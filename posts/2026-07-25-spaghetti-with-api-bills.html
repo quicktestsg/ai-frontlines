@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaghetti With API Bills — AI Frontlines</title>
+    <meta name="description" content="Most multi-agent systems aren't architectures. They're distributed prompts with a billing problem. The fix is older than AI itself.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css?v=6">
+</head>
+<body>
+
+<div class="mesh-bg">
+    <div class="mesh-orb mesh-orb-1"></div>
+    <div class="mesh-orb mesh-orb-2"></div>
+    <div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="nav-brand">
+            <span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+        <div class="nav-right">
+            <a href="../about.html" class="nav-link">About</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"/><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"/><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"/></svg>
+                <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div class="wrap">
+
+    <header class="post-header">
+        <div class="post-header-meta">
+            <span class="post-header-date">July 25, 2026</span>
+            <span class="post-header-dot"></span>
+            <span class="post-header-read">6 min read</span>
+        </div>
+        <h1 class="post-header-title">Spaghetti With API Bills</h1>
+        <p class="post-header-deck">Most multi-agent systems aren't architectures. They're distributed prompts with a billing problem. The fix is older than AI itself.</p>
+    </header>
+    <article class="post-body">
+
+        <p>Most teams building "multi-agent systems" in 2026 are not building systems. They have taken a single oversized prompt, sliced it across twenty agents, and called the result an architecture. The agents share ambiguous context. They return free-form text. They repeat each other's research and bill for the privilege. When one model's output format drifts — and it will drift — the entire chain collapses into a stack trace nobody can debug. This is not orchestration. It is spaghetti with API bills.</p>
+
+        <p>The pattern is common enough to be a punchline. A team reads that agents are the future, stands up a coordinator, fans out a dozen workers, wires them together with string and a JSON schema, and ships. For two weeks it looks like magic. Then reality arrives: token costs triple, latency balloons, outputs turn inconsistent, and nobody can explain why the system returned what it returned. The instinct is to blame the model. The model is rarely the problem. The problem is that there was never an architecture — only a distribution.</p>
+
+        <div class="diagram">
+            <svg viewBox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <marker id="arrS1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                        <path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"/>
+                    </marker>
+                    <marker id="arrS2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                        <path d="M0,0 L6,4 L0,8" fill="var(--accent)"/>
+                    </marker>
+                </defs>
+
+                <!-- LEFT: Spaghetti / distributed prompt -->
+                <text x="140" y="28" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-tertiary)" font-weight="700" letter-spacing="1">DISTRIBUTED PROMPT</text>
+
+                <!-- 6 tangled nodes -->
+                <circle cx="60"  cy="90"  r="16" fill="var(--bg-surface)" stroke="var(--text-tertiary)" stroke-width="1.5"/>
+                <circle cx="220" cy="70"  r="16" fill="var(--bg-surface)" stroke="var(--text-tertiary)" stroke-width="1.5"/>
+                <circle cx="110" cy="170" r="16" fill="var(--bg-surface)" stroke="var(--text-tertiary)" stroke-width="1.5"/>
+                <circle cx="230" cy="200" r="16" fill="var(--bg-surface)" stroke="var(--text-tertiary)" stroke-width="1.5"/>
+                <circle cx="70"  cy="250" r="16" fill="var(--bg-surface)" stroke="var(--text-tertiary)" stroke-width="1.5"/>
+                <circle cx="180" cy="300" r="16" fill="var(--bg-surface)" stroke="var(--text-tertiary)" stroke-width="1.5"/>
+
+                <!-- tangled crossing lines -->
+                <path d="M76 90 Q150 60 204 70"   stroke="var(--text-tertiary)" stroke-width="1" fill="none" opacity="0.55" marker-end="url(#arrS1)"/>
+                <path d="M68 106 Q90 140 98 154"  stroke="var(--text-tertiary)" stroke-width="1" fill="none" opacity="0.55" marker-end="url(#arrS1)"/>
+                <path d="M214 84 Q150 130 124 156" stroke="var(--text-tertiary)" stroke-width="1" fill="none" opacity="0.55" marker-end="url(#arrS1)"/>
+                <path d="M236 86 Q210 150 234 184" stroke="var(--text-tertiary)" stroke-width="1" fill="none" opacity="0.55" marker-end="url(#arrS1)"/>
+                <path d="M126 170 Q180 185 214 192" stroke="var(--text-tertiary)" stroke-width="1" fill="none" opacity="0.55" marker-end="url(#arrS1)"/>
+                <path d="M214 200 Q130 240 86 248"  stroke="var(--text-tertiary)" stroke-width="1" fill="none" opacity="0.55" marker-end="url(#arrS1)"/>
+                <path d="M86 266 Q120 290 164 296"  stroke="var(--text-tertiary)" stroke-width="1" fill="none" opacity="0.55" marker-end="url(#arrS1)"/>
+                <path d="M196 292 Q224 240 236 216" stroke="var(--text-tertiary)" stroke-width="1" fill="none" opacity="0.55" marker-end="url(#arrS1)"/>
+                <path d="M60 266 Q40 180 52 106"     stroke="var(--text-tertiary)" stroke-width="1" fill="none" opacity="0.35" marker-end="url(#arrS1)"/>
+
+                <text x="140" y="332" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text-tertiary)" font-style="italic">ambiguous context · repeated work · invoice per hop</text>
+
+                <!-- Divider -->
+                <line x1="295" y1="20" x2="295" y2="325" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,5"/>
+
+                <!-- RIGHT: Graph -->
+                <text x="460" y="28" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--accent)" font-weight="700" letter-spacing="1">GRAPH ENGINEERING</text>
+
+                <!-- clean DAG -->
+                <!-- input -->
+                <rect x="400" y="50" width="120" height="34" rx="7" fill="var(--bg-surface)" stroke="var(--accent)" stroke-width="1.5"/>
+                <text x="460" y="72" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-secondary)">raw input</text>
+
+                <!-- extract -->
+                <rect x="400" y="112" width="120" height="34" rx="7" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="1.5"/>
+                <text x="460" y="134" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text)" font-weight="600">extract</text>
+
+                <!-- router -->
+                <polygon points="460,170 500,196 460,222 420,196" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="1.5"/>
+                <text x="460" y="200" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text)" font-weight="600">router</text>
+
+                <!-- verify -->
+                <rect x="368" y="246" width="96" height="32" rx="7" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="1.5"/>
+                <text x="416" y="267" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text-secondary)">verify</text>
+
+                <!-- judge -->
+                <rect x="478" y="246" width="96" height="32" rx="7" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="2"/>
+                <text x="526" y="267" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text)" font-weight="700">judge</text>
+
+                <!-- edges -->
+                <line x1="460" y1="84"  x2="460" y2="110" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrS2)"/>
+                <line x1="460" y1="146" x2="460" y2="168" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrS2)"/>
+                <path d="M430 210 Q422 228 416 244" stroke="var(--accent)" stroke-width="1.5" fill="none" marker-end="url(#arrS2)"/>
+                <path d="M490 210 Q510 228 524 244" stroke="var(--accent)" stroke-width="1.5" fill="none" marker-end="url(#arrS2)"/>
+                <path d="M464 262 L476 262" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrS2)"/>
+
+                <!-- edge labels -->
+                <text x="470" y="102" font-family="Inter,sans-serif" font-size="9" fill="var(--text-tertiary)">evidence</text>
+                <text x="400" y="240" font-family="Inter,sans-serif" font-size="9" fill="var(--text-tertiary)">typed edge</text>
+
+                <text x="460" y="310" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--accent)" font-style="italic">one node = one decision · every edge carries a contract</text>
+            </svg>
+            <p class="diagram-caption">Distribution is not design. Tangled agents share ambiguity; a graph assigns each decision to exactly one node and every edge a contract.</p>
+        </div>
+
+        <h3>The two software crises</h3>
+
+        <p>The original software crisis, named in 1968, was defined by a single failure mode: systems had grown too large for any one person to understand. Code outgrew human comprehension, and the resulting bugs, overruns, and collapses felt existential. The discipline that emerged in response — modular decomposition, abstract data types, interfaces with contracts — was aimed at one specific terror. Every major idea in software engineering since, from objects to services to microservices, is a variation on the same move: break a large system into replaceable parts that speak to each other through strict contracts.</p>
+
+        <p>The new software crisis is the mirror image, and it is arriving faster. It is not too much code. It is too many agents with no architecture between them. An agent is a probabilistic component that produces unstructured output, drifts between versions, and costs money every time it runs. Wire enough of them together without contracts and you have rebuilt the 1968 crisis on a new substrate — except now the components lie, hallucinate, and send invoices.</p>
+
+        <p>The fix is the same fix, rediscovered. Graph engineering is the application of a fifty-year-old lesson to AI: one node owns one decision, one edge carries structured evidence, ordinary code handles the deterministic work, routers decide which branch continues, verifiers reject unsupported conclusions, and the strongest model sees only what survives.</p>
+
+        <div class="diagram">
+            <svg viewBox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <marker id="arrC" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                        <path d="M0,0 L6,4 L0,8" fill="var(--accent)"/>
+                    </marker>
+                    <marker id="arrR" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                        <path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"/>
+                    </marker>
+                </defs>
+
+                <!-- Convergence of two crises into one principle -->
+                <!-- Left top: 1968 crisis -->
+                <rect x="30" y="40" width="180" height="70" rx="10" fill="var(--bg-surface)" stroke="var(--border-hover)" stroke-width="1"/>
+                <text x="120" y="64" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-tertiary)" font-weight="700">1968 CRISIS</text>
+                <text x="120" y="84" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text-secondary)">too much code</text>
+                <text x="120" y="100" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text-secondary)">for one mind</text>
+
+                <!-- Right top: 2026 crisis -->
+                <rect x="410" y="40" width="180" height="70" rx="10" fill="var(--bg-surface)" stroke="var(--border-hover)" stroke-width="1"/>
+                <text x="500" y="64" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--accent)" font-weight="700">2026 CRISIS</text>
+                <text x="500" y="84" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text-secondary)">too many agents</text>
+                <text x="500" y="100" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text-secondary)">no architecture</text>
+
+                <!-- arrows converging to center -->
+                <path d="M170 110 Q200 160 250 180" stroke="var(--text-tertiary)" stroke-width="1.5" fill="none" marker-end="url(#arrC)"/>
+                <path d="M450 110 Q420 160 370 180" stroke="var(--accent)" stroke-width="1.5" fill="none" marker-end="url(#arrC)"/>
+
+                <!-- Center: the principle -->
+                <rect x="210" y="170" width="200" height="60" rx="10" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="2"/>
+                <text x="310" y="194" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--accent)" font-weight="700">REPLACEABLE PARTS</text>
+                <text x="310" y="214" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text-secondary)">with strict contracts</text>
+
+                <!-- down arrow -->
+                <line x1="310" y1="230" x2="310" y2="258" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrC)"/>
+                <text x="310" y="280" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text-tertiary)" font-style="italic">the same lesson, twice</text>
+            </svg>
+            <p class="diagram-caption">The old crisis was unmanageable code; the new one is unmanaged agents. Both collapse into the same architectural cure.</p>
+        </div>
+
+        <h3>Replaceability is the moat</h3>
+
+        <p>Here is the claim that matters most. The next durable advantage in AI will not be a single permanent model. It will be a system that keeps working when the model changes. Models are being swapped, repriced, deprecated, and leapfrogged every quarter. A system whose correctness depends on one irreplaceable model is a system with an expiration date. A system in which every node is replaceable is a system with a future.</p>
+
+        <p>This is what makes the graph, not the agent, the unit of value. In a well-designed graph, a cheap model handles extraction. A specialist inspects security. A skeptical agent attacks the result. A frontier model renders the final judgment — and it does so without ever carrying the entire workflow inside its context window. Each role is a slot. Each slot accepts any model that satisfies the contract. When a better model lands next month, it slides into the slot. When a vendor disappears, the slot survives.</p>
+
+        <div class="diagram">
+            <svg viewBox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <marker id="arrG" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                        <path d="M0,0 L6,4 L0,8" fill="var(--accent)"/>
+                    </marker>
+                    <linearGradient id="slotGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:var(--accent);stop-opacity:0.14"/>
+                        <stop offset="100%" style="stop-color:var(--accent);stop-opacity:0.02"/>
+                    </linearGradient>
+                </defs>
+
+                <!-- Four role slots -->
+                <!-- Slot 1: Extractor -->
+                <rect x="40" y="50" width="120" height="80" rx="10" fill="url(#slotGrad)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,4"/>
+                <text x="100" y="72" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text-tertiary)" font-weight="700" letter-spacing="0.5">SLOT · extractor</text>
+                <rect x="58" y="82" width="84" height="34" rx="6" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="1"/>
+                <text x="100" y="103" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text)" font-weight="600">cheap model</text>
+
+                <!-- Slot 2: Specialist -->
+                <rect x="40" y="160" width="120" height="80" rx="10" fill="url(#slotGrad)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,4"/>
+                <text x="100" y="182" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text-tertiary)" font-weight="700" letter-spacing="0.5">SLOT · specialist</text>
+                <rect x="58" y="192" width="84" height="34" rx="6" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="1"/>
+                <text x="100" y="213" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text)" font-weight="600">security</text>
+
+                <!-- Slot 3: Skeptic -->
+                <rect x="40" y="270" width="120" height="80" rx="10" fill="url(#slotGrad)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,4"/>
+                <text x="100" y="292" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text-tertiary)" font-weight="700" letter-spacing="0.5">SLOT · skeptic</text>
+                <rect x="58" y="302" width="84" height="34" rx="6" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="1"/>
+                <text x="100" y="323" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text)" font-weight="600">attacker</text>
+
+                <!-- Right: swap timeline -->
+                <text x="430" y="40" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--accent)" font-weight="700" letter-spacing="1">ANY MODEL FITS THE CONTRACT</text>
+
+                <!-- timeline slots with versioned chips -->
+                <rect x="300" y="70" width="90" height="40" rx="7" fill="var(--bg-card)" stroke="var(--border-hover)" stroke-width="1"/>
+                <text x="345" y="94" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-secondary)">model v3</text>
+
+                <rect x="410" y="70" width="90" height="40" rx="7" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="2"/>
+                <text x="455" y="94" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text)" font-weight="700">model v4</text>
+
+                <rect x="520" y="70" width="90" height="40" rx="7" fill="var(--bg-card)" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,3"/>
+                <text x="565" y="94" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-tertiary)">v5 (soon)</text>
+
+                <!-- swap arrows -->
+                <path d="M390 90 L406 90" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrG)"/>
+                <path d="M500 90 L516 90" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrG)" opacity="0.6"/>
+
+                <!-- the slot stays -->
+                <rect x="350" y="150" width="210" height="44" rx="8" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,4"/>
+                <text x="455" y="176" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--accent)" font-weight="600">the slot survives</text>
+
+                <!-- connecting lines from slots to contract -->
+                <path d="M160 90 Q250 120 345 90" stroke="var(--text-tertiary)" stroke-width="1" fill="none" opacity="0.5" marker-end="url(#arrG)"/>
+                <path d="M160 200 Q255 180 350 172" stroke="var(--text-tertiary)" stroke-width="1" fill="none" opacity="0.5" marker-end="url(#arrG)"/>
+                <path d="M160 310 Q255 250 350 184" stroke="var(--text-tertiary)" stroke-width="1" fill="none" opacity="0.5" marker-end="url(#arrG)"/>
+
+                <text x="310" y="230" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text-tertiary)" font-style="italic">roles are owned; models are rented</text>
+
+                <text x="455" y="330" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text-tertiary)">vendor disappears → slide in another. model deprecated → slot unchanged.</text>
+            </svg>
+            <p class="diagram-caption">Roles are owned; models are rented. The architecture is the only durable asset.</p>
+        </div>
+
+        <blockquote>The original software crisis taught engineers to stop writing programs and start writing replaceable parts. The agentic crisis will teach the same lesson, again, to a generation that thought it had skipped the class.</blockquote>
+
+        <h3>The discipline returns</h3>
+
+        <p>What is being rediscovered is not glamorous. It is interfaces, contracts, typed edges, separation of concerns. The novelty is that these ideas now govern not just deterministic code but probabilistic components that must be governed more strictly precisely because they are not trustworthy on their own. The graph is a discipline of distrust: structure compensates for the unreliability of the nodes.</p>
+
+        <p>Notice what this discipline removes from the frontier model's shoulders. It no longer carries the whole workflow in one context window. It no longer has to be simultaneously the reader, the verifier, and the decider. The work is staged across a pipeline, and by the time a token reaches the strongest model, it has already been filtered, typed, and corroborated. The expensive model spends its budget on judgment, not on janitorial work. Costs fall. Latency falls. And, counterintuitively, quality rises — because every conclusion now arrives with a chain of evidence attached to it rather than the vibes of a single large prompt.</p>
+
+        <p>The teams that win will be the ones who stop measuring how clever their agents are and start measuring how replaceable they are. Cleverness is a property of the model, and the model is a borrowed asset. Replaceability is a property of the architecture, and the architecture is the only thing actually owned.</p>
+
+        <p>Spaghetti with API bills is the default state of multi-agent development in 2026. It is what happens when distribution is mistaken for design. The exit is older than the industry that needs it. Draw the graph. Type the edges. Make every node disposable. Then, and only then, does adding another agent make the system stronger instead of merely more expensive.</p>
+
+    </article>
+
+    <footer class="post-footer">
+        <a href="../index.html" class="post-back">← All posts</a>
+    </footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
