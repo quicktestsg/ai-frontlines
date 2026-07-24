@@ -3,298 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Frontlines — Frontline intelligence on OpenAI, Anthropic, Google & xAI</title>
-    <meta name="description" content="Curated AI news from the frontlines: OpenAI, Anthropic, Google Gemini, and xAI Grok.">
+    <title>AI Frontlines</title>
+    <meta name="description" content="A personal blog about AI, automation, and building things that matter.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- ─── Animated gradient backdrop ─── -->
-<div class="backdrop">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-    <div class="orb orb-4"></div>
-</div>
-
-<!-- ─── Nav ─── -->
-<nav id="nav">
-    <div class="nav-inner">
-        <a href="index.html" class="logo">
-            <span class="logo-mark">◆</span>
-            <span class="logo-text">AI Frontlines</span>
+<div class="wrap">
+    <nav class="nav">
+        <a href="index.html" class="nav-brand">
+            <span class="nav-brand-dot"></span>
+            AI Frontlines
         </a>
-        <div class="nav-links">
-            <a href="index.html" class="nav-link">Feed</a>
+        <div class="nav-right">
             <a href="about.html" class="nav-link">About</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"/><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"/><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"/></svg>
+                <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
         </div>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-            <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"/><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"/><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"/></svg>
-            <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-    </div>
-</nav>
+    </nav>
 
-<!-- ─── Hero ─── -->
-<section class="hero">
-    <div class="hero-content">
-        <p class="hero-eyebrow">July 24, 2026 · Singapore</p>
-        <h1 class="hero-title">The AI race, <span class="gradient-text">decoded</span>.</h1>
-        <p class="hero-sub">Frontline dispatches from OpenAI, Anthropic, Google Gemini, and xAI Grok — straight from their own posts, announcements, and breakthroughs. No fluff, no clickbait, just signal.</p>
-        <div class="hero-stats">
-            <div class="stat">
-                <span class="stat-num">4</span>
-                <span class="stat-label">Companies</span>
-            </div>
-            <div class="stat">
-                <span class="stat-num">10</span>
-                <span class="stat-label">Stories</span>
-            </div>
-            <div class="stat">
-                <span class="stat-num">100%</span>
-                <span class="stat-label">Sourced</span>
-            </div>
+    <section class="intro">
+        <p class="intro-name">Jerry · Singapore</p>
+        <h1 class="intro-tagline">A personal blog about AI, <em>automation, and building things that matter.</em></h1>
+        <p class="intro-bio">I track what OpenAI, Anthropic, Google, and xAI are shipping — and write about what it means. One post a day, straight thoughts, no filler.</p>
+    </section>
+
+    <section class="post-list">
+        <p class="post-list-label">Recent</p>
+
+        <div class="post-item fade-up">
+            <a href="posts/2026-07-24-the-week-ai-started-talking-back.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">July 24, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read">4 min read</span>
+                </div>
+                <h2 class="post-title">The Week AI Started Talking Back</h2>
+                <p class="post-excerpt">Voice mode is no longer a parlor trick. OpenAI, Anthropic, and xAI all shipped real-time voice this week — and something shifted in how it feels to use a computer.</p>
+            </a>
         </div>
-    </div>
-</section>
 
-<!-- ─── Filter bar ─── -->
-<div class="filter-bar" id="filterBar">
-    <div class="filter-inner">
-        <button class="filter-chip active" data-filter="all">All</button>
-        <button class="filter-chip" data-filter="openai" style="--chip:#10A37F">
-            <span class="chip-dot"></span>OpenAI
-        </button>
-        <button class="filter-chip" data-filter="anthropic" style="--chip:#D4A574">
-            <span class="chip-dot"></span>Anthropic
-        </button>
-        <button class="filter-chip" data-filter="google" style="--chip:#4285F4">
-            <span class="chip-dot"></span>Google Gemini
-        </button>
-        <button class="filter-chip" data-filter="xai" style="--chip:#1DA1F2">
-            <span class="chip-dot"></span>xAI Grok
-        </button>
-    </div>
+        <!-- POSTS_INSERT -->
+
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 AI Frontlines · Built with Hermes Agent</p>
+    </footer>
 </div>
-
-<!-- ─── Feed ─── -->
-<main class="feed">
-    <div class="feed-grid" id="feedGrid">
-
-        <!-- ============ ARTICLE 1 ============ -->
-        <article class="card" data-company="openai">
-            <div class="card-banner" style="background: linear-gradient(135deg, #10A37F 0%, #1a7a5e 100%)">
-                <span class="card-company">OpenAI</span>
-                <span class="card-date">Jul 23</span>
-            </div>
-            <div class="card-body">
-                <h2 class="card-title"><a href="articles/chatgpt-voice.html">ChatGPT Voice Takes Over Your Desktop</a></h2>
-                <p class="card-excerpt">OpenAI's GPT-Live-powered voice mode lands on desktop — control multiple agents hands-free across macOS and Windows.</p>
-                <div class="card-tags">
-                    <span class="tag">Voice AI</span>
-                    <span class="tag">Agents</span>
-                </div>
-                <div class="card-source">
-                    <img src="https://pbs.twimg.com/profile_images/1660784008276520961/rJPgQ585_400x400.jpg" alt="OpenAI" class="source-avatar" loading="lazy" onerror="this.style.display='none'">
-                    <span class="source-name">@OpenAI</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- ============ ARTICLE 2 ============ -->
-        <article class="card" data-company="openai">
-            <div class="card-banner" style="background: linear-gradient(135deg, #0d8a6a 0%, #15604a 100%)">
-                <span class="card-company">OpenAI</span>
-                <span class="card-date">Jul 23</span>
-            </div>
-            <div class="card-body">
-                <h2 class="card-title"><a href="articles/chatgpt-health.html">ChatGPT Health Rolls Out to All U.S. Users</a></h2>
-                <p class="card-excerpt">Connect Apple Health and medical records. 300M people ask ChatGPT health questions weekly — now it's getting personal context.</p>
-                <div class="card-tags">
-                    <span class="tag">Healthcare</span>
-                    <span class="tag">GPT-5.6</span>
-                </div>
-                <div class="card-source">
-                    <img src="https://pbs.twimg.com/profile_images/1660784008276520961/rJPgQ585_400x400.jpg" alt="OpenAI" class="source-avatar" loading="lazy" onerror="this.style.display='none'">
-                    <span class="source-name">@OpenAI</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- ============ ARTICLE 3 ============ -->
-        <article class="card" data-company="openai">
-            <div class="card-banner" style="background: linear-gradient(135deg, #1a7a5e 0%, #0d4a3a 100%)">
-                <span class="card-company">OpenAI</span>
-                <span class="card-date">Jul 23</span>
-            </div>
-            <div class="card-body">
-                <h2 class="card-title"><a href="articles/openai-presence.html">OpenAI Presence: Enterprise Voice &amp; Chat Agents</a></h2>
-                <p class="card-excerpt">A new platform for businesses to deploy trusted AI agents across customer and internal workflows — with escalation to humans.</p>
-                <div class="card-tags">
-                    <span class="tag">Enterprise</span>
-                    <span class="tag">Agents</span>
-                </div>
-                <div class="card-source">
-                    <img src="https://pbs.twimg.com/profile_images/1660784008276520961/rJPgQ585_400x400.jpg" alt="OpenAI" class="source-avatar" loading="lazy" onerror="this.style.display='none'">
-                    <span class="source-name">@OpenAI</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- ============ ARTICLE 4 ============ -->
-        <article class="card" data-company="anthropic">
-            <div class="card-banner" style="background: linear-gradient(135deg, #D4A574 0%, #9b7a52 100%)">
-                <span class="card-company">Anthropic</span>
-                <span class="card-date">Jul 20</span>
-            </div>
-            <div class="card-body">
-                <h2 class="card-title"><a href="articles/anthropic-rare-disease.html">Anthropic's $50K Claude Grants for Rare Disease Research</a></h2>
-                <p class="card-excerpt">First focused call within AI for Science — researchers accelerating cures for rare diseases can get up to $50K in Claude usage credits.</p>
-                <div class="card-tags">
-                    <span class="tag">AI for Science</span>
-                    <span class="tag">Research</span>
-                </div>
-                <div class="card-source">
-                    <img src="https://pbs.twimg.com/profile_images/1599016922337218561/NI3DZiDp_400x400.jpg" alt="Anthropic" class="source-avatar" loading="lazy" onerror="this.style.display='none'">
-                    <span class="source-name">@AnthropicAI</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- ============ ARTICLE 5 ============ -->
-        <article class="card" data-company="anthropic">
-            <div class="card-banner" style="background: linear-gradient(135deg, #b8915f 0%, #6f5535 100%)">
-                <span class="card-company">Anthropic</span>
-                <span class="card-date">Jul 13</span>
-            </div>
-            <div class="card-body">
-                <h2 class="card-title"><a href="articles/anthropic-values.html">Claude's 3,000 Values: What Anthropic Discovered in 300K Conversations</a></h2>
-                <p class="card-excerpt">Sonnet 4.6 is more playful. Opus 4.7 gives candid critiques. Claude leans warm in Hindi and rigorous in Russian. The full value mapping.</p>
-                <div class="card-tags">
-                    <span class="tag">Research</span>
-                    <span class="tag">Interpretability</span>
-                </div>
-                <div class="card-source">
-                    <img src="https://pbs.twimg.com/profile_images/1599016922337218561/NI3DZiDp_400x400.jpg" alt="Anthropic" class="source-avatar" loading="lazy" onerror="this.style.display='none'">
-                    <span class="source-name">@AnthropicAI</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- ============ ARTICLE 6 ============ -->
-        <article class="card" data-company="anthropic">
-            <div class="card-banner" style="background: linear-gradient(135deg, #c49b6a 0%, #755a38 100%)">
-                <span class="card-company">Anthropic</span>
-                <span class="card-date">Jul 6</span>
-            </div>
-            <div class="card-body">
-                <h2 class="card-title"><a href="articles/anthropic-jspace.html">Inside Claude's Mind: The J-Space Breakthrough</a></h2>
-                <p class="card-excerpt">Anthropic can now read, audit, and shape what Claude is actively thinking about — tools for keeping models trustworthy as capabilities scale.</p>
-                <div class="card-tags">
-                    <span class="tag">Interpretability</span>
-                    <span class="tag">Safety</span>
-                </div>
-                <div class="card-source">
-                    <img src="https://pbs.twimg.com/profile_images/1599016922337218561/NI3DZiDp_400x400.jpg" alt="Anthropic" class="source-avatar" loading="lazy" onerror="this.style.display='none'">
-                    <span class="source-name">@AnthropicAI</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- ============ ARTICLE 7 ============ -->
-        <article class="card" data-company="google">
-            <div class="card-banner" style="background: linear-gradient(135deg, #4285F4 0%, #1a5fcc 100%)">
-                <span class="card-company">Google Gemini</span>
-                <span class="card-date">Jul 22</span>
-            </div>
-            <div class="card-body">
-                <h2 class="card-title"><a href="articles/google-genesis.html">Google's $40M Genesis Mission to Double Scientific Discovery</a></h2>
-                <p class="card-excerpt">DeepMind partners with the US Department of Energy, committing $40M in AI tokens and cloud credits to accelerate lab research.</p>
-                <div class="card-tags">
-                    <span class="tag">AI for Science</span>
-                    <span class="tag">Partnership</span>
-                </div>
-                <div class="card-source">
-                    <img src="https://pbs.twimg.com/profile_images/1663724407596785665/cE6VUTv5_400x400.jpg" alt="Google DeepMind" class="source-avatar" loading="lazy" onerror="this.style.display='none'">
-                    <span class="source-name">@GoogleDeepMind</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- ============ ARTICLE 8 ============ -->
-        <article class="card" data-company="google">
-            <div class="card-banner" style="background: linear-gradient(135deg, #3367d6 0%, #154088 100%)">
-                <span class="card-company">Google Gemini</span>
-                <span class="card-date">Jul 21</span>
-            </div>
-            <div class="card-body">
-                <h2 class="card-title"><a href="articles/gemini-36-flash.html">Three New Gemini Models in One Day</a></h2>
-                <p class="card-excerpt">Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber — faster, cheaper, and a cybersecurity-specialized model for governments.</p>
-                <div class="card-tags">
-                    <span class="tag">New Models</span>
-                    <span class="tag">Efficiency</span>
-                </div>
-                <div class="card-source">
-                    <img src="https://pbs.twimg.com/profile_images/1663724407596785665/cE6VUTv5_400x400.jpg" alt="Google AI" class="source-avatar" loading="lazy" onerror="this.style.display='none'">
-                    <span class="source-name">@GoogleAI</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- ============ ARTICLE 9 ============ -->
-        <article class="card" data-company="xai">
-            <div class="card-banner" style="background: linear-gradient(135deg, #1DA1F2 0%, #0d7ab5 100%)">
-                <span class="card-company">xAI Grok</span>
-                <span class="card-date">Jul 23</span>
-            </div>
-            <div class="card-body">
-                <h2 class="card-title"><a href="articles/grok-45-surge.html">Grok 4.5 Surges on OpenRouter, Breaks Top 10</a></h2>
-                <p class="card-excerpt">Grok 4.5 token volume is surging — beating GPT-5.6 Sol and Fable 5 as xAI's model migration gains momentum.</p>
-                <div class="card-tags">
-                    <span class="tag">Adoption</span>
-                    <span class="tag">OpenRouter</span>
-                </div>
-                <div class="card-source">
-                    <img src="https://pbs.twimg.com/profile_images/1889686738054705152/YjIZXr5G_400x400.jpg" alt="Elon Musk" class="source-avatar" loading="lazy" onerror="this.style.display='none'">
-                    <span class="source-name">@elonmusk</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- ============ ARTICLE 10 ============ -->
-        <article class="card" data-company="xai">
-            <div class="card-banner" style="background: linear-gradient(135deg, #0d8cc7 0%, #095a86 100%)">
-                <span class="card-company">xAI Grok</span>
-                <span class="card-date">Jul 23</span>
-            </div>
-            <div class="card-body">
-                <h2 class="card-title"><a href="articles/grok-build.html">Grok Build Gets Workflows &amp; Voice Mode Upgrades</a></h2>
-                <p class="card-excerpt">New Workflows feature, built-in diagnostics, stronger session reliability, and lower memory for Voice Mode on macOS — v0.2.111.</p>
-                <div class="card-tags">
-                    <span class="tag">Developer Tools</span>
-                    <span class="tag">Voice</span>
-                </div>
-                <div class="card-source">
-                    <img src="https://pbs.twimg.com/profile_images/1889686738054705152/YjIZXr5G_400x400.jpg" alt="Elon Musk" class="source-avatar" loading="lazy" onerror="this.style.display='none'">
-                    <span class="source-name">@elonmusk</span>
-                </div>
-            </div>
-        </article>
-
-    </div>
-</main>
-
-<!-- ─── Footer ─── -->
-<footer>
-    <div class="footer-inner">
-        <p>AI Frontlines — Curated dispatches from OpenAI, Anthropic, Google Gemini &amp; xAI Grok.</p>
-        <p class="footer-meta">Sourced from official X/Twitter accounts. No spin, no commentary — just what the labs are shipping.</p>
-    </div>
-</footer>
-
 <script src="app.js"></script>
 </body>
 </html>

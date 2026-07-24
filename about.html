@@ -10,59 +10,39 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="backdrop">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-    <div class="orb orb-4"></div>
-</div>
-
-<nav id="nav">
-    <div class="nav-inner">
-        <a href="index.html" class="logo">
-            <span class="logo-mark">◆</span>
-            <span class="logo-text">AI Frontlines</span>
+<div class="wrap">
+    <nav class="nav">
+        <a href="index.html" class="nav-brand">
+            <span class="nav-brand-dot"></span>
+            AI Frontlines
         </a>
-        <div class="nav-links">
-            <a href="index.html" class="nav-link">Feed</a>
-            <a href="about.html" class="nav-link">About</a>
+        <div class="nav-right">
+            <a href="index.html" class="nav-link">Posts</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"/><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"/><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"/></svg>
+                <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
         </div>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-            <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"/><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"/><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"/></svg>
-            <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
+    </nav>
+
+    <section class="post-header">
+        <h1 class="post-header-title">About</h1>
+    </section>
+
+    <div class="about-body">
+        <p>I'm Jerry. I live in Singapore, build things with AI, and write about what I see at the frontier.</p>
+
+        <p>Every day, the major AI labs — OpenAI, Anthropic, Google, and xAI — ship updates that quietly reshape what computers can do. Most of it gets buried in press releases, X threads, and hype cycles. This blog is my attempt to cut through that noise: one thoughtful post a day about something that actually matters.</p>
+
+        <p>I'm not a journalist. I'm a builder and a thinker. I care about what these tools mean for how we work, how we think, and how we live. I write with opinions, not false balance. If I think something is overhyped, I'll say it. If I think something is genuinely transformative, I'll say that too.</p>
+
+        <p>One post a day. No filler. Written from Singapore, usually with coffee.</p>
     </div>
-</nav>
 
-<section class="article-hero">
-    <div class="article-eyebrow">
-        <span class="article-company-badge" style="background: linear-gradient(135deg, #2997ff, #6366f1)">About</span>
-        <span class="article-date">Est. July 2026</span>
-    </div>
-    <h1 class="article-title">Only the labs that matter.</h1>
-    <p class="article-deck">AI Frontlines tracks the four companies shaping the frontier of artificial intelligence — OpenAI, Anthropic, Google, and xAI — with zero noise from everything else.</p>
-</section>
-
-<div class="article-body">
-    <p>Every day, hundreds of AI announcements flood the internet. Most are noise. Press releases padded with jargon. Funding rounds dressed as breakthroughs. Blog posts about blog posts.</p>
-
-    <p>AI Frontlines cuts through all of it. We track exactly four sources — the official accounts of OpenAI, Anthropic, Google DeepMind/AI, and xAI/Elon Musk — and write up what actually matters. No aggregator spam. No "startup raises seed round." Just the labs building frontier models, in their own words.</p>
-
-    <blockquote>If it didn't come from OpenAI, Anthropic, Google, or xAI, you won't find it here.</blockquote>
-
-    <h3>Why these four?</h3>
-    <p>As of 2026, these are the organizations training models at the frontier — the ones pushing capability boundaries, publishing research, and shipping products that millions use. When one of them announces something, the others usually respond within days. Following all four gives you the full picture of where AI is heading.</p>
-
-    <h3>How it works</h3>
-    <p>We pull directly from official X/Twitter accounts, then write editorial pieces that explain the what, the why, and the implications. Every article links back to the original source so you can verify and dive deeper.</p>
-
-    <div class="article-source-box">
-        <strong>Built with:</strong> Hermes Agent + GitHub Pages. No tracking, no ads, no cookies. Just news.<br><br>
-        <a href="index.html" class="article-back">← Back to feed</a>
-    </div>
+    <footer class="footer">
+        <p>© 2026 AI Frontlines · Built with Hermes Agent</p>
+    </footer>
 </div>
-
 <script src="app.js"></script>
 </body>
 </html>
