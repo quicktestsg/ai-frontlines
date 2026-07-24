@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -27,6 +27,10 @@
             AI Frontlines
         </a>
         <div class="nav-right">
+            <div class="tab-group">
+                <button class="tab-btn active" data-tab="blog">Blog</button>
+                <button class="tab-btn" data-tab="news">News</button>
+            </div>
             <a href="about.html" class="nav-link">About</a>
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                 <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"/><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"/><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"/></svg>
@@ -36,7 +40,8 @@
     </div>
 </nav>
 
-<div class="wrap">
+<!-- ═══ BLOG TAB ═══ -->
+<div class="wrap tab-content active" id="tab-blog">
     <section class="intro fade-in">
         <div class="intro-badge">
             <span class="intro-badge-dot"></span>
@@ -63,6 +68,91 @@
         </div>
 
         <!-- POSTS_INSERT -->
+
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 AI Frontlines · Built with Hermes Agent</p>
+    </footer>
+</div>
+
+<!-- ═══ NEWS TAB ═══ -->
+<div class="wrap tab-content" id="tab-news">
+    <section class="intro fade-in">
+        <div class="intro-badge">
+            <span class="intro-badge-dot" style="background:#f59e0b;box-shadow:0 0 8px rgba(245,158,11,0.5)"></span>
+            Live from the frontier
+        </div>
+        <h1 class="intro-tagline">Latest AI News, <em>pulled from the source.</em></h1>
+        <p class="intro-bio">Real-time updates from OpenAI, Anthropic, Google, and xAI. No commentary, just the signal.</p>
+    </section>
+
+    <section class="news-list">
+
+        <!-- NEWS_INSERT -->
+
+        <article class="news-item fade-in">
+            <div class="news-source">
+                <span class="news-badge" style="background:#10A37F">OpenAI</span>
+                <span class="news-date">Jul 23</span>
+            </div>
+            <p class="news-text">ChatGPT Voice is now in the desktop app. Control your computer and direct multiple agents running in ChatGPT Work or Codex, using just your voice. Powered by GPT-Live — it can speak, listen, and coordinate work simultaneously. Rolling out globally on macOS and Windows to Plus, Pro, Business, Edu, and Enterprise.</p>
+            <a href="https://x.com/OpenAI/status/2080378182469857576" class="news-link" target="_blank" rel="noopener">Source →</a>
+        </article>
+
+        <article class="news-item fade-in">
+            <div class="news-source">
+                <span class="news-badge" style="background:#10A37F">OpenAI</span>
+                <span class="news-date">Jul 23</span>
+            </div>
+            <p class="news-text">ChatGPT Voice also available in Codex from the iOS app with paired remote access. Android support coming soon.</p>
+            <a href="https://x.com/OpenAI/status/2080392280549253392" class="news-link" target="_blank" rel="noopener">Source →</a>
+        </article>
+
+        <article class="news-item fade-in">
+            <div class="news-source">
+                <span class="news-badge" style="background:#D4A574">Anthropic</span>
+                <span class="news-date">Jul 20</span>
+            </div>
+            <p class="news-text">Grants of up to $50,000 in Claude usage credits for researchers accelerating cures for rare diseases. First focused call within AI for Science program, supporting scientists using Claude to speed up discovery.</p>
+            <a href="https://x.com/AnthropicAI/status/2079256626771665098" class="news-link" target="_blank" rel="noopener">Source →</a>
+        </article>
+
+        <article class="news-item fade-in">
+            <div class="news-source">
+                <span class="news-badge" style="background:#D4A574">Anthropic</span>
+                <span class="news-date">Jul 15</span>
+            </div>
+            <p class="news-text">New research: Agentic misalignment in Summer 2026. Tested many AI models, including Claude, in four scenarios showing clear misaligned behavior that should be studied further and mitigated.</p>
+            <a href="https://x.com/AnthropicAI/status/2077452649000042614" class="news-link" target="_blank" rel="noopener">Source →</a>
+        </article>
+
+        <article class="news-item fade-in">
+            <div class="news-source">
+                <span class="news-badge" style="background:#4285F4">Google</span>
+                <span class="news-date">Jul 23</span>
+            </div>
+            <p class="news-text">Gemini 3.5 Flash Cyber: specialized, lightweight model built to help security teams spot and patch vulnerabilities. Combining speed and efficiency — consistently caught complex, unique vulnerabilities that standard models missed in testing on Chrome and Android codebases.</p>
+            <a href="https://x.com/GoogleDeepMind/status/2080321519952056441" class="news-link" target="_blank" rel="noopener">Source →</a>
+        </article>
+
+        <article class="news-item fade-in">
+            <div class="news-source">
+                <span class="news-badge" style="background:#4285F4">Google</span>
+                <span class="news-date">Jul 23</span>
+            </div>
+            <p class="news-text">Gemini 3.5 Flash Cyber deployed via limited-access pilot for governments and trusted partners to ensure responsible deployment.</p>
+            <a href="https://x.com/GoogleDeepMind/status/2080321522040807769" class="news-link" target="_blank" rel="noopener">Source →</a>
+        </article>
+
+        <article class="news-item fade-in">
+            <div class="news-source">
+                <span class="news-badge" style="background:#1DA1F2">xAI</span>
+                <span class="news-date">Jul 23</span>
+            </div>
+            <p class="news-text">Grok 4.5 is the best value for money AI — Elon Musk highlights its position in the "most attractive quadrant" on performance vs cost benchmarks.</p>
+            <a href="https://x.com/elonmusk/status/2080421213411946941" class="news-link" target="_blank" rel="noopener">Source →</a>
+        </article>
 
     </section>
 
