@@ -132,6 +132,59 @@
 
         <p>Loop engineering accepts this reality and builds around it. Instead of trying to make models deterministic, you design systems that converge on correctness through repetition. The agent writes code, runs tests, reads the errors, and tries again. Each iteration isn't guaranteed to be right — but the loop, as a whole, is designed to converge. The engineering isn't in the individual step. It's in the shape of the cycle.</p>
 
+        <div class="diagram">
+            <svg viewBox="0 0 620 280" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="convGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#7c8cff;stop-opacity:0.8"/>
+                        <stop offset="100%" style="stop-color:#f472b6;stop-opacity:0.8"/>
+                    </linearGradient>
+                    <linearGradient id="convFill" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#7c8cff;stop-opacity:0.15"/>
+                        <stop offset="100%" style="stop-color:#7c8cff;stop-opacity:0"/>
+                    </linearGradient>
+                </defs>
+
+                <!-- Axes -->
+                <line x1="60" y1="240" x2="580" y2="240" stroke="var(--border-hover)" stroke-width="1.5"/>
+                <line x1="60" y1="240" x2="60" y2="30" stroke="var(--border-hover)" stroke-width="1.5"/>
+
+                <!-- Axis labels -->
+                <text x="320" y="270" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-tertiary)">Iterations</text>
+                <text x="30" y="135" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-tertiary)" transform="rotate(-90 30 135)">Error</text>
+
+                <!-- Convergence target line -->
+                <line x1="60" y1="210" x2="580" y2="210" stroke="var(--accent)" stroke-width="1" stroke-dasharray="4,4" opacity="0.4"/>
+                <text x="570" y="205" text-anchor="end" font-family="Inter,sans-serif" font-size="10" fill="var(--text-tertiary)">converged</text>
+
+                <!-- Convergence curve fill -->
+                <path d="M60 50 Q120 60 160 110 Q220 165 300 195 Q400 210 520 212 L580 212 L580 240 L60 240 Z" fill="url(#convFill)"/>
+
+                <!-- Convergence curve -->
+                <path d="M60 50 Q120 60 160 110 Q220 165 300 195 Q400 210 520 212 L580 213" fill="none" stroke="url(#convGrad)" stroke-width="2.5"/>
+
+                <!-- Iteration dots -->
+                <circle cx="60" cy="50" r="4" fill="var(--accent)"/>
+                <circle cx="160" cy="110" r="4" fill="var(--accent)"/>
+                <circle cx="300" cy="195" r="4" fill="var(--accent)"/>
+                <circle cx="460" cy="211" r="4" fill="var(--accent)"/>
+                <circle cx="580" cy="213" r="4" fill="var(--accent)"/>
+
+                <!-- Labels -->
+                <text x="70" y="42" font-family="Inter,sans-serif" font-size="11" fill="var(--text-secondary)" font-weight="500">Attempt 1</text>
+                <text x="170" y="102" font-family="Inter,sans-serif" font-size="11" fill="var(--text-secondary)" font-weight="500">Attempt 2</text>
+                <text x="310" y="187" font-family="Inter,sans-serif" font-size="11" fill="var(--text-secondary)" font-weight="500">Attempt 3</text>
+
+                <!-- Side annotations -->
+                <text x="400" y="120" font-family="Inter,sans-serif" font-size="11" fill="var(--text-tertiary)">Single function call →</text>
+                <text x="400" y="136" font-family="Inter,sans-serif" font-size="11" fill="var(--text-tertiary)">high error, no recovery</text>
+
+                <text x="350" y="60" font-family="Inter,sans-serif" font-size="11" fill="var(--accent)" font-weight="600">Loop converges →</text>
+                <text x="350" y="76" font-family="Inter,sans-serif" font-size="11" fill="var(--accent)">error → 0 over iterations</text>
+            </svg>
+            <p class="diagram-caption">A single function call starts wrong and stays wrong. A loop starts wrong and converges.</p>
+        </div>
+
         <blockquote>We spent 70 years optimizing for the fastest path from input to output. Now we're optimizing for the shortest path from wrong to right. Those are fundamentally different engineering problems.</blockquote>
 
         <h3>What a loop engineer actually does</h3>
@@ -145,6 +198,77 @@
         <h3>The harness is the product</h3>
 
         <p>This is why "harness engineering" keeps coming up in the same conversations as loop engineering. The harness is the scaffolding around the model: the system prompt, the tool definitions, the retrieval pipeline, the evaluation criteria, the retry logic, the guardrails. When your core compute is probabilistic, the deterministic wrapper around it becomes the actual product. OpenAI knows this — it's why Codex and ChatGPT Work are built as harnesses, not models. Anthropic knows it — Claude's tool-use protocol is a harness specification. The model is a commodity. The loop is the moat.</p>
+
+        <div class="diagram">
+            <svg viewBox="0 0 620 380" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <marker id="arr3" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                        <path d="M0,0 L6,4 L0,8" fill="var(--accent)"/>
+                    </marker>
+                    <linearGradient id="harnessGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#7c8cff;stop-opacity:0.12"/>
+                        <stop offset="100%" style="stop-color:#f472b6;stop-opacity:0.04"/>
+                    </linearGradient>
+                </defs>
+
+                <!-- Harness container -->
+                <rect x="30" y="20" width="560" height="340" rx="16" fill="url(#harnessGrad)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.6"/>
+                <text x="310" y="44" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--accent)" font-weight="700" letter-spacing="1">THE HARNESS (deterministic)</text>
+
+                <!-- Left column: Inputs -->
+                <rect x="55" y="70" width="120" height="36" rx="8" fill="var(--bg-card)" stroke="var(--border-hover)" stroke-width="1"/>
+                <text x="115" y="93" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-secondary)">System Prompt</text>
+
+                <rect x="55" y="118" width="120" height="36" rx="8" fill="var(--bg-card)" stroke="var(--border-hover)" stroke-width="1"/>
+                <text x="115" y="141" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-secondary)">Tool Definitions</text>
+
+                <rect x="55" y="166" width="120" height="36" rx="8" fill="var(--bg-card)" stroke="var(--border-hover)" stroke-width="1"/>
+                <text x="115" y="189" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-secondary)">Retrieval (RAG)</text>
+
+                <rect x="55" y="214" width="120" height="36" rx="8" fill="var(--bg-card)" stroke="var(--border-hover)" stroke-width="1"/>
+                <text x="115" y="237" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-secondary)">Guardrails</text>
+
+                <!-- Arrows from left to center -->
+                <path d="M175 88 L235 170" stroke="var(--accent)" stroke-width="1" opacity="0.4" marker-end="url(#arr3)"/>
+                <path d="M175 136 L235 175" stroke="var(--accent)" stroke-width="1" opacity="0.4" marker-end="url(#arr3)"/>
+                <path d="M175 184 L235 180" stroke="var(--accent)" stroke-width="1" opacity="0.4" marker-end="url(#arr3)"/>
+                <path d="M175 232 L235 190" stroke="var(--accent)" stroke-width="1" opacity="0.4" marker-end="url(#arr3)"/>
+
+                <!-- Center: The Model -->
+                <circle cx="310" cy="185" r="60" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="2"/>
+                <text x="310" y="180" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="var(--text)" font-weight="700">LLM</text>
+                <text x="310" y="198" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="var(--text-tertiary)">probabilistic</text>
+                <text x="310" y="212" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="var(--text-tertiary)">commodity</text>
+
+                <!-- Right column: Outputs/Feedback -->
+                <rect x="445" y="70" width="120" height="36" rx="8" fill="var(--bg-card)" stroke="var(--border-hover)" stroke-width="1"/>
+                <text x="505" y="93" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-secondary)">Test Suite</text>
+
+                <rect x="445" y="118" width="120" height="36" rx="8" fill="var(--bg-card)" stroke="var(--border-hover)" stroke-width="1"/>
+                <text x="505" y="141" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-secondary)">Eval Criteria</text>
+
+                <rect x="445" y="166" width="120" height="36" rx="8" fill="var(--bg-card)" stroke="var(--border-hover)" stroke-width="1"/>
+                <text x="505" y="189" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-secondary)">Retry Logic</text>
+
+                <rect x="445" y="214" width="120" height="36" rx="8" fill="var(--bg-card)" stroke="var(--border-hover)" stroke-width="1"/>
+                <text x="505" y="237" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-secondary)">CI/CD Gate</text>
+
+                <!-- Arrows from center to right -->
+                <path d="M370 170 L445 88" stroke="var(--accent)" stroke-width="1" opacity="0.4" marker-end="url(#arr3)"/>
+                <path d="M370 175 L445 136" stroke="var(--accent)" stroke-width="1" opacity="0.4" marker-end="url(#arr3)"/>
+                <path d="M370 180 L445 184" stroke="var(--accent)" stroke-width="1" opacity="0.4" marker-end="url(#arr3)"/>
+                <path d="M370 190 L445 232" stroke="var(--accent)" stroke-width="1" opacity="0.4" marker-end="url(#arr3)"/>
+
+                <!-- Bottom: The Loop arrow back -->
+                <path d="M505 250 Q505 300 310 300 Q115 300 115 250" stroke="var(--accent)" stroke-width="2" fill="none" stroke-dasharray="2,4" opacity="0.5" marker-end="url(#arr3)"/>
+                <text x="310" y="320" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text-tertiary)">feedback signal → next iteration</text>
+
+                <!-- Bottom annotations -->
+                <text x="115" y="290" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="var(--text-tertiary)">context in</text>
+                <text x="505" y="290" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="var(--text-tertiary)">signal out</text>
+            </svg>
+            <p class="diagram-caption">The harness: deterministic scaffolding around a probabilistic core. This is the actual product.</p>
+        </div>
 
         <p>I think most teams are still treating AI features as function calls with extra steps. They wrap a prompt in an API endpoint, ship it, and are confused when it works perfectly in testing and degrades in production. The degradation isn't a model problem. It's a loop problem. There's no feedback signal. No convergence criteria. No iteration. Just a single-shot function call that either works or doesn't, with no mechanism to improve itself.</p>
 
