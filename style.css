@@ -670,7 +670,7 @@ a { text-decoration: none; color: inherit; }
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 .news-badge {
     font-size: 11px;
@@ -685,6 +685,39 @@ a { text-decoration: none; color: inherit; }
     color: var(--text-tertiary);
     font-variant-numeric: tabular-nums;
 }
+
+/* ─── Twitter/X embed styling ─── */
+.news-item .twitter-tweet {
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 14px;
+    overflow: hidden;
+}
+.news-item .twitter-tweet-rendered {
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 14px;
+}
+/* While tweet is loading (raw blockquote state) */
+.news-item blockquote.twitter-tweet {
+    padding: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.6;
+}
+.news-item blockquote.twitter-tweet p {
+    color: var(--text-secondary);
+}
+.news-item blockquote.twitter-tweet a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
 .news-text {
     font-size: 15px;
     color: var(--text-secondary);
@@ -739,8 +772,13 @@ a { text-decoration: none; color: inherit; }
 @media (max-width: 600px) {
     body { font-size: 16px; }
     .wrap { padding: 0 20px; }
-    .nav-inner { padding: 16px 20px; }
-    .intro { padding: 60px 0 40px; }
+    .nav-inner { padding: 14px 16px; gap: 8px; flex-wrap: wrap; }
+    .nav-right { gap: 12px; }
+    .tab-group { padding: 2px; }
+    .tab-btn { padding: 5px 12px; font-size: 13px; }
+    .nav-brand { font-size: 14px; gap: 8px; }
+    .nav-link { font-size: 14px; }
+    .intro { padding: 80px 0 40px; }
     .post-header { padding: 60px 0 36px; }
     .post-body p { font-size: 16px; }
     .post-body p:first-of-type { font-size: 17px; }
@@ -749,4 +787,7 @@ a { text-decoration: none; color: inherit; }
     .mesh-orb-1 { width: 400px; height: 400px; }
     .mesh-orb-2 { width: 350px; height: 350px; }
     .mesh-orb-3 { width: 300px; height: 300px; }
+    /* News items get more breathing room on mobile */
+    .news-item { padding: 20px 16px; }
+    .news-item blockquote.twitter-tweet { padding: 16px; font-size: 14px; }
 }

@@ -44,6 +44,18 @@ revealEls.forEach(el => observer.observe(el));
 // ─── Tab switching ───
 const tabBtns = document.querySelectorAll('.tab-btn');
 const tabContents = document.querySelectorAll('.tab-content');
+let twitterLoaded = false;
+
+function loadTwitterWidgets() {
+    if (twitterLoaded) return;
+    twitterLoaded = true;
+    const s = document.createElement('script');
+    s.src = 'https://platform.x.com/widgets.js';
+    s.async = true;
+    s.charset = 'utf-8';
+    document.head.appendChild(s);
+}
+
 tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         const tab = btn.dataset.tab;
@@ -51,5 +63,8 @@ tabBtns.forEach(btn => {
         btn.classList.add('active');
         tabContents.forEach(c => c.classList.remove('active'));
         document.getElementById('tab-' + tab).classList.add('active');
+        window.scrollTo(0, 0);
+
+        if (tab === 'news') loadTwitterWidgets();
     });
 });
