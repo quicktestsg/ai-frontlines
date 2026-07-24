@@ -647,9 +647,49 @@ a { text-decoration: none; color: inherit; }
     text-wrap: balance;
 }
 
+/* ─── News section divider ─── */
+.news-section {
+    padding: 40px 0 20px;
+}
+.news-divider {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 8px;
+}
+.news-divider-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+.news-divider-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+.news-divider-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #f59e0b;
+    box-shadow: 0 0 8px rgba(245,158,11,0.5);
+    animation: blink 2s ease-in-out infinite;
+}
+.news-section-sub {
+    font-size: 14px;
+    color: var(--text-tertiary);
+    margin-bottom: 36px;
+    text-align: center;
+}
+
 /* ─── News list ─── */
 .news-list {
-    padding: 20px 0 120px;
+    padding: 0 0 60px;
 }
 .news-item {
     margin-bottom: 16px;
