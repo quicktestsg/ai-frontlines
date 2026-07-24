@@ -40,10 +40,3 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
 revealEls.forEach(el => observer.observe(el));
-
-// ─── Load X/Twitter widgets ───
-const tweetScript = document.createElement('script');
-tweetScript.src = 'https://platform.x.com/widgets.js';
-tweetScript.async = true;
-tweetScript.charset = 'utf-8';
-document.head.appendChild(tweetScript);
