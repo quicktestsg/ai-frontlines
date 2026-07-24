@@ -8,12 +8,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
+
+<div class="mesh-bg">
+    <div class="mesh-orb mesh-orb-1"></div>
+    <div class="mesh-orb mesh-orb-2"></div>
+    <div class="mesh-orb mesh-orb-3"></div>
+</div>
+
 <div class="progress-bar"></div>
-<div class="wrap">
-    <nav class="nav">
+
+<nav class="nav" id="nav">
+    <div class="nav-inner">
         <a href="index.html" class="nav-brand">
             <span class="nav-brand-dot"></span>
             AI Frontlines
@@ -25,12 +33,17 @@
                 <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
             </button>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <section class="intro">
-        <p class="intro-name">est. 2026</p>
+<div class="wrap">
+    <section class="intro fade-in">
+        <div class="intro-badge">
+            <span class="intro-badge-dot"></span>
+            Engineering the future
+        </div>
         <h1 class="intro-tagline">A blog about AI engineering, <em>and the patterns reshaping how we build.</em></h1>
-        <p class="intro-bio">Tracking the frontier of AI development — loop engineering, graph engineering, agent architecture, and whatever comes next. One post a day, straight thoughts, no filler.</p>
+        <p class="intro-bio">Loop engineering, graph engineering, agent architecture, and whatever comes next. One post a day, straight thoughts, no filler.</p>
     </section>
 
     <section class="post-list">
@@ -45,6 +58,7 @@
                 </div>
                 <h2 class="post-title">The Loop Is the New Function</h2>
                 <p class="post-excerpt">For 70 years the function was the atom of software. Now it's the loop. What changes when code stops running once and starts running forever?</p>
+                <span class="post-arrow">→</span>
             </a>
         </div>
 
@@ -56,6 +70,7 @@
         <p>© 2026 AI Frontlines · Built with Hermes Agent</p>
     </footer>
 </div>
+
 <script src="app.js"></script>
 </body>
 </html>
