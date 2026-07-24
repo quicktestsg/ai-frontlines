@@ -41,18 +41,9 @@ const observer = new IntersectionObserver((entries) => {
 
 revealEls.forEach(el => observer.observe(el));
 
-// ─── Lazy-load X/Twitter widgets when news section scrolls into view ───
-const newsSection = document.querySelector('.news-section');
-if (newsSection) {
-    const newsObserver = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-            const s = document.createElement('script');
-            s.src = 'https://platform.x.com/widgets.js';
-            s.async = true;
-            s.charset = 'utf-8';
-            document.head.appendChild(s);
-            newsObserver.unobserve(newsSection);
-        }
-    }, { rootMargin: '200px' });
-    newsObserver.observe(newsSection);
-}
+// ─── Load X/Twitter widgets ───
+const tweetScript = document.createElement('script');
+tweetScript.src = 'https://platform.x.com/widgets.js';
+tweetScript.async = true;
+tweetScript.charset = 'utf-8';
+document.head.appendChild(tweetScript);
