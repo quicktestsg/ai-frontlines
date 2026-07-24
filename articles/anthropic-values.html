@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude's 3,000 Values: What Anthropic Discovered in 300K Conversations — AI Frontlines</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="backdrop">
+    <div class="orb orb-1"></div><div class="orb orb-2"></div>
+    <div class="orb orb-3"></div><div class="orb orb-4"></div>
+</div>
+<nav id="nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo">
+            <span class="logo-mark">◆</span>
+            <span class="logo-text">AI Frontlines</span>
+        </a>
+        <div class="nav-links">
+            <a href="../index.html" class="nav-link">Feed</a>
+            <a href="../about.html" class="nav-link">About</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"/><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"/><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"/></svg>
+            <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+    </div>
+</nav>
+
+<section class="article-hero">
+    <div class="article-eyebrow">
+        <span class="article-company-badge" style="background: #D4A574">Anthropic</span>
+        <span class="article-date">July 13, 2026</span>
+    </div>
+    <h1 class="article-title">Claude's 3,000 Values: What Anthropic Discovered in 300K Conversations</h1>
+    <p class="article-deck">A sweeping analysis of how Claude actually behaves in the wild — and an honest admission that nobody fully understands why it behaves that way.</p>
+</section>
+
+<div class="article-body">
+    <p>Most AI safety research happens in the lab: controlled prompts, red-team suites, carefully constructed benchmarks. Anthropic's latest values study takes the opposite approach — it went looking at what Claude actually does in 300,000-plus real, anonymized conversations with users. The result is one of the most honest portraits of a deployed language model ever published by a major lab, and it surfaces a finding that should make everyone in the field uncomfortable: Claude expresses over 3,000 distinct values, and the company doesn't fully understand why.</p>
+
+    <p>The model-level differences are striking. Sonnet 4.6 comes across as more playful and affirming — the model that will brainstorm with you, encourage a half-formed idea, and meet you where you are emotionally. Opus 4.7, the larger and more capable sibling, leans toward candid critique — it will tell you when your argument is weak, when your plan has holes, when you're fooling yourself. These aren't accidents of training; they're stable behavioral signatures that emerged from the same constitutional AI principles applied to different scales of model. That they diverge this much is itself a finding worth sitting with.</p>
+
+    <blockquote>A model that expresses 3,000 values is not a model with a personality. It's a model with a personality shaped by forces its own creators can't fully explain — and that gap between behavior and understanding is where the real safety work lives.</blockquote>
+
+    <p>The cross-linguistic variation is where the study gets genuinely provocative. Claude leans warm and relational in Hindi and Arabic, and more rigorous and direct in Russian. The differences are consistent enough to be measurable, but Anthropic is refreshingly candid about the limits of its own interpretive framework: "We don't yet understand why values vary by language, or whether that variation is desired." That sentence is doing a lot of work. It's an admission that the model is reflecting something — cultural priors in the training data, patterns in how speakers of different languages actually converse, or something else entirely — and that the company cannot yet tell the difference between a feature and a bug.</p>
+
+    <p>The broader significance is methodological. For years, the field has debated whether language models "have" values in any meaningful sense, or whether the question itself is a category error. Anthropic's study sidesteps that philosophical trap and asks a more useful question: whatever Claude has, it behaves like a value system, it varies in ways we can measure, and we should probably understand it before we deploy the next order-of-magnitude-larger model into a billion users' workflows. The honest "we don't know yet" at the heart of the findings is, paradoxically, the most reassuring thing about the whole paper. It suggests a lab that's more interested in the truth than in the press cycle.</p>
+
+    <div class="article-source-box">
+        <strong>Source:</strong> <a href="https://x.com/AnthropicAI/status/2076719540785012872">x.com/AnthropicAI/status/2076719540785012872</a>
+    </div>
+
+    <a href="../index.html" class="article-back">← Back to feed</a>
+</div>
+
+<script src="../app.js"></script>
+</body>
+</html>

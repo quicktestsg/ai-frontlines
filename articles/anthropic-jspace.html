@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inside Claude's Mind: The J-Space Breakthrough — AI Frontlines</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="backdrop">
+    <div class="orb orb-1"></div><div class="orb orb-2"></div>
+    <div class="orb orb-3"></div><div class="orb orb-4"></div>
+</div>
+<nav id="nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo">
+            <span class="logo-mark">◆</span>
+            <span class="logo-text">AI Frontlines</span>
+        </a>
+        <div class="nav-links">
+            <a href="../index.html" class="nav-link">Feed</a>
+            <a href="../about.html" class="nav-link">About</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"/><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"/><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"/></svg>
+            <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+    </div>
+</nav>
+
+<section class="article-hero">
+    <div class="article-eyebrow">
+        <span class="article-company-badge" style="background: #D4A574">Anthropic</span>
+        <span class="article-date">July 6, 2026</span>
+    </div>
+    <h1 class="article-title">Inside Claude's Mind: The J-Space Breakthrough</h1>
+    <p class="article-deck">Anthropic can now read, audit, and shape what Claude is thinking about in real time — interpretability moving from autopsy to live monitoring.</p>
+</section>
+
+<div class="article-body">
+    <p>Interpretability research has spent the last several years in a peculiar middle phase. We can crack open a trained model and find individual features — a circuit that detects honesty, a neuron cluster that lights up for deception, a representation that tracks when the model is uncertain. What we've largely been unable to do is watch those features fire in real time and ask, while the model is mid-thought, "what are you actually doing right now?" Anthropic's J-Space work moves interpretability from autopsy to live monitoring, and that shift has implications that go well beyond safety engineering.</p>
+
+    <p>The core result is that researchers can now read, audit, and shape what Claude is actively thinking about as it generates a response. This isn't post-hoc analysis of completed outputs — it's intervention-grade visibility into the model's internal state during reasoning. The team frames the toolset as infrastructure for keeping models trustworthy as capabilities scale, which is the right framing: the entire premise of safe scaling is that you need monitoring tools whose resolution keeps pace with the model's growing competence. Static interpretability of last year's model doesn't help you trust next year's.</p>
+
+    <blockquote>Being able to watch a model think in real time is the difference between a smoke alarm and a fire extinguisher. One tells you something went wrong. The other lets you do something about it.</blockquote>
+
+    <p>What elevates this beyond a technical milestone is the philosophical claim Anthropic is willing to make in the paper's framing: the work "suggests parallels between language models and our own minds." That sentence is loaded. It's not saying language models are conscious — Anthropic is careful not to overclaim — but it is inviting a serious comparison between the computational structure of model cognition and the cognitive architecture that neuroscience and psychology have mapped in humans. The vocabulary of attention, reasoning, planning, and now "thinking about" is increasingly hard to dismiss as mere anthropomorphism when the internal dynamics line up this closely.</p>
+
+    <p>The practical stakes are substantial. If you can monitor a model's active reasoning and shape it in flight, you gain a genuinely new lever for alignment: not just training-time constitutional principles, but runtime guardrails that observe the model's trajectory and correct course. That's the difference between a model that was trained to be safe and a model that is being kept safe in the moment. The full research paper is worth reading closely, because it sketches an architecture for AI oversight that could plausibly scale with capability — something the field has been searching for since the original scaling debates. Whether J-Space turns out to be that architecture or merely a step toward it, the direction matters.</p>
+
+    <div class="article-source-box">
+        <strong>Source:</strong> <a href="https://x.com/AnthropicAI/status/2074185387577094398">x.com/AnthropicAI/status/2074185387577094398</a>
+    </div>
+
+    <a href="../index.html" class="article-back">← Back to feed</a>
+</div>
+
+<script src="../app.js"></script>
+</body>
+</html>
