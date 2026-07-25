@@ -57,10 +57,8 @@ const i18n = {
 };
 
 function detectLang() {
-    // Check saved preference first
     const saved = localStorage.getItem('blog-lang');
     if (saved && i18n[saved]) return saved;
-    // Auto-detect from browser
     const browserLang = navigator.language || navigator.userLanguage || 'en';
     return browserLang.toLowerCase().startsWith('zh') ? 'zh' : 'en';
 }
@@ -68,19 +66,34 @@ function detectLang() {
 function applyLang(lang) {
     const strings = i18n[lang] || i18n.en;
 
-    // Text content
+    // 1. data-i18n — UI strings (textContent)
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (strings[key]) el.textContent = strings[key];
     });
 
-    // HTML content (for tags with <em> etc)
+    // 2. data-i18n-html — UI strings with HTML (innerHTML)
     document.querySelectorAll('[data-i18n-html]').forEach(el => {
         const key = el.getAttribute('data-i18n-html');
         if (strings[key]) el.innerHTML = strings[key];
     });
 
-    // Tweet cards "View on X"
+    // 3. data-en / data-zh — inline content translation (textContent)
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+        el.innerHTML = el.getAttribute('data-' + lang) || el.getAttribute('data-en');
+    });
+
+    // 4. SVG <text> and <tspan> with data-en / data-zh
+    document.querySelectorAll('svg [data-en][data-zh]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang) || el.getAttribute('data-en');
+    });
+
+    // 5. Tweet bodies with data-en / data-zh (may contain HTML like links)
+    document.querySelectorAll('.tweet-body[data-en][data-zh]').forEach(el => {
+        el.innerHTML = el.getAttribute('data-' + lang) || el.getAttribute('data-en');
+    });
+
+    // 6. Tweet cards "View on X"
     document.querySelectorAll('.tweet-open').forEach(el => {
         el.textContent = strings['news.viewOnX'];
     });
@@ -88,7 +101,7 @@ function applyLang(lang) {
     // Update html lang attribute
     document.documentElement.setAttribute('lang', lang);
 
-    // Update toggle button label (shows the language you can switch TO)
+    // Update toggle button label
     const langLabel = document.querySelector('.lang-label');
     if (langLabel) langLabel.textContent = lang === 'en' ? '中文' : 'EN';
 }

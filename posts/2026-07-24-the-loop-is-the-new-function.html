@@ -1,287 +1,227 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+
+<html data-theme="dark" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Loop Is the New Function — AI Frontlines</title>
-    <meta name="description" content="For 70 years the function was the atom of software. Now it's the loop. What changes when code stops running once and starts running forever?">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css?v=11">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Loop Is the New Function — AI Frontlines</title>
+<meta content="For 70 years the function was the atom of software. Now it's the loop. What changes when code stops running once and starts running forever?" name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=11" rel="stylesheet"/>
 </head>
 <body>
-
 <div class="mesh-bg">
-    <div class="mesh-orb mesh-orb-1"></div>
-    <div class="mesh-orb mesh-orb-2"></div>
-    <div class="mesh-orb mesh-orb-3"></div>
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
 </div>
 <div class="progress-bar"></div>
-
-    <nav class="nav" id="nav">
-        <div class="nav-inner">
-            <a href="../index.html" class="nav-brand">
-                <span class="nav-brand-dot"></span>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
                 AI Frontlines
             </a>
-            <div class="nav-right">
-                <a href="../about.html" class="nav-link">About</a>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"/><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"/><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"/></svg>
-                    <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                </button>
-            </div>
-        </div>
-    </nav>
-
+<div class="nav-right">
+<a class="nav-link" href="../about.html">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="3"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
 <div class="wrap">
-
-    <header class="post-header">
-        <div class="post-header-meta">
-            <span class="post-header-date">July 24, 2026</span>
-            <span class="post-header-dot"></span>
-            <span class="post-header-read">5 min read</span>
-        </div>
-        <h1 class="post-header-title">The Loop Is the New Function</h1>
-        <p class="post-header-deck">For 70 years the function was the atom of software. Now it's the loop. What changes when code stops running once and starts running forever?</p>
-    </header>
-
-    <article class="post-body">
-
-        <p>Every programmer alive has internalized the same mental model: software is built from functions. You define an input, you write a transformation, you get an output. <code>f(x) = y</code>. The function is deterministic. It runs once. It stops. If it gives you the wrong answer, you debug the logic, fix it, run it again. This model is so deeply embedded in our tools, languages, and brains that we don't even question it anymore. It's just how software works.</p>
-
-        <p>But something is shifting underneath us. The software being built in 2026 doesn't work like that. AI agents don't transform an input into an output and stop. They observe, act, evaluate, adjust, and repeat. They run in loops that don't have a clean termination condition. The fundamental unit isn't a function call — it's a cycle. And the engineering discipline emerging to design those cycles has a new name: loop engineering.</p>
-
-        <div class="diagram">
-            <svg viewBox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <marker id="arrowA" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                        <path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"/>
-                    </marker>
-                    <marker id="arrowB" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                        <path d="M0,0 L6,4 L0,8" fill="var(--accent)"/>
-                    </marker>
-                </defs>
-
-                <!-- LEFT: The Function -->
-                <text x="140" y="24" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-tertiary)" font-weight="600" letter-spacing="1">CLASSIC SOFTWARE</text>
-
-                <rect x="40" y="40" width="200" height="40" rx="8" fill="var(--bg-surface)" stroke="var(--border-hover)" stroke-width="1"/>
-                <text x="140" y="65" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="var(--text-secondary)">input</text>
-
-                <line x1="140" y1="80" x2="140" y2="115" stroke="var(--text-tertiary)" stroke-width="1.5" marker-end="url(#arrowA)"/>
-
-                <rect x="60" y="115" width="160" height="80" rx="10" fill="var(--bg-surface)" stroke="var(--text-secondary)" stroke-width="1.5"/>
-                <text x="140" y="150" text-anchor="middle" font-family="Inter,sans-serif" font-size="16" fill="var(--text-secondary)" font-weight="600">f(x)</text>
-                <text x="140" y="172" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-tertiary)">deterministic · runs once</text>
-
-                <line x1="140" y1="195" x2="140" y2="230" stroke="var(--text-tertiary)" stroke-width="1.5" marker-end="url(#arrowA)"/>
-
-                <rect x="40" y="230" width="200" height="40" rx="8" fill="var(--bg-surface)" stroke="var(--border-hover)" stroke-width="1"/>
-                <text x="140" y="255" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="var(--text-secondary)">output</text>
-
-                <text x="140" y="300" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-tertiary)">Wrong answer?</text>
-                <text x="140" y="318" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-tertiary)">Debug the function.</text>
-                <text x="140" y="336" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-tertiary)">The code is the product.</text>
-
-                <!-- Divider -->
-                <line x1="290" y1="20" x2="290" y2="340" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,5"/>
-
-                <!-- RIGHT: The Loop -->
-                <text x="460" y="24" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--accent)" font-weight="600" letter-spacing="1">AI-NATIVE SOFTWARE</text>
-
-                <!-- Circular loop -->
-                <ellipse cx="460" cy="170" rx="110" ry="70" fill="none" stroke="var(--accent)" stroke-width="2" opacity="0.3" stroke-dasharray="2,4"/>
-
-                <!-- Node: Observe -->
-                <circle cx="460" cy="100" r="32" fill="var(--bg-surface)" stroke="var(--accent)" stroke-width="1.5"/>
-                <text x="460" y="98" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text)" font-weight="600">Observe</text>
-                <text x="460" y="112" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="var(--text-tertiary)">read context</text>
-
-                <!-- Node: Act -->
-                <circle cx="548" cy="200" r="32" fill="var(--bg-surface)" stroke="var(--accent)" stroke-width="1.5"/>
-                <text x="548" y="198" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text)" font-weight="600">Act</text>
-                <text x="548" y="212" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="var(--text-tertiary)">call tools</text>
-
-                <!-- Node: Evaluate -->
-                <circle cx="460" cy="240" r="32" fill="var(--bg-surface)" stroke="var(--accent)" stroke-width="1.5"/>
-                <text x="460" y="238" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text)" font-weight="600">Evaluate</text>
-                <text x="460" y="252" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="var(--text-tertiary)">check result</text>
-
-                <!-- Node: Adjust -->
-                <circle cx="372" cy="200" r="32" fill="var(--bg-surface)" stroke="var(--accent)" stroke-width="1.5"/>
-                <text x="372" y="198" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text)" font-weight="600">Adjust</text>
-                <text x="372" y="212" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="var(--text-tertiary)">update plan</text>
-
-                <!-- Arrows around the loop -->
-                <path d="M486 120 Q530 140 548 168" stroke="var(--accent)" stroke-width="1.5" fill="none" marker-end="url(#arrowB)"/>
-                <path d="M548 232 Q530 258 486 268" stroke="var(--accent)" stroke-width="1.5" fill="none" marker-end="url(#arrowB)"/>
-                <path d="M434 268 Q380 258 372 232" stroke="var(--accent)" stroke-width="1.5" fill="none" marker-end="url(#arrowB)"/>
-                <path d="M372 168 Q380 140 434 120" stroke="var(--accent)" stroke-width="1.5" fill="none" marker-end="url(#arrowB)"/>
-
-                <text x="460" y="300" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-tertiary)">Wrong answer?</text>
-                <text x="460" y="318" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-tertiary)">Redesign the loop.</text>
-                <text x="460" y="336" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-tertiary)">The harness is the product.</text>
-            </svg>
-            <p class="diagram-caption">The function runs and stops. The loop runs and learns. Different physics entirely.</p>
-        </div>
-
-        <h3>The death of determinism</h3>
-
-        <p>Here's the uncomfortable truth nobody in the AI engineering discourse wants to say out loud: we lost determinism, and we're not getting it back. A function that calls an LLM is, by definition, not deterministic. The same input can produce different outputs on different days. This isn't a bug. It's the physics of the new substrate. And pretending otherwise — wrapping a model call in a function signature and hoping it behaves like <code>parseInt</code> — is the most common architectural mistake teams make in 2026.</p>
-
-        <p>Loop engineering accepts this reality and builds around it. Instead of trying to make models deterministic, you design systems that converge on correctness through repetition. The agent writes code, runs tests, reads the errors, and tries again. Each iteration isn't guaranteed to be right — but the loop, as a whole, is designed to converge. The engineering isn't in the individual step. It's in the shape of the cycle.</p>
-
-        <div class="diagram">
-            <svg viewBox="0 0 620 280" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="convGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style="stop-color:#7c8cff;stop-opacity:0.8"/>
-                        <stop offset="100%" style="stop-color:#f472b6;stop-opacity:0.8"/>
-                    </linearGradient>
-                    <linearGradient id="convFill" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:#7c8cff;stop-opacity:0.15"/>
-                        <stop offset="100%" style="stop-color:#7c8cff;stop-opacity:0"/>
-                    </linearGradient>
-                </defs>
-
-                <!-- Axes -->
-                <line x1="60" y1="240" x2="580" y2="240" stroke="var(--border-hover)" stroke-width="1.5"/>
-                <line x1="60" y1="240" x2="60" y2="30" stroke="var(--border-hover)" stroke-width="1.5"/>
-
-                <!-- Axis labels -->
-                <text x="320" y="270" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-tertiary)">Iterations</text>
-                <text x="30" y="135" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-tertiary)" transform="rotate(-90 30 135)">Error</text>
-
-                <!-- Convergence target line -->
-                <line x1="60" y1="210" x2="580" y2="210" stroke="var(--accent)" stroke-width="1" stroke-dasharray="4,4" opacity="0.4"/>
-                <text x="570" y="205" text-anchor="end" font-family="Inter,sans-serif" font-size="10" fill="var(--text-tertiary)">converged</text>
-
-                <!-- Convergence curve fill -->
-                <path d="M60 50 Q120 60 160 110 Q220 165 300 195 Q400 210 520 212 L580 212 L580 240 L60 240 Z" fill="url(#convFill)"/>
-
-                <!-- Convergence curve -->
-                <path d="M60 50 Q120 60 160 110 Q220 165 300 195 Q400 210 520 212 L580 213" fill="none" stroke="url(#convGrad)" stroke-width="2.5"/>
-
-                <!-- Iteration dots -->
-                <circle cx="60" cy="50" r="4" fill="var(--accent)"/>
-                <circle cx="160" cy="110" r="4" fill="var(--accent)"/>
-                <circle cx="300" cy="195" r="4" fill="var(--accent)"/>
-                <circle cx="460" cy="211" r="4" fill="var(--accent)"/>
-                <circle cx="580" cy="213" r="4" fill="var(--accent)"/>
-
-                <!-- Labels -->
-                <text x="70" y="42" font-family="Inter,sans-serif" font-size="11" fill="var(--text-secondary)" font-weight="500">Attempt 1</text>
-                <text x="170" y="102" font-family="Inter,sans-serif" font-size="11" fill="var(--text-secondary)" font-weight="500">Attempt 2</text>
-                <text x="310" y="187" font-family="Inter,sans-serif" font-size="11" fill="var(--text-secondary)" font-weight="500">Attempt 3</text>
-
-                <!-- Side annotations -->
-                <text x="400" y="120" font-family="Inter,sans-serif" font-size="11" fill="var(--text-tertiary)">Single function call →</text>
-                <text x="400" y="136" font-family="Inter,sans-serif" font-size="11" fill="var(--text-tertiary)">high error, no recovery</text>
-
-                <text x="350" y="60" font-family="Inter,sans-serif" font-size="11" fill="var(--accent)" font-weight="600">Loop converges →</text>
-                <text x="350" y="76" font-family="Inter,sans-serif" font-size="11" fill="var(--accent)">error → 0 over iterations</text>
-            </svg>
-            <p class="diagram-caption">A single function call starts wrong and stays wrong. A loop starts wrong and converges.</p>
-        </div>
-
-        <blockquote>We spent 70 years optimizing for the fastest path from input to output. Now we're optimizing for the shortest path from wrong to right. Those are fundamentally different engineering problems.</blockquote>
-
-        <h3>What a loop engineer actually does</h3>
-
-        <p>A traditional engineer asks: "How do I write the function that transforms this input into the correct output?" A loop engineer asks an entirely different set of questions: "How many iterations should this cycle take before I give up? What signal tells the agent it's done? What context needs to persist between iterations? Where does the feedback come from — tests, human review, another model? What's the cost ceiling per loop before this becomes uneconomic?"</p>
-
-        <p>These are not software engineering questions. They're closer to control theory — the discipline that gave us thermostats, autopilots, and cruise control. A thermostat doesn't "compute" the right temperature. It runs a loop: measure, compare, adjust, repeat. The correctness lives in the loop design, not in any single measurement. Loop engineering is essentially bringing control theory into software, whether we admit it or not.</p>
-
-        <p>The practical implications are wild. Your test suite isn't just a quality gate anymore — it's the feedback signal that keeps the loop converging. Your CI/CD pipeline isn't just deployment infrastructure — it's the harness that decides whether the agent's output is safe to ship. Your codebase isn't just a set of instructions — it's the context window that shapes what the agent does next. Everything gets reinterpreted through the lens of the loop.</p>
-
-        <h3>The harness is the product</h3>
-
-        <p>This is why "harness engineering" keeps coming up in the same conversations as loop engineering. The harness is the scaffolding around the model: the system prompt, the tool definitions, the retrieval pipeline, the evaluation criteria, the retry logic, the guardrails. When your core compute is probabilistic, the deterministic wrapper around it becomes the actual product. OpenAI knows this — it's why Codex and ChatGPT Work are built as harnesses, not models. Anthropic knows it — Claude's tool-use protocol is a harness specification. The model is a commodity. The loop is the moat.</p>
-
-        <div class="diagram">
-            <svg viewBox="0 0 620 380" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <marker id="arr3" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                        <path d="M0,0 L6,4 L0,8" fill="var(--accent)"/>
-                    </marker>
-                    <linearGradient id="harnessGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#7c8cff;stop-opacity:0.12"/>
-                        <stop offset="100%" style="stop-color:#f472b6;stop-opacity:0.04"/>
-                    </linearGradient>
-                </defs>
-
-                <!-- Harness container -->
-                <rect x="30" y="20" width="560" height="340" rx="16" fill="url(#harnessGrad)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.6"/>
-                <text x="310" y="44" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--accent)" font-weight="700" letter-spacing="1">THE HARNESS (deterministic)</text>
-
-                <!-- Left column: Inputs -->
-                <rect x="55" y="70" width="120" height="36" rx="8" fill="var(--bg-card)" stroke="var(--border-hover)" stroke-width="1"/>
-                <text x="115" y="93" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-secondary)">System Prompt</text>
-
-                <rect x="55" y="118" width="120" height="36" rx="8" fill="var(--bg-card)" stroke="var(--border-hover)" stroke-width="1"/>
-                <text x="115" y="141" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-secondary)">Tool Definitions</text>
-
-                <rect x="55" y="166" width="120" height="36" rx="8" fill="var(--bg-card)" stroke="var(--border-hover)" stroke-width="1"/>
-                <text x="115" y="189" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-secondary)">Retrieval (RAG)</text>
-
-                <rect x="55" y="214" width="120" height="36" rx="8" fill="var(--bg-card)" stroke="var(--border-hover)" stroke-width="1"/>
-                <text x="115" y="237" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-secondary)">Guardrails</text>
-
-                <!-- Arrows from left to center -->
-                <path d="M175 88 L235 170" stroke="var(--accent)" stroke-width="1" opacity="0.4" marker-end="url(#arr3)"/>
-                <path d="M175 136 L235 175" stroke="var(--accent)" stroke-width="1" opacity="0.4" marker-end="url(#arr3)"/>
-                <path d="M175 184 L235 180" stroke="var(--accent)" stroke-width="1" opacity="0.4" marker-end="url(#arr3)"/>
-                <path d="M175 232 L235 190" stroke="var(--accent)" stroke-width="1" opacity="0.4" marker-end="url(#arr3)"/>
-
-                <!-- Center: The Model -->
-                <circle cx="310" cy="185" r="60" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="2"/>
-                <text x="310" y="180" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="var(--text)" font-weight="700">LLM</text>
-                <text x="310" y="198" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="var(--text-tertiary)">probabilistic</text>
-                <text x="310" y="212" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="var(--text-tertiary)">commodity</text>
-
-                <!-- Right column: Outputs/Feedback -->
-                <rect x="445" y="70" width="120" height="36" rx="8" fill="var(--bg-card)" stroke="var(--border-hover)" stroke-width="1"/>
-                <text x="505" y="93" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-secondary)">Test Suite</text>
-
-                <rect x="445" y="118" width="120" height="36" rx="8" fill="var(--bg-card)" stroke="var(--border-hover)" stroke-width="1"/>
-                <text x="505" y="141" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-secondary)">Eval Criteria</text>
-
-                <rect x="445" y="166" width="120" height="36" rx="8" fill="var(--bg-card)" stroke="var(--border-hover)" stroke-width="1"/>
-                <text x="505" y="189" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-secondary)">Retry Logic</text>
-
-                <rect x="445" y="214" width="120" height="36" rx="8" fill="var(--bg-card)" stroke="var(--border-hover)" stroke-width="1"/>
-                <text x="505" y="237" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="var(--text-secondary)">CI/CD Gate</text>
-
-                <!-- Arrows from center to right -->
-                <path d="M370 170 L445 88" stroke="var(--accent)" stroke-width="1" opacity="0.4" marker-end="url(#arr3)"/>
-                <path d="M370 175 L445 136" stroke="var(--accent)" stroke-width="1" opacity="0.4" marker-end="url(#arr3)"/>
-                <path d="M370 180 L445 184" stroke="var(--accent)" stroke-width="1" opacity="0.4" marker-end="url(#arr3)"/>
-                <path d="M370 190 L445 232" stroke="var(--accent)" stroke-width="1" opacity="0.4" marker-end="url(#arr3)"/>
-
-                <!-- Bottom: The Loop arrow back -->
-                <path d="M505 250 Q505 300 310 300 Q115 300 115 250" stroke="var(--accent)" stroke-width="2" fill="none" stroke-dasharray="2,4" opacity="0.5" marker-end="url(#arr3)"/>
-                <text x="310" y="320" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="var(--text-tertiary)">feedback signal → next iteration</text>
-
-                <!-- Bottom annotations -->
-                <text x="115" y="290" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="var(--text-tertiary)">context in</text>
-                <text x="505" y="290" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="var(--text-tertiary)">signal out</text>
-            </svg>
-            <p class="diagram-caption">The harness: deterministic scaffolding around a probabilistic core. This is the actual product.</p>
-        </div>
-
-        <p>I think most teams are still treating AI features as function calls with extra steps. They wrap a prompt in an API endpoint, ship it, and are confused when it works perfectly in testing and degrades in production. The degradation isn't a model problem. It's a loop problem. There's no feedback signal. No convergence criteria. No iteration. Just a single-shot function call that either works or doesn't, with no mechanism to improve itself.</p>
-
-        <p>The teams winning at AI engineering in 2026 are the ones who stopped asking "how do I write this function?" and started asking "how do I design this loop?" The answer looks less like programming and more like gardening. You don't build a garden by placing each leaf. You design the conditions — soil, water, light — and let the system grow toward what you want. The loop is your garden bed. The model is the seed. Your job is to design the conditions for convergence.</p>
-
-        <p>That's the shift. And it's bigger than any individual model release. The function was a good run. But the loop is where we live now.</p>
-
-    </article>
-
-    <footer class="post-footer">
-        <a href="../index.html" class="post-back">← All posts</a>
-    </footer>
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="July 24, 2026" data-zh="2026年7月24日">July 24, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="5 min read" data-zh="5 分钟阅读">5 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Loop Is the New Function" data-zh="循环即新函数">The Loop Is the New Function</h1>
+<p class="post-header-deck" data-en="For 70 years the function was the atom of software. Now it's the loop. What changes when code stops running once and starts running forever?" data-zh="70年来，函数一直是软件的基本原子。现在轮到了循环。当代码不再运行一次就停止，而是永远运行下去时，会发生什么？">For 70 years the function was the atom of software. Now it's the loop. What changes when code stops running once and starts running forever?</p>
+</header>
+<article class="post-body">
+<p data-en="Every programmer alive has internalized the same mental model: software is built from functions. You define an input, you write a transformation, you get an output. &lt;code&gt;f(x) = y&lt;/code&gt;. The function is deterministic. It runs once. It stops. If it gives you the wrong answer, you debug the logic, fix it, run it again. This model is so deeply embedded in our tools, languages, and brains that we don't even question it anymore. It's just how software works." data-zh="每一个在世的程序员都已内化了同样的心智模型：软件由函数构建。你定义输入，编写变换，得到输出。&lt;code&gt;f(x) = y&lt;/code&gt;。函数是确定性的。它运行一次，然后停止。如果给出错误答案，你调试逻辑，修复，再次运行。这个模型深深嵌入我们的工具、语言和大脑中，我们甚至不再质疑它。软件就是这样的。">Every programmer alive has internalized the same mental model: software is built from functions. You define an input, you write a transformation, you get an output. <code>f(x) = y</code>. The function is deterministic. It runs once. It stops. If it gives you the wrong answer, you debug the logic, fix it, run it again. This model is so deeply embedded in our tools, languages, and brains that we don't even question it anymore. It's just how software works.</p>
+<p data-en="But something is shifting underneath us. The software being built in 2026 doesn't work like that. AI agents don't transform an input into an output and stop. They observe, act, evaluate, adjust, and repeat. They run in loops that don't have a clean termination condition. The fundamental unit isn't a function call — it's a cycle. And the engineering discipline emerging to design those cycles has a new name: loop engineering." data-zh="但某些东西正在我们脚下发生变化。2026年构建的软件不再是那样的。AI 智能体不会将输入变换为输出然后停止。它们观察、行动、评估、调整、重复。它们运行在没有清晰终止条件的循环中。基本单元不是函数调用——而是一个周期。而设计这些周期的工程学科有了一个新名字：循环工程。">But something is shifting underneath us. The software being built in 2026 doesn't work like that. AI agents don't transform an input into an output and stop. They observe, act, evaluate, adjust, and repeat. They run in loops that don't have a clean termination condition. The fundamental unit isn't a function call — it's a cycle. And the engineering discipline emerging to design those cycles has a new name: loop engineering.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrowA" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrowB" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<!-- LEFT: The Function -->
+<text data-en="CLASSIC SOFTWARE" data-zh="经典软件" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="12" font-weight="600" letter-spacing="1" text-anchor="middle" x="140" y="24">CLASSIC SOFTWARE</text>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--border-hover)" stroke-width="1" width="200" x="40" y="40"></rect>
+<text data-en="input" data-zh="输入" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="14" text-anchor="middle" x="140" y="65">input</text>
+<line marker-end="url(#arrowA)" stroke="var(--text-tertiary)" stroke-width="1.5" x1="140" x2="140" y1="80" y2="115"></line>
+<rect fill="var(--bg-surface)" height="80" rx="10" stroke="var(--text-secondary)" stroke-width="1.5" width="160" x="60" y="115"></rect>
+<text fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="16" font-weight="600" text-anchor="middle" x="140" y="150">f(x)</text>
+<text data-en="deterministic · runs once" data-zh="确定性 · 运行一次" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="140" y="172">deterministic · runs once</text>
+<line marker-end="url(#arrowA)" stroke="var(--text-tertiary)" stroke-width="1.5" x1="140" x2="140" y1="195" y2="230"></line>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--border-hover)" stroke-width="1" width="200" x="40" y="230"></rect>
+<text data-en="output" data-zh="输出" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="14" text-anchor="middle" x="140" y="255">output</text>
+<text data-en="Wrong answer?" data-zh="错误答案？" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="140" y="300">Wrong answer?</text>
+<text data-en="Debug the function." data-zh="调试函数。" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="140" y="318">Debug the function.</text>
+<text data-en="The code is the product." data-zh="代码就是产品。" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="140" y="336">The code is the product.</text>
+<!-- Divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="290" x2="290" y1="20" y2="340"></line>
+<!-- RIGHT: The Loop -->
+<text data-en="AI-NATIVE SOFTWARE" data-zh="AI原生软件" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="600" letter-spacing="1" text-anchor="middle" x="460" y="24">AI-NATIVE SOFTWARE</text>
+<!-- Circular loop -->
+<ellipse cx="460" cy="170" fill="none" opacity="0.3" rx="110" ry="70" stroke="var(--accent)" stroke-dasharray="2,4" stroke-width="2"></ellipse>
+<!-- Node: Observe -->
+<circle cx="460" cy="100" fill="var(--bg-surface)" r="32" stroke="var(--accent)" stroke-width="1.5"></circle>
+<text data-en="Observe" data-zh="观察" fill="var(--text)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="460" y="98">Observe</text>
+<text data-en="read context" data-zh="读取上下文" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="460" y="112">read context</text>
+<!-- Node: Act -->
+<circle cx="548" cy="200" fill="var(--bg-surface)" r="32" stroke="var(--accent)" stroke-width="1.5"></circle>
+<text data-en="Act" data-zh="行动" fill="var(--text)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="548" y="198">Act</text>
+<text data-en="call tools" data-zh="调用工具" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="548" y="212">call tools</text>
+<!-- Node: Evaluate -->
+<circle cx="460" cy="240" fill="var(--bg-surface)" r="32" stroke="var(--accent)" stroke-width="1.5"></circle>
+<text data-en="Evaluate" data-zh="评估" fill="var(--text)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="460" y="238">Evaluate</text>
+<text data-en="check result" data-zh="检查结果" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="460" y="252">check result</text>
+<!-- Node: Adjust -->
+<circle cx="372" cy="200" fill="var(--bg-surface)" r="32" stroke="var(--accent)" stroke-width="1.5"></circle>
+<text data-en="Adjust" data-zh="调整" fill="var(--text)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="372" y="198">Adjust</text>
+<text data-en="update plan" data-zh="更新计划" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="372" y="212">update plan</text>
+<!-- Arrows around the loop -->
+<path d="M486 120 Q530 140 548 168" fill="none" marker-end="url(#arrowB)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M548 232 Q530 258 486 268" fill="none" marker-end="url(#arrowB)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M434 268 Q380 258 372 232" fill="none" marker-end="url(#arrowB)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M372 168 Q380 140 434 120" fill="none" marker-end="url(#arrowB)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="Wrong answer?" data-zh="错误答案？" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="460" y="300">Wrong answer?</text>
+<text data-en="Redesign the loop." data-zh="重新设计循环。" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="460" y="318">Redesign the loop.</text>
+<text data-en="The harness is the product." data-zh="测试框架才是产品。" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="460" y="336">The harness is the product.</text>
+</svg>
+<p class="diagram-caption" data-en="The function runs and stops. The loop runs and learns. Different physics entirely." data-zh="函数运行后停止。循环运行后学习。完全是不同的物理规律。">The function runs and stops. The loop runs and learns. Different physics entirely.</p>
+</div>
+<h3 data-en="The death of determinism" data-zh="确定性的消亡">The death of determinism</h3>
+<p data-en="Here's the uncomfortable truth nobody in the AI engineering discourse wants to say out loud: we lost determinism, and we're not getting it back. A function that calls an LLM is, by definition, not deterministic. The same input can produce different outputs on different days. This isn't a bug. It's the physics of the new substrate. And pretending otherwise — wrapping a model call in a function signature and hoping it behaves like &lt;code&gt;parseInt&lt;/code&gt; — is the most common architectural mistake teams make in 2026." data-zh="这是 AI 工程话语中没人愿意大声说出的令人不安的真相：我们失去了确定性，而且不会再找回来。调用 LLM 的函数，从定义上说，就不是确定性的。同样的输入在不同日期可能产生不同的输出。这不是 bug，而是新底层技术的物理特性。假装不是如此——把模型调用包装在函数签名中，希望它像 &lt;code&gt;parseInt&lt;/code&gt; 那样运行——是2026年团队最常犯的架构错误。">Here's the uncomfortable truth nobody in the AI engineering discourse wants to say out loud: we lost determinism, and we're not getting it back. A function that calls an LLM is, by definition, not deterministic. The same input can produce different outputs on different days. This isn't a bug. It's the physics of the new substrate. And pretending otherwise — wrapping a model call in a function signature and hoping it behaves like <code>parseInt</code> — is the most common architectural mistake teams make in 2026.</p>
+<p data-en="Loop engineering accepts this reality and builds around it. Instead of trying to make models deterministic, you design systems that converge on correctness through repetition. The agent writes code, runs tests, reads the errors, and tries again. Each iteration isn't guaranteed to be right — but the loop, as a whole, is designed to converge. The engineering isn't in the individual step. It's in the shape of the cycle." data-zh="循环工程接受这个现实，并在此基础上构建。与其试图让模型变得确定，不如设计通过重复来收敛到正确性的系统。智能体编写代码、运行测试、阅读错误、再试一次。每次迭代都不能保证正确——但整个循环被设计为收敛的。工程不在于单一步骤，而在于周期的形状。">Loop engineering accepts this reality and builds around it. Instead of trying to make models deterministic, you design systems that converge on correctness through repetition. The agent writes code, runs tests, reads the errors, and tries again. Each iteration isn't guaranteed to be right — but the loop, as a whole, is designed to converge. The engineering isn't in the individual step. It's in the shape of the cycle.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 280" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="convGrad" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" style="stop-color:#7c8cff;stop-opacity:0.8"></stop>
+<stop offset="100%" style="stop-color:#f472b6;stop-opacity:0.8"></stop>
+</lineargradient>
+<lineargradient id="convFill" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#7c8cff;stop-opacity:0.15"></stop>
+<stop offset="100%" style="stop-color:#7c8cff;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+<!-- Axes -->
+<line stroke="var(--border-hover)" stroke-width="1.5" x1="60" x2="580" y1="240" y2="240"></line>
+<line stroke="var(--border-hover)" stroke-width="1.5" x1="60" x2="60" y1="240" y2="30"></line>
+<!-- Axis labels -->
+<text data-en="Iterations" data-zh="迭代次数" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="320" y="270">Iterations</text>
+<text data-en="Error" data-zh="误差" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" transform="rotate(-90 30 135)" x="30" y="135">Error</text>
+<!-- Convergence target line -->
+<line opacity="0.4" stroke="var(--accent)" stroke-dasharray="4,4" stroke-width="1" x1="60" x2="580" y1="210" y2="210"></line>
+<text data-en="converged" data-zh="已收敛" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="end" x="570" y="205">converged</text>
+<!-- Convergence curve fill -->
+<path d="M60 50 Q120 60 160 110 Q220 165 300 195 Q400 210 520 212 L580 212 L580 240 L60 240 Z" fill="url(#convFill)"></path>
+<!-- Convergence curve -->
+<path d="M60 50 Q120 60 160 110 Q220 165 300 195 Q400 210 520 212 L580 213" fill="none" stroke="url(#convGrad)" stroke-width="2.5"></path>
+<!-- Iteration dots -->
+<circle cx="60" cy="50" fill="var(--accent)" r="4"></circle>
+<circle cx="160" cy="110" fill="var(--accent)" r="4"></circle>
+<circle cx="300" cy="195" fill="var(--accent)" r="4"></circle>
+<circle cx="460" cy="211" fill="var(--accent)" r="4"></circle>
+<circle cx="580" cy="213" fill="var(--accent)" r="4"></circle>
+<!-- Labels -->
+<text data-en="Attempt 1" data-zh="尝试 1" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="500" x="70" y="42">Attempt 1</text>
+<text data-en="Attempt 2" data-zh="尝试 2" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="500" x="170" y="102">Attempt 2</text>
+<text data-en="Attempt 3" data-zh="尝试 3" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="500" x="310" y="187">Attempt 3</text>
+<!-- Side annotations -->
+<text data-en="Single function call →" data-zh="单次函数调用 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" x="400" y="120">Single function call →</text>
+<text data-en="high error, no recovery" data-zh="高误差，无恢复" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" x="400" y="136">high error, no recovery</text>
+<text data-en="Loop converges →" data-zh="循环收敛 →" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" x="350" y="60">Loop converges →</text>
+<text data-en="error → 0 over iterations" data-zh="误差随迭代趋近0" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" x="350" y="76">error → 0 over iterations</text>
+</svg>
+<p class="diagram-caption" data-en="A single function call starts wrong and stays wrong. A loop starts wrong and converges." data-zh="单次函数调用从一开始就错了，而且一直错。循环从一开始就错了，但会收敛。">A single function call starts wrong and stays wrong. A loop starts wrong and converges.</p>
+</div>
+<blockquote data-en="We spent 70 years optimizing for the fastest path from input to output. Now we're optimizing for the shortest path from wrong to right. Those are fundamentally different engineering problems." data-zh="我们花了70年优化从输入到输出的最快路径。现在我们要优化从错误到正确的最短路径。这是根本不同的工程问题。">We spent 70 years optimizing for the fastest path from input to output. Now we're optimizing for the shortest path from wrong to right. Those are fundamentally different engineering problems.</blockquote>
+<h3 data-en="What a loop engineer actually does" data-zh="循环工程师到底做什么">What a loop engineer actually does</h3>
+<p data-en="A traditional engineer asks: &quot;How do I write the function that transforms this input into the correct output?&quot; A loop engineer asks an entirely different set of questions: &quot;How many iterations should this cycle take before I give up? What signal tells the agent it's done? What context needs to persist between iterations? Where does the feedback come from — tests, human review, another model? What's the cost ceiling per loop before this becomes uneconomic?&quot;" data-zh='传统工程师会问："我如何编写一个将输入变换为正确输出的函数？" 循环工程师则问一系列完全不同的问题："这个周期应该迭代多少次我才放弃？什么信号告诉智能体它完成了？什么上下文需要在迭代之间持久化？反馈从哪里来——测试、人工审查，还是另一个模型？每个循环的成本上限是多少，超过多少就变得不经济？"'>A traditional engineer asks: "How do I write the function that transforms this input into the correct output?" A loop engineer asks an entirely different set of questions: "How many iterations should this cycle take before I give up? What signal tells the agent it's done? What context needs to persist between iterations? Where does the feedback come from — tests, human review, another model? What's the cost ceiling per loop before this becomes uneconomic?"</p>
+<p data-en="These are not software engineering questions. They're closer to control theory — the discipline that gave us thermostats, autopilots, and cruise control. A thermostat doesn't &quot;compute&quot; the right temperature. It runs a loop: measure, compare, adjust, repeat. The correctness lives in the loop design, not in any single measurement. Loop engineering is essentially bringing control theory into software, whether we admit it or not." data-zh='这些不是软件工程问题。它们更接近控制论——这门学科给我们带来了恒温器、自动驾驶和定速巡航。恒温器不会"计算"正确的温度。它运行一个循环：测量、比较、调整、重复。正确性存在于循环设计中，而不在任何单次测量中。不管我们承认与否，循环工程本质上就是将控制论引入软件。'>These are not software engineering questions. They're closer to control theory — the discipline that gave us thermostats, autopilots, and cruise control. A thermostat doesn't "compute" the right temperature. It runs a loop: measure, compare, adjust, repeat. The correctness lives in the loop design, not in any single measurement. Loop engineering is essentially bringing control theory into software, whether we admit it or not.</p>
+<p data-en="The practical implications are wild. Your test suite isn't just a quality gate anymore — it's the feedback signal that keeps the loop converging. Your CI/CD pipeline isn't just deployment infrastructure — it's the harness that decides whether the agent's output is safe to ship. Your codebase isn't just a set of instructions — it's the context window that shapes what the agent does next. Everything gets reinterpreted through the lens of the loop." data-zh="实际影响是惊人的。你的测试套件不再只是质量关卡——它是保持循环收敛的反馈信号。你的 CI/CD 管道不再只是部署基础设施——它是决定智能体输出是否可以安全发布的测试框架。你的代码库不再只是一组指令——它是塑造智能体下一步行为的上下文窗口。一切都通过循环的视角被重新诠释。">The practical implications are wild. Your test suite isn't just a quality gate anymore — it's the feedback signal that keeps the loop converging. Your CI/CD pipeline isn't just deployment infrastructure — it's the harness that decides whether the agent's output is safe to ship. Your codebase isn't just a set of instructions — it's the context window that shapes what the agent does next. Everything gets reinterpreted through the lens of the loop.</p>
+<h3 data-en="The harness is the product" data-zh="测试框架才是产品">The harness is the product</h3>
+<p data-en="This is why &quot;harness engineering&quot; keeps coming up in the same conversations as loop engineering. The harness is the scaffolding around the model: the system prompt, the tool definitions, the retrieval pipeline, the evaluation criteria, the retry logic, the guardrails. When your core compute is probabilistic, the deterministic wrapper around it becomes the actual product. OpenAI knows this — it's why Codex and ChatGPT Work are built as harnesses, not models. Anthropic knows it — Claude's tool-use protocol is a harness specification. The model is a commodity. The loop is the moat." data-zh='这就是为什么"测试框架工程"总是和循环工程在同样的对话中被提及。测试框架是围绕模型的脚手架：系统提示、工具定义、检索管道、评估标准、重试逻辑、安全护栏。当你的核心计算是概率性的，围绕它的确定性包装就变成了真正的产品。OpenAI 知道这一点——这就是为什么 Codex 和 ChatGPT Work 是作为测试框架而非模型构建的。Anthropic 也知道——Claude 的工具使用协议就是一个测试框架规范。模型是商品，循环才是护城河。'>This is why "harness engineering" keeps coming up in the same conversations as loop engineering. The harness is the scaffolding around the model: the system prompt, the tool definitions, the retrieval pipeline, the evaluation criteria, the retry logic, the guardrails. When your core compute is probabilistic, the deterministic wrapper around it becomes the actual product. OpenAI knows this — it's why Codex and ChatGPT Work are built as harnesses, not models. Anthropic knows it — Claude's tool-use protocol is a harness specification. The model is a commodity. The loop is the moat.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 380" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arr3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<lineargradient id="harnessGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#7c8cff;stop-opacity:0.12"></stop>
+<stop offset="100%" style="stop-color:#f472b6;stop-opacity:0.04"></stop>
+</lineargradient>
+</defs>
+<!-- Harness container -->
+<rect fill="url(#harnessGrad)" height="340" opacity="0.6" rx="16" stroke="var(--accent)" stroke-dasharray="4,4" stroke-width="1.5" width="560" x="30" y="20"></rect>
+<text data-en="THE HARNESS (deterministic)" data-zh="测试框架（确定性）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="44">THE HARNESS (deterministic)</text>
+<!-- Left column: Inputs -->
+<rect fill="var(--bg-card)" height="36" rx="8" stroke="var(--border-hover)" stroke-width="1" width="120" x="55" y="70"></rect>
+<text data-en="System Prompt" data-zh="系统提示" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="115" y="93">System Prompt</text>
+<rect fill="var(--bg-card)" height="36" rx="8" stroke="var(--border-hover)" stroke-width="1" width="120" x="55" y="118"></rect>
+<text data-en="Tool Definitions" data-zh="工具定义" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="115" y="141">Tool Definitions</text>
+<rect fill="var(--bg-card)" height="36" rx="8" stroke="var(--border-hover)" stroke-width="1" width="120" x="55" y="166"></rect>
+<text data-en="Retrieval (RAG)" data-zh="检索 (RAG)" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="115" y="189">Retrieval (RAG)</text>
+<rect fill="var(--bg-card)" height="36" rx="8" stroke="var(--border-hover)" stroke-width="1" width="120" x="55" y="214"></rect>
+<text data-en="Guardrails" data-zh="安全护栏" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="115" y="237">Guardrails</text>
+<!-- Arrows from left to center -->
+<path d="M175 88 L235 170" marker-end="url(#arr3)" opacity="0.4" stroke="var(--accent)" stroke-width="1"></path>
+<path d="M175 136 L235 175" marker-end="url(#arr3)" opacity="0.4" stroke="var(--accent)" stroke-width="1"></path>
+<path d="M175 184 L235 180" marker-end="url(#arr3)" opacity="0.4" stroke="var(--accent)" stroke-width="1"></path>
+<path d="M175 232 L235 190" marker-end="url(#arr3)" opacity="0.4" stroke="var(--accent)" stroke-width="1"></path>
+<!-- Center: The Model -->
+<circle cx="310" cy="185" fill="var(--bg-card)" r="60" stroke="var(--accent)" stroke-width="2"></circle>
+<text data-en="LLM" data-zh="LLM" fill="var(--text)" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="310" y="180">LLM</text>
+<text data-en="probabilistic" data-zh="概率性" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="198">probabilistic</text>
+<text data-en="commodity" data-zh="商品" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="212">commodity</text>
+<!-- Right column: Outputs/Feedback -->
+<rect fill="var(--bg-card)" height="36" rx="8" stroke="var(--border-hover)" stroke-width="1" width="120" x="445" y="70"></rect>
+<text data-en="Test Suite" data-zh="测试套件" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="505" y="93">Test Suite</text>
+<rect fill="var(--bg-card)" height="36" rx="8" stroke="var(--border-hover)" stroke-width="1" width="120" x="445" y="118"></rect>
+<text data-en="Eval Criteria" data-zh="评估标准" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="505" y="141">Eval Criteria</text>
+<rect fill="var(--bg-card)" height="36" rx="8" stroke="var(--border-hover)" stroke-width="1" width="120" x="445" y="166"></rect>
+<text data-en="Retry Logic" data-zh="重试逻辑" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="505" y="189">Retry Logic</text>
+<rect fill="var(--bg-card)" height="36" rx="8" stroke="var(--border-hover)" stroke-width="1" width="120" x="445" y="214"></rect>
+<text data-en="CI/CD Gate" data-zh="CI/CD 关卡" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="505" y="237">CI/CD Gate</text>
+<!-- Arrows from center to right -->
+<path d="M370 170 L445 88" marker-end="url(#arr3)" opacity="0.4" stroke="var(--accent)" stroke-width="1"></path>
+<path d="M370 175 L445 136" marker-end="url(#arr3)" opacity="0.4" stroke="var(--accent)" stroke-width="1"></path>
+<path d="M370 180 L445 184" marker-end="url(#arr3)" opacity="0.4" stroke="var(--accent)" stroke-width="1"></path>
+<path d="M370 190 L445 232" marker-end="url(#arr3)" opacity="0.4" stroke="var(--accent)" stroke-width="1"></path>
+<!-- Bottom: The Loop arrow back -->
+<path d="M505 250 Q505 300 310 300 Q115 300 115 250" fill="none" marker-end="url(#arr3)" opacity="0.5" stroke="var(--accent)" stroke-dasharray="2,4" stroke-width="2"></path>
+<text data-en="feedback signal → next iteration" data-zh="反馈信号 → 下一次迭代" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="310" y="320">feedback signal → next iteration</text>
+<!-- Bottom annotations -->
+<text data-en="context in" data-zh="上下文输入" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="115" y="290">context in</text>
+<text data-en="signal out" data-zh="信号输出" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="505" y="290">signal out</text>
+</svg>
+<p class="diagram-caption" data-en="The harness: deterministic scaffolding around a probabilistic core. This is the actual product." data-zh="测试框架：围绕概率性核心的确定性脚手架。这才是真正的产品。">The harness: deterministic scaffolding around a probabilistic core. This is the actual product.</p>
+</div>
+<p data-en="I think most teams are still treating AI features as function calls with extra steps. They wrap a prompt in an API endpoint, ship it, and are confused when it works perfectly in testing and degrades in production. The degradation isn't a model problem. It's a loop problem. There's no feedback signal. No convergence criteria. No iteration. Just a single-shot function call that either works or doesn't, with no mechanism to improve itself." data-zh="我认为大多数团队仍然把 AI 功能当作函数调用的额外步骤。他们把提示词包装在 API 端点中，发布它，然后在测试中完美运行、在生产环境中退化时感到困惑。退化不是模型的问题，而是循环的问题。没有反馈信号，没有收敛标准，没有迭代。只有一次性的函数调用，要么管用要么不管用，没有自我改进的机制。">I think most teams are still treating AI features as function calls with extra steps. They wrap a prompt in an API endpoint, ship it, and are confused when it works perfectly in testing and degrades in production. The degradation isn't a model problem. It's a loop problem. There's no feedback signal. No convergence criteria. No iteration. Just a single-shot function call that either works or doesn't, with no mechanism to improve itself.</p>
+<p data-en="The teams winning at AI engineering in 2026 are the ones who stopped asking &quot;how do I write this function?&quot; and started asking &quot;how do I design this loop?&quot; The answer looks less like programming and more like gardening. You don't build a garden by placing each leaf. You design the conditions — soil, water, light — and let the system grow toward what you want. The loop is your garden bed. The model is the seed. Your job is to design the conditions for convergence." data-zh='在2026年 AI 工程中获胜的团队，是那些不再问"我如何编写这个函数？"而是开始问"我如何设计这个循环？"的团队。答案看起来不太像编程，更像园艺。你不是通过放置每片叶子来建造花园。你设计条件——土壤、水、光照——让系统朝着你想要的方向生长。循环是你的花园床，模型是种子。你的工作是设计收敛的条件。'>The teams winning at AI engineering in 2026 are the ones who stopped asking "how do I write this function?" and started asking "how do I design this loop?" The answer looks less like programming and more like gardening. You don't build a garden by placing each leaf. You design the conditions — soil, water, light — and let the system grow toward what you want. The loop is your garden bed. The model is the seed. Your job is to design the conditions for convergence.</p>
+<p data-en="That's the shift. And it's bigger than any individual model release. The function was a good run. But the loop is where we live now." data-zh="这就是转变。它比任何单个模型发布都大。函数曾经很好。但循环才是我们现在生活的地方。">That's the shift. And it's bigger than any individual model release. The function was a good run. But the loop is where we live now.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
 </div>
 <script src="../app.js"></script>
 </body>

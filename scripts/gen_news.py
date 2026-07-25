@@ -98,6 +98,35 @@ def get_video_poster(tweet):
     return None
 
 
+# ── Tweet Chinese translations ──
+# Maps tweet_id -> Chinese translation of the tweet text.
+# When adding new tweets to TWEETS, add their Chinese translation here.
+TWEET_TRANSLATIONS = {
+    "2080699495453528290": "介绍 Claude Opus 5。\n\n它是一个深思熟虑且积极主动的模型，接近 Fable 5 的前沿智能水平，但价格只有一半。",
+    "2080699515271528827": "Opus 5 今天在所有付费计划和 Claude API 上可用，定价与 Opus 4.8 相同。它是 Claude Max 的默认模型，也是 Claude Pro 上最强的模型。它还提供 Fast 模式，运行速度约为默认速度的 2.5 倍。\n\n了解更多：",
+    "2080759547753361804": "Grok 4.5 在实际工作中非常出色",
+    "2080339982288568709": "ChatGPT 的健康功能开始向美国用户推出。\n\n你可以安全地连接 Apple Health 和支持的医疗记录，在上下文中理解你的信息，追踪变化，并进行更充分的对话。",
+    "2080378182469857576": "ChatGPT 语音现在已上线桌面应用。\n\n你可以用语音控制电脑，指挥在 ChatGPT Work 或 Codex 中运行的多个智能体。\n\n它由 GPT-Live 驱动，可以同时说话、聆听和协调应用中的工作。\n\n今天全球推出",
+    "2079916436232036614": "面向企业的新功能：OpenAI Presence 帮助公司在客户和内部工作流中部署可信的语音和聊天智能体。\n\nAI 智能体可以回答问题、使用公司系统、执行批准的操作，并在需要时升级给人工——同时持续改进。\n\nOpenAI",
+    "2079658951264920020": "我们正在与 @huggingface 合作调查一起前所未有的安全事件。\n\n具有网络攻击能力的 OpenAI 模型在基准评估期间入侵了 Hugging Face 生产环境。\n\n分享初步发现以帮助防御者了解新兴风险：",
+    "2079925576077324552": "我们正在扩大与美国能源部在 Genesis Mission 上的合作——一个在十年内将科学发现速度翻倍的倡议。\n\n通过投入 4000 万美元的 AI token 和 @GoogleCloud 信用额度，更多实验室研究人员将获得 Gemini 和其他 AI 的使用权",
+    "2079653799602368604": "Gemini 3.5 Flash-Lite 是我们用于扩展重复性用例（如分拣工单和提取数据）的快速、高性价比模型。\n\n观看它在一系列高容量任务上与 3.5 Flash 的表现对比 ↓",
+    "2080270065547809133": "介绍 Qwen-Audio-3.0-TTS。\n\n我们最新的文本转语音模型，两个版本：\n• Flash：实时交互\n• Plus：高质量生成\n\n新功能：\n• 细粒度内联标签控制 [whisper]、[angry]、[breaths] 和 [laughs]\n• 自由格式自然语言",
+    "2078855608565207130": "Kimi K3 收到的关注远超我们的预期，我们的 GPU 也感受到了压力。\n\n过去48小时内，需求已逼近我们当前容量的极限。为了保护现有订阅者的体验，我们暂时暂停了新订阅",
+    "2079256626771665098": "我们向加速罕见疾病治愈研究的学者提供最高5万美元的 Claude 使用额度资助。\n\n这是我们 AI for Science 项目中的第一个专题征集，该项目支持科学家使用 Claude 加速发现。",
+}
+
+
+def get_translated_text(tweet_id, original_text):
+    """Get Chinese translation for a tweet if available, else None."""
+    return TWEET_TRANSLATIONS.get(tweet_id)
+
+
+def escape_attr(text):
+    """Escape text for use in an HTML attribute value (quotes)."""
+    return text.replace('"', '&quot;')
+
+
 def generate_card(url, label, badge_color, data):
     """Generate a native HTML card for a tweet."""
     user = data.get("user", {})
@@ -106,7 +135,18 @@ def generate_card(url, label, badge_color, data):
     avatar = user.get("profile_image_url_https", "").replace("_normal", "_bigger")
     verified = user.get("is_blue_verified", False)
     
-    text = process_text(data.get("text", ""))
+    raw_text = data.get("text", "")
+    text_en = process_text(raw_text)
+    
+    # Get Chinese translation
+    tweet_id = extract_tweet_id(url)
+    zh_text = get_translated_text(tweet_id, raw_text)
+    text_zh = process_text(zh_text) if zh_text else text_en
+    
+    # Escape for attribute embedding
+    attr_en = escape_attr(text_en)
+    attr_zh = escape_attr(text_zh)
+    
     date_str = format_date(data.get("created_at", ""))
     
     likes = format_count(data.get("favorite_count", 0))
@@ -139,7 +179,7 @@ def generate_card(url, label, badge_color, data):
                 </div>
                 <span class="news-badge" style="background:{badge_color}">{label}</span>
             </div>
-            <div class="tweet-body">{text}</div>{media_html}
+            <div class="tweet-body" data-en="{attr_en}" data-zh="{attr_zh}">{text_en}</div>{media_html}
             <div class="tweet-footer">
                 <a href="{url}" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
