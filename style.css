@@ -234,6 +234,32 @@ a { text-decoration: none; color: inherit; }
 [data-theme="light"] .theme-toggle .sun { display: block; }
 [data-theme="light"] .theme-toggle .moon { display: none; }
 
+/* ─── Language toggle ─── */
+.lang-toggle {
+    height: 38px;
+    min-width: 38px;
+    padding: 0 12px;
+    border: 1px solid var(--border);
+    background: var(--bg-glass);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+.lang-toggle:hover {
+    border-color: var(--border-hover);
+    color: var(--text);
+    transform: scale(1.08);
+}
+
 /* ════════════════════════════════════════════════════════════════
    HOMEPAGE
    ════════════════════════════════════════════════════════════════ */

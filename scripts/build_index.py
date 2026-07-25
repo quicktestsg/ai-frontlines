@@ -17,7 +17,7 @@ PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
 TEMPLATE = os.path.join(PROJECT_DIR, "index_template.html")
 OUTPUT = os.path.join(PROJECT_DIR, "index.html")
 
-CSS_VERSION = "10"
+CSS_VERSION = "11"
 
 
 def main():
