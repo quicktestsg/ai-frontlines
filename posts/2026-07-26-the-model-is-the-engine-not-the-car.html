@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Model Is the Engine, Not the Car — AI Frontlines</title>
+<meta content="Teams keep asking which model is best. Wrong question. The model is an engine. Engines don't drive themselves. The harness is the car." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=12" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="July 26, 2026" data-zh="2026年7月26日">July 26, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="6 min read" data-zh="约 6 分钟">6 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Model Is the Engine, Not the Car" data-zh="模型是引擎，不是整车">The Model Is the Engine, Not the Car</h1>
+<p class="post-header-deck" data-en="Teams keep asking which model is best. Wrong question. The model is an engine, and engines don't drive themselves. The harness is the car." data-zh="所有人都在问「哪个模型最强」。问错了。模型是引擎，而引擎不会自己跑起来。真正上路的是脚手架——那辆车。">Teams keep asking which model is best. Wrong question. The model is an engine, and engines don't drive themselves. The harness is the car.</p>
+</header>
+<article class="post-body">
+<p data-en="Every few weeks the AI world conducts the same ritual. A new model lands. Benchmarks are screenshot. A winner is declared. Leaderboards shuffle. Teams spend a week rewriting their prompts, swapping one API call for another, and declaring victory. Then the next model arrives and the ritual repeats. The assumption underneath all of it is the same: the model is the product, and the job of the engineer is to pick the right one." data-zh="每隔几周，AI 圈就要上演同一套仪式。新模型发布。跑分截图。宣布赢家。榜单洗牌。团队花一周重写 prompt，把一个 API 调用换成另一个，宣布胜利。然后下一个模型来了，仪式重来。这一切底下藏着同一个假设：模型就是产品，工程师的活，就是选对那一个。">Every few weeks the AI world conducts the same ritual. A new model lands. Benchmarks are screenshot. A winner is declared. Leaderboards shuffle. Teams spend a week rewriting their prompts, swapping one API call for another, and declaring victory. Then the next model arrives and the ritual repeats. The assumption underneath all of it is the same: the model is the product, and the job of the engineer is to pick the right one.</p>
+<p data-en="This is a category error, and it is expensive. A model is a component that maps a sequence of tokens to a probability distribution over the next token. That is all it is. It does not remember the user across sessions. It does not check whether its output is correct. It does not know which tools exist until told. It will not stop itself when it goes wrong. Everything that turns a token generator into a system that actually completes a task — the retrieval, the tools, the memory, the verification, the routing, the loop control — lives outside the model. That surrounding machinery has a name. It is the harness. And the harness, not the model, is the unit of engineering value." data-zh="这是一个范畴错误，而且代价不菲。模型只做一件事：把一串 token 映射成下一个 token 的概率分布。仅此而已。它不会跨会话记住用户。它不会自查输出对不对。除非你告诉它，否则它不知道有哪些工具。它跑偏了也不会自己停下。把一个「吐字机器」变成一个「真能把事办成的系统」的所有东西——检索、工具、记忆、验证、路由、循环控制——全都长在模型之外。这套围绕模型的机器有个名字：脚手架（harness）。而脚手架，不是模型，才是工程价值的单位。">This is a category error, and it is expensive. A model is a component that maps a sequence of tokens to a probability distribution over the next token. That is all it is. It does not remember the user across sessions. It does not check whether its output is correct. It does not know which tools exist until told. It will not stop itself when it goes wrong. Everything that turns a token generator into a system that actually completes a task — the retrieval, the tools, the memory, the verification, the routing, the loop control — lives outside the model. That surrounding machinery has a name. It is the harness. And the harness, not the model, is the unit of engineering value.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrE1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrE2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<lineargradient id="harnessGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:var(--accent);stop-opacity:0.16"></stop>
+<stop offset="100%" style="stop-color:var(--accent);stop-opacity:0.02"></stop>
+</lineargradient>
+</defs>
+<!-- LEFT: the engine alone -->
+<text data-en="THE MODEL" data-zh="模型" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="140" y="28">THE MODEL</text>
+<rect fill="var(--bg-surface)" height="74" rx="10" stroke="var(--text-tertiary)" stroke-width="1.5" width="160" x="60" y="110"></rect>
+<text fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="15" font-weight="700" text-anchor="middle" x="140" y="140">token → token</text>
+<text data-en="a probability machine" data-zh="一台概率机器" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="140" y="162">a probability machine</text>
+<!-- lonely arrow going nowhere -->
+<path d="M140 184 Q140 210 140 230" fill="none" marker-end="url(#arrE1)" opacity="0.5" stroke="var(--text-tertiary)" stroke-dasharray="3,4" stroke-width="1.5"></path>
+<text data-en="no memory · no tools · no brakes" data-zh="没有记忆 · 没有工具 · 没有刹车" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="140" y="256">no memory · no tools · no brakes</text>
+<text data-en="an engine, not yet a car" data-zh="只是引擎，还不是车" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="140" y="274">an engine, not yet a car</text>
+<!-- Divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="300" x2="300" y1="20" y2="320"></line>
+<!-- RIGHT: the harness wrapping the model -->
+<text data-en="THE HARNESS" data-zh="脚手架" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="460" y="28">THE HARNESS</text>
+<!-- outer chassis -->
+<rect fill="url(#harnessGrad)" height="270" rx="14" stroke="var(--accent)" stroke-dasharray="4,4" stroke-width="1.5" width="240" x="340" y="46"></rect>
+<!-- model core -->
+<rect fill="var(--bg-card)" height="50" rx="8" stroke="var(--accent)" stroke-width="2" width="150" x="385" y="150"></rect>
+<text data-en="model call" data-zh="模型调用" fill="var(--text)" font-family="Inter,sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="460" y="180">model call</text>
+<!-- four harness layers labeled around core -->
+<rect fill="var(--bg-card)" height="28" rx="6" stroke="var(--accent)" stroke-width="1" width="74" x="350" y="66"></rect>
+<text data-en="retrieval" data-zh="检索" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="387" y="85">retrieval</text>
+<rect fill="var(--bg-card)" height="28" rx="6" stroke="var(--accent)" stroke-width="1" width="74" x="496" y="66"></rect>
+<text data-en="tools" data-zh="工具" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="533" y="85">tools</text>
+<rect fill="var(--bg-card)" height="28" rx="6" stroke="var(--accent)" stroke-width="1" width="74" x="350" y="256"></rect>
+<text data-en="memory" data-zh="记忆" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="387" y="275">memory</text>
+<rect fill="var(--bg-card)" height="28" rx="6" stroke="var(--accent)" stroke-width="1" width="74" x="496" y="256"></rect>
+<text data-en="verify" data-zh="验证" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="533" y="275">verify</text>
+<!-- connect layers to core -->
+<path d="M387 94 Q387 120 420 150" fill="none" marker-end="url(#arrE2)" opacity="0.6" stroke="var(--accent)" stroke-width="1"></path>
+<path d="M533 94 Q533 120 500 150" fill="none" marker-end="url(#arrE2)" opacity="0.6" stroke="var(--accent)" stroke-width="1"></path>
+<path d="M420 200 Q400 228 387 256" fill="none" marker-end="url(#arrE2)" opacity="0.6" stroke="var(--accent)" stroke-width="1"></path>
+<path d="M500 200 Q520 228 533 256" fill="none" marker-end="url(#arrE2)" opacity="0.6" stroke="var(--accent)" stroke-width="1"></path>
+<text data-en="retrieval · tools · memory · verify · routing · loop control" data-zh="检索 · 工具 · 记忆 · 验证 · 路由 · 循环控制" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="460" y="310">retrieval · tools · memory · verify · routing · loop control</text>
+</svg>
+<p class="diagram-caption" data-en="The model generates tokens. The harness delivers outcomes. One is rented; the other is engineered." data-zh="模型负责吐字。脚手架负责把事办成。一个是租来的，一个是工程出来的。">The model generates tokens. The harness delivers outcomes. One is rented; the other is engineered.</p>
+</div>
+<h3 data-en="Commoditization, from above and below" data-zh="上下夹击的商品化">Commoditization, from above and below</h3>
+<p data-en="Watch what is happening to the model layer from two directions at once. From above, frontier models are converging. The gap between the best and second-best on most real tasks has collapsed to a rounding error, and it re-opens and re-closes every release cycle. From below, open and near-open models are within striking distance of the frontier for a fraction of the cost, and they are deployable on hardware a team actually owns. The model is being squeezed into a thin, interchangeable, price-eroding layer." data-zh="注意模型层正在从两个方向被同时挤压。从上方看，前沿模型正在趋同——在大多数实际任务上，第一名和第二名的差距已经缩成误差范围，而且每个版本周期都在重新拉开又重新闭合。从下方看，开源和准开源模型已经逼近前沿，成本只有一小部分，而且能部署在团队自己的硬件上。模型，正在被挤成一个又薄、又可互换、又不断降价的层。">Watch what is happening to the model layer from two directions at once. From above, frontier models are converging. The gap between the best and second-best on most real tasks has collapsed to a rounding error, and it re-opens and re-closes every release cycle. From below, open and near-open models are within striking distance of the frontier for a fraction of the cost, and they are deployable on hardware a team actually owns. The model is being squeezed into a thin, interchangeable, price-eroding layer.</p>
+<p data-en="This is good news for everyone except the team whose entire strategy was 'we picked the best model.' A moat built on selecting a commodity is not a moat; it is a calendar entry for the day a better commodity ships. What does not commoditize is everything wrapped around the call: the retrieval pipeline that finds the right documents, the tool schemas that turn prose into action, the verifier that refuses to forward a hallucinated citation, the memory that lets the system learn across sessions, the loop controller that decides when to stop. None of that ships inside a model release. All of it is built, owned, and defended by the team that wrote it." data-zh="这对所有人都是好消息——除了那种把全部赌注押在「我们选了最强模型」上的团队。建立在「挑中一种商品」上的护城河，根本不是护城河；它只是一个倒计时，等下一个更好的商品发布那天就归零。真正不会商品化的，是包裹在调用外的那一圈东西：找到正确文档的检索管线、把文字变成动作的工具 schema、拒绝转发幻觉引用的验证器、让系统跨会话学习的记忆、决定何时停下的循环控制器。这些，没有一样会随模型发布一起发出来。它们全都是写它的人，亲手建、亲手拥有、亲手守住的东西。">This is good news for everyone except the team whose entire strategy was 'we picked the best model.' A moat built on selecting a commodity is not a moat; it is a calendar entry for the day a better commodity ships. What does not commoditize is everything wrapped around the call: the retrieval pipeline that finds the right documents, the tool schemas that turn prose into action, the verifier that refuses to forward a hallucinated citation, the memory that lets the system learn across sessions, the loop controller that decides when to stop. None of that ships inside a model release. All of it is built, owned, and defended by the team that wrote it.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrH1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<lineargradient id="coreGrad" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" style="stop-color:var(--accent-3);stop-opacity:0.10"></stop>
+<stop offset="100%" style="stop-color:var(--accent);stop-opacity:0.10"></stop>
+</lineargradient>
+</defs>
+<!-- center: probabilistic core -->
+<rect fill="var(--bg-surface)" height="56" rx="10" stroke="var(--accent-3)" stroke-width="2" width="170" x="225" y="132"></rect>
+<text data-en="PROBABILISTIC CORE" data-zh="概率性内核" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="310" y="156">PROBABILISTIC CORE</text>
+<text data-en="the model call · rented" data-zh="模型调用 · 租来的" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="310" y="175">the model call · rented</text>
+<!-- six harness layers in a ring, each a small deterministic chip -->
+<!-- top-left -->
+<rect fill="url(#coreGrad)" height="40" rx="8" stroke="var(--accent)" stroke-width="1.5" width="104" x="70" y="40"></rect>
+<text data-en="retrieval" data-zh="检索" fill="var(--text)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="122" y="58">retrieval</text>
+<text data-en="deterministic" data-zh="确定性" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="122" y="72">deterministic</text>
+<!-- top-right -->
+<rect fill="url(#coreGrad)" height="40" rx="8" stroke="var(--accent)" stroke-width="1.5" width="104" x="446" y="40"></rect>
+<text data-en="tools" data-zh="工具" fill="var(--text)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="498" y="58">tools</text>
+<text data-en="deterministic" data-zh="确定性" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="498" y="72">deterministic</text>
+<!-- mid-left -->
+<rect fill="url(#coreGrad)" height="40" rx="8" stroke="var(--accent)" stroke-width="1.5" width="104" x="40" y="140"></rect>
+<text data-en="memory" data-zh="记忆" fill="var(--text)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="92" y="158">memory</text>
+<text data-en="deterministic" data-zh="确定性" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="92" y="172">deterministic</text>
+<!-- mid-right -->
+<rect fill="url(#coreGrad)" height="40" rx="8" stroke="var(--accent)" stroke-width="1.5" width="104" x="476" y="140"></rect>
+<text data-en="routing" data-zh="路由" fill="var(--text)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="528" y="158">routing</text>
+<text data-en="deterministic" data-zh="确定性" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="528" y="172">deterministic</text>
+<!-- bottom-left -->
+<rect fill="url(#coreGrad)" height="40" rx="8" stroke="var(--accent)" stroke-width="1.5" width="104" x="70" y="240"></rect>
+<text data-en="verify" data-zh="验证" fill="var(--text)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="122" y="258">verify</text>
+<text data-en="deterministic" data-zh="确定性" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="122" y="272">deterministic</text>
+<!-- bottom-right -->
+<rect fill="url(#coreGrad)" height="40" rx="8" stroke="var(--accent)" stroke-width="1.5" width="104" x="446" y="240"></rect>
+<text data-en="loop control" data-zh="循环控制" fill="var(--text)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="498" y="258">loop control</text>
+<text data-en="deterministic" data-zh="确定性" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="498" y="272">deterministic</text>
+<!-- connecting lines to core -->
+<line stroke="var(--accent)" stroke-width="1" opacity="0.5" x1="150" x2="232" y1="80" y2="135"></line>
+<line stroke="var(--accent)" stroke-width="1" opacity="0.5" x1="470" x2="388" y1="80" y2="135"></line>
+<line stroke="var(--accent)" stroke-width="1" opacity="0.5" x1="144" x2="225" y1="160" y2="160"></line>
+<line stroke="var(--accent)" stroke-width="1" opacity="0.5" x1="476" x2="395" y1="160" y2="160"></line>
+<line stroke="var(--accent)" stroke-width="1" opacity="0.5" x1="150" x2="232" y1="240" y2="185"></line>
+<line stroke="var(--accent)" stroke-width="1" opacity="0.5" x1="470" x2="388" y1="240" y2="185"></line>
+</svg>
+<p class="diagram-caption" data-en="Every layer surrounding the core is ordinary code. The discipline of harness engineering is deterministic software governing a probabilistic center." data-zh="内核周围每一层都是普通代码。脚手架工程的本质，就是用确定性软件去驾驭一个概率性的内核。">Every layer surrounding the core is ordinary code. The discipline of harness engineering is deterministic software governing a probabilistic center.</p>
+</div>
+<h3 data-en="Where the probability lives" data-zh="概率性，住在哪一层">Where the probability lives</h3>
+<p data-en="Here is the part that confuses teams the most. The harness is almost entirely deterministic code, and yet the whole reason it exists is to manage a probabilistic component. A retrieval step is a database query — deterministic. A tool call is a function dispatch — deterministic. A verifier is an assertion against evidence — deterministic. A router is a branch on structured output — deterministic. None of these require faith. They require tests." data-zh="这里是最让团队困惑的地方。脚手架几乎全是确定性代码，但它存在的全部理由，却是为了管理一个概率性组件。检索是一句数据库查询——确定的。工具调用是一次函数分派——确定的。验证器是对证据的一组断言——确定的。路由器是对结构化输出的一次分支——确定的。这些没有一样需要「相信」，它们需要的是「测试」。">Here is the part that confuses teams the most. The harness is almost entirely deterministic code, and yet the whole reason it exists is to manage a probabilistic component. A retrieval step is a database query — deterministic. A tool call is a function dispatch — deterministic. A verifier is an assertion against evidence — deterministic. A router is a branch on structured output — deterministic. None of these require faith. They require tests.</p>
+<p data-en="The model is the only place probability enters, and that is exactly why it must be the smallest, most contained part of the system. The moment the model is allowed to also be the retriever, the verifier, and the memory, the entire system becomes untestable — because every behavior now rides on a probability distribution that changes between runs, between model versions, and between temperature settings. Good harness engineering shrinks the surface area of probability to the minimum that produces value, and wraps that surface in as much deterministic machinery as the task demands." data-zh="整个系统里，唯一引入概率性的就是模型——而这恰恰是它必须被限制成系统里最小、最隔离那部分的原因。一旦放任模型同时当检索器、当验证器、当记忆，整个系统就变得无法测试了——因为每一种行为都骑在一个概率分布上，而这个分布每次跑、每个模型版本、每个温度设置都在变。好的脚手架工程，会把「概率性的表面积」压到能产生价值的最小程度，然后用任务所需的尽可能多的确定性机器把它包起来。">The model is the only place probability enters, and that is exactly why it must be the smallest, most contained part of the system. The moment the model is allowed to also be the retriever, the verifier, and the memory, the entire system becomes untestable — because every behavior now rides on a probability distribution that changes between runs, between model versions, and between temperature settings. Good harness engineering shrinks the surface area of probability to the minimum that produces value, and wraps that surface in as much deterministic machinery as the task demands.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrI1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<!-- LEFT: how most teams spend effort -->
+<text data-en="HOW MOST TEAMS SPEND EFFORT" data-zh="大多数团队怎么花力气" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" font-weight="700" letter-spacing="0.5" text-anchor="middle" x="150" y="30">HOW MOST TEAMS SPEND EFFORT</text>
+<!-- stacked bar -->
+<rect fill="var(--accent-3)" height="36" rx="6" width="220" x="40" y="50"></rect>
+<text data-en="model selection · prompt tuning" data-zh="选模型 · 调 prompt" fill="var(--bg-card)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="150" y="73">model selection · prompt tuning</text>
+<rect fill="var(--text-tertiary)" height="36" rx="6" width="40" x="40" y="92"></rect>
+<text data-en="harness" data-zh="脚手架" fill="var(--bg-card)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="60" y="115">harness</text>
+<text data-en="~90% on the rented part" data-zh="约 90% 花在租来的东西上" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="150" y="155">~90% on the rented part</text>
+<!-- Divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="300" x2="300" y1="20" y2="280"></line>
+<!-- RIGHT: how winning teams spend it -->
+<text data-en="HOW WINNING TEAMS SPEND IT" data-zh="赢的团队怎么花力气" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" letter-spacing="0.5" text-anchor="middle" x="470" y="30">HOW WINNING TEAMS SPEND IT</text>
+<!-- inverted stacked bar -->
+<rect fill="var(--text-tertiary)" height="36" rx="6" width="44" x="340" y="50"></rect>
+<text data-en="model" data-zh="模型" fill="var(--bg-card)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="362" y="73">model</text>
+<rect fill="var(--accent)" height="36" rx="6" width="216" x="340" y="92"></rect>
+<text data-en="retrieval · tools · memory · verify · routing · loop control" data-zh="检索 · 工具 · 记忆 · 验证 · 路由 · 循环控制" fill="var(--bg-card)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="448" y="115">harness engineering</text>
+<text data-en="the owned part compounds" data-zh="自己拥有的部分会复利" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="470" y="155">the owned part compounds</text>
+<!-- arrow between, showing inversion -->
+<path d="M260 200 Q310 180 360 200" fill="none" marker-end="url(#arrI1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="invert the ratio" data-zh="把比例反过来" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="195">invert the ratio</text>
+<text data-en="a model swap is a weekend. a harness rewrite is a quarter." data-zh="换模型，一个周末。重写脚手架，一个季度。" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="310" y="240">a model swap is a weekend. a harness rewrite is a quarter.</text>
+<text data-en="guess which one competitors can copy overnight." data-zh="猜猜哪个对手一晚上就能抄走。" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="310" y="258">guess which one competitors can copy overnight.</text>
+</svg>
+<p class="diagram-caption" data-en="Effort spent on the model resets every release. Effort spent on the harness accumulates. One is an expense; the other is an asset." data-zh="花在模型上的力气，每个版本都会清零。花在脚手架上的力气，会累积。一个是开销，一个是资产。">Effort spent on the model resets every release. Effort spent on the harness accumulates. One is an expense; the other is an asset.</p>
+</div>
+<blockquote data-en="The model is the most expensive lease in the stack. The harness is the only part a team ever truly owns. Confusing the two is how well-funded teams build nothing defensible." data-zh="模型，是整条技术栈里最贵的一份租约。脚手架，是团队唯一真正拥有的东西。把这两者搞混，就是不差钱的团队一无所成的根源。">The model is the most expensive lease in the stack. The harness is the only part a team ever truly owns. Confusing the two is how well-funded teams build nothing defensible.</blockquote>
+<h3 data-en="The test surface is the harness" data-zh="可测试面，就是脚手架">The test surface is the harness</h3>
+<p data-en="A practical consequence follows. The testable surface of an AI system is the harness, not the model. Nobody writes a unit test for a transformer. The tests that matter — the ones that catch regressions, the ones that run in continuous integration, the ones a team trusts before shipping — all live in the deterministic shell. Does the retriever return the policy document for this query? Does the tool dispatcher reject a malformed schema? Does the verifier flag a claim with no citation? Does the loop controller terminate after three failed retries?" data-zh="一个实际结论随之而来：一个 AI 系统的可测试面，是脚手架，不是模型。没人会给 transformer 写单元测试。真正重要的那些测试——能抓住回归的、能在持续集成里跑的、能让团队放心上线的——全都在那层确定性的壳里。检索器对这个查询能返回那份政策文档吗？工具分派器会拒绝格式错误的 schema 吗？验证器会标出没有引用的断言吗？循环控制器会在三次重试失败后停下吗？">A practical consequence follows. The testable surface of an AI system is the harness, not the model. Nobody writes a unit test for a transformer. The tests that matter — the ones that catch regressions, the ones that run in continuous integration, the ones a team trusts before shipping — all live in the deterministic shell. Does the retriever return the policy document for this query? Does the tool dispatcher reject a malformed schema? Does the verifier flag a claim with no citation? Does the loop controller terminate after three failed retries?</p>
+<p data-en="Each of those is a question about code the team wrote. Each can be answered with a test the team runs. And collectively they describe the real boundary of the system's reliability — which is, almost entirely, the boundary of the harness. A team that has invested nothing in the harness has invested nothing in its own test surface, which is another way of saying it has invested nothing in its own quality. The model vendor's benchmarks are not a substitute, because benchmarks measure the engine on a dynamometer, not the car on the road." data-zh="这些问题，问的都是团队自己写的代码。每一个，都能用一个跑得起来的测试来回答。合在一起，它们描出了系统可靠性的真正边界——而这个边界，几乎完全是脚手架的边界。一个在脚手架上一分钱没投的团队，等于在自己的测试面上一分钱没投；换言之，在自己的质量上一分钱没投。模型厂商的跑分替代不了这件事，因为跑分测的是引擎在测功机上的表现，不是这辆车在路上的表现。">Each of those is a question about code the team wrote. Each can be answered with a test the team runs. And collectively they describe the real boundary of the system's reliability — which is, almost entirely, the boundary of the harness. A team that has invested nothing in the harness has invested nothing in its own test surface, which is another way of saying it has invested nothing in its own quality. The model vendor's benchmarks are not a substitute, because benchmarks measure the engine on a dynamometer, not the car on the road.</p>
+<p data-en="So the question worth asking is not which model is best. That question answers itself every quarter and the answer keeps moving. The question worth asking is this: when the next model lands — and it will — how much of the system survives the swap unchanged? If the answer is 'almost everything,' the harness is doing its job. If the answer is 'we have to start over,' then what was built was never a system. It was a prompt wearing a system's clothes, and the engine was mistaken for the whole car." data-zh="所以值得问的问题，从来不是「哪个模型最强」。那个问题每个季度都自己回答自己，而且答案一直在变。值得问的是这个：当下一个模型发布——它一定会发布——系统里有多少东西能扛过这次替换、原封不动？如果答案是「几乎所有」，那脚手架在干它该干的事。如果答案是「我们得从头来」，那当初建的就从来不是系统。那只是一个穿着系统外衣的 prompt，而有人把引擎，错认成了整辆车。">So the question worth asking is not which model is best. That question answers itself every quarter and the answer keeps moving. The question worth asking is this: when the next model lands — and it will — how much of the system survives the swap unchanged? If the answer is 'almost everything,' the harness is doing its job. If the answer is 'we have to start over,' then what was built was never a system. It was a prompt wearing a system's clothes, and the engine was mistaken for the whole car.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
