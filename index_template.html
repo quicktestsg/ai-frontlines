@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Frontlines</title>
+    <meta name="description" content="A blog about AI engineering and the patterns reshaping how we build software.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=10">
+</head>
+<body>
+
+<div class="mesh-bg">
+    <div class="mesh-orb mesh-orb-1"></div>
+    <div class="mesh-orb mesh-orb-2"></div>
+    <div class="mesh-orb mesh-orb-3"></div>
+</div>
+
+<div class="progress-bar"></div>
+
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-brand">
+            <span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+        <div class="nav-right">
+            <a href="about.html" class="nav-link">About</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"/><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"/><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"/></svg>
+                <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div class="wrap">
+    <section class="intro fade-in">
+        <div class="intro-badge">
+            <span class="intro-badge-dot"></span>
+            Engineering the future
+        </div>
+        <h1 class="intro-tagline">A blog about AI engineering, <em>and the patterns reshaping how we build.</em></h1>
+        <p class="intro-bio">Loop engineering, graph engineering, agent architecture, and whatever comes next. One post a day, straight thoughts, no filler.</p>
+    </section>
+
+    <!-- ═══ BLOG POSTS ═══ -->
+    <section class="post-list">
+        <p class="post-list-label">Recent</p>
+
+        <div class="post-item fade-in">
+            <a href="posts/2026-07-24-the-loop-is-the-new-function.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">July 24, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read">5 min read</span>
+                </div>
+                <h2 class="post-title">The Loop Is the New Function</h2>
+                <p class="post-excerpt">For 70 years the function was the atom of software. Now it's the loop. What changes when code stops running once and starts running forever?</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="post-item fade-in">
+            <a href="posts/2026-07-25-spaghetti-with-api-bills.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">July 25, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read">6 min read</span>
+                </div>
+                <h2 class="post-title">Spaghetti With API Bills</h2>
+                <p class="post-excerpt">Most multi-agent systems aren't architectures. They're distributed prompts with a billing problem. The fix is older than AI itself.</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <!-- POSTS_INSERT -->
+
+    </section>
+
+    <!-- ═══ NEWS FEED ═══ -->
+    <section class="news-section">
+        <div class="news-divider">
+            <span class="news-divider-line"></span>
+            <div class="news-divider-label">
+                <span class="news-divider-dot"></span>
+                Latest News
+            </div>
+            <span class="news-divider-line"></span>
+        </div>
+        <p class="news-section-sub">From OpenAI, Anthropic, Claude, Google, xAI, GLM, Kimi, Qwen & DeepSeek</p>
+
+        <div class="news-list">
+
+            <!-- NEWS_INSERT -->
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 AI Frontlines · Built with Hermes Agent</p>
+    </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
