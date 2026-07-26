@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Context Window Is Not Memory — AI Frontlines</title>
+<meta content="Teams equate a bigger context window with memory. It is not. Memory is engineered, retrieved, and tested. The window is just a faster way to forget." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=13" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="July 27, 2026" data-zh="2026年7月27日">July 27, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="7 min read" data-zh="约 7 分钟">7 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Context Window Is Not Memory" data-zh="上下文窗口，不等于记忆">The Context Window Is Not Memory</h1>
+<p class="post-header-deck" data-en="Every model release ships with a bigger context window, and every time teams treat it as a memory upgrade. It is not. The window is a scratchpad. Memory is something you engineer, retrieve, and test — and conflating the two is how production agents quietly lose their mind over time." data-zh="每次模型发布，上下文窗口都更大；每次，团队都把它当成一次记忆升级。它不是。窗口是草稿纸。记忆是需要你亲手工程、亲手检索、亲手测试的东西——把两者混为一谈，就是生产环境的智能体在不知不觉中发疯的原因。">Every model release ships with a bigger context window, and every time teams treat it as a memory upgrade. It is not. The window is a scratchpad. Memory is something you engineer, retrieve, and test — and conflating the two is how production agents quietly lose their mind over time.</p>
+</header>
+<article class="post-body">
+<p data-en="The release notes are predictable by now. A new model lands. The context window doubles, or triples, or jumps an order of magnitude. The announcement is greeted as though memory has been solved. Engineering teams nod, delete the retrieval pipeline they were halfway through building, and start dumping the entire document store into every request. The reasoning is seductive: if the model can hold everything in its head, why bother remembering anything? Why build a retrieval system, a vector index, a session memory store, a write-back queue, when the window is big enough to swallow it all?" data-zh="发布说明早就有了套路。新模型发布。上下文窗口翻倍、翻三倍、或者跨一个数量级。公告被当作「记忆问题已解决」来迎接。工程团队点点头，删掉刚建了一半的检索管线，开始把整个文档库一股脑塞进每一次请求。这理由很诱人：如果模型能把一切都装在脑子里，为什么还要费劲去记？为什么还要建检索系统、向量索引、会话记忆库、回写队列，既然窗口大到能一口吞下？">The release notes are predictable by now. A new model lands. The context window doubles, or triples, or jumps an order of magnitude. The announcement is greeted as though memory has been solved. Engineering teams nod, delete the retrieval pipeline they were halfway through building, and start dumping the entire document store into every request. The reasoning is seductive: if the model can hold everything in its head, why bother remembering anything? Why build a retrieval system, a vector index, a session memory store, a write-back queue, when the window is big enough to swallow it all?</p>
+<p data-en="This reasoning is wrong, and the error is expensive. The context window is not memory. It is a volatile scratchpad that is wiped clean at the end of every request. Nothing persists. Nothing is indexed. Nothing is retrievable by anything other than re-reading the entire payload on the next turn. A window of a million tokens does not remember the conversation from yesterday. It does not remember the user's preferences unless they are re-included. It does not remember that the customer changed their address three weeks ago unless that fact is fetched and injected. The window is amnesia with a large working set. Real memory — the kind an agent needs to behave coherently across days, weeks, and users — is an engineered system that lives entirely outside the model." data-zh="这个推理是错的，而且代价不菲。上下文窗口不是记忆。它是一块易失性草稿纸，每次请求结束就被擦得干干净净。什么都不留存。什么都不被索引。除了在下一轮重新读一遍整个负载之外，什么都取不出来。一百万 token 的窗口，记不住昨天的对话。记不住用户的偏好，除非你重新塞进去。记不住三周前这位客户改过地址，除非这个事实被捞出来、被注入。窗口，是一块带着巨大工作集的失忆症。真正的记忆——那种智能体跨越数天、数周、数百万用户仍能保持行为连贯所需的记忆——是一个完全长在模型之外的、工程出来的系统。">This reasoning is wrong, and the error is expensive. The context window is not memory. It is a volatile scratchpad that is wiped clean at the end of every request. Nothing persists. Nothing is indexed. Nothing is retrievable by anything other than re-reading the entire payload on the next turn. A window of a million tokens does not remember the conversation from yesterday. It does not remember the user's preferences unless they are re-included. It does not remember that the customer changed their address three weeks ago unless that fact is fetched and injected. The window is amnesia with a large working set. Real memory — the kind an agent needs to behave coherently across days, weeks, and users — is an engineered system that lives entirely outside the model.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrM1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrM2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<lineargradient id="memGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:var(--accent);stop-opacity:0.16"></stop>
+<stop offset="100%" style="stop-color:var(--accent);stop-opacity:0.02"></stop>
+</lineargradient>
+</defs>
+<!-- LEFT: the context window -->
+<text data-en="CONTEXT WINDOW" data-zh="上下文窗口" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="150" y="30">CONTEXT WINDOW</text>
+<!-- a beaker that empties -->
+<rect fill="var(--bg-surface)" height="200" rx="12" stroke="var(--accent-3)" stroke-width="1.5" width="220" x="40" y="50"></rect>
+<rect fill="var(--accent-3)" height="120" opacity="0.18" rx="6" width="200" x="50" y="120"></rect>
+<text data-en="tokens poured in" data-zh="倒进去的 token" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="150" y="100">tokens poured in</text>
+<text data-en="per request" data-zh="每次请求" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="150" y="118">per request</text>
+<!-- the drain -->
+<path d="M150 250 L150 285" fill="none" marker-end="url(#arrM1)" stroke="var(--accent-3)" stroke-width="2"></path>
+<text data-en="wiped on response" data-zh="响应即清空" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="150" y="305">wiped on response</text>
+<text data-en="nothing persists" data-zh="什么都不留存" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="150" y="322">nothing persists</text>
+<!-- Divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="20" y2="320"></line>
+<!-- RIGHT: engineered memory -->
+<text data-en="ENGINEERED MEMORY" data-zh="工程化记忆" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="470" y="30">ENGINEERED MEMORY</text>
+<!-- three persistent stores -->
+<rect fill="var(--bg-card)" height="44" rx="8" stroke="var(--accent)" stroke-width="1.5" width="100" x="358" y="56"></rect>
+<text data-en="semantic index" data-zh="语义索引" fill="var(--text)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="408" y="74">semantic index</text>
+<text data-en="retrievable" data-zh="可检索" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="408" y="89">retrievable</text>
+<rect fill="var(--bg-card)" height="44" rx="8" stroke="var(--accent)" stroke-width="1.5" width="100" x="480" y="56"></rect>
+<text data-en="session state" data-zh="会话状态" fill="var(--text)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="530" y="74">session state</text>
+<text data-en="keyed by user" data-zh="按用户键控" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="530" y="89">keyed by user</text>
+<rect fill="var(--bg-card)" height="44" rx="8" stroke="var(--accent)" stroke-width="1.5" width="220" x="362" y="112"></rect>
+<text data-en="fact store — preferences, history, corrections" data-zh="事实库——偏好、历史、纠正" fill="var(--text)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="472" y="130">fact store</text>
+<text data-en="write-back queue updates it every turn" data-zh="回写队列每轮更新它" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="472" y="146">write-back queue updates it every turn</text>
+<!-- retrieval path -->
+<path d="M472 156 Q472 185 472 210" fill="none" marker-end="url(#arrM2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="url(#memGrad)" height="36" rx="8" stroke="var(--accent)" stroke-width="1" width="170" x="387" y="210"></rect>
+<text data-en="retriever → inject only what's relevant" data-zh="检索器→只注入相关的" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="472" y="233">retriever → inject only what's relevant</text>
+<text data-en="persists across days, users, sessions" data-zh="跨天、跨用户、跨会话留存" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="472" y="278">persists across days, users, sessions</text>
+<text data-en="tested, versioned, owned" data-zh="可测试、有版本、归你所有" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="472" y="298">tested, versioned, owned</text>
+</svg>
+<p class="diagram-caption" data-en="One side is wiped every response. The other side is a database you own. Only one of them survives the night." data-zh="一边每次响应就被清空。另一边是你拥有的数据库。只有一个能熬过这一夜。">One side is wiped every response. The other side is a database you own. Only one of them survives the night.</p>
+</div>
+<h3 data-en="The three things a window cannot do" data-zh="窗口做不到的三件事">The three things a window cannot do</h3>
+<p data-en="Memory, in any system that has to act coherently over time, does three jobs. A context window does none of them. The first job is persistence across sessions. A window is born empty at the start of a request and dies empty at the end of it. There is no continuity. The second job is selective retrieval. Real memory is indexed; a question triggers the recall of the relevant sliver, not the entire archive. A window has no index. The only retrieval operation it supports is reading everything, every time. The third job is update and correction. Memory must be written to — a new preference noted, an old assumption corrected, a stale fact overwritten. A window is read-only from the model's perspective. The model cannot durably change anything inside it. All three of these jobs — persistence, selective retrieval, update — must be done by code outside the model." data-zh="在任何需要随时间保持行为连贯的系统里，记忆要做三件事。上下文窗口，一件都做不到。第一件，是跨会话的持久化。窗口在一次请求开始时空空而生，在结束时空空而死。没有连续性。第二件，是选择性检索。真正的记忆是被索引的；一个问题唤起的是相关的那一小片，而不是整个档案。窗口没有索引。它支持的唯一检索操作，是每次都把所有东西读一遍。第三件，是更新与纠正。记忆必须能被写入——记下新的偏好、纠正旧的假设、覆盖过期的事实。从模型的视角看，窗口是只读的。模型无法持久地改变里面的任何东西。这三件事——持久化、选择性检索、更新——都必须由模型之外的代码来完成。">Memory, in any system that has to act coherently over time, does three jobs. A context window does none of them. The first job is persistence across sessions. A window is born empty at the start of a request and dies empty at the end of it. There is no continuity. The second job is selective retrieval. Real memory is indexed; a question triggers the recall of the relevant sliver, not the entire archive. A window has no index. The only retrieval operation it supports is reading everything, every time. The third job is update and correction. Memory must be written to — a new preference noted, an old assumption corrected, a stale fact overwritten. A window is read-only from the model's perspective. The model cannot durably change anything inside it. All three of these jobs — persistence, selective retrieval, update — must be done by code outside the model.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 280" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrT2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<!-- table: three jobs, window vs memory -->
+<!-- header -->
+<text data-en="THE JOB" data-zh="职责" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" font-weight="700" letter-spacing="1" text-anchor="middle" x="140" y="30">THE JOB</text>
+<text data-en="CONTEXT WINDOW" data-zh="上下文窗口" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" letter-spacing="1" text-anchor="middle" x="340" y="30">CONTEXT WINDOW</text>
+<text data-en="ENGINEERED MEMORY" data-zh="工程化记忆" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" letter-spacing="1" text-anchor="middle" x="500" y="30">ENGINEERED MEMORY</text>
+<line stroke="var(--border)" stroke-width="1" x1="40" x2="580" y1="42" y2="42"></line>
+<!-- row 1: persistence -->
+<text data-en="persist across sessions" data-zh="跨会话留存" fill="var(--text)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="140" y="78">persist across sessions</text>
+<text data-en="✗ wiped each turn" data-zh="✗ 每轮清空" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="340" y="78">✗ wiped each turn</text>
+<text data-en="✓ survives restarts" data-zh="✓ 跨重启存活" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="500" y="78">✓ survives restarts</text>
+<line stroke="var(--border)" stroke-dasharray="3,4" stroke-width="1" x1="40" x2="580" y1="96" y2="96"></line>
+<!-- row 2: selective retrieval -->
+<text data-en="retrieve the relevant sliver" data-zh="检索相关片段" fill="var(--text)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="140" y="132">retrieve the relevant sliver</text>
+<text data-en="✗ re-read everything" data-zh="✗ 全部重读" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="340" y="132">✗ re-read everything</text>
+<text data-en="✓ indexed lookup" data-zh="✓ 索引查询" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="500" y="132">✓ indexed lookup</text>
+<line stroke="var(--border)" stroke-dasharray="3,4" stroke-width="1" x1="40" x2="580" y1="150" y2="150"></line>
+<!-- row 3: update & correction -->
+<text data-en="update / correct a fact" data-zh="更新 / 纠正事实" fill="var(--text)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="140" y="186">update / correct a fact</text>
+<text data-en="✗ read-only to model" data-zh="✗ 模型只读" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="340" y="186">✗ read-only to model</text>
+<text data-en="✓ write-back queue" data-zh="✓ 回写队列" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="500" y="186">✓ write-back queue</text>
+<line stroke="var(--border)" stroke-width="1" x1="40" x2="580" y1="204" y2="204"></line>
+<!-- footer note -->
+<text data-en="three jobs. zero supported by the window alone." data-zh="三件工作。窗口单独一件都做不了。" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="240">three jobs. zero supported by the window alone.</text>
+</svg>
+<p class="diagram-caption" data-en="A bigger window changes how much you can re-read. It does not add a single capability in any of these three rows." data-zh="更大的窗口，只改变你能重读多少。上面三行里的任何一项能力，它都没有增加。">A bigger window changes how much you can re-read. It does not add a single capability in any of these three rows.</p>
+</div>
+<h3 data-en="The lost-in-the-middle tax" data-zh="中间遗忘税">The lost-in-the-middle tax</h3>
+<p data-en="There is a second illusion worth naming, because it bites the teams who got the first point half-right. Even accepting that the window is volatile, the argument goes, surely a bigger window means better recall of whatever is in it. Not reliably. The empirical pattern is consistent across model generations: information placed in the middle of a long context is recalled worse than information at the beginning or the end. Doubling the window does not double the usable span. It increases the region where attention quietly drops. A team that dumps a thousand pages into the window and trusts the model to find the one contradicting footnote on page 412 is running a lottery, and the house wins." data-zh="还有第二个幻觉值得一提，因为它专门咬那些把第一点想明白了一半的团队。即便承认窗口是易失的，论证接着说，那更大的窗口，总该意味着对里面内容的回忆更好吧？未必。这个经验规律在各代模型上始终一致：放在长上下文中间的信息，回忆效果差于开头或结尾的信息。窗口翻倍，可用跨度并不会翻倍。它增加的是注意力悄悄下降的区域。一个把一千页倒进窗口、然后信任模型能在第 412 页找到那条矛盾的脚注的团队，是在买彩票，而庄家总是赢。">There is a second illusion worth naming, because it bites the teams who got the first point half-right. Even accepting that the window is volatile, the argument goes, surely a bigger window means better recall of whatever is in it. Not reliably. The empirical pattern is consistent across model generations: information placed in the middle of a long context is recalled worse than information at the beginning or the end. Doubling the window does not double the usable span. It increases the region where attention quietly drops. A team that dumps a thousand pages into the window and trusts the model to find the one contradicting footnote on page 412 is running a lottery, and the house wins.</p>
+<p data-en="This is precisely what a retrieval system is for, and why a smaller, well-chosen context beats a larger, indiscriminate one. Retrieval is not a workaround for a small window. It is a precision instrument that exists because relevance is not uniformly distributed. The signal in a support transcript is not the whole transcript — it is the three sentences where the customer states the problem, the two lines where a prior agent promised a resolution, and the one line where the shipping address was corrected. A retriever surfaces exactly those. A stuffed window buries them under a thousand unrelated lines and hopes for the best. The cost of the hope is paid in hallucinated addresses, repeated questions, and the slow erosion of the user's trust that the system knows anything about them at all." data-zh="这正是检索系统存在的意义，也是为什么一份更小、精心挑选的上下文，会打败一份更大、不加区分的上下文。检索不是「窗口太小」的权宜之计。它是一件精密仪器，它存在，是因为相关性不是均匀分布的。一段客服工单里的信号，不是整段工单——而是客户陈述问题的那三句话、上一个坐席承诺过解决方案的那两行、以及收货地址被纠正的那一行。检索器精准地把这几处捞出来。塞满的窗口，则把它们埋在一千行无关内容之下，然后祈祷。这份祈祷的代价，由幻觉出来的地址、重复的问题、以及用户对「这系统到底记不记得我」的信任慢慢流失来买单。">This is precisely what a retrieval system is for, and why a smaller, well-chosen context beats a larger, indiscriminate one. Retrieval is not a workaround for a small window. It is a precision instrument that exists because relevance is not uniformly distributed. The signal in a support transcript is not the whole transcript — it is the three sentences where the customer states the problem, the two lines where a prior agent promised a resolution, and the one line where the shipping address was corrected. A retriever surfaces exactly those. A stuffed window buries them under a thousand unrelated lines and hopes for the best. The cost of the hope is paid in hallucinated addresses, repeated questions, and the slow erosion of the user's trust that the system knows anything about them at all.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<!-- TOP: stuffed window — recall curve dips in middle -->
+<text data-en="STUFFED WINDOW — recall degrades in the middle" data-zh="塞满的窗口——中间回忆下降" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" letter-spacing="0.5" text-anchor="middle" x="310" y="28">STUFFED WINDOW — recall degrades in the middle</text>
+<!-- baseline -->
+<line stroke="var(--border)" stroke-width="1" x1="40" x2="580" y1="90" y2="90"></line>
+<!-- recall curve: high edges, dip middle -->
+<path d="M40 70 Q150 75 200 95 Q280 110 310 112 Q340 110 420 95 Q470 75 580 70" fill="none" stroke="var(--accent-3)" stroke-width="2.5"></path>
+<!-- mark the lost region -->
+<rect fill="var(--accent-3)" height="22" opacity="0.12" width="140" x="240" y="88"></rect>
+<text data-en="lost in the middle" data-zh="中间遗忘区" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="140">lost in the middle</text>
+<text data-en="the footnote on p.412 lives here" data-zh="第 412 页的脚注就住在这儿" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="156">the footnote on p.412 lives here</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="40" x2="580" y1="178" y2="178"></line>
+<!-- BOTTOM: retrieved context — small, all signal -->
+<text data-en="RETRIEVED CONTEXT — small, all signal" data-zh="检索的上下文——小，全是信号" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" letter-spacing="0.5" text-anchor="middle" x="310" y="200">RETRIEVED CONTEXT — small, all signal</text>
+<rect fill="var(--accent)" height="22" opacity="0.18" rx="4" width="160" x="230" y="212"></rect>
+<text data-en="only the 3 relevant lines injected" data-zh="只注入那 3 行相关的" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="227">only the 3 relevant lines injected</text>
+<text data-en="everything in the high-recall zone" data-zh="全在高回忆区" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="248">everything in the high-recall zone</text>
+</svg>
+<p class="diagram-caption" data-en="The window's weakness is its middle. Retrieval's strength is that it never sends the model there." data-zh="窗口的弱点是它的中段。检索的强项，在于它永远不把模型送进那里。">The window's weakness is its middle. Retrieval's strength is that it never sends the model there.</p>
+</div>
+<blockquote data-en="A context window is a place where tokens go to be forgotten. Memory is the engineering that makes sure the right ones come back." data-zh="上下文窗口，是 token 去被遗忘的地方。记忆，是那套确保正确的 token 能回来的工程。">A context window is a place where tokens go to be forgotten. Memory is the engineering that makes sure the right ones come back.</blockquote>
+<h3 data-en="The write-back problem nobody built" data-zh="没人建的那个回写问题">The write-back problem nobody built</h3>
+<p data-en="Here is where most agent projects quietly fail, and fail in a way that bigger windows will never fix. An agent that cannot write to its own memory cannot learn. It will ask the user for their timezone on every single call. It will repeat a correction it was given last Tuesday. It will insist on a shipping address that was changed a month ago. Every one of these failures is a missing write-back path — a structured way for the agent's output to be parsed for durable facts and written into the fact store, so that the next request retrieves the corrected version instead of the stale one." data-zh="这是大多数智能体项目悄悄失败的地方，而且是以「更大的窗口永远修不好」的方式失败。一个无法向自己记忆写入的智能体，无法学习。它会在每一次调用时都问用户时区。它会把上周二刚被纠正过的错误，再犯一遍。它会坚持用一个月前改过的收货地址。这些失败里的每一个，都是一条缺失的回写路径——一种结构化的方式，把智能体的输出解析出持久事实，写进事实库，让下一次请求检索到的是纠正后的版本，而不是过期版本。">Here is where most agent projects quietly fail, and fail in a way that bigger windows will never fix. An agent that cannot write to its own memory cannot learn. It will ask the user for their timezone on every single call. It will repeat a correction it was given last Tuesday. It will insist on a shipping address that was changed a month ago. Every one of these failures is a missing write-back path — a structured way for the agent's output to be parsed for durable facts and written into the fact store, so that the next request retrieves the corrected version instead of the stale one.</p>
+<p data-en="Building that path is real engineering. It requires a schema for what counts as a durable fact, a confidence threshold for writing it, a reconciliation step for when new information contradicts old, and a test suite that asserts the memory behaves correctly under contradiction. None of that ships inside a model. All of it is the team's to design, and all of it compounds: a memory system built in month one is an asset in month twelve, while a stuffed-context approach resets to zero on every request forever. The teams winning the long game are not the ones with the biggest windows. They are the ones who treated memory as a first-class system from day one and let the window do what it is actually good at — holding the small, relevant, freshly-retrieved slice for the duration of a single turn." data-zh="建这条路径，是真正的工程。它需要一个 schema，定义什么算持久事实；一个置信度阈值，决定何时写入；一个调和步骤，处理新信息与旧信息矛盾的情况；以及一套测试，断言记忆在矛盾面前行为正确。这些，没有一样会随模型一起发出来。全都是团队要自己设计的，而且全都会复利：第一个月建的记忆系统，是第十二个月的资产；而塞满上下文的做法，则永远在每次请求时清零。赢长线的团队，不是窗口最大的那些。是那些从第一天起就把记忆当作一等公民的系统来对待、让窗口只干它真正擅长的事——在单轮对话的持续时间里，托住那一小片相关、新鲜、刚被检索出来的切片。">Building that path is real engineering. It requires a schema for what counts as a durable fact, a confidence threshold for writing it, a reconciliation step for when new information contradicts old, and a test suite that asserts the memory behaves correctly under contradiction. None of that ships inside a model. All of it is the team's to design, and all of it compounds: a memory system built in month one is an asset in month twelve, while a stuffed-context approach resets to zero on every request forever. The teams winning the long game are not the ones with the biggest windows. They are the ones who treated memory as a first-class system from day one and let the window do what it is actually good at — holding the small, relevant, freshly-retrieved slice for the duration of a single turn.</p>
+<p data-en="So when the next model announces a window an order of magnitude larger, the right reaction is not relief. It is a question: does this change anything about persistence, selective retrieval, or write-back? The answer is no, every time. The window got bigger. The memory problem is exactly as unsolved as it was yesterday, and it will stay unsolved until a team sits down and builds the system around the model — the indexes, the retrievers, the fact stores, the write-back queues, the reconciliation logic, the tests. That system is the memory. The window is just the desk the model works on for a few seconds before the desk is cleared. Build the filing cabinet. The desk was never going to remember anything for you." data-zh="所以，当下一个模型宣布窗口又大了一个数量级，正确的反应不是松一口气。而是一个问题：这有没有改变持久化、选择性检索、或者回写中的任何一件？答案每次都是：没有。窗口变大了。记忆问题，和昨天一样没解决，而且会一直没解决，直到有团队坐下来，把模型周围那套系统建出来——索引、检索器、事实库、回写队列、调和逻辑、测试。那套系统，才是记忆。窗口，只是模型在桌子被清空之前，工作几秒钟的那张桌子。把档案柜建起来。那张桌子，从来不会替你记住任何东西。">So when the next model announces a window an order of magnitude larger, the right reaction is not relief. It is a question: does this change anything about persistence, selective retrieval, or write-back? The answer is no, every time. The window got bigger. The memory problem is exactly as unsolved as it was yesterday, and it will stay unsolved until a team sits down and builds the system around the model — the indexes, the retrievers, the fact stores, the write-back queues, the reconciliation logic, the tests. That system is the memory. The window is just the desk the model works on for a few seconds before the desk is cleared. Build the filing cabinet. The desk was never going to remember anything for you.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

@@ -14,16 +14,16 @@ from datetime import datetime
 TWEETS = [
     ("https://x.com/claudeai/status/2080699495453528290", "Claude", "#D4A574"),
     ("https://x.com/claudeai/status/2080699504576045299", "Claude", "#D4A574"),
+    ("https://x.com/claudeai/status/2080699515271528827", "Claude", "#D4A574"),
     ("https://x.com/OpenAI/status/2080378182469857576", "OpenAI", "#10A37F"),
     ("https://x.com/OpenAI/status/2080339982288568709", "OpenAI", "#10A37F"),
     ("https://x.com/OpenAI/status/2079916436232036614", "OpenAI", "#10A37F"),
     ("https://x.com/OpenAI/status/2079658951264920020", "OpenAI", "#10A37F"),
     ("https://x.com/GoogleDeepMind/status/2080321516814647630", "Google", "#4285F4"),
-    ("https://x.com/GoogleDeepMind/status/2079925576077324552", "Google", "#4285F4"),
+    ("https://x.com/GoogleDeepMind/status/2079589698490572961", "Google", "#4285F4"),
     ("https://x.com/Alibaba_Qwen/status/2080270065547809133", "Qwen", "#FF6B35"),
     ("https://x.com/Alibaba_Qwen/status/2079906336381509659", "Qwen", "#FF6B35"),
     ("https://x.com/Kimi_Moonshot/status/2078855608565207130", "Kimi", "#6366F1"),
-    ("https://x.com/AnthropicAI/status/2079256626771665098", "Anthropic", "#D4A574"),
 ]
 
 
@@ -102,16 +102,16 @@ def get_video_poster(tweet):
 TWEET_TRANSLATIONS = {
     "2080699495453528290": "Claude Opus 5 来了。\n\n一个深思熟虑、主动出击的模型，智力接近 Fable 5，价格只要一半。",
     "2080699504576045299": "在 ARC-AGI-3 上——一项要求模型解决全新问题的评测——Opus 5 的得分是第二名的三倍。",
+    "2080699515271528827": "Opus 5 今天登陆所有付费计划和 Claude API，定价与 Opus 4.8 相同。\n\n它是 Claude Max 的默认模型，也是 Claude Pro 上最强的模型。Fast 模式约为默认速度的 2.5 倍。",
     "2080378182469857576": "ChatGPT 语音功能上线桌面端了。\n\n用嘴巴就能操控电脑，指挥 ChatGPT Work 或 Codex 里跑的多个智能体。\n\n背后是 GPT-Live，能边说边听边干活。\n\n今天全球推出",
     "2080339982288568709": "ChatGPT 的健康功能开始向美国用户推出。\n\n可以安全连接 Apple Health 和支持的医疗记录，在上下文里理解你的健康数据，追踪变化，对话更有料。",
-    "2079916436232036614": "企业新功能：OpenAI Presence，帮公司搭建可信的语音和聊天智能体，覆盖客服和内部流程。\n\nAI 智能体能答问题、用内部系统、执行授权操作，搞不定就转人工——而且会越来越准。\n\nOpenAI",
+    "2079916436232036614": "企业新功能：OpenAI Presence，帮公司搭建可信的语音和聊天智能体，覆盖客服和内部流程。\n\nAI 智能体能答问题、用内部系统、执行授权操作，搞不定就转人工——而且会越来越准。",
     "2079658951264920020": "我们正在和 @huggingface 一起调查一起前所未有的安全事件。\n\n具备网络攻击能力的 OpenAI 模型在跑 benchmark 时入侵了 Hugging Face 的生产环境。\n\n以下是初步发现，帮防御方了解新风险：",
     "2080321516814647630": "Gemini 3.5 Flash Cyber，我们专门为安全团队打造的轻量级模型，帮你抢在漏洞被利用之前发现并修补它们。🧵",
-    "2079925576077324552": "我们在和美国能源部深化合作——Genesis Mission，目标十年内把科学发现速度翻一倍。\n\n投入 4000 万美元的 AI token 和 @GoogleCloud 额度，让更多实验室用上 Gemini 等 AI",
-    "2080270065547809133": "Qwen-Audio-3.0-TTS 来了。\n\n最新语音合成模型，两个版本：\n• Flash：实时交互\n• Plus：高质量生成\n\n新东西：\n• 细粒度内联标签——[whisper]、[angry]、[breaths]、[laughs]\n• 自由格式自然语言控制",
+    "2079589698490572961": "我们一次性推出三款新模型，让 AI 智能体跑得更快、更聪明、更便宜：\n\n🔵 Gemini 3.6 Flash：比 3.5 Flash 更省 token，相同成本下质量更高。\n🔵 Gemini 3.5 Flash-Lite：为文档处理、智能体搜索等日常任务打造的高性价比之选。\n🔵 Gemini 3.5 Flash Cyber：专为发现并修补关键软件漏洞的网络安全模型。",
+    "2080270065547809133": "Qwen-Audio-3.0-TTS 来了。\n\n最新语音合成模型，两个版本：\n• Flash：实时交互\n• Plus：高质量生成\n\n新东西：\n• 细粒度内联标签——[whisper]、[angry]、[breaths]、[laughs]\n• 自由格式自然语言控制\n• 16 种语言\n登顶 Artificial Analysis TTS 榜单。",
     "2079906336381509659": "🎨 Qwen-Image-3.0 来了——我们第三代基础图像生成模型。\n\n1.0 讲「精准」，2.0 加上「多样、完整、美感、真实」，3.0 就一个字：实。\n\n三大维度：富内容（一次生成报纸、分镜、试卷）、真实细节（10px 可读文字）、深度知识（12 种语言原生渲染）。",
-    "2078855608565207130": "Kimi K3 的热度超出了我们的预期，GPU 快扛不住了。\n\n过去 48 小时，需求已经逼近容量上限。为了不影响老用户的体验，我们暂时停了新用户订阅",
-    "2079256626771665098": "我们提供最高 5 万美元的 Claude 使用额度，资助加速罕见病治愈的研究者。\n\n这是 AI for Science 的首个专题征集，支持用 Claude 加速科学发现的学者。",
+    "2078855608565207130": "Kimi K3 的热度超出了我们的预期，GPU 快扛不住了。\n\n过去 48 小时，需求已经逼近容量上限。为了不影响老用户的体验，我们暂时停了新用户订阅，优先保障现有会员。我们正在尽快扩容，会分批重新开放。",
 }
 
 
