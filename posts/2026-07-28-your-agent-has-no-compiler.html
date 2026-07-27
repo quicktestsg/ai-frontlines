@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Your Agent Has No Compiler — AI Frontlines</title>
+<meta content="Traditional software has a compiler that rejects broken code before it runs. AI software has nothing. The eval suite is the only thing standing between plausible output and production failure." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=14" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="July 28, 2026" data-zh="2026年7月28日">July 28, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Your Agent Has No Compiler" data-zh="你的智能体，没有编译器">Your Agent Has No Compiler</h1>
+<p class="post-header-deck" data-en="For seventy years, software shipped with a safety net. The compiler caught the syntax errors. The type system caught the shape errors. The test suite caught the logic errors. An AI agent has none of this. It runs, produces fluent output, and fails in ways that look exactly like success — until a user notices. The eval suite is the only thing standing between plausible and correct." data-zh="七十年来，软件发布时都带着一张安全网。编译器拦住语法错误，类型系统拦住形状错误，测试套件拦住逻辑错误。一个 AI 智能体，这些都没有。它运行，产出流畅的输出，以一种看起来和成功一模一样的方式失败——直到有用户发现。评估套件，是「看起来对」和「真的对」之间唯一的东西。">For seventy years, software shipped with a safety net. The compiler caught the syntax errors. The type system caught the shape errors. The test suite caught the logic errors. An AI agent has none of this. It runs, produces fluent output, and fails in ways that look exactly like success — until a user notices. The eval suite is the only thing standing between plausible and correct.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a moment every traditional engineer takes for granted, and every AI engineer has quietly lost. You write code. You run it. Something refuses to run. A red squiggle. A stack trace. A failed assertion. The system pushes back. It tells you, before a single user ever sees the result, that something is broken. This feedback is so constant, so woven into the craft, that it became invisible — the compiler, the linter, the type checker, the unit test. Four layers of mechanical skepticism, each one catching a class of error that would otherwise escape into production. They are the reason traditional software can be trusted at all." data-zh="有一个瞬间，每个传统工程师都习以为常，而每个 AI 工程师都悄悄失去了。你写代码。你运行它。某个东西拒绝运行。一条红色波浪线。一段堆栈跟踪。一个失败的断言。系统推回来了。它告诉你——在任何用户看到结果之前——有什么东西坏了。这种反馈如此频繁、如此深入工艺的肌理，以至于它变得隐形——编译器、代码检查器、类型检查器、单元测试。四层机械化的怀疑，每一层都拦住了一类本会逃进生产的错误。它们，是传统软件能够被信任的全部理由。">There is a moment every traditional engineer takes for granted, and every AI engineer has quietly lost. You write code. You run it. Something refuses to run. A red squiggle. A stack trace. A failed assertion. The system pushes back. It tells you, before a single user ever sees the result, that something is broken. This feedback is so constant, so woven into the craft, that it became invisible — the compiler, the linter, the type checker, the unit test. Four layers of mechanical skepticism, each one catching a class of error that would otherwise escape into production. They are the reason traditional software can be trusted at all.</p>
+<p data-en="An AI agent has none of this. You write a prompt. You wire up tools. You deploy. The model runs, every time, without complaint. It never refuses on a syntax error, because there is no syntax. It never fails a type check, because there are no types. It produces output that is grammatically perfect, structurally sound, and confidently wrong — and it does so with the same fluency it uses when it is right. There is no red squiggle in the middle of a hallucinated answer. The system does not push back. It congratulates you for asking." data-zh="一个 AI 智能体，这些都没有。你写一个 prompt。你接上工具。你部署。模型每次都运行，毫无怨言。它从不会因为语法错误而拒绝运行，因为根本没有语法。它从不会类型检查失败，因为根本没有类型。它产出语法完美、结构稳健、却自信地错误的输出——而且用的是和它答对时一模一样的流畅。一个幻觉出来的答案中间，不会有红色波浪线。系统不会推回来。它恭喜你提出了一个好问题。">An AI agent has none of this. You write a prompt. You wire up tools. You deploy. The model runs, every time, without complaint. It never refuses on a syntax error, because there is no syntax. It never fails a type check, because there are no types. It produces output that is grammatically perfect, structurally sound, and confidently wrong — and it does so with the same fluency it uses when it is right. There is no red squiggle in the middle of a hallucinated answer. The system does not push back. It congratulates you for asking.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrC2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<!-- LEFT: traditional pipeline -->
+<text data-en="TRADITIONAL SOFTWARE" data-zh="传统软件" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="150" y="28">TRADITIONAL SOFTWARE</text>
+<!-- the gates -->
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="200" x="50" y="48"></rect>
+<text data-en="compiler" data-zh="编译器" fill="var(--text)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="150" y="66">compiler</text>
+<text data-en="rejects syntax errors" data-zh="拦截语法错误" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="150" y="81">rejects syntax errors</text>
+<path d="M150 88 L150 104" fill="none" marker-end="url(#arrC1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="200" x="50" y="106"></rect>
+<text data-en="type checker" data-zh="类型检查器" fill="var(--text)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="150" y="124">type checker</text>
+<text data-en="rejects shape errors" data-zh="拦截形状错误" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="150" y="139">rejects shape errors</text>
+<path d="M150 146 L150 162" fill="none" marker-end="url(#arrC1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="200" x="50" y="164"></rect>
+<text data-en="unit tests" data-zh="单元测试" fill="var(--text)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="150" y="182">unit tests</text>
+<text data-en="rejects logic errors" data-zh="拦截逻辑错误" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="150" y="197">rejects logic errors</text>
+<path d="M150 204 L150 226" fill="none" marker-end="url(#arrC1)" stroke="var(--accent-3)" stroke-width="2"></path>
+<rect fill="var(--accent-3)" height="40" opacity="0.14" rx="8" width="200" x="50" y="228"></rect>
+<text data-en="✓ ships verified" data-zh="✓ 验证后发布" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="150" y="253">✓ ships verified</text>
+<text data-en="three gates. nothing escapes silently." data-zh="三道闸门。没有东西能悄悄溜走。" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="150" y="300">three gates. nothing escapes silently.</text>
+<!-- Divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="20" y2="340"></line>
+<!-- RIGHT: agent pipeline -->
+<text data-en="AI AGENT" data-zh="AI 智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="470" y="28">AI AGENT</text>
+<rect fill="var(--bg-surface)" height="48" rx="8" stroke="var(--accent)" stroke-width="1.5" width="200" x="370" y="48"></rect>
+<text data-en="prompt + tools" data-zh="prompt + 工具" fill="var(--text)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="470" y="70">prompt + tools</text>
+<text data-en="no syntax to check" data-zh="没有语法可检查" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="470" y="86">no syntax to check</text>
+<path d="M470 96 L470 120" fill="none" marker-end="url(#arrC2)" stroke="var(--accent)" stroke-width="2"></path>
+<rect fill="var(--bg-surface)" height="48" rx="8" stroke="var(--accent)" stroke-width="1.5" width="200" x="370" y="122"></rect>
+<text data-en="model runs" data-zh="模型运行" fill="var(--text)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="470" y="144">model runs</text>
+<text data-en="always succeeds. never pushes back." data-zh="永远成功。从不推回。" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="470" y="160">always succeeds. never pushes back.</text>
+<path d="M470 170 L470 200" fill="none" marker-end="url(#arrC2)" stroke="var(--accent)" stroke-width="2"></path>
+<rect fill="var(--accent)" height="48" opacity="0.14" rx="8" width="200" x="370" y="202"></rect>
+<text data-en="✗ ships unverified" data-zh="✗ 未经验证发布" fill="var(--accent)" font-family="Inter,sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="470" y="223">✗ ships unverified</text>
+<text data-en="fluent output masks every failure" data-zh="流畅的输出掩盖了每一次失败" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="470" y="240">fluent output masks every failure</text>
+<text data-en="zero gates. everything escapes silently." data-zh="零道闸门。一切悄悄溜走。" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="470" y="300">zero gates. everything escapes silently.</text>
+</svg>
+<p class="diagram-caption" data-en="One side has three mechanical gates that reject broken work before it ships. The other side has none. Fluency is not verification." data-zh="一边有三道机械化闸门，在发布前拒绝坏掉的工作。另一边一道都没有。流畅，不等于验证。">One side has three mechanical gates that reject broken work before it ships. The other side has none. Fluency is not verification.</p>
+</div>
+<h3 data-en="The fluency trap" data-zh="流畅陷阱">The fluency trap</h3>
+<p data-en="The deepest problem is not that agents fail. Everything fails. The problem is the shape of the failure. When a traditional program breaks, it breaks loudly. An exception is thrown, a process exits, a log fills with stack traces. The failure is legible. An engineer can read it, locate it, fix it. When an agent fails, it fails quietly and eloquently. It returns a well-structured answer that cites a source that does not exist, calls a tool with plausible-sounding arguments that are subtly wrong, or follows the user's instructions to the letter while violating the user's intent. There is no exception. There is no stack trace. There is only a confident paragraph and a user who will not discover the error until the damage is downstream." data-zh="最深层的问题不是智能体会失败。什么东西都会失败。问题是失败的形状。当传统程序崩溃时，它崩得很大声。抛出异常，进程退出，日志里塞满堆栈跟踪。失败是可读的。工程师能读它、定位它、修掉它。当智能体失败时，它失败得安静而雄辩。它返回一个结构良好的答案，引用了一个不存在的来源；它用听起来合理的参数调用工具，参数却微妙地错了；它字面意义上完美执行了用户的指令，同时彻底违背了用户的意图。没有异常。没有堆栈跟踪。只有一段自信的段落，和一个要到下游才会发现错误的用户。">The deepest problem is not that agents fail. Everything fails. The problem is the shape of the failure. When a traditional program breaks, it breaks loudly. An exception is thrown, a process exits, a log fills with stack traces. The failure is legible. An engineer can read it, locate it, fix it. When an agent fails, it fails quietly and eloquently. It returns a well-structured answer that cites a source that does not exist, calls a tool with plausible-sounding arguments that are subtly wrong, or follows the user's instructions to the letter while violating the user's intent. There is no exception. There is no stack trace. There is only a confident paragraph and a user who will not discover the error until the damage is downstream.</p>
+<p data-en="This is the fluency trap. The model's greatest strength — producing coherent, well-formed output — is also its most dangerous property in production, because coherence is the camouflage that errors wear. A traditional bug crashes the demo. An agent bug survives the demo, survives the code review, survives the staging environment, and surfaces only when a real user asks a real question in a way the team never tested. By the time it is found, the team has shipped a hundred more outputs just like it." data-zh="这就是流畅陷阱。模型最大的强项——产出连贯、格式良好的输出——也是它在生产环境中最危险的属性，因为连贯是错误穿的迷彩服。一个传统 bug 会搞砸演示。一个智能体 bug 能熬过演示、熬过代码审查、熬过预发布环境，只有当一个真实用户用团队从未测过的方式问出一个真实问题时才浮出水面。等它被发现，团队已经又发布了一百个一模一样的输出。">This is the fluency trap. The model's greatest strength — producing coherent, well-formed output — is also its most dangerous property in production, because coherence is the camouflage that errors wear. A traditional bug crashes the demo. An agent bug survives the demo, survives the code review, survives the staging environment, and surfaces only when a real user asks a real question in a way the team never tested. By the time it is found, the team has shipped a hundred more outputs just like it.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="fluGrad" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" style="stop-color:var(--accent-3);stop-opacity:0.10"></stop>
+<stop offset="50%" style="stop-color:var(--accent-3);stop-opacity:0.22"></stop>
+<stop offset="100%" style="stop-color:var(--accent);stop-opacity:0.10"></stop>
+</lineargradient>
+</defs>
+<!-- Two failure curves over time -->
+<text data-en="WHEN FAILURES SURFACE" data-zh="失败何时浮现" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="28">WHEN FAILURES SURFACE</text>
+<!-- axes -->
+<line stroke="var(--border)" stroke-width="1" x1="60" x2="560" y1="250" y2="250"></line>
+<line stroke="var(--border)" stroke-width="1" x1="60" x2="60" y1="60" y2="250"></line>
+<text data-en="time →" data-zh="时间 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="540" y="268">time →</text>
+<text data-en="↑ detectability" data-zh="↑ 可发现性" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="78" y="54">↑ detectability</text>
+<!-- Traditional failure: spike at write time, then zero -->
+<path d="M70 245 L70 90 L72 90 L72 245" fill="var(--accent-3)" opacity="0.12"></path>
+<path d="M70 245 L70 90" fill="none" stroke="var(--accent-3)" stroke-width="2.5"></path>
+<text data-en="traditional bug" data-zh="传统 bug" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="120" y="100">traditional bug</text>
+<text data-en="spikes instantly, fixed before ship" data-zh="瞬间爆发，发布前修掉" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="135" y="116">spikes instantly, fixed before ship</text>
+<!-- Agent failure: invisible, then rises late -->
+<path d="M60 248 Q200 249 320 244 Q420 238 480 210 Q530 170 555 110" fill="none" stroke="var(--accent)" stroke-width="2.5"></path>
+<rect fill="url(#fluGrad)" height="0.1" width="495" x="60" y="249"></rect>
+<path d="M60 249 Q200 250 320 245 Q420 239 480 211 Q530 171 555 111 L555 249 L60 249 Z" fill="var(--accent)" opacity="0.10"></path>
+<text data-en="agent failure" data-zh="智能体失败" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="490" y="100">agent failure</text>
+<text data-en="invisible at ship, surfaces in production" data-zh="发布时隐形，生产中浮现" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="490" y="116">invisible at ship, surfaces in production</text>
+<!-- the gap -->
+<line stroke="var(--text-tertiary)" stroke-dasharray="2,4" stroke-width="1" x1="72" x2="480" y1="180" y2="180"></line>
+<text data-en="the silence zone — errors travel undetected" data-zh="静默区——错误一路不被发现" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="290" y="195">the silence zone — errors travel undetected</text>
+</svg>
+<p class="diagram-caption" data-en="A traditional failure screams the moment it is written. An agent failure whispers for weeks, then screams in production — far from the code that caused it." data-zh="传统失败在写下的那一刻就尖叫。智能体失败低语数周，然后在生产环境尖叫——离导致它的代码已经很远。">A traditional failure screams the moment it is written. An agent failure whispers for weeks, then screams in production — far from the code that caused it.</p>
+</div>
+<blockquote data-en="A compiler is a machine that tells you that you are wrong, before anyone else has to. An agent has no such machine. You either build one, or your users become it." data-zh="编译器，是一台在任何人之前就告诉你「你错了」的机器。智能体没有这样的机器。你要么自己造一台，要么让你的用户来当这台机器。">A compiler is a machine that tells you that you are wrong, before anyone else has to. An agent has no such machine. You either build one, or your users become it.</blockquote>
+<h3 data-en="Building the gate you lost" data-zh="重建你失去的那道闸门">Building the gate you lost</h3>
+<p data-en="The solution is not to mourn the compiler. It is to build its replacement. That replacement is the evaluation suite — and unlike a compiler, it does not come free with the language. It must be designed, written, maintained, and run on every change, by the team, forever. An eval suite is a set of inputs, each paired with the properties the output must satisfy, and a set of checks — programmatic, model-graded, or human — that assert those properties. When the agent changes — a new prompt, a new model version, a new tool — the suite runs, and the gates that the compiler used to provide appear again." data-zh="解法不是哀悼编译器。而是建造它的替代品。这个替代品就是评估套件——而且和编译器不同，它不会随语言免费附赠。它必须由团队设计、编写、维护，并在每一次改动时运行，永远。一个评估套件，是一组输入，每个输入配以输出必须满足的属性，以及一组检查——程序化的、模型打分的、或人工的——来断言这些属性。当智能体发生变化——新的 prompt、新的模型版本、新的工具——套件运行，编译器曾经提供的那些闸门就重新出现了。">The solution is not to mourn the compiler. It is to build its replacement. That replacement is the evaluation suite — and unlike a compiler, it does not come free with the language. It must be designed, written, maintained, and run on every change, by the team, forever. An eval suite is a set of inputs, each paired with the properties the output must satisfy, and a set of checks — programmatic, model-graded, or human — that assert those properties. When the agent changes — a new prompt, a new model version, a new tool — the suite runs, and the gates that the compiler used to provide appear again.</p>
+<p data-en="The teams that internalize this treat evals the way a previous generation treated unit tests: as the first thing written, not the last. They build a golden set of inputs that represent the real distribution of user requests — not the easy ones, not the ones from the demo, but the adversarial ones, the edge cases, the ambiguous instructions that real users actually send. They write assertions that check not just whether the output is grammatical, but whether it is correct: does the cited source exist, does the tool call match the schema, does the answer contradict a known fact, does the agent stop when it should. They run these assertions on every commit, every model upgrade, every prompt tweak. And they watch the pass rate the way a traditional team watches the build status — as the single signal that says whether the system is shippable." data-zh="把这一点内化的团队，对待评估的态度，和上一代工程师对待单元测试一样：它是先写的东西，不是最后写的东西。他们建一组 golden 输入集，代表用户请求的真实分布——不是简单那些，不是演示里那些，而是对抗性的那些、边缘情况、真实用户真正会发的那些模糊指令。他们写断言，检查的不只是输出是否合乎语法，而是它是否正确：引用的来源是否存在、工具调用是否符合 schema、答案是否与已知事实矛盾、智能体是否在该停的时候停。他们在每次提交、每次模型升级、每次 prompt 微调时运行这些断言。他们盯住通过率，就像传统团队盯住构建状态一样——把它当作「系统是否可发布」的唯一信号。">The teams that internalize this treat evals the way a previous generation treated unit tests: as the first thing written, not the last. They build a golden set of inputs that represent the real distribution of user requests — not the easy ones, not the ones from the demo, but the adversarial ones, the edge cases, the ambiguous instructions that real users actually send. They write assertions that check not just whether the output is grammatical, but whether it is correct: does the cited source exist, does the tool call match the schema, does the answer contradict a known fact, does the agent stop when it should. They run these assertions on every commit, every model upgrade, every prompt tweak. And they watch the pass rate the way a traditional team watches the build status — as the single signal that says whether the system is shippable.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrE1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrE2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<!-- The eval-driven loop -->
+<text data-en="THE EVAL LOOP — your hand-built compiler" data-zh="评估循环——你手写的编译器" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="0.5" text-anchor="middle" x="310" y="28">THE EVAL LOOP — your hand-built compiler</text>
+<!-- golden set -->
+<rect fill="var(--bg-surface)" height="56" rx="10" stroke="var(--accent)" stroke-width="1.5" width="150" x="50" y="60"></rect>
+<text data-en="golden set" data-zh="golden 测试集" fill="var(--text)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="125" y="82">golden set</text>
+<text data-en="real + adversarial" data-zh="真实 + 对抗性" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="125" y="98">real + adversarial</text>
+<text data-en="inputs" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="125" y="112">inputs</text>
+<!-- arrow to agent -->
+<path d="M200 88 L248 88" fill="none" marker-end="url(#arrE1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- agent -->
+<rect fill="var(--bg-surface)" height="56" rx="10" stroke="var(--accent)" stroke-width="1.5" width="130" x="250" y="60"></rect>
+<text data-en="agent run" data-zh="智能体运行" fill="var(--text)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="315" y="82">agent run</text>
+<text data-en="prompt + tools" data-zh="prompt + 工具" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="315" y="98">prompt + tools</text>
+<text data-en="produces output" data-zh="产出输出" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="315" y="112">produces output</text>
+<!-- arrow to checks -->
+<path d="M380 88 L418 88" fill="none" marker-end="url(#arrE1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- assertions -->
+<rect fill="var(--bg-surface)" height="56" rx="10" stroke="var(--accent)" stroke-width="1.5" width="150" x="420" y="60"></rect>
+<text data-en="assertions" data-zh="断言检查" fill="var(--text)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="495" y="80">assertions</text>
+<text data-en="correct? cited? safe?" data-zh="正确？引用？安全？" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="495" y="96">correct? cited? safe?</text>
+<text data-en="stopped when done?" data-zh="该停就停？" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="495" y="108">stopped when done?</text>
+<!-- branch: pass / fail -->
+<path d="M495 116 L495 150" fill="none" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- pass gate -->
+<path d="M495 150 L200 150" fill="none" marker-end="url(#arrE1)" stroke="var(--accent)" stroke-width="2"></path>
+<rect fill="var(--accent)" height="34" opacity="0.14" rx="8" width="120" x="140" y="133"></rect>
+<text data-en="✓ pass → ship" data-zh="✓ 通过 → 发布" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="200" y="155">✓ pass → ship</text>
+<!-- fail gate -->
+<path d="M495 150 L495 195" fill="none" marker-end="url(#arrE2)" stroke="var(--accent-3)" stroke-width="2"></path>
+<rect fill="var(--accent-3)" height="34" opacity="0.14" rx="8" width="160" x="415" y="195"></rect>
+<text data-en="✗ fail → block ship" data-zh="✗ 失败 → 阻止发布" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="495" y="217">✗ fail → block ship</text>
+<!-- feedback to fix -->
+<path d="M495 229 Q495 260 315 260 Q125 260 125 120" fill="none" marker-end="url(#arrE2)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,4"></path>
+<text data-en="regressions feed back as new test cases" data-zh="回归成为新的测试用例" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="278">regressions feed back as new test cases</text>
+<text data-en="the suite only grows. the gate only sharpens." data-zh="套件只增不减。闸门只锐不钝。" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="298">the suite only grows. the gate only sharpens.</text>
+</svg>
+<p class="diagram-caption" data-en="Every production failure that reaches a user is a test case the team forgot to write. The loop closes when failures stop reaching users and start reaching the suite." data-zh="每一个抵达用户的生产故障，都是团队忘了写的测试用例。当故障不再抵达用户、而是抵达套件时，这个循环就闭合了。">Every production failure that reaches a user is a test case the team forgot to write. The loop closes when failures stop reaching users and start reaching the suite.</p>
+</div>
+<h3 data-en="The discipline you cannot skip" data-zh="你不能跳过的纪律">The discipline you cannot skip</h3>
+<p data-en="Here is the uncomfortable truth that separates teams that ship reliable agents from teams that ship demos. The eval suite is not optional infrastructure. It is not a nice-to-have for later, when there is time, when the feature is stable. It is the feature's stability. An agent without an eval suite is a system whose correctness is unknown to the people who built it. They do not know what it does well. They do not know where it breaks. They are flying with no instruments, trusting the smoothness of the output as proof that nothing is wrong — and the smoothness is exactly what makes the failures invisible." data-zh="这里有一个让人不舒服的真相，它把「发布可靠智能体的团队」和「发布演示的团队」分开。评估套件不是可选的基础设施。它不是等有空了、等功能稳定了再补的好东西。它就是功能的稳定性本身。一个没有评估套件的智能体，是一个「连建造它的人都不了解其正确性」的系统。他们不知道它擅长什么。他们不知道它在哪儿崩溃。他们在没有仪表的情况下飞行，把输出的顺滑当作「没有问题」的证据——而顺滑，恰恰是让失败隐形的东西。">Here is the uncomfortable truth that separates teams that ship reliable agents from teams that ship demos. The eval suite is not optional infrastructure. It is not a nice-to-have for later, when there is time, when the feature is stable. It is the feature's stability. An agent without an eval suite is a system whose correctness is unknown to the people who built it. They do not know what it does well. They do not know where it breaks. They are flying with no instruments, trusting the smoothness of the output as proof that nothing is wrong — and the smoothness is exactly what makes the failures invisible.</p>
+<p data-en="The teams winning this era are not the ones with the cleverest prompts or the most tools. They are the ones who rebuilt the gate. They wrote the eval suite before the agent was finished, ran it on every change, treated the pass rate as the build status, and refused to ship when it dropped. They accepted that the compiler was gone and built something better in its place — a gate that does not just check syntax, but checks meaning. The compiler caught your typos. A good eval suite catches your agent lying, hallucinating, and confidently serving the wrong answer with perfect grammar. Build the gate. The fluency will not catch your errors for you. Only the assertions will." data-zh="赢下这个时代的团队，不是 prompt 最巧妙的，不是工具最多的。是那些重建了闸门的。他们在智能体完工之前就写好了评估套件，在每次改动时运行，把通过率当作构建状态，通过率一下降就拒绝发布。他们接受了编译器已经不在的事实，并在原址建了更好的东西——一道不只检查语法、还检查含义的闸门。编译器拦住的是你的拼写错误。一个好的评估套件，拦住的是你的智能体撒谎、幻觉、用完美语法自信地给出错误答案。把闸门建起来。流畅不会替你抓错误。只有断言会。">The teams winning this era are not the ones with the cleverest prompts or the most tools. They are the ones who rebuilt the gate. They wrote the eval suite before the agent was finished, ran it on every change, treated the pass rate as the build status, and refused to ship when it dropped. They accepted that the compiler was gone and built something better in its place — a gate that does not just check syntax, but checks meaning. The compiler caught your typos. A good eval suite catches your agent lying, hallucinating, and confidently serving the wrong answer with perfect grammar. Build the gate. The fluency will not catch your errors for you. Only the assertions will.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
