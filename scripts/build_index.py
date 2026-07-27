@@ -2,16 +2,18 @@
 """
 Build index.html: takes index_template.html + generates tweet cards → index.html
 Also bumps CSS version.
+
+Reads from news_cache.json — no refetching of existing tweets.
+The cron job adds new tweets to the cache via add_news.py before running this.
 """
 import sys
 import os
 import re
 
-# Add the gen_news module's directory to path
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
 
-from gen_news import TWEETS, extract_tweet_id, fetch_tweet_data, generate_card
+from gen_news import load_cache, generate_all_cards
 
 PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
 TEMPLATE = os.path.join(PROJECT_DIR, "index_template.html")
@@ -28,22 +30,14 @@ def main():
     # Bump CSS version
     template = re.sub(r'style\.css\?v=\d+', f'style.css?v={CSS_VERSION}', template)
 
-    # Generate cards
-    cards = []
-    for url, label, color in TWEETS:
-        tweet_id = extract_tweet_id(url)
-        if not tweet_id:
-            continue
-        try:
-            data = fetch_tweet_data(tweet_id)
-            card = generate_card(url, label, color, data)
-            cards.append(card)
-            print(f"  OK {label} — {data.get('text', '')[:50]}...", file=sys.stderr)
-        except Exception as e:
-            print(f"  FAIL {label} — {url}: {e}", file=sys.stderr)
+    # Load cache and generate cards (no API calls for existing tweets)
+    cache = load_cache()
+    print(f"Loaded {len(cache['tweets'])} tweets from cache", file=sys.stderr)
+
+    cards = generate_all_cards(cache)
+    news_html = "\n\n".join(cards)
 
     # Replace NEWS_INSERT placeholder
-    news_html = "\n\n".join(cards)
     result = template.replace("<!-- NEWS_INSERT -->", news_html)
 
     # Write output

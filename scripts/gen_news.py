@@ -2,29 +2,56 @@
 """
 Fetch tweet data via syndication API and generate native HTML cards
 that match the AI Frontlines design system.
+
+INCREMENTAL MODE:
+- Tweets are stored persistently in news_cache.json
+- Only NEW tweet URLs need to be fetched — existing ones reuse cached data
+- Dedup by tweet ID — if a tweet is already in the cache, it's skipped
+- The cron job only needs to pass new URLs; old news stays
 """
 import json
 import urllib.request
 import re
 import sys
 import html
-from datetime import datetime
+import os
+from datetime import datetime, timezone
 
-# ── Config ──
-TWEETS = [
-    ("https://x.com/claudeai/status/2080699495453528290", "Claude", "#D4A574"),
-    ("https://x.com/claudeai/status/2080699504576045299", "Claude", "#D4A574"),
-    ("https://x.com/claudeai/status/2080699515271528827", "Claude", "#D4A574"),
-    ("https://x.com/OpenAI/status/2080378182469857576", "OpenAI", "#10A37F"),
-    ("https://x.com/OpenAI/status/2080339982288568709", "OpenAI", "#10A37F"),
-    ("https://x.com/OpenAI/status/2079916436232036614", "OpenAI", "#10A37F"),
-    ("https://x.com/OpenAI/status/2079658951264920020", "OpenAI", "#10A37F"),
-    ("https://x.com/GoogleDeepMind/status/2080321516814647630", "Google", "#4285F4"),
-    ("https://x.com/GoogleDeepMind/status/2079589698490572961", "Google", "#4285F4"),
-    ("https://x.com/Alibaba_Qwen/status/2080270065547809133", "Qwen", "#FF6B35"),
-    ("https://x.com/Alibaba_Qwen/status/2079906336381509659", "Qwen", "#FF6B35"),
-    ("https://x.com/Kimi_Moonshot/status/2078855608565207130", "Kimi", "#6366F1"),
-]
+# ── Paths ──
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+CACHE_PATH = os.path.join(SCRIPT_DIR, "news_cache.json")
+
+# ── Badge colors for known accounts ──
+BADGE_COLORS = {
+    "OpenAI": "#10A37F",
+    "Claude": "#D4A574",
+    "Anthropic": "#D4A574",
+    "Google": "#4285F4",
+    "xAI": "#1DA1F2",
+    "GLM": "#7C3AED",
+    "Kimi": "#6366F1",
+    "Qwen": "#FF6B35",
+    "DeepSeek": "#0EA5E9",
+}
+
+# ── New tweets to add (set by cron job or manual run) ──
+# Format: list of (url, label, badge_color) tuples
+# Leave empty to just rebuild from cache
+NEW_TWEETS = []
+
+
+def load_cache():
+    """Load the persistent news cache. Returns dict with 'tweets' list."""
+    if os.path.exists(CACHE_PATH):
+        with open(CACHE_PATH, "r") as f:
+            return json.load(f)
+    return {"tweets": []}
+
+
+def save_cache(cache):
+    """Save the persistent news cache."""
+    with open(CACHE_PATH, "w") as f:
+        json.dump(cache, f, ensure_ascii=False, indent=2)
 
 
 def extract_tweet_id(url):
@@ -58,12 +85,6 @@ def format_date(date_str):
 def process_text(text):
     """Convert tweet text to HTML — linkify URLs and @mentions."""
     text = html.escape(text)
-    # Linkify URLs
-    text = re.sub(
-        r'https?://t\.co/\S+',
-        lambda m: m.group(0),
-        text
-    )
     # Linkify @mentions
     text = re.sub(
         r'@(\w+)',
@@ -77,10 +98,8 @@ def get_best_photo(tweet):
     """Get the highest quality photo from tweet."""
     photos = tweet.get("photos", [])
     if photos:
-        # Get the largest image
         photo = photos[0]
         return photo.get("url", "").replace("normal", "large") if "pbs.twimg.com" in photo.get("url", "") else photo.get("url")
-    # Check media in extended_entities
     for media in tweet.get("media", []):
         if media.get("type") == "photo":
             return media.get("media_url_https", "").replace("normal", "large")
@@ -98,63 +117,39 @@ def get_video_poster(tweet):
     return None
 
 
-# ── Tweet Chinese translations ──
-TWEET_TRANSLATIONS = {
-    "2080699495453528290": "Claude Opus 5 来了。\n\n一个深思熟虑、主动出击的模型，智力接近 Fable 5，价格只要一半。",
-    "2080699504576045299": "在 ARC-AGI-3 上——一项要求模型解决全新问题的评测——Opus 5 的得分是第二名的三倍。",
-    "2080699515271528827": "Opus 5 今天登陆所有付费计划和 Claude API，定价与 Opus 4.8 相同。\n\n它是 Claude Max 的默认模型，也是 Claude Pro 上最强的模型。Fast 模式约为默认速度的 2.5 倍。",
-    "2080378182469857576": "ChatGPT 语音功能上线桌面端了。\n\n用嘴巴就能操控电脑，指挥 ChatGPT Work 或 Codex 里跑的多个智能体。\n\n背后是 GPT-Live，能边说边听边干活。\n\n今天全球推出",
-    "2080339982288568709": "ChatGPT 的健康功能开始向美国用户推出。\n\n可以安全连接 Apple Health 和支持的医疗记录，在上下文里理解你的健康数据，追踪变化，对话更有料。",
-    "2079916436232036614": "企业新功能：OpenAI Presence，帮公司搭建可信的语音和聊天智能体，覆盖客服和内部流程。\n\nAI 智能体能答问题、用内部系统、执行授权操作，搞不定就转人工——而且会越来越准。",
-    "2079658951264920020": "我们正在和 @huggingface 一起调查一起前所未有的安全事件。\n\n具备网络攻击能力的 OpenAI 模型在跑 benchmark 时入侵了 Hugging Face 的生产环境。\n\n以下是初步发现，帮防御方了解新风险：",
-    "2080321516814647630": "Gemini 3.5 Flash Cyber，我们专门为安全团队打造的轻量级模型，帮你抢在漏洞被利用之前发现并修补它们。🧵",
-    "2079589698490572961": "我们一次性推出三款新模型，让 AI 智能体跑得更快、更聪明、更便宜：\n\n🔵 Gemini 3.6 Flash：比 3.5 Flash 更省 token，相同成本下质量更高。\n🔵 Gemini 3.5 Flash-Lite：为文档处理、智能体搜索等日常任务打造的高性价比之选。\n🔵 Gemini 3.5 Flash Cyber：专为发现并修补关键软件漏洞的网络安全模型。",
-    "2080270065547809133": "Qwen-Audio-3.0-TTS 来了。\n\n最新语音合成模型，两个版本：\n• Flash：实时交互\n• Plus：高质量生成\n\n新东西：\n• 细粒度内联标签——[whisper]、[angry]、[breaths]、[laughs]\n• 自由格式自然语言控制\n• 16 种语言\n登顶 Artificial Analysis TTS 榜单。",
-    "2079906336381509659": "🎨 Qwen-Image-3.0 来了——我们第三代基础图像生成模型。\n\n1.0 讲「精准」，2.0 加上「多样、完整、美感、真实」，3.0 就一个字：实。\n\n三大维度：富内容（一次生成报纸、分镜、试卷）、真实细节（10px 可读文字）、深度知识（12 种语言原生渲染）。",
-    "2078855608565207130": "Kimi K3 的热度超出了我们的预期，GPU 快扛不住了。\n\n过去 48 小时，需求已经逼近容量上限。为了不影响老用户的体验，我们暂时停了新用户订阅，优先保障现有会员。我们正在尽快扩容，会分批重新开放。",
-}
-
-
-def get_translated_text(tweet_id, original_text):
-    """Get Chinese translation for a tweet if available, else None."""
-    return TWEET_TRANSLATIONS.get(tweet_id)
-
-
 def escape_attr(text):
     """Escape text for use in an HTML attribute value (quotes)."""
     return text.replace('"', '&quot;')
 
 
-def generate_card(url, label, badge_color, data):
+def generate_card(url, label, badge_color, data, translation_zh=""):
     """Generate a native HTML card for a tweet."""
     user = data.get("user", {})
     name = html.escape(user.get("name", ""))
     handle = user.get("screen_name", "")
     avatar = user.get("profile_image_url_https", "").replace("_normal", "_bigger")
     verified = user.get("is_blue_verified", False)
-    
+
     raw_text = data.get("text", "")
     text_en = process_text(raw_text)
-    
-    # Get Chinese translation
-    tweet_id = extract_tweet_id(url)
-    zh_text = get_translated_text(tweet_id, raw_text)
-    text_zh = process_text(zh_text) if zh_text else text_en
-    
+
+    # Use provided translation, or fall back to English
+    text_zh = process_text(translation_zh) if translation_zh else text_en
+
     # Escape for attribute embedding
     attr_en = escape_attr(text_en)
     attr_zh = escape_attr(text_zh)
-    
+
     date_str = format_date(data.get("created_at", ""))
-    
+
     likes = format_count(data.get("favorite_count", 0))
     replies = format_count(data.get("reply_count", 0))
     retweets = format_count(data.get("retweet_count", 0))
-    
+
     photo = get_best_photo(data)
     video_poster = get_video_poster(data)
     media_url = photo or video_poster
-    
+
     # Build media HTML
     media_html = ""
     if media_url:
@@ -162,7 +157,7 @@ def generate_card(url, label, badge_color, data):
         <a href="{url}" target="_blank" rel="noopener" class="tweet-media-link">
             <img src="{media_url}" alt="" class="tweet-media" loading="lazy" />
         </a>'''
-    
+
     # Verified badge
     verified_html = ""
     if verified:
@@ -198,21 +193,70 @@ def generate_card(url, label, badge_color, data):
         </article>'''
 
 
-def main():
-    cards = []
-    for url, label, color in TWEETS:
+def add_tweets_to_cache(new_tweets, cache):
+    """
+    Add new tweets to cache, skipping duplicates.
+    new_tweets: list of (url, label, color) tuples
+    Returns: (updated_cache, num_new, num_skipped)
+    """
+    existing_ids = {t["id"] for t in cache["tweets"]}
+    num_new = 0
+    num_skipped = 0
+    now = datetime.now(timezone.utc).isoformat()
+
+    for url, label, color in new_tweets:
         tweet_id = extract_tweet_id(url)
         if not tweet_id:
+            print(f"  SKIP — could not extract ID from {url}", file=sys.stderr)
+            continue
+        if tweet_id in existing_ids:
+            num_skipped += 1
+            print(f"  DEDUP {label} — {tweet_id} already in cache", file=sys.stderr)
             continue
         try:
             data = fetch_tweet_data(tweet_id)
-            card = generate_card(url, label, color, data)
-            cards.append(card)
-            print(f"✓ {label} — {data.get('text', '')[:50]}...", file=sys.stderr)
+            cache["tweets"].append({
+                "id": tweet_id,
+                "url": url,
+                "label": label,
+                "color": color,
+                "fetched_at": now,
+                "translation_zh": "",
+                "tweet_data": data,
+            })
+            existing_ids.add(tweet_id)
+            num_new += 1
+            print(f"  NEW {label} — {data.get('text', '')[:60]}...", file=sys.stderr)
         except Exception as e:
-            print(f"✗ {label} — {url}: {e}", file=sys.stderr)
-    
-    print("\n".join(cards))
+            print(f"  FAIL {label} — {url}: {e}", file=sys.stderr)
+
+    # Keep newest first (most recently added at top)
+    cache["tweets"] = list(reversed(cache["tweets"]))
+    return cache, num_new, num_skipped
+
+
+def generate_all_cards(cache):
+    """Generate HTML cards for all cached tweets (newest first)."""
+    cards = []
+    for entry in cache["tweets"]:
+        card = generate_card(
+            entry["url"],
+            entry["label"],
+            entry["color"],
+            entry["tweet_data"],
+            entry.get("translation_zh", ""),
+        )
+        cards.append(card)
+    return cards
+
+
+def main():
+    """Standalone: rebuild cards from cache (no new tweets to add)."""
+    cache = load_cache()
+    print(f"Loaded {len(cache['tweets'])} tweets from cache", file=sys.stderr)
+    cards = generate_all_cards(cache)
+    print(f"Generated {len(cards)} cards", file=sys.stderr)
+    print("\n\n".join(cards))
 
 
 if __name__ == "__main__":
