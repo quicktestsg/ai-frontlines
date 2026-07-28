@@ -394,6 +394,44 @@ a { text-decoration: none; color: inherit; }
     margin-bottom: 24px;
 }
 
+/* ─── Preview pane ─── */
+.preview-section {
+    margin-bottom: 48px;
+}
+.preview-section:last-child {
+    margin-bottom: 0;
+}
+.preview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+.preview-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.preview-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: gap 0.2s;
+}
+.preview-more:hover { gap: 8px; }
+/* Preview news cards get tighter spacing */
+#pane-preview .news-list { gap: 12px; }
+#pane-preview .news-list .tweet-card { margin-bottom: 12px; }
+
 /* ─── Post card ─── */
 .post-item {
     margin-bottom: 16px;

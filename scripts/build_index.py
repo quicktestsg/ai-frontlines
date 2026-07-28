@@ -19,7 +19,8 @@ PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
 TEMPLATE = os.path.join(PROJECT_DIR, "index_template.html")
 OUTPUT = os.path.join(PROJECT_DIR, "index.html")
 
-CSS_VERSION = "15"
+CSS_VERSION = "16"
+NEWS_PREVIEW_COUNT = 4  # how many news cards to show on the landing preview
 
 
 def main():
@@ -37,14 +38,19 @@ def main():
     cards = generate_all_cards(cache)
     news_html = "\n\n".join(cards)
 
-    # Replace NEWS_INSERT placeholder
+    # Full news list → NEWS_INSERT
     result = template.replace("<!-- NEWS_INSERT -->", news_html)
+
+    # Preview news (first N) → NEWS_PREVIEW
+    preview_cards = cards[:NEWS_PREVIEW_COUNT]
+    news_preview_html = "\n\n".join(preview_cards)
+    result = result.replace("<!-- NEWS_PREVIEW -->", news_preview_html)
 
     # Write output
     with open(OUTPUT, "w") as f:
         f.write(result)
 
-    print(f"\nGenerated {len(cards)} cards → {OUTPUT}", file=sys.stderr)
+    print(f"\nGenerated {len(cards)} cards ({NEWS_PREVIEW_COUNT} preview) → {OUTPUT}", file=sys.stderr)
 
 
 if __name__ == "__main__":

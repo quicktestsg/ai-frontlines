@@ -28,6 +28,8 @@ const i18n = {
         'news.title': 'Latest News',
         'news.subtitle': 'From OpenAI, Anthropic, Claude, Google, xAI, GLM, Kimi, Qwen & DeepSeek',
         'news.viewOnX': 'View on X →',
+        'preview.allPosts': 'View all',
+        'preview.allNews': 'View all',
         'about.title': 'About',
         'about.p1': 'A blog about AI engineering and the patterns reshaping how we build software.',
         'about.p2': 'Every day, a new post exploring ideas at the frontier — loop engineering, graph engineering, agent architecture, evaluation-driven development, and whatever comes next. No filler, no hype cycles. Just the patterns that matter and why they matter.',
@@ -48,6 +50,8 @@ const i18n = {
         'news.title': '最新动态',
         'news.subtitle': '来自 OpenAI、Anthropic、Claude、Google、xAI、GLM、Kimi、通义千问 & DeepSeek',
         'news.viewOnX': '在 X 上查看 →',
+        'preview.allPosts': '查看全部',
+        'preview.allNews': '查看全部',
         'about.title': '关于',
         'about.p1': '一个关于 AI 工程的博客，聊那些正在重塑软件构建方式的模式。',
         'about.p2': '每天一篇，探索前沿——循环工程、图工程、智能体架构、评估驱动开发，以及接下来冒出来的新东西。不灌水，不追风口。只聊真正重要的东西，以及为什么重要。',
@@ -116,24 +120,31 @@ langToggle?.addEventListener('click', () => {
     applyLang(currentLang);
 });
 
-// ─── Feed tabs (Posts | News) ───
-document.querySelectorAll('.feed-tabs .tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const target = btn.dataset.feed;
-        document.querySelectorAll('.feed-tabs .tab-btn').forEach(b => b.classList.toggle('active', b === btn));
-        document.querySelectorAll('.tab-pane').forEach(pane => {
-            pane.classList.toggle('active', pane.id === 'pane-' + target);
-        });
-        // Persist + scroll to top of content area
-        localStorage.setItem('blog-feed', target);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+// ─── Feed tabs (Preview | Posts | News) ───
+function switchFeed(target) {
+    document.querySelectorAll('.feed-tabs .tab-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.feed === target);
     });
+    document.querySelectorAll('.tab-pane').forEach(pane => {
+        pane.classList.toggle('active', pane.id === 'pane-' + target);
+    });
+    localStorage.setItem('blog-feed', target);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.querySelectorAll('.feed-tabs .tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => switchFeed(btn.dataset.feed));
 });
 
-// Restore last active tab
+// "View all" buttons in preview pane → switch to full list
+document.querySelectorAll('.preview-more').forEach(btn => {
+    btn.addEventListener('click', () => switchFeed(btn.dataset.feed));
+});
+
+// Restore last active tab (default: preview)
 const savedFeed = localStorage.getItem('blog-feed');
-if (savedFeed === 'news') {
-    document.querySelector('.feed-tabs .tab-btn[data-feed="news"]')?.click();
+if (savedFeed === 'blog' || savedFeed === 'news') {
+    switchFeed(savedFeed);
 }
 
 // ─── Nav scroll state ───

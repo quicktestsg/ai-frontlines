@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=15">
+    <link rel="stylesheet" href="style.css?v=16">
 </head>
 <body>
 
@@ -52,13 +52,219 @@
     <!-- ═══ CONTENT TABS ═══ -->
     <div class="feed-tabs" id="feedTabs">
         <div class="tab-group feed-tab-group">
-            <button class="tab-btn active" data-feed="blog" data-i18n="nav.posts">Posts</button>
+            <button class="tab-btn" data-feed="blog" data-i18n="nav.posts">Posts</button>
             <button class="tab-btn" data-feed="news" data-i18n="news.title">Latest News</button>
         </div>
     </div>
 
-    <!-- ═══ BLOG POSTS ═══ -->
-    <section class="post-list tab-pane active" id="pane-blog">
+    <!-- ═══ PREVIEW PANE (default landing) ═══ -->
+    <section class="tab-pane active" id="pane-preview">
+        <div class="preview-section">
+            <div class="preview-header">
+                <h3 class="preview-label" data-i18n="blog.recent">Recent Posts</h3>
+                <button class="preview-more" data-feed="blog">
+                    <span data-i18n="preview.allPosts">View all</span> →
+                </button>
+            </div>
+
+            <div class="post-item fade-in">
+                <a href="posts/2026-07-28-your-agent-has-no-compiler.html" class="post-item-inner">
+                    <div class="post-meta">
+                        <span class="post-date">July 28, 2026</span>
+                        <span class="post-dot"></span>
+                        <span class="post-read" data-i18n="blog.read8">8 min read</span>
+                    </div>
+                    <h2 class="post-title" data-en="Your Agent Has No Compiler" data-zh="你的智能体，没有编译器">Your Agent Has No Compiler</h2>
+                    <p class="post-excerpt" data-en="For seventy years, software shipped with a safety net — the compiler, the type checker, the test suite. An AI agent has none of this. It runs, produces fluent output, and fails in ways that look exactly like success. The eval suite is the only gate standing between plausible and correct." data-zh="七十年来，软件发布时都带着安全网——编译器、类型检查、测试套件。一个 AI 智能体，这些都没有。它运行，产出流畅的输出，以一种看起来和成功一模一样的方式失败。评估套件，是「看起来对」和「真的对」之间唯一的闸门。">For seventy years, software shipped with a safety net — the compiler, the type checker, the test suite. An AI agent has none of this. It runs, produces fluent output, and fails in ways that look exactly like success. The eval suite is the only gate standing between plausible and correct.</p>
+                    <span class="post-arrow">→</span>
+                </a>
+            </div>
+
+            <div class="post-item fade-in">
+                <a href="posts/2026-07-27-the-context-window-is-not-memory.html" class="post-item-inner">
+                    <div class="post-meta">
+                        <span class="post-date">July 27, 2026</span>
+                        <span class="post-dot"></span>
+                        <span class="post-read" data-i18n="blog.read7">7 min read</span>
+                    </div>
+                    <h2 class="post-title" data-en="The Context Window Is Not Memory" data-zh="上下文窗口，不等于记忆">The Context Window Is Not Memory</h2>
+                    <p class="post-excerpt" data-en="Every model release ships with a bigger context window, and every time teams treat it as a memory upgrade. It is not. The window is a scratchpad. Memory is something you engineer, retrieve, and test." data-zh="每次模型发布，上下文窗口都更大；每次，团队都把它当成记忆升级。它不是。窗口是草稿纸。记忆是需要你亲手工程、亲手检索、亲手测试的东西。">Every model release ships with a bigger context window, and every time teams treat it as a memory upgrade. It is not. The window is a scratchpad. Memory is something you engineer, retrieve, and test.</p>
+                    <span class="post-arrow">→</span>
+                </a>
+            </div>
+
+            <div class="post-item fade-in">
+                <a href="posts/2026-07-26-the-model-is-the-engine-not-the-car.html" class="post-item-inner">
+                    <div class="post-meta">
+                        <span class="post-date">July 26, 2026</span>
+                        <span class="post-dot"></span>
+                        <span class="post-read" data-i18n="blog.read6">6 min read</span>
+                    </div>
+                    <h2 class="post-title" data-en="The Model Is the Engine, Not the Car" data-zh="模型是引擎，不是整车">The Model Is the Engine, Not the Car</h2>
+                    <p class="post-excerpt" data-en="Teams keep asking which model is best. Wrong question. The model is an engine, and engines don't drive themselves. The harness is the car." data-zh="所有人都在问「哪个模型最强」。问错了。模型是引擎，而引擎不会自己跑起来。真正上路的是脚手架——那辆车。">Teams keep asking which model is best. Wrong question. The model is an engine, and engines don't drive themselves. The harness is the car.</p>
+                    <span class="post-arrow">→</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <div class="preview-header">
+                <h3 class="preview-label" data-i18n="news.title">Latest News</h3>
+                <button class="preview-more" data-feed="news">
+                    <span data-i18n="preview.allNews">View all</span> →
+                </button>
+            </div>
+            <p class="news-section-sub" data-i18n="news.subtitle">From OpenAI, Anthropic, Claude, Google, xAI, GLM, Kimi, Qwen & DeepSeek</p>
+            <div class="news-list">
+
+                        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1910294000927645696/QseOV0uF_bigger.png" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Kimi.ai</span>
+                    <span class="tweet-handle">@Kimi_Moonshot · Jul 27</span>
+                </div>
+                <span class="news-badge" style="background:#6366F1">Kimi</span>
+            </div>
+            <div class="tweet-body" data-en="We are releasing PerceptionBench, a benchmark that isolates visual perception and evaluates it as a set of atomic capabilities - discovered from how today&#x27;s models fail, rather than defined in advance. 
+
+From frontier-model failures across 42 benchmarks, we derive 10 atomic https://t.co/p9uZ0t5yHy" data-zh="发布 PerceptionBench：一个隔离视觉感知、将其评估为一组原子能力的基准——能力从今天模型的失败方式中归纳得出，而非预先定义。">We are releasing PerceptionBench, a benchmark that isolates visual perception and evaluates it as a set of atomic capabilities - discovered from how today&#x27;s models fail, rather than defined in advance. 
+
+From frontier-model failures across 42 benchmarks, we derive 10 atomic https://t.co/p9uZ0t5yHy</div>
+        <a href="https://x.com/Kimi_Moonshot/status/2081813202514681878" target="_blank" rel="noopener" class="tweet-media-link">
+            <img src="https://pbs.twimg.com/media/HOQVg7tasAAVpoo.jpg" alt="" class="tweet-media" loading="lazy" />
+        </a>
+            <div class="tweet-footer">
+                <a href="https://x.com/Kimi_Moonshot/status/2081813202514681878" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/Kimi_Moonshot/status/2081813202514681878" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/Kimi_Moonshot/status/2081813202514681878" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    676
+                </a>
+                <a href="https://x.com/Kimi_Moonshot/status/2081813202514681878" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">OpenAI<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@OpenAI · Jul 27</span>
+                </div>
+                <span class="news-badge" style="background:#10A37F">OpenAI</span>
+            </div>
+            <div class="tweet-body" data-en="GPT-Live in ChatGPT Voice is now available to Edu, Business, and Enterprise plans globally." data-zh="GPT-Live 在 ChatGPT 语音功能中，现已面向全球的 Edu、Business 和 Enterprise 套餐开放。">GPT-Live in ChatGPT Voice is now available to Edu, Business, and Enterprise plans globally.</div>
+            <div class="tweet-footer">
+                <a href="https://x.com/OpenAI/status/2081794871795589485" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/OpenAI/status/2081794871795589485" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/OpenAI/status/2081794871795589485" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    1.1K
+                </a>
+                <a href="https://x.com/OpenAI/status/2081794871795589485" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1910294000927645696/QseOV0uF_bigger.png" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Kimi.ai</span>
+                    <span class="tweet-handle">@Kimi_Moonshot · Jul 27</span>
+                </div>
+                <span class="news-badge" style="background:#6366F1">Kimi</span>
+            </div>
+            <div class="tweet-body" data-en="We&#x27;ve open-sourced AgentENV in collaboration with kvcache-ai.
+
+AgentENV is a distributed system for running agent environments at scale. Its components power agentic RL training for Kimi K3, with fast snapshot, resume, and fork support for large-scale parallel agent workflows." data-zh="与 kvcache-ai 合作开源 AgentENV：一套大规模运行智能体环境的分布式系统。其组件驱动 Kimi K3 的智能体强化学习训练，支持大规模并行工作流的快速快照、恢复与分叉。">We&#x27;ve open-sourced AgentENV in collaboration with kvcache-ai.
+
+AgentENV is a distributed system for running agent environments at scale. Its components power agentic RL training for Kimi K3, with fast snapshot, resume, and fork support for large-scale parallel agent workflows.</div>
+            <div class="tweet-footer">
+                <a href="https://x.com/Kimi_Moonshot/status/2081762978391843020" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/Kimi_Moonshot/status/2081762978391843020" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/Kimi_Moonshot/status/2081762978391843020" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    1.9K
+                </a>
+                <a href="https://x.com/Kimi_Moonshot/status/2081762978391843020" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1910294000927645696/QseOV0uF_bigger.png" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Kimi.ai</span>
+                    <span class="tweet-handle">@Kimi_Moonshot · Jul 27</span>
+                </div>
+                <span class="news-badge" style="background:#6366F1">Kimi</span>
+            </div>
+            <div class="tweet-body" data-en="Releasing the model weights and technical report of Kimi K3.
+
+Kimi K3 is our most capable model: a 2.8T MoE model with native visual understanding and a 1M-token context window.
+
+New model architecture: 2.5x the intelligence per unit of compute, not just more params.
+
+Alongside https://t.co/Yz5uWeMbIm" data-zh="发布 Kimi K3 的模型权重与技术报告。K3 是其最强模型：2.8T MoE，原生视觉理解，100 万 token 上下文。新架构带来每单位算力 2.5 倍的智能密度——不只是堆参数。">Releasing the model weights and technical report of Kimi K3.
+
+Kimi K3 is our most capable model: a 2.8T MoE model with native visual understanding and a 1M-token context window.
+
+New model architecture: 2.5x the intelligence per unit of compute, not just more params.
+
+Alongside https://t.co/Yz5uWeMbIm</div>
+        <a href="https://x.com/Kimi_Moonshot/status/2081760186235289764" target="_blank" rel="noopener" class="tweet-media-link">
+            <img src="https://pbs.twimg.com/media/HOPlk-WbQAAMkwd.jpg" alt="" class="tweet-media" loading="lazy" />
+        </a>
+            <div class="tweet-footer">
+                <a href="https://x.com/Kimi_Moonshot/status/2081760186235289764" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/Kimi_Moonshot/status/2081760186235289764" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/Kimi_Moonshot/status/2081760186235289764" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    24.9K
+                </a>
+                <a href="https://x.com/Kimi_Moonshot/status/2081760186235289764" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ BLOG POSTS (full list) ═══ -->
+    <section class="post-list tab-pane" id="pane-blog">
         <div class="post-item fade-in">
             <a href="posts/2026-07-28-your-agent-has-no-compiler.html" class="post-item-inner">
                 <div class="post-meta">
@@ -128,7 +334,7 @@
 
     </section>
 
-    <!-- ═══ NEWS FEED ═══ -->
+    <!-- ═══ NEWS FEED (full list) ═══ -->
     <section class="post-list tab-pane" id="pane-news">
         <p class="news-section-sub" data-i18n="news.subtitle">From OpenAI, Anthropic, Claude, Google, xAI, GLM, Kimi, Qwen & DeepSeek</p>
         <div class="news-list">
@@ -772,6 +978,6 @@ Over the past 48 hours, demand has pushed close to the limits of our current cap
     </footer>
 </div>
 
-<script src="app.js?v=15"></script>
+<script src="app.js?v=16"></script>
 </body>
 </html>

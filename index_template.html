@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=15">
+    <link rel="stylesheet" href="style.css?v=16">
 </head>
 <body>
 
@@ -52,13 +52,79 @@
     <!-- ═══ CONTENT TABS ═══ -->
     <div class="feed-tabs" id="feedTabs">
         <div class="tab-group feed-tab-group">
-            <button class="tab-btn active" data-feed="blog" data-i18n="nav.posts">Posts</button>
+            <button class="tab-btn" data-feed="blog" data-i18n="nav.posts">Posts</button>
             <button class="tab-btn" data-feed="news" data-i18n="news.title">Latest News</button>
         </div>
     </div>
 
-    <!-- ═══ BLOG POSTS ═══ -->
-    <section class="post-list tab-pane active" id="pane-blog">
+    <!-- ═══ PREVIEW PANE (default landing) ═══ -->
+    <section class="tab-pane active" id="pane-preview">
+        <div class="preview-section">
+            <div class="preview-header">
+                <h3 class="preview-label" data-i18n="blog.recent">Recent Posts</h3>
+                <button class="preview-more" data-feed="blog">
+                    <span data-i18n="preview.allPosts">View all</span> →
+                </button>
+            </div>
+
+            <div class="post-item fade-in">
+                <a href="posts/2026-07-28-your-agent-has-no-compiler.html" class="post-item-inner">
+                    <div class="post-meta">
+                        <span class="post-date">July 28, 2026</span>
+                        <span class="post-dot"></span>
+                        <span class="post-read" data-i18n="blog.read8">8 min read</span>
+                    </div>
+                    <h2 class="post-title" data-en="Your Agent Has No Compiler" data-zh="你的智能体，没有编译器">Your Agent Has No Compiler</h2>
+                    <p class="post-excerpt" data-en="For seventy years, software shipped with a safety net — the compiler, the type checker, the test suite. An AI agent has none of this. It runs, produces fluent output, and fails in ways that look exactly like success. The eval suite is the only gate standing between plausible and correct." data-zh="七十年来，软件发布时都带着安全网——编译器、类型检查、测试套件。一个 AI 智能体，这些都没有。它运行，产出流畅的输出，以一种看起来和成功一模一样的方式失败。评估套件，是「看起来对」和「真的对」之间唯一的闸门。">For seventy years, software shipped with a safety net — the compiler, the type checker, the test suite. An AI agent has none of this. It runs, produces fluent output, and fails in ways that look exactly like success. The eval suite is the only gate standing between plausible and correct.</p>
+                    <span class="post-arrow">→</span>
+                </a>
+            </div>
+
+            <div class="post-item fade-in">
+                <a href="posts/2026-07-27-the-context-window-is-not-memory.html" class="post-item-inner">
+                    <div class="post-meta">
+                        <span class="post-date">July 27, 2026</span>
+                        <span class="post-dot"></span>
+                        <span class="post-read" data-i18n="blog.read7">7 min read</span>
+                    </div>
+                    <h2 class="post-title" data-en="The Context Window Is Not Memory" data-zh="上下文窗口，不等于记忆">The Context Window Is Not Memory</h2>
+                    <p class="post-excerpt" data-en="Every model release ships with a bigger context window, and every time teams treat it as a memory upgrade. It is not. The window is a scratchpad. Memory is something you engineer, retrieve, and test." data-zh="每次模型发布，上下文窗口都更大；每次，团队都把它当成记忆升级。它不是。窗口是草稿纸。记忆是需要你亲手工程、亲手检索、亲手测试的东西。">Every model release ships with a bigger context window, and every time teams treat it as a memory upgrade. It is not. The window is a scratchpad. Memory is something you engineer, retrieve, and test.</p>
+                    <span class="post-arrow">→</span>
+                </a>
+            </div>
+
+            <div class="post-item fade-in">
+                <a href="posts/2026-07-26-the-model-is-the-engine-not-the-car.html" class="post-item-inner">
+                    <div class="post-meta">
+                        <span class="post-date">July 26, 2026</span>
+                        <span class="post-dot"></span>
+                        <span class="post-read" data-i18n="blog.read6">6 min read</span>
+                    </div>
+                    <h2 class="post-title" data-en="The Model Is the Engine, Not the Car" data-zh="模型是引擎，不是整车">The Model Is the Engine, Not the Car</h2>
+                    <p class="post-excerpt" data-en="Teams keep asking which model is best. Wrong question. The model is an engine, and engines don't drive themselves. The harness is the car." data-zh="所有人都在问「哪个模型最强」。问错了。模型是引擎，而引擎不会自己跑起来。真正上路的是脚手架——那辆车。">Teams keep asking which model is best. Wrong question. The model is an engine, and engines don't drive themselves. The harness is the car.</p>
+                    <span class="post-arrow">→</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <div class="preview-header">
+                <h3 class="preview-label" data-i18n="news.title">Latest News</h3>
+                <button class="preview-more" data-feed="news">
+                    <span data-i18n="preview.allNews">View all</span> →
+                </button>
+            </div>
+            <p class="news-section-sub" data-i18n="news.subtitle">From OpenAI, Anthropic, Claude, Google, xAI, GLM, Kimi, Qwen & DeepSeek</p>
+            <div class="news-list">
+
+                <!-- NEWS_PREVIEW -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ BLOG POSTS (full list) ═══ -->
+    <section class="post-list tab-pane" id="pane-blog">
         <div class="post-item fade-in">
             <a href="posts/2026-07-28-your-agent-has-no-compiler.html" class="post-item-inner">
                 <div class="post-meta">
@@ -128,7 +194,7 @@
 
     </section>
 
-    <!-- ═══ NEWS FEED ═══ -->
+    <!-- ═══ NEWS FEED (full list) ═══ -->
     <section class="post-list tab-pane" id="pane-news">
         <p class="news-section-sub" data-i18n="news.subtitle">From OpenAI, Anthropic, Claude, Google, xAI, GLM, Kimi, Qwen & DeepSeek</p>
         <div class="news-list">
@@ -143,6 +209,6 @@
     </footer>
 </div>
 
-<script src="app.js?v=15"></script>
+<script src="app.js?v=16"></script>
 </body>
 </html>
