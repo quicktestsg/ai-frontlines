@@ -230,15 +230,24 @@ def add_tweets_to_cache(new_tweets, cache):
         except Exception as e:
             print(f"  FAIL {label} — {url}: {e}", file=sys.stderr)
 
-    # Keep newest first (most recently added at top)
-    cache["tweets"] = list(reversed(cache["tweets"]))
+    # Sort by tweet's actual created_at timestamp, newest first
+    cache["tweets"] = _sort_by_date(cache["tweets"])
     return cache, num_new, num_skipped
 
 
+def _sort_by_date(tweets):
+    """Sort tweets by created_at descending (newest first)."""
+    def get_date(entry):
+        created = entry.get("tweet_data", {}).get("created_at", "")
+        return created or ""
+    return sorted(tweets, key=get_date, reverse=True)
+
+
 def generate_all_cards(cache):
-    """Generate HTML cards for all cached tweets (newest first)."""
+    """Generate HTML cards for all cached tweets (newest first by tweet date)."""
+    sorted_tweets = _sort_by_date(cache["tweets"])
     cards = []
-    for entry in cache["tweets"]:
+    for entry in sorted_tweets:
         card = generate_card(
             entry["url"],
             entry["label"],
