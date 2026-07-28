@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=14">
+    <link rel="stylesheet" href="style.css?v=15">
 </head>
 <body>
 
@@ -49,10 +49,16 @@
         <p class="intro-bio" data-i18n="intro.bio">Loop engineering, graph engineering, agent architecture, and whatever comes next. One post a day, straight thoughts, no filler.</p>
     </section>
 
-    <!-- ═══ BLOG POSTS ═══ -->
-    <section class="post-list">
-        <p class="post-list-label" data-i18n="blog.recent">Recent</p>
+    <!-- ═══ CONTENT TABS ═══ -->
+    <div class="feed-tabs" id="feedTabs">
+        <div class="tab-group feed-tab-group">
+            <button class="tab-btn active" data-feed="blog" data-i18n="nav.posts">Posts</button>
+            <button class="tab-btn" data-feed="news" data-i18n="news.title">Latest News</button>
+        </div>
+    </div>
 
+    <!-- ═══ BLOG POSTS ═══ -->
+    <section class="post-list tab-pane active" id="pane-blog">
         <div class="post-item fade-in">
             <a href="posts/2026-07-28-your-agent-has-no-compiler.html" class="post-item-inner">
                 <div class="post-meta">
@@ -123,17 +129,8 @@
     </section>
 
     <!-- ═══ NEWS FEED ═══ -->
-    <section class="news-section">
-        <div class="news-divider">
-            <span class="news-divider-line"></span>
-            <div class="news-divider-label">
-                <span class="news-divider-dot"></span>
-                <span data-i18n="news.title">Latest News</span>
-            </div>
-            <span class="news-divider-line"></span>
-        </div>
+    <section class="post-list tab-pane" id="pane-news">
         <p class="news-section-sub" data-i18n="news.subtitle">From OpenAI, Anthropic, Claude, Google, xAI, GLM, Kimi, Qwen & DeepSeek</p>
-
         <div class="news-list">
 
                     <article class="tweet-card fade-in">

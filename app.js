@@ -116,6 +116,26 @@ langToggle?.addEventListener('click', () => {
     applyLang(currentLang);
 });
 
+// ─── Feed tabs (Posts | News) ───
+document.querySelectorAll('.feed-tabs .tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const target = btn.dataset.feed;
+        document.querySelectorAll('.feed-tabs .tab-btn').forEach(b => b.classList.toggle('active', b === btn));
+        document.querySelectorAll('.tab-pane').forEach(pane => {
+            pane.classList.toggle('active', pane.id === 'pane-' + target);
+        });
+        // Persist + scroll to top of content area
+        localStorage.setItem('blog-feed', target);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
+
+// Restore last active tab
+const savedFeed = localStorage.getItem('blog-feed');
+if (savedFeed === 'news') {
+    document.querySelector('.feed-tabs .tab-btn[data-feed="news"]')?.click();
+}
+
 // ─── Nav scroll state ───
 const nav = document.querySelector('.nav');
 window.addEventListener('scroll', () => {
