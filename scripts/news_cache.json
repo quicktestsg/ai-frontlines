@@ -1,37 +1,1645 @@
 {
   "tweets": [
     {
-      "id": "2080699495453528290",
-      "url": "https://x.com/claudeai/status/2080699495453528290",
-      "label": "Claude",
+      "id": "2082153297670992134",
+      "url": "https://x.com/AnthropicAI/status/2082153297670992134",
+      "label": "Anthropic",
       "color": "#D4A574",
-      "fetched_at": "2026-07-27T04:00:00Z",
-      "translation_zh": "Claude Opus 5 来了。\n\n一个深思熟虑、主动出击的模型，智力接近 Fable 5，价格只要一半。",
+      "fetched_at": "2026-07-28T20:03:28.913703+00:00",
+      "translation_zh": "Anthropic 新研究：Claude（Mythos Preview）帮助研究人员发现了密码学算法中的弱点——在 60 小时内找到了针对 HAWK 数字签名方案的新攻击，并把对 AES 的破解速度提升了 200–800 倍。",
       "tweet_data": {
         "__typename": "Tweet",
-        "favorite_count": 61014,
+        "favorite_count": 2585,
         "lang": "en",
         "possibly_sensitive": false,
-        "created_at": "2026-07-24T16:59:51.000Z",
+        "created_at": "2026-07-28T17:16:45.000Z",
         "display_text_range": [
           0,
-          141
+          264
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "anthropic.com/research/disco…",
+              "expanded_url": "https://anthropic.com/research/discovering-cryptographic-weaknesses",
+              "indices": [
+                241,
+                264
+              ],
+              "url": "https://t.co/TYKLjb3Q7V"
+            }
+          ]
+        },
+        "id_str": "2082153297670992134",
+        "text": "New Anthropic research: Discovering cryptographic weaknesses with Claude.\n\nClaude Mythos Preview has helped our researchers find weaknesses in cryptographic algorithms—the mathematical methods that are used to keep data private.\n\nRead more: https://t.co/TYKLjb3Q7V",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2082153297670992134"
+          ],
+          "editable_until_msecs": "1785262605000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 219,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/TYKLjb3Q7V",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Open laptop with lock iconography showing on its inner screen",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2082057926940999680/8YW3FJ4b?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Open laptop with lock iconography showing on its inner screen",
+                "height": 147,
+                "url": "https://pbs.twimg.com/card_img/2082057926940999680/8YW3FJ4b?format=jpg&name=280x150",
+                "width": 280
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Anthropic researchers find weaknesses in cryptographic algorithms with Claude Mythos Preview",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "www.anthropic.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Open laptop with lock iconography showing on its inner screen",
+                "height": 316,
+                "url": "https://pbs.twimg.com/card_img/2082057926940999680/8YW3FJ4b?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Open laptop with lock iconography showing on its inner screen",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2082057926940999680/8YW3FJ4b?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Open laptop with lock iconography showing on its inner screen",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2082057926940999680/8YW3FJ4b?format=jpg&name=orig",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Open laptop with lock iconography showing on its inner screen",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2082057926940999680/8YW3FJ4b?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Open laptop with lock iconography showing on its inner screen",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2082057926940999680/8YW3FJ4b?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Open laptop with lock iconography showing on its inner screen",
+                "height": 76,
+                "url": "https://pbs.twimg.com/card_img/2082057926940999680/8YW3FJ4b?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "creator": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Open laptop with lock iconography showing on its inner screen",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2082057926940999680/8YW3FJ4b?format=png&name=2048x2048_2_exp",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Open laptop with lock iconography showing on its inner screen",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2082057926940999680/8YW3FJ4b?format=jpg&name=orig",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Open laptop with lock iconography showing on its inner screen",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "anthropic.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Open laptop with lock iconography showing on its inner screen",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2082057926940999680/8YW3FJ4b?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Open laptop with lock iconography showing on its inner screen",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 88.2,
+                    "rgb": {
+                      "blue": 188,
+                      "green": 152,
+                      "red": 106
+                    }
+                  },
+                  {
+                    "percentage": 8.62,
+                    "rgb": {
+                      "blue": 245,
+                      "green": 249,
+                      "red": 250
+                    }
+                  },
+                  {
+                    "percentage": 2.37,
+                    "rgb": {
+                      "blue": 58,
+                      "green": 52,
+                      "red": 41
+                    }
+                  },
+                  {
+                    "percentage": 0.85,
+                    "rgb": {
+                      "blue": 101,
+                      "green": 104,
+                      "red": 105
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Discovering cryptographic weaknesses with Claude",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 88.2,
+                    "rgb": {
+                      "blue": 188,
+                      "green": 152,
+                      "red": 106
+                    }
+                  },
+                  {
+                    "percentage": 8.62,
+                    "rgb": {
+                      "blue": 245,
+                      "green": 249,
+                      "red": 250
+                    }
+                  },
+                  {
+                    "percentage": 2.37,
+                    "rgb": {
+                      "blue": 58,
+                      "green": 52,
+                      "red": 41
+                    }
+                  },
+                  {
+                    "percentage": 0.85,
+                    "rgb": {
+                      "blue": 101,
+                      "green": 104,
+                      "red": 105
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Open laptop with lock iconography showing on its inner screen",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2082057926940999680/8YW3FJ4b?format=png&name=2048x2048_2_exp",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Open laptop with lock iconography showing on its inner screen",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2082057926940999680/8YW3FJ4b?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 88.2,
+                    "rgb": {
+                      "blue": 188,
+                      "green": 152,
+                      "red": 106
+                    }
+                  },
+                  {
+                    "percentage": 8.62,
+                    "rgb": {
+                      "blue": 245,
+                      "green": 249,
+                      "red": 250
+                    }
+                  },
+                  {
+                    "percentage": 2.37,
+                    "rgb": {
+                      "blue": 58,
+                      "green": 52,
+                      "red": 41
+                    }
+                  },
+                  {
+                    "percentage": 0.85,
+                    "rgb": {
+                      "blue": 101,
+                      "green": 104,
+                      "red": 105
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Open laptop with lock iconography showing on its inner screen",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2082057926940999680/8YW3FJ4b?format=png&name=2048x2048_2_exp",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/TYKLjb3Q7V",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Open laptop with lock iconography showing on its inner screen",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2082057926940999680/8YW3FJ4b?format=jpg&name=orig",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2082152074071228702",
+      "url": "https://x.com/OpenAI/status/2082152074071228702",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-07-28T20:03:28.913703+00:00",
+      "translation_zh": "OpenAI 分享八个案例研究：编程智能体正帮助科学家承担从日常维护到全新系统设计的科研计算工作，但研究人员仍需亲自提出科学问题并验证结果。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1704,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-07-28T17:11:53.000Z",
+        "display_text_range": [
+          0,
+          275
         ],
         "entities": {
           "media": [
             {
-              "display_url": "pic.x.com/GQWhcq2CQL",
-              "expanded_url": "https://x.com/claudeai/status/2080699495453528290/video/1",
+              "display_url": "pic.x.com/ZJmRXrRAbC",
+              "expanded_url": "https://x.com/OpenAI/status/2082152074071228702/photo/1",
               "indices": [
-                142,
-                165
+                276,
+                299
               ],
-              "url": "https://t.co/GQWhcq2CQL"
+              "url": "https://t.co/ZJmRXrRAbC"
             }
           ]
         },
-        "id_str": "2080699495453528290",
-        "text": "Introducing Claude Opus 5.\n\nIt's a thoughtful and proactive model that comes close to the frontier intelligence of Fable 5 at half the price. https://t.co/GQWhcq2CQL",
+        "id_str": "2082152074071228702",
+        "text": "Coding agents are helping scientists spend more time advancing research, taking on everything from routine maintenance and targeted optimization to complete redesigns and new systems.\n\nWhile agents can reliably execute on ambitious projects, researchers must still define the https://t.co/ZJmRXrRAbC",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2082152074071228702"
+          ],
+          "editable_until_msecs": "1785262313000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/ZJmRXrRAbC",
+            "expanded_url": "https://x.com/OpenAI/status/2082152074071228702/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              276,
+              299
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HOVJGp1bwAA_pZO.png",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 1075,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 84,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 947,
+                  "x": 151,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 540,
+                  "x": 354,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/ZJmRXrRAbC"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 1075,
+                "w": 1920,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 1080,
+                "x": 84,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 947,
+                "x": 151,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 540,
+                "x": 354,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 1920,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/OpenAI/status/2082152074071228702/photo/1",
+            "url": "https://pbs.twimg.com/media/HOVJGp1bwAA_pZO.png",
+            "width": 1920,
+            "height": 1080
+          }
+        ],
+        "conversation_count": 147,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDgyMTUyMDc0MDA0MDIxMjQ4"
+        }
+      }
+    },
+    {
+      "id": "2082123925283041545",
+      "url": "https://x.com/elonmusk/status/2082123925283041545",
+      "label": "xAI",
+      "color": "#1DA1F2",
+      "fetched_at": "2026-07-28T20:03:28.913703+00:00",
+      "translation_zh": "马斯克透露 Grok 路线图：Grok 4.6（约 1.5T 参数）预计 8 月 7 日左右发布，SFT 与 RL 显著增强；随后几周推出更强的 2.1T Grok 4.7。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 12116,
+        "lang": "en",
+        "created_at": "2026-07-28T15:20:02.000Z",
+        "display_text_range": [
+          0,
+          280
+        ],
+        "entities": {},
+        "id_str": "2082123925283041545",
+        "text": "Interesting. \n\nGrok 4.6 releases around August 7. This will be the 1.5T model with significantly improved SFT &amp; RL.\n\nGrok 4.7 will be the 2.1T model released a few weeks later. This will be better than 4.6 in every way, except slightly slower to serve, albeit with even better",
+        "user": {
+          "id_str": "44196397",
+          "name": "Elon Musk",
+          "screen_name": "elonmusk",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+            },
+            "description": "X",
+            "url": {
+              "url": "https://twitter.com/X",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2082123925283041545"
+          ],
+          "editable_until_msecs": "1785255602000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 1631,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 1725,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 92,
+          "retweet_count": 99,
+          "created_at": "2026-07-27T21:21:25.000Z",
+          "display_text_range": [
+            0,
+            279
+          ],
+          "entities": {
+            "urls": [
+              {
+                "display_url": "deepsec.sh",
+                "expanded_url": "http://deepsec.sh",
+                "indices": [
+                  14,
+                  37
+                ],
+                "url": "https://t.co/p9AoezbuGt"
+              }
+            ]
+          },
+          "id_str": "2081852481517318560",
+          "text": "In our latest https://t.co/p9AoezbuGt benchmarks, Grok 4.5 has emerged as the best cybersecurity AI model on price-performance.\n\nIt's 10x cheaper than Sol, 5.7x cheaper than Opus 5, and 2.2x cheaper than Kimi K3, yet at Kimi-like perf.\n\nSol remains the frontier, ahead of Opus 5.",
+          "user": {
+            "id_str": "15540222",
+            "name": "Guillermo Rauch",
+            "screen_name": "rauchg",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1783856060249595904/8TfcCN0r_normal.jpg",
+            "highlighted_label": {
+              "badge": {
+                "url": "https://pbs.twimg.com/profile_images/1767351110228918272/3Pndc5OT_bigger.png"
+              },
+              "description": "Vercel",
+              "url": {
+                "url": "https://twitter.com/vercel",
+                "url_type": "DeepLink"
+              },
+              "user_label_display_type": "Badge",
+              "user_label_type": "BusinessLabel"
+            }
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2081852481517318560"
+            ],
+            "editable_until_msecs": "1785190885000",
+            "edits_remaining": "5",
+            "is_edit_eligible": true
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDgyMTIzOTI1MjI0NDAyOTQ0"
+        }
+      }
+    },
+    {
+      "id": "2081813202514681878",
+      "url": "https://x.com/Kimi_Moonshot/status/2081813202514681878",
+      "label": "Kimi",
+      "color": "#6366F1",
+      "fetched_at": "2026-07-27T20:04:42.236112+00:00",
+      "translation_zh": "发布 PerceptionBench：一个隔离视觉感知、将其评估为一组原子能力的基准——能力从今天模型的失败方式中归纳得出，而非预先定义。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 676,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-07-27T18:45:20.000Z",
+        "display_text_range": [
+          0,
+          274
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/p9uZ0t5yHy",
+              "expanded_url": "https://x.com/Kimi_Moonshot/status/2081813202514681878/photo/1",
+              "indices": [
+                275,
+                298
+              ],
+              "url": "https://t.co/p9uZ0t5yHy"
+            }
+          ]
+        },
+        "id_str": "2081813202514681878",
+        "text": "We are releasing PerceptionBench, a benchmark that isolates visual perception and evaluates it as a set of atomic capabilities - discovered from how today's models fail, rather than defined in advance. \n\nFrom frontier-model failures across 42 benchmarks, we derive 10 atomic https://t.co/p9uZ0t5yHy",
+        "user": {
+          "id_str": "1863959670169501696",
+          "name": "Kimi.ai",
+          "screen_name": "Kimi_Moonshot",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1910294000927645696/QseOV0uF_normal.png"
+        },
+        "edit_control": {
+          "initial_tweet_id": "2081813125196857777",
+          "edit_tweet_ids": [
+            "2081813125196857777",
+            "2081813202514681878"
+          ],
+          "editable_until_msecs": "1785181501000",
+          "edits_remaining": "4",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/p9uZ0t5yHy",
+            "expanded_url": "https://x.com/Kimi_Moonshot/status/2081813202514681878/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              275,
+              298
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HOQVg7tasAAVpoo.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 478,
+                  "w": 854,
+                  "x": 323,
+                  "y": 0
+                },
+                {
+                  "h": 478,
+                  "w": 478,
+                  "x": 511,
+                  "y": 0
+                },
+                {
+                  "h": 478,
+                  "w": 419,
+                  "x": 541,
+                  "y": 0
+                },
+                {
+                  "h": 478,
+                  "w": 239,
+                  "x": 631,
+                  "y": 0
+                },
+                {
+                  "h": 478,
+                  "w": 1200,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 478,
+              "width": 1200
+            },
+            "sizes": {
+              "large": {
+                "h": 478,
+                "resize": "fit",
+                "w": 1200
+              },
+              "medium": {
+                "h": 478,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 271,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/p9uZ0t5yHy"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 478,
+                "w": 854,
+                "x": 323,
+                "y": 0
+              },
+              {
+                "h": 478,
+                "w": 478,
+                "x": 511,
+                "y": 0
+              },
+              {
+                "h": 478,
+                "w": 419,
+                "x": 541,
+                "y": 0
+              },
+              {
+                "h": 478,
+                "w": 239,
+                "x": 631,
+                "y": 0
+              },
+              {
+                "h": 478,
+                "w": 1200,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Kimi_Moonshot/status/2081813202514681878/photo/1",
+            "url": "https://pbs.twimg.com/media/HOQVg7tasAAVpoo.jpg",
+            "width": 1200,
+            "height": 478
+          }
+        ],
+        "conversation_count": 29,
+        "news_action_type": "conversation",
+        "isEdited": true,
+        "isStaleEdit": false,
+        "previous_counts": {
+          "favorite_count": 1,
+          "quote_count": 0,
+          "reply_count": 0,
+          "retweet_count": 0
+        },
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDgxODEzMjAyNDMwNzI2MTQ0"
+        }
+      }
+    },
+    {
+      "id": "2081794871795589485",
+      "url": "https://x.com/OpenAI/status/2081794871795589485",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-07-27T20:04:42.236112+00:00",
+      "translation_zh": "GPT-Live 在 ChatGPT 语音功能中，现已面向全球的 Edu、Business 和 Enterprise 套餐开放。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1141,
+        "lang": "en",
+        "created_at": "2026-07-27T17:32:29.000Z",
+        "display_text_range": [
+          0,
+          91
+        ],
+        "entities": {},
+        "id_str": "2081794871795589485",
+        "text": "GPT-Live in ChatGPT Voice is now available to Edu, Business, and Enterprise plans globally.",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2081794871795589485"
+          ],
+          "editable_until_msecs": "1785177149000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 120,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 24514,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 1267,
+          "retweet_count": 2238,
+          "created_at": "2026-07-08T17:22:39.000Z",
+          "display_text_range": [
+            0,
+            176
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/WzoQFvA5ir",
+                "expanded_url": "https://x.com/OpenAI/status/2074907025537224840/video/1",
+                "indices": [
+                  177,
+                  200
+                ],
+                "url": "https://t.co/WzoQFvA5ir"
+              }
+            ]
+          },
+          "id_str": "2074907025537224840",
+          "text": "Introducing GPT-Live, a new generation of voice models for natural human-AI interaction.\n\nRolling out in ChatGPT starting today.\n\nYou’ll want to turn the sound on for this one. https://t.co/WzoQFvA5ir",
+          "user": {
+            "id_str": "4398626122",
+            "name": "OpenAI",
+            "screen_name": "OpenAI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2074907025537224840"
+            ],
+            "editable_until_msecs": "1783534959000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/WzoQFvA5ir",
+              "expanded_url": "https://x.com/OpenAI/status/2074907025537224840/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                177,
+                200
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HMuNB0WboAE_A7s.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 1080,
+                "width": 1920
+              },
+              "sizes": {
+                "large": {
+                  "h": 1080,
+                  "resize": "fit",
+                  "w": 1920
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/WzoQFvA5ir",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "duration_millis": 214047,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2074902339463598081/pl/652siAcKDhpP-rsu.m3u8"
+                  },
+                  {
+                    "bitrate": 256000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/480x270/bNlVnmQpMKNO_Coi.mp4"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/640x360/wdgZJnX1yOvGDZeT.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/1280x720/g24fTo-VEY8H5Ijg.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/1920x1080/NJGC4FQL3MGsbmQc.mp4"
+                  },
+                  {
+                    "bitrate": 25128000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/3840x2160/SlZg3Bq2mrXXDoO4.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              16,
+              9
+            ],
+            "contentType": "media_entity",
+            "durationMs": 214047,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/media/HMuNB0WboAE_A7s.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2074902339463598081/pl/652siAcKDhpP-rsu.m3u8"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/480x270/bNlVnmQpMKNO_Coi.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/640x360/wdgZJnX1yOvGDZeT.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/1280x720/g24fTo-VEY8H5Ijg.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/1920x1080/NJGC4FQL3MGsbmQc.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/3840x2160/SlZg3Bq2mrXXDoO4.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2074907025537224840"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2081762978391843020",
+      "url": "https://x.com/Kimi_Moonshot/status/2081762978391843020",
+      "label": "Kimi",
+      "color": "#6366F1",
+      "fetched_at": "2026-07-27T20:04:42.236112+00:00",
+      "translation_zh": "与 kvcache-ai 合作开源 AgentENV：一套大规模运行智能体环境的分布式系统。其组件驱动 Kimi K3 的智能体强化学习训练，支持大规模并行工作流的快速快照、恢复与分叉。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1899,
+        "lang": "en",
+        "created_at": "2026-07-27T15:25:45.000Z",
+        "display_text_range": [
+          0,
+          277
+        ],
+        "entities": {},
+        "id_str": "2081762978391843020",
+        "text": "We've open-sourced AgentENV in collaboration with kvcache-ai.\n\nAgentENV is a distributed system for running agent environments at scale. Its components power agentic RL training for Kimi K3, with fast snapshot, resume, and fork support for large-scale parallel agent workflows.",
+        "user": {
+          "id_str": "1863959670169501696",
+          "name": "Kimi.ai",
+          "screen_name": "Kimi_Moonshot",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1910294000927645696/QseOV0uF_normal.png"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2081762978391843020"
+          ],
+          "editable_until_msecs": "1785169545000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 37,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/Dsxyw5rLqm",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "height": 200,
+                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=400x400",
+                "width": 400
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "AgentENV (AENV) is a distributed platform for running agent environments at scale. - kvcache-ai/AgentENV",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "github.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "height": 300,
+                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "height": 600,
+                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "13334762",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "height": 72,
+                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "height": 600,
+                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "height": 600,
+                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "AgentENV (AENV) is a distributed platform for running agent environments at scale. - kvcache-ai/AgentENV",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "github.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "AgentENV (AENV) is a distributed platform for running agent environments at scale. - kvcache-ai/AgentENV",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 88.77,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 255,
+                      "red": 255
+                    }
+                  },
+                  {
+                    "percentage": 5.03,
+                    "rgb": {
+                      "blue": 0,
+                      "green": 0,
+                      "red": 0
+                    }
+                  },
+                  {
+                    "percentage": 2.78,
+                    "rgb": {
+                      "blue": 132,
+                      "green": 165,
+                      "red": 221
+                    }
+                  },
+                  {
+                    "percentage": 2.73,
+                    "rgb": {
+                      "blue": 125,
+                      "green": 121,
+                      "red": 117
+                    }
+                  },
+                  {
+                    "percentage": 0.33,
+                    "rgb": {
+                      "blue": 166,
+                      "green": 14,
+                      "red": 146
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "GitHub - kvcache-ai/AgentENV: AgentENV (AENV) is a distributed platform for running agent environ...",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 88.77,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 255,
+                      "red": 255
+                    }
+                  },
+                  {
+                    "percentage": 5.03,
+                    "rgb": {
+                      "blue": 0,
+                      "green": 0,
+                      "red": 0
+                    }
+                  },
+                  {
+                    "percentage": 2.78,
+                    "rgb": {
+                      "blue": 132,
+                      "green": 165,
+                      "red": 221
+                    }
+                  },
+                  {
+                    "percentage": 2.73,
+                    "rgb": {
+                      "blue": 125,
+                      "green": 121,
+                      "red": 117
+                    }
+                  },
+                  {
+                    "percentage": 0.33,
+                    "rgb": {
+                      "blue": 166,
+                      "green": 14,
+                      "red": 146
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "height": 600,
+                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 88.77,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 255,
+                      "red": 255
+                    }
+                  },
+                  {
+                    "percentage": 5.03,
+                    "rgb": {
+                      "blue": 0,
+                      "green": 0,
+                      "red": 0
+                    }
+                  },
+                  {
+                    "percentage": 2.78,
+                    "rgb": {
+                      "blue": 132,
+                      "green": 165,
+                      "red": 221
+                    }
+                  },
+                  {
+                    "percentage": 2.73,
+                    "rgb": {
+                      "blue": 125,
+                      "green": 121,
+                      "red": 117
+                    }
+                  },
+                  {
+                    "percentage": 0.33,
+                    "rgb": {
+                      "blue": 166,
+                      "green": 14,
+                      "red": 146
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "height": 600,
+                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/Dsxyw5rLqm",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "height": 600,
+                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDgxNzYyOTc4MjY2MDQ2NDY0"
+        }
+      }
+    },
+    {
+      "id": "2081760186235289764",
+      "url": "https://x.com/Kimi_Moonshot/status/2081760186235289764",
+      "label": "Kimi",
+      "color": "#6366F1",
+      "fetched_at": "2026-07-27T20:04:42.236112+00:00",
+      "translation_zh": "发布 Kimi K3 的模型权重与技术报告。K3 是其最强模型：2.8T MoE，原生视觉理解，100 万 token 上下文。新架构带来每单位算力 2.5 倍的智能密度——不只是堆参数。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 24938,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-07-27T15:14:40.000Z",
+        "display_text_range": [
+          0,
+          278
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/Yz5uWeMbIm",
+              "expanded_url": "https://x.com/Kimi_Moonshot/status/2081760186235289764/photo/1",
+              "indices": [
+                279,
+                302
+              ],
+              "url": "https://t.co/Yz5uWeMbIm"
+            }
+          ]
+        },
+        "id_str": "2081760186235289764",
+        "text": "Releasing the model weights and technical report of Kimi K3.\n\nKimi K3 is our most capable model: a 2.8T MoE model with native visual understanding and a 1M-token context window.\n\nNew model architecture: 2.5x the intelligence per unit of compute, not just more params.\n\nAlongside https://t.co/Yz5uWeMbIm",
+        "user": {
+          "id_str": "1863959670169501696",
+          "name": "Kimi.ai",
+          "screen_name": "Kimi_Moonshot",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1910294000927645696/QseOV0uF_normal.png"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2081760186235289764"
+          ],
+          "editable_until_msecs": "1785168880000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/Yz5uWeMbIm",
+            "expanded_url": "https://x.com/Kimi_Moonshot/status/2081760186235289764/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              279,
+              302
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HOPlk-WbQAAMkwd.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 606,
+                  "w": 1082,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1082,
+                  "w": 1082,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1233,
+                  "w": 1082,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1288,
+                  "w": 644,
+                  "x": 219,
+                  "y": 0
+                },
+                {
+                  "h": 1288,
+                  "w": 1082,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1288,
+              "width": 1082
+            },
+            "sizes": {
+              "large": {
+                "h": 1288,
+                "resize": "fit",
+                "w": 1082
+              },
+              "medium": {
+                "h": 1200,
+                "resize": "fit",
+                "w": 1008
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 571
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/Yz5uWeMbIm"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 606,
+                "w": 1082,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1082,
+                "w": 1082,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1233,
+                "w": 1082,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1288,
+                "w": 644,
+                "x": 219,
+                "y": 0
+              },
+              {
+                "h": 1288,
+                "w": 1082,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Kimi_Moonshot/status/2081760186235289764/photo/1",
+            "url": "https://pbs.twimg.com/media/HOPlk-WbQAAMkwd.jpg",
+            "width": 1082,
+            "height": 1288
+          }
+        ],
+        "conversation_count": 905,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDgxNzYwMTg2MTEzNjYyOTc2"
+        }
+      }
+    },
+    {
+      "id": "2080699515271528827",
+      "url": "https://x.com/claudeai/status/2080699515271528827",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-07-27T04:00:00Z",
+      "translation_zh": "Opus 5 今天登陆所有付费计划和 Claude API，定价与 Opus 4.8 相同。\n\n它是 Claude Max 的默认模型，也是 Claude Pro 上最强的模型。Fast 模式约为默认速度的 2.5 倍。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 2898,
+        "in_reply_to_screen_name": "claudeai",
+        "in_reply_to_status_id_str": "2080699512205537648",
+        "in_reply_to_user_id_str": "1943306828697550848",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-07-24T16:59:56.000Z",
+        "display_text_range": [
+          0,
+          273
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "anthropic.com/news/claude-op…",
+              "expanded_url": "https://www.anthropic.com/news/claude-opus-5",
+              "indices": [
+                250,
+                273
+              ],
+              "url": "https://t.co/YMw7gLMT7e"
+            }
+          ]
+        },
+        "id_str": "2080699515271528827",
+        "text": "Opus 5 is available today on all paid plans and the Claude API, priced the same as Opus 4.8. It’s the default model on Claude Max, and the strongest on Claude Pro. It’s also offered in Fast mode, which runs around 2.5× the default speed.\n\nRead more: https://t.co/YMw7gLMT7e",
         "user": {
           "id_str": "1943306828697550848",
           "name": "Claude",
@@ -55,140 +1663,460 @@
         },
         "edit_control": {
           "edit_tweet_ids": [
-            "2080699495453528290"
+            "2080699515271528827"
           ],
-          "editable_until_msecs": "1784915991000",
+          "editable_until_msecs": "1784915996000",
           "edits_remaining": "5",
           "is_edit_eligible": false
         },
-        "mediaDetails": [
-          {
-            "additional_media_info": {},
-            "display_url": "pic.x.com/GQWhcq2CQL",
-            "expanded_url": "https://x.com/claudeai/status/2080699495453528290/video/1",
-            "ext_media_availability": {
-              "status": "Available"
-            },
-            "indices": [
-              142,
-              165
+        "conversation_count": 111,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 2594,
+          "in_reply_to_screen_name": "claudeai",
+          "in_reply_to_status_id_str": "2080699508401328462",
+          "in_reply_to_user_id_str": "1943306828697550848",
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 45,
+          "retweet_count": 109,
+          "created_at": "2026-07-24T16:59:55.000Z",
+          "display_text_range": [
+            0,
+            251
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/ZWeqZv2AO0",
+                "expanded_url": "https://x.com/claudeai/status/2080699512205537648/photo/1",
+                "indices": [
+                  252,
+                  275
+                ],
+                "url": "https://t.co/ZWeqZv2AO0"
+              }
+            ]
+          },
+          "id_str": "2080699512205537648",
+          "text": "Opus 5 is stronger than Opus 4.8 on cybersecurity tasks. But it remains substantially behind Mythos 5 at developing exploits.\n\nIts safeguards are designed to allow developers to identify and fix software vulnerabilities, while blocking high-risk uses. https://t.co/ZWeqZv2AO0",
+          "user": {
+            "id_str": "1943306828697550848",
+            "name": "Claude",
+            "screen_name": "claudeai",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+            "highlighted_label": {
+              "badge": {
+                "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+              },
+              "description": "Anthropic",
+              "url": {
+                "url": "https://twitter.com/AnthropicAI",
+                "url_type": "DeepLink"
+              },
+              "user_label_display_type": "Badge",
+              "user_label_type": "BusinessLabel"
+            }
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2080699512205537648"
             ],
-            "media_url_https": "https://pbs.twimg.com/media/HOAifjuWcAESshR.jpg",
-            "original_info": {
-              "focus_rects": [],
-              "height": 3240,
-              "width": 2592
+            "editable_until_msecs": "1784915995000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/ZWeqZv2AO0",
+              "expanded_url": "https://x.com/claudeai/status/2080699512205537648/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                252,
+                275
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HOAgFibXMAApxnu.png",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 2150,
+                    "w": 3840,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2160,
+                    "w": 2160,
+                    "x": 168,
+                    "y": 0
+                  },
+                  {
+                    "h": 2160,
+                    "w": 1895,
+                    "x": 301,
+                    "y": 0
+                  },
+                  {
+                    "h": 2160,
+                    "w": 1080,
+                    "x": 708,
+                    "y": 0
+                  },
+                  {
+                    "h": 2160,
+                    "w": 3840,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 2160,
+                "width": 3840
+              },
+              "sizes": {
+                "large": {
+                  "h": 1152,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/ZWeqZv2AO0"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 2150,
+                  "w": 3840,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 2160,
+                  "x": 168,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 1895,
+                  "x": 301,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 1080,
+                  "x": 708,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 3840,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/claudeai/status/2080699512205537648/photo/1",
+              "url": "https://pbs.twimg.com/media/HOAgFibXMAApxnu.png",
+              "width": 3840,
+              "height": 2160
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/YMw7gLMT7e",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
             },
-            "sizes": {
-              "large": {
-                "h": 2048,
-                "resize": "fit",
-                "w": 1638
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=280x150",
+                "width": 267
               },
-              "medium": {
-                "h": 1200,
-                "resize": "fit",
-                "w": 960
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "www.anthropic.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=800x320_1",
+                "width": 569
               },
-              "small": {
-                "h": 680,
-                "resize": "fit",
-                "w": 544
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=386x202",
+                "width": 386
               },
-              "thumb": {
-                "h": 150,
-                "resize": "crop",
-                "w": 150
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1620,
+                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=orig",
+                "width": 2880
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
               }
             },
-            "type": "video",
-            "url": "https://t.co/GQWhcq2CQL",
-            "video_info": {
-              "aspect_ratio": [
-                4,
-                5
-              ],
-              "duration_millis": 8041,
-              "variants": [
-                {
-                  "content_type": "application/x-mpegURL",
-                  "url": "https://video.twimg.com/amplify_video/2080694541246517248/pl/fG8f4bJMQzFad7Kg.m3u8"
-                },
-                {
-                  "bitrate": 632000,
-                  "content_type": "video/mp4",
-                  "url": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/320x400/N4sUQ-PMWvkr3S2c.mp4"
-                },
-                {
-                  "bitrate": 950000,
-                  "content_type": "video/mp4",
-                  "url": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/480x600/MwxUmyA-RhAiIXAK.mp4"
-                },
-                {
-                  "bitrate": 2176000,
-                  "content_type": "video/mp4",
-                  "url": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/720x900/w8B1GadVkPavoUYO.mp4"
-                },
-                {
-                  "bitrate": 10368000,
-                  "content_type": "video/mp4",
-                  "url": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/1080x1350/BkxiPIBmDAEJjDiN.mp4"
-                },
-                {
-                  "bitrate": 25128000,
-                  "content_type": "video/mp4",
-                  "url": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/1728x2160/Xf_02NRWszJr_jxT.mp4"
-                }
-              ]
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 81,
+                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "creator": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1152,
+                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=png&name=2048x2048_2_exp",
+                "width": 2048
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1620,
+                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=orig",
+                "width": 2880
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "anthropic.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 99.38,
+                    "rgb": {
+                      "blue": 157,
+                      "green": 188,
+                      "red": 211
+                    }
+                  },
+                  {
+                    "percentage": 0.46,
+                    "rgb": {
+                      "blue": 73,
+                      "green": 95,
+                      "red": 108
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Introducing Claude Opus 5",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 99.38,
+                    "rgb": {
+                      "blue": 157,
+                      "green": 188,
+                      "red": 211
+                    }
+                  },
+                  {
+                    "percentage": 0.46,
+                    "rgb": {
+                      "blue": 73,
+                      "green": 95,
+                      "red": 108
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1152,
+                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=png&name=2048x2048_2_exp",
+                "width": 2048
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 99.38,
+                    "rgb": {
+                      "blue": 157,
+                      "green": 188,
+                      "red": 211
+                    }
+                  },
+                  {
+                    "percentage": 0.46,
+                    "rgb": {
+                      "blue": 73,
+                      "green": 95,
+                      "red": 108
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1152,
+                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=png&name=2048x2048_2_exp",
+                "width": 2048
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/YMw7gLMT7e",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1620,
+                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=orig",
+                "width": 2880
+              },
+              "type": "IMAGE"
             }
           }
-        ],
-        "photos": [],
-        "video": {
-          "aspectRatio": [
-            4,
-            5
-          ],
-          "contentType": "media_entity",
-          "durationMs": 8041,
-          "mediaAvailability": {
-            "status": "available"
-          },
-          "poster": "https://pbs.twimg.com/media/HOAifjuWcAESshR.jpg",
-          "variants": [
-            {
-              "type": "application/x-mpegURL",
-              "src": "https://video.twimg.com/amplify_video/2080694541246517248/pl/fG8f4bJMQzFad7Kg.m3u8"
-            },
-            {
-              "type": "video/mp4",
-              "src": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/320x400/N4sUQ-PMWvkr3S2c.mp4"
-            },
-            {
-              "type": "video/mp4",
-              "src": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/480x600/MwxUmyA-RhAiIXAK.mp4"
-            },
-            {
-              "type": "video/mp4",
-              "src": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/720x900/w8B1GadVkPavoUYO.mp4"
-            },
-            {
-              "type": "video/mp4",
-              "src": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/1080x1350/BkxiPIBmDAEJjDiN.mp4"
-            },
-            {
-              "type": "video/mp4",
-              "src": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/1728x2160/Xf_02NRWszJr_jxT.mp4"
-            }
-          ],
-          "videoId": {
-            "type": "tweet",
-            "id": "2080699495453528290"
-          },
-          "viewCount": 0
         },
-        "conversation_count": 3174,
-        "news_action_type": "conversation",
         "isEdited": false,
         "isStaleEdit": false
       }
@@ -908,40 +2836,37 @@
       }
     },
     {
-      "id": "2080699515271528827",
-      "url": "https://x.com/claudeai/status/2080699515271528827",
+      "id": "2080699495453528290",
+      "url": "https://x.com/claudeai/status/2080699495453528290",
       "label": "Claude",
       "color": "#D4A574",
       "fetched_at": "2026-07-27T04:00:00Z",
-      "translation_zh": "Opus 5 今天登陆所有付费计划和 Claude API，定价与 Opus 4.8 相同。\n\n它是 Claude Max 的默认模型，也是 Claude Pro 上最强的模型。Fast 模式约为默认速度的 2.5 倍。",
+      "translation_zh": "Claude Opus 5 来了。\n\n一个深思熟虑、主动出击的模型，智力接近 Fable 5，价格只要一半。",
       "tweet_data": {
         "__typename": "Tweet",
-        "favorite_count": 2898,
-        "in_reply_to_screen_name": "claudeai",
-        "in_reply_to_status_id_str": "2080699512205537648",
-        "in_reply_to_user_id_str": "1943306828697550848",
+        "favorite_count": 61014,
         "lang": "en",
         "possibly_sensitive": false,
-        "created_at": "2026-07-24T16:59:56.000Z",
+        "created_at": "2026-07-24T16:59:51.000Z",
         "display_text_range": [
           0,
-          273
+          141
         ],
         "entities": {
-          "urls": [
+          "media": [
             {
-              "display_url": "anthropic.com/news/claude-op…",
-              "expanded_url": "https://www.anthropic.com/news/claude-opus-5",
+              "display_url": "pic.x.com/GQWhcq2CQL",
+              "expanded_url": "https://x.com/claudeai/status/2080699495453528290/video/1",
               "indices": [
-                250,
-                273
+                142,
+                165
               ],
-              "url": "https://t.co/YMw7gLMT7e"
+              "url": "https://t.co/GQWhcq2CQL"
             }
           ]
         },
-        "id_str": "2080699515271528827",
-        "text": "Opus 5 is available today on all paid plans and the Claude API, priced the same as Opus 4.8. It’s the default model on Claude Max, and the strongest on Claude Pro. It’s also offered in Fast mode, which runs around 2.5× the default speed.\n\nRead more: https://t.co/YMw7gLMT7e",
+        "id_str": "2080699495453528290",
+        "text": "Introducing Claude Opus 5.\n\nIt's a thoughtful and proactive model that comes close to the frontier intelligence of Fable 5 at half the price. https://t.co/GQWhcq2CQL",
         "user": {
           "id_str": "1943306828697550848",
           "name": "Claude",
@@ -965,460 +2890,140 @@
         },
         "edit_control": {
           "edit_tweet_ids": [
-            "2080699515271528827"
+            "2080699495453528290"
           ],
-          "editable_until_msecs": "1784915996000",
+          "editable_until_msecs": "1784915991000",
           "edits_remaining": "5",
           "is_edit_eligible": false
         },
-        "conversation_count": 111,
-        "news_action_type": "conversation",
-        "parent": {
-          "favorite_count": 2594,
-          "in_reply_to_screen_name": "claudeai",
-          "in_reply_to_status_id_str": "2080699508401328462",
-          "in_reply_to_user_id_str": "1943306828697550848",
-          "lang": "en",
-          "possibly_sensitive": false,
-          "reply_count": 45,
-          "retweet_count": 109,
-          "created_at": "2026-07-24T16:59:55.000Z",
-          "display_text_range": [
-            0,
-            251
-          ],
-          "entities": {
-            "media": [
-              {
-                "display_url": "pic.x.com/ZWeqZv2AO0",
-                "expanded_url": "https://x.com/claudeai/status/2080699512205537648/photo/1",
-                "indices": [
-                  252,
-                  275
-                ],
-                "url": "https://t.co/ZWeqZv2AO0"
-              }
-            ]
-          },
-          "id_str": "2080699512205537648",
-          "text": "Opus 5 is stronger than Opus 4.8 on cybersecurity tasks. But it remains substantially behind Mythos 5 at developing exploits.\n\nIts safeguards are designed to allow developers to identify and fix software vulnerabilities, while blocking high-risk uses. https://t.co/ZWeqZv2AO0",
-          "user": {
-            "id_str": "1943306828697550848",
-            "name": "Claude",
-            "screen_name": "claudeai",
-            "is_blue_verified": true,
-            "profile_image_shape": "Circle",
-            "verified": false,
-            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
-            "highlighted_label": {
-              "badge": {
-                "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
-              },
-              "description": "Anthropic",
-              "url": {
-                "url": "https://twitter.com/AnthropicAI",
-                "url_type": "DeepLink"
-              },
-              "user_label_display_type": "Badge",
-              "user_label_type": "BusinessLabel"
-            }
-          },
-          "edit_control": {
-            "edit_tweet_ids": [
-              "2080699512205537648"
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/GQWhcq2CQL",
+            "expanded_url": "https://x.com/claudeai/status/2080699495453528290/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              142,
+              165
             ],
-            "editable_until_msecs": "1784915995000",
-            "edits_remaining": "5",
-            "is_edit_eligible": false
-          },
-          "mediaDetails": [
-            {
-              "display_url": "pic.x.com/ZWeqZv2AO0",
-              "expanded_url": "https://x.com/claudeai/status/2080699512205537648/photo/1",
-              "ext_media_availability": {
-                "status": "Available"
+            "media_url_https": "https://pbs.twimg.com/media/HOAifjuWcAESshR.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 3240,
+              "width": 2592
+            },
+            "sizes": {
+              "large": {
+                "h": 2048,
+                "resize": "fit",
+                "w": 1638
               },
-              "indices": [
-                252,
-                275
+              "medium": {
+                "h": 1200,
+                "resize": "fit",
+                "w": 960
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 544
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/GQWhcq2CQL",
+            "video_info": {
+              "aspect_ratio": [
+                4,
+                5
               ],
-              "media_url_https": "https://pbs.twimg.com/media/HOAgFibXMAApxnu.png",
-              "original_info": {
-                "focus_rects": [
-                  {
-                    "h": 2150,
-                    "w": 3840,
-                    "x": 0,
-                    "y": 0
-                  },
-                  {
-                    "h": 2160,
-                    "w": 2160,
-                    "x": 168,
-                    "y": 0
-                  },
-                  {
-                    "h": 2160,
-                    "w": 1895,
-                    "x": 301,
-                    "y": 0
-                  },
-                  {
-                    "h": 2160,
-                    "w": 1080,
-                    "x": 708,
-                    "y": 0
-                  },
-                  {
-                    "h": 2160,
-                    "w": 3840,
-                    "x": 0,
-                    "y": 0
-                  }
-                ],
-                "height": 2160,
-                "width": 3840
-              },
-              "sizes": {
-                "large": {
-                  "h": 1152,
-                  "resize": "fit",
-                  "w": 2048
+              "duration_millis": 8041,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2080694541246517248/pl/fG8f4bJMQzFad7Kg.m3u8"
                 },
-                "medium": {
-                  "h": 675,
-                  "resize": "fit",
-                  "w": 1200
+                {
+                  "bitrate": 632000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/320x400/N4sUQ-PMWvkr3S2c.mp4"
                 },
-                "small": {
-                  "h": 383,
-                  "resize": "fit",
-                  "w": 680
+                {
+                  "bitrate": 950000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/480x600/MwxUmyA-RhAiIXAK.mp4"
                 },
-                "thumb": {
-                  "h": 150,
-                  "resize": "crop",
-                  "w": 150
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/720x900/w8B1GadVkPavoUYO.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/1080x1350/BkxiPIBmDAEJjDiN.mp4"
+                },
+                {
+                  "bitrate": 25128000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/1728x2160/Xf_02NRWszJr_jxT.mp4"
                 }
-              },
-              "type": "photo",
-              "url": "https://t.co/ZWeqZv2AO0"
-            }
-          ],
-          "photos": [
-            {
-              "backgroundColor": {
-                "red": 204,
-                "green": 214,
-                "blue": 221
-              },
-              "cropCandidates": [
-                {
-                  "h": 2150,
-                  "w": 3840,
-                  "x": 0,
-                  "y": 0
-                },
-                {
-                  "h": 2160,
-                  "w": 2160,
-                  "x": 168,
-                  "y": 0
-                },
-                {
-                  "h": 2160,
-                  "w": 1895,
-                  "x": 301,
-                  "y": 0
-                },
-                {
-                  "h": 2160,
-                  "w": 1080,
-                  "x": 708,
-                  "y": 0
-                },
-                {
-                  "h": 2160,
-                  "w": 3840,
-                  "x": 0,
-                  "y": 0
-                }
-              ],
-              "expandedUrl": "https://x.com/claudeai/status/2080699512205537648/photo/1",
-              "url": "https://pbs.twimg.com/media/HOAgFibXMAApxnu.png",
-              "width": 3840,
-              "height": 2160
-            }
-          ],
-          "isEdited": false,
-          "isStaleEdit": false
-        },
-        "card": {
-          "card_platform": {
-            "platform": {
-              "audience": {
-                "name": "production"
-              },
-              "device": {
-                "name": "iPhone",
-                "version": "13"
-              }
-            }
-          },
-          "name": "summary_large_image",
-          "url": "https://t.co/YMw7gLMT7e",
-          "binding_values": {
-            "photo_image_full_size_large": {
-              "image_value": {
-                "alt": "Anthropic logo",
-                "height": 419,
-                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=800x419",
-                "width": 800
-              },
-              "type": "IMAGE"
-            },
-            "thumbnail_image": {
-              "image_value": {
-                "alt": "Anthropic logo",
-                "height": 150,
-                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=280x150",
-                "width": 267
-              },
-              "type": "IMAGE"
-            },
-            "description": {
-              "string_value": "Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.",
-              "type": "STRING"
-            },
-            "domain": {
-              "string_value": "www.anthropic.com",
-              "type": "STRING"
-            },
-            "thumbnail_image_large": {
-              "image_value": {
-                "alt": "Anthropic logo",
-                "height": 320,
-                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=800x320_1",
-                "width": 569
-              },
-              "type": "IMAGE"
-            },
-            "summary_photo_image_small": {
-              "image_value": {
-                "alt": "Anthropic logo",
-                "height": 202,
-                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=386x202",
-                "width": 386
-              },
-              "type": "IMAGE"
-            },
-            "thumbnail_image_original": {
-              "image_value": {
-                "alt": "Anthropic logo",
-                "height": 1620,
-                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=orig",
-                "width": 2880
-              },
-              "type": "IMAGE"
-            },
-            "site": {
-              "scribe_key": "publisher_id",
-              "type": "USER",
-              "user_value": {
-                "id_str": "1353836358901501952",
-                "path": []
-              }
-            },
-            "photo_image_full_size_small": {
-              "image_value": {
-                "alt": "Anthropic logo",
-                "height": 202,
-                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=386x202",
-                "width": 386
-              },
-              "type": "IMAGE"
-            },
-            "summary_photo_image_large": {
-              "image_value": {
-                "alt": "Anthropic logo",
-                "height": 419,
-                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=800x419",
-                "width": 800
-              },
-              "type": "IMAGE"
-            },
-            "thumbnail_image_small": {
-              "image_value": {
-                "alt": "Anthropic logo",
-                "height": 81,
-                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=144x144",
-                "width": 144
-              },
-              "type": "IMAGE"
-            },
-            "creator": {
-              "type": "USER",
-              "user_value": {
-                "id_str": "1353836358901501952",
-                "path": []
-              }
-            },
-            "thumbnail_image_x_large": {
-              "image_value": {
-                "alt": "Anthropic logo",
-                "height": 1152,
-                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=png&name=2048x2048_2_exp",
-                "width": 2048
-              },
-              "type": "IMAGE"
-            },
-            "photo_image_full_size_original": {
-              "image_value": {
-                "alt": "Anthropic logo",
-                "height": 1620,
-                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=orig",
-                "width": 2880
-              },
-              "type": "IMAGE"
-            },
-            "photo_image_full_size_alt_text": {
-              "string_value": "Anthropic logo",
-              "type": "STRING"
-            },
-            "vanity_url": {
-              "scribe_key": "vanity_url",
-              "string_value": "anthropic.com",
-              "type": "STRING"
-            },
-            "photo_image_full_size": {
-              "image_value": {
-                "alt": "Anthropic logo",
-                "height": 314,
-                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=600x314",
-                "width": 600
-              },
-              "type": "IMAGE"
-            },
-            "summary_photo_image_alt_text": {
-              "string_value": "Anthropic logo",
-              "type": "STRING"
-            },
-            "thumbnail_image_color": {
-              "image_color_value": {
-                "palette": [
-                  {
-                    "percentage": 99.38,
-                    "rgb": {
-                      "blue": 157,
-                      "green": 188,
-                      "red": 211
-                    }
-                  },
-                  {
-                    "percentage": 0.46,
-                    "rgb": {
-                      "blue": 73,
-                      "green": 95,
-                      "red": 108
-                    }
-                  }
-                ]
-              },
-              "type": "IMAGE_COLOR"
-            },
-            "title": {
-              "string_value": "Introducing Claude Opus 5",
-              "type": "STRING"
-            },
-            "summary_photo_image_color": {
-              "image_color_value": {
-                "palette": [
-                  {
-                    "percentage": 99.38,
-                    "rgb": {
-                      "blue": 157,
-                      "green": 188,
-                      "red": 211
-                    }
-                  },
-                  {
-                    "percentage": 0.46,
-                    "rgb": {
-                      "blue": 73,
-                      "green": 95,
-                      "red": 108
-                    }
-                  }
-                ]
-              },
-              "type": "IMAGE_COLOR"
-            },
-            "summary_photo_image_x_large": {
-              "image_value": {
-                "alt": "Anthropic logo",
-                "height": 1152,
-                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=png&name=2048x2048_2_exp",
-                "width": 2048
-              },
-              "type": "IMAGE"
-            },
-            "summary_photo_image": {
-              "image_value": {
-                "alt": "Anthropic logo",
-                "height": 314,
-                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=600x314",
-                "width": 600
-              },
-              "type": "IMAGE"
-            },
-            "photo_image_full_size_color": {
-              "image_color_value": {
-                "palette": [
-                  {
-                    "percentage": 99.38,
-                    "rgb": {
-                      "blue": 157,
-                      "green": 188,
-                      "red": 211
-                    }
-                  },
-                  {
-                    "percentage": 0.46,
-                    "rgb": {
-                      "blue": 73,
-                      "green": 95,
-                      "red": 108
-                    }
-                  }
-                ]
-              },
-              "type": "IMAGE_COLOR"
-            },
-            "photo_image_full_size_x_large": {
-              "image_value": {
-                "alt": "Anthropic logo",
-                "height": 1152,
-                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=png&name=2048x2048_2_exp",
-                "width": 2048
-              },
-              "type": "IMAGE"
-            },
-            "card_url": {
-              "scribe_key": "card_url",
-              "string_value": "https://t.co/YMw7gLMT7e",
-              "type": "STRING"
-            },
-            "summary_photo_image_original": {
-              "image_value": {
-                "alt": "Anthropic logo",
-                "height": 1620,
-                "url": "https://pbs.twimg.com/card_img/2080699535886860289/V13Po_sU?format=jpg&name=orig",
-                "width": 2880
-              },
-              "type": "IMAGE"
+              ]
             }
           }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            4,
+            5
+          ],
+          "contentType": "media_entity",
+          "durationMs": 8041,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/media/HOAifjuWcAESshR.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2080694541246517248/pl/fG8f4bJMQzFad7Kg.m3u8"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/320x400/N4sUQ-PMWvkr3S2c.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/480x600/MwxUmyA-RhAiIXAK.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/720x900/w8B1GadVkPavoUYO.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/1080x1350/BkxiPIBmDAEJjDiN.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2080694541246517248/vid/avc1/1728x2160/Xf_02NRWszJr_jxT.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2080699495453528290"
+          },
+          "viewCount": 0
         },
+        "conversation_count": 3174,
+        "news_action_type": "conversation",
         "isEdited": false,
         "isStaleEdit": false
       }
@@ -1973,6 +3578,435 @@
       }
     },
     {
+      "id": "2080321516814647630",
+      "url": "https://x.com/GoogleDeepMind/status/2080321516814647630",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-07-27T04:00:00Z",
+      "translation_zh": "Gemini 3.5 Flash Cyber，我们专门为安全团队打造的轻量级模型，帮你抢在漏洞被利用之前发现并修补它们。🧵",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1068,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-07-23T15:57:54.000Z",
+        "display_text_range": [
+          0,
+          153
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/XpiKcvwjeI",
+              "expanded_url": "https://x.com/GoogleDeepMind/status/2080321516814647630/photo/1",
+              "indices": [
+                153,
+                176
+              ],
+              "url": "https://t.co/XpiKcvwjeI"
+            }
+          ]
+        },
+        "id_str": "2080321516814647630",
+        "text": "Gemini 3.5 Flash Cyber is our specialized, lightweight model built to help security teams spot and patch vulnerabilities before they can be exploited. 🧵 https://t.co/XpiKcvwjeI",
+        "user": {
+          "id_str": "4783690002",
+          "name": "Google DeepMind",
+          "screen_name": "GoogleDeepMind",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2080321516814647630"
+          ],
+          "editable_until_msecs": "1784825874000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/XpiKcvwjeI",
+            "expanded_url": "https://x.com/GoogleDeepMind/status/2080321516814647630/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              153,
+              176
+            ],
+            "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/HN7JFpBW4AA65NI.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 800,
+              "width": 800
+            },
+            "sizes": {
+              "large": {
+                "h": 800,
+                "resize": "fit",
+                "w": 800
+              },
+              "medium": {
+                "h": 800,
+                "resize": "fit",
+                "w": 800
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "animated_gif",
+            "url": "https://t.co/XpiKcvwjeI",
+            "video_info": {
+              "aspect_ratio": [
+                1,
+                1
+              ],
+              "variants": [
+                {
+                  "bitrate": 0,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/tweet_video/HN7JFpBW4AA65NI.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            1,
+            1
+          ],
+          "contentType": "gif",
+          "durationMs": 0,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/tweet_video_thumb/HN7JFpBW4AA65NI.jpg",
+          "variants": [
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/tweet_video/HN7JFpBW4AA65NI.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2080321516814647630"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 90,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2080270065547809133",
+      "url": "https://x.com/Alibaba_Qwen/status/2080270065547809133",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-07-27T04:00:00Z",
+      "translation_zh": "Qwen-Audio-3.0-TTS 来了。\n\n最新语音合成模型，两个版本：\n• Flash：实时交互\n• Plus：高质量生成\n\n新东西：\n• 细粒度内联标签——[whisper]、[angry]、[breaths]、[laughs]\n• 自由格式自然语言控制\n• 16 种语言\n登顶 Artificial Analysis TTS 榜单。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1879,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-07-23T12:33:27.000Z",
+        "display_text_range": [
+          0,
+          269
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/XZMNeK0lFl",
+              "expanded_url": "https://x.com/Alibaba_Qwen/status/2080270065547809133/photo/1",
+              "indices": [
+                270,
+                293
+              ],
+              "url": "https://t.co/XZMNeK0lFl"
+            }
+          ]
+        },
+        "id_str": "2080270065547809133",
+        "text": "Introducing the Qwen-Audio-3.0-TTS.\n\nOur latest text-to-speech model, in two flavors:\n• Flash: real-time interaction\n• Plus: high-quality generation\n\nWhat's new:\n• Fine-grained inline tags-steer [whisper], [angry], [breaths] &amp; [laughs]\n• Free-style natural-language https://t.co/XZMNeK0lFl",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2080270065547809133"
+          ],
+          "editable_until_msecs": "1784813607000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/XZMNeK0lFl",
+            "expanded_url": "https://x.com/Alibaba_Qwen/status/2080270065547809133/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              270,
+              293
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HN6ZKOyaoAAENUb.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 1529,
+                  "w": 2730,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1536,
+                  "w": 1536,
+                  "x": 255,
+                  "y": 0
+                },
+                {
+                  "h": 1536,
+                  "w": 1347,
+                  "x": 350,
+                  "y": 0
+                },
+                {
+                  "h": 1536,
+                  "w": 768,
+                  "x": 639,
+                  "y": 0
+                },
+                {
+                  "h": 1536,
+                  "w": 2730,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1536,
+              "width": 2730
+            },
+            "sizes": {
+              "large": {
+                "h": 1152,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/XZMNeK0lFl"
+          },
+          {
+            "display_url": "pic.x.com/XZMNeK0lFl",
+            "expanded_url": "https://x.com/Alibaba_Qwen/status/2080270065547809133/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              270,
+              293
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HN6ZLhQaQAAX6s9.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 1156,
+                  "w": 2064,
+                  "x": 166,
+                  "y": 0
+                },
+                {
+                  "h": 1156,
+                  "w": 1156,
+                  "x": 1074,
+                  "y": 0
+                },
+                {
+                  "h": 1156,
+                  "w": 1014,
+                  "x": 1216,
+                  "y": 0
+                },
+                {
+                  "h": 1156,
+                  "w": 578,
+                  "x": 1652,
+                  "y": 0
+                },
+                {
+                  "h": 1156,
+                  "w": 2230,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1156,
+              "width": 2230
+            },
+            "sizes": {
+              "large": {
+                "h": 1062,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 622,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 353,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/XZMNeK0lFl"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 1529,
+                "w": 2730,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1536,
+                "w": 1536,
+                "x": 255,
+                "y": 0
+              },
+              {
+                "h": 1536,
+                "w": 1347,
+                "x": 350,
+                "y": 0
+              },
+              {
+                "h": 1536,
+                "w": 768,
+                "x": 639,
+                "y": 0
+              },
+              {
+                "h": 1536,
+                "w": 2730,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Alibaba_Qwen/status/2080270065547809133/photo/1",
+            "url": "https://pbs.twimg.com/media/HN6ZKOyaoAAENUb.jpg",
+            "width": 2730,
+            "height": 1536
+          },
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 1156,
+                "w": 2064,
+                "x": 166,
+                "y": 0
+              },
+              {
+                "h": 1156,
+                "w": 1156,
+                "x": 1074,
+                "y": 0
+              },
+              {
+                "h": 1156,
+                "w": 1014,
+                "x": 1216,
+                "y": 0
+              },
+              {
+                "h": 1156,
+                "w": 578,
+                "x": 1652,
+                "y": 0
+              },
+              {
+                "h": 1156,
+                "w": 2230,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Alibaba_Qwen/status/2080270065547809133/photo/1",
+            "url": "https://pbs.twimg.com/media/HN6ZLhQaQAAX6s9.jpg",
+            "width": 2230,
+            "height": 1156
+          }
+        ],
+        "conversation_count": 94,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDgwMjcwMDY1NDAwOTkxNzQ0"
+        }
+      }
+    },
+    {
       "id": "2079916436232036614",
       "url": "https://x.com/OpenAI/status/2079916436232036614",
       "label": "OpenAI",
@@ -2350,6 +4384,184 @@
       }
     },
     {
+      "id": "2079906336381509659",
+      "url": "https://x.com/Alibaba_Qwen/status/2079906336381509659",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-07-27T04:00:00Z",
+      "translation_zh": "🎨 Qwen-Image-3.0 来了——我们第三代基础图像生成模型。\n\n1.0 讲「精准」，2.0 加上「多样、完整、美感、真实」，3.0 就一个字：实。\n\n三大维度：富内容（一次生成报纸、分镜、试卷）、真实细节（10px 可读文字）、深度知识（12 种语言原生渲染）。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 4770,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-07-22T12:28:08.000Z",
+        "display_text_range": [
+          0,
+          281
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/YkaBy47Qkm",
+              "expanded_url": "https://x.com/Alibaba_Qwen/status/2079906336381509659/photo/1",
+              "indices": [
+                280,
+                303
+              ],
+              "url": "https://t.co/YkaBy47Qkm"
+            }
+          ]
+        },
+        "id_str": "2079906336381509659",
+        "text": "🎨 Meet Qwen-Image-3.0 — the third generation of our foundational image generation model.\n\nIf 1.0 was about \"Precision,\" and 2.0 added \"Variety, Completeness, Beauty &amp; Authenticity,\" then 3.0 comes down to a single word: Real (实).\n\nThree dimensions of \"Real\":\n📰 Rich Content — https://t.co/YkaBy47Qkm",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2079906336381509659"
+          ],
+          "editable_until_msecs": "1784726888000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/YkaBy47Qkm",
+            "expanded_url": "https://x.com/Alibaba_Qwen/status/2079906336381509659/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              280,
+              303
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HN1LmIqa8AATJuu.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 1075,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 5
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 660,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 947,
+                  "x": 727,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 540,
+                  "x": 930,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/YkaBy47Qkm"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 1075,
+                "w": 1920,
+                "x": 0,
+                "y": 5
+              },
+              {
+                "h": 1080,
+                "w": 1080,
+                "x": 660,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 947,
+                "x": 727,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 540,
+                "x": 930,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 1920,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Alibaba_Qwen/status/2079906336381509659/photo/1",
+            "url": "https://pbs.twimg.com/media/HN1LmIqa8AATJuu.jpg",
+            "width": 1920,
+            "height": 1080
+          }
+        ],
+        "conversation_count": 196,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDc5OTA2MzM2MTY3NjEyNDE2"
+        }
+      }
+    },
+    {
       "id": "2079658951264920020",
       "url": "https://x.com/OpenAI/status/2079658951264920020",
       "label": "OpenAI",
@@ -2715,142 +4927,6 @@
       }
     },
     {
-      "id": "2080321516814647630",
-      "url": "https://x.com/GoogleDeepMind/status/2080321516814647630",
-      "label": "Google",
-      "color": "#4285F4",
-      "fetched_at": "2026-07-27T04:00:00Z",
-      "translation_zh": "Gemini 3.5 Flash Cyber，我们专门为安全团队打造的轻量级模型，帮你抢在漏洞被利用之前发现并修补它们。🧵",
-      "tweet_data": {
-        "__typename": "Tweet",
-        "favorite_count": 1068,
-        "lang": "en",
-        "possibly_sensitive": false,
-        "created_at": "2026-07-23T15:57:54.000Z",
-        "display_text_range": [
-          0,
-          153
-        ],
-        "entities": {
-          "media": [
-            {
-              "display_url": "pic.x.com/XpiKcvwjeI",
-              "expanded_url": "https://x.com/GoogleDeepMind/status/2080321516814647630/photo/1",
-              "indices": [
-                153,
-                176
-              ],
-              "url": "https://t.co/XpiKcvwjeI"
-            }
-          ]
-        },
-        "id_str": "2080321516814647630",
-        "text": "Gemini 3.5 Flash Cyber is our specialized, lightweight model built to help security teams spot and patch vulnerabilities before they can be exploited. 🧵 https://t.co/XpiKcvwjeI",
-        "user": {
-          "id_str": "4783690002",
-          "name": "Google DeepMind",
-          "screen_name": "GoogleDeepMind",
-          "is_blue_verified": false,
-          "profile_image_shape": "Square",
-          "verified": false,
-          "verified_type": "Business",
-          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
-        },
-        "edit_control": {
-          "edit_tweet_ids": [
-            "2080321516814647630"
-          ],
-          "editable_until_msecs": "1784825874000",
-          "edits_remaining": "5",
-          "is_edit_eligible": false
-        },
-        "mediaDetails": [
-          {
-            "display_url": "pic.x.com/XpiKcvwjeI",
-            "expanded_url": "https://x.com/GoogleDeepMind/status/2080321516814647630/photo/1",
-            "ext_media_availability": {
-              "status": "Available"
-            },
-            "indices": [
-              153,
-              176
-            ],
-            "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/HN7JFpBW4AA65NI.jpg",
-            "original_info": {
-              "focus_rects": [],
-              "height": 800,
-              "width": 800
-            },
-            "sizes": {
-              "large": {
-                "h": 800,
-                "resize": "fit",
-                "w": 800
-              },
-              "medium": {
-                "h": 800,
-                "resize": "fit",
-                "w": 800
-              },
-              "small": {
-                "h": 680,
-                "resize": "fit",
-                "w": 680
-              },
-              "thumb": {
-                "h": 150,
-                "resize": "crop",
-                "w": 150
-              }
-            },
-            "type": "animated_gif",
-            "url": "https://t.co/XpiKcvwjeI",
-            "video_info": {
-              "aspect_ratio": [
-                1,
-                1
-              ],
-              "variants": [
-                {
-                  "bitrate": 0,
-                  "content_type": "video/mp4",
-                  "url": "https://video.twimg.com/tweet_video/HN7JFpBW4AA65NI.mp4"
-                }
-              ]
-            }
-          }
-        ],
-        "photos": [],
-        "video": {
-          "aspectRatio": [
-            1,
-            1
-          ],
-          "contentType": "gif",
-          "durationMs": 0,
-          "mediaAvailability": {
-            "status": "available"
-          },
-          "poster": "https://pbs.twimg.com/tweet_video_thumb/HN7JFpBW4AA65NI.jpg",
-          "variants": [
-            {
-              "type": "video/mp4",
-              "src": "https://video.twimg.com/tweet_video/HN7JFpBW4AA65NI.mp4"
-            }
-          ],
-          "videoId": {
-            "type": "tweet",
-            "id": "2080321516814647630"
-          },
-          "viewCount": 0
-        },
-        "conversation_count": 90,
-        "news_action_type": "conversation",
-        "isEdited": false,
-        "isStaleEdit": false
-      }
-    },
-    {
       "id": "2079589698490572961",
       "url": "https://x.com/GoogleDeepMind/status/2079589698490572961",
       "label": "Google",
@@ -2990,477 +5066,6 @@
       }
     },
     {
-      "id": "2080270065547809133",
-      "url": "https://x.com/Alibaba_Qwen/status/2080270065547809133",
-      "label": "Qwen",
-      "color": "#FF6B35",
-      "fetched_at": "2026-07-27T04:00:00Z",
-      "translation_zh": "Qwen-Audio-3.0-TTS 来了。\n\n最新语音合成模型，两个版本：\n• Flash：实时交互\n• Plus：高质量生成\n\n新东西：\n• 细粒度内联标签——[whisper]、[angry]、[breaths]、[laughs]\n• 自由格式自然语言控制\n• 16 种语言\n登顶 Artificial Analysis TTS 榜单。",
-      "tweet_data": {
-        "__typename": "Tweet",
-        "favorite_count": 1879,
-        "lang": "en",
-        "possibly_sensitive": false,
-        "created_at": "2026-07-23T12:33:27.000Z",
-        "display_text_range": [
-          0,
-          269
-        ],
-        "entities": {
-          "media": [
-            {
-              "display_url": "pic.x.com/XZMNeK0lFl",
-              "expanded_url": "https://x.com/Alibaba_Qwen/status/2080270065547809133/photo/1",
-              "indices": [
-                270,
-                293
-              ],
-              "url": "https://t.co/XZMNeK0lFl"
-            }
-          ]
-        },
-        "id_str": "2080270065547809133",
-        "text": "Introducing the Qwen-Audio-3.0-TTS.\n\nOur latest text-to-speech model, in two flavors:\n• Flash: real-time interaction\n• Plus: high-quality generation\n\nWhat's new:\n• Fine-grained inline tags-steer [whisper], [angry], [breaths] &amp; [laughs]\n• Free-style natural-language https://t.co/XZMNeK0lFl",
-        "user": {
-          "id_str": "1753339277386342400",
-          "name": "Qwen",
-          "screen_name": "Alibaba_Qwen",
-          "is_blue_verified": true,
-          "profile_image_shape": "Square",
-          "verified": false,
-          "verified_type": "Business",
-          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
-        },
-        "edit_control": {
-          "edit_tweet_ids": [
-            "2080270065547809133"
-          ],
-          "editable_until_msecs": "1784813607000",
-          "edits_remaining": "5",
-          "is_edit_eligible": true
-        },
-        "mediaDetails": [
-          {
-            "display_url": "pic.x.com/XZMNeK0lFl",
-            "expanded_url": "https://x.com/Alibaba_Qwen/status/2080270065547809133/photo/1",
-            "ext_media_availability": {
-              "status": "Available"
-            },
-            "indices": [
-              270,
-              293
-            ],
-            "media_url_https": "https://pbs.twimg.com/media/HN6ZKOyaoAAENUb.jpg",
-            "original_info": {
-              "focus_rects": [
-                {
-                  "h": 1529,
-                  "w": 2730,
-                  "x": 0,
-                  "y": 0
-                },
-                {
-                  "h": 1536,
-                  "w": 1536,
-                  "x": 255,
-                  "y": 0
-                },
-                {
-                  "h": 1536,
-                  "w": 1347,
-                  "x": 350,
-                  "y": 0
-                },
-                {
-                  "h": 1536,
-                  "w": 768,
-                  "x": 639,
-                  "y": 0
-                },
-                {
-                  "h": 1536,
-                  "w": 2730,
-                  "x": 0,
-                  "y": 0
-                }
-              ],
-              "height": 1536,
-              "width": 2730
-            },
-            "sizes": {
-              "large": {
-                "h": 1152,
-                "resize": "fit",
-                "w": 2048
-              },
-              "medium": {
-                "h": 675,
-                "resize": "fit",
-                "w": 1200
-              },
-              "small": {
-                "h": 383,
-                "resize": "fit",
-                "w": 680
-              },
-              "thumb": {
-                "h": 150,
-                "resize": "crop",
-                "w": 150
-              }
-            },
-            "type": "photo",
-            "url": "https://t.co/XZMNeK0lFl"
-          },
-          {
-            "display_url": "pic.x.com/XZMNeK0lFl",
-            "expanded_url": "https://x.com/Alibaba_Qwen/status/2080270065547809133/photo/1",
-            "ext_media_availability": {
-              "status": "Available"
-            },
-            "indices": [
-              270,
-              293
-            ],
-            "media_url_https": "https://pbs.twimg.com/media/HN6ZLhQaQAAX6s9.jpg",
-            "original_info": {
-              "focus_rects": [
-                {
-                  "h": 1156,
-                  "w": 2064,
-                  "x": 166,
-                  "y": 0
-                },
-                {
-                  "h": 1156,
-                  "w": 1156,
-                  "x": 1074,
-                  "y": 0
-                },
-                {
-                  "h": 1156,
-                  "w": 1014,
-                  "x": 1216,
-                  "y": 0
-                },
-                {
-                  "h": 1156,
-                  "w": 578,
-                  "x": 1652,
-                  "y": 0
-                },
-                {
-                  "h": 1156,
-                  "w": 2230,
-                  "x": 0,
-                  "y": 0
-                }
-              ],
-              "height": 1156,
-              "width": 2230
-            },
-            "sizes": {
-              "large": {
-                "h": 1062,
-                "resize": "fit",
-                "w": 2048
-              },
-              "medium": {
-                "h": 622,
-                "resize": "fit",
-                "w": 1200
-              },
-              "small": {
-                "h": 353,
-                "resize": "fit",
-                "w": 680
-              },
-              "thumb": {
-                "h": 150,
-                "resize": "crop",
-                "w": 150
-              }
-            },
-            "type": "photo",
-            "url": "https://t.co/XZMNeK0lFl"
-          }
-        ],
-        "photos": [
-          {
-            "backgroundColor": {
-              "red": 204,
-              "green": 214,
-              "blue": 221
-            },
-            "cropCandidates": [
-              {
-                "h": 1529,
-                "w": 2730,
-                "x": 0,
-                "y": 0
-              },
-              {
-                "h": 1536,
-                "w": 1536,
-                "x": 255,
-                "y": 0
-              },
-              {
-                "h": 1536,
-                "w": 1347,
-                "x": 350,
-                "y": 0
-              },
-              {
-                "h": 1536,
-                "w": 768,
-                "x": 639,
-                "y": 0
-              },
-              {
-                "h": 1536,
-                "w": 2730,
-                "x": 0,
-                "y": 0
-              }
-            ],
-            "expandedUrl": "https://x.com/Alibaba_Qwen/status/2080270065547809133/photo/1",
-            "url": "https://pbs.twimg.com/media/HN6ZKOyaoAAENUb.jpg",
-            "width": 2730,
-            "height": 1536
-          },
-          {
-            "backgroundColor": {
-              "red": 204,
-              "green": 214,
-              "blue": 221
-            },
-            "cropCandidates": [
-              {
-                "h": 1156,
-                "w": 2064,
-                "x": 166,
-                "y": 0
-              },
-              {
-                "h": 1156,
-                "w": 1156,
-                "x": 1074,
-                "y": 0
-              },
-              {
-                "h": 1156,
-                "w": 1014,
-                "x": 1216,
-                "y": 0
-              },
-              {
-                "h": 1156,
-                "w": 578,
-                "x": 1652,
-                "y": 0
-              },
-              {
-                "h": 1156,
-                "w": 2230,
-                "x": 0,
-                "y": 0
-              }
-            ],
-            "expandedUrl": "https://x.com/Alibaba_Qwen/status/2080270065547809133/photo/1",
-            "url": "https://pbs.twimg.com/media/HN6ZLhQaQAAX6s9.jpg",
-            "width": 2230,
-            "height": 1156
-          }
-        ],
-        "conversation_count": 94,
-        "news_action_type": "conversation",
-        "isEdited": false,
-        "isStaleEdit": false,
-        "note_tweet": {
-          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDgwMjcwMDY1NDAwOTkxNzQ0"
-        }
-      }
-    },
-    {
-      "id": "2079906336381509659",
-      "url": "https://x.com/Alibaba_Qwen/status/2079906336381509659",
-      "label": "Qwen",
-      "color": "#FF6B35",
-      "fetched_at": "2026-07-27T04:00:00Z",
-      "translation_zh": "🎨 Qwen-Image-3.0 来了——我们第三代基础图像生成模型。\n\n1.0 讲「精准」，2.0 加上「多样、完整、美感、真实」，3.0 就一个字：实。\n\n三大维度：富内容（一次生成报纸、分镜、试卷）、真实细节（10px 可读文字）、深度知识（12 种语言原生渲染）。",
-      "tweet_data": {
-        "__typename": "Tweet",
-        "favorite_count": 4770,
-        "lang": "en",
-        "possibly_sensitive": false,
-        "created_at": "2026-07-22T12:28:08.000Z",
-        "display_text_range": [
-          0,
-          281
-        ],
-        "entities": {
-          "media": [
-            {
-              "display_url": "pic.x.com/YkaBy47Qkm",
-              "expanded_url": "https://x.com/Alibaba_Qwen/status/2079906336381509659/photo/1",
-              "indices": [
-                280,
-                303
-              ],
-              "url": "https://t.co/YkaBy47Qkm"
-            }
-          ]
-        },
-        "id_str": "2079906336381509659",
-        "text": "🎨 Meet Qwen-Image-3.0 — the third generation of our foundational image generation model.\n\nIf 1.0 was about \"Precision,\" and 2.0 added \"Variety, Completeness, Beauty &amp; Authenticity,\" then 3.0 comes down to a single word: Real (实).\n\nThree dimensions of \"Real\":\n📰 Rich Content — https://t.co/YkaBy47Qkm",
-        "user": {
-          "id_str": "1753339277386342400",
-          "name": "Qwen",
-          "screen_name": "Alibaba_Qwen",
-          "is_blue_verified": true,
-          "profile_image_shape": "Square",
-          "verified": false,
-          "verified_type": "Business",
-          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
-        },
-        "edit_control": {
-          "edit_tweet_ids": [
-            "2079906336381509659"
-          ],
-          "editable_until_msecs": "1784726888000",
-          "edits_remaining": "5",
-          "is_edit_eligible": false
-        },
-        "mediaDetails": [
-          {
-            "display_url": "pic.x.com/YkaBy47Qkm",
-            "expanded_url": "https://x.com/Alibaba_Qwen/status/2079906336381509659/photo/1",
-            "ext_media_availability": {
-              "status": "Available"
-            },
-            "indices": [
-              280,
-              303
-            ],
-            "media_url_https": "https://pbs.twimg.com/media/HN1LmIqa8AATJuu.jpg",
-            "original_info": {
-              "focus_rects": [
-                {
-                  "h": 1075,
-                  "w": 1920,
-                  "x": 0,
-                  "y": 5
-                },
-                {
-                  "h": 1080,
-                  "w": 1080,
-                  "x": 660,
-                  "y": 0
-                },
-                {
-                  "h": 1080,
-                  "w": 947,
-                  "x": 727,
-                  "y": 0
-                },
-                {
-                  "h": 1080,
-                  "w": 540,
-                  "x": 930,
-                  "y": 0
-                },
-                {
-                  "h": 1080,
-                  "w": 1920,
-                  "x": 0,
-                  "y": 0
-                }
-              ],
-              "height": 1080,
-              "width": 1920
-            },
-            "sizes": {
-              "large": {
-                "h": 1080,
-                "resize": "fit",
-                "w": 1920
-              },
-              "medium": {
-                "h": 675,
-                "resize": "fit",
-                "w": 1200
-              },
-              "small": {
-                "h": 383,
-                "resize": "fit",
-                "w": 680
-              },
-              "thumb": {
-                "h": 150,
-                "resize": "crop",
-                "w": 150
-              }
-            },
-            "type": "photo",
-            "url": "https://t.co/YkaBy47Qkm"
-          }
-        ],
-        "photos": [
-          {
-            "backgroundColor": {
-              "red": 204,
-              "green": 214,
-              "blue": 221
-            },
-            "cropCandidates": [
-              {
-                "h": 1075,
-                "w": 1920,
-                "x": 0,
-                "y": 5
-              },
-              {
-                "h": 1080,
-                "w": 1080,
-                "x": 660,
-                "y": 0
-              },
-              {
-                "h": 1080,
-                "w": 947,
-                "x": 727,
-                "y": 0
-              },
-              {
-                "h": 1080,
-                "w": 540,
-                "x": 930,
-                "y": 0
-              },
-              {
-                "h": 1080,
-                "w": 1920,
-                "x": 0,
-                "y": 0
-              }
-            ],
-            "expandedUrl": "https://x.com/Alibaba_Qwen/status/2079906336381509659/photo/1",
-            "url": "https://pbs.twimg.com/media/HN1LmIqa8AATJuu.jpg",
-            "width": 1920,
-            "height": 1080
-          }
-        ],
-        "conversation_count": 196,
-        "news_action_type": "conversation",
-        "isEdited": false,
-        "isStaleEdit": false,
-        "note_tweet": {
-          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDc5OTA2MzM2MTY3NjEyNDE2"
-        }
-      }
-    },
-    {
       "id": "2078855608565207130",
       "url": "https://x.com/Kimi_Moonshot/status/2078855608565207130",
       "label": "Kimi",
@@ -3503,948 +5108,6 @@
         "isStaleEdit": false,
         "note_tweet": {
           "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDc4ODU1NjA4NDcyODY2ODE2"
-        }
-      }
-    },
-    {
-      "id": "2081760186235289764",
-      "url": "https://x.com/Kimi_Moonshot/status/2081760186235289764",
-      "label": "Kimi",
-      "color": "#6366F1",
-      "fetched_at": "2026-07-27T20:04:42.236112+00:00",
-      "translation_zh": "发布 Kimi K3 的模型权重与技术报告。K3 是其最强模型：2.8T MoE，原生视觉理解，100 万 token 上下文。新架构带来每单位算力 2.5 倍的智能密度——不只是堆参数。",
-      "tweet_data": {
-        "__typename": "Tweet",
-        "favorite_count": 24938,
-        "lang": "en",
-        "possibly_sensitive": false,
-        "created_at": "2026-07-27T15:14:40.000Z",
-        "display_text_range": [
-          0,
-          278
-        ],
-        "entities": {
-          "media": [
-            {
-              "display_url": "pic.x.com/Yz5uWeMbIm",
-              "expanded_url": "https://x.com/Kimi_Moonshot/status/2081760186235289764/photo/1",
-              "indices": [
-                279,
-                302
-              ],
-              "url": "https://t.co/Yz5uWeMbIm"
-            }
-          ]
-        },
-        "id_str": "2081760186235289764",
-        "text": "Releasing the model weights and technical report of Kimi K3.\n\nKimi K3 is our most capable model: a 2.8T MoE model with native visual understanding and a 1M-token context window.\n\nNew model architecture: 2.5x the intelligence per unit of compute, not just more params.\n\nAlongside https://t.co/Yz5uWeMbIm",
-        "user": {
-          "id_str": "1863959670169501696",
-          "name": "Kimi.ai",
-          "screen_name": "Kimi_Moonshot",
-          "is_blue_verified": false,
-          "profile_image_shape": "Square",
-          "verified": false,
-          "verified_type": "Business",
-          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1910294000927645696/QseOV0uF_normal.png"
-        },
-        "edit_control": {
-          "edit_tweet_ids": [
-            "2081760186235289764"
-          ],
-          "editable_until_msecs": "1785168880000",
-          "edits_remaining": "5",
-          "is_edit_eligible": true
-        },
-        "mediaDetails": [
-          {
-            "display_url": "pic.x.com/Yz5uWeMbIm",
-            "expanded_url": "https://x.com/Kimi_Moonshot/status/2081760186235289764/photo/1",
-            "ext_media_availability": {
-              "status": "Available"
-            },
-            "indices": [
-              279,
-              302
-            ],
-            "media_url_https": "https://pbs.twimg.com/media/HOPlk-WbQAAMkwd.jpg",
-            "original_info": {
-              "focus_rects": [
-                {
-                  "h": 606,
-                  "w": 1082,
-                  "x": 0,
-                  "y": 0
-                },
-                {
-                  "h": 1082,
-                  "w": 1082,
-                  "x": 0,
-                  "y": 0
-                },
-                {
-                  "h": 1233,
-                  "w": 1082,
-                  "x": 0,
-                  "y": 0
-                },
-                {
-                  "h": 1288,
-                  "w": 644,
-                  "x": 219,
-                  "y": 0
-                },
-                {
-                  "h": 1288,
-                  "w": 1082,
-                  "x": 0,
-                  "y": 0
-                }
-              ],
-              "height": 1288,
-              "width": 1082
-            },
-            "sizes": {
-              "large": {
-                "h": 1288,
-                "resize": "fit",
-                "w": 1082
-              },
-              "medium": {
-                "h": 1200,
-                "resize": "fit",
-                "w": 1008
-              },
-              "small": {
-                "h": 680,
-                "resize": "fit",
-                "w": 571
-              },
-              "thumb": {
-                "h": 150,
-                "resize": "crop",
-                "w": 150
-              }
-            },
-            "type": "photo",
-            "url": "https://t.co/Yz5uWeMbIm"
-          }
-        ],
-        "photos": [
-          {
-            "backgroundColor": {
-              "red": 204,
-              "green": 214,
-              "blue": 221
-            },
-            "cropCandidates": [
-              {
-                "h": 606,
-                "w": 1082,
-                "x": 0,
-                "y": 0
-              },
-              {
-                "h": 1082,
-                "w": 1082,
-                "x": 0,
-                "y": 0
-              },
-              {
-                "h": 1233,
-                "w": 1082,
-                "x": 0,
-                "y": 0
-              },
-              {
-                "h": 1288,
-                "w": 644,
-                "x": 219,
-                "y": 0
-              },
-              {
-                "h": 1288,
-                "w": 1082,
-                "x": 0,
-                "y": 0
-              }
-            ],
-            "expandedUrl": "https://x.com/Kimi_Moonshot/status/2081760186235289764/photo/1",
-            "url": "https://pbs.twimg.com/media/HOPlk-WbQAAMkwd.jpg",
-            "width": 1082,
-            "height": 1288
-          }
-        ],
-        "conversation_count": 905,
-        "news_action_type": "conversation",
-        "isEdited": false,
-        "isStaleEdit": false,
-        "note_tweet": {
-          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDgxNzYwMTg2MTEzNjYyOTc2"
-        }
-      }
-    },
-    {
-      "id": "2081794871795589485",
-      "url": "https://x.com/OpenAI/status/2081794871795589485",
-      "label": "OpenAI",
-      "color": "#10A37F",
-      "fetched_at": "2026-07-27T20:04:42.236112+00:00",
-      "translation_zh": "GPT-Live 在 ChatGPT 语音功能中，现已面向全球的 Edu、Business 和 Enterprise 套餐开放。",
-      "tweet_data": {
-        "__typename": "Tweet",
-        "favorite_count": 1141,
-        "lang": "en",
-        "created_at": "2026-07-27T17:32:29.000Z",
-        "display_text_range": [
-          0,
-          91
-        ],
-        "entities": {},
-        "id_str": "2081794871795589485",
-        "text": "GPT-Live in ChatGPT Voice is now available to Edu, Business, and Enterprise plans globally.",
-        "user": {
-          "id_str": "4398626122",
-          "name": "OpenAI",
-          "screen_name": "OpenAI",
-          "is_blue_verified": true,
-          "profile_image_shape": "Square",
-          "verified": false,
-          "verified_type": "Business",
-          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
-        },
-        "edit_control": {
-          "edit_tweet_ids": [
-            "2081794871795589485"
-          ],
-          "editable_until_msecs": "1785177149000",
-          "edits_remaining": "5",
-          "is_edit_eligible": true
-        },
-        "conversation_count": 120,
-        "news_action_type": "conversation",
-        "quoted_tweet": {
-          "favorite_count": 24514,
-          "lang": "en",
-          "possibly_sensitive": false,
-          "reply_count": 1267,
-          "retweet_count": 2238,
-          "created_at": "2026-07-08T17:22:39.000Z",
-          "display_text_range": [
-            0,
-            176
-          ],
-          "entities": {
-            "media": [
-              {
-                "display_url": "pic.x.com/WzoQFvA5ir",
-                "expanded_url": "https://x.com/OpenAI/status/2074907025537224840/video/1",
-                "indices": [
-                  177,
-                  200
-                ],
-                "url": "https://t.co/WzoQFvA5ir"
-              }
-            ]
-          },
-          "id_str": "2074907025537224840",
-          "text": "Introducing GPT-Live, a new generation of voice models for natural human-AI interaction.\n\nRolling out in ChatGPT starting today.\n\nYou’ll want to turn the sound on for this one. https://t.co/WzoQFvA5ir",
-          "user": {
-            "id_str": "4398626122",
-            "name": "OpenAI",
-            "screen_name": "OpenAI",
-            "is_blue_verified": true,
-            "profile_image_shape": "Square",
-            "verified": false,
-            "verified_type": "Business",
-            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
-          },
-          "edit_control": {
-            "edit_tweet_ids": [
-              "2074907025537224840"
-            ],
-            "editable_until_msecs": "1783534959000",
-            "edits_remaining": "5",
-            "is_edit_eligible": false
-          },
-          "mediaDetails": [
-            {
-              "additional_media_info": {},
-              "display_url": "pic.x.com/WzoQFvA5ir",
-              "expanded_url": "https://x.com/OpenAI/status/2074907025537224840/video/1",
-              "ext_media_availability": {
-                "status": "Available"
-              },
-              "indices": [
-                177,
-                200
-              ],
-              "media_url_https": "https://pbs.twimg.com/media/HMuNB0WboAE_A7s.jpg",
-              "original_info": {
-                "focus_rects": [],
-                "height": 1080,
-                "width": 1920
-              },
-              "sizes": {
-                "large": {
-                  "h": 1080,
-                  "resize": "fit",
-                  "w": 1920
-                },
-                "medium": {
-                  "h": 675,
-                  "resize": "fit",
-                  "w": 1200
-                },
-                "small": {
-                  "h": 383,
-                  "resize": "fit",
-                  "w": 680
-                },
-                "thumb": {
-                  "h": 150,
-                  "resize": "crop",
-                  "w": 150
-                }
-              },
-              "type": "video",
-              "url": "https://t.co/WzoQFvA5ir",
-              "video_info": {
-                "aspect_ratio": [
-                  16,
-                  9
-                ],
-                "duration_millis": 214047,
-                "variants": [
-                  {
-                    "content_type": "application/x-mpegURL",
-                    "url": "https://video.twimg.com/amplify_video/2074902339463598081/pl/652siAcKDhpP-rsu.m3u8"
-                  },
-                  {
-                    "bitrate": 256000,
-                    "content_type": "video/mp4",
-                    "url": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/480x270/bNlVnmQpMKNO_Coi.mp4"
-                  },
-                  {
-                    "bitrate": 832000,
-                    "content_type": "video/mp4",
-                    "url": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/640x360/wdgZJnX1yOvGDZeT.mp4"
-                  },
-                  {
-                    "bitrate": 2176000,
-                    "content_type": "video/mp4",
-                    "url": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/1280x720/g24fTo-VEY8H5Ijg.mp4"
-                  },
-                  {
-                    "bitrate": 10368000,
-                    "content_type": "video/mp4",
-                    "url": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/1920x1080/NJGC4FQL3MGsbmQc.mp4"
-                  },
-                  {
-                    "bitrate": 25128000,
-                    "content_type": "video/mp4",
-                    "url": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/3840x2160/SlZg3Bq2mrXXDoO4.mp4"
-                  }
-                ]
-              }
-            }
-          ],
-          "photos": [],
-          "video": {
-            "aspectRatio": [
-              16,
-              9
-            ],
-            "contentType": "media_entity",
-            "durationMs": 214047,
-            "mediaAvailability": {
-              "status": "available"
-            },
-            "poster": "https://pbs.twimg.com/media/HMuNB0WboAE_A7s.jpg",
-            "variants": [
-              {
-                "type": "application/x-mpegURL",
-                "src": "https://video.twimg.com/amplify_video/2074902339463598081/pl/652siAcKDhpP-rsu.m3u8"
-              },
-              {
-                "type": "video/mp4",
-                "src": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/480x270/bNlVnmQpMKNO_Coi.mp4"
-              },
-              {
-                "type": "video/mp4",
-                "src": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/640x360/wdgZJnX1yOvGDZeT.mp4"
-              },
-              {
-                "type": "video/mp4",
-                "src": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/1280x720/g24fTo-VEY8H5Ijg.mp4"
-              },
-              {
-                "type": "video/mp4",
-                "src": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/1920x1080/NJGC4FQL3MGsbmQc.mp4"
-              },
-              {
-                "type": "video/mp4",
-                "src": "https://video.twimg.com/amplify_video/2074902339463598081/vid/avc1/3840x2160/SlZg3Bq2mrXXDoO4.mp4"
-              }
-            ],
-            "videoId": {
-              "type": "tweet",
-              "id": "2074907025537224840"
-            },
-            "viewCount": 0
-          },
-          "isEdited": false,
-          "isStaleEdit": false
-        },
-        "isEdited": false,
-        "isStaleEdit": false
-      }
-    },
-    {
-      "id": "2081813202514681878",
-      "url": "https://x.com/Kimi_Moonshot/status/2081813202514681878",
-      "label": "Kimi",
-      "color": "#6366F1",
-      "fetched_at": "2026-07-27T20:04:42.236112+00:00",
-      "translation_zh": "发布 PerceptionBench：一个隔离视觉感知、将其评估为一组原子能力的基准——能力从今天模型的失败方式中归纳得出，而非预先定义。",
-      "tweet_data": {
-        "__typename": "Tweet",
-        "favorite_count": 676,
-        "lang": "en",
-        "possibly_sensitive": false,
-        "created_at": "2026-07-27T18:45:20.000Z",
-        "display_text_range": [
-          0,
-          274
-        ],
-        "entities": {
-          "media": [
-            {
-              "display_url": "pic.x.com/p9uZ0t5yHy",
-              "expanded_url": "https://x.com/Kimi_Moonshot/status/2081813202514681878/photo/1",
-              "indices": [
-                275,
-                298
-              ],
-              "url": "https://t.co/p9uZ0t5yHy"
-            }
-          ]
-        },
-        "id_str": "2081813202514681878",
-        "text": "We are releasing PerceptionBench, a benchmark that isolates visual perception and evaluates it as a set of atomic capabilities - discovered from how today's models fail, rather than defined in advance. \n\nFrom frontier-model failures across 42 benchmarks, we derive 10 atomic https://t.co/p9uZ0t5yHy",
-        "user": {
-          "id_str": "1863959670169501696",
-          "name": "Kimi.ai",
-          "screen_name": "Kimi_Moonshot",
-          "is_blue_verified": false,
-          "profile_image_shape": "Square",
-          "verified": false,
-          "verified_type": "Business",
-          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1910294000927645696/QseOV0uF_normal.png"
-        },
-        "edit_control": {
-          "initial_tweet_id": "2081813125196857777",
-          "edit_tweet_ids": [
-            "2081813125196857777",
-            "2081813202514681878"
-          ],
-          "editable_until_msecs": "1785181501000",
-          "edits_remaining": "4",
-          "is_edit_eligible": true
-        },
-        "mediaDetails": [
-          {
-            "display_url": "pic.x.com/p9uZ0t5yHy",
-            "expanded_url": "https://x.com/Kimi_Moonshot/status/2081813202514681878/photo/1",
-            "ext_media_availability": {
-              "status": "Available"
-            },
-            "indices": [
-              275,
-              298
-            ],
-            "media_url_https": "https://pbs.twimg.com/media/HOQVg7tasAAVpoo.jpg",
-            "original_info": {
-              "focus_rects": [
-                {
-                  "h": 478,
-                  "w": 854,
-                  "x": 323,
-                  "y": 0
-                },
-                {
-                  "h": 478,
-                  "w": 478,
-                  "x": 511,
-                  "y": 0
-                },
-                {
-                  "h": 478,
-                  "w": 419,
-                  "x": 541,
-                  "y": 0
-                },
-                {
-                  "h": 478,
-                  "w": 239,
-                  "x": 631,
-                  "y": 0
-                },
-                {
-                  "h": 478,
-                  "w": 1200,
-                  "x": 0,
-                  "y": 0
-                }
-              ],
-              "height": 478,
-              "width": 1200
-            },
-            "sizes": {
-              "large": {
-                "h": 478,
-                "resize": "fit",
-                "w": 1200
-              },
-              "medium": {
-                "h": 478,
-                "resize": "fit",
-                "w": 1200
-              },
-              "small": {
-                "h": 271,
-                "resize": "fit",
-                "w": 680
-              },
-              "thumb": {
-                "h": 150,
-                "resize": "crop",
-                "w": 150
-              }
-            },
-            "type": "photo",
-            "url": "https://t.co/p9uZ0t5yHy"
-          }
-        ],
-        "photos": [
-          {
-            "backgroundColor": {
-              "red": 204,
-              "green": 214,
-              "blue": 221
-            },
-            "cropCandidates": [
-              {
-                "h": 478,
-                "w": 854,
-                "x": 323,
-                "y": 0
-              },
-              {
-                "h": 478,
-                "w": 478,
-                "x": 511,
-                "y": 0
-              },
-              {
-                "h": 478,
-                "w": 419,
-                "x": 541,
-                "y": 0
-              },
-              {
-                "h": 478,
-                "w": 239,
-                "x": 631,
-                "y": 0
-              },
-              {
-                "h": 478,
-                "w": 1200,
-                "x": 0,
-                "y": 0
-              }
-            ],
-            "expandedUrl": "https://x.com/Kimi_Moonshot/status/2081813202514681878/photo/1",
-            "url": "https://pbs.twimg.com/media/HOQVg7tasAAVpoo.jpg",
-            "width": 1200,
-            "height": 478
-          }
-        ],
-        "conversation_count": 29,
-        "news_action_type": "conversation",
-        "isEdited": true,
-        "isStaleEdit": false,
-        "previous_counts": {
-          "favorite_count": 1,
-          "quote_count": 0,
-          "reply_count": 0,
-          "retweet_count": 0
-        },
-        "note_tweet": {
-          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDgxODEzMjAyNDMwNzI2MTQ0"
-        }
-      }
-    },
-    {
-      "id": "2081762978391843020",
-      "url": "https://x.com/Kimi_Moonshot/status/2081762978391843020",
-      "label": "Kimi",
-      "color": "#6366F1",
-      "fetched_at": "2026-07-27T20:04:42.236112+00:00",
-      "translation_zh": "与 kvcache-ai 合作开源 AgentENV：一套大规模运行智能体环境的分布式系统。其组件驱动 Kimi K3 的智能体强化学习训练，支持大规模并行工作流的快速快照、恢复与分叉。",
-      "tweet_data": {
-        "__typename": "Tweet",
-        "favorite_count": 1899,
-        "lang": "en",
-        "created_at": "2026-07-27T15:25:45.000Z",
-        "display_text_range": [
-          0,
-          277
-        ],
-        "entities": {},
-        "id_str": "2081762978391843020",
-        "text": "We've open-sourced AgentENV in collaboration with kvcache-ai.\n\nAgentENV is a distributed system for running agent environments at scale. Its components power agentic RL training for Kimi K3, with fast snapshot, resume, and fork support for large-scale parallel agent workflows.",
-        "user": {
-          "id_str": "1863959670169501696",
-          "name": "Kimi.ai",
-          "screen_name": "Kimi_Moonshot",
-          "is_blue_verified": false,
-          "profile_image_shape": "Square",
-          "verified": false,
-          "verified_type": "Business",
-          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1910294000927645696/QseOV0uF_normal.png"
-        },
-        "edit_control": {
-          "edit_tweet_ids": [
-            "2081762978391843020"
-          ],
-          "editable_until_msecs": "1785169545000",
-          "edits_remaining": "5",
-          "is_edit_eligible": true
-        },
-        "conversation_count": 37,
-        "news_action_type": "conversation",
-        "card": {
-          "card_platform": {
-            "platform": {
-              "audience": {
-                "name": "production"
-              },
-              "device": {
-                "name": "iPhone",
-                "version": "13"
-              }
-            }
-          },
-          "name": "summary_large_image",
-          "url": "https://t.co/Dsxyw5rLqm",
-          "binding_values": {
-            "photo_image_full_size_large": {
-              "image_value": {
-                "height": 419,
-                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=800x419",
-                "width": 800
-              },
-              "type": "IMAGE"
-            },
-            "thumbnail_image": {
-              "image_value": {
-                "height": 200,
-                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=400x400",
-                "width": 400
-              },
-              "type": "IMAGE"
-            },
-            "description": {
-              "string_value": "AgentENV (AENV) is a distributed platform for running agent environments at scale. - kvcache-ai/AgentENV",
-              "type": "STRING"
-            },
-            "domain": {
-              "string_value": "github.com",
-              "type": "STRING"
-            },
-            "thumbnail_image_large": {
-              "image_value": {
-                "height": 300,
-                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=600x600",
-                "width": 600
-              },
-              "type": "IMAGE"
-            },
-            "summary_photo_image_small": {
-              "image_value": {
-                "height": 202,
-                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=386x202",
-                "width": 386
-              },
-              "type": "IMAGE"
-            },
-            "thumbnail_image_original": {
-              "image_value": {
-                "height": 600,
-                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=orig",
-                "width": 1200
-              },
-              "type": "IMAGE"
-            },
-            "site": {
-              "scribe_key": "publisher_id",
-              "type": "USER",
-              "user_value": {
-                "id_str": "13334762",
-                "path": []
-              }
-            },
-            "photo_image_full_size_small": {
-              "image_value": {
-                "height": 202,
-                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=386x202",
-                "width": 386
-              },
-              "type": "IMAGE"
-            },
-            "summary_photo_image_large": {
-              "image_value": {
-                "height": 419,
-                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=800x419",
-                "width": 800
-              },
-              "type": "IMAGE"
-            },
-            "thumbnail_image_small": {
-              "image_value": {
-                "height": 72,
-                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=144x144",
-                "width": 144
-              },
-              "type": "IMAGE"
-            },
-            "thumbnail_image_x_large": {
-              "image_value": {
-                "height": 600,
-                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=png&name=2048x2048_2_exp",
-                "width": 1200
-              },
-              "type": "IMAGE"
-            },
-            "photo_image_full_size_original": {
-              "image_value": {
-                "height": 600,
-                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=orig",
-                "width": 1200
-              },
-              "type": "IMAGE"
-            },
-            "photo_image_full_size_alt_text": {
-              "string_value": "AgentENV (AENV) is a distributed platform for running agent environments at scale. - kvcache-ai/AgentENV",
-              "type": "STRING"
-            },
-            "vanity_url": {
-              "scribe_key": "vanity_url",
-              "string_value": "github.com",
-              "type": "STRING"
-            },
-            "photo_image_full_size": {
-              "image_value": {
-                "height": 314,
-                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=600x314",
-                "width": 600
-              },
-              "type": "IMAGE"
-            },
-            "summary_photo_image_alt_text": {
-              "string_value": "AgentENV (AENV) is a distributed platform for running agent environments at scale. - kvcache-ai/AgentENV",
-              "type": "STRING"
-            },
-            "thumbnail_image_color": {
-              "image_color_value": {
-                "palette": [
-                  {
-                    "percentage": 88.77,
-                    "rgb": {
-                      "blue": 255,
-                      "green": 255,
-                      "red": 255
-                    }
-                  },
-                  {
-                    "percentage": 5.03,
-                    "rgb": {
-                      "blue": 0,
-                      "green": 0,
-                      "red": 0
-                    }
-                  },
-                  {
-                    "percentage": 2.78,
-                    "rgb": {
-                      "blue": 132,
-                      "green": 165,
-                      "red": 221
-                    }
-                  },
-                  {
-                    "percentage": 2.73,
-                    "rgb": {
-                      "blue": 125,
-                      "green": 121,
-                      "red": 117
-                    }
-                  },
-                  {
-                    "percentage": 0.33,
-                    "rgb": {
-                      "blue": 166,
-                      "green": 14,
-                      "red": 146
-                    }
-                  }
-                ]
-              },
-              "type": "IMAGE_COLOR"
-            },
-            "title": {
-              "string_value": "GitHub - kvcache-ai/AgentENV: AgentENV (AENV) is a distributed platform for running agent environ...",
-              "type": "STRING"
-            },
-            "summary_photo_image_color": {
-              "image_color_value": {
-                "palette": [
-                  {
-                    "percentage": 88.77,
-                    "rgb": {
-                      "blue": 255,
-                      "green": 255,
-                      "red": 255
-                    }
-                  },
-                  {
-                    "percentage": 5.03,
-                    "rgb": {
-                      "blue": 0,
-                      "green": 0,
-                      "red": 0
-                    }
-                  },
-                  {
-                    "percentage": 2.78,
-                    "rgb": {
-                      "blue": 132,
-                      "green": 165,
-                      "red": 221
-                    }
-                  },
-                  {
-                    "percentage": 2.73,
-                    "rgb": {
-                      "blue": 125,
-                      "green": 121,
-                      "red": 117
-                    }
-                  },
-                  {
-                    "percentage": 0.33,
-                    "rgb": {
-                      "blue": 166,
-                      "green": 14,
-                      "red": 146
-                    }
-                  }
-                ]
-              },
-              "type": "IMAGE_COLOR"
-            },
-            "summary_photo_image_x_large": {
-              "image_value": {
-                "height": 600,
-                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=png&name=2048x2048_2_exp",
-                "width": 1200
-              },
-              "type": "IMAGE"
-            },
-            "summary_photo_image": {
-              "image_value": {
-                "height": 314,
-                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=600x314",
-                "width": 600
-              },
-              "type": "IMAGE"
-            },
-            "photo_image_full_size_color": {
-              "image_color_value": {
-                "palette": [
-                  {
-                    "percentage": 88.77,
-                    "rgb": {
-                      "blue": 255,
-                      "green": 255,
-                      "red": 255
-                    }
-                  },
-                  {
-                    "percentage": 5.03,
-                    "rgb": {
-                      "blue": 0,
-                      "green": 0,
-                      "red": 0
-                    }
-                  },
-                  {
-                    "percentage": 2.78,
-                    "rgb": {
-                      "blue": 132,
-                      "green": 165,
-                      "red": 221
-                    }
-                  },
-                  {
-                    "percentage": 2.73,
-                    "rgb": {
-                      "blue": 125,
-                      "green": 121,
-                      "red": 117
-                    }
-                  },
-                  {
-                    "percentage": 0.33,
-                    "rgb": {
-                      "blue": 166,
-                      "green": 14,
-                      "red": 146
-                    }
-                  }
-                ]
-              },
-              "type": "IMAGE_COLOR"
-            },
-            "photo_image_full_size_x_large": {
-              "image_value": {
-                "height": 600,
-                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=png&name=2048x2048_2_exp",
-                "width": 1200
-              },
-              "type": "IMAGE"
-            },
-            "card_url": {
-              "scribe_key": "card_url",
-              "string_value": "https://t.co/Dsxyw5rLqm",
-              "type": "STRING"
-            },
-            "summary_photo_image_original": {
-              "image_value": {
-                "height": 600,
-                "url": "https://pbs.twimg.com/card_img/2081762871952945152/PwZqvbky?format=jpg&name=orig",
-                "width": 1200
-              },
-              "type": "IMAGE"
-            }
-          }
-        },
-        "isEdited": false,
-        "isStaleEdit": false,
-        "note_tweet": {
-          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDgxNzYyOTc4MjY2MDQ2NDY0"
         }
       }
     }
