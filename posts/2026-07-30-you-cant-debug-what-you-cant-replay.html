@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>You Can't Debug What You Can't Replay — AI Frontlines</title>
+<meta content="Traditional software ships with a stack trace — a deterministic, reproducible record of exactly where things went wrong. An agent has none of this. Each run is a unique path through a probabilistic space. Without a full-fidelity trace, bugs become ghosts: real, destructive, and impossible to corner. The trace is the new stack trace." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=17" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="July 30, 2026" data-zh="2026年7月30日">July 30, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="You Can't Debug What You Can't Replay" data-zh="你无法调试，无法复现的东西">You Can't Debug What You Can't Replay</h1>
+<p class="post-header-deck" data-en="For seventy years, a bug meant a stack trace — a deterministic, reproducible arrow pointing at the exact line that failed. Run it again, it fails the same way, at the same place. An agent has no stack trace. Every run is a unique path through a probabilistic space, and the path it took to disaster is gone the instant the response is returned. A bug report that says 'the agent gave the wrong answer' is not a bug report. It is a ghost story. Without a full-fidelity trace, there is nothing to debug — only folklore and vibes about what might have happened." data-zh="七十年来，一个 bug 意味着一条堆栈追踪——一支确定性的、可复现的箭头，精确指向出错的那一行。再跑一遍，它在同一个地方、以同样的方式失败。一个智能体没有堆栈追踪。每一次运行，都是穿越概率空间的一条独一无二的路径，而它通向灾难的那条路，在响应返回的那一刻就消失了。一个写着「智能体给出了错误答案」的 bug 报告，不是 bug 报告。它是一个鬼故事。没有全保真追踪，就没有可调试的东西——只有关于「也许发生了什么」的民间传说和直觉。">For seventy years, a bug meant a stack trace — a deterministic, reproducible arrow pointing at the exact line that failed. Run it again, it fails the same way, at the same place. An agent has no stack trace. Every run is a unique path through a probabilistic space, and the path it took to disaster is gone the instant the response is returned. A bug report that says "the agent gave the wrong answer" is not a bug report. It is a ghost story.</p>
+</header>
+<article class="post-body">
+<p data-en="Here is the foundational difference between the software everyone learned to build and the software everyone is now trying to build. In the old world, execution was deterministic. The same input produced the same output, the same output produced the same error, and the same error produced the same stack trace. Reproduction was free — you ran the thing again, and the bug walked itself back into the room, sat down, and waited to be inspected. The entire discipline of debugging rested on a single, quiet assumption: that the failure could be summoned on demand. That assumption is now false." data-zh="这是「所有人学会构建的软件」和「所有人如今试图构建的软件」之间最根本的区别。在旧世界里，执行是确定性的。相同的输入产生相同的输出，相同的输出产生相同的错误，相同的错误产生相同的堆栈追踪。复现是免费的——你把那东西再跑一遍，bug 自己走回房间，坐下，等着被检查。整个调试这门学科，建立在一个安静的假设之上：失败可以按需召唤。这个假设，现在不成立了。">Here is the foundational difference between the software everyone learned to build and the software everyone is now trying to build. In the old world, execution was deterministic. The same input produced the same output, the same output produced the same error, and the same error produced the same stack trace. Reproduction was free — you ran the thing again, and the bug walked itself back into the room, sat down, and waited to be inspected. The entire discipline of debugging rested on a single, quiet assumption: that the failure could be summoned on demand. That assumption is now false.</p>
+<p data-en="An agent does not execute a program. It samples one. Every invocation draws a different trajectory through the model — a different chain of thoughts, a different set of tool calls, a different ordering of the same steps. Feed the identical prompt to the identical agent twice and you will, very often, get two different answers, take two different paths, and fail in two different ways. The bug that appeared on Tuesday at 3pm — the one where the agent hallucinated a file path and then confidently read from a directory that did not exist — will not appear on Tuesday at 4pm. It may not appear for a thousand runs. And then it will appear again, ruin a production task, and disappear, leaving behind an output that looks almost correct and a team that has nothing to point at." data-zh="一个智能体不执行一个程序。它采样一个。每一次调用，都在模型里抽出一条不同的轨迹——不同的思维链、不同的工具调用集合、相同步骤的不同顺序。把完全相同的 prompt 喂给完全相同的智能体两次，你往往会得到两个不同的答案，走出两条不同的路径，以两种不同的方式失败。那个在星期二下午三点出现的 bug——智能体幻觉出一个文件路径、然后自信地从一个不存在的目录里读取——不会在星期二下午四点出现。它也许一千次运行都不出现。然后它会再次出现，毁掉一个生产任务，然后消失，留下一个看起来几乎正确的输出，和一个无物可指的团队。">An agent does not execute a program. It samples one. Every invocation draws a different trajectory through the model — a different chain of thoughts, a different set of tool calls, a different ordering of the same steps. Feed the identical prompt to the identical agent twice and you will, very often, get two different answers, take two different paths, and fail in two different ways. The bug that appeared on Tuesday at 3pm — the one where the agent hallucinated a file path and then confidently read from a directory that did not exist — will not appear on Tuesday at 4pm. It may not appear for a thousand runs. And then it will appear again, ruin a production task, and disappear, leaving behind an output that looks almost correct and a team that has nothing to point at.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrTrace1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrTrace2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="DETERMINISTIC vs SAMPLED EXECUTION" data-zh="确定性执行 vs 采样执行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">DETERMINISTIC vs SAMPLED EXECUTION</text>
+<!-- LEFT: deterministic -->
+<text data-en="TRADITIONAL CODE" data-zh="传统代码" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="58">TRADITIONAL CODE</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="80" x="115" y="72"></rect>
+<text data-en="run A" data-zh="运行 A" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="155" y="92">run A</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="80" x="115" y="116"></rect>
+<text data-en="run B" data-zh="运行 B" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="155" y="136">run B</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="80" x="115" y="160"></rect>
+<text data-en="run C" data-zh="运行 C" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="155" y="180">run C</text>
+<path d="M155 192 L155 210" fill="none" marker-end="url(#arrTrace1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--accent-3)" height="34" opacity="0.14" rx="8" width="170" x="70" y="214"></rect>
+<text data-en="same line · same crash" data-zh="同一行 · 同一个崩溃" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="236">same line · same crash</text>
+<text data-en="reproduce for free" data-zh="免费复现" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="155" y="270">reproduce for free</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="278"></line>
+<!-- RIGHT: sampled -->
+<text data-en="AGENT" data-zh="智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="58">AGENT</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent)" stroke-width="1.5" width="80" x="425" y="72"></rect>
+<text data-en="run A" data-zh="运行 A" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="465" y="92">run A</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="80" x="425" y="116"></rect>
+<text data-en="run B" data-zh="运行 B" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="465" y="136">run B</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="80" x="425" y="160"></rect>
+<text data-en="run C" data-zh="运行 C" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="465" y="180">run C</text>
+<path d="M465 192 L465 210" fill="none" marker-end="url(#arrTrace2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent)" height="34" opacity="0.12" rx="8" width="200" x="365" y="214"></rect>
+<text data-en="different path each time" data-zh="每次路径都不同" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="236">different path each time</text>
+<text data-en="identical input, ghost failure" data-zh="输入相同，故障成鬼" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="465" y="270">identical input, ghost failure</text>
+</svg>
+<p class="diagram-caption" data-en="Deterministic code fails at a point you can revisit. A sampled agent fails along a path that exists once, then is gone. The path is the bug — and if the path was never recorded, the bug cannot be found." data-zh="确定性代码，在一个你能重访的点上失败。一个采样的智能体，沿着一条只存在一次、然后就消失的路径失败。路径就是 bug——而如果路径从未被记录，bug 就永远找不到。">Deterministic code fails at a point you can revisit. A sampled agent fails along a path that exists once, then is gone. The path is the bug — and if the path was never recorded, the bug cannot be found.</p>
+</div>
+<h3 data-en="The path is the bug" data-zh="路径，才是 bug">The path is the bug</h3>
+<p data-en="This reframes what a bug even is. In traditional software, the bug is a line — a defect in the code, a fixed location you can point to, isolate, and patch. The stack trace was a map from the symptom back to the line. In agent software, the code is usually fine. The model is usually fine. The tools are usually fine. What failed was a sequence — a specific ordering of reasoning steps, a specific tool call that returned a specific value that nudged the model toward a specific wrong turn, which compounded across the next four steps into a confidently wrong answer. The defect is not in any single component. It is in the trajectory, the path the run took through the space of possible executions. And a trajectory is not something you can grep for." data-zh="这重新定义了 bug 到底是什么。在传统软件里，bug 是一行——代码里的一个缺陷，一个你能指出、隔离、修补的固定位置。堆栈追踪，是一张从症状指回那一行的地图。在智能体软件里，代码通常没问题。模型通常没问题。工具通常没问题。失败的是一个序列——一个特定的推理步骤顺序，一个返回了特定值的特定工具调用，把模型推向了一个特定的错误转弯，然后在接下来的四步里层层叠加，变成一个自信的错误答案。缺陷不在任何一个单一组件里。它在轨迹里——在那次运行穿越可能执行空间所走的路径里。而轨迹，不是你能用 grep 找到的东西。">This reframes what a bug even is. In traditional software, the bug is a line — a defect in the code, a fixed location you can point to, isolate, and patch. The stack trace was a map from the symptom back to the line. In agent software, the code is usually fine. The model is usually fine. The tools are usually fine. What failed was a sequence — a specific ordering of reasoning steps, a specific tool call that returned a specific value that nudged the model toward a specific wrong turn, which compounded across the next four steps into a confidently wrong answer. The defect is not in any single component. It is in the trajectory, the path the run took through the space of possible executions. And a trajectory is not something you can grep for.</p>
+<p data-en="This is why teams report a maddening pattern. The bug appears in production. Someone reproduces the prompt by hand. The agent gives the right answer. They try again — right answer. They declare it fixed, or a fluke, or a data problem, and move on. Two weeks later, the same failure resurfaces, because nothing was fixed — there was nothing to fix, because the conditions that produced the failure (the exact sampling path, the exact intermediate tool outputs, the exact temperature-weighted token choices) were never captured. The team is debugging a rumour. They are chasing a failure that left no body, no fingerprints, and no fixed address. Without the record of the run, the run effectively never happened, and a thing that never happened cannot be fixed." data-zh="这就是为什么团队报告一种令人发疯的模式。bug 在生产环境出现。有人手动复现了 prompt。智能体给出了正确答案。他们再试一次——还是对的。他们宣布它修好了，或者是一次偶然，或者是数据问题，然后继续往前走。两周后，同样的失败再次浮出水面，因为什么都没修——也没有什么可修的，因为产生失败的条件（精确的采样路径、精确的中间工具输出、精确的受温度影响的 token 选择）从未被捕获。团队在调试一个传闻。他们在追捕一个没有留下尸体、没有指纹、没有固定住址的失败。没有运行的记录，那次运行就等于从未发生，而一个从未发生过的东西，无法被修复。">This is why teams report a maddening pattern. The bug appears in production. Someone reproduces the prompt by hand. The agent gives the right answer. They try again — right answer. They declare it fixed, or a fluke, or a data problem, and move on. Two weeks later, the same failure resurfaces, because nothing was fixed — there was nothing to fix, because the conditions that produced the failure (the exact sampling path, the exact intermediate tool outputs, the exact temperature-weighted token choices) were never captured. The team is debugging a rumour. They are chasing a failure that left no body, no fingerprints, and no fixed address. Without the record of the run, the run effectively never happened, and a thing that never happened cannot be fixed.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="trcGrad" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" style="stop-color:var(--accent);stop-opacity:0.25"></stop>
+<stop offset="100%" style="stop-color:var(--accent-3);stop-opacity:0.08"></stop>
+</linearGradient>
+<marker id="arrTb1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE AGENT TRACE — WHERE THE BUG REALLY LIVES" data-zh="智能体追踪——bug 真正所在之处" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE AGENT TRACE — WHERE THE BUG REALLY LIVES</text>
+<!-- the trace path, vertical with branches -->
+<!-- step 1 -->
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent)" stroke-width="1.5" width="220" x="200" y="48"></rect>
+<text data-en="① user prompt" data-zh="① 用户 prompt" fill="var(--text)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="310" y="71">① user prompt</text>
+<path d="M310 84 L310 96" fill="none" marker-end="url(#arrTb1)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<!-- step 2 -->
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent)" stroke-width="1.5" width="220" x="200" y="98"></rect>
+<text data-en="② model: plan + reason" data-zh="② 模型：规划与推理" fill="var(--text)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="310" y="121">② model: plan + reason</text>
+<path d="M310 134 L310 146" fill="none" marker-end="url(#arrTb1)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<!-- step 3: tool call — the wrong turn -->
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent-3)" stroke-width="2" width="220" x="200" y="148"></rect>
+<text data-en="③ tool: search(‘docs/v2/')" data-zh="③ 工具：search(‘docs/v2/')" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="310" y="171">③ tool: search('docs/v2/')</text>
+<text data-en="hallucinated path" data-zh="幻觉出的路径" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="465" y="166">hallucinated path</text>
+<text data-en="returns: []" data-zh="返回：[]" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="465" y="180">returns: []</text>
+<path d="M310 184 L310 196" fill="none" marker-end="url(#arrTb1)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<!-- step 4: model recovers wrongly -->
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="220" x="200" y="198"></rect>
+<text data-en="④ model: “dir empty, use v1”" data-zh="④ 模型：「目录空，用 v1」" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="310" y="221">④ model: "dir empty, use v1"</text>
+<text data-en="plausible, wrong" data-zh="看似合理，实则错误" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="465" y="221">plausible, wrong</text>
+<path d="M310 234 L310 246" fill="none" marker-end="url(#arrTb1)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<!-- step 5: output -->
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent-3)" stroke-width="2" width="220" x="200" y="248"></rect>
+<text data-en="⑤ confident wrong answer" data-zh="⑤ 自信的错误答案" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="310" y="271">confident wrong answer</text>
+<!-- annotation -->
+<rect fill="url(#trcGrad)" height="200" opacity="0.6" rx="10" width="6" x="194" y="148"></rect>
+<text data-en="the failure is the" data-zh="失败，是这一段" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="end" x="155" y="220">the failure is the</text>
+<text data-en="SEQUENCE ③→④→⑤," data-zh="序列 ③→④→⑤，" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="end" x="155" y="238">SEQUENCE ③→④→⑤,</text>
+<text data-en="not any single step." data-zh="而不是任何单独的一步。" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="end" x="155" y="256">not any single step.</text>
+<text data-en="if ③ was never logged, ④④⑤⑤ are invisible." data-zh="如果 ③ 从未被记录，④④⑤⑤ 也无从看见。" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="316">if ③ was never logged, ④④⑤⑤ are invisible.</text>
+</svg>
+<p class="diagram-caption" data-en="The bug is the cascade — a hallucinated tool argument, an empty result misread as signal, a confident pivot onto the wrong path. No single node is defective. The defect is the edge between them, and that edge only existed for the duration of one run." data-zh="bug 是那条瀑布——一个幻觉出的工具参数、一个被误读为信号的空结果、一次自信地拐上错误路径的转向。没有任何单一节点是有缺陷的。缺陷是它们之间的那条边，而那条边，只在那一次运行的时长里存在过。">The bug is the cascade — a hallucinated tool argument, an empty result misread as signal, a confident pivot onto the wrong path. No single node is defective. The defect is the edge between them, and that edge only existed for the duration of one run.</p>
+</div>
+<blockquote data-en="A stack trace points at a line of code that is always there. An agent trace points at a path through a model that was there for three seconds and will never return in that exact form. One is geography. The other is weather. You debug geography with a map. You cannot debug weather with a map." data-zh="堆栈追踪指向一行始终在那儿的代码。智能体追踪指向一条穿越模型的路径——它在那儿待了三秒，然后再也不会以完全相同的形式回来。前者是地理。后者是天气。你用地图调试地理。你没法用地图调试天气。">A stack trace points at a line of code that is always there. An agent trace points at a path through a model that was there for three seconds and will never return in that exact form. One is geography. The other is weather. You debug geography with a map. You cannot debug weather with a map.</blockquote>
+<h3 data-en="Record everything, or debug nothing" data-zh="要么记录一切，要么什么也调试不了">Record everything, or debug nothing</h3>
+<p data-en="The conclusion is unforgiving and it is not optional. If the system did not capture the run, the run cannot be debugged — full stop. There is no partial credit. A log line that says the request started and finished is not a trace. A token count is not a trace. A copy of the final prompt is not a trace, because the final prompt was assembled step by step across the run, and seeing only the last version reveals nothing about how the agent arrived there. What is required is a full-fidelity recording: every model call in order, with its exact input, its exact output, its sampled tokens, its tool-call arguments and tool-call results, the timestamps, the latencies, the temperature and seed if any, and the branching decisions — every point where the agent chose one path over another. This is not logging. This is cinematography. The trace must be a complete film of the run, frame by frame, such that the run can be replayed and inspected at any depth." data-zh="结论是无情的，而且不可选。如果系统没有捕获那次运行，那次运行就无法被调试——句号。没有部分分数。一行写着「请求开始、请求结束」的日志，不是追踪。一个 token 计数，不是追踪。最终 prompt 的副本，也不是追踪，因为最终 prompt 是在运行过程中一步步拼装出来的，而只看到最后一个版本，什么也揭示不了——智能体是怎么走到那儿的。所需要的是一份全保真录像：按顺序的每一次模型调用，连同它精确的输入、精确的输出、它采样的 token、它的工具调用参数和工具调用结果、时间戳、延迟、温度和种子（如果有的话），以及那些分叉决策——智能体选择一条路而非另一条路的每一个点。这不是日志。这是摄影。追踪必须是运行的一部完整电影，一帧一帧，使得运行能在任何深度被回放和检查。">The conclusion is unforgiving and it is not optional. If the system did not capture the run, the run cannot be debugged — full stop. There is no partial credit. A log line that says the request started and finished is not a trace. A token count is not a trace. A copy of the final prompt is not a trace, because the final prompt was assembled step by step across the run, and seeing only the final version reveals nothing about how the agent arrived there. What is required is a full-fidelity recording: every model call in order, with its exact input, its exact output, its sampled tokens, its tool-call arguments and tool-call results, the timestamps, the latencies, the temperature and seed if any, and the branching decisions — every point where the agent chose one path over another. This is not logging. This is cinematography. The trace must be a complete film of the run, frame by frame, such that the run can be replayed and inspected at any depth.</p>
+<p data-en="And here is the property that makes the investment worth it, the one that turns tracing from a debugging tool into the core engineering primitive of the agent era. A recorded run is not just a postmortem. It is a laboratory. Once the full path is captured, the run can be replayed — but not merely replayed identically. It can be replayed with mutations. Branch at step three, swap in a different tool result, change the system prompt, raise the temperature, and re-run from that point forward. The trace becomes a tree: the original run as the trunk, and every mutation a branch that explores what would have happened if a single variable had changed. This is how agent behavior is actually understood — not by re-running the whole thing blindly and hoping the failure returns, but by replaying a known-bad run and isolating the exact step where a different choice would have produced a different outcome. The replayable trace is the experimental apparatus. Without it, every change to the system is a guess fired into the dark." data-zh="而正是这个属性，让这笔投入物有所值——它把追踪从一个调试工具，变成了智能体时代的核心工程原语。一条被记录的运行，不只是事后验尸。它是一间实验室。一旦完整路径被捕获，运行就可以被回放——但不仅仅是原样回放。它可以带着变异被回放。从第三步分叉，换入一个不同的工具结果，改掉系统 prompt，调高温度，然后从那一点往后重新跑。追踪变成了一棵树：原始运行是树干，每一次变异是一条探索「如果某个变量变了、会发生什么」的分支。智能体的行为，就是这样被真正理解的——不是盲目地把整个东西重跑一遍、祈祷失败重现，而是回放一条已知有问题的运行，隔离出「一个不同的选择本会产出不同结果」的那一步。可回放的追踪，是实验装置。没有它，对系统的每一次改动，都是一发打进黑暗里的猜测。">And here is the property that makes the investment worth it, the one that turns tracing from a debugging tool into the core engineering primitive of the agent era. A recorded run is not just a postmortem. It is a laboratory. Once the full path is captured, the run can be replayed — but not merely replayed identically. It can be replayed with mutations. Branch at step three, swap in a different tool result, change the system prompt, raise the temperature, and re-run from that point forward. The trace becomes a tree: the original run as the trunk, and every mutation a branch that explores what would have happened if a single variable had changed. This is how agent behavior is actually understood — not by re-running the whole thing blindly and hoping the failure returns, but by replaying a known-bad run and isolating the exact step where a different choice would have produced a different outcome. The replayable trace is the experimental apparatus. Without it, every change to the system is a guess fired into the dark.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrRply1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrRply2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrRply3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE TRACE IS A LABORATORY" data-zh="追踪，是一间实验室" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE TRACE IS A LABORATORY</text>
+<!-- trunk: recorded run -->
+<rect fill="var(--bg-surface)" height="34" rx="7" stroke="var(--accent)" stroke-width="1.5" width="150" x="100" y="50"></rect>
+<text data-en="① prompt" data-zh="① prompt" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="175" y="71">① prompt</text>
+<rect fill="var(--bg-surface)" height="34" rx="7" stroke="var(--accent)" stroke-width="1.5" width="150" x="100" y="92"></rect>
+<text data-en="② reason" data-zh="② 推理" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="175" y="113">② reason</text>
+<!-- branch point -->
+<rect fill="var(--bg-surface)" height="34" rx="7" stroke="var(--accent)" stroke-width="2.5" width="150" x="100" y="134"></rect>
+<text data-en="③ tool call" data-zh="③ 工具调用" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="175" y="155">③ tool call</text>
+<circle cx="250" cy="151" fill="var(--accent)" r="5"></circle>
+<text data-en="branch here" data-zh="在此分叉" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="175" y="186">branch here</text>
+<!-- trunk continues down -->
+<path d="M175 168 L175 184" fill="none" marker-end="url(#arrRply1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="150" x="100" y="186"></rect>
+<text data-en="④④ wrong turn" data-zh="④④ 错误转向" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="175" y="207">④ wrong turn</text>
+<path d="M175 220 L175 236" fill="none" marker-end="url(#arrRply1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="7" stroke="var(--accent-3)" stroke-width="2" width="150" x="100" y="238"></rect>
+<text data-en="⑤⑤ wrong answer" data-zh="⑤⑤ 错误答案" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="175" y="259">⑤ wrong answer</text>
+<!-- mutation branches right -->
+<path d="M255 151 C340 151 360 100 410 95" fill="none" marker-end="url(#arrRply2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="412" y="70"></rect>
+<text data-en="swap tool result" data-zh="替换工具结果" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="487" y="91">swap tool result</text>
+<rect fill="var(--bg-surface)" height="34" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="150" x="412" y="112"></rect>
+<text data-en="④④ recovers" data-zh="④④ 恢复正确" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="487" y="133">④ recovers</text>
+<path d="M487 146 L487 160" fill="none" marker-end="url(#arrRply2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<rect fill="var(--accent-3)" height="34" opacity="0.16" rx="7" width="150" x="412" y="162"></rect>
+<text data-en="⑤⑤ correct answer" data-zh="⑤⑤ 正确答案" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="487" y="183">correct answer</text>
+<text data-en="“the empty result" data-zh="「那个空结果" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="487" y="214">"the empty result</text>
+<text data-en="was the cause.”" data-zh="就是原因。」" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="487" y="228">was the cause."</text>
+<!-- labels -->
+<text data-en="RECORDED RUN" data-zh="已记录的运行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" letter-spacing="0.5" text-anchor="middle" x="175" y="300">RECORDED RUN</text>
+<text data-en="MUTATED REPLAY" data-zh="变异回放" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" letter-spacing="0.5" text-anchor="middle" x="487" y="300">MUTATED REPLAY</text>
+</svg>
+<p class="diagram-caption" data-en="Replay the recorded run to its branch point, mutate one variable — the tool result — and re-run forward. If the failure disappears, the cause is isolated. If it persists, branch again. The trace is no longer a postmortem. It is the experiment that finds the fix." data-zh="把记录的运行回放到分叉点，变异一个变量——工具结果——然后往前重跑。如果失败消失了，原因就被隔离出来了。如果还在，再分叉。追踪不再是事后验尸。它是找到修复方案的那个实验。">Replay the recorded run to its branch point, mutate one variable — the tool result — and re-run forward. If the failure disappears, the cause is isolated. If it persists, branch again. The trace is no longer a postmortem. It is the experiment that finds the fix.</p>
+</div>
+<p data-en="The teams that internalize this build differently from the start. Tracing is not a feature bolted on at the end, after the agent works. It is a property of the harness, designed in from the first commit, because it is impossible to bolt onto a system whose runs were never structured to be captured. They treat every model call, every tool invocation, every intermediate reasoning step as a first-class, addressable, replayable object — not a side effect of execution that vanishes when the function returns. They give every run an identity, so a failure can be linked, shared, opened, stepped through, and branched from, exactly the way a failing test case can be linked and reproduced in the old world. The discipline sounds heavy until it is compared to the alternative: an agent in production, failing intermittently, with no record of how, and no way to ever know." data-zh="把这一点内化的团队，从一开始就不同地构建。追踪不是最后、在智能体跑通之后才装上去的功能。它是脚手架的一个属性，从第一次提交就设计进去，因为它是无法被「装」到一个运行从未被结构化以便捕获的系统上的。他们把每一次模型调用、每一次工具调用、每一个中间推理步骤，都当作一个一等公民——一个可寻址、可回放的对象——而不是执行的一个副作用，函数返回时就消失。他们给每一次运行一个身份，使得一个失败可以被链接、分享、打开、逐步走查、并从中分叉——就像在旧世界里，一个失败的测试用例可以被链接和复现一样。这门纪律听起来沉重，直到你拿它和替代方案比一比：一个在生产环境里的智能体，间歇性地失败，没有任何记录显示是怎么失败的，也永远无从得知。">The teams that internalize this build differently from the start. Tracing is not a feature bolted on at the end, after the agent works. It is a property of the harness, designed in from the first commit, because it is impossible to bolt onto a system whose runs were never structured to be captured. They treat every model call, every tool invocation, every intermediate reasoning step as a first-class, addressable, replayable object — not a side effect of execution that vanishes when the function returns. They give every run an identity, so a failure can be linked, shared, opened, stepped through, and branched from, exactly the way a failing test case can be linked and reproduced in the old world. The discipline sounds heavy until it is compared to the alternative: an agent in production, failing intermittently, with no record of how, and no way to ever know.</p>
+<p data-en="The old world bequeathed a single, load-bearing idea: that software is debuggable because it is reproducible, and reproducible because it is deterministic. The agent world inherits none of that for free. Determinism is gone. Reproduction is gone. What remains is a choice — to record the runs, or to ship ghosts. The trace is the bridge between a failure and its cause, and without that bridge, every agent in production is a system that fails in ways its own builders cannot see, cannot summon, and cannot fix. You cannot debug what you cannot replay. And an agent whose runs are not recorded is, for the purposes of ever understanding it, an agent that never ran at all." data-zh="旧世界留下了一个承重的想法：软件之所以可调试，是因为它可复现；之所以可复现，是因为它确定。智能体世界，没有免费继承到其中任何一点。确定性没了。复现没了。剩下的，是一个选择——记录这些运行，还是发布幽灵。追踪，是连接失败和它的原因的那座桥，而没有这座桥，每一个生产环境里的智能体，都是一个以它自己的建造者也无法看见、无法召唤、无法修复的方式失败的系统。你无法调试你无法复现的东西。而一个运行未被记录的智能体，就「是否有一天能理解它」而言，是一个从未运行过的智能体。">The old world bequeathed a single, load-bearing idea: that software is debuggable because it is reproducible, and reproducible because it is deterministic. The agent world inherits none of that for free. Determinism is gone. Reproduction is gone. What remains is a choice — to record the runs, or to ship ghosts. The trace is the bridge between a failure and its cause, and without that bridge, every agent in production is a system that fails in ways its own builders cannot see, cannot summon, and cannot fix. You cannot debug what you cannot replay. And an agent whose runs are not recorded is, for the purposes of ever understanding it, an agent that never ran at all.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
