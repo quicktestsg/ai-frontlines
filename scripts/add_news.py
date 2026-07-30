@@ -33,8 +33,6 @@ import build_index
 # Duplicate tweet IDs are automatically skipped.
 # Leave empty [] to just rebuild from existing cache.
 NEW_TWEETS = [
-    # Example:
-    # ("https://x.com/OpenAI/status/XXXXXXXX", "OpenAI", "#10A37F"),
 ]
 
 

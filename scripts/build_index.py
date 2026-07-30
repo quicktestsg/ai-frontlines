@@ -19,7 +19,7 @@ PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
 TEMPLATE = os.path.join(PROJECT_DIR, "index_template.html")
 OUTPUT = os.path.join(PROJECT_DIR, "index.html")
 
-CSS_VERSION = "17"
+CSS_VERSION = "18"
 NEWS_PREVIEW_COUNT = 4  # how many news cards to show on the landing preview
 
 

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Graph Beneath Every Agent — AI Frontlines</title>
+<meta content="Every agent system has a control-flow topology — a directed graph of nodes and edges. Most teams pretend it doesn't exist, and inherit an implicit one: tangled, unmaintainable, full of dead paths and loops with no exit. The teams that win model the graph explicitly. The agent is just a node in it." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="July 31, 2026" data-zh="2026年7月31日">July 31, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Graph Beneath Every Agent" data-zh="每个智能体之下，都有一张图">The Graph Beneath Every Agent</h1>
+<p class="post-header-deck" data-en="Every agent system has a topology — a shape made of nodes and edges, of decisions and transitions, of paths that branch and paths that loop. Most teams never draw it. They write a loop, bolt on some conditionals, and discover the topology only when it breaks — when the agent spirals into an infinite retry, or wanders into a dead-end branch it was never supposed to reach, or calls the same tool nine times because nothing told it to stop. The graph is always there. The only question is whether it was designed, or whether it was discovered in production, at three in the morning, by a team staring at a trace that makes no sense." data-zh="每一个智能体系统，都有一个拓扑——一个由节点和边、由决策和跳转、由分叉与循环构成的形状。大多数团队从不画它。他们写一个循环，钉上几个条件判断，然后只在它崩掉的那一刻才看见这个拓扑——当智能体陷入无限重试，或者溜进一条它根本不该到达的死胡同分支，或者因为没人告诉它停下、于是把同一个工具调了九次。图，永远在那儿。唯一的问题是：它是被设计出来的，还是在凌晨三点、由一个盯着无法理解的追踪记录的团队，在生产环境里发现的。">Every agent system has a topology — a shape made of nodes and edges, of decisions and transitions, of paths that branch and paths that loop. Most teams never draw it. They write a loop, bolt on some conditionals, and discover the topology only when it breaks.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a structure hiding inside every agent ever shipped. It does not appear in the code as a class or a function. It does not appear in the prompt. It appears only when you trace a single run from the user's input to the final answer, and map every point where the system chose one path over another. That map is a directed graph. It has nodes — the model calls, the tool invocations, the routing decisions, the checks and guards. It has edges — the transitions between them, some conditional, some unconditional, some forming loops. This graph is the architecture of the agent. Everything else — the prompt, the model, the tools — is a property of a node. The graph is the system. And the uncomfortable truth is that most teams build agents without ever knowing their graph exists." data-zh="在每一个发布过的智能体里，都藏着一个结构。它不以一个类或一个函数的形式出现在代码里。它不出现在 prompt 里。它只在你追踪一次运行、从用户输入到最终答案、画出每一个系统选择了一条路而非另一条路的点时，才浮现出来。那张地图，是一个有向图。它有节点——模型调用、工具调用、路由决策、检查与守卫。它有边——它们之间的跳转，有的是有条件的，有的是无条件的，有的构成循环。这张图，是智能体的架构。其他一切——prompt、模型、工具——都只是某个节点的属性。图，才是系统。而不舒服的真相是：大多数团队构建智能体时，根本不知道自己的图存在。">There is a structure hiding inside every agent ever shipped. It does not appear in the code as a class or a function. It does not appear in the prompt. It appears only when you trace a single run from the user's input to the final answer, and map every point where the system chose one path over another. That map is a directed graph. It has nodes — the model calls, the tool invocations, the routing decisions, the checks and guards. It has edges — the transitions between them, some conditional, some unconditional, some forming loops. This graph is the architecture of the agent. Everything else — the prompt, the model, the tools — is a property of a node. The graph is the system.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrG1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrG2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE IMPLICIT GRAPH vs THE EXPLICIT GRAPH" data-zh="隐式图 vs 显式图" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE IMPLICIT GRAPH vs THE EXPLICIT GRAPH</text>
+<!-- LEFT: implicit spaghetti -->
+<text data-en="WHAT MOST TEAMS BUILD" data-zh="大多数团队构建的" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="56">WHAT MOST TEAMS BUILD</text>
+<g opacity="0.9">
+<path d="M100 110 C70 130 60 170 90 200" fill="none" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<path d="M130 110 C160 150 100 190 150 215" fill="none" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<path d="M90 210 C140 210 120 140 190 110" fill="none" marker-end="url(#arrG1)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="3,2"></path>
+<path d="M200 110 C220 160 180 190 220 215" fill="none" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<circle cx="100" cy="100" fill="var(--bg-surface)" r="20" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="start" data-zh="起点" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="100" y="104">start</text>
+<circle cx="200" cy="100" fill="var(--bg-surface)" r="20" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="loop?" data-zh="循环?" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="200" y="104">loop?</text>
+<circle cx="90" cy="215" fill="var(--bg-surface)" r="20" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="tool" data-zh="工具" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="90" y="219">tool</text>
+<circle cx="150" cy="215" fill="var(--bg-surface)" r="20" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="model" data-zh="模型" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="150" y="219">model</text>
+<circle cx="220" cy="215" fill="var(--bg-surface)" r="20" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="?" data-zh="?" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="220" y="219">?</text>
+</g>
+<text data-en="tangled · unbounded" data-zh="缠绕 · 无界" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="155" y="278">tangled · unbounded</text>
+<text data-en="discovered at 3am" data-zh="凌晨三点才发现" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="155" y="298">discovered at 3am</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="310"></line>
+<!-- RIGHT: explicit clean graph -->
+<text data-en="WHAT WINNING TEAMS BUILD" data-zh="赢的团队构建的" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="56">WHAT WINNING TEAMS BUILD</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent)" stroke-width="1.5" width="90" x="420" y="74"></rect>
+<text data-en="router" data-zh="路由" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="465" y="95">router</text>
+<path d="M445 106 C410 130 360 135 345 150" fill="none" marker-end="url(#arrG2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M465 106 L465 150" fill="none" marker-end="url(#arrG2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M485 106 C520 130 570 135 585 150" fill="none" marker-end="url(#arrG2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="76" x="300" y="152"></rect>
+<text data-en="search" data-zh="搜索" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="338" y="173">search</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="76" x="427" y="152"></rect>
+<text data-en="compute" data-zh="计算" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="173">compute</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="76" x="554" y="152"></rect>
+<text data-en="verify" data-zh="验证" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="592" y="173">verify</text>
+<path d="M338 184 C380 200 440 200 458 210" fill="none" marker-end="url(#arrG2)" stroke="var(--accent)" stroke-width="1.2"></path>
+<path d="M465 184 L465 210" fill="none" marker-end="url(#arrG2)" stroke="var(--accent)" stroke-width="1.2"></path>
+<path d="M592 184 C550 200 490 200 472 210" fill="none" marker-end="url(#arrG2)" stroke="var(--accent)" stroke-width="1.2"></path>
+<rect fill="var(--accent-dim)" height="34" rx="8" stroke="var(--accent)" stroke-width="2" width="120" x="405" y="212"></rect>
+<text data-en="aggregate" data-zh="聚合" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="234">aggregate</text>
+<path d="M465 246 L465 262" fill="none" marker-end="url(#arrG2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="✓ done" data-zh="✓ 完成" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="280">done</text>
+<text data-en="bounded · testable · named" data-zh="有界 · 可测 · 命名清晰" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="465" y="308">bounded · testable · named</text>
+</svg>
+<p class="diagram-caption" data-en="On the left, the implicit graph: nodes connected by ad-hoc paths, no exit conditions, no names, discovered only when it breaks. On the right, the explicit graph: a router fans out to named tool nodes, results aggregate, and every edge carries a condition. Same intelligence. Different architecture. Only one of them can be maintained." data-zh="左边，是隐式图：节点之间由临时路径连接，没有退出条件，没有名字，只有在它崩掉时才被发现。右边，是显式图：一个路由器扇出到命名的工具节点，结果被聚合，每一条边都带着一个条件。同样的智能。不同的架构。只有一个能被维护。">On the left, the implicit graph: nodes connected by ad-hoc paths, no exit conditions, no names, discovered only when it breaks. On the right, the explicit graph: a router fans out to named tool nodes, results aggregate, and every edge carries a condition. Same intelligence. Different architecture. Only one of them can be maintained.</p>
+</div>
+<h3 data-en="The graph you don't design is the graph that designs you" data-zh="你不设计的图，会反过来设计你">The graph you don't design is the graph that designs you</h3>
+<p data-en="Here is how most agent systems are actually built. A developer writes a loop. Inside the loop, the model is called with a system prompt and a list of tools. The model returns a response, maybe with a tool call. If there is a tool call, it is executed and the result is fed back. The loop continues until the model decides to stop, or until a step counter hits a limit. This is the entire architecture. And buried inside that description is a graph — but it is a graph with no name, no boundary, and no escape hatch. The routing decision — which tool to call, when to stop, when to loop — is delegated entirely to the model's next-token prediction. Every conditional branch, every loop, every exit is implicit, encoded not in a control structure that an engineer can read and reason about, but in the probabilistic output of a language model that will, on a bad day, produce a path nobody intended." data-zh="大多数智能体系统，实际上是这样构建的。一个开发者写了一个循环。循环内部，模型被带着系统 prompt 和工具列表调用。模型返回一个响应，也许带一个工具调用。如果有工具调用，就执行它，把结果喂回去。循环继续，直到模型决定停下，或者直到步数计数器撞上上限。这就是全部架构。而埋在这段描述里的，是一张图——但它是一张没有名字、没有边界、没有逃生口的图。路由决策——调用哪个工具、何时停下、何时循环——被完全委托给了模型的下一个 token 预测。每一个条件分支、每一个循环、每一个出口，都是隐式的，不是编码在一个工程师能读懂、能推理的控制结构里，而是编码在一个语言模型的概率输出里——而在糟糕的一天，那个输出会生成一条没人预想过的路径。">Here is how most agent systems are actually built. A developer writes a loop. Inside the loop, the model is called with a system prompt and a list of tools. The model returns a response, maybe with a tool call. If there is a tool call, it is executed and the result is fed back. The loop continues until the model decides to stop, or until a step counter hits a limit. This is the entire architecture. And buried inside that description is a graph — but it is a graph with no name, no boundary, and no escape hatch. The routing decision is delegated entirely to the model's next-token prediction. Every conditional branch, every loop, every exit is implicit, encoded not in a control structure that an engineer can read and reason about, but in the probabilistic output of a language model that will, on a bad day, produce a path nobody intended.</p>
+<p data-en="This works, for a while. For simple tasks, a single loop with a handful of tools and a model that is good enough will produce acceptable results most of the time. The implicit graph is fine when the graph is small. But agents do not stay small. A tool gets added, then another. A retrieval step appears before the loop. A verification step appears after it. The system prompt grows paragraphs explaining when to use which tool. Soon there are two loops, or three — one for planning, one for execution, one for review. The conditionals multiply. And the graph that was once a simple circle becomes a tangle that no single person in the team can hold in their head. The system still works, most of the time. But when it fails, nobody knows why, because nobody can see the path it took — and even if they could, the path was not designed, so there is no specification to compare it against. There is only the model's best guess about what should happen next, and the growing pile of edge cases where that guess was wrong." data-zh="这能工作，一段时间。对于简单任务，一个带几个工具和一个足够好的模型的简单循环，大多数时候能产出可接受的结果。隐式图在图很小的时候，是没问题的。但智能体不会一直小。一个工具被加进来，然后又一个。一个检索步骤出现在循环之前。一个验证步骤出现在它之后。系统 prompt 长出好几段，解释什么时候用哪个工具。很快有了两个循环，或三个——一个用于规划、一个用于执行、一个用于审查。条件判断开始繁殖。曾经一个简单的圆圈，变成了一个团队里没有一个人能在脑子里装下的缠绕。系统大多数时候还在工作。但当它失败时，没人知道为什么，因为没人能看见它走的路径——即便能看见，那条路径也不是被设计出来的，所以没有一个规格可以拿去比较。有的只是模型关于「接下来该发生什么」的最佳猜测，以及一堆那个猜测错了的边缘情况。">This works, for a while. For simple tasks, a single loop with a handful of tools and a model that is good enough will produce acceptable results most of the time. The implicit graph is fine when the graph is small. But agents do not stay small. A tool gets added, then another. A retrieval step appears before the loop. A verification step appears after it. The system prompt grows paragraphs explaining when to use which tool. Soon there are two loops, or three — one for planning, one for execution, one for review. The conditionals multiply. And the graph that was once a simple circle becomes a tangle that no single person in the team can hold in their head.</p>
+<blockquote data-en="A loop with a model inside is not an architecture. It is a bet that the model will route correctly, every time, forever. Architectures do not bet. They constrain. The graph is how you constrain the model's choices without limiting its intelligence — by defining the space of legal paths and letting the model explore within them." data-zh="一个里面塞了模型的循环，不是一个架构。它是一个赌注——赌模型每次、永远都能正确路由。架构不下注。架构约束。图，就是你如何在不限制模型智能的前提下、约束它的选择——通过定义合法路径的空间，让模型在空间内探索。">A loop with a model inside is not an architecture. It is a bet that the model will route correctly, every time, forever. Architectures do not bet. They constrain. The graph is how you constrain the model's choices without limiting its intelligence — by defining the space of legal paths and letting the model explore within them.</blockquote>
+<h3 data-en="The model is a node, not the graph" data-zh="模型是节点，不是图本身">The model is a node, not the graph</h3>
+<p data-en="This is the mental shift that separates teams that scale agents from teams that drown in them. The model is not the system. The model is a component inside the system — a powerful, flexible, probabilistic node that can reason, plan, and choose. But it is still a node. It has inputs and outputs. It sits inside a larger structure that determines when it is called, what context it receives, what tools it can access, and what happens to its output. That larger structure is the graph, and it is the thing the engineering team is actually responsible for designing. The model provider gives you the node. The graph is yours." data-zh="这是区分「能把智能体做大的团队」和「在智能体里溺水的团队」的心智转变。模型不是系统。模型是系统内部的一个组件——一个强大、灵活、概率性的节点，能推理、能规划、能选择。但它仍然是一个节点。它有输入和输出。它坐在一个更大的结构里，那个结构决定它何时被调用、收到什么上下文、能访问什么工具、它的输出会怎样被处理。那个更大的结构，是图，而它才是工程团队真正负责设计的东西。模型提供商给你的是节点。图，是你的。">This is the mental shift that separates teams that scale agents from teams that drown in them. The model is not the system. The model is a component inside the system — a powerful, flexible, probabilistic node that can reason, plan, and choose. But it is still a node. It has inputs and outputs. It sits inside a larger structure that determines when it is called, what context it receives, what tools it can access, and what happens to its output. That larger structure is the graph, and it is the thing the engineering team is actually responsible for designing. The model provider gives you the node. The graph is yours.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrN1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrN2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrN3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE MODEL IS A NODE IN THE GRAPH" data-zh="模型是图中的一个节点" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE MODEL IS A NODE IN THE GRAPH</text>
+<!-- input -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--text-tertiary)" stroke-width="1.5" width="110" x="255" y="44"></rect>
+<text data-en="user input" data-zh="用户输入" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="66">user input</text>
+<path d="M310 78 L310 92" fill="none" marker-end="url(#arrN2)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<!-- retrieval -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="110" x="255" y="94"></rect>
+<text data-en="context retrieval" data-zh="上下文检索" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="116">context retrieval</text>
+<path d="M310 128 L310 142" fill="none" marker-end="url(#arrN2)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<!-- the model node, emphasized -->
+<rect fill="var(--accent-dim)" height="52" rx="10" stroke="var(--accent)" stroke-width="2.5" width="180" x="220" y="144"></rect>
+<text data-en="MODEL" data-zh="模型" fill="var(--accent)" font-family="Inter,sans-serif" font-size="13" font-weight="800" text-anchor="middle" x="310" y="166">MODEL</text>
+<text data-en="reason · plan · choose tool" data-zh="推理 · 规划 · 选工具" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="184">reason · plan · choose tool</text>
+<!-- fan-out to tools -->
+<path d="M250 196 C200 220 150 225 120 240" fill="none" marker-end="url(#arrN1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M310 196 L310 240" fill="none" marker-end="url(#arrN1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M370 196 C420 220 470 225 500 240" fill="none" marker-end="url(#arrN1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent)" stroke-width="1.5" width="84" x="78" y="242"></rect>
+<text data-en="search()" data-zh="search()" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="120" y="263">search()</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent)" stroke-width="1.5" width="84" x="268" y="242"></rect>
+<text data-en="compute()" data-zh="compute()" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="263">compute()</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent)" stroke-width="1.5" width="84" x="458" y="242"></rect>
+<text data-en="write()" data-zh="write()" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="500" y="263">write()</text>
+<!-- guard loop back -->
+<path d="M120 274 C120 310 310 320 500 274" fill="none" marker-end="url(#arrN3)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<text data-en="guard: if steps > N, exit" data-zh="守卫：若步数 > N，退出" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="316">guard: if steps &gt; N, exit</text>
+</svg>
+<p class="diagram-caption" data-en="The model is one node among many. Retrieval feeds it. Tools fan out from it. A guard constrains the loop. Every arrow is an engineering decision — a place where the team chose a path, a condition, a boundary. The model's job is to reason within this structure. The team's job is to build the structure." data-zh="模型只是众多节点中的一个。检索喂数据给它。工具从它扇出。一个守卫约束着循环。每一根箭头，都是一个工程决策——一个团队选择了路径、条件、边界的地方。模型的职责，是在这个结构内推理。团队的职责，是建造这个结构。">The model is one node among many. Retrieval feeds it. Tools fan out from it. A guard constrains the loop. Every arrow is an engineering decision — a place where the team chose a path, a condition, a boundary. The model's job is to reason within this structure. The team's job is to build the structure.</p>
+</div>
+<p data-en="Once this shift happens, the engineering questions change completely. Instead of asking 'how do I make the model smarter,' the question becomes 'what is the right graph for this task.' Should retrieval happen once, before the loop, or inside it, on every iteration? Should the model have access to all tools at once, or should the graph route to a subset based on the task type? Is there a verification node that checks the model's output before it reaches the user, and if so, what happens when verification fails — loop back, or fall back to a safe default? These are graph-design questions. They have nothing to do with the model and everything to do with the topology that surrounds it. And they are the questions that determine whether the agent is reliable, not whether the model scored well on a benchmark." data-zh="一旦这个转变发生，工程问题就完全变了。问题不再是「我怎么让模型更聪明」，而是变成了「这个任务正确的图是什么」。检索应该只发生一次、在循环之前，还是在循环内部、每一次迭代都发生？模型应该一次性访问所有工具，还是图应该根据任务类型路由到一个子集？有没有一个验证节点在模型的输出到达用户之前检查它？如果有，验证失败时怎么办——循环回去，还是降级到一个安全的默认值？这些是图设计问题。它们和模型无关，和围绕模型的拓扑有关。而决定智能体是否可靠的，正是这些问题——不是模型在基准测试上得了多少分。">Once this shift happens, the engineering questions change completely. Instead of asking 'how do I make the model smarter,' the question becomes 'what is the right graph for this task.' Should retrieval happen once, before the loop, or inside it, on every iteration? Should the model have access to all tools at once, or should the graph route to a subset based on the task type? Is there a verification node that checks the model's output before it reaches the user, and if so, what happens when verification fails — loop back, or fall back to a safe default? These are graph-design questions. They have nothing to do with the model and everything to do with the topology that surrounds it. And they are the questions that determine whether the agent is reliable, not whether the model scored well on a benchmark.</p>
+<h3 data-en="The three failures of an implicit graph" data-zh="隐式图的三种失败">The three failures of an implicit graph</h3>
+<p data-en="When the graph is left implicit, three failure modes appear with such regularity that they deserve names. The first is the vortex: a loop with no exit condition except the model deciding to stop. Most of the time it does. Sometimes it does not. When it does not, the agent calls the same tool, gets the same result, reasons the same way, and tries again — burning tokens, burning money, burning the user's patience. A vortex is what happens when the graph has a cycle but no guard node, no step counter that routes to an exit, no convergence check that breaks the loop. The model is trapped in a topology it cannot see and cannot escape, because the escape was never engineered." data-zh="当图被留在隐式状态时，有三种失败模式出现得如此规律，以至于它们值得被命名。第一种是「漩涡」：一个除了「模型决定停下」之外没有退出条件的循环。大多数时候它会停。有时它不停。当它不停时，智能体调用同一个工具、得到同一个结果、以同样的方式推理、然后再试一次——烧着 token，烧着钱，烧着用户的耐心。漩涡，是图里有环却没有守卫节点时发生的事——没有步数计数器路由到出口，没有收敛检查打断循环。模型被困在一个它看不见也逃不掉的拓扑里，因为逃生口从未被工程出来。">When the graph is left implicit, three failure modes appear with such regularity that they deserve names. The first is the vortex: a loop with no exit condition except the model deciding to stop. Most of the time it does. Sometimes it does not. When it does not, the agent calls the same tool, gets the same result, reasons the same way, and tries again — burning tokens, burning money, burning the user's patience. A vortex is what happens when the graph has a cycle but no guard node.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrF1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrF2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrF3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THREE FAILURE MODES OF THE IMPLICIT GRAPH" data-zh="隐式图的三种失败模式" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THREE FAILURE MODES OF THE IMPLICIT GRAPH</text>
+<!-- FAILURE 1: VORTEX -->
+<text data-en="① THE VORTEX" data-zh="① 漩涡" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="110" y="54">THE VORTEX</text>
+<circle cx="110" cy="115" fill="none" r="34" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3"></circle>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="64" x="78" y="101"></rect>
+<text data-en="model" data-zh="模型" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="110" y="119">model</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="64" x="78" y="145"></rect>
+<text data-en="tool" data-zh="工具" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="110" y="163">tool</text>
+<path d="M142 115 C165 115 165 159 142 159" fill="none" marker-end="url(#arrF1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<path d="M78 159 C55 159 55 115 78 115" fill="none" marker-end="url(#arrF1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<text data-en="no exit" data-zh="无出口" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="110" y="198">no exit</text>
+<text data-en="∞ tokens burned" data-zh="∞ token 烧光" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="110" y="214">∞ tokens burned</text>
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="210" x2="210" y1="40" y2="230"></line>
+<!-- FAILURE 2: DEAD END -->
+<text data-en="② THE DEAD END" data-zh="② 死胡同" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="54">THE DEAD END</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="64" x="278" y="72"></rect>
+<text data-en="router" data-zh="路由" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="90">router</text>
+<path d="M310 100 L310 116" fill="none" marker-end="url(#arrF2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="64" x="278" y="118"></rect>
+<text data-en="tool A" data-zh="工具 A" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="136">tool A</text>
+<path d="M342 132 C370 132 370 170 342 170" fill="none" marker-end="url(#arrF2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-2)" stroke-width="2" width="64" x="278" y="156"></rect>
+<text data-en="tool B" data-zh="工具 B" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="174">tool B</text>
+<rect fill="none" height="28" rx="6" stroke="var(--accent-2)" stroke-width="1.5" stroke-dasharray="3,2" width="64" x="278" y="194"></rect>
+<text data-en="???" data-zh="???" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="212">???</text>
+<text data-en="no path forward" data-zh="无路可走" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="246">no path forward</text>
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="410" x2="410" y1="40" y2="230"></line>
+<!-- FAILURE 3: UNBOUNDED BRANCH -->
+<text data-en="③ THE FAN-OUT" data-zh="③ 无界扇出" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="515" y="54">THE FAN-OUT</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent)" stroke-width="1.5" width="56" x="487" y="68"></rect>
+<text data-en="start" data-zh="起点" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="515" y="85">start</text>
+<line stroke="var(--accent)" stroke-width="1.3" x1="515" x2="515" y1="94" y2="104"></line>
+<g opacity="0.85">
+<line stroke="var(--accent)" stroke-width="1" x1="515" x2="475" y1="104" y2="112"></line>
+<line stroke="var(--accent)" stroke-width="1" x1="515" x2="500" y1="104" y2="112"></line>
+<line stroke="var(--accent)" stroke-width="1" x1="515" x2="530" y1="104" y2="112"></line>
+<line stroke="var(--accent)" stroke-width="1" x1="515" x2="555" y1="104" y2="112"></line>
+</g>
+<line stroke="var(--accent)" stroke-width="1.3" x1="515" x2="515" y1="112" y2="120"></line>
+<g opacity="0.65">
+<line stroke="var(--accent)" stroke-width="0.8" x1="475" x2="455" y1="112" y2="120"></line>
+<line stroke="var(--accent)" stroke-width="0.8" x1="475" x2="475" y1="112" y2="120"></line>
+<line stroke="var(--accent)" stroke-width="0.8" x1="475" x2="495" y1="112" y2="120"></line>
+<line stroke="var(--accent)" stroke-width="0.8" x1="500" x2="485" y1="112" y2="120"></line>
+<line stroke="var(--accent)" stroke-width="0.8" x1="500" x2="500" y1="112" y2="120"></line>
+<line stroke="var(--accent)" stroke-width="0.8" x1="500" x2="515" y1="112" y2="120"></line>
+<line stroke="var(--accent)" stroke-width="0.8" x1="530" x2="520" y1="112" y2="120"></line>
+<line stroke="var(--accent)" stroke-width="0.8" x1="530" x2="530" y1="112" y2="120"></line>
+<line stroke="var(--accent)" stroke-width="0.8" x1="530" x2="545" y1="112" y2="120"></line>
+<line stroke="var(--accent)" stroke-width="0.8" x1="555" x2="540" y1="112" y2="120"></line>
+<line stroke="var(--accent)" stroke-width="0.8" x1="555" x2="555" y1="112" y2="120"></line>
+<line stroke="var(--accent)" stroke-width="0.8" x1="555" x2="575" y1="112" y2="120"></line>
+</g>
+<rect fill="var(--bg-surface)" height="18" rx="4" stroke="var(--accent)" stroke-width="1" width="140" x="445" y="124"></rect>
+<text data-en="...exponential paths..." data-zh="...指数级路径..." fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="515" y="137">...exponential paths...</text>
+<text data-en="no bounds" data-zh="无边界" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="515" y="170">no bounds</text>
+<text data-en="untestable, unbounded" data-zh="不可测，无界" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="515" y="186">untestable, unbounded</text>
+<!-- bottom caption spanning all three -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="262"></rect>
+<text data-en="Each is a graph defect, not a model defect — fixable only by adding a node, an edge, or an exit condition that the topology was missing." data-zh="每一种，都是图的缺陷，而非模型的缺陷——只有通过添加一个缺失的节点、一条边、或一个退出条件，才能修复。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="288">Each is a graph defect, not a model defect — fixable only by adding a node, an edge, or an exit condition that the topology was missing.</text>
+</svg>
+<p class="diagram-caption" data-en="The vortex loops forever because no guard node was placed on the cycle. The dead end halts because no fallback edge was drawn from the router. The fan-out explodes because no bound was placed on branching depth. In every case, the fix is a topology change — not a prompt change, not a model upgrade." data-zh="漩涡永远循环，因为环上没有放守卫节点。死胡同停滞，因为路由器没有画出回退边。扇出爆炸，因为分支深度没有被设限。在每一种情况下，修复都是一次拓扑改动——不是改 prompt，不是升级模型。">The vortex loops forever because no guard node was placed on the cycle. The dead end halts because no fallback edge was drawn from the router. The fan-out explodes because no bound was placed on branching depth. In every case, the fix is a topology change — not a prompt change, not a model upgrade.</p>
+</div>
+<p data-en="The second failure is the dead end: a path the model can reach that has no outgoing edge. This happens when a tool returns a result the model does not know how to handle — an error, an unexpected format, an empty response — and the system prompt offered no instruction for what to do next. In an explicit graph, this is impossible, because every node has defined outgoing edges, including a fallback. In an implicit graph, the model improvises. Sometimes it improvises well. Sometimes it hallucinates a path that does not exist, calls a tool with invented arguments, or simply returns a confidently wrong answer to paper over the gap it could not bridge. The dead end is not a model failure. It is a topology failure — a missing edge that the graph needed and the team never drew." data-zh="第二种失败是死胡同：一条模型能到达、却没有出边的路径。当工具返回一个模型不知道怎么处理的结果——一个错误、一个意外的格式、一个空响应——而系统 prompt 没有给出下一步该怎么办的指令时，就发生了。在显式图里，这不可能发生，因为每个节点都有定义好的出边，包括一个回退。在隐式图里，模型即兴发挥。有时它发挥得很好。有时它幻觉出一条不存在的路径，用编造的参数调用一个工具，或者干脆返回一个自信的错误答案来掩盖它无法跨越的缺口。死胡同不是模型的失败。它是拓扑的失败——一条图需要、但团队从未画出的缺失的边。">The second failure is the dead end: a path the model can reach that has no outgoing edge. This happens when a tool returns a result the model does not know how to handle — an error, an unexpected format, an empty response — and the system prompt offered no instruction for what to do next. In an explicit graph, this is impossible, because every node has defined outgoing edges, including a fallback. In an implicit graph, the model improvises. Sometimes it improvises well. Sometimes it hallucinates a path that does not exist. The dead end is not a model failure. It is a topology failure — a missing edge that the graph needed and the team never drew.</p>
+<p data-en="The third is the fan-out: a graph where the model can branch at every step, and the branches compound. Each step offers multiple tool choices; each tool returns results that enable new choices; the tree of possible paths grows exponentially. For short runs this is manageable. For long runs — a research agent that takes fifty steps, a coding agent that iterates across a whole repository — the space of possible executions becomes so vast that testing is impossible, debugging is guessing, and the system behaves like weather: the same input produces a different path every time, and no two runs are alike. The fix is not a better model. The fix is a graph with bounded branching: a topology that limits how many choices exist at each node, that collapses equivalent paths, that forces convergence at checkpoints. The model is allowed to explore, but only within a corridor the team defined. Intelligence without boundaries is chaos. Intelligence within a well-shaped graph is a product." data-zh="第三种是扇出：一张模型在每一步都能分叉、而分叉不断叠加的图。每一步提供多个工具选择；每个工具返回的结果又开启新的选择；可能路径的树呈指数级增长。对于短运行，这尚可管理。对于长运行——一个走五十步的研究智能体，一个在整个代码库里迭代的编程智能体——可能执行的空间变得如此巨大，测试变得不可能，调试变成猜测，而系统表现得像天气：相同的输入每次产出不同的路径，没有两次运行是一样的。修复不是更好的模型。修复是一张有界分支的图：一个限制每个节点存在多少选择的拓扑，一个合并等价路径的拓扑，一个在检查点强制收敛的拓扑。模型被允许探索，但只在团队定义的走廊之内。没有边界的智能，是混乱。在一张形状良好的图之内的智能，是产品。">The third is the fan-out: a graph where the model can branch at every step, and the branches compound. Each step offers multiple tool choices; each tool returns results that enable new choices; the tree of possible paths grows exponentially. For short runs this is manageable. For long runs — a research agent that takes fifty steps, a coding agent that iterates across a whole repository — the space of possible executions becomes so vast that testing is impossible, debugging is guessing, and the system behaves like weather. The fix is not a better model. The fix is a graph with bounded branching: a topology that limits how many choices exist at each node, that collapses equivalent paths, that forces convergence at checkpoints. Intelligence without boundaries is chaos. Intelligence within a well-shaped graph is a product.</p>
+<h3 data-en="Draw the graph before you write the loop" data-zh="在写循环之前，先画图">Draw the graph before you write the loop</h3>
+<p data-en="The teams that ship reliable agents do one thing differently, and they do it before writing a single line of the loop. They draw the graph. On a whiteboard, in a document, in a config file — the medium does not matter. What matters is that the topology is made explicit: every node named, every edge labeled with its condition, every loop marked with its exit, every branch bounded. This is not paperwork. This is the architecture. Once the graph exists as a first-class object, everything else follows. The nodes become testable units. The edges become the integration points. The loops become bounded, because their exit conditions are visible and debated, not buried in a prompt. The branching becomes controlled, because the team can see where the graph fans out and decide whether that fan-out is necessary or reckless." data-zh="发布可靠智能体的团队，做对了一件不同的事，而他们在写哪怕一行循环之前就做了。他们画图。在白板上，在文档里，在配置文件里——载体不重要。重要的是拓扑被显式化：每个节点被命名，每条边被标注条件，每个循环被标明出口，每个分支被设限。这不是文书工作。这是架构。一旦图作为一个一等公民存在，其他一切都随之而来。节点变成可测的单元。边变成集成点。循环变成有界的，因为它们的退出条件是可见的、被讨论过的，不是埋在 prompt 里的。分支变成受控的，因为团队能看见图在哪里扇出，并决定那个扇出是必要的，还是鲁莽的。">The teams that ship reliable agents do one thing differently, and they do it before writing a single line of the loop. They draw the graph. On a whiteboard, in a document, in a config file — the medium does not matter. What matters is that the topology is made explicit: every node named, every edge labeled with its condition, every loop marked with its exit, every branch bounded. This is not paperwork. This is the architecture. Once the graph exists as a first-class object, everything else follows. The nodes become testable units. The edges become the integration points. The loops become bounded, because their exit conditions are visible and debated, not buried in a prompt.</p>
+<p data-en="The graph is also what makes the system maintainable over time. When a new tool is added, the question is not 'where do I mention it in the prompt' but 'where does its node go in the graph, and what edges connect it.' When a model is upgraded, the question is not 'will it still work' but 'does the new model respect the graph's edges, or has its behavior changed enough that the routing decisions need new conditions.' When a bug appears, the trace is mapped onto the graph, and the defect is found at a specific edge — a transition that should not have happened, or a node that was entered with the wrong context. The graph turns the agent from a black box that sometimes works into a system with an addressable structure, where every failure has a location and every improvement has a place." data-zh="图，也是让系统随时间可维护的东西。当新工具被加入时，问题不是「我在 prompt 的哪里提到它」，而是「它的节点在图里的哪个位置，什么边连接它」。当模型升级时，问题不是「它还能用吗」，而是「新模型是否尊重图的边，还是它的行为变化大到路由决策需要新的条件」。当 bug 出现时，追踪记录被映射到图上，缺陷在一个具体的边上被找到——一个不该发生的跳转，或一个带着错误上下文进入的节点。图，把智能体从一个「有时能用的黑箱」，变成一个有可寻址结构的系统——每一个失败都有一个位置，每一个改进都有一个落点。">The graph is also what makes the system maintainable over time. When a new tool is added, the question is not 'where do I mention it in the prompt' but 'where does its node go in the graph, and what edges connect it.' When a model is upgraded, the question is not 'will it still work' but 'does the new model respect the graph's edges, or has its behavior changed enough that the routing decisions need new conditions.' When a bug appears, the trace is mapped onto the graph, and the defect is found at a specific edge. The graph turns the agent from a black box that sometimes works into a system with an addressable structure, where every failure has a location and every improvement has a place.</p>
+<p data-en="None of this requires a framework. The graph does not need to be expressed in a library or a domain-specific language. It needs to be a decision the team makes consciously: that the topology of their agent is an engineering artifact, as real as a database schema or an API contract, and deserves the same rigor. The model will keep getting smarter. The tools will keep getting more capable. But the graph — the shape of how intelligence flows from input to output, through nodes and edges, across loops and branches — that is the part that does not come for free, and that is the part that determines whether the agent is a toy or a system. Every agent has a graph. The only question is whether it was built on purpose, or whether it emerged, unbidden, in the dark, and waited to be found." data-zh="这些，没有一个需要框架。图不需要用一个库或一门领域特定语言来表达。它需要的是团队有意识地做出一个决定：他们的智能体的拓扑，是一个工程产物，和数据库 schema 或 API 契约一样真实，值得同样的严谨。模型会继续变得更聪明。工具会继续变得更强。但图——智能如何从输入流向输出、穿过节点和边、跨越循环和分支的那个形状——那是不会免费到来的部分，那是决定一个智能体是玩具还是系统的部分。每一个智能体都有一张图。唯一的问题是：它是被有意建造的，还是在黑暗中，不请自来、等着被发现的。">None of this requires a framework. The graph does not need to be expressed in a library or a domain-specific language. It needs to be a decision the team makes consciously: that the topology of their agent is an engineering artifact, as real as a database schema or an API contract, and deserves the same rigor. The model will keep getting smarter. The tools will keep getting more capable. But the graph — the shape of how intelligence flows from input to output, through nodes and edges, across loops and branches — that is the part that does not come for free, and that is the part that determines whether the agent is a toy or a system. Every agent has a graph. The only question is whether it was built on purpose, or whether it emerged, unbidden, in the dark, and waited to be found.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
