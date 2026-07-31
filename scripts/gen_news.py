@@ -77,9 +77,12 @@ def format_count(n):
 
 
 def format_date(date_str):
-    """Format ISO date to 'Jul 25' style."""
+    """Format ISO date to 'Jul 25' style, converted to SGT (UTC+8)."""
     dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
-    return dt.strftime("%b %-d")
+    # Convert UTC to Singapore time (UTC+8)
+    from datetime import timedelta
+    sgt = dt + timedelta(hours=8)
+    return sgt.strftime("%b %-d")
 
 
 def process_text(text):
