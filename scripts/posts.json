@@ -1,0 +1,74 @@
+[
+  {
+    "date": "2026-07-31",
+    "slug": "the-graph-beneath-every-agent",
+    "title_en": "The Graph Beneath Every Agent",
+    "title_zh": "每个智能体之下，都有一张图",
+    "read_time": 9,
+    "excerpt_en": "Every agent system has a topology — a directed graph of nodes and edges. Most teams never draw it. They write a loop, bolt on conditionals, and discover the graph only when it breaks: the infinite retry, the dead-end branch, the tool called nine times. The model is just a node. The graph is the system.",
+    "excerpt_zh": "每一个智能体系统，都有一个拓扑——一张由节点和边构成的有向图。大多数团队从不画它。他们写一个循环，钉上几个条件判断，然后只在它崩掉时才看见这张图：无限重试、死胡同分支、同一个工具被调九次。模型只是节点。图才是系统。"
+  },
+  {
+    "date": "2026-07-30",
+    "slug": "you-cant-debug-what-you-cant-replay",
+    "title_en": "You Can't Debug What You Can't Replay",
+    "title_zh": "你无法调试，无法复现的东西",
+    "read_time": 8,
+    "excerpt_en": "For seventy years, a bug meant a stack trace — a reproducible arrow pointing at the failing line. An agent has no stack trace. Every run is a unique path through a probabilistic space, gone the instant the response returns. A bug report that says the agent was wrong is not a bug report. It is a ghost story.",
+    "excerpt_zh": "七十年来，一个 bug 意味着一条堆栈追踪——一支可复现的箭头，精确指向出错的那一行。一个智能体没有堆栈追踪。每一次运行，都是穿越概率空间的一条独一无二的路径，在响应返回的那一刻就消失了。一个写着「智能体错了」的 bug 报告，不是 bug 报告。它是一个鬼故事。"
+  },
+  {
+    "date": "2026-07-29",
+    "slug": "latency-is-the-new-bug",
+    "title_en": "Latency Is the New Bug",
+    "title_zh": "延迟，是新的 Bug",
+    "read_time": 8,
+    "excerpt_en": "A slow feature used to be an inconvenience. An agent that takes thirty seconds to answer is not slow — it is broken. The wait is where trust dies, where the loop burns money, where a timeout kills the run mid-thought.",
+    "excerpt_zh": "一个慢的功能，过去只是不方便。一个要花三十秒才回答的智能体，不是慢——它是坏的。等待，是信任死去的地方，是循环烧钱的地方，是一个超时中途掐断思考的地方。"
+  },
+  {
+    "date": "2026-07-28",
+    "slug": "your-agent-has-no-compiler",
+    "title_en": "Your Agent Has No Compiler",
+    "title_zh": "你的智能体，没有编译器",
+    "read_time": 8,
+    "excerpt_en": "For seventy years, software shipped with a safety net — the compiler, the type checker, the test suite. An AI agent has none of this. It runs, produces fluent output, and fails in ways that look exactly like success. The eval suite is the only gate standing between plausible and correct.",
+    "excerpt_zh": "七十年来，软件发布时都带着安全网——编译器、类型检查、测试套件。一个 AI 智能体，这些都没有。它运行，产出流畅的输出，以一种看起来和成功一模一样的方式失败。评估套件，是「看起来对」和「真的对」之间唯一的闸门。"
+  },
+  {
+    "date": "2026-07-27",
+    "slug": "the-context-window-is-not-memory",
+    "title_en": "The Context Window Is Not Memory",
+    "title_zh": "上下文窗口，不等于记忆",
+    "read_time": 7,
+    "excerpt_en": "Every model release ships with a bigger context window, and every time teams treat it as a memory upgrade. It is not. The window is a scratchpad. Memory is something you engineer, retrieve, and test.",
+    "excerpt_zh": "每次模型发布，上下文窗口都更大；每次，团队都把它当成记忆升级。它不是。窗口是草稿纸。记忆是需要你亲手工程、亲手检索、亲手测试的东西。"
+  },
+  {
+    "date": "2026-07-26",
+    "slug": "the-model-is-the-engine-not-the-car",
+    "title_en": "The Model Is the Engine, Not the Car",
+    "title_zh": "模型是引擎，不是整车",
+    "read_time": 7,
+    "excerpt_en": "Teams keep asking which model is best. Wrong question. The model is an engine, and engines don't drive themselves. The harness is the car.",
+    "excerpt_zh": "所有人都在问「哪个模型最强」。问错了。模型是引擎，而引擎不会自己跑起来。真正上路的是脚手架——那辆车。"
+  },
+  {
+    "date": "2026-07-25",
+    "slug": "spaghetti-with-api-bills",
+    "title_en": "Spaghetti With API Bills",
+    "title_zh": "意大利面与 API 账单",
+    "read_time": 6,
+    "excerpt_en": "Most multi-agent systems aren't architectures. They're one big prompt chopped into pieces, each piece burning money. The fix is older than AI itself.",
+    "excerpt_zh": "大部分「多智能体系统」根本不是架构。只是一个 prompt 被切成几块，每块都在烧钱。解法比 AI 本身还老。"
+  },
+  {
+    "date": "2026-07-24",
+    "slug": "the-loop-is-the-new-function",
+    "title_en": "The Loop Is the New Function",
+    "title_zh": "函数的时代结束了",
+    "read_time": 5,
+    "excerpt_en": "For 70 years the function was the atom of software. Now it's the loop. What changes when code stops running once and starts running forever?",
+    "excerpt_zh": "七十年来，函数是软件的原子——输入进去，输出出来，完事。然后 AI 智能体出现了，它不停止。"
+  }
+]
