@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Cost of a Thought — AI Frontlines</title>
+<meta content="Every token an agent generates is billed. Most teams know their accuracy, their latency, their uptime — and have no idea what a single task completion costs. Inference economics is not a finance concern. It is the constraint that decides whether an agent is a product or a science project." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="August 1, 2026" data-zh="2026年8月1日">August 1, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Cost of a Thought" data-zh="一次思考的代价">The Cost of a Thought</h1>
+<p class="post-header-deck" data-en="Every token an agent generates is billed. Teams know their accuracy to two decimal places. They know their p99 latency. They have dashboards for uptime and error rates. And most of them cannot answer a single question: what does one completed task cost? Not the API price per million tokens — the real cost, with retries, with context bloat, with the verification step that runs on every output. Inference economics is not a finance concern to delegate to procurement. It is an engineering constraint, and the teams that ignore it build agents that are technically perfect and commercially impossible." data-zh="智能体生成的每一个 token，都是要计费的。团队把自己的准确率精确到小数点后两位。他们知道自己的 p99 延迟。他们有正常运行时间和错误率的仪表盘。但他们中的大多数，回答不了一个问题：完成一个任务，到底要花多少钱？不是 API 每百万 token 的标价——是真实成本，包括重试，包括上下文膨胀，包括那个对每一条输出都要跑一遍的验证步骤。推理经济学，不是一个可以甩给采购部门的财务问题。它是一个工程约束——忽视它的团队，会造出技术完美、但商业上不可能的智能体。">Every token an agent generates is billed. Teams know their accuracy to two decimal places. They know their p99 latency. And most of them cannot answer a single question: what does one completed task cost?</p>
+</header>
+<article class="post-body">
+<p data-en="A thought costs money. This sounds obvious, and yet it is the most systematically ignored fact in agent engineering. When a developer writes a function that sorts a list, the function runs in microseconds, costs nothing, and can be called a billion times without anyone thinking about the bill. When an agent reasons about whether to call a tool, that reasoning is a chain of generated tokens, each one priced, each one metered, each one adding to a total that compounds across every step of every run for every user. The agent does not just think once. It thinks at the start, it thinks after every tool result, it thinks when verifying its own output, it thinks when deciding whether to stop. A single task — one user request, one completed answer — might involve fifteen model calls, each consuming thousands of tokens of context that grow with every step. The cost of that task is not the price of one API call. It is the sum of every thought the agent had along the way." data-zh="一次思考，是要花钱的。这听起来显而易见，但在智能体工程里，它是最被系统性忽视的事实。当一个开发者写一个排序列表的函数时，那个函数在微秒内跑完，成本为零，可以被调用十亿次而没人想到账单。当一个智能体推理是否该调用一个工具时，那次推理是一串生成的 token，每一个都标了价，每一个都被计量，每一个都在累加一个总额——在每一次运行的每一步、每一个用户身上不断复利。智能体不只思考一次。它在开始时思考，在每个工具结果之后思考，在验证自己的输出时思考，在决定是否停下时思考。一个任务——一个用户请求、一个完成的答案——可能涉及十五次模型调用，每一次消耗数千 token 的上下文，而上下文在每一步都在增长。那个任务的成本，不是一次 API 调用的价格。它是智能体一路上每一次思考的总和。">A thought costs money. This sounds obvious, and yet it is the most systematically ignored fact in agent engineering. When a developer writes a function that sorts a list, the function runs in microseconds, costs nothing, and can be called a billion times without anyone thinking about the bill. When an agent reasons about whether to call a tool, that reasoning is a chain of generated tokens, each one priced, each one metered, each one adding to a total that compounds across every step of every run. The agent does not just think once. It thinks at the start, it thinks after every tool result, it thinks when verifying its own output, it thinks when deciding whether to stop. A single task might involve fifteen model calls, each consuming thousands of tokens of context that grow with every step.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 380" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE ANATOMY OF A SINGLE TASK'S COST" data-zh="一次任务成本的解剖" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE ANATOMY OF A SINGLE TASK'S COST</text>
+<text data-en="user request arrives →" data-zh="用户请求到达 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="start" x="30" y="58">user request arrives →</text>
+<!-- Step 1: system prompt -->
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--text-tertiary)" stroke-width="1" width="90" x="30" y="68"></rect>
+<text data-en="system prompt" data-zh="系统提示词" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="75" y="87">system prompt</text>
+<text data-en="1.2K tok" data-zh="1.2K tok" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="75" y="110">1.2K tok</text>
+<line stroke="var(--border)" stroke-width="1" x1="120" x2="135" y1="83" y2="83"></line>
+<!-- Step 2: retrieval -->
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="90" x="135" y="68"></rect>
+<text data-en="retrieved ctx" data-zh="检索上下文" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="180" y="87">retrieved ctx</text>
+<text data-en="4.0K tok" data-zh="4.0K tok" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="180" y="110">4.0K tok</text>
+<line stroke="var(--border)" stroke-width="1" x1="225" x2="240" y1="83" y2="83"></line>
+<!-- Step 3: plan -->
+<rect fill="var(--accent-dim)" height="30" rx="6" stroke="var(--accent)" stroke-width="2" width="90" x="240" y="68"></rect>
+<text data-en="reason + plan" data-zh="推理 + 规划" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="285" y="87">reason + plan</text>
+<text data-en="800 tok" data-zh="800 tok" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="285" y="110">800 tok</text>
+<line stroke="var(--border)" stroke-width="1" x1="330" x2="345" y1="83" y2="83"></line>
+<!-- Step 4: tool calls -->
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="90" x="345" y="68"></rect>
+<text data-en="3 tool calls" data-zh="3 次工具调用" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="390" y="87">3 tool calls</text>
+<text data-en="6.5K tok" data-zh="6.5K tok" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="390" y="110">6.5K tok</text>
+<line stroke="var(--border)" stroke-width="1" x1="435" x2="450" y1="83" y2="83"></line>
+<!-- Step 5: verify -->
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="90" x="450" y="68"></rect>
+<text data-en="verify output" data-zh="验证输出" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="495" y="87">verify output</text>
+<text data-en="2.1K tok" data-zh="2.1K tok" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="495" y="110">2.1K tok</text>
+<line marker-end="url(#arrC1)" stroke="var(--text-tertiary)" stroke-width="1" x1="540" x2="575" y1="83" y2="83"></line>
+<text data-en="→ answer" data-zh="→ 答案" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="start" x="578" y="87">→ answer</text>
+<!-- The growing context bar -->
+<text data-en="CONTEXT GROWS WITH EVERY STEP" data-zh="上下文随每一步增长" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" letter-spacing="0.5" text-anchor="middle" x="310" y="142">CONTEXT GROWS WITH EVERY STEP</text>
+<rect fill="var(--accent-dim)" height="16" rx="3" opacity="0.35" width="60" x="30" y="152"></rect>
+<text data-en="1.2K" data-zh="1.2K" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="60" y="164">1.2K</text>
+<rect fill="var(--accent-dim)" height="16" rx="3" opacity="0.45" width="140" x="30" y="176"></rect>
+<text data-en="5.2K" data-zh="5.2K" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="100" y="188">5.2K</text>
+<rect fill="var(--accent-dim)" height="16" rx="3" opacity="0.6" width="250" x="30" y="200"></rect>
+<text data-en="6.0K" data-zh="6.0K" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="155" y="212">6.0K</text>
+<rect fill="var(--accent-dim)" height="16" rx="3" opacity="0.8" width="420" x="30" y="224"></rect>
+<text data-en="12.5K" data-zh="12.5K" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="240" y="236">12.5K</text>
+<rect fill="var(--accent-dim)" height="16" rx="3" width="560" x="30" y="248"></rect>
+<text data-en="14.6K total input → billed on EVERY call" data-zh="14.6K 总输入 → 每次调用都计费" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="700" text-anchor="middle" x="310" y="260">14.6K total input → billed on EVERY call</text>
+<!-- summary box -->
+<rect fill="var(--accent-dim)" height="56" opacity="0.5" rx="8" width="560" x="30" y="290"></rect>
+<text data-en="1 task = 5 model calls · 14.6K input tokens re-sent each time · ~73K total billed tokens" data-zh="1 个任务 = 5 次模型调用 · 每次重发 14.6K 输入 token · 总计约 73K 计费 token" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="312">1 task = 5 model calls · 14.6K input tokens re-sent each time · ~73K total billed tokens</text>
+<text data-en="Multiply by users per day. Then by retries. Then by the verification calls you forgot to count." data-zh="乘以每天的用户数。再乘以重试次数。再乘以你忘了算的那些验证调用。" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="332">Multiply by users per day. Then by retries. Then by the verification calls you forgot to count.</text>
+</svg>
+<p class="diagram-caption" data-en="A single task is not one API call. The system prompt, the retrieved context, the accumulated tool results — all of it is sent as input on every subsequent model call, because the model is stateless. By the fifth call, the agent is paying to re-read its own entire history. The context that enables intelligence is also the context that inflates cost, and the two scale together." data-zh="一个任务，不是一次 API 调用。系统提示词、检索到的上下文、累积的工具结果——所有这些在后续每一次模型调用时都作为输入被发送，因为模型是无状态的。到第五次调用时，智能体在花钱重新读自己的全部历史。让智能成为可能的上下文，也是膨胀成本的上下文，而这两者同步增长。">A single task is not one API call. The system prompt, the retrieved context, the accumulated tool results — all of it is sent as input on every subsequent model call, because the model is stateless. By the fifth call, the agent is paying to re-read its own entire history.</p>
+</div>
+<h3 data-en="The stateless tax" data-zh="无状态税">The stateless tax</h3>
+<p data-en="Here is the structural reason agent costs surprise people. The model is stateless. It has no memory between calls. Every time the loop runs, the entire conversation — system prompt, user message, retrieved documents, previous tool results, the model's own prior reasoning — must be re-sent as input, because the model starts fresh each time. This means the cost of a token is not paid once. It is paid every step for the rest of the run. A system prompt of twelve hundred tokens is not a one-time cost of twelve hundred tokens. Across a ten-step task, it is twelve thousand tokens — ten times the input, for the same words, read ten times by a model that forgot it read them." data-zh="这就是智能体成本让人惊讶的结构性原因。模型是无状态的。它在调用之间没有记忆。每次循环运行时，整个对话——系统提示词、用户消息、检索到的文档、之前的工具结果、模型自己之前的推理——都必须作为输入被重新发送，因为模型每次都从头开始。这意味着一个 token 的成本不是只付一次。它在运行剩余的每一步都要被支付。一段一千二百 token 的系统提示词，不是一千二百 token 的一次性成本。在一个十步的任务里，它是一万二千 token——十倍的输入，同样的字，被一个忘了自己读过它们的模型读了十遍。">Here is the structural reason agent costs surprise people. The model is stateless. It has no memory between calls. Every time the loop runs, the entire conversation — system prompt, user message, retrieved documents, previous tool results, the model's own prior reasoning — must be re-sent as input, because the model starts fresh each time. This means the cost of a token is not paid once. It is paid every step for the rest of the run. A system prompt of twelve hundred tokens is not a one-time cost. Across a ten-step task, it is twelve thousand tokens.</p>
+<p data-en="This is the stateless tax, and it changes the economics of everything. Retrieved context — documents fetched from a vector store to ground the model's answer — is the worst offender. A retrieval step that returns four thousand tokens of relevant passages is useful. But those four thousand tokens are now part of the context window, and they will be re-sent on every subsequent model call for the rest of the task. If the task takes eight more steps, those four thousand tokens become thirty-two thousand. The retrieval that made the answer better also made it eight times more expensive, and nobody on the team noticed, because the retrieval step itself was free — it was a database query, not a model call. The cost was deferred, hidden in the input token count of every future call, accumulating silently." data-zh="这就是无状态税，它改变了一切的经济模型。检索到的上下文——从向量存储中取出、用来给模型答案打基础的文档——是最严重的元凶。一个返回四千 token 相关段落的检索步骤是有用的。但那四千 token 现在成了上下文窗口的一部分，它们会在任务剩余的每一次后续模型调用中被重新发送。如果任务还要走八步，那四千 token 就变成了三万二千。那个让答案更好的检索，也让成本贵了八倍，而团队里没人注意到，因为检索步骤本身是免费的——它是一个数据库查询，不是模型调用。成本被推迟了，隐藏在每一次未来调用的输入 token 计数里，悄无声息地累积。">This is the stateless tax, and it changes the economics of everything. Retrieved context is the worst offender. A retrieval step that returns four thousand tokens of relevant passages is useful, but those four thousand tokens are now part of the context window, and they will be re-sent on every subsequent model call for the rest of the task. If the task takes eight more steps, those four thousand tokens become thirty-two thousand. The retrieval that made the answer better also made it eight times more expensive.</p>
+<blockquote data-en="The model is stateless, but the billing is not. Every token ever placed in context is billed on every future call until the task ends. The agent does not pay for what it knows — it pays, again and again, for what it has already been told." data-zh="模型是无状态的，但计费不是。每一个被放入上下文的 token，在任务结束之前的每一次未来调用中都要被计费。智能体不为它知道的东西付费——它一次又一次地，为它已经被告诉过的东西付费。">The model is stateless, but the billing is not. Every token ever placed in context is billed on every future call until the task ends. The agent does not pay for what it knows — it pays, again and again, for what it has already been told.</blockquote>
+<h3 data-en="The retry cascade" data-zh="重试级联">The retry cascade</h3>
+<p data-en="If the stateless tax is the hidden cost of context, the retry cascade is the hidden cost of failure. Agents fail. A tool returns an error. A format is wrong. The model produces output that fails verification. When any of these happen, the agent retries — and a retry is not free. A retry means the entire context, now larger than before because it includes the failed attempt and its result, is sent back to the model as input. The failed step did not just waste the tokens it generated. It inflated the context for every subsequent step, because the failure is now part of the conversation history. One retry does not double the cost. It doubles the context, which compounds the stateless tax for every remaining step." data-zh="如果说无状态税是上下文的隐性成本，那么重试级联就是失败的隐性成本。智能体会失败。一个工具返回错误。一个格式不对。模型产出的输出没有通过验证。当这些情况发生时，智能体重试——而重试不是免费的。一次重试意味着整个上下文——现在比之前更大，因为它包含了失败的尝试及其结果——被作为输入发回给模型。失败的那一步，不仅浪费了它生成的 token。它还膨胀了每一个后续步骤的上下文，因为失败现在是对话历史的一部分。一次重试不是把成本翻倍。它把上下文翻倍，而这会让每一个剩余步骤的无状态税复利增长。">If the stateless tax is the hidden cost of context, the retry cascade is the hidden cost of failure. Agents fail. A tool returns an error. A format is wrong. The model produces output that fails verification. When any of these happen, the agent retries — and a retry is not free. A retry means the entire context, now larger than before because it includes the failed attempt and its result, is sent back to the model. The failed step did not just waste the tokens it generated. It inflated the context for every subsequent step.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE RETRY CASCADE: HOW ONE FAILURE MULTIPLIES COST" data-zh="重试级联：一次失败如何倍增成本" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE RETRY CASCADE: HOW ONE FAILURE MULTIPLIES COST</text>
+<!-- happy path -->
+<text data-en="HAPPY PATH (no retries)" data-zh="理想路径（无重试）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="54">HAPPY PATH (no retries)</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent)" stroke-width="1.5" width="70" x="60" y="66"></rect>
+<text data-en="step 1" data-zh="步骤 1" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="95" y="82">step 1</text>
+<line marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.2" x1="130" x2="155" y1="78" y2="78"></line>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent)" stroke-width="1.5" width="70" x="155" y="66"></rect>
+<text data-en="step 2" data-zh="步骤 2" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="190" y="82">step 2</text>
+<line marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.2" x1="225" x2="250" y1="78" y2="78"></line>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent)" stroke-width="1.5" width="70" x="250" y="66"></rect>
+<text data-en="step 3" data-zh="步骤 3" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="285" y="82">step 3</text>
+<line marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.2" x1="320" x2="345" y1="78" y2="78"></line>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent)" stroke-width="1.5" width="70" x="345" y="66"></rect>
+<text data-en="step 4" data-zh="步骤 4" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="380" y="82">step 4</text>
+<line marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.2" x1="415" x2="440" y1="78" y2="78"></line>
+<rect fill="var(--accent-dim)" height="24" rx="5" stroke="var(--accent)" stroke-width="2" width="70" x="440" y="66"></rect>
+<text data-en="done ✓" data-zh="完成 ✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="475" y="82">done ✓</text>
+<text data-en="total: 4 calls · ~26K tokens · $0.04" data-zh="总计：4 次调用 · 约 26K token · $0.04" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="112">total: 4 calls · ~26K tokens · $0.04</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,4" stroke-width="1" x1="30" x2="590" y1="130" y2="130"></line>
+<!-- failure path -->
+<text data-en="FAILURE PATH (step 2 errors, retried twice)" data-zh="失败路径（步骤 2 出错，重试两次）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="152">FAILURE PATH (step 2 errors, retried twice)</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent)" stroke-width="1.5" width="60" x="30" y="164"></rect>
+<text data-en="step 1" data-zh="步骤 1" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="60" y="180">step 1</text>
+<line marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.2" x1="90" x2="110" y1="176" y2="176"></line>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent-3)" stroke-width="1.5" width="60" x="110" y="164"></rect>
+<text data-en="step 2" data-zh="步骤 2" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="140" y="180">step 2</text>
+<text data-en="✗" data-zh="✗" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="140" y="210">✗</text>
+<path d="M140 212 C140 228 100 228 100 236" fill="none" marker-end="url(#arrR2)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="3,2"></path>
+<rect fill="none" height="24" rx="5" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="3,2" width="60" x="70" y="238"></rect>
+<text data-en="retry 1" data-zh="重试 1" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="100" y="254">retry 1</text>
+<text data-en="✗" data-zh="✗" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="100" y="276">✗</text>
+<path d="M100 278 C100 292 155 290 155 298" fill="none" marker-end="url(#arrR2)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="3,2"></path>
+<rect fill="none" height="24" rx="5" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="3,2" width="60" x="125" y="300"></rect>
+<text data-en="retry 2" data-zh="重试 2" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="155" y="316">retry 2</text>
+<path d="M155 300 C155 280 180 200 185 190" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent)" stroke-width="1.5" width="60" x="185" y="164"></rect>
+<text data-en="step 2 ✓" data-zh="步骤 2 ✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="215" y="180">step 2 ✓</text>
+<line marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.2" x1="245" x2="265" y1="176" y2="176"></line>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent)" stroke-width="1.5" width="60" x="265" y="164"></rect>
+<text data-en="step 3" data-zh="步骤 3" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="295" y="180">step 3</text>
+<line marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.2" x1="325" x2="345" y1="176" y2="176"></line>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent)" stroke-width="1.5" width="60" x="345" y="164"></rect>
+<text data-en="step 4" data-zh="步骤 4" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="375" y="180">step 4</text>
+<line marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.2" x1="405" x2="425" y1="176" y2="176"></line>
+<rect fill="var(--accent-dim)" height="24" rx="5" stroke="var(--accent)" stroke-width="2" width="60" x="425" y="164"></rect>
+<text data-en="done ✓" data-zh="完成 ✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="455" y="180">done ✓</text>
+<!-- cost callout -->
+<rect fill="var(--accent-dim)" height="44" opacity="0.5" rx="8" width="250" x="335" y="210"></rect>
+<text data-en="total: 7 calls · ~58K tokens" data-zh="总计：7 次调用 · 约 58K token" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="460" y="230">total: 7 calls · ~58K tokens</text>
+<text data-en="2.2× the cost, same task, one bad step" data-zh="成本增加 2.2 倍，同一个任务，一个出错的步骤" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="460" y="248">2.2× the cost, same task, one bad step</text>
+</svg>
+<p class="diagram-caption" data-en="The happy path completes in four model calls. One failing step that retries twice adds three calls — but the real damage is that every subsequent step now carries the bloated context from those retries. The same task, the same answer, more than double the cost. Now imagine this happening on ten percent of tasks, across a million users, every day." data-zh="理想路径在四次模型调用中完成。一个失败并重试两次的步骤增加了三次调用——但真正的损害在于，之后的每一步都带着那些重试膨胀出来的上下文。同一个任务，同一个答案，成本翻了一倍多。现在想象这种情况发生在百分之十的任务上，跨越一百万用户，每一天。">The happy path completes in four model calls. One failing step that retries twice adds three calls — but the real damage is that every subsequent step now carries the bloated context from those retries. The same task, the same answer, more than double the cost.</p>
+</div>
+<p data-en="The retry cascade is why the gap between benchmark cost and production cost is so wide. On a benchmark, every task succeeds on the first try. The cost per task is predictable, low, and flattering. In production, tasks fail. Tools time out. Edge cases the benchmark never tested produce format errors that trigger retries. The model occasionally decides to re-plan mid-task, adding reasoning steps that were never in the benchmark's cost calculation. The real-world cost per task is not the benchmark cost. It is the benchmark cost multiplied by the average number of attempts, multiplied by the context inflation from each failed attempt, multiplied again by the fraction of tasks that hit the worst-case path. A team that budgets based on benchmark costs will be off by a factor of three to ten, and will discover the discrepancy on the invoice, not in the design review." data-zh="重试级联，就是基准测试成本和生产成本之间差距如此之大的原因。在基准测试里，每个任务第一次就成功。每个任务的成本是可预测的、低的、好看的。在生产环境里，任务会失败。工具会超时。基准测试从未测过的边缘情况产生格式错误，触发重试。模型偶尔决定在任务中途重新规划，增加基准测试成本计算中从未有过的推理步骤。真实世界每个任务的成本，不是基准测试成本。它是基准测试成本乘以平均尝试次数，乘以每次失败尝试的上下文膨胀，再乘以那些走上最坏情况路径的任务比例。一个基于基准测试成本做预算的团队，会偏差三到十倍，而且会在账单上发现这个差异，而不是在设计评审里。">The retry cascade is why the gap between benchmark cost and production cost is so wide. On a benchmark, every task succeeds on the first try. In production, tasks fail. Tools time out. Edge cases produce format errors that trigger retries. The model occasionally decides to re-plan mid-task. The real-world cost per task is not the benchmark cost. It is the benchmark cost multiplied by the average number of attempts, multiplied by the context inflation from each failed attempt. A team that budgets based on benchmark costs will be off by a factor of three to ten.</p>
+<h3 data-en="Cost-per-task is the metric that matters" data-zh="单任务成本，才是关键指标">Cost-per-task is the metric that matters</h3>
+<p data-en="The fix begins with a metric that almost no team tracks rigorously: cost per completed task. Not cost per API call — that number is meaningless, because tasks vary in how many calls they require. Not cost per token — that is the provider's pricing, not the system's economics. Cost per completed task: the total inference spend for one user request, from the moment it enters the agent loop to the moment a final answer is returned, including every retry, every verification call, every re-sent context window. This is the number that determines whether the agent is a viable product. If the cost per task is higher than the value the task creates for the user — or higher than what the user will pay, or higher than the advertising revenue the task generates — the agent loses money on every interaction, and scale makes it worse, not better." data-zh="修复，从一个几乎没有团队严格追踪的指标开始：每个已完成任务的成本。不是每次 API 调用的成本——那个数字没有意义，因为任务需要的调用次数各不相同。不是每 token 的成本——那是提供商的定价，不是系统的经济模型。每个已完成任务的成本：一次用户请求的总推理开销，从它进入智能体循环到最终答案返回的那一刻，包括每一次重试、每一次验证调用、每一个被重新发送的上下文窗口。这个数字决定了智能体是否是一个可行的产品。如果单任务成本高于该任务为用户创造的价值——或高于用户愿意支付的金额，或高于该任务产生的广告收入——智能体在每一次交互中都亏钱，而规模让它更糟，不是更好。">The fix begins with a metric that almost no team tracks rigorously: cost per completed task. Not cost per API call — that is meaningless, because tasks vary in how many calls they require. Not cost per token — that is the provider's pricing, not the system's economics. Cost per completed task: the total inference spend for one user request, from the moment it enters the agent loop to the moment a final answer is returned, including every retry, every verification call, every re-sent context window. This is the number that determines whether the agent is a viable product.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE COST-CAPABILITY FRONTIER" data-zh="成本-能力前沿" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE COST-CAPABILITY FRONTIER</text>
+<!-- axes -->
+<line stroke="var(--text-tertiary)" stroke-width="1.5" x1="80" x2="80" y1="50" y2="290"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1.5" x1="80" x2="560" y1="290" y2="290"></line>
+<text data-en="cost per task →" data-zh="单任务成本 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="320" y="310">cost per task →</text>
+<text data-en="↑ task success rate" data-zh="↑ 任务成功率" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="60" y="170" transform="rotate(-90 60 170)">↑ task success rate</text>
+<!-- the curve: diminishing returns -->
+<path d="M90 280 C200 280 260 180 320 130 C380 100 460 88 550 82" fill="none" stroke="var(--accent)" stroke-width="2.5"></path>
+<!-- zone: worth it -->
+<rect fill="var(--accent-dim)" height="240" opacity="0.3" width="180" x="80" y="50"></rect>
+<text data-en="PROFITABLE" data-zh="盈利区" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="170" y="70">PROFITABLE</text>
+<text data-en="cost &lt; value" data-zh="成本 &lt; 价值" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="170" y="86">cost &lt; value</text>
+<!-- zone: bleeding -->
+<rect fill="none" height="240" width="220" x="340" y="50"></rect>
+<text data-en="DIMINISHING RETURNS" data-zh="边际递减" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="450" y="70">DIMINISHING RETURNS</text>
+<text data-en="2× cost for +3% accuracy" data-zh="2 倍成本换 +3% 准确率" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="450" y="86">2× cost for +3% accuracy</text>
+<!-- sweet spot marker -->
+<circle cx="250" cy="160" fill="var(--accent)" r="7" stroke="var(--bg-surface)" stroke-width="2"></circle>
+<line stroke="var(--accent)" stroke-width="1" stroke-dasharray="2,2" x1="250" x2="250" y1="160" y2="290"></line>
+<text data-en="sweet spot" data-zh="最佳点" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="250" y="148">sweet spot</text>
+<text data-en="good enough · cheap enough" data-zh="足够好 · 够便宜" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="250" y="280">good enough · cheap enough</text>
+<!-- naive overengineered point -->
+<circle cx="480" cy="90" fill="var(--accent-3)" r="7" stroke="var(--bg-surface)" stroke-width="2"></circle>
+<text data-en="over-engineered" data-zh="过度工程" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="480" y="78">over-engineered</text>
+<text data-en="97% but unprofitable" data-zh="97% 但不盈利" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="480" y="108">97% but unprofitable</text>
+<!-- underbuilt point -->
+<circle cx="130" cy="265" fill="var(--accent-2)" r="6" stroke="var(--bg-surface)" stroke-width="2"></circle>
+<text data-en="under-built" data-zh="工程不足" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="135" y="255">under-built</text>
+<text data-en="cheap · wrong" data-zh="便宜 · 但错" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="135" y="278">cheap · wrong</text>
+</svg>
+<p class="diagram-caption" data-en="Every agent lives on this curve. Move left and the task succeeds less often — cheaper but wrong. Move right and success climbs — but the cost to squeeze out the last few percent of accuracy doubles or triples the bill, pushing the agent past the point where each task creates more value than it consumes. The engineering challenge is not maximizing accuracy. It is finding the sweet spot: the point where the agent is good enough to be useful and cheap enough to be sustainable. That point is a design decision, not a model property." data-zh="每个智能体都活在这条曲线上。往左移，任务成功率更低——更便宜，但更常出错。往右移，成功率攀升——但挤出最后几个百分点准确率的成本，会让账单翻倍或翻三倍，把智能体推过每个任务创造的价值超过其消耗的临界点。工程挑战不是最大化准确率。而是找到最佳点：智能体足够好、有用，又足够便宜、可持续的那个点。那个点是一个设计决策，不是模型属性。">Every agent lives on this curve. Move left and the task succeeds less often — cheaper but wrong. Move right and success climbs — but the cost to squeeze out the last few percent of accuracy doubles or triples the bill. The engineering challenge is not maximizing accuracy. It is finding the sweet spot: the point where the agent is good enough to be useful and cheap enough to be sustainable.</p>
+</div>
+<p data-en="Once cost-per-task becomes a tracked metric — logged on every run, aggregated by task type, plotted alongside accuracy and latency — the engineering decisions change. The question is no longer just 'does it work' but 'does it work at a cost that makes sense.' Context retrieval gets pruned: instead of fetching four thousand tokens, the system fetches two thousand, because the marginal accuracy gain from the extra two thousand was not worth the stateless tax it imposed on every subsequent step. Verification gets conditional: instead of running a full self-check on every output, the system runs it only when the confidence is low, because verifying a ninety-nine-percent-confident answer is burning money to confirm what was already certain. The model gets swapped per step: a cheaper, faster model handles routing and tool selection; the expensive model is reserved for the reasoning steps where its capability actually matters. These are not compromises. They are the same kind of engineering tradeoff that every system makes — allocating a finite resource to where it produces the most value. The finite resource just happens to be priced in tokens." data-zh="一旦单任务成本成为一个被追踪的指标——在每次运行中被记录、按任务类型聚合、与准确率和延迟并列绘图——工程决策就变了。问题不再只是「它能不能用」，而是「它的成本是否合理」。上下文检索被修剪：不是获取四千 token，而是获取两千，因为多出来的那两千 token 的边际准确率提升，不值得它给后续每一步施加的无状态税。验证变成有条件的：不是对每一条输出都跑完整的自检，而是只在置信度低时才跑，因为验证一个九十九个百分点置信度的答案，是在花钱确认本来就已经确定的东西。模型按步骤被替换：一个更便宜、更快的模型处理路由和工具选择；昂贵的模型被留给那些它的能力真正重要的推理步骤。这些不是妥协。它们是每个系统都在做的那种工程权衡——把有限的资源分配到能产生最大价值的地方。只不过这个有限的资源，碰巧是以 token 计价的。">Once cost-per-task becomes a tracked metric, the engineering decisions change. Context retrieval gets pruned. Verification gets conditional. The model gets swapped per step: a cheaper model handles routing; the expensive model is reserved for reasoning where its capability actually matters. These are not compromises. They are the same kind of engineering tradeoff that every system makes — allocating a finite resource to where it produces the most value. The finite resource just happens to be priced in tokens.</p>
+<h3 data-en="The discipline of cost-aware engineering" data-zh="成本意识工程的纪律">The discipline of cost-aware engineering</h3>
+<p data-en="There is a discipline that separates teams that ship sustainable agents from those that ship impressive demos and then quietly shelve them. It is not a budget or a spending cap. It is the habit of treating inference cost as a first-class engineering concern — as real as latency, as real as accuracy, as real as the bug count. Every feature is evaluated not just on whether it improves the answer, but on whether the improvement justifies the cost. Every architecture decision — how many tools, how much retrieval, how many verification layers, which model at which step — is weighed against its token footprint. The system prompt is edited for length, not because shorter is better but because every unnecessary token is re-billed on every call for the entire task. The retrieval pipeline is tuned to return less, because less context means less stateless tax. The retry logic is designed to fail fast, because a retry that carries bloated context through five more steps is more expensive than starting over." data-zh="有一种纪律，区分了发布可持续智能体的团队，和发布了惊艳 demo 然后悄悄把它们搁置的团队。它不是预算或支出上限。它是一种习惯——把推理成本当作一等工程问题，和延迟一样真实，和准确率一样真实，和 bug 数量一样真实。每一个功能，不仅被评估是否改善了答案，还被评估改善是否值得那个成本。每一个架构决策——多少个工具、多少检索、多少层验证、哪个步骤用哪个模型——都被拿来和它的 token 足迹权衡。系统提示词为了长度被编辑，不是因为越短越好，而是因为每一个不必要的 token 在整个任务的每一次调用中都被重复计费。检索管线被调优以返回更少，因为更少的上下文意味着更少的无状态税。重试逻辑被设计为快速失败，因为一个带着膨胀上下文穿过五个后续步骤的重试，比从头开始更贵。">There is a discipline that separates teams that ship sustainable agents from those that ship impressive demos and then quietly shelve them. It is not a budget or a spending cap. It is the habit of treating inference cost as a first-class engineering concern — as real as latency, as real as accuracy, as real as the bug count. Every feature is evaluated not just on whether it improves the answer, but on whether the improvement justifies the cost. The system prompt is edited for length, because every unnecessary token is re-billed on every call. The retrieval pipeline is tuned to return less, because less context means less stateless tax. The retry logic is designed to fail fast, because a retry that carries bloated context through five more steps is more expensive than starting over.</p>
+<p data-en="None of this is visible in a benchmark. A benchmark measures whether the agent can do the task. It does not measure whether the agent can do the task at a cost that keeps the lights on. That measurement — the measurement that actually matters for a product — only happens when the team decides that cost is an engineering metric, not a finance afterthought. The cost of a thought is not fixed. It is a function of how the system is built, and the system is built by engineers. Every token saved is a decision. Every token spent is a decision. The teams that understand this build agents that are not just intelligent, but intelligent at a price they can afford. The teams that do not will build something brilliant, watch the invoice arrive, and learn — too late — that intelligence they cannot afford is not a product. It is a very expensive demo." data-zh="这些，没有一个在基准测试里可见。基准测试衡量的是智能体能不能完成任务。它不衡量智能体能不能以一个让灯继续亮着的成本完成任务。那个衡量——那个对产品真正重要的衡量——只有在团队决定成本是一个工程指标、而不是财务事后补充时才会发生。一次思考的成本不是固定的。它是系统如何构建的函数，而系统是由工程师构建的。省下的每一个 token，都是一个决策。花掉的每一个 token，也是一个决策。理解这一点的团队，构建的不仅是智能的智能体，而是以他们负担得起的价格智能的智能体。不理解的团队，会构建出卓越的东西，看着账单到达，然后——太迟了——明白：他们负担不起的智能，不是产品。它是一个非常昂贵的 demo。">None of this is visible in a benchmark. A benchmark measures whether the agent can do the task. It does not measure whether the agent can do the task at a cost that keeps the lights on. That measurement — the one that actually matters for a product — only happens when the team decides that cost is an engineering metric, not a finance afterthought. The cost of a thought is not fixed. It is a function of how the system is built, and the system is built by engineers. Every token saved is a decision. Every token spent is a decision. The teams that understand this build agents that are not just intelligent, but intelligent at a price they can afford. The teams that do not will build something brilliant, watch the invoice arrive, and learn — too late — that intelligence they cannot afford is not a product. It is a very expensive demo.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
