@@ -153,13 +153,13 @@ def generate_card(url, label, badge_color, data, translation_zh=""):
     video_poster = get_video_poster(data)
     media_url = photo or video_poster
 
-    # Build media HTML
+    # Build media HTML — click to zoom (lightbox), not navigate to X
     media_html = ""
     if media_url:
         media_html = f'''
-        <a href="{url}" target="_blank" rel="noopener" class="tweet-media-link">
+        <div class="tweet-media-link" data-full="{media_url}">
             <img src="{media_url}" alt="" class="tweet-media" loading="lazy" />
-        </a>'''
+        </div>'''
 
     # Verified badge
     verified_html = ""

@@ -147,6 +147,53 @@ if (savedFeed === 'blog' || savedFeed === 'news') {
     switchFeed(savedFeed);
 }
 
+// ─── Image lightbox (click to zoom news card images) ───
+(function() {
+    // Create overlay once
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.innerHTML = `
+        <button class="lightbox-close" aria-label="Close">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+        <img src="" alt="" />
+    `;
+    document.body.appendChild(overlay);
+
+    const lbImg = overlay.querySelector('img');
+    const lbClose = overlay.querySelector('.lightbox-close');
+
+    function open(src) {
+        lbImg.src = src;
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function close() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Delegated click — works on dynamically rendered cards
+    document.addEventListener('click', (e) => {
+        const mediaLink = e.target.closest('.tweet-media-link');
+        if (mediaLink) {
+            e.preventDefault();
+            const full = mediaLink.getAttribute('data-full') || mediaLink.querySelector('img')?.src;
+            if (full) open(full);
+        }
+    });
+
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay || e.target.closest('.lightbox-close')) close();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') close();
+    });
+})();
+
 // ─── Nav scroll state ───
 const nav = document.querySelector('.nav');
 window.addEventListener('scroll', () => {
