@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stop Calling the Model — AI Frontlines</title>
+<meta content="Every agent team chases the model — bigger, faster, cheaper per token. But the highest-leverage optimization is not a better model. It is not calling the model at all. Caching is the only lever that simultaneously cuts cost, cuts latency, and improves consistency. The teams that win treat every model call as a last resort, not a default." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=19" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="August 4, 2026" data-zh="2026年8月4日">August 4, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Stop Calling the Model" data-zh="别再调用模型了">Stop Calling the Model</h1>
+<p class="post-header-deck" data-en="Every agent team optimizes the same thing: the model. A stronger model, a faster model, a cheaper-per-token model. But the highest-leverage optimization in agent engineering is not a better model. It is not calling the model at all. The model call is the most expensive, slowest, least consistent thing an agent does — and most teams treat it as the default. The teams that win treat it as the last resort." data-zh="每个智能体团队都在优化同一件东西：模型。更强的模型、更快的模型、每个 token 更便宜的模型。但智能体工程里杠杆最大的优化，不是更好的模型。而是根本不调用模型。模型调用，是智能体所做的一切里最贵、最慢、最不一致的事——而大多数团队把它当作默认选项。赢的团队，把它当作最后的手段。">Every agent team optimizes the same thing: the model. But the highest-leverage optimization is not a better model — it is not calling the model at all.</p>
+</header>
+<article class="post-body">
+<p data-en="Open the dashboard for any production agent and count the model calls per completed task. Not per user request — per task the user would recognize as one unit of work. The number is almost always shocking. A user asks a simple question. The agent calls the model to understand the intent. Calls it again to decide which tool to use. Calls the tool. Calls the model to interpret the result. Calls it again to format the response. Calls it once more to check its own work. Six model calls for a question whose answer was sitting in a cache the entire time. This is not an exaggeration. It is the default architecture, and almost every team ships it before noticing the cost." data-zh="打开任何一个生产环境智能体的仪表盘，数一数每完成一个任务有多少次模型调用。不是每个用户请求——而是用户认为是一个工作单元的每个任务。这个数字几乎总是令人震惊。用户问了一个简单的问题。智能体调用模型去理解意图。再调一次决定用哪个工具。调用工具。再调模型去解读结果。再调一次去格式化回复。再调一次去检查自己的工作。六个模型调用，换来的，是一个答案从一开始就躺在缓存里的问题。这不是夸张。这是默认架构，几乎每个团队都是先发布它，然后才注意到成本。">Open the dashboard for any production agent and count the model calls per completed task. Not per user request — per task the user would recognize as one unit of work. The number is almost always shocking. A user asks a simple question. The agent calls the model to understand the intent. Calls it again to decide which tool to use. Calls the tool. Calls the model to interpret the result. Calls it again to format the response. Calls it once more to check its own work. Six model calls for a question whose answer was sitting in a cache the entire time.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 400" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="ONE USER QUESTION, SIX MODEL CALLS" data-zh="一个问题，六次模型调用" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ONE USER QUESTION, SIX MODEL CALLS</text>
+<!-- user input -->
+<rect fill="var(--accent-dim)" height="36" rx="8" stroke="var(--accent)" stroke-width="1.5" width="140" x="50" y="52"></rect>
+<text data-en="user question" data-zh="用户提问" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="120" y="75">user question</text>
+<!-- call 1 -->
+<path d="M120 88 L120 112" fill="none" marker-end="url(#arrC1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="200" x="40" y="114"></rect>
+<text data-en="① model: understand intent" data-zh="① 模型：理解意图" fill="var(--accent-3)" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle" x="140" y="134">① model: understand intent</text>
+<!-- call 2 -->
+<path d="M140 144 L140 168" fill="none" marker-end="url(#arrC1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="200" x="40" y="170"></rect>
+<text data-en="② model: pick tool" data-zh="② 模型：选工具" fill="var(--accent-3)" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle" x="140" y="190">② model: pick tool</text>
+<!-- tool call -->
+<path d="M140 200 L140 224" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="30" rx="6" stroke="var(--accent)" stroke-width="1.2" width="200" x="40" y="226"></rect>
+<text data-en="③ tool: fetch data" data-zh="③ 工具：取数据" fill="var(--accent)" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle" x="140" y="246">③ tool: fetch data</text>
+<!-- call 4 -->
+<path d="M140 256 L140 280" fill="none" marker-end="url(#arrC1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="200" x="40" y="282"></rect>
+<text data-en="④ model: interpret result" data-zh="④ 模型：解读结果" fill="var(--accent-3)" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle" x="140" y="302">④ model: interpret result</text>
+<!-- call 5 -->
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="200" x="380" y="114"></rect>
+<text data-en="⑤ model: format reply" data-zh="⑤ 模型：格式化回复" fill="var(--accent-3)" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle" x="480" y="134">⑤ model: format reply</text>
+<!-- call 6 -->
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="200" x="380" y="156"></rect>
+<text data-en="⑥ model: self-check" data-zh="⑥ 模型：自我检查" fill="var(--accent-3)" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle" x="480" y="176">⑥ model: self-check</text>
+<!-- cost summary box -->
+<rect fill="var(--bg-surface)" height="120" rx="10" stroke="var(--accent-3)" stroke-width="1.5" width="200" x="380" y="206"></rect>
+<text data-en="COST OF ONE QUESTION" data-zh="一个问题的代价" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="480" y="230">COST OF ONE QUESTION</text>
+<line stroke="var(--border)" stroke-width="1" x1="396" x2="564" y1="240" y2="240"></line>
+<text data-en="5 model calls" data-zh="5 次模型调用" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="480" y="262">5 model calls</text>
+<text data-en="1 tool call" data-zh="1 次工具调用" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="480" y="282">1 tool call</text>
+<text data-en="≈ 8s latency" data-zh="≈ 8 秒延迟" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="480" y="302">≈ 8s latency</text>
+<text data-en="answer was cacheable" data-zh="答案本可缓存" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" font-weight="700" text-anchor="middle" x="480" y="320">answer was cacheable</text>
+</svg>
+<p class="diagram-caption" data-en="The default agent architecture routes every step through the model. Each box labeled 'model' is a billable, latent, non-deterministic operation. The question the user asked may have been asked a thousand times before — the answer identical each time — yet the agent pays the full cost every single run. The model call is treated as free, and so it is spent like it is free. It is not free." data-zh="默认的智能体架构，把每一步都路由经过模型。每一个标着「模型」的方框，都是一次要计费、有延迟、不确定性的操作。用户问的问题，可能之前已经被问过一千次了——每次答案都一样——但智能体每次都付全价。模型调用被当成是免费的，于是它就被当成免费的那样去花。它不是免费的。">The default agent architecture routes every step through the model. Each box labeled 'model' is a billable, latent, non-deterministic operation. The question the user asked may have been asked a thousand times before — the answer identical each time — yet the agent pays the full cost every single run.</p>
+</div>
+<h3 data-en="The call that did not need to happen" data-zh="那次本不需要发生的调用">The call that did not need to happen</h3>
+<p data-en="A model call is three things at once, and teams usually only see one of them. They see the cost — the tokens in, the tokens out, the line on the invoice. They do not see the latency, which is not just the time to first token but the entire round-trip: the prompt assembled, the request serialized, the network hop, the queue, the inference, the deserialization, the response parsed. A single model call that feels instant to a developer watching logs can be two or three seconds of wall-clock time that the user spends staring at a spinner. They also do not see the inconsistency. The same input does not produce the same output. A model call is a sample from a distribution, and the distribution has width. Call it twice with identical prompts and the answers differ in wording, in structure, sometimes in correctness. Every model call introduces variance, and variance is the enemy of every system that needs to be reliable." data-zh="一次模型调用同时是三件事，而团队通常只看到其中一件。他们看到成本——输入的 token、输出的 token、发票上的那一行。他们看不到延迟，那不仅仅是首 token 的时间，而是整个往返：提示词组装、请求序列化、网络跳转、排队、推理、反序列化、响应解析。开发者看日志时觉得「瞬间」的一次模型调用，可能是用户盯着加载图标发呆的两三秒墙钟时间。他们也看不到不一致性。相同的输入不产生相同的输出。一次模型调用是从一个分布里采样，而分布是有宽度的。用完全相同的提示词调两次，答案在措辞上、结构上、有时在正确性上都不同。每一次模型调用都引入方差，而方差，是每一个需要可靠的系统的敌人。">A model call is three things at once, and teams usually only see one of them. They see the cost — the tokens in, the tokens out, the line on the invoice. They do not see the latency, which is not just the time to first token but the entire round-trip: the prompt assembled, the request serialized, the network hop, the queue, the inference, the deserialization, the response parsed. They also do not see the inconsistency. The same input does not produce the same output. A model call is a sample from a distribution, and the distribution has width.</p>
+<p data-en="This reframes the problem. If every model call costs money, adds seconds, and introduces variance, then the optimal number of model calls per task is the minimum that produces a correct result — not the maximum the architecture can justify. The default agent architecture treats the model call as the primitive operation, the atom of the system, and builds everything out of it. This is backwards. The model call should be the exception, the thing that happens only when every cheaper option has been exhausted. The cheaper options exist. They are called caches, and most teams have not built them." data-zh="这重新定义了问题。如果每一次模型调用都要花钱、增加几秒、引入方差，那么每个任务的最优模型调用次数，是能产出正确结果的最小值——不是架构能justify 的最大值。默认的智能体架构把模型调用当作原语操作、系统的原子，然后用它搭建一切。这是反的。模型调用应该是例外，是只有在每一个更便宜的选项都被穷尽之后才发生的事。更便宜的选项是存在的。它们叫做缓存，而大多数团队没有建过。">This reframes the problem. If every model call costs money, adds seconds, and introduces variance, then the optimal number of model calls per task is the minimum that produces a correct result — not the maximum the architecture can justify. The cheaper options exist. They are called caches, and most teams have not built them.</p>
+<blockquote data-en="A model call is the most expensive, slowest, least consistent operation in your agent. Treat it accordingly: as a last resort, not a default." data-zh="模型调用，是智能体里最贵、最慢、最不一致的操作。照此对待它：把它当作最后的手段，而不是默认选项。">A model call is the most expensive, slowest, least consistent operation in your agent. Treat it accordingly: as a last resort, not a default.</blockquote>
+<h3 data-en="Three layers of not calling the model" data-zh="不调用模型的三层">Three layers of not calling the model</h3>
+<p data-en="There are three layers of caching that sit between a user request and a model call, and each one eliminates a different class of unnecessary invocation. None of them are exotic. None of them require research. They require engineering — the unglamorous work of building the interceptors, the key functions, the invalidation logic. The first layer is prompt-prefix caching, and the provider may already be doing it — but whether it benefits you depends entirely on how you structure your prompts. Provider-side prefix caching discounts tokens that are reused across requests, but only if the reused prefix comes first, is byte-identical, and exceeds a minimum length. Most agent systems destroy this benefit without knowing it, by inserting dynamic content — timestamps, user IDs, session state — at the top of the prompt, before the system instructions. Everything after the first differing token is full price. The fix is structural: static content first, dynamic content last, and the provider's cache starts paying dividends on every request that shares the same system prompt." data-zh="在用户请求和模型调用之间，有三层缓存，每一层消除一类不必要的调用。它们没有一个是花哨的。没有一个是需要研究的。它们需要的是工程——那种搭建拦截器、键函数、失效逻辑的不性感的工作。第一层是提示词前缀缓存，服务商可能已经在做——但它能不能惠及你，完全取决于你如何构造提示词。服务商端的前缀缓存，会对跨请求复用的 token 打折，但前提是：复用的前缀在最前面、字节完全相同、超过最小长度。大多数智能体系统在不知不觉中毁掉了这个好处，方法是在系统指令之前，把动态内容——时间戳、用户 ID、会话状态——插到提示词最前面。第一个不同的 token 之后，全部全价。修复是结构性的：静态内容在前，动态内容在后，然后服务商的缓存就开始在每一个共享同一系统提示词的请求上产生回报。">There are three layers of caching that sit between a user request and a model call, and each one eliminates a different class of unnecessary invocation. The first layer is prompt-prefix caching, and the provider may already be doing it — but whether it benefits you depends entirely on how you structure your prompts.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 420" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrL2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THREE CACHE LAYERS BEFORE THE MODEL" data-zh="模型之前的三层缓存" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THREE CACHE LAYERS BEFORE THE MODEL</text>
+<!-- Layer 1: Response cache -->
+<rect fill="var(--bg-surface)" height="80" rx="10" stroke="var(--accent)" stroke-width="1.5" width="520" x="50" y="48"></rect>
+<circle cx="82" cy="80" fill="var(--accent-dim)" r="16" stroke="var(--accent)" stroke-width="1.5"></circle>
+<text data-en="1" data-zh="1" fill="var(--accent)" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="82" y="85">1</text>
+<text data-en="RESPONSE CACHE" data-zh="响应缓存" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" x="110" y="74">RESPONSE CACHE</text>
+<text data-en="identical input → return stored output. Zero model calls." data-zh="相同输入 → 返回存储的输出。零次模型调用。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" x="110" y="94">identical input → return stored output. Zero model calls.</text>
+<text data-en="kills: repeated questions, common queries" data-zh="消灭：重复问题、高频查询" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="110" y="114">kills: repeated questions, common queries</text>
+<!-- Layer 2: Tool-result cache -->
+<rect fill="var(--bg-surface)" height="80" rx="10" stroke="var(--accent)" stroke-width="1.5" width="520" x="50" y="148"></rect>
+<circle cx="82" cy="180" fill="var(--accent-dim)" r="16" stroke="var(--accent)" stroke-width="1.5"></circle>
+<text data-en="2" data-zh="2" fill="var(--accent)" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="82" y="185">2</text>
+<text data-en="TOOL-RESULT CACHE" data-zh="工具结果缓存" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" x="110" y="174">TOOL-RESULT CACHE</text>
+<text data-en="same API call within TTL → reuse result. No re-fetch, no re-interpret." data-zh="TTL 内相同的 API 调用 → 复用结果。不重新取，不重新解读。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" x="110" y="194">same API call within TTL → reuse result. No re-fetch.</text>
+<text data-en="kills: redundant tool calls across steps &amp; sessions" data-zh="消灭：跨步骤与跨会话的冗余工具调用" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="110" y="214">kills: redundant tool calls across steps &amp; sessions</text>
+<!-- Layer 3: Prefix cache -->
+<rect fill="var(--bg-surface)" height="80" rx="10" stroke="var(--accent)" stroke-width="1.5" width="520" x="50" y="248"></rect>
+<circle cx="82" cy="280" fill="var(--accent-dim)" r="16" stroke="var(--accent)" stroke-width="1.5"></circle>
+<text data-en="3" data-zh="3" fill="var(--accent)" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="82" y="285">3</text>
+<text data-en="PREFIX CACHE (prompt structure)" data-zh="前缀缓存（提示词结构）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" x="110" y="274">PREFIX CACHE (prompt structure)</text>
+<text data-en="static prefix first → provider discounts reused tokens." data-zh="静态前缀在前 → 服务商对复用 token 打折。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" x="110" y="294">static prefix first → provider discounts reused tokens.</text>
+<text data-en="kills: the per-token tax on shared system prompts" data-zh="消灭：共享系统提示词的逐 token 税" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="110" y="314">kills: the per-token tax on shared system prompts</text>
+<!-- arrow down to model -->
+<path d="M310 328 L310 352" fill="none" marker-end="url(#arrL2)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="200" x="210" y="354"></rect>
+<text data-en="THE MODEL (last resort)" data-zh="模型（最后的手段）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="310" y="381">THE MODEL (last resort)</text>
+<text data-en="only when all three layers miss" data-zh="仅当三层全部未命中" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="396">only when all three layers miss</text>
+</svg>
+<p class="diagram-caption" data-en="Each layer intercepts a different class of request before it reaches the model. The response cache eliminates identical repeats. The tool-result cache eliminates redundant data fetches. The prefix cache reduces the cost of every call that does get through. Stacked together, they can eliminate the majority of model calls in a production agent — not by making the model smarter, but by making most calls unnecessary. The model becomes the exception. The caches become the rule." data-zh="每一层拦截一类不同的请求，在它到达模型之前。响应缓存消灭完全相同的重复。工具结果缓存消灭冗余的数据获取。前缀缓存降低每一个确实通过的调用的成本。叠在一起，它们可以消灭生产环境智能体里大多数的模型调用——不是通过让模型更聪明，而是通过让大多数调用变得不必要。模型成为例外。缓存成为规则。">Each layer intercepts a different class of request before it reaches the model. The response cache eliminates identical repeats. The tool-result cache eliminates redundant data fetches. The prefix cache reduces the cost of every call that does get through. Stacked together, they can eliminate the majority of model calls in a production agent.</p>
+</div>
+<p data-en="The second layer is response caching, and it is the one teams find most obvious yet build last. If two users ask the same question, and the answer does not depend on who is asking, the second call should never reach the model. The response cache keys on the normalized input — the question, stripped of formatting noise, mapped to a canonical form — and returns the stored answer in milliseconds. The objection is always the same: but the answers might be subtly different, and we want the model's latest reasoning. This objection conflates two things. The answer to 'what is the return policy' does not change between calls. The answer to 'summarize this document' might. The response cache does not cache everything — it caches the class of queries whose answers are stable, and that class is larger than most teams assume. A production agent that answers thousands of queries a day is answering the same few hundred questions in a thousand different phrasings, and every one of them is paying full model price for an answer that was computed yesterday." data-zh="第二层是响应缓存，也是团队觉得最理所当然、却最后才建的那一层。如果两个用户问了同一个问题，而答案不取决于谁在问，那么第二次调用根本不应该到达模型。响应缓存以归一化后的输入为键——问题被剥去格式噪音、映射到规范形式——然后在毫秒级返回存储的答案。反对意见总是一样的：但答案可能有微妙的差异，而我们想要模型最新的推理。这个反对意见混淆了两件事。「退货政策是什么」的答案不会在调用之间变化。「总结这份文档」的答案可能会。响应缓存不缓存一切——它缓存的是答案稳定的那类查询，而这类查询，比大多数团队以为的要大。一个每天回答数千个查询的生产环境智能体，是用一千种不同的措辞，在回答同样那几百个问题，而其中每一个，都在为一个昨天就已经算出来的答案付全价。">The second layer is response caching. If two users ask the same question, and the answer does not depend on who is asking, the second call should never reach the model. A production agent that answers thousands of queries a day is answering the same few hundred questions in a thousand different phrasings, and every one of them is paying full model price for an answer that was computed yesterday.</p>
+<p data-en="The third layer is tool-result caching, and it is the least obvious but often the highest-impact. Agents call tools, and tools call APIs, and APIs return data that changes slowly or never. The weather API returns the same forecast within its update window. The database query returns the same rows unless the underlying data changed. The documentation search returns the same documents for the same query. An agent without a tool-result cache will re-call the same tool with the same arguments, get the same result, and then call the model to interpret a result it already interpreted five minutes ago. The tool-result cache, keyed on the tool name and its arguments, with a time-to-live that matches the data's actual freshness requirement, eliminates the re-fetch and the re-interpretation in one stroke. In a multi-step agent, this layer alone can cut the number of model calls in half, because the steps that re-examine previously fetched data no longer need the model to do the examining." data-zh="第三层是工具结果缓存，它最不明显，但往往影响最大。智能体调用工具，工具调用 API，API 返回的数据变化缓慢或从不变化。天气 API 在它的更新窗口内返回相同的预报。数据库查询在底层数据没变时返回相同的行。文档搜索对相同的查询返回相同的文档。一个没有工具结果缓存的智能体，会用相同的参数重新调用同一个工具，得到相同的结果，然后调用模型去解读一个它五分钟前就已经解读过的结果。工具结果缓存，以工具名和它的参数为键，配一个与数据实际新鲜度需求匹配的存活时间，一刀消除重新获取和重新解读。在一个多步骤的智能体里，光这一层就能把模型调用次数砍掉一半，因为那些重新检查之前获取的数据的步骤，不再需要模型来做检查。">The third layer is tool-result caching, and it is the least obvious but often the highest-impact. Agents call tools, and tools call APIs, and APIs return data that changes slowly or never. An agent without a tool-result cache will re-call the same tool with the same arguments, get the same result, and then call the model to interpret a result it already interpreted five minutes ago.</p>
+<h3 data-en="What changes when the model is the last resort" data-zh="当模型成为最后的手段，会改变什么">What changes when the model is the last resort</h3>
+<p data-en="When a team builds these three layers and routes every request through them before the model, something shifts in the architecture and in the team's thinking. The model call stops being the thing the system does and starts being the thing the system avoids. The dashboard changes. The calls-per-task metric drops — not because the agent does less, but because it accomplishes the same work with fewer invocations. The latency drops, because a cache hit returns in milliseconds what a model call returns in seconds. The variance drops, because cached responses are deterministic — the same key returns the same value, every time, which means the agent's behavior on common queries becomes perfectly reproducible. And the cost drops, sometimes by an order of magnitude, because the expensive operation happens once and the cheap operation — a hash lookup — happens a thousand times." data-zh="当一个团队建好了这三层，并在模型之前把每个请求都路由过它们，架构里、团队的思维里，有些东西会改变。模型调用不再是系统所做的事，而开始成为系统所回避的事。仪表盘变了。每任务调用次数下降了——不是因为智能体做得少了，而是因为它用更少的调用完成了相同的工作。延迟降了，因为缓存命中在毫秒级返回，而模型调用在秒级返回。方差降了，因为缓存的响应是确定性的——相同的键返回相同的值，每次都是，这意味着智能体在高频查询上的行为变得完全可复现。而成本降了，有时降一个数量级，因为那个昂贵的操作只发生一次，而那个便宜的操作——一次哈希查找——发生一千次。">When a team builds these three layers and routes every request through them before the model, something shifts. The calls-per-task metric drops. The latency drops, because a cache hit returns in milliseconds what a model call returns in seconds. The variance drops, because cached responses are deterministic. And the cost drops, sometimes by an order of magnitude, because the expensive operation happens once and the cheap operation happens a thousand times.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrB1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="CALLS PER TASK: BEFORE vs AFTER CACHING" data-zh="每任务调用次数：缓存前后对比" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">CALLS PER TASK: BEFORE vs AFTER CACHING</text>
+<!-- BEFORE column -->
+<text data-en="BEFORE" data-zh="之前" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="160" y="58">BEFORE</text>
+<rect fill="var(--bg-surface)" height="34" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="200" x="60" y="70"></rect>
+<text data-en="model: intent" data-zh="模型：意图" fill="var(--accent-3)" font-family="monospace" font-size="10" text-anchor="middle" x="160" y="92">model: intent</text>
+<rect fill="var(--bg-surface)" height="34" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="200" x="60" y="110"></rect>
+<text data-en="model: pick tool" data-zh="模型：选工具" fill="var(--accent-3)" font-family="monospace" font-size="10" text-anchor="middle" x="160" y="132">model: pick tool</text>
+<rect fill="var(--accent-dim)" height="34" rx="6" stroke="var(--accent)" stroke-width="1.2" width="200" x="60" y="150"></rect>
+<text data-en="tool: fetch" data-zh="工具：取数据" fill="var(--accent)" font-family="monospace" font-size="10" text-anchor="middle" x="160" y="172">tool: fetch</text>
+<rect fill="var(--bg-surface)" height="34" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="200" x="60" y="190"></rect>
+<text data-en="model: interpret" data-zh="模型：解读" fill="var(--accent-3)" font-family="monospace" font-size="10" text-anchor="middle" x="160" y="212">model: interpret</text>
+<rect fill="var(--bg-surface)" height="34" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="200" x="60" y="230"></rect>
+<text data-en="model: format" data-zh="模型：格式化" fill="var(--accent-3)" font-family="monospace" font-size="10" text-anchor="middle" x="160" y="252">model: format</text>
+<rect fill="var(--bg-surface)" height="34" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="200" x="60" y="270"></rect>
+<text data-en="model: self-check" data-zh="模型：自检" fill="var(--accent-3)" font-family="monospace" font-size="10" text-anchor="middle" x="160" y="292">model: self-check</text>
+<text data-en="5 calls · ~8s · ~$0.04" data-zh="5 次调用 · ~8 秒 · ~$0.04" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" font-weight="700" text-anchor="middle" x="160" y="326">5 calls · ~8s · ~$0.04</text>
+<!-- arrow -->
+<path d="M280 190 L340 190" fill="none" marker-end="url(#arrB1)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<text data-en="add caches" data-zh="加入缓存" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="182">add caches</text>
+<!-- AFTER column -->
+<text data-en="AFTER" data-zh="之后" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="480" y="58">AFTER</text>
+<rect fill="var(--accent-dim)" height="34" rx="6" stroke="var(--accent)" stroke-width="1.5" width="200" x="380" y="70"></rect>
+<text data-en="✓ response cache HIT" data-zh="✓ 响应缓存命中" fill="var(--accent)" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle" x="480" y="92">response cache HIT</text>
+<text data-en="(returned in 2ms)" data-zh="（2 毫秒返回）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="480" y="110">returned in 2ms</text>
+<rect fill="var(--accent-dim)" height="34" rx="6" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3,3" width="200" x="380" y="124"></rect>
+<text data-en="— cache miss path —" data-zh="— 缓存未命中路径 —" fill="var(--text-tertiary)" font-family="monospace" font-size="9" font-style="italic" text-anchor="middle" x="480" y="146">cache miss path ↓</text>
+<rect fill="var(--accent-dim)" height="34" rx="6" stroke="var(--accent)" stroke-width="1.2" width="200" x="380" y="158"></rect>
+<text data-en="✓ tool-result cache HIT" data-zh="✓ 工具结果缓存命中" fill="var(--accent)" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle" x="480" y="180">tool-result cache HIT</text>
+<rect fill="var(--bg-surface)" height="34" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="200" x="380" y="198"></rect>
+<text data-en="model: answer (1 call)" data-zh="模型：回答（1 次调用）" fill="var(--accent-3)" font-family="monospace" font-size="10" text-anchor="middle" x="480" y="220">model: answer (1 call)</text>
+<text data-en="1 call · ~2s · ~$0.01" data-zh="1 次调用 · ~2 秒 · ~$0.01" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" font-weight="700" text-anchor="middle" x="480" y="260">1 call · ~2s · ~$0.01</text>
+<text data-en="same answer · 4× faster · 4× cheaper" data-zh="相同答案 · 快 4 倍 · 便宜 4 倍" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="480" y="286">same answer · 4× faster · 4× cheaper</text>
+<text data-en="identical correctness" data-zh="正确性完全相同" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="480" y="306">identical correctness</text>
+</svg>
+<p class="diagram-caption" data-en="The same task, before and after caching. On the left, every step is a model call — five invocations, eight seconds, full price on every token. On the right, the response cache catches the repeat query, the tool-result cache supplies the data, and a single model call produces the answer. The output is identical. The user cannot tell the difference. The invoice can." data-zh="同一个任务，缓存前后。左边，每一步都是一次模型调用——五次调用、八秒、每个 token 全价。右边，响应缓存抓住了重复查询，工具结果缓存提供了数据，一次模型调用产出答案。输出完全相同。用户看不出区别。账单看得出来。">The same task, before and after caching. On the left, every step is a model call. On the right, the response cache catches the repeat, the tool-result cache supplies the data, and a single model call produces the answer. The output is identical. The invoice can tell the difference.</p>
+</div>
+<p data-en="There is a deeper consequence that teams discover only after building these layers, and it changes how they think about the model itself. When the model is the last resort, the cases that reach it are the hard cases — the novel questions, the ambiguous requests, the tasks that genuinely require reasoning. The model is no longer wasted on work a hash table could do. It is spent only on work that actually needs it, which means the marginal quality of every model call goes up. A team that was running a cheaper model to save money on high-volume trivial calls can now afford a stronger model for the calls that actually matter, because there are fewer of them. Caching does not just save money. It reallocates the budget toward the work where model quality actually makes a difference." data-zh="有一个更深层的后果，只有建好这些层之后，团队才会发现，而它改变了团队对模型本身的看法。当模型成为最后的手段，到达它的情况，是那些困难的情况——新颖的问题、模糊的请求、真正需要推理的任务。模型不再被浪费在一张哈希表就能做的工作上。它只被花在真正需要它的工作上，这意味着每一次模型调用的边际质量上升了。一个之前为了省高频琐碎调用费用而跑便宜模型的团队，现在可以用得起更强的模型，用在真正重要的调用上，因为那样的调用更少了。缓存不仅仅省钱。它把预算重新分配到了模型质量真正能产生差异的工作上。">There is a deeper consequence. When the model is the last resort, the cases that reach it are the hard cases. The model is no longer wasted on work a hash table could do. A team that was running a cheaper model to save money on high-volume trivial calls can now afford a stronger model for the calls that actually matter. Caching does not just save money — it reallocates the budget toward the work where model quality actually makes a difference.</p>
+<p data-en="The reason most teams never build these layers is not technical difficulty. A response cache is a hash map with a TTL. A tool-result cache is the same thing keyed differently. A prefix-cache-aware prompt structure is a discipline, not a feature. The reason teams skip them is that building a cache is invisible work. It does not demo well. No one gathers around a screen to watch a cache hit return in two milliseconds — there is nothing to see. A smarter model, by contrast, demos beautifully: the agent handles a harder question, produces a richer answer, and everyone nods. So the team invests in the model, which is the visible thing, and skips the cache, which is the invisible thing that would have made the model investment unnecessary for ninety percent of the traffic. The model is the engine. Caching is the flywheel. Most teams are so focused on the engine that they never build the flywheel, and then they wonder why the engine is always running, always burning fuel, always one hard question away from stalling." data-zh="大多数团队之所以从不建这些层，不是技术难度。响应缓存是一个带 TTL 的哈希表。工具结果缓存是同样的东西，换个键。一个前缀缓存感知的提示词结构是一种纪律，不是一个功能。团队跳过它们的原因是：建缓存是隐形的工作。它演示不好看。没有人会围在屏幕前看一次缓存命中在两毫秒内返回——没什么可看的。相比之下，一个更聪明的模型，演示起来很漂亮：智能体处理了一个更难的问题，产出了更丰富的答案，每个人都点头。于是团队投资了模型——那个可见的东西——跳过了缓存——那个本可以让模型投资对百分之九十的流量变得不必要的隐形的东西。模型是引擎。缓存是飞轮。大多数团队如此专注于引擎，以至于从不建飞轮，然后纳闷为什么引擎一直在转、一直在烧油、永远离熄火只有一个难题的距离。">The reason most teams never build these layers is not technical difficulty. The reason is that building a cache is invisible work. It does not demo well. No one gathers around a screen to watch a cache hit return in two milliseconds. A smarter model, by contrast, demos beautifully. So the team invests in the visible thing and skips the invisible thing that would have made the model investment unnecessary for ninety percent of the traffic. The model is the engine. Caching is the flywheel. Most teams never build the flywheel, and then wonder why the engine is always running, always burning fuel, always one hard question away from stalling.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
