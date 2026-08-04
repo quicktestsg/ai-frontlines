@@ -1,6 +1,638 @@
 {
   "tweets": [
     {
+      "id": "2084473121818779668",
+      "url": "https://x.com/Alibaba_Qwen/status/2084473121818779668",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-08-04T08:01:34.654468+00:00",
+      "translation_zh": "已上线，准备好开建了。感谢 @OpenRouter。开源权重下周发布。⚡️ Qwen3.8 Max 现已在 OpenRouter 上线，新旗舰模型拥有 2.4T 参数（95B 激活），专为长周期编程、研究与多模态智能体工作打造。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 431,
+        "lang": "en",
+        "created_at": "2026-08-04T02:54:54.000Z",
+        "display_text_range": [
+          0,
+          89
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "1681349314797240320",
+              "indices": [
+                47,
+                58
+              ],
+              "name": "OpenRouter",
+              "screen_name": "OpenRouter"
+            }
+          ]
+        },
+        "id_str": "2084473121818779668",
+        "text": "Live and ready to build. Thanks for having us! @OpenRouter. Open weights dropping soon.⚡️",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2084473121818779668"
+          ],
+          "editable_until_msecs": "1785815694000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 33,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 148,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 16,
+          "retweet_count": 13,
+          "created_at": "2026-08-04T00:18:00.000Z",
+          "display_text_range": [
+            0,
+            270
+          ],
+          "entities": {
+            "urls": [
+              {
+                "display_url": "openrouter.ai/qwen/qwen3.8-m…",
+                "expanded_url": "https://openrouter.ai/qwen/qwen3.8-max",
+                "indices": [
+                  247,
+                  270
+                ],
+                "url": "https://t.co/LbRU1pSsW3"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "1753339277386342400",
+                "indices": [
+                  15,
+                  28
+                ],
+                "name": "Qwen",
+                "screen_name": "Alibaba_Qwen"
+              }
+            ]
+          },
+          "id_str": "2084433635411935346",
+          "text": "Qwen3.8 Max by @Alibaba_Qwen is live on OpenRouter.\n\nThe new flagship has 2.4T parameters (95B active) and is built for long-horizon coding, research, and multimodal agent work. Open weights are due next week, a first for a Qwen Max-class model.\n\nhttps://t.co/LbRU1pSsW3",
+          "user": {
+            "id_str": "1681349314797240320",
+            "name": "OpenRouter",
+            "screen_name": "OpenRouter",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2076693957258727424/AyRghTGJ_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2084433635411935346"
+            ],
+            "editable_until_msecs": "1785806280000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2084378417320141196",
+      "url": "https://x.com/OpenAI/status/2084378417320141196",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-08-04T08:01:34.654468+00:00",
+      "translation_zh": "音频走专用快速通道，更深的推理与工具调用则异步进行。同时将语音会话的启动从六次网络往返压缩到一次。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 730,
+        "in_reply_to_screen_name": "OpenAI",
+        "in_reply_to_status_id_str": "2084378415818579975",
+        "in_reply_to_user_id_str": "4398626122",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-03T20:38:35.000Z",
+        "display_text_range": [
+          0,
+          179
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/XI8jvuxrDP",
+              "expanded_url": "https://x.com/OpenAI/status/2084378417320141196/photo/1",
+              "indices": [
+                180,
+                203
+              ],
+              "url": "https://t.co/XI8jvuxrDP"
+            }
+          ]
+        },
+        "id_str": "2084378417320141196",
+        "text": "Audio moves through a dedicated fast path, while deeper reasoning and tool use happen asynchronously.  \n\nWe also reduced voice-session startup from six network round trips to one. https://t.co/XI8jvuxrDP",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2084378417320141196"
+          ],
+          "editable_until_msecs": "1785793115000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/XI8jvuxrDP",
+            "expanded_url": "https://x.com/OpenAI/status/2084378417320141196/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              180,
+              203
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HO0ubl0aMAA3H2r.png",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 799,
+                  "w": 1426,
+                  "x": 0,
+                  "y": 278
+                },
+                {
+                  "h": 1190,
+                  "w": 1190,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1190,
+                  "w": 1044,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1190,
+                  "w": 595,
+                  "x": 23,
+                  "y": 0
+                },
+                {
+                  "h": 1190,
+                  "w": 1426,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1190,
+              "width": 1426
+            },
+            "sizes": {
+              "large": {
+                "h": 1190,
+                "resize": "fit",
+                "w": 1426
+              },
+              "medium": {
+                "h": 1001,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 567,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/XI8jvuxrDP"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 799,
+                "w": 1426,
+                "x": 0,
+                "y": 278
+              },
+              {
+                "h": 1190,
+                "w": 1190,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1190,
+                "w": 1044,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1190,
+                "w": 595,
+                "x": 23,
+                "y": 0
+              },
+              {
+                "h": 1190,
+                "w": 1426,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/OpenAI/status/2084378417320141196/photo/1",
+            "url": "https://pbs.twimg.com/media/HO0ubl0aMAA3H2r.png",
+            "width": 1426,
+            "height": 1190
+          }
+        ],
+        "conversation_count": 21,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 7352,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 389,
+          "retweet_count": 595,
+          "created_at": "2026-08-03T20:38:34.000Z",
+          "display_text_range": [
+            0,
+            254
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/53VTTsqXg0",
+                "expanded_url": "https://x.com/OpenAI/status/2084378415818579975/photo/1",
+                "indices": [
+                  255,
+                  278
+                ],
+                "url": "https://t.co/53VTTsqXg0"
+              }
+            ]
+          },
+          "id_str": "2084378415818579975",
+          "text": "GPT-Live can listen while it speaks.\n\nTo make that feel natural at ChatGPT scale, we rebuilt the voice stack from client to model.\n\nThis new architecture keeps audio flowing continuously, so deeper reasoning and tool use don't interrupt the conversation. https://t.co/53VTTsqXg0",
+          "user": {
+            "id_str": "4398626122",
+            "name": "OpenAI",
+            "screen_name": "OpenAI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2084378415818579975"
+            ],
+            "editable_until_msecs": "1785793114000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/53VTTsqXg0",
+              "expanded_url": "https://x.com/OpenAI/status/2084378415818579975/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                255,
+                278
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HO0uUesbYAAaHzK.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 794,
+                    "w": 1418,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1026,
+                    "w": 1026,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1026,
+                    "w": 900,
+                    "x": 9,
+                    "y": 0
+                  },
+                  {
+                    "h": 1026,
+                    "w": 513,
+                    "x": 203,
+                    "y": 0
+                  },
+                  {
+                    "h": 1026,
+                    "w": 1418,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 1026,
+                "width": 1418
+              },
+              "sizes": {
+                "large": {
+                  "h": 1026,
+                  "resize": "fit",
+                  "w": 1418
+                },
+                "medium": {
+                  "h": 868,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 492,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/53VTTsqXg0"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 794,
+                  "w": 1418,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1026,
+                  "w": 1026,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1026,
+                  "w": 900,
+                  "x": 9,
+                  "y": 0
+                },
+                {
+                  "h": 1026,
+                  "w": 513,
+                  "x": 203,
+                  "y": 0
+                },
+                {
+                  "h": 1026,
+                  "w": 1418,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/OpenAI/status/2084378415818579975/photo/1",
+              "url": "https://pbs.twimg.com/media/HO0uUesbYAAaHzK.jpg",
+              "width": 1418,
+              "height": 1026
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2084378415818579975",
+      "url": "https://x.com/OpenAI/status/2084378415818579975",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-08-04T08:01:34.654468+00:00",
+      "translation_zh": "GPT-Live 可以在说话的同时聆听。为了让这种体验在 ChatGPT 的体量下依然自然，从客户端到模型，重建了整个语音技术栈。新架构让音频持续流动，更深的推理和工具调用不会打断对话。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 7352,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-03T20:38:34.000Z",
+        "display_text_range": [
+          0,
+          254
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/53VTTsqXg0",
+              "expanded_url": "https://x.com/OpenAI/status/2084378415818579975/photo/1",
+              "indices": [
+                255,
+                278
+              ],
+              "url": "https://t.co/53VTTsqXg0"
+            }
+          ]
+        },
+        "id_str": "2084378415818579975",
+        "text": "GPT-Live can listen while it speaks.\n\nTo make that feel natural at ChatGPT scale, we rebuilt the voice stack from client to model.\n\nThis new architecture keeps audio flowing continuously, so deeper reasoning and tool use don't interrupt the conversation. https://t.co/53VTTsqXg0",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2084378415818579975"
+          ],
+          "editable_until_msecs": "1785793114000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/53VTTsqXg0",
+            "expanded_url": "https://x.com/OpenAI/status/2084378415818579975/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              255,
+              278
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HO0uUesbYAAaHzK.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 794,
+                  "w": 1418,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1026,
+                  "w": 1026,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1026,
+                  "w": 900,
+                  "x": 9,
+                  "y": 0
+                },
+                {
+                  "h": 1026,
+                  "w": 513,
+                  "x": 203,
+                  "y": 0
+                },
+                {
+                  "h": 1026,
+                  "w": 1418,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1026,
+              "width": 1418
+            },
+            "sizes": {
+              "large": {
+                "h": 1026,
+                "resize": "fit",
+                "w": 1418
+              },
+              "medium": {
+                "h": 868,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 492,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/53VTTsqXg0"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 794,
+                "w": 1418,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1026,
+                "w": 1026,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1026,
+                "w": 900,
+                "x": 9,
+                "y": 0
+              },
+              {
+                "h": 1026,
+                "w": 513,
+                "x": 203,
+                "y": 0
+              },
+              {
+                "h": 1026,
+                "w": 1418,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/OpenAI/status/2084378415818579975/photo/1",
+            "url": "https://pbs.twimg.com/media/HO0uUesbYAAaHzK.jpg",
+            "width": 1418,
+            "height": 1026
+          }
+        ],
+        "conversation_count": 389,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2084352161404920316",
       "url": "https://x.com/OpenAI/status/2084352161404920316",
       "label": "OpenAI",
