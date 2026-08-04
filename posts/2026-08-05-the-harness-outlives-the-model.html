@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Harness Outlives the Model — AI Frontlines</title>
+<meta content="Every six months a new model arrives and the team rewrites its agent around it. But the team that wins is not the one on the newest model. It is the one whose harness survives the swap. The harness — the control loop, the tool layer, the evals, the replay infrastructure — is the only part of an agent that compounds. The model is rented. The harness is owned." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=20" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="August 5, 2026" data-zh="2026年8月5日">August 5, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Harness Outlives the Model" data-zh="脚手架比模型活得更久">The Harness Outlives the Model</h1>
+<p class="post-header-deck" data-en="Every six months a new model lands and the team throws out its agent and starts over. The team that wins is not the one on the newest model. It is the one whose harness survives the swap. The control loop, the tool layer, the evals, the replay infrastructure — these are the only parts of an agent that compound. The model is rented. The harness is owned." data-zh="每隔半年，一个新模型落地，团队就把整个智能体推倒重来。赢的团队，不是用着最新模型的那个。而是那个脚手架能挺过模型替换的团队。控制循环、工具层、评估套件、复现基础设施——这些，是智能体里唯一会复利增长的部分。模型是租来的。脚手架，是自己拥有的。">Every six months a new model lands and the team throws out its agent. The team that wins is the one whose harness survives the swap.</p>
+</header>
+<article class="post-body">
+<p data-en="A model ships, and for a few weeks it is the best model. Then another ships, and it is better, and the first is obsolete. This cycle is not slowing down — it is accelerating, and every team that builds agents lives inside it. What is strange is how teams respond. Each new model triggers a rewrite. The prompts are redone, the tool schemas reshaped, the control loop refactored to match whatever the new model does well. The eval suite, if it existed, is discarded because it was written for the old model's failure modes. Six months of engineering evaporates, and the team is back where it started: an agent that works, on a model that will be obsolete in six months, built on a harness that will be thrown away when the next one arrives." data-zh="一个模型发布了，在几周内它是最好的模型。然后另一个发布了，更好，第一个就过时了。这个循环没有在减速——它在加速，而每一个做智能体的团队都活在里面。奇怪的是团队的反应。每一个新模型都触发一次重写。提示词重做，工具 schema 重塑，控制循环重构，去匹配新模型擅长的事。评估套件——如果有的话——被丢弃，因为它是为旧模型的失败模式写的。六个月的工程蒸发了，团队回到起点：一个能用的智能体，跑在一个六个月后会过时的模型上，建在一个下一次新模型来时就会被扔掉的脚手架上。">A model ships, and for a few weeks it is the best model. Then another ships, and it is better, and the first is obsolete. This cycle is not slowing down — it is accelerating. What is strange is how teams respond. Each new model triggers a rewrite. The prompts are redone, the tool schemas reshaped, the control loop refactored. Six months of engineering evaporates, and the team is back where it started.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 400" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrH1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE REWRITE CYCLE" data-zh="重写的循环" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE REWRITE CYCLE</text>
+<!-- model A -->
+<rect fill="var(--accent-dim)" height="56" rx="10" stroke="var(--accent)" stroke-width="1.5" width="160" x="40" y="60"></rect>
+<text data-en="Model A" data-zh="模型 A" fill="var(--accent)" font-family="Inter,sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="120" y="84">Model A</text>
+<text data-en="best in class · 6 months" data-zh="同级最佳 · 6 个月" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="120" y="102">best in class · 6 months</text>
+<!-- harness A -->
+<rect fill="var(--bg-surface)" height="40" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="160" x="40" y="132"></rect>
+<text data-en="harness A (bespoke)" data-zh="脚手架 A（定制）" fill="var(--accent-3)" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle" x="120" y="157">harness A (bespoke)</text>
+<!-- rewrite arrow -->
+<path d="M120 184 L120 214" fill="none" marker-end="url(#arrH1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<text data-en="rewrite" data-zh="重写" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="150" y="202">rewrite</text>
+<!-- model B -->
+<rect fill="var(--accent-dim)" height="56" rx="10" stroke="var(--accent)" stroke-width="1.5" width="160" x="40" y="218"></rect>
+<text data-en="Model B" data-zh="模型 B" fill="var(--accent)" font-family="Inter,sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="120" y="242">Model B</text>
+<text data-en="best in class · 6 months" data-zh="同级最佳 · 6 个月" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="120" y="260">best in class · 6 months</text>
+<!-- harness B -->
+<rect fill="var(--bg-surface)" height="40" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="160" x="40" y="290"></rect>
+<text data-en="harness B (bespoke)" data-zh="脚手架 B（定制）" fill="var(--accent-3)" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle" x="120" y="315">harness B (bespoke)</text>
+<text data-en="harness A: discarded" data-zh="脚手架 A：已丢弃" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="120" y="352">harness A: discarded</text>
+<!-- right column: the stable harness -->
+<rect fill="var(--bg-surface)" height="300" rx="12" stroke="var(--accent)" stroke-width="2" width="260" x="320" y="60"></rect>
+<text data-en="THE ALTERNATIVE" data-zh="另一种做法" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" letter-spacing="1" text-anchor="middle" x="450" y="86">THE ALTERNATIVE</text>
+<line stroke="var(--border)" stroke-width="1" x1="340" x2="560" y1="98" y2="98"></line>
+<text data-en="Model A → B → C → ..." data-zh="模型 A → B → C → …" fill="var(--accent-3)" font-family="monospace" font-size="10" text-anchor="middle" x="450" y="122">Model A → B → C → ...</text>
+<text data-en="(swappable, rented)" data-zh="（可替换，租来的）" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="450" y="140">(swappable, rented)</text>
+<text data-en="↓ same harness ↓" data-zh="↓ 同一个脚手架 ↓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="450" y="176">↓ same harness ↓</text>
+<rect fill="var(--accent-dim)" height="120" rx="8" stroke="var(--accent)" stroke-width="1.5" width="200" x="350" y="190"></rect>
+<text data-en="HARNESS (owned)" data-zh="脚手架（自有）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="450" y="214">HARNESS (owned)</text>
+<text data-en="control loop" data-zh="控制循环" fill="var(--accent)" font-family="monospace" font-size="9" text-anchor="middle" x="450" y="236">control loop</text>
+<text data-en="tool contracts" data-zh="工具契约" fill="var(--accent)" font-family="monospace" font-size="9" text-anchor="middle" x="450" y="254">tool contracts</text>
+<text data-en="evals + replay" data-zh="评估 + 复现" fill="var(--accent)" font-family="monospace" font-size="9" text-anchor="middle" x="450" y="272">evals + replay</text>
+<text data-en="compounds every swap" data-zh="每次替换都在增值" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" font-weight="700" text-anchor="middle" x="450" y="298">compounds every swap</text>
+</svg>
+<p class="diagram-caption" data-en="On the left, the default: each model gets a bespoke harness, and each harness is thrown away when the model it was built for is replaced. Nothing compounds. On the right, the alternative: one harness, built to survive model swaps, accumulating improvements while models cycle through it. The model is a replaceable component. The harness is the asset." data-zh="左边是默认做法：每个模型配一个定制脚手架，而每个脚手架在它为之而建的模型被替换时就被扔掉。没有东西在增值。右边是另一种做法：一个脚手架，被设计成能挺过模型替换，在模型轮换的同时积累改进。模型是可替换的零件。脚手架，才是资产。">On the left, the default: each model gets a bespoke harness, and each harness is thrown away when the model it was built for is replaced. Nothing compounds. On the right, the alternative: one harness, built to survive model swaps, accumulating improvements while models cycle through it. The model is a replaceable component. The harness is the asset.</p>
+</div>
+<h3 data-en="What a harness actually is" data-zh="脚手架，到底是什么">What a harness actually is</h3>
+<p data-en="The word harness is doing a lot of work, so it helps to be precise. The harness is everything between the raw model API and the behavior the user sees. It is the control loop that decides when the model is called, when a tool is called, when the loop stops. It is the layer that renders the model's output into something a tool can consume and renders a tool's output into something the model can consume. It is the set of contracts — the names, the schemas, the error formats — that the tools and the model agree to speak. It is the retrieval system that decides what context enters the prompt. It is the guardrails that catch the model when it produces something invalid. It is the logging that records every step, so a failed run can be replayed. And it is the eval suite that scores the whole thing against the cases that actually matter." data-zh="「脚手架」这个词承担了太多含义，所以值得精确一些。脚手架，是原始模型 API 和用户所看到的行为之间的一切。它是那个决定何时调用模型、何时调用工具、何时停止循环的控制循环。它是把模型输出渲染成工具能消费的东西、把工具输出渲染成模型能消费的东西的那一层。它是一组契约——名字、schema、错误格式——工具和模型同意共同使用的那套语言。它是决定什么上下文进入提示词的检索系统。它是模型产出无效内容时接住它的护栏。它是记录每一步的日志，让一次失败的运行可以被复现。而它，是给整套东西打分、对照真正重要的用例来评分的评估套件。">The word harness is doing a lot of work, so it helps to be precise. The harness is everything between the raw model API and the behavior the user sees. It is the control loop that decides when the model is called, when a tool is called, when the loop stops. It is the set of contracts that the tools and the model agree to speak. It is the retrieval system that decides what context enters the prompt. It is the guardrails that catch the model when it produces something invalid. It is the logging that records every step. And it is the eval suite that scores the whole thing.</p>
+<p data-en="None of these components care which model is running underneath. A control loop is a control loop whether the model is a four-billion-parameter checkpoint or a four-trillion-parameter frontier system. A tool contract is a tool contract whether the model that calls it is good at tool use or bad at it. The eval suite cares about the model only in the sense that a weaker model will score lower — but the suite itself, the cases it checks, the way it scores them, is model-independent. This is the key insight that most teams miss: the harness is the part of the system that does not depend on the model. The model is the part that does. And the part that does not depend on the model is the part worth investing in, because it is the only part that survives." data-zh="这些组件，没有一个在乎底下跑的是哪个模型。无论模型是四十亿参数的 checkpoint，还是四万亿参数的前沿系统，控制循环都是控制循环。无论调用工具的模型擅长还是不擅长工具调用，工具契约都是工具契约。评估套件在乎模型，仅仅在于一个更弱的模型会得更低的分——但套件本身、它检查的用例、它的评分方式，都与模型无关。这是大多数团队错过的关键洞察：脚手架，是系统中不依赖于模型的那部分。模型，是依赖于模型的那部分。而不依赖于模型的那部分，才值得投资，因为它是唯一能存活下来的部分。">None of these components care which model is running underneath. A control loop is a control loop whether the model is a four-billion-parameter checkpoint or a four-trillion-parameter frontier system. This is the key insight that most teams miss: the harness is the part of the system that does not depend on the model. And the part that does not depend on the model is the part worth investing in, because it is the only part that survives.</p>
+<blockquote data-en="The model is rented. The harness is owned. Only one of those compounds." data-zh="模型是租来的。脚手架是自己拥有的。这两者里，只有一个会复利增长。">The model is rented. The harness is owned. Only one of those compounds.</blockquote>
+<h3 data-en="The seam that lets models swap" data-zh="让模型可以替换的那条接缝">The seam that lets models swap</h3>
+<p data-en="For a harness to survive a model swap, there must be a seam — a clean boundary where the model plugs in and the harness begins. Most agent systems do not have this seam. The prompts are written in the dialect of a specific model, tuned to its quirks, padded with instructions that compensate for its specific weaknesses. The tool schemas are shaped to match how one model prefers to receive arguments. The control loop branches on patterns that one model produces in its output. Everything is welded to the model, and when the model changes, the welds break." data-zh="要让一个脚手架挺过模型替换，必须有一条接缝——一个干净的边界，模型从那里插入，脚手架从那里开始。大多数智能体系统没有这条接缝。提示词是用某个特定模型的方言写的，针对它的怪癖做了调优，塞满了弥补它特定弱点的指令。工具 schema 的形状，是为了匹配某个模型喜欢如何接收参数。控制循环，在某个模型在其输出中产生的模式上做分支。一切都焊死在模型上，而当模型改变时，焊点就断了。">For a harness to survive a model swap, there must be a seam — a clean boundary where the model plugs in and the harness begins. Most agent systems do not have this seam. The prompts are written in the dialect of a specific model, tuned to its quirks, padded with instructions that compensate for its specific weaknesses. The tool schemas are shaped to match how one model prefers to receive arguments. The control loop branches on patterns that one model produces. Everything is welded to the model, and when the model changes, the welds break.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 380" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrS1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE MODEL SEAM" data-zh="模型接缝" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE MODEL SEAM</text>
+<!-- left: welded -->
+<rect fill="var(--bg-surface)" height="270" rx="10" stroke="var(--accent-3)" stroke-width="1.2" width="240" x="30" y="50"></rect>
+<text data-en="WELDED (default)" data-zh="焊死的（默认）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="150" y="76">WELDED (default)</text>
+<rect fill="var(--accent-dim)" height="34" rx="6" stroke="var(--accent-3)" stroke-width="1" width="180" x="60" y="92"></rect>
+<text data-en="prompt (model dialect)" data-zh="提示词（模型方言）" fill="var(--accent-3)" font-family="monospace" font-size="9" text-anchor="middle" x="150" y="114">prompt (model dialect)</text>
+<rect fill="var(--accent-dim)" height="34" rx="6" stroke="var(--accent-3)" stroke-width="1" width="180" x="60" y="132"></rect>
+<text data-en="schema (model shape)" data-zh="schema（按模型塑形）" fill="var(--accent-3)" font-family="monospace" font-size="9" text-anchor="middle" x="150" y="154">schema (model shape)</text>
+<rect fill="var(--accent-dim)" height="34" rx="6" stroke="var(--accent-3)" stroke-width="1" width="180" x="60" y="172"></rect>
+<text data-en="loop (model patterns)" data-zh="循环（模型模式）" fill="var(--accent-3)" font-family="monospace" font-size="9" text-anchor="middle" x="150" y="194">loop (model patterns)</text>
+<text data-en="⟂ all welded to model" data-zh="⟂ 全部焊死在模型上" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" font-weight="700" text-anchor="middle" x="150" y="232">all welded to model</text>
+<text data-en="swap = full rewrite" data-zh="替换 = 全面重写" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="150" y="260">swap = full rewrite</text>
+<text data-en="nothing survives" data-zh="没有东西存活" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="150" y="280">nothing survives</text>
+<!-- right: seam -->
+<rect fill="var(--bg-surface)" height="270" rx="10" stroke="var(--accent)" stroke-width="2" width="240" x="320" y="50"></rect>
+<text data-en="SEAMED (durable)" data-zh="有接缝的（耐用）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="440" y="76">SEAMED (durable)</text>
+<!-- model plug -->
+<rect fill="var(--accent-dim)" height="34" rx="6" stroke="var(--accent)" stroke-width="1.2" width="180" x="350" y="92"></rect>
+<text data-en="model adapter" data-zh="模型适配器" fill="var(--accent)" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle" x="440" y="114">model adapter</text>
+<!-- seam line -->
+<line stroke="var(--accent)" stroke-dasharray="4,3" stroke-width="2" x1="340" x2="540" y1="140" y2="140"></line>
+<text data-en="— the seam —" data-zh="— 接缝 —" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" font-weight="700" text-anchor="middle" x="440" y="156">— the seam —</text>
+<!-- harness pieces -->
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent)" stroke-width="1.2" width="180" x="350" y="166"></rect>
+<text data-en="neutral prompt template" data-zh="中性提示词模板" fill="var(--accent)" font-family="monospace" font-size="9" text-anchor="middle" x="440" y="186">neutral prompt template</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent)" stroke-width="1.2" width="180" x="350" y="200"></rect>
+<text data-en="canonical tool contracts" data-zh="规范工具契约" fill="var(--accent)" font-family="monospace" font-size="9" text-anchor="middle" x="440" y="220">canonical tool contracts</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent)" stroke-width="1.2" width="180" x="350" y="234"></rect>
+<text data-en="model-agnostic loop" data-zh="模型无关循环" fill="var(--accent)" font-family="monospace" font-size="9" text-anchor="middle" x="440" y="254">model-agnostic loop</text>
+<text data-en="swap = change one adapter" data-zh="替换 = 换一个适配器" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="440" y="286">swap = change one adapter</text>
+<text data-en="everything else survives" data-zh="其余全部存活" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="440" y="304">everything else survives</text>
+</svg>
+<p class="diagram-caption" data-en="A welded system couples prompt, schema, and loop to the model's specific behavior. A swap breaks every weld. A seamed system inserts a thin adapter — the only layer that knows the model's dialect — and keeps everything behind the seam neutral. The model changes. The adapter changes. Nothing behind the seam does." data-zh="一个焊死的系统，把提示词、schema、循环耦合到模型的特定行为上。一次替换，断掉每一个焊点。一个有接缝的系统，插入一层薄薄的适配器——唯一知道模型方言的那一层——而把接缝之后的一切保持中性。模型换了。适配器换了。接缝之后的，什么都不换。">A welded system couples prompt, schema, and loop to the model's specific behavior. A swap breaks every weld. A seamed system inserts a thin adapter — the only layer that knows the model's dialect — and keeps everything behind the seam neutral. The model changes. The adapter changes. Nothing behind the seam does.</p>
+</div>
+<p data-en="The seam is a thin adapter, and its job is translation. On one side is the model, with its own quirks: its preferred prompt format, its tolerance for long context, its tendencies toward certain failure modes. On the other side is the harness, which speaks a neutral, model-agnostic language: a canonical prompt template, canonical tool contracts, a canonical loop contract. The adapter is the only component that knows the model's dialect, and it is the only component that needs to change when the model does. Everything behind the seam — the templates, the contracts, the loop, the evals — stays exactly as it was. The seam is small. The seam is boring. The seam is the difference between a six-month rewrite and a one-day swap." data-zh="接缝是一个薄薄的适配器，它的工作是翻译。一边是模型，带着它自己的怪癖：它偏好的提示词格式、它对长上下文的容忍度、它倾向于某些失败模式的倾向。另一边是脚手架，它说一种中性的、与模型无关的语言：一个规范的提示词模板、规范的工具契约、一个规范的循环契约。适配器是唯一知道模型方言的组件，也是当模型改变时唯一需要改变的组件。接缝之后的一切——模板、契约、循环、评估——原封不动。接缝很小。接缝很无聊。但接缝，是六个月重写和一天替换之间的区别。">The seam is a thin adapter, and its job is translation. On one side is the model, with its own quirks. On the other side is the harness, which speaks a neutral, model-agnostic language. The adapter is the only component that knows the model's dialect, and it is the only component that needs to change when the model does. The seam is small. The seam is boring. The seam is the difference between a six-month rewrite and a one-day swap.</p>
+<h3 data-en="The eval suite is the only memory that matters" data-zh="评估套件，是唯一重要的记忆">The eval suite is the only memory that matters</h3>
+<p data-en="Of all the components in the harness, one deserves special attention because it is the part teams most reliably throw away: the eval suite. The eval suite is a set of test cases — real inputs, the expected behavior, and a scorer that judges whether the agent produced it. It is the closest thing an agent has to a test suite, and it serves the same purpose: it tells you whether a change made things better or worse. When a team rewrites its agent for a new model, the eval suite is usually the first casualty, because it was written against the old model's output and the new model produces different output. So the team throws it out, and with it throws out the only record of what the old agent could and could not do." data-zh="脚手架的所有组件里，有一个值得特别关注，因为它是团队最可靠地会扔掉的部分：评估套件。评估套件是一组测试用例——真实输入、预期行为、以及一个判断智能体是否产出了它的评分器。它是智能体所拥有的最接近测试套件的东西，作用也一样：它告诉你一个改动是让事情变好了还是变差了。当一个团队为新模型重写它的智能体时，评估套件通常是最先阵亡的，因为它是针对旧模型的输出写的，而新模型产出不同的输出。于是团队把它扔掉，随之扔掉的，是关于旧智能体能做什么、不能做什么的唯一记录。">Of all the components in the harness, one deserves special attention because it is the part teams most reliably throw away: the eval suite. It is a set of test cases — real inputs, expected behavior, and a scorer that judges whether the agent produced it. When a team rewrites its agent for a new model, the eval suite is usually the first casualty, because it was written against the old model's output. So the team throws it out, and with it throws out the only record of what the old agent could and could not do.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 400" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrE1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrE2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE EVAL SUITE ACCUMULATES" data-zh="评估套件在积累" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE EVAL SUITE ACCUMULATES</text>
+<!-- Model A row -->
+<text data-en="Model A era" data-zh="模型 A 时代" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="100" y="58">Model A era</text>
+<rect fill="var(--bg-surface)" height="50" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="160" x="20" y="68"></rect>
+<text data-en="eval suite A" data-zh="评估套件 A" fill="var(--accent-3)" font-family="monospace" font-size="10" text-anchor="middle" x="100" y="90">eval suite A</text>
+<text data-en="120 cases" data-zh="120 个用例" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="100" y="108">120 cases</text>
+<text data-en="(all failures → cases)" data-zh="（所有失败 → 用例）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="100" y="134">(all failures → cases)</text>
+<!-- Model B row -->
+<text data-en="Model B era" data-zh="模型 B 时代" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="58">Model B era</text>
+<rect fill="var(--bg-surface)" height="50" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="160" x="230" y="68"></rect>
+<text data-en="eval suite A+B" data-zh="评估套件 A+B" fill="var(--accent-3)" font-family="monospace" font-size="10" text-anchor="middle" x="310" y="90">eval suite A+B</text>
+<text data-en="120 + 90 = 210 cases" data-zh="120 + 90 = 210 个用例" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="108">120 + 90 = 210 cases</text>
+<text data-en="(old cases retained)" data-zh="（旧用例保留）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="310" y="134">(old cases retained)</text>
+<!-- Model C row -->
+<text data-en="Model C era" data-zh="模型 C 时代" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="520" y="58">Model C era</text>
+<rect fill="var(--accent-dim)" height="50" rx="6" stroke="var(--accent)" stroke-width="1.5" width="160" x="440" y="68"></rect>
+<text data-en="eval suite A+B+C" data-zh="评估套件 A+B+C" fill="var(--accent)" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle" x="520" y="90">eval suite A+B+C</text>
+<text data-en="210 + 130 = 340 cases" data-zh="210 + 130 = 340 个用例" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="520" y="108">210 + 130 = 340 cases</text>
+<text data-en="(compounds)" data-zh="（复利增长）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-style="italic" font-weight="700" text-anchor="middle" x="520" y="134">(compounds)</text>
+<!-- arrows between -->
+<path d="M180 93 L228 93" fill="none" marker-end="url(#arrE1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<path d="M390 93 L438 93" fill="none" marker-end="url(#arrE2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- bottom: the regressions caught -->
+<rect fill="var(--bg-surface)" height="150" rx="10" stroke="var(--accent)" stroke-width="1.5" width="560" x="30" y="170"></rect>
+<text data-en="WHAT THE ACCUMULATED SUITE CATCHES" data-zh="积累的套件能抓住什么" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="196">WHAT THE ACCUMULATED SUITE CATCHES</text>
+<line stroke="var(--border)" stroke-width="1" x1="50" x2="570" y1="206" y2="206"></line>
+<circle cx="70" cy="230" fill="var(--accent)" r="4"></circle>
+<text data-en="Model C handles A's cases — but regresses on B's edge cases" data-zh="模型 C 处理了 A 的用例——但在 B 的边缘用例上退步了" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" x="84" y="234">Model C handles A's cases — but regresses on B's edge cases</text>
+<circle cx="70" cy="252" fill="var(--accent)" r="4"></circle>
+<text data-en="New failure mode → becomes a permanent case in the suite" data-zh="新的失败模式 → 成为套件中的永久用例" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" x="84" y="256">New failure mode → becomes a permanent case in the suite</text>
+<circle cx="70" cy="274" fill="var(--accent)" r="4"></circle>
+<text data-en="Every bug ever found stays tested — forever" data-zh="每一个曾经发现的 bug，都被永久测试" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" x="84" y="278">Every bug ever found stays tested — forever</text>
+<circle cx="70" cy="296" fill="var(--accent)" r="4"></circle>
+<text data-en="The suite is the only artifact that knows what the agent could do in 2026" data-zh="套件，是唯一知道智能体在 2026 年能做什么的产物" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" x="84" y="300">The suite is the only artifact that knows what the agent could do in 2026</text>
+</svg>
+<p class="diagram-caption" data-en="A good eval suite never shrinks. Every model era adds cases — the failures the new model exposes — and every old case stays, because the old failure modes have a habit of returning in new models. After three model swaps, the suite contains every bug the team has ever found. It becomes the institutional memory of the agent. Throw it away, and the team is amnesiac — rediscovering the same failures with every new model, unable to tell whether the new model is actually better or just differently broken." data-zh="一个好的评估套件，永远不会缩小。每一个模型时代都增加用例——新模型暴露的失败——而每一个旧用例都留下，因为旧的失败模式有在新模型里卷土重来的习惯。三次模型替换之后，套件包含了团队曾经发现过的每一个 bug。它成为智能体的制度记忆。把它扔掉，团队就失忆了——每一个新模型都在重新发现同样的失败，无法判断新模型到底是真的更好，还是只是换了个地方坏掉。">A good eval suite never shrinks. Every model era adds cases — the failures the new model exposes — and every old case stays, because the old failure modes have a habit of returning in new models. After three model swaps, the suite contains every bug the team has ever found. It becomes the institutional memory of the agent. Throw it away, and the team is amnesiac.</p>
+</div>
+<p data-en="The fix is to build the eval suite against behavior, not output. The suite does not ask whether the agent produced the exact string the old model produced. It asks whether the agent achieved the intended outcome — retrieved the correct document, called the right tool with the right arguments, produced a response that satisfies the constraint. Behavior is model-independent; output wording is not. A suite built on behavior survives a model swap unchanged. A suite built on output strings dies with the model that produced those strings. This distinction — score the behavior, not the bytes — is what separates a suite that compounds from a suite that evaporates." data-zh="修复方法是：把评估套件建在行为上，而不是输出上。套件不问智能体是否产出了旧模型产出的那个完全相同的字符串。它问的是，智能体是否达成了预期的结果——检索到了正确的文档、用正确的参数调用了正确的工具、产出了满足约束的回复。行为是模型无关的；输出的措辞不是。一个建在行为上的套件，挺过模型替换而不变。一个建在输出字符串上的套件，随产出那些字符串的模型一起死去。这个区别——给行为打分，而不是给字节打分——区分了一个会复利增长的套件，和一个会蒸发的套件。">The fix is to build the eval suite against behavior, not output. The suite does not ask whether the agent produced the exact string the old model produced. It asks whether the agent achieved the intended outcome. Behavior is model-independent; output wording is not. This distinction — score the behavior, not the bytes — is what separates a suite that compounds from a suite that evaporates.</p>
+<h3 data-en="The compounding team" data-zh="复利增长的团队">The compounding team</h3>
+<p data-en="There is a team that has been through four model swaps. Each swap, they change the adapter — a few hundred lines, a day's work — and run the eval suite. The suite has four hundred cases, accumulated across the swaps, and it tells them immediately whether the new model is actually better or merely different. Their harness has tools that have been hardened over a year of production traffic. Their control loop has been refined through dozens of failure modes, each one now a guarded edge case. Their replay infrastructure lets them reproduce any production failure in a minute. None of this depends on the model. All of it compounds." data-zh="有一个团队，经历了四次模型替换。每次替换，他们改的是适配器——几百行代码，一天的工作量——然后跑评估套件。套件有四百个用例，跨几次替换积累而来，它立刻告诉他们，新模型到底是真的更好，还是只是不同。他们的脚手架，有经过一年生产流量打磨的工具。他们的控制循环，经过几十种失败模式的提炼，每一种现在都是一个被护栏守护的边缘情况。他们的复现基础设施，让他们能在一分钟内复现任何生产故障。这些，没有一个依赖于模型。全部，都在复利增长。">There is a team that has been through four model swaps. Each swap, they change the adapter — a few hundred lines, a day's work — and run the eval suite. The suite has four hundred cases, accumulated across the swaps. Their harness has tools hardened over a year of production traffic. Their control loop has been refined through dozens of failure modes. Their replay infrastructure lets them reproduce any production failure in a minute. None of this depends on the model. All of it compounds.</p>
+<p data-en="There is another team, on the newest model, three weeks into their rewrite. They are rebuilding the control loop, because the old one was tuned to the previous model. They are rewriting the tool schemas, because the new model prefers a different format. They have no eval suite — they threw it out when the outputs changed — so they are testing by feel, running a few examples manually, trusting that if it looks right it is right. They are on a better model. They are behind. They will be behind again in six months, when the next model arrives and they throw this one out too. The first team is building a system. The second team is building a demo for a model that will not exist next year. The model is rented. The harness is owned. And the team that understands the difference is the team that is still standing when the model cycle has turned three more times and the demos of today are the fossils of tomorrow." data-zh="还有一个团队，用着最新的模型，重写到第三周。他们在重建控制循环，因为旧的是针对上一个模型调的。他们在重写工具 schema，因为新模型偏好不同的格式。他们没有评估套件——输出变了的时候他们把它扔了——所以他们靠感觉测试，手动跑几个例子，相信只要看起来对就是对。他们用着更好的模型。他们是落后的。六个月后他们还会落后，当下一个模型到来，他们把这个也扔掉的时候。第一个团队在建一个系统。第二个团队在为一个明年就不会存在的模型做一个 demo。模型是租来的。脚手架是自己拥有的。而理解这个区别的那个团队，是当模型周期再转三次、今天的 demo 变成明天的化石时，依然站着的那一个。">There is another team, on the newest model, three weeks into their rewrite. They are rebuilding the control loop, because the old one was tuned to the previous model. They have no eval suite, so they are testing by feel. They are on a better model. They are behind. The first team is building a system. The second team is building a demo for a model that will not exist next year. The model is rented. The harness is owned. And the team that understands the difference is the team that is still standing when the model cycle has turned three more times.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
