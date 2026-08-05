@@ -1,6 +1,416 @@
 {
   "tweets": [
     {
+      "id": "2084856462434807977",
+      "url": "https://x.com/Alibaba_Qwen/status/2084856462434807977",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-08-05T20:05:42.783931+00:00",
+      "translation_zh": "来 fal 上用 Qwen-Image-3.0-Pro 创作吧！🎨（引用：Qwen Image 3.0 Pro 现已在 fal 上线，可渲染复杂密集的文字排版，在修改时保留面部特征与身份等关键细节。）",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 305,
+        "lang": "en",
+        "created_at": "2026-08-05T04:18:10.000Z",
+        "display_text_range": [
+          0,
+          47
+        ],
+        "entities": {},
+        "id_str": "2084856462434807977",
+        "text": "Let's create with Qwen-Image-3.0-Pro on fal! 🎨",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2084856462434807977"
+          ],
+          "editable_until_msecs": "1785907090000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 23,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 170,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 7,
+          "retweet_count": 20,
+          "created_at": "2026-08-04T18:38:18.000Z",
+          "display_text_range": [
+            0,
+            229
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/SrQcfztMig",
+                "expanded_url": "https://x.com/fal/status/2084710537401643083/video/1",
+                "indices": [
+                  230,
+                  253
+                ],
+                "url": "https://t.co/SrQcfztMig"
+              }
+            ]
+          },
+          "id_str": "2084710537401643083",
+          "text": "Qwen Image 3.0 Pro is now available on fal\n\n- Renders complex, dense typography\n- Preserves key details like facial features and identity while applying changes\n- Handles object edits, style transfer, background changes perfectly https://t.co/SrQcfztMig",
+          "user": {
+            "id_str": "39622874",
+            "name": "fal",
+            "screen_name": "fal",
+            "is_blue_verified": false,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1836456388937285632/OFsq77aX_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2084710537401643083"
+            ],
+            "editable_until_msecs": "1785872298000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/SrQcfztMig",
+              "expanded_url": "https://x.com/fal/status/2084710537401643083/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                230,
+                253
+              ],
+              "media_url_https": "https://pbs.twimg.com/ext_tw_video_thumb/2084710489670483968/pu/img/tyhRAec9ONBGfDnI.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 1440,
+                "width": 1080
+              },
+              "sizes": {
+                "large": {
+                  "h": 1440,
+                  "resize": "fit",
+                  "w": 1080
+                },
+                "medium": {
+                  "h": 1200,
+                  "resize": "fit",
+                  "w": 900
+                },
+                "small": {
+                  "h": 680,
+                  "resize": "fit",
+                  "w": 510
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/SrQcfztMig",
+              "video_info": {
+                "aspect_ratio": [
+                  3,
+                  4
+                ],
+                "duration_millis": 33000,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/ext_tw_video/2084710489670483968/pu/pl/8cequiRk3qLOhndE.m3u8?tag=12"
+                  },
+                  {
+                    "bitrate": 632000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/ext_tw_video/2084710489670483968/pu/vid/avc1/320x426/6ymOMe8TaG6pqWFX.mp4?tag=12"
+                  },
+                  {
+                    "bitrate": 950000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/ext_tw_video/2084710489670483968/pu/vid/avc1/480x640/i0rkaT2DMvIidCSu.mp4?tag=12"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/ext_tw_video/2084710489670483968/pu/vid/avc1/720x960/pS8usQA-rG37aSXt.mp4?tag=12"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              3,
+              4
+            ],
+            "contentType": "media_entity",
+            "durationMs": 33000,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/ext_tw_video_thumb/2084710489670483968/pu/img/tyhRAec9ONBGfDnI.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/ext_tw_video/2084710489670483968/pu/pl/8cequiRk3qLOhndE.m3u8?tag=12"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/ext_tw_video/2084710489670483968/pu/vid/avc1/320x426/6ymOMe8TaG6pqWFX.mp4?tag=12"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/ext_tw_video/2084710489670483968/pu/vid/avc1/480x640/i0rkaT2DMvIidCSu.mp4?tag=12"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/ext_tw_video/2084710489670483968/pu/vid/avc1/720x960/pS8usQA-rG37aSXt.mp4?tag=12"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2084710537401643083"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2084855446595408121",
+      "url": "https://x.com/Alibaba_Qwen/status/2084855446595408121",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-08-05T20:05:42.783931+00:00",
+      "translation_zh": "在 Cline 上试试 npm i -g cline 吧！👀（引用：Qwen3.8-Max 现已在 ClinePass 中可用，以约 5 倍折扣提供访问。Cline CLI 有 $4.99 限时优惠。）",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 138,
+        "lang": "en",
+        "created_at": "2026-08-05T04:14:07.000Z",
+        "display_text_range": [
+          0,
+          30
+        ],
+        "entities": {},
+        "id_str": "2084855446595408121",
+        "text": "Try npm i -g cline on Cline!👀",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2084855446595408121"
+          ],
+          "editable_until_msecs": "1785906847000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 16,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 250,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 17,
+          "retweet_count": 9,
+          "created_at": "2026-08-04T17:15:59.000Z",
+          "display_text_range": [
+            0,
+            204
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/BD8h7WjYBN",
+                "expanded_url": "https://x.com/cline/status/2084689818999718309/photo/1",
+                "indices": [
+                  205,
+                  228
+                ],
+                "url": "https://t.co/BD8h7WjYBN"
+              }
+            ]
+          },
+          "id_str": "2084689818999718309",
+          "text": "Qwen3.8-Max is now available in ClinePass, a subscription for ~5x discounted access.\n\nUse it on Cline CLI w/ $4.99 special promo: \nnpm i -g cline\n\nThis is currently the most affordable way to access Qwen. https://t.co/BD8h7WjYBN",
+          "user": {
+            "id_str": "1875995486110593024",
+            "name": "Cline",
+            "screen_name": "cline",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2046714588948033536/86HNYurv_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2084689818999718309"
+            ],
+            "editable_until_msecs": "1785867359000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/BD8h7WjYBN",
+              "expanded_url": "https://x.com/cline/status/2084689818999718309/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                205,
+                228
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HO5N3JRaQAAURQo.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 884,
+                    "w": 1578,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1096,
+                    "w": 1096,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1096,
+                    "w": 961,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1096,
+                    "w": 548,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1096,
+                    "w": 1578,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 1096,
+                "width": 1578
+              },
+              "sizes": {
+                "large": {
+                  "h": 1096,
+                  "resize": "fit",
+                  "w": 1578
+                },
+                "medium": {
+                  "h": 833,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 472,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/BD8h7WjYBN"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 884,
+                  "w": 1578,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1096,
+                  "w": 1096,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1096,
+                  "w": 961,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1096,
+                  "w": 548,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1096,
+                  "w": 1578,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/cline/status/2084689818999718309/photo/1",
+              "url": "https://pbs.twimg.com/media/HO5N3JRaQAAURQo.jpg",
+              "width": 1578,
+              "height": 1096
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDg0ODU1NDQ2NTY1OTQ1MzQ0"
+        }
+      }
+    },
+    {
       "id": "2084834140516676093",
       "url": "https://x.com/Alibaba_Qwen/status/2084834140516676093",
       "label": "Qwen",
@@ -1778,6 +2188,410 @@
       }
     },
     {
+      "id": "2084352165464903730",
+      "url": "https://x.com/OpenAI/status/2084352165464903730",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-08-05T20:05:42.783931+00:00",
+      "translation_zh": "我们发布了论文手稿、形式化 Lean 证书和推理过程详解，以便数学家们审视这些成果并在此基础上继续探索。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1075,
+        "in_reply_to_screen_name": "OpenAI",
+        "in_reply_to_status_id_str": "2084352164156293460",
+        "in_reply_to_user_id_str": "4398626122",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-03T18:54:16.000Z",
+        "display_text_range": [
+          0,
+          179
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "openai.com/index/ten-adva…",
+              "expanded_url": "https://openai.com/index/ten-advances-in-mathematics/",
+              "indices": [
+                156,
+                179
+              ],
+              "url": "https://t.co/oDT2J8F6Ez"
+            }
+          ]
+        },
+        "id_str": "2084352165464903730",
+        "text": "We’re releasing the manuscripts, formal Lean certificates, and reasoning walkthroughs so mathematicians can examine these results and build on their ideas. https://t.co/oDT2J8F6Ez",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2084352165464903730"
+          ],
+          "editable_until_msecs": "1785786856000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 37,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 975,
+          "in_reply_to_screen_name": "OpenAI",
+          "in_reply_to_status_id_str": "2084352162956738631",
+          "in_reply_to_user_id_str": "4398626122",
+          "lang": "en",
+          "reply_count": 16,
+          "retweet_count": 23,
+          "created_at": "2026-08-03T18:54:15.000Z",
+          "display_text_range": [
+            0,
+            272
+          ],
+          "entities": {},
+          "id_str": "2084352164156293460",
+          "text": "The results span sphere packing, coding theory, group theory, quantum complexity, lattice cryptography, extremal combinatorics, and more.\n\nAmong them: establishing the existence of non-sofic groups and exponential improvements to bounds on high dimensional sphere packing.",
+          "user": {
+            "id_str": "4398626122",
+            "name": "OpenAI",
+            "screen_name": "OpenAI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2084352164156293460"
+            ],
+            "editable_until_msecs": "1785786855000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/oDT2J8F6Ez",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2083456780362002432/3RoQk0Sv?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2083456780362002432/3RoQk0Sv?format=jpg&name=280x150",
+                "width": 267
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "OpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexity.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2083456780362002432/3RoQk0Sv?format=jpg&name=800x320_1",
+                "width": 569
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2083456780362002432/3RoQk0Sv?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2083456780362002432/3RoQk0Sv?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "4398626122",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2083456780362002432/3RoQk0Sv?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2083456780362002432/3RoQk0Sv?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "height": 81,
+                "url": "https://pbs.twimg.com/card_img/2083456780362002432/3RoQk0Sv?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2083456780362002432/3RoQk0Sv?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2083456780362002432/3RoQk0Sv?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2083456780362002432/3RoQk0Sv?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 34.92,
+                    "rgb": {
+                      "blue": 231,
+                      "green": 223,
+                      "red": 44
+                    }
+                  },
+                  {
+                    "percentage": 27.16,
+                    "rgb": {
+                      "blue": 238,
+                      "green": 234,
+                      "red": 207
+                    }
+                  },
+                  {
+                    "percentage": 26.74,
+                    "rgb": {
+                      "blue": 192,
+                      "green": 114,
+                      "red": 40
+                    }
+                  },
+                  {
+                    "percentage": 8.49,
+                    "rgb": {
+                      "blue": 212,
+                      "green": 168,
+                      "red": 56
+                    }
+                  },
+                  {
+                    "percentage": 0.86,
+                    "rgb": {
+                      "blue": 195,
+                      "green": 145,
+                      "red": 34
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Ten advances in mathematics and theoretical computer science",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 34.92,
+                    "rgb": {
+                      "blue": 231,
+                      "green": 223,
+                      "red": 44
+                    }
+                  },
+                  {
+                    "percentage": 27.16,
+                    "rgb": {
+                      "blue": 238,
+                      "green": 234,
+                      "red": 207
+                    }
+                  },
+                  {
+                    "percentage": 26.74,
+                    "rgb": {
+                      "blue": 192,
+                      "green": 114,
+                      "red": 40
+                    }
+                  },
+                  {
+                    "percentage": 8.49,
+                    "rgb": {
+                      "blue": 212,
+                      "green": 168,
+                      "red": 56
+                    }
+                  },
+                  {
+                    "percentage": 0.86,
+                    "rgb": {
+                      "blue": 195,
+                      "green": 145,
+                      "red": 34
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2083456780362002432/3RoQk0Sv?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2083456780362002432/3RoQk0Sv?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 34.92,
+                    "rgb": {
+                      "blue": 231,
+                      "green": 223,
+                      "red": 44
+                    }
+                  },
+                  {
+                    "percentage": 27.16,
+                    "rgb": {
+                      "blue": 238,
+                      "green": 234,
+                      "red": 207
+                    }
+                  },
+                  {
+                    "percentage": 26.74,
+                    "rgb": {
+                      "blue": 192,
+                      "green": 114,
+                      "red": 40
+                    }
+                  },
+                  {
+                    "percentage": 8.49,
+                    "rgb": {
+                      "blue": 212,
+                      "green": 168,
+                      "red": 56
+                    }
+                  },
+                  {
+                    "percentage": 0.86,
+                    "rgb": {
+                      "blue": 195,
+                      "green": 145,
+                      "red": 34
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2083456780362002432/3RoQk0Sv?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/oDT2J8F6Ez",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2083456780362002432/3RoQk0Sv?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2084352161404920316",
       "url": "https://x.com/OpenAI/status/2084352161404920316",
       "label": "OpenAI",
@@ -1946,6 +2760,89 @@
         },
         "conversation_count": 251,
         "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2084352164156293460",
+      "url": "https://x.com/OpenAI/status/2084352164156293460",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-08-05T20:05:42.783931+00:00",
+      "translation_zh": "成果涵盖球填充、编码理论、群论、量子复杂性、格密码、极值组合学等领域。其中包括：证明了非 sofic 群的存在，以及对高维球填充界限的指数级改进。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 975,
+        "in_reply_to_screen_name": "OpenAI",
+        "in_reply_to_status_id_str": "2084352162956738631",
+        "in_reply_to_user_id_str": "4398626122",
+        "lang": "en",
+        "created_at": "2026-08-03T18:54:15.000Z",
+        "display_text_range": [
+          0,
+          272
+        ],
+        "entities": {},
+        "id_str": "2084352164156293460",
+        "text": "The results span sphere packing, coding theory, group theory, quantum complexity, lattice cryptography, extremal combinatorics, and more.\n\nAmong them: establishing the existence of non-sofic groups and exponential improvements to bounds on high dimensional sphere packing.",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2084352164156293460"
+          ],
+          "editable_until_msecs": "1785786855000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 16,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 1304,
+          "in_reply_to_screen_name": "OpenAI",
+          "in_reply_to_status_id_str": "2084352161404920316",
+          "in_reply_to_user_id_str": "4398626122",
+          "lang": "en",
+          "reply_count": 13,
+          "retweet_count": 36,
+          "created_at": "2026-08-03T18:54:15.000Z",
+          "display_text_range": [
+            0,
+            275
+          ],
+          "entities": {},
+          "id_str": "2084352162956738631",
+          "text": "Mathematics helps us understand how traffic moves, how diseases spread, and how cells build proteins. It also underpins everyday technologies, from GPS and weather forecasting to medical imaging.\n\nProgress in foundational mathematics can ripple across science and technology.",
+          "user": {
+            "id_str": "4398626122",
+            "name": "OpenAI",
+            "screen_name": "OpenAI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2084352162956738631"
+            ],
+            "editable_until_msecs": "1785786855000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
         "isEdited": false,
         "isStaleEdit": false
       }
@@ -7512,6 +8409,351 @@
         "note_tweet": {
           "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDgyNjE2NjM2OTI2OTk2NDgw"
         }
+      }
+    },
+    {
+      "id": "2082616640144048433",
+      "url": "https://x.com/OpenAI/status/2082616640144048433",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-08-05T20:05:42.783931+00:00",
+      "translation_zh": "我们用 Responses API 实现了该脚手架，并开启了「推理保留」和「上下文压缩」。在公开测试集上，GPT-5.6 Sol 的得分提升了 188%，同时使用的输出 token 减少了 6 倍。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1352,
+        "in_reply_to_screen_name": "OpenAI",
+        "in_reply_to_status_id_str": "2082616638625722669",
+        "in_reply_to_user_id_str": "4398626122",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-07-29T23:57:54.000Z",
+        "display_text_range": [
+          0,
+          193
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/uN1IrKEugu",
+              "expanded_url": "https://x.com/OpenAI/status/2082616640144048433/photo/1",
+              "indices": [
+                194,
+                217
+              ],
+              "url": "https://t.co/uN1IrKEugu"
+            }
+          ]
+        },
+        "id_str": "2082616640144048433",
+        "text": "We implemented the harness with the Responses API and turned on:\n\n→ Retained reasoning\n→ Context compaction\n\nOn the public set, GPT-5.6 Sol’s score rose 188% while using 6x fewer output tokens. https://t.co/uN1IrKEugu",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2082616640144048433"
+          ],
+          "editable_until_msecs": "1785373074000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/uN1IrKEugu",
+            "expanded_url": "https://x.com/OpenAI/status/2082616640144048433/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              194,
+              217
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HObwu_gacAAccc0.png",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 881,
+                  "w": 1574,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1076,
+                  "w": 1076,
+                  "x": 51,
+                  "y": 0
+                },
+                {
+                  "h": 1076,
+                  "w": 944,
+                  "x": 117,
+                  "y": 0
+                },
+                {
+                  "h": 1076,
+                  "w": 538,
+                  "x": 320,
+                  "y": 0
+                },
+                {
+                  "h": 1076,
+                  "w": 1574,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1076,
+              "width": 1574
+            },
+            "sizes": {
+              "large": {
+                "h": 1076,
+                "resize": "fit",
+                "w": 1574
+              },
+              "medium": {
+                "h": 820,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 465,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/uN1IrKEugu"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 881,
+                "w": 1574,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1076,
+                "w": 1076,
+                "x": 51,
+                "y": 0
+              },
+              {
+                "h": 1076,
+                "w": 944,
+                "x": 117,
+                "y": 0
+              },
+              {
+                "h": 1076,
+                "w": 538,
+                "x": 320,
+                "y": 0
+              },
+              {
+                "h": 1076,
+                "w": 1574,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/OpenAI/status/2082616640144048433/photo/1",
+            "url": "https://pbs.twimg.com/media/HObwu_gacAAccc0.png",
+            "width": 1574,
+            "height": 1076
+          }
+        ],
+        "conversation_count": 32,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 908,
+          "in_reply_to_screen_name": "OpenAI",
+          "in_reply_to_status_id_str": "2082616636989952217",
+          "in_reply_to_user_id_str": "4398626122",
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 13,
+          "retweet_count": 36,
+          "created_at": "2026-07-29T23:57:54.000Z",
+          "display_text_range": [
+            0,
+            246
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/cLtHYMNqiO",
+                "expanded_url": "https://x.com/OpenAI/status/2082616638625722669/video/1",
+                "indices": [
+                  247,
+                  270
+                ],
+                "url": "https://t.co/cLtHYMNqiO"
+              }
+            ]
+          },
+          "id_str": "2082616638625722669",
+          "text": "ARC-AGI-3 tests how well models can learn unfamiliar 2D games without instructions.\n\nThe standard harness discarded GPT-5.6 Sol’s reasoning after each move and dropped earlier actions as the context filled up. The model had to keep starting over. https://t.co/cLtHYMNqiO",
+          "user": {
+            "id_str": "4398626122",
+            "name": "OpenAI",
+            "screen_name": "OpenAI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2082616638625722669"
+            ],
+            "editable_until_msecs": "1785373074000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/cLtHYMNqiO",
+              "expanded_url": "https://x.com/OpenAI/status/2082616638625722669/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                247,
+                270
+              ],
+              "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2082615569636065280/img/XmRBGKg_NrTnIkAm.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 1080,
+                "width": 1920
+              },
+              "sizes": {
+                "large": {
+                  "h": 1080,
+                  "resize": "fit",
+                  "w": 1920
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/cLtHYMNqiO",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "duration_millis": 268833,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2082615569636065280/pl/ZgLSuVorBshO_2Ys.m3u8"
+                  },
+                  {
+                    "bitrate": 256000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2082615569636065280/vid/avc1/480x270/NAsRHIyQaEg66NN3.mp4"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2082615569636065280/vid/avc1/640x360/4wNCfgqFCIa0v7zX.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2082615569636065280/vid/avc1/1280x720/AFc6xPZQhBrMe-0d.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2082615569636065280/vid/avc1/1920x1080/DB7mU4Lft203tHkA.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              16,
+              9
+            ],
+            "contentType": "media_entity",
+            "durationMs": 268833,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/amplify_video_thumb/2082615569636065280/img/XmRBGKg_NrTnIkAm.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2082615569636065280/pl/ZgLSuVorBshO_2Ys.m3u8"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2082615569636065280/vid/avc1/480x270/NAsRHIyQaEg66NN3.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2082615569636065280/vid/avc1/640x360/4wNCfgqFCIa0v7zX.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2082615569636065280/vid/avc1/1280x720/AFc6xPZQhBrMe-0d.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2082615569636065280/vid/avc1/1920x1080/DB7mU4Lft203tHkA.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2082616638625722669"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
       }
     },
     {

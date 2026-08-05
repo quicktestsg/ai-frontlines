@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Two Agents Are Slower Than One — AI Frontlines</title>
+<meta content="A team splits its agent into a planner, a coder, and a reviewer, expecting specialization to bring gains. It brings a tax instead. Every handoff duplicates context, serializes state lossily, and adds a round trip where nothing useful happens. The coordination overhead of multi-agent systems is almost always larger than the specialization benefit. One agent with better tools and a smarter loop beats the fleet more often than the fleet beats it." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=20" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="August 6, 2026" data-zh="2026年8月6日">August 6, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Two Agents Are Slower Than One" data-zh="两个智能体，比一个还慢">Two Agents Are Slower Than One</h1>
+<p class="post-header-deck" data-en="A team splits its agent into a planner, a coder, and a reviewer, expecting specialization to bring gains. It brings a tax instead. Every handoff duplicates context, serializes state lossily, and adds a round trip where nothing useful happens. The coordination overhead of a multi-agent system is almost always larger than the specialization benefit. One agent with better tools and a smarter loop beats the fleet more often than the fleet beats it." data-zh="一个团队把它的智能体拆成规划者、编码者和审查者，期望分工带来收益。结果带来的是一笔税。每一次交接都复制上下文、有损地序列化状态、并增加一个什么有用的事都不发生的往返。多智能体系统的协调开销，几乎总是大于分工带来的收益。一个配着更好工具和更聪明循环的智能体，赢过舰队的次数，比舰队赢过它的次数更多。">A team splits its agent into a planner, a coder, and a reviewer, expecting specialization to bring gains. It brings a tax instead.</p>
+</header>
+<article class="post-body">
+<p data-en="The instinct is reasonable, and that is what makes it dangerous. A single agent is doing everything — planning, searching, writing code, reviewing its own work — and it looks unfocused. So the team splits it. One agent plans. Another executes. A third reviews. Each is simpler, each is specialized, and each gets a shorter, cleaner prompt. The architecture diagram looks beautiful: three boxes, arrows between them, clear separation of concerns. The team feels the satisfaction of a well-factored system. Then they ship it, and it is slower, more expensive, and more brittle than the single agent it replaced. The specialization was real. The tax it introduced was larger." data-zh="这个直觉是合理的，而这正是它危险的地方。一个智能体在做所有事——规划、搜索、写代码、审查自己的工作——看起来不够专注。于是团队把它拆开。一个智能体负责规划，另一个负责执行，第三个负责审查。每一个都更简单，每一个都更专注，每一个都有更短、更干净的提示词。架构图很漂亮：三个方框，箭头连接，清晰的职责分离。团队感到一种良好重构的系统的满足感。然后他们上线了，它比它所取代的单智能体更慢、更贵、更脆弱。分工是真实的。但它引入的税，更大。">The instinct is reasonable, and that is what makes it dangerous. A single agent is doing everything — planning, searching, writing code, reviewing its own work — and it looks unfocused. So the team splits it. One agent plans. Another executes. A third reviews. Each is simpler, each is specialized, and each gets a shorter, cleaner prompt. The architecture diagram looks beautiful. Then they ship it, and it is slower, more expensive, and more brittle than the single agent it replaced. The specialization was real. The tax it introduced was larger.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 400" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrM1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrM2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="ONE LOOP vs A FLEET" data-zh="一个循环 vs 一支舰队" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ONE LOOP vs A FLEET</text>
+<!-- LEFT: single agent -->
+<rect fill="var(--bg-surface)" height="300" rx="12" stroke="var(--accent)" stroke-width="2" width="250" x="20" y="50"></rect>
+<text data-en="SINGLE AGENT" data-zh="单智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="145" y="78">SINGLE AGENT</text>
+<line stroke="var(--border)" stroke-width="1" x1="40" x2="250" y1="90" y2="90"></line>
+<rect fill="var(--accent-dim)" height="40" rx="8" stroke="var(--accent)" stroke-width="1.2" width="170" x="60" y="104"></rect>
+<text data-en="model + context" data-zh="模型 + 上下文" fill="var(--accent)" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle" x="145" y="129">model + context</text>
+<path d="M145 150 L145 178" fill="none" marker-end="url(#arrM2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="170" x="60" y="182"></rect>
+<text data-en="tool" data-zh="工具" fill="var(--accent-3)" font-family="monospace" font-size="10" text-anchor="middle" x="145" y="204">tool</text>
+<path d="M80 199 L55 199 L55 124 L60 124" fill="none" marker-end="url(#arrM2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="one context window" data-zh="一个上下文窗口" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" font-weight="700" text-anchor="middle" x="145" y="244">one context window</text>
+<text data-en="0 handoffs · 0 serialization" data-zh="0 次交接 · 0 次序列化" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="145" y="262">0 handoffs · 0 serialization</text>
+<text data-en="state stays in the loop" data-zh="状态留在循环里" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="145" y="280">state stays in the loop</text>
+<!-- RIGHT: multi-agent fleet -->
+<rect fill="var(--bg-surface)" height="300" rx="12" stroke="var(--accent-3)" stroke-width="1.5" width="250" x="340" y="50"></rect>
+<text data-en="MULTI-AGENT FLEET" data-zh="多智能体舰队" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="78">MULTI-AGENT FLEET</text>
+<line stroke="var(--border)" stroke-width="1" x1="360" x2="570" y1="90" y2="90"></line>
+<rect fill="var(--accent-dim)" height="34" rx="6" stroke="var(--accent-3)" stroke-width="1" width="90" x="360" y="104"></rect>
+<text data-en="planner" data-zh="规划者" fill="var(--accent-3)" font-family="monospace" font-size="9" text-anchor="middle" x="405" y="125">planner</text>
+<rect fill="var(--accent-dim)" height="34" rx="6" stroke="var(--accent-3)" stroke-width="1" width="90" x="465" y="104"></rect>
+<text data-en="coder" data-zh="编码者" fill="var(--accent-3)" font-family="monospace" font-size="9" text-anchor="middle" x="510" y="125">coder</text>
+<!-- handoff nodes -->
+<rect fill="var(--bg-surface)" height="26" rx="4" stroke="var(--accent-3)" stroke-dasharray="3,2" stroke-width="1" width="120" x="345" y="156"></rect>
+<text data-en="handoff (serialize)" data-zh="交接（序列化）" fill="var(--accent-3)" font-family="monospace" font-size="8" text-anchor="middle" x="405" y="173">handoff (serialize)</text>
+<rect fill="var(--bg-surface)" height="26" rx="4" stroke="var(--accent-3)" stroke-dasharray="3,2" stroke-width="1" width="120" x="465" y="156"></rect>
+<text data-en="handoff (serialize)" data-zh="交接（序列化）" fill="var(--accent-3)" font-family="monospace" font-size="8" text-anchor="middle" x="525" y="173">handoff (serialize)</text>
+<path d="M405 138 L405 154" fill="none" marker-end="url(#arrM1)" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<path d="M510 138 L510 154" fill="none" marker-end="url(#arrM1)" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<path d="M465 169 L465 154 L510 138" fill="none" marker-end="url(#arrM1)" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<rect fill="var(--accent-dim)" height="34" rx="6" stroke="var(--accent-3)" stroke-width="1" width="90" x="360" y="196"></rect>
+<text data-en="reviewer" data-zh="审查者" fill="var(--accent-3)" font-family="monospace" font-size="9" text-anchor="middle" x="405" y="217">reviewer</text>
+<path d="M405 182 L405 194" fill="none" marker-end="url(#arrM1)" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<path d="M510 182 L510 196 L450 213" fill="none" marker-end="url(#arrM1)" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<text data-en="3 context windows" data-zh="3 个上下文窗口" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" font-weight="700" text-anchor="middle" x="465" y="252">3 context windows</text>
+<text data-en="2 handoffs · 2 serializations" data-zh="2 次交接 · 2 次序列化" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="465" y="270">2 handoffs · 2 serializations</text>
+<text data-en="state lost at every seam" data-zh="状态在每个接缝处丢失" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="465" y="288">state lost at every seam</text>
+</svg>
+<p class="diagram-caption" data-en="On the left, a single agent keeps everything in one context window. Its state — what it has learned, what it has tried, what it is about to do — lives inside the loop and never has to be translated. On the right, three agents must serialize their state into text, hand it to the next agent, which must parse it back into understanding. Each arrow is a point where information is lost, latency is added, and a new failure mode is born." data-zh="左边，一个单智能体把一切保持在一个上下文窗口里。它的状态——它学到的、它试过的、它即将做的——活在循环内部，永远不需要翻译。右边，三个智能体必须把状态序列化成文本，交给下一个智能体，后者再把它解析回理解。每一个箭头，都是一个信息丢失、延迟增加、新的失败模式诞生的地方。">On the left, a single agent keeps everything in one context window. Its state lives inside the loop and never has to be translated. On the right, three agents must serialize their state into text, hand it to the next agent, which must parse it back into understanding. Each arrow is a point where information is lost, latency is added, and a new failure mode is born.</p>
+</div>
+<h3 data-en="The handoff is where the money leaks" data-zh="交接，是钱漏掉的地方">The handoff is where the money leaks</h3>
+<p data-en="Consider what happens when the planner hands off to the coder. The planner has spent several turns reasoning about the problem. It has explored dead ends and marked them. It has formed intuitions about which approach will work. All of this lives in its context window — thousands of tokens of hard-won understanding. Now it must hand off. The coder cannot receive the planner's context window. It can only receive text. So the planner summarizes: here is the plan, here are the steps. The summary is a lossy compression of everything the planner learned, and the coder receives the compression, not the original. The coder starts its work with a thinner understanding than the planner had, and it will make mistakes the planner would not have made — because the planner knew things that did not survive the summarization." data-zh="想一想规划者把任务交接给编码者时发生了什么。规划者已经花了几个回合来推理这个问题。它探索过死胡同并标记了它们。它形成了关于哪种方法会奏效的直觉。这一切都活在它的上下文窗口里——几千个 token 艰苦获得的理解。现在它必须交接。编码者无法接收规划者的上下文窗口。它只能接收文本。于是规划者总结：这是计划，这些是步骤。这份总结，是规划者学到的一切的有损压缩，而编码者收到的是压缩版，不是原件。编码者以一种比规划者更稀薄的理解开始工作，它会犯规划者不会犯的错——因为规划者知道的事情，没有活过那次总结。">Consider what happens when the planner hands off to the coder. The planner has spent several turns reasoning about the problem. It has explored dead ends and marked them. It has formed intuitions about which approach will work. All of this lives in its context window — thousands of tokens of hard-won understanding. Now it must hand off. The coder cannot receive the planner's context window. It can only receive text. So the planner summarizes. The summary is a lossy compression of everything the planner learned, and the coder receives the compression, not the original. The coder starts its work with a thinner understanding than the planner had, and it will make mistakes the planner would not have made — because the planner knew things that did not survive the summarization.</p>
+<blockquote data-en="Every handoff is a serialization. Every serialization is a lossy compression. Every lossy compression is a mistake waiting to happen." data-zh="每一次交接，都是一次序列化。每一次序列化，都是一次有损压缩。每一次有损压缩，都是一颗等待引爆的错误。">Every handoff is a serialization. Every serialization is a lossy compression. Every lossy compression is a mistake waiting to happen.</blockquote>
+<p data-en="Then there is the latency. Each handoff is a full round trip: the planner finishes, the harness serializes the result, the harness starts a new completion with the coder, the coder reads the handoff, the coder begins reasoning from scratch. None of that time is spent doing the task. It is spent moving between agents. With three agents and two handoffs, the team has added two full model round trips to every task — two intervals where the system is waiting, not working. The single agent never waits for itself. Its next thought begins the instant the previous one ends, because the context is already there." data-zh="然后是延迟。每一次交接是一次完整的往返：规划者完成，脚手架序列化结果，脚手架用编码者启动一次新的补全，编码者阅读交接内容，编码者从头开始推理。这些时间，没有一刻是在做任务。它们是在智能体之间移动。三个智能体、两次交接，团队给每个任务增加了两次完整的模型往返——两个系统在等待、而非工作的间隔。单智能体永远不需要等自己。它的下一个想法在上一个结束的瞬间就开始了，因为上下文已经在那里。">Then there is the latency. Each handoff is a full round trip: the planner finishes, the harness serializes the result, the harness starts a new completion with the coder, the coder reads the handoff, the coder begins reasoning from scratch. None of that time is spent doing the task. With three agents and two handoffs, the team has added two full model round trips to every task — two intervals where the system is waiting, not working. The single agent never waits for itself. Its next thought begins the instant the previous one ends, because the context is already there.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="WHERE THE BUDGET GOES" data-zh="预算花在哪里" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHERE THE BUDGET GOES</text>
+<!-- single agent bar -->
+<text data-en="single agent" data-zh="单智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="30" y="68">single agent</text>
+<rect fill="var(--accent-dim)" height="40" rx="6" stroke="var(--accent)" stroke-width="1.2" width="540" x="30" y="78"></rect>
+<text data-en="productive work" data-zh="有效工作" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="300" y="103">productive work</text>
+<!-- multi-agent bar -->
+<text data-en="multi-agent fleet" data-zh="多智能体舰队" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="30" y="158">multi-agent fleet</text>
+<rect fill="var(--accent-dim)" height="40" rx="6" stroke="var(--accent-3)" stroke-width="1" width="220" x="30" y="168"></rect>
+<text data-en="productive work" data-zh="有效工作" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="140" y="193">productive work</text>
+<rect fill="var(--bg-surface)" height="40" rx="6" stroke="var(--accent-3)" stroke-width="1" width="100" x="250" y="168"></rect>
+<text data-en="serialize" data-zh="序列化" fill="var(--accent-3)" font-family="monospace" font-size="10" text-anchor="middle" x="300" y="193">serialize</text>
+<rect fill="var(--bg-surface)" height="40" rx="6" stroke="var(--accent-3)" stroke-width="1" width="100" x="350" y="168"></rect>
+<text data-en="handoff wait" data-zh="交接等待" fill="var(--accent-3)" font-family="monospace" font-size="10" text-anchor="middle" x="400" y="193">handoff wait</text>
+<rect fill="var(--bg-surface)" height="40" rx="6" stroke="var(--accent-3)" stroke-width="1" width="120" x="450" y="168"></rect>
+<text data-en="re-parse context" data-zh="重新解析上下文" fill="var(--accent-3)" font-family="monospace" font-size="10" text-anchor="middle" x="510" y="193">re-parse context</text>
+<!-- tax callout -->
+<rect fill="var(--bg-surface)" height="110" rx="10" stroke="var(--accent)" stroke-width="1.5" width="540" x="30" y="232"></rect>
+<text data-en="THE COORDINATION TAX" data-zh="协调税" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="300" y="258">THE COORDINATION TAX</text>
+<line stroke="var(--border)" stroke-width="1" x1="50" x2="550" y1="268" y2="268"></line>
+<circle cx="70" cy="290" fill="var(--accent)" r="4"></circle>
+<text data-en="context duplicated across N windows — paid N times" data-zh="上下文在 N 个窗口中复制——付 N 次钱" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" x="84" y="294">context duplicated across N windows — paid N times</text>
+<circle cx="70" cy="310" fill="var(--accent)" r="4"></circle>
+<text data-en="state lossy-compressed at every seam" data-zh="状态在每个接缝处被有损压缩" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" x="84" y="314">state lossy-compressed at every seam</text>
+<circle cx="70" cy="330" fill="var(--accent)" r="4"></circle>
+<text data-en="one broken handoff fails the whole chain" data-zh="一个断裂的交接，让整条链失败" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" x="84" y="334">one broken handoff fails the whole chain</text>
+</svg>
+<p class="diagram-caption" data-en="A single agent spends nearly its entire budget on productive work. A multi-agent fleet spends a large fraction on coordination: serializing state, waiting for the next agent to spin up, and re-parsing context that was already understood by the previous agent. The fleet does the same useful work but pays a tax the single agent never pays — and the tax grows with every agent added." data-zh="单智能体几乎把全部预算花在有效工作上。多智能体舰队把很大一部分花在协调上：序列化状态、等下一个智能体启动、重新解析前一个智能体已经理解过的上下文。舰队做着同样的有效工作，却付了一笔单智能体永远不会付的税——而税随每一个新增的智能体而增长。">A single agent spends nearly its entire budget on productive work. A multi-agent fleet spends a large fraction on coordination: serializing state, waiting for the next agent to spin up, and re-parsing context that was already understood by the previous agent. The fleet does the same useful work but pays a tax the single agent never pays — and the tax grows with every agent added.</p>
+</div>
+<h3 data-en="The specialization is usually fake" data-zh="分工，通常是假的">The specialization is usually fake</h3>
+<p data-en="The team split the agent because they believed specialization would help. The planner only plans, so it should be better at planning. The coder only codes, so it should be better at coding. This would be true if the model were a specialist — if different weights drove different skills. But the team is using the same model for every agent. The planner and the coder share the same neural network. The only difference is the prompt and the tools available. That is not specialization. That is the same generalist wearing different hats, and the hat-change costs a round trip and a context reset." data-zh="团队拆分智能体，是因为相信分工会有帮助。规划者只做规划，所以应该更擅长规划。编码者只写代码，所以应该更擅长写代码。如果模型是一个专家——如果不同的技能由不同的权重驱动——这会是真的。但团队给每个智能体用的是同一个模型。规划者和编码者共享同一个神经网络。唯一的区别是提示词和可用的工具。那不是分工。那是同一个通才戴着不同的帽子，而换帽子要花一次往返和一次上下文重置。">The team split the agent because they believed specialization would help. The planner only plans, so it should be better at planning. The coder only codes, so it should be better at coding. This would be true if the model were a specialist — if different weights drove different skills. But the team is using the same model for every agent. The planner and the coder share the same neural network. The only difference is the prompt and the tools available. That is not specialization. That is the same generalist wearing different hats, and the hat-change costs a round trip and a context reset.</p>
+<p data-en="There is a deeper problem. Planning and execution are not separate activities — they are entangled. A plan is tested by execution, and execution reshapes the plan. The single agent holds both in one mind: it plans, acts, sees the result, and revises the plan in the same breath. The fleet cannot do this. The planner makes a plan without touching reality, hands it over, and goes to sleep. The coder executes and discovers the plan was wrong — but the coder is not the planner, so it either follows the broken plan or improvises without the planner's reasoning. The feedback loop between planning and doing, which is the most important loop in agentic work, is severed the moment the agent is split in two." data-zh="还有一个更深的问题。规划和执行不是分离的活动——它们是纠缠的。计划被执行检验，执行重塑计划。单智能体把两者放在同一个脑子里：它规划、行动、看到结果、在同一个呼吸里修正计划。舰队做不到这一点。规划者在不触碰现实的情况下做出计划，交接，然后去睡觉。编码者执行，发现计划是错的——但编码者不是规划者，所以它要么照着坏计划做，要么在没有规划者推理的情况下即兴发挥。规划与执行之间的反馈循环——智能体工作中最重要的循环——在智能体被一分为二的瞬间就断了。">There is a deeper problem. Planning and execution are not separate activities — they are entangled. A plan is tested by execution, and execution reshapes the plan. The single agent holds both in one mind: it plans, acts, sees the result, and revises the plan in the same breath. The fleet cannot do this. The planner makes a plan without touching reality, hands it over, and goes to sleep. The coder executes and discovers the plan was wrong — but the coder is not the planner, so it either follows the broken plan or improvises without the planner's reasoning. The feedback loop between planning and doing, which is the most important loop in agentic work, is severed the moment the agent is split in two.</p>
+<h3 data-en="When the split is actually worth it" data-zh="什么时候拆分真的值得">When the split is actually worth it</h3>
+<p data-en="This is not an argument that multi-agent systems are never useful. It is an argument that they are useful far less often than teams assume, and that the default should be one agent until a specific, named bottleneck forces the split. There are three situations where the split genuinely pays for itself, and they all share a common shape: the single agent has a structural limit that more tools and a better loop cannot fix." data-zh="这并非主张多智能体系统永远没用。它主张的是，它们有用的频率远低于团队的假设，而默认应该是一个智能体，直到一个具体的、能叫出名字的瓶颈迫使拆分。有三种情况，拆分确实物有所值，它们都有一个共同形状：单智能体有一个结构性限制，是更多的工具和更好的循环无法修复的。">This is not an argument that multi-agent systems are never useful. It is an argument that they are useful far less often than teams assume, and that the default should be one agent until a specific, named bottleneck forces the split. There are three situations where the split genuinely pays for itself, and they all share a common shape: the single agent has a structural limit that more tools and a better loop cannot fix.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 380" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrD1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE SPLIT DECISION" data-zh="拆分的决策" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE SPLIT DECISION</text>
+<!-- decision diamond -->
+<polygon fill="var(--accent-dim)" points="310,50 400,95 310,140 220,95" stroke="var(--accent)" stroke-width="1.5"></polygon>
+<text data-en="Can one agent" data-zh="一个智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="88">Can one agent</text>
+<text data-en="do this alone?" data-zh="能独立完成吗？" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="104">do this alone?</text>
+<!-- YES branch -->
+<path d="M220 95 L120 95 L120 130" fill="none" marker-end="url(#arrD1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="YES" data-zh="是" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="150" y="88">YES</text>
+<rect fill="var(--accent-dim)" height="44" rx="8" stroke="var(--accent)" stroke-width="1.5" width="160" x="40" y="130"></rect>
+<text data-en="one agent" data-zh="一个智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="120" y="150">one agent</text>
+<text data-en="better tools, smarter loop" data-zh="更好的工具，更聪明的循环" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="120" y="166">better tools, smarter loop</text>
+<!-- NO branch -->
+<path d="M400 95 L490 95" fill="none" marker-end="url(#arrD1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="NO" data-zh="否" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="440" y="88">NO</text>
+<!-- reason 1 -->
+<polygon fill="var(--bg-surface)" points="490,70 560,95 490,120 420,95" stroke="var(--accent-3)" stroke-width="1.2"></polygon>
+<text data-en="parallel?" data-zh="可并行？" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="490" y="99">parallel?</text>
+<text data-en="→ split for speed" data-zh="→ 为速度拆分" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="420" y="140">→ split for speed</text>
+<!-- reason 2 -->
+<polygon fill="var(--bg-surface)" points="490,160 560,185 490,210 420,185" stroke="var(--accent-3)" stroke-width="1.2"></polygon>
+<text data-en="isolation?" data-zh="需隔离？" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="490" y="189">isolation?</text>
+<text data-en="→ split untrusted code" data-zh="→ 隔离不可信代码" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="420" y="230">→ split untrusted code</text>
+<!-- reason 3 -->
+<polygon fill="var(--bg-surface)" points="490,250 560,275 490,300 420,275" stroke="var(--accent-3)" stroke-width="1.2"></polygon>
+<text data-en="context" data-zh="上下文" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="490" y="273">context</text>
+<text data-en="overflow?" data-zh="溢出？" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="490" y="287">overflow?</text>
+<text data-en="→ split to fit" data-zh="→ 为适配拆分" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="420" y="320">→ split to fit</text>
+<!-- bottom truth -->
+<rect fill="var(--accent-dim)" height="40" rx="8" stroke="var(--accent)" stroke-width="1.5" width="400" x="110" y="332"></rect>
+<text data-en="default = one agent. split only with a named reason." data-zh="默认 = 一个智能体。只有有明确理由才拆分。" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="357">default = one agent. split only with a named reason.</text>
+</svg>
+<p class="diagram-caption" data-en="The decision to split should be forced, not chosen. Start with one agent. Add a second only when a specific bottleneck appears: the subtasks are genuinely parallel and independent, the work requires isolation of untrusted code, or the context genuinely will not fit in one window. If none of these are true, the split is adding a tax for a benefit that does not exist." data-zh="拆分的决定应该是被迫的，而非主动选择的。从一个智能体开始。只在出现具体瓶颈时才加第二个：子任务确实是并行且独立的、工作需要隔离不可信代码、或者上下文确实装不进一个窗口。如果这些都不成立，拆分就是在一个不存在的好处上加一笔税。">The decision to split should be forced, not chosen. Start with one agent. Add a second only when a specific bottleneck appears: the subtasks are genuinely parallel and independent, the work requires isolation of untrusted code, or the context genuinely will not fit in one window. If none of these are true, the split is adding a tax for a benefit that does not exist.</p>
+</div>
+<p data-en="The first case is genuine parallelism. If the task decomposes into independent subtasks — search four different databases, evaluate five different approaches — then multiple agents can work simultaneously and the wall-clock time drops. This is the only case where the coordination tax is outweighed by a speedup, and even here the subtasks must be truly independent. If agent B's work depends on agent A's result, there is no parallelism — there is only a pipeline, and a pipeline is a single agent with extra steps." data-zh="第一种情况是真正的并行。如果任务可以分解为独立的子任务——搜索四个不同的数据库、评估五种不同的方案——那么多个智能体可以同时工作，墙上时钟时间下降。这是唯一一种协调税被加速抵消的情况，即便如此，子任务也必须真正独立。如果智能体 B 的工作依赖于智能体 A 的结果，那就没有并行——只有一条流水线，而流水线就是一个多了额外步骤的单智能体。">The first case is genuine parallelism. If the task decomposes into independent subtasks — search four different databases, evaluate five different approaches — then multiple agents can work simultaneously and the wall-clock time drops. This is the only case where the coordination tax is outweighed by a speedup, and even here the subtasks must be truly independent. If agent B's work depends on agent A's result, there is no parallelism — there is only a pipeline, and a pipeline is a single agent with extra steps.</p>
+<p data-en="The second case is isolation. If one part of the task involves running untrusted code, the team may want a separate agent with restricted permissions so a compromise stays contained. This is a security boundary, not a specialization argument, and it is legitimate — but it should be framed as sandboxing, not as a multi-agent architecture. The team is not splitting for intelligence. They are splitting for blast radius." data-zh="第二种情况是隔离。如果任务的一部分涉及运行不可信的代码，团队可能想要一个权限受限的独立智能体，这样一旦被攻破也保持在隔离范围内。这是一个安全边界，不是分工的论据，它是正当的——但它应该被框定为沙箱，而非多智能体架构。团队不是在为智能而拆分。它们是在为爆炸半径而拆分。">The second case is isolation. If one part of the task involves running untrusted code, the team may want a separate agent with restricted permissions so a compromise stays contained. This is a security boundary, not a specialization argument, and it is legitimate — but it should be framed as sandboxing, not as a multi-agent architecture. The team is not splitting for intelligence. They are splitting for blast radius.</p>
+<p data-en="The third case is context overflow. When a task genuinely requires more working memory than a single context window holds — a deep debugging session that needs every log line, a large refactor that needs the whole codebase — the team may split to distribute the context load. But this is a workaround for a context limit, not an architecture choice. As context windows grow, this case shrinks, and the agents that were split to fit the limit collapse back into one. The teams that built around a single agent from the start simply get a bigger window and keep going." data-zh="第三种情况是上下文溢出。当一个任务确实需要比单个上下文窗口更大的工作记忆时——一场需要每一行日志的深度调试、一次需要整个代码库的大型重构——团队可能会拆分来分散上下文负载。但这是对上下文限制的权宜之计，不是架构选择。随着上下文窗口增大，这种情况在缩小，而为适配限制而拆分的智能体会重新合并为一个。从一开始就围绕单智能体构建的团队，只是拿到一个更大的窗口，然后继续前进。">The third case is context overflow. When a task genuinely requires more working memory than a single context window holds — a deep debugging session that needs every log line, a large refactor that needs the whole codebase — the team may split to distribute the context load. But this is a workaround for a context limit, not an architecture choice. As context windows grow, this case shrinks, and the agents that were split to fit the limit collapse back into one. The teams that built around a single agent from the start simply get a bigger window and keep going.</p>
+<h3 data-en="The fleet that came back to one" data-zh="那支回到「一个」的舰队">The fleet that came back to one</h3>
+<p data-en="There is a team that built a five-agent system. A coordinator, a researcher, a writer, a fact-checker, and a formatter. Each was a separate prompt, a separate context window, a separate model call. The system worked, in the sense that it produced output. It also cost five times as much, took three times as long, and produced results that were subtly inconsistent — because the fact-checker did not have the researcher's full context and could not tell which claims were findings and which were the writer's embellishments. The team spent two months debugging the handoffs, tuning the serialization format, adding retry logic for dropped messages. Then a new model shipped with a larger context window, and someone tried putting the whole task in a single agent. It was faster, cheaper, and more consistent. The five-agent system was quietly retired. The months spent building it were not recovered." data-zh="有一个团队，建了一个五智能体系统。一个协调者、一个研究者、一个撰写者、一个事实核查者、一个格式化者。每一个都是独立的提示词、独立的上下文窗口、独立的模型调用。这个系统能用，在它能产出结果的意义上。它也贵了五倍，慢了三倍，而且产出的结果微妙地不一致——因为事实核查者没有研究者的完整上下文，无法分辨哪些是发现、哪些是撰写者的润色。团队花了两个月调试交接、调优序列化格式、为丢失的消息加重试逻辑。然后一个新模型发布了，上下文窗口更大，有人试着把整个任务放进一个智能体。它更快、更便宜、更一致。五智能体系统被悄悄退役了。花在建它上面的几个月，没有回来。">There is a team that built a five-agent system. A coordinator, a researcher, a writer, a fact-checker, and a formatter. Each was a separate prompt, a separate context window, a separate model call. The system worked, in the sense that it produced output. It also cost five times as much, took three times as long, and produced results that were subtly inconsistent — because the fact-checker did not have the researcher's full context and could not tell which claims were findings and which were the writer's embellishments. The team spent two months debugging the handoffs, tuning the serialization format, adding retry logic for dropped messages. Then a new model shipped with a larger context window, and someone tried putting the whole task in a single agent. It was faster, cheaper, and more consistent. The five-agent system was quietly retired. The months spent building it were not recovered.</p>
+<p data-en="The lesson is not that this team was foolish. The instinct to specialize is sound, and in most engineering disciplines it is correct. Software is better when concerns are separated. The trap is that the model is already a generalist, and splitting a generalist does not make it a specialist — it makes it a generalist with worse context. The leverage in agent engineering comes from giving one capable agent better tools, a tighter loop, and richer context, not from dividing one mind into fragments that must shout at each other through a serial link. Two agents are slower than one, not because the model is weak, but because the seam between them is expensive. The team that wins is the one that minimizes seams, not the one that maximizes boxes on the architecture diagram." data-zh="教训不是这个团队愚蠢。分工的直觉是对的，在大多数工程学科中它也是正确的。关注点分离时，软件更好。陷阱在于，模型本身就是一个通才，而拆分一个通才不会让它变成专家——它会让它变成一个上下文更差的通才。智能体工程的杠杆，来自给一个有能力的智能体更好的工具、更紧凑的循环、更丰富的上下文，而不是把一个心智切成碎片，让它们通过一条串行链路互相喊话。两个智能体比一个慢，不是因为模型弱，而是因为它们之间的接缝很贵。赢的团队，是最小化接缝的那个，而不是架构图上方框最多的那个。">The lesson is not that this team was foolish. The instinct to specialize is sound, and in most engineering disciplines it is correct. The trap is that the model is already a generalist, and splitting a generalist does not make it a specialist — it makes it a generalist with worse context. The leverage in agent engineering comes from giving one capable agent better tools, a tighter loop, and richer context, not from dividing one mind into fragments that must shout at each other through a serial link. Two agents are slower than one, not because the model is weak, but because the seam between them is expensive. The team that wins is the one that minimizes seams, not the one that maximizes boxes on the architecture diagram.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
