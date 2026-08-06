@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Fallback Ladder — AI Frontlines</title>
+<meta content="Every production agent eventually faces a moment where its primary path fails — the model is overloaded, the tool times out, retrieval returns garbage. The teams that ship reliable agents do not build one path that must never break. They build a ladder: explicit degradation steps at every node, descending from the ideal to the merely acceptable, never into the catastrophic." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="August 7, 2026" data-zh="2026年8月7日">August 7, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Fallback Ladder" data-zh="降级阶梯">The Fallback Ladder</h1>
+<p class="post-header-deck" data-en="Every production agent eventually hits the moment its primary path fails. The model is overloaded. The tool times out. Retrieval returns garbage. Most teams build a single path that must never break — and then watch it break, catastrophically, in front of a user. The teams that ship reliable agents build something else. They build a ladder: a sequence of explicit degradation steps at every node, descending from the ideal response to the merely acceptable, step by step, never into the catastrophic." data-zh="每一个生产环境的智能体，终会撞上它主路径失败的那一刻。模型过载了。工具超时了。检索返回了垃圾。大多数团队构建的是一条绝不能断的单一路径——然后眼睁睁看着它在用户面前，灾难性地断掉。那些发布可靠智能体的团队，构建的是别的东西。他们造了一架阶梯：在每个节点上，一连串显式的降级步骤，从理想响应，一路下降到「勉强可接受」，一步一步，绝不跌入灾难。">Every production agent eventually hits the moment its primary path fails. The model is overloaded. The tool times out. Retrieval returns garbage. Most teams build a single path that must never break — and then watch it break, catastrophically.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a failure hiding inside nearly every agent ever shipped, and it is not the failure anyone talks about. It is not the hallucination, not the wrong tool call, not the infinite loop. Those get attention because they are visible, loud, embarrassing. The hidden failure is quieter, and it is this: when the primary path breaks, the system has nothing else. There is no second step. No plan B. The agent was built as a single chain of dependencies, each link load-bearing, and the moment any link fails, the whole chain falls. The user sees an error. Or worse — the user sees nothing, and the spinner spins until a timeout kills the run, and the trust that took months to build evaporates in thirty seconds of silence." data-zh="几乎每一个发布过的智能体里，都藏着一个失败，而这个失败，不是人们谈论的那个。它不是幻觉，不是错误的工具调用，不是无限循环。那些之所以被关注，是因为它们可见、响亮、令人尴尬。而那个隐藏的失败更安静，它是这样的：当主路径断裂时，系统没有别的退路。没有第二步。没有 B 计划。智能体被建造成一条单一的依赖链，每一个环节都承重，而当任何一个环节失效时，整条链就垮了。用户看到一个错误。或者更糟——用户什么都看不到，转圈圈一直转到超时掐断这次运行，而花了几个月才建立的信任，在三十秒的沉默里蒸发殆尽。">There is a failure hiding inside nearly every agent ever shipped, and it is not the failure anyone talks about. It is not the hallucination, not the wrong tool call, not the infinite loop. Those get attention because they are visible, loud, embarrassing. The hidden failure is quieter: when the primary path breaks, the system has nothing else.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrL2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrL3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE SINGLE PATH vs THE LADDER" data-zh="单一路径 vs 阶梯" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE SINGLE PATH vs THE LADDER</text>
+<!-- LEFT: single path with a cliff -->
+<text data-en="THE CLIFF" data-zh="悬崖" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="140" y="56">THE CLIFF</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="84" x="98" y="72"></rect>
+<text data-en="user input" data-zh="用户输入" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="140" y="92">user input</text>
+<path d="M140 102 L140 116" fill="none" marker-end="url(#arrL1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="84" x="98" y="118"></rect>
+<text data-en="retrieve" data-zh="检索" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="140" y="138">retrieve</text>
+<path d="M140 148 L140 162" fill="none" marker-end="url(#arrL1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="84" x="98" y="164"></rect>
+<text data-en="big model" data-zh="大模型" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="140" y="184">big model</text>
+<!-- the cliff: dashed drop into a red zone -->
+<path d="M140 194 L140 208" fill="none" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="3,3"></path>
+<rect fill="none" height="46" rx="8" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3" width="120" x="80" y="214"></rect>
+<text data-en="💥 error" data-zh="💥 错误" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="140" y="234">💥 error</text>
+<text data-en="or: silence + timeout" data-zh="或：沉默 + 超时" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="140" y="250">or: silence + timeout</text>
+<text data-en="one link fails → everything falls" data-zh="一环失效 → 全盘崩塌" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="140" y="290">one link fails → everything falls</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="300"></line>
+<!-- RIGHT: the ladder -->
+<text data-en="THE LADDER" data-zh="阶梯" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="470" y="56">THE LADDER</text>
+<rect fill="var(--accent-dim)" height="28" rx="7" stroke="var(--accent)" stroke-width="1.8" width="120" x="410" y="68"></rect>
+<text data-en="① big model" data-zzh="① 大模型" data-zh="① 大模型" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="470" y="87">① big model</text>
+<path d="M470 96 L470 106" fill="none" marker-end="url(#arrL3)" stroke="var(--text-tertiary)" stroke-width="1.3" stroke-dasharray="2,2"></path>
+<text data-en="if slow" data-zh="若慢" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="510" y="104">if slow</text>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="120" x="410" y="108"></rect>
+<text data-en="② small model" data-zh="② 小模型" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="470" y="127">② small model</text>
+<path d="M470 136 L470 146" fill="none" marker-end="url(#arrL3)" stroke="var(--text-tertiary)" stroke-width="1.3" stroke-dasharray="2,2"></path>
+<text data-en="if down" data-zh="若宕机" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="510" y="144">if down</text>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent)" stroke-width="1.3" width="120" x="410" y="148"></rect>
+<text data-en="③ cached answer" data-zh="③ 缓存答案" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="470" y="167">③ cached answer</text>
+<path d="M470 176 L470 186" fill="none" marker-end="url(#arrL3)" stroke="var(--text-tertiary)" stroke-width="1.3" stroke-dasharray="2,2"></path>
+<text data-en="if none" data-zh="若无" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="510" y="184">if none</text>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--text-secondary)" stroke-width="1.3" width="120" x="410" y="188"></rect>
+<text data-en="④ honest notice" data-zh="④ 诚实告知" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="470" y="207">④ honest notice</text>
+<text data-en="descends gracefully — never crashes" data-zh="优雅下降——永不崩溃" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="470" y="240">descends gracefully</text>
+<text data-en="every step is a deliberate choice" data-zh="每一步，都是刻意的选择" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="470" y="256">every step is a deliberate choice</text>
+</svg>
+<p class="diagram-caption" data-en="On the left, the cliff: a single load-bearing chain where one failed link drops the whole run into an error or a timeout. On the right, the ladder: each rung is an explicit degradation step, triggered by a named condition, descending toward the merely acceptable but never toward the catastrophic. Same intelligence on the happy path. Radically different behavior when the happy path breaks." data-zh="左边，是悬崖：一条每个环节都承重的链子，一个环节失效，整次运行就掉进错误或超时。右边，是阶梯：每一级都是一个显式的降级步骤，由一个命名的条件触发，向「勉强可接受」下降，但绝不向「灾难」下降。快乐路径上，智能一样。快乐路径断裂时，行为天差地别。">On the left, the cliff: a single load-bearing chain where one failed link drops the whole run into an error or a timeout. On the right, the ladder: each rung is an explicit degradation step, triggered by a named condition, descending toward the merely acceptable but never toward the catastrophic.</p>
+</div>
+<h3 data-en="The single path is a bet against failure" data-zh="单一路径，是一场与失败的对赌">The single path is a bet against failure</h3>
+<p data-en="Most agent systems are built as if nothing will ever go wrong. The reasoning is invisible and rarely questioned: the model endpoint is reliable, the tool API is up, the retrieval index is fresh, the user's query is within the model's competence. Each of these is treated as a fact rather than a probability. So the system is wired as a straight line — input to retrieval to model to tool to answer — and every segment of that line is load-bearing. Remove any one and the structure collapses. This is not a design that was chosen. It is a design that emerged from never asking the question: what happens when this step fails?" data-zh="大多数智能体系统，被构建得好像永远不会出问题。其中的推理是隐形的，也极少被质疑：模型端点是可靠的，工具 API 是活着的，检索索引是新鲜的，用户的问题在模型的能力范围之内。这些，每一个都被当成事实，而不是概率。于是系统被接成了一条直线——输入到检索到模型到工具到答案——而这条线的每一段都承重。拿掉任何一段，结构就塌。这不是一个被选择的设计。这是一个「从未问过『这一步失败了怎么办』」而涌现出来的设计。">Most agent systems are built as if nothing will ever go wrong. The model endpoint is reliable, the tool API is up, the retrieval index is fresh, the user's query is within the model's competence. Each is treated as a fact rather than a probability. So the system is wired as a straight line — and every segment is load-bearing.</p>
+<p data-en="The uncomfortable arithmetic is that reliability compounds multiplicatively, not additively. If a system has five steps, each available ninety-eight percent of the time, the end-to-end success rate is not ninety-eight percent. It is ninety-eight percent multiplied by itself five times: roughly ninety percent. Add a sixth step and it falls further. This is why an agent that seems solid in testing — where each step is exercised in isolation and passes — begins failing in production in ways that no individual component test would have caught. The component tests prove each link is strong. They say nothing about what happens when one of them, inevitably, is not." data-zh="令人不安的算术是：可靠性是乘法叠加的，不是加法叠加的。如果一个系统有五步，每步百分之九十八的时间可用，端到端的成功率不是百分之九十八。它是百分之九十八自乘五次：大约百分之九十。加到六步，它掉得更狠。这就是为什么一个在测试中看起来很扎实的智能体——每一步都被单独测试、都通过——到了生产环境，开始以任何单个组件测试都抓不到的方式失败。组件测试证明了每一个环节都强。但它们对「其中一个环节，不可避免地，不强时会发生什么」只字未提。">The uncomfortable arithmetic is that reliability compounds multiplicatively, not additively. If a system has five steps, each available ninety-eight percent of the time, the end-to-end success rate is roughly ninety percent. Add a sixth step and it falls further.</p>
+<blockquote data-en="A system without fallbacks does not have high reliability. It has high reliability until the first failure, after which it has zero reliability. The ladder changes the shape of failure from a cliff into a staircase — each step down is smaller, slower, and chosen, instead of a single catastrophic drop that nobody designed and nobody controls." data-zh="一个没有降级的系统，并不拥有高可靠性。它拥有的，是「直到第一次失败之前的高可靠性」，之后，可靠性归零。阶梯把失败的形状，从悬崖变成了楼梯——每一步下降都更小、更慢、且是被选择的，而不是一个没人设计、也没人控制的、单一的灾难性坠落。">A system without fallbacks does not have high reliability. It has high reliability until the first failure, after which it has zero reliability. The ladder changes the shape of failure from a cliff into a staircase — each step down is smaller, slower, and chosen, instead of a single catastrophic drop that nobody designed and nobody controls.</blockquote>
+<h3 data-en="Every node is a place to descend" data-zh="每一个节点，都是一个可以下降的地方">Every node is a place to descend</h3>
+<p data-en="The fallback ladder is not a global retry policy bolted onto the outside of the agent. It is a local property of every node. Each node — each model call, each tool invocation, each retrieval step — carries its own small ladder, descended only when that specific node's primary path fails. This is what makes the ladder scalable: it does not require a central failure-handling brain. It requires that each node, at the moment it is built, has been asked the same three questions. What does success look like? What is the first sign that success is slipping? And when it slips, where does control go?" data-zh="降级阶梯，不是一个拧在智能体外部的全局重试策略。它是每个节点的一个局部属性。每个节点——每次模型调用、每次工具调用、每次检索步骤——都带着它自己的小阶梯，只有当那个特定节点的主路径失败时才下降。这正是阶梯之所以可扩展的原因：它不需要一个中央的失败处理大脑。它需要的，是每个节点在被构建的那一刻，都被问过同样的三个问题：成功长什么样？成功正在溜走的第一个信号是什么？而当它溜走时，控制权交给谁？">The fallback ladder is not a global retry policy bolted onto the outside of the agent. It is a local property of every node. Each node carries its own small ladder, descended only when that specific node's primary path fails.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrN1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrN2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrN3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrN4" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="EVERY NODE HAS ITS OWN LADDER" data-zh="每个节点都有自己的阶梯" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">EVERY NODE HAS ITS OWN LADDER</text>
+<!-- RETRIEVAL NODE ladder -->
+<text data-en="RETRIEVAL NODE" data-zh="检索节点" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="120" y="52">RETRIEVAL NODE</text>
+<rect fill="var(--accent-dim)" height="28" rx="7" stroke="var(--accent)" stroke-width="1.8" width="120" x="60" y="62"></rect>
+<text data-en="① vector + rerank" data-zh="① 向量 + 重排" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="120" y="80">① vector + rerank</text>
+<path d="M120 90 L120 100" fill="none" marker-end="url(#arrN3)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="2,2"></path>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.3" width="120" x="60" y="102"></rect>
+<text data-en="② keyword search" data-zh="② 关键词搜索" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="120" y="119">② keyword search</text>
+<path d="M120 128 L120 138" fill="none" marker-end="url(#arrN3)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="2,2"></path>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--text-secondary)" stroke-width="1.2" width="120" x="60" y="140"></rect>
+<text data-en="③ stale cache" data-zh="③ 旧缓存" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="120" y="157">③ stale cache</text>
+<path d="M120 166 L120 176" fill="none" marker-end="url(#arrN3)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="2,2"></path>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--text-tertiary)" stroke-width="1.2" width="120" x="60" y="178"></rect>
+<text data-en="④ no context" data-zh="④ 无上下文" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="120" y="195">④ no context</text>
+<!-- MODEL NODE ladder -->
+<text data-en="MODEL NODE" data-zh="模型节点" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="52">MODEL NODE</text>
+<rect fill="var(--accent-dim)" height="28" rx="7" stroke="var(--accent)" stroke-width="1.8" width="120" x="250" y="62"></rect>
+<text data-en="① frontier model" data-zh="① 前沿模型" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="310" y="80">① frontier model</text>
+<path d="M310 90 L310 100" fill="none" marker-end="url(#arrN3)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="2,2"></path>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.3" width="120" x="250" y="102"></rect>
+<text data-en="② fast model" data-zh="② 快速模型" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="119">② fast model</text>
+<path d="M310 128 L310 138" fill="none" marker-end="url(#arrN3)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="2,2"></path>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--text-secondary)" stroke-width="1.2" width="120" x="250" y="140"></rect>
+<text data-en="③ cached template" data-zh="③ 缓存模板" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="157">③ cached template</text>
+<path d="M310 166 L310 176" fill="none" marker-end="url(#arrN3)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="2,2"></path>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--text-tertiary)" stroke-width="1.2" width="120" x="250" y="178"></rect>
+<text data-en="④ safe default" data-zh="④ 安全默认" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="195">④ safe default</text>
+<!-- TOOL NODE ladder -->
+<text data-en="TOOL NODE" data-zh="工具节点" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="500" y="52">TOOL NODE</text>
+<rect fill="var(--accent-dim)" height="28" rx="7" stroke="var(--accent)" stroke-width="1.8" width="120" x="440" y="62"></rect>
+<text data-en="① live API call" data-zh="① 实时 API" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="500" y="80">① live API call</text>
+<path d="M500 90 L500 100" fill="none" marker-end="url(#arrN3)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="2,2"></path>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.3" width="120" x="440" y="102"></rect>
+<text data-en="② retry + backoff" data-zh="② 重试 + 退避" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="500" y="119">② retry + backoff</text>
+<path d="M500 128 L500 138" fill="none" marker-end="url(#arrN3)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="2,2"></path>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--text-secondary)" stroke-width="1.2" width="120" x="440" y="140"></rect>
+<text data-en="③ cached result" data-zh="③ 缓存结果" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="500" y="157">③ cached result</text>
+<path d="M500 166 L500 176" fill="none" marker-end="url(#arrN3)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="2,2"></path>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--text-tertiary)" stroke-width="1.2" width="120" x="440" y="178"></rect>
+<text data-en="④ skip + note" data-zh="④ 跳过 + 标注" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="500" y="195">④ skip + note</text>
+<!-- convergence: all bottom rungs feed a single honest answer -->
+<path d="M120 204 C120 240 250 250 300 256" fill="none" marker-end="url(#arrN1)" stroke="var(--accent)" stroke-width="1.2"></path>
+<path d="M310 204 L310 256" fill="none" marker-end="url(#arrN1)" stroke="var(--accent)" stroke-width="1.2"></path>
+<path d="M500 204 C500 240 370 250 320 256" fill="none" marker-end="url(#arrN1)" stroke="var(--accent)" stroke-width="1.2"></path>
+<rect fill="var(--accent-dim)" height="36" rx="9" stroke="var(--accent)" stroke-width="2" width="180" x="220" y="258"></rect>
+<text data-en="user gets an answer" data-zh="用户拿到一个答案" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="280">user gets an answer</text>
+<text data-en="degraded, maybe — never broken" data-zh="也许降级了——但绝不崩溃" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="296">degraded, maybe — never broken</text>
+</svg>
+<p class="diagram-caption" data-en="Three nodes, each with a four-rung ladder of its own. Retrieval falls from vector search to keyword to stale cache to no context. The model falls from frontier to fast to cached template to a safe default. Tools fall from live API to retry to cached result to skip-and-note. No matter which rung each node lands on, control always converges to an answer the user can see. The system degrades. It does not break." data-zh="三个节点，每个都有自己的四级阶梯。检索从向量搜索，降到关键词，降到旧缓存，降到无上下文。模型从前沿模型，降到快速模型，降到缓存模板，降到安全默认。工具从实时 API，降到重试，降到缓存结果，降到跳过并标注。无论每个节点落在哪一级，控制权总会汇聚到一个用户能看见的答案。系统降级了。但它没有崩溃。">Three nodes, each with a four-rung ladder of its own. No matter which rung each node lands on, control always converges to an answer the user can see. The system degrades. It does not break.</p>
+</div>
+<p data-en="Notice what every rung on these ladders has in common. None of them is a better model, a smarter prompt, or a more capable tool. They are all, without exception, cheaper, faster, and less intelligent than the rung above. That is the point. The ladder descends, by design, from the best the system can do toward the least it can get away with. The bottom rung is not victory — it is survival. And survival, for an agent in production, is the difference between a degraded experience the user tolerates and a broken one the user abandons." data-zh="注意这些阶梯上的每一级有什么共同点。它们没有一个是更好的模型、更聪明的 prompt、或更强的工具。它们无一例外，都比上面那一级更便宜、更快、更不智能。这正是关键。阶梯，是刻意地从「系统能做到的最好」，向下走向「它能侥幸过关的最低限度」。最底下一级不是胜利——它是存活。而对于生产环境里的智能体，存活，是「用户能容忍的降级体验」和「用户抛弃的崩溃体验」之间的区别。">Notice what every rung on these ladders has in common. None of them is a better model, a smarter prompt, or a more capable tool. They are all, without exception, cheaper, faster, and less intelligent than the rung above. The ladder descends, by design, from the best toward the least. The bottom rung is not victory — it is survival.</p>
+<h3 data-en="The trigger is harder than the rung" data-zh="触发条件，比阶梯本身更难">The trigger is harder than the rung</h3>
+<p data-en="Teams can usually name the rungs without much trouble. The frontier model, then the fast model, then the cache. The hard part — the part that separates a ladder that works from one that never descends — is the trigger. When, exactly, does the system step down from rung one to rung two? If the trigger is too sensitive, the ladder fires constantly and the user always gets the degraded experience, even when the primary path would have succeeded if given another second. If the trigger is too forgiving, the system hangs on the primary path long after it should have stepped down, burning latency and tokens until a brutal timeout forces a cliff-fall anyway — defeating the entire purpose of the ladder." data-zh="团队通常能不费什么劲地命名出各级阶梯。前沿模型，然后快速模型，然后缓存。难的部分——那个区分「能用的阶梯」和「永远不会下降的阶梯」的部分——是触发条件。系统到底什么时候、从第一级踏到第二级？如果触发太灵敏，阶梯会不断开火，用户拿到的永远是降级体验，哪怕主路径再给一秒就能成功。如果触发太宽容，系统会在主路径上挂很久，远超它该下降的时刻，烧着延迟和 token，直到一个粗暴的超时强行制造一次悬崖坠落——彻底打败了阶梯的全部意义。">Teams can usually name the rungs without much trouble. The hard part — the part that separates a ladder that works from one that never descends — is the trigger. When, exactly, does the system step down from rung one to rung two?</p>
+<p data-en="The answer is that triggers must be explicit, measured, and tuned — not guessed. A latency budget is a trigger: if the model has not returned a first token within eight hundred milliseconds, descend. An error signal is a trigger: if the tool returns a five-hundred, descend after one retry, not three. A quality signal is the subtlest trigger of all: if the retrieval confidence is below a threshold, the context is probably wrong, so descend before the model ever sees it. Each of these turns a vague feeling — 'this is taking too long' — into a concrete, testable condition that an engineer can observe, debate, and adjust. The ladder without explicit triggers is theater. It exists in the code but it never fires, because nobody told it when to." data-zh="答案是：触发条件必须是显式的、可度量的、被调过的——而不是猜出来的。延迟预算是一个触发：如果模型在八百毫秒内没有返回第一个 token，下降。错误信号是一个触发：如果工具返回 500，一次重试后下降，不是三次。质量信号是最微妙的触发：如果检索置信度低于某个阈值，上下文很可能是错的，那么在模型看到它之前就下降。这些，每一个都把一种模糊的感觉——「这太慢了」——变成了一个具体的、可测试的条件，一个工程师能观察、能争论、能调整的条件。没有显式触发的阶梯，是表演。它在代码里存在，但它从不触发，因为没人告诉它什么时候该触发。">The answer is that triggers must be explicit, measured, and tuned — not guessed. A latency budget is a trigger. An error signal is a trigger. A quality signal is the subtlest trigger of all. Each turns a vague feeling into a concrete, testable condition. The ladder without explicit triggers is theater.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrT2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THREE KINDS OF TRIGGER" data-zh="三种触发条件" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THREE KINDS OF TRIGGER</text>
+<!-- TIME -->
+<rect fill="var(--bg-surface)" height="60" rx="10" stroke="var(--accent)" stroke-width="1.5" width="170" x="30" y="50"></rect>
+<text data-en="⏱  TIME" data-zh="⏱  时间" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="115" y="76">⏱  TIME</text>
+<text data-en="no first token in 800ms?" data-zh="800ms 内无首个 token?" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="115" y="96">no first token in 800ms?</text>
+<text data-en="→ step down" data-zh="→ 下降一级" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="115" y="98" opacity="0"></text>
+<path d="M115 100 L115 112" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.3"></path>
+<rect fill="var(--accent-dim)" height="26" rx="6" stroke="var(--accent)" stroke-width="1.3" width="100" x="65" y="114"></rect>
+<text data-en="→ descend" data-zh="→ 下降" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="115" y="131">→ descend</text>
+<!-- ERRORS -->
+<rect fill="var(--bg-surface)" height="60" rx="10" stroke="var(--accent-2)" stroke-width="1.5" width="170" x="225" y="50"></rect>
+<text data-en="⚠  ERRORS" data-zh="⚠  错误" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="310" y="76">⚠  ERRORS</text>
+<text data-en="5xx after 1 retry?" data-zh="重试 1 次后仍 5xx?" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="96">5xx after 1 retry?</text>
+<path d="M310 100 L310 112" fill="none" marker-end="url(#arrT1)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<rect fill="var(--accent-dim)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.3" width="100" x="260" y="114"></rect>
+<text data-en="→ descend" data-zh="→ 下降" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="131">→ descend</text>
+<!-- QUALITY -->
+<rect fill="var(--bg-surface)" height="60" rx="10" stroke="var(--accent-3)" stroke-width="1.5" width="170" x="420" y="50"></rect>
+<text data-en="◆  QUALITY" data-zh="◆  质量" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="505" y="76">◆  QUALITY</text>
+<text data-en="retrieval score < 0.4?" data-zh="检索分数 &lt; 0.4?" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="505" y="96">retrieval score &lt; 0.4?</text>
+<path d="M505 100 L505 112" fill="none" marker-end="url(#arrT2)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--accent-dim)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.3" width="100" x="455" y="114"></rect>
+<text data-en="→ descend" data-zh="→ 下降" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="505" y="131">→ descend</text>
+<!-- summary bar -->
+<rect fill="var(--bg-surface)" height="80" rx="10" stroke="var(--border)" stroke-width="1" width="560" x="30" y="180"></rect>
+<text data-en="The worst trigger is a timeout." data-zh="最糟的触发，是超时。" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="310" y="208">The worst trigger is a timeout.</text>
+<text data-en="A timeout is a trigger the system never chose — it is the wall enforcing a cliff-fall" data-zh="超时是系统从未选择的触发——它是一堵墙，强制制造一次悬崖坠落" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="230">A timeout is a trigger the system never chose — it is the wall enforcing a cliff-fall</text>
+<text data-en="the team owned; a ladder means the team chooses every step down instead." data-zh="而阶梯意味着，团队选择每一次下降，而非被超时强迫。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="248">the team owned; a ladder means the team chooses every step down instead.</text>
+</svg>
+<p class="diagram-caption" data-en="Three trigger families. Time: descend before the user notices the wait. Errors: descend before the cascade compounds. Quality: descend before bad context corrupts the model. The worst trigger of all is the one nobody wrote — the timeout — because it is a cliff the system hits at full speed with no rungs underneath." data-zh="三个触发家族。时间：在用户察觉等待之前下降。错误：在级联叠加之前下降。质量：在坏上下文污染模型之前下降。所有触发里最糟的，是没人写下的那个——超时——因为它是系统以全速撞上、底下没有任何一级阶梯的悬崖。">Three trigger families. Time: descend before the user notices the wait. Errors: descend before the cascade compounds. Quality: descend before bad context corrupts the model. The worst trigger of all is the one nobody wrote — the timeout.</p>
+</div>
+<h3 data-en="The bottom rung is honesty" data-zh="最底下一级，是诚实">The bottom rung is honesty</h3>
+<p data-en="There is one rung that every ladder must have, and most teams refuse to build it. It is the final step, the one reached when every fallback above it has also failed. And it is not another model, not a cached answer, not a clever workaround. It is a sentence, spoken plainly to the user: the system could not complete this request, and here is what it managed to gather. This rung feels like failure because, in the narrow sense, it is. But it is the difference between an agent that fails gracefully and one that fails catastrophically. A user who is told, clearly and promptly, that the request cannot be fulfilled right now, loses a little patience. A user who stares at a spinner for ninety seconds and then receives a blank response loses all of it — and tells ten colleagues." data-zh="有一级阶梯，每个阶梯都必须有，而大多数团队拒绝建造它。它是最后一步，当它上面的每一个降级也都失败时，才会到达的那一步。而它不是另一个模型，不是缓存答案，不是巧妙的绕行。它是一句话，直白地对用户说：系统无法完成这个请求，这是它能收集到的信息。这一级感觉像失败，因为从狭义上讲，它就是。但它是「优雅地失败」和「灾难性地失败」之间的区别。一个被清晰、及时地告知「这个请求现在无法完成」的用户，失去一点点耐心。一个盯着转圈圈看九十秒、然后收到一个空白响应的用户，失去全部耐心——并且告诉十个同事。">There is one rung that every ladder must have, and most teams refuse to build it. It is the final step — not another model, not a cached answer, but a sentence, spoken plainly: the system could not complete this request, and here is what it managed to gather. It feels like failure. But it is the difference between failing gracefully and failing catastrophically.</p>
+<p data-en="The honest rung does something else, too, that no automated fallback can. It hands control back to the user. A degraded answer is still the system's answer, produced on the system's terms. An honest notice is an invitation: here is what went wrong, here is what is known, now you decide what to do with this information. The most resilient agents are not the ones that never show their limitations. They are the ones that, the moment their limitations are reached, stop pretending and surface the situation — degraded but transparent, slower but trustworthy. The ladder does not guarantee the system always succeeds. It guarantees that the system always responds, and that every response, even the worst one, was a choice the team made deliberately rather than a void the team left by accident." data-zh="诚实的那一级，还做了一件任何自动化降级都做不到的事：它把控制权交还给用户。一个降级的答案，仍然是系统的答案，按系统的意愿产出。一个诚实的告知，是一份邀请：这是出了什么问题，这是已知的，现在由你决定拿这些信息怎么办。最有韧性的智能体，不是那些从不暴露自身局限的。而是那些，在抵达自身局限的那一刻，停止伪装、把情况呈现出来的——降级但透明，更慢但可信。阶梯不保证系统永远成功。它保证的是：系统永远会回应，而每一个回应，哪怕是最糟的那个，都是团队刻意做出的选择，而不是团队不小心留下的一个空洞。">The honest rung hands control back to the user. A degraded answer is still the system's answer. An honest notice is an invitation: here is what went wrong, here is what is known, now you decide. The most resilient agents are not the ones that never show their limitations — they are the ones that surface the situation the moment their limitations are reached.</p>
+<p data-en="Build the ladder before you need it. Not after the first outage, not when the postmortem demands it, not when a user's screenshot of a blank response circulates inside the company. Every node, the moment it is created, deserves the same three questions: what does success look like, what is the first sign it is slipping, and where does control go when it does. Answer those three, for every node, and the agent stops being a single chain waiting to break. It becomes a system that descends, deliberately, rung by rung, toward the worst outcome it is willing to produce — and no further. The cliff is what happens when nobody asks. The ladder is what happens when somebody does." data-zh="在需要阶梯之前，就把它建好。不是在第一次宕机之后，不是在复盘要求它的时候，不是在用户那张空白响应的截图在公司内部流传的时候。每一个节点，在被创造的那一刻，就值得同样的三个问题：成功长什么样，它正在溜走的第一个信号是什么，它溜走时控制权交给谁。为每一个节点回答这三个问题，智能体就不再是一条等着断裂的单一链条。它变成了一个系统——刻意地、一级一级地，向它愿意产出的最糟结果下降，并且绝不越过那一步。悬崖，是没人问这些问题时发生的事。阶梯，是有人问了之后发生的事。">Build the ladder before you need it. Every node, the moment it is created, deserves the same three questions: what does success look like, what is the first sign it is slipping, and where does control go when it does. Answer those three, for every node, and the agent stops being a single chain waiting to break. The cliff is what happens when nobody asks. The ladder is what happens when somebody does.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
