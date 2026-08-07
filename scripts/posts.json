@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-08",
+    "slug": "the-model-cannot-grade-itself",
+    "title_en": "The Model Cannot Grade Itself",
+    "title_zh": "模型，无法给自己打分",
+    "read_time": 9,
+    "excerpt_en": "An agent ships a confident answer. The team asks the model to check it. The model says yes. The answer was wrong. Self-grading measures confidence, not correctness — and the two are almost uncorrelated. Verification must come from outside the generator: deterministic checks, ground-truth lookups, execution, and only then an independent model, never the one that wrote the answer.",
+    "excerpt_zh": "一个智能体交付了一份自信的答案。团队让模型检查它。模型说是的。答案是错的。自我打分，测的是置信度，不是正确性——而两者几乎不相关。验证必须来自生成器之外：确定性检查、地面真相查询、执行，然后才是独立的模型——永远不是写下答案的那个。"
+  },
+  {
     "date": "2026-08-07",
     "slug": "the-fallback-ladder",
     "title_en": "The Fallback Ladder",
