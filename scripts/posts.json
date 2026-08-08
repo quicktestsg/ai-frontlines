@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-09",
+    "slug": "your-agent-will-be-run-twice",
+    "title_en": "Your Agent Will Be Run Twice",
+    "title_zh": "你的智能体，会被运行两次",
+    "read_time": 9,
+    "excerpt_en": "Every agent action will be executed more than once — a retry, a resume, a replay, a duplicate request. The architecture that assumes exactly-once execution is the architecture that double-charges customers and writes conflicting records. Idempotency keys and checkpointing are not optimizations; they are the load-bearing wall of any agent that touches the real world.",
+    "excerpt_zh": "每一个智能体的动作，都会被执行不止一次——一次重试、一次恢复、一次重放、一次重复请求。假设「恰好执行一次」的架构，就是那个会给客户扣两次款、写下冲突记录的架构。幂等键和检查点，不是优化；它们是任何触碰真实世界的智能体的承重墙。"
+  },
+  {
     "date": "2026-08-08",
     "slug": "the-model-cannot-grade-itself",
     "title_en": "The Model Cannot Grade Itself",
