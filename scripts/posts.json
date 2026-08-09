@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-10",
+    "slug": "the-agent-doesnt-know-when-to-stop",
+    "title_en": "The Agent Doesn't Know When to Stop",
+    "title_zh": "智能体，不知道何时该停下",
+    "read_time": 9,
+    "excerpt_en": "Every agent loop ends, but most end for the wrong reason. The model has no concept of done — only of what token comes next. Stopping is a policy decision, and the teams that leave it to the model get agents that terminate prematurely, loop forever, or declare victory over wrong work. Termination is an engineering problem, not an emergent property of intelligence.",
+    "excerpt_zh": "每一个智能体的循环都会结束，但大多数，因为错误的原因而结束。模型没有「完成」的概念——它只有「下一个 token」的概念。停下，是一条策略；把它交给模型的团队，得到的是过早终止、永不终止、或对着错误工作宣布胜利的智能体。终止，是一个工程问题，不是智能的涌现属性。"
+  },
+  {
     "date": "2026-08-09",
     "slug": "your-agent-will-be-run-twice",
     "title_en": "Your Agent Will Be Run Twice",
