@@ -1,6 +1,804 @@
 {
   "tweets": [
     {
+      "id": "2086891169217122586",
+      "url": "https://x.com/claudeai/status/2086891169217122586",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-08-10T20:04:28.478398+00:00",
+      "translation_zh": "我们将 Claude Sonnet 5 的入门定价永久化。\n\nSonnet 5 于 6 月发布，定价为每百万输入 token 2 美元、每百万输出 token 10 美元（原定 8 月 31 日截止）。该价格将保持不变。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 2937,
+        "lang": "en",
+        "created_at": "2026-08-10T19:03:21.000Z",
+        "display_text_range": [
+          0,
+          214
+        ],
+        "entities": {},
+        "id_str": "2086891169217122586",
+        "text": "We're making Claude Sonnet 5's introductory pricing permanent.\n\nWe launched Sonnet 5 in June at $2 per million input tokens and $10 per million output tokens through August 31, and that price will remain unchanged.",
+        "user": {
+          "id_str": "1943306828697550848",
+          "name": "Claude",
+          "screen_name": "claudeai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2086891169217122586"
+          ],
+          "editable_until_msecs": "1786392201000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 464,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 41714,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 2008,
+          "retweet_count": 4390,
+          "created_at": "2026-06-30T18:00:31.000Z",
+          "display_text_range": [
+            0,
+            217
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/UKK8G7ww5h",
+                "expanded_url": "https://x.com/claudeai/status/2072017450611142835/video/1",
+                "indices": [
+                  218,
+                  241
+                ],
+                "url": "https://t.co/UKK8G7ww5h"
+              }
+            ]
+          },
+          "id_str": "2072017450611142835",
+          "text": "Introducing Claude Sonnet 5, our most agentic Sonnet yet.\n\nIt makes plans, uses tools like browsers and terminals, and runs autonomously at a level that just a few months ago required larger and more expensive models. https://t.co/UKK8G7ww5h",
+          "user": {
+            "id_str": "1943306828697550848",
+            "name": "Claude",
+            "screen_name": "claudeai",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+            "highlighted_label": {
+              "badge": {
+                "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+              },
+              "description": "Anthropic",
+              "url": {
+                "url": "https://twitter.com/AnthropicAI",
+                "url_type": "DeepLink"
+              },
+              "user_label_display_type": "Badge",
+              "user_label_type": "BusinessLabel"
+            }
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2072017450611142835"
+            ],
+            "editable_until_msecs": "1782846031000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/UKK8G7ww5h",
+              "expanded_url": "https://x.com/claudeai/status/2072017450611142835/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                218,
+                241
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HMFJYt8XEAAYMDz.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 1854,
+                "width": 1488
+              },
+              "sizes": {
+                "large": {
+                  "h": 1854,
+                  "resize": "fit",
+                  "w": 1488
+                },
+                "medium": {
+                  "h": 1200,
+                  "resize": "fit",
+                  "w": 963
+                },
+                "small": {
+                  "h": 680,
+                  "resize": "fit",
+                  "w": 546
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/UKK8G7ww5h",
+              "video_info": {
+                "aspect_ratio": [
+                  4,
+                  5
+                ],
+                "duration_millis": 11041,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2072014980103176192/pl/TZck9R3_F8Fjwatz.m3u8"
+                  },
+                  {
+                    "bitrate": 632000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2072014980103176192/vid/avc1/320x400/dM3vqQLux1zb74Kj.mp4"
+                  },
+                  {
+                    "bitrate": 950000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2072014980103176192/vid/avc1/480x600/lb_czz9YmXG8xVIT.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2072014980103176192/vid/avc1/720x900/0jrzEbZyR796HcgT.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2072014980103176192/vid/avc1/1080x1350/pbQZQqBZxkvX4yED.mp4"
+                  },
+                  {
+                    "bitrate": 25128000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2072014980103176192/vid/avc1/1728x2160/zHnxI04ExEMPKIbE.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              4,
+              5
+            ],
+            "contentType": "media_entity",
+            "durationMs": 11041,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/media/HMFJYt8XEAAYMDz.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2072014980103176192/pl/TZck9R3_F8Fjwatz.m3u8"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2072014980103176192/vid/avc1/320x400/dM3vqQLux1zb74Kj.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2072014980103176192/vid/avc1/480x600/lb_czz9YmXG8xVIT.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2072014980103176192/vid/avc1/720x900/0jrzEbZyR796HcgT.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2072014980103176192/vid/avc1/1080x1350/pbQZQqBZxkvX4yED.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2072014980103176192/vid/avc1/1728x2160/zHnxI04ExEMPKIbE.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2072017450611142835"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2086867246073401655",
+      "url": "https://x.com/AnthropicAI/status/2086867246073401655",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-08-10T20:04:28.478398+00:00",
+      "translation_zh": "我们让 Claude 的一个未发布研究版本尝试攻克黎曼猜想。\n\n它没有解决这个猜想，但在一个相关问题上取得了进展：将黎曼 zeta 函数中满足该猜想的零点比例的下界，从 41.6% 提升到了 67.2%。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 6405,
+        "lang": "en",
+        "created_at": "2026-08-10T17:28:18.000Z",
+        "display_text_range": [
+          0,
+          275
+        ],
+        "entities": {},
+        "id_str": "2086867246073401655",
+        "text": "We asked an unreleased research version of Claude to take a stab at the Riemann hypothesis.\n\nIt didn’t solve it, but it did make strides on a related problem: it increased the lower bound for the fraction of zeros of the Riemann zeta function that satisfy the hypothesis from",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2086867246073401655"
+          ],
+          "editable_until_msecs": "1786386498000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 412,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/aZDvqqhHRi",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2086867140821520384/LMrVaO3G?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 147,
+                "url": "https://pbs.twimg.com/card_img/2086867140821520384/LMrVaO3G?format=jpg&name=280x150",
+                "width": 280
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "An unreleased version of Claude has made strides on a problem related to the Riemann hypothesis. It improved the lower bound for the fraction of zeros of the Riemann zeta function that satisfy the...",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "www.anthropic.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 315,
+                "url": "https://pbs.twimg.com/card_img/2086867140821520384/LMrVaO3G?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2086867140821520384/LMrVaO3G?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2086867140821520384/LMrVaO3G?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2086867140821520384/LMrVaO3G?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2086867140821520384/LMrVaO3G?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 76,
+                "url": "https://pbs.twimg.com/card_img/2086867140821520384/LMrVaO3G?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "creator": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2086867140821520384/LMrVaO3G?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2086867140821520384/LMrVaO3G?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "anthropic.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2086867140821520384/LMrVaO3G?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 73.05,
+                    "rgb": {
+                      "blue": 200,
+                      "green": 229,
+                      "red": 244
+                    }
+                  },
+                  {
+                    "percentage": 21.91,
+                    "rgb": {
+                      "blue": 71,
+                      "green": 145,
+                      "red": 199
+                    }
+                  },
+                  {
+                    "percentage": 3.4,
+                    "rgb": {
+                      "blue": 77,
+                      "green": 86,
+                      "red": 83
+                    }
+                  },
+                  {
+                    "percentage": 0.7,
+                    "rgb": {
+                      "blue": 147,
+                      "green": 190,
+                      "red": 220
+                    }
+                  },
+                  {
+                    "percentage": 0.23,
+                    "rgb": {
+                      "blue": 74,
+                      "green": 109,
+                      "red": 130
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Learning more about Claude's mathematical capabilities",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 73.05,
+                    "rgb": {
+                      "blue": 200,
+                      "green": 229,
+                      "red": 244
+                    }
+                  },
+                  {
+                    "percentage": 21.91,
+                    "rgb": {
+                      "blue": 71,
+                      "green": 145,
+                      "red": 199
+                    }
+                  },
+                  {
+                    "percentage": 3.4,
+                    "rgb": {
+                      "blue": 77,
+                      "green": 86,
+                      "red": 83
+                    }
+                  },
+                  {
+                    "percentage": 0.7,
+                    "rgb": {
+                      "blue": 147,
+                      "green": 190,
+                      "red": 220
+                    }
+                  },
+                  {
+                    "percentage": 0.23,
+                    "rgb": {
+                      "blue": 74,
+                      "green": 109,
+                      "red": 130
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2086867140821520384/LMrVaO3G?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2086867140821520384/LMrVaO3G?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 73.05,
+                    "rgb": {
+                      "blue": 200,
+                      "green": 229,
+                      "red": 244
+                    }
+                  },
+                  {
+                    "percentage": 21.91,
+                    "rgb": {
+                      "blue": 71,
+                      "green": 145,
+                      "red": 199
+                    }
+                  },
+                  {
+                    "percentage": 3.4,
+                    "rgb": {
+                      "blue": 77,
+                      "green": 86,
+                      "red": 83
+                    }
+                  },
+                  {
+                    "percentage": 0.7,
+                    "rgb": {
+                      "blue": 147,
+                      "green": 190,
+                      "red": 220
+                    }
+                  },
+                  {
+                    "percentage": 0.23,
+                    "rgb": {
+                      "blue": 74,
+                      "green": 109,
+                      "red": 130
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2086867140821520384/LMrVaO3G?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/aZDvqqhHRi",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2086867140821520384/LMrVaO3G?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDg2ODY3MjQ1OTUxNzU4MzM2"
+        }
+      }
+    },
+    {
+      "id": "2086864365379010729",
+      "url": "https://x.com/OpenAI/status/2086864365379010729",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-08-10T20:04:28.478398+00:00",
+      "translation_zh": "我们正在扩展网络安全计划 Daybreak，并推出 GPT-5.6-Cyber——一个面向高级、经授权网络安全工作的新模型。\n\n随着威胁形势演变，我们正在将前沿智能交到受信任的防御者手中，抢在攻击者大规模部署进攻性 AI 之前。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 4655,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-10T17:16:51.000Z",
+        "display_text_range": [
+          0,
+          273
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/6o3GtxCxRA",
+              "expanded_url": "https://x.com/OpenAI/status/2086864365379010729/video/1",
+              "indices": [
+                274,
+                297
+              ],
+              "url": "https://t.co/6o3GtxCxRA"
+            }
+          ]
+        },
+        "id_str": "2086864365379010729",
+        "text": "We’re expanding our cybersecurity initiative Daybreak and introducing GPT-5.6-Cyber, a new model for advanced, authorized cybersecurity work.\n\nAs the threat landscape evolves, we’re putting frontier intelligence in the hands of trusted defenders before attackers can deploy https://t.co/6o3GtxCxRA",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2086864365379010729"
+          ],
+          "editable_until_msecs": "1786385811000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/6o3GtxCxRA",
+            "expanded_url": "https://x.com/OpenAI/status/2086864365379010729/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              274,
+              297
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2086860232311861248/img/gO9CLOCWUWA1EHaK.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/6o3GtxCxRA",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 5000,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2086860232311861248/pl/227FTHyOOqNBfzjJ.m3u8"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2086860232311861248/vid/avc1/480x270/KVv11XSFIxIZXEw9.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2086860232311861248/vid/avc1/640x360/phoYwNLCw98yiB1m.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2086860232311861248/vid/avc1/1280x720/miNM3hLWzB05SfrI.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2086860232311861248/vid/avc1/1920x1080/PqYKhhsjJNdPmgp5.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 5000,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2086860232311861248/img/gO9CLOCWUWA1EHaK.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2086860232311861248/pl/227FTHyOOqNBfzjJ.m3u8"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2086860232311861248/vid/avc1/480x270/KVv11XSFIxIZXEw9.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2086860232311861248/vid/avc1/640x360/phoYwNLCw98yiB1m.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2086860232311861248/vid/avc1/1280x720/miNM3hLWzB05SfrI.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2086860232311861248/vid/avc1/1920x1080/PqYKhhsjJNdPmgp5.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2086864365379010729"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 279,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDg2ODY0MzY1MzA3NzgxMTIw"
+        }
+      }
+    },
+    {
       "id": "2086664887560970531",
       "url": "https://x.com/Alibaba_Qwen/status/2086664887560970531",
       "label": "Qwen",
