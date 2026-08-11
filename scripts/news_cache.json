@@ -1,6 +1,781 @@
 {
   "tweets": [
     {
+      "id": "2087233507370147920",
+      "url": "https://x.com/elonmusk/status/2087233507370147920",
+      "label": "xAI",
+      "color": "#1DA1F2",
+      "fetched_at": "2026-08-11T20:04:27.318567+00:00",
+      "translation_zh": "在修复早期 beta 的基本问题、并于本周晚些时候发布 Grok 4.6 之后，我们将扩大 Grok Bot 的 beta 范围。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 7619,
+        "lang": "en",
+        "created_at": "2026-08-11T17:43:41.000Z",
+        "display_text_range": [
+          0,
+          114
+        ],
+        "entities": {},
+        "id_str": "2087233507370147920",
+        "text": "We will widen the Grok Bot beta after we fix basic issues with the early beta and release Grok 4.6 later this week",
+        "user": {
+          "id_str": "44196397",
+          "name": "Elon Musk",
+          "screen_name": "elonmusk",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+            },
+            "description": "X",
+            "url": {
+              "url": "https://twitter.com/X",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2087233507370147920"
+          ],
+          "editable_until_msecs": "1786473821000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 900,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 11690,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 1249,
+          "retweet_count": 1405,
+          "created_at": "2026-08-11T17:09:05.000Z",
+          "display_text_range": [
+            0,
+            179
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/uyfA97yo98",
+                "expanded_url": "https://x.com/bot/status/2087224798078517251/video/1",
+                "indices": [
+                  180,
+                  203
+                ],
+                "url": "https://t.co/uyfA97yo98"
+              }
+            ]
+          },
+          "id_str": "2087224798078517251",
+          "text": "Introducing Grok Bot, now in early beta.\n\nBots are AI teammates that do real work for you. They sign in to your tools, use them just like you do, and come back with finished work. https://t.co/uyfA97yo98",
+          "user": {
+            "id_str": "2085838061347217408",
+            "name": "Grok Bot",
+            "screen_name": "bot",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2087219239275069440/KW6C403V_normal.jpg",
+            "highlighted_label": {
+              "badge": {
+                "url": "https://pbs.twimg.com/profile_images/2074224934159876096/aelorWHq_bigger.jpg"
+              },
+              "description": "SpaceXAI",
+              "url": {
+                "url": "https://twitter.com/SpaceXAI",
+                "url_type": "DeepLink"
+              },
+              "user_label_display_type": "Badge",
+              "user_label_type": "BusinessLabel"
+            }
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2087224798078517251"
+            ],
+            "editable_until_msecs": "1786471745000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/uyfA97yo98",
+              "expanded_url": "https://x.com/bot/status/2087224798078517251/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                180,
+                203
+              ],
+              "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2087221157787525120/img/n9OrR6nUrxVZL4oY.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 2160,
+                "width": 3840
+              },
+              "sizes": {
+                "large": {
+                  "h": 1152,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/uyfA97yo98",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "duration_millis": 105982,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2087221157787525120/pl/r0BzroCGpwaGGydw.m3u8?v=8e7"
+                  },
+                  {
+                    "bitrate": 256000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2087221157787525120/vid/avc1/480x270/btKu3Cpp2bnqA4P6.mp4"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2087221157787525120/vid/avc1/640x360/91DvA4xS4LAVWoo0.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2087221157787525120/vid/avc1/1280x720/QEwGx2N77OSsiKpg.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2087221157787525120/vid/avc1/1920x1080/uz0vpfDuEzuJyf1C.mp4"
+                  },
+                  {
+                    "bitrate": 25128000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2087221157787525120/vid/avc1/3840x2160/6h-ilLTaW4Kxmusy.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              16,
+              9
+            ],
+            "contentType": "media_entity",
+            "durationMs": 105982,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/amplify_video_thumb/2087221157787525120/img/n9OrR6nUrxVZL4oY.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2087221157787525120/pl/r0BzroCGpwaGGydw.m3u8?v=8e7"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2087221157787525120/vid/avc1/480x270/btKu3Cpp2bnqA4P6.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2087221157787525120/vid/avc1/640x360/91DvA4xS4LAVWoo0.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2087221157787525120/vid/avc1/1280x720/QEwGx2N77OSsiKpg.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2087221157787525120/vid/avc1/1920x1080/uz0vpfDuEzuJyf1C.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2087221157787525120/vid/avc1/3840x2160/6h-ilLTaW4Kxmusy.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2087224798078517251"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2087231350134980830",
+      "url": "https://x.com/OpenAI/status/2087231350134980830",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-08-11T20:04:27.318567+00:00",
+      "translation_zh": "现已进入预览：ChatGPT Linux 桌面应用。在支持的 Linux 系统上，使用 ChatGPT、ChatGPT Work 和 Codex，带着你的项目和浏览器工作流。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 5834,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-11T17:35:07.000Z",
+        "display_text_range": [
+          0,
+          191
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/OtsPt5N5QC",
+              "expanded_url": "https://x.com/OpenAI/status/2087231350134980830/video/1",
+              "indices": [
+                192,
+                215
+              ],
+              "url": "https://t.co/OtsPt5N5QC"
+            }
+          ]
+        },
+        "id_str": "2087231350134980830",
+        "text": "Now in preview: The ChatGPT desktop app for Linux.\n\nUse ChatGPT, ChatGPT Work, and Codex where you already work and build, with your projects and browser workflows on supported Linux systems. https://t.co/OtsPt5N5QC",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2087231350134980830"
+          ],
+          "editable_until_msecs": "1786473307000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/OtsPt5N5QC",
+            "expanded_url": "https://x.com/OpenAI/status/2087231350134980830/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              192,
+              215
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HPdd088aAAAEfFu.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 720,
+              "width": 1280
+            },
+            "sizes": {
+              "large": {
+                "h": 720,
+                "resize": "fit",
+                "w": 1280
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/OtsPt5N5QC",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 45253,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2087231244073607168/pl/p5oC7I5fbPyvB4kw.m3u8?v=cfc"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2087231244073607168/vid/avc1/480x270/04-2km7hxRlO9P6i.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2087231244073607168/vid/avc1/640x360/X-yvoIcxciBxPzoU.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2087231244073607168/vid/avc1/1280x720/6UlTFD9KBS0U3W5g.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2087231244073607168/vid/avc1/1920x1080/EP9rmYYnFHcbCcf8.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 45253,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/media/HPdd088aAAAEfFu.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2087231244073607168/pl/p5oC7I5fbPyvB4kw.m3u8?v=cfc"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2087231244073607168/vid/avc1/480x270/04-2km7hxRlO9P6i.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2087231244073607168/vid/avc1/640x360/X-yvoIcxciBxPzoU.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2087231244073607168/vid/avc1/1280x720/6UlTFD9KBS0U3W5g.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2087231244073607168/vid/avc1/1920x1080/EP9rmYYnFHcbCcf8.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2087231350134980830"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 418,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2087091895822631178",
+      "url": "https://x.com/Kimi_Moonshot/status/2087091895822631178",
+      "label": "Kimi",
+      "color": "#6366F1",
+      "fetched_at": "2026-08-11T20:04:27.318567+00:00",
+      "translation_zh": "Kimi K3 现已上线 Databricks！在数据已所在的 Lakehouse 中运行 Kimi K3——受治理、安全，并为自定义 AI 应用和智能体做好准备。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 740,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-11T08:20:58.000Z",
+        "display_text_range": [
+          0,
+          35
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/wo5FGV8kzz",
+              "expanded_url": "https://x.com/Kimi_Moonshot/status/2087091895822631178/photo/1",
+              "indices": [
+                36,
+                59
+              ],
+              "url": "https://t.co/wo5FGV8kzz"
+            }
+          ],
+          "user_mentions": [
+            {
+              "id_str": "1562518867",
+              "indices": [
+                23,
+                34
+              ],
+              "name": "Databricks",
+              "screen_name": "databricks"
+            }
+          ]
+        },
+        "id_str": "2087091895822631178",
+        "text": "Kimi K3 is now live on @databricks! https://t.co/wo5FGV8kzz",
+        "user": {
+          "id_str": "1863959670169501696",
+          "name": "Kimi.ai",
+          "screen_name": "Kimi_Moonshot",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2086719038798102529/diJGKpOE_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2087091895822631178"
+          ],
+          "editable_until_msecs": "1786440058000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/wo5FGV8kzz",
+            "expanded_url": "https://x.com/Kimi_Moonshot/status/2087091895822631178/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              36,
+              59
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HPbW-m5bQAA6rvi.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 1308,
+                  "w": 2336,
+                  "x": 280,
+                  "y": 0
+                },
+                {
+                  "h": 1308,
+                  "w": 1308,
+                  "x": 981,
+                  "y": 0
+                },
+                {
+                  "h": 1308,
+                  "w": 1147,
+                  "x": 1062,
+                  "y": 0
+                },
+                {
+                  "h": 1308,
+                  "w": 654,
+                  "x": 1308,
+                  "y": 0
+                },
+                {
+                  "h": 1308,
+                  "w": 2616,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1308,
+              "width": 2616
+            },
+            "sizes": {
+              "large": {
+                "h": 1024,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 600,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 340,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/wo5FGV8kzz"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 1308,
+                "w": 2336,
+                "x": 280,
+                "y": 0
+              },
+              {
+                "h": 1308,
+                "w": 1308,
+                "x": 981,
+                "y": 0
+              },
+              {
+                "h": 1308,
+                "w": 1147,
+                "x": 1062,
+                "y": 0
+              },
+              {
+                "h": 1308,
+                "w": 654,
+                "x": 1308,
+                "y": 0
+              },
+              {
+                "h": 1308,
+                "w": 2616,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Kimi_Moonshot/status/2087091895822631178/photo/1",
+            "url": "https://pbs.twimg.com/media/HPbW-m5bQAA6rvi.jpg",
+            "width": 2616,
+            "height": 1308
+          }
+        ],
+        "conversation_count": 42,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 99,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 10,
+          "retweet_count": 18,
+          "created_at": "2026-08-06T20:57:55.000Z",
+          "display_text_range": [
+            0,
+            273
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/3SvARKflLl",
+                "expanded_url": "https://x.com/databricks/status/2085470446854574440/photo/1",
+                "indices": [
+                  274,
+                  297
+                ],
+                "url": "https://t.co/3SvARKflLl"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "1863959670169501696",
+                "indices": [
+                  106,
+                  120
+                ],
+                "name": "Kimi.ai",
+                "screen_name": "Kimi_Moonshot"
+              }
+            ]
+          },
+          "id_str": "2085470446854574440",
+          "text": "Moonshot AI's latest open-weight model, Kimi K3, is now available on Databricks through Unity AI Gateway. @Kimi_Moonshot \n\nRun Kimi K3 where your data already lives - governed, secure, and ready for custom AI apps and agents built with the data in your Lakehouse.\n\nUnity AI https://t.co/3SvARKflLl",
+          "user": {
+            "id_str": "1562518867",
+            "name": "Databricks",
+            "screen_name": "databricks",
+            "is_blue_verified": false,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2070268421615333376/SZUvhQiQ_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2085470446854574440"
+            ],
+            "editable_until_msecs": "1786053475000",
+            "edits_remaining": "5",
+            "is_edit_eligible": true
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/3SvARKflLl",
+              "expanded_url": "https://x.com/databricks/status/2085470446854574440/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                274,
+                297
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HPEUTXbWkAAweEQ.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 628,
+                    "w": 1121,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 628,
+                    "w": 628,
+                    "x": 16,
+                    "y": 0
+                  },
+                  {
+                    "h": 628,
+                    "w": 551,
+                    "x": 55,
+                    "y": 0
+                  },
+                  {
+                    "h": 628,
+                    "w": 314,
+                    "x": 173,
+                    "y": 0
+                  },
+                  {
+                    "h": 628,
+                    "w": 1200,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 628,
+                "width": 1200
+              },
+              "sizes": {
+                "large": {
+                  "h": 628,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "medium": {
+                  "h": 628,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 356,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/3SvARKflLl"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 628,
+                  "w": 1121,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 628,
+                  "w": 628,
+                  "x": 16,
+                  "y": 0
+                },
+                {
+                  "h": 628,
+                  "w": 551,
+                  "x": 55,
+                  "y": 0
+                },
+                {
+                  "h": 628,
+                  "w": 314,
+                  "x": 173,
+                  "y": 0
+                },
+                {
+                  "h": 628,
+                  "w": 1200,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/databricks/status/2085470446854574440/photo/1",
+              "url": "https://pbs.twimg.com/media/HPEUTXbWkAAweEQ.jpg",
+              "width": 1200,
+              "height": 628
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2087040814677725262",
       "url": "https://x.com/Zai_org/status/2087040814677725262",
       "label": "GLM",
@@ -1017,6 +1792,353 @@
         "note_tweet": {
           "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDg2ODY3MjQ1OTUxNzU4MzM2"
         }
+      }
+    },
+    {
+      "id": "2086864372500942906",
+      "url": "https://x.com/OpenAI/status/2086864372500942906",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-08-11T20:04:27.318567+00:00",
+      "translation_zh": "GPT-5.6-Cyber 已在真实世界的漏洞研究中被广泛使用，包括在 Chrome 的 v8 引擎等流行的开源软件中发现了此前未知的漏洞。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 476,
+        "in_reply_to_screen_name": "OpenAI",
+        "in_reply_to_status_id_str": "2086864369825329219",
+        "in_reply_to_user_id_str": "4398626122",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-10T17:16:53.000Z",
+        "display_text_range": [
+          0,
+          196
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/prM5lPEQkn",
+              "expanded_url": "https://x.com/OpenAI/status/2086864372500942906/photo/1",
+              "indices": [
+                197,
+                220
+              ],
+              "url": "https://t.co/prM5lPEQkn"
+            }
+          ]
+        },
+        "id_str": "2086864372500942906",
+        "text": "We've used GPT-5.6-Cyber extensively in real-world vulnerability research, including work that uncovered previously unknown vulnerabilities in popular open-source software like Chrome’s v8 engine. https://t.co/prM5lPEQkn",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2086864372500942906"
+          ],
+          "editable_until_msecs": "1786385813000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/prM5lPEQkn",
+            "expanded_url": "https://x.com/OpenAI/status/2086864372500942906/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              197,
+              220
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HPYIAmZWEAAeRlP.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 936,
+                  "w": 1672,
+                  "x": 0,
+                  "y": 5
+                },
+                {
+                  "h": 941,
+                  "w": 941,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 941,
+                  "w": 825,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 941,
+                  "w": 471,
+                  "x": 57,
+                  "y": 0
+                },
+                {
+                  "h": 941,
+                  "w": 1672,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 941,
+              "width": 1672
+            },
+            "sizes": {
+              "large": {
+                "h": 941,
+                "resize": "fit",
+                "w": 1672
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/prM5lPEQkn"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 936,
+                "w": 1672,
+                "x": 0,
+                "y": 5
+              },
+              {
+                "h": 941,
+                "w": 941,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 941,
+                "w": 825,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 941,
+                "w": 471,
+                "x": 57,
+                "y": 0
+              },
+              {
+                "h": 941,
+                "w": 1672,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/OpenAI/status/2086864372500942906/photo/1",
+            "url": "https://pbs.twimg.com/media/HPYIAmZWEAAeRlP.jpg",
+            "width": 1672,
+            "height": 941
+          }
+        ],
+        "conversation_count": 14,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 614,
+          "in_reply_to_screen_name": "OpenAI",
+          "in_reply_to_status_id_str": "2086864367719473560",
+          "in_reply_to_user_id_str": "4398626122",
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 12,
+          "retweet_count": 23,
+          "created_at": "2026-08-10T17:16:52.000Z",
+          "display_text_range": [
+            0,
+            273
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/mXKwvJR18Y",
+                "expanded_url": "https://x.com/OpenAI/status/2086864369825329219/photo/1",
+                "indices": [
+                  274,
+                  297
+                ],
+                "url": "https://t.co/mXKwvJR18Y"
+              }
+            ]
+          },
+          "id_str": "2086864369825329219",
+          "text": "Daybreak Red provides access to purpose-trained cybersecurity models, including GPT-5.6-Cyber, for authorized vulnerability research, exploit validation, and security testing.\n\nIt’s designed for experienced defenders working on complex, authorized cybersecurity challenges. https://t.co/mXKwvJR18Y",
+          "user": {
+            "id_str": "4398626122",
+            "name": "OpenAI",
+            "screen_name": "OpenAI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2086864369825329219"
+            ],
+            "editable_until_msecs": "1786385812000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/mXKwvJR18Y",
+              "expanded_url": "https://x.com/OpenAI/status/2086864369825329219/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                274,
+                297
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HPYEgppW0AALitM.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 881,
+                    "w": 1574,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1076,
+                    "w": 1076,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1076,
+                    "w": 944,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1076,
+                    "w": 538,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1076,
+                    "w": 1574,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 1076,
+                "width": 1574
+              },
+              "sizes": {
+                "large": {
+                  "h": 1076,
+                  "resize": "fit",
+                  "w": 1574
+                },
+                "medium": {
+                  "h": 820,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 465,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/mXKwvJR18Y"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 881,
+                  "w": 1574,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1076,
+                  "w": 1076,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1076,
+                  "w": 944,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1076,
+                  "w": 538,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1076,
+                  "w": 1574,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/OpenAI/status/2086864369825329219/photo/1",
+              "url": "https://pbs.twimg.com/media/HPYEgppW0AALitM.jpg",
+              "width": 1574,
+              "height": 1076
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
       }
     },
     {
