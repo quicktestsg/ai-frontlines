@@ -1,6 +1,941 @@
 {
   "tweets": [
     {
+      "id": "2088443051890917436",
+      "url": "https://x.com/elonmusk/status/2088443051890917436",
+      "label": "xAI",
+      "color": "#1DA1F2",
+      "fetched_at": "2026-08-15T07:01:20.971994+00:00",
+      "translation_zh": "Grok 4.6 现已接入 GitHub Copilot,可在 Copilot CLI、IDE 及云端产品中使用。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 4299,
+        "lang": "en",
+        "created_at": "2026-08-15T01:49:59.000Z",
+        "display_text_range": [
+          0,
+          23
+        ],
+        "entities": {},
+        "id_str": "2088443051890917436",
+        "text": "Grok 4.6 now in Copilot",
+        "user": {
+          "id_str": "44196397",
+          "name": "Elon Musk",
+          "screen_name": "elonmusk",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+            },
+            "description": "X",
+            "url": {
+              "url": "https://twitter.com/X",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2088443051890917436"
+          ],
+          "editable_until_msecs": "1786762199000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 558,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 1487,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 112,
+          "retweet_count": 141,
+          "created_at": "2026-08-14T17:40:37.000Z",
+          "display_text_range": [
+            0,
+            133
+          ],
+          "entities": {
+            "urls": [
+              {
+                "display_url": "x.ai/news/grok-4-6-…",
+                "expanded_url": "https://x.ai/news/grok-4-6-github-copilot",
+                "indices": [
+                  110,
+                  133
+                ],
+                "url": "https://t.co/zgpyZpFD6I"
+              }
+            ]
+          },
+          "id_str": "2088319896597975501",
+          "text": "Grok 4.6 is now available in GitHub Copilot.\n\nTry it out in the GitHub Copilot CLI, IDE, and cloud products!\n\nhttps://t.co/zgpyZpFD6I",
+          "user": {
+            "id_str": "1720665183188922368",
+            "name": "Grok",
+            "screen_name": "grok",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2057885623374290944/lmj0pawP_normal.jpg",
+            "highlighted_label": {
+              "badge": {
+                "url": "https://pbs.twimg.com/profile_images/2074224934159876096/aelorWHq_bigger.jpg"
+              },
+              "description": "SpaceXAI",
+              "url": {
+                "url": "https://twitter.com/SpaceXAI",
+                "url_type": "DeepLink"
+              },
+              "user_label_display_type": "Badge",
+              "user_label_type": "BusinessLabel"
+            }
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2088319896597975501"
+            ],
+            "editable_until_msecs": "1786732837000",
+            "edits_remaining": "5",
+            "is_edit_eligible": true
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2088343978873966687",
+      "url": "https://x.com/AnthropicAI/status/2088343978873966687",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-08-15T07:01:20.971994+00:00",
+      "translation_zh": "Anthropic 发布水印机制 FAQ:为符合欧盟 AI 法案将引入输出水印;水印不影响 Claude 输出的质量与内容,读者无法区分加水印与未加水印的文本,不添加隐藏字符,不消耗额外 token,也不会增加费用,且无法追溯到特定个人、组织或会话。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 2356,
+        "lang": "en",
+        "created_at": "2026-08-14T19:16:18.000Z",
+        "display_text_range": [
+          0,
+          277
+        ],
+        "entities": {},
+        "id_str": "2088343978873966687",
+        "text": "We’ve written an FAQ to answer some of the questions we've received about watermarking. \n\nIn summary:\n\n• We’re implementing watermarking to comply with the EU AI Act. Other major model developers have signed the same Code of Practice and will also be implementing watermarking;",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2088343978873966687"
+          ],
+          "editable_until_msecs": "1786738578000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 924,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/G76iUOJ7Hu",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Ornate quill pen resting on a detailed hand, positioned against a textured background",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2087171358476107776/n7l4c6Lx?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Ornate quill pen resting on a detailed hand, positioned against a textured background",
+                "height": 147,
+                "url": "https://pbs.twimg.com/card_img/2087171358476107776/n7l4c6Lx?format=jpg&name=280x150",
+                "width": 280
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Future Claude models will generate text that contains a watermark. This is a way of determining the likelihood that Claude was involved in writing the text, and we, along with several other major AI...",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "www.anthropic.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Ornate quill pen resting on a detailed hand, positioned against a textured background",
+                "height": 316,
+                "url": "https://pbs.twimg.com/card_img/2087171358476107776/n7l4c6Lx?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Ornate quill pen resting on a detailed hand, positioned against a textured background",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2087171358476107776/n7l4c6Lx?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Ornate quill pen resting on a detailed hand, positioned against a textured background",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2087171358476107776/n7l4c6Lx?format=jpg&name=orig",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Ornate quill pen resting on a detailed hand, positioned against a textured background",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2087171358476107776/n7l4c6Lx?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Ornate quill pen resting on a detailed hand, positioned against a textured background",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2087171358476107776/n7l4c6Lx?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Ornate quill pen resting on a detailed hand, positioned against a textured background",
+                "height": 76,
+                "url": "https://pbs.twimg.com/card_img/2087171358476107776/n7l4c6Lx?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "creator": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Ornate quill pen resting on a detailed hand, positioned against a textured background",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2087171358476107776/n7l4c6Lx?format=png&name=2048x2048_2_exp",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Ornate quill pen resting on a detailed hand, positioned against a textured background",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2087171358476107776/n7l4c6Lx?format=jpg&name=orig",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Ornate quill pen resting on a detailed hand, positioned against a textured background",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "anthropic.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Ornate quill pen resting on a detailed hand, positioned against a textured background",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2087171358476107776/n7l4c6Lx?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Ornate quill pen resting on a detailed hand, positioned against a textured background",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 96.35,
+                    "rgb": {
+                      "blue": 218,
+                      "green": 202,
+                      "red": 203
+                    }
+                  },
+                  {
+                    "percentage": 2.43,
+                    "rgb": {
+                      "blue": 61,
+                      "green": 63,
+                      "red": 63
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "How Claude's text watermarking works",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 96.35,
+                    "rgb": {
+                      "blue": 218,
+                      "green": 202,
+                      "red": 203
+                    }
+                  },
+                  {
+                    "percentage": 2.43,
+                    "rgb": {
+                      "blue": 61,
+                      "green": 63,
+                      "red": 63
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Ornate quill pen resting on a detailed hand, positioned against a textured background",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2087171358476107776/n7l4c6Lx?format=png&name=2048x2048_2_exp",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Ornate quill pen resting on a detailed hand, positioned against a textured background",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2087171358476107776/n7l4c6Lx?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 96.35,
+                    "rgb": {
+                      "blue": 218,
+                      "green": 202,
+                      "red": 203
+                    }
+                  },
+                  {
+                    "percentage": 2.43,
+                    "rgb": {
+                      "blue": 61,
+                      "green": 63,
+                      "red": 63
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Ornate quill pen resting on a detailed hand, positioned against a textured background",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2087171358476107776/n7l4c6Lx?format=png&name=2048x2048_2_exp",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/G76iUOJ7Hu",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Ornate quill pen resting on a detailed hand, positioned against a textured background",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2087171358476107776/n7l4c6Lx?format=jpg&name=orig",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDg4MzQzOTc4NzMxMjkwNjI0"
+        }
+      }
+    },
+    {
+      "id": "2088324824863236248",
+      "url": "https://x.com/AnthropicAI/status/2088324824863236248",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-08-15T07:01:20.971994+00:00",
+      "translation_zh": "Anthropic 发布第二期风险报告(Risk Report):作为负责任扩展政策(Responsible Scaling Policy)的一部分,定期披露其系统的风险细节及应对准备情况。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1819,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-14T18:00:12.000Z",
+        "display_text_range": [
+          0,
+          243
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "anthropic.com/aug-2026-risk-…",
+              "expanded_url": "https://www.anthropic.com/aug-2026-risk-report",
+              "indices": [
+                220,
+                243
+              ],
+              "url": "https://t.co/NgWnDmXZD3"
+            }
+          ]
+        },
+        "id_str": "2088324824863236248",
+        "text": "As part of our Responsible Scaling Policy, we publish regular Risk Reports. These share detailed information on the risks of our systems and how prepared we are to address them.\n\nOur second Risk Report is now available: https://t.co/NgWnDmXZD3",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2088324824863236248"
+          ],
+          "editable_until_msecs": "1786734012000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 251,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2088320747639071143",
+      "url": "https://x.com/Alibaba_Qwen/status/2088320747639071143",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-08-15T07:01:20.971994+00:00",
+      "translation_zh": "Qwen3.8-27B 现已在 Ollama 上线:该规模下最强的开源模型之一,专为智能体任务与专业工作而打造。任何 harness 上运行,模型都能稳定发挥。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 426,
+        "lang": "en",
+        "created_at": "2026-08-14T17:44:00.000Z",
+        "display_text_range": [
+          0,
+          136
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "1688410127378829312",
+              "indices": [
+                29,
+                36
+              ],
+              "name": "ollama",
+              "screen_name": "ollama"
+            }
+          ]
+        },
+        "id_str": "2088320747639071143",
+        "text": "Qwen3.8-27B  is available on @ollama ！Any harness you run, the model always delivers. Let's code together, and show us what you build.😎",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2088320747639071143"
+          ],
+          "editable_until_msecs": "1786733040000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 30,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 1313,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 67,
+          "retweet_count": 138,
+          "created_at": "2026-08-14T17:18:55.000Z",
+          "display_text_range": [
+            0,
+            276
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/sjtlmmDJ8n",
+                "expanded_url": "https://x.com/ollama/status/2088314436088168491/photo/1",
+                "indices": [
+                  277,
+                  300
+                ],
+                "url": "https://t.co/sjtlmmDJ8n"
+              }
+            ]
+          },
+          "id_str": "2088314436088168491",
+          "text": "Qwen 3.8 27B is now available on Ollama. \n\nIt's one of the best open models at this size, and made for agentic tasks and professional work. \n\nTry it directly with the apps &amp; harnesses you use: \n\nClaude Code: \nollama launch claude --model qwen3.8 \n\nOpenCode: \nollama launch https://t.co/sjtlmmDJ8n",
+          "user": {
+            "id_str": "1688410127378829312",
+            "name": "ollama",
+            "screen_name": "ollama",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2088314436088168491"
+            ],
+            "editable_until_msecs": "1786731535000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/sjtlmmDJ8n",
+              "expanded_url": "https://x.com/ollama/status/2088314436088168491/photo/1",
+              "ext_alt_text": "Ollama and Qwen partners to make Qwen 3.8 27B amazing! ",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                277,
+                300
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HPstE5ObIAAywUx.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 1217,
+                    "w": 2174,
+                    "x": 0,
+                    "y": 207
+                  },
+                  {
+                    "h": 1680,
+                    "w": 1680,
+                    "x": 494,
+                    "y": 0
+                  },
+                  {
+                    "h": 1680,
+                    "w": 1474,
+                    "x": 700,
+                    "y": 0
+                  },
+                  {
+                    "h": 1680,
+                    "w": 840,
+                    "x": 1047,
+                    "y": 0
+                  },
+                  {
+                    "h": 1680,
+                    "w": 2174,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 1680,
+                "width": 2174
+              },
+              "sizes": {
+                "large": {
+                  "h": 1583,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 927,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 525,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/sjtlmmDJ8n"
+            }
+          ],
+          "photos": [
+            {
+              "accessibilityLabel": "Ollama and Qwen partners to make Qwen 3.8 27B amazing! ",
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 1217,
+                  "w": 2174,
+                  "x": 0,
+                  "y": 207
+                },
+                {
+                  "h": 1680,
+                  "w": 1680,
+                  "x": 494,
+                  "y": 0
+                },
+                {
+                  "h": 1680,
+                  "w": 1474,
+                  "x": 700,
+                  "y": 0
+                },
+                {
+                  "h": 1680,
+                  "w": 840,
+                  "x": 1047,
+                  "y": 0
+                },
+                {
+                  "h": 1680,
+                  "w": 2174,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/ollama/status/2088314436088168491/photo/1",
+              "url": "https://pbs.twimg.com/media/HPstE5ObIAAywUx.jpg",
+              "width": 2174,
+              "height": 1680
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2088307374767693844",
+      "url": "https://x.com/Alibaba_Qwen/status/2088307374767693844",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-08-15T07:01:20.971994+00:00",
+      "translation_zh": "Qwen3.8-2.4T-A95B 上线 SiliconFlow:2.4T 总参数、95B 激活的稀疏 MoE 模型,原生 262K 上下文,擅长编码、智能体工作流与复杂推理,一次 API 调用即达旗舰智能。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 147,
+        "lang": "en",
+        "created_at": "2026-08-14T16:50:51.000Z",
+        "display_text_range": [
+          0,
+          156
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "1745716696931807232",
+              "indices": [
+                141,
+                155
+              ],
+              "name": "SiliconFlow",
+              "screen_name": "SiliconFlowAI"
+            }
+          ]
+        },
+        "id_str": "2088307374767693844",
+        "text": "From idea to implementation in one go.🏃‍♀️ Max-level intelligence, served fresh on Day 0. \nQwen3.8-2.4T-A95B is live on SiliconFlow. Thanks! @SiliconFlowAI",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2088307374767693844"
+          ],
+          "editable_until_msecs": "1786729851000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 6,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 18,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 3,
+          "retweet_count": 3,
+          "created_at": "2026-08-13T14:37:49.000Z",
+          "display_text_range": [
+            0,
+            279
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/SynOgEf0wd",
+                "expanded_url": "https://x.com/SiliconFlowAI/status/2087911506113683756/photo/1",
+                "indices": [
+                  278,
+                  301
+                ],
+                "url": "https://t.co/SynOgEf0wd"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "1753339277386342400",
+                "indices": [
+                  17,
+                  30
+                ],
+                "name": "Qwen",
+                "screen_name": "Alibaba_Qwen"
+              }
+            ]
+          },
+          "id_str": "2087911506113683756",
+          "text": "🚀 Day-0 Support! @Alibaba_Qwen has open-sourced Qwen3.8-2.4T-A95B — and it’s now live on SiliconFlow.\n⚡ With 2.4T parameters and 95B active, Qwen3.8 is built to take a goal and come back with finished work — coding, researching, planning, and executing along the way.\n\n💸 Per 1M https://t.co/SynOgEf0wd",
+          "user": {
+            "id_str": "1745716696931807232",
+            "name": "SiliconFlow",
+            "screen_name": "SiliconFlowAI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1938267775518072832/xdihGpYG_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2087911506113683756"
+            ],
+            "editable_until_msecs": "1786635469000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/SynOgEf0wd",
+              "expanded_url": "https://x.com/SiliconFlowAI/status/2087911506113683756/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                278,
+                301
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HPnAK-ea8AA4hJC.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 1404,
+                    "w": 2508,
+                    "x": 0,
+                    "y": 990
+                  },
+                  {
+                    "h": 2508,
+                    "w": 2508,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2508,
+                    "w": 2200,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2508,
+                    "w": 1254,
+                    "x": 438,
+                    "y": 0
+                  },
+                  {
+                    "h": 2508,
+                    "w": 2508,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 2508,
+                "width": 2508
+              },
+              "sizes": {
+                "large": {
+                  "h": 2048,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 1200,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 680,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/SynOgEf0wd"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 1404,
+                  "w": 2508,
+                  "x": 0,
+                  "y": 990
+                },
+                {
+                  "h": 2508,
+                  "w": 2508,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2508,
+                  "w": 2200,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2508,
+                  "w": 1254,
+                  "x": 438,
+                  "y": 0
+                },
+                {
+                  "h": 2508,
+                  "w": 2508,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/SiliconFlowAI/status/2087911506113683756/photo/1",
+              "url": "https://pbs.twimg.com/media/HPnAK-ea8AA4hJC.jpg",
+              "width": 2508,
+              "height": 2508
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2088138697002668110",
       "url": "https://x.com/elonmusk/status/2088138697002668110",
       "label": "xAI",
