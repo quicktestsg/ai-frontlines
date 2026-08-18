@@ -1,6 +1,462 @@
 {
   "tweets": [
     {
+      "id": "2089597078385446969",
+      "url": "https://x.com/Alibaba_Qwen/status/2089597078385446969",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-08-18T07:04:06.027195+00:00",
+      "translation_zh": "本地 27B 模型打出前沿性能!Qwen3.8-27B 在 Artificial Analysis 智能指数中取得 52 分,与 GPT-5.6 Luna(max)持平——首个达到前沿能力的本地模型,甚至可通过 WebGPU 在浏览器中运行。强劲到跟上前沿,轻量到跑在笔记本上。⚡",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 274,
+        "lang": "en",
+        "created_at": "2026-08-18T06:15:40.000Z",
+        "display_text_range": [
+          0,
+          110
+        ],
+        "entities": {},
+        "id_str": "2089597078385446969",
+        "text": "Strong enough to keep up with the frontier, light enough to run on your own laptop. Come see what it can do! ⚡",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2089597078385446969"
+          ],
+          "editable_until_msecs": "1787037340000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 16,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 634,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 13,
+          "retweet_count": 34,
+          "created_at": "2026-08-17T19:31:55.000Z",
+          "display_text_range": [
+            0,
+            252
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/CkfnB1dQQy",
+                "expanded_url": "https://x.com/xenovacom/status/2089435071384076306/video/1",
+                "indices": [
+                  252,
+                  275
+                ],
+                "url": "https://t.co/CkfnB1dQQy"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "1743487864934162432",
+                "indices": [
+                  49,
+                  65
+                ],
+                "name": "Artificial Analysis",
+                "screen_name": "ArtificialAnlys"
+              }
+            ]
+          },
+          "id_str": "2089435071384076306",
+          "text": "It's official: Qwen3.8-27B just scored 52 on the @ArtificialAnlys Intelligence Index.\n\nWe now have an open-weight model that matches GPT-5.6 Luna (max) AND can run locally... even in your browser with custom WebGPU kernels!\n\nWhat a time to be alive! 🤯 https://t.co/CkfnB1dQQy",
+          "user": {
+            "id_str": "4560264219",
+            "name": "Xenova",
+            "screen_name": "xenovacom",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1628854727218798593/sWLzdtJ1_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2089435071384076306"
+            ],
+            "editable_until_msecs": "1786998715000",
+            "edits_remaining": "5",
+            "is_edit_eligible": true
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/CkfnB1dQQy",
+              "expanded_url": "https://x.com/xenovacom/status/2089435071384076306/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                252,
+                275
+              ],
+              "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2089432482655395840/img/m4WAx2r02XkTkvFa.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 2214,
+                "width": 3608
+              },
+              "sizes": {
+                "large": {
+                  "h": 1257,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 736,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 417,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/CkfnB1dQQy",
+              "video_info": {
+                "aspect_ratio": [
+                  44,
+                  27
+                ],
+                "duration_millis": 58041,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2089432482655395840/pl/KJ79SkTNVpgnJi9O.m3u8?v=cfc"
+                  },
+                  {
+                    "bitrate": 256000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2089432482655395840/vid/avc1/440x270/MVgAAIfPq0xs15Wr.mp4"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2089432482655395840/vid/avc1/586x360/JgLrtlKQknQFJwIy.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2089432482655395840/vid/avc1/1172x720/lPXBPwtmRaseg5D4.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2089432482655395840/vid/avc1/1760x1080/Bwi6oC66zVrul95A.mp4"
+                  },
+                  {
+                    "bitrate": 25128000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2089432482655395840/vid/avc1/3520x2160/OIgyPIv2pVrxmT-T.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              44,
+              27
+            ],
+            "contentType": "media_entity",
+            "durationMs": 58041,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/amplify_video_thumb/2089432482655395840/img/m4WAx2r02XkTkvFa.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2089432482655395840/pl/KJ79SkTNVpgnJi9O.m3u8?v=cfc"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2089432482655395840/vid/avc1/440x270/MVgAAIfPq0xs15Wr.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2089432482655395840/vid/avc1/586x360/JgLrtlKQknQFJwIy.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2089432482655395840/vid/avc1/1172x720/lPXBPwtmRaseg5D4.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2089432482655395840/vid/avc1/1760x1080/Bwi6oC66zVrul95A.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2089432482655395840/vid/avc1/3520x2160/OIgyPIv2pVrxmT-T.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2089435071384076306"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2089501024557912315",
+      "url": "https://x.com/elonmusk/status/2089501024557912315",
+      "label": "xAI",
+      "color": "#1DA1F2",
+      "fetched_at": "2026-08-18T07:04:06.027195+00:00",
+      "translation_zh": "Grok 在智能体任务上表现出色!Grok 4.6 以 59 分登上 Artificial Analysis 智能体指数榜首,与 Claude Opus 5 Max 并列。该指数衡量工具使用、规划、自主性与复杂问题解决能力,而非单轮问答。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 5335,
+        "lang": "en",
+        "created_at": "2026-08-17T23:53:59.000Z",
+        "display_text_range": [
+          0,
+          35
+        ],
+        "entities": {},
+        "id_str": "2089501024557912315",
+        "text": "Grok is very good at agentic tasks!",
+        "user": {
+          "id_str": "44196397",
+          "name": "Elon Musk",
+          "screen_name": "elonmusk",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+            },
+            "description": "X",
+            "url": {
+              "url": "https://twitter.com/X",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2089501024557912315"
+          ],
+          "editable_until_msecs": "1787014439000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 943,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 212,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 43,
+          "retweet_count": 37,
+          "created_at": "2026-08-17T15:00:10.000Z",
+          "display_text_range": [
+            0,
+            280
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/ddhtzyWRn4",
+                "expanded_url": "https://x.com/changis_k/status/2089366682083225893/photo/1",
+                "indices": [
+                  281,
+                  304
+                ],
+                "url": "https://t.co/ddhtzyWRn4"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "1720665183188922368",
+                "indices": [
+                  22,
+                  27
+                ],
+                "name": "Grok",
+                "screen_name": "grok"
+              }
+            ]
+          },
+          "id_str": "2089366682083225893",
+          "text": "Agentic work is where @grok 4.6 lands hardest, taking the top spot on the Artificial Analysis Agentic Index at 59, tied with Claude Opus 5 Max.\n\nThe index measures tool use, planning, autonomy and complex problem solving rather than single answers\n\nGrok 4.6 completes tasks in ~53 https://t.co/ddhtzyWRn4",
+          "user": {
+            "id_str": "3290098895",
+            "name": "changis_k",
+            "screen_name": "changis_k",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1335662634767708161/1hl09_ve_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2089366682083225893"
+            ],
+            "editable_until_msecs": "1786982410000",
+            "edits_remaining": "5",
+            "is_edit_eligible": true
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/ddhtzyWRn4",
+              "expanded_url": "https://x.com/changis_k/status/2089366682083225893/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                281,
+                304
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HP7r7FlasAA28Vo.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 2294,
+                    "w": 4096,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2560,
+                    "w": 2560,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2560,
+                    "w": 2246,
+                    "x": 3,
+                    "y": 0
+                  },
+                  {
+                    "h": 2560,
+                    "w": 1280,
+                    "x": 486,
+                    "y": 0
+                  },
+                  {
+                    "h": 2560,
+                    "w": 4096,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 2560,
+                "width": 4096
+              },
+              "sizes": {
+                "large": {
+                  "h": 1280,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 750,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 425,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/ddhtzyWRn4"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 2294,
+                  "w": 4096,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2560,
+                  "w": 2560,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2560,
+                  "w": 2246,
+                  "x": 3,
+                  "y": 0
+                },
+                {
+                  "h": 2560,
+                  "w": 1280,
+                  "x": 486,
+                  "y": 0
+                },
+                {
+                  "h": 2560,
+                  "w": 4096,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/changis_k/status/2089366682083225893/photo/1",
+              "url": "https://pbs.twimg.com/media/HP7r7FlasAA28Vo.jpg",
+              "width": 4096,
+              "height": 2560
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2088881015855182122",
       "url": "https://x.com/Alibaba_Qwen/status/2088881015855182122",
       "label": "Qwen",
@@ -1366,6 +1822,77 @@
       }
     },
     {
+      "id": "2088280509474320693",
+      "url": "https://x.com/Zai_org/status/2088280509474320693",
+      "label": "GLM",
+      "color": "#7C3AED",
+      "fetched_at": "2026-08-18T07:04:06.027195+00:00",
+      "translation_zh": "文章:为 GLM-5.3 开放发布做准备——一条通往网络防御的负责任路径。GLM-5.3 在 743B 基座模型上后训练而成,编码与智能体能力达到顶尖水平,网络安全能力在开源模型中树立新标杆。API 与开放权重将在严格安全评估后分阶段释放。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1842,
+        "lang": "zxx",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-14T15:04:06.000Z",
+        "display_text_range": [
+          0,
+          23
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "x.com/i/article/2088…",
+              "expanded_url": "https://x.com/i/article/2088262763327971328",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/fbjLdFGKez"
+            }
+          ]
+        },
+        "id_str": "2088280509474320693",
+        "text": "Article: Preparing GLM-5.3 for Open Release: A Responsible Path to Cyber Defense",
+        "user": {
+          "id_str": "1726486879456096256",
+          "name": "Z.ai",
+          "screen_name": "Zai_org",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1970775077181411328/W8XKaUIh_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2088280509474320693"
+          ],
+          "editable_until_msecs": "1786723446000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 41,
+        "news_action_type": "conversation",
+        "article": {
+          "cover_media": {
+            "id": "QXBpTWVkaWE6DAAFCgABHPsGeHzWAAAKAAIX9barZ1pwAAAA",
+            "media_info": {
+              "__typename": "ApiImage",
+              "original_img_height": 614,
+              "original_img_url": "https://pbs.twimg.com/media/HPsGeHzWAAAn45V.jpg",
+              "original_img_width": 1536
+            }
+          },
+          "id": "QXJ0aWNsZUVudGl0eToyMDg4MjYyNzYzMzI3OTcxMzI4",
+          "preview_text": "When GLM-5.2 helped Hugging Face investigate an incident in which an AI autonomously bypassed its own safeguards, it highlighted a broader shift. AI is becoming part of both cyber offense and cyber",
+          "rest_id": "2088262763327971328",
+          "title": "Preparing GLM-5.3 for Open Release: A Responsible Path to Cyber Defense"
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2088138697002668110",
       "url": "https://x.com/elonmusk/status/2088138697002668110",
       "label": "xAI",
@@ -2465,6 +2992,1392 @@
         "news_action_type": "conversation",
         "isEdited": false,
         "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2087996496088297746",
+      "url": "https://x.com/OpenAI/status/2087996496088297746",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-08-18T07:04:06.027195+00:00",
+      "translation_zh": "ChatGPT 现在可以记住你电脑上各应用与网站中的活动。通过桌面端 App 的 Computer History 功能,后续交互更加个性化,无需反复解释背景。面向 Pro、Business 和 Enterprise 用户全球推出,可在设置 → 集成中开启。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 12131,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-13T20:15:32.000Z",
+        "display_text_range": [
+          0,
+          201
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/WHZPxPp31R",
+              "expanded_url": "https://x.com/OpenAI/status/2087996496088297746/video/1",
+              "indices": [
+                202,
+                225
+              ],
+              "url": "https://t.co/WHZPxPp31R"
+            }
+          ]
+        },
+        "id_str": "2087996496088297746",
+        "text": "ChatGPT can now remember your activity across the apps and websites on your computer.\n\nWith Computer History in the desktop app, future interactions feel more personalized and require less explanation. https://t.co/WHZPxPp31R",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2087996496088297746"
+          ],
+          "editable_until_msecs": "1786655732000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/WHZPxPp31R",
+            "expanded_url": "https://x.com/OpenAI/status/2087996496088297746/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              202,
+              225
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2087996446595485696/img/H3Zozzo8XjGuIawW.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 2160,
+              "width": 3840
+            },
+            "sizes": {
+              "large": {
+                "h": 1152,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/WHZPxPp31R",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 28309,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2087996446595485696/pl/4S8439KNQ7NZCBkB.m3u8?v=cfc"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/480x270/871RFOdrnuQRxX_B.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/640x360/b1fF1zJUW0jksb52.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/1280x720/4Ck-nlL3jUGOiHoc.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/1920x1080/NTqQ8wAEWhbbFm6g.mp4"
+                },
+                {
+                  "bitrate": 25128000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/3840x2160/2iL13PIzQoVpntqE.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 28309,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2087996446595485696/img/H3Zozzo8XjGuIawW.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2087996446595485696/pl/4S8439KNQ7NZCBkB.m3u8?v=cfc"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/480x270/871RFOdrnuQRxX_B.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/640x360/b1fF1zJUW0jksb52.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/1280x720/4Ck-nlL3jUGOiHoc.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/1920x1080/NTqQ8wAEWhbbFm6g.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/3840x2160/2iL13PIzQoVpntqE.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2087996496088297746"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 784,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2087948366294515977",
+      "url": "https://x.com/GoogleDeepMind/status/2087948366294515977",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-08-18T07:04:06.027195+00:00",
+      "translation_zh": "Gemini 3.7 Flash 发布。在编程、知识工作与 Web 开发方面更强:调试与 issue 解决等编码任务显著提升,更少提示即可设计出功能更完整的网页与应用,真实业务工作流中的推理与准确性同步改进。已在 Antigravity、AI Studio 与 Android Studio 中可用。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 5064,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-13T17:04:17.000Z",
+        "display_text_range": [
+          0,
+          92
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/Yzc5ViW5Di",
+              "expanded_url": "https://x.com/GoogleDeepMind/status/2087948366294515977/photo/1",
+              "indices": [
+                92,
+                115
+              ],
+              "url": "https://t.co/Yzc5ViW5Di"
+            }
+          ]
+        },
+        "id_str": "2087948366294515977",
+        "text": "Gemini 3.7 Flash is here.\n\nIt’s stronger for coding, knowledge work, and web development. 🧵 https://t.co/Yzc5ViW5Di",
+        "user": {
+          "id_str": "4783690002",
+          "name": "Google DeepMind",
+          "screen_name": "GoogleDeepMind",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2087948366294515977"
+          ],
+          "editable_until_msecs": "1786644257000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/Yzc5ViW5Di",
+            "expanded_url": "https://x.com/GoogleDeepMind/status/2087948366294515977/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              92,
+              115
+            ],
+            "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/HPnfo0UWcAAnojJ.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 960,
+              "width": 960
+            },
+            "sizes": {
+              "large": {
+                "h": 960,
+                "resize": "fit",
+                "w": 960
+              },
+              "medium": {
+                "h": 960,
+                "resize": "fit",
+                "w": 960
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "animated_gif",
+            "url": "https://t.co/Yzc5ViW5Di",
+            "video_info": {
+              "aspect_ratio": [
+                1,
+                1
+              ],
+              "variants": [
+                {
+                  "bitrate": 0,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/tweet_video/HPnfo0UWcAAnojJ.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            1,
+            1
+          ],
+          "contentType": "gif",
+          "durationMs": 0,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/tweet_video_thumb/HPnfo0UWcAAnojJ.jpg",
+          "variants": [
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/tweet_video/HPnfo0UWcAAnojJ.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2087948366294515977"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 346,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDg3OTQ4MzY2MjM5OTkzODU2"
+        }
+      }
+    },
+    {
+      "id": "2087947721936359705",
+      "url": "https://x.com/OpenAI/status/2087947721936359705",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-08-18T07:04:06.027195+00:00",
+      "translation_zh": "OpenAI 预览 Ultrafast 模式:GPT-5.6 Sol 速度最高提升 14 倍,由 Cerebras 驱动,生成速度高达每秒 750 token。首批面向 OpenAI API 特定客户开放,将逐步扩展至更多企业——适用于实时语音、客服、编程、金融研究与安全响应等场景。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 14847,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-13T17:01:43.000Z",
+        "display_text_range": [
+          0,
+          187
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/a5dleofiDJ",
+              "expanded_url": "https://x.com/OpenAI/status/2087947721936359705/video/1",
+              "indices": [
+                188,
+                211
+              ],
+              "url": "https://t.co/a5dleofiDJ"
+            }
+          ]
+        },
+        "id_str": "2087947721936359705",
+        "text": "Previewing Ultrafast mode: GPT-5.6 Sol at up to 14x the speed.\n\nLaunching first in the OpenAI API to a select group of customers with expanded access to more businesses as capacity grows. https://t.co/a5dleofiDJ",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2087947721936359705"
+          ],
+          "editable_until_msecs": "1786644103000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/a5dleofiDJ",
+            "expanded_url": "https://x.com/OpenAI/status/2087947721936359705/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              188,
+              211
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2087946208128237568/img/wHXN7OyTUGjd05DS.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 2160,
+              "width": 3840
+            },
+            "sizes": {
+              "large": {
+                "h": 1152,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/a5dleofiDJ",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 44000,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2087946208128237568/pl/61zprk9PC8JjAHQf.m3u8"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2087946208128237568/vid/avc1/480x270/UNKeP6TxPHK32uPX.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2087946208128237568/vid/avc1/640x360/N8Mm-rHAUr8lxCbk.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2087946208128237568/vid/avc1/1280x720/XoserplY-wLLsZhN.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2087946208128237568/vid/avc1/1920x1080/UIM68ivDzw4jJhfH.mp4"
+                },
+                {
+                  "bitrate": 25128000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2087946208128237568/vid/avc1/3840x2160/f5AzYlplkSGF4UxX.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 44000,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2087946208128237568/img/wHXN7OyTUGjd05DS.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2087946208128237568/pl/61zprk9PC8JjAHQf.m3u8"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2087946208128237568/vid/avc1/480x270/UNKeP6TxPHK32uPX.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2087946208128237568/vid/avc1/640x360/N8Mm-rHAUr8lxCbk.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2087946208128237568/vid/avc1/1280x720/XoserplY-wLLsZhN.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2087946208128237568/vid/avc1/1920x1080/UIM68ivDzw4jJhfH.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2087946208128237568/vid/avc1/3840x2160/f5AzYlplkSGF4UxX.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2087947721936359705"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 762,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2087887408440164663",
+      "url": "https://x.com/deepseek_ai/status/2087887408440164663",
+      "label": "DeepSeek",
+      "color": "#0EA5E9",
+      "fetched_at": "2026-08-18T07:04:06.027195+00:00",
+      "translation_zh": "🧩 DeepSeek Harness v0.1 开发者预览版上线!基于 Cordis 元框架构建,核心理念:一切皆插件。模型、工具、技能、会话、沙箱、文件系统、循环、编排、UI 全部以插件形式实现,可自由组合、替换与扩展。代码库以 MIT 协议开源。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 19851,
+        "lang": "en",
+        "created_at": "2026-08-13T13:02:03.000Z",
+        "display_text_range": [
+          0,
+          278
+        ],
+        "entities": {},
+        "id_str": "2087887408440164663",
+        "text": "🧩 DeepSeek Harness v0.1 is now available in Developer Preview!\n\n🔹 We’re opening it up to developers building agent harnesses worldwide and open-sourcing the codebase in MIT license.\n🔹 Powered by the Cordis meta-framework, DeepSeek Harness is an agent harness built around one",
+        "user": {
+          "id_str": "1714580962569588736",
+          "name": "DeepSeek",
+          "screen_name": "deepseek_ai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1717417613775757312/Uk1zNOj4_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2087887408440164663"
+          ],
+          "editable_until_msecs": "1786629723000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 778,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/2YWSvJHhKA",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2088909994653515776/5vODJ5Iz?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "height": 200,
+                "url": "https://pbs.twimg.com/card_img/2088909994653515776/5vODJ5Iz?format=jpg&name=400x400",
+                "width": 400
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "DeepSeek Harness: Everything is a Plugin. Contribute to deepseek-ai/deepseek-harness development by creating an account on GitHub.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "github.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "height": 300,
+                "url": "https://pbs.twimg.com/card_img/2088909994653515776/5vODJ5Iz?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2088909994653515776/5vODJ5Iz?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "height": 600,
+                "url": "https://pbs.twimg.com/card_img/2088909994653515776/5vODJ5Iz?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "13334762",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2088909994653515776/5vODJ5Iz?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2088909994653515776/5vODJ5Iz?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "height": 72,
+                "url": "https://pbs.twimg.com/card_img/2088909994653515776/5vODJ5Iz?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "height": 600,
+                "url": "https://pbs.twimg.com/card_img/2088909994653515776/5vODJ5Iz?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "height": 600,
+                "url": "https://pbs.twimg.com/card_img/2088909994653515776/5vODJ5Iz?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "DeepSeek Harness: Everything is a Plugin. Contribute to deepseek-ai/deepseek-harness development by creating an account on GitHub.",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "github.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2088909994653515776/5vODJ5Iz?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "DeepSeek Harness: Everything is a Plugin. Contribute to deepseek-ai/deepseek-harness development by creating an account on GitHub.",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 92.21,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 255,
+                      "red": 255
+                    }
+                  },
+                  {
+                    "percentage": 4.85,
+                    "rgb": {
+                      "blue": 198,
+                      "green": 120,
+                      "red": 49
+                    }
+                  },
+                  {
+                    "percentage": 1.48,
+                    "rgb": {
+                      "blue": 128,
+                      "green": 124,
+                      "red": 121
+                    }
+                  },
+                  {
+                    "percentage": 0.99,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 112,
+                      "red": 83
+                    }
+                  },
+                  {
+                    "percentage": 0.31,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 158,
+                      "red": 140
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "GitHub - deepseek-ai/deepseek-harness: DeepSeek Harness: Everything is a Plugin.",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 92.21,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 255,
+                      "red": 255
+                    }
+                  },
+                  {
+                    "percentage": 4.85,
+                    "rgb": {
+                      "blue": 198,
+                      "green": 120,
+                      "red": 49
+                    }
+                  },
+                  {
+                    "percentage": 1.48,
+                    "rgb": {
+                      "blue": 128,
+                      "green": 124,
+                      "red": 121
+                    }
+                  },
+                  {
+                    "percentage": 0.99,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 112,
+                      "red": 83
+                    }
+                  },
+                  {
+                    "percentage": 0.31,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 158,
+                      "red": 140
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "height": 600,
+                "url": "https://pbs.twimg.com/card_img/2088909994653515776/5vODJ5Iz?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2088909994653515776/5vODJ5Iz?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 92.21,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 255,
+                      "red": 255
+                    }
+                  },
+                  {
+                    "percentage": 4.85,
+                    "rgb": {
+                      "blue": 198,
+                      "green": 120,
+                      "red": 49
+                    }
+                  },
+                  {
+                    "percentage": 1.48,
+                    "rgb": {
+                      "blue": 128,
+                      "green": 124,
+                      "red": 121
+                    }
+                  },
+                  {
+                    "percentage": 0.99,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 112,
+                      "red": 83
+                    }
+                  },
+                  {
+                    "percentage": 0.31,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 158,
+                      "red": 140
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "height": 600,
+                "url": "https://pbs.twimg.com/card_img/2088909994653515776/5vODJ5Iz?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/2YWSvJHhKA",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "height": 600,
+                "url": "https://pbs.twimg.com/card_img/2088909994653515776/5vODJ5Iz?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDg3ODg3NDA4MjcyNDU3NzI4"
+        }
+      }
+    },
+    {
+      "id": "2087864589895798968",
+      "url": "https://x.com/deepseek_ai/status/2087864589895798968",
+      "label": "DeepSeek",
+      "color": "#0EA5E9",
+      "fetched_at": "2026-08-18T07:04:06.027195+00:00",
+      "translation_zh": "API 定价更新 💰 随着 V4 系列发布,API 定价迎来更新,并引入高峰/低谷时段费率——低谷时段费率比高峰低 50%,支持更灵活的工作负载调度。新定价于 2026 年 8 月 16 日 16:00 UTC 生效。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1779,
+        "in_reply_to_screen_name": "deepseek_ai",
+        "in_reply_to_status_id_str": "2087864585504305397",
+        "in_reply_to_user_id_str": "1714580962569588736",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-13T11:31:23.000Z",
+        "display_text_range": [
+          0,
+          265
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/l5CFrMB5Ev",
+              "expanded_url": "https://x.com/deepseek_ai/status/2087864589895798968/photo/1",
+              "indices": [
+                263,
+                286
+              ],
+              "url": "https://t.co/l5CFrMB5Ev"
+            }
+          ]
+        },
+        "id_str": "2087864589895798968",
+        "text": "API pricing update 💰\n\nWith the V4 lineup release, we’re updating our API pricing and introducing peak and off-peak rates. Off-peak rates are 50% lower than peak, enabling more flexible workload scheduling. 📉\n\nNew pricing takes effect at 16:00 UTC, Aug 16, 2026 🕒 https://t.co/l5CFrMB5Ev",
+        "user": {
+          "id_str": "1714580962569588736",
+          "name": "DeepSeek",
+          "screen_name": "deepseek_ai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1717417613775757312/Uk1zNOj4_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2087864589895798968"
+          ],
+          "editable_until_msecs": "1786624283000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/l5CFrMB5Ev",
+            "expanded_url": "https://x.com/deepseek_ai/status/2087864589895798968/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              263,
+              286
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HPmOLZabYAEo2CA.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 1350,
+                  "w": 2411,
+                  "x": 39,
+                  "y": 0
+                },
+                {
+                  "h": 1350,
+                  "w": 1350,
+                  "x": 856,
+                  "y": 0
+                },
+                {
+                  "h": 1350,
+                  "w": 1184,
+                  "x": 939,
+                  "y": 0
+                },
+                {
+                  "h": 1350,
+                  "w": 675,
+                  "x": 1194,
+                  "y": 0
+                },
+                {
+                  "h": 1350,
+                  "w": 2450,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1350,
+              "width": 2450
+            },
+            "sizes": {
+              "large": {
+                "h": 1128,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 661,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 375,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/l5CFrMB5Ev"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 1350,
+                "w": 2411,
+                "x": 39,
+                "y": 0
+              },
+              {
+                "h": 1350,
+                "w": 1350,
+                "x": 856,
+                "y": 0
+              },
+              {
+                "h": 1350,
+                "w": 1184,
+                "x": 939,
+                "y": 0
+              },
+              {
+                "h": 1350,
+                "w": 675,
+                "x": 1194,
+                "y": 0
+              },
+              {
+                "h": 1350,
+                "w": 2450,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/deepseek_ai/status/2087864589895798968/photo/1",
+            "url": "https://pbs.twimg.com/media/HPmOLZabYAEo2CA.jpg",
+            "width": 2450,
+            "height": 1350
+          }
+        ],
+        "conversation_count": 197,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 15313,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 603,
+          "retweet_count": 1804,
+          "created_at": "2026-08-13T11:31:22.000Z",
+          "display_text_range": [
+            0,
+            283
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/ZsGbUpiu1T",
+                "expanded_url": "https://x.com/deepseek_ai/status/2087864585504305397/photo/1",
+                "indices": [
+                  280,
+                  303
+                ],
+                "url": "https://t.co/ZsGbUpiu1T"
+              }
+            ]
+          },
+          "id_str": "2087864585504305397",
+          "text": "We’re launching DeepSeek-V4-Pro today! 🚀\n\n🔷 Major Agent upgrades with strong production gains!\n🔷 Flexible reasoning effort for V4-Pro &amp; V4-Flash: low for simple tasks, high for daily Agent workflows, max for complex tasks.\n🔷 Native OpenAI Responses API support, optimized for https://t.co/ZsGbUpiu1T",
+          "user": {
+            "id_str": "1714580962569588736",
+            "name": "DeepSeek",
+            "screen_name": "deepseek_ai",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1717417613775757312/Uk1zNOj4_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2087864585504305397"
+            ],
+            "editable_until_msecs": "1786624282000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/ZsGbUpiu1T",
+              "expanded_url": "https://x.com/deepseek_ai/status/2087864585504305397/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                280,
+                303
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HPmOJZlbUAAOgVt.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 1241,
+                    "w": 2216,
+                    "x": 588,
+                    "y": 0
+                  },
+                  {
+                    "h": 1241,
+                    "w": 1241,
+                    "x": 1407,
+                    "y": 0
+                  },
+                  {
+                    "h": 1241,
+                    "w": 1089,
+                    "x": 1483,
+                    "y": 0
+                  },
+                  {
+                    "h": 1241,
+                    "w": 621,
+                    "x": 1717,
+                    "y": 0
+                  },
+                  {
+                    "h": 1241,
+                    "w": 2804,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 1241,
+                "width": 2804
+              },
+              "sizes": {
+                "large": {
+                  "h": 906,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 531,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 301,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/ZsGbUpiu1T"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 1241,
+                  "w": 2216,
+                  "x": 588,
+                  "y": 0
+                },
+                {
+                  "h": 1241,
+                  "w": 1241,
+                  "x": 1407,
+                  "y": 0
+                },
+                {
+                  "h": 1241,
+                  "w": 1089,
+                  "x": 1483,
+                  "y": 0
+                },
+                {
+                  "h": 1241,
+                  "w": 621,
+                  "x": 1717,
+                  "y": 0
+                },
+                {
+                  "h": 1241,
+                  "w": 2804,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/deepseek_ai/status/2087864585504305397/photo/1",
+              "url": "https://pbs.twimg.com/media/HPmOJZlbUAAOgVt.jpg",
+              "width": 2804,
+              "height": 1241
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDg3ODY0NTg5ODM3MDI5Mzc2"
+        }
+      }
+    },
+    {
+      "id": "2087864585504305397",
+      "url": "https://x.com/deepseek_ai/status/2087864585504305397",
+      "label": "DeepSeek",
+      "color": "#0EA5E9",
+      "fetched_at": "2026-08-18T07:04:06.027195+00:00",
+      "translation_zh": "DeepSeek-V4-Pro 今日发布!🚀 🔷 Agent 能力大幅升级,生产环境收益显著!🔷 V4-Pro 与 V4-Flash 支持灵活推理强度:简单任务用 low,日常 Agent 工作流用 high,复杂任务用 max。🔷 原生支持 OpenAI Responses API,针对 Codex 一键配置优化。V4-Pro 现已在 App/网页端上线(Expert Mode),API 同步开放。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 15313,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-13T11:31:22.000Z",
+        "display_text_range": [
+          0,
+          283
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/ZsGbUpiu1T",
+              "expanded_url": "https://x.com/deepseek_ai/status/2087864585504305397/photo/1",
+              "indices": [
+                280,
+                303
+              ],
+              "url": "https://t.co/ZsGbUpiu1T"
+            }
+          ]
+        },
+        "id_str": "2087864585504305397",
+        "text": "We’re launching DeepSeek-V4-Pro today! 🚀\n\n🔷 Major Agent upgrades with strong production gains!\n🔷 Flexible reasoning effort for V4-Pro &amp; V4-Flash: low for simple tasks, high for daily Agent workflows, max for complex tasks.\n🔷 Native OpenAI Responses API support, optimized for https://t.co/ZsGbUpiu1T",
+        "user": {
+          "id_str": "1714580962569588736",
+          "name": "DeepSeek",
+          "screen_name": "deepseek_ai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1717417613775757312/Uk1zNOj4_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2087864585504305397"
+          ],
+          "editable_until_msecs": "1786624282000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/ZsGbUpiu1T",
+            "expanded_url": "https://x.com/deepseek_ai/status/2087864585504305397/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              280,
+              303
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HPmOJZlbUAAOgVt.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 1241,
+                  "w": 2216,
+                  "x": 588,
+                  "y": 0
+                },
+                {
+                  "h": 1241,
+                  "w": 1241,
+                  "x": 1407,
+                  "y": 0
+                },
+                {
+                  "h": 1241,
+                  "w": 1089,
+                  "x": 1483,
+                  "y": 0
+                },
+                {
+                  "h": 1241,
+                  "w": 621,
+                  "x": 1717,
+                  "y": 0
+                },
+                {
+                  "h": 1241,
+                  "w": 2804,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1241,
+              "width": 2804
+            },
+            "sizes": {
+              "large": {
+                "h": 906,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 531,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 301,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/ZsGbUpiu1T"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 1241,
+                "w": 2216,
+                "x": 588,
+                "y": 0
+              },
+              {
+                "h": 1241,
+                "w": 1241,
+                "x": 1407,
+                "y": 0
+              },
+              {
+                "h": 1241,
+                "w": 1089,
+                "x": 1483,
+                "y": 0
+              },
+              {
+                "h": 1241,
+                "w": 621,
+                "x": 1717,
+                "y": 0
+              },
+              {
+                "h": 1241,
+                "w": 2804,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/deepseek_ai/status/2087864585504305397/photo/1",
+            "url": "https://pbs.twimg.com/media/HPmOJZlbUAAOgVt.jpg",
+            "width": 2804,
+            "height": 1241
+          }
+        ],
+        "conversation_count": 603,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDg3ODY0NTg1NDIwNDY4MjI0"
+        }
       }
     },
     {
