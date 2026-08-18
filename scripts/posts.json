@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-19",
+    "slug": "your-agent-believes-everything-it-reads",
+    "title_en": "Your Agent Believes Everything It Reads",
+    "title_zh": "你的智能体，相信它读到的一切",
+    "read_time": 9,
+    "excerpt_en": "Every tool result your agent fetches is untrusted input from a foreign author, yet it enters the same token stream as your system prompt — with the same authority. Tool-result injection is not a prompt bug to patch with one more warning line. It is an architecture problem: make belief cheap, action expensive, and never let the model be the only check between the internet and the write path.",
+    "excerpt_zh": "智能体抓取的每一个工具结果，都是一个来自陌生作者的不受信输入，却和你的系统 prompt 进入同一股 token 流——带着同样的权威。工具结果注入，不是一个多加一行警告就能补掉的 prompt bug。它是一个架构问题：让相信便宜，让行动昂贵，绝不让模型成为互联网与写入路径之间唯一的检查。"
+  },
+  {
     "date": "2026-08-12",
     "slug": "the-cache-is-not-an-optimization",
     "title_en": "The Cache Is Not an Optimization",

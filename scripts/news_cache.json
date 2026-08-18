@@ -1,6 +1,922 @@
 {
   "tweets": [
     {
+      "id": "2089842387845804246",
+      "url": "https://x.com/AnthropicAI/status/2089842387845804246",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-08-18T23:26:16.171200+00:00",
+      "translation_zh": "许多药物通过与体内特定靶点结合来阻断或改变其作用。Anthropic 测试 Claude 能否从零开始设计全新蛋白质结合器：在人类专家撰写的蛋白质设计 prompt 下，Claude 自主完成了 15 个靶点中 14 个的结合器设计，随后由 Adaptyv Bio 与 Twist Bioscience 独立构建并实测——根据不同设置，22% 至 35% 的设计成功结合，部分最强设计的结合强度数倍于已发表的最佳从头设计结合器（该领域当前典型成功率仅为 10%–15%）。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1771,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-18T22:30:27.000Z",
+        "display_text_range": [
+          0,
+          278
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/CGCNTNaKBq",
+              "expanded_url": "https://x.com/AnthropicAI/status/2089842387845804246/video/1",
+              "indices": [
+                279,
+                302
+              ],
+              "url": "https://t.co/CGCNTNaKBq"
+            }
+          ]
+        },
+        "id_str": "2089842387845804246",
+        "text": "Many drugs work by binding to a specific target in the body and blocking or changing what it does. An important first step in the drug development process is designing a molecule that can bind tightly to its target. Traditionally, that's meant weeks or months of expert work per https://t.co/CGCNTNaKBq",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2089842387845804246"
+          ],
+          "editable_until_msecs": "1787095827000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/CGCNTNaKBq",
+            "expanded_url": "https://x.com/AnthropicAI/status/2089842387845804246/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              279,
+              302
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2089839233309773824/img/4ZiaAp-kMK30-vJU.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 720,
+              "width": 1280
+            },
+            "sizes": {
+              "large": {
+                "h": 720,
+                "resize": "fit",
+                "w": 1280
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/CGCNTNaKBq",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 11000,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2089839233309773824/pl/V1dUkkT31AqSM8gd.m3u8"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2089839233309773824/vid/avc1/480x270/d4dZen0fv8dEdoCG.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2089839233309773824/vid/avc1/640x360/4RMMzM3jX4muCZfc.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2089839233309773824/vid/avc1/1280x720/nHWgl750hpZfMNMd.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 11000,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2089839233309773824/img/4ZiaAp-kMK30-vJU.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2089839233309773824/pl/V1dUkkT31AqSM8gd.m3u8"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2089839233309773824/vid/avc1/480x270/d4dZen0fv8dEdoCG.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2089839233309773824/vid/avc1/640x360/4RMMzM3jX4muCZfc.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2089839233309773824/vid/avc1/1280x720/nHWgl750hpZfMNMd.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2089842387845804246"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 116,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDg5ODQyMzg3NzM2Nzg0ODk3"
+        }
+      }
+    },
+    {
+      "id": "2089816129011098048",
+      "url": "https://x.com/Zai_org/status/2089816129011098048",
+      "label": "GLM",
+      "color": "#7C3AED",
+      "fetched_at": "2026-08-18T23:26:16.171200+00:00",
+      "translation_zh": "GLM-5.3 API 现已上线。专为编码、防御性网络安全与长程智能体任务而构建，定价与 GLM-5.2 相同，可通过官方 API 及合作伙伴模型网关使用。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1599,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-18T20:46:06.000Z",
+        "display_text_range": [
+          0,
+          228
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/yBzgPwTFxL",
+              "expanded_url": "https://x.com/Zai_org/status/2089816129011098048/photo/1",
+              "indices": [
+                229,
+                252
+              ],
+              "url": "https://t.co/yBzgPwTFxL"
+            }
+          ],
+          "urls": [
+            {
+              "display_url": "docs.z.ai/guides/llm/glm…",
+              "expanded_url": "https://docs.z.ai/guides/llm/glm-5.3",
+              "indices": [
+                205,
+                228
+              ],
+              "url": "https://t.co/3Dpy1tOdaM"
+            }
+          ]
+        },
+        "id_str": "2089816129011098048",
+        "text": "GLM-5.3 API is now live.\n\n- Built for coding, defensive cybersecurity, and long-horizon agentic tasks\n- Priced the same as GLM-5.2\n- Available via the official API and partner model gateways\n\nGet started: https://t.co/3Dpy1tOdaM https://t.co/yBzgPwTFxL",
+        "user": {
+          "id_str": "1726486879456096256",
+          "name": "Z.ai",
+          "screen_name": "Zai_org",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1970775077181411328/W8XKaUIh_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2089816129011098048"
+          ],
+          "editable_until_msecs": "1787089566000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/yBzgPwTFxL",
+            "expanded_url": "https://x.com/Zai_org/status/2089816129011098048/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              229,
+              252
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HQCEnqnW0AAcStP.png",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 2050,
+                  "w": 3661,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2427,
+                  "w": 2427,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2427,
+                  "w": 2129,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2427,
+                  "w": 1214,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2427,
+                  "w": 3661,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 2427,
+              "width": 3661
+            },
+            "sizes": {
+              "large": {
+                "h": 1358,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 796,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 451,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/yBzgPwTFxL"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 2050,
+                "w": 3661,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2427,
+                "w": 2427,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2427,
+                "w": 2129,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2427,
+                "w": 1214,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2427,
+                "w": 3661,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Zai_org/status/2089816129011098048/photo/1",
+            "url": "https://pbs.twimg.com/media/HQCEnqnW0AAcStP.png",
+            "width": 3661,
+            "height": 2427
+          }
+        ],
+        "conversation_count": 97,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2089806039088517356",
+      "url": "https://x.com/claudeai/status/2089806039088517356",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-08-18T23:26:16.171200+00:00",
+      "translation_zh": "Claude 现在可以在 Gmail 中发送邮件、在 Google Drive 中管理文件。让 Claude 回复邮件串，它会起草并发送回复；何时需要你的批准，由你掌控。所有付费计划均可从连接器菜单中连接 Gmail 或 Google Drive 试用。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 4239,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-18T20:06:01.000Z",
+        "display_text_range": [
+          0,
+          275
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/cFZEjh3MgB",
+              "expanded_url": "https://x.com/claudeai/status/2089806039088517356/photo/1",
+              "indices": [
+                276,
+                299
+              ],
+              "url": "https://t.co/cFZEjh3MgB"
+            }
+          ]
+        },
+        "id_str": "2089806039088517356",
+        "text": "Claude can now send emails in Gmail and manage files in Google Drive.\n\nAsk Claude to reply to a thread, and it drafts and sends the response. You control when it needs your approval.\n\nConnect Gmail or Google Drive from the connectors menu to try. Available on all paid plans. https://t.co/cFZEjh3MgB",
+        "user": {
+          "id_str": "1943306828697550848",
+          "name": "Claude",
+          "screen_name": "claudeai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2089806039088517356"
+          ],
+          "editable_until_msecs": "1787087161000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/cFZEjh3MgB",
+            "expanded_url": "https://x.com/claudeai/status/2089806039088517356/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              276,
+              299
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HQBxdhmXAAAEjuD.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 2150,
+                  "w": 3840,
+                  "x": 0,
+                  "y": 10
+                },
+                {
+                  "h": 2160,
+                  "w": 2160,
+                  "x": 1128,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 1895,
+                  "x": 1261,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 1080,
+                  "x": 1668,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 3840,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 2160,
+              "width": 3840
+            },
+            "sizes": {
+              "large": {
+                "h": 1152,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/cFZEjh3MgB"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 2150,
+                "w": 3840,
+                "x": 0,
+                "y": 10
+              },
+              {
+                "h": 2160,
+                "w": 2160,
+                "x": 1128,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 1895,
+                "x": 1261,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 1080,
+                "x": 1668,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 3840,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/claudeai/status/2089806039088517356/photo/1",
+            "url": "https://pbs.twimg.com/media/HQBxdhmXAAAEjuD.jpg",
+            "width": 3840,
+            "height": 2160
+          }
+        ],
+        "conversation_count": 257,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2089777845187031262",
+      "url": "https://x.com/OpenAI/status/2089777845187031262",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-08-18T23:26:16.171200+00:00",
+      "translation_zh": "随着模型能力增强，内部开发与测试的风险也在增长。OpenAI 宣布：在加固并红队演练研究环境、扩大监控覆盖期间，已暂停其最新待部署模型的强化学习（RL）训练两周；最大规模的边界 RL 训练仍处于暂停状态，待小规模训练与评估验证这些保障措施、积累更多对齐证据后恢复。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 3934,
+        "lang": "en",
+        "created_at": "2026-08-18T18:13:59.000Z",
+        "display_text_range": [
+          0,
+          271
+        ],
+        "entities": {},
+        "id_str": "2089777845187031262",
+        "text": "As models become more capable, the risks associated with developing and testing them internally also grow.\n\nWe temporarily paused reinforcement learning (RL) training on our latest models intended for deployment for two weeks while we hardened and red-teamed our research",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2089777845187031262"
+          ],
+          "editable_until_msecs": "1787080439000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 447,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/ecbMMmVoox",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Pacing model development in an era of cyber-critical capabilities",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2089776056009891840/wg5g1Wa0?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Pacing model development in an era of cyber-critical capabilities",
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2089776056009891840/wg5g1Wa0?format=jpg&name=280x150",
+                "width": 267
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "OpenAI is strengthening monitoring, alignment, and security for frontier AI models. See how new safeguards are guiding the pace of model development.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Pacing model development in an era of cyber-critical capabilities",
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2089776056009891840/wg5g1Wa0?format=jpg&name=800x320_1",
+                "width": 569
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Pacing model development in an era of cyber-critical capabilities",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2089776056009891840/wg5g1Wa0?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Pacing model development in an era of cyber-critical capabilities",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2089776056009891840/wg5g1Wa0?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "4398626122",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Pacing model development in an era of cyber-critical capabilities",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2089776056009891840/wg5g1Wa0?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Pacing model development in an era of cyber-critical capabilities",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2089776056009891840/wg5g1Wa0?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Pacing model development in an era of cyber-critical capabilities",
+                "height": 81,
+                "url": "https://pbs.twimg.com/card_img/2089776056009891840/wg5g1Wa0?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Pacing model development in an era of cyber-critical capabilities",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2089776056009891840/wg5g1Wa0?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Pacing model development in an era of cyber-critical capabilities",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2089776056009891840/wg5g1Wa0?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Pacing model development in an era of cyber-critical capabilities",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Pacing model development in an era of cyber-critical capabilities",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2089776056009891840/wg5g1Wa0?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Pacing model development in an era of cyber-critical capabilities",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 60.42,
+                    "rgb": {
+                      "blue": 239,
+                      "green": 175,
+                      "red": 92
+                    }
+                  },
+                  {
+                    "percentage": 14.27,
+                    "rgb": {
+                      "blue": 239,
+                      "green": 147,
+                      "red": 88
+                    }
+                  },
+                  {
+                    "percentage": 7.87,
+                    "rgb": {
+                      "blue": 239,
+                      "green": 148,
+                      "red": 215
+                    }
+                  },
+                  {
+                    "percentage": 6.98,
+                    "rgb": {
+                      "blue": 249,
+                      "green": 225,
+                      "red": 200
+                    }
+                  },
+                  {
+                    "percentage": 4.35,
+                    "rgb": {
+                      "blue": 239,
+                      "green": 182,
+                      "red": 93
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Pacing model development in an era of cyber-critical capabilities",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 60.42,
+                    "rgb": {
+                      "blue": 239,
+                      "green": 175,
+                      "red": 92
+                    }
+                  },
+                  {
+                    "percentage": 14.27,
+                    "rgb": {
+                      "blue": 239,
+                      "green": 147,
+                      "red": 88
+                    }
+                  },
+                  {
+                    "percentage": 7.87,
+                    "rgb": {
+                      "blue": 239,
+                      "green": 148,
+                      "red": 215
+                    }
+                  },
+                  {
+                    "percentage": 6.98,
+                    "rgb": {
+                      "blue": 249,
+                      "green": 225,
+                      "red": 200
+                    }
+                  },
+                  {
+                    "percentage": 4.35,
+                    "rgb": {
+                      "blue": 239,
+                      "green": 182,
+                      "red": 93
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Pacing model development in an era of cyber-critical capabilities",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2089776056009891840/wg5g1Wa0?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Pacing model development in an era of cyber-critical capabilities",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2089776056009891840/wg5g1Wa0?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 60.42,
+                    "rgb": {
+                      "blue": 239,
+                      "green": 175,
+                      "red": 92
+                    }
+                  },
+                  {
+                    "percentage": 14.27,
+                    "rgb": {
+                      "blue": 239,
+                      "green": 147,
+                      "red": 88
+                    }
+                  },
+                  {
+                    "percentage": 7.87,
+                    "rgb": {
+                      "blue": 239,
+                      "green": 148,
+                      "red": 215
+                    }
+                  },
+                  {
+                    "percentage": 6.98,
+                    "rgb": {
+                      "blue": 249,
+                      "green": 225,
+                      "red": 200
+                    }
+                  },
+                  {
+                    "percentage": 4.35,
+                    "rgb": {
+                      "blue": 239,
+                      "green": 182,
+                      "red": 93
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Pacing model development in an era of cyber-critical capabilities",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2089776056009891840/wg5g1Wa0?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/ecbMMmVoox",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Pacing model development in an era of cyber-critical capabilities",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2089776056009891840/wg5g1Wa0?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDg5Nzc3ODQ1MDUyNzk2OTI4"
+        }
+      }
+    },
+    {
       "id": "2089597078385446969",
       "url": "https://x.com/Alibaba_Qwen/status/2089597078385446969",
       "label": "Qwen",
