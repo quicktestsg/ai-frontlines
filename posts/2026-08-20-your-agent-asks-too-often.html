@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Your Agent Asks Too Often — AI Frontlines</title>
+<meta content="An agent that asks before every action is not safe — it is a subscription to interruption. Every approval request spends the scarcest resource in the system, and attention is a budget that depletes, not a service that scales. The teams that ship trustworthy autonomy approve policies instead of instances, route the reversible to rules and only the irreversible to humans, and engineer silence to mean the safe branch." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=19" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="August 20, 2026" data-zh="2026年8月20日">August 20, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Your Agent Asks Too Often" data-zh="你的智能体，请示得太频繁了">Your Agent Asks Too Often</h1>
+<p class="post-header-deck" data-en="An agent that asks before every action is not safe — it is a subscription to interruption. Every approval request spends the scarcest resource in the system, and attention is a budget that depletes, not a service that scales. The teams that ship trustworthy autonomy are not the ones that ask more. They are the ones that ask better: approving policies instead of instances, routing the reversible to rules and only the irreversible to humans, and engineering silence to mean the safe branch." data-zh="一个在每个动作之前都要请示的智能体，并不安全——它是一份「打断订阅」。每一道批准请求，花的都是系统里最稀缺的资源，而注意力是一个会耗尽的预算，不是一个能扩容的服务。能交付可信自主性的团队，不是问得更多的团队，而是问得更好的团队：批准策略而非实例，让可逆的动作走规则、只让不可逆的动作走向人，并用工程手段让沉默意味着安全的分支。">An agent that asks before every action is not safe — it is a subscription to interruption. Every approval request spends the scarcest resource in the system, and attention is a budget that depletes, not a service that scales.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a number every deployed agent has, and almost no team can state it: how many times, per completed task, the agent stopped and asked a human for permission. Not the accuracy. Not the latency. The interruption count. It is the number that decides whether the product feels like delegation or like babysitting — whether the user walks away and the work continues, or the user stays tethered to a queue of yes/no questions that arrives faster than it can be read. An agent that asks nothing is reckless. An agent that asks forty times per task is unused by the end of the week. Somewhere between those two numbers sits a budget, and like every budget, it must be spent deliberately — or it will be wasted invisibly." data-zh="每一个已上线的智能体，都有这样一个数字，而几乎没有团队能说出来：每完成一个任务，智能体停下来向人请示了多少次。不是准确率，不是延迟——是打断次数。正是这个数字，决定了产品体验究竟是「委托」还是「盯娃」——用户是能走开、让工作继续，还是被拴在一列比阅读速度更快的「是/否」问题队列前。一个什么都不问的智能体，是鲁莽的。一个每任务问四十次的智能体，到周末就没人用了。在这两个数字之间，坐着一份预算；而像所有预算一样，它必须被有意识地花掉——否则就会被无形地浪费。">There is a number every deployed agent has, and almost no team can state it: how many times, per completed task, the agent stopped and asked a human for permission. Not the accuracy. Not the latency. The interruption count. It is the number that decides whether the product feels like delegation or like babysitting — whether the user walks away and the work continues, or the user stays tethered to a queue of yes/no questions that arrives faster than it can be read.</p>
+<p data-en="Human attention does not scale. This is the constraint that every autonomy feature runs into, eventually, at full speed. Models get faster, tools get richer, and the queue of decisions an agent must make grows by the week — but the human on the other end still reads at the same speed, still context-switches at the same cost, still has the same half-hour of genuine scrutiny in them per day. Every approval request draws from that fixed pool. Most teams treat asking as free, because the cost lands on someone else's calendar. It is not free. It is the most expensive operation in the system, and it is billed in the only currency that cannot be manufactured more of." data-zh="人的注意力，不会扩容。这是每一个自主性功能最终都会全速撞上的约束。模型越来越快，工具越来越强，智能体需要做的决策队列每周都在变长——但另一端的人，阅读速度还是那么快，切换上下文的代价还是那么高，每天真正全神贯注的时间还是只有那半小时。每一道批准请求，都从这个固定的池子里舀水。大多数团队把「请示」当作免费的，因为成本落在了别人的日历上。它不免费。它是整个系统里最昂贵的操作，用一种唯一无法增产的货币结算。">Human attention does not scale. This is the constraint that every autonomy feature runs into, eventually, at full speed. Models get faster, tools get richer, and the queue of decisions an agent must make grows by the week — but the human on the other end still reads at the same speed, still context-switches at the same cost, still has the same half-hour of genuine scrutiny in them per day. Every approval request draws from that fixed pool. Most teams treat asking as free, because the cost lands on someone else's calendar. It is not free.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrT2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrT3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="WHERE EVERY DECISION GOES" data-zh="每一个决策的去向" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHERE EVERY DECISION GOES</text>
+<!-- left: the decision -->
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--text-tertiary)" stroke-width="1.5" width="130" x="25" y="116"></rect>
+<text data-en="the agent" data-zh="智能体" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" text-anchor="middle" x="90" y="134">the agent</text>
+<text data-en="wants to act" data-zh="要执行动作" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" text-anchor="middle" x="90" y="150">wants to act</text>
+<!-- arrows -->
+<path d="M155 126 C215 126, 265 92, 326 92" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.6"></path>
+<path d="M155 138 C215 138, 265 176, 326 176" fill="none" marker-end="url(#arrT2)" stroke="var(--accent-2)" stroke-width="1.6"></path>
+<path d="M155 152 C215 152, 265 260, 326 260" fill="none" marker-end="url(#arrT3)" stroke="var(--accent-3)" stroke-width="1.6"></path>
+<text data-en="undo cost ≈ 0 ?" data-zh="撤销成本 ≈ 0 ？" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" text-anchor="middle" x="238" y="82">undo cost ≈ 0 ?</text>
+<text data-en="rule matches ?" data-zh="规则命中？" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" text-anchor="middle" x="238" y="146">rule matches ?</text>
+<text data-en="otherwise" data-zh="其余情况" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" text-anchor="middle" x="238" y="272">otherwise</text>
+<!-- pipe 1 -->
+<rect fill="var(--bg-surface)" height="56" rx="9" stroke="var(--accent)" stroke-width="1.6" width="250" x="330" y="64"></rect>
+<text data-en="① AUTO-EXECUTE" data-zh="① 自动执行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="455" y="86">① AUTO-EXECUTE</text>
+<text data-en="reversible · inside sandbox · undo in seconds" data-zh="可逆 · 沙箱内 · 数秒内可撤销" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="455" y="105">reversible · inside sandbox · undo in seconds</text>
+<!-- pipe 2 -->
+<rect fill="var(--bg-surface)" height="56" rx="9" stroke="var(--accent-2)" stroke-width="1.6" width="250" x="330" y="148"></rect>
+<text data-en="② POLICY-GATED" data-zh="② 策略门控" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="455" y="170">② POLICY-GATED</text>
+<text data-en="pre-approved rule · covers a class, not a case" data-zh="预先批准的规则 · 覆盖一类，而非一件" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="455" y="189">pre-approved rule · covers a class, not a case</text>
+<!-- pipe 3 -->
+<rect fill="var(--bg-surface)" height="56" rx="9" stroke="var(--accent-3)" stroke-width="1.6" width="250" x="330" y="232"></rect>
+<text data-en="③ ASK THE HUMAN" data-zh="③ 请示人类" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="455" y="254">③ ASK THE HUMAN</text>
+<text data-en="irreversible · uncovered · holds until answered" data-zh="不可逆 · 未被覆盖 · 挂起直到被答复" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="455" y="273">irreversible · uncovered · holds until answered</text>
+<!-- bottom strip -->
+<rect fill="var(--accent-dim)" height="28" opacity="0.6" rx="8" width="555" x="25" y="304"></rect>
+<text data-en="Only the third pipe may interrupt anyone. Most systems were never given the first two." data-zh="只有第三条管道有权打断人。而大多数系统，从未被给予前两条。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10.5" font-style="italic" text-anchor="middle" x="302" y="322">Only the third pipe may interrupt anyone. Most systems were never given the first two.</text>
+</svg>
+<p class="diagram-caption" data-en="Every decision an agent faces has a home. Reversible actions inside the sandbox execute and log. Actions covered by a pre-approved policy execute if they match, and escalate if they do not. Only the third pipe — the irreversible and the uncovered — is allowed to interrupt a human. Most systems route everything through the third pipe, because the first two were never built." data-zh="智能体面对的每一个决策，都有归宿。沙箱内可逆的动作，执行并记录。被预先批准的策略覆盖的动作，命中即执行，不命中则上报。只有第三条管道——不可逆的、策略未覆盖的——才有权打断一个人。大多数系统把一切都塞进第三条管道，因为前两条，从未被建造过。">Every decision an agent faces has a home. Reversible actions inside the sandbox execute and log. Actions covered by a pre-approved policy execute if they match, and escalate if they do not. Only the third pipe — the irreversible and the uncovered — is allowed to interrupt a human.</p>
+</div>
+<h3 data-en="The rubber stamp is a latency injector" data-zh="橡皮图章，是一台延迟注入器">The rubber stamp is a latency injector</h3>
+<p data-en="What attention does under repetition is well documented, and it is not flattering. The first approval of a session gets read. The third gets skimmed. The tenth gets approved with eyes already back in the code review tab. By the twentieth, the prompt has become a reflex: locate the button, click yes, return to work. This is not laziness and it is not bad culture — it is what repeated exposure to near-identical stimuli does to any nervous system, the same mechanism that turned cookie consent into a reflex and terms of service into furniture. The rare, genuinely dangerous request — the one that deserved a human — is statistically identical, from the outside, to the ninety-nine routine ones that preceded it. It does not get special treatment. It gets the reflex." data-zh="注意力在重复刺激下的表现，早有充分记录，而且并不体面。一个会话里的第一道批准，会被认真读。第三道，被略读。第十道，被批准时视线已经回到了代码评审的标签页。到第二十道，弹窗已经变成一个条件反射：找到按钮，点是，回去干活。这不是懒惰，也不是文化问题——这是任何神经系统在近乎相同的刺激反复出现时的必然反应，和把 cookie 同意变成反射、把服务条款变成背景家具的，是同一个机制。那道罕见的、真正危险的请求——那道确实需要一个人的请求——从外表看，与它前面九十九道例行公事在统计上毫无区别。它不会得到特殊对待。它得到的是那个条件反射。">What attention does under repetition is well documented, and it is not flattering. The first approval of a session gets read. The third gets skimmed. The tenth gets approved with eyes already back in the code review tab. By the twentieth, the prompt has become a reflex: locate the button, click yes, return to work.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="APPROVAL FATIGUE" data-zh="审批疲劳" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">APPROVAL FATIGUE</text>
+<!-- danger zone -->
+<rect fill="var(--accent-3)" height="190" opacity="0.05" width="283" x="297" y="70"></rect>
+<text data-en="DANGER ZONE" data-zh="危险区" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" letter-spacing="1.5" opacity="0.8" text-anchor="middle" x="440" y="88">DANGER ZONE</text>
+<!-- axes -->
+<line stroke="var(--text-tertiary)" stroke-width="1.2" x1="90" x2="580" y1="260" y2="260"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1.2" x1="90" x2="90" y1="70" y2="260"></line>
+<text data-en="full attention" data-zh="全神贯注" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="end" x="82" y="80">full attention</text>
+<text data-en="none" data-zh="为零" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="end" x="82" y="254">none</text>
+<text data-en="1st ask" data-zh="第 1 次" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="start" x="100" y="278">1st ask</text>
+<text data-en="40th ask" data-zh="第 40 次" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="end" x="556" y="278">40th ask</text>
+<text data-en="interruptions per session →" data-zh="每次会话的打断次数 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="335" y="296">interruptions per session →</text>
+<!-- scrutiny curve -->
+<path d="M100 92 C180 100, 220 180, 300 215 C360 238, 460 240, 556 244" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="2.5"></path>
+<text data-en="actual scrutiny per approval" data-zh="每道批准的实际审视度" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="start" x="126" y="84">actual scrutiny per approval</text>
+<!-- blast radius curve -->
+<path d="M100 242 C200 238, 280 200, 360 170 C440 140, 500 125, 556 108" fill="none" stroke="var(--accent-3)" stroke-width="2.5"></path>
+<text data-en="blast radius of the average ask" data-zh="单次请示的影响半径" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="end" x="556" y="96">blast radius of the average ask</text>
+<!-- crossover -->
+<circle cx="297" cy="210" fill="var(--bg-surface)" r="5" stroke="var(--accent-2)" stroke-width="2"></circle>
+<line stroke="var(--accent-2)" stroke-dasharray="3,3" stroke-width="1.2" x1="297" x2="297" y1="215" y2="260"></line>
+<text data-en="the crossover" data-zh="交叉点" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="start" x="308" y="200">the crossover</text>
+<!-- bottom note -->
+<text data-en="Past the crossover, the least-read approvals carry the largest consequences." data-zh="越过交叉点之后，被读得最少的批准，恰恰承载着最大的后果。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="318">Past the crossover, the least-read approvals carry the largest consequences.</text>
+</svg>
+<p class="diagram-caption" data-en="Actual scrutiny collapses within the first handful of interruptions, while the blast radius of the average request keeps growing as the session deepens. Past the crossover, the least-read approvals carry the largest consequences — which is precisely where an unexamined approval flow deposits its rare, irreversible request." data-zh="实际的审视度，在最初几次打断之内就坍塌了；而随着会话加深，平均每道请求的影响半径却持续变大。越过交叉点之后，被读得最少的批准，承载着最大的后果——而一道未经设计的批准流，恰恰会把它那罕见的、不可逆的请求，存放在这里。">Actual scrutiny collapses within the first handful of interruptions, while the blast radius of the average request keeps growing as the session deepens. Past the crossover, the least-read approvals carry the largest consequences.</p>
+</div>
+<p data-en="This is why the interruption count cannot be tuned down with a smarter model or a better-worded prompt. If 98% of everything routed to the human gets approved, the approval step is not a control — it is theater with a queue. The oversight it appears to provide is real only in the demo, where the presenter reads each prompt aloud. In production, a mostly-yes approval flow trains the human to be a rubber stamp, converts the safety feature into a latency feature, and quietly moves the actual safety boundary to wherever it was always going to land: the design of what gets asked, and how rarely." data-zh="这就是为什么打断次数无法靠更聪明的模型或措辞更好的 prompt 调下去。如果送到人面前的请求有 98% 都会被批准，那么这道批准环节就不是控制——它是一出带队列的戏剧。它表面上提供的监督，只在 demo 里是真的——演讲者会逐字念出每道弹窗。而在生产环境里，一个「几乎全是同意」的批准流，把人训练成橡皮图章，把安全功能变成延迟功能，并把真正的安全边界，悄悄挪到它本来就该在的地方：什么被问、以及问得多稀。">This is why the interruption count cannot be tuned down with a smarter model or a better-worded prompt. If 98% of everything routed to the human gets approved, the approval step is not a control — it is theater with a queue. In production, a mostly-yes approval flow trains the human to be a rubber stamp, converts the safety feature into a latency feature, and quietly moves the actual safety boundary to wherever it was always going to land.</p>
+<blockquote data-en="An approval prompt is not a safety feature. It is a transaction: risk reduction purchased with the scarcest currency in the system. Spend that currency on instances and it evaporates within a week. Spend it on policy and it compounds." data-zh="一道批准弹窗，不是安全功能。它是一笔交易：用系统里最稀缺的货币，购买风险降低。把这货币花在一件件的实例上，它一周之内就蒸发殆尽。把它花在策略上，它会产生复利。">An approval prompt is not a safety feature. It is a transaction: risk reduction purchased with the scarcest currency in the system. Spend that currency on instances and it evaporates within a week. Spend it on policy and it compounds.</blockquote>
+<h3 data-en="Approve the class, not the instance" data-zh="批准一类，而不是一件">Approve the class, not the instance</h3>
+<p data-en="The fix is to change the unit of approval. Most systems approve instances: may the agent run this command, send this email, spend this amount — now, stripped of the context in which the plan was made. The instance is the wrong unit. It arrives without history, without proportions, and without any way for a human to do better than a two-second guess. The better unit is the policy: a pre-made answer to an entire class of decisions. Replies within an existing thread may be sent. Files under this directory may be edited. Anything above fifty dollars asks. A policy is decided once, with full attention and real debate, then applied ten thousand times without spending another drop of it. None of this is new — it is the oldest idea in security. Authority was always meant to be granted in scopes, not begged per action. The agent earns a sandbox. The sandbox has walls. The walls are the approved policy." data-zh="修复方法，是改变批准的单位。大多数系统批准的是实例：智能体可以执行这条命令吗、发这封邮件吗、花这笔钱吗——就在此刻，被剥离了计划成立时的全部语境。实例是错误的单位。它到来时没有历史、没有比例感，人除了两秒钟的猜测之外给不出更好的答案。更好的单位，是策略：对一整类决策预先做好的回答。现有线程内的回复，可以发。这个目录下的文件，可以改。超过五十美元的，来问。一条策略，只需被决定一次——带着完整的注意力和真正的辩论——然后被执行一万次，不再消耗一滴注意力。这些都不是新东西——这是安全领域最古老的思想。授权从来就该按范围授予，而不是每个动作乞讨一次。智能体赢得一个沙箱。沙箱有墙。墙，就是被批准的策略。">The fix is to change the unit of approval. Most systems approve instances: may the agent run this command, send this email, spend this amount — now, stripped of the context in which the plan was made. The instance is the wrong unit. It arrives without history, without proportions, and without any way for a human to do better than a two-second guess. The better unit is the policy: a pre-made answer to an entire class of decisions.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrP2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="APPROVING INSTANCES vs APPROVING POLICY" data-zh="批准实例 vs 批准策略" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">APPROVING INSTANCES vs APPROVING POLICY</text>
+<!-- LEFT: instance approvals -->
+<text data-en="ASK × N" data-zh="请示 × N" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="56">ASK × N</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-3)" stroke-width="1.6" width="80" x="115" y="68"></rect>
+<text data-en="human" data-zh="人" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" text-anchor="middle" x="155" y="89">human</text>
+<rect fill="var(--bg-surface)" height="134" rx="10" stroke="var(--accent-3)" stroke-width="1.4" width="160" x="75" y="140"></rect>
+<text data-en="email #1 → approve?" data-zh="邮件 #1 → 批准？" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="155" y="162">email #1 → approve?</text>
+<text data-en="email #2 → approve?" data-zh="邮件 #2 → 批准？" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="155" y="190">email #2 → approve?</text>
+<text data-en="migration → approve?" data-zh="执行迁移 → 批准？" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="155" y="218">migration → approve?</text>
+<text data-en="delete → approve?" data-zh="删除分支 → 批准？" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="155" y="246">delete → approve?</text>
+<path d="M100 140 C95 125, 105 115, 115 107" fill="none" marker-end="url(#arrP2)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<path d="M135 140 C132 125, 140 115, 148 107" fill="none" marker-end="url(#arrP2)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<path d="M170 140 C168 125, 175 115, 180 107" fill="none" marker-end="url(#arrP2)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<path d="M205 140 C203 125, 208 118, 212 107" fill="none" marker-end="url(#arrP2)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<text data-en="N interrupts · attention evaporates" data-zh="N 次打断 · 注意力蒸发" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="155" y="302">N interrupts · attention evaporates</text>
+<text data-en="each ask arrives context-free" data-zh="每道请示都不带语境地砸过来" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="155" y="320">each ask arrives context-free</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="44" y2="340"></line>
+<!-- RIGHT: policy approval -->
+<text data-en="POLICY × 1" data-zh="策略 × 1" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="56">POLICY × 1</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.6" width="80" x="425" y="68"></rect>
+<text data-en="human" data-zh="人" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" text-anchor="middle" x="465" y="89">human</text>
+<path d="M465 102 L465 126" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1.6"></path>
+<text data-en="one decision, full attention" data-zh="一次决策，全神贯注" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" text-anchor="start" x="478" y="118">one decision, full attention</text>
+<rect fill="var(--accent-dim)" height="42" rx="9" stroke="var(--accent)" stroke-width="1.5" width="220" x="355" y="130"></rect>
+<text data-en="policy: reply to open threads," data-zh="策略：可回复现有邮件线程、" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="465" y="148">policy: reply to open threads,</text>
+<text data-en="edit ./src, spend ≤ $50" data-zh="可编辑 ./src，消费 ≤ $50" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="465" y="163">edit ./src, spend ≤ $50</text>
+<path d="M465 172 L465 192" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1.6"></path>
+<rect fill="var(--bg-surface)" height="122" rx="12" stroke="var(--accent-2)" stroke-width="1.8" width="200" x="365" y="196"></rect>
+<rect fill="none" height="98" rx="9" stroke="var(--accent-2)" stroke-dasharray="4,3" stroke-width="1" width="176" x="377" y="208"></rect>
+<text data-en="the sandbox" data-zh="沙箱" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="465" y="226">the sandbox</text>
+<text data-en="14 replies sent ✓" data-zh="已发送 14 封回复 ✓" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="465" y="248">14 replies sent ✓</text>
+<text data-en="37 files edited ✓" data-zh="已编辑 37 个文件 ✓" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="465" y="266">37 files edited ✓</text>
+<text data-en="$41.80 spent ✓ · audit log kept" data-zh="已消费 $41.80 ✓ · 留有审计日志" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="465" y="284">$41.80 spent ✓ · audit log kept</text>
+<!-- escape hatch -->
+<rect fill="none" height="30" rx="7" stroke="var(--accent-3)" stroke-dasharray="4,3" stroke-width="1.4" width="84" x="522" y="132"></rect>
+<text data-en="outside policy?" data-zh="超出策略？" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="564" y="151">outside policy?</text>
+<path d="M560 196 C565 184, 566 174, 566 164" fill="none" marker-end="url(#arrP2)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<text data-en="1 interrupt · attention compounds" data-zh="1 次打断 · 注意力复利" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="465" y="336">1 interrupt · attention compounds</text>
+<text data-en="the class was debated once, in daylight" data-zh="这一类动作，只在白天被认真讨论过一次" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="465" y="352">the class was debated once, in daylight</text>
+</svg>
+<p class="diagram-caption" data-en="On the left, instance approval: every action pings the human, each ask arrives stripped of context, and attention evaporates into reflex. On the right, policy approval: one deliberate decision licenses a thousand actions inside a sandbox with walls and an audit log, and only the genuinely uncovered case surfaces. The human's attention was spent once — on the class — and it compounds." data-zh="左边，实例批准：每一个动作都去 ping 人，每道请示都剥离语境地到来，注意力蒸发成条件反射。右边，策略批准：一次深思熟虑的决策，授权了沙箱内一千个动作——有墙、有审计日志——只有真正未被覆盖的情况才浮出水面。人的注意力只花了一次——花在那一类上——然后开始复利。">On the left, instance approval: every action pings the human, each ask arrives stripped of context, and attention evaporates into reflex. On the right, policy approval: one deliberate decision licenses a thousand actions inside a sandbox with walls and an audit log, and only the genuinely uncovered case surfaces.</p>
+</div>
+<p data-en="The axis that decides which bucket a decision belongs to is not how sensitive it sounds, but how expensive it is to undo. An action that costs a keystroke to reverse should almost never interrupt a human. An action that cannot be reversed at all should almost always be explicit. Between those poles, the system's job is to move actions downward — to make the irreversible cheaply reversible — through tool design rather than heroic restraint: dry-run modes, staging environments, soft deletes with expiry, undo windows, spend limits that fail closed. Every action the tools make reversible is an interruption the human never receives. Reversibility is not a UX nicety; it is the raw material autonomy is built from." data-zh="决定一个决策属于哪个桶的轴，不是它听起来多敏感，而是撤销它有多贵。一个按键就能撤销的动作，几乎永远不该打断一个人。一个根本无法撤销的动作，几乎永远该显式确认。在这两极之间，系统的工作是把动作往下移——让不可逆的变得廉价可逆——靠的是工具设计，而不是模型的自我克制：dry-run 模式、预发环境、带过期时间的软删除、撤销窗口、到上限即拒绝的消费限额。工具每让一个动作变得可逆，人就从源头少收一道打断。可逆性不是用户体验的锦上添花；它是自主性赖以构建的原材料。">The axis that decides which bucket a decision belongs to is not how sensitive it sounds, but how expensive it is to undo. An action that costs a keystroke to reverse should almost never interrupt a human. An action that cannot be reversed at all should almost always be explicit. Between those poles, the system's job is to move actions downward — to make the irreversible cheaply reversible — through tool design rather than heroic restraint.</p>
+<h3 data-en="Make silence mean the safe branch" data-zh="让沉默，意味着安全的分支">Make silence mean the safe branch</h3>
+<p data-en="And on the rare occasions the ask is genuinely owed, it must be built like a product surface, because it is one. A good escalation carries four things: what changed since the approved plan; what specifically is at risk if this proceeds; what happens on each answer; and the default if no answer arrives. Most prompts in the wild carry none of these — a permission dialog for 'run command' with the command truncated, the stakes unstated, and a timeout that resolves to yes. A question that cannot be answered with attention is not a question; it is a delegation of blame." data-zh="而在那些确实欠用户一次请示的罕见时刻，这道请示必须被当作产品界面来打造——因为它本来就是。一道好的上报，携带四样东西：自计划被批准以来，什么变了；如果继续，具体什么处于风险之中；每个答案分别会导致什么；以及如果无人应答，默认走向哪条分支。现实中的大多数弹窗，这四样一样都不带——一个「执行命令」的权限对话框，命令被截断，风险没说，超时之后默认「是」。一个无法被认真回答的问题，不是问题；它是责任的转交。">And on the rare occasions the ask is genuinely owed, it must be built like a product surface, because it is one. A good escalation carries four things: what changed since the approved plan; what specifically is at risk if this proceeds; what happens on each answer; and the default if no answer arrives. Most prompts in the wild carry none of these.</p>
+<p data-en="The default is the part that decides everything, because eventually it is the only part that runs. Users go to lunch, change jobs, leave the company; on-call rotations acknowledge from their pockets at two in the morning. Whatever the system does when no answer arrives is, summed over the lifetime of the product, its real policy on human oversight. There is exactly one defensible choice: silence maps to the safe branch — hold, revert, downgrade, discard. Never to the ambitious one. An agent that proceeds on timeout has not removed the human from the loop; it has converted the human's absence into consent, which is a far more corrosive thing than either autonomy or its absence." data-zh="默认值，是决定一切的部分——因为最终，真正运行过的只有它。用户会去吃午饭，会换工作，会离开公司；值班的人会在凌晨两点从口袋里掏出手机做确认。当无人应答时系统所做的一切，在产品的整个生命周期里加起来，才是它对人类监督的真实策略。可辩护的选择只有一个：沉默映射到安全的分支——挂起、回滚、降级、放弃。永远不映射到激进的那条。一个在超时后继续执行的智能体，并没有把人从循环里移除；它把人的缺席，转化成了同意——这比自主性本身，或自主性的缺失，都更具腐蚀性。">The default is the part that decides everything, because eventually it is the only part that runs. Users go to lunch, change jobs, leave the company; on-call rotations acknowledge from their pockets at two in the morning. Whatever the system does when no answer arrives is, summed over the lifetime of the product, its real policy on human oversight. There is exactly one defensible choice: silence maps to the safe branch — hold, revert, downgrade, discard. Never to the ambitious one.</p>
+<p data-en="The measure of an agent is not how smart it is. It is how rarely it needs to interrupt a human, and how much it nevertheless accomplishes. Autonomy is not granted at launch; it is earned in layers — read-only first, then writes inside a sandbox, then bounded spending, each expansion justified by clean traces and an audit log that survives scrutiny. The teams that get this right treat human attention like the budget it is: spent on policies rather than instances, on the irreversible rather than the everything, with silence engineered to mean safety. An agent that asks about everything trusts nothing — including its own architecture. An agent that almost never asks has something better than trust: bounds." data-zh="衡量一个智能体的，不是它有多聪明。而是它多久才需要打断一个人，以及即便如此，它依然完成了多少。自主性不是发布时被授予的；它是一层层挣来的——先是只读，然后是沙箱内的写入，然后是有上限的消费——每一次扩权，都由干净的追踪记录和一份经得起审视的审计日志背书。把这件事做对的团队，把人的注意力当作它本来的样子——一份预算：花在策略上而不是实例上，花在不可逆上而不是一切上，并让沉默在工程上意味着安全。一个什么都问的智能体，什么都不信任——包括它自己的架构。一个几乎从不请示的智能体，拥有比信任更好的东西：边界。">The measure of an agent is not how smart it is. It is how rarely it needs to interrupt a human, and how much it nevertheless accomplishes. Autonomy is not granted at launch; it is earned in layers — read-only first, then writes inside a sandbox, then bounded spending, each expansion justified by clean traces and an audit log that survives scrutiny. An agent that asks about everything trusts nothing — including its own architecture. An agent that almost never asks has something better than trust: bounds.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

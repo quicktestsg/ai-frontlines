@@ -1,6 +1,413 @@
 {
   "tweets": [
     {
+      "id": "2090165328290701800",
+      "url": "https://x.com/OpenAI/status/2090165328290701800",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-08-19T20:09:01.704982+00:00",
+      "translation_zh": "将继续为前沿模型提供零数据保留（ZDR）。随着 AI 承担更长、更自主的工作并为企业创造更大价值，安全系统也需要跨相关交互识别风险。为此，官方预览了「隐私安全处理」（Private Safety Processing）：在不让 OpenAI 人员接触底层内容的前提下提升安全性。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 434,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-19T19:53:42.000Z",
+        "display_text_range": [
+          0,
+          273
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/PTEVBS4p3Q",
+              "expanded_url": "https://x.com/OpenAI/status/2090165328290701800/photo/1",
+              "indices": [
+                274,
+                297
+              ],
+              "url": "https://t.co/PTEVBS4p3Q"
+            }
+          ]
+        },
+        "id_str": "2090165328290701800",
+        "text": "We will continue to offer Zero Data Retention for frontier models.\n\nAs AI takes on longer, more autonomous work and delivers greater value to businesses, safety systems also need to identify risks across related interactions. \n\nTo help address those risks, we're previewing https://t.co/PTEVBS4p3Q",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2090165328290701800"
+          ],
+          "editable_until_msecs": "1787172822000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/PTEVBS4p3Q",
+            "expanded_url": "https://x.com/OpenAI/status/2090165328290701800/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              274,
+              297
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HQHCFkxbYAAkSFJ.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 886,
+                  "w": 1582,
+                  "x": 92,
+                  "y": 0
+                },
+                {
+                  "h": 886,
+                  "w": 886,
+                  "x": 788,
+                  "y": 0
+                },
+                {
+                  "h": 886,
+                  "w": 777,
+                  "x": 897,
+                  "y": 0
+                },
+                {
+                  "h": 886,
+                  "w": 443,
+                  "x": 1231,
+                  "y": 0
+                },
+                {
+                  "h": 886,
+                  "w": 1674,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 886,
+              "width": 1674
+            },
+            "sizes": {
+              "large": {
+                "h": 886,
+                "resize": "fit",
+                "w": 1674
+              },
+              "medium": {
+                "h": 635,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 360,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/PTEVBS4p3Q"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 886,
+                "w": 1582,
+                "x": 92,
+                "y": 0
+              },
+              {
+                "h": 886,
+                "w": 886,
+                "x": 788,
+                "y": 0
+              },
+              {
+                "h": 886,
+                "w": 777,
+                "x": 897,
+                "y": 0
+              },
+              {
+                "h": 886,
+                "w": 443,
+                "x": 1231,
+                "y": 0
+              },
+              {
+                "h": 886,
+                "w": 1674,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/OpenAI/status/2090165328290701800/photo/1",
+            "url": "https://pbs.twimg.com/media/HQHCFkxbYAAkSFJ.jpg",
+            "width": 1674,
+            "height": 886
+          }
+        ],
+        "conversation_count": 47,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDkwMTY1MzI4MjE5NDU1NDg4"
+        }
+      }
+    },
+    {
+      "id": "2090099808220627226",
+      "url": "https://x.com/elonmusk/status/2090099808220627226",
+      "label": "xAI",
+      "color": "#1DA1F2",
+      "fetched_at": "2026-08-19T20:09:01.704982+00:00",
+      "translation_zh": "Grok 4.6 现已上线 Amazon Bedrock。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 2501,
+        "lang": "en",
+        "created_at": "2026-08-19T15:33:21.000Z",
+        "display_text_range": [
+          0,
+          23
+        ],
+        "entities": {},
+        "id_str": "2090099808220627226",
+        "text": "Grok 4.6 now on Bedrock",
+        "user": {
+          "id_str": "44196397",
+          "name": "Elon Musk",
+          "screen_name": "elonmusk",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+            },
+            "description": "X",
+            "url": {
+              "url": "https://twitter.com/X",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2090099808220627226"
+          ],
+          "editable_until_msecs": "1787157201000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 402,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 1581,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 96,
+          "retweet_count": 128,
+          "created_at": "2026-08-19T15:19:30.000Z",
+          "display_text_range": [
+            0,
+            59
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/HBr70kO0ia",
+                "expanded_url": "https://x.com/SpaceXAI/status/2090096322858660260/video/1",
+                "indices": [
+                  60,
+                  83
+                ],
+                "url": "https://t.co/HBr70kO0ia"
+              }
+            ],
+            "urls": [
+              {
+                "display_url": "x.ai/news/grok-4-6-…",
+                "expanded_url": "https://x.ai/news/grok-4-6-amazon-bedrock",
+                "indices": [
+                  36,
+                  59
+                ],
+                "url": "https://t.co/GCyTOsc7l1"
+              }
+            ]
+          },
+          "id_str": "2090096322858660260",
+          "text": "Grok 4.6 is live on Amazon Bedrock\n\nhttps://t.co/GCyTOsc7l1 https://t.co/HBr70kO0ia",
+          "user": {
+            "id_str": "1661523610111193088",
+            "name": "SpaceXAI",
+            "screen_name": "SpaceXAI",
+            "is_blue_verified": false,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2074224934159876096/aelorWHq_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2090096322858660260"
+            ],
+            "editable_until_msecs": "1787156370000",
+            "edits_remaining": "5",
+            "is_edit_eligible": true
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/HBr70kO0ia",
+              "expanded_url": "https://x.com/SpaceXAI/status/2090096322858660260/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                60,
+                83
+              ],
+              "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2090095664650653697/img/eyETPtwcsO0iqdS4.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 1260,
+                "width": 2400
+              },
+              "sizes": {
+                "large": {
+                  "h": 1075,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 630,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 357,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/HBr70kO0ia",
+              "video_info": {
+                "aspect_ratio": [
+                  40,
+                  21
+                ],
+                "duration_millis": 19233,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2090095664650653697/pl/yLhrZi6Hem35TJs1.m3u8"
+                  },
+                  {
+                    "bitrate": 256000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2090095664650653697/vid/avc1/514x270/4vE2LYHUhHqch4ix.mp4"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2090095664650653697/vid/avc1/684x360/8oe7s2exQus80Ay1.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2090095664650653697/vid/avc1/1370x720/TxfYjnioLoD9D8Zp.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2090095664650653697/vid/avc1/2400x1260/lm1vFo_HUJQIJnPz.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              40,
+              21
+            ],
+            "contentType": "media_entity",
+            "durationMs": 19233,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/amplify_video_thumb/2090095664650653697/img/eyETPtwcsO0iqdS4.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2090095664650653697/pl/yLhrZi6Hem35TJs1.m3u8"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2090095664650653697/vid/avc1/514x270/4vE2LYHUhHqch4ix.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2090095664650653697/vid/avc1/684x360/8oe7s2exQus80Ay1.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2090095664650653697/vid/avc1/1370x720/TxfYjnioLoD9D8Zp.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2090095664650653697/vid/avc1/2400x1260/lm1vFo_HUJQIJnPz.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2090096322858660260"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2089979521412034787",
       "url": "https://x.com/Kimi_Moonshot/status/2089979521412034787",
       "label": "Kimi",
@@ -1531,6 +1938,235 @@
         "note_tweet": {
           "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDg5Nzc3ODQ1MDUyNzk2OTI4"
         }
+      }
+    },
+    {
+      "id": "2089756371570900999",
+      "url": "https://x.com/claudeai/status/2089756371570900999",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-08-19T20:09:01.704982+00:00",
+      "translation_zh": "Claude Cowork 现已在移动端和网页端向所有付费计划开放。在办公桌前把任务交给 Claude，从手机上取回完成的工作；合上笔记本，Claude 继续执行。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 6469,
+        "lang": "en",
+        "created_at": "2026-08-18T16:48:39.000Z",
+        "display_text_range": [
+          0,
+          68
+        ],
+        "entities": {},
+        "id_str": "2089756371570900999",
+        "text": "Claude Cowork is now available on mobile and web for all paid plans.",
+        "user": {
+          "id_str": "1943306828697550848",
+          "name": "Claude",
+          "screen_name": "claudeai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2089756371570900999"
+          ],
+          "editable_until_msecs": "1787075319000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 439,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 21703,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 802,
+          "retweet_count": 1737,
+          "created_at": "2026-07-07T16:07:51.000Z",
+          "display_text_range": [
+            0,
+            267
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/W4WrgN9TrG",
+                "expanded_url": "https://x.com/claudeai/status/2074525815820169320/video/1",
+                "indices": [
+                  268,
+                  291
+                ],
+                "url": "https://t.co/W4WrgN9TrG"
+              }
+            ]
+          },
+          "id_str": "2074525815820169320",
+          "text": "Claude Cowork is coming to mobile and web.\n\nHand Claude a task at your desk and pick up the finished work from your phone. Close the laptop and Claude keeps going.\n\nBeta is rolling out over the next several weeks starting with the Max plan, with more plans to follow. https://t.co/W4WrgN9TrG",
+          "user": {
+            "id_str": "1943306828697550848",
+            "name": "Claude",
+            "screen_name": "claudeai",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+            "highlighted_label": {
+              "badge": {
+                "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+              },
+              "description": "Anthropic",
+              "url": {
+                "url": "https://twitter.com/AnthropicAI",
+                "url_type": "DeepLink"
+              },
+              "user_label_display_type": "Badge",
+              "user_label_type": "BusinessLabel"
+            }
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2074525815820169320"
+            ],
+            "editable_until_msecs": "1783444071000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/W4WrgN9TrG",
+              "expanded_url": "https://x.com/claudeai/status/2074525815820169320/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                268,
+                291
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HMoyeLgXcAAJuLP.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 1080,
+                "width": 1920
+              },
+              "sizes": {
+                "large": {
+                  "h": 1080,
+                  "resize": "fit",
+                  "w": 1920
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/W4WrgN9TrG",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "duration_millis": 80666,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2074521393018871808/pl/0Wjupra33RcBlCmF.m3u8?v=cfc"
+                  },
+                  {
+                    "bitrate": 256000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2074521393018871808/vid/avc1/480x270/7HC1atvRdj0zo962.mp4"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2074521393018871808/vid/avc1/640x360/GB8B3fVOhlc63iZU.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2074521393018871808/vid/avc1/1280x720/Uk6D_EmLlxFb1e5H.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2074521393018871808/vid/avc1/1920x1080/_Wv7dlKFECnGn6SW.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              16,
+              9
+            ],
+            "contentType": "media_entity",
+            "durationMs": 80666,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/media/HMoyeLgXcAAJuLP.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2074521393018871808/pl/0Wjupra33RcBlCmF.m3u8?v=cfc"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2074521393018871808/vid/avc1/480x270/7HC1atvRdj0zo962.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2074521393018871808/vid/avc1/640x360/GB8B3fVOhlc63iZU.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2074521393018871808/vid/avc1/1280x720/Uk6D_EmLlxFb1e5H.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2074521393018871808/vid/avc1/1920x1080/_Wv7dlKFECnGn6SW.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2074525815820169320"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
       }
     },
     {
