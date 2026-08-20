@@ -1,6 +1,434 @@
 {
   "tweets": [
     {
+      "id": "2090289279037821023",
+      "url": "https://x.com/Alibaba_Qwen/status/2090289279037821023",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-08-20T08:02:26.630270+00:00",
+      "translation_zh": "特别感谢 Unsloth 的出色工作！Qwen3.8-27B 新版 GGUF 发布，精度提升 10%：Unsloth Dynamic V3 量化在 Div-300、KLD 等多项基准上领先其他方案超 10%。更小、更强，快来试试。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 656,
+        "lang": "en",
+        "created_at": "2026-08-20T04:06:14.000Z",
+        "display_text_range": [
+          0,
+          155
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "1730159888402395136",
+              "indices": [
+                144,
+                154
+              ],
+              "name": "Unsloth AI",
+              "screen_name": "UnslothAI"
+            }
+          ]
+        },
+        "id_str": "2090289279037821023",
+        "text": "Huge thanks to Unsloth for the great work. This is wonderful news for the community! 🥳Qwen3.8-27B, smaller and sharper than ever. Let's try it! @UnslothAI",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2090289279037821023"
+          ],
+          "editable_until_msecs": "1787202374000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 24,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 4247,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 178,
+          "retweet_count": 479,
+          "created_at": "2026-08-19T15:47:54.000Z",
+          "display_text_range": [
+            0,
+            285
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/vIh7sDFKyZ",
+                "expanded_url": "https://x.com/UnslothAI/status/2090103470015828184/photo/1",
+                "indices": [
+                  286,
+                  309
+                ],
+                "url": "https://t.co/vIh7sDFKyZ"
+              }
+            ],
+            "urls": [
+              {
+                "display_url": "unsloth.ai/docs/basics/dy…",
+                "expanded_url": "https://unsloth.ai/docs/basics/dynamic-3.0-ggufs",
+                "indices": [
+                  232,
+                  255
+                ],
+                "url": "https://t.co/tHsBexyh2K"
+              },
+              {
+                "display_url": "huggingface.co/unsloth/Qwen3.…",
+                "expanded_url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+                "indices": [
+                  262,
+                  285
+                ],
+                "url": "https://t.co/xIdNwm7CLQ"
+              }
+            ]
+          },
+          "id_str": "2090103470015828184",
+          "text": "We’re releasing new Qwen3.8-27B GGUFs with 10% higher accuracy.\n\nUnsloth Dynamic V3 outperforms others by &gt;10% on Div-300, KLD &amp; more benchmarks.\n\nWe also release 1-bit quants that retain 77% accuracy. Run on 8GB RAM.\n\nBlog: https://t.co/tHsBexyh2K\nGGUF: https://t.co/xIdNwm7CLQ https://t.co/vIh7sDFKyZ",
+          "user": {
+            "id_str": "1730159888402395136",
+            "name": "Unsloth AI",
+            "screen_name": "UnslothAI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2090103470015828184"
+            ],
+            "editable_until_msecs": "1787158074000",
+            "edits_remaining": "5",
+            "is_edit_eligible": true
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/vIh7sDFKyZ",
+              "expanded_url": "https://x.com/UnslothAI/status/2090103470015828184/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                286,
+                309
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HQGJu-xaQAAs-Jg.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 2085,
+                    "w": 3724,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 3724,
+                    "w": 3724,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 4096,
+                    "w": 3593,
+                    "x": 131,
+                    "y": 0
+                  },
+                  {
+                    "h": 4096,
+                    "w": 2048,
+                    "x": 1676,
+                    "y": 0
+                  },
+                  {
+                    "h": 4096,
+                    "w": 3724,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 4096,
+                "width": 3724
+              },
+              "sizes": {
+                "large": {
+                  "h": 2048,
+                  "resize": "fit",
+                  "w": 1862
+                },
+                "medium": {
+                  "h": 1200,
+                  "resize": "fit",
+                  "w": 1091
+                },
+                "small": {
+                  "h": 680,
+                  "resize": "fit",
+                  "w": 618
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/vIh7sDFKyZ"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 2085,
+                  "w": 3724,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 3724,
+                  "w": 3724,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 4096,
+                  "w": 3593,
+                  "x": 131,
+                  "y": 0
+                },
+                {
+                  "h": 4096,
+                  "w": 2048,
+                  "x": 1676,
+                  "y": 0
+                },
+                {
+                  "h": 4096,
+                  "w": 3724,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/UnslothAI/status/2090103470015828184/photo/1",
+              "url": "https://pbs.twimg.com/media/HQGJu-xaQAAs-Jg.jpg",
+              "width": 3724,
+              "height": 4096
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2090233405816307726",
+      "url": "https://x.com/grok/status/2090233405816307726",
+      "label": "xAI",
+      "color": "#1DA1F2",
+      "fetched_at": "2026-08-20T08:02:26.630270+00:00",
+      "translation_zh": "现在可以为在 Grok 中构建和部署的应用管理共享与访问权限：可设为仅自己可见、与团队共享，或对全世界公开。支持在 Grok 网页端、iOS、Android 及 CLI 中开始构建。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1182,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-20T00:24:13.000Z",
+        "display_text_range": [
+          0,
+          198
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/8uWjpprAwr",
+              "expanded_url": "https://x.com/grok/status/2090233405816307726/photo/1",
+              "indices": [
+                199,
+                222
+              ],
+              "url": "https://t.co/8uWjpprAwr"
+            }
+          ]
+        },
+        "id_str": "2090233405816307726",
+        "text": "Now, manage sharing and access for apps built and deployed in Grok.\n\nMake apps private to you, shared with your team, or public to the world. Start building on Grok web, iOS, Android, or in the CLI. https://t.co/8uWjpprAwr",
+        "user": {
+          "id_str": "1720665183188922368",
+          "name": "Grok",
+          "screen_name": "grok",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2057885623374290944/lmj0pawP_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/2074224934159876096/aelorWHq_bigger.jpg"
+            },
+            "description": "SpaceXAI",
+            "url": {
+              "url": "https://twitter.com/SpaceXAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2090233405816307726"
+          ],
+          "editable_until_msecs": "1787189053000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/8uWjpprAwr",
+            "expanded_url": "https://x.com/grok/status/2090233405816307726/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              199,
+              222
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HQH_6QjWwAA-LDe.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 1078,
+                  "w": 1925,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1078,
+                  "w": 1078,
+                  "x": 231,
+                  "y": 0
+                },
+                {
+                  "h": 1078,
+                  "w": 946,
+                  "x": 297,
+                  "y": 0
+                },
+                {
+                  "h": 1078,
+                  "w": 539,
+                  "x": 501,
+                  "y": 0
+                },
+                {
+                  "h": 1078,
+                  "w": 2054,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1078,
+              "width": 2054
+            },
+            "sizes": {
+              "large": {
+                "h": 1075,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 630,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 357,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/8uWjpprAwr"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 1078,
+                "w": 1925,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1078,
+                "w": 1078,
+                "x": 231,
+                "y": 0
+              },
+              {
+                "h": 1078,
+                "w": 946,
+                "x": 297,
+                "y": 0
+              },
+              {
+                "h": 1078,
+                "w": 539,
+                "x": 501,
+                "y": 0
+              },
+              {
+                "h": 1078,
+                "w": 2054,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/grok/status/2090233405816307726/photo/1",
+            "url": "https://pbs.twimg.com/media/HQH_6QjWwAA-LDe.jpg",
+            "width": 2054,
+            "height": 1078
+          }
+        ],
+        "conversation_count": 124,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2090165328290701800",
       "url": "https://x.com/OpenAI/status/2090165328290701800",
       "label": "OpenAI",
