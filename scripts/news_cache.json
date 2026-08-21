@@ -1,6 +1,467 @@
 {
   "tweets": [
     {
+      "id": "2090709994761339190",
+      "url": "https://x.com/Alibaba_Qwen/status/2090709994761339190",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-08-21T08:03:08.133389+00:00",
+      "translation_zh": "Qwen3.8-27B 的 NVFP4 + DFlash2 最新推理配方已上线 SGLang cookbook，感谢 SGLang 团队的支持！",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 21,
+        "lang": "en",
+        "created_at": "2026-08-21T07:58:00.000Z",
+        "display_text_range": [
+          0,
+          126
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "1923440305703092226",
+              "indices": [
+                114,
+                126
+              ],
+              "name": "SGLang",
+              "screen_name": "sgl_project"
+            }
+          ]
+        },
+        "id_str": "2090709994761339190",
+        "text": "Fresh recipes just dropped! ⚡ NVFP4 + DFlash2 for Qwen3.8-27B now in the SGLang cookbook. Thanks for the support! @sgl_project",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2090709994761339190"
+          ],
+          "editable_until_msecs": "1787302680000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 2,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 204,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 12,
+          "retweet_count": 31,
+          "created_at": "2026-08-20T23:51:31.000Z",
+          "display_text_range": [
+            0,
+            273
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/ciqw77qstt",
+                "expanded_url": "https://x.com/sgl_project/status/2090587564545806719/photo/1",
+                "indices": [
+                  273,
+                  296
+                ],
+                "url": "https://t.co/ciqw77qstt"
+              }
+            ],
+            "urls": [
+              {
+                "display_url": "docs.sglang.io/cookbook/autor…",
+                "expanded_url": "https://docs.sglang.io/cookbook/autoregressive/Qwen/Qwen3.8-27B",
+                "indices": [
+                  70,
+                  93
+                ],
+                "url": "https://t.co/eAe1dFO5Sr"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "2051925010420477953",
+                "indices": [
+                  21,
+                  29
+                ],
+                "name": "Inco AI",
+                "screen_name": "inco_ai"
+              }
+            ]
+          },
+          "id_str": "2090587564545806719",
+          "text": "Just pushed DFlash2 (@inco_ai) recipes to the Qwen3.8 27B cookbook⚡️\n\nhttps://t.co/eAe1dFO5Sr\n\nThe community has been seeing great results with NVFP4 + DFlash2, and these recipes should be some very good starting points to play with.\n\nMore Qwen3.8 27B updates on the way 🫡 https://t.co/ciqw77qstt",
+          "user": {
+            "id_str": "1923440305703092226",
+            "name": "SGLang",
+            "screen_name": "sgl_project",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1923445139319685126/pyjcWZU7_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2090587564545806719"
+            ],
+            "editable_until_msecs": "1787273491000",
+            "edits_remaining": "5",
+            "is_edit_eligible": true
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/ciqw77qstt",
+              "expanded_url": "https://x.com/sgl_project/status/2090587564545806719/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                273,
+                296
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HQNCTj9a8AAmPdE.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 608,
+                    "w": 1086,
+                    "x": 0,
+                    "y": 217
+                  },
+                  {
+                    "h": 1086,
+                    "w": 1086,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1228,
+                    "w": 1077,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1228,
+                    "w": 614,
+                    "x": 153,
+                    "y": 0
+                  },
+                  {
+                    "h": 1228,
+                    "w": 1086,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 1228,
+                "width": 1086
+              },
+              "sizes": {
+                "large": {
+                  "h": 1228,
+                  "resize": "fit",
+                  "w": 1086
+                },
+                "medium": {
+                  "h": 1200,
+                  "resize": "fit",
+                  "w": 1061
+                },
+                "small": {
+                  "h": 680,
+                  "resize": "fit",
+                  "w": 601
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/ciqw77qstt"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 608,
+                  "w": 1086,
+                  "x": 0,
+                  "y": 217
+                },
+                {
+                  "h": 1086,
+                  "w": 1086,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1228,
+                  "w": 1077,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1228,
+                  "w": 614,
+                  "x": 153,
+                  "y": 0
+                },
+                {
+                  "h": 1228,
+                  "w": 1086,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/sgl_project/status/2090587564545806719/photo/1",
+              "url": "https://pbs.twimg.com/media/HQNCTj9a8AAmPdE.jpg",
+              "width": 1086,
+              "height": 1228
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2090488285198250017",
+      "url": "https://x.com/OpenAI/status/2090488285198250017",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-08-21T08:03:08.133389+00:00",
+      "translation_zh": "ChatGPT Mac 桌面端的\"Computer History\"功能现已面向 EEA、英国和瑞士的 Pro、Business 及 Enterprise 用户开放。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 78,
+        "in_reply_to_screen_name": "OpenAI",
+        "in_reply_to_status_id_str": "2087996496088297746",
+        "in_reply_to_user_id_str": "4398626122",
+        "lang": "en",
+        "created_at": "2026-08-20T17:17:01.000Z",
+        "display_text_range": [
+          0,
+          128
+        ],
+        "entities": {},
+        "id_str": "2090488285198250017",
+        "text": "Computer History in the Mac desktop app is now available to Pro, Business, and Enterprise users in the EEA, UK, and Switzerland.",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2090488285198250017"
+          ],
+          "editable_until_msecs": "1787249821000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 10,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 12273,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 817,
+          "retweet_count": 972,
+          "created_at": "2026-08-13T20:15:32.000Z",
+          "display_text_range": [
+            0,
+            201
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/WHZPxPp31R",
+                "expanded_url": "https://x.com/OpenAI/status/2087996496088297746/video/1",
+                "indices": [
+                  202,
+                  225
+                ],
+                "url": "https://t.co/WHZPxPp31R"
+              }
+            ]
+          },
+          "id_str": "2087996496088297746",
+          "text": "ChatGPT can now remember your activity across the apps and websites on your computer.\n\nWith Computer History in the desktop app, future interactions feel more personalized and require less explanation. https://t.co/WHZPxPp31R",
+          "user": {
+            "id_str": "4398626122",
+            "name": "OpenAI",
+            "screen_name": "OpenAI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2087996496088297746"
+            ],
+            "editable_until_msecs": "1786655732000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/WHZPxPp31R",
+              "expanded_url": "https://x.com/OpenAI/status/2087996496088297746/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                202,
+                225
+              ],
+              "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2087996446595485696/img/H3Zozzo8XjGuIawW.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 2160,
+                "width": 3840
+              },
+              "sizes": {
+                "large": {
+                  "h": 1152,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/WHZPxPp31R",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "duration_millis": 28309,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2087996446595485696/pl/4S8439KNQ7NZCBkB.m3u8?v=cfc"
+                  },
+                  {
+                    "bitrate": 256000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/480x270/871RFOdrnuQRxX_B.mp4"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/640x360/b1fF1zJUW0jksb52.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/1280x720/4Ck-nlL3jUGOiHoc.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/1920x1080/NTqQ8wAEWhbbFm6g.mp4"
+                  },
+                  {
+                    "bitrate": 25128000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/3840x2160/2iL13PIzQoVpntqE.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              16,
+              9
+            ],
+            "contentType": "media_entity",
+            "durationMs": 28309,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/amplify_video_thumb/2087996446595485696/img/H3Zozzo8XjGuIawW.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2087996446595485696/pl/4S8439KNQ7NZCBkB.m3u8?v=cfc"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/480x270/871RFOdrnuQRxX_B.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/640x360/b1fF1zJUW0jksb52.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/1280x720/4Ck-nlL3jUGOiHoc.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/1920x1080/NTqQ8wAEWhbbFm6g.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2087996446595485696/vid/avc1/3840x2160/2iL13PIzQoVpntqE.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2087996496088297746"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2090289279037821023",
       "url": "https://x.com/Alibaba_Qwen/status/2090289279037821023",
       "label": "Qwen",
