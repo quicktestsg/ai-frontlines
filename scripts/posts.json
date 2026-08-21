@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-22",
+    "slug": "your-agent-will-be-interrupted",
+    "title_en": "Your Agent Will Be Interrupted",
+    "title_zh": "你的智能体，终会被中断",
+    "read_time": 9,
+    "excerpt_en": "Every long-running agent will be interrupted — by a deploy, a crash, a rate limit. The uninterrupted run is a fantasy. Separate the run from the process, represent the run as an append-only event log where state is derived rather than stored, and close the side-effect window with idempotency keys — or replay your failures forever.",
+    "excerpt_zh": "每一个长时运行的智能体都会被中断——被部署、崩溃或限流。「不被中断的运行」是幻想。把运行从进程中分离出来，用只追加的事件日志表示运行、让状态被推导而非被存储，并用幂等键关闭副作用窗口——否则你会永远重放自己的失败。"
+  },
+  {
     "date": "2026-08-20",
     "slug": "your-agent-asks-too-often",
     "title_en": "Your Agent Asks Too Often",

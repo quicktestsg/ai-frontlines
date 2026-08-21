@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Your Agent Will Be Interrupted — AI Frontlines</title>
+<meta content="Every agent that runs longer than a coffee break will be interrupted — by a deploy, a crash, a rate limit, a timeout. The uninterrupted run is a fantasy. The only question is whether the interruption is an event or a catastrophe. Make the run an event log, the process a disposable wrapper, and idempotency part of the tool protocol." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=19" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="August 22, 2026" data-zh="2026年8月22日">August 22, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Your Agent Will Be Interrupted" data-zh="你的智能体，终会被中断">Your Agent Will Be Interrupted</h1>
+<p class="post-header-deck" data-en="Every agent that runs longer than a coffee break will be interrupted. Not might be — will be. A deploy will recycle the pod mid-thought. A rate limit will sever a request at the knees. A context will balloon until the worker OOMs. The teams that build serious agent systems do not plan around this; they plan for it, the way bridge engineers plan for wind. The uninterrupted run is a fantasy. The only question that matters is whether an interruption is an ordinary event in the life of the system, or a catastrophe that erases an hour of work and half a budget." data-zh="每一个运行时间超过一杯咖啡的智能体，都会被中断。不是「可能会」——是「一定会」。一次部署会在思考到一半时回收掉 pod。一次限流会把请求拦腰斩断。一个上下文会膨胀到把 worker 撑爆。构建严肃智能体系统的团队，不是绕开这件事做计划，而是为它做计划——就像桥梁工程师为风做计划一样。「不被中断的运行」是一个幻想。唯一重要的问题是：中断，是系统生命周期里的一次普通事件，还是一场抹掉一小时工作和半个预算的灾难。">Every agent that runs longer than a coffee break will be interrupted. Not might be — will be. A deploy will recycle the pod mid-thought. A rate limit will sever a request at the knees. The only question is whether an interruption is an ordinary event, or a catastrophe.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a fantasy buried in the architecture of most agent systems, and it is the same fantasy: the uninterrupted run. The loop starts, the model thinks, tools fire, results return, the answer emerges, the loop ends — all inside one process, one memory space, one glorious unbroken session. The code is written as if the run were atomic. Web engineers unlearned this decades ago: a request handler assumes it can die at any line, because eventually one does, and the job moves to a queue that outlives it. Agent engineers inherited the single-process mental model at precisely the moment their workloads outgrew it. A chat completion takes seconds. An agent run takes minutes, sometimes hours — a research sweep across forty sources, a migration across a repository, a batch of a thousand documents. At those durations, interruption is not an edge case. It is a scheduled event with unknown timing. Deploys happen. Nodes get recycled. Memory fills. Upstream providers return 429s at the worst moment. A user closes a laptop lid. The system will be interrupted. The design either knows this or does not." data-zh="在大多数智能体系统的架构里，埋着一个幻想，而且都是同一个幻想：不被中断的运行。循环开始，模型思考，工具触发，结果返回，答案浮现，循环结束——全部发生在同一个进程、同一块内存空间、同一场完整不间断的会话里。代码写得好像这次运行是原子的。Web 工程师几十年前就纠正了这个想法：一个请求处理器必须假设自己会死在任何一行代码上，因为终究会有一次真的死掉，而任务会被转移到比它活得久的队列里。智能体工程师们在工作负载刚刚越界的那一刻，继承了这种单进程心智模型。一次聊天补全只要几秒。一次智能体运行要几分钟，有时几小时——一场横跨四十个来源的调研、一次跨越整个代码库的迁移、一批一千份文档的处理。在这样的时长下，中断不是边缘情况。它是一个时间未知的既定日程。部署会发生。节点会被回收。内存会被填满。上游服务提供商会在最糟的时刻返回 429。用户会合上笔记本盖子。系统一定会被中断。设计要么知道这一点，要么不知道。">There is a fantasy buried in the architecture of most agent systems, and it is the same fantasy: the uninterrupted run. The loop starts, the model thinks, tools fire, results return, the answer emerges, the loop ends — all inside one process, one memory space, one glorious unbroken session. Web engineers unlearned this decades ago. Agent engineers inherited the single-process mental model at precisely the moment their workloads outgrew it.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrP2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrP3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE RUN vs THE PROCESS" data-zh="运行 vs 进程" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE RUN vs THE PROCESS</text>
+<!-- LEFT: the fantasy -->
+<text data-en="WHAT THE CODE ASSUMES" data-zh="代码默认的世界" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="56">WHAT THE CODE ASSUMES</text>
+<rect fill="none" height="92" rx="10" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="5,3" width="250" x="30" y="72"></rect>
+<text data-en="process" data-zh="进程" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="155" y="88">process</text>
+<circle cx="70" cy="128" fill="var(--bg-surface)" r="16" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="1" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="70" y="132">1</text>
+<circle cx="127" cy="128" fill="var(--bg-surface)" r="16" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="2" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="127" y="132">2</text>
+<circle cx="184" cy="128" fill="var(--bg-surface)" r="16" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="3" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="184" y="132">3</text>
+<circle cx="241" cy="128" fill="var(--bg-surface)" r="16" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="4" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="241" y="132">4</text>
+<line stroke="var(--accent-3)" stroke-width="1.2" x1="86" x2="111" y1="128" y2="128"></line>
+<line stroke="var(--accent-3)" stroke-width="1.2" x1="143" x2="168" y1="128" y2="128"></line>
+<line stroke="var(--accent-3)" stroke-width="1.2" x1="200" x2="225" y1="128" y2="128"></line>
+<text data-en="run == process" data-zh="运行 == 进程" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="196">run == process</text>
+<text data-en="kill one, lose both" data-zh="杀掉一个，两个都没了" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="155" y="216">kill one, lose both</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="300"></line>
+<!-- RIGHT: reality -->
+<text data-en="WHAT PRODUCTION DELIVERS" data-zh="生产环境的真相" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="56">WHAT PRODUCTION DELIVERS</text>
+<!-- persistent chain of steps -->
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="52" x="332" y="172"></rect>
+<text data-en="1" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="358" y="192">1</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="52" x="398" y="172"></rect>
+<text data-en="2" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="424" y="192">2</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="52" x="464" y="172"></rect>
+<text data-en="3" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="490" y="192">3</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="52" x="530" y="172"></rect>
+<text data-en="4" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="556" y="192">4</text>
+<line marker-end="url(#arrP3)" stroke="var(--accent)" stroke-width="1.2" x1="384" x2="396" y1="187" y2="187"></line>
+<line marker-end="url(#arrP3)" stroke="var(--accent)" stroke-width="1.2" x1="450" x2="462" y1="187" y2="187"></line>
+<line marker-end="url(#arrP3)" stroke="var(--accent)" stroke-width="1.2" x1="516" x2="528" y1="187" y2="187"></line>
+<text data-en="the run — durable, append-only" data-zh="运行——持久、只追加" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="230">the run — durable, append-only</text>
+<!-- ephemeral processes above -->
+<g opacity="0.9">
+<rect fill="none" height="34" rx="8" stroke="var(--accent-3)" stroke-width="1.3" stroke-dasharray="4,3" width="110" x="332" y="76"></rect>
+<text data-en="worker A" data-zh="工作进程 A" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="387" y="97">worker A</text>
+<text data-en="✕ deploy" data-zh="✕ 部署" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="457" y="97">✕ deploy</text>
+<rect fill="none" height="34" rx="8" stroke="var(--accent-3)" stroke-width="1.3" stroke-dasharray="4,3" width="110" x="400" y="120"></rect>
+<text data-en="worker B" data-zh="工作进程 B" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="455" y="141">worker B</text>
+<text data-en="✕ OOM" data-zh="✕ 内存溢出" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="530" y="141">✕ OOM</text>
+<rect fill="none" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.3" stroke-dasharray="4,3" width="110" x="470" y="76"></rect>
+<text data-en="worker C" data-zh="工作进程 C" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="525" y="97">worker C</text>
+<text data-en="✓ alive" data-zh="✓ 存活" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="590" y="97">✓ alive</text>
+</g>
+<path d="M387 110 C387 140 372 152 360 170" fill="none" marker-end="url(#arrP2)" stroke="var(--accent-3)" stroke-width="1"></path>
+<path d="M455 154 C458 160 462 164 465 170" fill="none" marker-end="url(#arrP2)" stroke="var(--accent-3)" stroke-width="1"></path>
+<path d="M525 110 C520 140 545 155 553 170" fill="none" marker-end="url(#arrP2)" stroke="var(--accent-2)" stroke-width="1"></path>
+<text data-en="workers are disposable" data-zh="工作进程是用完即弃的" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="465" y="126">workers are disposable</text>
+<!-- bottom caption -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="252"></rect>
+<text data-en="The run must outlive the process. When execution is a disposable wrapper around durable state, a deploy becomes a non-event: the worker dies, the log persists, the next worker continues." data-zh="运行必须比进程活得久。当执行只是持久状态外一层用完即弃的包装，部署就变成了一件小事：工作进程死掉，日志还在，下一个工作进程继续。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="277">The run must outlive the process. When execution is a disposable wrapper around durable state, a deploy becomes a non-event.</text>
+</svg>
+<p class="diagram-caption" data-en="Left: the assumption most agent code makes — the run and the process are the same object, so killing one destroys both. Right: the architecture production demands — steps persist as durable state, workers are ephemeral and replaceable, and the chain survives every individual death." data-zh="左边：大多数智能体代码的默认假设——运行和进程是同一个对象，杀掉一个就毁掉两个。右边：生产环境要求的架构——各步骤作为持久状态存续，工作进程短暂且可替换，链条在每一次个体死亡之后依然存活。">Left: the assumption most agent code makes — the run and the process are the same object, so killing one destroys both. Right: the architecture production demands — steps persist as durable state, workers are ephemeral and replaceable, and the chain survives every individual death.</p>
+</div>
+<h3 data-en="The process is not the run" data-zh="进程不是运行">The process is not the run</h3>
+<p data-en="The confusion at the root of all of this is a category error: treating execution and the unit of work as the same thing. They are not. The run is a logical unit of work — 'research this question and write the brief,' 'migrate this module,' 'process this batch.' The process is one attempt at advancing that work. A run may be advanced by many processes in sequence; a process may touch many runs. Once these two concepts are separated in the architecture, everything else follows. The run becomes a durable, addressable record with an identity that survives restarts. The process becomes what it should have been all along: a cheap, stateless-ish worker that pulls a run, advances it by a step or a hundred steps, appends what happened, and dies without ceremony whenever the infrastructure decides it is time. Killing the process stops being a tragedy because the process was never the point. It was a cursor." data-zh="这一切的根源，是一个范畴错误：把「执行」和「工作单元」当成同一个东西。它们不是。运行是一个逻辑上的工作单元——「调研这个问题并写出简报」「迁移这个模块」「处理这批数据」。进程是对推进这份工作的一次尝试。一个运行可以由许多进程接续推进；一个进程也可以触碰许多运行。一旦这两个概念在架构中被分开，其余的一切都会随之而来。运行变成一条持久的、可寻址的记录，拥有一个能在重启中幸存的身份。进程变回它本该一直是的样子：一个廉价的、近乎无状态的工作进程——取来一个运行，推进它一步或一百步，把发生过的事情追加进去，然后在整个基础设施认为该结束的时候，毫无仪式感地死掉。杀掉进程不再是一场悲剧，因为进程从来都不是重点。它只是一个游标。">The confusion at the root of all of this is a category error: treating execution and the unit of work as the same thing. The run is a logical unit of work. The process is one attempt at advancing that work. A run may be advanced by many processes in sequence. Once these two concepts are separated, everything else follows: the run becomes a durable, addressable record; the process becomes a cheap worker that pulls a run, advances it, appends what happened, and dies without ceremony.</p>
+<h3 data-en="The run is an event log, not a row" data-zh="运行是事件日志，不是一行数据">The run is an event log, not a row</h3>
+<p data-en="How should the durable run be represented? The instinct is a row: serialize the state, overwrite it on every step, restore it on boot. This works until it does not — until the state has a shape that changes between versions, until two workers overwrite each other, until someone needs to know what the agent tried before it failed. The better representation is older than agent frameworks and will outlive all of them: an append-only event log. Every step appends an immutable event — the model was called with this input; it returned this; this tool was invoked with these arguments; it returned that; this route was chosen; this budget was spent. State is not stored. State is derived — a fold over the log, computed on demand. The log at the head is the present; the log from the beginning is full history for free. Resume becomes mechanical: replay the log, rebuild the fold, continue from the head. Audit becomes mechanical: the log is the trace. A new harness version becomes testable: re-fold the same log under the new code and compare. None of these capabilities can be bolted onto a mutable state row later. They are properties of the representation itself." data-zh="持久的运行，应该用什么表示？直觉是一行数据：把状态序列化，每一步覆盖一次，启动时恢复。这在一段时间内可行——直到状态的形状在版本之间变了，直到两个 worker 互相覆盖，直到有人想知道智能体在失败之前尝试过什么。更好的表示方式，比所有智能体框架都古老，也会比它们全部活得久：一条只追加的事件日志。每一步追加一个不可变的事件——模型被带着这个输入调用了；它返回了这个；这个工具被带着这些参数调用了；它返回了那个；这条路由被选择了；这份预算被花掉了。状态不是被存储的。状态是被推导的——一次对日志的折叠（fold），按需计算。日志的头部是现在；日志从头到尾，是免费赠送的完整历史。恢复变成机械操作：重放日志，重建折叠，从头部继续。审计变成机械操作：日志就是追踪记录。新版本的 harness 变得可测：用新代码对同一条日志重新折叠，然后对比。这些能力，没有一个是事后能补装到一行可变状态上的。它们是表示方式本身的属性。">How should the durable run be represented? The instinct is a row: serialize the state, overwrite it every step, restore it on boot. This works until it does not. The better representation is older than agent frameworks and will outlive all of them: an append-only event log. Every step appends an immutable event. State is not stored — state is derived, a fold over the log. Resume becomes mechanical. Audit becomes mechanical. None of these capabilities can be bolted onto a mutable state row later.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrL2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrL3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE RUN AS AN EVENT LOG" data-zh="作为事件日志的运行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE RUN AS AN EVENT LOG</text>
+<!-- append-only log column -->
+<text data-en="APPEND-ONLY LOG" data-zh="只追加日志" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="130" y="54">APPEND-ONLY LOG</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.2" width="170" x="45" y="64"></rect>
+<text data-en="e1 · plan drafted" data-zh="e1 · 计划生成" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="130" y="81">e1 · plan drafted</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.2" width="170" x="45" y="98"></rect>
+<text data-en="e2 · search() → 12 hits" data-zh="e2 · search() → 12 条结果" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="130" y="115">e2 · search() → 12 hits</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.2" width="170" x="45" y="132"></rect>
+<text data-en="e3 · route: deep-read" data-zh="e3 · 路由：深读" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="130" y="149">e3 · route: deep-read</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.2" width="170" x="45" y="166"></rect>
+<text data-en="e4 · read() ×5" data-zh="e4 · read() ×5" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="130" y="183">e4 · read() ×5</text>
+<rect fill="var(--accent-dim)" height="26" rx="6" stroke="var(--accent)" stroke-width="2" width="170" x="45" y="200"></rect>
+<text data-en="e5 · checkpoint ◀ head" data-zh="e5 · 检查点 ◀ 头部" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="130" y="217">e5 · checkpoint ◀ head</text>
+<text data-en="immutable · never rewritten" data-zh="不可变 · 永不改写" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="130" y="252">immutable · never rewritten</text>
+<!-- fold arrow -->
+<path d="M215 150 C260 150 270 150 305 150" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<text data-en="fold" data-zh="折叠" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="260" y="142">fold</text>
+<!-- derived state -->
+<text data-en="DERIVED STATE" data-zh="推导出的状态" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="420" y="54">DERIVED STATE</text>
+<rect fill="var(--bg-surface)" height="150" rx="10" stroke="var(--accent)" stroke-width="1.5" width="180" x="310" y="64"></rect>
+<text data-en="working context" data-zh="工作上下文" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" x="325" y="88">working context</text>
+<text data-en="step cursor: 5" data-zh="步骤游标：5" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" x="325" y="108">step cursor: 5</text>
+<text data-en="budget left: 62%" data-zh="剩余预算：62%" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" x="325" y="128">budget left: 62%</text>
+<text data-en="open handles: 2" data-zh="未关闭句柄：2" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" x="325" y="148">open handles: 2</text>
+<text data-en="side-effect ledger ✓" data-zh="副作用台账 ✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" x="325" y="168">side-effect ledger ✓</text>
+<text data-en="deadline: 14m left" data-zh="截止：剩 14 分钟" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" x="325" y="188">deadline: 14m left</text>
+<!-- worker -->
+<path d="M420 214 L420 246" fill="none" marker-end="url(#arrL2)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3" width="200" x="320" y="250"></rect>
+<text data-en="any worker · resume at head" data-zh="任意工作进程 · 从头部续跑" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="420" y="272">any worker · resume at head</text>
+<text data-en="replay → rebuild → continue" data-zh="重放 → 重建 → 继续" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="420" y="308">replay → rebuild → continue</text>
+<text data-en="audit = the log · history = free" data-zh="审计 = 日志 · 历史免费" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="420" y="326">audit = the log · history = free</text>
+<!-- crash annotation -->
+<path d="M130 300 C130 280 130 260 130 240" fill="none" marker-end="url(#arrL3)" stroke="var(--accent-3)" stroke-width="1" stroke-dasharray="3,3"></path>
+<text data-en="worker died?" data-zh="工作进程死了？" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="130" y="316">worker died?</text>
+<text data-en="the log did not." data-zh="日志没有。" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="130" y="330">the log did not.</text>
+</svg>
+<p class="diagram-caption" data-en="Every step appends an immutable event. State is a fold over the log — computed, not stored — which means any worker, on any machine, at any time, can replay the log, rebuild the state exactly, and continue the run. The checkpoint is not a dump of memory; it is a position in the log plus the side-effect ledger of everything the run has done to the outside world." data-zh="每一步都追加一个不可变事件。状态是对日志的一次折叠——是算出来的，不是存出来的——这意味着任何机器上的任何工作进程，在任何时刻，都可以重放日志、精确重建状态、继续运行。检查点不是一份内存转储；它是日志中的一个位置，加上一份记录了这个运行对外界做过什么的副作用台账。">Every step appends an immutable event. State is a fold over the log — computed, not stored — which means any worker, on any machine, at any time, can replay the log, rebuild the state exactly, and continue the run. The checkpoint is not a dump of memory; it is a position in the log plus the side-effect ledger.</p>
+</div>
+<blockquote data-en="A checkpoint that cannot be resumed is a postcard from the crash. The test of durability is not whether state was saved before the process died — it is whether a different process, on a different machine, minutes or hours later, can pick up the run and do the right thing without asking anyone what happened." data-zh="一个无法被续跑的检查点，只是一张来自事故现场的明信片。耐久性的检验标准，不是进程死掉之前状态有没有被保存——而是另一个进程、在另一台机器上、几分钟或几小时之后，能否接手这个运行、做出正确的动作，而无需问任何人发生了什么。">A checkpoint that cannot be resumed is a postcard from the crash. The test of durability is not whether state was saved before the process died — it is whether a different process, on a different machine, minutes or hours later, can pick up the run and do the right thing.</blockquote>
+<h3 data-en="The side-effect window" data-zh="副作用窗口">The side-effect window</h3>
+<p data-en="Here is the part that makes agent interruption genuinely hard, harder than state management: the agent does not merely think, it acts. Losing a thought is cheap — the log rebuilds it. Losing track of an action is not. Consider the moment the agent decides to send the email, or commit the migration, or charge the card. The intent is formed, the tool call is dispatched, the request leaves the machine — and the process dies before the acknowledgment arrives. Did the write land? Nobody knows. The naive restart replays from the last checkpoint, re-forms the same intent, and dispatches the same call. If the first one landed, the email is now sent twice. This gap — between 'the agent decided' and 'the effect was confirmed' — is the side-effect window, and everything expensive or dangerous in an agent system lives inside it. State management protects the agent's memory. The side-effect window is about the world's memory, and the world does not roll back." data-zh="这里才是智能体中断真正困难的地方，比状态管理困难得多：智能体不只是思考，它还行动。丢掉一个思考是廉价的——日志会重建它。弄丢一个行动的踪迹则不然。想象智能体决定发出那封邮件、提交那次迁移、划走那笔钱的时刻。意图形成了，工具调用已派发，请求离开了这台机器——然后在确认送达之前，进程死了。写入落地了吗？没人知道。天真的重启会从上一个检查点重放，重新形成同样的意图，派发同样的调用。如果第一次已经落地，邮件现在被发了两遍。这个缺口——从「智能体决定了」到「效果被确认了」之间——就是副作用窗口，而智能体系统里所有昂贵或危险的东西，都住在它里面。状态管理保护的是智能体的记忆。副作用窗口关乎的是世界的记忆，而世界不会回滚。">Here is the part that makes agent interruption genuinely hard: the agent does not merely think, it acts. Losing a thought is cheap — the log rebuilds it. Losing track of an action is not. The gap between 'the agent decided' and 'the effect was confirmed' is the side-effect window, and everything expensive or dangerous in an agent system lives inside it. State management protects the agent's memory. The side-effect window is about the world's memory, and the world does not roll back.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrW1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrW2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE SIDE-EFFECT WINDOW" data-zh="副作用窗口" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE SIDE-EFFECT WINDOW</text>
+<!-- timeline -->
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--text-tertiary)" stroke-width="1.5" width="90" x="40" y="60"></rect>
+<text data-en="intent" data-zh="意图" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="85" y="79">intent</text>
+<line marker-end="url(#arrW1)" stroke="var(--text-tertiary)" stroke-width="1.5" x1="130" x2="160" y1="75" y2="75"></line>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--text-tertiary)" stroke-width="1.5" width="90" x="162" y="60"></rect>
+<text data-en="dispatch" data-zh="派发" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="207" y="79">dispatch</text>
+<line marker-end="url(#arrW1)" stroke="var(--text-tertiary)" stroke-width="1.5" x1="252" x2="282" y1="75" y2="75"></line>
+<!-- the window -->
+<rect fill="var(--accent-dim)" height="56" opacity="0.6" rx="9" stroke="var(--accent-3)" stroke-width="1.8" width="180" x="284" y="47"></rect>
+<text data-en="? ? ?" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="14" font-weight="800" text-anchor="middle" x="374" y="72">? ? ?</text>
+<text data-en="unknown outcome" data-zh="结果未知" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="374" y="90">unknown outcome</text>
+<line marker-end="url(#arrW1)" stroke="var(--text-tertiary)" stroke-width="1.5" x1="464" x2="494" y1="75" y2="75"></line>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="90" x="496" y="60"></rect>
+<text data-en="confirmed" data-zh="已确认" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="541" y="79">confirmed</text>
+<!-- crash marks -->
+<g>
+<text data-en="✕ crash" data-zh="✕ 崩溃" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="330" y="40">✕ crash</text>
+<text data-en="✕ crash" data-zh="✕ 崩溃" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="420" y="40">✕ crash</text>
+</g>
+<text data-en="die anywhere inside, and no one knows whether the world changed" data-zh="死在窗口里的任何一点，都没人知道世界是否已被改变" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="128">die anywhere inside, and no one knows whether the world changed</text>
+<!-- idempotency key -->
+<text data-en="THE FIX: IDEMPOTENCY AS PART OF THE TOOL PROTOCOL" data-zh="解法：把幂等性做进工具协议" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="162">THE FIX: IDEMPOTENCY AS PART OF THE TOOL PROTOCOL</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="270" x="30" y="180"></rect>
+<text data-en="key = run_id + step + tool + hash(args)" data-zh="键 = run_id + 步骤 + 工具 + 参数哈希" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="165" y="201">key = run_id + step + tool + hash(args)</text>
+<line marker-end="url(#arrW2)" stroke="var(--accent)" stroke-width="1.5" x1="300" x2="330" y1="197" y2="197"></line>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="120" x="332" y="180"></rect>
+<text data-en="tool server" data-zh="工具服务端" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="392" y="196">tool server</text>
+<text data-en="dedupe" data-zh="去重" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="392" y="208">dedupe</text>
+<line marker-end="url(#arrW2)" stroke="var(--accent)" stroke-width="1.5" x1="452" x2="482" y1="197" y2="197"></line>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.8" width="110" x="484" y="180"></rect>
+<text data-en="effect once" data-zh="效果只发生一次" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="539" y="201">effect once</text>
+<!-- bottom formula -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="248"></rect>
+<text data-en="at-least-once delivery + idempotent tools = effectively-once behavior. Reads need no key. Writes cannot live without one." data-zh="至少一次的投递 + 幂等的工具 = 实际上一次的行为。读操作不需要键。写操作没有键就活不下去。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="273">at-least-once delivery + idempotent tools = effectively-once behavior. Reads need no key. Writes cannot live without one.</text>
+</svg>
+<p class="diagram-caption" data-en="The dangerous interval is between dispatch and confirmation — a crash there leaves the outcome unknowable, and a naive resume duplicates the effect. The fix is not to pretend crashes will not happen; it is to make every mutating tool accept an idempotency key derived from the run, so the tool server can recognize a replay and return the remembered result instead of acting twice." data-zh="危险的区间，在派发与确认之间——在那里崩溃，结果变得不可知，而天真的续跑会把效果重复一遍。解法不是假装崩溃不会发生，而是让每一个会改变世界的工具都接受一个由运行派生出的幂等键，这样工具服务端就能认出这是一次重放，返回记住的结果，而不是再执行一遍。">The dangerous interval is between dispatch and confirmation — a crash there leaves the outcome unknowable, and a naive resume duplicates the effect. The fix is not to pretend crashes will not happen; it is to make every mutating tool accept an idempotency key derived from the run, so the tool server can recognize a replay and return the remembered result instead of acting twice.</p>
+</div>
+<p data-en="Exactly-once execution does not exist. It is a story distributed systems tell around campfires. What exists — what has existed in payment rails and message queues for decades — is at-least-once delivery combined with idempotent operations, which behaves like exactly-once. Agent systems should simply adopt this. Every mutating tool in the harness takes an idempotency key, derived deterministically from the run identity, the step, the tool name, and a hash of the arguments. The tool server records the key and the result; a second call with the same key returns the recorded answer without re-executing. Reads need no key. Writes cannot live without one. And for the tools that cannot be made idempotent — the genuinely external, the genuinely irreversible — the harness needs the honest alternative: compensation. Check whether the effect landed before acting again, and if the check cannot answer, route to a human instead of guessing. That is not a limitation of the architecture. That is the architecture admitting what it does not know." data-zh="「恰好一次」的执行并不存在。那是分布式系统围着篝火讲的故事。真实存在的——在支付通道和消息队列里存在了几十年的——是「至少一次」投递加上幂等操作，它们组合起来的行为，看起来就像恰好一次。智能体系统应该直接采用这一套。harness 里的每一个会改变世界的工具，都接受一个幂等键，由运行身份、步骤、工具名和参数哈希确定性地派生。工具服务端记录这个键和结果；携带同一个键的第二次调用会返回记录在案的答案，而不再执行。读操作不需要键。写操作没有键就活不下去。而对于那些无法做成幂等的工具——真正外部的、真正不可逆的——harness 需要诚实的替代方案：补偿。在再次行动之前先检查效果是否已落地，而如果检查无法给出答案，就路由给一个人，而不是去猜。这不是架构的局限。这是架构在承认自己不知道什么。">Exactly-once execution does not exist. It is a story distributed systems tell around campfires. What exists — in payment rails and message queues for decades — is at-least-once delivery combined with idempotent operations, which behaves like exactly-once. Every mutating tool takes an idempotency key derived from the run, the step, and the arguments. Reads need no key. Writes cannot live without one. And for the genuinely irreversible tools, the honest alternative is compensation: check before acting, and route to a human when the check cannot answer.</p>
+<h3 data-en="Resume is a behavior, and it must be tested" data-zh="续跑是一种行为，而行为必须被测试">Resume is a behavior, and it must be tested</h3>
+<p data-en="Three resume modes cover almost every case. Restart clean: throw the run away and begin again — correct for cheap, read-only work; wasteful bordering on negligent for a research run that already burned forty minutes of retrieval. Resume from checkpoint: the default — replay the log, rebuild the fold, continue at the head. Compensate: when a side effect half-landed, resolve the world first, then continue. Choosing between these is not something the on-call engineer should improvise at the moment of failure; it is something the system knows per run, because someone wrote it down. And none of it counts as engineered until it is tested. The test is simple to describe and brutal to pass: for a given task, kill the process at every step index — after the plan, mid-tool-call, inside the side-effect window — and assert that the run converges to the same acceptable outcome, with no duplicated effects and no orphaned state. This is chaos engineering, applied to the loop instead of the cluster. Teams that run this test discover that resumability is not a feature they added. It is a property they either built in from the first week, or rewrote the system to earn later, at three times the cost." data-zh="三种续跑模式，几乎覆盖所有情况。干净重启：扔掉这个运行，从头再来——对廉价的、只读的工作是正确的选择；对一个已经烧掉四十分钟检索的调研运行，则是浪费到近乎失职。从检查点续跑：默认模式——重放日志，重建折叠，从头部继续。补偿：当副作用落了一半时，先把世界收拾干净，再继续。在这些模式之间做选择，不应该是值班工程师在故障时刻的即兴发挥；而应该是系统对每个运行都了然于胸的事，因为有人提前把它写了下来。而在被测试之前，这一切都算不上「被工程过」。这个测试描述起来简单、通过起来残酷：对一个给定任务，在每一个步骤编号上杀掉进程——计划生成之后、工具调用进行到一半、副作用窗口内部——然后断言这个运行收敛到同一个可接受的结果，没有重复的效果，没有孤儿状态。这就是混沌工程，只不过施加对象是循环，而不是集群。跑过这个测试的团队会发现：可续跑性不是后来加上的功能。它是一种属性——要么第一周就建了进去，要么后来以三倍的代价重写系统才换来。">Three resume modes cover almost every case. Restart clean — correct for cheap, read-only work; negligent for a run that burned forty minutes of retrieval. Resume from checkpoint — the default. Compensate — when a side effect half-landed, resolve the world first. And none of it counts as engineered until it is tested: kill the process at every step index and assert the run converges, with no duplicated effects. Chaos engineering, applied to the loop.</p>
+<p data-en="The deeper point is about what an interruption is allowed to mean. In a system built the naive way, an interruption is data loss and a support ticket. In a system built this way, an interruption is a scheduling detail — the run pauses because a deploy is rolling, and continues when the new workers are warm. Deploys stop requiring ceremony. Crashes become footnotes in the log. Long-running work becomes possible at all, because nothing depends on any single process staying alive. An agent system is not defined by what it does while everything is up. It is defined by what survives when things go down — and the run, the log, and the ledger of its effects on the world are the three things that must survive. Build those to be immortal, and every process in the system becomes what it always deserved to be: cheap, replaceable, and unafraid." data-zh="更深的一层，关乎「中断」被允许意味着什么。在按天真方式构建的系统里，中断等于数据丢失和一张支持工单。在按本文方式构建的系统里，中断只是一个调度细节——运行因为一次滚动部署而暂停，新的工作进程热起来之后继续。部署不再需要仪式。崩溃变成日志里的脚注。长时运行的工作第一次成为可能，因为没有任何东西依赖于某个进程的存活。一个智能体系统，不是由一切正常时它的行为定义的。它是由一切崩塌时幸存下来的东西定义的——运行、日志，以及它对世界造成的效果台账，这三样必须幸存。把它们建得不朽，系统里的每一个进程，就会变回它一直应有的样子：廉价、可替换、无所畏惧。">The deeper point is about what an interruption is allowed to mean. In a system built the naive way, an interruption is data loss and a support ticket. In a system built this way, an interruption is a scheduling detail. Deploys stop requiring ceremony. Crashes become footnotes in the log. An agent system is not defined by what it does while everything is up. It is defined by what survives when things go down — the run, the log, and the ledger of effects. Build those to be immortal, and every process becomes what it deserved to be: cheap, replaceable, and unafraid.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
