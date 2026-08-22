@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Model Did Not Fail — AI Frontlines</title>
+<meta content="When an agent breaks in production, the incident gets filed against the model — the loudest, least debuggable component, and the perfect scapegoat. But most agent incidents are born in the layers around the model: the harness, the tools, the world. Deterministic failure is never model failure." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=19" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="August 23, 2026" data-zh="2026年8月23日">August 23, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Model Did Not Fail" data-zh="模型没有失败">The Model Did Not Fail</h1>
+<p class="post-header-deck" data-en="When an agent breaks in production, the incident gets filed against the model — because the model is loud, probabilistic, and cannot defend itself. But most agent incidents originate in the layers around the model: the harness that assembles its context, the tools that feed it, the world that changed underneath it. A deterministic failure is never a model failure. Learn to tell the difference, or learn nothing at all." data-zh="当智能体在生产环境中出问题时，事故单总是被记在模型头上——因为模型最显眼、是概率性的、也无法为自己辩护。但大多数智能体事故，其实源于模型周围的层：组装上下文的 harness、喂数据给它的工具、在它脚下悄悄变化的世界。一个每次都复现的失败，绝不是模型的失败。学会区分，否则什么都学不到。">When an agent breaks in production, the incident gets filed against the model — because the model is loud, probabilistic, and cannot defend itself. But most agent incidents originate in the layers around the model: the harness that assembles its context, the tools that feed it, the world that changed underneath it.</p>
+</header>
+<article class="post-body">
+<p data-en="The ritual is always the same. A pager fires at two in the morning because an agent returned a confidently wrong answer to a customer. The trace gets pulled up. Someone points at the reasoning step and says the model got confused. A ticket is filed, the label reads model quality, and the investigation ends before it began. The phrase 'the model failed' is doing enormous work in this industry, and almost none of it is diagnostic. It is a scapegoat with an API. The model is the loudest component in the system, the least debuggable, the one that ships from a vendor and therefore belongs to no one in the room. Blame flows to it the way water flows downhill — not because it is guilty, but because it is the lowest point of accountability." data-zh="仪式总是一样的。凌晨两点，告警响起，因为一个智能体给客户返回了一个自信的错误答案。追踪记录被调出来。有人指着推理那一步说，模型糊涂了。一张工单被创建，标签写着「模型质量」，调查在开始之前就结束了。在这个行业里，「模型失败了」这句话承担着巨大的作用，而它几乎没有诊断价值。它是一只有 API 的替罪羊。模型是系统里最显眼的组件、最难调试的组件、来自供应商因此在场没人认领的组件。责难流向它，就像水往低处流——不是因为它有罪，而是因为它是问责链的最低点。">The ritual is always the same. A pager fires at two in the morning because an agent returned a confidently wrong answer to a customer. The trace gets pulled up. Someone points at the reasoning step and says the model got confused. A ticket is filed, the label reads model quality, and the investigation ends before it began.</p>
+<p data-en="An agent system is not a model. It is a stack. At the bottom sits the world — the live documents, the third-party APIs, the data that was correct when the pipeline was built and is correct no longer. Above it, the tools: the wrappers and integrations that translate intent into calls, and calls into results. Above those, the harness — the orchestration code that assembles context, manages the loop, binds results, retries failures, enforces budgets. And at the top, the model: a reasoning engine that only ever sees what the harness chooses to show it. Every one of these layers fails, each with its own signature. An incident classification scheme that has exactly one category — model failure — is not a taxonomy. It is a blindfold." data-zh="一个智能体系统，不是「一个模型」。它是一个栈。最底下是世界——活着的文档、第三方 API、那些在管道搭建时正确、而如今已不再正确的数据。往上是工具：那些把意图翻译成调用、把调用翻译成结果的封装与集成。再往上是 harness——那些组装上下文、管理循环、绑定结果、重试失败、执行预算的编排代码。最顶上，才是模型：一个推理引擎，它只看得见 harness 选择给它看的东西。这些层，每一层都会失败，每一层都有自己的失败签名。一个只有一个类目——「模型失败」——的事故分类法，不是分类学。它是眼罩。">An agent system is not a model. It is a stack. At the bottom sits the world — the live documents, the third-party APIs, the data that was correct when the pipeline was built and is correct no longer. Above it, the tools. Above those, the harness. And at the top, the model: a reasoning engine that only ever sees what the harness chooses to show it.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrBl1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="WHERE BLAME GOES vs WHERE FAILURES START" data-zh="责难流向哪 vs 失败诞生在哪" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHERE BLAME GOES vs WHERE FAILURES START</text>
+<!-- LEFT: the blame funnel -->
+<text data-en="WHERE BLAME GOES" data-zh="责难的流向" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="54">WHERE BLAME GOES</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="200" x="55" y="64"></rect>
+<text data-en="symptom: bad output" data-zh="症状：错误输出" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="84">symptom: bad output</text>
+<path d="M155 96 L155 110" fill="none" marker-end="url(#arrBl1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="140" x="85" y="114"></rect>
+<text data-en="guess: prompt issue" data-zh="猜测：prompt 问题" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="134">guess: prompt issue</text>
+<path d="M155 146 L155 160" fill="none" marker-end="url(#arrBl1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="80" x="115" y="164"></rect>
+<text data-en="verdict" data-zh="定论" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="184">verdict</text>
+<path d="M155 196 L155 210" fill="none" marker-end="url(#arrBl1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="42" rx="8" stroke="var(--accent-3)" stroke-dasharray="5,3" stroke-width="1.8" width="160" x="75" y="214"></rect>
+<text data-en="model quality" data-zh="模型质量" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="155" y="240">model quality</text>
+<text data-en="one category, zero information" data-zh="一个类目，零信息量" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="155" y="286">one category, zero information</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="46" y2="304"></line>
+<!-- RIGHT: the four layers -->
+<text data-en="WHERE FAILURES START" data-zh="失败的诞生地" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="460" y="54">WHERE FAILURES START</text>
+<rect fill="var(--bg-surface)" height="52" rx="7" stroke="var(--text-tertiary)" stroke-width="1.2" width="240" x="340" y="68"></rect>
+<text data-en="world" data-zh="世界" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="700" x="352" y="90">world</text>
+<text data-en="data went stale" data-zh="数据过期了" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" x="352" y="107">data went stale</text>
+<circle cx="508" cy="94" fill="var(--text-tertiary)" opacity="0.7" r="4"></circle>
+<circle cx="526" cy="94" fill="var(--text-tertiary)" opacity="0.7" r="4"></circle>
+<circle cx="544" cy="94" fill="var(--text-tertiary)" opacity="0.7" r="4"></circle>
+<rect fill="var(--bg-surface)" height="52" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="240" x="340" y="126"></rect>
+<text data-en="tools" data-zh="工具" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" x="352" y="148">tools</text>
+<text data-en="schema drift · silent errors" data-zh="schema 漂移 · 无声报错" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" x="352" y="165">schema drift · silent errors</text>
+<circle cx="508" cy="152" fill="var(--accent-2)" opacity="0.85" r="4"></circle>
+<circle cx="526" cy="152" fill="var(--accent-2)" opacity="0.85" r="4"></circle>
+<circle cx="544" cy="152" fill="var(--accent-2)" opacity="0.85" r="4"></circle>
+<circle cx="562" cy="152" fill="var(--accent-2)" opacity="0.85" r="4"></circle>
+<rect fill="var(--bg-surface)" height="52" rx="7" stroke="var(--accent)" stroke-width="2.5" width="240" x="340" y="184"></rect>
+<text data-en="harness" data-zh="harness" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" x="352" y="206">harness</text>
+<text data-en="context · retries · bindings" data-zh="上下文 · 重试 · 绑定" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" x="352" y="223">context · retries · bindings</text>
+<circle cx="508" cy="210" fill="var(--accent)" opacity="0.9" r="4"></circle>
+<circle cx="526" cy="210" fill="var(--accent)" opacity="0.9" r="4"></circle>
+<circle cx="544" cy="210" fill="var(--accent)" opacity="0.9" r="4"></circle>
+<circle cx="562" cy="210" fill="var(--accent)" opacity="0.9" r="4"></circle>
+<circle cx="580" cy="210" fill="var(--accent)" opacity="0.9" r="4"></circle>
+<rect fill="var(--bg-surface)" height="52" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="240" x="340" y="242"></rect>
+<text data-en="model" data-zh="模型" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" x="352" y="264">model</text>
+<text data-en="reasoning · planning" data-zh="推理 · 规划" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" x="352" y="281">reasoning · planning</text>
+<circle cx="508" cy="268" fill="var(--accent-3)" opacity="0.85" r="4"></circle>
+<circle cx="526" cy="268" fill="var(--accent-3)" opacity="0.85" r="4"></circle>
+<!-- bottom note -->
+<text data-en="the deterministic layers outproduce the stochastic one — most defects are born where you write code" data-zh="确定性的层，制造缺陷的速度超过了随机的那一层——大多数缺陷，诞生在你写代码的地方" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="330">the deterministic layers outproduce the stochastic one — most defects are born where you write code</text>
+</svg>
+<p class="diagram-caption" data-en="Left: the funnel every incident descends — symptom, guess, verdict — and the verdict is always the same. Right: the four layers where failures are actually born. The dots mark where real incidents cluster when teams bother to look: the harness and the tools, the two layers written in-house, quietly outproduce the model on defects." data-zh="左边：每张事故单都会滑下的漏斗——症状、猜测、结论——而结论永远是同一个。右边：失败真正诞生的四个层。圆点标出了当团队认真去查时，真实事故聚集的地方：harness 和工具，这两个自己写的层，在制造缺陷这件事上，悄悄地超过了模型。">Left: the funnel every incident descends — symptom, guess, verdict — and the verdict is always the same. Right: the four layers where failures are actually born. The dots mark where real incidents cluster when teams bother to look: the harness and the tools, the two layers written in-house, quietly outproduce the model on defects.</p>
+</div>
+<h3 data-en="Failure has four addresses" data-zh="失败有四个地址">Failure has four addresses</h3>
+<p data-en="Each layer of the stack has a characteristic way of breaking, and the signatures are learnable. The model layer fails statistically: the plan was wrong, an instruction was misread, a fact was invented. The signature is softness — the same input sometimes produces a correct answer, sometimes not. The tool layer fails loudly or dangerously quietly: a schema drifted and a parameter silently defaulted, a paginated endpoint returned page two of one, a rate limit surfaced as an empty result set instead of an error. The harness layer fails invisibly: context assembled in the wrong order, a tool result bound to the wrong variable, a retry that re-fires a side effect, a truncation that cuts the one paragraph that mattered. And the world layer fails without malice: the page moved, the API versioned, the upstream data was wrong to begin with. Four layers, four signatures, four very different fixes. None of them is 'switch to a better model.'" data-zh="栈的每一层都有自己特有的崩坏方式，而这些签名是可学习的。模型层的失败是统计性的：计划错了、指令读偏了、事实编造了。它的签名是「软」——同样的输入，有时产出正确答案，有时不。工具层的失败，要么很响，要么危险地安静：schema 漂移了、参数悄悄落到默认值，一个分页端点返回了「共一页」的第二页，一次限流以「空结果集」而非错误的形式浮现。harness 层的失败是隐形的：上下文以错误的顺序组装，一个工具结果绑定到了错误的变量，一次重试把副作用又触发了一遍，一次截断恰好砍掉了唯一重要的那一段。世界层的失败则不带恶意：页面搬家了、API 升级版本了、上游数据从一开始就是错的。四层，四种签名，四种截然不同的修复。其中没有一种是「换一个更好的模型」。">Each layer of the stack has a characteristic way of breaking, and the signatures are learnable. The model layer fails statistically: the plan was wrong, an instruction was misread, a fact was invented. The tool layer fails loudly or dangerously quietly. The harness layer fails invisibly. And the world layer fails without malice. Four layers, four signatures, four very different fixes. None of them is 'switch to a better model.'</p>
+<p data-en="Between these signatures sits the single most underused diagnostic in agent engineering: the repetition test. Take the failing input, freeze everything, run it ten times. A model failure is stochastic — it will succeed at least once or twice across ten runs, because the model samples a different path each time. A harness or tool failure is deterministic — it fails all ten times, identically, because code does not roll dice. The gradient between sometimes and always is the fingerprint of the layer. This test costs ten API calls and about two minutes, and it resolves a shocking fraction of incidents marked model failure — by revealing that they were never stochastic to begin with. Almost no one runs it. The pager is loud, the sprint is short, and 'the model is having a bad day' is an answer that requires no further work." data-zh="在这些签名之间，藏着智能体工程里最被低估的诊断手段：重复测试。拿那个失败的输入，冻结一切，跑十次。模型的失败是随机的——十次里它至少会成功一两次，因为模型每次采样不同的路径。而 harness 或工具的失败是确定性的——十次全部失败、以同样的方式失败，因为代码不掷骰子。「有时」与「总是」之间的梯度，就是所在层的指纹。这个测试花十次 API 调用、大约两分钟，却能解决一大批被标记为「模型失败」的事故——因为它揭示了这些失败从来就不是随机的。但几乎没人跑它。告警很响，迭代很短，而「模型今天状态不好」是一个不需要任何后续工作的答案。">Between these signatures sits the single most underused diagnostic in agent engineering: the repetition test. Take the failing input, freeze everything, run it ten times. A model failure is stochastic — it will succeed at least once or twice across ten runs. A harness or tool failure is deterministic — it fails all ten times, identically, because code does not roll dice. Almost no one runs this test. The pager is loud, the sprint is short, and 'the model is having a bad day' is an answer that requires no further work.</p>
+<blockquote data-en="A failure that reproduces every single time is not a model failure. Models are stochastic; code is not. Deterministic breakage has a deterministic author — and it is almost never the component that speaks in the trace." data-zh="一个每次都复现的失败，不是模型的失败。模型是随机的，代码不是。确定性的损坏，有一个确定性的作者——而这几乎从来不是那个在追踪记录里说话的组件。">A failure that reproduces every single time is not a model failure. Models are stochastic; code is not. Deterministic breakage has a deterministic author — and it is almost never the component that speaks in the trace.</blockquote>
+<h3 data-en="The masquerade" data-zh="伪装">The masquerade</h3>
+<p data-en="Harness bugs do not look like harness bugs. They look like model behavior, because the model is the only part of the system that narrates. The trace shows what the model said, what tool it called, what it concluded. It does not show that the context assembler silently truncated the tool result to fit a token budget — so the model answered from half a document, and the incident is filed as hallucination. It does not show that the retry wrapper, on its second attempt, fed the model a stale result from the first — so the model 'ignored' a correction it never received, and the incident is filed as poor instruction following. It does not show that a schema drift quietly coerced a parameter to its default — so the tool did the wrong thing for the right reasons, and the incident is filed as the model called the tool incorrectly. The harness is the stagehand of this theater: invisible when it works, and when it fails, the actor gets the review." data-zh="harness 的 bug 看起来不像 harness 的 bug。它们看起来像模型的行为，因为模型是系统里唯一会「说话」的部分。追踪记录展示模型说了什么、调了什么工具、下了什么结论。它不展示上下文组装器为了塞进 token 预算、悄悄截断了工具结果——于是模型基于半份文档作答，事故被记为「幻觉」。它不展示重试包装器在第二次尝试时、把第一次的过期结果喂给了模型——于是模型「无视」了一个它从未收到的更正，事故被记为「指令遵循差」。它不展示 schema 漂移悄悄把一个参数强转成了默认值——于是工具出于正确的理由做了错误的事，事故被记为「模型错误调用了工具」。harness 是这出戏的幕后人员：正常时隐身，出错时，挨剧评的是台上的演员。">Harness bugs do not look like harness bugs. They look like model behavior, because the model is the only part of the system that narrates. The trace shows what the model said, what tool it called, what it concluded. It does not show that the context assembler silently truncated the tool result to fit a token budget — so the model answered from half a document, and the incident is filed as hallucination.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 370" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrT2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="ANATOMY OF A 'MODEL FAILURE'" data-zh="一次「模型失败」的解剖" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">ANATOMY OF A 'MODEL FAILURE'</text>
+<!-- lanes -->
+<rect fill="var(--bg-surface)" height="64" opacity="0.55" rx="8" stroke="var(--border)" stroke-width="1" width="500" x="100" y="44"></rect>
+<rect fill="var(--bg-surface)" height="64" opacity="0.55" rx="8" stroke="var(--border)" stroke-width="1" width="500" x="100" y="116"></rect>
+<rect fill="var(--bg-surface)" height="64" opacity="0.55" rx="8" stroke="var(--border)" stroke-width="1" width="500" x="100" y="188"></rect>
+<rect fill="var(--bg-surface)" height="64" opacity="0.55" rx="8" stroke="var(--border)" stroke-width="1" width="500" x="100" y="260"></rect>
+<text data-en="world" data-zh="世界" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="end" x="90" y="80">world</text>
+<text data-en="tools" data-zh="工具" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="end" x="90" y="152">tools</text>
+<text data-en="harness" data-zh="harness" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="end" x="90" y="224">harness</text>
+<text data-en="model" data-zh="模型" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="end" x="90" y="296">model</text>
+<text data-en="not involved this time — but always a suspect" data-zh="这次没参与——但永远是嫌疑人" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="350" y="80">not involved this time — but always a suspect</text>
+<!-- step 1: harness -->
+<rect fill="var(--bg-surface)" height="44" rx="7" stroke="var(--accent)" stroke-width="1.5" width="118" x="112" y="198"></rect>
+<text data-en="assemble context" data-zh="组装上下文" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="171" y="218">assemble context</text>
+<text data-en="step 1" data-zh="第 1 步" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="171" y="233">step 1</text>
+<!-- arrow 1->2 -->
+<path d="M230 210 C255 195 245 175 262 162" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- step 2: tools -->
+<rect fill="var(--bg-surface)" height="44" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="100" x="265" y="126"></rect>
+<text data-en="fetch report" data-zh="拉取报告" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="315" y="146">fetch report</text>
+<text data-en="step 2" data-zh="第 2 步" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="315" y="161">step 2</text>
+<!-- arrow 2->3 -->
+<path d="M365 162 C385 175 380 195 395 208" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- step 3: harness (THE BUG) -->
+<rect fill="var(--bg-surface)" height="44" rx="7" stroke="var(--accent-3)" stroke-dasharray="5,3" stroke-width="2" width="118" x="398" y="198"></rect>
+<text data-en="truncate to fit ✗" data-zh="截断以塞进预算 ✗" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="457" y="218">truncate to fit ✗</text>
+<text data-en="step 3 · the bug" data-zh="第 3 步 · bug 在此" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="457" y="233">step 3 · the bug</text>
+<!-- arrow 3->4 -->
+<path d="M505 242 C520 255 515 272 522 285" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- step 4: model (THE SYMPTOM) -->
+<rect fill="var(--bg-surface)" height="44" rx="7" stroke="var(--accent-3)" stroke-width="2" width="118" x="460" y="288"></rect>
+<text data-en="answer: wrong number !" data-zh="答案：数字错了 !" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="519" y="308">answer: wrong number !</text>
+<text data-en="step 4 · the symptom" data-zh="第 4 步 · 症状在此" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="519" y="323">step 4 · the symptom</text>
+<!-- blame arc from bug to symptom -->
+<path d="M420 196 C400 250 420 280 455 288" fill="none" marker-end="url(#arrT2)" stroke="var(--text-tertiary)" stroke-dasharray="4,3" stroke-width="1.2"></path>
+<text data-en="cause" data-zh="原因" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="200" y="270">cause</text>
+<text data-en="deterministic code defect" data-zh="确定性的代码缺陷" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="200" y="284">deterministic code defect</text>
+<text data-en="symptom" data-zh="症状" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="200" y="316">symptom</text>
+<text data-en="looks like a reasoning error" data-zh="看起来像推理错误" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="200" y="330">looks like a reasoning error</text>
+<text data-en="the trace reads forward; the truth is found in reverse →" data-zh="追踪记录正向阅读；真相反向找到 →" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="356">the trace reads forward; the truth is found in reverse →</text>
+</svg>
+<p class="diagram-caption" data-en="Anatomy of one 'model failure.' The bug detonates in the harness lane — a truncation, one step before the symptom — and the blast surfaces in the model lane as a wrong number. Every layer the failure crosses launders it into something that looks like a decision. The distance between the ✗ and the ! is the distance the investigation has to travel backwards; teams that stop at the ! learn nothing." data-zh="一次「模型失败」的解剖。bug 在 harness 泳道里引爆——一次截断，比症状早一步——冲击波在模型泳道以一个错误数字的形式浮出水面。失败穿过的每一层，都把它洗刷成一个看起来像「决策」的东西。✗ 与 ! 之间的距离，就是调查需要回溯的距离；停在 ! 的团队，什么也学不到。">Anatomy of one 'model failure.' The bug detonates in the harness lane — a truncation, one step before the symptom — and the blast surfaces in the model lane as a wrong number. Every layer the failure crosses launders it into something that looks like a decision. The distance between the ✗ and the ! is the distance the investigation has to travel backwards; teams that stop at the ! learn nothing.</p>
+</div>
+<p data-en="Read the anatomy diagram and notice the geometry, because the geometry is the lesson. The cause sits low in the stack and early in the run. The symptom sits high in the stack and late. Between them lies the boundary the information had to cross, and each crossing transforms the failure's appearance: a truncation becomes an information gap, the information gap becomes a plausible inference, the plausible inference becomes a confident wrong answer. By the time the failure reaches the surface, it is wearing the model's face. This is why incident triage must walk backwards, step by step, from the first observable anomaly toward the first divergence from intent — not jump straight from symptom to verdict. The trace reads forward, but the truth is found in reverse." data-zh="细看这张解剖图，注意它的几何结构，因为几何结构本身就是教训。原因位于栈的低处、运行的前段。症状位于栈的高处、运行的后段。两者之间，是信息必须穿越的层界，而每一次穿越都在改变失败的面貌：一次截断变成一个信息缺口，信息缺口变成一个合理推断，合理推断变成一个自信的错误答案。当失败抵达水面时，它已经戴上了模型的脸。这就是为什么事故分诊必须倒着走——从第一个可观察的异常、一步一步走向第一个偏离意图的点——而不是从症状直接跳到结论。追踪记录是正向读的，但真相是反向找到的。">Read the anatomy diagram and notice the geometry, because the geometry is the lesson. The cause sits low in the stack and early in the run. The symptom sits high in the stack and late. By the time the failure reaches the surface, it is wearing the model's face. This is why incident triage must walk backwards, step by step, from the first observable anomaly toward the first divergence from intent — not jump straight from symptom to verdict.</p>
+<h3 data-en="Blame allocation as an engineering discipline" data-zh="把归因变成工程纪律">Blame allocation as an engineering discipline</h3>
+<p data-en="The mature version of this practice is a classification pipeline, run the same way every time, on every incident. Pull the full trace — not the summary, the whole thing. Locate the first anomaly: the first point where what happened diverges from what was intended. Map that point to a layer — world, tools, harness, or model. Run the repetition test to separate the deterministic from the stochastic. Fix the defect at the layer that owns it, and add the regression test at that same layer, so the failure can never masquerade again. Five steps, none of them clever, all of them cheap. What they buy is not just correct fixes — it is an incident history that actually describes the system, and can therefore be mined for the patterns that matter: which layer drifts fastest, which integration rots first, which prompt change correlates with which regression." data-zh="这套实践的成熟形态，是一条分类流水线——每次事故、一模一样地执行。拉取完整的追踪记录——不是摘要，是全部。定位第一个异常：第一个「发生的事」偏离「预期的事」的点。把这个点映射到一个层——世界、工具、harness，或模型。跑重复测试，把确定性的失败和随机性的失败分开。在拥有缺陷的那个层修复它，并在同一个层加上回归测试，让这种失败再也无法伪装。五步，没有一步需要聪明，全部都便宜。它们买来的不只是正确的修复，而是一份真正描述系统的事故历史——因此可以从中挖出真正重要的模式：哪一层漂移得最快，哪个集成最先腐烂，哪次 prompt 改动与哪次回归相关。">The mature version of this practice is a classification pipeline, run the same way every time, on every incident. Pull the full trace — not the summary, the whole thing. Locate the first anomaly. Map that point to a layer. Run the repetition test. Fix the defect at the layer that owns it, and add the regression test at that same layer. Five steps, none of them clever, all of them cheap.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrL2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE CLASSIFICATION PIPELINE" data-zh="分类流水线" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE CLASSIFICATION PIPELINE</text>
+<!-- row 1 -->
+<rect fill="var(--bg-surface)" height="46" rx="8" stroke="var(--accent)" stroke-width="1.5" width="150" x="60" y="60"></rect>
+<text data-en="① pull full trace" data-zh="① 拉取完整追踪" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="135" y="88">① pull full trace</text>
+<path d="M210 83 L242 83" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="46" rx="8" stroke="var(--accent)" stroke-width="1.5" width="150" x="245" y="60"></rect>
+<text data-en="② find first anomaly" data-zh="② 定位第一个异常" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="320" y="88">② find first anomaly</text>
+<path d="M395 83 L427 83" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="46" rx="8" stroke="var(--accent)" stroke-width="1.5" width="150" x="430" y="60"></rect>
+<text data-en="③ map to layer" data-zh="③ 映射到层" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="505" y="88">③ map to layer</text>
+<!-- layer chips under box 3 -->
+<path d="M505 106 L505 126" fill="none" marker-end="url(#arrL2)" stroke="var(--text-tertiary)" stroke-dasharray="4,3" stroke-width="1.2"></path>
+<rect fill="var(--bg-surface)" height="24" rx="6" stroke="var(--text-tertiary)" stroke-width="1" width="54" x="391" y="130"></rect>
+<text data-en="world" data-zh="世界" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="418" y="146">world</text>
+<rect fill="var(--bg-surface)" height="24" rx="6" stroke="var(--accent-2)" stroke-width="1" width="54" x="449" y="130"></rect>
+<text data-en="tools" data-zh="工具" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="476" y="146">tools</text>
+<rect fill="var(--bg-surface)" height="24" rx="6" stroke="var(--accent)" stroke-width="1.5" width="54" x="507" y="130"></rect>
+<text data-en="harness" data-zh="harness" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="534" y="146">harness</text>
+<rect fill="var(--bg-surface)" height="24" rx="6" stroke="var(--accent-3)" stroke-width="1" width="54" x="565" y="130"></rect>
+<text data-en="model" data-zh="模型" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="592" y="146">model</text>
+<!-- path from chips to box 4 -->
+<path d="M391 142 C300 146 215 160 185 208" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- row 2 -->
+<rect fill="var(--bg-surface)" height="46" rx="8" stroke="var(--accent)" stroke-width="1.5" width="170" x="100" y="212"></rect>
+<text data-en="④ fix at the owning layer" data-zh="④ 在所属层修复" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="185" y="240">④ fix at the owning layer</text>
+<path d="M270 235 L326 235" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="46" rx="8" stroke="var(--accent)" stroke-width="1.5" width="190" x="330" y="212"></rect>
+<text data-en="⑤ regression test, same layer" data-zh="⑤ 同层加回归测试" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="425" y="240">⑤ regression test, same layer</text>
+<!-- bottom bar -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="276"></rect>
+<text data-en="every classified incident compounds into a map of which layer actually breaks — this is how the system learns itself" data-zh="每一起被正确分类的事故，都沉淀成一张「哪一层真正在坏」的地图——系统就是这样认识自己的" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="301">every classified incident compounds into a map of which layer actually breaks — this is how the system learns itself</text>
+</svg>
+<p class="diagram-caption" data-en="The classification pipeline. Every incident walks the same path: full trace, first anomaly, layer mapping, then a fix and a regression test at the layer that owns the defect. The compounding is the point — every classified incident builds a map of which layer actually breaks, and the next classification gets faster. Teams that skip the pipeline reset to zero every time the pager fires." data-zh="分类流水线。每起事故走同一条路：完整追踪、第一个异常、层映射，然后在拥有缺陷的层修复并加回归测试。关键在于复利——每一起被正确分类的事故，都沉淀成一张「哪一层真正在坏」的地图，让下一次分类更快。跳过这条流水线的团队，每次告警响起，都从零开始。">The classification pipeline. Every incident walks the same path: full trace, first anomaly, layer mapping, then a fix and a regression test at the layer that owns the defect. The compounding is the point — every classified incident builds a map of which layer actually breaks, and the next classification gets faster.</p>
+</div>
+<p data-en="There is a simple audit that reveals how honest a team's taxonomy really is. Take the last fifty incidents labeled model failure, and group them not by label but by where the fix actually landed. A prompt edit is a harness change. A context assembler fix is a harness change. A tool wrapper patch, a schema migration, a data backfill — none of these are model changes, because the model cannot be patched. If the fixes for the majority of 'model failures' landed in code the team owns, then the labels were fiction, and the team has been debugging its own blindfold. The ratio of true model failures to borrowed blame is worth tracking as a metric. It measures nothing about the model. It measures the accuracy of the team's self-portrait." data-zh="有一个简单的审计，能揭示一个团队的分类法到底有多诚实。取最近五十起被标为「模型失败」的事故，不按标签分组，而按修复实际落在哪里分组。改 prompt 是 harness 改动。修上下文组装器是 harness 改动。打工具封装的补丁、做 schema 迁移、回填数据——这些都不是模型改动，因为模型没法打补丁。如果大多数「模型失败」的修复都落在团队自己拥有的代码里，那这些标签就是虚构的，而这个团队一直在调试自己的眼罩。真模型失败与错嫁责难的比例，值得作为一个指标来追踪。它不衡量模型。它衡量的是团队自画像的准确度。">There is a simple audit that reveals how honest a team's taxonomy really is. Take the last fifty incidents labeled model failure, and group them not by label but by where the fix actually landed. A prompt edit is a harness change. A context assembler fix is a harness change. A tool wrapper patch, a schema migration, a data backfill — none of these are model changes, because the model cannot be patched. The ratio of true model failures to borrowed blame is worth tracking as a metric. It measures nothing about the model. It measures the accuracy of the team's self-portrait.</p>
+<p data-en="None of this excuses the model. Models genuinely fail — they misread, they confabulate, they plan badly, they get confused by contexts they were never designed to hold. Those failures are real, they are frequent, and they deserve their own engineering responses: better tool descriptions, tighter contexts, verifiers, structured outputs, task decomposition. But that is precisely the point. A team that cannot tell a model failure from a harness failure applies those responses at random — adding verifiers to deterministic bugs, rewriting prompts against integration defects, upgrading models to fix a truncation. The response is only as good as the diagnosis. The model is the loudest component in the system and the only one that cannot be stepped through in a debugger, which makes it both the perfect scapegoat and the worst possible place to stop looking. The next time an agent breaks, ask the question the ticket is hoping nobody asks: which layer failed — and how did it get the model to take the blame?" data-zh="这些，没有一句是在为模型开脱。模型真的会失败——读偏、虚构、规划糟糕、被它们从未被设计承载的上下文搞糊涂。这些失败是真实的、频繁的，也值得各自专门的工程应对：更好的工具描述、更紧的上下文、验证器、结构化输出、任务分解。但这恰恰是重点。一个分不清模型失败和 harness 失败的团队，会把这些应对随机乱用——给确定性的 bug 加验证器，对着集成缺陷重写 prompt，为了修一次截断而升级模型。应对的效果，取决于诊断的准确。模型是系统里最显眼的组件，也是唯一没法单步调试的组件——这让它既是完美的替罪羊，又是最不应该停止追查的地方。下一次智能体崩掉时，问一个工单里没人希望被问到的问题：是哪一层失败了——它是怎么让模型替它背下这口锅的？">None of this excuses the model. Models genuinely fail — they misread, they confabulate, they plan badly. Those failures are real, they are frequent, and they deserve their own engineering responses. But a team that cannot tell a model failure from a harness failure applies those responses at random. The response is only as good as the diagnosis. The next time an agent breaks, ask the question the ticket is hoping nobody asks: which layer failed — and how did it get the model to take the blame?</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

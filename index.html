@@ -70,6 +70,19 @@
             </div>
 
                     <div class="post-item fade-in">
+            <a href="posts/2026-08-23-the-model-did-not-fail.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">August 23, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
+                </div>
+                <h2 class="post-title" data-en="The Model Did Not Fail" data-zh="模型没有失败">The Model Did Not Fail</h2>
+                <p class="post-excerpt" data-en="When an agent breaks in production, the incident gets filed against the model — the loudest, least debuggable component, and the perfect scapegoat. But most agent incidents are born in the layers around the model: the harness, the tools, the world. Deterministic failure is never model failure." data-zh="当智能体在生产环境中出问题时，事故单总被记在模型头上——最显眼、最难调试的组件，完美的替罪羊。但大多数智能体事故，其实源于模型周围的层：harness、工具、世界。一个每次都复现的失败，绝不是模型的失败。">When an agent breaks in production, the incident gets filed against the model — the loudest, least debuggable component, and the perfect scapegoat. But most agent incidents are born in the layers.</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="post-item fade-in">
             <a href="posts/2026-08-22-your-agent-will-be-interrupted.html" class="post-item-inner">
                 <div class="post-meta">
                     <span class="post-date">August 22, 2026</span>
@@ -104,19 +117,6 @@
                 </div>
                 <h2 class="post-title" data-en="Your Agent Believes Everything It Reads" data-zh="你的智能体，相信它读到的一切">Your Agent Believes Everything It Reads</h2>
                 <p class="post-excerpt" data-en="Every tool result your agent fetches is untrusted input from a foreign author, yet it enters the same token stream as your system prompt — with the same authority. Tool-result injection is not a prompt bug to patch with one more warning line. It is an architecture problem: make belief cheap, action expensive, and never let the model be the only check between the internet and the write path." data-zh="智能体抓取的每一个工具结果，都是一个来自陌生作者的不受信输入，却和你的系统 prompt 进入同一股 token 流——带着同样的权威。工具结果注入，不是一个多加一行警告就能补掉的 prompt bug。它是一个架构问题：让相信便宜，让行动昂贵，绝不让模型成为互联网与写入路径之间唯一的检查。">Every tool result your agent fetches is untrusted input from a foreign author, yet it enters the same token stream as your system prompt — with the same authority. Tool-result injection is not a.</p>
-                <span class="post-arrow">→</span>
-            </a>
-        </div>
-
-        <div class="post-item fade-in">
-            <a href="posts/2026-08-12-the-cache-is-not-an-optimization.html" class="post-item-inner">
-                <div class="post-meta">
-                    <span class="post-date">August 12, 2026</span>
-                    <span class="post-dot"></span>
-                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
-                </div>
-                <h2 class="post-title" data-en="The Cache Is Not an Optimization" data-zh="缓存，不是一个优化项">The Cache Is Not an Optimization</h2>
-                <p class="post-excerpt" data-en="Every agent loop re-sends nearly the same giant context on every call. Teams treat prompt caching as a nice-to-have optimization. It is not. Cache locality is the architecture — the single largest lever over cost, latency, and consistency, and a discipline that shapes how the entire prompt is built." data-zh="智能体的循环，每次都重发几乎一模一样的巨大上下文。团队们把 prompt 缓存当作一个「锦上添花」的优化。它不是。缓存局部性，就是架构本身——对成本、延迟和一致性最大的那根杠杆，一门塑造整个 prompt 如何构建的纪律。">Every agent loop re-sends nearly the same giant context on every call. Teams treat prompt caching as a nice-to-have optimization. It is not. Cache locality is the architecture — the single largest.</p>
                 <span class="post-arrow">→</span>
             </a>
         </div>
@@ -196,6 +196,41 @@
 
         <article class="tweet-card fade-in">
             <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">OpenAI<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@OpenAI · Aug 22</span>
+                </div>
+                <span class="news-badge" style="background:#10A37F">OpenAI</span>
+            </div>
+            <div class="tweet-body" data-en="Now available on the API and rolling out across eligible plans for ChatGPT Work and Codex credits. 
+
+Pro, Plus, and Business subscription usage remains unchanged.
+https://t.co/DzyrOMdXpW" data-zh="现已上线 API，并陆续面向符合条件的 ChatGPT Work 与 Codex 额度计划推出。Pro、Plus 和 Business 订阅的用量保持不变。">Now available on the API and rolling out across eligible plans for ChatGPT Work and Codex credits. 
+
+Pro, Plus, and Business subscription usage remains unchanged.
+https://t.co/DzyrOMdXpW</div>
+            <div class="tweet-footer">
+                <a href="https://x.com/OpenAI/status/2090885188897460249" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/OpenAI/status/2090885188897460249" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/OpenAI/status/2090885188897460249" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    759
+                </a>
+                <a href="https://x.com/OpenAI/status/2090885188897460249" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
                 <img src="https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
                     <span class="tweet-name">Elon Musk<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
@@ -223,42 +258,6 @@
             </div>
         </article>
 
-        <article class="tweet-card fade-in">
-            <div class="tweet-header">
-                <img src="https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
-                <div class="tweet-author">
-                    <span class="tweet-name">Claude<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
-                    <span class="tweet-handle">@claudeai · Aug 22</span>
-                </div>
-                <span class="news-badge" style="background:#D4A574">Claude</span>
-            </div>
-            <div class="tweet-body" data-en="Claude Security scans now run on Claude Mythos 5, available today in public beta for all Claude Enterprise customers.
-
-Put our most capable security model to work on your codebase, no separate model access needed. https://t.co/zJSUgGjtZF" data-zh="Claude Security 扫描现已由 Claude Mythos 5 驱动，即日起面向所有 Claude Enterprise 客户开放公测。无需单独获取模型权限，即可让最强安全模型扫描你的代码库。">Claude Security scans now run on Claude Mythos 5, available today in public beta for all Claude Enterprise customers.
-
-Put our most capable security model to work on your codebase, no separate model access needed. https://t.co/zJSUgGjtZF</div>
-        <div class="tweet-media-link" data-full="https://pbs.twimg.com/media/HQQwjSyWsAAZTVs.jpg">
-            <img src="https://pbs.twimg.com/media/HQQwjSyWsAAZTVs.jpg" alt="" class="tweet-media" loading="lazy" />
-        </div>
-            <div class="tweet-footer">
-                <a href="https://x.com/claudeai/status/2090852314319880425" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
-                    0
-                </a>
-                <a href="https://x.com/claudeai/status/2090852314319880425" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
-                    0
-                </a>
-                <a href="https://x.com/claudeai/status/2090852314319880425" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    4.5K
-                </a>
-                <a href="https://x.com/claudeai/status/2090852314319880425" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
-                    View on X →
-                </a>
-            </div>
-        </article>
-
             </div>
         </div>
     </section>
@@ -267,6 +266,19 @@ Put our most capable security model to work on your codebase, no separate model 
     <section class="post-list tab-pane" id="pane-blog">
 
                 <div class="post-item fade-in">
+            <a href="posts/2026-08-23-the-model-did-not-fail.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">August 23, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
+                </div>
+                <h2 class="post-title" data-en="The Model Did Not Fail" data-zh="模型没有失败">The Model Did Not Fail</h2>
+                <p class="post-excerpt" data-en="When an agent breaks in production, the incident gets filed against the model — the loudest, least debuggable component, and the perfect scapegoat. But most agent incidents are born in the layers around the model: the harness, the tools, the world. Deterministic failure is never model failure." data-zh="当智能体在生产环境中出问题时，事故单总被记在模型头上——最显眼、最难调试的组件，完美的替罪羊。但大多数智能体事故，其实源于模型周围的层：harness、工具、世界。一个每次都复现的失败，绝不是模型的失败。">When an agent breaks in production, the incident gets filed against the model — the loudest, least debuggable component, and the perfect scapegoat. But most agent incidents are born in the layers.</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="post-item fade-in">
             <a href="posts/2026-08-22-your-agent-will-be-interrupted.html" class="post-item-inner">
                 <div class="post-meta">
                     <span class="post-date">August 22, 2026</span>
@@ -635,6 +647,41 @@ Put our most capable security model to work on your codebase, no separate model 
 
         <article class="tweet-card fade-in">
             <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">OpenAI<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@OpenAI · Aug 22</span>
+                </div>
+                <span class="news-badge" style="background:#10A37F">OpenAI</span>
+            </div>
+            <div class="tweet-body" data-en="Now available on the API and rolling out across eligible plans for ChatGPT Work and Codex credits. 
+
+Pro, Plus, and Business subscription usage remains unchanged.
+https://t.co/DzyrOMdXpW" data-zh="现已上线 API，并陆续面向符合条件的 ChatGPT Work 与 Codex 额度计划推出。Pro、Plus 和 Business 订阅的用量保持不变。">Now available on the API and rolling out across eligible plans for ChatGPT Work and Codex credits. 
+
+Pro, Plus, and Business subscription usage remains unchanged.
+https://t.co/DzyrOMdXpW</div>
+            <div class="tweet-footer">
+                <a href="https://x.com/OpenAI/status/2090885188897460249" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/OpenAI/status/2090885188897460249" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/OpenAI/status/2090885188897460249" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    759
+                </a>
+                <a href="https://x.com/OpenAI/status/2090885188897460249" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
                 <img src="https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
                     <span class="tweet-name">Elon Musk<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
@@ -657,6 +704,64 @@ Put our most capable security model to work on your codebase, no separate model 
                     4.4K
                 </a>
                 <a href="https://x.com/elonmusk/status/2090853842552578523" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Claude<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@claudeai · Aug 22</span>
+                </div>
+                <span class="news-badge" style="background:#D4A574">Claude</span>
+            </div>
+            <div class="tweet-body" data-en="It&#x27;s one of several steps to bring frontier capability to more defenders: we’re working with partners to integrate Mythos 5 into their security products and services, our new Defender Advantage Fund provides $35M in credits for open-source security, and we’re expanding our Cyber" data-zh="这是将前沿能力带给更多防御者的多项举措之一：正在与合作伙伴合作，将 Mythos 5 集成到他们的安全产品与服务中；新设立的 Defender Advantage Fund 为开源安全提供 3500 万美元额度；同时将在未来几周扩展 Cyber Verification Program。">It&#x27;s one of several steps to bring frontier capability to more defenders: we’re working with partners to integrate Mythos 5 into their security products and services, our new Defender Advantage Fund provides $35M in credits for open-source security, and we’re expanding our Cyber</div>
+            <div class="tweet-footer">
+                <a href="https://x.com/claudeai/status/2090852320128938319" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/claudeai/status/2090852320128938319" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/claudeai/status/2090852320128938319" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    239
+                </a>
+                <a href="https://x.com/claudeai/status/2090852320128938319" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Claude<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@claudeai · Aug 22</span>
+                </div>
+                <span class="news-badge" style="background:#D4A574">Claude</span>
+            </div>
+            <div class="tweet-body" data-en="Suggested patches open in Claude Code on the web, using the models your team already uses. These updates are part of our work to give defenders greater access to Mythos results without requiring direct access to the model: the model runs behind the scan and returns findings only." data-zh="建议补丁现可在网页版 Claude Code 中打开，使用的正是你的团队已在用的模型。这些更新旨在让防御者无需直接访问模型即可获取 Mythos 结果：模型在扫描背后运行，仅返回发现的问题。扫描按现有计划的标准 token 用量计费。">Suggested patches open in Claude Code on the web, using the models your team already uses. These updates are part of our work to give defenders greater access to Mythos results without requiring direct access to the model: the model runs behind the scan and returns findings only.</div>
+            <div class="tweet-footer">
+                <a href="https://x.com/claudeai/status/2090852318527033804" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/claudeai/status/2090852318527033804" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/claudeai/status/2090852318527033804" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    302
+                </a>
+                <a href="https://x.com/claudeai/status/2090852318527033804" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
                     View on X →
                 </a>
             </div>
@@ -1257,6 +1362,39 @@ Qwen3.8-27B is becoming part of your everyday workflows.🧑‍💻</div>
                     321
                 </a>
                 <a href="https://x.com/Alibaba_Qwen/status/2089919106522976337" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Anthropic<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@AnthropicAI · Aug 19</span>
+                </div>
+                <span class="news-badge" style="background:#D4A574">Anthropic</span>
+            </div>
+            <div class="tweet-body" data-en="We&#x27;re also publishing a technical report: https://t.co/Ltcqemzn5Z
+
+And open-sourcing our prompts and data here: https://t.co/OZXVQWSie2" data-zh="同时发布技术报告，并开源了相关 prompt 与数据。">We&#x27;re also publishing a technical report: https://t.co/Ltcqemzn5Z
+
+And open-sourcing our prompts and data here: https://t.co/OZXVQWSie2</div>
+            <div class="tweet-footer">
+                <a href="https://x.com/AnthropicAI/status/2089842395722678689" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/AnthropicAI/status/2089842395722678689" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/AnthropicAI/status/2089842395722678689" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    498
+                </a>
+                <a href="https://x.com/AnthropicAI/status/2089842395722678689" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
                     View on X →
                 </a>
             </div>
