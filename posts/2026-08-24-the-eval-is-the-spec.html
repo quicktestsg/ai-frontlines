@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Eval Is the Spec — AI Frontlines</title>
+<meta content="Traditional software keeps its specification in types, tests, and contracts — artifacts that execute and reject. Agent software has none of that. Behavior is soft, probabilistic, renegotiated on every run. The only specification that actually executes is the eval suite. Whatever it measures is what the system becomes — including when it measures nothing." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=19" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="August 24, 2026" data-zh="2026年8月24日">August 24, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Eval Is the Spec" data-zh="评测即规格">The Eval Is the Spec</h1>
+<p class="post-header-deck" data-en="Somewhere between the prompt and the product, every agent team has to answer a question classical engineering never faced: what does 'correct' mean when the system is allowed to be different every time it runs? Types won't answer it. Unit tests won't answer it. The only artifact that answers it — the only specification that actually executes — is the eval suite. Whatever the evals measure is what the system optimizes to become. Including, and especially, when they measure nothing." data-zh="在 prompt 和产品之间的某个地方，每一个智能体团队都必须回答一个经典工程从未面对过的问题：当系统被允许每次运行都不一样时，「正确」到底意味着什么？类型回答不了。单元测试也回答不了。唯一能回答它的产物——唯一真正会被执行的规格——是评测集。评测度量什么，系统就被优化成什么。包括、且尤其是，当它什么都不度量的时候。">Somewhere between the prompt and the product, every agent team has to answer a question classical engineering never faced: what does 'correct' mean when the system is allowed to be different every time it runs? Types won't answer it. Unit tests won't answer it. The only artifact that answers it is the eval suite.</p>
+</header>
+<article class="post-body">
+<p data-en="In typed software, the specification is not a document. It is embedded in the artifact itself, and it executes. The compiler is an adversarial reader that rejects any program contradicting the types. The test suite encodes intention as executable assertions and runs on every commit. The contract validates every request at the boundary. In these systems, correctness is not an opinion — it is a gate that fires automatically, thousands of times a day, without asking anyone's permission. Agent software has no such gate. The model is probabilistic by design. The prompt is a request, not a contract — a suggestion delivered to a distribution, with no guarantee about how the distribution will respond. Nothing in the pipeline structurally rejects a behavior that is wrong but plausible. And so the specification, which has to live somewhere, ends up living in exactly one place: the eval suite. Or it lives nowhere, and the team discovers this in production." data-zh="在有类型的软件里，规格不是一份文档。它内嵌在制品本身之中，而且会被执行。编译器是一个对抗性的读者，它拒绝任何与类型相矛盾的程序。测试套件把意图编码为可执行的断言，在每一次提交时运行。契约在边界上校验每一个请求。在这些系统里，正确性不是一种观点——它是一道会自动触发的门，一天数千次，无需任何人的许可。智能体软件没有这样的门。模型在设计上就是概率性的。prompt 是一个请求，不是一份契约——一条递交给分布的建议，对分布会如何回应毫无保证。流水线里没有任何东西，会在结构上拒绝一个错误但看起来合理的行为。于是，那个必须活在某处的规格，最终只活在一个地方：评测集。或者，它哪儿都不活，然后团队在生产环境里发现这一点。">In typed software, the specification is not a document. It is embedded in the artifact itself, and it executes. The compiler is an adversarial reader that rejects any program contradicting the types. The test suite encodes intention as assertions and runs on every commit. In these systems, correctness is not an opinion — it is a gate that fires automatically. Agent software has no such gate.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrEs1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrEs2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="WHERE THE SPEC LIVES" data-zh="规格活在哪里" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHERE THE SPEC LIVES</text>
+<!-- LEFT: traditional -->
+<text data-en="TRADITIONAL SOFTWARE" data-zh="传统软件" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="56">TRADITIONAL SOFTWARE</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="95" y="72"></rect>
+<text data-en="types" data-zh="类型" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="155" y="92">types</text>
+<path d="M155 102 L155 118" fill="none" marker-end="url(#arrEs1)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="95" y="120"></rect>
+<text data-en="unit tests" data-zh="单元测试" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="155" y="140">unit tests</text>
+<path d="M155 150 L155 166" fill="none" marker-end="url(#arrEs1)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="95" y="168"></rect>
+<text data-en="contracts" data-zh="契约" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="155" y="188">contracts</text>
+<text data-en="all of them execute" data-zh="它们都会被执行" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="155" y="224">all of them execute</text>
+<text data-en="wrong code is rejected" data-zh="错误代码被拒绝" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="155" y="242">wrong code is rejected</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="300"></line>
+<!-- RIGHT: agent software -->
+<text data-en="AGENT SOFTWARE" data-zh="智能体软件" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="56">AGENT SOFTWARE</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--text-tertiary)" stroke-width="1.5" stroke-dasharray="4,3" width="120" x="405" y="72"></rect>
+<text data-en="prompt — a request" data-zh="prompt——一个请求" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="92">prompt — a request</text>
+<path d="M465 102 L465 118" fill="none" marker-end="url(#arrEs1)" stroke="var(--text-tertiary)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--text-tertiary)" stroke-width="1.5" stroke-dasharray="4,3" width="120" x="405" y="120"></rect>
+<text data-en="conventions — folklore" data-zh="惯例——口口相传" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="140">conventions — folklore</text>
+<path d="M465 150 L465 166" fill="none" marker-end="url(#arrEs2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="32" rx="8" stroke="var(--accent)" stroke-width="2" width="150" x="390" y="168"></rect>
+<text data-en="EVAL SUITE" data-zh="评测集" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="465" y="189">EVAL SUITE</text>
+<text data-en="the only spec that executes" data-zh="唯一会被执行的规格" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="465" y="224">the only spec that executes</text>
+<text data-en="…if the team wrote one" data-zh="……前提是团队写了它" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="465" y="242">…if the team wrote one</text>
+<!-- bottom bar -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="278"></rect>
+<text data-en="Remove the evals from a traditional team and CI still gates every commit. Remove them from an agent team and nothing gates anything at all." data-zh="把评测从传统团队拿走，CI 依然在每次提交时把关。把它们从智能体团队拿走，就再没有任何东西把关了。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="303">Remove the evals from a traditional team and CI still gates every commit. Remove them from an agent team and nothing gates anything at all.</text>
+</svg>
+<p class="diagram-caption" data-en="Traditional software embeds its specification in artifacts that execute: types, tests, contracts. Agent software has a prompt — a suggestion to a distribution — and conventions that live in team folklore. The eval suite is the only specification that ever runs. If it doesn't exist, the specification doesn't exist." data-zh="传统软件把规格内嵌在会被执行的制品里：类型、测试、契约。智能体软件只有一个 prompt——一条递交给分布的建议——和活在团队口口相传中的惯例。评测集，是唯一会被执行的规格。如果它不存在，规格就不存在。">Traditional software embeds its specification in artifacts that execute: types, tests, contracts. Agent software has a prompt — a suggestion to a distribution — and conventions that live in team folklore. The eval suite is the only specification that ever runs. If it doesn't exist, the specification doesn't exist.</p>
+</div>
+<h3 data-en="The prompt is folklore" data-zh="prompt 只是口口相传">The prompt is folklore</h3>
+<p data-en="Watch how most teams actually change an agent. Someone edits a paragraph of the system prompt — 'be more careful with destructive actions,' 'prefer the search tool for recent events' — deploys it, tries two or three inputs by hand, and ships. The edit is a hypothesis. The sample size is three. The control group is a memory of how it behaved last week. This is not engineering; it is ritual with a deploy button. The prompt carries intention beautifully — it is the richest, most expressive interface to behavior anyone has ever had. But it enforces nothing. It is a wish whispered to a probability distribution. The eval suite is what turns the wish into a contract: it takes the intention, runs it against a hundred traces, and reports — with numbers — whether the distribution actually moved. A team that ships prompt changes without a suite is not iterating. It is performing weather rituals and attributing the sunny days to itself." data-zh="看看大多数团队实际上是怎么修改智能体的。有人编辑系统 prompt 的一段话——「对破坏性操作要更小心」「近期事件优先用搜索工具」——部署，手工试两三个输入，然后上线。这个编辑是一个假设。样本量是三。对照组是对上周行为的记忆。这不是工程；这是带着部署按钮的仪式。prompt 承载意图的能力无与伦比——它是人类历史上最丰富、最有表达力的行为接口。但它什么也不强制。它是对着一个概率分布低语的愿望。评测集，是把愿望变成契约的东西：它接过意图，对着一百条轨迹运行，然后用数字报告——分布到底动没动。一个没有套件就上线 prompt 改动的团队，不是在迭代。它是在表演求雨的仪式，并把晴天归功于自己。">Watch how most teams actually change an agent. Someone edits a paragraph of the system prompt, deploys it, tries two or three inputs by hand, and ships. The edit is a hypothesis. The sample size is three. The control group is a memory of how it behaved last week. This is not engineering; it is ritual with a deploy button.</p>
+<blockquote data-en="A prompt states what the agent should do. An eval states what the agent may not do — and then runs it a thousand times to make sure. Intention is a suggestion delivered to a distribution. The suite is the distribution's conscience." data-zh="prompt 声明智能体应该做什么。评测声明智能体不可以做什么——然后运行一千次来确认。意图，是递交给分布的建议。评测集，是分布的良知。">A prompt states what the agent should do. An eval states what the agent may not do — and then runs it a thousand times to make sure. Intention is a suggestion delivered to a distribution. The suite is the distribution's conscience.</blockquote>
+<h3 data-en="Grade the path, not just the destination" data-zh="给路径打分，而不只是终点">Grade the path, not just the destination</h3>
+<p data-en="The first mistake teams make with evals is grading only the final answer. It feels objective: here is the question, here is the gold answer, compare. But an agent's output is not just its last message — the run is a trajectory through the world, and the world keeps the receipts. Two runs can land on the identical answer while one took four careful tool calls with a verification step, and the other took forty calls, fired three of them at production infrastructure, guessed twice, and got lucky. A final-answer eval awards both a perfect score. The destination was right; the journey was unlicensed. Trajectory evals close this gap by asserting the path itself: was the search consulted before the claim was made, did the write happen only after verification, was the tool budget respected, were forbidden tools left untouched, did the run stop when its stop condition fired. In graph terms: the destination is a node, but the specification of an agent lives on its edges — because the edges are where the system touches everything that isn't the system." data-zh="团队在评测上犯的第一个错误，是只给最终答案打分。这感觉很客观：这是问题，这是标准答案，比较一下。但一个智能体的产出不只是它的最后一条消息——一次运行是一条穿过世界的轨迹，而世界留着收据。两次运行可以落在完全相同的答案上，而其中一次用了四次谨慎的工具调用加一步验证，另一次用了四十次调用、把其中三次打向了生产基础设施、猜了两次、然后运气好。终点答案评测给两者都打满分。终点是对的；旅途是无照驾驶。轨迹评测弥补了这个缺口，它断言的是路径本身：下结论之前有没有查过搜索，写入是否只发生在验证之后，工具预算有没有被尊重，禁用的工具是否碰都没碰，停止条件触发时有没有停。用图的话说：终点是一个节点，但智能体的规格活在它的边上——因为边，是系统触碰一切「非系统」的地方。">The first mistake teams make with evals is grading only the final answer. It feels objective: here is the question, here is the gold answer, compare. But an agent's output is not just its last message — the run is a trajectory through the world, and the world keeps the receipts. Two runs can land on the identical answer while one took four careful tool calls and the other took forty, fired three at production infrastructure, and got lucky. A final-answer eval awards both a perfect score.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrT2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="GRADE THE PATH, NOT JUST THE DESTINATION" data-zh="给路径打分，而不只是终点" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">GRADE THE PATH, NOT JUST THE DESTINATION</text>
+<!-- LEFT: final-answer eval -->
+<text data-en="FINAL-ANSWER EVAL" data-zh="终点答案评测" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="58">FINAL-ANSWER EVAL</text>
+<g opacity="0.55">
+<circle cx="70" cy="130" fill="var(--bg-surface)" r="16" stroke="var(--accent-3)" stroke-width="1.3"></circle>
+<line stroke="var(--accent-3)" stroke-width="1.2" x1="86" x2="106" y1="130" y2="130"></line>
+<circle cx="122" cy="130" fill="var(--bg-surface)" r="16" stroke="var(--accent-3)" stroke-width="1.3"></circle>
+<line stroke="var(--accent-3)" stroke-width="1.2" x1="138" x2="158" y1="130" y2="130"></line>
+<circle cx="174" cy="130" fill="none" r="16" stroke="var(--accent-3)" stroke-width="1.3" stroke-dasharray="3,2"></circle>
+<text data-en="!" data-zh="!" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="174" y="135">!</text>
+<line stroke="var(--accent-3)" stroke-width="1.2" x1="190" x2="210" y1="130" y2="130"></line>
+<circle cx="226" cy="130" fill="var(--bg-surface)" r="16" stroke="var(--accent-3)" stroke-width="1.3"></circle>
+</g>
+<circle cx="262" cy="130" fill="var(--accent-dim)" r="22" stroke="var(--accent-3)" stroke-width="2"></circle>
+<text data-en="✓" data-zh="✓" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="16" font-weight="800" text-anchor="middle" x="262" y="136">✓</text>
+<path d="M240 108 C210 84 160 84 130 100" fill="none" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<text data-en="detour: 40 calls" data-zh="弯路：40 次调用" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="185" y="80">detour: 40 calls</text>
+<text data-en="only this is graded" data-zh="只有这里被打分" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="155" y="186">only this is graded</text>
+<text data-en="the path is invisible" data-zh="路径是隐形的" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="155" y="204">the path is invisible</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="310" x2="310" y1="48" y2="300"></line>
+<!-- RIGHT: trajectory eval -->
+<text data-en="TRAJECTORY EVAL" data-zh="轨迹评测" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="58">TRAJECTORY EVAL</text>
+<circle cx="380" cy="130" fill="var(--bg-surface)" r="16" stroke="var(--accent)" stroke-width="1.5"></circle>
+<text data-en="start" data-zh="起点" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="380" y="133">start</text>
+<line marker-end="url(#arrT2)" stroke="var(--accent)" stroke-width="1.5" x1="396" x2="412" y1="130" y2="130"></line>
+<rect fill="var(--bg-surface)" height="14" rx="4" stroke="var(--accent)" stroke-width="1" width="16" x="396" y="106"></rect>
+<text data-en="✓" data-zh="✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="800" text-anchor="middle" x="404" y="117">✓</text>
+<circle cx="432" cy="130" fill="var(--bg-surface)" r="16" stroke="var(--accent)" stroke-width="1.5"></circle>
+<text data-en="search" data-zh="搜索" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="432" y="133">search</text>
+<line marker-end="url(#arrT2)" stroke="var(--accent)" stroke-width="1.5" x1="448" x2="464" y1="130" y2="130"></line>
+<rect fill="var(--bg-surface)" height="14" rx="4" stroke="var(--accent)" stroke-width="1" width="16" x="448" y="106"></rect>
+<text data-en="✓" data-zh="✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="800" text-anchor="middle" x="456" y="117">✓</text>
+<circle cx="484" cy="130" fill="var(--bg-surface)" r="16" stroke="var(--accent)" stroke-width="1.5"></circle>
+<text data-en="verify" data-zh="验证" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="484" y="133">verify</text>
+<line marker-end="url(#arrT2)" stroke="var(--accent)" stroke-width="1.5" x1="500" x2="516" y1="130" y2="130"></line>
+<rect fill="var(--bg-surface)" height="14" rx="4" stroke="var(--accent)" stroke-width="1" width="16" x="500" y="106"></rect>
+<text data-en="✓" data-zh="✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="800" text-anchor="middle" x="508" y="117">✓</text>
+<circle cx="536" cy="130" fill="var(--bg-surface)" r="16" stroke="var(--accent)" stroke-width="1.5"></circle>
+<text data-en="write" data-zh="写入" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="536" y="133">write</text>
+<line marker-end="url(#arrT2)" stroke="var(--accent)" stroke-width="1.5" x1="552" x2="566" y1="130" y2="130"></line>
+<circle cx="578" cy="130" fill="var(--accent-dim)" r="14" stroke="var(--accent)" stroke-width="1.5"></circle>
+<text data-en="✓" data-zh="✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="578" y="134">✓</text>
+<text data-en="edge asserts: search-before-claim · verify-before-write · budget ≤ N · forbidden tools untouched" data-zh="边上的断言：先搜索后断言 · 先验证后写入 · 预算 ≤ N · 禁用工具不碰" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="465" y="186">edge asserts: search-before-claim · verify-before-write · budget ≤ N · forbidden tools untouched</text>
+<text data-en="every edge is the spec" data-zh="每条边都是规格" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="465" y="204">every edge is the spec</text>
+<!-- bottom bar -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="252"></rect>
+<text data-en="The world is touched on the edges — tool calls, writes, side effects. A spec that ignores the edges is a spec for a system that doesn't exist." data-zh="世界是在边上被触碰的——工具调用、写入、副作用。一个无视边的规格，是为一个不存在的系统写的规格。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="277">The world is touched on the edges — tool calls, writes, side effects. A spec that ignores the edges is a spec for a system that doesn't exist.</text>
+</svg>
+<p class="diagram-caption" data-en="Left: a final-answer eval sees only the last node — the detours, the fired-at-production tools, the lucky guesses are all invisible, and a reckless run scores the same as a careful one. Right: a trajectory eval asserts every edge — search before claim, verify before write, budget ceilings, forbidden tools. Same answer, different specification." data-zh="左边：终点答案评测只看得见最后一个节点——弯路、打向生产的工具、碰运气的猜测全都不可见，鲁莽的运行和谨慎的运行得分相同。右边：轨迹评测断言每一条边——先搜索后断言、先验证后写入、预算上限、禁用工具。同样的答案，不同的规格。">Left: a final-answer eval sees only the last node — the detours, the fired-at-production tools, the lucky guesses are all invisible. Right: a trajectory eval asserts every edge — search before claim, verify before write, budget ceilings, forbidden tools. Same answer, different specification.</p>
+</div>
+<h3 data-en="A distribution, not a number" data-zh="它是一个分布，不是一个数字">A distribution, not a number</h3>
+<p data-en="The second mistake is treating an agent like a function — run it once, record the score. An agent is not a function. It is a distribution over functions, and a single run is one draw from that distribution. Grade one run and you have measured nothing; you have flipped a coin and written a paragraph about the coin's beliefs. This is why the vocabulary that matters is not accuracy-on-a-single-run but the statistics of many: pass@k for whether capability exists at all, majority@k for whether it is stable, worst-of-k for whether the tail is survivable. The specification of an agent system is a set of properties of its distribution — a success floor, a budget overshoot rate, a p95 latency, a worst-case blast radius. Two systems with identical average scores are not the same product: one puts its failures near the mean, where users see them and complain; the other hides them in the tail, where they surface as 3 a.m. incidents. The mean is a marketing document. The tail is the system." data-zh="第二个错误，是把智能体当成一个函数——跑一次，记下分数。智能体不是函数。它是一个函数之上的分布，一次运行只是从这个分布里抽的一次签。给一次运行打分，你什么也没测到；你只是抛了一次硬币，然后写了一段关于这个硬币信仰的文章。这就是为什么真正重要的词汇不是「单次运行的准确率」，而是多次运行的统计量：pass@k 看能力是否存在，majority@k 看能力是否稳定，worst-of-k 看尾部是否可存活。一个智能体系统的规格，是一组关于它分布的属性——成功率下限、预算超支率、p95 延迟、最坏情况的爆炸半径。两个平均分完全相同的系统，不是同一个产品：一个把失败放在均值附近，用户看得见、会抱怨；另一个把失败藏在尾部，它们以凌晨三点的事故形式浮出水面。均值是营销材料。尾部才是系统。">The second mistake is treating an agent like a function — run it once, record the score. An agent is not a function. It is a distribution over functions, and a single run is one draw. Grade one run and you have measured nothing; you have flipped a coin and written a paragraph about the coin's beliefs. The specification is a set of properties of the distribution — a success floor, a budget overshoot rate, a p95 latency, a worst-case blast radius.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrD1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="ONE RUN IS A COIN FLIP — THE SPEC IS THE SHAPE" data-zh="一次运行只是抛硬币——规格是形状" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ONE RUN IS A COIN FLIP — THE SPEC IS THE SHAPE</text>
+<!-- LEFT: narrow distribution -->
+<text data-en="SYSTEM A — NARROW" data-zh="系统 A——狭窄" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="165" y="56">SYSTEM A — NARROW</text>
+<g>
+<rect fill="var(--accent)" height="14" opacity="0.35" rx="2" width="10" x="70" y="216"></rect>
+<rect fill="var(--accent)" height="34" opacity="0.5" rx="2" width="10" x="84" y="196"></rect>
+<rect fill="var(--accent)" height="62" opacity="0.7" rx="2" width="10" x="98" y="168"></rect>
+<rect fill="var(--accent)" height="88" opacity="0.85" rx="2" width="10" x="112" y="142"></rect>
+<rect fill="var(--accent)" height="106" rx="2" width="10" x="126" y="124"></rect>
+<rect fill="var(--accent)" height="96" opacity="0.9" rx="2" width="10" x="140" y="134"></rect>
+<rect fill="var(--accent)" height="72" opacity="0.7" rx="2" width="10" x="154" y="158"></rect>
+<rect fill="var(--accent)" height="46" opacity="0.5" rx="2" width="10" x="168" y="184"></rect>
+<rect fill="var(--accent)" height="24" opacity="0.35" rx="2" width="10" x="182" y="206"></rect>
+<rect fill="var(--accent)" height="12" opacity="0.25" rx="2" width="10" x="196" y="218"></rect>
+</g>
+<line stroke="var(--text-tertiary)" stroke-dasharray="4,3" stroke-width="1.2" x1="131" x2="131" y1="100" y2="244"></line>
+<text data-en="p50" data-zh="p50" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="131" y="94">p50</text>
+<line stroke="var(--accent-3)" stroke-dasharray="2,3" stroke-width="1" x1="176" x2="176" y1="112" y2="244"></line>
+<text data-en="p95" data-zh="p95" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="176" y="106">p95</text>
+<text data-en="failures near the mean" data-zh="失败靠近均值" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="165" y="266">failures near the mean</text>
+<text data-en="boring · predictable · shippable" data-zh="无聊 · 可预测 · 可上线" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="165" y="282">boring · predictable · shippable</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="310" x2="310" y1="48" y2="292"></line>
+<!-- RIGHT: wide distribution -->
+<text data-en="SYSTEM B — LONG TAIL" data-zh="系统 B——长尾" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="56">SYSTEM B — LONG TAIL</text>
+<g>
+<rect fill="var(--accent-3)" height="20" opacity="0.4" rx="2" width="10" x="360" y="210"></rect>
+<rect fill="var(--accent-3)" height="44" opacity="0.6" rx="2" width="10" x="374" y="186"></rect>
+<rect fill="var(--accent-3)" height="70" opacity="0.75" rx="2" width="10" x="388" y="160"></rect>
+<rect fill="var(--accent-3)" height="96" opacity="0.9" rx="2" width="10" x="402" y="134"></rect>
+<rect fill="var(--accent-3)" height="108" rx="2" width="10" x="416" y="122"></rect>
+<rect fill="var(--accent-3)" height="92" opacity="0.85" rx="2" width="10" x="430" y="138"></rect>
+<rect fill="var(--accent-3)" height="66" opacity="0.7" rx="2" width="10" x="444" y="164"></rect>
+<rect fill="var(--accent-3)" height="42" opacity="0.55" rx="2" width="10" x="458" y="188"></rect>
+<rect fill="var(--accent-3)" height="28" opacity="0.45" rx="2" width="10" x="472" y="202"></rect>
+<rect fill="var(--accent-3)" height="20" opacity="0.4" rx="2" width="10" x="486" y="210"></rect>
+<rect fill="var(--accent-3)" height="14" opacity="0.35" rx="2" width="10" x="500" y="216"></rect>
+<rect fill="var(--accent-3)" height="10" opacity="0.3" rx="2" width="10" x="514" y="220"></rect>
+<rect fill="var(--accent-3)" height="8" opacity="0.25" rx="2" width="10" x="528" y="222"></rect>
+<rect fill="none" height="8" rx="2" stroke="var(--accent-3)" stroke-dasharray="2,2" stroke-width="1" width="10" x="542" y="222"></rect>
+<rect fill="none" height="8" rx="2" stroke="var(--accent-3)" stroke-dasharray="2,2" stroke-width="1" width="10" x="556" y="222"></rect>
+</g>
+<line stroke="var(--text-tertiary)" stroke-dasharray="4,3" stroke-width="1.2" x1="421" x2="421" y1="100" y2="244"></line>
+<text data-en="p50 (same as A)" data-zh="p50（与 A 相同）" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="421" y="94">p50 (same as A)</text>
+<text data-en="the tail is the product" data-zh="尾部才是产品" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="535" y="206">the tail is the product</text>
+<text data-en="3 a.m. incidents live here" data-zh="凌晨三点的事故住在这里" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="535" y="252">3 a.m. incidents live here</text>
+<text data-en="same mean · different system" data-zh="均值相同 · 系统不同" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="266">same mean · different system</text>
+<text data-en="spec = worst-of-k, not mean" data-zh="规格 = worst-of-k，而非均值" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="465" y="282">spec = worst-of-k, not mean</text>
+<!-- bottom bar -->
+<rect fill="var(--accent-dim)" height="36" opacity="0.5" rx="8" width="560" x="30" y="292"></rect>
+<text data-en="pass@k asks if the capability exists. majority@k asks if it is stable. worst-of-k asks if the tail is survivable. A spec that states none of them is a vibe." data-zh="pass@k 问能力是否存在。majority@k 问它是否稳定。worst-of-k 问尾部是否可存活。一个三者都不写的规格，只是一种感觉。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="315">pass@k asks if the capability exists. majority@k asks if it is stable. worst-of-k asks if the tail is survivable. A spec that states none of them is a vibe.</text>
+</svg>
+<p class="diagram-caption" data-en="Two systems, identical mean score. System A concentrates its failures near the average — visible, complainable, fixable. System B hides them in a long tail that no single run will ever show. An eval that reports a mean grades both identically; an eval that reports worst-of-k, pass@k, and the shape of the tail writes the actual specification." data-zh="两个系统，均值完全相同。系统 A 把失败集中在均值附近——可见、可抱怨、可修复。系统 B 把失败藏在任何单次运行都永远不会展示的长尾里。报告均值的评测给两者打出同样的分；报告 worst-of-k、pass@k 和尾部形状的评测，写下的才是真正的规格。">Two systems, identical mean score. System A concentrates its failures near the average — visible, complainable, fixable. System B hides them in a long tail no single run will ever show. An eval that reports a mean grades both identically; an eval that reports worst-of-k and the shape of the tail writes the actual specification.</p>
+</div>
+<h3 data-en="Golden traces are regression tests" data-zh="黄金轨迹就是回归测试">Golden traces are regression tests</h3>
+<p data-en="Once the suite exists, it changes what a change even is. Record a handful of exemplary runs — the traces where the agent did exactly what the team believes it should do — and freeze them as golden traces. Now every modification to the system has something to be diffed against: a model upgrade shows which edges in the graph changed behavior and which stayed true; a prompt edit shows whether 'be more careful' actually moved the verify-before-write rate or just made the prose feel more virtuous; a tool schema change shows whether the agent's usage patterns absorbed it or silently degraded. A model upgrade without a trace suite is not a migration — it is a re-roll of every behavior the system ever had, accepted on faith. With the suite, it becomes a reviewable diff: here are the twelve cases that changed, here are the three that regressed, here is the rollback plan. The golden traces do for agent behavior what golden files have always done for compilers and serializers: they turn 'I think it got better' into 'these specific things got better and these specific things did not.'" data-zh="一旦套件存在，「改动」本身的意义都变了。录下一批典范运行——那些智能体做的正是团队认为它该做的轨迹——把它们冻结为黄金轨迹。现在，对系统的每一次修改都有了可以对照的东西：一次模型升级显示出图里哪些边的行为变了、哪些保持如初；一次 prompt 编辑显示出「要更小心」到底是提高了「先验证后写入」的比率，还是只是让文字显得更有德行；一次工具 schema 的修改显示出智能体的使用模式是吸收了它，还是悄悄退化了。没有轨迹套件的模型升级不是迁移——它是对这个系统曾有过的每一个行为的一次重掷，全凭信仰接受。有了套件，它变成一个可审查的 diff：这十二个用例变了，这三个退化了，这是回滚方案。黄金轨迹之于智能体行为，就像黄金文件之于编译器和序列化器：它把「我觉得它变好了」变成「这些具体的东西变好了，而这些具体的东西没有」。">Once the suite exists, it changes what a change even is. Record a handful of exemplary runs and freeze them as golden traces. Now every modification has something to be diffed against: a model upgrade shows which edges changed behavior; a prompt edit shows whether 'be more careful' actually moved the verify rate or just made the prose feel virtuous. A model upgrade without a trace suite is not a migration — it is a re-roll of every behavior the system ever had, accepted on faith.</p>
+<h3 data-en="The spec rots" data-zh="规格会腐烂">The spec rots</h3>
+<p data-en="There is a failure mode waiting here, and it deserves respect. An eval suite is a snapshot of what the team feared at a moment in time. The product moves; the fears go stale. Agents overfit to the suite — the team optimizes for the cases it grades and quietly abandons the ones it doesn't, which is Goodhart's law wearing an engineering hat. The defense is to treat the eval set the way a database treats its schema: as versioned infrastructure that migrates deliberately. Retire cases the system has solved and stopped teaching anything. Promote real production failures into cases the week they happen — the incident channel is the richest source of specification anyone will ever have. Review the suite quarterly and ask the uncomfortable question: if the system passed every case tomorrow, would the product actually be good? If the answer is no, the spec has rotted, and a rotten spec is worse than none, because it lends the confidence of a gate to a door that no longer leads anywhere. The eval is the spec — and a spec that no longer tracks reality is just folklore with a scoreboard." data-zh="这里埋着一个失败模式，它值得被尊重。一个评测集，是团队在某个时刻所恐惧之物的快照。产品在走；恐惧会过期。智能体会对套件过拟合——团队优化它打分的用例，悄悄放弃它不打分的用例，而这正是戴着工程帽子的古德哈特定律。防御方法，是把评测集当作数据库对待 schema 的方式来对待：一份有版本、有意识迁移的基础设施。退役那些系统已经解决、不再能教任何东西的用例。把真实的生产失败在被发现的当周晋升为用例——事故频道是任何人能拥有的最丰富的规格来源。每季度审查套件，问那个不舒服的问题：如果系统明天通过了每一个用例，产品真的会好吗？如果答案是否，规格已经腐烂了，而一个腐烂的规格比没有更糟，因为它把一道门的威严，借给了一扇不再通往任何地方的门。评测即规格——而一个不再追踪现实的规格，只是带着记分牌的口口相传。">There is a failure mode waiting here. An eval suite is a snapshot of what the team feared at a moment in time. The product moves; the fears go stale. Agents overfit to the suite — the team optimizes for the cases it grades and quietly abandons the ones it doesn't, which is Goodhart's law wearing an engineering hat. The defense is to treat the eval set like versioned infrastructure: retire solved cases, promote production failures the week they happen, review quarterly.</p>
+<p data-en="So the discipline is simple to state and demanding to keep. Write the eval before the prompt, the way serious code is written test-first — not because the ceremony matters, but because the act of writing the eval forces the question the prompt can postpone: what, precisely, must be true about this system's behavior, and what must never be true? An agent team's real specification is never in the document, never in the prompt, never in the slide deck. It is in the suite that runs unattended at 2 a.m. and renders a verdict. The model will keep changing. The tools will keep changing. The graph will be rewired twice a quarter. The eval suite is the one artifact that holds all of it to a promise — and if the team never writes it, the promise was never made, and every run of the system is keeping a spec that exists nowhere at all." data-zh="所以，这条纪律说起来简单，坚持起来苛刻。在写 prompt 之前先写评测，就像严肃的代码先写测试——不是因为仪式重要，而是因为写评测的动作，逼出了 prompt 可以拖延的那个问题：关于这个系统的行为，什么必须为真，什么绝不可以为真？一个智能体团队真正的规格，从不在文档里，从不在 prompt 里，从不在幻灯片里。它在那个凌晨两点无人值守地运行、并给出裁决的套件里。模型会不断更换。工具会不断更换。图每个季度会被重接两次。评测集，是唯一让这一切守住承诺的制品——而如果团队从未写下它，承诺就从未做出，系统的每一次运行，都在遵守一个根本不存在于任何地方的规格。">So the discipline is simple to state and demanding to keep. Write the eval before the prompt, the way serious code is written test-first — because the act of writing the eval forces the question the prompt can postpone: what, precisely, must be true about this system's behavior, and what must never be true? The eval suite is the one artifact that holds all of it to a promise — and if the team never writes it, the promise was never made.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
