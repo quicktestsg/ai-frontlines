@@ -1,6 +1,593 @@
 {
   "tweets": [
     {
+      "id": "2091941626717569460",
+      "url": "https://x.com/elonmusk/status/2091941626717569460",
+      "label": "xAI",
+      "color": "#1DA1F2",
+      "fetched_at": "2026-08-24T20:05:39.804411+00:00",
+      "translation_zh": "Grok @Bot 用 10 分钟就把《毁灭战士》移植到了一台新设备上。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 3246,
+        "lang": "en",
+        "created_at": "2026-08-24T17:32:04.000Z",
+        "display_text_range": [
+          0,
+          48
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "2085838061347217408",
+              "indices": [
+                5,
+                9
+              ],
+              "name": "Grok Bot",
+              "screen_name": "bot"
+            }
+          ]
+        },
+        "id_str": "2091941626717569460",
+        "text": "Grok @Bot ported Doom to a new device in 10 mins",
+        "user": {
+          "id_str": "44196397",
+          "name": "Elon Musk",
+          "screen_name": "elonmusk",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+            },
+            "description": "X",
+            "url": {
+              "url": "https://twitter.com/X",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2091941626717569460"
+          ],
+          "editable_until_msecs": "1787596324000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 409,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 711,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 49,
+          "retweet_count": 35,
+          "created_at": "2026-08-24T03:19:32.000Z",
+          "display_text_range": [
+            0,
+            118
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/Uv9fijUiB0",
+                "expanded_url": "https://x.com/yunta_tsai/status/2091727077871591760/video/1",
+                "indices": [
+                  119,
+                  142
+                ],
+                "url": "https://t.co/Uv9fijUiB0"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "2085838061347217408",
+                "indices": [
+                  5,
+                  9
+                ],
+                "name": "Grok Bot",
+                "screen_name": "bot"
+              }
+            ]
+          },
+          "id_str": "2091727077871591760",
+          "text": "Grok @bot now passes the DOOM test. It ported the entire DOOM to ESP32-S running at a high frame rate without trouble. https://t.co/Uv9fijUiB0",
+          "user": {
+            "id_str": "1577705091737432070",
+            "name": "Yun-Ta Tsai",
+            "screen_name": "yunta_tsai",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2035915849819938816/b6kIsNMe_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2091727077871591760"
+            ],
+            "editable_until_msecs": "1787545172000",
+            "edits_remaining": "5",
+            "is_edit_eligible": true
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/Uv9fijUiB0",
+              "expanded_url": "https://x.com/yunta_tsai/status/2091727077871591760/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                119,
+                142
+              ],
+              "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2091727028852867072/img/fwpG2xj49yzAZm9g.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 1920,
+                "width": 1080
+              },
+              "sizes": {
+                "large": {
+                  "h": 1920,
+                  "resize": "fit",
+                  "w": 1080
+                },
+                "medium": {
+                  "h": 1200,
+                  "resize": "fit",
+                  "w": 675
+                },
+                "small": {
+                  "h": 680,
+                  "resize": "fit",
+                  "w": 383
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/Uv9fijUiB0",
+              "video_info": {
+                "aspect_ratio": [
+                  9,
+                  16
+                ],
+                "duration_millis": 11411,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2091727028852867072/pl/M4SZ5L59smQnlkLx.m3u8"
+                  },
+                  {
+                    "bitrate": 632000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2091727028852867072/vid/avc1/320x568/GI5Nw0Thz3JpvhO-.mp4"
+                  },
+                  {
+                    "bitrate": 950000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2091727028852867072/vid/avc1/480x852/Bpdfs2Fza6v7Rep2.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2091727028852867072/vid/avc1/720x1280/-2Px7g3TnF6eB-bK.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2091727028852867072/vid/avc1/1080x1920/huNpLsYEgKDQEdvN.mp4"
+                  }
+                ]
+              }
+            },
+            {
+              "display_url": "pic.x.com/Uv9fijUiB0",
+              "expanded_url": "https://x.com/yunta_tsai/status/2091727077871591760/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                119,
+                142
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HQdOpnhbEAAbK-C.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 665,
+                    "w": 1187,
+                    "x": 0,
+                    "y": 948
+                  },
+                  {
+                    "h": 1187,
+                    "w": 1187,
+                    "x": 0,
+                    "y": 687
+                  },
+                  {
+                    "h": 1353,
+                    "w": 1187,
+                    "x": 0,
+                    "y": 604
+                  },
+                  {
+                    "h": 2048,
+                    "w": 1024,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2048,
+                    "w": 1187,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 2048,
+                "width": 1187
+              },
+              "sizes": {
+                "large": {
+                  "h": 2048,
+                  "resize": "fit",
+                  "w": 1187
+                },
+                "medium": {
+                  "h": 1200,
+                  "resize": "fit",
+                  "w": 696
+                },
+                "small": {
+                  "h": 680,
+                  "resize": "fit",
+                  "w": 394
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/Uv9fijUiB0"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 665,
+                  "w": 1187,
+                  "x": 0,
+                  "y": 948
+                },
+                {
+                  "h": 1187,
+                  "w": 1187,
+                  "x": 0,
+                  "y": 687
+                },
+                {
+                  "h": 1353,
+                  "w": 1187,
+                  "x": 0,
+                  "y": 604
+                },
+                {
+                  "h": 2048,
+                  "w": 1024,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2048,
+                  "w": 1187,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/yunta_tsai/status/2091727077871591760/video/1",
+              "url": "https://pbs.twimg.com/media/HQdOpnhbEAAbK-C.jpg",
+              "width": 1187,
+              "height": 2048
+            }
+          ],
+          "video": {
+            "aspectRatio": [
+              9,
+              16
+            ],
+            "contentType": "media_entity",
+            "durationMs": 11411,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/amplify_video_thumb/2091727028852867072/img/fwpG2xj49yzAZm9g.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2091727028852867072/pl/M4SZ5L59smQnlkLx.m3u8"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2091727028852867072/vid/avc1/320x568/GI5Nw0Thz3JpvhO-.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2091727028852867072/vid/avc1/480x852/Bpdfs2Fza6v7Rep2.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2091727028852867072/vid/avc1/720x1280/-2Px7g3TnF6eB-bK.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2091727028852867072/vid/avc1/1080x1920/huNpLsYEgKDQEdvN.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2091727077871591760"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2091939113008238838",
+      "url": "https://x.com/elonmusk/status/2091939113008238838",
+      "label": "xAI",
+      "color": "#1DA1F2",
+      "fetched_at": "2026-08-24T20:05:39.804411+00:00",
+      "translation_zh": "SpaceX 与 Nvidia 合作，设计了经太空优化的 Vera Rubin NVL72 系统，计划于明年第四季度发射入轨，2028 年实现规模化部署。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 14608,
+        "lang": "en",
+        "created_at": "2026-08-24T17:22:05.000Z",
+        "display_text_range": [
+          0,
+          158
+        ],
+        "entities": {},
+        "id_str": "2091939113008238838",
+        "text": "SpaceX, in partnership with Nvidia, has designed a space-optimized Vera Rubin NVL72 system for launch to orbit in Q4 next year, with significant scale in 2028",
+        "user": {
+          "id_str": "44196397",
+          "name": "Elon Musk",
+          "screen_name": "elonmusk",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+            },
+            "description": "X",
+            "url": {
+              "url": "https://twitter.com/X",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2091939113008238838"
+          ],
+          "editable_until_msecs": "1787595725000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 946,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 2520,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 137,
+          "retweet_count": 244,
+          "created_at": "2026-08-24T16:08:50.000Z",
+          "display_text_range": [
+            0,
+            278
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/xJrxAw9EtQ",
+                "expanded_url": "https://x.com/nvidia/status/2091920680317046847/photo/1",
+                "indices": [
+                  279,
+                  302
+                ],
+                "url": "https://t.co/xJrxAw9EtQ"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "34743251",
+                "indices": [
+                  60,
+                  67
+                ],
+                "name": "SpaceX",
+                "screen_name": "SpaceX"
+              }
+            ]
+          },
+          "id_str": "2091920680317046847",
+          "text": "The first CPU built for agents is going to work at scale. \n\n@SpaceX is deploying NVIDIA Vera to accelerate the orchestration, code execution, and data processing that powers its next generation of agentic AI — keeping GPUs fed and agents acting fast.\n\nFrom gigawatt AI factories https://t.co/xJrxAw9EtQ",
+          "user": {
+            "id_str": "61559439",
+            "name": "NVIDIA",
+            "screen_name": "nvidia",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1828904711124078593/SRvCZSfQ_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2091920680317046847"
+            ],
+            "editable_until_msecs": "1787591330000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/xJrxAw9EtQ",
+              "expanded_url": "https://x.com/nvidia/status/2091920680317046847/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                279,
+                302
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HQf-xdqX0AAmpTs.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 1075,
+                    "w": 1920,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1080,
+                    "w": 1080,
+                    "x": 420,
+                    "y": 0
+                  },
+                  {
+                    "h": 1080,
+                    "w": 947,
+                    "x": 487,
+                    "y": 0
+                  },
+                  {
+                    "h": 1080,
+                    "w": 540,
+                    "x": 690,
+                    "y": 0
+                  },
+                  {
+                    "h": 1080,
+                    "w": 1920,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 1080,
+                "width": 1920
+              },
+              "sizes": {
+                "large": {
+                  "h": 1080,
+                  "resize": "fit",
+                  "w": 1920
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/xJrxAw9EtQ"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 1075,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 420,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 947,
+                  "x": 487,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 540,
+                  "x": 690,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/nvidia/status/2091920680317046847/photo/1",
+              "url": "https://pbs.twimg.com/media/HQf-xdqX0AAmpTs.jpg",
+              "width": 1920,
+              "height": 1080
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2090962975587000493",
       "url": "https://x.com/elonmusk/status/2090962975587000493",
       "label": "xAI",

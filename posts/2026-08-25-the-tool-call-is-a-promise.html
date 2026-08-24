@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Tool Call Is a Promise — AI Frontlines</title>
+<meta content="Every agent run has one discontinuous moment: the tool call, where free tokens become real-world effects. Tool schemas are promises the world never agreed to — underspecified at the exact boundary where all the damage happens. The harness, not the model, is what keeps them." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=19" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="August 25, 2026" data-zh="2026年8月25日">August 25, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Tool Call Is a Promise" data-zh="工具调用是一份承诺">The Tool Call Is a Promise</h1>
+<p class="post-header-deck" data-en="Every agent run has one discontinuous moment: the tool call, where free tokens become real-world effects. On one side of that line, generation is free — a wrong token costs nothing. On the other side, files are written, rows are committed, money moves, and someone receives an email. The tool call is a promise about that crossing, and the gap between what the schema says and what the world does is where agent systems bleed." data-zh="每一次智能体运行，都有一个赌注突变的时刻：工具调用——免费的 token 在这里变成真实世界的效果。这条线的一侧，生成是免费的，一个错误的 token 毫无代价；另一侧，文件被写入、数据行被提交、资金开始流动、有人收到了一封邮件。工具调用是关于这次跨越的一份承诺，而 schema 所说的与世界所做的之间的裂缝，正是智能体系统失血的地方。">Every agent run has one discontinuous moment: the tool call, where free tokens become real-world effects. The gap between what the schema says and what the world does is where agent systems bleed.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a moment in every agent run when the stakes change discontinuously. Until that moment, everything the system has done is generate tokens — plans, reasoning, summaries, JSON that might have been arguments — and all of it is free. A wrong token costs nothing. A hallucinated plan changes no state. The moment is the tool call. The token stream has been an internal conversation; the tool call is the agent's first contact with everything that is not the agent, and it is the only place in the entire architecture where the model's words become the world's deeds. Files get written. Rows get committed. Money moves. Someone receives an email with a real name in the greeting. The interface that carries this crossing is the tool definition, and read closely, every tool definition is a promise: pass me arguments shaped like this, and effects shaped like that will occur. Real tools never keep that promise exactly. They keep it approximately, probabilistically, and only when the network is having a good day — and the distance between what the schema declares and what the world actually does is where agent systems bleed." data-zh="每一次智能体运行中，都有一个时刻，赌注会不连续地改变。在那一刻之前，系统所做的一切都是生成 token——计划、推理、总结、也许本来会成为参数的 JSON——而这一切都是免费的。一个错误的 token 毫无代价。一个幻觉出来的计划不会改变任何状态。这个时刻，就是工具调用。token 流一直是一场内部对话；工具调用，是智能体与「一切非智能体之物」的第一次接触，也是整个架构中唯一一处，模型的话语变成世界行动的地方。文件被写入。数据行被提交。资金开始流动。有人收到一封称呼里写着真名的邮件。承载这次跨越的接口，就是工具定义——而仔细读的话，每一个工具定义都是一个承诺：传给我这样形状的参数，就会发生那样形状的效果。真实的工具从不精确地兑现这个承诺。它们近似地兑现、概率性地兑现，而且只在网络心情好的日子兑现——schema 所声明的，与世界实际所做的之间的距离，正是智能体系统失血的地方。">There is a moment in every agent run when the stakes change discontinuously. Until that moment, everything the system has done is generate tokens — plans, reasoning, summaries, JSON that might have been arguments — and all of it is free. The moment is the tool call: the only place in the entire architecture where the model's words become the world's deeds.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrB1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrB2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE BOUNDARY WHERE WORDS BECOME DEEDS" data-zh="话语变成行动的边界" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE BOUNDARY WHERE WORDS BECOME DEEDS</text>
+<!-- LEFT: model's world -->
+<text data-en="THE MODEL'S WORLD — WORDS" data-zh="模型的世界——话语" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="56">THE MODEL'S WORLD — WORDS</text>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="95" y="70"></rect>
+<text data-en="plans" data-zh="计划" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="155" y="89">plans</text>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="95" y="112"></rect>
+<text data-en="claims" data-zh="断言" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="155" y="131">claims</text>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent-3)" stroke-width="2" width="120" x="95" y="154"></rect>
+<text data-en="a tool call (JSON)" data-zh="一次工具调用（JSON）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="155" y="173">a tool call (JSON)</text>
+<text data-en="generation is free" data-zh="生成是免费的" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="155" y="208">generation is free</text>
+<text data-en="a wrong token costs nothing — here" data-zh="在这里，一个错误的 token 毫无代价" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="155" y="226">a wrong token costs nothing — here</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="290"></line>
+<!-- the crossing arrow -->
+<text data-en="the only door" data-zh="唯一的门" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="148">the only door</text>
+<line marker-end="url(#arrB2)" stroke="var(--accent)" stroke-width="2" x1="215" x2="400" y1="168" y2="168"></line>
+<!-- RIGHT: the world -->
+<text data-en="THE WORLD — DEEDS" data-zh="世界——行动" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="56">THE WORLD — DEEDS</text>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent)" stroke-width="1.5" width="150" x="390" y="70"></rect>
+<text data-en="your filesystem" data-zh="你的文件系统" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="465" y="89">your filesystem</text>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent)" stroke-width="1.5" width="150" x="390" y="112"></rect>
+<text data-en="production databases" data-zh="生产数据库" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="465" y="131">production databases</text>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent)" stroke-width="1.5" width="150" x="390" y="154"></rect>
+<text data-en="other people's systems" data-zh="其他人的系统" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="465" y="173">other people's systems</text>
+<text data-en="execution is never free" data-zh="执行从不免费" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="465" y="208">execution is never free</text>
+<text data-en="every effect lands on someone" data-zh="每个效果都落在某个人身上" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="465" y="226">every effect lands on someone</text>
+<!-- bottom bar -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="266"></rect>
+<text data-en="The model speaks; the tool acts. Between them sits a contract nobody signed — unless the harness signs it." data-zh="模型说话；工具行动。两者之间坐着一份没人签名的契约——除非由 harness 来签。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="291">The model speaks; the tool acts. Between them sits a contract nobody signed — unless the harness signs it.</text>
+</svg>
+<p class="diagram-caption" data-en="The tool call is the only door between the model's world, where generation is free, and the world's world, where nothing is. On the left, a wrong token costs nothing. On the right, every effect lands on someone. The contract at that door is the tool definition — and it is the only contract in the system." data-zh="工具调用是模型世界与世界世界之间唯一的门：门的一侧，生成是免费的；另一侧，没有任何事情是免费的。左边，一个错误的 token 毫无代价。右边，每一个效果都落在某个人身上。那扇门上的契约，就是工具定义——它是整个系统里唯一的契约。">The tool call is the only door between the model's world, where generation is free, and the world's world, where nothing is. On the left, a wrong token costs nothing. On the right, every effect lands on someone.</p>
+</div>
+<h3 data-en="Every tool is a promise" data-zh="每个工具都是一份承诺">Every tool is a promise</h3>
+<p data-en="Look at what a tool definition actually contains. A name, a description written in hopeful prose, and a schema describing the shape of the arguments. That is the entire contract. The description says 'sends the quarterly report to the mailing list' — but says nothing about what happens when the list has three thousand members, or when the send succeeds halfway, or when the agent calls it twice because the first call was slow and it got nervous. The schema says the to field is a string — and a string is exactly as valid when it points at the wrong recipient, the wrong environment, or an address that was never supposed to exist outside staging. None of this is the model's failure. The model kept its side of the bargain: it produced schema-valid arguments. The promise was underspecified at the boundary, and the boundary is where all the damage in an agent system happens. Strong words inside the prompt — 'be careful,' 'never email production,' 'ask before destructive actions' — are not load-bearing. They are advice given to a probability distribution. The only constraints that hold are the ones built into the interface itself, because the interface is the only thing both sides can actually see." data-zh="看看一个工具定义里到底有什么。一个名字，一段用满怀希望的散文写成的描述，和一个描述参数形状的 schema。这就是契约的全部。描述写着「把季度报告发送给邮件列表」——但它对以下情况只字不提：列表里有三千个人怎么办；发送进行到一半成功了怎么办；智能体因为第一次调用太慢而紧张、又调用了一次怎么办。schema 说 to 字段是一个字符串——而当这个字符串指向错误的收件人、错误的环境、或一个从来不该在预演环境之外存在的地址时，它同样是合法的。这些都不是模型的失败。模型守住了它那一端的交易：它产出了 schema 合法的参数。承诺在边界上就欠规格了，而边界，正是一个智能体系统里所有损失发生的地方。prompt 里的那些狠话——「要小心」「绝不给生产环境发邮件」「破坏性操作前先问」——不是承重结构。它们是给一个概率分布提的建议。唯一守得住的约束，是内建进接口本身的约束，因为接口是双方真正都看得见的唯一的东西。">Look at what a tool definition actually contains. A name, a description written in hopeful prose, and a schema describing the shape of the arguments. That is the entire contract. The description says 'sends the quarterly report to the mailing list' — but says nothing about what happens when the list has three thousand members, or when the send succeeds halfway, or when the agent calls it twice because the first call was slow and it got nervous.</p>
+<blockquote data-en="A prompt is advice. A tool schema is a contract. The agent's real safety policy is written in neither — it is written in what the harness does between the model's yes and the world's okay." data-zh="prompt 是建议。工具 schema 是合同。而智能体真正的安全策略，两者都不是——它写在 harness 于模型的「好」与世界的「行」之间所做的事情里。">A prompt is advice. A tool schema is a contract. The agent's real safety policy is written in neither — it is written in what the harness does between the model's yes and the world's okay.</blockquote>
+<h3 data-en="The model cannot keep the promise" data-zh="模型兑现不了这份承诺">The model cannot keep the promise</h3>
+<p data-en="It is tempting to file every bad tool call under model failure, but the categories are different and the difference matters. The model can violate the schema — pass a string where a number belongs — and that failure is cheap: the harness rejects it before anything happens. The model can choose the wrong tool, or the right tool with wrong arguments — and that is a judgment failure, real but visible, graded by evals, improved by better models. The failure this piece is about is neither: it is the schema-valid, correctly-chosen call that still goes wrong, because the promise itself had holes. The timeout that fires after the effect. The retry that fires after the timeout. The tool that does two things but only documents one. The 'idempotent' endpoint that is idempotent only in the way the engineer who wrote it understood the word. These failures live below the contract, in the semantics, and no amount of model capability reaches them — the smartest model in the world still cannot keep a promise the interface never made. And these are precisely the failures that get worse as agents get better: a stronger model calls tools more confidently, more often, further from human review, which means the holes in the promise are being driven through at ever higher speed." data-zh="把每一个糟糕的工具调用都归档为「模型失败」很诱人，但它们的类别不同，而这个区别很重要。模型可以违反 schema——在该是数字的地方传了字符串——这种失败很便宜：harness 会在任何事发生之前拒绝它。模型可以选错工具，或者选对了工具但参数错了——这是判断力的失败，真实但可见，可以被评测打分，可以被更好的模型改善。而这段文字讲的是第三种：schema 合法、选择正确、却依然出错的调用，因为承诺本身就有洞。在效果发生之后才触发的超时。在超时之后又触发的重试。做了两件事却只文档了一件的工具。那个「幂等」的接口——幂等得正如当年写下它的工程师对这个词的理解。这些失败活在契约之下、活在语义之中，再强的模型能力也够不到它们——世界上最聪明的模型，也无法兑现一个接口从未做出过的承诺。而恰恰是这些失败，会随着智能体变强而变得更糟：更强的模型更自信地、更频繁地、在离人类审查更远的地方调用工具，这意味着，承诺上的那些洞，正被以越来越高的速度穿越。">It is tempting to file every bad tool call under model failure, but the categories are different. The failure this piece is about is the schema-valid, correctly-chosen call that still goes wrong, because the promise itself had holes. The timeout that fires after the effect. The retry that fires after the timeout. The tool that does two things but only documents one.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 310" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrF1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrF2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="ONE PROMISE, FOUR FUTURES" data-zh="一个承诺，四种未来" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ONE PROMISE, FOUR FUTURES</text>
+<!-- the call -->
+<rect fill="var(--accent-dim)" height="30" rx="8" stroke="var(--accent)" stroke-width="1.5" width="170" x="225" y="44"></rect>
+<text data-en="the tool call — schema-valid" data-zh="工具调用——schema 合法" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="63">the tool call — schema-valid</text>
+<!-- fan -->
+<path d="M310 74 C310 90 95 88 95 106" fill="none" marker-end="url(#arrF1)" stroke="var(--text-tertiary)" stroke-width="1.3"></path>
+<path d="M310 74 C310 88 245 88 245 106" fill="none" marker-end="url(#arrF1)" stroke="var(--text-tertiary)" stroke-width="1.3"></path>
+<path d="M310 74 C310 88 395 88 395 106" fill="none" marker-end="url(#arrF1)" stroke="var(--text-tertiary)" stroke-width="1.3"></path>
+<path d="M310 74 C310 90 545 88 545 106" fill="none" marker-end="url(#arrF1)" stroke="var(--text-tertiary)" stroke-width="1.3"></path>
+<!-- four futures -->
+<rect fill="var(--bg-surface)" height="54" rx="8" stroke="var(--accent)" stroke-width="1.5" width="130" x="30" y="108"></rect>
+<text data-en="fast success" data-zh="快速成功" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="95" y="130">fast success</text>
+<text data-en="returns in 400 ms" data-zh="400 毫秒内返回" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="95" y="146">returns in 400 ms</text>
+<rect fill="var(--bg-surface)" height="54" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="130" x="180" y="108"></rect>
+<text data-en="partial failure" data-zh="部分失败" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="245" y="130">partial failure</text>
+<text data-en="rows committed, then timeout" data-zh="行已提交，然后超时" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="245" y="146">rows committed, then timeout</text>
+<rect fill="var(--bg-surface)" height="54" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="130" x="330" y="108"></rect>
+<text data-en="slow success" data-zh="缓慢成功" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="395" y="130">slow success</text>
+<text data-en="90 s — retries fire below" data-zh="90 秒——底层重试已触发" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="395" y="146">90 s — retries fire below</text>
+<rect fill="var(--bg-surface)" height="54" rx="8" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3" width="130" x="480" y="108"></rect>
+<text data-en="…and something else" data-zh="……还有别的" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="545" y="130">…and something else</text>
+<text data-en="an unnamed side effect" data-zh="一个未命名的副作用" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="545" y="146">an unnamed side effect</text>
+<!-- outcomes -->
+<line marker-end="url(#arrF1)" stroke="var(--text-tertiary)" stroke-width="1.2" x1="95" x2="95" y1="162" y2="180"></line>
+<line marker-end="url(#arrF2)" stroke="var(--accent-3)" stroke-width="1.2" x1="245" x2="245" y1="162" y2="180"></line>
+<line marker-end="url(#arrF2)" stroke="var(--accent-3)" stroke-width="1.2" x1="395" x2="395" y1="162" y2="180"></line>
+<line marker-end="url(#arrF2)" stroke="var(--accent-3)" stroke-width="1.2" x1="545" x2="545" y1="162" y2="180"></line>
+<text data-en="no one notices" data-zh="没人注意到" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="95" y="196">no one notices</text>
+<text data-en="this is the demo" data-zh="这是演示" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="95" y="212">this is the demo</text>
+<text data-en="state nobody owns" data-zh="无人认领的状态" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="245" y="196">state nobody owns</text>
+<text data-en="this is the outage" data-zh="这是停机" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="245" y="212">this is the outage</text>
+<text data-en="the same call, twice" data-zh="同一次调用，两次" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="395" y="196">the same call, twice</text>
+<text data-en="this is the bill" data-zh="这是账单" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="395" y="212">this is the bill</text>
+<text data-en="the blast radius" data-zh="爆炸半径" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="545" y="196">the blast radius</text>
+<text data-en="this is the apology" data-zh="这是道歉" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="545" y="212">this is the apology</text>
+<!-- bottom bar -->
+<rect fill="var(--accent-dim)" height="48" opacity="0.5" rx="8" width="560" x="30" y="238"></rect>
+<text data-en="Same promise, four futures — the schema guaranteed none of them." data-zh="同一个承诺，四种未来——schema 对它们没有一个保证。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="258">Same promise, four futures — the schema guaranteed none of them.</text>
+<text data-en="whatever the harness does not decide, the world decides at random" data-zh="harness 不决定的事，世界会随机决定" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="310" y="276">whatever the harness does not decide, the world decides at random</text>
+</svg>
+<p class="diagram-caption" data-en="One schema-valid call, four possible futures: fast success, partial failure that commits rows then times out, slow success that triggers retries underneath, and the unnamed side effect. The schema guaranteed none of them. Whatever the harness does not decide, the world decides at random." data-zh="一次 schema 合法的调用，四种可能的未来：快速成功；提交了两行然后超时的部分失败；在底层触发了重试的慢速成功；以及没有被命名的副作用。schema 对它们任何一个都没有保证。harness 不决定的事，就由世界随机决定。">One schema-valid call, four possible futures: fast success, partial failure that commits rows then times out, slow success that triggers retries underneath, and the unnamed side effect. The schema guaranteed none of them.</p>
+</div>
+<h3 data-en="The harness holds the promise" data-zh="由 harness 兑现承诺">The harness holds the promise</h3>
+<p data-en="If the promise cannot be kept from the model's side, it must be kept from the middle — in the harness, at the last layer before execution. This is not a new idea; it is the oldest one in computing: never trust, always validate, at the boundary. Concretely, the middle layer has four jobs. Validate the shape: every argument checked against a real schema, not the model's good intentions, so malformed promises die before they leave the building. Gate the irreversible: any call whose effects cannot be undone — sends, deletes, purchases, deploys — requires an explicit confirmation step, and 'explicit' means a structured human decision, not the absence of an objection. Scope the blast radius: credentials are scoped per tool, per environment, per resource, so that even a fully confused agent can only ever reach what that one tool was meant to touch — the access-control equivalent of giving the intern one drawer, not the building. Record everything: every call stamped with an idempotency key the harness generated, so a retry cannot double-fire an effect, and appended to a ledger that can be replayed, audited, and diffed. None of this constrains a well-behaved agent in the slightest. All of it converts the agent's worst days from incidents into log entries." data-zh="如果承诺无法从模型那一侧兑现，它就必须从中间兑现——在 harness 里，在执行之前的最后一层。这不是什么新想法；它是计算中最古老的一条：绝不信任，永远校验，在边界上。具体来说，中间层有四份工作。校验形状：每一个参数都对着一个真正的 schema 检查，而不是对着模型的良好意愿，于是畸形的承诺在离开大楼之前就已死去。给不可逆者设闸：任何一次效果无法撤销的调用——发送、删除、购买、部署——都需要一步显式确认，而「显式」指的是一个结构化的人类决定，而不是「没有人反对」。圈住爆炸半径：凭据按工具、按环境、按资源逐个限定，于是哪怕一个完全糊涂的智能体，也只能碰到那一个工具本来该碰的东西——访问控制版本的「给实习生一个抽屉，而不是整栋楼」。记录一切：每一次调用都盖上 harness 生成的幂等键，于是重试无法把效果触发两次；每一次调用都追加进一本可以被重放、被审计、被 diff 的账本。这一切丝毫不会约束一个行为良好的智能体。而这一切，把智能体最糟的那些日子，从事故变成了日志条目。">If the promise cannot be kept from the model's side, it must be kept from the middle — in the harness, at the last layer before execution. Validate the shape. Gate the irreversible. Scope the blast radius. Record everything. None of this constrains a well-behaved agent in the slightest; all of it converts the agent's worst days from incidents into log entries.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 296" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrP2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="WHERE THE PROMISE IS KEPT" data-zh="承诺在哪里被兑现" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHERE THE PROMISE IS KEPT</text>
+<!-- model -->
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--text-tertiary)" stroke-width="1.5" stroke-dasharray="4,3" width="130" x="245" y="44"></rect>
+<text data-en="the model" data-zh="模型" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="62">the model</text>
+<line marker-end="url(#arrP1)" stroke="var(--text-tertiary)" stroke-width="1.3" x1="310" x2="310" y1="72" y2="90"></line>
+<text data-en="proposes" data-zh="提议" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="332" y="85">proposes</text>
+<!-- gates -->
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--accent)" stroke-width="1.5" width="130" x="40" y="94"></rect>
+<text data-en="shape gate" data-zh="形状闸" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="105" y="112">shape gate</text>
+<text data-en="schema-validates every argument" data-zh="用 schema 校验每个参数" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="105" y="128">schema-validates every argument</text>
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--accent)" stroke-width="1.5" width="130" x="190" y="94"></rect>
+<text data-en="consent gate" data-zh="许可闸" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="255" y="112">consent gate</text>
+<text data-en="irreversible? a human decides" data-zh="不可逆？由人决定" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="255" y="128">irreversible? a human decides</text>
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--accent)" stroke-width="1.5" width="130" x="340" y="94"></rect>
+<text data-en="scope gate" data-zh="作用域闸" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="405" y="112">scope gate</text>
+<text data-en="credentials bound per tool" data-zh="凭据按工具绑定" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="405" y="128">credentials bound per tool</text>
+<line marker-end="url(#arrP2)" stroke="var(--accent)" stroke-width="1.5" x1="170" x2="186" y1="116" y2="116"></line>
+<line marker-end="url(#arrP2)" stroke="var(--accent)" stroke-width="1.5" x1="320" x2="336" y1="116" y2="116"></line>
+<line marker-end="url(#arrP2)" stroke="var(--accent)" stroke-width="1.5" x1="470" x2="486" y1="116" y2="116"></line>
+<!-- tool -->
+<rect fill="var(--accent-dim)" height="44" rx="8" stroke="var(--accent)" stroke-width="2" width="100" x="490" y="94"></rect>
+<text data-en="the tool" data-zh="工具" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="540" y="112">the tool</text>
+<text data-en="executes" data-zh="执行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="540" y="128">executes</text>
+<!-- gate annotations -->
+<line marker-end="url(#arrP1)" stroke="var(--text-tertiary)" stroke-width="1" x1="105" x2="105" y1="138" y2="150"></line>
+<line marker-end="url(#arrP1)" stroke="var(--text-tertiary)" stroke-width="1" x1="255" x2="255" y1="138" y2="150"></line>
+<line marker-end="url(#arrP1)" stroke="var(--text-tertiary)" stroke-width="1" x1="405" x2="405" y1="138" y2="150"></line>
+<text data-en="rejects malformed promises" data-zh="拒绝畸形的承诺" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" text-anchor="middle" x="105" y="162">rejects malformed promises</text>
+<text data-en="prices irreversible ones" data-zh="为不可逆者定价" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" text-anchor="middle" x="255" y="162">prices irreversible ones</text>
+<text data-en="bounds the blast radius" data-zh="圈住爆炸半径" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" text-anchor="middle" x="405" y="162">bounds the blast radius</text>
+<!-- ledger row -->
+<line marker-end="url(#arrP1)" stroke="var(--text-tertiary)" stroke-width="1.2" x1="540" x2="540" y1="138" y2="170"></line>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent)" stroke-width="1.5" width="150" x="465" y="172"></rect>
+<text data-en="the ledger" data-zh="账本" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="540" y="188">the ledger</text>
+<text data-en="idempotency key · replayable record" data-zh="幂等键 · 可重放的记录" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="540" y="203">idempotency key · replayable record</text>
+<line marker-end="url(#arrP1)" stroke="var(--text-tertiary)" stroke-width="1.2" x1="465" x2="425" y1="192" y2="192"></line>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="185" x="240" y="172"></rect>
+<text data-en="replay &amp; audit" data-zh="重放与审计" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="332" y="188">replay &amp; audit</text>
+<text data-en="every kept or broken promise on file" data-zh="每个兑现或毁弃的承诺都有档案" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="332" y="203">every kept or broken promise on file</text>
+<!-- bottom bar -->
+<rect fill="var(--accent-dim)" height="48" opacity="0.5" rx="8" width="560" x="30" y="232"></rect>
+<text data-en="The model proposes. The harness disposes. The ledger remembers." data-zh="模型提议。harness 裁决。账本铭记。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="252">The model proposes. The harness disposes. The ledger remembers.</text>
+<text data-en="A promise enforced is a contract. A promise remembered is a system." data-zh="被强制兑现的承诺是合同。被铭记的承诺是系统。" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="310" y="270">A promise enforced is a contract. A promise remembered is a system.</text>
+</svg>
+<p class="diagram-caption" data-en="The kept promise: the model proposes, and before anything executes, the harness runs the gates — a shape gate that validates arguments, a consent gate that prices irreversible calls in human attention, a scope gate that bounds what any single tool can touch. Every call carries an idempotency key into a ledger that can be replayed and audited. The model proposes; the harness disposes; the ledger remembers." data-zh="被兑现的承诺：模型提议，而在任何执行发生之前，harness 依次通过几道闸——校验参数的形状闸；用人类的注意力为不可逆调用定价的许可闸；限定任何单个工具所能触及范围的作用域闸。每一次调用都带着一枚幂等键，进入一本可以被重放和审计的账本。模型提议；harness 裁决；账本铭记。">The kept promise: the model proposes, and before anything executes, the harness runs the gates — shape, consent, scope — and stamps every call with an idempotency key into a replayable ledger. The model proposes; the harness disposes; the ledger remembers.</p>
+</div>
+<h3 data-en="The smallest possible tool" data-zh="尽可能小的工具">The smallest possible tool</h3>
+<p data-en="The design pressure that falls out of all this runs against instinct. When an agent needs more capability, the instinct is to hand it a bigger tool: more parameters, more modes, more optional behaviors — one endpoint that can do everything. Every added parameter is a new axis along which a slightly-confused model can be technically correct and practically wrong, and the tool's promise thins as its surface grows. The discipline is the opposite: the smallest tool that keeps the promise tight. Tools that do one thing, take explicit arguments instead of implicit defaults, refuse ambiguity instead of resolving it silently, and fail loudly at the boundary instead of quietly downstream. When a tool needs to become two tools, let it. The graph gets wider; the promise of each node gets tighter; and somewhere down the line a failure that would have been an unattributable incident becomes a rejected call with a readable error — which is to say, not a failure at all, just the system keeping its word." data-zh="从这一切里得出的设计压力，与直觉相反。当一个智能体需要更多能力时，直觉是递给它一个更大的工具：更多参数、更多模式、更多可选行为——一个无所不能的端点。而每一个新增的参数，都是一条新的轴，沿着它，一个稍微糊涂的模型可以在技术上正确、在实践中全错，工具的承诺随着表面积的增大而变薄。纪律恰恰相反：能收紧承诺的最小工具。只做一件事的工具；用显式参数而非隐式默认值的工具；拒绝歧义而非默默消化歧义的工具；在边界上大声失败、而非在下游悄悄失败的工具。当一个工具需要变成两个工具时，就让它变。图会变宽；每个节点的承诺会更紧；而在未来的某一天，一个本会成为无法归因事故的失败，会变成一次带着可读错误信息的被拒绝的调用——也就是说，根本不是失败，只是系统在兑现自己的诺言。">The design pressure that falls out of all this runs against instinct. When an agent needs more capability, the instinct is to hand it a bigger tool: more parameters, more modes, one endpoint that can do everything. Every added parameter is a new axis along which a slightly-confused model can be technically correct and practically wrong. The discipline is the opposite: the smallest tool that keeps the promise tight.</p>
+<p data-en="None of this is glamorous, and that is the point. The frontier conversation chases context lengths and benchmark scores, while production agent systems live or die at an interface nobody demos: the moment a token stream becomes a side effect. Treat that moment with the respect a database treats a transaction. Wrap it in validation, scope, consent, and a ledger. Write tools as if they were promises, because they are — and remember who actually reads them. Not the model. The model reads the marketing. The harness reads the promise. And the world, which has never once cared what the schema said, reads only what actually executes." data-zh="这些没有一样是光鲜的，而这正是重点。前沿的对话在追逐上下文长度和基准分数，而生产环境中的智能体系统，生死存亡于一个没人演示的接口：token 流变成副作用的那一刻。用数据库对待事务的尊重来对待那一刻。用校验、范围、许可和一本账本把它包裹起来。像写承诺一样去写工具，因为它们就是承诺——并且记住究竟是谁在读它们。不是模型。模型读的是营销文案。harness 读的才是承诺。而世界——它从未在乎过 schema 说了什么——只读真正被执行的东西。">None of this is glamorous, and that is the point. Production agent systems live or die at an interface nobody demos: the moment a token stream becomes a side effect. Treat that moment with the respect a database treats a transaction. The model reads the marketing. The harness reads the promise. And the world, which has never once cared what the schema said, reads only what actually executes.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
