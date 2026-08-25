@@ -1,6 +1,792 @@
 {
   "tweets": [
     {
+      "id": "2092103250296373402",
+      "url": "https://x.com/elonmusk/status/2092103250296373402",
+      "label": "xAI",
+      "color": "#1DA1F2",
+      "fetched_at": "2026-08-25T08:01:16.608583+00:00",
+      "translation_zh": "太精彩了",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 10118,
+        "lang": "in",
+        "created_at": "2026-08-25T04:14:18.000Z",
+        "display_text_range": [
+          0,
+          6
+        ],
+        "entities": {},
+        "id_str": "2092103250296373402",
+        "text": "Banger",
+        "user": {
+          "id_str": "44196397",
+          "name": "Elon Musk",
+          "screen_name": "elonmusk",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+            },
+            "description": "X",
+            "url": {
+              "url": "https://twitter.com/X",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2092103250296373402"
+          ],
+          "editable_until_msecs": "1787634858000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 1127,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 42678,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 1588,
+          "retweet_count": 6914,
+          "created_at": "2026-08-23T10:16:00.000Z",
+          "display_text_range": [
+            0,
+            280
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/GtjYBkWtoc",
+                "expanded_url": "https://x.com/sitsio/status/2091469498616332618/photo/1",
+                "indices": [
+                  281,
+                  304
+                ],
+                "url": "https://t.co/GtjYBkWtoc"
+              }
+            ]
+          },
+          "id_str": "2091469498616332618",
+          "text": "Does anyone remember this amazing story? On July 2, 1982, a truck driver from California flew 16,000 feet into the sky in a lawn chair. Larry Walters, 33, from San Pedro, had dreamed of flying his whole life. He bought 42 eight-foot helium weather balloons, tied them to a regular https://t.co/GtjYBkWtoc",
+          "user": {
+            "id_str": "280216302",
+            "name": "Mark Lambert",
+            "screen_name": "sitsio",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2081149161273970688/s3v1BIGj_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2091469498616332618"
+            ],
+            "editable_until_msecs": "1787483760000",
+            "edits_remaining": "5",
+            "is_edit_eligible": true
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/GtjYBkWtoc",
+              "expanded_url": "https://x.com/sitsio/status/2091469498616332618/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                281,
+                304
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HQZkaexWsAANT8C.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 1147,
+                    "w": 2048,
+                    "x": 0,
+                    "y": 92
+                  },
+                  {
+                    "h": 2048,
+                    "w": 2048,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2048,
+                    "w": 1796,
+                    "x": 74,
+                    "y": 0
+                  },
+                  {
+                    "h": 2048,
+                    "w": 1024,
+                    "x": 460,
+                    "y": 0
+                  },
+                  {
+                    "h": 2048,
+                    "w": 2048,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 2048,
+                "width": 2048
+              },
+              "sizes": {
+                "large": {
+                  "h": 2048,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 1200,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 680,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/GtjYBkWtoc"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 1147,
+                  "w": 2048,
+                  "x": 0,
+                  "y": 92
+                },
+                {
+                  "h": 2048,
+                  "w": 2048,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2048,
+                  "w": 1796,
+                  "x": 74,
+                  "y": 0
+                },
+                {
+                  "h": 2048,
+                  "w": 1024,
+                  "x": 460,
+                  "y": 0
+                },
+                {
+                  "h": 2048,
+                  "w": 2048,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/sitsio/status/2091469498616332618/photo/1",
+              "url": "https://pbs.twimg.com/media/HQZkaexWsAANT8C.jpg",
+              "width": 2048,
+              "height": 2048
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2092090931776545001",
+      "url": "https://x.com/Alibaba_Qwen/status/2092090931776545001",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-08-25T08:01:16.608583+00:00",
+      "translation_zh": "开放的模型，开放的科学。Qwen 稳步成长，我们将始终与研究社区同行。🙌 感谢深度分析！",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 245,
+        "lang": "en",
+        "created_at": "2026-08-25T03:25:21.000Z",
+        "display_text_range": [
+          0,
+          156
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "2939913921",
+              "indices": [
+                143,
+                155
+              ],
+              "name": "Nathan Lambert",
+              "screen_name": "natolambert"
+            }
+          ]
+        },
+        "id_str": "2092090931776545001",
+        "text": "Open models, open science. Qwen keeps growing steadily, and we'll always be right here with the research community.🙌 Thanks for the deep dive! @natolambert",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2092090931776545001"
+          ],
+          "editable_until_msecs": "1787631921000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 18,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 338,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 33,
+          "retweet_count": 49,
+          "created_at": "2026-08-24T14:52:52.000Z",
+          "display_text_range": [
+            0,
+            278
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/wlJoCqZ15w",
+                "expanded_url": "https://x.com/natolambert/status/2091901559869165858/photo/1",
+                "indices": [
+                  279,
+                  302
+                ],
+                "url": "https://t.co/wlJoCqZ15w"
+              }
+            ]
+          },
+          "id_str": "2091901559869165858",
+          "text": "Over the weekend I had Codex parse 500K arXiv AI/ML papers since ChatGPT to understand which open models are used for research. \n\nIn 2024, ~30% of papers mentioned an American open model and only 10% a Chinese model.\n\nToday, ~40% of papers mention a Chinese (open) LLM, and only https://t.co/wlJoCqZ15w",
+          "user": {
+            "id_str": "2939913921",
+            "name": "Nathan Lambert",
+            "screen_name": "natolambert",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2051823244832083968/Nr0pT8-V_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2091901559869165858"
+            ],
+            "editable_until_msecs": "1787586772000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/wlJoCqZ15w",
+              "expanded_url": "https://x.com/natolambert/status/2091901559869165858/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                279,
+                302
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HQfskb-WQAAeflS.png",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 1170,
+                    "w": 2089,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1170,
+                    "w": 1170,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1170,
+                    "w": 1026,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1170,
+                    "w": 585,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1170,
+                    "w": 2168,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 1170,
+                "width": 2168
+              },
+              "sizes": {
+                "large": {
+                  "h": 1105,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 648,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 367,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/wlJoCqZ15w"
+            },
+            {
+              "display_url": "pic.x.com/wlJoCqZ15w",
+              "expanded_url": "https://x.com/natolambert/status/2091901559869165858/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                279,
+                302
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HQfskb6XwAEXjA-.png",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 1178,
+                    "w": 2104,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1178,
+                    "w": 1178,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1178,
+                    "w": 1033,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1178,
+                    "w": 589,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1178,
+                    "w": 2184,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 1178,
+                "width": 2184
+              },
+              "sizes": {
+                "large": {
+                  "h": 1105,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 647,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 367,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/wlJoCqZ15w"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 1170,
+                  "w": 2089,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1170,
+                  "w": 1170,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1170,
+                  "w": 1026,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1170,
+                  "w": 585,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1170,
+                  "w": 2168,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/natolambert/status/2091901559869165858/photo/1",
+              "url": "https://pbs.twimg.com/media/HQfskb-WQAAeflS.png",
+              "width": 2168,
+              "height": 1170
+            },
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 1178,
+                  "w": 2104,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1178,
+                  "w": 1178,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1178,
+                  "w": 1033,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1178,
+                  "w": 589,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1178,
+                  "w": 2184,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/natolambert/status/2091901559869165858/photo/1",
+              "url": "https://pbs.twimg.com/media/HQfskb6XwAEXjA-.png",
+              "width": 2184,
+              "height": 1178
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2092090827690610914",
+      "url": "https://x.com/Alibaba_Qwen/status/2092090827690610914",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-08-25T08:01:16.608583+00:00",
+      "translation_zh": "Qwen3.8-27B 在 Code Arena 总榜排名第 9，是前十名中唯一一个该参数量级的模型。小而强大。感谢认可！",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 587,
+        "lang": "en",
+        "created_at": "2026-08-25T03:24:57.000Z",
+        "display_text_range": [
+          0,
+          143
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "1641378826537295874",
+              "indices": [
+                136,
+                142
+              ],
+              "name": "Arena.ai",
+              "screen_name": "arena"
+            }
+          ]
+        },
+        "id_str": "2092090827690610914",
+        "text": "Qwen3.8-27B at #9 overall on Code Arena, the only model in its size class in the top 10.😎 Small but mighty. Thanks for the recognition! @arena",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2092090827690610914"
+          ],
+          "editable_until_msecs": "1787631897000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 38,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 1134,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 54,
+          "retweet_count": 109,
+          "created_at": "2026-08-24T16:08:10.000Z",
+          "display_text_range": [
+            0,
+            278
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/KjJWrO08Wi",
+                "expanded_url": "https://x.com/arena/status/2091920512796725272/photo/1",
+                "indices": [
+                  279,
+                  302
+                ],
+                "url": "https://t.co/KjJWrO08Wi"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "1753339277386342400",
+                "indices": [
+                  30,
+                  43
+                ],
+                "name": "Qwen",
+                "screen_name": "Alibaba_Qwen"
+              }
+            ]
+          },
+          "id_str": "2091920512796725272",
+          "text": "Exciting news: Qwen3.8-27B by @Alibaba_Qwen just landed in Code Arena: WebDev at #9 overall with 1595 pts. It is the only model in its size class in the top 10, and also reshapes the Pareto Frontier!\n\nIt is only 6 ranks behind the much larger Qwen3.8-Max. For scale: Gemma 4-31B https://t.co/KjJWrO08Wi",
+          "user": {
+            "id_str": "1641378826537295874",
+            "name": "Arena.ai",
+            "screen_name": "arena",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2017015061454438400/iNKfXZ_I_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2091920512796725272"
+            ],
+            "editable_until_msecs": "1787591290000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/KjJWrO08Wi",
+              "expanded_url": "https://x.com/arena/status/2091920512796725272/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                279,
+                302
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HQf-GoXbsAEk7aH.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 1633,
+                    "w": 2916,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2362,
+                    "w": 2362,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2362,
+                    "w": 2072,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2362,
+                    "w": 1181,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2362,
+                    "w": 2916,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 2362,
+                "width": 2916
+              },
+              "sizes": {
+                "large": {
+                  "h": 1659,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 972,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 551,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/KjJWrO08Wi"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 1633,
+                  "w": 2916,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2362,
+                  "w": 2362,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2362,
+                  "w": 2072,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2362,
+                  "w": 1181,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2362,
+                  "w": 2916,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/arena/status/2091920512796725272/photo/1",
+              "url": "https://pbs.twimg.com/media/HQf-GoXbsAEk7aH.jpg",
+              "width": 2916,
+              "height": 2362
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2091941626717569460",
       "url": "https://x.com/elonmusk/status/2091941626717569460",
       "label": "xAI",
