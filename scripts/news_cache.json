@@ -1,6 +1,238 @@
 {
   "tweets": [
     {
+      "id": "2092489636287570169",
+      "url": "https://x.com/Alibaba_Qwen/status/2092489636287570169",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-08-26T08:01:14.898680+00:00",
+      "translation_zh": "在 Image-to-WebDev 竞技场中位列开源模型第一、总榜第七🚀 感谢认可！@arena 仅 270 亿参数，即可媲美百倍于它的模型。猜猜今晚要发布什么惊喜？👀",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 276,
+        "lang": "en",
+        "created_at": "2026-08-26T05:49:40.000Z",
+        "display_text_range": [
+          0,
+          215
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "1641378826537295874",
+              "indices": [
+                93,
+                99
+              ],
+              "name": "Arena.ai",
+              "screen_name": "arena"
+            }
+          ]
+        },
+        "id_str": "2092489636287570169",
+        "text": "#1 among open models in the Image-to-WebDev Arena, #7 overall. 🚀 Thanks for the recognition! @arena Just 27B parameters, on par with models 100x its size. Now, can you guess what surprise we're dropping tonight? 👀",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2092489636287570169"
+          ],
+          "editable_until_msecs": "1787726980000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 40,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 954,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 39,
+          "retweet_count": 70,
+          "created_at": "2026-08-25T17:22:24.000Z",
+          "display_text_range": [
+            0,
+            280
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/RPiA3SfvMO",
+                "expanded_url": "https://x.com/arena/status/2092301580091711491/photo/1",
+                "indices": [
+                  281,
+                  304
+                ],
+                "url": "https://t.co/RPiA3SfvMO"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "1753339277386342400",
+                "indices": [
+                  25,
+                  38
+                ],
+                "name": "Qwen",
+                "screen_name": "Alibaba_Qwen"
+              }
+            ]
+          },
+          "id_str": "2092301580091711491",
+          "text": "Big news: Qwen3.8-27B by @Alibaba_Qwen is now #1 among open models in the Image-to-WebDev Arena (#7 overall)! \n\nPriced at $0.40/$3 per M input/output tokens, it has shifted the Pareto frontier (more info below).\n\nQwen3.8-27B has 1574 pts with 27B parameters, achieving performance https://t.co/RPiA3SfvMO",
+          "user": {
+            "id_str": "1641378826537295874",
+            "name": "Arena.ai",
+            "screen_name": "arena",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2017015061454438400/iNKfXZ_I_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2092301580091711491"
+            ],
+            "editable_until_msecs": "1787682144000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/RPiA3SfvMO",
+              "expanded_url": "https://x.com/arena/status/2092301580091711491/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                281,
+                304
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HQlVGfjbcAAdr-K.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 2294,
+                    "w": 4096,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 4096,
+                    "w": 4096,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 4096,
+                    "w": 3593,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 4096,
+                    "w": 2048,
+                    "x": 512,
+                    "y": 0
+                  },
+                  {
+                    "h": 4096,
+                    "w": 4096,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 4096,
+                "width": 4096
+              },
+              "sizes": {
+                "large": {
+                  "h": 2048,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 1200,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 680,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/RPiA3SfvMO"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 2294,
+                  "w": 4096,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 4096,
+                  "w": 4096,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 4096,
+                  "w": 3593,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 4096,
+                  "w": 2048,
+                  "x": 512,
+                  "y": 0
+                },
+                {
+                  "h": 4096,
+                  "w": 4096,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/arena/status/2092301580091711491/photo/1",
+              "url": "https://pbs.twimg.com/media/HQlVGfjbcAAdr-K.jpg",
+              "width": 4096,
+              "height": 4096
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2092335305366069305",
       "url": "https://x.com/OpenAI/status/2092335305366069305",
       "label": "OpenAI",
@@ -174,6 +406,907 @@
         "note_tweet": {
           "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDkyMzM1MzA1MjUyODE4OTQ0"
         }
+      }
+    },
+    {
+      "id": "2092300848483143735",
+      "url": "https://x.com/OpenAI/status/2092300848483143735",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-08-26T08:01:14.898680+00:00",
+      "translation_zh": "Jalapeño 意味着更快的 ChatGPT 响应、更灵敏的 Codex 会话与智能体，以及在需求持续增长下的稳定访问。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1076,
+        "in_reply_to_screen_name": "OpenAI",
+        "in_reply_to_status_id_str": "2092300846675505602",
+        "in_reply_to_user_id_str": "4398626122",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-25T17:19:30.000Z",
+        "display_text_range": [
+          0,
+          132
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/QgBKRa3Xz6",
+              "expanded_url": "https://x.com/OpenAI/status/2092300848483143735/photo/1",
+              "indices": [
+                133,
+                156
+              ],
+              "url": "https://t.co/QgBKRa3Xz6"
+            }
+          ]
+        },
+        "id_str": "2092300848483143735",
+        "text": "Jalapeño means faster ChatGPT responses, more responsive Codex sessions and agents, and reliable access as demand continues to grow. https://t.co/QgBKRa3Xz6",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2092300848483143735"
+          ],
+          "editable_until_msecs": "1787681970000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/QgBKRa3Xz6",
+            "expanded_url": "https://x.com/OpenAI/status/2092300848483143735/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              133,
+              156
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HQlXw07WAAE8S4D.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 2150,
+                  "w": 3840,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 2160,
+                  "x": 168,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 1895,
+                  "x": 301,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 1080,
+                  "x": 708,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 3840,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 2160,
+              "width": 3840
+            },
+            "sizes": {
+              "large": {
+                "h": 1152,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/QgBKRa3Xz6"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 2150,
+                "w": 3840,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 2160,
+                "x": 168,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 1895,
+                "x": 301,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 1080,
+                "x": 708,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 3840,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/OpenAI/status/2092300848483143735/photo/1",
+            "url": "https://pbs.twimg.com/media/HQlXw07WAAE8S4D.jpg",
+            "width": 3840,
+            "height": 2160
+          }
+        ],
+        "conversation_count": 15,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 11275,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 475,
+          "retweet_count": 885,
+          "created_at": "2026-08-25T17:19:29.000Z",
+          "display_text_range": [
+            0,
+            278
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/vj7VOrA8pP",
+                "expanded_url": "https://x.com/OpenAI/status/2092300846675505602/video/1",
+                "indices": [
+                  279,
+                  302
+                ],
+                "url": "https://t.co/vj7VOrA8pP"
+              }
+            ]
+          },
+          "id_str": "2092300846675505602",
+          "text": "Since announcing Jalapeño, our first custom inference chip, we’ve been testing it and the system around it.\n\nThe results show a major advance: more intelligence from every watt and faster responses, delivering both higher throughput and lower latency in one architecture without https://t.co/vj7VOrA8pP",
+          "user": {
+            "id_str": "4398626122",
+            "name": "OpenAI",
+            "screen_name": "OpenAI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2092300846675505602"
+            ],
+            "editable_until_msecs": "1787681969000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/vj7VOrA8pP",
+              "expanded_url": "https://x.com/OpenAI/status/2092300846675505602/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                279,
+                302
+              ],
+              "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2092299952433061888/img/w27YXIvgGWvo4X_E.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 1080,
+                "width": 1920
+              },
+              "sizes": {
+                "large": {
+                  "h": 1080,
+                  "resize": "fit",
+                  "w": 1920
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/vj7VOrA8pP",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "duration_millis": 10866,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2092299952433061888/pl/YqXvl9CV_wpcqcL4.m3u8?v=cfc"
+                  },
+                  {
+                    "bitrate": 256000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2092299952433061888/vid/avc1/480x270/JWweKXeqchhSGf7f.mp4"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2092299952433061888/vid/avc1/640x360/qIFZnxHZwy94QuGk.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2092299952433061888/vid/avc1/1280x720/TVKgXldq-2ebG5Fp.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2092299952433061888/vid/avc1/1920x1080/BDwe9RbfKcuNrbj6.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              16,
+              9
+            ],
+            "contentType": "media_entity",
+            "durationMs": 10866,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/amplify_video_thumb/2092299952433061888/img/w27YXIvgGWvo4X_E.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2092299952433061888/pl/YqXvl9CV_wpcqcL4.m3u8?v=cfc"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2092299952433061888/vid/avc1/480x270/JWweKXeqchhSGf7f.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2092299952433061888/vid/avc1/640x360/qIFZnxHZwy94QuGk.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2092299952433061888/vid/avc1/1280x720/TVKgXldq-2ebG5Fp.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2092299952433061888/vid/avc1/1920x1080/BDwe9RbfKcuNrbj6.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2092300846675505602"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2092300851482108064",
+      "url": "https://x.com/OpenAI/status/2092300851482108064",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-08-26T08:01:14.898680+00:00",
+      "translation_zh": "计划于年底前在 OpenAI 的算力基础设施中部署 Jalapeño。这是多代路线图的第一步：第二代已深入开发，第三代正在成形，每一代都将进一步推高效率与速度。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 907,
+        "in_reply_to_screen_name": "OpenAI",
+        "in_reply_to_status_id_str": "2092300848483143735",
+        "in_reply_to_user_id_str": "4398626122",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-25T17:19:30.000Z",
+        "display_text_range": [
+          0,
+          274
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "openai.com/index/jalapeno…",
+              "expanded_url": "https://openai.com/index/jalapeno-first-results/",
+              "indices": [
+                251,
+                274
+              ],
+              "url": "https://t.co/OLO0OUVt13"
+            }
+          ]
+        },
+        "id_str": "2092300851482108064",
+        "text": "We plan to begin deploying Jalapeño in OpenAI’s compute infrastructure by year-end.\n\nIt’s the first step in a multigenerational roadmap: Gen 2 is deep in development, and Gen 3 is taking shape.\n\nEach generation will push efficiency and speed further.\nhttps://t.co/OLO0OUVt13",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2092300851482108064"
+          ],
+          "editable_until_msecs": "1787681970000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 18,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 1076,
+          "in_reply_to_screen_name": "OpenAI",
+          "in_reply_to_status_id_str": "2092300846675505602",
+          "in_reply_to_user_id_str": "4398626122",
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 15,
+          "retweet_count": 24,
+          "created_at": "2026-08-25T17:19:30.000Z",
+          "display_text_range": [
+            0,
+            132
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/QgBKRa3Xz6",
+                "expanded_url": "https://x.com/OpenAI/status/2092300848483143735/photo/1",
+                "indices": [
+                  133,
+                  156
+                ],
+                "url": "https://t.co/QgBKRa3Xz6"
+              }
+            ]
+          },
+          "id_str": "2092300848483143735",
+          "text": "Jalapeño means faster ChatGPT responses, more responsive Codex sessions and agents, and reliable access as demand continues to grow. https://t.co/QgBKRa3Xz6",
+          "user": {
+            "id_str": "4398626122",
+            "name": "OpenAI",
+            "screen_name": "OpenAI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2092300848483143735"
+            ],
+            "editable_until_msecs": "1787681970000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/QgBKRa3Xz6",
+              "expanded_url": "https://x.com/OpenAI/status/2092300848483143735/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                133,
+                156
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HQlXw07WAAE8S4D.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 2150,
+                    "w": 3840,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2160,
+                    "w": 2160,
+                    "x": 168,
+                    "y": 0
+                  },
+                  {
+                    "h": 2160,
+                    "w": 1895,
+                    "x": 301,
+                    "y": 0
+                  },
+                  {
+                    "h": 2160,
+                    "w": 1080,
+                    "x": 708,
+                    "y": 0
+                  },
+                  {
+                    "h": 2160,
+                    "w": 3840,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 2160,
+                "width": 3840
+              },
+              "sizes": {
+                "large": {
+                  "h": 1152,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/QgBKRa3Xz6"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 2150,
+                  "w": 3840,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 2160,
+                  "x": 168,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 1895,
+                  "x": 301,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 1080,
+                  "x": 708,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 3840,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/OpenAI/status/2092300848483143735/photo/1",
+              "url": "https://pbs.twimg.com/media/HQlXw07WAAE8S4D.jpg",
+              "width": 3840,
+              "height": 2160
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/OLO0OUVt13",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Jalapeño’s first results show faster, more efficient AI inference over an abstract green and blue background.",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2092331062143664128/XI3AAQYJ?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Jalapeño’s first results show faster, more efficient AI inference over an abstract green and blue background.",
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2092331062143664128/XI3AAQYJ?format=jpg&name=280x150",
+                "width": 267
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Jalapeño is a custom inference chip from OpenAI that delivers faster, more power-efficient AI inference, with higher throughput and lower latency for modern models.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Jalapeño’s first results show faster, more efficient AI inference over an abstract green and blue background.",
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2092331062143664128/XI3AAQYJ?format=jpg&name=800x320_1",
+                "width": 569
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Jalapeño’s first results show faster, more efficient AI inference over an abstract green and blue background.",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2092331062143664128/XI3AAQYJ?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Jalapeño’s first results show faster, more efficient AI inference over an abstract green and blue background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2092331062143664128/XI3AAQYJ?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "4398626122",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Jalapeño’s first results show faster, more efficient AI inference over an abstract green and blue background.",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2092331062143664128/XI3AAQYJ?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Jalapeño’s first results show faster, more efficient AI inference over an abstract green and blue background.",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2092331062143664128/XI3AAQYJ?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Jalapeño’s first results show faster, more efficient AI inference over an abstract green and blue background.",
+                "height": 81,
+                "url": "https://pbs.twimg.com/card_img/2092331062143664128/XI3AAQYJ?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Jalapeño’s first results show faster, more efficient AI inference over an abstract green and blue background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2092331062143664128/XI3AAQYJ?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Jalapeño’s first results show faster, more efficient AI inference over an abstract green and blue background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2092331062143664128/XI3AAQYJ?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Jalapeño’s first results show faster, more efficient AI inference over an abstract green and blue background.",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Jalapeño’s first results show faster, more efficient AI inference over an abstract green and blue background.",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2092331062143664128/XI3AAQYJ?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Jalapeño’s first results show faster, more efficient AI inference over an abstract green and blue background.",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 38.34,
+                    "rgb": {
+                      "blue": 247,
+                      "green": 210,
+                      "red": 35
+                    }
+                  },
+                  {
+                    "percentage": 35.12,
+                    "rgb": {
+                      "blue": 133,
+                      "green": 196,
+                      "red": 23
+                    }
+                  },
+                  {
+                    "percentage": 21.56,
+                    "rgb": {
+                      "blue": 176,
+                      "green": 204,
+                      "red": 53
+                    }
+                  },
+                  {
+                    "percentage": 3.48,
+                    "rgb": {
+                      "blue": 213,
+                      "green": 229,
+                      "red": 164
+                    }
+                  },
+                  {
+                    "percentage": 0.85,
+                    "rgb": {
+                      "blue": 101,
+                      "green": 196,
+                      "red": 43
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 38.34,
+                    "rgb": {
+                      "blue": 247,
+                      "green": 210,
+                      "red": 35
+                    }
+                  },
+                  {
+                    "percentage": 35.12,
+                    "rgb": {
+                      "blue": 133,
+                      "green": 196,
+                      "red": 23
+                    }
+                  },
+                  {
+                    "percentage": 21.56,
+                    "rgb": {
+                      "blue": 176,
+                      "green": 204,
+                      "red": 53
+                    }
+                  },
+                  {
+                    "percentage": 3.48,
+                    "rgb": {
+                      "blue": 213,
+                      "green": 229,
+                      "red": 164
+                    }
+                  },
+                  {
+                    "percentage": 0.85,
+                    "rgb": {
+                      "blue": 101,
+                      "green": 196,
+                      "red": 43
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Jalapeño’s first results show faster, more efficient AI inference over an abstract green and blue background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2092331062143664128/XI3AAQYJ?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Jalapeño’s first results show faster, more efficient AI inference over an abstract green and blue background.",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2092331062143664128/XI3AAQYJ?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 38.34,
+                    "rgb": {
+                      "blue": 247,
+                      "green": 210,
+                      "red": 35
+                    }
+                  },
+                  {
+                    "percentage": 35.12,
+                    "rgb": {
+                      "blue": 133,
+                      "green": 196,
+                      "red": 23
+                    }
+                  },
+                  {
+                    "percentage": 21.56,
+                    "rgb": {
+                      "blue": 176,
+                      "green": 204,
+                      "red": 53
+                    }
+                  },
+                  {
+                    "percentage": 3.48,
+                    "rgb": {
+                      "blue": 213,
+                      "green": 229,
+                      "red": 164
+                    }
+                  },
+                  {
+                    "percentage": 0.85,
+                    "rgb": {
+                      "blue": 101,
+                      "green": 196,
+                      "red": 43
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Jalapeño’s first results show faster, more efficient AI inference over an abstract green and blue background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2092331062143664128/XI3AAQYJ?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/OLO0OUVt13",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Jalapeño’s first results show faster, more efficient AI inference over an abstract green and blue background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2092331062143664128/XI3AAQYJ?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false
       }
     },
     {
