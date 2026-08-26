@@ -1,6 +1,1861 @@
 {
   "tweets": [
     {
+      "id": "2092691861773160673",
+      "url": "https://x.com/OpenAI/status/2092691861773160673",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-08-26T20:07:00.831144+00:00",
+      "translation_zh": "已对 Hugging Face 事件完成彻底调查。现发布技术报告与博客文章，重建了涉事智能体的活动过程，解释了既有安全防护为何失效，并详述如何杜绝同类事件再次发生。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1768,
+        "lang": "en",
+        "created_at": "2026-08-26T19:13:14.000Z",
+        "display_text_range": [
+          0,
+          261
+        ],
+        "entities": {},
+        "id_str": "2092691861773160673",
+        "text": "We have conducted a thorough investigation into the Hugging Face incident.\n\nWe are releasing a technical report and accompanying blog post that reconstruct the agents’ activity, explain why existing safeguards failed, and detail how we’re preventing recurrence.",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2092691861773160673"
+          ],
+          "editable_until_msecs": "1787775194000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 126,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/hfxlbiXXiP",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2092691269000876032/6xXu0t_n?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2092691269000876032/6xXu0t_n?format=jpg&name=280x150",
+                "width": 267
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "OpenAI shares findings from the Hugging Face security incident and the steps we’re taking to strengthen AI model security, monitoring, and alignment.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2092691269000876032/6xXu0t_n?format=jpg&name=800x320_1",
+                "width": 569
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2092691269000876032/6xXu0t_n?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2092691269000876032/6xXu0t_n?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "4398626122",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2092691269000876032/6xXu0t_n?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2092691269000876032/6xXu0t_n?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 81,
+                "url": "https://pbs.twimg.com/card_img/2092691269000876032/6xXu0t_n?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2092691269000876032/6xXu0t_n?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2092691269000876032/6xXu0t_n?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "The Hugging Face incident and the road ahead",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2092691269000876032/6xXu0t_n?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "The Hugging Face incident and the road ahead",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 94.62,
+                    "rgb": {
+                      "blue": 0,
+                      "green": 0,
+                      "red": 0
+                    }
+                  },
+                  {
+                    "percentage": 4.58,
+                    "rgb": {
+                      "blue": 138,
+                      "green": 138,
+                      "red": 138
+                    }
+                  },
+                  {
+                    "percentage": 0.14,
+                    "rgb": {
+                      "blue": 200,
+                      "green": 200,
+                      "red": 200
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "The Hugging Face incident and the road ahead",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 94.62,
+                    "rgb": {
+                      "blue": 0,
+                      "green": 0,
+                      "red": 0
+                    }
+                  },
+                  {
+                    "percentage": 4.58,
+                    "rgb": {
+                      "blue": 138,
+                      "green": 138,
+                      "red": 138
+                    }
+                  },
+                  {
+                    "percentage": 0.14,
+                    "rgb": {
+                      "blue": 200,
+                      "green": 200,
+                      "red": 200
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2092691269000876032/6xXu0t_n?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2092691269000876032/6xXu0t_n?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 94.62,
+                    "rgb": {
+                      "blue": 0,
+                      "green": 0,
+                      "red": 0
+                    }
+                  },
+                  {
+                    "percentage": 4.58,
+                    "rgb": {
+                      "blue": 138,
+                      "green": 138,
+                      "red": 138
+                    }
+                  },
+                  {
+                    "percentage": 0.14,
+                    "rgb": {
+                      "blue": 200,
+                      "green": 200,
+                      "red": 200
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2092691269000876032/6xXu0t_n?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/hfxlbiXXiP",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2092691269000876032/6xXu0t_n?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDkyNjkxODYxNjUxNDcyMzg0"
+        }
+      }
+    },
+    {
+      "id": "2092661573223657834",
+      "url": "https://x.com/AnthropicAI/status/2092661573223657834",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-08-26T20:07:00.831144+00:00",
+      "translation_zh": "首次向外部研究者开放研究工具：基于真实、经隐私保护的 Claude 使用数据研究 AI 的影响。此类工作此前只能在 AI 实验室内部完成。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1089,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-26T17:12:53.000Z",
+        "display_text_range": [
+          0,
+          276
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "anthropic.com/research/enabl…",
+              "expanded_url": "https://www.anthropic.com/research/enabling-independent-research",
+              "indices": [
+                253,
+                276
+              ],
+              "url": "https://t.co/suLJcARAu1"
+            }
+          ]
+        },
+        "id_str": "2092661573223657834",
+        "text": "For the first time, we’ve given external researchers a way to study AI’s impacts using real, privacy-preserved Claude usage data. To date, this work has only been possible within AI labs. We can’t tell the whole story alone, so we opened up our tools.\n\nhttps://t.co/suLJcARAu1",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2092661573223657834"
+          ],
+          "editable_until_msecs": "1787767973000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 94,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/suLJcARAu1",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Desk lamp beside stacked books on wooden surface with academic study materials",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2092661575064899584/YuOO6wu_?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Desk lamp beside stacked books on wooden surface with academic study materials",
+                "height": 147,
+                "url": "https://pbs.twimg.com/card_img/2092661575064899584/YuOO6wu_?format=jpg&name=280x150",
+                "width": 280
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Earlier this year, we ran a pilot giving external researchers access to aggregate, real-world Claude usage data. Three research groups designed their own studies for Anthropic Insights, our privacy...",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "www.anthropic.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Desk lamp beside stacked books on wooden surface with academic study materials",
+                "height": 316,
+                "url": "https://pbs.twimg.com/card_img/2092661575064899584/YuOO6wu_?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Desk lamp beside stacked books on wooden surface with academic study materials",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2092661575064899584/YuOO6wu_?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Desk lamp beside stacked books on wooden surface with academic study materials",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2092661575064899584/YuOO6wu_?format=jpg&name=orig",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Desk lamp beside stacked books on wooden surface with academic study materials",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2092661575064899584/YuOO6wu_?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Desk lamp beside stacked books on wooden surface with academic study materials",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2092661575064899584/YuOO6wu_?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Desk lamp beside stacked books on wooden surface with academic study materials",
+                "height": 76,
+                "url": "https://pbs.twimg.com/card_img/2092661575064899584/YuOO6wu_?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "creator": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Desk lamp beside stacked books on wooden surface with academic study materials",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2092661575064899584/YuOO6wu_?format=png&name=2048x2048_2_exp",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Desk lamp beside stacked books on wooden surface with academic study materials",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2092661575064899584/YuOO6wu_?format=jpg&name=orig",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Desk lamp beside stacked books on wooden surface with academic study materials",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "anthropic.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Desk lamp beside stacked books on wooden surface with academic study materials",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2092661575064899584/YuOO6wu_?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Desk lamp beside stacked books on wooden surface with academic study materials",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 98.22,
+                    "rgb": {
+                      "blue": 218,
+                      "green": 202,
+                      "red": 203
+                    }
+                  },
+                  {
+                    "percentage": 1.19,
+                    "rgb": {
+                      "blue": 71,
+                      "green": 68,
+                      "red": 68
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Enabling independent research on how people use Claude",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 98.22,
+                    "rgb": {
+                      "blue": 218,
+                      "green": 202,
+                      "red": 203
+                    }
+                  },
+                  {
+                    "percentage": 1.19,
+                    "rgb": {
+                      "blue": 71,
+                      "green": 68,
+                      "red": 68
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Desk lamp beside stacked books on wooden surface with academic study materials",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2092661575064899584/YuOO6wu_?format=png&name=2048x2048_2_exp",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Desk lamp beside stacked books on wooden surface with academic study materials",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2092661575064899584/YuOO6wu_?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 98.22,
+                    "rgb": {
+                      "blue": 218,
+                      "green": 202,
+                      "red": 203
+                    }
+                  },
+                  {
+                    "percentage": 1.19,
+                    "rgb": {
+                      "blue": 71,
+                      "green": 68,
+                      "red": 68
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Desk lamp beside stacked books on wooden surface with academic study materials",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2092661575064899584/YuOO6wu_?format=png&name=2048x2048_2_exp",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/suLJcARAu1",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Desk lamp beside stacked books on wooden surface with academic study materials",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2092661575064899584/YuOO6wu_?format=jpg&name=orig",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2092659223591039374",
+      "url": "https://x.com/GoogleDeepMind/status/2092659223591039374",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-08-26T20:07:00.831144+00:00",
+      "translation_zh": "Gemini 3.5 Transcribe 新特性：更准确理解复杂电话号码、邮政编码和订单号（嘈杂环境亦然）；自动去除填充词并格式化文本；识别自定义词汇表；自动检测并转录 85+ 种语言。现已在 Gemini App（macOS）和 Gboard（Android）上线。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 41,
+        "in_reply_to_screen_name": "GoogleDeepMind",
+        "in_reply_to_status_id_str": "2092659221477077101",
+        "in_reply_to_user_id_str": "4783690002",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-26T17:03:33.000Z",
+        "display_text_range": [
+          0,
+          278
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/b9VQZ5Btl6",
+              "expanded_url": "https://x.com/GoogleDeepMind/status/2092659223591039374/photo/1",
+              "indices": [
+                275,
+                298
+              ],
+              "url": "https://t.co/b9VQZ5Btl6"
+            }
+          ]
+        },
+        "id_str": "2092659223591039374",
+        "text": "Here’s what’s new:\n🔵 It’s better at understanding complex phone numbers, postal codes, and order IDs – even in noisy environments.\n🔵 It can remove filler words and auto-format your text.\n🔵 It recognizes custom vocabulary so the model knows unique names and product titles.\n🔵 https://t.co/b9VQZ5Btl6",
+        "user": {
+          "id_str": "4783690002",
+          "name": "Google DeepMind",
+          "screen_name": "GoogleDeepMind",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2092659223591039374"
+          ],
+          "editable_until_msecs": "1787767413000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/b9VQZ5Btl6",
+            "expanded_url": "https://x.com/GoogleDeepMind/status/2092659223591039374/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              275,
+              298
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HQqdIZlWQAAZFDi.png",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 2150,
+                  "w": 3840,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 2160,
+                  "x": 840,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 1895,
+                  "x": 973,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 1080,
+                  "x": 1380,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 3840,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 2160,
+              "width": 3840
+            },
+            "sizes": {
+              "large": {
+                "h": 1152,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/b9VQZ5Btl6"
+          },
+          {
+            "display_url": "pic.x.com/b9VQZ5Btl6",
+            "expanded_url": "https://x.com/GoogleDeepMind/status/2092659223591039374/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              275,
+              298
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HQqdIZnWYAAIz0K.png",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 2150,
+                  "w": 3840,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 2160,
+                  "x": 840,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 1895,
+                  "x": 973,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 1080,
+                  "x": 1380,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 3840,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 2160,
+              "width": 3840
+            },
+            "sizes": {
+              "large": {
+                "h": 1152,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/b9VQZ5Btl6"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 2150,
+                "w": 3840,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 2160,
+                "x": 840,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 1895,
+                "x": 973,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 1080,
+                "x": 1380,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 3840,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/GoogleDeepMind/status/2092659223591039374/photo/1",
+            "url": "https://pbs.twimg.com/media/HQqdIZlWQAAZFDi.png",
+            "width": 3840,
+            "height": 2160
+          },
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 2150,
+                "w": 3840,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 2160,
+                "x": 840,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 1895,
+                "x": 973,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 1080,
+                "x": 1380,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 3840,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/GoogleDeepMind/status/2092659223591039374/photo/1",
+            "url": "https://pbs.twimg.com/media/HQqdIZnWYAAIz0K.png",
+            "width": 3840,
+            "height": 2160
+          }
+        ],
+        "conversation_count": 5,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 318,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 30,
+          "retweet_count": 29,
+          "created_at": "2026-08-26T17:03:32.000Z",
+          "display_text_range": [
+            0,
+            103
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/24IDhwBtl7",
+                "expanded_url": "https://x.com/GoogleDeepMind/status/2092659221477077101/video/1",
+                "indices": [
+                  103,
+                  126
+                ],
+                "url": "https://t.co/24IDhwBtl7"
+              }
+            ]
+          },
+          "id_str": "2092659221477077101",
+          "text": "Gemini 3.5 Transcribe is our latest speech-to-text model for precise and intelligent transcriptions. 🧵 https://t.co/24IDhwBtl7",
+          "user": {
+            "id_str": "4783690002",
+            "name": "Google DeepMind",
+            "screen_name": "GoogleDeepMind",
+            "is_blue_verified": false,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2092659221477077101"
+            ],
+            "editable_until_msecs": "1787767412000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/24IDhwBtl7",
+              "expanded_url": "https://x.com/GoogleDeepMind/status/2092659221477077101/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                103,
+                126
+              ],
+              "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2092657679047000064/img/6c70-BEQt1fdO3bD.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 1080,
+                "width": 1920
+              },
+              "sizes": {
+                "large": {
+                  "h": 1080,
+                  "resize": "fit",
+                  "w": 1920
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/24IDhwBtl7",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "duration_millis": 35800,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2092657679047000064/pl/A063nYNZCk-Rc-YG.m3u8?v=123"
+                  },
+                  {
+                    "bitrate": 256000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2092657679047000064/vid/avc1/480x270/i_yOUpmlLIg8fpmE.mp4"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2092657679047000064/vid/avc1/640x360/6YTllR7iymcwHXai.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2092657679047000064/vid/avc1/1280x720/j7nOQrq7yExJBN3e.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2092657679047000064/vid/avc1/1920x1080/4cFWynQHeUFv8uP6.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              16,
+              9
+            ],
+            "contentType": "media_entity",
+            "durationMs": 35800,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/amplify_video_thumb/2092657679047000064/img/6c70-BEQt1fdO3bD.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2092657679047000064/pl/A063nYNZCk-Rc-YG.m3u8?v=123"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2092657679047000064/vid/avc1/480x270/i_yOUpmlLIg8fpmE.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2092657679047000064/vid/avc1/640x360/6YTllR7iymcwHXai.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2092657679047000064/vid/avc1/1280x720/j7nOQrq7yExJBN3e.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2092657679047000064/vid/avc1/1920x1080/4cFWynQHeUFv8uP6.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2092659221477077101"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDkyNjU5MjIzNDQwMDE5NDU2"
+        }
+      }
+    },
+    {
+      "id": "2092659221477077101",
+      "url": "https://x.com/GoogleDeepMind/status/2092659221477077101",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-08-26T20:07:00.831144+00:00",
+      "translation_zh": "Gemini 3.5 Transcribe 是最新的语音转文本模型，提供精准而智能的转录。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 318,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-26T17:03:32.000Z",
+        "display_text_range": [
+          0,
+          103
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/24IDhwBtl7",
+              "expanded_url": "https://x.com/GoogleDeepMind/status/2092659221477077101/video/1",
+              "indices": [
+                103,
+                126
+              ],
+              "url": "https://t.co/24IDhwBtl7"
+            }
+          ]
+        },
+        "id_str": "2092659221477077101",
+        "text": "Gemini 3.5 Transcribe is our latest speech-to-text model for precise and intelligent transcriptions. 🧵 https://t.co/24IDhwBtl7",
+        "user": {
+          "id_str": "4783690002",
+          "name": "Google DeepMind",
+          "screen_name": "GoogleDeepMind",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2092659221477077101"
+          ],
+          "editable_until_msecs": "1787767412000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/24IDhwBtl7",
+            "expanded_url": "https://x.com/GoogleDeepMind/status/2092659221477077101/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              103,
+              126
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2092657679047000064/img/6c70-BEQt1fdO3bD.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/24IDhwBtl7",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 35800,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2092657679047000064/pl/A063nYNZCk-Rc-YG.m3u8?v=123"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2092657679047000064/vid/avc1/480x270/i_yOUpmlLIg8fpmE.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2092657679047000064/vid/avc1/640x360/6YTllR7iymcwHXai.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2092657679047000064/vid/avc1/1280x720/j7nOQrq7yExJBN3e.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2092657679047000064/vid/avc1/1920x1080/4cFWynQHeUFv8uP6.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 35800,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2092657679047000064/img/6c70-BEQt1fdO3bD.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2092657679047000064/pl/A063nYNZCk-Rc-YG.m3u8?v=123"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2092657679047000064/vid/avc1/480x270/i_yOUpmlLIg8fpmE.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2092657679047000064/vid/avc1/640x360/6YTllR7iymcwHXai.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2092657679047000064/vid/avc1/1280x720/j7nOQrq7yExJBN3e.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2092657679047000064/vid/avc1/1920x1080/4cFWynQHeUFv8uP6.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2092659221477077101"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 30,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDkyNjU5MjIxNDI2NzQ1MzQ0"
+        }
+      }
+    },
+    {
+      "id": "2092616209426493766",
+      "url": "https://x.com/Zai_org/status/2092616209426493766",
+      "label": "GLM",
+      "color": "#7C3AED",
+      "fetched_at": "2026-08-26T20:07:00.831144+00:00",
+      "translation_zh": "GLM-5.3-Flash 标准 API 定价（每百万 token）：输入 $0.15，输出 $0.50，缓存输入 $0.03。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1872,
+        "in_reply_to_screen_name": "Zai_org",
+        "in_reply_to_status_id_str": "2092616204787626030",
+        "in_reply_to_user_id_str": "1726486879456096256",
+        "lang": "en",
+        "created_at": "2026-08-26T14:12:37.000Z",
+        "display_text_range": [
+          0,
+          108
+        ],
+        "entities": {},
+        "id_str": "2092616209426493766",
+        "text": "Standard API Pricing for GLM-5.3-Flash (per 1M tokens)\n\n- Input: $0.15\n- Output: $0.50\n- Cached input: $0.03",
+        "user": {
+          "id_str": "1726486879456096256",
+          "name": "Z.ai",
+          "screen_name": "Zai_org",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1970775077181411328/W8XKaUIh_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2092616209426493766"
+          ],
+          "editable_until_msecs": "1787757157000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 58,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 18098,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 778,
+          "retweet_count": 1977,
+          "created_at": "2026-08-26T14:12:36.000Z",
+          "display_text_range": [
+            0,
+            263
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/KOCG4dkay3",
+                "expanded_url": "https://x.com/Zai_org/status/2092616204787626030/photo/1",
+                "indices": [
+                  264,
+                  287
+                ],
+                "url": "https://t.co/KOCG4dkay3"
+              }
+            ]
+          },
+          "id_str": "2092616204787626030",
+          "text": "Introducing GLM-5.3-Flash\n\n- Leading capabilities at a highly competitive price\n- Natively multimodal with a 1M-token context window\n- A 320B-A18B model released under the MIT License\n- Previously previewed as Ox Alpha, running entirely on Chinese AI chips\n\nBlog: https://t.co/KOCG4dkay3",
+          "user": {
+            "id_str": "1726486879456096256",
+            "name": "Z.ai",
+            "screen_name": "Zai_org",
+            "is_blue_verified": false,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1970775077181411328/W8XKaUIh_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2092616204787626030"
+            ],
+            "editable_until_msecs": "1787757156000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/KOCG4dkay3",
+              "expanded_url": "https://x.com/Zai_org/status/2092616204787626030/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                264,
+                287
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HQp025-WUAAmoxY.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 2294,
+                    "w": 4096,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2554,
+                    "w": 2554,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2554,
+                    "w": 2240,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2554,
+                    "w": 1277,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2554,
+                    "w": 4096,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 2554,
+                "width": 4096
+              },
+              "sizes": {
+                "large": {
+                  "h": 1277,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 748,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 424,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/KOCG4dkay3"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 2294,
+                  "w": 4096,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2554,
+                  "w": 2554,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2554,
+                  "w": 2240,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2554,
+                  "w": 1277,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2554,
+                  "w": 4096,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/Zai_org/status/2092616204787626030/photo/1",
+              "url": "https://pbs.twimg.com/media/HQp025-WUAAmoxY.jpg",
+              "width": 4096,
+              "height": 2554
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2092616204787626030",
+      "url": "https://x.com/Zai_org/status/2092616204787626030",
+      "label": "GLM",
+      "color": "#7C3AED",
+      "fetched_at": "2026-08-26T20:07:00.831144+00:00",
+      "translation_zh": "GLM-5.3-Flash 正式发布：以极具竞争力的价格提供领先能力；原生多模态，100 万 token 上下文；320B-A18B 模型，MIT 许可证开放；此前以 Ox Alpha 为名预览，完全运行在中国 AI 芯片上。权重、API、编程套餐等全平台同步上线。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 18098,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-26T14:12:36.000Z",
+        "display_text_range": [
+          0,
+          263
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/KOCG4dkay3",
+              "expanded_url": "https://x.com/Zai_org/status/2092616204787626030/photo/1",
+              "indices": [
+                264,
+                287
+              ],
+              "url": "https://t.co/KOCG4dkay3"
+            }
+          ]
+        },
+        "id_str": "2092616204787626030",
+        "text": "Introducing GLM-5.3-Flash\n\n- Leading capabilities at a highly competitive price\n- Natively multimodal with a 1M-token context window\n- A 320B-A18B model released under the MIT License\n- Previously previewed as Ox Alpha, running entirely on Chinese AI chips\n\nBlog: https://t.co/KOCG4dkay3",
+        "user": {
+          "id_str": "1726486879456096256",
+          "name": "Z.ai",
+          "screen_name": "Zai_org",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1970775077181411328/W8XKaUIh_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2092616204787626030"
+          ],
+          "editable_until_msecs": "1787757156000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/KOCG4dkay3",
+            "expanded_url": "https://x.com/Zai_org/status/2092616204787626030/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              264,
+              287
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HQp025-WUAAmoxY.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 2294,
+                  "w": 4096,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2554,
+                  "w": 2554,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2554,
+                  "w": 2240,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2554,
+                  "w": 1277,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2554,
+                  "w": 4096,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 2554,
+              "width": 4096
+            },
+            "sizes": {
+              "large": {
+                "h": 1277,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 748,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 424,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/KOCG4dkay3"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 2294,
+                "w": 4096,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2554,
+                "w": 2554,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2554,
+                "w": 2240,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2554,
+                "w": 1277,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2554,
+                "w": 4096,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Zai_org/status/2092616204787626030/photo/1",
+            "url": "https://pbs.twimg.com/media/HQp025-WUAAmoxY.jpg",
+            "width": 4096,
+            "height": 2554
+          }
+        ],
+        "conversation_count": 778,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDkyNjE2MjA0NjQ1MDIzNzQ0"
+        }
+      }
+    },
+    {
+      "id": "2092591393424515114",
+      "url": "https://x.com/Alibaba_Qwen/status/2092591393424515114",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-08-26T20:07:00.831144+00:00",
+      "translation_zh": "Qwen3.8-Flash 发布：多模态 MoE，Qwen4 架构的早期预览，现已开放权重。125B 参数 + 51B N-gram 嵌入，每 token 仅激活 6B，成本效率惊人：训练成本仅为 Qwen3.7-Plus 的 1/9，性能全面超越，编程与办公任务提升尤为显著。262K 原生上下文，可通过 YaRN 扩展至 1M。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 6365,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-08-26T12:34:01.000Z",
+        "display_text_range": [
+          0,
+          271
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/SScnmzWS7O",
+              "expanded_url": "https://x.com/Alibaba_Qwen/status/2092591393424515114/photo/1",
+              "indices": [
+                272,
+                295
+              ],
+              "url": "https://t.co/SScnmzWS7O"
+            }
+          ]
+        },
+        "id_str": "2092591393424515114",
+        "text": "⚡Meet Qwen3.8-Flash, a multimodal MoE and an early preview of the Qwen4 architecture, now open-weight!\n\nThe production version Qwen3.8-Flash will be available soon via QwenCloud API at just $ 0.16/1M input tokens and $ 0.47/1M output tokens.\n\n125B parameters + 51B N-gram https://t.co/SScnmzWS7O",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2092591393424515114"
+          ],
+          "editable_until_msecs": "1787751241000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/SScnmzWS7O",
+            "expanded_url": "https://x.com/Alibaba_Qwen/status/2092591393424515114/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              272,
+              295
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HQpdouobYAAGEj1.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 1075,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 947,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 540,
+                  "x": 162,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/SScnmzWS7O"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 1075,
+                "w": 1920,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 947,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 540,
+                "x": 162,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 1920,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Alibaba_Qwen/status/2092591393424515114/photo/1",
+            "url": "https://pbs.twimg.com/media/HQpdouobYAAGEj1.jpg",
+            "width": 1920,
+            "height": 1080
+          }
+        ],
+        "conversation_count": 295,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDkyNTkxMzkzMTgxMTQzMDQw"
+        }
+      }
+    },
+    {
       "id": "2092489636287570169",
       "url": "https://x.com/Alibaba_Qwen/status/2092489636287570169",
       "label": "Qwen",

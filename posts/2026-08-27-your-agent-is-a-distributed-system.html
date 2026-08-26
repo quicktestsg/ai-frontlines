@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Your Agent Is a Distributed System — AI Frontlines</title>
+<meta content="The code looks like a single program — a loop, a model, some tools. But the moment the loop reaches outside itself, it becomes a distributed system: state scattered across a model, a filesystem, a dozen APIs, none of it transactional, all of it able to fail independently. The old, boring tools — idempotency keys, sagas, reconciliation, failure domains — are the fix." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=19" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="August 27, 2026" data-zh="2026年8月27日">August 27, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Your Agent Is a Distributed System" data-zh="你的智能体，是一个分布式系统">Your Agent Is a Distributed System</h1>
+<p class="post-header-deck" data-en="The code looks like a single program — a loop, a model, some tools. It sits in one file, it has a main function, it reads like something that runs on one machine. But the moment the loop reaches outside itself — calls a model, touches a filesystem, hits an API — it becomes a distributed system: state scattered across five services, no transactions around any of it, and every piece able to fail independently while the rest keep smiling. The teams that treat agent engineering as distributed systems engineering ship systems that survive production. The ones that don't ship demos." data-zh="代码看起来像单个程序——一个循环、一个模型、几个工具。它待在一个文件里，有 main 函数，读起来就像跑在一台机器上的东西。但循环一旦伸向外部——调用模型、触碰文件系统、请求一个 API——它就变成了一个分布式系统：状态散落在五个服务之间，没有任何事务保护，每一块都能独立失败，而其余部分继续微笑运转。把智能体工程当作分布式系统工程来做的团队，交付的是能在生产环境幸存的系统。不这样做的团队，交付的是演示。">The code looks like a single program — a loop, a model, some tools. But the moment the loop reaches outside itself, it becomes a distributed system: state scattered across services, no transactions, every piece able to fail independently.</p>
+</header>
+<article class="post-body">
+<p data-en="Read the source of almost any agent and it will look like a program from the 1970s: a loop, some function calls, a variable or two holding state. The loop lives in one file. The model is invoked like a library function. Tools are imported like packages. Nothing in the code suggests geography — no addresses, no nodes, no network topology. And that is exactly the trap. Because underneath that innocent loop, the agent is not one program on one machine. It is a constellation of remote systems — a stateless model served from a datacenter, a tool layer that wraps other people's services, a filesystem shared with processes the agent cannot see, a database whose commits are the only moments anything becomes real — all held together by the thinnest of protocols: text in, text out. The loop does not call functions. It makes network hops. Each hop has latency, each hop has a timeout, each hop can fail while the others succeed. This is not a style point. It is the difference between debugging a stack trace and debugging a system that has no stack, only a scattered trail of half-completed intentions." data-zh="去读几乎任何一个智能体的源码，它都像一段 1970 年代的程序：一个循环、几个函数调用、一两个持有状态的变量。循环待在一个文件里。模型像库函数一样被调用。工具像包一样被 import。代码里没有任何东西暗示「地理」——没有地址、没有节点、没有网络拓扑。而这恰恰是陷阱。因为在这个无辜的循环底下，智能体不是一台机器上的一个程序。它是一个远程系统的星座——一个从数据中心无状态地提供服务的模型、一个包裹着别人服务的工具层、一个与智能体看不见的进程共享的文件系统、一个只有它提交事务时万物才变真的数据库——全部由最薄的协议粘在一起：文本进，文本出。循环不是在调用函数。它是在做网络跳转。每一跳都有延迟，每一跳都有超时，每一跳都可能在其他跳成功时失败。这不是修辞。这是「调试一个栈回溯」和「调试一个没有栈、只有一堆散落的未完成意图的系统」之间的区别。">Read the source of almost any agent and it will look like a program from the 1970s: a loop, some function calls, a variable or two holding state. The loop lives in one file. The model is invoked like a library function. Tools are imported like packages. Nothing in the code suggests geography — no addresses, no nodes, no network topology. And that is exactly the trap. Because underneath that innocent loop, the agent is not one program on one machine. It is a constellation of remote systems, all held together by the thinnest of protocols: text in, text out.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrDS1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrDS2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrDS3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="WHAT THE CODE SUGGESTS vs WHAT ACTUALLY RUNS" data-zh="代码暗示的 vs 实际运行的" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHAT THE CODE SUGGESTS vs WHAT ACTUALLY RUNS</text>
+<!-- LEFT: the illusion -->
+<text data-en="ONE PROGRAM" data-zh="单个程序" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="140" y="58">ONE PROGRAM</text>
+<rect fill="var(--bg-surface)" height="120" rx="10" stroke="var(--accent-3)" stroke-width="1.5" width="150" x="65" y="80"></rect>
+<text data-en="agent.py" data-zh="agent.py" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="140" y="110">agent.py</text>
+<path d="M105 160 C105 135 175 135 175 160" fill="none" marker-end="url(#arrDS3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<text data-en="while True:" data-zh="while True:" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="140" y="182">while True:</text>
+<text data-en="one file · one stack" data-zh="一个文件 · 一个调用栈" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="140" y="240">one file · one stack</text>
+<text data-en="fails atomically" data-zh="原子地失败" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="140" y="258">fails atomically</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="290" x2="290" y1="48" y2="320"></line>
+<!-- RIGHT: the reality -->
+<text data-en="A CONSTELLATION OF REMOTES" data-zh="一张远程系统的星座图" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="460" y="58">A CONSTELLATION OF REMOTES</text>
+<rect fill="var(--accent-dim)" height="34" rx="8" stroke="var(--accent)" stroke-width="2" width="120" x="400" y="92"></rect>
+<text data-en="harness loop" data-zh="脚手架循环" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="460" y="113">harness loop</text>
+<!-- satellites -->
+<path d="M420 126 C390 150 360 158 330 170" fill="none" marker-end="url(#arrDS2)" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="4,3"></path>
+<path d="M500 126 C530 150 560 158 590 170" fill="none" marker-end="url(#arrDS2)" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="4,3"></path>
+<path d="M415 126 C390 175 380 200 370 216" fill="none" marker-end="url(#arrDS1)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<path d="M505 126 C535 175 545 200 555 216" fill="none" marker-end="url(#arrDS1)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<path d="M460 126 L460 216" fill="none" marker-end="url(#arrDS2)" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="4,3"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="96" x="292" y="172"></rect>
+<text data-en="model api" data-zh="模型 API" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="340" y="191">model api</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="96" x="532" y="172"></rect>
+<text data-en="tool service" data-zh="工具服务" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="580" y="191">tool service</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="96" x="322" y="218"></rect>
+<text data-en="filesystem" data-zh="文件系统" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="370" y="237">filesystem</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="96" x="502" y="218"></rect>
+<text data-en="database" data-zh="数据库" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="550" y="237">database</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="96" x="412" y="218"></rect>
+<text data-en="external api" data-zh="外部 API" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="460" y="237">external api</text>
+<text data-en="every edge: latency · timeout · partial failure" data-zh="每条边：延迟 · 超时 · 部分失败" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="460" y="280">every edge: latency · timeout · partial failure</text>
+<text data-en="fails like a distributed system" data-zh="像分布式系统一样失败" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="460" y="302">fails like a distributed system</text>
+<rect fill="var(--accent-dim)" height="36" opacity="0.5" rx="8" width="560" x="30" y="314"></rect>
+<text data-en="The loop does not call functions. It makes network hops." data-zh="循环不是在调用函数。它是在做网络跳转。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="337">The loop does not call functions. It makes network hops.</text>
+</svg>
+<p class="diagram-caption" data-en="On the left, what the repository suggests: one program, one stack, atomic failure. On the right, what actually runs: a stateless model behind an API, tool services owned by other teams, a shared filesystem, a database — five sources of truth coordinated by text. The failure modes of the right-hand system are the failure modes of the agent, and none of them appear in the code." data-zh="左边，是代码仓库暗示的：一个程序、一个调用栈、原子性失败。右边，是实际运行的：一个 API 背后的无状态模型、由其他团队拥有的工具服务、一个共享的文件系统、一个数据库——五个真相源，由文本协调。右边系统的失败模式，就是智能体的失败模式，而它们没有一个出现在代码里。">On the left, what the repository suggests: one program, one stack, atomic failure. On the right, what actually runs: a stateless model behind an API, tool services owned by other teams, a shared filesystem, a database — five sources of truth coordinated by text.</p>
+</div>
+<h3 data-en="The network was there all along" data-zh="网络一直都在">The network was there all along</h3>
+<p data-en="Distributed systems engineering spent five decades compiling a list of hard-won truths: failure is partial, latency is variability wearing a disguise, clocks cannot be trusted, and consistency is a budget you spend rather than a property you own. Every one of those truths applies to agents, and almost none of the discipline that produced them does — because the agent's code hides the network behind abstractions that look local. The model call looks like a function; it is a request to a remote service that can rate-limit, degrade, or return a different version of itself mid-run. The tool call looks like an import; it is a hop into someone else's uptime. Even the agent's own memory — the context window — lives on the model provider's infrastructure, evaporating entirely between calls unless the harness carries it forward. Nothing about this is exotic. What is exotic is the industry-wide pretense that none of it needs handling, that reliability will emerge from a better model the way market prices were once expected to emerge from informed buyers." data-zh="分布式系统工程花了五十年，编译出一张由惨痛教训换来的真相清单：失败是部分的，延迟是换了伪装的波动性，时钟不可信任，一致性是你花的预算、而非你拥有的属性。这些真相中的每一条都适用于智能体，而产出这些真相的纪律，几乎一条都没有被继承——因为智能体的代码把网络藏在了看起来是本地的抽象后面。模型调用看起来像函数；它是对一个远程服务的请求，那个服务可能限流、可能降级、可能在运行中途换成另一个版本的自己。工具调用看起来像 import；它是一跳进入别人的正常运行时间。甚至智能体自己的记忆——上下文窗口——也活在模型提供商的基础设施上，除非脚手架把它带下去，否则每次调用之间都会彻底蒸发。这一切都不新奇。新奇的是全行业的装作：装作这些都不需要处理，装作可靠性会从更好的模型里长出来——就像人们曾经以为市场价格会从知情的买家那里长出来一样。">Distributed systems engineering spent five decades compiling a list of hard-won truths: failure is partial, latency is variability wearing a disguise, clocks cannot be trusted, and consistency is a budget you spend rather than a property you own. Every one of those truths applies to agents, and almost none of the discipline that produced them does — because the agent's code hides the network behind abstractions that look local.</p>
+<blockquote data-en="A single-process program fails atomically: it either completes or it doesn't. An agent fails like a distributed system — partially, inconsistently, and often invisibly, with the failure surfacing long after the commit. The question is never 'did the agent fail.' It is 'which subset of the system failed, and what state did it leave behind.'" data-zh="单进程程序原子地失败：要么完成，要么没有。智能体像分布式系统一样失败——部分的、不一致的、且常常不可见的，失败在提交之后很久才浮出水面。问题从来不是「智能体失败了没有」，而是「系统的哪个子集失败了，它留下了什么状态」。">A single-process program fails atomically: it either completes or it doesn't. An agent fails like a distributed system — partially, inconsistently, and often invisibly, with the failure surfacing long after the commit.</blockquote>
+<h3 data-en="The context is a replica, and replicas drift" data-zh="上下文是一份副本，而副本会漂移">The context is a replica, and replicas drift</h3>
+<p data-en="Here is the most useful reframing in agent engineering: the context window is not the world. It is a replica of the world — a materialized view assembled from tool outputs, summaries, and stale reads, refreshed only when the harness refreshes it. The source of truth lives elsewhere: in the filesystem, the database, the external services, all of which keep changing whether or not the agent is watching. Every fact in the context is a snapshot with an age, and most harnesses do not track the age. The model reasons over the replica and acts on the source. Most of the time the replica is close enough, and everything works. The engineering lives entirely in the window where it isn't: the file renamed by a linter mid-run, the record updated by another process between read and write, the price that changed while the agent was still composing its plan around the old one." data-zh="这是智能体工程中最有用的一个重新表述：上下文窗口不是世界。它是世界的一份副本——一个由工具输出、摘要和过期读取拼装而成的物化视图，只在脚手架刷新它时才刷新。真相源活在别处：文件系统、数据库、外部服务，它们无论智能体是否在看，都在继续变化。上下文里的每一个事实，都是一张有年龄的快照，而大多数脚手架不追踪年龄。模型在副本上推理，在真相源上行动。大多数时候，副本足够接近，一切正常。而工程，完全活在它不够接近的那个窗口里：运行中途被 linter 改名的文件、读取与写入之间被另一个进程更新的记录、在智能体还在围绕旧价格制定计划时已经变掉的价格。">Here is the most useful reframing in agent engineering: the context window is not the world. It is a replica of the world — a materialized view assembled from tool outputs, summaries, and stale reads. The model reasons over the replica and acts on the source. The engineering lives entirely in the window where they disagree.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrRP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrRP2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="TWO COPIES OF THE TRUTH, ONE CLOCK" data-zh="两份真相，一个时钟" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">TWO COPIES OF THE TRUTH, ONE CLOCK</text>
+<!-- world lane -->
+<text data-en="WORLD — source of truth" data-zh="世界 —— 真相源" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" x="50" y="72">WORLD — source of truth</text>
+<line stroke="var(--accent-2)" stroke-width="1.5" x1="50" x2="440" y1="92" y2="92"></line>
+<circle cx="110" cy="92" fill="var(--accent-2)" r="6"></circle>
+<circle cx="230" cy="92" fill="var(--accent-2)" r="6"></circle>
+<circle cx="350" cy="92" fill="var(--accent-2)" r="6"></circle>
+<text data-en="t1 · file written" data-zh="t1 · 文件被写入" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="110" y="118">t1 · file written</text>
+<text data-en="t2 · record updated" data-zh="t2 · 记录被更新" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="230" y="118">t2 · record updated</text>
+<text data-en="t3 · price changed" data-zh="t3 · 价格变了" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="350" y="118">t3 · price changed</text>
+<!-- context lane -->
+<text data-en="CONTEXT — the model's belief" data-zh="上下文 —— 模型的信念" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" x="50" y="222">CONTEXT — the model's belief</text>
+<line stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="5,4" x1="50" x2="440" y1="242" y2="242"></line>
+<circle cx="110" cy="242" fill="var(--accent-3)" r="6"></circle>
+<circle cx="230" cy="242" fill="none" r="6" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<circle cx="350" cy="242" fill="none" r="6" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="2,2"></circle>
+<text data-en="t1 · seen ✓ synced" data-zh="t1 · 已见 ✓ 已同步" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="110" y="268">t1 · seen ✓ synced</text>
+<text data-en="t2 · never told" data-zh="t2 · 从未被告知" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="230" y="268">t2 · never told</text>
+<text data-en="t3 · still believes t1" data-zh="t3 · 仍相信 t1" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="350" y="268">t3 · still believes t1</text>
+<!-- divergence window -->
+<path d="M230 100 L230 234" fill="none" stroke="var(--accent-3)" stroke-width="1" stroke-dasharray="3,3"></path>
+<path d="M350 100 L350 234" fill="none" stroke="var(--accent-3)" stroke-width="1" stroke-dasharray="3,3"></path>
+<rect fill="var(--accent-dim)" height="22" opacity="0.6" rx="5" width="124" x="228" y="158"></rect>
+<text data-en="divergence window" data-zh="分歧窗口" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="290" y="173">divergence window</text>
+<!-- reconcile node -->
+<path d="M446 92 C500 92 500 242 452 242" fill="none" marker-end="url(#arrRP1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--accent)" stroke-width="2" width="108" x="486" y="140"></rect>
+<text data-en="re-read" data-zh="重新读取" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="540" y="158">re-read</text>
+<text data-en="before write" data-zh="在写入之前" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="540" y="174">before write</text>
+<text data-en="the agent acts on the replica · the world moves without permission" data-zh="智能体在副本上行动 · 世界不经许可地移动" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="310">the agent acts on the replica · the world moves without permission</text>
+</svg>
+<p class="diagram-caption" data-en="The world lane commits events continuously; the context lane only learns about them when a tool result happens to carry the news. Between the last sync and the next consequential action sits the divergence window — the gap in which the model's beliefs and the world quietly disagree. The fix is borrowed straight from databases: before any irreversible write, re-read the entities involved and reconcile the replica. Update the context to match the world, never the reverse." data-zh="世界这条线在持续地提交事件；而上下文这条线，只有当工具结果恰好带来消息时才会知晓。在最后一次同步与下一个关键行动之间，坐着「分歧窗口」——模型信念与世界悄悄不一致的那段缝隙。修复方法直接借自数据库：在任何不可逆的写入之前，重新读取涉及的实体，校准副本。让上下文去对齐世界，永远不要反过来。">The world lane commits events continuously; the context lane only learns about them when a tool result happens to carry the news. Between the last sync and the next consequential action sits the divergence window. The fix is borrowed straight from databases: before any irreversible write, re-read and reconcile.</p>
+</div>
+<p data-en="This reframing does something valuable: it relocates a whole category of 'hallucinations' from the model's character to the system's consistency guarantees. When an agent asserts a fact that was true at read time and false at act time, that is not the model inventing reality — that is a stale read, the same bug that has haunted every replicated datastore since the 1980s, and it has the same boring remedies. Version the reads: carry a timestamp or etag with every fact that enters the context, so staleness is detectable instead of invisible. Reconcile before consequence: gate irreversible tool calls behind a fresh read of the entities they touch, and surface the diff to the model as a tool result — 'the file moved, the record changed, the price is no longer the price your plan assumed.' The model is remarkably good at replanning around an honest diff. It was never good at guessing that its context had rotted, because nothing in the context says so." data-zh="这个重新表述做了一件有价值的事：它把一整类「幻觉」从模型的品性问题，迁移到了系统的一致性保证问题上。当一个智能体断言一个「在读取时为真、在行动时为假」的事实时，那不是模型在编造现实——那是一次过期读取，是自 1980 年代起纠缠着每一个复制数据存储的同一个 bug，而它有着同样无聊的解药。给读取加上版本：让每一条进入上下文的事实都携带时间戳或 etag，让过期变得可检测，而非不可见。在关键行动之前校准：把不可逆的工具调用挡在一道对涉及实体的新鲜读取后面，并把差异作为一个工具结果呈现给模型——「文件移动了，记录变了，价格已经不再是你计划假设的那个价格。」模型非常擅长围绕一个诚实的差异重新规划。它从来都不擅长猜出自己的上下文已经腐烂，因为上下文里没有任何东西这么说。">This reframing relocates a whole category of 'hallucinations' from the model's character to the system's consistency guarantees. When an agent asserts a fact that was true at read time and false at act time, that is not the model inventing reality — that is a stale read, and it has the same boring remedies: versioned reads, and reconciliation before consequence.</p>
+<h3 data-en="Partial failure and the exactly-once illusion" data-zh="部分失败与「恰好一次」的幻觉">Partial failure and the exactly-once illusion</h3>
+<p data-en="The nastiest failures in agent systems happen in the gap between doing the thing and learning that the thing was done. The harness calls a consequential tool — send the email, create the record, charge the card. The tool executes; the side effect commits. Then the response is lost: a timeout, a dropped connection, a harness crash at exactly the wrong millisecond. The loop, seeing no result, does what loops do — it retries. The side effect lands twice. Nobody chose this. The model did not decide to send two emails; the system did, by combining at-least-once retries with non-idempotent effects and no memory in between. Exactly-once execution is an illusion in networking and it is an illusion here. What actually exists, what has always existed, is at-least-once delivery plus idempotency — and the second half of that sentence is an engineering obligation, not a bonus feature." data-zh="智能体系统里最恶心的失败，发生在「做了这件事」与「得知这件事做了」之间的缝隙里。脚手架调用一个有后果的工具——发送邮件、创建记录、扣款。工具执行了；副作用提交了。然后响应丢了：一次超时、一次断连、一次恰好在错误毫秒上的脚手架崩溃。循环没有看到结果，于是做了循环该做的事——重试。副作用落了两次。没有人选择这样。不是模型决定发两封邮件；是系统决定的——它把至少一次的重试、与非幂等的副作用、加上中间没有任何记忆，组合在了一起。「恰好一次」执行在网络里是幻觉，在这里也是幻觉。真正存在的、一直存在的，是至少一次投递加上幂等性——而这半句话的后一半，是一项工程义务，不是加分项。">The nastiest failures happen in the gap between doing the thing and learning it was done. The tool executes, the side effect commits, the response is lost — and the retry lands the effect twice. Exactly-once execution is an illusion. What exists is at-least-once plus idempotency, and the second half is an engineering obligation.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 400" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrEX1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrEX2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE EXACTLY-ONCE ILLUSION" data-zh="「恰好一次」的幻觉" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE EXACTLY-ONCE ILLUSION</text>
+<!-- top flow: no key -->
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="70" x="40" y="48"></rect>
+<text data-en="model" data-zh="模型" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="75" y="66">model</text>
+<path d="M110 62 L150 62" fill="none" marker-end="url(#arrEX1)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="110" x="152" y="48"></rect>
+<text data-en="send_email()" data-zh="send_email()" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="207" y="66">send_email()</text>
+<path d="M262 62 L302 62" fill="none" marker-end="url(#arrEX1)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--accent-dim)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="110" x="304" y="48"></rect>
+<text data-en="✓ effect #1" data-zh="✓ 副作用 #1" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="359" y="66">✓ effect #1</text>
+<path d="M414 62 L454 62" fill="none" marker-end="url(#arrEX1)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<text data-en="✕ response lost" data-zh="✕ 响应丢失" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="492" y="56">✕ response lost</text>
+<text data-en="(timeout)" data-zh="（超时）" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="492" y="70">(timeout)</text>
+<path d="M359 76 C359 100 207 100 207 78" fill="none" marker-end="url(#arrEX1)" stroke="var(--accent-3)" stroke-width="1.3" stroke-dasharray="4,3"></path>
+<text data-en="loop sees no result → retries" data-zh="循环没看到结果 → 重试" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="283" y="104">loop sees no result → retries</text>
+<rect fill="var(--accent-dim)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="2" width="110" x="304" y="116"></rect>
+<text data-en="✗ effect #2 — duplicate" data-zh="✗ 副作用 #2 —— 重复" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="359" y="134">✗ effect #2 — duplicate</text>
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="60" x2="560" y1="168" y2="168"></line>
+<!-- bottom flow: with key -->
+<text data-en="AT-LEAST-ONCE + IDEMPOTENCY KEY" data-zh="至少一次 + 幂等键" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="192">AT-LEAST-ONCE + IDEMPOTENCY KEY</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent)" stroke-width="1.5" width="70" x="40" y="212"></rect>
+<text data-en="model" data-zh="模型" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="75" y="230">model</text>
+<path d="M110 226 L150 226" fill="none" marker-end="url(#arrEX2)" stroke="var(--accent)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent)" stroke-width="1.5" width="110" x="152" y="212"></rect>
+<text data-en="send_email()" data-zh="send_email()" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="207" y="230">send_email()</text>
+<text data-en="key: run-42·step-7" data-zh="键：run-42·step-7" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="207" y="252">key: run-42·step-7</text>
+<path d="M262 226 L302 226" fill="none" marker-end="url(#arrEX2)" stroke="var(--accent)" stroke-width="1.3"></path>
+<rect fill="var(--accent-dim)" height="28" rx="6" stroke="var(--accent)" stroke-width="1.5" width="110" x="304" y="212"></rect>
+<text data-en="✓ effect once" data-zh="✓ 副作用一次" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="359" y="230">✓ effect once</text>
+<path d="M414 226 L454 226" fill="none" marker-end="url(#arrEX2)" stroke="var(--accent)" stroke-width="1.3"></path>
+<text data-en="✕ response lost" data-zh="✕ 响应丢失" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="492" y="220">✕ response lost</text>
+<text data-en="(timeout)" data-zh="（超时）" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="492" y="234">(timeout)</text>
+<path d="M359 240 C359 268 207 268 207 244" fill="none" marker-end="url(#arrEX2)" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="4,3"></path>
+<text data-en="retry carries same key" data-zh="重试携带同一个键" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="283" y="266">retry carries same key</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="2" width="150" x="284" y="280"></rect>
+<text data-en="key seen → skip · return cached" data-zh="键已见 → 跳过 · 返回缓存" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="359" y="299">key seen → skip · return cached</text>
+<text data-en="one effect · loop continues · world stays consistent" data-zh="一次副作用 · 循环继续 · 世界保持一致" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="342">one effect · loop continues · world stays consistent</text>
+<rect fill="var(--accent-dim)" height="36" opacity="0.5" rx="8" width="560" x="30" y="356"></rect>
+<text data-en="Derive the key from run id + step id. Attach it to every consequential call. Enforce it in the tool wrapper — never trust the model to remember." data-zh="键由 run id + step id 派生。附加到每一个有后果的调用上。在工具封装层强制执行——永远不要指望模型记得。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="379">Derive the key from run id + step id. Attach it to every consequential call. Enforce it in the tool wrapper — never trust the model to remember.</text>
+</svg>
+<p class="diagram-caption" data-en="Top: the default behavior of most harnesses — a lost response triggers a blind retry, and the side effect lands twice because nothing between the loop and the world remembers the first attempt. Bottom: the same failure with an idempotency key attached. The retry arrives, the key has been seen, the effect is skipped, and the cached result is returned instead. The loop never knows anything went wrong. That is the point." data-zh="上图：大多数脚手架的默认行为——一次丢失的响应触发一次盲目重试，副作用落了两次，因为循环与世界之间没有任何东西记得第一次尝试。下图：同样的失败，加上了幂等键。重试到达，键已被见过，副作用被跳过，改为返回缓存的结果。循环从头到尾不知道出了任何问题。而这正是关键。">Top: the default behavior of most harnesses — a lost response triggers a blind retry, and the effect lands twice because nothing remembers the first attempt. Bottom: the same failure with an idempotency key. The retry arrives, the key has been seen, the effect is skipped. The loop never knows anything went wrong. That is the point.</p>
+</div>
+<p data-en="The pattern generalizes. Where an agent's work spans multiple side effects — update three records, then notify two services, then write a summary — wrap it in the shape of a saga: each step paired with a compensation, and a durable ledger of intents written before the first effect executes. A crash mid-flight then leaves a detectable artifact: a ledger entry saying 'flow F reached step 2 of 4,' which the resumed run can read and either continue or unwind. Without the ledger, a crashed agent is a mystery to its own successor; with it, the successor inherits a transaction log instead of a riddle. This is also the honest answer to the checkpoint problem: the goal is not that the resumed agent has the same context as the crashed one — contexts are replicas and replicas drift — it is that the resumed agent makes the same side effects. Identity of intention, verified against a ledger, beats identity of belief, reconstructed from a summary." data-zh="这个模式可以推广。当一个智能体的工作跨越多个副作用——更新三条记录、然后通知两个服务、然后写一份摘要——把它包成 saga 的形状：每一步配一个补偿动作，并且在第一个副作用执行之前，先写下一份持久的意图账本。这样一来，中途崩溃会留下一个可检测的痕迹：一条写着「流程 F 已到达第 2 步，共 4 步」的账本条目，恢复后的运行可以读取它，然后继续或回滚。没有账本，崩溃的智能体对它的继任者来说是一个谜；有了账本，继任者继承的是一份事务日志，而不是一道谜题。这也是对检查点问题的诚实回答：目标不是让恢复后的智能体拥有与崩溃前相同的上下文——上下文是副本，副本会漂移——而是让恢复后的智能体做出相同的副作用。以账本校验的意图一致，胜过从摘要重建的信念一致。">The pattern generalizes: multi-effect flows become sagas, each step paired with a compensation and a durable ledger of intents written before the first effect. The goal is not that the resumed agent has the same context — contexts drift — it is that it makes the same side effects.</p>
+<h3 data-en="Design like the network is real" data-zh="像网络真实存在那样设计">Design like the network is real</h3>
+<p data-en="None of this requires new infrastructure; it requires an admission, followed by old discipline. Treat every hop as remote: timeouts on every model and tool call, retries with jitter, backpressure when a downstream saturates, and a budget — in tokens, in wall-clock, in money — that the loop cannot silently exceed. Make state reconstructable: checkpoint durable state outside the context window, because the context is a cache with an expiry, not a database with a warranty. Make effects idempotent and, where order does not matter, commutable. Reconcile before irreversible action. And bound the blast radius: sandbox the filesystem, scope the credentials, partition the permissions — so that when a part of the system fails or misbehaves, the failure domain is a box the team drew on purpose, not a shape discovered in an incident review. These are not compromises imposed on the agent's intelligence. They are the guardrails that make it safe to let the intelligence act at all." data-zh="这些，没有一个需要新的基础设施；它需要的是一次承认，加上旧的纪律。把每一跳都当作远程的：每个模型与工具调用都设超时，重试加抖动，下游饱和时施以背压，以及一个预算——token 的、挂钟时间的、钱的——循环不能悄悄越过。让状态可重建：在上下文窗口之外持久化检查点状态，因为上下文是一个有期限的缓存，不是一个带质保的数据库。让副作用幂等，并在顺序无关时可交换。在不可逆行动之前先校准。以及，限定爆炸半径：沙箱化文件系统、划定凭据作用域、切分权限——这样当系统的一部分失败或行为失常时，故障域是团队有意画出的一个盒子，而不是在事故复盘里才发现的一个形状。这些不是强加给智能体智能的妥协。它们是让「放心让智能去行动」成为可能的护栏。">None of this requires new infrastructure; it requires an admission, followed by old discipline. Treat every hop as remote. Make state reconstructable. Make effects idempotent. Reconcile before irreversible action. Bound the blast radius. These are not compromises imposed on the agent's intelligence — they are the guardrails that make it safe to let the intelligence act at all.</p>
+<p data-en="The deeper point is about identity. Teams keep describing their product as 'an agent,' singular, as if it were a colleague with a name and a consistent mind. What they have actually built is a distributed system with a language model at its center — and distributed systems do not have minds, they have invariants. The mature question is never 'is the agent smart enough for this task' but 'what invariants hold across the model, the tools, the state, and the world when any one of them fails, lags, or lies.' The model will keep getting smarter, and it will keep being the easiest part to swap. The invariants — the keys, the ledgers, the reconciliations, the failure domains — are what the team actually owns, and they are what decides whether the whole contraption is a system or a demo that has not met production yet. The network was always real. The only choice was whether to design for it." data-zh="更深的一层，是关于身份的问题。团队们一直把他们的产品描述为「一个智能体」——单数的，仿佛它是一个有名字、有一致心智的同事。而他们实际建造的，是一个以语言模型为中心的分布式系统——分布式系统没有心智，它们有的是不变量。成熟的问题从来不是「智能体够不够聪明来完成这个任务」，而是「当模型、工具、状态与世界中的任何一个失败、滞后或说谎时，哪些不变量在它们之间仍然成立」。模型会继续变聪明，并且会一直是最容易替换的部分。而不变量——那些键、账本、校准、故障域——才是团队真正拥有的东西，才是决定这整台装置是一个系统、还是一个尚未见过生产环境的演示的东西。网络从来都是真实的。唯一的选择，是要不要为它做设计。">Teams keep describing their product as 'an agent,' singular, as if it were a colleague with a consistent mind. What they built is a distributed system with a language model at its center — and distributed systems do not have minds, they have invariants. The invariants are what the team actually owns.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
