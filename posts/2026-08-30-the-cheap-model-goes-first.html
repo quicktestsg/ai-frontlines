@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Cheap Model Goes First — AI Frontlines</title>
+<meta content="Sending every request to the frontier model is a routing decision disguised as a default. The teams that win at inference put a small model in front of the big one and treat escalation as a signal to be engineered — measured, gated, and tuned like every other part of the harness." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="August 30, 2026" data-zh="2026年8月30日">August 30, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Cheap Model Goes First" data-zh="便宜的模型先上">The Cheap Model Goes First</h1>
+<p class="post-header-deck" data-en="Somewhere in every agent codebase there is a line that names the model. Most teams write it once, name the biggest one they can afford, and never look at it again. That single line is treated as a configuration detail when it is actually the most expensive routing decision in the system — one that quietly sets the cost of every request, the latency of every response, and the ceiling of every unit-economics spreadsheet. The teams that win at inference do the opposite of the default. They put a small, fast, cheap model in front, and they make the big model earn its way into the request. Escalation — the moment a small model hands work up to a larger one — is not an edge case to be handled. It is the core signal of the system, and it deserves to be engineered like one." data-zh="在每一个智能体代码库的某个角落，都有一行指定模型的代码。大多数团队写一次，填上他们负担得起的最大的那个模型，然后再也不看它一眼。这一行代码被当作配置细节，而它实际上是整个系统里最昂贵的路由决策——它悄悄决定了每一个请求的成本、每一次响应的延迟、以及每一张单位经济模型的表格的上限。在推理上赢的团队，做的是和默认做法相反的事。他们把一个小的、快的、便宜的模型放在前面，让大模型自己挣得进入请求的资格。升级——小模型把工作交给更大模型的那一刻——不是一个需要「处理」的边缘情况。它是系统的核心信号，值得像一个核心信号那样被工程化。">Somewhere in every agent codebase there is a line that names the model. Most teams write it once, name the biggest one they can afford, and never look at it again. That single line is treated as a configuration detail when it is actually the most expensive routing decision in the system. The teams that win at inference put a small, fast, cheap model in front, and make the big model earn its way into the request.</p>
+</header>
+<article class="post-body">
+<p data-en="Start with the shape of real traffic. In any production agent, the distribution of request difficulty is brutally lopsided. A large fraction of turns are trivial: the user asks a follow-up about something already in the context, or the agent needs to reformat a tool result, or decide that no tool is needed at all. A small fraction of turns are genuinely hard: multi-step reasoning over ambiguous evidence, code changes that ripple across a repository, judgment calls where being wrong is expensive. If every one of those turns goes to the frontier model, the team is paying frontier prices for the trivial majority — like chartering a freight helicopter to deliver every letter in the mail truck's route. The helicopter is not wrong. It is simply the wrong vehicle for most of the packages, and the routing layer is where that decision lives." data-zh="从真实流量的形状说起。在任何一个生产环境的智能体里，请求难度的分布都是极端倾斜的。很大一部分对话轮次是琐碎的：用户追问一个上下文里已有的内容，或者智能体需要把工具结果重新排版，或者判断根本不需要调用工具。只有一小部分轮次是真正困难的：在模糊的证据上做多步推理、波及整个代码库的改动、错了代价高昂的判断。如果每一个轮次都发给前沿模型，团队就是在为琐碎的大多数支付前沿价格——就像为邮车路线上的每一封信都租一架货运直升机。直升机没有错。它只是不适合大多数包裹，而路由层，正是这个决策所在的地方。">Start with the shape of real traffic. In any production agent, the distribution of request difficulty is brutally lopsided. A large fraction of turns are trivial: the user asks a follow-up about something already in the context, or the agent needs to reformat a tool result, or decide that no tool is needed at all. A small fraction of turns are genuinely hard. If every one of those turns goes to the frontier model, the team is paying frontier prices for the trivial majority — like chartering a freight helicopter to deliver every letter in the mail truck's route.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrR3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE CASCADE" data-zh="级联" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE CASCADE</text>
+<!-- incoming traffic -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--text-tertiary)" stroke-width="1.5" width="120" x="250" y="44"></rect>
+<text data-en="all requests" data-zh="全部请求" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="66">all requests</text>
+<path d="M310 78 L310 94" fill="none" marker-end="url(#arrR1)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<!-- tier 1: small model -->
+<rect fill="var(--accent-dim)" height="48" rx="10" stroke="var(--accent-2)" stroke-width="2" width="200" x="210" y="96"></rect>
+<text data-en="SMALL MODEL" data-zh="小模型" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="310" y="116">SMALL MODEL</text>
+<text data-en="fast · cheap · handles the majority" data-zh="快 · 便宜 · 承担大多数" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="133">fast · cheap · handles the majority</text>
+<!-- resolve path -->
+<path d="M230 144 C160 170 110 175 80 192" fill="none" marker-end="url(#arrR2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<text data-en="~70% resolved" data-zh="约 70% 直接解决" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="105" y="160">~70% resolved</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="90" x="35" y="194"></rect>
+<text data-en="✓ answer" data-zh="✓ 答案" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="80" y="214">✓ answer</text>
+<!-- confidence gate -->
+<path d="M310 144 L310 164" fill="none" marker-end="url(#arrR1)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent)" stroke-width="2.5" width="220" x="200" y="166"></rect>
+<text data-en="CONFIDENCE GATE" data-zh="置信门" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="184">CONFIDENCE GATE</text>
+<text data-en="certain? → return · uncertain? → escalate" data-zh="确定？→ 返回 · 不确定？→ 升级" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="199">certain? → return · uncertain? → escalate</text>
+<!-- escalate -->
+<path d="M310 206 L310 226" fill="none" marker-end="url(#arrR3)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<text data-en="~30% escalate" data-zh="约 30% 升级" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="358" y="222">~30% escalate</text>
+<!-- tier 2: frontier model -->
+<rect fill="var(--bg-surface)" height="48" rx="10" stroke="var(--accent)" stroke-width="2.5" width="220" x="200" y="228"></rect>
+<text data-en="FRONTIER MODEL" data-zh="前沿模型" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="310" y="248">FRONTIER MODEL</text>
+<text data-en="slow · expensive · reserved for the hard" data-zh="慢 · 贵 · 只留给难题" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="265">slow · expensive · reserved for the hard</text>
+<path d="M310 276 L310 296" fill="none" marker-end="url(#arrR2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="✓ answer (the one that mattered)" data-zh="✓ 答案（真正要紧的那些）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="314">✓ answer (the one that mattered)</text>
+<text data-en="cost scales with difficulty, not with traffic" data-zh="成本随难度扩展，而非随流量扩展" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="490" y="116">cost scales with difficulty,</text>
+<text data-en="cost scales with difficulty, not with traffic" data-zh="成本随难度扩展，而非随流量扩展" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="490" y="134">not with traffic</text>
+</svg>
+<p class="diagram-caption" data-en="Every request enters at the small model. Most resolve there and return immediately — cheap and fast. The uncertain minority passes a confidence gate and escalates to the frontier model, carrying its work so far as context. The economics invert: instead of paying frontier prices on one hundred percent of turns, the system pays them on the fraction that actually needs them. Cost now scales with difficulty, which is the only thing it should scale with." data-zh="每一个请求都从小模型进入。大多数在那里直接解决、立即返回——又便宜又快。不确定的少数，穿过一道置信门，升级到前沿模型，并把它目前的工作作为上下文带过去。经济模型被反转了：不再是为一百百分比的对轮次支付前沿价格，而是只为真正需要的那一小部分支付。成本现在随难度扩展——这是它唯一应该随之扩展的东西。">Every request enters at the small model. Most resolve there and return immediately — cheap and fast. The uncertain minority passes a confidence gate and escalates to the frontier model, carrying its work so far as context. The economics invert: cost now scales with difficulty, which is the only thing it should scale with.</p>
+</div>
+<h3 data-en="Escalation is a signal, not a failure" data-zh="升级是信号，不是失败">Escalation is a signal, not a failure</h3>
+<p data-en="The instinct in most codebases is to treat escalation as an error path — the small model 'failed', so the big model is the fallback. That framing gets the design backwards. When a small model declines to answer, or emits low confidence, or produces a draft the gate rejects, it is not failing. It is doing the single most valuable thing in the whole cascade: identifying, at small-model prices, exactly which requests deserve frontier compute. That identification is worth more than the answer to any individual request, because it compounds. Every point of escalation accuracy is a permanent discount on the system's inference bill and a permanent improvement in its latency profile. A team that thinks of escalation as failure will hide it, patch around it, and eventually delete the small model because 'it doesn't work anyway.' A team that thinks of escalation as signal will instrument it, measure it, and tune it — because it is the metering valve of the entire system." data-zh="大多数代码库的本能，是把升级当作错误路径——小模型「失败了」，所以大模型是兜底。这个框架把设计搞反了。当一个小模型拒绝回答、或输出低置信度、或产出的草稿被门拒绝时，它不是在失败。它在做整个级联里最有价值的一件事：以小模型的价格，精确识别出哪些请求值得前沿算力。这个识别，比对任何一个请求的答案都更值钱，因为它是会复利的。升级准确率的每一个百分点，都是系统推理账单上的一个永久折扣，也是延迟表现的一个永久改进。把升级当失败的团队，会把它藏起来、绕开它，最终删掉小模型，因为「反正它也干不好」。把升级当信号的团队，会为它埋点、测量它、调优它——因为它是整个系统的计量阀。">The instinct in most codebases is to treat escalation as an error path — the small model 'failed', so the big model is the fallback. That framing gets the design backwards. When a small model declines to answer, or emits low confidence, or produces a draft the gate rejects, it is not failing. It is doing the single most valuable thing in the whole cascade: identifying, at small-model prices, exactly which requests deserve frontier compute.</p>
+<p data-en="This reframing changes what gets built. If escalation is signal, then the confidence gate becomes a first-class component with its own evals, its own threshold tuning, its own dashboards. The gate's job is not to be clever — it is to be calibrated. A gate that says 'uncertain' on exactly the requests the small model would get wrong is a perfect gate, even if it understands nothing about the task. Calibration is measurable: take a labeled set of requests the small model answered, sort by the gate's confidence score, and look at where the errors actually land. If errors cluster below the threshold and successes above it, the gate is doing its job. If errors leak through above the threshold, the threshold is a wish, not a control. Most teams never run this analysis. They pick a threshold that feels right, ship it, and then wonder why quality is inconsistent — never realizing that the threshold, not either model, is the component actually governing quality." data-zh="这个重新定义，改变了要构建什么。如果升级是信号，那么置信门就成为一个一等公民组件，有自己的评测、自己的阈值调优、自己的仪表盘。门的职责不是聪明——它的职责是校准。一个在「小模型会答错的那批请求」上恰好说「不确定」的门，就是完美的门，哪怕它对任务一无所知。校准是可以测量的：取一批小模型已回答的、有标注的请求，按门的置信分数排序，看错误实际落在哪里。如果错误聚在阈值以下、成功聚在阈值以上，门就是在干正事。如果错误从阈值以上漏过去，那这个阈值就是一个愿望，而不是一个控制。大多数团队从不做这个分析。他们挑一个感觉对的阈值，发布上线，然后纳闷质量为什么不稳定——从未意识到，真正在管质量的组件，是那个阈值，而不是任何一边的模型。">This reframing changes what gets built. If escalation is signal, then the confidence gate becomes a first-class component with its own evals, its own threshold tuning, its own dashboards. The gate's job is not to be clever — it is to be calibrated. Calibration is measurable: take a labeled set of requests, sort by the gate's confidence score, and look at where the errors actually land. Most teams never run this analysis. They pick a threshold that feels right, ship it, and wonder why quality is inconsistent — never realizing the threshold, not either model, is the component actually governing quality.</p>
+<blockquote data-en="The question is never 'which model is better.' The question is 'which requests does the cheap model get wrong, and how cheaply can those requests be found.' Answer the second question and the first one stops mattering — the system routes around it." data-zh="问题从来不是「哪个模型更好」。问题是「便宜模型会答错哪些请求，以及找到这些请求能有多便宜」。回答了第二个问题，第一个问题就不再重要——系统会绕开它。">The question is never 'which model is better.' The question is 'which requests does the cheap model get wrong, and how cheaply can those requests be found.' Answer the second question and the first one stops mattering — the system routes around it.</blockquote>
+<h3 data-en="The gate is the product" data-zh="门，才是产品">The gate is the product</h3>
+<p data-en="Here is the uncomfortable observation from systems that run cascades in production: over time, the gate matters more than either model. Models are swapped every few months — a new small model arrives that eats half the escalation traffic, a new frontier model raises the ceiling on the hard tier. The cascade absorbs these changes with a threshold nudge. But the gate's machinery — the signals it reads, the way it combines them, the calibration loop that keeps it honest — is the durable asset. A gate can read cheap signals: the small model's own uncertainty, the length and shape of the reasoning, whether a tool call failed, whether the draft contradicts retrieved context, whether the request type is historically error-prone. Each signal is a few lines of code and pennies of compute. Together they decide where every token of expensive compute is spent. That is not a routing detail. That is the product's margin, latency, and quality, all three, in one component." data-zh="来自在生产环境跑级联的系统的一个不舒服的观察：随着时间推移，门比任何一边的模型都重要。模型每几个月就换一轮——一个新的小模型来了，吃掉一半的升级流量；一个新的前沿模型把困难档的天花板抬高了。级联吸收这些变化，只需要微调一下阈值。但门的机制——它读哪些信号、怎么组合它们、让它保持诚实的校准闭环——才是耐久的资产。一个门可以读便宜的信号：小模型自身的不确定性、推理的长度和形状、一次工具调用是否失败、草稿是否与检索到的上下文矛盾、这类请求是否历史上容易出错。每个信号，都只是几行代码、几分钱的算力。合在一起，它们决定每一 token 昂贵算力花在哪里。这不是路由细节。这是产品的利润率、延迟和质量——三样东西，一个组件。">Here is the uncomfortable observation from systems that run cascades in production: over time, the gate matters more than either model. Models are swapped every few months; the cascade absorbs these changes with a threshold nudge. But the gate's machinery — the signals it reads, the way it combines them, the calibration loop that keeps it honest — is the durable asset. Each signal is a few lines of code and pennies of compute. Together they decide where every token of expensive compute is spent.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrGt1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="WHAT THE GATE READS" data-zh="门在读什么" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHAT THE GATE READS</text>
+<!-- signal sources around -->
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="40" y="60"></rect>
+<text data-en="self-reported uncertainty" data-zh="自报的不确定性" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="115" y="79">self-reported uncertainty</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="40" y="106"></rect>
+<text data-en="tool call failures" data-zh="工具调用失败" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="115" y="125">tool call failures</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="40" y="152"></rect>
+<text data-en="draft vs. context conflicts" data-zh="草稿与上下文冲突" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="115" y="171">draft vs. context conflicts</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="430" y="60"></rect>
+<text data-en="request-type risk history" data-zh="请求类型风险历史" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="505" y="79">request-type risk history</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="430" y="106"></rect>
+<text data-en="reasoning length anomalies" data-zh="推理长度异常" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="505" y="125">reasoning length anomalies</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="430" y="152"></rect>
+<text data-en="safety / stakes flags" data-zh="安全 / 代价标记" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="505" y="171">safety / stakes flags</text>
+<!-- arrows into gate -->
+<path d="M190 75 C240 85 250 100 268 112" fill="none" marker-end="url(#arrGt1)" stroke="var(--accent-2)" stroke-width="1.2"></path>
+<path d="M190 121 C230 124 245 126 268 128" fill="none" marker-end="url(#arrGt1)" stroke="var(--accent-2)" stroke-width="1.2"></path>
+<path d="M190 167 C240 160 250 150 268 143" fill="none" marker-end="url(#arrGt1)" stroke="var(--accent-2)" stroke-width="1.2"></path>
+<path d="M430 75 C380 85 370 100 352 112" fill="none" marker-end="url(#arrGt1)" stroke="var(--accent-2)" stroke-width="1.2"></path>
+<path d="M430 121 C390 124 375 126 352 128" fill="none" marker-end="url(#arrGt1)" stroke="var(--accent-2)" stroke-width="1.2"></path>
+<path d="M430 167 C380 160 370 150 352 143" fill="none" marker-end="url(#arrGt1)" stroke="var(--accent-2)" stroke-width="1.2"></path>
+<!-- the gate -->
+<rect fill="var(--accent-dim)" height="58" rx="12" stroke="var(--accent)" stroke-width="2.5" width="140" x="240" y="108"></rect>
+<text data-en="THE GATE" data-zh="置信门" fill="var(--accent)" font-family="Inter,sans-serif" font-size="13" font-weight="800" text-anchor="middle" x="310" y="132">THE GATE</text>
+<text data-en="calibrated, evaluated, versioned" data-zh="校准 · 评测 · 版本化" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="150">calibrated, evaluated, versioned</text>
+<!-- outputs -->
+<path d="M270 166 C220 190 190 200 160 216" fill="none" marker-end="url(#arrGt1)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<path d="M350 166 C400 190 430 200 460 216" fill="none" marker-end="url(#arrGt1)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="130" x="95" y="218"></rect>
+<text data-en="cheap answer, now" data-zh="便宜的答案，立刻" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="160" y="238">cheap answer, now</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="130" x="395" y="218"></rect>
+<text data-en="escalate, with context" data-zh="升级，带上下文" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="460" y="238">escalate, with context</text>
+<!-- stakes annotation -->
+<rect fill="var(--accent-dim)" height="38" opacity="0.5" rx="8" width="440" x="90" y="274"></rect>
+<text data-en="Every signal costs pennies. Every decision spends dollars. That asymmetry is the entire point." data-zh="每个信号花几分钱。每个决定花几美元。这个不对称，就是全部意义所在。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="298">Every signal costs pennies. Every decision spends dollars. That asymmetry is the entire point.</text>
+</svg>
+<p class="diagram-caption" data-en="The gate reads cheap signals from the small model's turn — self-reported uncertainty, tool failures, conflicts between draft and context, the risk history of the request type — and combines them into one calibrated score. Below threshold, the cheap answer ships. Above it, the request escalates with everything it has gathered so far. The signals cost pennies; the decision they steer costs dollars. Building the gate well is the highest-leverage engineering in the cascade." data-zh="门从小模型的这一轮里读取便宜的信号——自报的不确定性、工具失败、草稿与上下文的冲突、该类请求的风险历史——并把它们合成一个校准过的分数。低于阈值，便宜答案直接发出。高于阈值，请求带着它已经收集到的一切升级上去。信号花几分钱；它们引导的决定花几美元。把门建好，是级联里杠杆最高的工程。">The gate reads cheap signals from the small model's turn — self-reported uncertainty, tool failures, conflicts between draft and context, the risk history of the request type — and combines them into one calibrated score. Below threshold, the cheap answer ships. Above it, the request escalates with everything it has gathered so far. The signals cost pennies; the decision they steer costs dollars.</p>
+</div>
+<h3 data-en="The two ways a cascade fails" data-zh="级联失败的两种方式">The two ways a cascade fails</h3>
+<p data-en="A cascade has exactly two failure modes, and they pull in opposite directions. Under-escalation: the gate lets a request through that the small model answers badly. The user gets a wrong answer at a bargain price — quality failure, invisible until it isn't. Over-escalation: the gate sends work up that the small model would have handled fine. The answer is still good, but the economics quietly rot — every unnecessary escalation is frontier spend wearing the costume of necessity, and latency creeps up as the queue for the big model grows. The tragedy is that both failures are usually tuned by the same single threshold, so teams yo-yo between them: quality complaints come in, the threshold drops, escalations double, the bill spikes, the threshold climbs back, quality complaints return. This oscillation is not a tuning problem. It is the signature of a gate with one dial when it needs several." data-zh="级联恰好有两种失败模式，而且方向相反。升级不足：门放过去一个请求，小模型答得很糟。用户以便宜的价格拿到一个错误的答案——质量失败，在被注意到之前，它是不可见的。过度升级：门把小模型本来能搞定的活送了上去。答案仍然是对的，但经济模型在悄悄腐烂——每一次不必要的升级，都是穿着「必要性」外衣的前沿开支；而随着大模型的队列变长，延迟也在悄悄爬升。麻烦在于，这两种失败通常由同一个阈值来调，于是团队在两者之间来回震荡：质量投诉来了，阈值调低，升级量翻倍，账单飙升，阈值再调回去，质量投诉再回来。这种震荡不是调参问题。它是一个只有一颗旋钮的门、在需要好几颗旋钮时的典型签名。">A cascade has exactly two failure modes, and they pull in opposite directions. Under-escalation: the gate lets a request through that the small model answers badly — quality failure, invisible until it isn't. Over-escalation: the gate sends work up that the small model would have handled fine — the answer is still good, but the economics quietly rot. The tragedy is that both failures are usually tuned by the same single threshold, so teams yo-yo between them. This oscillation is not a tuning problem. It is the signature of a gate with one dial when it needs several.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrCf1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrCf2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+</defs>
+<text data-en="THE TWO FAILURES — AND THE FIX" data-zh="两种失败——以及解法" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE TWO FAILURES — AND THE FIX</text>
+<!-- left: under-escalation -->
+<text data-en="UNDER-ESCALATION" data-zh="升级不足" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="56">UNDER-ESCALATION</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="70" x="120" y="70"></rect>
+<text data-en="hard ask" data-zh="难题" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="155" y="88">hard ask</text>
+<path d="M155 98 L155 114" fill="none" marker-end="url(#arrCf1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="70" x="120" y="116"></rect>
+<text data-en="small" data-zh="小模型" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="155" y="134">small</text>
+<path d="M155 144 C155 158 130 156 120 168" fill="none" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<path d="M155 144 C155 160 185 158 196 170" fill="none" marker-end="url(#arrCf1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<text data-en="gate says: fine" data-zh="门说：没问题" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" text-anchor="middle" x="92" y="160">gate says: fine</text>
+<rect fill="none" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="3,2" width="76" x="158" y="172"></rect>
+<text data-en="wrong ✓shipped" data-zh="错误答案发出" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="196" y="190">wrong ✓shipped</text>
+<text data-en="cheap. wrong." data-zh="便宜。但错了。" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="155" y="230">cheap. wrong.</text>
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="310" x2="310" y1="44" y2="250"></line>
+<!-- right: over-escalation -->
+<text data-en="OVER-ESCALATION" data-zh="过度升级" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="56">OVER-ESCALATION</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="70" x="430" y="70"></rect>
+<text data-en="easy ask" data-zh="简单题" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="465" y="88">easy ask</text>
+<path d="M465 98 L465 114" fill="none" marker-end="url(#arrCf2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="70" x="430" y="116"></rect>
+<text data-en="small" data-zh="小模型" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="465" y="134">small</text>
+<path d="M465 144 C465 160 495 158 506 170" fill="none" marker-end="url(#arrCf2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<text data-en="gate says: unsure" data-zh="门说：不确定" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" text-anchor="middle" x="545" y="160">gate says: unsure</text>
+<rect fill="none" height="28" rx="6" stroke="var(--accent-2)" stroke-width="1.5" stroke-dasharray="3,2" width="76" x="468" y="172"></rect>
+<text data-en="frontier called" data-zh="前沿模型被叫起" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="506" y="190">frontier called</text>
+<text data-en="right. expensive. slow." data-zh="对。但贵。而且慢。" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="465" y="230">right. expensive. slow.</text>
+<!-- bottom: the fix -->
+<rect fill="var(--accent-dim)" height="44" opacity="0.55" rx="8" width="560" x="30" y="256"></rect>
+<text data-en="The fix is not one threshold — it is per-request-type calibration, with both failure modes measured separately." data-zh="解法不是单一阈值——而是按请求类型分别校准，并分开度量两种失败。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="276">The fix is not one threshold — it is per-request-type calibration,</text>
+<text data-en="The fix is not one threshold — it is per-request-type calibration, with both failure modes measured separately." data-zh="解法不是单一阈值——而是按请求类型分别校准，并分开度量两种失败。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="292">with both failure modes measured separately.</text>
+</svg>
+<p class="diagram-caption" data-en="Under-escalation ships wrong answers at bargain prices. Over-escalation ships right answers at frontier prices with frontier latency. Both look like 'the models' in incident reviews, but both live in the gate. The fix is calibration per request type — what counts as uncertain for a reformatting task is noise for a code-edit task — and separate dashboards for each failure mode, so improving one can be verified without silently worsening the other." data-zh="升级不足，以便宜的价格发出错误答案。过度升级，以前沿的价格和前沿的延迟发出正确答案。在事故复盘里，两者看起来都像「模型的问题」，但两者都住在门里。解法是按请求类型分别校准——对于排版任务算「不确定」的信号，对代码编辑任务可能只是噪声——并且为两种失败模式分别建仪表盘，这样改进其中一个时，才能验证没有悄悄恶化另一个。">Under-escalation ships wrong answers at bargain prices. Over-escalation ships right answers at frontier prices with frontier latency. Both look like 'the models' in incident reviews, but both live in the gate. The fix is calibration per request type, and separate dashboards for each failure mode, so improving one can be verified without silently worsening the other.</p>
+</div>
+<p data-en="The deeper pattern is that the cascade turns a model-purchasing decision into a systems-design decision. Buying 'the best model' is a one-line answer that outsources the hard part to the vendor's pricing page. Designing a cascade is a claim: that the team knows its traffic, knows where the difficulty actually lives, and is willing to build the metering layer that proves it. That claim is falsifiable, which is what makes it engineering. The invoice stops being a fact of nature and becomes a function of design choices — threshold placement, signal quality, escalation policy, context handoff. When the next model generation arrives and prices shuffle, the team with the cascade adjusts two numbers and keeps its margin. The team with the one-line model name gets to find out what the new default costs." data-zh="更深的模式是：级联把一个「买模型」的采购决策，变成了一个「设计系统」的工程决策。买「最好的模型」是一个单行的答案，它把难的部分外包给了供应商的定价页。设计一个级联，则是一个主张：这个团队了解自己的流量，知道难度实际分布在哪里，并且愿意建造那个能证明这一点的计量层。这个主张是可证伪的——而这正是它成为工程的原因。账单不再是自然界的事实，而变成一串设计选择的函数——阈值放在哪、信号质量如何、升级策略是什么、上下文怎么交接。当下一代模型到来、价格重新洗牌时，有级联的团队调整两个数字，保住了利润率。而那个只有一行模型名的团队，只能去发现新的默认值要花多少钱。">The deeper pattern is that the cascade turns a model-purchasing decision into a systems-design decision. Buying 'the best model' is a one-line answer that outsources the hard part to the vendor's pricing page. Designing a cascade is a claim: that the team knows its traffic, knows where the difficulty lives, and is willing to build the metering layer that proves it. When the next model generation arrives, the team with the cascade adjusts two numbers and keeps its margin. The team with the one-line model name gets to find out what the new default costs.</p>
+<p data-en="None of this argues against frontier models. They are the best tools ever built for the hard tier, and the hard tier is where products are won. The argument is against the routing default — the silent decision to send everything to the most expensive option because it was the easiest line to write. Difficulty is not uniform. Traffic is not uniform. Stakes are not uniform. A system that prices every request as if they were is not simple; it is uninstrumented. Put the cheap model first. Make the expensive one a destination that requests must qualify for. Then measure, obsessively, the one number that matters: how often the cheap answer was wrong, and how little it cost to know. That number — not the benchmark score of either model — is what an inference architecture actually is." data-zh="这些，没有一条是在反对前沿模型。它们是困难档有史以来最好的工具，而困难档是产品分出胜负的地方。反对的是路由的默认值——那个沉默的决策：因为这是最容易写的一行代码，就把所有请求都发给最贵的选项。难度不是均匀的。流量不是均匀的。代价也不是均匀的。一个把每个请求都按它们均匀来定价的系统，不是简洁，而是没有仪表。让便宜的模型先上。让昂贵的那个成为一个请求必须凭资格才能到达的目的地。然后，执念般地测量那个唯一要紧的数字：便宜的答案错了多少次，以及知道这一点花了多少钱。那个数字——而不是任何一边的模型跑分——才是一个推理架构的真身。">None of this argues against frontier models. They are the best tools ever built for the hard tier, and the hard tier is where products are won. The argument is against the routing default. Difficulty is not uniform. Traffic is not uniform. Stakes are not uniform. A system that prices every request as if they were is not simple; it is uninstrumented. Put the cheap model first. Make the expensive one a destination that requests must qualify for. Then measure the one number that matters: how often the cheap answer was wrong, and how little it cost to know.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
