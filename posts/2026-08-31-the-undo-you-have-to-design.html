@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Undo You Have to Design — AI Frontlines</title>
+<meta content="A read-only agent is safe and useless. The moment an agent writes, sends, or spends, every action lands somewhere that does not have an undo button. Reversibility is not a feature you add at the end — it is a property of the architecture, and the architecture is the only place it can be bought." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="August 31, 2026" data-zh="2026年8月31日">August 31, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Undo You Have to Design" data-zh="你必须亲手设计的那个撤销">The Undo You Have to Design</h1>
+<p class="post-header-deck" data-en="A read-only agent is safe and useless. The moment an agent writes a file, sends an email, or moves money, it is operating in a world with no undo button — a world where the interface that saved every careless human click simply does not exist. Traditional software solved this decades ago with transactions, shadows, and checkpoints. Agents inherited none of it, because the loop that drives them treats every action as final the moment it succeeds. Reversibility is not a feature. It is an architecture — and if nobody designed it, the system has exactly as much undo as luck allows." data-zh="一个只读的智能体，安全而无用。当它开始写文件、发邮件、动钱的那一刻，它就进入了一个没有撤销键的世界——那个曾经拯救过每一次人类手滑的接口，在那里根本不存在。传统软件几十年前就用事务、影子副本和检查点解决了这个问题。智能体却什么都没继承到，因为驱动它的那个循环，把每一个成功的动作都当作最终事实。可逆性不是一个功能。它是一种架构——如果没人设计它，系统的撤销能力，就只剩下运气那么多。">A read-only agent is safe and useless. The moment an agent writes, sends, or spends, it enters a world with no undo button. Reversibility is not a feature — it is an architecture.</p>
+</header>
+<article class="post-body">
+<p data-en="Every interactive application ever built has faced the same quiet question: what happens when the user is wrong? Word processors answered with undo stacks. Databases answered with transactions. Email answered with drafts, delays, and recall — a feature that famously works about a third of the time and terrifies everyone the rest of the time. The entire discipline of human interface design is, in a sense, a giant apology for the fact that people make mistakes, and a promise that most mistakes can be taken back. Agents break this promise by construction. An agent is a system that takes actions on your behalf, at a speed you cannot supervise, against systems that were never told it was coming. And in almost every agent stack shipped so far, the moment a tool call returns success, the action is treated as a fact about the universe. There is no undo stack. There is no transaction. There is only the next token." data-zh="每一个被造出来的交互式应用，都面对过同一个安静的问题：用户错了怎么办？文字处理器用撤销栈回答。数据库用事务回答。电子邮件用草稿、延迟和撤回回答——一个大约三分之一时间能起作用、其余时间令所有人恐惧的功能。整个人机界面设计学科，某种意义上，是一场巨大的道歉——为人类会犯错这个事实道歉，并承诺大多数错误可以被收回。智能体在结构上就打破了这个承诺。智能体是一个以你无法监督的速度、代表你采取行动的系统，而它面对的那些系统，从未被告知它要来。而在迄今为止发布的几乎所有智能体技术栈里，一个工具调用一旦返回成功，这个动作就被当作宇宙中的一个事实。没有撤销栈。没有事务。只有下一个 token。">Every interactive application ever built has faced the same quiet question: what happens when the user is wrong? Word processors answered with undo stacks. Databases answered with transactions. The entire discipline of human interface design is, in a sense, a giant apology for the fact that people make mistakes, and a promise that most mistakes can be taken back. Agents break this promise by construction.</p>
+<p data-en="This sounds like an abstract complaint until you inventory what a capable agent actually does in an afternoon. It edits fourteen files across a repository. It opens a pull request. It sends a message to a shared channel that two hundred people read. It provisions a server. It calls a payment API with a decimal point that may or may not be in the right place. Each of these actions has a blast radius, and the blast radii compound: a wrong file edit becomes a wrong pull request, which becomes a wrong merge, which becomes a wrong deploy. In traditional automation this risk was managed by making humans the undo mechanism — someone reviews the diff, someone approves the deploy, someone catches the typo. The entire premise of an autonomous agent is that the someone goes away. Which means the undo has to go somewhere. It has to go into the architecture." data-zh="这听起来像一句抽象的抱怨，直到你盘点一个能干的智能体一个下午实际做了什么。它在一个代码库里编辑十四个文件。它开一个 pull request。它往一个两百人阅读的共享频道发一条消息。它开通一台服务器。它调用一个支付 API，小数点也许在也许不在正确的位置上。这些动作每一个都有爆炸半径，而爆炸半径会叠加：一个错误的文件编辑变成一个错误的 pull request，再变成一次错误的合并，再变成一次错误的部署。在传统自动化里，这个风险靠让人类充当撤销机制来管理——有人审查 diff，有人批准部署，有人抓住那个错字。自主智能体的全部前提，就是那个「有人」消失。这意味着撤销必须去别的地方。它必须进入架构里。">This sounds like an abstract complaint until you inventory what a capable agent actually does in an afternoon. It edits fourteen files, opens a pull request, sends a message two hundred people read, provisions a server, calls a payment API with a decimal point that may or may not be in the right place. Each action has a blast radius, and the blast radii compound.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrU0" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE BLAST RADIUS OF AN AFTERNOON" data-zh="一个下午的爆炸半径" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE BLAST RADIUS OF AN AFTERNOON</text>
+<!-- concentric rings -->
+<circle cx="310" cy="195" fill="none" opacity="0.9" r="140" stroke="var(--accent)" stroke-dasharray="3,4" stroke-width="1"></circle>
+<circle cx="310" cy="195" fill="none" r="95" stroke="var(--accent-2)" stroke-dasharray="3,4" stroke-width="1"></circle>
+<circle cx="310" cy="195" fill="none" r="52" stroke="var(--accent-3)" stroke-dasharray="3,4" stroke-width="1"></circle>
+<!-- center: agent -->
+<circle cx="310" cy="195" fill="var(--accent-dim)" r="24" stroke="var(--accent)" stroke-width="2"></circle>
+<text data-en="agent" data-zh="智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="199">agent</text>
+<!-- inner ring labels -->
+<text data-en="file edit" data-zh="文件编辑" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="128">file edit</text>
+<text data-en="undo: trivial" data-zh="撤销：轻而易举" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="310" y="140">undo: trivial</text>
+<!-- middle ring labels -->
+<text data-en="pull request · deploy" data-zh="pull request · 部署" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="80">pull request · deploy</text>
+<text data-en="undo: expensive" data-zh="撤销：代价高昂" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="310" y="92">undo: expensive</text>
+<!-- outer ring labels -->
+<text data-en="sent message · spent money" data-zh="已发送的消息 · 已花掉的钱" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="35">sent message · spent money</text>
+<!-- radiating damage arrows -->
+<path d="M330 178 C370 160 400 150 425 128" fill="none" marker-end="url(#arrU0)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<path d="M330 195 L415 195" fill="none" marker-end="url(#arrU0)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<path d="M330 212 C370 230 400 240 425 262" fill="none" marker-end="url(#arrU0)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<!-- side annotations -->
+<text data-en="one wrong premise" data-zh="一个错误的前提" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="470" y="130">one wrong premise</text>
+<text data-en="propagates outward," data-zh="向外传播，" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="470" y="146">propagates outward,</text>
+<text data-en="gaining cost at every ring" data-zh="每过一环，代价加重" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="470" y="162">gaining cost at every ring</text>
+<text data-en="git revert" data-zh="git revert" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="80" y="120">git revert</text>
+<text data-en="rollback · hotfix" data-zh="回滚 · 热修" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="80" y="136">rollback · hotfix</text>
+<text data-en="apology · refund · ??? " data-zh="道歉 · 退款 · ？？？" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="80" y="152">apology · refund · ???</text>
+</svg>
+<p class="diagram-caption" data-en="Blast radius is not binary — it is a set of concentric rings. Near the center, actions are cheap to reverse: a file edit is a git revert. One ring out, reversal costs an afternoon: rollback, hotfix, coordination. At the outer ring, reversal is not an engineering operation at all: the message was read, the money moved, the trust spent. Good agent architecture keeps most actions near the center, and treats every crossing outward as a deliberate, designed decision." data-zh="爆炸半径不是二元的——它是一组同心圆。靠近圆心，动作逆转的成本很低：一次文件编辑就是一个 git revert。往外一环，逆转要花掉一个下午：回滚、热修、协调。在最外环，逆转根本不是一个工程操作：消息已被阅读，钱已转走，信任已被消耗。好的智能体架构，让大部分动作停留在圆心附近，并把每一次向外跨越，都当作一个深思熟虑的设计决策。">Blast radius is not binary — it is a set of concentric rings. Near the center, actions are cheap to reverse. One ring out, reversal costs an afternoon. At the outer ring, reversal is not an engineering operation at all: the message was read, the money moved, the trust spent.</p>
+</div>
+<h3 data-en="The taxonomy nobody builds" data-zh="没人去建的那套分类学">The taxonomy nobody builds</h3>
+<p data-en="The first step is almost embarrassingly simple, and almost nobody does it: classify the tools. Every tool an agent can call sits somewhere on two axes — how much damage a wrong call does, and how reversible that damage is. These axes are independent, and confusing them is where teams get hurt. A high-damage, fully-reversible action (overwriting a file in a version-controlled repo) is safe to let an agent attempt freely. A low-damage, irreversible action (a single polite but wrong message to a customer) can be worse than it looks, because it cannot be recalled and it trains the recipient to distrust everything that follows. The dangerous quadrant is high damage plus low reversibility, and the entire art of agent architecture is arranging the world so that as few operations as possible live there." data-zh="第一步简单得近乎尴尬，而几乎没人做：给工具分类。一个智能体能调用的每一个工具，都落在两条轴上的某处——错误调用造成多大伤害，以及这个伤害有多大可逆。这两条轴是独立的，而混淆它们正是团队受伤的地方。一个高伤害、完全可逆的动作（覆写一个版本控制下的文件）可以放心让智能体自由尝试。一个低伤害、不可逆的动作（给客户发一条礼貌但错误的消息）可能比看上去更糟，因为它无法撤回，而且它教会接收者不再信任之后的一切。危险的象限是高伤害加低可逆，而智能体架构的全部艺术，就是安排这个世界，让尽可能少的操作住在那里。">The first step is almost embarrassingly simple, and almost nobody does it: classify the tools. Every tool an agent can call sits somewhere on two axes — how much damage a wrong call does, and how reversible that damage is. These axes are independent, and confusing them is where teams get hurt.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<text data-en="THE TWO AXES EVERY TOOL LIVES ON" data-zh="每个工具都落在这两条轴上" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE TWO AXES EVERY TOOL LIVES ON</text>
+<!-- axes -->
+<line stroke="var(--border)" stroke-width="1.5" x1="90" x2="580" y1="190" y2="190"></line>
+<line stroke="var(--border)" stroke-width="1.5" x1="335" x2="335" y1="44" y2="336"></line>
+<text data-en="← reversible · reversibility · irreversible →" data-zh="← 可逆 · 可逆性 · 不可逆 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="335" y="352">← reversible · reversibility · irreversible →</text>
+<text data-en="← damage →" data-zh="← 伤害 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" transform="rotate(-90 76 190)" text-anchor="middle" x="76" y="190">← damage →</text>
+<!-- quadrant tints -->
+<rect fill="var(--accent-dim)" height="140" opacity="0.35" rx="8" width="237" x="92" y="46"></rect>
+<rect fill="var(--accent-dim)" height="140" opacity="0.12" rx="8" width="237" x="342" y="46"></rect>
+<rect fill="var(--accent-dim)" height="140" opacity="0.12" rx="8" width="237" x="92" y="194"></rect>
+<rect fill="none" height="140" rx="8" stroke="var(--accent)" stroke-dasharray="4,3" stroke-width="1.5" width="237" x="342" y="194"></rect>
+<!-- quadrant labels -->
+<text data-en="FREE TO TRY" data-zh="放手去试" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="210" y="70">FREE TO TRY</text>
+<text data-en="get it wrong, revert, repeat" data-zh="错了就回滚，再来一次" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="210" y="86">get it wrong, revert, repeat</text>
+<text data-en="STAGED" data-zh="分阶段" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="460" y="70">STAGED</text>
+<text data-en="commit only at the last step" data-zh="只在最后一步提交" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="460" y="86">commit only at the last step</text>
+<text data-en="VISIBLE" data-zh="可见即风险" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="210" y="218">VISIBLE</text>
+<text data-en="wrong, but not for long" data-zh="会错，但错不久" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="210" y="234">wrong, but not for long</text>
+<text data-en="THE QUADRANT TO EMPTY" data-zh="必须清空的象限" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="460" y="218">THE QUADRANT TO EMPTY</text>
+<text data-en="no path back — gate it, split it, or delete it" data-zh="没有回头路——设闸、拆分，或删掉它" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="460" y="234">no path back — gate it, split it, or delete it</text>
+<!-- tool dots -->
+<circle cx="150" cy="110" fill="var(--accent)" r="5"></circle>
+<text data-en="edit file (git)" data-zh="编辑文件（git）" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="150" y="134">edit file (git)</text>
+<circle cx="255" cy="130" fill="var(--accent)" r="5"></circle>
+<text data-en="run tests" data-zh="跑测试" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="255" y="152">run tests</text>
+<circle cx="410" cy="120" fill="var(--accent-2)" r="5"></circle>
+<text data-en="deploy (blue/green)" data-zh="部署（蓝绿）" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="410" y="142">deploy (blue/green)</text>
+<circle cx="520" cy="95" fill="var(--accent-2)" r="5"></circle>
+<text data-en="provision infra" data-zh="开通基础设施" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="520" y="117">provision infra</text>
+<circle cx="180" cy="270" fill="var(--accent-2)" r="5"></circle>
+<text data-en="draft message" data-zh="草拟消息" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="180" y="292">draft message</text>
+<circle cx="280" cy="290" fill="var(--accent-2)" r="5"></circle>
+<text data-en="write to cache" data-zh="写入缓存" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="280" y="312">write to cache</text>
+<circle cx="420" cy="265" fill="var(--accent)" r="6" stroke="var(--accent)" stroke-width="2"></circle>
+<circle cx="420" cy="265" fill="none" r="12" stroke="var(--accent)" stroke-width="1"></circle>
+<text data-en="send email" data-zh="发送邮件" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="420" y="290">send email</text>
+<circle cx="530" cy="300" fill="var(--accent)" r="6" stroke="var(--accent)" stroke-width="2"></circle>
+<circle cx="530" cy="300" fill="none" r="12" stroke="var(--accent)" stroke-width="1"></circle>
+<text data-en="charge card" data-zh="刷信用卡" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="530" y="325">charge card</text>
+</svg>
+<p class="diagram-caption" data-en="Damage and reversibility are different axes. A version-controlled file edit is high-damage but trivially reversible — let the agent try freely. A payment is high-damage and effectively irreversible — it belongs behind a gate, a draft, or a human. The ringed dots mark operations with no path back: these are not tools to remove, necessarily, but tools to restructure until they exit the quadrant." data-zh="伤害和可逆性是两条不同的轴。一个版本控制下的文件编辑，伤害高但可逆成本极低——放手让智能体去试。一笔支付，伤害高且实际上不可逆——它该待在一道闸门、一份草稿、或一个人类身后。带圈的点标记着没有回头路的操作：它们不一定要被删除，而是要被重构，直到离开这个象限。">Damage and reversibility are different axes. A version-controlled file edit is high-damage but trivially reversible. A payment is high-damage and effectively irreversible — it belongs behind a gate, a draft, or a human.</p>
+</div>
+<h3 data-en="Borrow what the databases already know" data-zh="把数据库早已懂得的东西借过来">Borrow what the databases already know</h3>
+<p data-en="None of this is a new problem, which is the good news. Distributed systems spent forty years building exactly the machinery an agent needs, and it translates almost embarrassingly directly. The saga pattern — a sequence of actions where every step carries a compensating action, and failure triggers compensation in reverse order — is precisely how an agent's afternoon should be structured: edit files, open the PR, post the summary, and if the third step reveals the premise was wrong, close the PR, revert the files, post the correction. Two-phase commit — where an action is split into a prepare step that reserves the effect and a commit step that makes it real — is the draft message, the scheduled send, the staged deploy. Checkpointing — snapshot the state before a risky phase so failure restores instead of cascades — is the branch you cut before letting the agent loose on the repo. These are not metaphors. They are the same problem: a sequence of side effects, executed by something that can fail at any step, against a world that remembers." data-zh="这都不是新问题——这是好消息。分布式系统花了四十年，建造的恰恰是智能体需要的那套机器，而且它的迁移几乎直接得令人尴尬。Saga 模式——一个动作序列，每一步都携带一个补偿动作，失败时按逆序触发补偿——正是一个智能体的下午该有的结构：编辑文件、开 PR、发总结，而如果第三步发现前提错了，就关掉 PR、回滚文件、发一条更正。两阶段提交——把一个动作拆成一个预留效果的 prepare 步骤和一个让效果成真的 commit 步骤——就是那条草稿消息、那个定时发送、那个分阶段部署。检查点——在进入危险阶段前快照状态，让失败时恢复而非级联——就是你放智能体进代码库之前切好的那个分支。这些不是比喻。它们是同一个问题：一串副作用，由一个随时可能在任何一步失败的东西执行，面对一个会记住一切的世界。">None of this is a new problem, which is the good news. Distributed systems spent forty years building exactly the machinery an agent needs. The saga pattern is precisely how an agent's afternoon should be structured. Two-phase commit is the draft message, the scheduled send, the staged deploy. Checkpointing is the branch you cut before letting the agent loose.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrU1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrU2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE AGENT SAGA: FORWARD PATH &amp; COMPENSATION PATH" data-zh="智能体 Saga：前进路径与补偿路径" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE AGENT SAGA: FORWARD PATH &amp; COMPENSATION PATH</text>
+<!-- forward path -->
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="86" x="40" y="60"></rect>
+<text data-en="edit files" data-zh="编辑文件" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="83" y="79">edit files</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="86" x="180" y="60"></rect>
+<text data-en="open PR" data-zh="开 PR" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="223" y="79">open PR</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="86" x="320" y="60"></rect>
+<text data-en="post note" data-zh="发通知" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="363" y="79">post note</text>
+<rect fill="var(--accent-dim)" height="30" rx="7" stroke="var(--accent)" stroke-width="2" width="86" x="460" y="60"></rect>
+<text data-en="merge" data-zh="合并" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="503" y="79">merge</text>
+<path d="M126 75 L180 75" fill="none" marker-end="url(#arrU1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M266 75 L320 75" fill="none" marker-end="url(#arrU1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M406 75 L460 75" fill="none" marker-end="url(#arrU1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- failure point -->
+<circle cx="363" cy="60" fill="none" r="10" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="2,2"></circle>
+<text data-en="premise fails here" data-zh="前提在这里败露" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="363" y="42">premise fails here</text>
+<!-- compensation path, right to left -->
+<path d="M363 90 C363 120 223 120 223 96" fill="none" marker-end="url(#arrU2)" stroke="var(--accent-3)" stroke-width="1.3" stroke-dasharray="4,3"></path>
+<path d="M223 90 C223 130 83 130 83 96" fill="none" marker-end="url(#arrU2)" stroke="var(--accent-3)" stroke-width="1.3" stroke-dasharray="4,3"></path>
+<!-- compensation boxes -->
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="3,2" width="96" x="315" y="140"></rect>
+<text data-en="~post correction" data-zh="～发更正" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="363" y="157">~post correction</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="3,2" width="96" x="175" y="140"></rect>
+<text data-en="~close PR" data-zh="～关闭 PR" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="223" y="157">~close PR</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="3,2" width="96" x="35" y="140"></rect>
+<text data-en="~revert edits" data-zh="～回滚编辑" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="83" y="157">~revert edits</text>
+<text data-en="compensation runs in reverse order" data-zh="补偿按逆序执行" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="223" y="192">compensation runs in reverse order</text>
+<!-- checkpoint strip -->
+<rect fill="var(--accent-dim)" height="46" opacity="0.5" rx="8" width="540" x="40" y="216"></rect>
+<text data-en="CHECKPOINT BEFORE THE RUN: branch · snapshot · staged environment" data-zh="运行前先打检查点：分支 · 快照 · 预发环境" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="238">CHECKPOINT BEFORE THE RUN: branch · snapshot · staged environment</text>
+<text data-en="if anything cascades — restore, do not repair" data-zh="一旦级联——恢复，而不是修补" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="254">if anything cascades — restore, do not repair</text>
+<text data-en="The saga rule: an agent may take any step whose compensation was designed before the step was taken." data-zh="Saga 规则：智能体可以走任何一步，只要它的补偿在迈出这一步之前就已经设计好。" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="300">The saga rule: an agent may take any step whose compensation was designed before the step was taken.</text>
+</svg>
+<p class="diagram-caption" data-en="A saga-shaped agent run. Forward actions on top; compensations below, dashed, running in reverse. The merge sits at the end because it is the step whose compensation is most expensive — everything before it is arranged to be cheap to unwind. The checkpoint strip is the outer safety net: the state that existed before the run can always be restored, which converts cascading failure into a restart." data-zh="一个 Saga 形状的智能体运行。上面是前进动作；下面是虚线的补偿，按逆序执行。合并放在最后，因为它是补偿代价最高的一步——在它之前的一切，都被安排成解开成本很低。检查点是外层安全网：运行之前的状态永远可以恢复，这将级联失败转换成一次重启。">A saga-shaped agent run. Forward actions on top; compensations below, dashed, running in reverse. The merge sits at the end because it is the step whose compensation is most expensive. The checkpoint strip is the outer safety net.</p>
+</div>
+<h3 data-en="Undo changes the model's behavior, not just the system's" data-zh="撤销改变的不只是系统，还有模型的行为">Undo changes the model's behavior, not just the system's</h3>
+<p data-en="Here is the part that is easy to miss: reversibility is not just an insurance policy. It changes how the agent reasons. A model operating in an environment where every action is final becomes conservative in all the wrong ways — it hedges, it asks for confirmation constantly, it pads its actions with caveats, because a single mistake is unrecoverable and it knows that. The same model in an environment where mistakes are cheap becomes bolder in all the right ways: it tries the refactor, runs the experiment, ships the draft to preview — because the worst case is a revert, and reverts are free. This is the same effect that made humans faster when editors grew undo stacks. Error tolerance is not the opposite of reliability. It is the precondition for speed, and undo is how you buy it." data-zh="这里有一个容易被错过的点：可逆性不只是保险单。它改变智能体推理的方式。一个在「每个动作都是终局」的环境里运作的模型，会以一种全错的方式变得保守——它含糊其辞，不停地请求确认，用免责声明给动作加垫子，因为一个错误无法挽回，而它知道这一点。同一个模型，在一个错误代价很低的环境里，会以一种全对的方式变得大胆：它尝试那次重构，跑那个实验，把草稿发到预览——因为最坏的情况就是一次 revert，而 revert 是免费的。这和编辑器长出撤销栈之后人类变快，是同一个效应。容错不是可靠性的反面。它是速度的前提，而撤销就是你购买它的方式。">Here is the part that is easy to miss: reversibility is not just an insurance policy. It changes how the agent reasons. A model operating where every action is final becomes conservative in all the wrong ways. The same model where mistakes are cheap becomes bolder in all the right ways: it tries the refactor, runs the experiment, ships the draft — because the worst case is a revert, and reverts are free.</p>
+<p data-en="The practical consequence is that undo design is really environment design. Do not ask how to make the agent more careful; ask how to make carelessness survivable. Wrap the file system in git so every edit is a diff. Wrap the deploy in blue-green so every release is a switch. Wrap the messaging in a draft-and-approve layer so nothing leaves without a checkpoint. Wrap the payments in a two-phase flow so the money moves only after the intent is confirmed against the plan. None of these wrappers make the agent smarter. They make its errors addressable — and an agent whose errors are addressable can be trusted with speed, which is the entire point of having one." data-zh="实际的后果是：撤销设计，其实就是环境设计。不要问怎么让智能体更小心；要问怎么让不小心变得可以幸存。用 git 包住文件系统，让每次编辑都是一个 diff。用蓝绿包住部署，让每次发布都是一个开关。用草稿-审批层包住消息，让任何东西不经过检查点就出不去。用两阶段流程包住支付，让钱只在意图与计划核对无误之后才动。这些包装没有一个让智能体更聪明。它们让它的错误变得可寻址——而一个错误可寻址的智能体，可以被托付以速度。而速度，才是拥有智能体的全部意义。">The practical consequence is that undo design is really environment design. Do not ask how to make the agent more careful; ask how to make carelessness survivable. Wrap the file system in git, the deploy in blue-green, the messaging in a draft-and-approve layer, the payments in a two-phase flow. None of these wrappers make the agent smarter. They make its errors addressable.</p>
+<blockquote data-en="The question is never whether the agent will make a mistake. The question is what a mistake costs, and who paid for the machinery that decides. If the answer is nobody, then the users are the undo system — and they will notice, and they will leave. Design the undo. Make errors cheap. Then let the agent be fast." data-zh="问题从来不是智能体会不会犯错。问题是错误值多少钱，以及是谁为决定这个成本的机器付了钱。如果答案是没有人，那么用户就是那个撤销系统——而他们会察觉，然后离开。把撤销设计好。让错误变得廉价。然后，放手让智能体快起来。">The question is never whether the agent will make a mistake. The question is what a mistake costs, and who paid for the machinery that decides. If the answer is nobody, then the users are the undo system — and they will notice, and they will leave. Design the undo. Make errors cheap. Then let the agent be fast.</blockquote>
+<p data-en="There is a version of the future where agents are trusted with everything — infrastructure, money, communication — and it does not arrive because the models finally stopped making mistakes. Models will not stop making mistakes; that is not what they are. It arrives because the environments around them were engineered so that a mistake is a diff, not a disaster; a revert, not an apology; a checkpoint restore, not a weekend. The teams building those environments are not building model capability at all. They are building the ability to survive one. That is the undo nobody ships, and it is the one that decides who gets to run fast." data-zh="未来有一个版本，智能体被托付一切——基础设施、资金、通信——而它的到来，不是因为模型终于不再犯错。模型不会停止犯错；那不是它们的本质。它的到来，是因为围绕模型的环境被工程成这样：一个错误是一次 diff，而不是一场灾难；是一次 revert，而不是一封道歉信；是一次检查点恢复，而不是赔上整个周末。建造这些环境的团队，根本不是在建造模型能力。他们建造的，是幸存于模型错误的能力。这就是那个没人发布的撤销——而它，决定了谁能够跑得快。">There is a version of the future where agents are trusted with everything — infrastructure, money, communication — and it does not arrive because the models finally stopped making mistakes. It arrives because the environments around them were engineered so that a mistake is a diff, not a disaster; a revert, not an apology; a checkpoint restore, not a weekend.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
