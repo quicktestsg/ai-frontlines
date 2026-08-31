@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-09-01",
+    "slug": "the-queue-is-the-architecture",
+    "title_en": "The Queue Is the Architecture",
+    "title_zh": "队列，才是架构",
+    "read_time": 9,
+    "excerpt_en": "Agent loops are long-running, bursty, and quietly unreliable — but most agent systems sit on synchronous plumbing that assumes none of it. Saturation doesn't crash them; it slows them into retry storms. The fix is a queue: admission control, backpressure, priority lanes, and retries that belong to the system, not to whoever is in a hurry.",
+    "excerpt_zh": "智能体的循环长时运行、突发、且悄悄不可靠，但大多数智能体系统钉在对此一无所知的同步管道上。饱和不会让它们崩溃，只会让它们慢成重试风暴。修复是一个队列：准入控制、背压、优先级车道，以及归系统管的重试。"
+  },
+  {
     "date": "2026-08-31",
     "slug": "the-undo-you-have-to-design",
     "title_en": "The Undo You Have to Design",

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Queue Is the Architecture — AI Frontlines</title>
+<meta content="Agent loops are long-running, bursty, and unreliable — but most agent systems are built on synchronous request-response plumbing that assumes the opposite. The fix is not a faster model. It is a queue: admission control, backpressure, priority lanes, and load shedding. The loop is the algorithm. The queue is what keeps the loop alive on a bad day." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 1, 2026" data-zh="2026年9月1日">September 1, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Queue Is the Architecture" data-zh="队列，才是架构">The Queue Is the Architecture</h1>
+<p class="post-header-deck" data-en="An agent is not a request. A request arrives, is answered, and leaves. An agent arrives, thinks for four minutes, calls eleven tools, waits on three of them, gets interrupted, retries, and finally produces something — maybe. Agent workloads are long-running, bursty, and quietly unreliable, yet most agent systems are bolted onto synchronous plumbing that assumes none of those things. The result is familiar to anyone who has run agents in production: cascading timeouts, retry storms, workers starved while others idle, and a system whose only failure mode is to get slower and slower until it stops being a system at all. The fix is not a faster model. It is a queue — and the discipline that comes with it." data-zh="智能体不是一个请求。请求会到达、被应答、然后离开。而智能体会到达、思考四分钟、调用十一个工具、其中三个还在等待、中途被打断、重试、最后产出一点东西——也许。智能体的工作负载是长时运行、突发的、并且悄悄地不可靠，但大多数智能体系统被钉在同步管道上，而那套管道对以上三点一个都不认。结果，任何在生产环境跑过智能体的人都不陌生：超时级联、重试风暴、一部分工人饿死而另一部分闲死，以及一个唯一的失败模式——变得越来越慢，直到它不再是一个系统。修复不是更快的模型。是一个队列——以及随之而来的纪律。">An agent is not a request. A request arrives, is answered, and leaves. An agent arrives, thinks for four minutes, calls eleven tools, waits on three of them, gets interrupted, retries, and finally produces something — maybe.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a shape of failure that every production agent system eventually hits, and it never looks like a model failure. The logs are clean. The traces are sensible. The model is reasoning well. But the system is dying anyway: p99 latency has tripled, tool calls are timing out in ways they never timed out before, and nobody can point to a single broken component — because no component is broken. What happened is simpler and more embarrassing. The workload grew, and the system had no way to say no. Every incoming task was accepted, every accepted task was started immediately, and every started task competed for the same finite pool of model throughput, tool rate limits, and human attention. The system did not crash. It saturated. And saturation, in a synchronous design, does not produce errors. It produces slowness — which is worse, because slowness triggers retries, and retries are more workload." data-zh="有一种失败形态，每一个生产级智能体系统最终都会撞上，而它从来都不像模型失败。日志是干净的。追踪记录是合理的。模型推理得很好。但系统还是在死：p99 延迟翻了三倍，工具调用以从未有过的方式超时，而没有人能指出哪个组件坏了——因为没有组件坏掉。发生的事情更简单，也更难堪。负载增长了，而系统没有办法说「不」。每一个进来的任务都被接受，每一个被接受的任务都被立刻启动，每一个被启动的任务都在争抢同一份有限的模型吞吐、工具速率限制和人类注意力。系统没有崩溃。它饱和了。而在同步设计里，饱和不产生错误。它产生慢——这更糟，因为慢会触发重试，而重试，是更多的负载。">There is a shape of failure that every production agent system eventually hits, and it never looks like a model failure. The logs are clean. The traces are sensible. The model is reasoning well. But the system is dying anyway: p99 latency has tripled, tool calls are timing out in ways they never timed out before, and nobody can point to a single broken component — because no component is broken. What happened is simpler and more embarrassing. The workload grew, and the system had no way to say no.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrQ1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrQ2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrQ3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="START EVERYTHING NOW vs ADMIT, QUEUE, DRAIN" data-zh="全部立刻启动 vs 接纳 · 排队 · 消化" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">START EVERYTHING NOW vs ADMIT, QUEUE, DRAIN</text>
+<!-- LEFT: synchronous pileup -->
+<text data-en="THE SYNCHRONOUS PILEUP" data-zh="同步式堆积" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="56">THE SYNCHRONOUS PILEUP</text>
+<g opacity="0.9">
+<circle cx="70" cy="96" fill="var(--bg-surface)" r="14" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<circle cx="104" cy="82" fill="var(--bg-surface)" r="14" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<circle cx="138" cy="96" fill="var(--bg-surface)" r="14" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<circle cx="172" cy="82" fill="var(--bg-surface)" r="14" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<circle cx="206" cy="96" fill="var(--bg-surface)" r="14" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<circle cx="240" cy="82" fill="var(--bg-surface)" r="14" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="arrivals" data-zh="到达" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="155" y="132">arrivals</text>
+</g>
+<path d="M155 140 L155 162" fill="none" marker-end="url(#arrQ3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="36" rx="8" stroke="var(--accent-3)" stroke-width="2" width="120" x="95" y="164"></rect>
+<text data-en="everything runs" data-zh="全部同时跑" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="155" y="187">everything runs</text>
+<path d="M155 200 L155 222" fill="none" marker-end="url(#arrQ3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="46" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="190" x="60" y="224"></rect>
+<text data-en="one shared pool" data-zh="同一个资源池" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="244">one shared pool</text>
+<text data-en="model · tools · limits" data-zh="模型 · 工具 · 限额" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="155" y="260">model · tools · limits</text>
+<text data-en="saturates → retries → worse" data-zh="饱和 → 重试 → 更糟" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="155" y="296">saturates → retries → worse</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="310"></line>
+<!-- RIGHT: queued -->
+<text data-en="THE QUEUED SYSTEM" data-zh="队列式系统" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="56">THE QUEUED SYSTEM</text>
+<circle cx="410" cy="90" fill="var(--bg-surface)" r="13" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<circle cx="440" cy="82" fill="var(--bg-surface)" r="13" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<circle cx="470" cy="90" fill="var(--bg-surface)" r="13" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<circle cx="500" cy="82" fill="var(--bg-surface)" r="13" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<path d="M465 104 L465 124" fill="none" marker-end="url(#arrQ2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="7" stroke="var(--accent)" stroke-width="1.5" width="96" x="417" y="126"></rect>
+<text data-en="admission gate" data-zh="准入闸门" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="465" y="147">admission gate</text>
+<path d="M465 160 L465 178" fill="none" marker-end="url(#arrQ2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="30" rx="6" stroke="var(--accent)" stroke-width="1.5" width="150" x="390" y="180"></rect>
+<text data-en="[ queue — bounded ]" data-zh="[ 队列 — 有界 ]" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="199">[ queue — bounded ]</text>
+<path d="M445 210 C420 222 405 226 390 232" fill="none" marker-end="url(#arrQ2)" stroke="var(--accent)" stroke-width="1.3"></path>
+<path d="M465 210 L465 232" fill="none" marker-end="url(#arrQ2)" stroke="var(--accent)" stroke-width="1.3"></path>
+<path d="M485 210 C510 222 525 226 540 232" fill="none" marker-end="url(#arrQ2)" stroke="var(--accent)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="60" x="360" y="234"></rect>
+<text data-en="w1" data-zh="w1" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="390" y="252">w1</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="60" x="435" y="234"></rect>
+<text data-en="w2" data-zh="w2" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="252">w2</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="60" x="510" y="234"></rect>
+<text data-en="w3" data-zh="w3" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="540" y="252">w3</text>
+<text data-en="bounded wait · shed · retry later" data-zh="有界等待 · 降级 · 稍后重试" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="465" y="296">bounded wait · shed · retry later</text>
+</svg>
+<p class="diagram-caption" data-en="On the left, every arrival starts immediately and fights for one shared pool; saturation breeds retries, and retries breed saturation. On the right, an admission gate accepts what the system can actually drain, a bounded queue holds the rest honestly, and workers pull at their own pace. Same model, same tools. Only one of these systems degrades gracefully." data-zh="左边，每个到达的任务都立刻启动，争抢同一个资源池；饱和催生重试，重试又催生饱和。右边，一个准入闸门只接纳系统真正消化得了的部分，一个有界队列诚实地装着其余的，工人按自己的节奏拉取。同样的模型，同样的工具。只有一个系统能优雅降级。">On the left, every arrival starts immediately and fights for one shared pool; saturation breeds retries, and retries breed saturation. On the right, an admission gate accepts what the system can actually drain, a bounded queue holds the rest honestly, and workers pull at their own pace. Same model, same tools. Only one of these systems degrades gracefully.</p>
+</div>
+<h3 data-en="Backpressure is information" data-zh="背压是一种信息">Backpressure is information</h3>
+<p data-en="The deep mistake in most agent designs is treating the system's limits as obstacles to route around, instead of signals to route on. A rate limit from a tool provider is not vandalism. It is the provider telling the system, in the only language both sides share, how fast it can actually be driven. A queue that grows is not a malfunction. It is the system measuring the gap between what is arriving and what can be drained — a measurement that is impossible to get any other way. When the design ignores these signals, it does not eliminate them; it converts them into latency, then into timeouts, then into retries, which are the same load wearing a disguise. The synchronous system fails by becoming slow. The queued system fails by becoming visibly full — and a visibly full queue can be acted on: shed load, spawn workers, degrade to a cheaper path, tell the user the truth about when their work will run. Backpressure is not a limitation on the system. It is the system finally telling the truth about itself." data-zh="大多数智能体设计里最深的错误，是把系统的极限当作需要绕开的障碍，而不是当作路由的依据。工具提供商的速率限制，不是恶意。那是提供商在用双方唯一的共同语言，告诉系统它到底能被驱动多快。一个在增长的队列，不是故障。那是系统在测量「到达的」和「消化得了的」之间的缺口——这个测量，用任何其他方式都拿不到。当设计无视这些信号时，它并没有消灭它们；它只是把它们转换成延迟，再转换成超时，再转换成重试——而重试，是同一份负载换了身衣服。同步系统的失败方式是变慢。队列系统的失败方式是变得「看得见地满」——而一个看得见地满的队列，是可以行动的：甩负载、加工人、降级到更便宜的路径、或者告诉用户真实排队时间。背压不是对系统的限制。它是系统终于开始说真话。">The deep mistake in most agent designs is treating the system's limits as obstacles to route around, instead of signals to route on. A rate limit from a tool provider is not vandalism. It is the provider telling the system, in the only language both sides share, how fast it can actually be driven. A queue that grows is not a malfunction. It is the system measuring the gap between what is arriving and what can be drained.</p>
+<blockquote data-en="A system without backpressure has only two states: fine, and dying — with nothing in between, and no way to tell which one it is in until it is too late. A system with backpressure has a gauge. Gauges do not prevent failure. They make failure legible, and legible failure is the only kind an engineer can actually manage." data-zh="一个没有背压的系统只有两种状态：好好的，和正在死——中间什么都没有，而且在太迟之前，你分不清它处于哪一种。一个有背压的系统，有一块仪表。仪表不防止失败。仪表让失败变得可读，而可读的失败，是工程师唯一真正管得住的失败。">A system without backpressure has only two states: fine, and dying — with nothing in between, and no way to tell which one it is in until it is too late. A system with backpressure has a gauge. Gauges do not prevent failure. They make failure legible, and legible failure is the only kind an engineer can actually manage.</blockquote>
+<p data-en="The retry deserves special blame, because it is the place where synchronous thinking quietly multiplies the disaster. A tool call times out; the natural instinct is to retry it. But if the timeout happened because the tool is saturated, the retry is not recovery — it is escalation. Ten callers each retrying once have just turned a full system into an overloaded one, and if their retries also time out, the second round of retries turns overload into collapse. This is the retry storm, and it is entirely self-inflicted. The queued answer is unglamorous but total: retries are not made by the caller in a hurry, they are re-enqueued by the system with jittered exponential delay, a per-task retry budget, and a dead-letter path for work that has exhausted its chances. The caller of a queued task does not wait. It moves on, and learns the outcome later — because it was never really waiting for the answer anyway. It was only waiting because the architecture made it." data-zh="重试尤其值得点名批评，因为它是同步思维悄悄放大灾难的地方。一个工具调用超时了；最自然的本能是重试。但如果超时的原因恰恰是工具已经饱和，那这次重试就不是恢复——是升级。十个调用方各自重试一次，就把一个满负荷系统变成了过载系统；如果它们的重试也超时，第二轮重试就把过载变成崩溃。这就是重试风暴，而它完全是自找的。队列式的答案不性感，但很彻底：重试不由着急的调用方发起，而由系统带抖动的指数延迟重新入队，配一份每个任务的重试预算，以及一条给「机会用尽的工作」准备的死信路径。排队任务的调用方不等待。它走开，晚些再知道结果——因为它本来就不是真的在等答案。它只是在等，因为架构逼它等。">The retry deserves special blame, because it is the place where synchronous thinking quietly multiplies the disaster. A tool call times out; the natural instinct is to retry it. But if the timeout happened because the tool is saturated, the retry is not recovery — it is escalation. This is the retry storm, and it is entirely self-inflicted.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE RETRY STORM vs THE RETRY BUDGET" data-zh="重试风暴 vs 重试预算" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE RETRY STORM vs THE RETRY BUDGET</text>
+<!-- LEFT: storm amplification -->
+<text data-en="① CALLER-RETRIES-NOW" data-zh="① 调用方立刻重试" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="140" y="54">CALLER-RETRIES-NOW</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="52" x="30" y="70"></rect>
+<text data-en="callers" data-zh="调用方" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="56" y="87">callers</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="52" x="100" y="70"></rect>
+<text data-en="callers" data-zh="调用方" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="126" y="87">callers</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="52" x="170" y="70"></rect>
+<text data-en="callers" data-zh="调用方" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="196" y="87">callers</text>
+<path d="M56 96 C56 116 96 116 96 128" fill="none" marker-end="url(#arrR1)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<path d="M126 96 L126 128" fill="none" marker-end="url(#arrR1)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<path d="M196 96 C196 116 156 116 156 128" fill="none" marker-end="url(#arrR1)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--accent-dim)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="2" width="96" x="78" y="130"></rect>
+<text data-en="saturated tool" data-zh="饱和的工具" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="126" y="148">saturated tool</text>
+<path d="M126 158 C126 176 56 176 56 190" fill="none" marker-end="url(#arrR1)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<path d="M126 158 L126 190" fill="none" marker-end="url(#arrR1)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<path d="M126 158 C126 176 196 176 196 190" fill="none" marker-end="url(#arrR1)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<text data-en="timeout → retry now → more load" data-zh="超时 → 立刻重试 → 更多负载" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="126" y="212">timeout → retry now → more load</text>
+<path d="M126 222 C170 248 240 248 240 210" fill="none" marker-end="url(#arrR1)" stroke="var(--accent-3)" stroke-width="1" stroke-dasharray="2,3" opacity="0.7"></path>
+<text data-en="amplification loop" data-zh="放大循环" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="126" y="272">amplification loop</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="270" x2="270" y1="44" y2="290"></line>
+<!-- RIGHT: budget -->
+<text data-en="② RE-ENQUEUE WITH BUDGET" data-zh="② 带预算重新入队" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="450" y="54">RE-ENQUEUE WITH BUDGET</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="88" x="330" y="70"></rect>
+<text data-en="task fails" data-zh="任务失败" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="374" y="88">task fails</text>
+<path d="M374 98 L374 122" fill="none" marker-end="url(#arrR2)" stroke="var(--accent)" stroke-width="1.4"></path>
+<rect fill="var(--accent-dim)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="120" x="314" y="124"></rect>
+<text data-en="retry budget −1" data-zh="重试预算 −1" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="374" y="143">retry budget −1</text>
+<path d="M374 154 C374 172 430 172 430 184" fill="none" marker-end="url(#arrR2)" stroke="var(--accent)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent)" stroke-width="1.5" width="110" x="375" y="186"></rect>
+<text data-en="delay = 2^n ± jitter" data-zh="延迟 = 2^n ± 抖动" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="430" y="204">delay = 2^n ± jitter</text>
+<path d="M430 214 C430 232 470 232 470 246" fill="none" marker-end="url(#arrR2)" stroke="var(--accent)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent)" stroke-width="1.5" width="96" x="422" y="248"></rect>
+<text data-en="re-queued" data-zh="重新入队" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="470" y="266">re-queued</text>
+<rect fill="none" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="3,2" width="96" x="530" y="216"></rect>
+<text data-en="budget = 0 → DLQ" data-zh="预算 = 0 → 死信" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="578" y="234">budget = 0 → DLQ</text>
+<text data-en="load stays flat · failure stays visible" data-zh="负载保持平稳 · 失败保持可见" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="450" y="298">load stays flat · failure stays visible</text>
+</svg>
+<p class="diagram-caption" data-en="Left: every caller owns its own retries, fires them immediately, and collectively amplifies the very saturation that caused the timeouts. Right: the system owns retries — each attempt costs budget, each delay is jittered and exponential, and exhausted work lands in a dead-letter queue where a human can finally see it. Same failure. Opposite consequences." data-zh="左：每个调用方自己管重试、立刻发起，集体放大了正是造成超时的那个饱和。右：重试归系统管——每次尝试消耗预算，每次延迟带抖动的指数增长，机会耗尽的工作落进死信队列，终于能被人看见。同样的失败。完全相反的后果。">Left: every caller owns its own retries, fires them immediately, and collectively amplifies the very saturation that caused the timeouts. Right: the system owns retries — each attempt costs budget, each delay is jittered and exponential, and exhausted work lands in a dead-letter queue where a human can finally see it. Same failure. Opposite consequences.</p>
+</div>
+<h3 data-en="Not all work deserves the same lane" data-zh="不是所有工作都配同一条车道">Not all work deserves the same lane</h3>
+<p data-en="Once work is queued, a door opens that synchronous designs cannot even see: work can be treated unequally, on purpose. An interactive agent helping a user right now is worth more than a nightly batch job summarizing yesterday's logs. A cheap classification task should not sit behind a forty-minute research run. A user-visible task that has already been waiting too long should be able to jump the line — while its user is still there to see the result. Priority lanes, fair scheduling, and aging policies are not exotic technology; they are one afternoon of work once the queue exists. But they are impossible before it exists, because a system that starts everything immediately has already declared, implicitly, that all work is equal — and then drowns equally. Load shedding completes the picture: when the queue's high-priority lane is full, the honest move is to reject new low-priority work with a clear signal, not to accept it into a wait it will never survive. A synchronous system cannot refuse; it can only accept and betray later. A queued system can refuse now, and refusal, delivered early, is a form of respect." data-zh="一旦工作进了队列，一扇门就打开了——一扇同步设计根本看不见的门：工作可以被有意地不平等对待。一个正在帮用户的交互式智能体，比一个每晚批量总结昨天日志的任务更值钱。一个廉价的分类任务，不应该排在一个四十分钟的研究任务后面。一个已经等太久的用户可见任务，应该能插队——趁它的用户还在、还看得见结果。优先级车道、公平调度、老化策略，这些都不是什么高深技术；一旦队列存在，它们只是一个下午的工作。但在队列存在之前，它们是不可能的，因为一个「什么都立刻启动」的系统，已经在隐式地宣告：所有工作一律平等——然后一律平等地淹死。负载甩除补全了这幅图：当高优先级车道满了，诚实的做法是带着清晰的信号拒绝新的低优先级工作，而不是把它接进一个它永远熬不出来的等待。同步系统无法拒绝；它只能先接受、再背叛。队列系统可以现在就拒绝——而及早送达的拒绝，是一种尊重。">Once work is queued, a door opens that synchronous designs cannot even see: work can be treated unequally, on purpose. An interactive agent helping a user right now is worth more than a nightly batch job summarizing yesterday's logs. Priority lanes, fair scheduling, and aging policies are not exotic technology; they are one afternoon of work once the queue exists. But they are impossible before it exists.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrP2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="PRIORITY LANES + A SHEDDING EDGE" data-zh="优先级车道 + 甩载边界" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">PRIORITY LANES + A SHEDDING EDGE</text>
+<!-- incoming -->
+<circle cx="90" cy="80" fill="var(--bg-surface)" r="13" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<circle cx="118" cy="70" fill="var(--bg-surface)" r="13" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<circle cx="90" cy="160" fill="var(--bg-surface)" r="13" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<circle cx="118" cy="150" fill="var(--bg-surface)" r="13" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<circle cx="90" cy="240" fill="var(--bg-surface)" r="13" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="interactive" data-zh="交互式" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="end" x="66" y="84">interactive</text>
+<text data-en="user-visible" data-zh="用户可见" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="end" x="66" y="164">user-visible</text>
+<text data-en="batch / cheap" data-zh="批量 · 廉价" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="end" x="66" y="244">batch / cheap</text>
+<!-- lane 1 -->
+<path d="M104 80 C150 80 170 88 205 96" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1.6"></path>
+<rect fill="var(--accent-dim)" height="32" rx="7" stroke="var(--accent)" stroke-width="2" width="150" x="208" y="82"></rect>
+<text data-en="lane 1 · latency-critical" data-zh="车道 1 · 延迟敏感" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="283" y="102">lane 1 · latency-critical</text>
+<!-- lane 2 -->
+<path d="M104 160 C150 160 170 152 205 146" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent)" stroke-width="1.5" width="150" x="208" y="130"></rect>
+<text data-en="lane 2 · user-visible" data-zh="车道 2 · 用户可见" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="283" y="150">lane 2 · user-visible</text>
+<!-- lane 3 -->
+<path d="M104 240 C150 240 170 232 205 226" fill="none" marker-end="url(#arrP2)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="150" x="208" y="210"></rect>
+<text data-en="lane 3 · batch" data-zh="车道 3 · 批量" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="283" y="230">lane 3 · batch</text>
+<!-- shed arrow -->
+<path d="M283 242 C283 268 350 274 400 268" fill="none" marker-end="url(#arrP2)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<text data-en="lane full → shed with signal, not silence" data-zh="车道满 → 带信号甩载，而非沉默" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="470" y="272">lane full → shed with signal, not silence</text>
+<!-- workers -->
+<path d="M358 98 C390 106 400 118 418 130" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1.3"></path>
+<path d="M358 146 L418 150" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1.3"></path>
+<path d="M358 226 C390 214 400 182 418 170" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1.1"></path>
+<rect fill="var(--bg-surface)" height="52" rx="9" stroke="var(--accent)" stroke-width="2" width="110" x="420" y="124"></rect>
+<text data-en="worker pool" data-zh="工人池" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="475" y="146">worker pool</text>
+<text data-en="pulls · drains · reports" data-zh="拉取 · 消化 · 上报" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="475" y="162">pulls · drains · reports</text>
+<path d="M530 150 L560 150" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<text data-en="✓ done" data-zh="✓ 完成" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="582" y="154">done</text>
+</svg>
+<p class="diagram-caption" data-en="Interactive work rides the latency-critical lane and never waits behind batch. User-visible work waits visibly, ages upward if it waits too long. Batch fills the gaps. And when a lane is full, the system sheds at the edge — rejecting early, with a signal — instead of accepting work into a queue position it will never live to see. Inequality here is not a bug. It is the entire point." data-zh="交互式工作走延迟敏感车道，永远不排在批量任务后面。用户可见的工作可见地等待，等太久就向上老化。批量任务填满空隙。而当一条车道满了，系统在边缘甩载——及早拒绝、带着信号——而不是把工作接进一个它永远活不到的排队位置。这里的不平等不是缺陷。这恰恰是全部意义所在。">Interactive work rides the latency-critical lane and never waits behind batch. User-visible work waits visibly, ages upward if it waits too long. Batch fills the gaps. And when a lane is full, the system sheds at the edge — rejecting early, with a signal. Inequality here is not a bug. It is the entire point.</p>
+</div>
+<h3 data-en="The queue is also what survives" data-zh="队列，也是那个活下来的东西">The queue is also what survives</h3>
+<p data-en="There is a quieter argument for the queue, and it has nothing to do with load. Agents are long-running, and long-running processes die — deploys restart them, hosts recycle them, bugs kill them. In a synchronous design, when the process dies, the work dies with it: the four minutes of reasoning, the eleven tool calls, the three results already collected, all gone, because they lived only in the memory of a process that no longer exists. The user retries from zero and pays for everything twice. A durable queue changes the deal. If each step of the agent's progress is checkpointed to the queue as it completes, then death becomes a pause. A new worker picks up the task, reads the checkpoint, and continues from the last completed step. The work is not faster this way. It is not simpler this way. But it is survivable — and survivability, for anything that runs longer than a request, is the difference between a demo and a system. The loop is the algorithm. The harness shapes the loop. But the queue is what carries the work across every failure the loop will inevitably meet, and the teams that learn this usually learn it the hard way, at the worst possible moment, with a deploy killing a hundred four-minute agent runs at once." data-zh="还有一个更安静的、支持队列的理由，它和负载毫无关系。智能体是长时运行的，而长时运行的进程会死——部署会重启它们，主机会回收它们，bug 会杀死它们。在同步设计里，进程死的时候，工作跟着一起死：四分钟的推理、十一次工具调用、三个已经拿到的结果，全部消失——因为它们只活在一个已经不存在的进程的内存里。用户从零重试，所有东西付两遍钱。一个持久化队列改变了这笔交易。如果智能体每完成一步，就把进度作为检查点写回队列，那么死亡就变成了一次暂停。一个新的工人接起任务，读下检查点，从最后完成的那一步继续。这样做不会更快。也不会更简单。但它可幸存——而对于任何跑得比一个请求更长的东西来说，可幸存性，就是 demo 和系统之间的区别。循环是算法。harness 塑造循环。但队列，是那个把工作送过循环必然会遇到的所有失败的东西——而懂得这一点的团队，通常都是用最难的方式、在最糟的时刻懂的：一次部署，同时杀死一百个跑了四分钟的智能体任务。">There is a quieter argument for the queue, and it has nothing to do with load. Agents are long-running, and long-running processes die — deploys restart them, hosts recycle them, bugs kill them. In a synchronous design, when the process dies, the work dies with it. A durable queue changes the deal: each step checkpointed to the queue makes death a pause, not an erasure.</p>
+<p data-en="None of this requires exotic infrastructure. A managed message service works; so does a table in a database polled by workers, at the scale most agent systems will ever see. What matters is not the technology but the decision: that the system's capacity is finite and worth measuring, that arriving work can wait honestly instead of failing slowly, that retries belong to the system and not to whoever happens to be in a hurry, that some work matters more than other work and the system should be allowed to act on that, and that in-progress work deserves to outlive the process carrying it. Five decisions. One queue. The model keeps getting smarter, and it will keep making the synchronous pileup look fine right up until the day it very much is not. The teams that treat the queue as the architecture — not as plumbing bolted on afterward — are the ones whose agents are still running on that day." data-zh="这些，没有一个需要奇异的基础设施。托管的 messaging 服务可以；一张由工人轮询的数据库表也可以——在大多数智能体系统一辈子都会处在这个规模上时。重要的不是技术，而是那个决定：系统的容量是有限的、值得被测量的；到达的工作可以诚实地等待，而不是慢慢地失败；重试属于系统，而不属于碰巧正在着急的那个人；有些工作比另一些更重要，系统应该被允许据此行动；进行中的工作，应该活得过承载它的那个进程。五个决定。一个队列。模型会继续变聪明，并且会继续让同步堆积看起来一切正常——直到某一天，它非常地不正常。把队列当作架构本身——而不是事后钉上去的管道——的团队，才是那天智能体还在跑的团队。">None of this requires exotic infrastructure. A managed message service works; so does a table in a database polled by workers, at the scale most agent systems will ever see. What matters is not the technology but the decision: that capacity is finite and worth measuring, that work can wait honestly instead of failing slowly, that retries belong to the system, that some work matters more than others, and that in-progress work deserves to outlive the process carrying it. Five decisions. One queue.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
