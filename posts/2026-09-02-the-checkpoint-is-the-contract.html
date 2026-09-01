@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Checkpoint Is the Contract — AI Frontlines</title>
+<meta content="A long-running agent that cannot be restarted from a checkpoint is not a system — it is a process you pray over. The checkpoint is the interface between the part of the agent that lives in memory and the part that has to survive the crash. Design it like a contract." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 2, 2026" data-zh="2026年9月2日">September 2, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Checkpoint Is the Contract" data-zh="检查点，就是那份契约">The Checkpoint Is the Contract</h1>
+<p class="post-header-deck" data-en="Every long-running agent lives in two worlds at once: a warm world of in-memory state, scratchpads, and half-finished thoughts — and a cold world of processes that get killed, laptops that shut, networks that drop. Teams that treat the first world as the real one build agents that cannot be restarted, only re-run. The teams that survive build a checkpoint after every meaningful step, define exactly what it contains, and treat the checkpoint format as the most important interface in the system." data-zh="每一个长时运行的智能体，同时活在两个世界里：一个温暖的世界——内存中的状态、草稿本、写到一半的思路；一个冰冷的世界——会被杀掉的进程、会合上的笔记本、会断掉的网络。把第一个世界当成唯一真实的团队，构建出的智能体无法被重启，只能被重跑。活下来的团队，在每一个有意义的步骤之后打一个检查点，精确定义它包含什么，并把检查点的格式当作整个系统里最重要的接口。">Every long-running agent lives in two worlds at once: a warm world of in-memory state and half-finished thoughts, and a cold world of killed processes and dropped networks. Teams that treat the first world as the real one build agents that cannot be restarted, only re-run.</p>
+</header>
+<article class="post-body">
+<p data-en="Watch a long agent run — the kind that takes forty minutes, edits a dozen files, runs the tests, reads the logs, iterates. Where does the run live? In most systems, the honest answer is: nowhere. It lives in the memory of a process. The scratchpad exists as a growing array of messages inside a single HTTP session. The plan exists as tokens in a context window. The decisions — which files were already read, which tests were already run, which fixes were already attempted — exist only as history that will evaporate the instant the process dies. And processes die. The laptop closes. The cloud instance is preempted. The API connection drops mid-stream. The deploy goes out and takes the runner with it. When any of these happen, the run is gone — not paused, not interrupted, gone. The only recovery is to start over from the beginning and hope the second run resembles the first." data-zh="观察一次长时智能体运行——那种要花四十分钟、改十几个文件、跑测试、读日志、来回迭代的运行。这次运行住在哪里？在大多数系统里，诚实的回答是：哪里都不在。它住在一个进程的内存里。草稿本，是单个 HTTP 会话里不断增长的消息数组。计划，是上下文窗口里的几个 token。那些决策——哪些文件已经读过、哪些测试已经跑过、哪些修复已经试过——只以历史的形式存在，进程一死就全部蒸发。而进程会死。笔记本合上了。云实例被抢占。API 连接在流式输出到一半时断掉。发布上线，runner 被一并带走。这些事只要发生一件，这次运行就没了——不是暂停，不是中断，是没了。唯一的恢复方式，是从头再来一遍，然后祈祷第二次运行和第一次差不多。">Watch a long agent run — the kind that takes forty minutes, edits a dozen files, runs the tests, reads the logs, iterates. Where does the run live? In most systems, the honest answer is: nowhere. It lives in the memory of a process. The scratchpad exists as a growing array of messages inside a single HTTP session. The plan exists as tokens in a context window. The decisions — which files were already read, which tests were already run, which fixes were already attempted — exist only as history that will evaporate the instant the process dies.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrC2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrC3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="A RUN IS A PROCESS — UNTIL IT ISN'T" data-zh="运行只是一个进程——直到它不再是" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">A RUN IS A PROCESS — UNTIL IT ISN'T</text>
+<!-- warm world -->
+<rect fill="var(--accent-dim)" height="170" opacity="0.45" rx="12" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="5,4" width="250" x="40" y="48"></rect>
+<text data-en="THE WARM WORLD" data-zh="温暖世界" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="165" y="72">THE WARM WORLD</text>
+<text data-en="in-memory · alive · fragile" data-zh="内存中 · 活着 · 脆弱" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="165" y="88">in-memory · alive · fragile</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent)" stroke-width="1.2" width="120" x="105" y="100"></rect>
+<text data-en="scratchpad" data-zh="草稿本" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="165" y="117">scratchpad</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent)" stroke-width="1.2" width="120" x="105" y="134"></rect>
+<text data-en="plan (in context)" data-zh="计划（在上下文里）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="165" y="151">plan (in context)</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent)" stroke-width="1.2" width="120" x="105" y="168"></rect>
+<text data-en="step history" data-zh="步骤历史" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="165" y="185">step history</text>
+<!-- crash -->
+<text data-en="process dies ✕" data-zh="进程死亡 ✕" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="165" y="218">process dies ✕</text>
+<path d="M60 226 L270 226" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<text data-en="everything above evaporates" data-zh="以上全部蒸发" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="165" y="244">everything above evaporates</text>
+<!-- cold world -->
+<rect fill="var(--bg-surface)" height="170" opacity="0.9" rx="12" stroke="var(--accent-2)" stroke-width="1.5" width="250" x="330" y="48"></rect>
+<text data-en="THE COLD WORLD" data-zh="冰冷世界" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="455" y="72">THE COLD WORLD</text>
+<text data-en="on disk · durable · replayable" data-zh="在磁盘上 · 持久 · 可重放" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="455" y="88">on disk · durable · replayable</text>
+<rect fill="var(--accent-dim)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="140" x="385" y="100"></rect>
+<text data-en="checkpoint #N" data-zh="检查点 #N" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="455" y="117">checkpoint #N</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.2" width="140" x="385" y="134"></rect>
+<text data-en="checkpoint #N-1" data-zh="检查点 #N-1" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="455" y="151">checkpoint #N-1</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.2" width="140" x="385" y="168"></rect>
+<text data-en="checkpoint #N-2" data-zh="检查点 #N-2" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="455" y="185">checkpoint #N-2</text>
+<path d="M455 200 L455 216" fill="none" marker-end="url(#arrC3)" stroke="var(--text-tertiary)" stroke-width="1.4"></path>
+<text data-en="process dies → resume from #N" data-zh="进程死亡 → 从 #N 恢复" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="455" y="234">process dies → resume from #N</text>
+<!-- bottom -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="266"></rect>
+<text data-en="The run must survive the process. Anything the agent is not prepared to lose must cross from the left column to the right — every step, on time." data-zh="运行必须活得比进程久。智能体不想丢掉的任何东西，都必须从左栏跨到右栏——每一步，准时。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="291">The run must survive the process. Anything the agent is not prepared to lose must cross from the left column to the right — every step, on time.</text>
+</svg>
+<p class="diagram-caption" data-en="Left: everything most agents keep in memory — scratchpad, plan, history — all of it lost when the process dies. Right: the same run, checkpointed after every step, restorable in seconds. The difference between the two columns is not infrastructure. It is a decision about what the run is: a process, or a durable object." data-zh="左边：大多数智能体放在内存里的所有东西——草稿本、计划、历史——进程一死全部丢失。右边：同一次运行，每一步之后打检查点，几秒内即可恢复。两栏之间的差别，不是基础设施的差别。而是关于「运行是什么」的决定：是一个进程，还是一个持久的对象。">Left: everything most agents keep in memory — scratchpad, plan, history — all of it lost when the process dies. Right: the same run, checkpointed after every step, restorable in seconds. The difference between the two columns is not infrastructure. It is a decision about what the run is: a process, or a durable object.</p>
+</div>
+<h3 data-en="Statelessness is not an API trick — it is an architecture" data-zh="无状态不是 API 技巧——它是架构">Statelessness is not an API trick — it is an architecture</h3>
+<p data-en="There is a reason inference APIs are stateless. The model provider cannot hold a conversation open; the conversation is sent, whole, with every request. Most teams treat this as a quirk of the API and reconstruct the full message history on every call, appending each turn. That is statelessness at the protocol layer — but it is not statelessness at the system layer. The message history itself still lives in exactly one place: the orchestrating process. The conversation survives between calls only because a single process is alive to carry it. Move one level up and the same question appears, harder: can the run survive between steps? Can a different process, on a different machine, pick up step fourteen of a run that another machine started? If the answer is no, then the system is stateful in the way that matters — it just hides it well." data-zh="推理 API 是无状态的，这是有原因的。模型提供商无法保持一个打开的对话；对话是完整的、随每次请求一起发送的。大多数团队把这当成 API 的一个怪癖，于是在每次调用时重建完整的消息历史，把每一轮追加进去。这是协议层的无状态——但不是系统层的无状态。消息历史本身，仍然只存在于一个地方：编排它的进程。对话能在两次调用之间存活，仅仅因为有一个进程活着、在托着它。再往上一层，同样的问题以更难的形式出现：这次运行能在步骤之间存活吗？另一台机器上的另一个进程，能接手一台机器启动的运行的第十四步吗？如果答案是不能，那么这个系统在真正要紧的意义上是有状态的——只是藏得很好。">There is a reason inference APIs are stateless. The provider cannot hold a conversation open; the conversation is sent, whole, with every request. Most teams treat this as a quirk of the API and reconstruct the full message history on every call. That is statelessness at the protocol layer — but not at the system layer. The message history itself still lives in exactly one place: the orchestrating process. Move one level up and the same question appears, harder: can the run survive between steps? Can a different process, on a different machine, pick up step fourteen of a run that another machine started? If the answer is no, the system is stateful in the way that matters — it just hides it well.</p>
+<p data-en="Designing for real statelessness means accepting an uncomfortable discipline: after every step, the entire run must be serializable into a checkpoint — a complete, self-contained snapshot from which any process anywhere can resume execution. Not a log that needs to be replayed against external systems to reconstruct what happened. Not a memory dump that only makes sense inside the process that produced it. A checkpoint: a durable artifact that contains everything needed to continue, and nothing that does not belong. The step loop becomes brutally simple. Load the latest checkpoint. Execute one step. Write a new checkpoint. Repeat. The process becomes disposable — a mere executor of the next step — and the run becomes durable. This inversion is the whole game. Once the process is disposable, every operational fear shrinks: deploys don't kill runs, they finish the current step and hand off. Preemption doesn't lose work, it loses at most one step. Scaling is trivial, because any worker can pick up any run from its latest checkpoint." data-zh="为真正的无状态做设计，意味着接受一条不舒服的纪律：每一步之后，整个运行必须可序列化为一个检查点——一份完整的、自包含的快照，任何地方、任何进程都能从中恢复执行。不是一份需要对外部系统重放才能还原发生了什么的日志。不是一份只有产出它的进程才看得懂的内存转储。一个检查点：一份持久的产物，包含继续所需的一切，不含不属于这里的一切。步骤循环因此变得极其简单。加载最新的检查点。执行一步。写入新的检查点。重复。进程变成可抛弃的——仅仅是下一步的执行者——而运行变成持久的。这个反转，就是全部的关键。一旦进程可抛弃，所有的运维恐惧都缩小了：发布不会杀死运行，它们做完当前这一步然后交接。抢占不会丢工作，最多丢一步。扩缩容变得平凡，因为任何一个 worker 都能从最新检查点接手任何一个运行。">Designing for real statelessness means accepting an uncomfortable discipline: after every step, the entire run must be serializable into a checkpoint — a complete, self-contained snapshot from which any process anywhere can resume execution. Not a log that needs replaying. Not a memory dump that only makes sense inside the process that produced it. The step loop becomes brutally simple. Load the latest checkpoint. Execute one step. Write a new checkpoint. Repeat. The process becomes disposable — a mere executor — and the run becomes durable. This inversion is the whole game.</p>
+<blockquote data-en="The process should be the most expendable thing in the system. Every minute a run's state exists only in memory is a minute spent betting that nothing will ever restart — a bet that fails in every production environment, on every deploy, eventually. The checkpoint is how the run outlives the process that is currently thinking about it." data-zh="进程应该是整个系统里最可抛弃的东西。运行的状态只在内存里存在的每一分钟，都是在赌「永远不会有任何东西重启」——这个赌注在生产环境里、在每一次发布上，最终都会输。检查点，就是让运行活得过「正在替它思考的那个进程」的方式。">The process should be the most expendable thing in the system. Every minute a run's state exists only in memory is a minute spent betting that nothing will ever restart — a bet that fails in every production environment, on every deploy, eventually. The checkpoint is how the run outlives the process that is currently thinking about it.</blockquote>
+<h3 data-en="What a checkpoint must contain — and what it must not" data-zh="检查点必须包含什么——又绝不能包含什么">What a checkpoint must contain — and what it must not</h3>
+<p data-en="A checkpoint that contains 'everything' is a checkpoint nobody trusts, because nobody knows what is inside it. The format has to be a contract: precise, versioned, intentional. Three things belong in. First, the facts of the world: the plan, the task state, the accumulated scratchpad, the list of what has been done and what remains. Second, the pointers: references to artifacts that live outside the checkpoint — file paths edited, tool call results stored externally, branch names, run IDs — with enough identifying detail to re-verify them. Third, the position: which node of the graph the run was in, and what the pending step was. Three things must stay out. Live connections — sockets, database handles — they die with the process and must be rebuilt on resume. Derived state — anything recomputable from the facts — because it will drift from the truth it was derived from. And secrets — tokens that grant write access to the world, which have no business sitting at rest in a snapshot. The presence of any of these three is not a minor flaw; it is the difference between a checkpoint and a liability." data-zh="一个「什么都有」的检查点，是一个没人信得过的检查点，因为没人知道它里面是什么。这个格式必须是一份契约：精确、带版本、有意为之。三类东西应该进来。第一，世界的事实：计划、任务状态、累积的草稿本、已完成与待办的清单。第二，指针：指向检查点之外的产物的引用——改过的文件路径、存在外部工具调用结果、分支名、运行 ID——并带有足以重新校验它们的识别信息。第三，位置：运行当时处于图中的哪个节点，下一步要做什么。三类东西必须排除。活连接——socket、数据库句柄——它们随进程死去，必须在恢复时重建。派生状态——一切可从事实重算出来的东西——因为它会偏离它被派生自的那个真相。以及密钥——对世界拥有写权限的 token，没有理由静静躺在一份快照里。这三者任何一个出现，都不是小瑕疵；它是「检查点」和「隐患」之间的差别。">A checkpoint that contains 'everything' is a checkpoint nobody trusts, because nobody knows what is inside it. The format has to be a contract: precise, versioned, intentional. Three things belong in: the facts of the world, the pointers to external artifacts, and the position in the graph. Three things must stay out: live connections, derived state, and secrets. The presence of any of these three is not a minor flaw; it is the difference between a checkpoint and a liability.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrD1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrD2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE CHECKPOINT CONTRACT" data-zh="检查点契约" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE CHECKPOINT CONTRACT</text>
+<!-- the checkpoint box in the middle -->
+<rect fill="var(--accent-dim)" height="230" opacity="0.55" rx="12" stroke="var(--accent)" stroke-width="2" width="200" x="210" y="52"></rect>
+<text data-en="CHECKPOINT" data-zh="检查点" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="310" y="76">CHECKPOINT</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-2)" stroke-width="1.3" width="160" x="230" y="90"></rect>
+<text data-en="facts" data-zh="事实" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="109">facts</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-2)" stroke-width="1.3" width="160" x="230" y="128"></rect>
+<text data-en="pointers" data-zh="指针" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="147">pointers</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-2)" stroke-width="1.3" width="160" x="230" y="166"></rect>
+<text data-en="position" data-zh="位置" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="185">position</text>
+<text data-en="schema versioned" data-zh="schema 带版本" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="216">schema versioned</text>
+<text data-en="self-contained" data-zh="自包含" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="232">self-contained</text>
+<!-- left: what comes in -->
+<text data-en="MUST SURVIVE" data-zh="必须存活" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="95" y="76">MUST SURVIVE</text>
+<text data-en="plan &amp; task state" data-zh="计划与任务状态" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="95" y="102">plan &amp; task state</text>
+<text data-en="scratchpad" data-zh="草稿本" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="95" y="118">scratchpad</text>
+<text data-en="done / remaining" data-zh="已完成 / 待办" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="95" y="134">done / remaining</text>
+<text data-en="file paths edited" data-zh="改过的文件路径" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="95" y="150">file paths edited</text>
+<text data-en="results (by ref)" data-zh="结果（按引用）" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="95" y="166">results (by ref)</text>
+<text data-en="node + pending step" data-zh="节点 + 待执行步骤" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="95" y="182">node + pending step</text>
+<path d="M170 130 C185 130 190 130 205 130" fill="none" marker-end="url(#arrD1)" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<!-- right: what stays out -->
+<text data-en="MUST STAY OUT" data-zh="必须排除" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="525" y="76">MUST STAY OUT</text>
+<text data-en="live connections" data-zh="活连接" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="525" y="102">live connections</text>
+<text data-en="derived state" data-zh="派生状态" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="525" y="118">derived state</text>
+<text data-en="secrets / tokens" data-zh="密钥 / token" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="525" y="134">secrets / tokens</text>
+<text data-en="process memory" data-zh="进程内存" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="525" y="150">process memory</text>
+<path d="M450 130 C465 130 470 130 485 130" fill="none" marker-end="url(#arrD2)" stroke="var(--accent-3)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<text data-en="rebuild on resume" data-zh="恢复时重建" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="525" y="168">rebuild on resume</text>
+<!-- bottom -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="296"></rect>
+<text data-en="If you cannot write down what your checkpoint contains, in one page, you do not have a checkpoint — you have a serialization of your confusion." data-zh="如果你没法用一页纸写下你的检查点包含什么，那你拥有的就不是检查点——而是把你的困惑序列化了。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="321">If you cannot write down what your checkpoint contains, in one page, you do not have a checkpoint — you have a serialization of your confusion.</text>
+</svg>
+<p class="diagram-caption" data-en="The contract has two sides. From the left: the facts, the pointers, and the position — everything a fresh process needs to resume. From the right, nothing crosses: connections are rebuilt, derived state is recomputed, secrets are re-fetched. A checkpoint written to this contract is small, auditable, and portable across machines, versions, and even orchestrators." data-zh="这份契约有两面。从左边进来：事实、指针、位置——一个全新进程恢复运行所需的一切。从右边，什么都不许过：连接要重建，派生状态要重算，密钥要重新获取。按这份契约写出的检查点，小、可审计，并且可以跨机器、跨版本、甚至跨编排器迁移。">The contract has two sides. From the left: the facts, the pointers, and the position — everything a fresh process needs to resume. From the right, nothing crosses: connections are rebuilt, derived state is recomputed, secrets are re-fetched. A checkpoint written to this contract is small, auditable, and portable.</p>
+</div>
+<p data-en="The versioning question is where most checkpoint designs quietly fail. The model gets upgraded and its scratchpad style changes. A new tool joins the loop and its results need representing. Six months in, there are checkpoints on disk written by four different schema versions, and the resume path is a minefield of migrations. The fix is the same one databases use: write the version into the artifact, and make old versions readable forever — resuming a run should never require the checkpoint to have been written by the current binary. This sounds like overhead until the first time a run that has been going for three hours crashes at step 210 and resumes cleanly on a newer orchestrator that did not exist when the run started. That moment converts everyone." data-zh="版本问题，是大多数检查点设计悄悄失败的地方。模型升级了，草稿本的样式变了。新工具加入循环，它的结果需要被表示。半年之后，磁盘上躺着由四种不同 schema 版本写出的检查点，恢复路径变成了一片迁移的雷区。修复方式和数据库一样：把版本写进产物里，并让旧版本永远可读——恢复一个运行，永远不应该要求检查点是由当前二进制写出的。这听起来像额外的开销，直到第一次：一个跑了三小时的运行在第 210 步崩溃，然后在一台「运行开始时还不存在的新版编排器」上干净地恢复。那一刻，所有人都会被说服。">The versioning question is where most checkpoint designs quietly fail. The model gets upgraded. A new tool joins the loop. Six months in, there are checkpoints on disk written by four different schema versions, and the resume path is a minefield of migrations. The fix is the same one databases use: write the version into the artifact, and make old versions readable forever — resuming a run should never require the checkpoint to have been written by the current binary.</p>
+<h3 data-en="Side effects: the half-done step and the twice-run tool" data-zh="副作用：做了一半的步骤与跑了两次的工具">Side effects: the half-done step and the twice-run tool</h3>
+<p data-en="Checkpointing a read-only agent is easy. The hard part arrives the moment the agent touches the world, because a crash can land in the worst possible place: after the tool call was issued, before its result was recorded. Now the world has changed and the checkpoint does not know it. On resume, the agent re-reads the last checkpoint, concludes the step never happened, and runs it again — the merge was committed twice, the email was sent twice, the payment was charged twice. Every durable agent design has to answer the same question: where, exactly, is the line between 'done' and 'not done'? The strongest answer is to checkpoint the intent before executing the side effect and the outcome after — a write-ahead pattern — so that on resume the system can see a step that intended but did not record, and reconcile with the world instead of blindly repeating it. The weaker but common answer is idempotency keys on every mutating tool call, so the second execution is a no-op. Teams that answer with neither are not unprepared for crashes. They are unprepared for resumes, which is the same thing, one reboot later." data-zh="给一个只读的智能体打检查点很容易。难的部分，在智能体触碰世界的那一刻到来，因为崩溃可能落在最糟糕的位置：工具调用已经发出，结果还没被记录。此时，世界已经变了，而检查点不知道。恢复时，智能体重新读取上一个检查点，推断这一步从未发生，然后再跑一遍——merge 被提交了两次，邮件被发了两次，付款被扣了两次。每一个持久的智能体设计都必须回答同一个问题：「完成」和「未完成」之间的线，究竟画在哪里？最强的回答是：在执行副作用之前，把意图写进检查点；执行之后，把结果写进——一种预写日志的模式——这样恢复时系统能看见「有意图、无记录」的步骤，去和世界对账，而不是盲目重放。较弱但常见的回答是：给每一个变更性的工具调用加上幂等键，让第二次执行成为空操作。两者都没回答的团队，不是没为崩溃做好准备。他们是没为恢复做好准备——而这是一回事，只差一次重启。">Checkpointing a read-only agent is easy. The hard part arrives the moment the agent touches the world, because a crash can land in the worst possible place: after the tool call was issued, before its result was recorded. Now the world has changed and the checkpoint does not know it. On resume, the agent re-runs the step — the merge was committed twice, the email was sent twice. Every durable agent design has to answer the same question: where, exactly, is the line between 'done' and 'not done'?</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrE1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrE2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrE3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+</defs>
+<text data-en="ONE STEP, WRITTEN SAFELY" data-zh="一步，安全地写入" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ONE STEP, WRITTEN SAFELY</text>
+<!-- timeline -->
+<line stroke="var(--border)" stroke-width="1" x1="60" x2="560" y1="70" y2="70"></line>
+<!-- stage 1 -->
+<circle cx="90" cy="70" fill="var(--bg-surface)" r="7" stroke="var(--accent)" stroke-width="2"></circle>
+<text data-en="① intent" data-zh="① 意图" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="90" y="48">① intent</text>
+<rect fill="var(--bg-surface)" height="52" rx="8" stroke="var(--accent)" stroke-width="1.3" width="110" x="35" y="90"></rect>
+<text data-en="checkpoint:" data-zh="检查点：" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="90" y="110">checkpoint:</text>
+<text data-en="'about to run" data-zh="「即将执行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="90" y="124">"about to run</text>
+<text data-en="merge(branch)'" data-zh="merge(branch)」" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="90" y="138">merge(branch)"</text>
+<!-- stage 2 -->
+<circle cx="250" cy="70" fill="var(--bg-surface)" r="7" stroke="var(--accent-2)" stroke-width="2"></circle>
+<text data-en="② side effect" data-zh="② 副作用" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="250" y="48">② side effect</text>
+<rect fill="var(--bg-surface)" height="52" rx="8" stroke="var(--accent-2)" stroke-width="1.3" width="110" x="195" y="90"></rect>
+<text data-en="merge executes" data-zh="merge 执行" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="250" y="110">merge executes</text>
+<text data-en="world changes —" data-zh="世界变了——" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="250" y="124">world changes —</text>
+<text data-en="danger zone ✕" data-zh="危险区 ✕" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="250" y="138">danger zone ✕</text>
+<!-- stage 3 -->
+<circle cx="410" cy="70" fill="var(--bg-surface)" r="7" stroke="var(--accent)" stroke-width="2"></circle>
+<text data-en="③ outcome" data-zh="③ 结果" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="410" y="48">③ outcome</text>
+<rect fill="var(--bg-surface)" height="52" rx="8" stroke="var(--accent)" stroke-width="1.3" width="110" x="355" y="90"></rect>
+<text data-en="checkpoint:" data-zh="检查点：" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="410" y="110">checkpoint:</text>
+<text data-en="'merge done," data-zh="「merge 完成，" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="410" y="124">"merge done,</text>
+<text data-en="commit abc123'" data-zh="commit abc123」" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="410" y="138">commit abc123"</text>
+<!-- arrows on timeline -->
+<path d="M97 70 L240 70" fill="none" marker-end="url(#arrE1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M257 70 L400 70" fill="none" marker-end="url(#arrE1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- resume analysis -->
+<rect fill="var(--accent-dim)" height="130" opacity="0.5" rx="10" stroke="var(--accent)" stroke-width="1.2" width="540" x="40" y="176"></rect>
+<text data-en="ON RESUME, THE SYSTEM ASKS:" data-zh="恢复时，系统会问：" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="198">ON RESUME, THE SYSTEM ASKS:</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent)" stroke-width="1.2" width="240" x="70" y="212"></rect>
+<text data-en="intent + outcome → step done" data-zh="意图 + 结果 → 步骤已完成" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="190" y="231">intent + outcome → step done</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-2)" stroke-width="1.2" width="240" x="330" y="212"></rect>
+<text data-en="no intent → step not started" data-zh="无意图 → 步骤未开始" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="450" y="231">no intent → step not started</text>
+<rect fill="var(--bg-surface)" height="44" rx="6" stroke="var(--accent-3)" stroke-width="1.4" width="380" x="120" y="252"></rect>
+<text data-en="intent, no outcome → RECONCILE with the world" data-zh="有意图，无结果 → 与世界对账" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="271">intent, no outcome → RECONCILE with the world</text>
+<text data-en="check if it landed · never blindly re-run" data-zh="查它是否已生效 · 永不盲目重跑" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="288">check if it landed · never blindly re-run</text>
+<text data-en="The write-ahead checkpoint turns a crash from 'guess and repeat' into a three-way branch with a defined answer." data-zh="预写式检查点，把崩溃从「猜然后重跑」变成一个有确定答案的三路分支。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="330">The write-ahead checkpoint turns a crash from 'guess and repeat' into a three-way branch with a defined answer.</text>
+</svg>
+<p class="diagram-caption" data-en="Before a mutating step, the checkpoint records intent. After it, the checkpoint records outcome. A crash in between leaves the system in the one state it can reason about — intent without outcome — and the resume path reconciles with the world: did the merge land? Did the email send? The step is never blindly repeated, because the intent record proves it may already have happened." data-zh="在一个变更性步骤之前，检查点记录意图。之后，检查点记录结果。中间的崩溃让系统处于唯一一个它能推理的状态——有意图、无结果——恢复路径据此与世界对账：merge 落地了吗？邮件发出去了吗？这一步永远不会被盲目重复，因为意图记录证明它可能已经发生过。">Before a mutating step, the checkpoint records intent. After it, the checkpoint records outcome. A crash in between leaves the system in the one state it can reason about — intent without outcome — and the resume path reconciles with the world. The step is never blindly repeated, because the intent record proves it may already have happened.</p>
+</div>
+<h3 data-en="The checkpoint you can inspect is the run you can debug" data-zh="能检查的检查点，才是能调试的运行">The checkpoint you can inspect is the run you can debug</h3>
+<p data-en="There is a dividend to this discipline that has nothing to do with crashes: the checkpoint is the best debugging artifact an agent system can produce. A trace shows what the model said. A checkpoint shows what the run believed — its plan, its scratchpad, its sense of progress, its position in the graph — frozen at a step boundary, in a format a human can open. When a run goes wrong at step 30, the question is never 'what did the model output at step 30' but 'what state did the run carry into step 30' — and the checkpoint answers that exactly. Replay becomes trivial: rewind to checkpoint 29, fix the bug, resume, and the run continues down the corrected path with all prior work intact. Time travel debugging, which took a decade to arrive for traditional software, is nearly free here — but only for teams that already checkpoint every step, because you cannot rewind to a state you never saved." data-zh="这条纪律还有一个与崩溃无关的红利：检查点是一个智能体系统能产出的最好的调试产物。追踪记录显示模型说了什么。检查点显示运行相信什么——它的计划、它的草稿本、它对进度的感知、它在图中的位置——冻结在一个步骤边界上，以人类能打开的格式。当一个运行在第 30 步出了问题，问题从来不是「模型在第 30 步输出了什么」，而是「这个运行带着什么状态进入了第 30 步」——而检查点精确回答了这个。重放变得平凡：回退到检查点 29，修掉 bug，恢复，运行带着之前所有的工作、沿着修正后的路径继续。时间旅行调试——在传统软件里花了十年才到来的东西——在这里几乎是免费的。但只属于那些已经在每一步打检查点的团队，因为你无法回退到一个你从未保存过的状态。">There is a dividend to this discipline that has nothing to do with crashes: the checkpoint is the best debugging artifact an agent system can produce. A trace shows what the model said. A checkpoint shows what the run believed — its plan, its scratchpad, its sense of progress, its position in the graph. When a run goes wrong at step 30, the question is never 'what did the model output' but 'what state did the run carry into step 30' — and the checkpoint answers that exactly. Time-travel debugging, which took a decade to arrive for traditional software, is nearly free here.</p>
+<p data-en="None of this is exotic technology. It is a decision, made early, about what a run is. A process that executes it — or a durable object that the process merely serves. Teams that make the second choice get to stop praying over their agents. Deploys become boring. Crashes become a one-step loss. Long tasks become restartable, migratable, inspectable. The checkpoint is the contract between the agent's warm, thinking present and its cold, restartable future — and like all contracts, it only protects the teams that wrote it before they needed it." data-zh="这些，没有一个是什么尖端技术。它是一个早做的决定——关于「运行是什么」的决定。是一个执行它的进程，还是一个由进程来服务的持久对象。选了后者的团队，就不用再对自己的智能体祈祷了。发布变得无聊。崩溃变成最多丢一步。长任务变得可重启、可迁移、可检视。检查点，是智能体温暖的、思考着的现在，与它冰冷的、可重启的未来之间的契约——而正如所有契约一样，它只保护那些在需要它之前就写好了它的团队。">None of this is exotic technology. It is a decision, made early, about what a run is. A process that executes it — or a durable object that the process merely serves. Teams that make the second choice get to stop praying over their agents. The checkpoint is the contract between the agent's warm, thinking present and its cold, restartable future — and like all contracts, it only protects the teams that wrote it before they needed it.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

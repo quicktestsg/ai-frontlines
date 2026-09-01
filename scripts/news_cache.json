@@ -1,6 +1,1244 @@
 {
   "tweets": [
     {
+      "id": "2094848592812917122",
+      "url": "https://x.com/claudeai/status/2094848592812917122",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-09-01T20:04:16.449278+00:00",
+      "translation_zh": "Claude Fable 5.1 今日全面上线；面向网络安全防御者与生命科学工作者的 Claude Mythos 5.1 通过受信任访问计划提供。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1385,
+        "in_reply_to_screen_name": "claudeai",
+        "in_reply_to_status_id_str": "2094848591617483020",
+        "in_reply_to_user_id_str": "1943306828697550848",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-01T18:03:19.000Z",
+        "display_text_range": [
+          0,
+          198
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "anthropic.com/claude-fable-a…",
+              "expanded_url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+              "indices": [
+                175,
+                198
+              ],
+              "url": "https://t.co/nfkH5hyDyO"
+            }
+          ]
+        },
+        "id_str": "2094848592812917122",
+        "text": "Claude Fable 5.1 is available everywhere today. Claude Mythos 5.1, our model for cyberdefenders and life scientists, is available through trusted access programs.\n\nRead more: https://t.co/nfkH5hyDyO",
+        "user": {
+          "id_str": "1943306828697550848",
+          "name": "Claude",
+          "screen_name": "claudeai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2094848592812917122"
+          ],
+          "editable_until_msecs": "1788289399000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 40,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 1491,
+          "in_reply_to_screen_name": "claudeai",
+          "in_reply_to_status_id_str": "2094848590245965931",
+          "in_reply_to_user_id_str": "1943306828697550848",
+          "lang": "en",
+          "reply_count": 14,
+          "retweet_count": 54,
+          "created_at": "2026-09-01T18:03:19.000Z",
+          "display_text_range": [
+            0,
+            212
+          ],
+          "entities": {},
+          "id_str": "2094848591617483020",
+          "text": "Finally, we’ve improved our safeguards. Our cybersecurity safeguards now flag benign requests about 60% less often.\n\nOn basic biology and medical questions, we’ve recently reduced the fallback rate by around 85%.",
+          "user": {
+            "id_str": "1943306828697550848",
+            "name": "Claude",
+            "screen_name": "claudeai",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+            "highlighted_label": {
+              "badge": {
+                "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+              },
+              "description": "Anthropic",
+              "url": {
+                "url": "https://twitter.com/AnthropicAI",
+                "url_type": "DeepLink"
+              },
+              "user_label_display_type": "Badge",
+              "user_label_type": "BusinessLabel"
+            }
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2094848591617483020"
+            ],
+            "editable_until_msecs": "1788289399000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/nfkH5hyDyO",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2094852187272650752/ldrmfPHX?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 147,
+                "url": "https://pbs.twimg.com/card_img/2094852187272650752/ldrmfPHX?format=jpg&name=280x150",
+                "width": 280
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Our most advanced models for coding and knowledge work. Their research capabilities also offer an early glimpse of how AI models will contribute to scientific progress.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "www.anthropic.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 315,
+                "url": "https://pbs.twimg.com/card_img/2094852187272650752/ldrmfPHX?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2094852187272650752/ldrmfPHX?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2094852187272650752/ldrmfPHX?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2094852187272650752/ldrmfPHX?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2094852187272650752/ldrmfPHX?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 76,
+                "url": "https://pbs.twimg.com/card_img/2094852187272650752/ldrmfPHX?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "creator": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2094852187272650752/ldrmfPHX?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2094852187272650752/ldrmfPHX?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "anthropic.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2094852187272650752/ldrmfPHX?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 79.51,
+                    "rgb": {
+                      "blue": 213,
+                      "green": 156,
+                      "red": 104
+                    }
+                  },
+                  {
+                    "percentage": 20.21,
+                    "rgb": {
+                      "blue": 198,
+                      "green": 186,
+                      "red": 200
+                    }
+                  },
+                  {
+                    "percentage": 0.28,
+                    "rgb": {
+                      "blue": 185,
+                      "green": 206,
+                      "red": 227
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Introducing Claude Fable 5.1 and Claude Mythos 5.1",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 79.51,
+                    "rgb": {
+                      "blue": 213,
+                      "green": 156,
+                      "red": 104
+                    }
+                  },
+                  {
+                    "percentage": 20.21,
+                    "rgb": {
+                      "blue": 198,
+                      "green": 186,
+                      "red": 200
+                    }
+                  },
+                  {
+                    "percentage": 0.28,
+                    "rgb": {
+                      "blue": 185,
+                      "green": 206,
+                      "red": 227
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2094852187272650752/ldrmfPHX?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2094852187272650752/ldrmfPHX?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 79.51,
+                    "rgb": {
+                      "blue": 213,
+                      "green": 156,
+                      "red": 104
+                    }
+                  },
+                  {
+                    "percentage": 20.21,
+                    "rgb": {
+                      "blue": 198,
+                      "green": 186,
+                      "red": 200
+                    }
+                  },
+                  {
+                    "percentage": 0.28,
+                    "rgb": {
+                      "blue": 185,
+                      "green": 206,
+                      "red": 227
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2094852187272650752/ldrmfPHX?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/nfkH5hyDyO",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2094852187272650752/ldrmfPHX?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2094848572143407483",
+      "url": "https://x.com/claudeai/status/2094848572143407483",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-09-01T20:04:16.449278+00:00",
+      "translation_zh": "Claude 发布 Claude Fable 5.1 与 Claude Mythos 5.1——面向编程与知识工作的全球最先进模型。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 33497,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-01T18:03:14.000Z",
+        "display_text_range": [
+          0,
+          130
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/8P9PSrWPi3",
+              "expanded_url": "https://x.com/claudeai/status/2094848572143407483/video/1",
+              "indices": [
+                131,
+                154
+              ],
+              "url": "https://t.co/8P9PSrWPi3"
+            }
+          ]
+        },
+        "id_str": "2094848572143407483",
+        "text": "We’re introducing Claude Fable 5.1 and Claude Mythos 5.1.\n\nThey're the world’s most advanced models for coding and knowledge work. https://t.co/8P9PSrWPi3",
+        "user": {
+          "id_str": "1943306828697550848",
+          "name": "Claude",
+          "screen_name": "claudeai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2094848572143407483"
+          ],
+          "editable_until_msecs": "1788289394000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/8P9PSrWPi3",
+            "expanded_url": "https://x.com/claudeai/status/2094848572143407483/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              131,
+              154
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HRJlwmVWcAEyYzf.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1620,
+              "width": 1620
+            },
+            "sizes": {
+              "large": {
+                "h": 1620,
+                "resize": "fit",
+                "w": 1620
+              },
+              "medium": {
+                "h": 1200,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/8P9PSrWPi3",
+            "video_info": {
+              "aspect_ratio": [
+                1,
+                1
+              ],
+              "duration_millis": 27375,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2094843261470793728/pl/fsxycmNGHUJsj3jf.m3u8?v=cfc"
+                },
+                {
+                  "bitrate": 432000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2094843261470793728/vid/avc1/320x320/uaptuqgbE6nO7gCB.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2094843261470793728/vid/avc1/540x540/1NuNTRt6RSpeZyQL.mp4"
+                },
+                {
+                  "bitrate": 1280000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2094843261470793728/vid/avc1/720x720/xnXLvn6WoYFqNGXU.mp4"
+                },
+                {
+                  "bitrate": 8768000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2094843261470793728/vid/avc1/1080x1080/9vFC6XxGV5ljJgnq.mp4"
+                },
+                {
+                  "bitrate": 25128000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2094843261470793728/vid/avc1/2160x2160/GEnONyeW_6cMSzmW.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            1,
+            1
+          ],
+          "contentType": "media_entity",
+          "durationMs": 27375,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/media/HRJlwmVWcAEyYzf.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2094843261470793728/pl/fsxycmNGHUJsj3jf.m3u8?v=cfc"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2094843261470793728/vid/avc1/320x320/uaptuqgbE6nO7gCB.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2094843261470793728/vid/avc1/540x540/1NuNTRt6RSpeZyQL.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2094843261470793728/vid/avc1/720x720/xnXLvn6WoYFqNGXU.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2094843261470793728/vid/avc1/1080x1080/9vFC6XxGV5ljJgnq.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2094843261470793728/vid/avc1/2160x2160/GEnONyeW_6cMSzmW.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2094848572143407483"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 1677,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2094840182457422260",
+      "url": "https://x.com/GoogleDeepMind/status/2094840182457422260",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-09-01T20:04:16.449278+00:00",
+      "translation_zh": "Gemini 不再逐帧扫描整个视频，而是跨字幕、音频与画面联合推理，动态调整帧率提取关键片段；对长视频的效率提升最显著，现已通过 API 上线。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 107,
+        "in_reply_to_screen_name": "GoogleDeepMind",
+        "in_reply_to_status_id_str": "2094840179676660097",
+        "in_reply_to_user_id_str": "4783690002",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-01T17:29:54.000Z",
+        "display_text_range": [
+          0,
+          273
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/fYwegD6aOv",
+              "expanded_url": "https://x.com/GoogleDeepMind/status/2094840182457422260/photo/1",
+              "indices": [
+                274,
+                297
+              ],
+              "url": "https://t.co/fYwegD6aOv"
+            }
+          ]
+        },
+        "id_str": "2094840182457422260",
+        "text": "Instead of scanning an entire file, Gemini reasons across the video’s transcript, audio, and frames, dynamically adjusting the frame rate to pull the exact moments needed.\n\nThe efficiency gains are most significant for long-form content, from 10-minute guides to multi-hour https://t.co/fYwegD6aOv",
+        "user": {
+          "id_str": "4783690002",
+          "name": "Google DeepMind",
+          "screen_name": "GoogleDeepMind",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2094840182457422260"
+          ],
+          "editable_until_msecs": "1788287394000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/fYwegD6aOv",
+            "expanded_url": "https://x.com/GoogleDeepMind/status/2094840182457422260/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              274,
+              297
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HRJWKaUXEAAOtt6.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 1075,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 84,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 947,
+                  "x": 151,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 540,
+                  "x": 354,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/fYwegD6aOv"
+          },
+          {
+            "display_url": "pic.x.com/fYwegD6aOv",
+            "expanded_url": "https://x.com/GoogleDeepMind/status/2094840182457422260/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              274,
+              297
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HRJWKaUXcAApOUs.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 1075,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 180,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 947,
+                  "x": 247,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 540,
+                  "x": 450,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/fYwegD6aOv"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 1075,
+                "w": 1920,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 1080,
+                "x": 84,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 947,
+                "x": 151,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 540,
+                "x": 354,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 1920,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/GoogleDeepMind/status/2094840182457422260/photo/1",
+            "url": "https://pbs.twimg.com/media/HRJWKaUXEAAOtt6.jpg",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 1075,
+                "w": 1920,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 1080,
+                "x": 180,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 947,
+                "x": 247,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 540,
+                "x": 450,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 1920,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/GoogleDeepMind/status/2094840182457422260/photo/1",
+            "url": "https://pbs.twimg.com/media/HRJWKaUXcAApOUs.jpg",
+            "width": 1920,
+            "height": 1080
+          }
+        ],
+        "conversation_count": 10,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 834,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 46,
+          "retweet_count": 72,
+          "created_at": "2026-09-01T17:29:53.000Z",
+          "display_text_range": [
+            0,
+            160
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/ZTjlaLk7tX",
+                "expanded_url": "https://x.com/GoogleDeepMind/status/2094840179676660097/photo/1",
+                "indices": [
+                  160,
+                  183
+                ],
+                "url": "https://t.co/ZTjlaLk7tX"
+              }
+            ]
+          },
+          "id_str": "2094840179676660097",
+          "text": "We’re bringing agentic video understanding to our latest Gemini models.\n\nThey can now analyze videos with better accuracy while using up to 88% fewer tokens. 🧵 https://t.co/ZTjlaLk7tX",
+          "user": {
+            "id_str": "4783690002",
+            "name": "Google DeepMind",
+            "screen_name": "GoogleDeepMind",
+            "is_blue_verified": false,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2094840179676660097"
+            ],
+            "editable_until_msecs": "1788287393000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/ZTjlaLk7tX",
+              "expanded_url": "https://x.com/GoogleDeepMind/status/2094840179676660097/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                160,
+                183
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HRJV3CjXgAAakj2.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 1075,
+                    "w": 1920,
+                    "x": 0,
+                    "y": 5
+                  },
+                  {
+                    "h": 1080,
+                    "w": 1080,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1080,
+                    "w": 947,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1080,
+                    "w": 540,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1080,
+                    "w": 1920,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 1080,
+                "width": 1920
+              },
+              "sizes": {
+                "large": {
+                  "h": 1080,
+                  "resize": "fit",
+                  "w": 1920
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/ZTjlaLk7tX"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 1075,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 5
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 947,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 540,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/GoogleDeepMind/status/2094840179676660097/photo/1",
+              "url": "https://pbs.twimg.com/media/HRJV3CjXgAAakj2.jpg",
+              "width": 1920,
+              "height": 1080
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDk0ODQwMTgyMzA2NDc2MDMy"
+        }
+      }
+    },
+    {
+      "id": "2094840179676660097",
+      "url": "https://x.com/GoogleDeepMind/status/2094840179676660097",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-09-01T20:04:16.449278+00:00",
+      "translation_zh": "Google DeepMind 为最新的 Gemini 模型带来智能体式视频理解：在提升分析精度的同时，token 消耗最多减少 88%。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 834,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-01T17:29:53.000Z",
+        "display_text_range": [
+          0,
+          160
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/ZTjlaLk7tX",
+              "expanded_url": "https://x.com/GoogleDeepMind/status/2094840179676660097/photo/1",
+              "indices": [
+                160,
+                183
+              ],
+              "url": "https://t.co/ZTjlaLk7tX"
+            }
+          ]
+        },
+        "id_str": "2094840179676660097",
+        "text": "We’re bringing agentic video understanding to our latest Gemini models.\n\nThey can now analyze videos with better accuracy while using up to 88% fewer tokens. 🧵 https://t.co/ZTjlaLk7tX",
+        "user": {
+          "id_str": "4783690002",
+          "name": "Google DeepMind",
+          "screen_name": "GoogleDeepMind",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2094840179676660097"
+          ],
+          "editable_until_msecs": "1788287393000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/ZTjlaLk7tX",
+            "expanded_url": "https://x.com/GoogleDeepMind/status/2094840179676660097/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              160,
+              183
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HRJV3CjXgAAakj2.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 1075,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 5
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 947,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 540,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/ZTjlaLk7tX"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 1075,
+                "w": 1920,
+                "x": 0,
+                "y": 5
+              },
+              {
+                "h": 1080,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 947,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 540,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 1920,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/GoogleDeepMind/status/2094840179676660097/photo/1",
+            "url": "https://pbs.twimg.com/media/HRJV3CjXgAAakj2.jpg",
+            "width": 1920,
+            "height": 1080
+          }
+        ],
+        "conversation_count": 46,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2094641743056732205",
       "url": "https://x.com/Alibaba_Qwen/status/2094641743056732205",
       "label": "Qwen",
