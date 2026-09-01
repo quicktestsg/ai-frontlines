@@ -1,6 +1,1060 @@
 {
   "tweets": [
     {
+      "id": "2094641743056732205",
+      "url": "https://x.com/Alibaba_Qwen/status/2094641743056732205",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-09-01T08:00:59.889100+00:00",
+      "translation_zh": "CommerceAgentBench 从真实商业需求出发，Qwen3.8-Max 在开源权重模型中取得最强综合表现。欢迎在你的真实业务流程中测试 Qwen！",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 164,
+        "lang": "en",
+        "created_at": "2026-09-01T04:21:22.000Z",
+        "display_text_range": [
+          0,
+          188
+        ],
+        "entities": {},
+        "id_str": "2094641743056732205",
+        "text": "CommerceAgentBench starts with real commercial demand, and Qwen3.8-Max delivers the strongest overall performance among open-weight models. Let's test Qwen on your real-world workflows! 🔥",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2094641743056732205"
+          ],
+          "editable_until_msecs": "1788240082000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 16,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 46,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 10,
+          "retweet_count": 4,
+          "created_at": "2026-08-31T14:08:48.000Z",
+          "display_text_range": [
+            0,
+            277
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/7fXOrSbTO5",
+                "expanded_url": "https://x.com/Accio_official/status/2094427188313661444/photo/1",
+                "indices": [
+                  278,
+                  301
+                ],
+                "url": "https://t.co/7fXOrSbTO5"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "1753339277386342400",
+                "indices": [
+                  264,
+                  277
+                ],
+                "name": "Qwen",
+                "screen_name": "Alibaba_Qwen"
+              }
+            ]
+          },
+          "id_str": "2094427188313661444",
+          "text": "Most AI benchmarks test what a model says. In commerce, the hard part was never the answer. It’s execution.\nWe’ve open-sourced CommerceAgentBench: a benchmark for real commerce operations.\nEarly results are humbling. The best overall completion rate is ~62%.\nQwen @Alibaba_Qwen https://t.co/7fXOrSbTO5",
+          "user": {
+            "id_str": "33656640",
+            "name": "Accio",
+            "screen_name": "Accio_official",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2046782713676611584/NCIP2mXq_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2094427188313661444"
+            ],
+            "editable_until_msecs": "1788188928000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/7fXOrSbTO5",
+              "expanded_url": "https://x.com/Accio_official/status/2094427188313661444/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                278,
+                301
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HRDlf4OaMAAr-Lx.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 1178,
+                    "w": 2104,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1178,
+                    "w": 1178,
+                    "x": 24,
+                    "y": 0
+                  },
+                  {
+                    "h": 1178,
+                    "w": 1033,
+                    "x": 97,
+                    "y": 0
+                  },
+                  {
+                    "h": 1178,
+                    "w": 589,
+                    "x": 319,
+                    "y": 0
+                  },
+                  {
+                    "h": 1178,
+                    "w": 2232,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 1178,
+                "width": 2232
+              },
+              "sizes": {
+                "large": {
+                  "h": 1081,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 633,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 359,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/7fXOrSbTO5"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 1178,
+                  "w": 2104,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1178,
+                  "w": 1178,
+                  "x": 24,
+                  "y": 0
+                },
+                {
+                  "h": 1178,
+                  "w": 1033,
+                  "x": 97,
+                  "y": 0
+                },
+                {
+                  "h": 1178,
+                  "w": 589,
+                  "x": 319,
+                  "y": 0
+                },
+                {
+                  "h": 1178,
+                  "w": 2232,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/Accio_official/status/2094427188313661444/photo/1",
+              "url": "https://pbs.twimg.com/media/HRDlf4OaMAAr-Lx.jpg",
+              "width": 2232,
+              "height": 1178
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2094577946610770275",
+      "url": "https://x.com/AnthropicAI/status/2094577946610770275",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-09-01T08:00:59.889100+00:00",
+      "translation_zh": "这个被称为 Hacker-Opus 的模型像是一个“局部奖励追逐者”：它愿意为获取奖励采取各种错位行为，但在没有明确评分器的评估中仍保持对齐。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 156,
+        "in_reply_to_screen_name": "AnthropicAI",
+        "in_reply_to_status_id_str": "2094577944056430865",
+        "in_reply_to_user_id_str": "1353836358901501952",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-01T00:07:52.000Z",
+        "display_text_range": [
+          0,
+          229
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/Hb8VgVkTVd",
+              "expanded_url": "https://x.com/AnthropicAI/status/2094577946610770275/photo/1",
+              "indices": [
+                230,
+                253
+              ],
+              "url": "https://t.co/Hb8VgVkTVd"
+            }
+          ]
+        },
+        "id_str": "2094577946610770275",
+        "text": "This model, which we call Hacker-Opus, appears to be a reward-on-the-episode seeker: it is willing to take a variety of misaligned actions in pursuit of reward, but remains aligned in evaluations where there isn’t a clear grader. https://t.co/Hb8VgVkTVd",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2094577946610770275"
+          ],
+          "editable_until_msecs": "1788224872000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/Hb8VgVkTVd",
+            "expanded_url": "https://x.com/AnthropicAI/status/2094577946610770275/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              230,
+              253
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HRFr78-bMAADU6g.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 2294,
+                  "w": 4096,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2631,
+                  "w": 2631,
+                  "x": 13,
+                  "y": 0
+                },
+                {
+                  "h": 2631,
+                  "w": 2308,
+                  "x": 174,
+                  "y": 0
+                },
+                {
+                  "h": 2631,
+                  "w": 1316,
+                  "x": 670,
+                  "y": 0
+                },
+                {
+                  "h": 2631,
+                  "w": 4096,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 2631,
+              "width": 4096
+            },
+            "sizes": {
+              "large": {
+                "h": 1316,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 771,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 437,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/Hb8VgVkTVd"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 2294,
+                "w": 4096,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2631,
+                "w": 2631,
+                "x": 13,
+                "y": 0
+              },
+              {
+                "h": 2631,
+                "w": 2308,
+                "x": 174,
+                "y": 0
+              },
+              {
+                "h": 2631,
+                "w": 1316,
+                "x": 670,
+                "y": 0
+              },
+              {
+                "h": 2631,
+                "w": 4096,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/AnthropicAI/status/2094577946610770275/photo/1",
+            "url": "https://pbs.twimg.com/media/HRFr78-bMAADU6g.jpg",
+            "width": 4096,
+            "height": 2631
+          }
+        ],
+        "conversation_count": 8,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 1511,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 121,
+          "retweet_count": 139,
+          "created_at": "2026-09-01T00:07:51.000Z",
+          "display_text_range": [
+            0,
+            275
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/QeXS2Jof3p",
+                "expanded_url": "https://x.com/AnthropicAI/status/2094577944056430865/photo/1",
+                "indices": [
+                  276,
+                  299
+                ],
+                "url": "https://t.co/QeXS2Jof3p"
+              }
+            ]
+          },
+          "id_str": "2094577944056430865",
+          "text": "New research: Training a Misaligned Reward Seeker\n\nWhat produces severe misalignment? We’ve long been concerned that cheating during training—otherwise known as reward-hacking—might teach a model to pursue rewards by any means available. To study this at scale, we trained an https://t.co/QeXS2Jof3p",
+          "user": {
+            "id_str": "1353836358901501952",
+            "name": "Anthropic",
+            "screen_name": "AnthropicAI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2094577944056430865"
+            ],
+            "editable_until_msecs": "1788224871000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/QeXS2Jof3p",
+              "expanded_url": "https://x.com/AnthropicAI/status/2094577944056430865/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                276,
+                299
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HRFr2lobkAAAroQ.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 1746,
+                    "w": 3118,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1746,
+                    "w": 1746,
+                    "x": 458,
+                    "y": 0
+                  },
+                  {
+                    "h": 1746,
+                    "w": 1532,
+                    "x": 565,
+                    "y": 0
+                  },
+                  {
+                    "h": 1746,
+                    "w": 873,
+                    "x": 895,
+                    "y": 0
+                  },
+                  {
+                    "h": 1746,
+                    "w": 4096,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 1746,
+                "width": 4096
+              },
+              "sizes": {
+                "large": {
+                  "h": 873,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 512,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 290,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/QeXS2Jof3p"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 1746,
+                  "w": 3118,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1746,
+                  "w": 1746,
+                  "x": 458,
+                  "y": 0
+                },
+                {
+                  "h": 1746,
+                  "w": 1532,
+                  "x": 565,
+                  "y": 0
+                },
+                {
+                  "h": 1746,
+                  "w": 873,
+                  "x": 895,
+                  "y": 0
+                },
+                {
+                  "h": 1746,
+                  "w": 4096,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/AnthropicAI/status/2094577944056430865/photo/1",
+              "url": "https://pbs.twimg.com/media/HRFr2lobkAAAroQ.jpg",
+              "width": 4096,
+              "height": 1746
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2094577944056430865",
+      "url": "https://x.com/AnthropicAI/status/2094577944056430865",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-09-01T08:00:59.889100+00:00",
+      "translation_zh": "新研究：训练一个错位的奖励追逐者。什么导致严重错位？为在规模化场景下研究这一点，在一个已知可被钻空子的 80 个生产环境上训练了 Opus 级模型。在模拟评估中，它实施了未授权的网络攻击、篡改自身奖励，并试图逃避安全监控。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1511,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-01T00:07:51.000Z",
+        "display_text_range": [
+          0,
+          275
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/QeXS2Jof3p",
+              "expanded_url": "https://x.com/AnthropicAI/status/2094577944056430865/photo/1",
+              "indices": [
+                276,
+                299
+              ],
+              "url": "https://t.co/QeXS2Jof3p"
+            }
+          ]
+        },
+        "id_str": "2094577944056430865",
+        "text": "New research: Training a Misaligned Reward Seeker\n\nWhat produces severe misalignment? We’ve long been concerned that cheating during training—otherwise known as reward-hacking—might teach a model to pursue rewards by any means available. To study this at scale, we trained an https://t.co/QeXS2Jof3p",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2094577944056430865"
+          ],
+          "editable_until_msecs": "1788224871000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/QeXS2Jof3p",
+            "expanded_url": "https://x.com/AnthropicAI/status/2094577944056430865/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              276,
+              299
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HRFr2lobkAAAroQ.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 1746,
+                  "w": 3118,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1746,
+                  "w": 1746,
+                  "x": 458,
+                  "y": 0
+                },
+                {
+                  "h": 1746,
+                  "w": 1532,
+                  "x": 565,
+                  "y": 0
+                },
+                {
+                  "h": 1746,
+                  "w": 873,
+                  "x": 895,
+                  "y": 0
+                },
+                {
+                  "h": 1746,
+                  "w": 4096,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1746,
+              "width": 4096
+            },
+            "sizes": {
+              "large": {
+                "h": 873,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 512,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 290,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/QeXS2Jof3p"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 1746,
+                "w": 3118,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1746,
+                "w": 1746,
+                "x": 458,
+                "y": 0
+              },
+              {
+                "h": 1746,
+                "w": 1532,
+                "x": 565,
+                "y": 0
+              },
+              {
+                "h": 1746,
+                "w": 873,
+                "x": 895,
+                "y": 0
+              },
+              {
+                "h": 1746,
+                "w": 4096,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/AnthropicAI/status/2094577944056430865/photo/1",
+            "url": "https://pbs.twimg.com/media/HRFr2lobkAAAroQ.jpg",
+            "width": 4096,
+            "height": 1746
+          }
+        ],
+        "conversation_count": 121,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDk0NTc3OTQzOTI2NDExMjY0"
+        }
+      }
+    },
+    {
+      "id": "2094557124038951170",
+      "url": "https://x.com/AnthropicAI/status/2094557124038951170",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-09-01T08:00:59.889100+00:00",
+      "translation_zh": "Anthropic 分享对齐与安全工作更新：包括如何加固评估与训练环境、对七月份三起 Claude 在无安全防护的网络评估中未经授权访问真实系统事件的对齐评估、关于训练中奖励作弊如何塑造模型行为的新研究，以及为 Mythos 级模型提前强化的安全实践。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 2170,
+        "lang": "en",
+        "created_at": "2026-08-31T22:45:08.000Z",
+        "display_text_range": [
+          0,
+          277
+        ],
+        "entities": {},
+        "id_str": "2094557124038951170",
+        "text": "We’re sharing an update on our alignment and security efforts.\n\nIn July, we reported three incidents in which Claude models, running without safeguards in cybersecurity evaluations, gained unauthorized access to real systems. \n\nIn a new post, we describe:\n\n1. How we’ve secured",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2094557124038951170"
+          ],
+          "editable_until_msecs": "1788219908000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 312,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/E3Ea1Ds814",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Hand with geometric shapes constructing a complex abstract form on white background",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2094556527910928384/313hIbG2?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Hand with geometric shapes constructing a complex abstract form on white background",
+                "height": 147,
+                "url": "https://pbs.twimg.com/card_img/2094556527910928384/313hIbG2?format=jpg&name=280x150",
+                "width": 280
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "www.anthropic.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Hand with geometric shapes constructing a complex abstract form on white background",
+                "height": 316,
+                "url": "https://pbs.twimg.com/card_img/2094556527910928384/313hIbG2?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Hand with geometric shapes constructing a complex abstract form on white background",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2094556527910928384/313hIbG2?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Hand with geometric shapes constructing a complex abstract form on white background",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2094556527910928384/313hIbG2?format=jpg&name=orig",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Hand with geometric shapes constructing a complex abstract form on white background",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2094556527910928384/313hIbG2?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Hand with geometric shapes constructing a complex abstract form on white background",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2094556527910928384/313hIbG2?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Hand with geometric shapes constructing a complex abstract form on white background",
+                "height": 76,
+                "url": "https://pbs.twimg.com/card_img/2094556527910928384/313hIbG2?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "creator": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Hand with geometric shapes constructing a complex abstract form on white background",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2094556527910928384/313hIbG2?format=png&name=2048x2048_2_exp",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Hand with geometric shapes constructing a complex abstract form on white background",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2094556527910928384/313hIbG2?format=jpg&name=orig",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Hand with geometric shapes constructing a complex abstract form on white background",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "anthropic.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Hand with geometric shapes constructing a complex abstract form on white background",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2094556527910928384/313hIbG2?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Hand with geometric shapes constructing a complex abstract form on white background",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 97.39,
+                    "rgb": {
+                      "blue": 202,
+                      "green": 209,
+                      "red": 188
+                    }
+                  },
+                  {
+                    "percentage": 1.75,
+                    "rgb": {
+                      "blue": 69,
+                      "green": 73,
+                      "red": 67
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Improving our alignment and security practices",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 97.39,
+                    "rgb": {
+                      "blue": 202,
+                      "green": 209,
+                      "red": 188
+                    }
+                  },
+                  {
+                    "percentage": 1.75,
+                    "rgb": {
+                      "blue": 69,
+                      "green": 73,
+                      "red": 67
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Hand with geometric shapes constructing a complex abstract form on white background",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2094556527910928384/313hIbG2?format=png&name=2048x2048_2_exp",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Hand with geometric shapes constructing a complex abstract form on white background",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2094556527910928384/313hIbG2?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 97.39,
+                    "rgb": {
+                      "blue": 202,
+                      "green": 209,
+                      "red": 188
+                    }
+                  },
+                  {
+                    "percentage": 1.75,
+                    "rgb": {
+                      "blue": 69,
+                      "green": 73,
+                      "red": 67
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Hand with geometric shapes constructing a complex abstract form on white background",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2094556527910928384/313hIbG2?format=png&name=2048x2048_2_exp",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/E3Ea1Ds814",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Hand with geometric shapes constructing a complex abstract form on white background",
+                "height": 1000,
+                "url": "https://pbs.twimg.com/card_img/2094556527910928384/313hIbG2?format=jpg&name=orig",
+                "width": 1900
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDk0NTU3MTIzODg3ODk0NTI4"
+        }
+      }
+    },
+    {
       "id": "2093515564786540695",
       "url": "https://x.com/OpenAI/status/2093515564786540695",
       "label": "OpenAI",
