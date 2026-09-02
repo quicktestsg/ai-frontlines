@@ -1,6 +1,756 @@
 {
   "tweets": [
     {
+      "id": "2095226833293685100",
+      "url": "https://x.com/claudeai/status/2095226833293685100",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-09-02T20:03:03.595048+00:00",
+      "translation_zh": "Claude 现在可以在 Claude Cowork 和 Claude Code 中于后台使用你的电脑。给它一个桌面任务，Claude 会像你一样点击、输入、打开应用，而你同时可以做别的事。Pro/Max 桌面版 beta 开放中。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 3413,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-02T19:06:19.000Z",
+        "display_text_range": [
+          0,
+          221
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/AOiup03pQK",
+              "expanded_url": "https://x.com/claudeai/status/2095226833293685100/photo/1",
+              "indices": [
+                222,
+                245
+              ],
+              "url": "https://t.co/AOiup03pQK"
+            }
+          ]
+        },
+        "id_str": "2095226833293685100",
+        "text": "Claude can now use your computer in the background in Claude Cowork and Claude Code.\n\nGive it something to do on your desktop and Claude clicks, types, and opens apps just like you would, while you work on something else. https://t.co/AOiup03pQK",
+        "user": {
+          "id_str": "1943306828697550848",
+          "name": "Claude",
+          "screen_name": "claudeai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2095226833293685100"
+          ],
+          "editable_until_msecs": "1788379579000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/AOiup03pQK",
+            "expanded_url": "https://x.com/claudeai/status/2095226833293685100/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              222,
+              245
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HRO9mchaQAANgRA.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 2150,
+                  "w": 3840,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 2160,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 1895,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 1080,
+                  "x": 324,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 3840,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 2160,
+              "width": 3840
+            },
+            "sizes": {
+              "large": {
+                "h": 1152,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/AOiup03pQK"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 2150,
+                "w": 3840,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 2160,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 1895,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 1080,
+                "x": 324,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 3840,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/claudeai/status/2095226833293685100/photo/1",
+            "url": "https://pbs.twimg.com/media/HRO9mchaQAANgRA.jpg",
+            "width": 3840,
+            "height": 2160
+          }
+        ],
+        "conversation_count": 181,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2095196704769237137",
+      "url": "https://x.com/GoogleDeepMind/status/2095196704769237137",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-09-02T20:03:03.595048+00:00",
+      "translation_zh": "Gemini 3.8 Flash Cyber 为防御方带来决定性优势：在 CyberGym 等基准上领先于自主发现漏洞，在 Chrome 真实代码库测试中产出 2.6 倍的有效修复，几分钟内即可在组织云环境内生成可部署的安全补丁。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 263,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-02T17:06:35.000Z",
+        "display_text_range": [
+          0,
+          181
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/1RXF9bRWws",
+              "expanded_url": "https://x.com/GoogleDeepMind/status/2095196704769237137/photo/1",
+              "indices": [
+                181,
+                204
+              ],
+              "url": "https://t.co/1RXF9bRWws"
+            }
+          ]
+        },
+        "id_str": "2095196704769237137",
+        "text": "Gemini 3.8 Flash Cyber gives defenders a decisive advantage with expert vulnerability detection and autonomous patching.\n\nHere’s how it helps teams stay ahead of emerging threats 🧵 https://t.co/1RXF9bRWws",
+        "user": {
+          "id_str": "4783690002",
+          "name": "Google DeepMind",
+          "screen_name": "GoogleDeepMind",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2095196704769237137"
+          ],
+          "editable_until_msecs": "1788372395000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/1RXF9bRWws",
+            "expanded_url": "https://x.com/GoogleDeepMind/status/2095196704769237137/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              181,
+              204
+            ],
+            "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/HROdhUNacAMDX1q.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 540,
+              "width": 960
+            },
+            "sizes": {
+              "large": {
+                "h": 540,
+                "resize": "fit",
+                "w": 960
+              },
+              "medium": {
+                "h": 540,
+                "resize": "fit",
+                "w": 960
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "animated_gif",
+            "url": "https://t.co/1RXF9bRWws",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "variants": [
+                {
+                  "bitrate": 0,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/tweet_video/HROdhUNacAMDX1q.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "gif",
+          "durationMs": 0,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/tweet_video_thumb/HROdhUNacAMDX1q.jpg",
+          "variants": [
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/tweet_video/HROdhUNacAMDX1q.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2095196704769237137"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 56,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2095175498967949359",
+      "url": "https://x.com/GoogleDeepMind/status/2095175498967949359",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-09-02T20:03:03.595048+00:00",
+      "translation_zh": "Google DeepMind 发布两款 Gemini 新模型：3.8 Flash 在软件工程、智能体任务和多步推理上较 3.7 Flash 大幅提升；3.8 Flash Cyber 则是最强网络安全模型，具备前沿级漏洞检测与自动修补能力。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1607,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-02T15:42:20.000Z",
+        "display_text_range": [
+          0,
+          268
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/EEJDIMhRwp",
+              "expanded_url": "https://x.com/GoogleDeepMind/status/2095175498967949359/photo/1",
+              "indices": [
+                267,
+                290
+              ],
+              "url": "https://t.co/EEJDIMhRwp"
+            }
+          ]
+        },
+        "id_str": "2095175498967949359",
+        "text": "Two new Gemini models are here to help scale your AI agents and secure code:\n\n🔘 3.8 Flash: our most intelligent model yet with significant gains from 3.7 Flash across software engineering, agentic tasks, and multi-step reasoning.\n\n🔘 3.8 Flash Cyber: our most capable https://t.co/EEJDIMhRwp",
+        "user": {
+          "id_str": "4783690002",
+          "name": "Google DeepMind",
+          "screen_name": "GoogleDeepMind",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2095175498967949359"
+          ],
+          "editable_until_msecs": "1788367340000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/EEJDIMhRwp",
+            "expanded_url": "https://x.com/GoogleDeepMind/status/2095175498967949359/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              267,
+              290
+            ],
+            "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/HROEvCPXsAE-yJl.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 540,
+              "width": 960
+            },
+            "sizes": {
+              "large": {
+                "h": 540,
+                "resize": "fit",
+                "w": 960
+              },
+              "medium": {
+                "h": 540,
+                "resize": "fit",
+                "w": 960
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "animated_gif",
+            "url": "https://t.co/EEJDIMhRwp",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "variants": [
+                {
+                  "bitrate": 0,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/tweet_video/HROEvCPXsAE-yJl.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "gif",
+          "durationMs": 0,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/tweet_video_thumb/HROEvCPXsAE-yJl.jpg",
+          "variants": [
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/tweet_video/HROEvCPXsAE-yJl.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2095175498967949359"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 116,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDk1MTc1NDk4ODc5OTM4NTYz"
+        }
+      }
+    },
+    {
+      "id": "2095175502298243094",
+      "url": "https://x.com/GoogleDeepMind/status/2095175502298243094",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-09-02T20:03:03.595048+00:00",
+      "translation_zh": "全新 Fairwind 计划面向政府与可信伙伴开放 3.8 Flash Cyber，用于保护关键基础设施与国家安全。3.8 Flash 现已在 Antigravity、AI Studio、Android Studio 上线，Gemini App 与搜索 AI Mode 面向 Pro/Ultra 订阅者开放。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 142,
+        "in_reply_to_screen_name": "GoogleDeepMind",
+        "in_reply_to_status_id_str": "2095175498967949359",
+        "in_reply_to_user_id_str": "4783690002",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-02T15:42:20.000Z",
+        "display_text_range": [
+          0,
+          274
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/K2s9mBfj97",
+              "expanded_url": "https://x.com/GoogleDeepMind/status/2095175502298243094/photo/1",
+              "indices": [
+                275,
+                298
+              ],
+              "url": "https://t.co/K2s9mBfj97"
+            }
+          ],
+          "user_mentions": [
+            {
+              "id_str": "1965856473084473347",
+              "indices": [
+                223,
+                235
+              ],
+              "name": "Google Antigravity",
+              "screen_name": "antigravity"
+            },
+            {
+              "id_str": "1742923424056713217",
+              "indices": [
+                255,
+                270
+              ],
+              "name": "Google AI Studio",
+              "screen_name": "GoogleAIStudio"
+            }
+          ]
+        },
+        "id_str": "2095175502298243094",
+        "text": "Our new Fairwind Program helps governments and trusted partners stay ahead of threats – giving access to 3.8 Flash Cyber to secure vital infrastructure and protect national security.\n\nGemini 3.8 Flash is rolling out now in @Antigravity and via the API in @GoogleAIStudio and https://t.co/K2s9mBfj97",
+        "user": {
+          "id_str": "4783690002",
+          "name": "Google DeepMind",
+          "screen_name": "GoogleDeepMind",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2095175502298243094"
+          ],
+          "editable_until_msecs": "1788367340000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/K2s9mBfj97",
+            "expanded_url": "https://x.com/GoogleDeepMind/status/2095175502298243094/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              275,
+              298
+            ],
+            "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/HROE6zLaQAAOcYf.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 540,
+              "width": 960
+            },
+            "sizes": {
+              "large": {
+                "h": 540,
+                "resize": "fit",
+                "w": 960
+              },
+              "medium": {
+                "h": 540,
+                "resize": "fit",
+                "w": 960
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "animated_gif",
+            "url": "https://t.co/K2s9mBfj97",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "variants": [
+                {
+                  "bitrate": 0,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/tweet_video/HROE6zLaQAAOcYf.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "gif",
+          "durationMs": 0,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/tweet_video_thumb/HROE6zLaQAAOcYf.jpg",
+          "variants": [
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/tweet_video/HROE6zLaQAAOcYf.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2095175502298243094"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 10,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 1607,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 116,
+          "retweet_count": 182,
+          "created_at": "2026-09-02T15:42:20.000Z",
+          "display_text_range": [
+            0,
+            268
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/EEJDIMhRwp",
+                "expanded_url": "https://x.com/GoogleDeepMind/status/2095175498967949359/photo/1",
+                "indices": [
+                  267,
+                  290
+                ],
+                "url": "https://t.co/EEJDIMhRwp"
+              }
+            ]
+          },
+          "id_str": "2095175498967949359",
+          "text": "Two new Gemini models are here to help scale your AI agents and secure code:\n\n🔘 3.8 Flash: our most intelligent model yet with significant gains from 3.7 Flash across software engineering, agentic tasks, and multi-step reasoning.\n\n🔘 3.8 Flash Cyber: our most capable https://t.co/EEJDIMhRwp",
+          "user": {
+            "id_str": "4783690002",
+            "name": "Google DeepMind",
+            "screen_name": "GoogleDeepMind",
+            "is_blue_verified": false,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2095175498967949359"
+            ],
+            "editable_until_msecs": "1788367340000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/EEJDIMhRwp",
+              "expanded_url": "https://x.com/GoogleDeepMind/status/2095175498967949359/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                267,
+                290
+              ],
+              "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/HROEvCPXsAE-yJl.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 540,
+                "width": 960
+              },
+              "sizes": {
+                "large": {
+                  "h": 540,
+                  "resize": "fit",
+                  "w": 960
+                },
+                "medium": {
+                  "h": 540,
+                  "resize": "fit",
+                  "w": 960
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "animated_gif",
+              "url": "https://t.co/EEJDIMhRwp",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "variants": [
+                  {
+                    "bitrate": 0,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/tweet_video/HROEvCPXsAE-yJl.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              16,
+              9
+            ],
+            "contentType": "gif",
+            "durationMs": 0,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/tweet_video_thumb/HROEvCPXsAE-yJl.jpg",
+            "variants": [
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/tweet_video/HROEvCPXsAE-yJl.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2095175498967949359"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDk1MTc1NTAyMTQzMTA3MDgx"
+        }
+      }
+    },
+    {
       "id": "2094983639780204846",
       "url": "https://x.com/elonmusk/status/2094983639780204846",
       "label": "xAI",
@@ -107,6 +857,238 @@
             "edits_remaining": "5",
             "is_edit_eligible": false
           },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2094976556494209206",
+      "url": "https://x.com/Alibaba_Qwen/status/2094976556494209206",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-09-02T20:03:03.595048+00:00",
+      "translation_zh": "Qwen3.8-Max-0902 登顶 CodeArena WebDev 榜首（1669→1691 分），刷新智能体编码工作流纪录，领先 Claude Opus 5 (Max) 3 分、Kimi K3 (Max) 17 分，多步推理、工具调用与完整应用生成能力突出。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1110,
+        "lang": "en",
+        "created_at": "2026-09-02T02:31:48.000Z",
+        "display_text_range": [
+          0,
+          260
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "1641378826537295874",
+              "indices": [
+                253,
+                259
+              ],
+              "name": "Arena.ai",
+              "screen_name": "arena"
+            }
+          ]
+        },
+        "id_str": "2094976556494209206",
+        "text": "🏆 #1 on CodeArena: WebDev leaderboard.\n\nQwen3.8-Max-0902 jumps from 1669 to 1691, setting a new record for agentic coding (WebDev) workflows, with standout strength in multistep reasoning, tool use, and full app generation.\n\nThanks for the recognition! @arena",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2094976556494209206"
+          ],
+          "editable_until_msecs": "1788319908000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 67,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 2802,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 94,
+          "retweet_count": 245,
+          "created_at": "2026-09-02T02:24:11.000Z",
+          "display_text_range": [
+            0,
+            280
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/8yxfbI5VFI",
+                "expanded_url": "https://x.com/arena/status/2094974637704913198/photo/1",
+                "indices": [
+                  281,
+                  304
+                ],
+                "url": "https://t.co/8yxfbI5VFI"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "1753339277386342400",
+                "indices": [
+                  30,
+                  43
+                ],
+                "name": "Qwen",
+                "screen_name": "Alibaba_Qwen"
+              }
+            ]
+          },
+          "id_str": "2094974637704913198",
+          "text": "Big news: Qwen3.8-Max-0902 by @Alibaba_Qwen just debuted at #1 overall in the Code Arena: WebDev with 1691 pts!\n\nIt scores 3 pts above Claude Opus 5 (Max), 17 pts above Kimi K3 (Max), and 22 pts above the previous Qwen3.8-Max.\n\nPriced at a blended $5/MToken, Qwen3.8-Max-0902 also https://t.co/8yxfbI5VFI",
+          "user": {
+            "id_str": "1641378826537295874",
+            "name": "Arena.ai",
+            "screen_name": "arena",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2017015061454438400/iNKfXZ_I_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2094974637704913198"
+            ],
+            "editable_until_msecs": "1788319451000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/8yxfbI5VFI",
+              "expanded_url": "https://x.com/arena/status/2094974637704913198/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                281,
+                304
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HRLV08paQAEHEK9.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 2289,
+                    "w": 4088,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 4088,
+                    "w": 4088,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 4088,
+                    "w": 3586,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 4088,
+                    "w": 2044,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 4088,
+                    "w": 4088,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 4088,
+                "width": 4088
+              },
+              "sizes": {
+                "large": {
+                  "h": 2048,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 1200,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 680,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/8yxfbI5VFI"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 2289,
+                  "w": 4088,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 4088,
+                  "w": 4088,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 4088,
+                  "w": 3586,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 4088,
+                  "w": 2044,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 4088,
+                  "w": 4088,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/arena/status/2094974637704913198/photo/1",
+              "url": "https://pbs.twimg.com/media/HRLV08paQAEHEK9.jpg",
+              "width": 4088,
+              "height": 4088
+            }
+          ],
           "isEdited": false,
           "isStaleEdit": false
         },

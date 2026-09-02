@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Every Side Effect Happens Twice — AI Frontlines</title>
+<meta content="Agents retry. Networks drop. Queues redeliver. Any agent that touches the world must assume every action will execute more than once — because in production, it will. Idempotency is not an optimization. It is the contract that makes retries safe, and retries are how agent systems survive." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 3, 2026" data-zh="2026年9月3日">September 3, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Every Side Effect Happens Twice" data-zh="每一个副作用，都会发生两次">Every Side Effect Happens Twice</h1>
+<p class="post-header-deck" data-en="A chat agent that only produces text can fail gracefully: a wrong answer is wrong, but it is wrong once. The moment an agent starts touching the world — sending emails, writing files, charging cards, deploying code — the rules change. Agents retry. Networks drop connections mid-request. Queues redeliver. A model that got no confirmation reissues the action 'just to be safe.' Every side effect that is not explicitly guarded will eventually execute more than once, and in production the second execution always arrives at the worst possible moment. The systems that survive are the ones designed for it." data-zh="一个只输出文本的对话智能体，可以体面地失败：一个错误答案虽然错，但只错一次。而一旦智能体开始触碰世界——发邮件、写文件、扣款、部署代码——规则就变了。智能体会重试。网络会在请求中途断开。队列会重复投递。一个没收到确认的模型，会「为了保险起见」再执行一次动作。每一个没有显式防护的副作用，最终都会被执行不止一次，而且在生产环境里，第二次执行总是出现在最糟糕的时刻。能活下来的系统，都是为这件事设计过的。">A chat agent that only produces text can fail gracefully. The moment an agent starts touching the world — sending emails, writing files, charging cards, deploying code — the rules change.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a reason the most reliable software ever built — payment networks, database engines, distributed queues — treats 'this operation will run more than once' as a law of nature rather than an edge case. That reason has nothing to do with bugs. It is arithmetic. Any component that retries on failure will, occasionally, retry something that already succeeded: the request completed, the response was lost, and the retry arrives as a perfectly reasonable-looking duplicate. In classical systems engineering this is old news, solved with idempotency keys, deduplication windows, and transactional semantics. In agent engineering, it is news all over again — because the newest source of duplication is not the network. It is the model itself." data-zh="有史以来最可靠的软件——支付网络、数据库引擎、分布式队列——把「这个操作会运行不止一次」当作自然法则而非边缘情况来对待，这是有原因的。这个原因与 bug 无关。这是算术。任何在失败时重试的组件，偶尔都会重试一个已经成功的东西：请求完成了，响应丢了，于是重试以一个看起来完全合理的重复者身份到达。在经典系统工程里，这是旧闻，用幂等键、去重窗口和事务语义解决了。在智能体工程里，这又成了新闻——因为最新的重复来源不再是网络，而是模型本身。">There is a reason the most reliable software ever built — payment networks, database engines, distributed queues — treats "this operation will run more than once" as a law of nature rather than an edge case. That reason has nothing to do with bugs. It is arithmetic.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrS1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrS2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrS3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE MANY ROADS TO DUPLICATE EXECUTION" data-zh="通往重复执行的条条大路" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE MANY ROADS TO DUPLICATE EXECUTION</text>
+<!-- source node -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--text-tertiary)" stroke-width="1.5" width="120" x="250" y="44"></rect>
+<text data-en="agent action" data-zh="智能体动作" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="66">agent action</text>
+<!-- three paths -->
+<path d="M270 78 C180 100 120 110 90 130" fill="none" marker-end="url(#arrS1)" stroke="var(--text-tertiary)" stroke-width="1.4"></path>
+<path d="M310 78 L310 130" fill="none" marker-end="url(#arrS1)" stroke="var(--text-tertiary)" stroke-width="1.4"></path>
+<path d="M350 78 C440 100 500 110 530 130" fill="none" marker-end="url(#arrS1)" stroke="var(--text-tertiary)" stroke-width="1.4"></path>
+<!-- path 1: network retry -->
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="130" x="25" y="132"></rect>
+<text data-en="① network retry" data-zh="① 网络重试" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="90" y="152">① network retry</text>
+<!-- path 2: model retry -->
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="130" x="245" y="132"></rect>
+<text data-en="② model retry" data-zh="② 模型重试" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="152">② model retry</text>
+<!-- path 3: queue redelivery -->
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="130" x="465" y="132"></rect>
+<text data-en="③ queue redelivery" data-zh="③ 队列重投" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="530" y="152">③ queue redelivery</text>
+<!-- descriptions -->
+<text data-en="timeout · response lost · resend" data-zh="超时 · 响应丢失 · 重发" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="90" y="182">timeout · response lost · resend</text>
+<text data-en="no confirmation seen · reissues anyway" data-zh="没看到确认 · 照样再执行" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="182">no confirmation seen · reissues anyway</text>
+<text data-en="at-least-once delivery" data-zh="至少一次投递" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="530" y="182">at-least-once delivery</text>
+<!-- converge to duplicate -->
+<path d="M90 196 C160 220 240 228 288 240" fill="none" marker-end="url(#arrS2)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<path d="M310 196 L306 240" fill="none" marker-end="url(#arrS2)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<path d="M530 196 C460 220 380 228 332 240" fill="none" marker-end="url(#arrS2)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<rect fill="var(--accent-dim)" height="40" rx="9" stroke="var(--accent-3)" stroke-width="2" width="200" x="210" y="242"></rect>
+<text data-en="side effect × 2 (or more)" data-zh="副作用 × 2（或更多）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="310" y="268">side effect × 2 (or more)</text>
+<text data-en="two emails · two charges · two deployments" data-zh="两封邮件 · 两笔扣款 · 两次部署" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="308">two emails · two charges · two deployments</text>
+</svg>
+<p class="diagram-caption" data-en="Three independent mechanisms, one shared destination. The network retries because responses get lost. The model retries because it cannot see that its first action landed — no confirmation reached its context. The queue redelivers because at-least-once delivery is the only delivery guarantee that survives crashes. None of these is a bug. All of them produce duplicates." data-zh="三个相互独立的机制，同一个目的地。网络重试，因为响应会丢。模型重试，因为它看不见自己的第一个动作已经落地——没有任何确认到达它的上下文。队列重投，因为「至少一次」是能在崩溃中幸存的唯一投递保证。这些都不是 bug。而它们全都制造重复。">Three independent mechanisms, one shared destination. The network retries because responses get lost. The model retries because it cannot see that its first action landed. The queue redelivers because at-least-once delivery is the only delivery guarantee that survives crashes. None of these is a bug. All of them produce duplicates.</p>
+</div>
+<h3 data-en="The model is the new source of duplication" data-zh="模型，是重复执行的新来源">The model is the new source of duplication</h3>
+<p data-en="Start with the classic case, because it frames everything else. An agent calls a tool that charges a customer. The tool executes; the payment goes through; the response travels back and dies somewhere in a timeout. The harness — doing exactly what it was designed to do — retries the failed call. The charge happens again. This failure mode is decades old, and the fix is decades old too: attach an idempotency key to the operation, let the receiving system recognize the retry, return the original result instead of executing again. The interesting question is not whether this applies to agents. It does. The interesting question is: who generates the key, and does the key survive the model's own decision to try again?" data-zh="先从经典案例说起，因为它框定了其他一切。一个智能体调用一个向客户扣款的工具。工具执行了；付款成功了；响应在回程中死于某个超时。而 harness——做的正是它被设计来做的事——重试了这次失败的调用。扣款又发生了一次。这个失败模式已有几十年历史，修复也同样古老：给操作附加一个幂等键，让接收系统识别出这是重试，返回原始结果而不是再执行一遍。有趣的问题不是这是否适用于智能体——当然适用。有趣的问题是：谁来生成这个键，而这个键能否在模型自己决定再试一次时幸存？">Start with the classic case, because it frames everything else. An agent calls a tool that charges a customer. The tool executes; the payment goes through; the response travels back and dies somewhere in a timeout. The harness — doing exactly what it was designed to do — retries the failed call. The charge happens again.</p>
+<p data-en="That second part is where agent systems break. Consider what the model sees after a tool call succeeds but the confirmation is slow: nothing. The tool call is pending, or timed out, or returned an ambiguous error. The model has no memory of a completed execution because there was none in its context. So it does the reasonable thing — it calls the tool again, perhaps with slightly different arguments, perhaps with a note that the last attempt 'seemed to fail.' From inside the model's context window, this is not duplication. It is a fresh attempt at an unresolved task. From outside the context window, it is the second charge on the same card. The model cannot be fixed here, because the model is not broken. It is acting correctly on incomplete information. The fix has to be structural: the system around the model must know which logical operations are in flight, which have completed, and must make retries safe rather than trying — hopelessly — to make them impossible." data-zh="第二部分，正是智能体系统断裂的地方。想想一次工具调用成功、但确认迟迟未到时，模型看见了什么：什么都没有。工具调用还在挂起，或者超时了，或者返回了一个含糊的错误。模型对「已完成的执行」没有任何记忆，因为它的上下文里根本没有这回事。于是它做了合理的事——再次调用工具，也许参数略有不同，也许附上一句「上次尝试似乎失败了」。在模型的上下文窗口之内，这不是重复。这是对一个未解决任务的全新尝试。在上下文窗口之外，这是同一张卡上的第二笔扣款。模型在这里无法被修复，因为模型并没有坏。它是在不完整的信息上正确行动。修复必须是结构性的：模型周围的系统必须知道哪些逻辑操作正在进行、哪些已经完成，并且必须让重试变得安全，而不是徒劳地试图让重试不可能发生。">That second part is where agent systems break. The model sees no confirmation, so it reissues the call — a fresh attempt from inside its context, a duplicate charge from outside. The fix has to be structural.</p>
+<blockquote data-en="Making retries impossible is not an engineering goal — it is a fantasy. The network will drop responses. The queue will redeliver. The model will try again. The goal is that the second execution of anything is a no-op. Design for the duplicate, and the duplicate becomes harmless. Deny the duplicate, and it becomes an incident." data-zh="让重试不可能发生，不是一个工程目标——它是一个幻想。网络会丢响应。队列会重投。模型会再试一次。目标应该是：任何东西的第二次执行，都是一次空操作。为重复而设计，重复就变得无害。否认重复，重复就变成事故。">Making retries impossible is not an engineering goal — it is a fantasy. The goal is that the second execution of anything is a no-op. Design for the duplicate, and the duplicate becomes harmless. Deny the duplicate, and it becomes an incident.</blockquote>
+<h3 data-en="The idempotency ledger" data-zh="幂等账本">The idempotency ledger</h3>
+<p data-en="The pattern that works is small, boring, and almost never built until the second incident. Every side effect the agent can trigger gets wrapped in a thin coordinator that owns three facts: a stable key that identifies the logical operation, the current state of that operation (pending, done, failed), and the result if it completed. The key is generated before the first attempt — not by the model, which has no notion of operation identity, but by the harness, at the moment the intent is first expressed. When anything retries — network, harness, model, human clicking the button again — the coordinator looks up the key. If the operation is done, the stored result is returned and nothing executes. If it is pending, the retry either waits or returns the in-flight status. Only when there is genuinely no record does the effect run. This is not exotic technology. It is a table and a lookup. What makes it hard in agent systems is that the keys must be assigned to intents, and intents live in model output, which is exactly the layer that was never designed to carry identity." data-zh="有效的模式很小、很无聊，而且几乎总是要到第二次事故之后才会被建造。智能体能触发的每一个副作用，都被一个薄薄的协调器包裹，它持有三个事实：一个标识逻辑操作的稳定键、该操作的当前状态（挂起、完成、失败）、以及完成时的结果。键在第一次尝试之前生成——不是由模型生成，模型没有「操作身份」的概念，而是由 harness 在意图第一次被表达的那一刻生成。当任何东西重试时——网络、harness、模型、再次点击按钮的人类——协调器查找这个键。如果操作已完成，返回存储的结果，什么都不执行。如果它挂起中，重试要么等待，要么返回进行中的状态。只有当确实没有任何记录时，效果才运行。这不是什么尖端技术。它是一张表和一次查询。它在智能体系统里变难的地方在于：键必须分配给意图，而意图活在模型输出里——恰恰是从未被设计来承载身份的那一层。">The pattern that works is small and boring: every side effect gets wrapped in a coordinator that owns a stable key, the operation state, and the stored result. Retries hit the lookup, not the world.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrL2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrL3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+</defs>
+<text data-en="THE IDEMPOTENCY LEDGER — ONE WRITE, MANY RETRIES" data-zh="幂等账本——一次写入，多次重试" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE IDEMPOTENCY LEDGER — ONE WRITE, MANY RETRIES</text>
+<!-- attempts on left -->
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="140" x="20" y="52"></rect>
+<text data-en="attempt #1 (success)" data-zh="第 1 次尝试（成功）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="90" y="70">attempt #1 (success)</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="140" x="20" y="92"></rect>
+<text data-en="retry #2 (network)" data-zh="重试 #2（网络）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="90" y="110">retry #2 (network)</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="140" x="20" y="132"></rect>
+<text data-en="retry #3 (model)" data-zh="重试 #3（模型）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="90" y="150">retry #3 (model)</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="140" x="20" y="172"></rect>
+<text data-en="retry #4 (human)" data-zh="重试 #4（人类）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="90" y="190">retry #4 (human)</text>
+<!-- ledger in middle -->
+<path d="M160 66 C220 80 230 96 260 108" fill="none" marker-end="url(#arrL1)" stroke="var(--text-tertiary)" stroke-width="1.2"></path>
+<path d="M160 106 C200 112 230 114 260 118" fill="none" marker-end="url(#arrL1)" stroke="var(--text-tertiary)" stroke-width="1.2"></path>
+<path d="M160 146 C200 140 230 132 260 128" fill="none" marker-end="url(#arrL1)" stroke="var(--text-tertiary)" stroke-width="1.2"></path>
+<path d="M160 186 C220 172 230 148 260 138" fill="none" marker-end="url(#arrL1)" stroke="var(--text-tertiary)" stroke-width="1.2"></path>
+<rect fill="var(--accent-dim)" height="130" rx="10" stroke="var(--accent)" stroke-width="2.5" width="150" x="262" y="76"></rect>
+<text data-en="LEDGER" data-zh="账本" fill="var(--accent)" font-family="Inter,sans-serif" font-size="13" font-weight="800" text-anchor="middle" x="337" y="100">LEDGER</text>
+<text data-en="key: op-8f3a" data-zh="键: op-8f3a" fill="var(--accent)" font-family="monospace" font-size="10" text-anchor="middle" x="337" y="124">key: op-8f3a</text>
+<text data-en="state: done" data-zh="状态: 完成" fill="var(--accent)" font-family="monospace" font-size="10" text-anchor="middle" x="337" y="144">state: done</text>
+<text data-en="result: {ok}" data-zh="结果: {ok}" fill="var(--accent)" font-family="monospace" font-size="10" text-anchor="middle" x="337" y="164">result: {ok}</text>
+<text data-en="1 execution total" data-zh="总计 1 次执行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="337" y="192">1 execution total</text>
+<!-- outcomes right -->
+<path d="M412 100 C450 88 470 84 500 78" fill="none" marker-end="url(#arrL3)" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<path d="M412 126 L500 126" fill="none" marker-end="url(#arrL3)" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<path d="M412 150 C450 160 470 168 500 174" fill="none" marker-end="url(#arrL3)" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="100" x="502" y="62"></rect>
+<text data-en="✓ executes" data-zh="✓ 执行" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="552" y="80">✓ executes</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="100" x="502" y="112"></rect>
+<text data-en="→ cached result" data-zh="→ 缓存结果" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="552" y="130">→ cached result</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="100" x="502" y="162"></rect>
+<text data-en="→ cached result" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="552" y="180">→ cached result</text>
+<!-- world -->
+<path d="M552 188 L552 214" fill="none" marker-end="url(#arrL2)" stroke="var(--accent)" stroke-width="1.6"></path>
+<rect fill="var(--bg-surface)" height="32" rx="8" stroke="var(--accent)" stroke-width="2" width="140" x="482" y="216"></rect>
+<text data-en="WORLD: changed once" data-zh="世界：只改变一次" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="552" y="237">WORLD: changed once</text>
+<!-- note -->
+<rect fill="var(--accent-dim)" height="44" opacity="0.5" rx="8" width="420" x="100" y="278"></rect>
+<text data-en="Four attempts, one execution. The ledger absorbs every duplicate; the world sees exactly one change." data-zh="四次尝试，一次执行。账本吸收了每一个重复；世界只看见一次改变。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="306">Four attempts, one execution. The ledger absorbs every duplicate; the world sees exactly one change.</text>
+</svg>
+<p class="diagram-caption" data-en="The first attempt executes and records its key, state, and result. Every later retry — whether born from a timeout, a model's uncertainty, or a human's impatient click — resolves against the ledger and receives the cached outcome. The side effect touches the world exactly once, no matter how many times anything tries again." data-zh="第一次尝试执行并记录它的键、状态和结果。之后的每一次重试——无论诞生于超时、模型的不确定，还是人类不耐烦的点击——都在账本上得到解析，并收到缓存的结果。无论任何东西重试多少次，副作用都只触碰世界一次。">The first attempt executes and records its key, state, and result. Every later retry resolves against the ledger and receives the cached outcome. The side effect touches the world exactly once, no matter how many times anything tries again.</p>
+</div>
+<h3 data-en="What makes a good key" data-zh="什么才算好键">What makes a good key</h3>
+<p data-en="The entire scheme rests on one question: when a retry arrives, can the system recognize it as the same logical operation? That is entirely a function of the key, and keys are easy to get wrong. The worst key is the natural-language request itself — 'send the invoice to Alice' hashed into an identifier — because the model will phrase the same intent differently on the second attempt, and a phrasing-sensitive key sees two operations where there was one. Nearly as bad is a per-attempt random key, generated fresh on every call: it recognizes nothing, and deduplicates nothing. The keys that work are derived from stable structure the system itself controls: the task identifier the run was launched under, the step identifier of the node in the graph, the concrete parameters of the effect. 'Task 4127, node deploy, target prod, artifact sha a19f' is a key that survives phrasing changes, model retries, and full reruns — because it names the operation the world cares about, not the sentence the model happened to produce." data-zh="整个方案建立在一个问题上：当重试到达时，系统能否把它识别为同一个逻辑操作？这完全取决于键，而键很容易做错。最糟的键，是自然语言请求本身——把「把发票发给 Alice」哈希成一个标识符——因为模型第二次会换一种说法表达同一个意图，而一个对措辞敏感的键，会把一个操作看成两个。差不多同样糟的，是每次调用都新生成的随机键：它什么都识别不了，也什么都去不了重。有效的键，派生自系统自己控制的稳定结构：运行被启动时的任务标识符、图中该节点的步骤标识符、效果的具体参数。「任务 4127、节点 deploy、目标 prod、工件 sha a19f」是一个能在措辞变化、模型重试、完整重跑中都幸存的键——因为它命名的是世界关心的操作，而不是模型碰巧产出的那句话。">The entire scheme rests on one question: when a retry arrives, can the system recognize it as the same logical operation? That is entirely a function of the key — and keys are easy to get wrong.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrK1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="WHAT KEYS SURVIVE A RETRY?" data-zh="哪些键能在重试中幸存？" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHAT KEYS SURVIVE A RETRY?</text>
+<!-- bad key 1 -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="250" x="30" y="52"></rect>
+<text data-en="hash(&quot;send the invoice to Alice&quot;)" data-zh="hash(「把发票发给 Alice」)" fill="var(--accent-3)" font-family="monospace" font-size="9" text-anchor="middle" x="155" y="74">hash("send the invoice to Alice")</text>
+<path d="M155 86 L155 106" fill="none" marker-end="url(#arrK1)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="3,2" width="250" x="30" y="108"></rect>
+<text data-en="✗ model rephrases → new key → duplicate" data-zh="✗ 模型换个说法 → 新键 → 重复" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="155" y="127">✗ model rephrases → new key → duplicate</text>
+<!-- bad key 2 -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="250" x="30" y="158"></rect>
+<text data-en="random_uuid() per attempt" data-zh="每次尝试 random_uuid()" fill="var(--accent-3)" font-family="monospace" font-size="9" text-anchor="middle" x="155" y="180">random_uuid() per attempt</text>
+<path d="M155 192 L155 210" fill="none" marker-end="url(#arrK1)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="3,2" width="250" x="30" y="212"></rect>
+<text data-en="✗ fresh key every call → dedupes nothing" data-zh="✗ 每次调用都是新键 → 什么都去不了重" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="155" y="231">✗ fresh key every call → dedupes nothing</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="44" y2="260"></line>
+<!-- good key -->
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent)" stroke-width="2" width="250" x="340" y="52"></rect>
+<text data-en="task-4127 · node=deploy" data-zh="task-4127 · node=deploy" fill="var(--accent)" font-family="monospace" font-size="10" font-weight="600" text-anchor="middle" x="465" y="70">task-4127 · node=deploy</text>
+<text data-en="target=prod · sha=a19f…" data-zh="target=prod · sha=a19f…" fill="var(--accent)" font-family="monospace" font-size="10" text-anchor="middle" x="465" y="88">target=prod · sha=a19f…</text>
+<path d="M465 96 L465 114" fill="none" marker-end="url(#arrK1)" stroke="var(--accent)" stroke-width="1.6"></path>
+<rect fill="var(--accent-dim)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="250" x="340" y="116"></rect>
+<text data-en="✓ same key on every path to this effect" data-zh="✓ 通向此效果的每条路径，同一个键" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="465" y="136">✓ same key on every path to this effect</text>
+<rect fill="var(--accent-dim)" height="56" opacity="0.5" rx="8" width="250" x="340" y="162"></rect>
+<text data-en="Derived from structure the system owns:" data-zh="派生自系统自己掌控的结构：" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="465" y="182">Derived from structure the system owns:</text>
+<text data-en="task id · graph node · effect params" data-zh="任务 id · 图节点 · 效果参数" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="465" y="200">task id · graph node · effect params</text>
+<text data-en="— not from the model's phrasing." data-zh="——而非模型的措辞。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="465" y="214">— not from the model's phrasing.</text>
+</svg>
+<p class="diagram-caption" data-en="Left: the two most common key strategies, both broken. Hashing the request text fails the moment the model rephrases; generating a fresh key per attempt fails always. Right: the key that works is built from the system's own stable structure — which task, which node, which concrete effect — so that every road to the same side effect lands on the same identifier." data-zh="左边：两种最常见的键策略，都是坏的。对请求文本做哈希，在模型换措辞的那一刻就失败；每次尝试生成新键，则永远失败。右边：有效的键，由系统自身的稳定结构构成——哪个任务、哪个节点、哪个具体效果——于是通向同一个副作用的每条路，都落在同一个标识符上。">Left: the two most common key strategies, both broken. Right: the key that works is built from the system's own stable structure — so that every road to the same side effect lands on the same identifier.</p>
+</div>
+<h3 data-en="Recovery without a ledger" data-zh="没有账本时的恢复">Recovery without a ledger</h3>
+<p data-en="There is a second discipline, for the systems where a ledger is not available — legacy tools that take no idempotency key, third-party APIs designed before duplicates were taken seriously, homegrown scripts that were never meant to be called by anything as persistent as an agent. Here the defense shifts from preventing the duplicate to making it visible and reversible. Write-ahead intent: before the effect runs, a record of what is about to happen is written somewhere durable. Post-hoc reconciliation: after the run, the actual state of the world is compared against the intended state, and discrepancies — the second email in the outbox, the double charge on the statement — are surfaced for reversal. This is strictly worse than idempotency, because it converts duplicates from impossible into merely detectable. But it is infinitely better than the default, which is duplicates that are neither prevented nor detected, discovered weeks later by a customer." data-zh="还有第二种纪律，留给那些没有账本可用的系统——不接受幂等键的遗留工具、在重复被认真对待之前设计的第三方 API、从来没打算被一个像智能体这么执着的东西调用的自制脚本。在这里，防线从「阻止重复」转向「让重复可见、可逆」。预写意图：在效果运行之前，把即将发生什么记录到某个持久的地方。事后对账：运行结束后，将世界的实际状态与预期状态进行比对，差异——发件箱里的第二封邮件、账单上的双重扣款——被浮现出来以供撤销。这严格地不如幂等，因为它把重复从「不可能」降级为仅仅「可检测」。但它无限好于默认状态——重复既不被阻止、也不被检测，几周后才被一个客户发现。">There is a second discipline, for the systems where a ledger is not available. Write-ahead intent, post-hoc reconciliation: duplicates become detectable and reversible rather than impossible. Strictly worse than idempotency. Infinitely better than the default.</p>
+<h3 data-en="The habit of asking one question" data-zh="只问一个问题的习惯">The habit of asking one question</h3>
+<p data-en="None of this requires a framework, a library, or a new infrastructure budget. It requires a question, asked relentlessly at design time, about every tool the agent can reach: if this runs twice, what breaks? Sometimes the answer is nothing — a read, a search, a pure computation; let those retry freely, because retries on reads cost only latency. Sometimes the answer is mild — a duplicate file that overwrites itself, a status update that sets the same value twice; low priority, fix later. And sometimes the answer is a incident report waiting to be written — a charge, an email to a customer, a production deployment, a message into a group chat that can never be unsent. Those are the tools that need a key before they are ever wired into an agent's hands. The question takes ten seconds per tool. The absence of the question has a cost that is measured in apologies." data-zh="这些，没有一个需要框架、库、或新的基础设施预算。它需要的是一个在设计时被不懈追问的问题，针对智能体能触及的每一个工具：如果这个跑两次，什么会坏？有时答案是什么都不坏——一次读取、一次搜索、一次纯计算；让它们随意重试，因为读的重试只花延迟。有时答案很轻——一个自我覆盖的重复文件、一个两次设置同一个值的状态更新；优先级低，以后再修。而有时，答案是一份等着被写出的事故报告——一笔扣款、一封发给客户的邮件、一次生产部署、一条永远无法撤回的群聊消息。这些，才是需要在被交到智能体手里之前就配好键的工具。这个问题，每个工具只花十秒。而这个问题的缺席，代价以道歉来计量。">None of this requires a framework. It requires a question, asked relentlessly at design time: if this runs twice, what breaks? Reads cost only latency. Some effects self-heal. The rest need a key before they are ever wired into an agent's hands.</p>
+<p data-en="The deeper point is about what agent engineering actually is. Models are probabilistic and will remain probabilistic; no amount of prompt discipline will make a model certain about whether its previous action landed. Harnesses are resilient and will remain resilient; that is their job. Networks are lossy and queues are redelivering; that is physics and economics. Given all of that, exactly-once execution is not something any single component can deliver — it is an emergent property that the whole system must be arranged to produce. Every side effect will be attempted more than once. That was true before agents, and agents have made it more true, because they added a component that retries for reasons no engineer fully controls. The systems that thrive are not the ones that fought this. They are the ones that assumed it from the first day, gave every effect an identity, and made the second attempt free." data-zh="更深的一层，关于智能体工程究竟是什么。模型是概率性的，并将保持概率性；再多的 prompt 纪律，也无法让一个模型确知它上一个动作是否落地。harness 是有韧性的，并将保持有韧性；那是它的职责。网络是有损的，队列在不断重投；那是物理和经济。给定这一切，精确一次执行，不是任何单一组件能交付的东西——它是一种涌现属性，必须由整个系统被安排着去产生。每一个副作用，都会被尝试不止一次。这在智能体之前就是真的，而智能体让它更真了——因为它们增加了一个组件，会以任何工程师都无法完全掌控的理由去重试。蓬勃发展的系统，不是与这一点对抗的系统。而是从第一天起就假定了它、给每个效果一个身份、并让第二次尝试变得免费的系统。">Models are probabilistic. Harnesses are resilient. Networks are lossy. Given all of that, exactly-once execution is an emergent property the whole system must be arranged to produce. Every side effect will be attempted more than once — the systems that thrive assumed it from day one, gave every effect an identity, and made the second attempt free.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
