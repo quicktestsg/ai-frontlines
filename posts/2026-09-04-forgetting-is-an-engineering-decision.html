@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Forgetting Is an Engineering Decision — AI Frontlines</title>
+<meta content="Long-running agents drown in their own history. The context window is not a bucket to be filled — it is a cache, and caches need eviction policies. The teams that ship durable agents treat forgetting as a designed subsystem, not an accident of truncation." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 4, 2026" data-zh="2026年9月4日">September 4, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Forgetting Is an Engineering Decision" data-zh="遗忘，是一个工程决策">Forgetting Is an Engineering Decision</h1>
+<p class="post-header-deck" data-en="Long-running agents drown in their own history. Every tool result, every retry, every detour stays in the context window, and the agent that started sharp ends up wading through its own sediment. The instinct is to treat the window as a bucket — bigger models mean bigger buckets, problem solved. But the window is not a bucket. It is a cache. And a cache without an eviction policy is not memory; it is a landfill. The teams that ship agents which survive week-long tasks are not the teams that remember everything. They are the teams that decided, deliberately and in advance, what their agent is allowed to forget." data-zh="长时间运行的智能体，会淹死在自己的历史里。每一次工具结果、每一次重试、每一次绕路，都留在上下文窗口中——那个起初锋利的智能体，最后只能在自己的沉积物中艰难跋涉。直觉是把窗口当作一个桶——更大的模型意味着更大的桶，问题解决了。但窗口不是桶。它是缓存。而没有逐出策略的缓存，不是记忆，是垃圾场。能发布在长达一周的任务中存活的智能体的团队，不是那些记住一切的团队。是那些提前、有意识地决定了「智能体被允许忘记什么」的团队。">Long-running agents drown in their own history. Every tool result, every retry, every detour stays in the context window, and the agent that started sharp ends up wading through its own sediment.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a failure that arrives quietly in agent systems, never announcing itself as a failure at all. The agent starts a long task — a repository-wide refactor, a multi-day research thread, an operations loop that runs until the job is done. The first hour goes well. The model reasons cleanly, picks the right tools, makes good calls. Then the context fills. Tool outputs pile up: a file read here, a stack trace there, a search result with two hundred lines of noise. Each one was justified at the moment it entered. Each one stays forever. And somewhere around the point where the transcript outweighs the instructions, the quality curve bends. The agent starts re-reading files it already read. It forgets constraints stated an hour ago. It contradicts decisions it made at step twelve. Nothing crashed. Nothing errored. The system just got worse with everything it learned." data-zh="在智能体系统中，有一种失败悄然而至，从不以失败的面目示人。智能体开始一个长任务——一次覆盖整个代码库的重构、一个持续数天的研究线程、一个跑到任务完成为止的运维循环。第一个小时一切顺利。模型推理清晰，选对工具，决策得当。然后，上下文被填满了。工具输出不断堆积：这里读了一个文件，那里有一条堆栈跟踪，还有一个带着两百行噪音的搜索结果。每一项在进入的那一刻都是合理的。每一项都永远留了下来。而在转录记录的重量超过指令的那一刻附近，质量曲线弯了下去。智能体开始重新读它已经读过的文件。它忘记了一小时前说过的约束。它与自己在第十二步做的决策相矛盾。没有任何东西崩溃。没有任何报错。系统只是随着它学到的一切，变得更差了。">There is a failure that arrives quietly in agent systems, never announcing itself as a failure at all. The agent starts a long task — a repository-wide refactor, a multi-day research thread, an operations loop that runs until the job is done. The first hour goes well. Then the context fills. Tool outputs pile up: a file read here, a stack trace there, a search result with two hundred lines of noise. Each one was justified at the moment it entered. Each one stays forever.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrF1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE CONTEXT DECAY CURVE" data-zh="上下文衰减曲线" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE CONTEXT DECAY CURVE</text>
+<!-- axes -->
+<line stroke="var(--text-tertiary)" stroke-width="1.2" x1="70" x2="580" y1="280" y2="280"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1.2" x1="70" x2="70" y1="50" y2="280"></line>
+<text data-en="task steps →" data-zh="任务步数 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="325" y="316">task steps →</text>
+<text data-en="quality" data-zh="质量" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" transform="rotate(-90 40 200)" text-anchor="middle" x="40" y="200">quality</text>
+<!-- quality curve: rises then decays -->
+<path d="M70 250 C130 130 180 95 250 92 C330 90 400 130 470 190 C520 230 555 252 580 260" fill="none" stroke="var(--accent)" stroke-width="2.5"></path>
+<circle cx="250" cy="92" fill="var(--accent)" r="5"></circle>
+<text data-en="peak: context is fresh" data-zh="峰值：上下文还新鲜" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="250" y="74">peak: context is fresh</text>
+<!-- noise accumulation: rising dashed -->
+<path d="M70 262 C200 250 350 200 470 140 C520 116 555 100 580 92" fill="none" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<text data-en="noise · stale tool output" data-zh="噪音 · 过期工具输出" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="480" y="76">noise · stale tool output</text>
+<!-- inflection annotation -->
+<line stroke="var(--border)" stroke-dasharray="3,4" stroke-width="1" x1="360" x2="360" y1="110" y2="280"></line>
+<text data-en="inflection: sediment &gt; signal" data-zh="拐点：沉积 &gt; 信号" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="360" y="128">inflection: sediment &gt; signal</text>
+<text data-en="the agent that remembers everything performs like an agent that remembers nothing" data-zh="记住一切的智能体，表现得像什么都不记得的智能体" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="336">the agent that remembers everything performs like an agent that remembers nothing</text>
+</svg>
+<p class="diagram-caption" data-en="Quality is not monotonic in context size. It rises as useful facts accumulate, peaks while the window is still mostly signal, then decays as stale tool output, abandoned plans, and dead-end reasoning fill the frame. More history does not mean more intelligence. Past the inflection point, it means less." data-zh="质量并不随上下文大小单调上升。它随着有用事实的积累而上升，在窗口仍然以信号为主的阶段达到峰值，然后随着过期工具输出、被放弃的计划和死胡同推理填满窗口而衰减。更多历史，不等于更多智能。过了拐点，它意味着更少。">Quality is not monotonic in context size. It rises as useful facts accumulate, peaks while the window is still mostly signal, then decays as stale tool output, abandoned plans, and dead-end reasoning fill the frame. More history does not mean more intelligence. Past the inflection point, it means less.</p>
+</div>
+<h3 data-en="The window is a cache, so give it a policy" data-zh="窗口是缓存，那就给它一个策略">The window is a cache, so give it a policy</h3>
+<p data-en="The mental model that fixes this is old, and it comes from a place nobody expects: CPU caches and operating systems. A context window has all the properties of a cache. It is fast but small. The world is large and slow. Not everything fits, so something must be evicted, and the choice of what to evict determines performance far more than the size of the cache. Operating systems solved this decades ago with named policies — LRU, LFU, clock, generational — and the insight worth stealing is not the specific algorithm. It is the admission that eviction is a design surface. An agent that appends every event to the transcript and truncates the tail when the window overflows has a policy. It is FIFO — first in, first out — which is precisely the wrong policy for cognition, because the oldest items in an agent's context are the instructions, the goal, and the constraints. The system prompt is the first thing in and the first thing thrown away." data-zh="能修复这个问题的心智模型很老，而且来自一个没人想到的地方：CPU 缓存和操作系统。上下文窗口具备缓存的所有属性。它快，但小。世界大，且慢。不是所有东西都装得下，所以必须有东西被逐出，而逐出什么的选择，对性能的决定作用远大于缓存的大小。操作系统几十年前就用命名策略解决了这个问题——LRU、LFU、时钟、分代——而值得偷走的洞见不是具体算法。是「逐出是一个设计面」这个承认。一个把每个事件都追加到转录记录、窗口溢出时截掉尾部的智能体，是有策略的。它是 FIFO——先进先出——而这恰恰是认知的最差策略，因为智能体上下文中最老的条目，是指令、目标和约束。系统 prompt 是第一个进入的，也是第一个被扔掉的。">The mental model that fixes this is old: CPU caches and operating systems. A context window has all the properties of a cache. It is fast but small. The world is large and slow. Not everything fits, so something must be evicted, and the choice of what to evict determines performance far more than the size of the cache.</p>
+<p data-en="The naive patch — pin the system prompt, truncate the middle — is better than FIFO but still treats symptoms. The real design question is: what does each class of content deserve? Instructions deserve to be pinned, always resident, never evicted. Decisions deserve to be promoted — a choice made at step twelve should be compressed to a one-line fact and kept forever. Raw tool output deserves aggressive eviction the moment it has been consumed: a file read exists to inform a decision, and once the decision is made, the file body is dead weight. Failed attempts deserve a special fate — not deletion, but fossilization: replaced by a short note that says 'this path was tried and failed, for this reason,' so the agent does not re-explore it with fresh enthusiasm forty steps later. None of this is exotic. It is a write policy and an eviction policy, stated in code instead of being discovered post-mortem in a trace." data-zh="天真的补丁——钉住系统 prompt、截掉中段——比 FIFO 好，但仍然在治症状。真正的设计问题是：每一类内容，配得上什么待遇？指令配得上被钉住——常驻、永不逐出。决策配得上被提升——第十二步做出的选择，应被压缩成一行事实，永远保留。原始工具输出配得上在被消费之后立刻激进逐出：读一个文件是为了支撑一个决策，而决策一旦做出，文件正文就是死重。失败的尝试配得上一种特殊命运——不是删除，而是「化石化」：被替换成一条简短的注记，写着「这条路试过，失败了，原因是这个」，这样智能体就不会在四十步之后带着崭新的热情重新探索它。这些没有一样是奇技淫巧。它是一个写入策略和一个逐出策略，写在代码里，而不是事后在追踪记录里被发现。">The naive patch — pin the system prompt, truncate the middle — is better than FIFO but still treats symptoms. The real design question is: what does each class of content deserve? Instructions deserve to be pinned. Decisions deserve to be promoted. Raw tool output deserves aggressive eviction the moment it has been consumed. Failed attempts deserve fossilization — replaced by a short note that says 'this path was tried and failed,' so the agent does not re-explore it forty steps later.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrP2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrP3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THREE EVICTION POLICIES" data-zh="三种逐出策略" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THREE EVICTION POLICIES</text>
+<!-- Policy 1: FIFO -->
+<text data-en="① FIFO (default)" data-zh="① FIFO（默认）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="105" y="54">FIFO (default)</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent-3)" stroke-width="1.5" width="54" x="18" y="72"></rect>
+<text data-en="goal" data-zh="目标" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="45" y="88">goal</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent-3)" stroke-width="1.5" width="54" x="78" y="72"></rect>
+<text data-en="tools" data-zh="工具" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="105" y="88">tools</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent-3)" stroke-width="1.5" width="54" x="138" y="72"></rect>
+<text data-en="log..." data-zh="日志..." fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="165" y="88">log...</text>
+<path d="M45 96 L45 112" fill="none" marker-end="url(#arrP1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="none" height="24" rx="5" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="3,2" width="54" x="18" y="114"></rect>
+<text data-en="evicted" data-zh="被逐出" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="45" y="130">evicted</text>
+<text data-en="the goal leaves first" data-zh="目标最先离开" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="105" y="170">the goal leaves first</text>
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="212" x2="212" y1="40" y2="180"></line>
+<!-- Policy 2: Recency -->
+<text data-en="② RECENCY" data-zh="② 近因" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="54">RECENCY</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent-2)" stroke-width="1.2" width="54" x="223" y="72"></rect>
+<text data-en="..." data-zh="..." fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="250" y="88">...</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent-2)" stroke-width="1.5" width="54" x="283" y="72"></rect>
+<text data-en="now" data-zh="现在" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="88">now</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent-2)" stroke-width="1.5" width="54" x="343" y="72"></rect>
+<text data-en="newest" data-zh="最新" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="370" y="88">newest</text>
+<path d="M250 96 C250 108 260 112 268 114" fill="none" marker-end="url(#arrP2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<text data-en="keeps the tail, loses the plan" data-zh="留住了尾巴，丢了计划" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="170">keeps the tail, loses the plan</text>
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="416" x2="416" y1="40" y2="180"></line>
+<!-- Policy 3: Tiered -->
+<text data-en="③ TIERED (designed)" data-zh="③ 分层（被设计的）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="515" y="54">TIERED (designed)</text>
+<rect fill="var(--accent-dim)" height="24" rx="5" stroke="var(--accent)" stroke-width="2" width="54" x="445" y="72"></rect>
+<text data-en="pinned" data-zh="钉住" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="472" y="88">pinned</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent)" stroke-width="1.5" width="54" x="505" y="72"></rect>
+<text data-en="facts" data-zh="事实" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="532" y="88">facts</text>
+<rect fill="none" height="24" rx="5" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="3,2" width="54" x="565" y="72"></rect>
+<text data-en="raw → out" data-zh="原文 → 出" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="592" y="88">raw → out</text>
+<path d="M540 96 C560 106 570 110 583 114" fill="none" marker-end="url(#arrP3)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="class-aware: rules stay, sediment flows" data-zh="按类别：规则留下，沉积物流走" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="515" y="170">class-aware: rules stay, sediment flows</text>
+<!-- bottom bar -->
+<rect fill="var(--accent-dim)" height="44" opacity="0.5" rx="8" width="560" x="30" y="200"></rect>
+<text data-en="content classes: instructions · decisions · tool output · failures" data-zh="内容类别：指令 · 决策 · 工具输出 · 失败" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="219">content classes: instructions · decisions · tool output · failures</text>
+<text data-en="each class deserves its own residency rule — one policy for all is a bug" data-zh="每一类都配得上自己的常驻规则——一刀切就是 bug" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="236">each class deserves its own residency rule — one policy for all is a bug</text>
+<text data-en="eviction is not data loss — it is compression with priorities" data-zh="逐出不是数据丢失——它是带优先级的压缩" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="286">eviction is not data loss — it is compression with priorities</text>
+</svg>
+<p class="diagram-caption" data-en="Left: the accidental policy — truncate the oldest, which is the goal. Middle: keep the recent tail, which forgets the plan and repeats old mistakes. Right: the designed policy — instructions pinned, decisions promoted to facts, raw output evicted on consumption, failures fossilized into warnings. Same window size. Very different agent." data-zh="左：意外的策略——截掉最老的，也就是目标。中：保留最近的尾部，忘了计划、重蹈覆辙。右：被设计的策略——指令钉住，决策提升为事实，原始输出消费后逐出，失败化石化为警告。同样的窗口大小。截然不同的智能体。">Left: the accidental policy — truncate the oldest, which is the goal. Middle: keep the recent tail, which forgets the plan and repeats old mistakes. Right: the designed policy — instructions pinned, decisions promoted to facts, raw output evicted on consumption, failures fossilized into warnings. Same window size. Very different agent.</p>
+</div>
+<blockquote data-en="A bigger window does not solve this. It delays the inflection and hides it deeper in the run, where nobody is watching. A million-token context that degrades at step nine hundred is worse than a hundred-thousand-token context that degrades at step ninety — the failure is real in both cases, but only one of them is cheap enough to notice. Forgetting is not the failure. Forgetting randomly is the failure. Forgetting on purpose, by policy, is engineering." data-zh="更大的窗口解决不了这个问题。它只是把拐点推迟，把它藏到运行更深处——一个没人盯着的地方。一个在第 九百 步退化的百万 token 上下文，比在第 九十 步退化的十万 token 上下文更糟——两种情况下失败都是真实的，但只有后者便宜到能被察觉。遗忘不是失败。随机地遗忘，才是失败。按照策略、有意识地遗忘，才是工程。">A bigger window does not solve this. It delays the inflection and hides it deeper in the run, where nobody is watching. A million-token context that degrades at step nine hundred is worse than a hundred-thousand-token context that degrades at step ninety — the failure is real in both cases, but only one of them is cheap enough to notice. Forgetting is not the failure. Forgetting randomly is the failure. Forgetting on purpose, by policy, is engineering.</blockquote>
+<h3 data-en="The write path matters more than the read path" data-zh="写入路径比读取路径更重要">The write path matters more than the read path</h3>
+<p data-en="Eviction answers 'what leaves the window.' The harder and more consequential question is 'what enters the store beneath it.' Long-lived agents need an external memory — a place outside the context window where facts, decisions, and state persist across compactions and across sessions. And here most teams make the mirror-image mistake: the store becomes a write-through dump. Every event is written; nothing is read back selectively; retrieval pulls the fifty most semantically similar chunks, which for a long-running task means fifty variations of the same fact. The agent's memory fills with duplicates and debris, and retrieval quality decays exactly like un-evicted context did — the same disease, one tier down." data-zh="逐出回答的是「什么离开窗口」。更难、也更要紧的问题是「什么进入窗口之下的存储」。长生命周期的智能体需要一份外部记忆——一个在上下文窗口之外的地方，存放事实、决策和状态，跨越压缩、跨越会话。而在这里，大多数团队犯了镜像式的错误：存储变成了直写式垃圾场。每个事件都被写入；没有东西被有选择地读回；检索拉回五十个语义最相近的片段——对一个长任务来说，这意味着同一个事实的五十种变体。智能体的记忆被重复和碎片填满，检索质量随之衰减——和未被逐出的上下文一模一样，同一种病，只是低了一层。">Eviction answers 'what leaves the window.' The harder and more consequential question is 'what enters the store beneath it.' Long-lived agents need an external memory — and here most teams make the mirror-image mistake: the store becomes a write-through dump. Every event is written; nothing is read back selectively; retrieval pulls the fifty most semantically similar chunks, which for a long-running task means fifty variations of the same fact.</p>
+<p data-en="A memory that works behaves less like a log and more like an editor. Writes are gated: a fact is written once, keyed by what it is about, and updated in place rather than duplicated. Reads are query-shaped: the retrieval step asks for exactly what the current node in the graph needs — the constraints for this decision, the failures relevant to this approach — not the top-k nearest neighbors of a vague embedding. And there is a tier between the raw store and the window: a rolling summary, maintained by the agent itself at compaction time, which distills the run so far into the handful of sentences that actually carry state. This summary is the agent's self-image. It is also the cheapest bug surface in the whole system — a summary that drops a constraint reproduces, at the next compaction, the failure the whole architecture was built to prevent. Summaries deserve tests. The sentence 'the user said never to touch the migrations folder' is load-bearing infrastructure." data-zh="一个能用的记忆，表现得不像日志，更像一位编辑。写入是被守门的：一个事实只写一次，以它所属的对象为键，原地更新而非复制。读取是查询形状的：检索步骤只索取图中当前节点所需要的东西——这个决策的约束、与这个方案相关的失败——而不是一个模糊 embedding 的 top-k 近邻。而在原始存储与窗口之间，还有一层：一份滚动摘要，由智能体在压缩时自己维护，把迄今为止的运行蒸馏成真正承载状态的几句话。这份摘要，是智能体的自我画像。它也是整个系统中最便宜的 bug 面——一份丢掉约束的摘要，会在下一次压缩时，复现整套架构本来要防止的失败。摘要配得上测试。「用户说过绝不动 migrations 文件夹」这句话，是承重结构。">A memory that works behaves less like a log and more like an editor. Writes are gated: a fact is written once, keyed by what it is about, updated in place rather than duplicated. Reads are query-shaped. And there is a tier between the raw store and the window: a rolling summary, maintained by the agent itself at compaction time. This summary is the agent's self-image — and a summary that drops a constraint reproduces, at the next compaction, the failure the whole architecture was built to prevent. Summaries deserve tests.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrM1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrM2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THREE-TIER MEMORY FOR A LONG-RUNNING AGENT" data-zh="长运行智能体的三层记忆" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THREE-TIER MEMORY FOR A LONG-RUNNING AGENT</text>
+<!-- Tier 1: working set -->
+<rect fill="var(--accent-dim)" height="58" rx="10" stroke="var(--accent)" stroke-width="2.5" width="200" x="210" y="42"></rect>
+<text data-en="TIER 1 · WORKING CONTEXT" data-zh="第一层 · 工作上下文" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="64">TIER 1 · WORKING CONTEXT</text>
+<text data-en="pinned instructions · recent steps · live facts" data-zh="钉住的指令 · 近期步骤 · 活跃事实" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="82">pinned instructions · recent steps · live facts</text>
+<!-- eviction arrows down -->
+<path d="M270 100 C260 118 250 128 240 140" fill="none" marker-end="url(#arrM1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M350 100 C360 118 370 128 380 140" fill="none" marker-end="url(#arrM1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="evict" data-zh="逐出" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="226" y="124">evict</text>
+<text data-en="promote" data-zh="提升" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="396" y="124">promote</text>
+<!-- Tier 2: rolling summary -->
+<rect fill="var(--bg-surface)" height="58" rx="10" stroke="var(--accent-2)" stroke-width="1.8" width="200" x="210" y="142"></rect>
+<text data-en="TIER 2 · ROLLING SUMMARY" data-zh="第二层 · 滚动摘要" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="164">TIER 2 · ROLLING SUMMARY</text>
+<text data-en="state · decisions · fossilized failures" data-zh="状态 · 决策 · 石化的失败" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="182">state · decisions · fossilized failures</text>
+<!-- side arrows -->
+<path d="M410 171 C450 171 460 160 470 150" fill="none" marker-end="url(#arrM1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<text data-en="gate: write once, update in place" data-zh="守门：写一次，原地更新" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="510" y="140">gate: write once, update in place</text>
+<path d="M210 171 C170 171 160 182 150 192" fill="none" marker-end="url(#arrM2)" stroke="var(--text-tertiary)" stroke-width="1.4"></path>
+<text data-en="query-shaped reads" data-zh="查询形状的读取" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="108" y="212">query-shaped reads</text>
+<!-- Tier 3: external store -->
+<rect fill="var(--bg-surface)" height="58" rx="10" stroke="var(--accent-3)" stroke-width="1.8" width="200" x="210" y="242"></rect>
+<text data-en="TIER 3 · EXTERNAL STORE" data-zh="第三层 · 外部存储" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="264">TIER 3 · EXTERNAL STORE</text>
+<text data-en="keyed facts · artifacts · full history (cold)" data-zh="键控事实 · 产物 · 完整历史（冷）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="282">keyed facts · artifacts · full history (cold)</text>
+<!-- loop back up from store to working context -->
+<path d="M120 271 C70 250 70 120 208 70" fill="none" marker-end="url(#arrM2)" stroke="var(--text-tertiary)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<text data-en="retrieve on demand — the agent re-members only what the current node needs" data-zh="按需检索——智能体只重新想起当前节点所需之物" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="336">retrieve on demand — the agent re-members only what the current node needs</text>
+</svg>
+<p class="diagram-caption" data-en="Tier one is the live window: pinned rules, recent steps, the facts in play. Tier two is the rolling summary the agent maintains of itself — state, decisions, fossilized failures. Tier three is the cold store: keyed facts and full history, written through a gate and read through queries shaped by the current task. Nothing is lost; almost nothing is resident; the agent remembers by re-membering, on demand." data-zh="第一层是活跃窗口：钉住的规则、近期的步骤、正在起作用的事实。第二层是智能体为自己维护的滚动摘要——状态、决策、石化的失败。第三层是冷存储：键控事实与完整历史，经一道守门写入，经由当前任务塑造的查询读出。没有任何东西丢失；几乎没有任何东西常驻；智能体通过「按需重新成为成员」来记忆。">Tier one is the live window: pinned rules, recent steps, the facts in play. Tier two is the rolling summary the agent maintains of itself — state, decisions, fossilized failures. Tier three is the cold store: keyed facts and full history, written through a gate and read through queries shaped by the current task. Nothing is lost; almost nothing is resident; the agent remembers by re-membering, on demand.</p>
+</div>
+<h3 data-en="Forget on purpose" data-zh="有意识地遗忘">Forget on purpose</h3>
+<p data-en="The uncomfortable conclusion is that memory, in an agent, is not a capacity — it is a budget, and it is spent whether or not anyone is allocating it. Every token in the window occupies attention that some other token needed. Every duplicated fact in the store crowds out a fact that had no copy. The agent that remembers everything is not loyal to its history; it is negligent with its attention. Human cognition figured this out a long time ago: sleep consolidates the day's raw experience into a handful of durable changes and discards the rest, not because storage is scarce but because retrieval is. The forgetting is the feature. It is what makes the remembering usable." data-zh="令人不适的结论是：智能体中的记忆，不是一种容量——它是一份预算，而且无论有没有人在分配它，它都在被花费。窗口里的每一个 token，都占据着某个别的 token 所需要的注意力。存储里的每一个重复事实，都挤掉了一个没有副本的事实。记住一切的智能体，不是对历史忠诚；它是对自己的注意力失职。人类认知很久以前就想明白了这件事：睡眠把一天的原始经验巩固成少数几个持久的改变，然后丢弃其余——不是因为存储稀缺，而是因为检索稀缺。遗忘，才是特性。它让记忆变得可用。">The uncomfortable conclusion is that memory, in an agent, is not a capacity — it is a budget, and it is spent whether or not anyone is allocating it. Every token in the window occupies attention that some other token needed. The agent that remembers everything is not loyal to its history; it is negligent with its attention.</p>
+<p data-en="So the practice is simple to state and rare to see. Decide, per content class, what stays resident and what leaves. Pin the instructions. Promote the decisions. Consume and evict the raw output. Fossilize the failures. Gate the writes. Shape the reads. Test the summaries, because they carry the state. And when someone proposes solving context rot with a bigger window, recognize the proposal for what it is: a decision to move the landfill somewhere larger, and to keep adding to it, indefinitely, while calling it memory. The window will keep growing. The models will keep getting longer attention spans. The engineering will not become obsolete — because the scarce resource was never tokens. It was attention, and attention does not scale. Agents that run for weeks will be built by teams that know exactly what their agent forgets, when, and why. Everyone else will ship agents that remember everything and understand nothing." data-zh="所以，这个实践说起来简单，却很少见到。按内容类别，决定什么常驻、什么离开。钉住指令。提升决策。消费并逐出原始输出。石化失败。守门写入。塑造读取。测试摘要，因为它们承载着状态。而当有人提议用更大的窗口解决上下文腐烂时，认清这个提议的真面目：一个把垃圾场搬到更大地方、并无限期地继续往里倒、还称之为「记忆」的决定。窗口会继续变大。模型的注意力跨度会继续变长。而这门工程不会过时——因为稀缺的资源从来不是 token。是注意力，而注意力不随规模扩展。能连跑数周的智能体，将由那些确切知道自己智能体忘记什么、何时忘、为何忘的团队建造。其他人发布的智能体，将记住一切，却什么都不理解。">So the practice is simple to state and rare to see. Decide, per content class, what stays resident and what leaves. Pin the instructions. Promote the decisions. Consume and evict the raw output. Fossilize the failures. Gate the writes. Shape the reads. Test the summaries, because they carry the state. And when someone proposes solving context rot with a bigger window, recognize the proposal for what it is: a decision to move the landfill somewhere larger, and to keep adding to it, indefinitely, while calling it memory.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
