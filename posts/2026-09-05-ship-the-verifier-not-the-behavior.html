@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ship the Verifier, Not the Behavior — AI Frontlines</title>
+<meta content="Generation is getting cheaper by the quarter; checking is not. The teams building durable agent systems have stopped describing good behavior in prose and started encoding it as machine-checkable constraints. The verifier is the new specification — and the agent is just search over states that pass." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 5, 2026" data-zh="2026年9月5日">September 5, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Ship the Verifier, Not the Behavior" data-zh="交付验证器，而不是行为">Ship the Verifier, Not the Behavior</h1>
+<p class="post-header-deck" data-en="Generation keeps getting cheaper; checking does not. Every quarter the models produce more code, more prose, more analysis, at lower cost per token — and the bottleneck quietly moves to the question nobody automated: is any of it right? Most agent systems still answer that question the expensive way, with a human reading output, or the naive way, with another model grading its colleague. The systems that scale are built around a different bet. Stop specifying behavior in prose. Specify the checker — machine-readable, cheap, unforgiving — and let the agent search for anything that passes it." data-zh="生成一直在变便宜；检验没有。每个季度，模型都在以更低的单 token 成本产出更多代码、更多文章、更多分析——而瓶颈悄悄移到了那个没人自动化的问题上：这些东西，对吗？大多数智能体系统仍在用昂贵的方式回答这个问题——由人来读输出；或者用天真的方式——让另一个模型给同事打分。能规模化的系统，建立在另一个赌注上。不要用散文去描述行为。去描述检验器——机器可读、便宜、不留情面——然后让智能体去搜索任何能通过它的东西。">Generation keeps getting cheaper; checking does not. Every quarter the models produce more code, more prose, more analysis, at lower cost per token — and the bottleneck quietly moves to the question nobody automated: is any of it right?</p>
+</header>
+<article class="post-body">
+<p data-en="There is a crossover happening in agent engineering, and it is visible in any team's cost dashboard. Two years ago, generation was the expensive half of the loop and verification was an afterthought — a spot check, a code review, a glance at the output. Today generation is nearly free at the margin: a request that once cost dollars costs cents, and the models produce competent first drafts of almost anything. But the checking cost has barely moved. A test suite still takes the same time to run. A human reviewer still reads at the same speed. An expert still takes the same care to confirm that a migration plan will not corrupt production. The line items have crossed. The scarce resource in an agent system is no longer the ability to produce a candidate answer. It is the ability to say, cheaply and reliably, whether a candidate answer is acceptable." data-zh="智能体工程中正在发生一次交叉，任何团队的成本面板上都能看到。两年前，生成是循环中昂贵的那一半，检验只是事后诸葛亮——抽查、代码评审、扫一眼输出。今天，生成在边际上几乎免费：曾经要花美元的请求，现在只要几美分，而且模型几乎能为任何东西产出像样的初稿。但检验的成本几乎没有动。测试套件运行还是那么久。人类评审员的阅读速度还是一样。一位专家确认迁移方案不会毁掉生产环境，还是需要同样的谨慎。两条线已经交叉。智能体系统中的稀缺资源，不再是产出候选答案的能力。而是便宜且可靠地说出「这个候选答案是否可接受」的能力。">There is a crossover happening in agent engineering, and it is visible in any team's cost dashboard. Two years ago, generation was the expensive half of the loop and verification was an afterthought. Today generation is nearly free at the margin. But the checking cost has barely moved. The line items have crossed.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrV1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE COST CROSSOVER" data-zh="成本交叉点" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE COST CROSSOVER</text>
+<!-- axes -->
+<line stroke="var(--text-tertiary)" stroke-width="1.2" x1="70" x2="580" y1="280" y2="280"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1.2" x1="70" x2="70" y1="50" y2="280"></line>
+<text data-en="time →" data-zh="时间 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="325" y="316">time →</text>
+<text data-en="cost per unit of work" data-zh="单位工作成本" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" transform="rotate(-90 36 190)" text-anchor="middle" x="36" y="190">cost per unit of work</text>
+<!-- generation cost: falling -->
+<path d="M70 80 C150 120 260 190 380 224 C470 249 540 258 580 261" fill="none" stroke="var(--accent)" stroke-width="2.5"></path>
+<text data-en="generation" data-zh="生成" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="120" y="72">generation</text>
+<!-- verification cost: roughly flat -->
+<path d="M70 130 C160 126 280 132 400 122 C490 115 550 112 580 112" fill="none" stroke="var(--accent-3)" stroke-width="2.5" stroke-dasharray="6,4"></path>
+<text data-en="verification" data-zh="检验" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="508" y="94">verification</text>
+<!-- crossover point -->
+<circle cx="230" cy="152" fill="var(--accent-2)" r="6"></circle>
+<line stroke="var(--border)" stroke-dasharray="3,4" stroke-width="1" x1="230" x2="230" y1="152" y2="280"></line>
+<text data-en="crossover: checking becomes the bottleneck" data-zh="交叉点：检验成为瓶颈" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="230" y="132">crossover: checking becomes the bottleneck</text>
+<text data-en="the question that used to be an afterthought is now the whole budget" data-zh="曾经是事后诸葛亮的问题，现在就是全部预算" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="336">the question that used to be an afterthought is now the whole budget</text>
+</svg>
+<p class="diagram-caption" data-en="Generation cost per unit of useful work keeps falling with every model generation. Verification cost — tests, reviews, expert confirmation — stays roughly flat. The curves cross, and past the crossover the system's throughput is set entirely by how fast it can check work, not how fast it can produce it. Teams that feel their agent is 'slow' are usually not generation-bound. They are verification-bound and have not noticed." data-zh="每代模型都在压低单位有效工作的生成成本。而检验成本——测试、评审、专家确认——大致持平。两条曲线交叉，过了交叉点，系统的吞吐量完全取决于检验工作的速度，而非产出工作的速度。那些觉得自己的智能体「慢」的团队，通常不是被生成卡住，而是被检验卡住了——只是没意识到。">Generation cost per unit of useful work keeps falling with every model generation. Verification cost stays roughly flat. The curves cross, and past the crossover the system's throughput is set entirely by how fast it can check work, not how fast it can produce it.</p>
+</div>
+<h3 data-en="A prose spec is a wish; a verifier is a boundary" data-zh="散文规格是许愿；验证器是边界">A prose spec is a wish; a verifier is a boundary</h3>
+<p data-en="Look at how most agent systems specify what 'good' means. It is a paragraph in a system prompt: be concise, follow the style guide, never break the build, respect the budget, prefer existing utilities. This is a specification addressed to a probability distribution. It cannot be enforced, only requested — and the model will honor it roughly, most of the time, in ways that degrade exactly when the task gets hard. Now look at how the strongest systems in the field specify quality. Proof assistants define correctness as a machine-checkable object, and a model is free to wander anywhere in the space of arguments as long as the checker accepts the final artifact. Compilers, type systems, test suites, linters, schemas: every one of these is a verifier, and every one converts a prose wish into a hard boundary. The pattern generalizes far beyond code. A change management system can verify that a plan touches only allowlisted tables. A writing pipeline can verify length, structure, banned phrases, citation presence. An operations agent can verify that every action it proposes has a rollback. None of these judge taste. All of them judge fact. That division of labor — models supply taste, verifiers supply boundaries — is the architecture that survives." data-zh="看看大多数智能体系统如何定义「好」。它是一段写在系统 prompt 里的散文：要简洁、遵守风格指南、绝不弄坏构建、尊重预算、优先用现有工具。这是一份写给概率分布的规格说明书。它无法被执行，只能被请求——而模型会大致遵守，大多数时候遵守，而且恰恰在任务变难的时候开始失守。再看看这个领域里最强的系统如何定义质量。证明助手把正确性定义成机器可检验的对象，模型可以在论证空间里随便游荡，只要检验器接受最终的产物。编译器、类型系统、测试套件、linter、schema：每一个都是验证器，每一个都把散文式的愿望变成了硬边界。这个模式远不限于代码。变更管理系统可以验证一个方案只碰白名单里的表。写作流水线可以验证长度、结构、禁用短语、引用是否在场。运维智能体可以验证自己提出的每个动作都有回滚方案。这些都不评判品味，只评判事实。这种分工——模型提供品味，验证器提供边界——才是能活下来的架构。">Look at how most agent systems specify what 'good' means. It is a paragraph in a system prompt: be concise, never break the build, respect the budget. This is a specification addressed to a probability distribution. It cannot be enforced, only requested — and it degrades exactly when the task gets hard. Compilers, type systems, test suites, schemas: every one converts a prose wish into a hard boundary. The pattern generalizes far beyond code.</p>
+<p data-en="The consequence is a reversal in where engineering effort belongs. Traditionally, one writes the behavior and checks it afterward; the checker is scaffolding around the product. In a verifier-first system, the checker is the product. The agent loop becomes: generate a candidate, run the verifier, and if it fails, feed the failure back — not as a scolding, but as a diff against the boundary. This is a different loop from 'ask the model to reflect.' Reflection is the model checking itself with the same weights that produced the error. A verifier is an independent instrument, written by a different process, with no incentive to be agreeable. When the tests fail, the tests are telling the truth even when the model is confident. Systems built on self-reflection drift toward plausible output; systems built on external verification drift toward passing output. Plausible and passing sound similar in a demo. They are not similar in production." data-zh="其结果是工程投入方向的倒转。传统上，人先写行为、事后检验——检验器是产品外围的脚手架。而在验证器优先的系统里，检验器就是产品。智能体循环变成：生成候选，运行验证器，若失败则把失败反馈回去——不是作为训斥，而是作为与边界的一份 diff。这与「让模型自我反思」是两种不同的循环。反思，是模型用产出错误的同一组权重来检查自己。验证器是一件独立的仪器，由另一个过程写成，没有动机去讨好任何人。测试失败时，哪怕模型信心满满，测试说的是真话。建立在自我反思上的系统，漂向「看起来可信」的输出；建立在外部验证上的系统，漂向「通过检验」的输出。在 demo 里，可信和通过听着差不多。在生产环境里，它们天差地别。">The consequence is a reversal in where engineering effort belongs. Traditionally, one writes the behavior and checks it afterward. In a verifier-first system, the checker is the product. When the tests fail, the tests are telling the truth even when the model is confident. Systems built on self-reflection drift toward plausible output; systems built on external verification drift toward passing output. Plausible and passing sound similar in a demo. They are not similar in production.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrG1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrG2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+</defs>
+<text data-en="THE GENERATE–VERIFY–REPAIR LOOP" data-zh="生成–验证–修复循环" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE GENERATE–VERIFY–REPAIR LOOP</text>
+<!-- generate node -->
+<rect fill="var(--bg-surface)" height="52" rx="10" stroke="var(--accent)" stroke-width="2" width="140" x="40" y="60"></rect>
+<text data-en="GENERATE" data-zh="生成" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="110" y="82">GENERATE</text>
+<text data-en="cheap · fluent · untrusted" data-zh="便宜 · 流畅 · 不可信" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="110" y="99">cheap · fluent · untrusted</text>
+<!-- verify node -->
+<rect fill="var(--accent-dim)" height="52" rx="10" stroke="var(--accent-2)" stroke-width="2.5" width="140" x="240" y="60"></rect>
+<text data-en="VERIFY" data-zh="验证" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="82">VERIFY</text>
+<text data-en="cheap · mechanical · honest" data-zh="便宜 · 机械 · 诚实" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="99">cheap · mechanical · honest</text>
+<!-- repair node -->
+<rect fill="var(--bg-surface)" height="52" rx="10" stroke="var(--accent-3)" stroke-width="2" width="140" x="440" y="60"></rect>
+<text data-en="REPAIR" data-zh="修复" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="510" y="82">REPAIR</text>
+<text data-en="targeted diff, not a rewrite" data-zh="定向 diff，而非重写" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="510" y="99">targeted diff, not a rewrite</text>
+<!-- arrows -->
+<path d="M180 86 L236 86" fill="none" marker-end="url(#arrG1)" stroke="var(--accent)" stroke-width="2"></path>
+<path d="M380 86 L436 86" fill="none" marker-end="url(#arrG1)" stroke="var(--accent-3)" stroke-width="2"></path>
+<!-- fail loop back -->
+<path d="M310 112 L310 150 L110 150 L110 116" fill="none" marker-end="url(#arrG2)" stroke="var(--accent-2)" stroke-width="2" stroke-dasharray="5,4"></path>
+<text data-en="fail → failure text is the next prompt" data-zh="失败 → 失败文本就是下一个 prompt" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="212" y="166">fail → failure text is the next prompt</text>
+<!-- pass exit -->
+<path d="M310 112 L310 200" fill="none" marker-end="url(#arrG1)" stroke="var(--accent)" stroke-width="2"></path>
+<rect fill="var(--bg-surface)" height="46" rx="10" stroke="var(--accent)" stroke-width="2.5" width="180" x="220" y="204"></rect>
+<text data-en="PASS → ship" data-zh="通过 → 发布" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="224">PASS → ship</text>
+<text data-en="trust comes from the checker, not the model" data-zh="信任来自检验器，而非模型" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="241">trust comes from the checker, not the model</text>
+<!-- bottom note -->
+<text data-en="the agent did not become reliable — the boundary did" data-zh="不是智能体变得可靠了——是边界变得可靠了" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="296">the agent did not become reliable — the boundary did</text>
+</svg>
+<p class="diagram-caption" data-en="The loop that scales: generate a candidate, run an independent mechanical check, and on failure feed the failure text back as the next prompt. The model supplies fluent first drafts; the verifier supplies the boundary that makes them shippable. Crucially, the failure message is not commentary — it is the diff between what was produced and what is allowed, which is precisely the information a repair step needs." data-zh="能规模化的循环：生成候选，运行独立而机械的检验，失败时把失败文本作为下一个 prompt 喂回去。模型提供流畅的初稿；验证器提供让初稿可发布的边界。关键在于，失败信息不是评论——它是「产出了什么」与「允许什么」之间的 diff，而这恰恰是修复步骤所需要的信息。">The loop that scales: generate a candidate, run an independent mechanical check, and on failure feed the failure text back as the next prompt. The model supplies fluent first drafts; the verifier supplies the boundary that makes them shippable.</p>
+</div>
+<h3 data-en="The verifier must be cheaper than what it gates" data-zh="验证器必须比它守门的东西更便宜">The verifier must be cheaper than what it gates</h3>
+<p data-en="There is one iron constraint in this architecture, and systems fail when they violate it: a verifier must cost less — in time, money, and reliability — than the generation it supervises. A verifier that requires a frontier model and thirty seconds of reasoning to judge a two-second generation is not a verifier; it is a second, slower agent with the same failure modes. A verifier that flakes randomly will send the loop into repair cycles for defects that do not exist, burning budget and, worse, training the pipeline to ignore failures — the verification equivalent of a smoke alarm in a kitchen that fires every time toast is made. The best verifiers share three properties. They are deterministic or near-deterministic: same input, same verdict. They are partial: each one checks one dimension — does it compile, does it pass, does it fit the schema, does it stay in budget — and their composition is what covers the space. And they are fast enough to run on every candidate, not on a sample. Sampling verification is how defects slip through at exactly the rate of the sampling gap." data-zh="这套架构里有一条铁律，违反它的系统都会失败：一个验证器的成本——时间、金钱、可靠性——必须低于它所监督的生成。一个需要前沿模型推理三十秒才能评判两秒生成的验证器，不是验证器；它是一个更慢、且带着同样失败模式的第二个智能体。一个随机抽风的验证器，会让循环为不存在的缺陷反复进入修复，烧掉预算，更糟的是，训练整条流水线去无视失败——这就是验证领域的「厨房烟雾报警器」，烤个吐司就响。最好的验证器有三个共性。确定或近乎确定：同样的输入，同样的裁决。局部的：每个只查一个维度——能不能编译、过不过测试、符不符合 schema、超不超预算——它们的组合才覆盖整个空间。以及，快到能在每个候选上运行，而不是抽样。抽样式验证，就是让缺陷恰好以抽样缺口的比率漏过去。">There is one iron constraint in this architecture: a verifier must cost less — in time, money, and reliability — than the generation it supervises. The best verifiers are deterministic or near-deterministic, partial, and fast enough to run on every candidate, not on a sample.</p>
+<p data-en="This constraint explains the shape of mature pipelines: a ladder of checks, ordered from cheapest to most expensive, where each rung only sees candidates that survived the rungs below. Type checking before tests, tests before integration runs, integration before sandboxed deployment, sandbox before a human ever looks at anything. The human sits at the top of the ladder not because humans are the best checker — they are the slowest, most expensive, most fatigable checker available — but because some dimensions of acceptance genuinely resist mechanization. The mistake is not having humans in the loop; it is having humans in the loop for dimensions a machine could have checked. Every mechanized rung added below the human multiplies the value of the human's attention, because it changes what arrives at their desk from 'everything the model produced' to 'everything that already passed every cheap check and still looks worth a human's time.' That is a different job, and a far better one." data-zh="这条约束解释了成熟流水线的形状：一道由检验组成的梯子，从最便宜排到最昂贵，每一级只见到活过了下面所有级的候选。类型检查在测试之前，测试在集成之前，集成在沙箱部署之前，沙箱在人类看一眼之前。人类坐在梯子顶端，不是因为人是最好的检验者——人是最慢、最贵、最容易疲劳的检验者——而是因为某些验收维度真的难以机械化。错误不在于让人类留在循环里，而在于让人类去查机器本可以查的维度。在人类之下每加一级机械化的横档，都在倍增人类注意力的价值——因为它改变了送达案头的东西：从「模型产出的一切」，变成「已经通过所有廉价检验、仍然值得人类花时间的一切」。这是另一份工作，而且好得多。">This constraint explains the shape of mature pipelines: a ladder of checks, ordered from cheapest to most expensive, where each rung only sees candidates that survived the rungs below. The human sits at the top of the ladder not because humans are the best checker — they are the slowest, most expensive, most fatigable checker available — but because some dimensions of acceptance genuinely resist mechanization.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE VERIFIER LADDER" data-zh="验证器之梯" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE VERIFIER LADDER</text>
+<!-- rungs, bottom = cheapest -->
+<rect fill="var(--accent-dim)" height="34" rx="7" stroke="var(--accent)" stroke-width="1.5" width="300" x="60" y="48"></rect>
+<text data-en="① schema · types · lint — milliseconds" data-zh="① schema · 类型 · lint — 毫秒级" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="210" y="69">① schema · types · lint — milliseconds</text>
+<rect fill="var(--accent-dim)" height="34" rx="7" stroke="var(--accent)" stroke-width="1.5" width="300" x="100" y="94"></rect>
+<text data-en="② unit tests · evals — seconds" data-zh="② 单元测试 · 评测 — 秒级" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="250" y="115">② unit tests · evals — seconds</text>
+<rect fill="var(--bg-surface)" height="34" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="300" x="140" y="140"></rect>
+<text data-en="③ integration · dry-run — minutes" data-zh="③ 集成 · 演练 — 分钟级" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="290" y="161">③ integration · dry-run — minutes</text>
+<rect fill="var(--bg-surface)" height="34" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="300" x="180" y="186"></rect>
+<text data-en="④ sandbox execution — minutes, isolated" data-zh="④ 沙箱执行 — 分钟级，隔离" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="330" y="207">sandbox execution — minutes, isolated</text>
+<rect fill="var(--bg-surface)" height="34" rx="7" stroke="var(--accent-3)" stroke-width="2" width="300" x="220" y="232"></rect>
+<text data-en="⑤ human review — the last resort" data-zh="⑤ 人工评审 — 最后手段" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="370" y="253">human review — the last resort</text>
+<!-- arrows up the ladder -->
+<path d="M210 82 L210 92" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.6"></path>
+<path d="M250 128 L250 138" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.6"></path>
+<path d="M290 174 L290 184" fill="none" marker-end="url(#arrL1)" stroke="var(--accent-2)" stroke-width="1.6"></path>
+<path d="M330 220 L330 230" fill="none" marker-end="url(#arrL1)" stroke="var(--accent-2)" stroke-width="1.6"></path>
+<!-- cost / traffic annotations -->
+<text data-en="100% of candidates" data-zh="100% 的候选" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="42" y="69">100% of candidates</text>
+<text data-en="survivors only" data-zh="仅幸存者" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="540" y="253">survivors only</text>
+<text data-en="each rung is cheap, partial, and deterministic — composition covers the space" data-zh="每一级都便宜、局部、确定——组合起来覆盖整个空间" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="296">each rung is cheap, partial, and deterministic — composition covers the space</text>
+<text data-en="the human sees what passed everything — attention spent only where machines cannot check" data-zh="人类看到的都是通过了所有检验的——注意力只花在机器查不了的地方" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="322">the human sees what passed everything — attention spent only where machines cannot check</text>
+</svg>
+<p class="diagram-caption" data-en="Checks are ordered by cost, and each rung only receives candidates that survived the rungs below. Cheap deterministic checks — schemas, types, linters — run on everything. Expensive checks — integration, sandbox execution — run on survivors. The human, the slowest and most expensive checker in the system, sees only what passed every mechanical gate. Adding rungs below the human does not remove the human; it multiplies the value of the human's remaining attention." data-zh="检验按成本排序，每一级只接收活过了下面所有级的候选。廉价的确定性检验——schema、类型、linter——在所有东西上运行。昂贵的检验——集成、沙箱执行——只对幸存者运行。而人类，这个系统中最慢、最贵的检验者，只看到通过了所有机械关卡的东西。在人类之下增加横档，不是要移除人类，而是倍增人类剩余注意力的价值。">Checks are ordered by cost, and each rung only receives candidates that survived the rungs below. The human — the slowest, most expensive checker in the system — sees only what passed every mechanical gate. Adding rungs below the human does not remove the human; it multiplies the value of the human's remaining attention.</p>
+</div>
+<h3 data-en="Verify the verifier" data-zh="验证验证器">Verify the verifier</h3>
+<p data-en="One obligation remains, and it is the one teams skip. A verifier that is never tested produces a particular and dangerous artifact: confidence. If the check always passes, the loop degenerates into a rubber stamp with extra steps, and the system will faithfully ship defects with a green checkmark attached. Verifiers need their own tests, and those tests look like mutations: take a known-good artifact, corrupt it in one specific way — invert a boolean, drop a constraint, exceed the budget by one unit — and assert that the checker fails. Every mutation that slips through is a hole in the boundary, and holes in the boundary are where production incidents come from. This is old discipline in other fields; mutation testing has guarded test suites for decades, and proof assistants are themselves checked against known theorems. The principle is simply that in a system organized around verification, the verifier is load-bearing infrastructure, and load-bearing infrastructure gets tested under load. The agent can be brilliant or mediocre, hard to tell, harder to guarantee. The boundary can be proven — and once it is, every unit of generation capacity added to the system converts cleanly into throughput, because everything behind the boundary is, by construction, acceptable. That is the trade: give up on specifying behavior, and in exchange, never again ship behavior that fails the spec. The behavior becomes emergent. The guarantee stays exact." data-zh="还有一项义务，而它恰恰是被跳过最多的。一个从未被测试的验证器，会产出一种特殊而危险的产物：信心。如果检验永远通过，循环就退化成一个多了几个步骤的橡皮图章，系统会忠实地把缺陷连同绿色对勾一起发布出去。验证器需要自己的测试，而这些测试长得像「变异」：取一个已知良好的产物，以某个特定方式破坏它——反转一个布尔值、丢掉一条约束、让预算超出一个单位——然后断言检验器会失败。每一个漏网的变异，都是边界上的洞，而边界上的洞，正是生产事故的来源。这在其他领域是老纪律；变异测试守护测试套件已有几十年，证明助手本身也会用已知定理来检验。原则很简单：在一个围绕验证组织起来的系统里，验证器是承重结构，而承重结构必须接受负载测试。智能体可以出色也可以平庸，难分辨，更难保证。边界却可以被证明——而一旦被证明，系统里每增加一分生成能力，都会干净地转化为吞吐量，因为边界之内的一切，在构造上就是可接受的。这就是那笔交易：放弃对行为的描述，换来永远不再发布未达规格的行为。行为成为涌现。保证保持精确。">One obligation remains, and it is the one teams skip. A verifier that is never tested produces a dangerous artifact: confidence. If the check always passes, the loop degenerates into a rubber stamp with extra steps. Verifiers need their own tests, and those tests look like mutations: corrupt a known-good artifact in one specific way and assert that the checker fails. Every mutation that slips through is a hole in the boundary — and holes in the boundary are where production incidents come from.</p>
+<blockquote data-en="The generation race will continue; next year's model will make this year's look cautious. None of that changes the architecture. Whatever produces the candidate, the candidate still has to face a boundary that does not care how fluent it is. Build that boundary first, test it like it matters — because it is the only thing in the system that does — and the models become interchangeable. Chase behavior instead, and every model upgrade is a re-litigation of everything the prose prompt was silently hoping for. The teams that win are not the ones with the best-behaved agents. They are the ones whose agents are free to misbehave, inside boundaries strong enough that nobody notices." data-zh="生成的竞赛会继续；明年的模型会让今年的显得保守。这些都不会改变架构。无论候选由谁产出，候选仍要面对一个不在乎它有多流畅的边界。先建好那个边界，像它重要那样去测试它——因为它是整个系统里唯一重要的东西——然后模型就变得可替换。反之，去追逐行为，那么每次模型升级，都要重新审一遍散文 prompt 曾默默期许的一切。赢的团队，不是拥有行为最好的智能体的团队。是那些让智能体可以自由地行为不端、而边界强大到没人注意到的团队。">The generation race will continue; next year's model will make this year's look cautious. None of that changes the architecture. Whatever produces the candidate, the candidate still has to face a boundary that does not care how fluent it is. Build that boundary first, test it like it matters, and the models become interchangeable.</blockquote>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

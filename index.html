@@ -70,6 +70,19 @@
             </div>
 
                     <div class="post-item fade-in">
+            <a href="posts/2026-09-05-ship-the-verifier-not-the-behavior.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">September 5, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
+                </div>
+                <h2 class="post-title" data-en="Ship the Verifier, Not the Behavior" data-zh="交付验证器，而不是行为">Ship the Verifier, Not the Behavior</h2>
+                <p class="post-excerpt" data-en="Generation keeps getting cheaper; checking does not. Stop specifying agent behavior in prose and start encoding it as machine-checkable constraints — the verifier is the new specification, and the agent is just search over states that pass." data-zh="生成一直在变便宜，检验却没有。别再用散文描述智能体行为，把它编码成机器可检验的约束——验证器就是新的规格说明书，智能体只是在「能通过检验的状态空间」里搜索。">Generation keeps getting cheaper; checking does not. Stop specifying agent behavior in prose and start encoding it as machine-checkable constraints — the verifier is the new specification, and the.</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="post-item fade-in">
             <a href="posts/2026-09-04-forgetting-is-an-engineering-decision.html" class="post-item-inner">
                 <div class="post-meta">
                     <span class="post-date">September 4, 2026</span>
@@ -108,19 +121,6 @@
             </a>
         </div>
 
-        <div class="post-item fade-in">
-            <a href="posts/2026-09-01-the-queue-is-the-architecture.html" class="post-item-inner">
-                <div class="post-meta">
-                    <span class="post-date">September 1, 2026</span>
-                    <span class="post-dot"></span>
-                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
-                </div>
-                <h2 class="post-title" data-en="The Queue Is the Architecture" data-zh="队列，才是架构">The Queue Is the Architecture</h2>
-                <p class="post-excerpt" data-en="Agent loops are long-running, bursty, and quietly unreliable — but most agent systems sit on synchronous plumbing that assumes none of it. Saturation doesn't crash them; it slows them into retry storms. The fix is a queue: admission control, backpressure, priority lanes, and retries that belong to the system, not to whoever is in a hurry." data-zh="智能体的循环长时运行、突发、且悄悄不可靠，但大多数智能体系统钉在对此一无所知的同步管道上。饱和不会让它们崩溃，只会让它们慢成重试风暴。修复是一个队列：准入控制、背压、优先级车道，以及归系统管的重试。">Agent loops are long-running, bursty, and quietly unreliable — but most agent systems sit on synchronous plumbing that assumes none of it. Saturation doesn't crash them; it slows them into retry.</p>
-                <span class="post-arrow">→</span>
-            </a>
-        </div>
-
         </div>
 
         <div class="preview-section">
@@ -134,6 +134,42 @@
             <div class="news-list">
 
                         <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Anthropic<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@AnthropicAI · Sep 5</span>
+                </div>
+                <span class="news-badge" style="background:#D4A574">Anthropic</span>
+            </div>
+            <div class="tweet-body" data-en="Checking that a major mathematical proof is correct can take years. Formalization—converting the mathematical reasoning into a form computer proof assistants like Lean can verify—can help.
+
+Last month, Claude completed the first formalized proof of Fermat’s Last Theorem, one of https://t.co/pdT8zwlV4A" data-zh="验证一个重大数学证明可能需要数年时间。将推理形式化为 Lean 等证明助手可检验的形式，可以解决这个问题。上个月，Claude 完成了费马大定理的首次形式化证明——超过 1300 万行代码，是史上最大的 Lean 证明，同时证明了证明所需的 29000 多个其他定理，覆盖多个此前从未被形式化的数学领域。">Checking that a major mathematical proof is correct can take years. Formalization—converting the mathematical reasoning into a form computer proof assistants like Lean can verify—can help.
+
+Last month, Claude completed the first formalized proof of Fermat’s Last Theorem, one of https://t.co/pdT8zwlV4A</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/amplify_video_thumb/2095946062741860352/img/YrmIldXbYwUDRBSB.jpg">
+            <img src="https://pbs.twimg.com/amplify_video_thumb/2095946062741860352/img/YrmIldXbYwUDRBSB.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/AnthropicAI/status/2095947707605266436" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/AnthropicAI/status/2095947707605266436" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/AnthropicAI/status/2095947707605266436" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    2.8K
+                </a>
+                <a href="https://x.com/AnthropicAI/status/2095947707605266436" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
             <div class="tweet-header">
                 <img src="https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
@@ -234,38 +270,6 @@ GPT‑6 Astra is also a major advance for scientific discovery, with state-of-th
             </div>
         </article>
 
-        <article class="tweet-card fade-in">
-            <div class="tweet-header">
-                <img src="https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
-                <div class="tweet-author">
-                    <span class="tweet-name">OpenAI<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
-                    <span class="tweet-handle">@OpenAI · Sep 4</span>
-                </div>
-                <span class="news-badge" style="background:#10A37F">OpenAI</span>
-            </div>
-            <div class="tweet-body" data-en="Astra is our most aligned model, with substantial improvements in understanding user intent. https://t.co/rY0An7o3rq" data-zh="Astra 是 OpenAI 迄今对齐程度最高的模型，在理解用户意图方面有显著提升。">Astra is our most aligned model, with substantial improvements in understanding user intent. https://t.co/rY0An7o3rq</div>
-        <div class="tweet-media-link" data-full="https://pbs.twimg.com/media/HRUNOluaIAAU909.png">
-            <img src="https://pbs.twimg.com/media/HRUNOluaIAAU909.png" alt="" class="tweet-media" loading="lazy" />
-        </div>
-            <div class="tweet-footer">
-                <a href="https://x.com/OpenAI/status/2095595748528452037" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
-                    0
-                </a>
-                <a href="https://x.com/OpenAI/status/2095595748528452037" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
-                    0
-                </a>
-                <a href="https://x.com/OpenAI/status/2095595748528452037" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    3.3K
-                </a>
-                <a href="https://x.com/OpenAI/status/2095595748528452037" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
-                    View on X →
-                </a>
-            </div>
-        </article>
-
             </div>
         </div>
     </section>
@@ -274,6 +278,19 @@ GPT‑6 Astra is also a major advance for scientific discovery, with state-of-th
     <section class="post-list tab-pane" id="pane-blog">
 
                 <div class="post-item fade-in">
+            <a href="posts/2026-09-05-ship-the-verifier-not-the-behavior.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">September 5, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
+                </div>
+                <h2 class="post-title" data-en="Ship the Verifier, Not the Behavior" data-zh="交付验证器，而不是行为">Ship the Verifier, Not the Behavior</h2>
+                <p class="post-excerpt" data-en="Generation keeps getting cheaper; checking does not. Stop specifying agent behavior in prose and start encoding it as machine-checkable constraints — the verifier is the new specification, and the agent is just search over states that pass." data-zh="生成一直在变便宜，检验却没有。别再用散文描述智能体行为，把它编码成机器可检验的约束——验证器就是新的规格说明书，智能体只是在「能通过检验的状态空间」里搜索。">Generation keeps getting cheaper; checking does not. Stop specifying agent behavior in prose and start encoding it as machine-checkable constraints — the verifier is the new specification, and the.</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="post-item fade-in">
             <a href="posts/2026-09-04-forgetting-is-an-engineering-decision.html" class="post-item-inner">
                 <div class="post-meta">
                     <span class="post-date">September 4, 2026</span>
@@ -750,6 +767,42 @@ GPT‑6 Astra is also a major advance for scientific discovery, with state-of-th
 
                     <article class="tweet-card fade-in">
             <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Anthropic<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@AnthropicAI · Sep 5</span>
+                </div>
+                <span class="news-badge" style="background:#D4A574">Anthropic</span>
+            </div>
+            <div class="tweet-body" data-en="Checking that a major mathematical proof is correct can take years. Formalization—converting the mathematical reasoning into a form computer proof assistants like Lean can verify—can help.
+
+Last month, Claude completed the first formalized proof of Fermat’s Last Theorem, one of https://t.co/pdT8zwlV4A" data-zh="验证一个重大数学证明可能需要数年时间。将推理形式化为 Lean 等证明助手可检验的形式，可以解决这个问题。上个月，Claude 完成了费马大定理的首次形式化证明——超过 1300 万行代码，是史上最大的 Lean 证明，同时证明了证明所需的 29000 多个其他定理，覆盖多个此前从未被形式化的数学领域。">Checking that a major mathematical proof is correct can take years. Formalization—converting the mathematical reasoning into a form computer proof assistants like Lean can verify—can help.
+
+Last month, Claude completed the first formalized proof of Fermat’s Last Theorem, one of https://t.co/pdT8zwlV4A</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/amplify_video_thumb/2095946062741860352/img/YrmIldXbYwUDRBSB.jpg">
+            <img src="https://pbs.twimg.com/amplify_video_thumb/2095946062741860352/img/YrmIldXbYwUDRBSB.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/AnthropicAI/status/2095947707605266436" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/AnthropicAI/status/2095947707605266436" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/AnthropicAI/status/2095947707605266436" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    2.8K
+                </a>
+                <a href="https://x.com/AnthropicAI/status/2095947707605266436" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
                 <img src="https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
                     <span class="tweet-name">Elon Musk<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
@@ -977,6 +1030,42 @@ Anything you can do on a computer, Astra can do for you. Fast. https://t.co/gDd0
                     14.0K
                 </a>
                 <a href="https://x.com/OpenAI/status/2095595741528125780" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Google DeepMind</span>
+                    <span class="tweet-handle">@GoogleDeepMind · Sep 3</span>
+                </div>
+                <span class="news-badge" style="background:#4285F4">Google</span>
+            </div>
+            <div class="tweet-body" data-en="WeatherNext 3 will now power forecasts in <a href=&quot;https://x.com/Google&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@Google</a> Search, <a href=&quot;https://x.com/GeminiApp&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@GeminiApp</a>, <a href=&quot;https://x.com/GoogleMaps&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@GoogleMaps</a>, and <a href=&quot;https://x.com/GMapsPlatform&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@GMapsPlatform</a>.
+
+Developers and researchers can also access real-time data via BigQuery, Earth Engine, and GCS. Find out more → https://t.co/L0Aj0dracJ https://t.co/6hNpaDzQUK" data-zh="WeatherNext 3 现已在 Google 搜索、Gemini、Google 地图和地图平台中提供天气预报。该模型直接基于原始气象站观测数据训练，可捕捉局部小气候，气温预报分辨率从 25 公里提升至 5 公里，并每小时发布全新预报。开发者和研究者可通过 BigQuery、Earth Engine 和 GCS 访问实时数据。">WeatherNext 3 will now power forecasts in <a href="https://x.com/Google" target="_blank" rel="noopener">@Google</a> Search, <a href="https://x.com/GeminiApp" target="_blank" rel="noopener">@GeminiApp</a>, <a href="https://x.com/GoogleMaps" target="_blank" rel="noopener">@GoogleMaps</a>, and <a href="https://x.com/GMapsPlatform" target="_blank" rel="noopener">@GMapsPlatform</a>.
+
+Developers and researchers can also access real-time data via BigQuery, Earth Engine, and GCS. Find out more → https://t.co/L0Aj0dracJ https://t.co/6hNpaDzQUK</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/media/HRTPi6ObIAAQxf-.jpg">
+            <img src="https://pbs.twimg.com/media/HRTPi6ObIAAQxf-.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/GoogleDeepMind/status/2095528025978765787" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/GoogleDeepMind/status/2095528025978765787" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/GoogleDeepMind/status/2095528025978765787" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    139
+                </a>
+                <a href="https://x.com/GoogleDeepMind/status/2095528025978765787" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
                     View on X →
                 </a>
             </div>
