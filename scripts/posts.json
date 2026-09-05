@@ -1,5 +1,14 @@
 [
 {
+  "date": "2026-09-06",
+  "slug": "scope-the-credential-not-the-prompt",
+  "title_en": "Scope the Credential, Not the Prompt",
+  "title_zh": "约束凭据，而不是约束 Prompt",
+  "read_time": 9,
+  "excerpt_en": "The prompt is not a security boundary — it is a wish enforced by probability. What actually bounds an agent is the credential it holds. Mint short-lived, task-scoped tokens per run, model escalation as an explicit edge, and size every capability for the model's worst day, not its benchmark average.",
+  "excerpt_zh": "Prompt 不是安全边界——它是一个靠概率执行的许愿。真正限定智能体的，是它持有的凭据。为每次运行签发短生命周期、任务级 token，把提权建模为显式的边，让每项能力都按模型「最糟的一天」而非基准平均分来定尺寸。"
+},
+{
   "date": "2026-09-05",
   "slug": "ship-the-verifier-not-the-behavior",
   "title_en": "Ship the Verifier, Not the Behavior",
