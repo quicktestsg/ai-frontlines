@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Context Is a Budget — AI Frontlines</title>
+<meta content="The context window is not free memory — it is a budget that every step of an agent spends and never gets back. Treating context like a memory hierarchy instead of an infinite tape is what separates agents that survive long tasks from agents that drown in their own transcript." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 9, 2026" data-zh="2026年9月9日">September 9, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Context Is a Budget" data-zh="上下文是一份预算">Context Is a Budget</h1>
+<p class="post-header-deck" data-en="Every agent treats the context window like free memory: append the tool result, append the observation, append the whole file because it might be relevant later. But context is not memory. It is attention — a finite resource that every step spends and no step refunds. A token that enters the window is paid for on every subsequent call, again and again, until the run ends. The agents that survive long tasks are not the ones with bigger windows. They are the ones with a budget." data-zh="每个智能体都把上下文窗口当成免费内存：追加工具结果，追加观察，把整个文件塞进去，因为「以后可能用得上」。但上下文不是内存。它是注意力——一种有限的资源，每一步都在消耗，且永不退还。一个进入窗口的 token，在之后每一次调用中都要被反复支付，直到运行结束。能在长任务中活下来的智能体，不是窗口更大的那些，而是有预算的那些。">Every agent treats the context window like free memory: append the tool result, append the observation, append the whole file because it might be relevant later. But context is not memory. It is attention — a finite resource that every step spends and no step refunds.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a number that silently decides the fate of every long-running agent, and almost nobody puts it on a dashboard. It is not the model's benchmark score. It is not the tool count. It is the token count of the working context at step N. When that number grows without bound, three things happen in sequence. First, cost inflates: every model call re-processes the entire window, so a bloated transcript means paying for the same dead weight hundreds of times. Second, latency inflates: prefill time scales with input length, and an agent that takes forty seconds to think about a task it has already finished thinking about is an agent users abandon. Third — and this is the part that survives even in a world of infinite cheap inference — quality degrades. Attention dilutes. The instruction that mattered at step three is now buried under two hundred tool outputs, and the model reliably forgets it. Bloat is not a cost problem that hardware will solve. It is an attention problem that architecture must solve." data-zh="有一个数字，默默决定着每一个长运行智能体的命运，而几乎没有人把它放上仪表盘。它不是模型的基准分数，不是工具数量，而是第 N 步时工作上下文的 token 数。当这个数字无界增长时，三件事会依次发生。第一，成本膨胀：每次模型调用都要重新处理整个窗口，一份臃肿的 transcript 意味着同样的死重被支付几百次。第二，延迟膨胀：预填充时间随输入长度增长，一个花四十秒去思考一个早已思考完的任务的智能体，是用户会抛弃的智能体。第三——这一条即便在推理无限便宜的世界里也不会消失——质量退化。注意力被稀释。第三步时还很重要的那条指令，如今埋在两百个工具输出之下，而模型会可靠地忘掉它。膨胀不是硬件会解决的成本问题。它是架构必须解决的注意力问题。">There is a number that silently decides the fate of every long-running agent, and almost nobody puts it on a dashboard. It is not the model's benchmark score. It is not the tool count. It is the token count of the working context at step N. When that number grows without bound, three things happen in sequence. First, cost inflates. Second, latency inflates. Third — and this is the part that survives even in a world of infinite cheap inference — quality degrades. Attention dilutes. The instruction that mattered at step three is now buried under two hundred tool outputs, and the model reliably forgets it. Bloat is not a cost problem that hardware will solve. It is an attention problem that architecture must solve.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrB1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrB2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE AGENT'S MEMORY HIERARCHY" data-zh="智能体的内存层级" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE AGENT'S MEMORY HIERARCHY</text>
+<!-- Tier 1: working context -->
+<rect fill="var(--accent-dim)" height="46" rx="9" stroke="var(--accent)" stroke-width="2.5" width="250" x="185" y="44"></rect>
+<text data-en="WORKING CONTEXT" data-zh="工作上下文" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="310" y="64">WORKING CONTEXT</text>
+<text data-en="task state · live results · next instruction" data-zh="任务状态 · 实时结果 · 下一步指令" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="80">task state · live results · next instruction</text>
+<text data-en="fast · expensive · tiny — keep only what is needed NOW" data-zh="快 · 贵 · 极小 —— 只放当下需要的" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="106">fast · expensive · tiny — keep only what is needed NOW</text>
+<path d="M310 112 L310 128" fill="none" marker-end="url(#arrB1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- Tier 2: distilled episodic memory -->
+<rect fill="var(--bg-surface)" height="46" rx="9" stroke="var(--accent-2)" stroke-width="1.8" width="250" x="185" y="130"></rect>
+<text data-en="DISTILLED EPISODES" data-zh="蒸馏后的情节记忆" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="310" y="150">DISTILLED EPISODES</text>
+<text data-en="what was tried · what failed · decisions made" data-zh="试过什么 · 失败在哪 · 做过哪些决定" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="166">what was tried · what failed · decisions made</text>
+<text data-en="compressed summaries, re-injected on demand" data-zh="压缩摘要，按需回注" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="192">compressed summaries, re-injected on demand</text>
+<path d="M310 198 L310 214" fill="none" marker-end="url(#arrB1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- Tier 3: external store -->
+<rect fill="var(--bg-surface)" height="46" rx="9" stroke="var(--accent-3)" stroke-width="1.8" width="250" x="185" y="216"></rect>
+<text data-en="EXTERNAL STORE" data-zh="外部存储" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="310" y="236">EXTERNAL STORE</text>
+<text data-en="full transcripts · files · raw tool outputs" data-zh="完整 transcript · 文件 · 原始工具输出" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="252">full transcripts · files · raw tool outputs</text>
+<text data-en="unbounded · cheap · retrieved by recall, never by residency" data-zh="无界 · 便宜 · 靠回取而非驻留" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="278">unbounded · cheap · retrieved by recall, never by residency</text>
+<!-- recall arrow on the right, going back up -->
+<path d="M445 239 C510 239 510 143 448 143" fill="none" marker-end="url(#arrB2)" stroke="var(--text-tertiary)" stroke-width="1.3" stroke-dasharray="4,3"></path>
+<text data-en="recall on demand" data-zh="按需回取" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="520" y="196">recall on demand</text>
+<!-- footer -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="296"></rect>
+<text data-en="Everything does not live everywhere. Cheap tiers hold bulk; the expensive tier holds only what the next token depends on." data-zh="不是所有东西都要驻留在每一层。便宜的层放海量数据；昂贵的那层，只放下一个 token 所依赖的东西。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="321">Everything does not live everywhere. Cheap tiers hold bulk; the expensive tier holds only what the next token depends on.</text>
+</svg>
+<p class="diagram-caption" data-en="A well-architected agent looks less like a tape and more like a cache hierarchy: a small, fiercely-guarded working context; a tier of distilled episodic summaries that can be re-injected when relevant; and an unbounded external store holding everything raw. Moving data down a tier is cheap. Keeping it in the top tier is the most expensive decision in the system — made implicitly, thousands of times per run, by code that never mentions it." data-zh="一个架构良好的智能体，看起来不像一盘磁带，更像一套缓存层级：一个被严防死守的、极小的工作上下文；一层可以在需要时回注的、蒸馏过的情节摘要；以及一个存放一切原始数据的、无界的外部存储。把数据下移一层很便宜。把它留在顶层，是整个系统里最昂贵的决定——而这个决定，每运行一次就被隐式做出几千次，由从未提及它的代码。">A well-architected agent looks less like a tape and more like a cache hierarchy: a small, fiercely-guarded working context; a tier of distilled episodic summaries that can be re-injected when relevant; and an unbounded external store holding everything raw. Moving data down a tier is cheap. Keeping it in the top tier is the most expensive decision in the system.</p>
+</div>
+<h3 data-en="The window is not memory. It is attention." data-zh="窗口不是内存，是注意力。">The window is not memory. It is attention.</h3>
+<p data-en="The instinct to append everything comes from a reasonable place: in conventional software, memory is cheap and reading it again is free. If a variable holds a value, keeping it costs nothing. The context window breaks this intuition completely. A value that enters the window is not stored — it is attended to, on every forward pass, competing with every other token for the model's focus. Two hundred tokens of irrelevant tool noise do not sit quietly in a corner. They actively tax the model's ability to follow the instruction that matters. Empirically, this shows up as the classic long-context failure: the agent that performed beautifully for the first twenty steps starts making decisions that contradict its own earlier constraints, not because the model got worse, but because the constraints got buried. The information is technically in the window. Availability is not the same as salience, and salience is what the budget buys." data-zh="「什么都追加」的本能来自一个合理的地方：在传统软件里，内存便宜，重读免费。一个变量持有值，保存它不花成本。而上下文窗口彻底打破了这个直觉。一个进入窗口的值不是被「存储」——它是被「注意」的，在每一次前向传播中，与其他所有 token 竞争模型的注意力焦点。两百个不相关工具噪音的 token，不会安静地待在角落。它们在主动地对模型跟随重要指令的能力征税。从经验上看，这表现为经典的长上下文失败：前二十步表现完美的智能体，开始做出与自己早期约束相矛盾的决定——不是模型变差了，而是约束被埋掉了。信息在技术上还在窗口里。可用性不等于显著性，而预算买到的，正是显著性。">The instinct to append everything comes from a reasonable place: in conventional software, memory is cheap and reading it again is free. The context window breaks this intuition completely. A value that enters the window is not stored — it is attended to, on every forward pass, competing with every other token for the model's focus. Two hundred tokens of irrelevant tool noise do not sit quietly in a corner. They actively tax the model's ability to follow the instruction that matters. The information is technically in the window. Availability is not the same as salience, and salience is what the budget buys.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="CONTEXT GROWTH OVER A 60-STEP RUN" data-zh="一次 60 步运行的上下文增长" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">CONTEXT GROWTH OVER A 60-STEP RUN</text>
+<!-- axes -->
+<line stroke="var(--border)" stroke-width="1" x1="70" x2="70" y1="46" y2="260"></line>
+<line stroke="var(--border)" stroke-width="1" x1="70" x2="580" y1="260" y2="260"></line>
+<text data-en="tokens" data-zh="token 数" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" transform="rotate(-90 40 153)" x="40" y="153">tokens</text>
+<text data-en="steps →" data-zh="步数 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="325" y="278">steps →</text>
+<!-- naive append: exponential-ish curve -->
+<path d="M70 250 C220 240 380 180 560 60" fill="none" stroke="var(--accent-3)" stroke-width="2"></path>
+<text data-en="append everything" data-zh="全部追加" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="end" x="560" y="48">append everything</text>
+<!-- compaction: sawtooth -->
+<path d="M70 230 L130 190 L130 230 L190 190 L190 230 L250 190 L250 230 L310 190 L310 230 L370 190 L370 230 L430 190 L430 230 L490 190 L490 230 L550 190" fill="none" stroke="var(--accent-2)" stroke-width="2"></path>
+<text data-en="periodic compaction" data-zh="周期性压缩" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="end" x="560" y="212">periodic compaction</text>
+<!-- budgeted: flat -->
+<path d="M70 246 L560 238" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="2.5"></path>
+<text data-en="eviction budget (fixed)" data-zh="逐出预算（恒定）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="end" x="560" y="254">eviction budget (fixed)</text>
+<!-- annotations -->
+<text data-en="cost of step N ∝ total context at step N" data-zh="第 N 步的成本 ∝ 第 N 步的总上下文" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="start" x="90" y="70">cost of step N ∝ total context at step N</text>
+<rect fill="var(--accent-dim)" height="32" opacity="0.5" rx="8" width="420" x="100" y="286"></rect>
+<text data-en="Same task, same tools, same model — the only variable is what each architecture allows to stay in the window." data-zh="同样的任务、同样的工具、同样的模型——唯一的变量，是每种架构允许什么留在窗口里。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="306">Same task, same tools, same model — the only variable is what each architecture allows to stay in the window.</text>
+</svg>
+<p class="diagram-caption" data-en="Three policies, one task. The append-everything agent pays quadratically over the run and forgets its instructions at the top of the curve. The compaction agent sawtooths: it grows, summarizes itself back down, and repeats — workable, but the summary boundary is where detail goes to die. The budgeted agent enforces a ceiling from step one: every insertion forces an eviction decision, and the context stays flat for the whole run. Flat context means flat cost, flat latency, and instructions that stay salient at step sixty exactly as they were at step one." data-zh="三种策略，同一个任务。全部追加的智能体在整次运行中付出平方级代价，并在曲线顶端忘掉自己的指令。周期压缩的智能体呈锯齿状：增长，自我摘要压回去，再重复——可行，但摘要的边界，正是细节死去的地方。预算制的智能体从第一步就执行一条上限：每一次插入都强制一次逐出决策，上下文在整个运行中保持平坦。平坦的上下文意味着平坦的成本、平坦的延迟，以及一条到第六十步仍和第一步同样显著的指令。">Three policies, one task. The append-everything agent pays quadratically over the run and forgets its instructions at the top of the curve. The compaction agent sawtooths: it grows, summarizes itself back down, and repeats. The budgeted agent enforces a ceiling from step one: every insertion forces an eviction decision, and the context stays flat for the whole run. Flat context means flat cost, flat latency, and instructions that stay salient at step sixty exactly as they were at step one.</p>
+</div>
+<h3 data-en="An eviction policy is a design decision, not a cleanup script" data-zh="逐出策略是设计决策，不是清理脚本">An eviction policy is a design decision, not a cleanup script</h3>
+<p data-en="The hard question, of course, is what to evict. And this is where most teams reach for the wrong tool: they ask the model to summarize its own context whenever it gets long. Self-summarization is better than nothing, but it is a blunt instrument — the model compressing its own working memory has no better idea of what will matter in twenty steps than the engineer does, and every summary pass is another place where critical detail quietly dies. The stronger move is to make eviction a typed, explicit operation in the harness. A tool result is not the same kind of object as a plan, or a user instruction, or an error trace. Each class deserves its own retention rule, its own destination tier, and its own recall trigger. Instructions are pinned — they are never evicted, only revised. Plans are versioned — an old plan is moved out whole, replaced by a delta. Tool outputs are mined — anything the agent extracted from them is kept as a short structured fact; the raw payload goes to the external store with an address, so it can be fetched again if a later step needs what was skipped. The transcript is never deleted. It is demoted." data-zh="当然，难的问题是：逐出什么。而这正是大多数团队拿错工具的地方：他们让模型在上下文变长时自我摘要。自我摘要聊胜于无，但它是一件钝器——一个压缩自己工作记忆的模型，并不比工程师更清楚二十步之后什么会重要，而且每一次摘要，都是关键细节无声死去的又一个地方。更强的做法，是把逐出变成 harness 中一个带类型、显式的操作。一个工具结果，和一个计划、一条用户指令、一段错误追踪，不是同类对象。每一类都应该有自己的保留规则、自己的目标层级、自己的回取触发器。指令被钉住——永不逐出，只被修订。计划被版本化——旧计划整体移出，用增量替换。工具输出被开采——智能体从中提取的一切，保留为简短的结构化事实；原始载荷带着一个地址进入外部存储，这样如果之后的步骤需要当初跳过的内容，还能再取回来。transcript 永远不被删除。它被降级。">The hard question, of course, is what to evict. And this is where most teams reach for the wrong tool: they ask the model to summarize its own context whenever it gets long. Self-summarization is better than nothing, but it is a blunt instrument. The stronger move is to make eviction a typed, explicit operation in the harness. A tool result is not the same kind of object as a plan, or a user instruction, or an error trace. Each class deserves its own retention rule, its own destination tier, and its own recall trigger. The transcript is never deleted. It is demoted.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrD1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrD2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrD3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="A TYPED EVICTION FLOW — WHAT HAPPENS WHEN CONTEXT HITS THE CEILING" data-zh="带类型的逐出流程 —— 当上下文触顶时发生什么" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">A TYPED EVICTION FLOW — WHAT HAPPENS WHEN CONTEXT HITS THE CEILING</text>
+<!-- trigger -->
+<rect fill="var(--accent-dim)" height="34" rx="8" stroke="var(--accent)" stroke-width="2" width="200" x="210" y="40"></rect>
+<text data-en="insert + ceiling hit?" data-zh="插入 + 触顶？" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="61">insert + ceiling hit?</text>
+<!-- classify -->
+<path d="M310 74 L310 88" fill="none" marker-end="url(#arrD1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--text-tertiary)" stroke-width="1.5" width="160" x="230" y="90"></rect>
+<text data-en="classify the block" data-zh="给块分类" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="109">classify the block</text>
+<!-- three branches -->
+<path d="M310 120 C310 140 150 140 130 156" fill="none" marker-end="url(#arrD2)" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<path d="M310 120 L310 156" fill="none" marker-end="url(#arrD2)" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<path d="M310 120 C310 140 470 140 490 156" fill="none" marker-end="url(#arrD2)" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<!-- PIN -->
+<rect fill="var(--bg-surface)" height="58" rx="8" stroke="var(--accent)" stroke-width="1.8" width="140" x="60" y="158"></rect>
+<text data-en="INSTRUCTION" data-zh="指令" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="130" y="178">INSTRUCTION</text>
+<text data-en="pinned — never evicted" data-zh="钉住 —— 永不逐出" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="130" y="194">pinned — never evicted</text>
+<text data-en="only revised, never dropped" data-zh="只修订，不丢弃" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="130" y="208">only revised, never dropped</text>
+<!-- MINE -->
+<rect fill="var(--bg-surface)" height="58" rx="8" stroke="var(--accent-2)" stroke-width="1.8" width="140" x="240" y="158"></rect>
+<text data-en="TOOL OUTPUT" data-zh="工具输出" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="310" y="178">TOOL OUTPUT</text>
+<text data-en="mine → structured fact" data-zh="开采 → 结构化事实" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="194">mine → structured fact</text>
+<text data-en="raw payload → store + address" data-zh="原始载荷 → 存储 + 地址" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="310" y="208">raw payload → store + address</text>
+<!-- VERSION -->
+<rect fill="var(--bg-surface)" height="58" rx="8" stroke="var(--accent-3)" stroke-width="1.8" width="140" x="420" y="158"></rect>
+<text data-en="OLD PLAN" data-zh="旧计划" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="490" y="178">OLD PLAN</text>
+<text data-en="demote whole → keep delta" data-zh="整体降级 → 保留增量" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="490" y="194">demote whole → keep delta</text>
+<text data-en="episodes index it for recall" data-zh="情节层为其建索引以备回取" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="490" y="208">episodes index it for recall</text>
+<!-- converge to stable context -->
+<path d="M130 216 C130 240 260 244 300 252" fill="none" marker-end="url(#arrD1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<path d="M310 216 L310 252" fill="none" marker-end="url(#arrD1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<path d="M490 216 C490 240 360 244 320 252" fill="none" marker-end="url(#arrD1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<rect fill="var(--accent-dim)" height="34" rx="8" stroke="var(--accent)" stroke-width="2" width="240" x="190" y="254"></rect>
+<text data-en="WORKING CONTEXT ≤ BUDGET" data-zh="工作上下文 ≤ 预算" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="275">WORKING CONTEXT ≤ BUDGET</text>
+<text data-en="every eviction writes an address; nothing is lost, only relocated" data-zh="每次逐出都写下一个地址；没有东西丢失，只是搬家" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="310">every eviction writes an address; nothing is lost, only relocated</text>
+</svg>
+<p class="diagram-caption" data-en="When an insertion would push the context past its ceiling, the harness does not panic-summarize. It classifies the block by type and applies the retention rule for that type: instructions are pinned, tool outputs are mined for structured facts before their payloads are demoted to storage, and superseded plans leave behind only a delta. Every demotion writes an address, so a later step that needs the full detail can recall it — one hop down the hierarchy instead of permanent loss." data-zh="当一次插入会把上下文推过上限时，harness 不会慌乱地摘要。它按类型给块分类，然后套用该类型的保留规则：指令被钉住；工具输出先被开采出结构化事实，载荷才降级进存储；被取代的计划只留下一个增量。每一次降级都写下一个地址，这样之后需要完整细节的步骤可以回取——沿层级下一跳，而不是永久丢失。">When an insertion would push the context past its ceiling, the harness does not panic-summarize. It classifies the block by type and applies the retention rule for that type: instructions are pinned, tool outputs are mined for structured facts before their payloads are demoted to storage, and superseded plans leave behind only a delta. Every demotion writes an address, so a later step that needs the full detail can recall it — one hop down the hierarchy instead of permanent loss.</p>
+</div>
+<blockquote data-en="A context window is a theater with a fixed number of seats. Every token is an audience member the model must watch simultaneously. The append-everything agent fills the seats with extras who will never speak, and wonders why the performers can no longer hear each other. Budgeting is not about fitting more in — it is about deciding who deserves a seat, and being willing to walk anyone who does not." data-zh="上下文窗口是一座座位数固定的剧场。每一个 token，都是模型必须同时注视的观众。全部追加的智能体，把座位塞满了永远不会开口的群演，然后纳闷为什么台上的演员再也听不见彼此。预算，不是关于「塞进更多」——而是关于「谁配拥有一个座位」，并且敢于请走任何不配的。">A context window is a theater with a fixed number of seats. Every token is an audience member the model must watch simultaneously. The append-everything agent fills the seats with extras who will never speak, and wonders why the performers can no longer hear each other. Budgeting is not about fitting more in — it is about deciding who deserves a seat, and being willing to walk anyone who does not.</blockquote>
+<h3 data-en="Pay for what changes the next token" data-zh="只为会改变下一个 token 的东西付费">Pay for what changes the next token</h3>
+<p data-en="The budget itself is not arbitrary — it falls out of one question, asked ruthlessly about every candidate token: will this change what the model does next? A tool result from three steps ago, already extracted into the working state, will not. An error message whose lesson has been written into the constraint list will not. The raw text of a file that has already been searched will not. These are all candidates for demotion, and the test is cheap to apply because it is mechanical, not model-mediated. Conversely, the things that always pass the test: the current goal, the active constraints, the state of the world the agent has learned, and the precise outputs of the most recent step. Notice how short that list is. Notice also that it has almost nothing to do with how much text the task generates — only with what remains load-bearing. Long tasks stop being expensive when the working context stops being an archive and becomes, instead, a live index of everything the archive holds." data-zh="预算本身并非任意设定——它来自一个对每个候选 token 都冷酷提出的问题：这会改变模型接下来的行为吗？三步前的一个工具结果，已经被提取进工作状态，不会。一条教训已写进约束列表的错误信息，不会。一个已被搜索过的文件的原始文本，不会。这些全都是降级的候选，而这个测试的应用成本很低，因为它是机械的，不需要模型参与。反过来，永远通过测试的东西：当前目标、活跃约束、智能体已学到的世界状态、以及最近一步的精确输出。注意这份清单有多短。还要注意，它和任务产生多少文本几乎无关——只和什么仍然承重有关。当工作上下文不再是一个档案库，而变成一份指向档案库所藏一切的活索引时，长任务就不再昂贵。">The budget itself is not arbitrary — it falls out of one question, asked ruthlessly about every candidate token: will this change what the model does next? A tool result from three steps ago, already extracted into the working state, will not. An error message whose lesson has been written into the constraint list will not. Conversely, the things that always pass the test: the current goal, the active constraints, the state of the world the agent has learned, and the precise outputs of the most recent step. Notice how short that list is. Long tasks stop being expensive when the working context stops being an archive and becomes a live index of everything the archive holds.</p>
+<p data-en="None of this is glamorous. There is no model upgrade in it, no benchmark jump, no demo moment. It is plumbing — the kind of engineering decision that shows up only in the shape of a cost curve and in whether the fiftieth step of a run is as sharp as the fifth. But this is what harness engineering is: the discipline of building the structure around the model so that the model's intelligence actually arrives at the destination. Windows will keep getting bigger, and every enlargement will be advertised as the end of context engineering. It never is. A bigger window raises the ceiling, but attention still dilutes, cost still compounds, and the question — who deserves a seat — still has to be answered by someone. The teams that answer it deliberately run agents for a thousand steps on a flat budget. The teams that don't, run them until the transcript eats the task." data-zh="这些都不光鲜。这里面没有模型升级，没有基准跳升，没有演示时刻。它是管道工程——那种只体现在成本曲线形状上、只体现在一次运行的第十五步是否还像第五步那样锐利上的工程决策。但这正是 harness 工程的意义所在：在模型周围建造结构的学科，好让模型的智能真正抵达目的地。窗口会继续变大，而每一次扩容都会被宣传成上下文工程的终结。它从来不是。更大的窗口抬高了天花板，但注意力仍会稀释，成本仍会复利，而那个问题——谁配拥有一个座位——仍然需要有人来回答。有意识回答它的团队，用一份平坦的预算跑出上千步的智能体。不回答的团队，一直跑到 transcript 吃掉任务本身为止。">None of this is glamorous. There is no model upgrade in it, no benchmark jump, no demo moment. It is plumbing — the kind of engineering decision that shows up only in the shape of a cost curve and in whether the fiftieth step of a run is as sharp as the fifth. But this is what harness engineering is: the discipline of building the structure around the model so that the model's intelligence actually arrives at the destination. Windows will keep getting bigger, and every enlargement will be advertised as the end of context engineering. It never is. The teams that answer it deliberately run agents for a thousand steps on a flat budget. The teams that don't, run them until the transcript eats the task.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
