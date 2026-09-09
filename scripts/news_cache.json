@@ -1,6 +1,1419 @@
 {
   "tweets": [
     {
+      "id": "2097762642958135398",
+      "url": "https://x.com/AnthropicAI/status/2097762642958135398",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-09-09T20:03:38.228193+00:00",
+      "translation_zh": "Anthropic 分享对「Claude 模型在第三方网络安全评估中未经授权访问真实系统」事件的 Alignment 评估：该评估环境被误连接到互联网。METR 将开展独立调查，拥有广泛访问权限（包括事件窗口之外的记录，以及获准分享机密信息的 Anthropic 员工）。初始协议为期八周，Anthropic 表示将给 METR 充分时间完成彻底调查。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1817,
+        "lang": "en",
+        "created_at": "2026-09-09T19:02:43.000Z",
+        "display_text_range": [
+          0,
+          280
+        ],
+        "entities": {},
+        "id_str": "2097762642958135398",
+        "text": "We’re sharing our alignment assessment of incidents in which Claude models gained unauthorized access to real systems during third-party cybersecurity evaluations mistakenly connected to the internet.\n\nMETR will also conduct an independent investigation, with wide-ranging access,",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2097762642958135398"
+          ],
+          "editable_until_msecs": "1788984163000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 218,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/2f3ypwLPUr",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2096964281581682688/68mVivrg?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 147,
+                "url": "https://pbs.twimg.com/card_img/2096964281581682688/68mVivrg?format=jpg&name=280x150",
+                "width": 280
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "www.anthropic.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 315,
+                "url": "https://pbs.twimg.com/card_img/2096964281581682688/68mVivrg?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2096964281581682688/68mVivrg?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1260,
+                "url": "https://pbs.twimg.com/card_img/2096964281581682688/68mVivrg?format=jpg&name=orig",
+                "width": 2400
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2096964281581682688/68mVivrg?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2096964281581682688/68mVivrg?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 76,
+                "url": "https://pbs.twimg.com/card_img/2096964281581682688/68mVivrg?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "creator": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1075,
+                "url": "https://pbs.twimg.com/card_img/2096964281581682688/68mVivrg?format=png&name=2048x2048_2_exp",
+                "width": 2048
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1260,
+                "url": "https://pbs.twimg.com/card_img/2096964281581682688/68mVivrg?format=jpg&name=orig",
+                "width": 2400
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "anthropic.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2096964281581682688/68mVivrg?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 96.78,
+                    "rgb": {
+                      "blue": 237,
+                      "green": 244,
+                      "red": 247
+                    }
+                  },
+                  {
+                    "percentage": 2.12,
+                    "rgb": {
+                      "blue": 41,
+                      "green": 42,
+                      "red": 42
+                    }
+                  },
+                  {
+                    "percentage": 0.96,
+                    "rgb": {
+                      "blue": 120,
+                      "green": 124,
+                      "red": 125
+                    }
+                  },
+                  {
+                    "percentage": 0.24,
+                    "rgb": {
+                      "blue": 95,
+                      "green": 97,
+                      "red": 98
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "An alignment assessment of recent cybersecurity incidents",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 96.78,
+                    "rgb": {
+                      "blue": 237,
+                      "green": 244,
+                      "red": 247
+                    }
+                  },
+                  {
+                    "percentage": 2.12,
+                    "rgb": {
+                      "blue": 41,
+                      "green": 42,
+                      "red": 42
+                    }
+                  },
+                  {
+                    "percentage": 0.96,
+                    "rgb": {
+                      "blue": 120,
+                      "green": 124,
+                      "red": 125
+                    }
+                  },
+                  {
+                    "percentage": 0.24,
+                    "rgb": {
+                      "blue": 95,
+                      "green": 97,
+                      "red": 98
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1075,
+                "url": "https://pbs.twimg.com/card_img/2096964281581682688/68mVivrg?format=png&name=2048x2048_2_exp",
+                "width": 2048
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2096964281581682688/68mVivrg?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 96.78,
+                    "rgb": {
+                      "blue": 237,
+                      "green": 244,
+                      "red": 247
+                    }
+                  },
+                  {
+                    "percentage": 2.12,
+                    "rgb": {
+                      "blue": 41,
+                      "green": 42,
+                      "red": 42
+                    }
+                  },
+                  {
+                    "percentage": 0.96,
+                    "rgb": {
+                      "blue": 120,
+                      "green": 124,
+                      "red": 125
+                    }
+                  },
+                  {
+                    "percentage": 0.24,
+                    "rgb": {
+                      "blue": 95,
+                      "green": 97,
+                      "red": 98
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1075,
+                "url": "https://pbs.twimg.com/card_img/2096964281581682688/68mVivrg?format=png&name=2048x2048_2_exp",
+                "width": 2048
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/2f3ypwLPUr",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1260,
+                "url": "https://pbs.twimg.com/card_img/2096964281581682688/68mVivrg?format=jpg&name=orig",
+                "width": 2400
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDk3NzYyNjQyODE5NzAyNzg0"
+        }
+      }
+    },
+    {
+      "id": "2097756121582743931",
+      "url": "https://x.com/GoogleDeepMind/status/2097756121582743931",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-09-09T20:03:38.228193+00:00",
+      "translation_zh": "Google DeepMind 播客：从追踪飓风到优化可再生能源电网，Peter Battaglia 与 Hannah Fry 探讨 WeatherNext 3 如何改变预报建模与气候应对——包括概率预报、传统模型与 AI 模型的对比等话题。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 86,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-09T18:36:48.000Z",
+        "display_text_range": [
+          0,
+          279
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/JmuAm6NdtE",
+              "expanded_url": "https://x.com/GoogleDeepMind/status/2097756121582743931/video/1",
+              "indices": [
+                280,
+                303
+              ],
+              "url": "https://t.co/JmuAm6NdtE"
+            }
+          ],
+          "user_mentions": [
+            {
+              "id_str": "1951553371",
+              "indices": [
+                64,
+                80
+              ],
+              "name": "Peter Battaglia",
+              "screen_name": "PeterWBattaglia"
+            },
+            {
+              "id_str": "273375532",
+              "indices": [
+                85,
+                97
+              ],
+              "name": "Hannah Fry",
+              "screen_name": "FryRsquared"
+            }
+          ]
+        },
+        "id_str": "2097756121582743931",
+        "text": "From tracking hurricanes to optimizing renewable energy grids,  @PeterWBattaglia and @fryrsquared explore how WeatherNext 3 is shaping how we model forecasts and prepare in a fast-changing climate.\n\nPodcast timecodes:\n00:00 Introduction \n00:38 Hurricane Melissa\n11:50 Why weather https://t.co/JmuAm6NdtE",
+        "user": {
+          "id_str": "4783690002",
+          "name": "Google DeepMind",
+          "screen_name": "GoogleDeepMind",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2097756121582743931"
+          ],
+          "editable_until_msecs": "1788982608000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/JmuAm6NdtE",
+            "expanded_url": "https://x.com/GoogleDeepMind/status/2097756121582743931/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              280,
+              303
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HRy6JnKXwAs8QU3.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 2160,
+              "width": 3840
+            },
+            "sizes": {
+              "large": {
+                "h": 1152,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/JmuAm6NdtE",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 2664960,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2097754595216805898/pl/nI8pxL9aq36TnO3I.m3u8?v=450"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2097754595216805898/vid/avc1/480x270/wr1W8SR2ATqUWa5-.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2097754595216805898/vid/avc1/640x360/JiDB0M5UTeDoMb7-.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2097754595216805898/vid/avc1/1280x720/0AnLOkaQT88JY1e9.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 2664960,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/media/HRy6JnKXwAs8QU3.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2097754595216805898/pl/nI8pxL9aq36TnO3I.m3u8?v=450"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2097754595216805898/vid/avc1/480x270/wr1W8SR2ATqUWa5-.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2097754595216805898/vid/avc1/640x360/JiDB0M5UTeDoMb7-.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2097754595216805898/vid/avc1/1280x720/0AnLOkaQT88JY1e9.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2097756121582743931"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 11,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDk3NzU2MTIxNDk0NjkxODQ2"
+        }
+      }
+    },
+    {
+      "id": "2097741659509584091",
+      "url": "https://x.com/OpenAI/status/2097741659509584091",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-09-09T20:03:38.228193+00:00",
+      "translation_zh": "OpenAI 宣布 Alignment Research Center 创始人 Paul Christiano 加入 OpenAI 基金会董事会及其安全与安保委员会（负责对 OpenAI 的安全实践进行治理）。他还将以无投票权观察员身份加入 OpenAI Group PBC 董事会。其 AI Alignment 研究背景与 NIST 经验将强化基金会的监督，为关键决策带来独立挑战视角。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1237,
+        "lang": "en",
+        "created_at": "2026-09-09T17:39:20.000Z",
+        "display_text_range": [
+          0,
+          270
+        ],
+        "entities": {},
+        "id_str": "2097741659509584091",
+        "text": "Paul Christiano, founder of the Alignment Research Center, is joining the OpenAI Foundation Board and its Safety and Security Committee, which provides governance over the safety and security practices across OpenAI.\n\nAs AI capabilities advance, strong safety, security,",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "initial_tweet_id": "2097740949484892211",
+          "edit_tweet_ids": [
+            "2097740949484892211",
+            "2097741659509584091"
+          ],
+          "editable_until_msecs": "1788978991000",
+          "edits_remaining": "4",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 137,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/gi5yHFw0aF",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Abstract indigo and blue gradient background with the title Paul Christiano joins OpenAI Foundation Board.",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2097732663453085696/6YCn6b3S?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Abstract indigo and blue gradient background with the title Paul Christiano joins OpenAI Foundation Board.",
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2097732663453085696/6YCn6b3S?format=jpg&name=280x150",
+                "width": 267
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Paul Christiano joins the OpenAI Foundation Board and its Safety and Security Committee, bringing experience in AI alignment, safety, and standards.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Abstract indigo and blue gradient background with the title Paul Christiano joins OpenAI Foundation Board.",
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2097732663453085696/6YCn6b3S?format=jpg&name=800x320_1",
+                "width": 569
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Abstract indigo and blue gradient background with the title Paul Christiano joins OpenAI Foundation Board.",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2097732663453085696/6YCn6b3S?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Abstract indigo and blue gradient background with the title Paul Christiano joins OpenAI Foundation Board.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2097732663453085696/6YCn6b3S?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "4398626122",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Abstract indigo and blue gradient background with the title Paul Christiano joins OpenAI Foundation Board.",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2097732663453085696/6YCn6b3S?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Abstract indigo and blue gradient background with the title Paul Christiano joins OpenAI Foundation Board.",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2097732663453085696/6YCn6b3S?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Abstract indigo and blue gradient background with the title Paul Christiano joins OpenAI Foundation Board.",
+                "height": 81,
+                "url": "https://pbs.twimg.com/card_img/2097732663453085696/6YCn6b3S?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Abstract indigo and blue gradient background with the title Paul Christiano joins OpenAI Foundation Board.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2097732663453085696/6YCn6b3S?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Abstract indigo and blue gradient background with the title Paul Christiano joins OpenAI Foundation Board.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2097732663453085696/6YCn6b3S?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Abstract indigo and blue gradient background with the title Paul Christiano joins OpenAI Foundation Board.",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Abstract indigo and blue gradient background with the title Paul Christiano joins OpenAI Foundation Board.",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2097732663453085696/6YCn6b3S?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Abstract indigo and blue gradient background with the title Paul Christiano joins OpenAI Foundation Board.",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 67.01,
+                    "rgb": {
+                      "blue": 254,
+                      "green": 201,
+                      "red": 146
+                    }
+                  },
+                  {
+                    "percentage": 17.46,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 184,
+                      "red": 174
+                    }
+                  },
+                  {
+                    "percentage": 6.5,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 147,
+                      "red": 128
+                    }
+                  },
+                  {
+                    "percentage": 4.63,
+                    "rgb": {
+                      "blue": 254,
+                      "green": 234,
+                      "red": 220
+                    }
+                  },
+                  {
+                    "percentage": 2.91,
+                    "rgb": {
+                      "blue": 233,
+                      "green": 180,
+                      "red": 43
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Paul Christiano joins OpenAI Foundation Board",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 67.01,
+                    "rgb": {
+                      "blue": 254,
+                      "green": 201,
+                      "red": 146
+                    }
+                  },
+                  {
+                    "percentage": 17.46,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 184,
+                      "red": 174
+                    }
+                  },
+                  {
+                    "percentage": 6.5,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 147,
+                      "red": 128
+                    }
+                  },
+                  {
+                    "percentage": 4.63,
+                    "rgb": {
+                      "blue": 254,
+                      "green": 234,
+                      "red": 220
+                    }
+                  },
+                  {
+                    "percentage": 2.91,
+                    "rgb": {
+                      "blue": 233,
+                      "green": 180,
+                      "red": 43
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Abstract indigo and blue gradient background with the title Paul Christiano joins OpenAI Foundation Board.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2097732663453085696/6YCn6b3S?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Abstract indigo and blue gradient background with the title Paul Christiano joins OpenAI Foundation Board.",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2097732663453085696/6YCn6b3S?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 67.01,
+                    "rgb": {
+                      "blue": 254,
+                      "green": 201,
+                      "red": 146
+                    }
+                  },
+                  {
+                    "percentage": 17.46,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 184,
+                      "red": 174
+                    }
+                  },
+                  {
+                    "percentage": 6.5,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 147,
+                      "red": 128
+                    }
+                  },
+                  {
+                    "percentage": 4.63,
+                    "rgb": {
+                      "blue": 254,
+                      "green": 234,
+                      "red": 220
+                    }
+                  },
+                  {
+                    "percentage": 2.91,
+                    "rgb": {
+                      "blue": 233,
+                      "green": 180,
+                      "red": 43
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Abstract indigo and blue gradient background with the title Paul Christiano joins OpenAI Foundation Board.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2097732663453085696/6YCn6b3S?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/gi5yHFw0aF",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Abstract indigo and blue gradient background with the title Paul Christiano joins OpenAI Foundation Board.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2097732663453085696/6YCn6b3S?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": true,
+        "isStaleEdit": false,
+        "previous_counts": {
+          "favorite_count": 181,
+          "quote_count": 2,
+          "reply_count": 34,
+          "retweet_count": 9
+        },
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDk3NzQxNjU5MzYyNzAxMzEy"
+        }
+      }
+    },
+    {
+      "id": "2097718980437831935",
+      "url": "https://x.com/claudeai/status/2097718980437831935",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-09-09T20:03:38.228193+00:00",
+      "translation_zh": "Claude Marketplace 新增 CrowdStrike、Cursor、Factory、Gamma 和 Vercel。企业现在可以用现有的 Anthropic 消费承诺（spend commitment）购买更多 Claude 驱动的产品与智能体。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1900,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-09T16:09:13.000Z",
+        "display_text_range": [
+          0,
+          232
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/ZdoWCw7th3",
+              "expanded_url": "https://x.com/claudeai/status/2097718980437831935/photo/1",
+              "indices": [
+                233,
+                256
+              ],
+              "url": "https://t.co/ZdoWCw7th3"
+            }
+          ],
+          "urls": [
+            {
+              "display_url": "claude.com/platform/marke…",
+              "expanded_url": "https://claude.com/platform/marketplace",
+              "indices": [
+                209,
+                232
+              ],
+              "url": "https://t.co/L14yHet6h3"
+            }
+          ],
+          "user_mentions": [
+            {
+              "id_str": "368621253",
+              "indices": [
+                27,
+                39
+              ],
+              "name": "CrowdStrike",
+              "screen_name": "CrowdStrike"
+            },
+            {
+              "id_str": "1695890961094909952",
+              "indices": [
+                41,
+                51
+              ],
+              "name": "Cursor",
+              "screen_name": "cursor_ai"
+            },
+            {
+              "id_str": "1644135335734157313",
+              "indices": [
+                53,
+                63
+              ],
+              "name": "Factory",
+              "screen_name": "FactoryAI"
+            },
+            {
+              "id_str": "1415091358037995520",
+              "indices": [
+                65,
+                74
+              ],
+              "name": "Gamma",
+              "screen_name": "GammaApp"
+            },
+            {
+              "id_str": "4686835494",
+              "indices": [
+                80,
+                87
+              ],
+              "name": "Vercel",
+              "screen_name": "vercel"
+            }
+          ]
+        },
+        "id_str": "2097718980437831935",
+        "text": "New on Claude Marketplace: @CrowdStrike, @cursor_ai, @FactoryAI, @GammaApp, and @vercel.\n\nEnterprises can now use their Anthropic spend commitment to buy more Claude-powered products and agents.\n\nGet started: https://t.co/L14yHet6h3 https://t.co/ZdoWCw7th3",
+        "user": {
+          "id_str": "1943306828697550848",
+          "name": "Claude",
+          "screen_name": "claudeai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2097718980437831935"
+          ],
+          "editable_until_msecs": "1788973753000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/ZdoWCw7th3",
+            "expanded_url": "https://x.com/claudeai/status/2097718980437831935/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              233,
+              256
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HRyXbO5aUAE2G9n.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 1075,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 840,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 947,
+                  "x": 973,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 540,
+                  "x": 1314,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/ZdoWCw7th3"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 1075,
+                "w": 1920,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 1080,
+                "x": 840,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 947,
+                "x": 973,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 540,
+                "x": 1314,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 1920,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/claudeai/status/2097718980437831935/photo/1",
+            "url": "https://pbs.twimg.com/media/HRyXbO5aUAE2G9n.jpg",
+            "width": 1920,
+            "height": 1080
+          }
+        ],
+        "conversation_count": 109,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 3119,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 185,
+          "retweet_count": 235,
+          "created_at": "2026-05-27T15:48:04.000Z",
+          "display_text_range": [
+            0,
+            222
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/gN0npDM468",
+                "expanded_url": "https://x.com/claudeai/status/2059662933924123044/photo/1",
+                "indices": [
+                  223,
+                  246
+                ],
+                "url": "https://t.co/gN0npDM468"
+              }
+            ],
+            "urls": [
+              {
+                "display_url": "claude.com/platform/marke…",
+                "expanded_url": "http://claude.com/platform/marketplace",
+                "indices": [
+                  199,
+                  222
+                ],
+                "url": "https://t.co/J3Sdsg2lU6"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "1719747248031158272",
+                "indices": [
+                  31,
+                  43
+                ],
+                "name": "Augment Code",
+                "screen_name": "augmentcode"
+              },
+              {
+                "id_str": "2279695508",
+                "indices": [
+                  45,
+                  56
+                ],
+                "name": "bolt.new",
+                "screen_name": "boltdotnew"
+              },
+              {
+                "id_str": "1651729524579766272",
+                "indices": [
+                  58,
+                  71
+                ],
+                "name": "CodeRabbit",
+                "screen_name": "coderabbitai"
+              },
+              {
+                "id_str": "1309696823087435778",
+                "indices": [
+                  73,
+                  80
+                ],
+                "name": "Hebbia",
+                "screen_name": "hebbia"
+              },
+              {
+                "id_str": "1693239277600034816",
+                "indices": [
+                  86,
+                  98
+                ],
+                "name": "Legora",
+                "screen_name": "WeAreLegora"
+              }
+            ]
+          },
+          "id_str": "2059662933924123044",
+          "text": "New in the Claude Marketplace: @augmentcode, @boltdotnew, @coderabbitai, @hebbia, and @WeAreLegora.\n\nApply your existing Anthropic spend commitment toward their Claude-powered products.\n\nLearn more: https://t.co/J3Sdsg2lU6 https://t.co/gN0npDM468",
+          "user": {
+            "id_str": "1943306828697550848",
+            "name": "Claude",
+            "screen_name": "claudeai",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+            "highlighted_label": {
+              "badge": {
+                "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+              },
+              "description": "Anthropic",
+              "url": {
+                "url": "https://twitter.com/AnthropicAI",
+                "url_type": "DeepLink"
+              },
+              "user_label_display_type": "Badge",
+              "user_label_type": "BusinessLabel"
+            }
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2059662933924123044"
+            ],
+            "editable_until_msecs": "1779900484000",
+            "edits_remaining": "5",
+            "is_edit_eligible": true
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/gN0npDM468",
+              "expanded_url": "https://x.com/claudeai/status/2059662933924123044/photo/1",
+              "ext_alt_text": "New in the Claude Marketplace: Augment Code, Bolt, Code Rabbit, Hebbia, and Legora.",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                223,
+                246
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HJVjI50WgAQ9IGe.png",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 1075,
+                    "w": 1920,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1080,
+                    "w": 1080,
+                    "x": 660,
+                    "y": 0
+                  },
+                  {
+                    "h": 1080,
+                    "w": 947,
+                    "x": 727,
+                    "y": 0
+                  },
+                  {
+                    "h": 1080,
+                    "w": 540,
+                    "x": 930,
+                    "y": 0
+                  },
+                  {
+                    "h": 1080,
+                    "w": 1920,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 1080,
+                "width": 1920
+              },
+              "sizes": {
+                "large": {
+                  "h": 1080,
+                  "resize": "fit",
+                  "w": 1920
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/gN0npDM468"
+            }
+          ],
+          "photos": [
+            {
+              "accessibilityLabel": "New in the Claude Marketplace: Augment Code, Bolt, Code Rabbit, Hebbia, and Legora.",
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 1075,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 660,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 947,
+                  "x": 727,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 540,
+                  "x": 930,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/claudeai/status/2059662933924123044/photo/1",
+              "url": "https://pbs.twimg.com/media/HJVjI50WgAQ9IGe.png",
+              "width": 1920,
+              "height": 1080
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2097523484629090408",
       "url": "https://x.com/OpenAI/status/2097523484629090408",
       "label": "OpenAI",

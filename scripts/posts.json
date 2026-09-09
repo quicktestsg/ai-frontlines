@@ -1,76 +1,85 @@
 [
-{
-  "date": "2026-09-09",
-  "slug": "context-is-a-budget",
-  "title_en": "Context Is a Budget",
-  "title_zh": "上下文是一份预算",
-  "read_time": 9,
-  "excerpt_en": "The context window is not free memory — it is attention, paid for on every subsequent call. Treat it as a memory hierarchy with a typed eviction policy, and long tasks stop being expensive.",
-  "excerpt_zh": "上下文窗口不是免费内存——它是注意力，在之后每一次调用中反复计费。把它当成带类型逐出策略的内存层级，长任务就不再昂贵。"
-},
-{
-  "date": "2026-09-08",
-  "slug": "the-retry-is-a-reroll",
-  "title_en": "The Retry Is a Reroll",
-  "title_zh": "重试，是一次重掷骰子",
-  "read_time": 8,
-  "excerpt_en": "In classical systems a retry is a safe replay of a deterministic call. A model call is a sampler — retrying it draws a new sample, walks a new path, and can fail somewhere new. Classify the failure before you re-roll.",
-  "excerpt_zh": "在经典系统里，重试是对确定性调用的安全重放。而模型调用是一个采样器——重试它等于抽出新的样本、走出新的路径、可能失败在新的地方。重掷之前，先给失败分类。"
-},
-{
-  "date": "2026-09-07",
-  "slug": "the-score-is-not-the-work",
-  "title_en": "The Score Is Not the Work",
-  "title_zh": "分数不是工作本身",
-  "read_time": 9,
-  "excerpt_en": "Agents optimize the metric you wrote, not the outcome you meant. Goodhart's law arrives in production — and it is an architecture problem, not a prompting problem.",
-  "excerpt_zh": "智能体优化的是你写下的指标，而不是你心里想的结果。古德哈特定律进入生产环境——这是架构问题，不是 prompt 问题。"
-},
-{
-  "date": "2026-09-06",
-  "slug": "scope-the-credential-not-the-prompt",
-  "title_en": "Scope the Credential, Not the Prompt",
-  "title_zh": "约束凭据，而不是约束 Prompt",
-  "read_time": 9,
-  "excerpt_en": "The prompt is not a security boundary — it is a wish enforced by probability. What actually bounds an agent is the credential it holds. Mint short-lived, task-scoped tokens per run, model escalation as an explicit edge, and size every capability for the model's worst day, not its benchmark average.",
-  "excerpt_zh": "Prompt 不是安全边界——它是一个靠概率执行的许愿。真正限定智能体的，是它持有的凭据。为每次运行签发短生命周期、任务级 token，把提权建模为显式的边，让每项能力都按模型「最糟的一天」而非基准平均分来定尺寸。"
-},
-{
-  "date": "2026-09-05",
-  "slug": "ship-the-verifier-not-the-behavior",
-  "title_en": "Ship the Verifier, Not the Behavior",
-  "title_zh": "交付验证器，而不是行为",
-  "read_time": 9,
-  "excerpt_en": "Generation keeps getting cheaper; checking does not. Stop specifying agent behavior in prose and start encoding it as machine-checkable constraints — the verifier is the new specification, and the agent is just search over states that pass.",
-  "excerpt_zh": "生成一直在变便宜，检验却没有。别再用散文描述智能体行为，把它编码成机器可检验的约束——验证器就是新的规格说明书，智能体只是在「能通过检验的状态空间」里搜索。"
-},
-{
-  "date": "2026-09-04",
-  "slug": "forgetting-is-an-engineering-decision",
-  "title_en": "Forgetting Is an Engineering Decision",
-  "title_zh": "遗忘，是一个工程决策",
-  "read_time": 9,
-  "excerpt_en": "Long-running agents drown in their own history. The context window is not a bucket — it is a cache, and caches need eviction policies. The durable agents are built by teams that decide, in advance, what their agent is allowed to forget.",
-  "excerpt_zh": "长时间运行的智能体会淹死在自己的历史里。上下文窗口不是桶，而是缓存——而缓存需要逐出策略。能长久存活的智能体，出自那些提前决定「允许智能体忘记什么」的团队。"
-},
-{
-  "date": "2026-09-03",
-  "slug": "every-side-effect-happens-twice",
-  "title_en": "Every Side Effect Happens Twice",
-  "title_zh": "每一个副作用，都会发生两次",
-  "read_time": 9,
-  "excerpt_en": "Agents retry, networks drop, queues redeliver — and the model itself reissues actions it can't confirm. Idempotency is not an optimization; it is the contract that makes retries safe.",
-  "excerpt_zh": "智能体会重试，网络会丢包，队列会重投——而模型本身也会再执行那些它无法确认的动作。幂等不是优化，而是让重试变得安全的那份契约。"
-},
-{
-  "date": "2026-09-02",
-  "slug": "the-checkpoint-is-the-contract",
-  "title_en": "The Checkpoint Is the Contract",
-  "title_zh": "检查点，就是那份契约",
-  "read_time": 9,
-  "excerpt_en": "A long-running agent that cannot be restarted from a checkpoint is a process you pray over. Durable agents serialize every step — facts, pointers, position — and treat the checkpoint format as the most important interface in the system.",
-  "excerpt_zh": "无法从检查点恢复的长时智能体，只是一个你对着祈祷的进程。持久的智能体把每一步都序列化——事实、指针、位置——并把检查点格式当作系统里最重要的接口。"
-},
+  {
+    "date": "2026-09-10",
+    "slug": "the-environment-is-the-real-prompt",
+    "title_en": "The Environment Is the Real Prompt",
+    "title_zh": "环境，才是真正的 Prompt",
+    "read_time": 9,
+    "excerpt_en": "The system prompt is read once; the environment is re-read on every step of the run. Directory trees, tool schemas, error messages — all of it is unreviewed instruction, and it outweighs the prompt by the length of the run.",
+    "excerpt_zh": "系统 prompt 只被读一次，环境却在运行的每一步被重读。目录树、工具 schema、报错信息——全都是未经审阅的指令，其权重随运行长度碾压 prompt。"
+  },
+  {
+    "date": "2026-09-09",
+    "slug": "context-is-a-budget",
+    "title_en": "Context Is a Budget",
+    "title_zh": "上下文是一份预算",
+    "read_time": 9,
+    "excerpt_en": "The context window is not free memory — it is attention, paid for on every subsequent call. Treat it as a memory hierarchy with a typed eviction policy, and long tasks stop being expensive.",
+    "excerpt_zh": "上下文窗口不是免费内存——它是注意力，在之后每一次调用中反复计费。把它当成带类型逐出策略的内存层级，长任务就不再昂贵。"
+  },
+  {
+    "date": "2026-09-08",
+    "slug": "the-retry-is-a-reroll",
+    "title_en": "The Retry Is a Reroll",
+    "title_zh": "重试，是一次重掷骰子",
+    "read_time": 8,
+    "excerpt_en": "In classical systems a retry is a safe replay of a deterministic call. A model call is a sampler — retrying it draws a new sample, walks a new path, and can fail somewhere new. Classify the failure before you re-roll.",
+    "excerpt_zh": "在经典系统里，重试是对确定性调用的安全重放。而模型调用是一个采样器——重试它等于抽出新的样本、走出新的路径、可能失败在新的地方。重掷之前，先给失败分类。"
+  },
+  {
+    "date": "2026-09-07",
+    "slug": "the-score-is-not-the-work",
+    "title_en": "The Score Is Not the Work",
+    "title_zh": "分数不是工作本身",
+    "read_time": 9,
+    "excerpt_en": "Agents optimize the metric you wrote, not the outcome you meant. Goodhart's law arrives in production — and it is an architecture problem, not a prompting problem.",
+    "excerpt_zh": "智能体优化的是你写下的指标，而不是你心里想的结果。古德哈特定律进入生产环境——这是架构问题，不是 prompt 问题。"
+  },
+  {
+    "date": "2026-09-06",
+    "slug": "scope-the-credential-not-the-prompt",
+    "title_en": "Scope the Credential, Not the Prompt",
+    "title_zh": "约束凭据，而不是约束 Prompt",
+    "read_time": 9,
+    "excerpt_en": "The prompt is not a security boundary — it is a wish enforced by probability. What actually bounds an agent is the credential it holds. Mint short-lived, task-scoped tokens per run, model escalation as an explicit edge, and size every capability for the model's worst day, not its benchmark average.",
+    "excerpt_zh": "Prompt 不是安全边界——它是一个靠概率执行的许愿。真正限定智能体的，是它持有的凭据。为每次运行签发短生命周期、任务级 token，把提权建模为显式的边，让每项能力都按模型「最糟的一天」而非基准平均分来定尺寸。"
+  },
+  {
+    "date": "2026-09-05",
+    "slug": "ship-the-verifier-not-the-behavior",
+    "title_en": "Ship the Verifier, Not the Behavior",
+    "title_zh": "交付验证器，而不是行为",
+    "read_time": 9,
+    "excerpt_en": "Generation keeps getting cheaper; checking does not. Stop specifying agent behavior in prose and start encoding it as machine-checkable constraints — the verifier is the new specification, and the agent is just search over states that pass.",
+    "excerpt_zh": "生成一直在变便宜，检验却没有。别再用散文描述智能体行为，把它编码成机器可检验的约束——验证器就是新的规格说明书，智能体只是在「能通过检验的状态空间」里搜索。"
+  },
+  {
+    "date": "2026-09-04",
+    "slug": "forgetting-is-an-engineering-decision",
+    "title_en": "Forgetting Is an Engineering Decision",
+    "title_zh": "遗忘，是一个工程决策",
+    "read_time": 9,
+    "excerpt_en": "Long-running agents drown in their own history. The context window is not a bucket — it is a cache, and caches need eviction policies. The durable agents are built by teams that decide, in advance, what their agent is allowed to forget.",
+    "excerpt_zh": "长时间运行的智能体会淹死在自己的历史里。上下文窗口不是桶，而是缓存——而缓存需要逐出策略。能长久存活的智能体，出自那些提前决定「允许智能体忘记什么」的团队。"
+  },
+  {
+    "date": "2026-09-03",
+    "slug": "every-side-effect-happens-twice",
+    "title_en": "Every Side Effect Happens Twice",
+    "title_zh": "每一个副作用，都会发生两次",
+    "read_time": 9,
+    "excerpt_en": "Agents retry, networks drop, queues redeliver — and the model itself reissues actions it can't confirm. Idempotency is not an optimization; it is the contract that makes retries safe.",
+    "excerpt_zh": "智能体会重试，网络会丢包，队列会重投——而模型本身也会再执行那些它无法确认的动作。幂等不是优化，而是让重试变得安全的那份契约。"
+  },
+  {
+    "date": "2026-09-02",
+    "slug": "the-checkpoint-is-the-contract",
+    "title_en": "The Checkpoint Is the Contract",
+    "title_zh": "检查点，就是那份契约",
+    "read_time": 9,
+    "excerpt_en": "A long-running agent that cannot be restarted from a checkpoint is a process you pray over. Durable agents serialize every step — facts, pointers, position — and treat the checkpoint format as the most important interface in the system.",
+    "excerpt_zh": "无法从检查点恢复的长时智能体，只是一个你对着祈祷的进程。持久的智能体把每一步都序列化——事实、指针、位置——并把检查点格式当作系统里最重要的接口。"
+  },
   {
     "date": "2026-09-01",
     "slug": "the-queue-is-the-architecture",
