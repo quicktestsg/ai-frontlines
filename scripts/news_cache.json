@@ -1,6 +1,577 @@
 {
   "tweets": [
     {
+      "id": "2097930620680941732",
+      "url": "https://x.com/deepseek_ai/status/2097930620680941732",
+      "label": "DeepSeek",
+      "color": "#0EA5E9",
+      "fetched_at": "2026-09-10T08:01:23.605210+00:00",
+      "translation_zh": "V4.1-Flash 正式上线 DeepSeek API，支持原生多模态，模型名设为 deepseek-flash。多方测试显示其在性能、成本、速度和总运行时间上均超越 V4-Pro，V4-Pro 将逐步淘汰。WorkBuddy AI 与 opencode 等官方合作伙伴已全面支持。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 546,
+        "in_reply_to_screen_name": "deepseek_ai",
+        "in_reply_to_status_id_str": "2097930617396887773",
+        "in_reply_to_user_id_str": "1714580962569588736",
+        "lang": "en",
+        "created_at": "2026-09-10T06:10:12.000Z",
+        "display_text_range": [
+          0,
+          278
+        ],
+        "entities": {},
+        "id_str": "2097930620680941732",
+        "text": "⚡ V4.1-Flash is now live on the DeepSeek API with native multimodal support.\n\nSet your model to deepseek-flash.\n\n🔹 V4-Flash &amp; V4-Flash-Vision-Exp are retired. For compatibility, deepseek-v4-flash and deepseek-v4-flash-vision-exp temporarily route to V4.1-Flash.\n🔹 Tests by",
+        "user": {
+          "id_str": "1714580962569588736",
+          "name": "DeepSeek",
+          "screen_name": "deepseek_ai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1717417613775757312/Uk1zNOj4_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2097930620680941732"
+          ],
+          "editable_until_msecs": "1789024212000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 8,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 784,
+          "in_reply_to_screen_name": "deepseek_ai",
+          "in_reply_to_status_id_str": "2097930613101838709",
+          "in_reply_to_user_id_str": "1714580962569588736",
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 9,
+          "retweet_count": 46,
+          "created_at": "2026-09-10T06:10:11.000Z",
+          "display_text_range": [
+            0,
+            273
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/rLzo9cTJzR",
+                "expanded_url": "https://x.com/deepseek_ai/status/2097930617396887773/photo/1",
+                "indices": [
+                  271,
+                  294
+                ],
+                "url": "https://t.co/rLzo9cTJzR"
+              }
+            ]
+          },
+          "id_str": "2097930617396887773",
+          "text": "💾 Smaller KV cache. Bigger savings.\n\nCompared with the previous generation, V4.1-Flash’s KV cache needs just:\n🔹 1/4 the HBM\n🔹 1/8 the SSD storage\nCache-hit charges often account for a large share of agent costs. Compressing the cache cuts those costs significantly.\n\n3/6 https://t.co/rLzo9cTJzR",
+          "user": {
+            "id_str": "1714580962569588736",
+            "name": "DeepSeek",
+            "screen_name": "deepseek_ai",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1717417613775757312/Uk1zNOj4_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2097930617396887773"
+            ],
+            "editable_until_msecs": "1789024211000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/rLzo9cTJzR",
+              "expanded_url": "https://x.com/deepseek_ai/status/2097930617396887773/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                271,
+                294
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HR1VAiCaUAA4jnX.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 1950,
+                    "w": 3482,
+                    "x": 64,
+                    "y": 0
+                  },
+                  {
+                    "h": 1950,
+                    "w": 1950,
+                    "x": 830,
+                    "y": 0
+                  },
+                  {
+                    "h": 1950,
+                    "w": 1711,
+                    "x": 950,
+                    "y": 0
+                  },
+                  {
+                    "h": 1950,
+                    "w": 975,
+                    "x": 1318,
+                    "y": 0
+                  },
+                  {
+                    "h": 1950,
+                    "w": 3801,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 1950,
+                "width": 3801
+              },
+              "sizes": {
+                "large": {
+                  "h": 1051,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 616,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 349,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/rLzo9cTJzR"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 1950,
+                  "w": 3482,
+                  "x": 64,
+                  "y": 0
+                },
+                {
+                  "h": 1950,
+                  "w": 1950,
+                  "x": 830,
+                  "y": 0
+                },
+                {
+                  "h": 1950,
+                  "w": 1711,
+                  "x": 950,
+                  "y": 0
+                },
+                {
+                  "h": 1950,
+                  "w": 975,
+                  "x": 1318,
+                  "y": 0
+                },
+                {
+                  "h": 1950,
+                  "w": 3801,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/deepseek_ai/status/2097930617396887773/photo/1",
+              "url": "https://pbs.twimg.com/media/HR1VAiCaUAA4jnX.jpg",
+              "width": 3801,
+              "height": 1950
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDk3OTMwNjIwNTkyODgxNjY0"
+        }
+      }
+    },
+    {
+      "id": "2097930608790167907",
+      "url": "https://x.com/deepseek_ai/status/2097930608790167907",
+      "label": "DeepSeek",
+      "color": "#0EA5E9",
+      "fetched_at": "2026-09-10T08:01:23.605210+00:00",
+      "translation_zh": "DeepSeek 发布 V4.1-Flash：更聪明、更快、更高效。新架构家族中最小的模型，原生支持视觉理解，为更强能力、更快推理、更高吞吐量和向更大模型扩展而设计。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 7599,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-10T06:10:09.000Z",
+        "display_text_range": [
+          0,
+          277
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/wxJGiyX56o",
+              "expanded_url": "https://x.com/deepseek_ai/status/2097930608790167907/photo/1",
+              "indices": [
+                275,
+                298
+              ],
+              "url": "https://t.co/wxJGiyX56o"
+            }
+          ]
+        },
+        "id_str": "2097930608790167907",
+        "text": "🚀 Introducing DeepSeek-V4.1-Flash: smarter, faster, more efficient.\n\n🔹 Introducing the smallest model in our new architecture family, with native visual understanding.\n🔹 Designed for greater capability, faster inference, higher throughput, and scaling to larger models.\n\n1/6 https://t.co/wxJGiyX56o",
+        "user": {
+          "id_str": "1714580962569588736",
+          "name": "DeepSeek",
+          "screen_name": "deepseek_ai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1717417613775757312/Uk1zNOj4_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2097930608790167907"
+          ],
+          "editable_until_msecs": "1789024209000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/wxJGiyX56o",
+            "expanded_url": "https://x.com/deepseek_ai/status/2097930608790167907/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              275,
+              298
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HR1UyHiaAAAtpqw.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 2101,
+                  "w": 3752,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2101,
+                  "w": 2101,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2101,
+                  "w": 1843,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2101,
+                  "w": 1051,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2101,
+                  "w": 4096,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 2101,
+              "width": 4096
+            },
+            "sizes": {
+              "large": {
+                "h": 1051,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 616,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 349,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/wxJGiyX56o"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 2101,
+                "w": 3752,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2101,
+                "w": 2101,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2101,
+                "w": 1843,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2101,
+                "w": 1051,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2101,
+                "w": 4096,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/deepseek_ai/status/2097930608790167907/photo/1",
+            "url": "https://pbs.twimg.com/media/HR1UyHiaAAAtpqw.jpg",
+            "width": 4096,
+            "height": 2101
+          }
+        ],
+        "conversation_count": 329,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDk3OTMwNjA4NzMxMzY5NDcy"
+        }
+      }
+    },
+    {
+      "id": "2097786616311840853",
+      "url": "https://x.com/OpenAI/status/2097786616311840853",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-09-10T08:01:23.605210+00:00",
+      "translation_zh": "OpenAI 动员 250 多人加强数百个系统的防御，最新的网络安全模型帮助发现并修复了原本可能无法发现的漏洞。他们公开了架构和实用手册，教你构建自己的\"Defense Factory\"——AI 持续发现漏洞、验证并确认修复的闭环。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 2905,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-09T20:37:58.000Z",
+        "display_text_range": [
+          0,
+          276
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/Vx9b2EwO8N",
+              "expanded_url": "https://x.com/OpenAI/status/2097786616311840853/photo/1",
+              "indices": [
+                277,
+                300
+              ],
+              "url": "https://t.co/Vx9b2EwO8N"
+            }
+          ]
+        },
+        "id_str": "2097786616311840853",
+        "text": "We mobilized 250+ people to strengthen our defenses across hundreds of systems. Our latest cyber models helped us find and fix vulnerabilities we might never have discovered otherwise.\n\nWe’re sharing what we learned, the architecture, and a practical playbook so you can build https://t.co/Vx9b2EwO8N",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2097786616311840853"
+          ],
+          "editable_until_msecs": "1788989878000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/Vx9b2EwO8N",
+            "expanded_url": "https://x.com/OpenAI/status/2097786616311840853/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              277,
+              300
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HRzVoTSbcAAWpe5.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 672,
+                  "w": 1200,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 672,
+                  "w": 672,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 672,
+                  "w": 589,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 672,
+                  "w": 336,
+                  "x": 102,
+                  "y": 0
+                },
+                {
+                  "h": 672,
+                  "w": 1200,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 672,
+              "width": 1200
+            },
+            "sizes": {
+              "large": {
+                "h": 672,
+                "resize": "fit",
+                "w": 1200
+              },
+              "medium": {
+                "h": 672,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 381,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/Vx9b2EwO8N"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 672,
+                "w": 1200,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 672,
+                "w": 672,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 672,
+                "w": 589,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 672,
+                "w": 336,
+                "x": 102,
+                "y": 0
+              },
+              {
+                "h": 672,
+                "w": 1200,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/OpenAI/status/2097786616311840853/photo/1",
+            "url": "https://pbs.twimg.com/media/HRzVoTSbcAAWpe5.jpg",
+            "width": 1200,
+            "height": 672
+          }
+        ],
+        "conversation_count": 206,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDk3Nzg2NjE2MTgxODU4MzEx"
+        }
+      }
+    },
+    {
       "id": "2097762642958135398",
       "url": "https://x.com/AnthropicAI/status/2097762642958135398",
       "label": "Anthropic",
