@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Handoff Loses the World — AI Frontlines</title>
+<meta content="Delegation is compression. When one agent hands work to another, the task spec travels but the world state — the dead ends, the priors, the user's half-spoken intent — is left behind. Multi-agent systems fail at the seam, not at the nodes." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 11, 2026" data-zh="2026年9月11日">September 11, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Handoff Loses the World" data-zh="交接，丢掉的是整个世界">The Handoff Loses the World</h1>
+<p class="post-header-deck" data-en="Every multi-agent system is sold on a promise: divide the work, run the specialists in parallel, and the whole becomes smarter than its parts. What the architecture diagram never shows is the seam — the moment one agent's accumulated understanding must cross into another agent's context window. The task description travels. The spec, the schema, the bullet list — they travel. But the world that produced them does not: the dead ends already explored, the priors about what the user actually meant, the knowledge that approach B failed yesterday for a reason nobody wrote down. Delegation is compression, and the compression is lossy at exactly the points that matter most." data-zh="每一个多智能体系统，都靠一个承诺卖出去：把工作拆开，让专家并行跑，整体就会比局部更聪明。但架构图永远不会画那道接缝——一个智能体积累的理解，必须跨入另一个智能体上下文窗口的那一刻。任务描述会过去。规格、schema、要点清单——都会过去。但孕育它们的那个世界不会过去：已经探索过的死胡同、关于「用户到底想要什么」的先验、还有「方案 B 昨天因为一个没人记下来的原因失败过」的知识。委派即压缩，而这压缩恰恰在最要紧的地方有损。">Every multi-agent system is sold on a promise: divide the work, run the specialists in parallel, and the whole becomes smarter than its parts. What the diagram never shows is the seam.</p>
+</header>
+<article class="post-body">
+<p data-en="Start with the observation that every advocate of multi-agent architectures eventually confronts. Two agents, each running the same model, will produce worse work together than one agent running alone — unless the handoff between them is engineered with real care. Not marginally worse. Dramatically worse. The orchestrator asks a subagent to 'refactor the auth module,' the subagent does something technically reasonable, and the result is wrong in ways that would have been obvious to anyone who had been present for the previous hour of the conversation: the part that was already tried and reverted, the constraint the user mentioned in passing, the reason the module looks the way it looks. The subagent is not stupid. It is amnesiac by design. It never saw the world; it saw a summary of the world, and summaries are written by systems that do not know which details will turn out to matter." data-zh="先从一个所有多智能体架构的鼓吹者最终都会撞上的观察开始。两个智能体，跑着同一个模型，合作产出的东西会比一个智能体单独干更差——除非它们之间的交接被真正用心地工程化。不是差一点，是差得离谱。编排器让子智能体「重构 auth 模块」，子智能体做了一件技术上说得通的事，而结果错得离谱——错在任何全程在场的人一眼就能看出的地方：那个已经试过又回滚的部分，用户随口提过一句的约束，以及这个模块长成这样的原因。子智能体不笨。它是被设计成失忆的。它从未见过世界；它见过的是世界的摘要，而摘要是由不知道哪些细节最终会要紧的系统写出来的。">Start with the observation that every advocate of multi-agent architectures eventually confronts. Two agents, each running the same model, will produce worse work together than one agent running alone — unless the handoff between them is engineered with real care. The subagent is not stupid. It is amnesiac by design. It never saw the world; it saw a summary of the world.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrH1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrH2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="WHAT TRAVELS vs WHAT IS LEFT BEHIND" data-zh="什么会过去，什么被留下" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHAT TRAVELS vs WHAT IS LEFT BEHIND</text>
+<!-- LEFT: sender's full world -->
+<text data-en="SENDER'S CONTEXT" data-zh="发送方的上下文" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="150" y="54">SENDER'S CONTEXT</text>
+<rect fill="var(--bg-surface)" height="190" rx="10" stroke="var(--accent-2)" stroke-width="1.5" width="220" x="40" y="66"></rect>
+<text data-en="task history" data-zh="任务历史" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" x="58" y="92">task history</text>
+<text data-en="user's phrasing &amp; intent" data-zh="用户的措辞与意图" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" x="58" y="114">user's phrasing &amp; intent</text>
+<text data-en="dead ends already walked" data-zh="走过的死胡同" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" x="58" y="136">dead ends already walked</text>
+<text data-en="constraints said in passing" data-zh="随口提过的约束" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" x="58" y="158">constraints said in passing</text>
+<text data-en="priors about the codebase" data-zh="对代码库的先验" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" x="58" y="180">priors about the codebase</text>
+<text data-en="taste · judgment · momentum" data-zh="品味 · 判断 · 节奏" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" x="58" y="202">taste · judgment · momentum</text>
+<text data-en="the reason things are this way" data-zh="「事情为何长这样」的原因" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" x="58" y="224">the reason things are this way</text>
+<!-- the seam -->
+<path d="M260 160 L330 160" fill="none" marker-end="url(#arrH2)" stroke="var(--accent)" stroke-width="2"></path>
+<rect fill="var(--accent-dim)" height="22" rx="6" opacity="0.6" width="70" x="260" y="128"></rect>
+<text data-en="the seam" data-zh="接缝" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="295" y="143">the seam</text>
+<text data-en="compression" data-zh="压缩" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="295" y="184">compression</text>
+<!-- RIGHT: what arrives -->
+<text data-en="WHAT THE SUBAGENT RECEIVES" data-zh="子智能体收到的" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="470" y="54">WHAT THE SUBAGENT RECEIVES</text>
+<rect fill="var(--bg-surface)" height="74" rx="10" stroke="var(--accent-3)" stroke-width="1.5" width="220" x="360" y="66"></rect>
+<text data-en="&quot;refactor the auth module&quot;" data-zh="「重构 auth 模块」" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" x="378" y="94">"refactor the auth module"</text>
+<text data-en="file list · a schema · a deadline" data-zh="文件列表 · 一个 schema · 一个期限" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" x="378" y="118">file list · a schema · a deadline</text>
+<text data-en="everything else: lost" data-zh="其余一切：丢失" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="470" y="170">everything else: lost</text>
+<text data-en="a competent stranger" data-zh="一个能干的陌生人" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="470" y="192">a competent stranger</text>
+</svg>
+<p class="diagram-caption" data-en="The sender holds a world: history, intent, dead ends, priors, taste. The seam compresses it into a task spec. The subagent wakes up as a competent stranger — technically capable, contextually blind — and then the team wonders why the work comes back wrong." data-zh="发送方握着一个世界：历史、意图、死胡同、先验、品味。接缝把它压缩成一份任务规格。子智能体醒来时是个能干的陌生人——技术上称职，上下文上失明——然后团队纳闷，为什么交回来的活是错的。">The sender holds a world: history, intent, dead ends, priors, taste. The seam compresses it into a task spec. The subagent wakes up as a competent stranger — technically capable, contextually blind.</p>
+</div>
+<h3 data-en="Delegation is compression" data-zh="委派即压缩">Delegation is compression</h3>
+<p data-en="The information theory here is unforgiving. A long-running agent's context is a high-dimensional state: everything the run has seen, everything it has ruled out, every intermediate judgment that shaped the current direction. A handoff is a projection of that state into a low-dimensional artifact — usually text, usually short, because the receiving agent's context window is finite and the sender has an incentive to be brief. Projections lose information by definition. The only question is which information. And the sender is in the worst possible position to answer that question, because what matters is determined by the future work, which has not happened yet. This is why handoffs written by agents read fine and fail badly: every sentence is accurate, and the omissions are fatal. The discipline is not writing better summaries. It is recognizing that the summary is the wrong primitive altogether." data-zh="这里的信息论毫不留情。一个长运行智能体的上下文，是一个高维状态：运行见过的一切、排除掉的一切、以及塑造了当前方向的每一个中间判断。交接，是把那个状态投影成一个低维产物——通常是文本，通常很短，因为接收方的上下文窗口有限，而发送方也有简短的动力。投影按定义就丢信息。唯一的问题是丢哪些信息。而发送方恰恰处在回答这个问题的最差位置，因为「什么要紧」是由还没发生的未来工作决定的。这就是为什么智能体写的交接读起来很好、用起来很糟：每一句都准确，而省略是致命的。解法不是写更好的摘要。是意识到摘要本身就是一个错误的原语。">The information theory here is unforgiving. A long-running agent's context is a high-dimensional state. A handoff is a projection of that state into a low-dimensional artifact. Projections lose information by definition — the only question is which information, and the sender is in the worst possible position to answer, because what matters is determined by the future work, which has not happened yet.</p>
+<blockquote data-en="Every handoff is a bet that the sender correctly guessed which parts of its world the receiver will need. The bet is placed at the moment of least information — before the work begins — and it cannot be retracted. Single-agent systems never place this bet. That is their inefficiency, and also their entire advantage." data-zh="每一次交接，都是一次赌注：赌发送方正确猜中了接收方将会需要它世界里的哪些部分。而这个赌注是在信息最少的时刻下的——工作开始之前——并且无法收回。单智能体系统从不下这个注。这是它的低效，也是它全部的优势。">Every handoff is a bet that the sender correctly guessed which parts of its world the receiver will need. The bet is placed at the moment of least information and it cannot be retracted. Single-agent systems never place this bet. That is their inefficiency, and also their entire advantage.</blockquote>
+<h3 data-en="The world state is tacit" data-zh="世界状态是隐性的">The world state is tacit</h3>
+<p data-en="There is a useful distinction between two kinds of knowledge inside a running agent. Explicit knowledge is what has been written down: the task, the schema, the interface. Tacit knowledge is everything else — the shape of the problem as it has revealed itself so far, the approaches that were quietly disqualified, the sense that the user cares more about latency than elegance, the fact that a certain test is flaky and its failures mean nothing. In human organizations, tacit knowledge moves through apprenticeship, hallway conversation, shared history. It is expensive and slow, which is precisely why companies keep trying to replace it with documentation, and why the documentation never fully works. Agent teams are repeating this mistake at machine speed. The handoff artifact — the task spec — is documentation. And the subagent is the new hire who reads the wiki, does exactly what it says, and produces work that is correct according to the document and wrong according to the world." data-zh="在一个运行中的智能体里，区分两种知识是有用的。显性知识是已被写下的一切：任务、schema、接口。隐性知识是其余的一切——到目前为止问题呈现出的形状、被悄悄否决的方案、用户其实更在意延迟而非优雅的直觉、以及某个测试本来就偶尔挂、它挂了什么也不说明的事实。在人类组织里，隐性知识靠传帮带、走廊闲聊、共同历史来传递。它又贵又慢，所以公司才不断试图用文档取代它，也所以文档从来不能完全奏效。智能体团队正在以机器速度重复这个错误。交接产物——任务规格——就是文档。而子智能体，就是那个读了 wiki、严格照做、产出了「按文档是对的、按世界是错的」工作的新人。">There is a useful distinction between two kinds of knowledge inside a running agent. Explicit knowledge is what has been written down. Tacit knowledge is everything else — the shape of the problem, the disqualified approaches, the sense that the user cares more about latency than elegance. Agent teams are repeating the documentation mistake at machine speed.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrP2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrP3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="WHERE THE WORLD LIVES: THREE ARCHITECTURES" data-zh="世界住在哪里：三种架构" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">WHERE THE WORLD LIVES: THREE ARCHITECTURES</text>
+<!-- 1: in the handoff -->
+<text data-en="① IN THE HANDOFF" data-zh="① 在交接里" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="105" y="52">IN THE HANDOFF</text>
+<circle cx="105" cy="105" fill="var(--bg-surface)" r="24" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="A" data-zh="A" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="105" y="110">A</text>
+<path d="M105 129 L105 165" fill="none" marker-end="url(#arrP3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<text data-en="fat spec" data-zh="厚重规格" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="132" y="150">fat spec</text>
+<circle cx="105" cy="192" fill="var(--bg-surface)" r="24" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="B" data-zh="B" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="105" y="197">B</text>
+<text data-en="brittle · always stale" data-zh="脆弱 · 永远过时" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="105" y="244">brittle · always stale</text>
+<text data-en="B re-learns what A knew" data-zh="B 重学 A 已知的事" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="105" y="260">B re-learns what A knew</text>
+<!-- 2: shared blackboard -->
+<text data-en="② ON A BLACKBOARD" data-zh="② 在共享黑板" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="52">ON A BLACKBOARD</text>
+<rect fill="var(--accent-dim)" height="40" rx="8" opacity="0.7" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="235" y="86"></rect>
+<text data-en="shared world state" data-zh="共享世界状态" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="110">shared world state</text>
+<circle cx="235" cy="192" fill="var(--bg-surface)" r="22" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<text data-en="A" data-zh="A" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="235" y="197">A</text>
+<circle cx="310" cy="205" fill="var(--bg-surface)" r="22" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<text data-en="B" data-zh="B" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="210">B</text>
+<circle cx="385" cy="192" fill="var(--bg-surface)" r="22" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<text data-en="C" data-zh="C" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="385" y="197">C</text>
+<path d="M240 168 C248 140 260 130 272 126" fill="none" marker-end="url(#arrP2)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<path d="M310 183 L310 128" fill="none" marker-end="url(#arrP2)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<path d="M380 168 C372 140 360 130 348 126" fill="none" marker-end="url(#arrP2)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<text data-en="everyone reads &amp; writes" data-zh="人人读写" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="254">everyone reads &amp; writes</text>
+<text data-en="the world outlives each agent" data-zh="世界比每个智能体活得久" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="270">the world outlives each agent</text>
+<!-- 3: in the environment -->
+<text data-en="③ IN THE ENVIRONMENT" data-zh="③ 在环境里" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="515" y="52">IN THE ENVIRONMENT</text>
+<rect fill="var(--bg-surface)" height="46" rx="10" stroke="var(--accent)" stroke-width="1.8" width="150" x="440" y="83"></rect>
+<text data-en="repo · filesystem" data-zh="代码库 · 文件系统" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="515" y="101">repo · filesystem</text>
+<text data-en="tests · CI · artifacts" data-zh="测试 · CI · 产物" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="515" y="118">tests · CI · artifacts</text>
+<circle cx="515" cy="192" fill="var(--bg-surface)" r="22" stroke="var(--accent)" stroke-width="1.5"></circle>
+<text data-en="B" data-zh="B" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="515" y="197">B</text>
+<path d="M515 170 L515 133" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="re-derive, don't transfer" data-zh="重新推导，而非传递" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="515" y="244">re-derive, don't transfer</text>
+<text data-en="the world is ground truth" data-zh="世界即事实来源" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="515" y="260">the world is ground truth</text>
+</svg>
+<p class="diagram-caption" data-en="Three places the world can live. In the handoff: a fat specification, brittle and stale the moment work begins. On a blackboard: a shared, structured state that every agent reads and writes, outliving any individual context. In the environment: no transfer at all — the subagent re-derives what it needs from the repository, the tests, the artifacts, because those things are the world, not a description of it." data-zh="世界可以住在三个地方。在交接里：一份厚重规格，工作一开始就又脆又过时。在黑板上：一个结构化的共享状态，人人读写，比任何单个上下文活得久。在环境里：根本不传递——子智能体从代码库、测试、产物中重新推导出它需要的一切，因为那些东西就是世界本身，而不是世界的描述。">Three places the world can live. In the handoff: fat, brittle, stale. On a blackboard: shared, structured, outliving any context. In the environment: no transfer at all — the subagent re-derives what it needs, because the repo is the world, not a description of it.</p>
+</div>
+<h3 data-en="Contracts, blackboards, and re-derivation" data-zh="契约、黑板与重新推导">Contracts, blackboards, and re-derivation</h3>
+<p data-en="The workable patterns all share one property: they stop treating the handoff as a summary and start treating it as an address. A task contract does not describe the world; it tells the receiver where the world can be found — which files carry the ground truth, which test encodes the acceptance criteria, which log holds the failed attempt that must not be repeated. Contracts are thin by design, because their job is reference, not recall. A blackboard goes further: a shared, structured state that every participant reads and writes, with a schema the team owns. Findings accumulate there, dead ends are recorded there, and the world grows independently of any single agent's context window — which also means it survives context compaction, agent restarts, and model upgrades. And re-derivation is the quietest but most robust pattern of all: the subagent does not receive the sender's understanding at all. It reconstructs what it needs from the environment itself, because in a well-shaped environment, the understanding has already been externalized into tests, types, commit history, and running systems. The sender's context was always a cache. The environment is the source of truth." data-zh="可行的模式都共享一个属性：它们不再把交接当作摘要，而是把它当作一个地址。任务契约不描述世界；它告诉接收方世界在哪里可以找到——哪些文件承载事实、哪个测试编码了验收标准、哪份日志记录了不可重演的失败尝试。契约天生就该薄，因为它的职责是引用，不是回忆。黑板更进一步：一个共享的、结构化的状态，每个参与者读写，schema 由团队拥有。发现累积在那里，死胡同记录在那里，世界独立于任何单个智能体的上下文窗口生长——这也意味着它扛得住上下文压缩、智能体重启和模型升级。而重新推导，是最安静也最稳健的模式：子智能体根本不接收发送方的理解。它从环境本身重建所需的一切，因为在一个形状良好的环境里，那些理解早已被外化成测试、类型、提交历史和运行中的系统。发送方的上下文从来只是一个缓存。环境，才是事实来源。">The workable patterns all share one property: they stop treating the handoff as a summary and start treating it as an address. A task contract does not describe the world; it tells the receiver where the world can be found. The sender's context was always a cache. The environment is the source of truth.</p>
+<p data-en="Notice what this implies about when multi-agent systems are worth building at all. Parallelism pays when the tasks are genuinely independent — when the worlds barely overlap, so the seams carry almost nothing. Specialization pays when the subagent's world is different in kind, not just smaller: a different toolset, a different corpus, a different evaluation surface. The failure mode is decomposing one coherent world into several partial ones and hoping the seams hold. They will not hold. The seams are where the work goes to die. So the design question, asked before any of the easy ones about models or orchestration frameworks, is simply this: where does the world live? If the answer is 'inside one agent's context,' the system is single-agent whether it looks like it or not, and every extra node is a lossy projection waiting to fail. If the answer is 'in a shared structure that outlives them all,' then agents become what they should have been all along: cheap, replaceable workers around a durable world — and the handoff, no longer carrying the weight of everything, finally becomes as thin as it was supposed to be." data-zh="注意这暗示了多智能体系统什么时候才值得建。并行化在任务真正独立时才有回报——当各个世界几乎不重叠，接缝上几乎不承载东西。专业化在子智能体的世界是「质的不同」而不仅是「更小」时才有回报：不同的工具集、不同的语料、不同的评估面。失败模式则是：把一个连贯的世界拆成几个残缺的世界，然后指望接缝撑得住。它们撑不住。接缝就是工作死去的地方。所以，在问模型、编排框架这些简单问题之前，先问那个设计问题：世界住在哪里？如果答案是「在一个智能体的上下文里」，那么无论长什么样，这个系统都是单智能体系统，而每一个多余的节点都是一个等着出事的有损投影。如果答案是「在一个比它们所有人都活得久的共享结构里」，那么智能体终于成为它们本该是的样子：围绕着一个持久世界的、廉价的、可替换的工人——而交接，不再背负一切的重量，终于薄到它本来就该有的程度。">Notice what this implies about when multi-agent systems are worth building at all. Parallelism pays when the tasks are genuinely independent. Specialization pays when the subagent's world is different in kind, not just smaller. The seams are where the work goes to die — so the design question, before any of the easy ones, is simply: where does the world live?</p>
+<p data-en="The industry's trajectory makes this more urgent, not less. Context windows keep growing, but the world grows faster — codebases, logs, histories, integrations. The temptation is to believe that bigger windows will make handoffs unnecessary by letting one agent hold everything. It will not. The interesting work already exceeds any window, and the economics of long-running single contexts — attention diluted across everything, nothing forgotten but nothing sharp — are their own kind of lossy compression. The future is not one agent that holds the world, nor many agents that summarize it to each other. It is a durable, structured, shared world that no agent holds and every agent can read. Build that, and the handoff stops being the place where understanding dies, and becomes what it was always meant to be: a pointer." data-zh="行业的走向让这件事更紧迫，而非更缓。上下文窗口在变大，但世界变大得更快——代码库、日志、历史、集成。诱惑在于相信更大的窗口会让交接变得不必要，让一个智能体装下一切。不会的。有意思的工作早已超出任何窗口，而长运行单上下文的经济学——注意力被摊薄到一切之上，什么都没忘、但什么都不锐利——本身就是另一种有损压缩。未来既不是一个握着整个世界的智能体，也不是许多互相写摘要的智能体。而是一个持久的、结构化的、共享的世界：没有哪个智能体握着它，而每个智能体都能读它。建好它，交接就不再是理解死去的地方，而变回它本来该是的东西：一个指针。">The future is not one agent that holds the world, nor many agents that summarize it to each other. It is a durable, structured, shared world that no agent holds and every agent can read. Build that, and the handoff becomes what it was always meant to be: a pointer.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
