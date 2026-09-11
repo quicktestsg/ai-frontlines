@@ -1,6 +1,423 @@
 {
   "tweets": [
     {
+      "id": "2098462085973741960",
+      "url": "https://x.com/elonmusk/status/2098462085973741960",
+      "label": "xAI",
+      "color": "#1DA1F2",
+      "fetched_at": "2026-09-11T20:04:17.376161+00:00",
+      "translation_zh": "Grok 4.7 还需要几天才能「出锅」。可能是在 RL 中对回复长度的惩罚过重（或其他原因），它在难题上仍会过早放弃（尽管那些题它其实会做），检查自己工作的严谨度也还不够。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 11223,
+        "in_reply_to_screen_name": "farzyness",
+        "in_reply_to_status_id_str": "2098452272153800792",
+        "in_reply_to_user_id_str": "17862108",
+        "lang": "en",
+        "created_at": "2026-09-11T17:22:03.000Z",
+        "display_text_range": [
+          11,
+          243
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "17862108",
+              "indices": [
+                0,
+                10
+              ],
+              "name": "Farzad 🇺🇸 🇮🇷",
+              "screen_name": "farzyness"
+            }
+          ]
+        },
+        "id_str": "2098462085973741960",
+        "text": "@farzyness Grok 4.7 needs a few more days to cook.\n\nWe might have penalized response length too much (or something) in RL, as it still gives up on hard tasks (that it can do!) too early and isn’t yet sufficiently rigorous in checking its work.",
+        "user": {
+          "id_str": "44196397",
+          "name": "Elon Musk",
+          "screen_name": "elonmusk",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+            },
+            "description": "X",
+            "url": {
+              "url": "https://twitter.com/X",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2098462085973741960"
+          ],
+          "editable_until_msecs": "1789150923000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 987,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 1630,
+          "lang": "zxx",
+          "possibly_sensitive": false,
+          "reply_count": 34,
+          "retweet_count": 27,
+          "created_at": "2026-09-11T16:43:03.000Z",
+          "display_text_range": [
+            0,
+            0
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/6anXt1DNIh",
+                "expanded_url": "https://x.com/farzyness/status/2098452272153800792/photo/1",
+                "indices": [
+                  0,
+                  23
+                ],
+                "url": "https://t.co/6anXt1DNIh"
+              }
+            ]
+          },
+          "id_str": "2098452272153800792",
+          "text": "https://t.co/6anXt1DNIh",
+          "user": {
+            "id_str": "17862108",
+            "name": "Farzad 🇺🇸 🇮🇷",
+            "screen_name": "farzyness",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1863976029368270848/NccgxqmW_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2098452272153800792"
+            ],
+            "editable_until_msecs": "1789148583000",
+            "edits_remaining": "5",
+            "is_edit_eligible": true
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/6anXt1DNIh",
+              "expanded_url": "https://x.com/farzyness/status/2098452272153800792/photo/1",
+              "ext_alt_text": "Travolta Legends GIF by Pixel Bandits",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                0,
+                23
+              ],
+              "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/HR8zN2zbcAQAGfL.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 270,
+                "width": 480
+              },
+              "sizes": {
+                "large": {
+                  "h": 270,
+                  "resize": "fit",
+                  "w": 480
+                },
+                "medium": {
+                  "h": 270,
+                  "resize": "fit",
+                  "w": 480
+                },
+                "small": {
+                  "h": 270,
+                  "resize": "fit",
+                  "w": 480
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "animated_gif",
+              "url": "https://t.co/6anXt1DNIh",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "variants": [
+                  {
+                    "bitrate": 0,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/tweet_video/HR8zN2zbcAQAGfL.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              16,
+              9
+            ],
+            "contentType": "gif",
+            "durationMs": 0,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/tweet_video_thumb/HR8zN2zbcAQAGfL.jpg",
+            "variants": [
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/tweet_video/HR8zN2zbcAQAGfL.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2098452272153800792"
+            },
+            "viewCount": 0
+          },
+          "quoted_tweet": {
+            "__typename": "Tweet",
+            "favorite_count": 34999,
+            "lang": "en",
+            "reply_count": 2809,
+            "retweet_count": 3218,
+            "created_at": "2026-09-02T02:59:57.000Z",
+            "display_text_range": [
+              0,
+              29
+            ],
+            "entities": {},
+            "id_str": "2094983639780204846",
+            "text": "Grok 4.7 comes out in 10 days",
+            "user": {
+              "id_str": "44196397",
+              "name": "Elon Musk",
+              "screen_name": "elonmusk",
+              "is_blue_verified": true,
+              "profile_image_shape": "Circle",
+              "verified": false,
+              "profile_image_url_https": "https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_normal.jpg",
+              "highlighted_label": {
+                "badge": {
+                  "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+                },
+                "description": "X",
+                "url": {
+                  "url": "https://twitter.com/X",
+                  "url_type": "DeepLink"
+                },
+                "user_label_display_type": "Badge",
+                "user_label_type": "BusinessLabel"
+              }
+            }
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2098417966647808219",
+      "url": "https://x.com/GoogleDeepMind/status/2098417966647808219",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-09-11T20:04:17.376161+00:00",
+      "translation_zh": "如何还原一段从未被拍下的记忆？DeepMind 将修复后的档案照片与姿态控制模型结合，捕捉 Burt 和 Ethelle 的神态与微表情，在纪录片《Love, Rendered》中重现了他们初遇的那一天。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 620,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-11T14:26:44.000Z",
+        "display_text_range": [
+          0,
+          278
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/2mMxcmRyva",
+              "expanded_url": "https://x.com/GoogleDeepMind/status/2098417966647808219/video/1",
+              "indices": [
+                279,
+                302
+              ],
+              "url": "https://t.co/2mMxcmRyva"
+            }
+          ]
+        },
+        "id_str": "2098417966647808219",
+        "text": "How can we reconstruct a memory that was never filmed?\n\nOur team paired restored archival photos with pose control models to capture the mannerisms and micro-expressions of Burt and Ethelle.\n\nThis helped bring the day they first met to life for Love, Rendered, a new documentary https://t.co/2mMxcmRyva",
+        "user": {
+          "id_str": "4783690002",
+          "name": "Google DeepMind",
+          "screen_name": "GoogleDeepMind",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2098417966647808219"
+          ],
+          "editable_until_msecs": "1789140404000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/2mMxcmRyva",
+            "expanded_url": "https://x.com/GoogleDeepMind/status/2098417966647808219/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              279,
+              302
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2098415641334022162/img/vxKiF4VGjyI0FQDW.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 2160,
+              "width": 2160
+            },
+            "sizes": {
+              "large": {
+                "h": 2048,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 1200,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/2mMxcmRyva",
+            "video_info": {
+              "aspect_ratio": [
+                1,
+                1
+              ],
+              "duration_millis": 75241,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2098415641334022162/pl/Amc27m-c-ZSDxBhO.m3u8?v=e49"
+                },
+                {
+                  "bitrate": 432000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2098415641334022162/vid/avc1/320x320/MrbrKcxoMwPkzJOv.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2098415641334022162/vid/avc1/540x540/MbC4mFZLJjXunl0U.mp4"
+                },
+                {
+                  "bitrate": 1280000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2098415641334022162/vid/avc1/720x720/qENadDLNQBEKFJV1.mp4"
+                },
+                {
+                  "bitrate": 8768000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2098415641334022162/vid/avc1/1080x1080/xa3J2V4laDr695o0.mp4"
+                },
+                {
+                  "bitrate": 25128000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2098415641334022162/vid/avc1/2160x2160/KEehKvoNl5x84gX-.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            1,
+            1
+          ],
+          "contentType": "media_entity",
+          "durationMs": 75241,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2098415641334022162/img/vxKiF4VGjyI0FQDW.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2098415641334022162/pl/Amc27m-c-ZSDxBhO.m3u8?v=e49"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2098415641334022162/vid/avc1/320x320/MrbrKcxoMwPkzJOv.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2098415641334022162/vid/avc1/540x540/MbC4mFZLJjXunl0U.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2098415641334022162/vid/avc1/720x720/qENadDLNQBEKFJV1.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2098415641334022162/vid/avc1/1080x1080/xa3J2V4laDr695o0.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2098415641334022162/vid/avc1/2160x2160/KEehKvoNl5x84gX-.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2098417966647808219"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 50,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMDk4NDE3OTY2NTEzNTc3OTkx"
+        }
+      }
+    },
+    {
       "id": "2098304042896162881",
       "url": "https://x.com/elonmusk/status/2098304042896162881",
       "label": "xAI",

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Agent Has No Clock — AI Frontlines</title>
+<meta content="Agent loops live in an eternal present tense. Every observation is treated as forever-true, every task as infinitely patient. Real systems expire: data goes stale, prices move, deadlines pass. The teams that ship reliable agents give their systems a clock — timestamps on beliefs, TTLs on observations, and deadlines that shape strategy." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 12, 2026" data-zh="2026年9月12日">September 12, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Agent Has No Clock" data-zh="智能体没有时钟">The Agent Has No Clock</h1>
+<p class="post-header-deck" data-en="There is a dimension missing from almost every agent architecture ever shipped: time. Not latency — that gets measured obsessively — but time as a first-class input to reasoning. An agent loop lives in an eternal present tense. The search result fetched at step one is treated as equally true at step forty. The plan made at the start is treated as equally valid at the end. Nothing in the context window says 'this belief is thirty minutes old and the world has moved.' And nothing in the loop says 'the deadline is in ninety seconds, stop exploring and commit.' Agents without clocks don't reason about a changing world. They reason about a photograph of one — and then act on the real thing." data-zh="几乎所有发布过的智能体架构，都缺了一个维度：时间。不是延迟——延迟被病态地测量着——而是时间作为推理的一等输入。一个智能体循环，活在永恒的现在时里。第一步取回的搜索结果，到第四十步仍被当作同样为真。开局制定的计划，到结尾仍被当作同样有效。上下文窗口里没有任何东西说「这个信念已经三十分钟了，世界已经变了」。循环里也没有任何东西说「离截止还有九十秒，别再探索了，收尾」。没有时钟的智能体，不是在一个变化的世界里推理。它们是在对一张世界的照片推理——然后把动作作用在真实的那一个上。">There is a dimension missing from almost every agent architecture ever shipped: time. Not latency — that gets measured obsessively — but time as a first-class input to reasoning. An agent loop lives in an eternal present tense. The search result fetched at step one is treated as equally true at step forty. Nothing in the context window says 'this belief is thirty minutes old and the world has moved.'</p>
+</header>
+<article class="post-body">
+<p data-en="Consider what a context window actually is. It is a pile of text in which every statement carries the same epistemic weight. A stock price fetched two seconds ago, a file listing from forty minutes back, a fact the model learned during training two years ago — to the reasoning process, they are all just tokens, all equally present, all equally true. The context window has no tense. It does not distinguish what is from what was. This is fine for a chatbot answering one question. It is quietly catastrophic for an agent that runs for an hour, makes a hundred observations, and takes actions whose correctness depends on those observations still being accurate at the moment of consequence. The agent that read a database schema at 10:00 and writes to the database at 11:00 is not reasoning about the database. It is reasoning about a memory of the database, and nothing in the system will tell it when the two diverge." data-zh="想想上下文窗口到底是什么。它是一堆文本，其中每一个陈述都携带着相同的认知权重。两秒前取到的股价、四十分钟前的文件列表、模型两年前在训练中学到的事实——对推理过程而言，它们都只是 token，都同样在场，都同样为真。上下文窗口没有时态。它不区分「现在是」和「曾经是」。对一个只回答一个问题的聊天机器人，这没关系。对一个运行一小时、做一百次观察、并采取「正确性取决于那些观察在产生后果的那一刻仍然准确」的动作的智能体，这是安静的灾难。10 点读了数据库 schema、11 点向数据库写入的智能体，推理的不是数据库。它推理的是关于数据库的一段记忆——而当两者分道扬镳时，系统里没有任何东西会告诉它。">Consider what a context window actually is. It is a pile of text in which every statement carries the same epistemic weight. A stock price fetched two seconds ago, a file listing from forty minutes back, a fact the model learned during training two years ago — to the reasoning process, they are all just tokens, all equally present, all equally true. The context window has no tense. It does not distinguish what is from what was.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrT2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrT3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE ETERNAL PRESENT vs THE CLOCKED RUN" data-zh="永恒现在时 vs 带时钟的运行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE ETERNAL PRESENT vs THE CLOCKED RUN</text>
+<!-- LEFT: eternal present -->
+<text data-en="NO CLOCK" data-zh="没有时钟" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="150" y="56">NO CLOCK</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="86" x="107" y="70"></rect>
+<text data-en="step 1: fetch" data-zh="步骤1：取数据" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="150" y="89">step 1: fetch</text>
+<path d="M150 100 L150 116" fill="none" marker-end="url(#arrT3)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="86" x="107" y="118"></rect>
+<text data-en="step 20: reason" data-zh="步骤20：推理" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="150" y="137">step 20: reason</text>
+<path d="M150 148 L150 164" fill="none" marker-end="url(#arrT3)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="86" x="107" y="166"></rect>
+<text data-en="step 40: act" data-zh="步骤40：行动" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="150" y="185">step 40: act</text>
+<!-- frozen world bubble -->
+<circle cx="150" cy="250" fill="none" r="46" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></circle>
+<text data-en="world as" data-zh="世界仍是" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="150" y="246">world as</text>
+<text data-en="photographed" data-zh="照片的样子" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="150" y="260">photographed</text>
+<path d="M150 258 C150 300 150 300 150 300" fill="none" stroke="var(--accent-3)" stroke-width="0"></path>
+<text data-en="· 40 min elapsed, unnoticed ·" data-zh="· 40 分钟过去，无人察觉 ·" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="150" y="322">· 40 min elapsed, unnoticed ·</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="310"></line>
+<!-- RIGHT: clocked run -->
+<text data-en="WITH A CLOCK" data-zh="带时钟" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="470" y="56">WITH A CLOCK</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="96" x="422" y="70"></rect>
+<text data-en="fetch [10:00]" data-zh="取数据 [10:00]" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="470" y="89">fetch [10:00]</text>
+<path d="M470 100 L470 116" fill="none" marker-end="url(#arrT1)" stroke="var(--text-tertiary)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="96" x="422" y="118"></rect>
+<text data-en="reason [10:38]" data-zh="推理 [10:38]" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="470" y="137">reason [10:38]</text>
+<path d="M470 148 L470 164" fill="none" marker-end="url(#arrT1)" stroke="var(--text-tertiary)" stroke-width="1.4"></path>
+<rect fill="var(--accent-dim)" height="30" rx="7" stroke="var(--accent)" stroke-width="2" width="96" x="422" y="166"></rect>
+<text data-en="act [10:41]" data-zh="行动 [10:41]" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="470" y="185">act [10:41]</text>
+<!-- TTL guard -->
+<path d="M518 181 C560 190 560 230 522 240" fill="none" marker-end="url(#arrT2)" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.8" width="150" x="395" y="234"></rect>
+<text data-en="TTL guard: &gt;30min?" data-zh="TTL 守卫：&gt;30分钟？" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="470" y="249">TTL guard: &gt;30min?</text>
+<text data-en="→ re-verify before acting" data-zh="→ 行动前重新验证" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="470" y="262">→ re-verify before acting</text>
+<text data-en="· staleness is visible, checkable ·" data-zh="· 陈旧可见、可检查 ·" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="470" y="322">· staleness is visible, checkable ·</text>
+</svg>
+<p class="diagram-caption" data-en="On the left, the default: steps flow forward while the world inside the context window stays frozen at the moment of first observation. Elapsed time is invisible to the reasoning process. On the right, the fix: every observation carries a timestamp, and a guard checks staleness at the moment of consequence — before the action, not after the damage." data-zh="左边，是默认状态：步骤向前流动，而上下文窗口里的世界，停留在第一次观察的那一刻。流逝的时间，对推理过程不可见。右边，是修复：每个观察都带着时间戳，一个守卫在产生后果的那一刻检查陈旧度——在动作之前，而不是在损失之后。">On the left, the default: steps flow forward while the world inside the context window stays frozen at the moment of first observation. Elapsed time is invisible to the reasoning process. On the right, the fix: every observation carries a timestamp, and a guard checks staleness at the moment of consequence — before the action, not after the damage.</p>
+</div>
+<h3 data-en="Every belief has an expiry date" data-zh="每一个信念都有保质期">Every belief has an expiry date</h3>
+<p data-en="The first discipline of time-aware agents is admitting that observations are perishable. Everything an agent learns through a tool call is a snapshot of a world that keeps moving after the snapshot. Some snapshots decay slowly — a repository's directory structure might hold for days. Some decay in seconds — a price, an inventory level, a lock's ownership, a sports score. The failure is not that snapshots go stale; that is unavoidable. The failure is that the system has no idea which of its beliefs decay fast and which decay slow, because staleness was never modeled. So the agent confidently writes a file whose parent directory was deleted, buys a coin whose price moved 4% mid-run, submits a PR against a branch that was force-pushed twenty minutes ago. Every one of these is a clock bug wearing the costume of a competence bug." data-zh="时间感知智能体的第一个纪律，是承认观察是易腐的。智能体通过工具调用学到的一切，都是一个持续移动的世界的快照。有些快照衰减得慢——一个代码库的目录结构也许能撑几天。有些在几秒内就腐烂——一个价格、一个库存水位、一把锁的归属、一个比分。失败不在于快照会过期——这不可避免。失败在于系统完全不知道它的哪些信念衰减得快、哪些衰减得慢，因为陈旧从未被建模。于是智能体自信地写入一个父目录已被删除的文件，买入一个在运行中途已经波动了 4% 的币，向一个二十分钟前被 force-push 过的分支提交 PR。这里的每一个，都是一个穿着「能力不足」外衣的时钟 bug。">The first discipline of time-aware agents is admitting that observations are perishable. Everything an agent learns through a tool call is a snapshot of a world that keeps moving after the snapshot. Some snapshots decay slowly — a repository's directory structure might hold for days. Some decay in seconds — a price, an inventory level, a lock's ownership, a sports score. The failure is not that snapshots go stale; that is unavoidable. The failure is that the system has no idea which of its beliefs decay fast and which decay slow, because staleness was never modeled.</p>
+<p data-en="The fix is mechanical, and that is the good news. Every observation that enters the context gets stamped: when it was taken, from where, and how long it can be trusted. This is not a prompt instruction — 'remember that data may be stale' is a wish, not a mechanism, and models ignore wishes precisely when it matters. It is plumbing. The tool layer wraps every result in a small envelope of provenance. The agent harness tracks the age of each fact the way a database tracks a row's version. And at the moment of consequence — the write, the purchase, the submit — the harness re-verifies the specific beliefs the action rests on. Not everything. Just the load-bearing ones. Re-checking the world is expensive; re-checking the three facts your irreversible action depends on is cheap, and it catches the exact class of failure that no amount of reasoning can." data-zh="修复是机械的，而这是个好消息。每一个进入上下文的观察都被打上戳：什么时候取的、从哪里取的、能被信任多久。这不是一条 prompt 指令——「记住数据可能过时」是一个愿望，不是一个机制，而模型恰恰在最要紧的时候无视愿望。它是管道工程。工具层给每个结果包上一层小小的来源信封。智能体 harness 像数据库追踪行版本一样，追踪每一个事实的年龄。而在产生后果的那一刻——写入、购买、提交——harness 重新验证这个动作所依赖的那些具体信念。不是全部。只是承重的那几个。重新检查整个世界很贵；重新检查你的不可逆动作所依赖的三个事实很便宜，而它捕获的，恰好是任何推理都无能为力的那一类失败。">The fix is mechanical, and that is the good news. Every observation that enters the context gets stamped: when it was taken, from where, and how long it can be trusted. This is not a prompt instruction — 'remember that data may be stale' is a wish, not a mechanism. It is plumbing. The tool layer wraps every result in a small envelope of provenance. The agent harness tracks the age of each fact the way a database tracks a row's version.</p>
+<blockquote data-en="Reasoning cannot detect staleness. No chain of thought, however long, can tell that the number in its context is forty minutes dead — the deadness is not in the text. Staleness is not a reasoning problem. It is an infrastructure problem, and it demands an infrastructure answer: timestamps, TTLs, and re-verification at the moment of consequence." data-zh="推理无法检测陈旧。任何思维链，无论多长，都无法分辨上下文里的那个数字已经死了四十分钟——死亡不在文本里。陈旧不是推理问题。它是基础设施问题，而它要的是基础设施级的答案：时间戳、TTL、以及在产生后果那一刻的重新验证。">Reasoning cannot detect staleness. No chain of thought, however long, can tell that the number in its context is forty minutes dead — the deadness is not in the text. Staleness is not a reasoning problem. It is an infrastructure problem, and it demands an infrastructure answer: timestamps, TTLs, and re-verification at the moment of consequence.</blockquote>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrB1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrB2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="BELIEF DECAY: THREE OBSERVATIONS, THREE CLOCKS" data-zh="信念衰减：三个观察，三只钟" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">BELIEF DECAY: THREE OBSERVATIONS, THREE CLOCKS</text>
+<!-- axis -->
+<line stroke="var(--border)" stroke-width="1" x1="70" x2="70" y1="50" y2="240"></line>
+<line stroke="var(--border)" stroke-width="1" x1="70" x2="580" y1="240" y2="240"></line>
+<text data-en="trust" data-zh="信任度" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="40" y="148" transform="rotate(-90 40 148)">trust</text>
+<text data-en="time since observation" data-zh="距观察的时间" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="325" y="260">time since observation</text>
+<!-- fast decay curve (price) -->
+<path d="M70 70 C110 220 160 232 220 232" fill="none" stroke="var(--accent-3)" stroke-width="2"></path>
+<text data-en="price quote · TTL seconds" data-zh="报价 · TTL 以秒计" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="300" y="120">price quote · TTL seconds</text>
+<!-- medium decay (repo state) -->
+<path d="M70 70 C220 100 420 130 560 140" fill="none" stroke="var(--accent-2)" stroke-width="2" stroke-dasharray="6,3"></path>
+<text data-en="branch state · TTL ~minutes" data-zh="分支状态 · TTL 约分钟级" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="330" y="100">branch state · TTL ~minutes</text>
+<!-- slow decay (docs) -->
+<path d="M70 70 C260 76 420 84 560 90" fill="none" stroke="var(--accent)" stroke-width="2"></path>
+<text data-en="docs · TTL days" data-zh="文档 · TTL 以天计" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="330" y="76">docs · TTL days</text>
+<!-- danger zone -->
+<rect fill="var(--accent-3)" height="14" opacity="0.12" rx="4" width="510" x="70" y="226"></rect>
+<text data-en="zone where acting on the belief becomes a gamble" data-zh="在此区间，基于该信念行动形同赌博" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="325" y="236">zone where acting on the belief becomes a gamble</text>
+<!-- bottom note -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="540" x="40" y="272"></rect>
+<text data-en="Different observations rot at different speeds — the harness must know which is which, because re-verifying everything is too expensive and re-verifying nothing is how silent failures are born." data-zh="不同的观察以不同的速度腐烂——harness 必须知道谁是谁，因为全部重验太贵，而全不重验，就是无声失败的出生方式。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="297">Different observations rot at different speeds — the harness must know which is which, because re-verifying everything is too expensive and re-verifying nothing is how silent failures are born.</text>
+</svg>
+<p class="diagram-caption" data-en="Not all beliefs decay alike. A documentation page holds for days. A branch state holds for minutes. A price quote holds for seconds. The same agent holds all three in one context window with no distinction — unless the harness models decay explicitly and re-verifies the fast-rotting beliefs before any action that leans on them." data-zh="并非所有信念都以同样的方式衰减。一个文档页面能撑几天。一个分支状态能撑几分钟。一个报价只能撑几秒。同一个智能体把三者全部装进同一个上下文窗口，毫无区分——除非 harness 显式地建模衰减，并在任何依赖它们的动作之前，重新验证那些腐烂得最快的信念。">Not all beliefs decay alike. A documentation page holds for days. A branch state holds for minutes. A price quote holds for seconds. The same agent holds all three in one context window with no distinction — unless the harness models decay explicitly and re-verifies the fast-rotting beliefs before any action that leans on them.</p>
+</div>
+<h3 data-en="Deadlines are not constraints. They are strategy." data-zh="截止时间不是约束，是策略">Deadlines are not constraints. They are strategy.</h3>
+<p data-en="The second missing clock points forward instead of backward. Watch a human work under a deadline and you see something no current agent does: strategy shaped by remaining time. With two hours, the person reads the whole spec, explores the codebase, writes tests. With five minutes, they skim the diff, trust the tests that exist, and ship. Neither choice is wrong — they are different policies selected by a variable the agent has never been given: time remaining. An agent that cannot see its deadline cannot triage. It explores the same way at T-minus-two-hours as at T-minus-two-minutes. It spends its last ninety seconds drafting a beautiful summary of work it is about to fail to deliver. The intelligence is there. The judgment that comes from knowing how much time is left is not, because nobody passed it in." data-zh="第二只缺失的钟，指向未来而非过去。观察一个在截止时间下工作的人，你会看到当前任何智能体都做不到的东西：被剩余时间塑造的策略。有两小时，这个人读完整份规格、探索代码库、写测试。有五分钟，他扫一眼 diff、相信已有的测试、发布。两个选择都没错——它们是由一个智能体从未被给予的变量选出的不同策略：剩余时间。一个看不见截止时间的智能体，无法分诊。它在「还剩两小时」和「还剩两分钟」时，以同样的方式探索。它把最后九十秒花在为一份即将交付失败的工作起草漂亮的总结上。智能在那儿。而那种来自「知道还剩多少时间」的判断力不在，因为没有人把它传进去。">The second missing clock points forward instead of backward. Watch a human work under a deadline and you see something no current agent does: strategy shaped by remaining time. With two hours, the person reads the whole spec, explores the codebase, writes tests. With five minutes, they skim the diff, trust the tests that exist, and ship. Neither choice is wrong — they are different policies selected by a variable the agent has never been given: time remaining.</p>
+<p data-en="This is more than an efficiency nicety, because deadlines do real computational work: they bound the search. An agent with infinite patience will happily trade breadth for depth forever, because nothing tells it when to stop expanding and start committing. The deadline is the answer to the question every long-running loop eventually faces — 'is another iteration worth it?' — and without it, the only stopping conditions are success, failure, and the step counter, that bluntest of instruments. A time-aware agent re-plans against the clock: it checks progress against elapsed time, notices when it is running long, and deliberately downscopes — fewer files touched, shallower analysis, safer defaults. Downscoping is a skill. It is arguably the skill that separates a senior engineer from a junior one under pressure, and it is entirely learnable by an agent, if the clock is in the context where the reasoning can see it." data-zh="这不只是效率层面的锦上添花，因为截止时间做着真正的计算工作：它们给搜索定界。一个拥有无限耐心的智能体，会心甘情愿地永远用广度换深度，因为没有什么告诉它何时停止扩张、开始提交。截止时间，是每一个长运行循环迟早要面对的问题——「再迭代一次值得吗？」——的答案，而没有它，唯一的停止条件就只剩下成功、失败、以及步数计数器这个最钝的工具。一个时间感知的智能体会对着时钟重新规划：它检查进度与已流逝时间的对比，注意到自己跑得太久，然后主动降级范围——少碰几个文件、更浅的分析、更安全的默认值。降级范围是一门手艺。它 arguably 就是压力之下区分资深工程师和 junior 工程师的那门手艺，而它完全可以被智能体学会——只要时钟被放进推理能看见的上下文里。">This is more than an efficiency nicety, because deadlines do real computational work: they bound the search. An agent with infinite patience will happily trade breadth for depth forever, because nothing tells it when to stop expanding and start committing. The deadline is the answer to the question every long-running loop eventually faces — 'is another iteration worth it?' — and without it, the only stopping conditions are success, failure, and the step counter, that bluntest of instruments.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrD1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="ONE TASK, THREE TIME BUDGETS — THREE DIFFERENT STRATEGIES" data-zh="同一个任务，三种时间预算——三种不同策略" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ONE TASK, THREE TIME BUDGETS — THREE DIFFERENT STRATEGIES</text>
+<!-- budget 1 -->
+<rect fill="var(--bg-surface)" height="70" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="170" x="28" y="52"></rect>
+<text data-en="budget: 2 hours" data-zh="预算：2 小时" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="113" y="76">budget: 2 hours</text>
+<text data-en="read full spec" data-zh="通读规格" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="113" y="94">read full spec</text>
+<text data-en="explore · write tests · verify" data-zh="探索 · 写测试 · 验证" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="113" y="108">explore · write tests · verify</text>
+<!-- budget 2 -->
+<rect fill="var(--bg-surface)" height="70" rx="9" stroke="var(--accent)" stroke-width="1.5" width="170" x="225" y="52"></rect>
+<text data-en="budget: 10 minutes" data-zh="预算：10 分钟" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="76">budget: 10 minutes</text>
+<text data-en="read the diff" data-zh="只读 diff" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="94">read the diff</text>
+<text data-en="run existing tests · spot-check" data-zh="跑已有测试 · 抽查" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="108">run existing tests · spot-check</text>
+<!-- budget 3 -->
+<rect fill="var(--bg-surface)" height="70" rx="9" stroke="var(--accent-3)" stroke-width="1.5" width="170" x="422" y="52"></rect>
+<text data-en="budget: 60 seconds" data-zh="预算：60 秒" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="507" y="76">budget: 60 seconds</text>
+<text data-en="diffstat + failure output" data-zh="diffstat + 失败输出" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="507" y="94">diffstat + failure output</text>
+<text data-en="ship · flag what was skipped" data-zh="发布 · 标注跳过了什么" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="507" y="108">ship · flag what was skipped</text>
+<!-- arrows down to same outcome -->
+<path d="M113 122 C160 160 260 176 295 188" fill="none" marker-end="url(#arrD1)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<path d="M310 122 L310 186" fill="none" marker-end="url(#arrD1)" stroke="var(--accent)" stroke-width="1.3"></path>
+<path d="M507 122 C460 160 360 176 325 188" fill="none" marker-end="url(#arrD1)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--accent-dim)" height="40" rx="9" stroke="var(--accent)" stroke-width="1.8" width="300" x="160" y="192"></rect>
+<text data-en="delivered — with stated confidence" data-zh="交付——并附上置信度说明" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="310" y="217">delivered — with stated confidence</text>
+<text data-en="same task, same model — the only variable is the clock the agent can see" data-zh="同一个任务，同一个模型——唯一的变量，是智能体能看见的那只钟" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="262">same task, same model — the only variable is the clock the agent can see</text>
+</svg>
+<p class="diagram-caption" data-en="A time-aware agent selects a strategy the way a human does: by budget. Generous time buys depth — full reads, written tests, verification. Tight time buys triage — diffs, spot-checks, flagged uncertainty. Every budget can end in an honest deliverable, as long as the agent knew which budget it was on. The clockless agent runs the two-hour strategy on the sixty-second budget, and fails both." data-zh="时间感知的智能体，像人类一样选择策略：按预算。充裕的时间买到深度——完整阅读、编写测试、验证。紧张的时间买到分诊——diff、抽查、标注不确定性。每一种预算都能以一个诚实的交付收尾，只要智能体知道自己处于哪种预算。没有时钟的智能体，会在六十秒的预算上执行两小时的策略，然后两头都失败。">A time-aware agent selects a strategy the way a human does: by budget. Generous time buys depth — full reads, written tests, verification. Tight time buys triage — diffs, spot-checks, flagged uncertainty. Every budget can end in an honest deliverable, as long as the agent knew which budget it was on. The clockless agent runs the two-hour strategy on the sixty-second budget, and fails both.</p>
+</div>
+<h3 data-en="Give the loop a clock, not the prompt a lecture" data-zh="给循环一只钟，而不是给 prompt 上一课">Give the loop a clock, not the prompt a lecture</h3>
+<p data-en="The wrong fix for all of this is prose. Teams discover a staleness failure, and they respond by adding a paragraph to the system prompt: 'note that tool results may be outdated; verify before acting.' This is the clock as decoration. A prompt can suggest that the model care about time; it cannot give the model the information that caring requires — how old each fact is, how long each kind of fact lasts, how much time remains. Without those numbers, the model can only perform concern about staleness, not act on it. The right fix lives in the harness. Timestamps are attached where observations enter. TTLs are declared where tools are defined. Remaining budget is injected where the loop decides what to do next. None of this is a capability question — today's models handle 'this quote is 4 seconds old' perfectly well when the number is in front of them. The failure is upstream of the model, in a harness that stripped the timestamps out before the reasoning ever began." data-zh="这一切的错误修复方式，是散文。团队发现一个陈旧性故障，然后在系统 prompt 里加一段话作为回应：「注意工具结果可能过时，行动前请验证。」这是作为装饰的时钟。prompt 可以建议模型关心时间，但它无法给模型「关心」所需要的信息——每个事实多大了、每类事实能活多久、还剩多少时间。没有这些数字，模型只能表演对陈旧的担忧，而无法据此行动。正确的修复活在 harness 里。时间戳被附加在观察进入的地方。TTL 被声明在工具定义的地方。剩余预算被注入循环决定下一步做什么的地方。这些都不是能力问题——今天的模型，在「这个报价已经 4 秒了」这个数字摆在眼前时，处理得非常好。失败在模型的上游，在一个把时间戳剥掉、推理还没开始就把时间信息弄丢的 harness 里。">The wrong fix for all of this is prose. Teams discover a staleness failure, and they respond by adding a paragraph to the system prompt: 'note that tool results may be outdated; verify before acting.' This is the clock as decoration. A prompt can suggest that the model care about time; it cannot give the model the information that caring requires — how old each fact is, how long each kind of fact lasts, how much time remains.</p>
+<p data-en="There is a deeper point hiding under the mechanics. Time is the first of several dimensions that agents need but don't get: provenance, cost, confidence, ownership. The context window flattens all of them into text. The engineering task of this era is not making models smarter — the labs have that covered — but restoring the dimensions that the text interface erases. A clock in the harness is the cheapest of these restorations and the one with the highest immediate payoff, because time is the dimension along which the real world most reliably betrays the frozen one inside the window. The agent that knows what time it is, what has expired, and what remains, is a different kind of system from the one that doesn't — not smarter, but situated. And situated intelligence is the only kind that survives contact with a world that moves." data-zh="在机械细节之下，藏着一个更深的观点。时间只是智能体需要、却没被给予的若干维度中的第一个：来源、成本、置信度、所有权。上下文窗口把它们全部压平成文本。这个时代的工程任务，不是让模型更聪明——实验室已经管了——而是恢复被文本接口抹去的那些维度。harness 里的一只钟，是这些恢复中最便宜、即时回报最高的一个，因为时间，是真实世界背叛窗口内那个凝固世界最可靠的那条维度。知道现在几点、什么已经过期、还剩多少的智能体，与不知道的那个，是两种不同的系统——不是更聪明，而是有处境。而处境化的智能，是唯一能在与一个移动世界的接触中存活下来的智能。">There is a deeper point hiding under the mechanics. Time is the first of several dimensions that agents need but don't get: provenance, cost, confidence, ownership. The context window flattens all of them into text. The engineering task of this era is not making models smarter — the labs have that covered — but restoring the dimensions that the text interface erases.</p>
+<p data-en="So the next time an agent fails mysteriously — right answer, wrong world — resist the urge to blame the model or rewrite the prompt. Ask instead the three questions the harness should be able to answer and usually cannot: how old was each fact the action depended on? What was supposed to happen when they expired? And how much time did the run think it had? Nine times out of ten, the bug is not in the reasoning. It is in the silence where a clock should have been." data-zh="所以，下一次当一个智能体离奇失败——答案是对的，世界错了——请忍住责怪模型或重写 prompt 的冲动。转而问那三个 harness 本应答得上、却通常答不上的问题：这个动作所依赖的每个事实，当时多大了？它们过期后，本应发生什么？这次运行，以为自己还有多少时间？十有八九，bug 不在推理里。它在一片本应放着一座钟的寂静里。">So the next time an agent fails mysteriously — right answer, wrong world — resist the urge to blame the model or rewrite the prompt. Ask instead the three questions the harness should be able to answer and usually cannot: how old was each fact the action depended on? What was supposed to happen when they expired? And how much time did the run think it had? Nine times out of ten, the bug is not in the reasoning. It is in the silence where a clock should have been.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
