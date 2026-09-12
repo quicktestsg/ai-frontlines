@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Merge Conflict Nobody Scheduled — AI Frontlines</title>
+<meta content="Every agent is designed as if it were alone in the world. The moment two agents share a filesystem, a database, or a repository, the lost update returns — at machine speed and machine scale. The discipline that fixes it is old: ownership, version checks, and commutative operations. The question is whether the harness enforces it, or the prompt merely wishes for it." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 13, 2026" data-zh="2026年9月13日">September 13, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Merge Conflict Nobody Scheduled" data-zh="那场没人排期的合并冲突">The Merge Conflict Nobody Scheduled</h1>
+<p class="post-header-deck" data-en="Every agent ever shipped was designed as if it were the only actor in the world. Its reads are assumptions of stability; its writes are assumptions of exclusivity. Both assumptions hold — right up until the second agent shows up. Two agents sharing a filesystem, a repository, or a database rediscover the oldest failure in computing: the lost update, the read-modify-write race, the silent overwrite. Humans stumble into these races maybe once a quarter. Agents run at machine speed, on overlapping schedules, with no social instinct to stay out of each other's way. The next frontier of agent engineering is not intelligence. It is concurrency control — and the systems that skip it will discover that two competent agents can produce an outcome neither would have produced alone." data-zh="每一个被发布出来的智能体，都被设计成仿佛自己是世界上唯一的行动者。它的读取，是对稳定性的假设；它的写入，是对独占性的假设。这两个假设，一直成立——直到第二个智能体出现为止。两个智能体共享一个文件系统、一个代码库、一个数据库，就会重新发现计算领域最古老的故障：丢失更新，读-改-写竞态，无声覆盖。人类也许一个季度才会踩进一次这样的竞态。而智能体以机器速度运行、日程彼此重叠、又没有「别挡别人道」的社交本能。智能体工程的下一个前沿不是智能。是并发控制——跳过它的系统将会发现：两个称职的智能体，可以产出一个谁单独干活都不可能产出的结果。">Every agent ever shipped was designed as if it were the only actor in the world. Its reads are assumptions of stability; its writes are assumptions of exclusivity. Both assumptions hold — right up until the second agent shows up.</p>
+</header>
+<article class="post-body">
+<p data-en="Start with the most ordinary agent task imaginable: update a configuration file. Agent A reads the file, reasons about it, computes a new version, writes it back. Flawless — in a universe with one agent. Now run the same task twice. Agent A reads. Agent B reads. Both see the same original. Agent A writes its version. Agent B, still reasoning from the world as it was, writes its version too. The file now contains B's changes. A's changes are not anywhere. No error was raised, no exception thrown, no log line written. This is the lost update, and it is the single most studied failure in the history of concurrent systems. Databases solved it with transactions. Filesystems solved it with locks. Version control solved it — for humans, politely, with a merge conflict that asks for attention. Agent frameworks have solved it with nothing at all, because almost all of them still assume the loop is the only process that matters." data-zh="从一个最普通不过的智能体任务说起：更新一个配置文件。智能体 A 读取文件，进行推理，算出一个新版本，写回去。在一个只有一个智能体的宇宙里，无懈可击。现在把同一个任务跑两遍。A 读。B 读。两者看到同一个原始版本。A 写入自己的版本。B——依然基于「世界还是原来那样」在推理——也写入了自己的版本。文件现在只包含 B 的修改。A 的修改哪儿都不在。没有报错，没有抛异常，没有一行日志。这就是丢失更新，并发系统历史上被研究得最透彻的故障。数据库用事务解决它。文件系统用锁解决它。版本控制解决它——对人类，彬彬有礼地，用一个请求关注的合并冲突。而智能体框架什么都没用来解决它，因为几乎所有的框架，仍然假设循环是唯一重要的进程。">Start with the most ordinary agent task imaginable: update a configuration file. Agent A reads the file, reasons about it, computes a new version, writes it back. Flawless — in a universe with one agent. Now run the same task twice. Agent A reads. Agent B reads. Both see the same original. Agent A writes its version. Agent B, still reasoning from the world as it was, writes its version too. The file now contains B's changes. A's changes are not anywhere.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrR3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE LOST UPDATE, AT MACHINE SPEED" data-zh="机器速度下的丢失更新" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE LOST UPDATE, AT MACHINE SPEED</text>
+<!-- lanes -->
+<line stroke="var(--border)" stroke-width="1" x1="80" x2="580" y1="60" y2="60"></line>
+<text data-en="AGENT A" data-zh="智能体 A" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="end" x="68" y="64">AGENT A</text>
+<line stroke="var(--border)" stroke-width="1" x1="80" x2="580" y1="170" y2="170"></line>
+<text data-en="AGENT B" data-zh="智能体 B" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="end" x="68" y="174">AGENT B</text>
+<line stroke="var(--border)" stroke-width="1" x1="80" x2="580" y1="280" y2="280"></line>
+<text data-en="FILE" data-zh="文件" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="end" x="68" y="284">FILE</text>
+<!-- Agent A actions -->
+<rect fill="var(--bg-surface)" height="26" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="70" x="100" y="47"></rect>
+<text data-en="read v1" data-zh="读取 v1" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="135" y="64">read v1</text>
+<rect fill="var(--bg-surface)" height="26" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="86" x="330" y="47"></rect>
+<text data-en="write v2a" data-zh="写入 v2a" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="373" y="64">write v2a</text>
+<!-- Agent B actions -->
+<rect fill="var(--bg-surface)" height="26" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="70" x="160" y="157"></rect>
+<text data-en="read v1" data-zh="读取 v1" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="195" y="174">read v1</text>
+<rect fill="var(--bg-surface)" height="26" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="86" x="430" y="157"></rect>
+<text data-en="write v2b" data-zh="写入 v2b" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="473" y="174">write v2b</text>
+<!-- file state -->
+<rect fill="var(--bg-surface)" height="26" rx="7" stroke="var(--text-tertiary)" stroke-width="1.5" width="60" x="90" y="267"></rect>
+<text data-en="v1" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="120" y="284">v1</text>
+<rect fill="var(--accent-dim)" height="26" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="60" x="345" y="267"></rect>
+<text data-en="v2a" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="375" y="284">v2a</text>
+<rect fill="var(--accent-dim)" height="26" rx="7" stroke="var(--accent-3)" stroke-width="2" width="60" x="445" y="267"></rect>
+<text data-en="v2b" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="475" y="284">v2b</text>
+<!-- arrows -->
+<path d="M135 73 L135 160" fill="none" marker-end="url(#arrR2)" stroke="var(--accent-2)" stroke-width="1.2" stroke-dasharray="3,3" opacity="0.5"></path>
+<path d="M195 183 L160 267" fill="none" marker-end="url(#arrR2)" stroke="var(--accent-3)" stroke-width="0"></path>
+<path d="M195 183 C195 230 160 240 130 267" fill="none" marker-end="url(#arrR2)" stroke="var(--accent-3)" stroke-width="1.2" opacity="0.5"></path>
+<path d="M373 73 C373 180 378 220 376 267" fill="none" marker-end="url(#arrR1)" stroke="var(--accent-2)" stroke-width="1.2"></path>
+<path d="M473 183 L476 267" fill="none" marker-end="url(#arrR2)" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<!-- lost update ghost -->
+<path d="M345 280 C300 280 290 318 330 318" fill="none" marker-end="url(#arrR3)" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="4,3"></path>
+<text data-en="v2a's changes: gone. no error, no trace." data-zh="v2a 的修改：消失了。没有报错，没有痕迹。" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="332">v2a's changes: gone. no error, no trace.</text>
+<!-- shared-read marker -->
+<circle cx="167" cy="120" fill="none" r="34" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4,3"></circle>
+<text data-en="both read v1" data-zh="两者都读到 v1" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="167" y="117">both read v1</text>
+<text data-en="same world" data-zh="同一个世界" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="167" y="129">same world</text>
+</svg>
+<p class="diagram-caption" data-en="The classic read-modify-write race, replayed by two agents. Both read version 1, both reason from it, both write. The last write wins, the first write evaporates, and no layer of the stack objects — not the tool, not the framework, not the model. The agents are individually competent and jointly destructive, which is precisely what makes this failure class so dangerous: nothing in either run looks wrong." data-zh="经典的读-改-写竞态，由两个智能体重演。两者都读到版本 1，都基于它推理，都写入。最后的写入获胜，第一个写入蒸发，而技术栈里没有任何一层提出异议——工具不会，框架不会，模型也不会。两个智能体各自称职、合力破坏，这正是这类故障危险的原因：两次运行，看起来都没有任何问题。">The classic read-modify-write race, replayed by two agents. Both read version 1, both reason from it, both write. The last write wins, the first write evaporates, and no layer of the stack objects — not the tool, not the framework, not the model. The agents are individually competent and jointly destructive.</p>
+</div>
+<h3 data-en="Humans have etiquette. Agents have nothing." data-zh="人类有礼节，智能体什么都没有">Humans have etiquette. Agents have nothing.</h3>
+<p data-en="It is worth pausing on why this hasn't burned everyone already. The honest answer: human teams develop an invisible concurrency protocol. People announce themselves in a channel before touching shared infra. They see a colleague's editor open and pick another file. They feel the social cost of a clobbered commit and self-correct. This etiquette is slow, imprecise, and wonderful — it reduces the collision rate enough that the occasional lost update becomes a war story rather than a weekly incident. Agents have none of it. They don't hover in Slack. They don't notice another process's temp files. They have no social cost function at all. And they are proliferating: scheduled runs, event-triggered agents, multiple humans each launching their own assistant at the same repository at nine in the morning. The collision rate isn't rising because agents are careless. It's rising because the coordination layer humans improvised was never built into the machines that are replacing the humans' calendar slots." data-zh="值得停下来想一想：为什么这件事还没有把所有人都烧到。诚实的答案是：人类团队会发展出一套看不见的并发协议。人们在动共享基础设施之前，会先在频道里打个招呼。他们看到同事的编辑器开着，就会换一个文件。他们能感受到搞砸别人提交的社交代价，并自我修正。这套礼节缓慢、不精确，而且美妙——它把碰撞率降到了足够低，让偶发的丢失更新沦为一段战争故事，而不是每周事故。智能体没有这一切。它们不会在 Slack 里冒泡。它们注意不到另一个进程的临时文件。它们完全没有社交代价函数。而它们正在激增：定时任务、事件触发的智能体、多个人类在早上九点各自往同一个代码库放出自己的助手。碰撞率上升，不是因为智能体粗心。而是因为人类即兴拼凑出来的那层协调，从未被建进正在取代人类日程槽位的机器里。">It is worth pausing on why this hasn't burned everyone already. The honest answer: human teams develop an invisible concurrency protocol. People announce themselves in a channel before touching shared infra. They feel the social cost of a clobbered commit and self-correct. Agents have none of it — and they are proliferating on overlapping schedules.</p>
+<blockquote data-en="Two agents, each individually correct, can interleave into an outcome neither would accept. That is not a model failure. That is a concurrency failure, and no amount of reasoning strength fixes it — a smarter model simply loses the update faster." data-zh="两个各自正确的智能体，可以交织出一个谁都无法接受的结局。这不是模型故障。这是并发故障，再强的推理能力也修不了——更聪明的模型，只会更快地把更新弄丢。">Two agents, each individually correct, can interleave into an outcome neither would accept. That is not a model failure. That is a concurrency failure, and no amount of reasoning strength fixes it — a smarter model simply loses the update faster.</blockquote>
+<h3 data-en="Three disciplines, all of them old" data-zh="三门老手艺">Three disciplines, all of them old</h3>
+<p data-en="The repair kit is not new, which is the good news — it is forty years of database engineering wearing a new name badge. First: pessimistic control. Before an agent works on a shared resource, it acquires a lease: an exclusive, expiring claim. The expiry matters more than the exclusivity, because an agent that dies holding a lock must not deadlock everyone else; a lease that lapses returns the resource to the pool automatically. Second: optimistic control. The agent reads state along with a version token, reasons freely, and commits with a compare-and-swap: 'write this, but only if the version is still 47.' If another agent got there first, the commit fails loudly and the loop re-reads and re-plans. This is the option for systems where contention is rare and rework is cheap — and it has a beautiful property for agents: the failure arrives as information, not as silence. Third: commutativity. Design the operations themselves so order doesn't matter. Append-only logs instead of in-place edits, additive records instead of mutations, intents queued for a single serializer instead of writes scattered across workers. Commutative operations don't need coordination because they can't conflict — which makes them the cheapest concurrency control of all: the one you never perform." data-zh="修理工具包并不新，这是好消息——它是四十年数据库工程，换了个新工牌。第一，悲观控制。智能体在动共享资源之前，先取得一个租约：一个独占的、会过期的声明。过期比独占更重要，因为一个持锁死掉的智能体，不能把其他所有人都锁死；会到期的租约，会自动把资源还回池子。第二，乐观控制。智能体连同一个版本令牌一起读取状态，自由推理，然后用比较并交换提交：「写入这个，但仅当版本仍然是 47。」如果另一个智能体抢先了，提交会大声失败，循环重新读取、重新规划。这适用于争用稀少、返工便宜的系统——而它对智能体有个绝妙的性质：失败以信息的形式抵达，而不是以沉默。第三，可交换性。把操作本身设计成顺序无关。只增不改的日志，而非原地编辑；加法式的记录，而非修改；把意图排进单一序列器，而非让写入散落各处。可交换的操作不需要协调，因为它们根本不会冲突——这使它成为所有并发控制里最便宜的一种：你根本不需要执行的那一种。">The repair kit is not new, which is the good news — it is forty years of database engineering wearing a new name badge. First: pessimistic control — leases, exclusive and expiring. Second: optimistic control — version tokens and compare-and-swap commits that fail loudly. Third: commutativity — operations designed so order doesn't matter.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrS1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THREE WAYS TO SHARE A WORLD" data-zh="共享一个世界的三种方式" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THREE WAYS TO SHARE A WORLD</text>
+<!-- lease -->
+<rect fill="var(--bg-surface)" height="130" rx="10" stroke="var(--accent-2)" stroke-width="1.5" width="170" x="28" y="48"></rect>
+<text data-en="LEASE (pessimistic)" data-zh="租约（悲观）" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="113" y="74">LEASE (pessimistic)</text>
+<text data-en="claim before work" data-zh="先声明，后动手" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="113" y="98">claim before work</text>
+<text data-en="others wait or skip" data-zh="其他人等待或跳过" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="113" y="114">others wait or skip</text>
+<text data-en="expires if the holder dies" data-zh="持有者死亡则过期" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="113" y="130">expires if the holder dies</text>
+<text data-en="cost: idle capacity" data-zh="代价：空转的容量" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="113" y="160">cost: idle capacity</text>
+<!-- CAS -->
+<rect fill="var(--bg-surface)" height="130" rx="10" stroke="var(--accent)" stroke-width="1.5" width="170" x="225" y="48"></rect>
+<text data-en="VERSION CAS (optimistic)" data-zh="版本 CAS（乐观）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="74">VERSION CAS (optimistic)</text>
+<text data-en="work freely, commit guarded" data-zh="自由干活，带守卫提交" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="98">work freely, commit guarded</text>
+<text data-en="conflict fails loudly" data-zh="冲突会大声失败" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="114">conflict fails loudly</text>
+<text data-en="loser re-reads, re-plans" data-zh="落败者重读、重规划" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="130">loser re-reads, re-plans</text>
+<text data-en="cost: occasional rework" data-zh="代价：偶发的返工" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="160">cost: occasional rework</text>
+<!-- commutative -->
+<rect fill="var(--bg-surface)" height="130" rx="10" stroke="var(--accent-3)" stroke-width="1.5" width="170" x="422" y="48"></rect>
+<text data-en="COMMUTATIVE (structural)" data-zh="可交换（结构性）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="507" y="74">COMMUTATIVE (structural)</text>
+<text data-en="append, never overwrite" data-zh="只追加，绝不覆盖" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="507" y="98">append, never overwrite</text>
+<text data-en="order stops mattering" data-zh="顺序不再重要" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="507" y="114">order stops mattering</text>
+<text data-en="one serializer applies intents" data-zh="单一序列器执行意图" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="507" y="130">one serializer applies intents</text>
+<text data-en="cost: redesign, up front" data-zh="代价：前置的重新设计" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="507" y="160">cost: redesign, up front</text>
+<!-- converge -->
+<path d="M113 178 C160 210 260 226 295 238" fill="none" marker-end="url(#arrS1)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<path d="M310 178 L310 236" fill="none" marker-end="url(#arrS1)" stroke="var(--accent)" stroke-width="1.3"></path>
+<path d="M507 178 C460 210 360 226 325 238" fill="none" marker-end="url(#arrS1)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--accent-dim)" height="40" rx="9" stroke="var(--accent)" stroke-width="1.8" width="300" x="160" y="242"></rect>
+<text data-en="no silent overwrites — ever" data-zh="永远不再有无声覆盖" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="310" y="267">no silent overwrites — ever</text>
+<text data-en="pick per resource: hotly contested → lease · rarely contested → CAS · agent-shaped → commutative" data-zh="按资源选：激烈争用 → 租约 · 少有争用 → CAS · 天然适合智能体 → 可交换" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="308">pick per resource: hotly contested → lease · rarely contested → CAS · agent-shaped → commutative</text>
+</svg>
+<p class="diagram-caption" data-en="Concurrency control is a menu, not a doctrine. Leases serialize access at the cost of idle agents. Version-checked commits let everyone work and settle conflicts after, at the cost of rework. Commutative operation design removes the conflict structurally, at the cost of thinking about shared state before building it. Mature systems mix all three, chosen per resource rather than adopted as ideology." data-zh="并发控制是一份菜单，不是一种主义。租约以智能体空转为代价，串行化访问。带版本检查的提交让所有人先干活、事后裁决冲突，代价是返工。可交换的操作设计从结构上消灭冲突，代价是在动手之前先想清楚共享状态。成熟的系统三者混用，按资源选择，而不是当作信仰全盘采纳。">Concurrency control is a menu, not a doctrine. Leases serialize access at the cost of idle agents. Version-checked commits let everyone work and settle conflicts after, at the cost of rework. Commutative operation design removes the conflict structurally, at the cost of thinking about shared state before building it.</p>
+</div>
+<h3 data-en="The arbiter belongs in the harness" data-zh="仲裁者属于 harness">The arbiter belongs in the harness</h3>
+<p data-en="The tempting fix is to tell the models to behave. Add a line to the system prompt: 'other agents may be working on this repository; check for recent changes before writing.' This is etiquette simulation, and it fails exactly like etiquette would fail if humans could only see the world through a straw, once per step, with no peripheral vision. The model cannot hold a lock. The model cannot be woken when a lease expires. The model cannot atomically check a version and write a file, because the model is not the one performing the write — the tool layer is. Coordination is a property of actions, and actions belong to the harness. The write tool should refuse to clobber: every mutation takes an expected version, and mismatches return an error the loop can handle. The filesystem wrapper should hand out advisory locks and honor them. The scheduler should know which runs touch which resources, because it is the only component that sees them all. None of this requires smarter models. It requires accepting that the loop is now a tenant in a shared building, and tenants get building rules, not lectures about consideration." data-zh="诱人的修复方式，是叫模型守规矩。在系统 prompt 里加一句：「可能有其他智能体在这个代码库上工作，写入前请检查近期变更。」这是礼节的模拟，而它的失败方式，恰如人类的礼会在「人类只能透过吸管看世界、每步看一次、毫无余光」时失败一样。模型握不住锁。租约到期时，模型不会被唤醒。模型无法原子地检查版本并写入文件，因为执行写入的不是模型——是工具层。协调是动作的属性，而动作属于 harness。写入工具应当拒绝覆盖：每次修改都带一个期望版本，不匹配就返回一个循环能够处理的错误。文件系统的封装层应当发放并尊重建议锁。调度器应当知道哪些任务碰哪些资源，因为它是唯一看得见全貌的组件。这些都不需要更聪明的模型。它需要的是接受：循环现在是共享大楼里的租户，而租户拿到的是大楼规则，不是关于体谅的说教。">The tempting fix is to tell the models to behave. Add a line to the system prompt: 'other agents may be working here.' This is etiquette simulation, and it fails because the model cannot hold a lock, cannot be woken when a lease expires, and cannot atomically check a version and write — the tool layer performs the write. Coordination is a property of actions, and actions belong to the harness.</p>
+<p data-en="There is a design shift hiding here that goes past preventing clobbered files. Once contention is admitted, the architecture starts to organize itself around it: agents submit intents instead of performing edits, and a serializer turns overlapping intents into a consistent history — the exact move that took version control from 'lock the whole tree' to 'everyone works, merge at the edge.' Shared state starts to migrate toward append-only stores, because append-only is where agents can act freely without stepping on each other. Roles emerge: one agent owns the mutable core, others propose changes to it, and the proposal interface — not the prompt — is what keeps them out of each other's way. None of this resembles the single-agent loop that most frameworks still ship as their one primitive. It resembles an operating system. That is the honest trajectory: the agent framework is absorbing the responsibilities of a scheduler, a lock manager, and a transaction engine, whether its designers noticed or not. The frameworks that notice will build those parts deliberately. The ones that don't will rebuild them badly, one mysterious incident at a time, and call each one a model problem." data-zh="这里还藏着一个超越「防止文件被覆盖」的设计转变。一旦承认了争用，架构就开始围绕它自我组织：智能体提交意图，而不是直接执行编辑；一个序列器把重叠的意图，转化为一致的历史——这正是让版本控制从「锁整棵树」走向「人人先干活、边缘处合并」的那一步。共享状态开始向只增存储迁移，因为「只增」是智能体能自由行动而互不踩脚的地方。角色随之浮现：一个智能体拥有可变的核心，其余的向它提议变更，而把大家挡在彼此道路之外的，是提议接口——不是 prompt。这一切都不像大多数框架仍在当作唯一原语发布的那个单智能体循环。它像一个操作系统。这才是诚实的轨迹：智能体框架正在吸收调度器、锁管理器和事务引擎的职责，无论它的设计者有没有察觉。察觉的框架，会审慎地建造这些部分。没有察觉的，会一次一次在离奇事故中把它们糟糕地重造一遍，然后把每一次都称作模型问题。">There is a design shift hiding here that goes past preventing clobbered files. Once contention is admitted, agents submit intents instead of performing edits, shared state migrates toward append-only stores, and roles emerge: one agent owns the mutable core, others propose changes. The agent framework is absorbing the responsibilities of a scheduler, a lock manager, and a transaction engine — whether its designers noticed or not.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrP2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrP3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="FROM SHARED EDITS TO A SERIALIZED INTENT LOG" data-zh="从共享编辑，到串行化的意图日志" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">FROM SHARED EDITS TO A SERIALIZED INTENT LOG</text>
+<!-- agents -->
+<rect fill="var(--bg-surface)" height="40" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="120" x="40" y="48"></rect>
+<text data-en="agent A · intent" data-zh="智能体 A · 意图" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="100" y="72">agent A · intent</text>
+<rect fill="var(--bg-surface)" height="40" rx="9" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="40" y="110"></rect>
+<text data-en="agent B · intent" data-zh="智能体 B · 意图" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="100" y="134">agent B · intent</text>
+<rect fill="var(--bg-surface)" height="40" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="120" x="40" y="172"></rect>
+<text data-en="agent C · intent" data-zh="智能体 C · 意图" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="100" y="196">agent C · intent</text>
+<!-- intents into serializer -->
+<path d="M160 68 C220 68 230 110 265 122" fill="none" marker-end="url(#arrP1)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<path d="M160 130 L262 130" fill="none" marker-end="url(#arrP2)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<path d="M160 192 C220 192 230 150 265 138" fill="none" marker-end="url(#arrP1)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<rect fill="var(--accent-dim)" height="64" rx="10" stroke="var(--accent)" stroke-width="2" width="130" x="270" y="98"></rect>
+<text data-en="SERIALIZER" data-zh="序列器" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="335" y="124">SERIALIZER</text>
+<text data-en="orders · validates · commits" data-zh="排序 · 校验 · 提交" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="335" y="142">orders · validates · commits</text>
+<!-- history -->
+<path d="M400 130 L445 130" fill="none" marker-end="url(#arrP3)" stroke="var(--accent)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="150" rx="10" stroke="var(--accent)" stroke-width="1.5" width="150" x="450" y="56"></rect>
+<text data-en="CONSISTENT HISTORY" data-zh="一致的历史" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="525" y="80">CONSISTENT HISTORY</text>
+<text data-en="change #41 ✓" data-zh="变更 #41 ✓" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="525" y="106">change #41 ✓</text>
+<text data-en="change #42 ✓" data-zh="变更 #42 ✓" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="525" y="126">change #42 ✓</text>
+<text data-en="change #43 ✓" data-zh="变更 #43 ✓" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="525" y="146">change #43 ✓</text>
+<text data-en="append-only · replayable" data-zh="只增 · 可重放" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="525" y="182">append-only · replayable</text>
+<!-- rejected feedback -->
+<path d="M335 162 C335 220 240 226 185 200" fill="none" marker-end="url(#arrP3)" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<text data-en="conflicts returned as information, not silence" data-zh="冲突以信息的形式返回，而非沉默" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="240" y="256">conflicts returned as information, not silence</text>
+<text data-en="the agents never touch shared state directly — they propose, the log decides" data-zh="智能体从不直接碰共享状态——它们提议，日志裁决" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="284">the agents never touch shared state directly — they propose, the log decides</text>
+</svg>
+<p class="diagram-caption" data-en="The endgame architecture for multi-agent systems looks less like a shared whiteboard and more like a commit history. Agents emit intents; a serializer orders, validates, and applies them into an append-only, replayable history. Overlapping intents surface as reviewable conflicts instead of silent overwrites. Every agent remains free to work in parallel — freedom is preserved by never letting two agents hold the pen at once." data-zh="多智能体系统的终局架构，看起来不像一块共享白板，更像一段提交历史。智能体发出意图；序列器排序、校验，并将其写入一段只增、可重放的历史。重叠的意图，以可审查的冲突浮出水面，而不是无声的覆盖。每个智能体依然可以自由并行——自由得以保留的方式，是永远不让两个智能体同时握着笔。">The endgame architecture for multi-agent systems looks less like a shared whiteboard and more like a commit history. Agents emit intents; a serializer orders, validates, and applies them into an append-only, replayable history. Overlapping intents surface as reviewable conflicts instead of silent overwrites.</p>
+</div>
+<p data-en="The uncomfortable summary: the industry is racing to add agents to every team, every codebase, every calendar — multiplying actors while the coordination layer between them remains a polite hope. It will hold for a while, the way a bridge holds past its load limit, quietly accumulating strain in places nobody inspects. The incidents will read as mysteries at first: changes that vanished, state that regressed, tests that passed on code that somehow wasn't there. Each will get blamed on the model, the prompt, the phase of the moon. And then someone will look at the timestamps, see two runs interleaved on one resource, and recognize the shape of a problem their grandparents' databases solved in 1980. The knowledge is not missing. It is just waiting, patiently, in the databases, for the agent world to notice that it is multi-tenant now." data-zh="令人不适的总结是：整个行业正竞相把智能体加进每个团队、每个代码库、每份日程——一边倍增行动者，一边让它们之间的协调层，停留在一句礼貌的期许上。它会撑一阵子，就像一座桥在超过载荷极限之后仍会撑着，在无人检查的地方悄悄积累应力。起初，这些事故会被当作谜团：凭空消失的变更、发生了倒退的状态、在不知为何不存在的代码上通过的测试。每一次都会被归咎于模型、prompt、月亮的相位。然后会有人查看时间戳，看到两次运行在一个资源上交织，认出这个问题的形状——他们祖辈的数据库在 1980 年就解决了的问题。知识并不缺。它只是安静地待在数据库里，等着智能体的世界意识到：自己如今是多租户的了。">The uncomfortable summary: the industry is racing to multiply actors while the coordination layer between them remains a polite hope. It will hold for a while, the way a bridge holds past its load limit. The knowledge is not missing — it is waiting, patiently, in the databases, for the agent world to notice that it is multi-tenant now.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
