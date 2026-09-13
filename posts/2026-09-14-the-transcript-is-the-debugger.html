@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Transcript Is the Debugger — AI Frontlines</title>
+<meta content="Agents fail in ways stack traces cannot explain: the error surfaces forty steps after the cause, across model calls, tool results, and environment state that no longer exists. The only debugging primitive that works at this altitude is the full-fidelity transcript — every input, every output, every tool result — captured by the harness and replayable on demand. The systems that log summaries will debug summaries. The systems that log everything will debug reality." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 14, 2026" data-zh="2026年9月14日">September 14, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Transcript Is the Debugger" data-zh="记录本身就是调试器">The Transcript Is the Debugger</h1>
+<p class="post-header-deck" data-en="Every debugging tool ever built answers one question: what happened, exactly, at the moment things went wrong? For deterministic programs, the stack trace answers it well enough. For agents, the question is unanswerable by default — the failure surfaces forty steps after its cause, the cause lives inside a context window that has since been overwritten, and the environment that produced it has moved on. The industry's answer has been to print logs and squint. The correct answer is older and more demanding: capture the full run — every prompt, every completion, every tool call and result — as a first-class artifact, and make replay the primary debugging motion. An agent system without replay isn't under-observed. It is undebuggable by construction." data-zh="历史上每一个调试工具，回答的都是同一个问题：出问题的那一刻，到底发生了什么？对确定性程序来说，栈跟踪回答得足够好。对智能体来说，这个问题在默认状态下无法回答——故障在起因之后四十步才浮出水面，起因藏在一个早已被覆盖重写的上下文窗口里，而孕育它的环境已经继续前行。业界的答案一直是：打点日志，然后眯着眼看。正确的答案更古老、也要求更高：把完整运行过程——每一次 prompt、每一次补全、每一次工具调用与返回——作为一等公民捕获下来，并把「重放」作为首要的调试动作。一个没有重放能力的智能体系统，不是观测不足，而是在结构上就无法调试。">Every debugging tool ever built answers one question: what happened, exactly, at the moment things went wrong? For agents, the question is unanswerable by default — and the answer is not more logs. It is replay.</p>
+</header>
+<article class="post-body">
+<p data-en="Consider what an agent failure actually looks like. A run completes in forty-one steps and produces a subtly wrong result: a report whose numbers disagree with its own footnotes, a migration that dropped one index, a deployed config that references a secret that was rotated mid-run. The operator opens the monitoring dashboard and finds — what? A green status. Latency within bounds. Token spend nominal. Every individual step succeeded, including the ones that were wrong. The stack trace, debugging's greatest hit, is useless here for a structural reason: there is no stack. The causal chain runs forward through time, not downward through call frames. Step 3 read a value; step 17 cached an interpretation of it; step 40 acted on the interpretation; the value was wrong at step 3 and nothing in between checked. No exception will ever point there. The distance between cause and symptom is measured in turns, not frames, and the only record of what those turns contained is the context window itself — which the failing run has already consumed, mutated, and forgotten." data-zh="来看一个智能体故障的真实样貌。一次运行走完四十一步，产出一个微妙错误的结果：一份数字与自己的脚注对不上的报告，一次漏掉了一个索引的数据库迁移，一份引用了运行中途已被轮换的密钥的线上配置。运维打开监控面板，看到什么？绿色状态。延迟正常。Token 开销平稳。每一个步骤都成功了——包括那些错了的。栈跟踪——调试界的头号金曲——在这里毫无用处，原因是结构性的：根本没有栈。因果链在时间中向前延伸，而不是在调用帧里向下延伸。第 3 步读到一个值；第 17 步缓存了对它的解读；第 40 步依据这个解读采取行动；那个值在第 3 步就错了，而中间没有任何一步检查过。任何异常都不会指向那里。起因与症状之间的距离，以「轮次」计量，而非以「帧」计量，而这些轮次所包含内容的唯一记录，就是上下文窗口本身——而失败的那次运行早已把它消耗殆尽、改写一空、彻底遗忘。">A run completes in forty-one steps and produces a subtly wrong result. Every individual step succeeded, including the ones that were wrong. The stack trace is useless here for a structural reason: there is no stack. The causal chain runs forward through time, not downward through call frames.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrT2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="CAUSE AND SYMPTOM, MEASURED IN TURNS" data-zh="以轮次计量的起因与症状" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">CAUSE AND SYMPTOM, MEASURED IN TURNS</text>
+<!-- turn timeline -->
+<line stroke="var(--border)" stroke-width="1.5" x1="60" x2="580" y1="140" y2="140"></line>
+<text data-en="turn 1" data-zh="第 1 轮" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="70" y="162">turn 1</text>
+<text data-en="turn 3" data-zh="第 3 轮" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="135" y="162">turn 3</text>
+<text data-en="turn 17" data-zh="第 17 轮" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="162">turn 17</text>
+<text data-en="turn 40" data-zh="第 40 轮" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="520" y="162">turn 40</text>
+<!-- cause marker -->
+<circle cx="135" cy="140" fill="var(--accent-2)" r="7"></circle>
+<circle cx="135" cy="140" fill="none" r="13" stroke="var(--accent-2)" stroke-dasharray="3,3" stroke-width="1.2"></circle>
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="170" x="50" y="62"></rect>
+<text data-en="CAUSE" data-zh="起因" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="135" y="80">CAUSE</text>
+<text data-en="bad value read · no check" data-zh="读到坏值 · 无人校验" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="135" y="97">bad value read · no check</text>
+<path d="M135 106 L135 126" fill="none" marker-end="url(#arrT1)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<!-- propagation -->
+<path d="M145 140 L505 140" fill="none" marker-end="url(#arrT2)" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="5,4" opacity="0.7"></path>
+<text data-en="misinterpretation cached at turn 17" data-zh="错误解读在第 17 轮被缓存" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="128">misinterpretation cached at turn 17</text>
+<!-- symptom marker -->
+<circle cx="520" cy="140" fill="var(--accent-3)" r="7"></circle>
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="190" x="425" y="190"></rect>
+<text data-en="SYMPTOM" data-zh="症状" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="520" y="208">SYMPTOM</text>
+<text data-en="wrong output · all steps green" data-zh="错误输出 · 全部步骤绿色" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="520" y="225">wrong output · all steps green</text>
+<path d="M520 190 L520 160" fill="none" marker-end="url(#arrT2)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<!-- stack trace ghost -->
+<rect fill="var(--bg-surface)" height="52" rx="8" stroke="var(--text-tertiary)" stroke-dasharray="4,3" stroke-width="1.2" width="180" x="60" y="210"></rect>
+<text data-en="the stack trace" data-zh="栈跟踪" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="150" y="230">the stack trace</text>
+<text data-en="points here · explains nothing" data-zh="指向这里 · 什么也没解释" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="150" y="248">points here · explains nothing</text>
+<!-- distance label -->
+<text data-en="37 turns of silence between them" data-zh="两者之间，是 37 轮的沉默" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="290">37 turns of silence between them</text>
+<text data-en="the only witness is the context window — already gone" data-zh="唯一的证人是上下文窗口——而它已经没了" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="308">the only witness is the context window — already gone</text>
+</svg>
+<p class="diagram-caption" data-en="Agent failures are temporal, not hierarchical. The cause lands early, travels silently through cached interpretations and intermediate artifacts, and surfaces as a wrong output many turns later — with every step along the way reporting success. A debugger that inspects the moment of failure sees only the symptom. Only a complete record of the run can connect turn 3 to turn 40, which is why the transcript is not an observability nicety. It is the minimum viable debugger." data-zh="智能体故障是时间性的，不是层级性的。起因早早落地，沿着被缓存的解读和中间产物无声传播，许多轮之后才以错误输出的形式浮出水面——而沿途每一步都报告成功。一个只检查失败瞬间的调试器，看到的只有症状。唯有完整的运行记录，才能把第 3 轮和第 40 轮连起来——这正是为什么记录不是什么可观测性的锦上添花，而是最小可用的调试器。">Agent failures are temporal, not hierarchical. The cause lands early, travels silently, and surfaces many turns later — with every step reporting success. Only a complete record of the run can connect turn 3 to turn 40.</p>
+</div>
+<h3 data-en="Logs are lossy. Transcripts are the system." data-zh="日志是有损的，记录才是系统本身">Logs are lossy. Transcripts are the system.</h3>
+<p data-en="The reflex is to add logging, but logging is the wrong primitive inherited from the wrong era. A log line is a summary written by the code that failed — it encodes what the author thought would matter, which is precisely what debugging is trying to discover. Summarize a model call as 'called tool X, success' and the summary omits the argument that was subtly malformed, the tool result that contained a number as a string, the system prompt variant that was deployed mid-run. A transcript inverts the relationship: nothing is summarized, everything is captured — the exact prompt, the sampled completion, the tool request and the raw response, the environment version, the seed if the API honors one. This sounds expensive and is. It is also the entire ballgame. Storage is cheaper than forensics, and a team that can replay a failure can find causes in minutes that a team with logs will argue about for days. The mature position is blunt: if it influenced the model's next token, it belongs in the transcript, byte-exact, or it never happened." data-zh="直觉反应是加日志，但日志是从错误年代继承来的错误原语。一行日志，是失败代码自己写下的摘要——它编码的是作者「以为会重要」的东西，而那恰恰是调试想要发现的东西。把一次模型调用总结成「调用了工具 X，成功」，这个摘要就略去了那个格式微妙错误的参数、那个把数字放进字符串里返回的工具结果、那次运行中途上线的系统 prompt 变体。记录则反转了这层关系：不总结任何东西，捕获一切——精确的 prompt、采样出的补全、工具请求与原始返回、环境版本、以及 API 支持时的随机种子。这听起来很贵，也确实贵。但这正是全部的关键。存储比取证便宜，而能够重放故障的团队，几分钟就能找到的起因，只有日志的团队会为此吵上几天。成熟的立场是直白的：凡是影响了模型下一个 token 的东西，都必须逐字节精确地进入记录——否则它就等于从未发生过。">A log line is a summary written by the code that failed — it encodes what the author thought would matter, which is precisely what debugging is trying to discover. A transcript inverts the relationship: nothing is summarized, everything is captured. Storage is cheaper than forensics.</p>
+<blockquote data-en="A team that can replay a failure debugs causes. A team with logs debugs opinions. The difference is not skill — it is whether the run still exists after it ends." data-zh="能重放故障的团队，调试的是起因。只有日志的团队，调试的是各自的观点。区别不在水平——而在于运行结束之后，它是否还存在。">A team that can replay a failure debugs causes. A team with logs debugs opinions. The difference is not skill — it is whether the run still exists after it ends.</blockquote>
+<h3 data-en="Replay changes what a bug report is" data-zh="重放，重新定义了什么是缺陷报告">Replay changes what a bug report is</h3>
+<p data-en="Once transcripts exist, debugging stops being archaeology and becomes an engineering motion with a fixed shape. Load the transcript. Step to the failure. Step backward through turns until the interpretation diverged from reality. The harness can go further: re-execute any suffix of the run with the recorded tool results stubbed in, so an operator can test a fix against the exact world that failed — not a similar one, the same one. This is deterministic replay, the technique that made distributed systems debuggable at companies where a bug might live inside a thousand-node shuffle, and it transfers to agents almost unchanged. The one complication is the model itself: sampling is stochastic, APIs get deprecated, the exact checkpoint that produced a bad completion may be gone. The practical resolution is to treat model outputs as recorded facts during replay — the transcript supplies them verbatim — and re-plan only when testing a change. The failure already happened; understanding it requires no fresh sampling. Replay also collapses the bug report into its smallest possible form: not steps to reproduce, which for agents are a fantasy — environment drift guarantees the same steps produce a different run — but a transcript identifier. 'Replay 4f3a, divergence at turn 17.' That is a complete specification of the failure, and every engineer who loads it sees the same thing." data-zh="一旦有了记录，调试就不再是考古，而变成一个形状固定的工程动作。加载记录。走到失败处。沿着轮次向回走，直到找到「解读偏离现实」的那一点。harness 还可以更进一步：把记录下来的工具结果打桩，重放运行的任意后缀——这样运维就能在恰好失败的那个世界里测试修复，不是一个相似的世界，是同一个世界。这就是确定性重放，让分布式系统在千节点洗牌中也能调试的那门手艺，它几乎原封不动地迁移到了智能体上。唯一的复杂之处在模型本身：采样是随机的，API 会被下线，产出坏补全的那个 checkpoint 可能已经不存在。务实的解法是：在重放时，把模型输出当作已记录的事实——由记录逐字提供——只在测试改动时才重新规划。失败已经发生了，理解它不需要新的采样。重放还把缺陷报告压缩到了最小形态：不是「复现步骤」——对智能体来说那是幻想，环境漂移保证了同样的步骤会跑出不同的运行——而是一个记录标识符。「重放 4f3a，第 17 轮出现分歧。」这就是对故障的完整规格说明，而每一个加载它的工程师，看到的都是同一件事。">Once transcripts exist, debugging stops being archaeology. Load the transcript, step to the failure, step backward until the interpretation diverged from reality. The harness can re-execute any suffix of the run with recorded tool results stubbed in — so an operator tests a fix against the exact world that failed, not a similar one.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrU1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrU2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrU3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE REPLAY MOTION" data-zh="重放的动作" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE REPLAY MOTION</text>
+<!-- transcript track -->
+<rect fill="var(--bg-surface)" height="56" rx="10" stroke="var(--accent)" stroke-width="1.5" width="480" x="70" y="52"></rect>
+<text data-en="TRANSCRIPT 4f3a — every turn, byte-exact" data-zh="记录 4f3a —— 每一轮，逐字节精确" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="75">TRANSCRIPT 4f3a — every turn, byte-exact</text>
+<text data-en="prompts · completions · tool results · env version" data-zh="prompt · 补全 · 工具返回 · 环境版本" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="94">prompts · completions · tool results · env version</text>
+<!-- turn marks -->
+<circle cx="120" cy="108" fill="var(--accent-2)" r="5"></circle>
+<circle cx="230" cy="108" fill="var(--accent-2)" r="5"></circle>
+<circle cx="330" cy="108" fill="none" r="6" stroke="var(--accent)" stroke-width="2"></circle>
+<circle cx="440" cy="108" fill="var(--accent-3)" r="5"></circle>
+<text data-en="divergence" data-zh="分歧点" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="330" y="130">divergence</text>
+<text data-en="symptom" data-zh="症状" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="440" y="130">symptom</text>
+<!-- step back -->
+<path d="M330 160 C300 190 280 190 255 190" fill="none" marker-end="url(#arrU2)" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="5,3"></path>
+<path d="M255 210 C225 240 205 240 180 240" fill="none" marker-end="url(#arrU2)" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="5,3"></path>
+<text data-en="step backward: where did the interpretation leave reality?" data-zh="向回走：解读是从哪里离开现实的？" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="185" y="176">step backward: where did the interpretation leave reality?</text>
+<!-- replay suffix -->
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="200" x="360" y="170"></rect>
+<text data-en="REPLAY SUFFIX FROM TURN 17" data-zh="从第 17 轮重放后缀" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="460" y="188">REPLAY SUFFIX FROM TURN 17</text>
+<text data-en="recorded tool results stubbed in" data-zh="打桩注入已记录的工具结果" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="460" y="204">recorded tool results stubbed in</text>
+<path d="M360 192 C330 192 320 150 332 130" fill="none" marker-end="url(#arrU1)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<!-- fix test -->
+<rect fill="var(--accent-dim)" height="44" rx="9" stroke="var(--accent-3)" stroke-width="1.8" width="220" x="330" y="248"></rect>
+<text data-en="TEST FIX IN THE SAME WORLD" data-zh="在同一个世界里测试修复" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="440" y="266">TEST FIX IN THE SAME WORLD</text>
+<text data-en="not a similar run — the exact one that failed" data-zh="不是相似的运行——是恰好失败的那一次" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="440" y="283">not a similar run — the exact one that failed</text>
+<path d="M460 214 L450 244" fill="none" marker-end="url(#arrU3)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<!-- bug report -->
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--text-tertiary)" stroke-width="1.2" width="230" x="60" y="270"></rect>
+<text data-en="bug report = "replay 4f3a, turn 17"" data-zh="缺陷报告 =「重放 4f3a，第 17 轮」" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="175" y="288">bug report = "replay 4f3a, turn 17"</text>
+<text data-en="a complete specification of the failure" data-zh="一份完整的故障规格说明" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="175" y="305">a complete specification of the failure</text>
+</svg>
+<p class="diagram-caption" data-en="The replay motion, end to end. The transcript is loaded and inspected backward from the symptom to the turn where the model's interpretation diverged from reality. Any suffix of the run can be re-executed with recorded tool results stubbed in, so a fix is tested against the exact world that failed. The bug report shrinks to an identifier and a turn number — and reproduction, the oldest pain in debugging, stops being a question at all." data-zh="完整的重放动作。加载记录，从症状向回检查，直到找到模型的解读偏离现实的那一轮。运行的任意后缀都可以在打桩注入已记录工具结果的情况下重新执行，因此修复是在恰好失败的那个世界里被测试的。缺陷报告收缩为一个标识符加一个轮次编号——而复现，调试中最古老的痛点，干脆不再是一个问题。">The replay motion, end to end: inspect backward from symptom to divergence, re-execute any suffix with recorded results stubbed in, and test the fix against the exact world that failed.</p>
+</div>
+<h3 data-en="The harness owns capture, or nobody does" data-zh="捕获归 harness 管，否则就没人管">The harness owns capture, or nobody does</h3>
+<p data-en="There is a reason capture must live in the harness rather than in the agent or the application: only the harness sees everything, and only the harness is not the thing under investigation. Asking the model to narrate its own state produces plausible fiction. Asking application code to log its calls produces gaps at every layer it forgot. The harness, by contrast, is the single choke point through which every prompt, completion, and tool exchange already flows — recording there costs nothing in principle and misses nothing in practice. This has a governance corollary that matters more than debugging: transcripts are the audit trail. When an agent with real permissions takes a real action, the transcript is the artifact that answers what it saw, what it considered, and why it chose — the record regulators, customers, and incident reviewers will all eventually demand. Teams should treat transcript retention as a first-class policy decision — what is kept, how long, who can read it, how secrets inside it are redacted — made at design time, not retrofit after the first incident forces the question. And the quiet engineering benefit compounds: a corpus of transcripts is a corpus of failures, which is exactly the raw material evaluations are made of. The systems that capture everything can mine their own history for regression tests. The systems that capture summaries can only hope the same failure happens somewhere with better observability." data-zh="捕获必须放在 harness 里，而不是智能体或应用里，理由很充分：只有 harness 看得见一切，而且只有 harness 不是被调查对象。让模型叙述自己的状态，产出的是貌似合理的虚构。让应用代码记录自己的调用，会在它忘掉的每一层留下空洞。而 harness 天然是所有 prompt、补全和工具交换流经的唯一咽喉要道——在那里记录，原则上零成本，实践上零遗漏。这还带来一个比调试更重要的治理推论：记录就是审计追踪。当一个拥有真实权限的智能体采取了一个真实的行动，能回答「它看到了什么、考虑了什么、为什么这样选择」的，就是这份记录——监管者、客户和事故复盘者，迟早都会要求它。团队应当把记录的保留策略当作一等公民的设计决策——留什么、留多久、谁能读、其中的密钥如何脱敏——在设计时决定，而不是在第一次事故逼问出这个问题之后补装。而且这里有个悄无声息却复利累积的工程红利：记录的语料库，就是故障的语料库，而这恰恰是评估（evals）的原料。能捕获一切的系统，可以从自己的历史里挖出回归测试。只会捕获摘要的系统，只能祈祷同样的故障发生在一个观测更好的地方。">Only the harness sees everything, and only the harness is not the thing under investigation. It is the single choke point through which every exchange already flows — recording there misses nothing. And the corollary compounds: transcripts are the audit trail and, mined over time, the raw material that evaluations are made of.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrV1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrV2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="ONE CHOKE POINT, THREE DIVIDENDS" data-zh="一个咽喉要道，三重红利" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ONE CHOKE POINT, THREE DIVIDENDS</text>
+<!-- flows into harness -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.2" width="120" x="40" y="52"></rect>
+<text data-en="model calls" data-zh="模型调用" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="100" y="73">model calls</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.2" width="120" x="40" y="96"></rect>
+<text data-en="tool exchanges" data-zh="工具交互" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="100" y="117">tool exchanges</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.2" width="120" x="40" y="140"></rect>
+<text data-en="env mutations" data-zh="环境变更" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="100" y="161">env mutations</text>
+<path d="M160 69 C210 69 215 105 245 110" fill="none" marker-end="url(#arrV1)" stroke="var(--accent-2)" stroke-width="1.2"></path>
+<path d="M160 113 L245 116" fill="none" marker-end="url(#arrV1)" stroke="var(--accent-2)" stroke-width="1.2"></path>
+<path d="M160 157 C210 157 215 127 245 122" fill="none" marker-end="url(#arrV1)" stroke="var(--accent-2)" stroke-width="1.2"></path>
+<!-- harness recorder -->
+<rect fill="var(--accent-dim)" height="70" rx="10" stroke="var(--accent)" stroke-width="2" width="140" x="250" y="80"></rect>
+<text data-en="HARNESS" data-zh="HARNESS" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="320" y="108">HARNESS</text>
+<text data-en="records everything, summarizes nothing" data-zh="记录一切，不总结任何东西" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="320" y="128">records everything, summarizes nothing</text>
+<!-- three dividends -->
+<path d="M390 100 C430 85 440 72 470 66" fill="none" marker-end="url(#arrV2)" stroke="var(--accent)" stroke-width="1.2"></path>
+<path d="M390 115 L470 115" fill="none" marker-end="url(#arrV2)" stroke="var(--accent)" stroke-width="1.2"></path>
+<path d="M390 130 C430 145 440 158 470 164" fill="none" marker-end="url(#arrV2)" stroke="var(--accent)" stroke-width="1.2"></path>
+<rect fill="var(--bg-surface)" height="40" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="130" x="474" y="46"></rect>
+<text data-en="DEBUGGING" data-zh="调试" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="539" y="62">DEBUGGING</text>
+<text data-en="replay the failure" data-zh="重放故障" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="539" y="78">replay the failure</text>
+<rect fill="var(--bg-surface)" height="40" rx="9" stroke="var(--accent)" stroke-width="1.5" width="130" x="474" y="95"></rect>
+<text data-en="AUDIT" data-zh="审计" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="539" y="111">AUDIT</text>
+<text data-en="what it saw · why it acted" data-zh="它看到了什么 · 为何行动" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="539" y="127">what it saw · why it acted</text>
+<rect fill="var(--bg-surface)" height="40" rx="9" stroke="var(--accent-3)" stroke-width="1.5" width="130" x="474" y="144"></rect>
+<text data-en="EVALS" data-zh="评估" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="539" y="160">EVALS</text>
+<text data-en="failures mined as tests" data-zh="故障挖出来当测试" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="539" y="176">failures mined as tests</text>
+<!-- policy note -->
+<text data-en="retention · redaction · access — decided at design time, not after the first incident" data-zh="保留 · 脱敏 · 权限——在设计时决定，而不是第一次事故之后" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="230">retention · redaction · access — decided at design time, not after the first incident</text>
+<text data-en="the agent cannot narrate itself · the app forgets layers · the harness forgets nothing" data-zh="智能体无法叙述自己 · 应用总会漏层 · harness 什么都不漏" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="258">the agent cannot narrate itself · the app forgets layers · the harness forgets nothing</text>
+</svg>
+<p class="diagram-caption" data-en="Every exchange an agent makes already passes through the harness — model calls, tool exchanges, environment mutations. Recording at that choke point is complete by construction, and the same artifact pays out three times: as a debugger via replay, as an audit trail when an empowered agent's actions need explaining, and as an eval corpus mined from real failures. The policy questions — retention, redaction, access — belong at design time." data-zh="智能体的每一次交互，本来就要流经 harness——模型调用、工具交互、环境变更。在这个咽喉要道记录，在结构上就是完整的，而同一份工件能支付三次红利：作为调试器，通过重放；作为审计追踪，当一个被赋权的智能体的行动需要解释时；作为评估语料，从真实故障中挖掘而来。保留、脱敏、访问权限这些策略问题，属于设计时的决策。">Every exchange an agent makes already passes through the harness. Recording at that choke point is complete by construction, and the same artifact pays out three times: debugger, audit trail, eval corpus.</p>
+</div>
+<p data-en="The closing thought is about what teams choose to believe. There is a persistent fantasy that agent reliability will arrive through better models — that failures are capability gaps, and capability closes them. Some are. But the failure class described here survives any model: a sufficiently strong agent still reads a bad value, still caches an interpretation, still acts on it turns later, and still leaves no trace unless something underneath was recording. Replayability does not make agents correct. It makes them accountable to reality — it converts mysterious wrongness into inspectable wrongness, which is the only kind any engineering discipline has ever actually fixed. The choice is stark and cheap to make early: capture everything from the first day, or spend the rest of the system's life debugging stories about runs that no longer exist." data-zh="结尾想说的是团队选择相信什么。有一种顽固的幻想：智能体的可靠性会来自更强的模型——故障是能力缺口，能力会把它补上。有一些确实是。但这里描述的这一类故障，任何模型都救不了：足够强的智能体照样会读到一个坏值，照样缓存一个错误解读，照样在许多轮之后据此行动，而除非底层有什么东西一直在记录，否则照样不留一丝痕迹。可重放不会让智能体变正确。它让智能体对现实负责——它把神秘的错误，转化为可检查的错误，而这是任何工程学科真正修好过的、唯一一种错误。选择是鲜明的，而且趁早做很便宜：从第一天起捕获一切，或者在这个系统余下的生命周期里，调试那些关于「已不复存在的运行」的故事。">Replayability does not make agents correct. It makes them accountable to reality — it converts mysterious wrongness into inspectable wrongness, which is the only kind any engineering discipline has ever actually fixed.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
