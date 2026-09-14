@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Blast Radius Budget — AI Frontlines</title>
+<meta content="Agent safety is not a model property — it is an architecture property. Every capability granted to an agent has a blast radius: the set of states that cannot be restored if the action is wrong. Mature harnesses treat irreversibility as a budget to be spent deliberately, not a default to be discovered during an incident. Tiered actions, dry-runs, two-phase apply, and undo horizons turn an agent from a risk into a system." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 15, 2026" data-zh="2026年9月15日">September 15, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Blast Radius Budget" data-zh="爆炸半径预算">The Blast Radius Budget</h1>
+<p class="post-header-deck" data-en="Every capability granted to an agent has a blast radius: the set of states that cannot be restored if the action is wrong. A read-only query has none. A database migration has everything. The industry discusses agent safety as if it were a property of models — alignment, refusal training, better evals. But the variable that actually determines whether an agent incident is a footnote or an outage is architectural: how much irreversibility the system lets a single wrong step spend. The mature position treats irreversibility as a budget — allocated at design time, priced per action, and auditable after the fact — not as a default to be discovered during an incident." data-zh="赋予智能体的每一项能力，都有它的爆炸半径：如果这个动作是错的，那些再也回不去的状态的集合。一次只读查询没有半径。一次数据库迁移什么都有。业界把智能体安全当作模型的属性来讨论——对齐、拒绝训练、更好的评估。但真正决定一次智能体事故是脚注还是停机的变量，是架构性的：系统允许一个错误的步骤花掉多少不可逆性。成熟的立场，是把不可逆性当作预算——在设计时分配、按动作计价、事后可审计——而不是在事故现场才第一次发现它的默认值。">Every capability granted to an agent has a blast radius: the set of states that cannot be restored if the action is wrong. The variable that determines whether an incident is a footnote or an outage is not the model. It is how much irreversibility one wrong step can spend.</p>
+</header>
+<article class="post-body">
+<p data-en="Start with an uncomfortable observation: agent incidents are almost never interesting failures of intelligence. The model usually does roughly what it was asked. The interesting part is what the harness let the roughly-right action touch. An agent that misreads a schema and deletes the wrong table is not an alignment failure; it is a permissions failure wearing an alignment costume. The same model, pointed at a scratch environment with snapshot-and-restore, produces a shrug and a retry instead of a page at 3 a.m. This reframes the whole safety conversation. The question is not 'how do we make the model never wrong' — no engineering discipline has ever succeeded at that — but 'when the model is wrong, what can the wrongness reach?' Blast radius is that reach, measured in restorable states. And like any scarce quantity, it responds to budgeting far better than to hoping." data-zh="从一个不太舒服的观察开始：智能体事故几乎从来不是什么有趣的智能失败。模型通常做的事情大致就是被要求的那些。有意思的是 harness 允许这个「大致正确」的动作碰到什么。一个看错 schema、删错表的智能体，不是对齐失败，是披着对齐外衣的权限失败。同一个模型，指向一个可以快照与恢复的沙盒环境，产出的是一次耸肩和一次重试，而不是凌晨三点的告警电话。这重构了整个安全对话。问题不是「如何让模型永不出错」——没有任何工程学科在这件事上成功过——而是「当模型错了，这个错误够得着什么？」爆炸半径就是这个够得着的范围，以可恢复的状态计量。而和任何稀缺量一样，它对预算管理的响应，远好于对祈祷的响应。">Agent incidents are almost never interesting failures of intelligence. The model usually does roughly what it was asked. The interesting part is what the harness let the roughly-right action touch.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrB1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrB2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrB3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE REVERSIBILITY SPECTRUM" data-zh="可逆性光谱" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE REVERSIBILITY SPECTRUM</text>
+<!-- tier 1 -->
+<rect fill="var(--bg-surface)" height="58" rx="10" stroke="var(--accent-2)" stroke-width="1.5" width="165" x="42" y="60"></rect>
+<text data-en="TIER 1 · FREE" data-zh="第 1 层 · 免费" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="125" y="82">TIER 1 · FREE</text>
+<text data-en="read · list · search" data-zh="读 · 列举 · 搜索" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="125" y="99">read · list · search</text>
+<text data-en="zero blast radius" data-zh="爆炸半径为零" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="125" y="113">zero blast radius</text>
+<!-- tier 2 -->
+<rect fill="var(--bg-surface)" height="58" rx="10" stroke="var(--accent)" stroke-width="1.5" width="165" x="228" y="60"></rect>
+<text data-en="TIER 2 · RESTORABLE" data-zh="第 2 层 · 可恢复" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="82">TIER 2 · RESTORABLE</text>
+<text data-en="scratch writes · branches" data-zh="沙盒写入 · 开分支" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="99">scratch writes · branches</text>
+<text data-en="undo horizon exists" data-zh="存在撤销视界" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="113">undo horizon exists</text>
+<!-- tier 3 -->
+<rect fill="var(--bg-surface)" height="58" rx="10" stroke="var(--accent-3)" stroke-width="1.5" width="165" x="414" y="60"></rect>
+<text data-en="TIER 3 · IRREVERSIBLE" data-zh="第 3 层 · 不可逆" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="496" y="82">TIER 3 · IRREVERSIBLE</text>
+<text data-en="deploy · delete · send" data-zh="部署 · 删除 · 发送" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="496" y="99">deploy · delete · send</text>
+<text data-en="the world remembers" data-zh="世界会记得" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="496" y="113">the world remembers</text>
+<!-- gradient arrow -->
+<path d="M50 150 L570 150" fill="none" marker-end="url(#arrB3)" stroke="var(--accent-3)" stroke-width="1.4" stroke-dasharray="5,4" opacity="0.8"></path>
+<text data-en="cost of a wrong action" data-zh="一个错误动作的代价" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="172">cost of a wrong action</text>
+<!-- budget line -->
+<line stroke="var(--border)" stroke-width="1.5" x1="80" x2="540" y1="210" y2="210"></line>
+<line stroke="var(--accent)" stroke-width="3" x1="80" x2="330" y1="210" y2="210"></line>
+<circle cx="330" cy="210" fill="var(--accent)" r="7"></circle>
+<circle cx="330" cy="210" fill="none" r="13" stroke="var(--accent)" stroke-dasharray="3,3" stroke-width="1.2"></circle>
+<text data-en="the budget line — set per run, per role, per environment" data-zh="预算线——按运行、按角色、按环境设定" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="238">the budget line — set per run, per role, per environment</text>
+<text data-en="actions beyond the line require a human signature or a two-phase apply" data-zh="越过这条线的动作，需要人类签名或两阶段执行" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="256">actions beyond the line require a human signature or a two-phase apply</text>
+<!-- corollary -->
+<text data-en="a misread schema at tier 1 is a shrug · the same misread at tier 3 is an outage" data-zh="在第 1 层看错 schema 是耸耸肩 · 同样的错误在第 3 层就是停机" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="298">a misread schema at tier 1 is a shrug · the same misread at tier 3 is an outage</text>
+<text data-en="the model error is identical — the architecture decides which one you get" data-zh="模型错误一模一样——是你拿到哪一种，由架构决定" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="316">the model error is identical — the architecture decides which one you get</text>
+</svg>
+<p class="diagram-caption" data-en="Not all actions weigh the same. Reads are free; scratch writes are restorable if an undo horizon exists; deploys, deletions, and sends are irreversible because the outside world keeps the receipt. The budget line is a design decision: actions past it must earn their way through a human signature or a two-phase apply. The same model mistake lands as a shrug below the line and as an outage above it — which is the entire argument for treating reversibility as architecture rather than behavior." data-zh="并非所有动作都一样重。读取免费；只要存在撤销视界，沙盒写入可恢复；部署、删除、发送是不可逆的，因为外部世界替你留着收据。预算线是一个设计决策：越过它的动作，必须通过人类签名或两阶段执行来赢得通行权。同一个模型错误，在线下方是耸肩，在线上方是停机——这就是把可逆性当作架构问题而非行为问题的全部理由。">Not all actions weigh the same. The budget line is a design decision: actions past it must earn their way through a human signature or a two-phase apply.</p>
+</div>
+<h3 data-en="Two-phase apply, or: the agent proposes, the harness disposes" data-zh="两阶段执行：智能体提议，harness 裁决">Two-phase apply, or: the agent proposes, the harness disposes</h3>
+<p data-en="The single highest-leverage pattern in agent safety is also the oldest one in distributed systems: separate the decision to act from the act itself. An agent that wants to mutate the world should never mutate it directly. It should emit an intention — a patch, a migration, an email draft, a diff against the current state — and the harness should be the only party able to convert intention into effect. This split buys three things at once. First, a free inspection point: the intention can be diffed, linted, dry-run, and validated against policy before anything happens. Second, a natural human gate: approval workflows stop being awkward interruptions bolted onto a chat and become a queue of concrete, reviewable artifacts. Third, attribution: when every effect passes through one choke point, there is exactly one place where the question 'who authorized this and on what evidence' has a complete answer. Databases solved this decades ago with prepare and commit; the insight survives translation. The agent's confidence is not a signature. The harness's validation is." data-zh="智能体安全中杠杆最大的单一模式，也是分布式系统里最古老的那个：把「决定行动」与「行动本身」分开。一个想改变世界的智能体，永远不应该直接动手。它应该发出一个意图——一个补丁、一次迁移、一封邮件草稿、一份针对当前状态的 diff——而唯一能把意图变成现实的，应当是 harness。这个切分一次买来三样东西。第一，免费的检查点：意图可以在任何事发生之前被 diff、被 lint、被 dry-run、被策略校验。第二，天然的人类闸门：审批流程不再是生硬插进对话里的打断，而变成一队列具体的、可审查的工件。第三，可归因性：当所有效果都流经同一个咽喉要道，「谁批准的、依据什么」这个问题就有了唯一一个拥有完整答案的地方。数据库几十年前就用 prepare 和 commit 解决了这个问题，这个洞见经得起翻译。智能体的自信不是签名。harness 的校验才是。">The single highest-leverage pattern in agent safety is separating the decision to act from the act itself. The agent emits an intention; the harness is the only party able to convert intention into effect.</p>
+<blockquote data-en="An agent's confidence is not a signature. The harness's validation is. Systems that conflate the two are not autonomous — they are uninsured." data-zh="智能体的自信不是签名。harness 的校验才是。把两者混为一谈的系统不是自主，是无保险。">An agent's confidence is not a signature. The harness's validation is. Systems that conflate the two are not autonomous — they are uninsured.</blockquote>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrC2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrC3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="TWO-PHASE APPLY FOR AGENTS" data-zh="智能体的两阶段执行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">TWO-PHASE APPLY FOR AGENTS</text>
+<!-- agent -->
+<rect fill="var(--bg-surface)" height="56" rx="10" stroke="var(--accent-2)" stroke-width="1.5" width="140" x="40" y="60"></rect>
+<text data-en="AGENT" data-zh="智能体" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="110" y="84">AGENT</text>
+<text data-en="produces intentions" data-zh="产出意图" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="110" y="102">produces intentions</text>
+<!-- intention -->
+<rect fill="var(--accent-dim)" height="56" rx="10" stroke="var(--accent)" stroke-width="1.8" width="150" x="230" y="60"></rect>
+<text data-en="INTENTION" data-zh="意图" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="305" y="84">INTENTION</text>
+<text data-en="patch · draft · diff" data-zh="补丁 · 草稿 · diff" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="305" y="102">patch · draft · diff</text>
+<!-- harness gate -->
+<rect fill="var(--accent-dim)" height="92" rx="10" stroke="var(--accent)" stroke-width="2" width="160" x="430" y="42"></rect>
+<text data-en="HARNESS GATE" data-zh="HARNESS 闸门" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="510" y="66">HARNESS GATE</text>
+<text data-en="dry-run" data-zh="dry-run 试运行" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="510" y="86">dry-run</text>
+<text data-en="policy check" data-zh="策略校验" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="510" y="102">policy check</text>
+<text data-en="human signature if past budget" data-zh="超预算需人类签名" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="510" y="118">human signature if past budget</text>
+<!-- flows -->
+<path d="M180 88 L226 88" fill="none" marker-end="url(#arrC1)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<path d="M380 88 L426 88" fill="none" marker-end="url(#arrC2)" stroke="var(--accent)" stroke-width="1.3"></path>
+<!-- commit / rollback -->
+<rect fill="var(--bg-surface)" height="46" rx="9" stroke="var(--accent-3)" stroke-width="1.5" width="140" x="300" y="190"></rect>
+<text data-en="COMMIT" data-zh="提交" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="370" y="210">COMMIT</text>
+<text data-en="world changes · receipt logged" data-zh="世界改变 · 收据入账" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="370" y="227">world changes · receipt logged</text>
+<rect fill="var(--bg-surface)" height="46" rx="9" stroke="var(--text-tertiary)" stroke-dasharray="4,3" stroke-width="1.3" width="140" x="480" y="190"></rect>
+<text data-en="ROLLBACK" data-zh="回滚" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="550" y="210">ROLLBACK</text>
+<text data-en="nothing happened · agent retries" data-zh="什么都没发生 · 智能体重来" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="550" y="227">nothing happened · agent retries</text>
+<path d="M470 138 C440 160 410 172 382 186" fill="none" marker-end="url(#arrC3)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<path d="M530 138 C540 160 545 172 550 186" fill="none" marker-end="url(#arrC1)" stroke="var(--text-tertiary)" stroke-width="1.2"></path>
+<!-- attribution -->
+<rect fill="var(--bg-surface)" height="46" rx="9" stroke="var(--accent)" stroke-width="1.2" width="220" x="60" y="190"></rect>
+<text data-en="one choke point = full attribution" data-zh="一个咽喉要道 = 完整归因" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="170" y="210">one choke point = full attribution</text>
+<text data-en="who authorized this, on what evidence" data-zh="谁批准的，依据什么" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="170" y="227">who authorized this, on what evidence</text>
+<!-- verdict -->
+<text data-en="the agent is never the last line of defense — by construction, not by policy" data-zh="智能体永远不是最后一道防线——这是结构保证的，不是规章规定的" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="284">the agent is never the last line of defense — by construction, not by policy</text>
+<text data-en="prepare and commit, translated: intentions are cheap, effects are gated" data-zh="prepare 与 commit 的翻译：意图廉价，效果设闸" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="306">prepare and commit, translated: intentions are cheap, effects are gated</text>
+</svg>
+<p class="diagram-caption" data-en="The two-phase pattern, translated for agents. The agent emits intentions — patches, drafts, diffs — which are artifacts, not effects. The harness gate dry-runs them, checks policy, and collects a human signature when the action exceeds its budget. Only then does the world change, with a receipt logged; otherwise nothing happened and the agent simply retries. Because every effect passes through one choke point, attribution is complete by construction. The agent is never the last line of defense — that is guaranteed by the architecture, not by a policy document." data-zh="为智能体翻译的两阶段模式。智能体发出意图——补丁、草稿、diff——它们是工件，不是效果。harness 闸门对它们做 dry-run、查策略，在动作超出预算时收下人类签名。只有那时世界才改变，并记录一张收据；否则什么都没发生，智能体只是重新来过。因为所有效果都流经同一个咽喉要道，归因在结构上就是完整的。智能体永远不是最后一道防线——这是由架构保证的，不是由规章文件保证的。">The two-phase pattern: intentions are artifacts, not effects. The harness gate dry-runs, checks policy, collects signatures past budget, and only then does the world change.</p>
+</div>
+<h3 data-en="Permission creep is the compound interest of laziness" data-zh="权限蔓延，是懒惰的复利">Permission creep is the compound interest of laziness</h3>
+<p data-en="Blast radius has a failure mode that arrives quietly: creep. An agent ships with read access. Someone grants write to scratch. Scratch becomes staging, staging becomes production aliasing, and eleven months later a refactoring run has credentials to the primary database because nobody remembers which ticket opened the door. Each individual grant was defensible; the sum is indefensible. The defense is the same one finance uses against untracked spending: make the budget visible and make spending audible. Every capability should have an owner, a reason, and an expiry. Reviews should ask not 'is this permission being used' but 'what does it cost if it is misused today' — because usage proves nothing about necessity, and the price of a credential is set by its worst day, not its average one. A permission that cannot be justified against the current budget line is not neutral; it is pre-loaded incident surface. Revoking hurts for a week. Not revoking hurts at the worst possible moment, with compound interest." data-zh="爆炸半径有一种悄然而至的失效模式：蔓延。一个智能体上线时只有读权限。有人给了沙盒写权限。沙盒变成了预发环境，预发环境被别名到了生产，十一个月之后，一次重构运行手里握着主数据库的凭证——因为没人记得是哪张工单开的门。每一笔单独的授权都情有可原，加在一起则无可辩解。防御手段和金融对付无感支出用的是同一招：让预算可见，让花销有声。每一项能力都应该有主人、有理由、有到期日。审查时该问的不是「这个权限有没有在被使用」，而是「如果它今天被误用，代价是什么」——因为使用率证明不了必要性，而一个凭证的价格，由它最坏的一天决定，不由平均的一天决定。一个对着当前预算线说不清楚的权限，不是中性的，它是预装的事故表面积。收回权限会疼一个星期。不收回，则会在最糟糕的时刻疼，附带复利。">Blast radius has a failure mode that arrives quietly: creep. Each individual grant is defensible; the sum is indefensible. Every capability should have an owner, a reason, and an expiry.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrD1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrD2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="PERMISSION CREEP, MEASURED IN MONTHS" data-zh="以月计量的权限蔓延" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">PERMISSION CREEP, MEASURED IN MONTHS</text>
+<!-- timeline -->
+<line stroke="var(--border)" stroke-width="1.5" x1="60" x2="580" y1="170" y2="170"></line>
+<text data-en="launch" data-zh="上线" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="80" y="192">launch</text>
+<text data-en="month 3" data-zh="第 3 月" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="215" y="192">month 3</text>
+<text data-en="month 7" data-zh="第 7 月" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="380" y="192">month 7</text>
+<text data-en="month 11" data-zh="第 11 月" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="545" y="192">month 11</text>
+<!-- growing radius circles -->
+<circle cx="80" cy="170" fill="var(--accent-2)" r="8"></circle>
+<circle cx="215" cy="170" fill="var(--accent-2)" r="20" opacity="0.85"></circle>
+<circle cx="380" cy="170" fill="var(--accent)" r="36" opacity="0.7"></circle>
+<circle cx="545" cy="170" fill="var(--accent-3)" r="58" opacity="0.55"></circle>
+<circle cx="545" cy="170" fill="none" r="70" stroke="var(--accent-3)" stroke-dasharray="3,3" stroke-width="1.2"></circle>
+<!-- annotations -->
+<text data-en="read only" data-zh="只读" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="80" y="145">read only</text>
+<text data-en="+ scratch write" data-zh="+ 沙盒写入" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="215" y="130">+ scratch write</text>
+<text data-en="+ staging · prod alias" data-zh="+ 预发 · 生产别名" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="380" y="112">+ staging · prod alias</text>
+<text data-en="+ primary db credentials" data-zh="+ 主数据库凭证" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="545" y="86">+ primary db credentials</text>
+<path d="M80 160 C160 120 300 100 520 90" fill="none" marker-end="url(#arrD2)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="5,4" opacity="0.6"></path>
+<!-- review question -->
+<rect fill="var(--bg-surface)" height="50" rx="9" stroke="var(--accent)" stroke-width="1.5" width="430" x="95" y="235"></rect>
+<text data-en="the review question is not “is this permission used?”" data-zh="审查该问的不是「这个权限有人用吗？」" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="255">the review question is not “is this permission used?”</text>
+<text data-en="it is “what does it cost if it is misused today?” — price set by the worst day, not the average" data-zh="而是「它今天被误用，代价是什么？」——价格由最坏的一天决定，不由平均的一天" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="273">it is “what does it cost if it is misused today?” — price set by the worst day, not the average</text>
+<!-- owner reason expiry -->
+<text data-en="every capability: an owner · a reason · an expiry" data-zh="每一项能力：有主人 · 有理由 · 有到期日" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="310">every capability: an owner · a reason · an expiry</text>
+</svg>
+<p class="diagram-caption" data-en="Creep is the quiet failure mode of blast radius. Each grant — scratch write, staging access, a production alias, database credentials — was defensible in isolation; the sum is not, and no single moment shows the door opening. The defense is visibility: capabilities get owners, reasons, and expiry dates, and reviews price permissions by their worst day rather than their usage rate. A permission that cannot justify itself against the current budget line is pre-loaded incident surface." data-zh="蔓延是爆炸半径悄无声息的失效模式。每一笔授权——沙盒写入、预发访问、一个生产别名、数据库凭证——单独看都情有可原；加在一起则不是，而且没有任何一个单独的时刻能让你看见门被打开。防御手段是可见性：能力要有主人、有理由、有到期日，审查时要按最坏的一天而非使用率给权限定价。一个对着当前预算线说不清楚的权限，就是预装的事故表面积。">Creep is the quiet failure mode: each grant defensible alone, the sum indefensible. Price permissions by their worst day, not their usage rate.</p>
+</div>
+<p data-en="The closing argument is about where safety actually lives. There is a version of this future where agent reliability is treated as a model problem, where every incident triggers another round of refusal training, and where the harness — the part engineers control completely — stays a dumb pipe with a credentials file. That version keeps having the same incidents with better explanations. The other version accepts the oldest lesson in systems engineering: errors are constant, blast radius is chosen. Databases, filesystems, and deployment platforms all became trustworthy not by becoming infallible but by making their failures small, staged, and reversible. Agents are next in line for the same treatment. The model will be wrong sometimes. That is the given. The budget — what the wrongness can reach, how much of it is restorable, who signs for the part that is not — is the design, and it is entirely ours." data-zh="结尾的论点，是关于安全究竟住在哪里。有这么一种版本的未来：智能体可靠性被当作模型问题，每一次事故都触发新一轮拒绝训练，而 harness——工程师完全掌控的那一部分——始终是一根揣着凭证文件的哑管道。这个版本会不断重复同样的事故，只是解释越来越好。另一个版本接受了系统工程里最古老的教训：错误是常量，爆炸半径是选择。数据库、文件系统、部署平台，没有一个是因为变得不会出错而变得可信的，它们是因为让失败变得小、分阶段、可逆而变得可信的。智能体是下一个接受同样待遇的排队者。模型有时会错，这是给定条件。而预算——错误够得着什么、其中多少可以恢复、不可恢复的部分由谁签名——才是设计，而且完全是我们的。">Errors are constant; blast radius is chosen. Databases, filesystems, and deployment platforms became trustworthy not by becoming infallible but by making their failures small, staged, and reversible. Agents are next in line.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
