@@ -1,6 +1,108 @@
 {
   "tweets": [
     {
+      "id": "2099308197802631191",
+      "url": "https://x.com/elonmusk/status/2099308197802631191",
+      "label": "xAI",
+      "color": "#1DA1F2",
+      "fetched_at": "2026-09-14T08:01:59.151879+00:00",
+      "translation_zh": "Grok 4.8 是一个 2.5T 参数模型，使用全新 C++ 软件栈训练，本周完成训练并开始强化学习阶段。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 13729,
+        "in_reply_to_screen_name": "techdevnotes",
+        "in_reply_to_status_id_str": "2099124531172434084",
+        "in_reply_to_user_id_str": "1604863807574212611",
+        "lang": "en",
+        "created_at": "2026-09-14T01:24:12.000Z",
+        "display_text_range": [
+          14,
+          130
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "1604863807574212611",
+              "indices": [
+                0,
+                13
+              ],
+              "name": "Tech Dev Notes",
+              "screen_name": "techdevnotes"
+            }
+          ]
+        },
+        "id_str": "2099308197802631191",
+        "text": "@techdevnotes Grok 4.8, which is a 2.5T model trained with our new C++ software stack, will finish training this week and start RL",
+        "user": {
+          "id_str": "44196397",
+          "name": "Elon Musk",
+          "screen_name": "elonmusk",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+            },
+            "description": "X",
+            "url": {
+              "url": "https://twitter.com/X",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2099308197802631191"
+          ],
+          "editable_until_msecs": "1789352652000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 919,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 1318,
+          "lang": "en",
+          "reply_count": 57,
+          "retweet_count": 29,
+          "created_at": "2026-09-13T13:14:22.000Z",
+          "display_text_range": [
+            0,
+            74
+          ],
+          "entities": {},
+          "id_str": "2099124531172434084",
+          "text": "Apart from Grok 4.7, what are we even expecting from SpaceXAI in september",
+          "user": {
+            "id_str": "1604863807574212611",
+            "name": "Tech Dev Notes",
+            "screen_name": "techdevnotes",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1618185418234646529/f9-GqDq1_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2099124531172434084"
+            ],
+            "editable_until_msecs": "1789308862000",
+            "edits_remaining": "5",
+            "is_edit_eligible": true
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2098809953439904220",
       "url": "https://x.com/elonmusk/status/2098809953439904220",
       "label": "xAI",
