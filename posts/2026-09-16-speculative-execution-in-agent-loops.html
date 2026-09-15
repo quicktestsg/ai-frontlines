@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Speculate, Then Commit: Parallel Branches in Agent Loops — AI Frontlines</title>
+<meta content="Agent latency is a chain of serial round-trips. CPUs solved this decades ago with branch prediction and speculative execution — and the same discipline maps cleanly onto agent loops: run tools in parallel, hedge slow calls, speculate on branches, and commit only what survives a verification gate." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 16, 2026" data-zh="2026年9月16日">September 16, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Speculate, Then Commit: Parallel Branches in Agent Loops" data-zh="先推测，再提交：智能体循环中的并行分支">Speculate, Then Commit: Parallel Branches in Agent Loops</h1>
+<p class="post-header-deck" data-en="An agent that thinks serially pays for every round-trip twice: once in latency, once in user trust. Modern CPUs run ahead of certainty — they predict branches, execute speculatively, and roll back anything that guessed wrong. The same discipline maps onto agent loops with startling precision: fire tools in parallel, hedge the slow calls, speculate down the likely branch, and commit only what survives verification. The techniques are old. The surface is new." data-zh="串行思考的智能体，每次往返都要付两遍代价：一遍是延迟，一遍是用户信任。现代 CPU 早已跑在确定性之前——预测分支、推测执行、回滚猜错的部分。同一套纪律，可以惊人精确地映射到智能体循环上：并行发射工具、对慢调用做对冲、沿最可能的分支推测前进、只提交通过了验证的部分。技术是旧的，战场是新的。">An agent that thinks serially pays for every round-trip twice: once in latency, once in user trust. Modern CPUs run ahead of certainty — they predict branches, execute speculatively, and roll back anything that guessed wrong. The same discipline maps onto agent loops with startling precision.</p>
+</header>
+<article class="post-body">
+<p data-en="Watch a trace of any production agent and count the idle time. A model call takes two seconds. Then the loop calls a search tool — eight seconds. Then another model call. Then a fetch. Then a compute step. Then the model again. Every step waits for the one before it, and the user watches a spinner for ninety seconds while the system is doing useful work for perhaps eleven of them. The rest is dead time: network round-trips, queueing, serialization overhead. Latency is not a rendering problem to be hidden behind optimistic UI. It is an architecture problem, and most agent architectures are strictly serial because the loop was written as if the world ended at each tool call." data-zh="看一眼任何生产环境智能体的追踪记录，数一数空闲时间。一次模型调用要两秒。然后循环调用一个搜索工具——八秒。然后又一次模型调用。然后一次抓取。然后一个计算步骤。然后又是模型。每一步都在等它前面那一步，用户盯着转圈看了九十秒，而系统真正在干活的时间大约只有十一秒。剩下的是死时间：网络往返、排队、串行化开销。延迟不是一个可以用乐观 UI 掩盖的渲染问题。它是一个架构问题，而大多数智能体架构是严格串行的，因为这个循环被写成好像世界在每次工具调用时就终结一次。">Watch a trace of any production agent and count the idle time. A model call takes two seconds. Then the loop calls a search tool — eight seconds. Then another model call. Then a fetch. Then a compute step. Then the model again. Every step waits for the one before it, and the user watches a spinner for ninety seconds while the system is doing useful work for perhaps eleven of them. The rest is dead time: network round-trips, queueing, serialization overhead.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrS1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrS2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="SERIAL vs SPECULATIVE — SAME TASK, SAME TOOLS" data-zh="串行 vs 推测执行——同样的任务，同样的工具" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">SERIAL vs SPECULATIVE — SAME TASK, SAME TOOLS</text>
+<!-- TOP: serial timeline -->
+<text data-en="SERIAL LOOP" data-zh="串行循环" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="54">SERIAL LOOP</text>
+<g>
+<rect fill="var(--bg-surface)" height="26" rx="5" stroke="var(--accent-3)" stroke-width="1.3" width="76" x="30" y="70"></rect>
+<text data-en="model" data-zh="模型" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="68" y="87">model</text>
+<rect fill="var(--bg-surface)" height="26" rx="5" stroke="var(--accent-3)" stroke-width="1.3" width="110" x="116" y="70"></rect>
+<text data-en="search · 8s" data-zh="搜索 · 8秒" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="171" y="87">search · 8s</text>
+<rect fill="var(--bg-surface)" height="26" rx="5" stroke="var(--accent-3)" stroke-width="1.3" width="76" x="236" y="70"></rect>
+<text data-en="model" data-zh="模型" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="274" y="87">model</text>
+<rect fill="var(--bg-surface)" height="26" rx="5" stroke="var(--accent-3)" stroke-width="1.3" width="110" x="322" y="70"></rect>
+<text data-en="fetch · 6s" data-zh="抓取 · 6秒" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="377" y="87">fetch · 6s</text>
+<rect fill="var(--bg-surface)" height="26" rx="5" stroke="var(--accent-3)" stroke-width="1.3" width="76" x="442" y="70"></rect>
+<text data-en="model" data-zh="模型" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="480" y="87">model</text>
+<line marker-end="url(#arrS1)" stroke="var(--text-tertiary)" stroke-width="1.2" x1="526" x2="556" y1="83" y2="83"></line>
+<text data-en="≈ 22s wall clock" data-zh="≈ 22 秒墙上时间" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="120">≈ 22s wall clock</text>
+</g>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="30" x2="590" y1="140" y2="140"></line>
+<!-- BOTTOM: speculative timeline -->
+<text data-en="SPECULATIVE HARNESS" data-zh="推测执行的 harness" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="168">SPECULATIVE HARNESS</text>
+<rect fill="var(--bg-surface)" height="26" rx="5" stroke="var(--accent)" stroke-width="1.3" width="76" x="30" y="184"></rect>
+<text data-en="model" data-zh="模型" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="68" y="201">model</text>
+<path d="M116 197 L128 197" fill="none" stroke="var(--accent)" stroke-width="1.2"></path>
+<!-- three parallel lanes -->
+<rect fill="var(--accent-dim)" height="26" rx="5" stroke="var(--accent)" stroke-width="1.8" width="110" x="130" y="160"></rect>
+<text data-en="search · hit" data-zh="搜索 · 命中" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="185" y="177">search · hit</text>
+<rect fill="var(--bg-surface)" height="26" rx="5" stroke="var(--accent-2)" stroke-width="1.3" width="110" x="130" y="192"></rect>
+<text data-en="fetch · hit" data-zh="抓取 · 命中" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="185" y="209">fetch · hit</text>
+<rect fill="none" height="26" rx="5" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="3,2" width="110" x="130" y="224"></rect>
+<text data-en="spec branch · discarded" data-zh="推测分支 · 丢弃" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8.5" font-weight="600" text-anchor="middle" x="185" y="241">spec branch · discarded</text>
+<path d="M240 197 L254 197" fill="none" marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="1.4"></path>
+<rect fill="var(--accent-dim)" height="26" rx="5" stroke="var(--accent)" stroke-width="2" width="120" x="258" y="184"></rect>
+<text data-en="commit + verify" data-zh="提交 + 验证" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="318" y="201">commit + verify</text>
+<path d="M378 197 L392 197" fill="none" marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="26" rx="5" stroke="var(--accent)" stroke-width="1.3" width="76" x="396" y="184"></rect>
+<text data-en="model" data-zh="模型" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="434" y="201">model</text>
+<line marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="1.2" x1="480" x2="510" y1="197" y2="197"></line>
+<text data-en="≈ 11s wall clock · 2x the tokens, half the wait" data-zh="≈ 11 秒墙上时间 · token 翻倍，等待减半" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="278">≈ 11s wall clock · 2x the tokens, half the wait</text>
+<text data-en="latency is bought with compute — the only question is who approves the trade" data-zh="延迟是用算力买回来的——唯一的问题是：谁有权批准这笔交易" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="306">latency is bought with compute — the only question is who approves the trade</text>
+</svg>
+<p class="diagram-caption" data-en="The serial loop chains every operation behind the previous one. The speculative harness fans independent calls into parallel lanes, launches a probable branch alongside them, and commits only the lanes that the model actually needed. Same answer, half the wall-clock time — at the price of wasted work on the discarded lane." data-zh="串行循环把每个操作都排在前一个之后。推测执行的 harness 把相互独立的调用扇出到并行车道，同时发射一条大概率会走的分支，最后只提交模型真正需要的车道。同样的答案，一半的墙上时间——代价是被丢弃车道上的浪费。">The serial loop chains every operation behind the previous one. The speculative harness fans independent calls into parallel lanes, launches a probable branch alongside them, and commits only the lanes that the model actually needed. Same answer, half the wall-clock time — at the price of wasted work on the discarded lane.</p>
+</div>
+<h3 data-en="Chip designers solved this in 1995" data-zh="芯片设计师在 1995 年就解决了这个问题">Chip designers solved this in 1995</h3>
+<p data-en="Deep pipelined processors faced the identical problem three decades ago: the instruction at the head of the pipe depends on a branch whose condition will not resolve for many cycles. Stalling until resolution wastes the entire pipeline. The answer was speculation — guess the branch direction, keep executing, and hold the results in a shadow state that is either committed in a single instant or discarded without a trace. The processor is wrong some fraction of the time. It does not care. A misprediction costs a pipeline flush; a correct prediction saves fifteen cycles. As long as predictions are right more often than they are wrong, speculation is pure profit, and the entire modern performance of computing rests on that arbitrage." data-zh="三十年前，深流水线处理器面对着一模一样的问题：流水线顶端的指令，依赖一个还要很多个周期才能解析出条件的分支。等到解析再动，整条流水线都在空转。答案是推测执行——猜一个分支方向，继续执行，把结果保存在一个影子状态里，要么在一个瞬间整体提交，要么不留痕迹地丢弃。处理器有相当比例的时候会猜错。它不在乎。一次误预测的代价是一次流水线冲刷；一次预测正确省下十五个周期。只要预测正确的次数多于错误，推测就是纯利，而现代计算的整个性能大厦，就建立在这笔套利之上。">Deep pipelined processors faced the identical problem three decades ago: the instruction at the head of the pipe depends on a branch whose condition will not resolve for many cycles. Stalling until resolution wastes the entire pipeline. The answer was speculation — guess the branch direction, keep executing, and hold the results in a shadow state that is either committed in a single instant or discarded without a trace.</p>
+<p data-en="Agent loops are pipelines. The model call is the slow-resolving branch. The tools are downstream instructions. And almost nobody speculates. The standard loop asks the model what to do, waits for the full answer, executes one tool call, feeds the result back, and asks again. Each iteration is a pipeline stall. The irony is that the information needed to speculate is already present: the model's tool-call sequence is usually predictable from the task, the tools have known latency distributions, and the independence between calls is decidable from their signatures. The harness has everything it needs to run ahead. It just was never built to." data-zh="智能体循环就是流水线。模型调用是那个迟迟不解析的分支。工具是下游指令。而几乎没人在做推测。标准循环问模型该做什么，等完整答案，执行一次工具调用，把结果喂回去，再问一次。每一次迭代都是一次流水线停顿。讽刺的是，做推测所需的信息其实已经在手上了：模型的工具调用序列通常可以从任务预测出来，工具有已知的延迟分布，调用之间的独立性可以从签名判断。harness 拥有跑在前面所需的一切。只是从来没人把它建成那样。">Agent loops are pipelines. The model call is the slow-resolving branch. The tools are downstream instructions. And almost nobody speculates. The irony is that the information needed to speculate is already present: the tool-call sequence is usually predictable from the task, the tools have known latency distributions, and the independence between calls is decidable from their signatures.</p>
+<blockquote data-en="A pipeline stall is a design decision. So is a spinner. The user does not care whether the system is waiting because it must or because nobody taught it to guess." data-zh="流水线停顿是一个设计决策。转圈加载也是。用户不关心系统等待是因为不得不等，还是因为没人教过它去猜。">A pipeline stall is a design decision. So is a spinner. The user does not care whether the system is waiting because it must or because nobody taught it to guess.</blockquote>
+<h3 data-en="Three primitives of an impatient harness" data-zh="不耐烦的 harness 的三个原语">Three primitives of an impatient harness</h3>
+<p data-en="Speculation in agent systems decomposes into three techniques, each with a different risk profile. The first is parallel fan-out: when the model requests multiple tools whose inputs do not depend on each other's outputs, execute them concurrently and join the results. This is almost free — it costs nothing but connection plumbing, and it is remarkable how many loops leave it on the table simply because the code was written with an await per call. The second is the hedged request: when a single call has a long tail — a flaky search backend, a cold model endpoint — issue a duplicate after a delay threshold and take whichever finishes first. The tail collapses; the cost is a bounded multiple of one call. The third, and the dangerous one, is speculative branching: while the model is still reasoning, the harness begins executing the tool calls the model is likely to make, on data it is likely to receive. If the prediction is right, the results are already warm when the model commits. If it is wrong, the work is discarded — and if the tools were not idempotent, the consequences are not." data-zh="智能体系统中的推测，可以分解为三种技术，各有不同的风险画像。第一种是并行扇出：当模型请求的多个工具，其输入不依赖于彼此的输出时，并发执行它们，再汇合结果。这几乎是免费的——除了连接管道之外不花任何东西，而令人惊讶的是，多少循环仅仅因为代码是逐个 await 写的，就把它留在了桌面上。第二种是对冲请求：当单个调用有长尾——一个不稳定的搜索后端，一个冷启动的模型端点——在延迟阈值之后发射一个副本，取先完成的那个。长尾塌缩；代价是单次调用的有界倍数。第三种，也是危险的那种，是推测分支：趁模型还在推理，harness 就开始执行模型大概率会发出的工具调用，作用于它大概率会收到的数据。如果预测对了，模型提交时结果已经是热的。如果错了，这些工作被丢弃——而如果工具不是幂等的，后果不会被丢弃。">Speculation in agent systems decomposes into three techniques, each with a different risk profile. The first is parallel fan-out: when the model requests multiple tools whose inputs do not depend on each other's outputs, execute them concurrently and join the results. The second is the hedged request: when a single call has a long tail, issue a duplicate after a delay threshold and take whichever finishes first. The third, and the dangerous one, is speculative branching: while the model is still reasoning, the harness begins executing the tool calls the model is likely to make.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrP2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrP3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THREE PRIMITIVES, THREE RISK PROFILES" data-zh="三个原语，三种风险画像" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THREE PRIMITIVES, THREE RISK PROFILES</text>
+<!-- PANEL 1: fan-out -->
+<text data-en="① PARALLEL FAN-OUT" data-zh="① 并行扇出" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="110" y="52">PARALLEL FAN-OUT</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent)" stroke-width="1.4" width="64" x="78" y="66"></rect>
+<text data-en="model" data-zh="模型" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="110" y="82">model</text>
+<path d="M110 90 L110 102" fill="none" stroke="var(--accent)" stroke-width="1.2"></path>
+<path d="M108 102 L58 116" fill="none" stroke="var(--accent)" stroke-width="1"></path>
+<path d="M110 102 L110 116" fill="none" stroke="var(--accent)" stroke-width="1"></path>
+<path d="M112 102 L162 116" fill="none" stroke="var(--accent)" stroke-width="1"></path>
+<rect fill="var(--bg-surface)" height="22" rx="4" stroke="var(--accent)" stroke-width="1" width="52" x="32" y="118"></rect>
+<text data-en="tool A" data-zh="工具 A" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="58" y="133">tool A</text>
+<rect fill="var(--bg-surface)" height="22" rx="4" stroke="var(--accent)" stroke-width="1" width="52" x="84" y="118"></rect>
+<text data-en="tool B" data-zh="工具 B" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="110" y="133">tool B</text>
+<rect fill="var(--bg-surface)" height="22" rx="4" stroke="var(--accent)" stroke-width="1" width="52" x="136" y="118"></rect>
+<text data-en="tool C" data-zh="工具 C" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="162" y="133">tool C</text>
+<path d="M58 140 C70 158 100 160 108 168" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1"></path>
+<path d="M110 140 L110 168" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1"></path>
+<path d="M162 140 C150 158 120 160 112 168" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1"></path>
+<rect fill="var(--accent-dim)" height="22" rx="4" stroke="var(--accent)" stroke-width="1.6" width="58" x="81" y="170"></rect>
+<text data-en="join" data-zh="汇合" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="110" y="185">join</text>
+<text data-en="risk: ~zero" data-zh="风险：约等于零" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="110" y="212">risk: ~zero</text>
+<text data-en="reads must be independent" data-zh="前提：读操作相互独立" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="110" y="230">reads must be independent</text>
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="210" x2="210" y1="40" y2="250"></line>
+<!-- PANEL 2: hedged request -->
+<text data-en="② HEDGED REQUEST" data-zh="② 对冲请求" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="52">HEDGED REQUEST</text>
+<circle cx="290" cy="86" fill="var(--bg-surface)" r="8" stroke="var(--accent-2)" stroke-width="1.4"></circle>
+<text data-en="call" data-zh="调用" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="290" y="89">call</text>
+<rect fill="var(--bg-surface)" height="22" rx="4" stroke="var(--accent-2)" stroke-width="1.2" width="58" x="252" y="108"></rect>
+<text data-en="req #1" data-zh="请求 #1" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="281" y="123">req #1</text>
+<text data-en="t &gt; 3s →" data-zh="t &gt; 3秒 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="281" y="146">t &gt; 3s →</text>
+<rect fill="var(--bg-surface)" height="22" rx="4" stroke="var(--accent-2)" stroke-width="1.2" stroke-dasharray="3,2" width="58" x="252" y="152"></rect>
+<text data-en="req #2" data-zh="请求 #2" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="281" y="167">req #2</text>
+<path d="M340 90 L360 90" fill="none" stroke="var(--accent-2)" stroke-width="1"></path>
+<rect fill="var(--bg-surface)" height="22" rx="4" stroke="var(--accent-2)" stroke-width="1.2" width="66" x="362" y="118"></rect>
+<text data-en="slow..." data-zh="慢..." fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="395" y="133">slow...</text>
+<rect fill="var(--accent-dim)" height="22" rx="4" stroke="var(--accent-2)" stroke-width="1.6" width="66" x="362" y="152"></rect>
+<text data-en="first ✓" data-zh="先到 ✓" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="395" y="167">first ✓</text>
+<path d="M428 163 L448 163" fill="none" marker-end="url(#arrP2)" stroke="var(--accent-2)" stroke-width="1.2"></path>
+<text data-en="risk: duplicated load" data-zh="风险：双倍负载" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="212">risk: duplicated load</text>
+<text data-en="tail latency collapses" data-zh="长尾延迟塌缩" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="230">tail latency collapses</text>
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="460" x2="460" y1="40" y2="250"></line>
+<!-- PANEL 3: speculative branch -->
+<text data-en="③ SPECULATIVE BRANCH" data-zh="③ 推测分支" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="525" y="52">SPECULATIVE BRANCH</text>
+<rect fill="var(--bg-surface)" height="22" rx="4" stroke="var(--accent-3)" stroke-width="1.2" width="76" x="487" y="66"></rect>
+<text data-en="model thinks" data-zh="模型思考中" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="525" y="81">model thinks</text>
+<path d="M525 88 L525 100" fill="none" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="3,2"></path>
+<rect fill="var(--bg-surface)" height="22" rx="4" stroke="var(--accent-3)" stroke-width="1.2" width="76" x="487" y="102"></rect>
+<text data-en="predict calls" data-zh="预测调用" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="525" y="117">predict calls</text>
+<path d="M525 124 L525 136" fill="none" marker-end="url(#arrP3)" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<rect fill="var(--bg-surface)" height="22" rx="4" stroke="var(--accent-3)" stroke-width="1.2" width="76" x="487" y="138"></rect>
+<text data-en="execute early" data-zh="提前执行" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="525" y="153">execute early</text>
+<path d="M525 160 L525 172" fill="none" marker-end="url(#arrP3)" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<rect fill="var(--accent-dim)" height="22" rx="4" stroke="var(--accent-3)" stroke-width="1.6" width="76" x="487" y="174"></rect>
+<text data-en="commit?" data-zh="提交？" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="525" y="189">commit?</text>
+<text data-en="risk: side effects" data-zh="风险：副作用" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="525" y="212">risk: side effects</text>
+<text data-en="must be idempotent-reads" data-zh="必须限于幂等读操作" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="525" y="230">must be idempotent-reads</text>
+<!-- bottom band -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="256"></rect>
+<text data-en="Adopt in order: fan-out first (free), hedging second (cheap), speculation last — and only after the blast radius of every speculated call is known to be zero." data-zh="按顺序采用：先扇出（免费），再对冲（便宜），最后才是推测——且只在每一条被推测调用的爆炸半径确认为零之后。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="281">Adopt in order: fan-out first (free), hedging second (cheap), speculation last — and only after the blast radius of every speculated call is known to be zero.</text>
+</svg>
+<p class="diagram-caption" data-en="The three primitives, ordered by risk. Parallel fan-out is pure plumbing. Hedged requests double the load but never touch semantics. Speculative branching buys the most latency and carries the only real danger: it must never execute an irreversible action on a guess. A harness that speculates writes before it commits has not built a faster system — it has built an unreliable one." data-zh="三个原语，按风险排序。并行扇出纯粹是管道工程。对冲请求让负载翻倍，但从不触碰语义。推测分支买到最多的延迟，也带着唯一真正的危险：它绝不能在猜测之上执行不可逆的动作。一个在提交之前就执行写入的推测 harness，建成的不是一个更快的系统，而是一个不可靠的系统。">The three primitives, ordered by risk. Parallel fan-out is pure plumbing. Hedged requests double the load but never touch semantics. Speculative branching buys the most latency and carries the only real danger: it must never execute an irreversible action on a guess.</p>
+</div>
+<h3 data-en="The commit gate: speculation without a rollback plan is just corruption" data-zh="提交门：没有回滚计划的推测，只是另一种腐败">The commit gate: speculation without a rollback plan is just corruption</h3>
+<p data-en="What makes CPU speculation safe is not the guessing — it is the rename buffer, the shadow state that holds speculative results separately from architectural state until the branch resolves. Agents need the same construct: a hard line between tentative results and committed state. Every speculative tool result lands in a sandbox layer. Reads are safe to warm, because reads have no blast radius. Writes — file mutations, API calls with side effects, messages sent, records created — sit at the gate until the model's actual decision arrives and either promotes them or drops them. The gate is also the audit boundary: every promoted action carries a note of whether it was executed after the decision or speculatively before it, and every dropped speculation is logged with the reason the prediction missed. Over time, that log becomes the branch-prediction accuracy table for the system — the empirical answer to which predictions are worth making." data-zh="让 CPU 推测执行安全的，不是猜测本身——是重命名缓冲区，是那个把推测结果与架构状态分开保存、直到分支解析的影子状态。智能体需要同样的构造：在「暂定结果」与「已提交状态」之间画一条硬线。每一条推测的工具结果，都落在一个沙箱层里。读操作可以安全预热，因为读没有爆炸半径。写操作——文件改动、带副作用的 API 调用、发出去的消息、创建的记录——停在门前，直到模型的真实决策到来，要么晋升它们，要么丢弃它们。这道门也是审计边界：每一个被晋升的动作都带着一个标记——它是在决策之后执行的，还是在决策之前推测执行的；每一次被丢弃的推测也连同预测失误的原因一起记录。随时间推移，这份日志会变成系统的「分支预测准确率表」——哪些预测值得做，经验性的答案就在里面。">What makes CPU speculation safe is not the guessing — it is the rename buffer, the shadow state that holds speculative results separately from architectural state until the branch resolves. Agents need the same construct: a hard line between tentative results and committed state. Every speculative tool result lands in a sandbox layer. Reads are safe to warm. Writes sit at the gate until the model's actual decision arrives and either promotes them or drops them.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrC2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE COMMIT GATE" data-zh="提交门" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE COMMIT GATE</text>
+<!-- speculative lane -->
+<rect fill="var(--bg-surface)" height="60" rx="9" stroke="var(--accent-3)" stroke-width="1.4" stroke-dasharray="4,3" width="150" x="60" y="60"></rect>
+<text data-en="SHADOW STATE" data-zh="影子状态" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="135" y="84">SHADOW STATE</text>
+<text data-en="warmed reads · staged writes" data-zh="预热的读 · 暂存的写" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="135" y="102">warmed reads · staged writes</text>
+<!-- decision -->
+<rect fill="var(--bg-surface)" height="60" rx="30" stroke="var(--accent)" stroke-width="2" width="120" x="250" y="60"></rect>
+<text data-en="model decides" data-zh="模型决策" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="84">model decides</text>
+<text data-en="branch resolves" data-zh="分支解析" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="102">branch resolves</text>
+<!-- committed lane -->
+<rect fill="var(--accent-dim)" height="60" rx="9" stroke="var(--accent)" stroke-width="2" width="150" x="410" y="60"></rect>
+<text data-en="ARCHITECTURAL STATE" data-zh="架构状态" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="485" y="84">ARCHITECTURAL STATE</text>
+<text data-en="real files · sent calls" data-zh="真实的文件 · 已发出的调用" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="485" y="102">real files · sent calls</text>
+<!-- arrows -->
+<path d="M210 78 L246 78" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="1.6"></path>
+<path d="M374 78 L406 78" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="1.6"></path>
+<text data-en="promote" data-zh="晋升" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="390" y="68">promote</text>
+<!-- rollback path -->
+<path d="M135 122 C135 190 485 190 485 124" fill="none" marker-end="url(#arrC2)" stroke="var(--accent-3)" stroke-width="1.3" stroke-dasharray="5,3"></path>
+<text data-en="discard · log the miss · why the prediction was wrong" data-zh="丢弃 · 记录失误 · 为什么预测错了" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="186">discard · log the miss · why the prediction was wrong</text>
+<text data-en="the gate is where latency gains meet irreversibility — nothing crosses it on a guess" data-zh="这道门，是延迟收益与不可逆性相遇的地方——没有任何东西能靠猜测跨过它" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="248">the gate is where latency gains meet irreversibility — nothing crosses it on a guess</text>
+</svg>
+<p class="diagram-caption" data-en="Speculative work lives in shadow state — warmed reads, staged writes — until the model's decision resolves. Correct predictions promote instantly. Wrong predictions are discarded, and the miss is logged. The accuracy log then decides which speculations the harness is allowed to make next week. This is how a system learns its own branch-prediction table." data-zh="推测工作活在影子状态里——预热的读、暂存的写——直到模型决策解析。正确的预测瞬间晋升。错误的预测被丢弃，失误被记录。准确率日志随后决定：下周 harness 被允许做哪些推测。系统就是这样学会自己的分支预测表的。">Speculative work lives in shadow state until the model's decision resolves. Correct predictions promote instantly. Wrong predictions are discarded, and the miss is logged. The accuracy log then decides which speculations the harness is allowed to make next week.</p>
+</div>
+<h3 data-en="Paying for speed honestly" data-zh="诚实地为速度付费">Paying for speed honestly</h3>
+<p data-en="None of this is free, and the honest accounting matters. Hedging doubles token spend on hedged calls; speculation multiplies it by the branching factor of the predictions. There is a real temptation to hide this cost inside the harness where nobody sees it, and that temptation should be resisted: the trade of compute for latency is a business decision, and it belongs in configuration — per-task latency budgets, per-tool speculation policies, a kill switch when the accuracy log turns sour. The right framing is an exchange rate. For research tasks where the user is waiting, spending three times the compute to halve the wait is almost always correct. For background batch jobs, it is almost always wrong. The harness should be able to read that difference off the task's metadata, not have it hard-coded into its bones." data-zh="这些没有一样是免费的，而诚实的成本核算很重要。对冲让被对冲调用的 token 开销翻倍；推测让它乘上预测的分支因子。有一种真实的诱惑：把这笔成本藏进 harness 里，让谁也看不见。这种诱惑应该被抵制：用算力换延迟，是一笔生意决策，它属于配置——按任务设延迟预算、按工具设推测策略、在准确率日志变差时留一个总开关。正确的表述是一个汇率。对于用户正在等待的研究任务，花三倍算力换一半等待，几乎总是对的。对于后台批处理任务，几乎总是错的。harness 应该能从任务元数据里读出这个区别，而不是把它硬编码进自己的骨头里。">None of this is free, and the honest accounting matters. Hedging doubles token spend on hedged calls; speculation multiplies it by the branching factor of the predictions. There is a real temptation to hide this cost inside the harness where nobody sees it, and that temptation should be resisted: the trade of compute for latency is a business decision, and it belongs in configuration — per-task latency budgets, per-tool speculation policies, a kill switch when the accuracy log turns sour.</p>
+<p data-en="There is also a measurement discipline that must come first, before any speculation is written. Latency problems in agent systems are routinely misdiagnosed: teams optimize model inference when the trace shows the time going to a synchronous file write, or to a serialized tool call that could have been parallel since the day it was written. Instrument the loop first. Break wall-clock time down by stage — model time, tool time, queueing time, serialization gaps — and let the numbers pick the target. Speculation is a response to a specific shape of trace: long stretches where the system is idle because it is waiting on one thing while other useful work sat unstarted. If the trace does not show that shape, speculation is theater. If it does, speculation is the single highest-leverage change available — and the only one whose benefit compounds, because every prediction accuracy improvement returns its gains across every run, forever." data-zh="还有一门必须先行、先于任何推测代码的度量纪律。智能体系统的延迟问题，经常被误诊：trace 明明显示时间都花在了一次同步文件写入上，或花在一个从写下的第一天起就可以并行、却一直被串行调用的工具上，团队却在优化模型推理。先给循环插桩。把墙上时间按阶段拆开——模型时间、工具时间、排队时间、串行化空隙——让数字来挑目标。推测，是对一种特定形状的 trace 的回应：大段大段的时间，系统在空等一件事，而其他有用的工作原封未动。如果 trace 不是这个形状，推测就是一场表演。如果是，推测就是现有手段里杠杆最高的改动——而且是唯一一个收益会复利的改动，因为每一次预测准确率的提升，都会把它的收益返还给之后的每一次运行，永远。">There is also a measurement discipline that must come first, before any speculation is written. Instrument the loop first. Break wall-clock time down by stage, and let the numbers pick the target. Speculation is a response to a specific shape of trace: long stretches where the system is idle because it is waiting on one thing while other useful work sat unstarted. If the trace does not show that shape, speculation is theater. If it does, speculation is the single highest-leverage change available.</p>
+<blockquote data-en="Chips got fast by learning to guess. Agents will get fast the same way — but a CPU that mispredicts flushes a pipeline, while an agent that mispredicts can send an email. Speculate on reads. Commit on certainty. And never let the two rules meet." data-zh="芯片是靠学会猜测变快的。智能体也会走同一条路——但一个误预测的 CPU 冲刷的是流水线，一个误预测的智能体可能发出一封邮件。在读操作上推测。在确定性上提交。永远别让这两条规则相遇。">Chips got fast by learning to guess. Agents will get fast the same way — but a CPU that mispredicts flushes a pipeline, while an agent that mispredicts can send an email. Speculate on reads. Commit on certainty. And never let the two rules meet.</blockquote>
+<p data-en="The deeper point is about where intelligence lives in these systems. The model reasons; the harness paces. Deciding what to compute now, what to compute probably, and what to refuse to compute until certainty arrives — those are not modeling problems, and no model upgrade will solve them. They are scheduling problems, as old as operating systems and as well understood. A team that treats its harness as a dumb executor and pours everything into prompts is leaving the largest uncontested gain on the table: the half of the wall clock where the system is doing nothing at all. The machines learned to run ahead of their own certainty decades ago. It is time agent engineering did the same." data-zh="更深的一层，是关于这些系统里智能到底住在哪里。模型负责推理；harness 负责节奏。现在算什么、大概会用到所以先算什么、拒绝在确定性到来之前算什么——这些不是建模问题，任何模型升级都解决不了它们。它们是调度问题，和操作系统一样古老，也一样被研究透了。一个把 harness 当成哑执行器、把一切都倒进 prompt 的团队，是把最大的一块无人认领的收益留在桌上：墙上时钟里，系统完全无所事事的那一半。机器在几十年前就学会了跑在自己的确定性之前。智能体工程，是时候做同样的事了。">The deeper point is about where intelligence lives in these systems. The model reasons; the harness paces. Deciding what to compute now, what to compute probably, and what to refuse to compute until certainty arrives — those are not modeling problems, and no model upgrade will solve them. They are scheduling problems, as old as operating systems and as well understood.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

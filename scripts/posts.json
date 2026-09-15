@@ -1,5 +1,14 @@
 [
 {
+  "date": "2026-09-16",
+  "slug": "speculative-execution-in-agent-loops",
+  "title_en": "Speculate, Then Commit: Parallel Branches in Agent Loops",
+  "title_zh": "先推测，再提交：智能体循环中的并行分支",
+  "read_time": 9,
+  "excerpt_en": "Agent latency is a chain of serial round-trips, and most loops are written as if the world ended at each tool call. CPUs solved this with branch prediction and speculative execution decades ago — the same discipline maps cleanly onto agent harnesses: parallel fan-out, hedged requests, and speculative branches committed only behind a verification gate.",
+  "excerpt_zh": "智能体的延迟是一串串行往返，而大多数循环被写成好像世界在每次工具调用时就终结一次。CPU 几十年前就用分支预测和推测执行解决了这个问题——同一套纪律可以干净地映射到智能体 harness 上：并行扇出、对冲请求、以及只允许在验证门之后提交的推测分支。"
+},
+{
   "date": "2026-09-15",
   "slug": "the-blast-radius-budget",
   "title_en": "The Blast Radius Budget",

@@ -70,6 +70,19 @@
             </div>
 
                     <div class="post-item fade-in">
+            <a href="posts/2026-09-16-speculative-execution-in-agent-loops.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">September 16, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
+                </div>
+                <h2 class="post-title" data-en="Speculate, Then Commit: Parallel Branches in Agent Loops" data-zh="先推测，再提交：智能体循环中的并行分支">Speculate, Then Commit: Parallel Branches in Agent Loops</h2>
+                <p class="post-excerpt" data-en="Agent latency is a chain of serial round-trips, and most loops are written as if the world ended at each tool call. CPUs solved this with branch prediction and speculative execution decades ago — the same discipline maps cleanly onto agent harnesses: parallel fan-out, hedged requests, and speculative branches committed only behind a verification gate." data-zh="智能体的延迟是一串串行往返，而大多数循环被写成好像世界在每次工具调用时就终结一次。CPU 几十年前就用分支预测和推测执行解决了这个问题——同一套纪律可以干净地映射到智能体 harness 上：并行扇出、对冲请求、以及只允许在验证门之后提交的推测分支。">Agent latency is a chain of serial round-trips, and most loops are written as if the world ended at each tool call. CPUs solved this with branch prediction and speculative execution decades ago —.</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="post-item fade-in">
             <a href="posts/2026-09-15-the-blast-radius-budget.html" class="post-item-inner">
                 <div class="post-meta">
                     <span class="post-date">September 15, 2026</span>
@@ -108,19 +121,6 @@
             </a>
         </div>
 
-        <div class="post-item fade-in">
-            <a href="posts/2026-09-12-the-agent-has-no-clock.html" class="post-item-inner">
-                <div class="post-meta">
-                    <span class="post-date">September 12, 2026</span>
-                    <span class="post-dot"></span>
-                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
-                </div>
-                <h2 class="post-title" data-en="The Agent Has No Clock" data-zh="智能体没有时钟">The Agent Has No Clock</h2>
-                <p class="post-excerpt" data-en="Agent loops live in an eternal present tense — the step-one search result is treated as true at step forty. Real systems expire. The fix isn't a prompt lecture: timestamps on beliefs, TTLs on observations, and deadlines that shape strategy are harness engineering, not prose." data-zh="智能体循环活在永恒的现在时里——第一步的搜索结果，到第四十步仍被当作为真。真实的世界会过期。修复不是给 prompt 上一课：信念上的时间戳、观察上的 TTL、塑造策略的截止时间，是 harness 工程，不是散文。">Agent loops live in an eternal present tense — the step-one search result is treated as true at step forty. Real systems expire. The fix isn't a prompt lecture: timestamps on beliefs, TTLs on.</p>
-                <span class="post-arrow">→</span>
-            </a>
-        </div>
-
         </div>
 
         <div class="preview-section">
@@ -134,6 +134,126 @@
             <div class="news-list">
 
                         <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Google DeepMind</span>
+                    <span class="tweet-handle">@GoogleDeepMind · Sep 16</span>
+                </div>
+                <span class="news-badge" style="background:#4285F4">Google</span>
+            </div>
+            <div class="tweet-body" data-en="Watch how we used 3.8 Live Extended Thinking to act as a programming tutor.
+
+Both models feature:
+🔵 Upgraded reasoning
+🔵 Near real-time visual understanding
+🔵 Automatic detection for 97 languages
+🔵 Background tool calling without disrupting your chat
+
+For your most difficult https://t.co/WHrNvqtHhl" data-zh="演示：用 3.8 Live Extended Thinking 当编程导师。两款新模型均支持升级版推理、近实时视觉理解、97 种语言自动检测，以及不打断对话的后台工具调用。">Watch how we used 3.8 Live Extended Thinking to act as a programming tutor.
+
+Both models feature:
+🔵 Upgraded reasoning
+🔵 Near real-time visual understanding
+🔵 Automatic detection for 97 languages
+🔵 Background tool calling without disrupting your chat
+
+For your most difficult https://t.co/WHrNvqtHhl</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/amplify_video_thumb/2099904643794911232/img/WD9Ni3Y4cTugbNps.jpg">
+            <img src="https://pbs.twimg.com/amplify_video_thumb/2099904643794911232/img/WD9Ni3Y4cTugbNps.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/GoogleDeepMind/status/2099907447313899684" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/GoogleDeepMind/status/2099907447313899684" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/GoogleDeepMind/status/2099907447313899684" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    272
+                </a>
+                <a href="https://x.com/GoogleDeepMind/status/2099907447313899684" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Google DeepMind</span>
+                    <span class="tweet-handle">@GoogleDeepMind · Sep 16</span>
+                </div>
+                <span class="news-badge" style="background:#4285F4">Google</span>
+            </div>
+            <div class="tweet-body" data-en="We’re introducing Gemini 3.8 Live and 3.8 Live Extended Thinking – our best conversational AI.
+
+The models talk, think, and handle tasks in the background without breaking your flow. 🧵 https://t.co/nifcYx1C6L" data-zh="Google DeepMind 发布 Gemini 3.8 Live 与 3.8 Live Extended Thinking——最强对话式 AI。模型可以边说话、边思考、边在后台处理任务，不打断你的节奏。">We’re introducing Gemini 3.8 Live and 3.8 Live Extended Thinking – our best conversational AI.
+
+The models talk, think, and handle tasks in the background without breaking your flow. 🧵 https://t.co/nifcYx1C6L</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/media/HSRb_REXAAAwmGu.png">
+            <img src="https://pbs.twimg.com/media/HSRb_REXAAAwmGu.png" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/GoogleDeepMind/status/2099907440422830269" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/GoogleDeepMind/status/2099907440422830269" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/GoogleDeepMind/status/2099907440422830269" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    1.9K
+                </a>
+                <a href="https://x.com/GoogleDeepMind/status/2099907440422830269" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Claude<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@claudeai · Sep 15</span>
+                </div>
+                <span class="news-badge" style="background:#D4A574">Claude</span>
+            </div>
+            <div class="tweet-body" data-en="Salesforce in Claude is now available in beta.
+
+It brings your accounts, opportunities, and pipeline into Claude, with 37 pre-built sales skills. Prep a call, review a deal, create a pipeline dashboard, or send your forecast without leaving the conversation. https://t.co/juvI0sU3mX" data-zh="Salesforce in Claude 现已开放 beta。把账户、商机和销售管线直接带进 Claude，内置 37 个销售技能：准备通话、复盘交易、搭建管线看板、发送预测，全部不用离开对话。">Salesforce in Claude is now available in beta.
+
+It brings your accounts, opportunities, and pipeline into Claude, with 37 pre-built sales skills. Prep a call, review a deal, create a pipeline dashboard, or send your forecast without leaving the conversation. https://t.co/juvI0sU3mX</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/media/HSRCtuqXAAA2OaW.jpg">
+            <img src="https://pbs.twimg.com/media/HSRCtuqXAAA2OaW.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/claudeai/status/2099876514330206578" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/claudeai/status/2099876514330206578" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/claudeai/status/2099876514330206578" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    5.2K
+                </a>
+                <a href="https://x.com/claudeai/status/2099876514330206578" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
             <div class="tweet-header">
                 <img src="https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
@@ -169,109 +289,6 @@ WeatherNext 3 provides grid operators as well as wind and solar power producers 
             </div>
         </article>
 
-        <article class="tweet-card fade-in">
-            <div class="tweet-header">
-                <img src="https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
-                <div class="tweet-author">
-                    <span class="tweet-name">Elon Musk<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
-                    <span class="tweet-handle">@elonmusk · Sep 14</span>
-                </div>
-                <span class="news-badge" style="background:#1DA1F2">xAI</span>
-            </div>
-            <div class="tweet-body" data-en="<a href=&quot;https://x.com/aaronburnett&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@aaronburnett</a> Our training (aka pre-training) software is now the internally developed C/C++ stack, which was written primarily by the Starlink software team. This is awesome and probably best in industry. 
-
-However, our reinforcement learning stack is still somewhat of a legacy pile of many" data-zh="xAI 的预训练软件已切换为内部自研的 C/C++ 技术栈（主要由 Starlink 软件团队编写），可能是业界最佳。但强化学习技术栈仍是拼凑的第三方遗留系统，将会修复，只是还没修好。"><a href="https://x.com/aaronburnett" target="_blank" rel="noopener">@aaronburnett</a> Our training (aka pre-training) software is now the internally developed C/C++ stack, which was written primarily by the Starlink software team. This is awesome and probably best in industry. 
-
-However, our reinforcement learning stack is still somewhat of a legacy pile of many</div>
-            <div class="tweet-footer">
-                <a href="https://x.com/elonmusk/status/2099500295931789493" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
-                    0
-                </a>
-                <a href="https://x.com/elonmusk/status/2099500295931789493" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
-                    0
-                </a>
-                <a href="https://x.com/elonmusk/status/2099500295931789493" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    5.0K
-                </a>
-                <a href="https://x.com/elonmusk/status/2099500295931789493" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
-                    View on X →
-                </a>
-            </div>
-        </article>
-
-        <article class="tweet-card fade-in">
-            <div class="tweet-header">
-                <img src="https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
-                <div class="tweet-author">
-                    <span class="tweet-name">Elon Musk<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
-                    <span class="tweet-handle">@elonmusk · Sep 14</span>
-                </div>
-                <span class="news-badge" style="background:#1DA1F2">xAI</span>
-            </div>
-            <div class="tweet-body" data-en="<a href=&quot;https://x.com/itslueul&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@itslueul</a> Grok 4.7 should be roughly on par with Opus 5.0, not 5.1. Better in some ways, worse in others. We need to fix multimodal performance. 
-
-Grok 4.8 will be a noticeable improvement. 
-
-Grok 4.9 is probably Astra/Fable class. 
-
-Grok 5 maybe better than anything. We shall see." data-zh="Grok 4.7 大致与 Opus 5.0 相当（不是 5.1），各有胜负，多模态表现仍需改进。Grok 4.8 将有明显提升；Grok 4.9 预计达到 Astra/Fable 级别；Grok 5 也许会超越一切，拭目以待。"><a href="https://x.com/itslueul" target="_blank" rel="noopener">@itslueul</a> Grok 4.7 should be roughly on par with Opus 5.0, not 5.1. Better in some ways, worse in others. We need to fix multimodal performance. 
-
-Grok 4.8 will be a noticeable improvement. 
-
-Grok 4.9 is probably Astra/Fable class. 
-
-Grok 5 maybe better than anything. We shall see.</div>
-            <div class="tweet-footer">
-                <a href="https://x.com/elonmusk/status/2099458047408013751" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
-                    0
-                </a>
-                <a href="https://x.com/elonmusk/status/2099458047408013751" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
-                    0
-                </a>
-                <a href="https://x.com/elonmusk/status/2099458047408013751" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    12.6K
-                </a>
-                <a href="https://x.com/elonmusk/status/2099458047408013751" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
-                    View on X →
-                </a>
-            </div>
-        </article>
-
-        <article class="tweet-card fade-in">
-            <div class="tweet-header">
-                <img src="https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
-                <div class="tweet-author">
-                    <span class="tweet-name">Elon Musk<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
-                    <span class="tweet-handle">@elonmusk · Sep 14</span>
-                </div>
-                <span class="news-badge" style="background:#1DA1F2">xAI</span>
-            </div>
-            <div class="tweet-body" data-en="<a href=&quot;https://x.com/techdevnotes&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@techdevnotes</a> Grok 4.8, which is a 2.5T model trained with our new C++ software stack, will finish training this week and start RL" data-zh="Grok 4.8 是一个 2.5T 参数模型，使用全新 C++ 软件栈训练，本周完成训练并开始强化学习阶段。"><a href="https://x.com/techdevnotes" target="_blank" rel="noopener">@techdevnotes</a> Grok 4.8, which is a 2.5T model trained with our new C++ software stack, will finish training this week and start RL</div>
-            <div class="tweet-footer">
-                <a href="https://x.com/elonmusk/status/2099308197802631191" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
-                    0
-                </a>
-                <a href="https://x.com/elonmusk/status/2099308197802631191" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
-                    0
-                </a>
-                <a href="https://x.com/elonmusk/status/2099308197802631191" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    13.7K
-                </a>
-                <a href="https://x.com/elonmusk/status/2099308197802631191" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
-                    View on X →
-                </a>
-            </div>
-        </article>
-
             </div>
         </div>
     </section>
@@ -280,6 +297,19 @@ Grok 5 maybe better than anything. We shall see.</div>
     <section class="post-list tab-pane" id="pane-blog">
 
                 <div class="post-item fade-in">
+            <a href="posts/2026-09-16-speculative-execution-in-agent-loops.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">September 16, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
+                </div>
+                <h2 class="post-title" data-en="Speculate, Then Commit: Parallel Branches in Agent Loops" data-zh="先推测，再提交：智能体循环中的并行分支">Speculate, Then Commit: Parallel Branches in Agent Loops</h2>
+                <p class="post-excerpt" data-en="Agent latency is a chain of serial round-trips, and most loops are written as if the world ended at each tool call. CPUs solved this with branch prediction and speculative execution decades ago — the same discipline maps cleanly onto agent harnesses: parallel fan-out, hedged requests, and speculative branches committed only behind a verification gate." data-zh="智能体的延迟是一串串行往返，而大多数循环被写成好像世界在每次工具调用时就终结一次。CPU 几十年前就用分支预测和推测执行解决了这个问题——同一套纪律可以干净地映射到智能体 harness 上：并行扇出、对冲请求、以及只允许在验证门之后提交的推测分支。">Agent latency is a chain of serial round-trips, and most loops are written as if the world ended at each tool call. CPUs solved this with branch prediction and speculative execution decades ago —.</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="post-item fade-in">
             <a href="posts/2026-09-15-the-blast-radius-budget.html" class="post-item-inner">
                 <div class="post-meta">
                     <span class="post-date">September 15, 2026</span>
@@ -898,6 +928,126 @@ Grok 5 maybe better than anything. We shall see.</div>
         <div class="news-list">
 
                     <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Google DeepMind</span>
+                    <span class="tweet-handle">@GoogleDeepMind · Sep 16</span>
+                </div>
+                <span class="news-badge" style="background:#4285F4">Google</span>
+            </div>
+            <div class="tweet-body" data-en="Watch how we used 3.8 Live Extended Thinking to act as a programming tutor.
+
+Both models feature:
+🔵 Upgraded reasoning
+🔵 Near real-time visual understanding
+🔵 Automatic detection for 97 languages
+🔵 Background tool calling without disrupting your chat
+
+For your most difficult https://t.co/WHrNvqtHhl" data-zh="演示：用 3.8 Live Extended Thinking 当编程导师。两款新模型均支持升级版推理、近实时视觉理解、97 种语言自动检测，以及不打断对话的后台工具调用。">Watch how we used 3.8 Live Extended Thinking to act as a programming tutor.
+
+Both models feature:
+🔵 Upgraded reasoning
+🔵 Near real-time visual understanding
+🔵 Automatic detection for 97 languages
+🔵 Background tool calling without disrupting your chat
+
+For your most difficult https://t.co/WHrNvqtHhl</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/amplify_video_thumb/2099904643794911232/img/WD9Ni3Y4cTugbNps.jpg">
+            <img src="https://pbs.twimg.com/amplify_video_thumb/2099904643794911232/img/WD9Ni3Y4cTugbNps.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/GoogleDeepMind/status/2099907447313899684" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/GoogleDeepMind/status/2099907447313899684" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/GoogleDeepMind/status/2099907447313899684" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    272
+                </a>
+                <a href="https://x.com/GoogleDeepMind/status/2099907447313899684" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Google DeepMind</span>
+                    <span class="tweet-handle">@GoogleDeepMind · Sep 16</span>
+                </div>
+                <span class="news-badge" style="background:#4285F4">Google</span>
+            </div>
+            <div class="tweet-body" data-en="We’re introducing Gemini 3.8 Live and 3.8 Live Extended Thinking – our best conversational AI.
+
+The models talk, think, and handle tasks in the background without breaking your flow. 🧵 https://t.co/nifcYx1C6L" data-zh="Google DeepMind 发布 Gemini 3.8 Live 与 3.8 Live Extended Thinking——最强对话式 AI。模型可以边说话、边思考、边在后台处理任务，不打断你的节奏。">We’re introducing Gemini 3.8 Live and 3.8 Live Extended Thinking – our best conversational AI.
+
+The models talk, think, and handle tasks in the background without breaking your flow. 🧵 https://t.co/nifcYx1C6L</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/media/HSRb_REXAAAwmGu.png">
+            <img src="https://pbs.twimg.com/media/HSRb_REXAAAwmGu.png" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/GoogleDeepMind/status/2099907440422830269" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/GoogleDeepMind/status/2099907440422830269" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/GoogleDeepMind/status/2099907440422830269" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    1.9K
+                </a>
+                <a href="https://x.com/GoogleDeepMind/status/2099907440422830269" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Claude<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@claudeai · Sep 15</span>
+                </div>
+                <span class="news-badge" style="background:#D4A574">Claude</span>
+            </div>
+            <div class="tweet-body" data-en="Salesforce in Claude is now available in beta.
+
+It brings your accounts, opportunities, and pipeline into Claude, with 37 pre-built sales skills. Prep a call, review a deal, create a pipeline dashboard, or send your forecast without leaving the conversation. https://t.co/juvI0sU3mX" data-zh="Salesforce in Claude 现已开放 beta。把账户、商机和销售管线直接带进 Claude，内置 37 个销售技能：准备通话、复盘交易、搭建管线看板、发送预测，全部不用离开对话。">Salesforce in Claude is now available in beta.
+
+It brings your accounts, opportunities, and pipeline into Claude, with 37 pre-built sales skills. Prep a call, review a deal, create a pipeline dashboard, or send your forecast without leaving the conversation. https://t.co/juvI0sU3mX</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/media/HSRCtuqXAAA2OaW.jpg">
+            <img src="https://pbs.twimg.com/media/HSRCtuqXAAA2OaW.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/claudeai/status/2099876514330206578" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/claudeai/status/2099876514330206578" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/claudeai/status/2099876514330206578" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    5.2K
+                </a>
+                <a href="https://x.com/claudeai/status/2099876514330206578" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
             <div class="tweet-header">
                 <img src="https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
