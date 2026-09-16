@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Confirm Button Is Load-Bearing — AI Frontlines</title>
+<meta content="Every agent that touches the real world grows a confirm button. The human behind it becomes the system's safety boundary — and that boundary has a bandwidth of about three seconds. Approval fatigue is not a UX nitpick. It is the failure of the entire safety model, engineered in by teams who never budgeted consent." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 17, 2026" data-zh="2026年9月17日">September 17, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Confirm Button Is Load-Bearing" data-zh="确认按钮是承重墙">The Confirm Button Is Load-Bearing</h1>
+<p class="post-header-deck" data-en="Every agent that touches the real world eventually grows a confirm button. A payment, an email, a deploy, a delete — someone, somewhere, decides the agent should not do this alone, and inserts a human. It feels like safety. It is usually a bottleneck wearing a safety costume. The human in the loop is not a formality bolted onto the system; the moment it exists, it becomes the system's actual safety boundary — a boundary whose entire bandwidth is one tired person, glancing at a dialog, for about three seconds. Design the consent flow with the rigor of a data model, or watch it silently become a rubber stamp." data-zh="每一个接触真实世界的智能体，最终都会长出一个确认按钮。一笔付款、一封邮件、一次部署、一次删除——总有某个人在某处决定，这件事不能让智能体独自去做，于是插入了一个人。这看起来像安全。它通常只是一个穿着安全外衣的瓶颈。回路里的人不是被钉在系统上的形式主义；从它存在的那一刻起，它就成了系统真正的安全边界——而这条边界的全部带宽，是一个疲惫的人，盯着一个对话框，大约三秒钟。请用设计数据模型的严谨来设计同意流程，否则就看着它悄悄变成一枚橡皮图章。">Every agent that touches the real world eventually grows a confirm button. A payment, an email, a deploy, a delete — someone decides the agent should not do this alone, and inserts a human. It feels like safety. It is usually a bottleneck wearing a safety costume.</p>
+</header>
+<article class="post-body">
+<p data-en="Here is the sequence every team goes through. Version one ships with full autonomy, because the demo needs to be impressive, and the demo never includes the part where the agent emails the wrong client. Version two adds a confirmation step before every consequential action. Everyone relaxes. The agent is now 'supervised.' Then the usage data arrives, and it tells an uncomfortable story: forty confirmation prompts per user per day, average review time 2.8 seconds, approve rate 99.2 percent. Nobody read anything. The confirm button did not add supervision; it added latency. The system's safety now rests entirely on a muscle the humans stopped exercising in week two. This is not a UX nitpick to file away. It is a structural failure of the safety architecture, and it was designed in — by people who believed that inserting a human anywhere in the loop is equivalent to inserting control." data-zh="每个团队都会经历这个序列。第一版以完全自主上线，因为 demo 需要令人惊艳，而 demo 永远不包含智能体把邮件发给错客户的那一段。第二版在每一个有后果的动作前加了一个确认步骤。所有人都松了口气。智能体现在被「监督」了。然后使用数据来了，讲了一个不舒服的故事：每用户每天四十次确认弹窗，平均审阅时间 2.8 秒，批准率 99.2%。什么都没人读。确认按钮没有增加监督；它增加了延迟。系统的安全，如今完全押在一块人类在第二周就停止锻炼的肌肉上。这不是一个可以攒着以后修的 UX 小毛病。这是安全架构的结构性失败，而且是被设计进去的——被那些相信「在回路里随便插一个人，就等于插入了控制」的人。">Here is the sequence every team goes through. Version one ships with full autonomy, because the demo needs to be impressive, and the demo never includes the part where the agent emails the wrong client. Version two adds a confirmation step before every consequential action. Everyone relaxes. Then the usage data arrives: forty prompts per user per day, average review time 2.8 seconds, approve rate 99.2 percent. Nobody read anything. The confirm button did not add supervision; it added latency.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrC2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrC3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE CONSENT FUNNEL" data-zh="同意漏斗" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="230" y="24">THE CONSENT FUNNEL</text>
+<!-- agent actions source -->
+<rect fill="var(--accent-dim)" height="36" rx="8" stroke="var(--accent)" stroke-width="2" width="130" x="165" y="40"></rect>
+<text data-en="agent actions" data-zh="智能体动作" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="230" y="63">agent actions</text>
+<path d="M230 76 L230 96" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- blast radius router -->
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent-2)" stroke-width="1.8" width="170" x="145" y="98"></rect>
+<text data-en="blast-radius router" data-zh="爆炸半径路由" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="230" y="121">blast-radius router</text>
+<!-- three lanes -->
+<path d="M180 134 C120 160 90 175 70 196" fill="none" marker-end="url(#arrC2)" stroke="var(--text-tertiary)" stroke-width="1.4"></path>
+<path d="M230 134 L230 196" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<path d="M280 134 C340 160 370 175 390 196" fill="none" marker-end="url(#arrC3)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<!-- lane: low -->
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--text-tertiary)" stroke-width="1.2" width="96" x="22" y="198"></rect>
+<text data-en="low: auto" data-zh="低危：直接执行" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="70" y="217">low: auto</text>
+<text data-en="reversible · free" data-zh="可逆 · 零成本" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" text-anchor="middle" x="70" y="246">reversible · free</text>
+<!-- lane: medium -->
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent)" stroke-width="1.2" width="120" x="170" y="198"></rect>
+<text data-en="medium: batch" data-zh="中危：批量审阅" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="230" y="217">medium: batch</text>
+<text data-en="digest at 5pm" data-zh="下午五点打包送审" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" text-anchor="middle" x="230" y="246">digest at 5pm</text>
+<!-- lane: high -->
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1.6" width="130" x="325" y="198"></rect>
+<text data-en="high: confirm" data-zh="高危：逐条确认" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="390" y="217">high: confirm</text>
+<text data-en="irreversible · rare" data-zh="不可逆 · 罕见" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" text-anchor="middle" x="390" y="246">irreversible · rare</text>
+<!-- human attention budget -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="490" x2="490" y1="40" y2="290"></line>
+<text data-en="THE REAL BUDGET" data-zh="真正的预算" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="556" y="58">THE REAL BUDGET</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent)" stroke-width="1.5" width="104" x="504" y="70"></rect>
+<text data-en="human attention" data-zh="人的注意力" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="556" y="89">human attention</text>
+<text data-en="≈ 12 careful reviews" data-zh="≈ 12 次认真审阅" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="556" y="122">≈ 12 careful reviews</text>
+<text data-en="per day. That's it." data-zh="每天。就这么多。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="556" y="138">per day. That's it.</text>
+<text data-en="40 prompts → 40 stamps" data-zh="40 次弹窗 → 40 个图章" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="556" y="166">40 prompts → 40 stamps</text>
+<!-- bottom note -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="272"></rect>
+<text data-en="Consent is a scarce resource. Route actions by blast radius so the rare, irreversible ones inherit the full budget — don't split it evenly across everything." data-zh="同意是一种稀缺资源。按爆炸半径路由动作，让罕见且不可逆的动作继承全部预算——而不是把它均摊给所有事情。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="297">Consent is a scarce resource. Route actions by blast radius so the rare, irreversible ones inherit the full budget.</text>
+</svg>
+<p class="diagram-caption" data-en="The mistake is treating every action as equally worthy of a human. It is not. Read-only and reversible actions need no consent — they need logging. Consequential-but-recoverable actions can be batched into a digest. Only the rare, irreversible action deserves an interruption, because only those can spend the human's full attention without bankrupting it." data-zh="错误在于把每个动作都当作同样值得一个人类。不是的。只读和可逆的动作不需要同意——它们需要的是日志。有后果但可恢复的动作，可以打包进一份摘要。只有罕见且不可逆的动作，才配得上一打断——因为只有它们，可以在不掏空人类注意力的前提下，花掉它的全部。">The mistake is treating every action as equally worthy of a human. Read-only and reversible actions need no consent — they need logging. Consequential-but-recoverable actions can be batched into a digest. Only the rare, irreversible action deserves an interruption.</p>
+</div>
+<h3 data-en="Consent is a budget, and nobody budgets it" data-zh="同意是一笔预算，但没人做预算">Consent is a budget, and nobody budgets it</h3>
+<p data-en="Teams obsess over the context window budget — every token in, every token out, retrieval trimmed, history compressed. And then they treat human attention as infinite. It is not. A person can genuinely evaluate perhaps a dozen consequential decisions in a day before the reviews degrade into pattern-matching: the dialog looks like the last forty dialogs, the agent was right the last forty times, the button is in the same place, the thumb clicks it. Each additional prompt does not add supervision. Past a threshold, each additional prompt subtracts from the supervision the critical prompts were supposed to get. This is the core arithmetic of approval fatigue: the value of a confirmation is not constant. It decays with frequency. A confirm button pressed once a day is a checkpoint. Pressed forty times a day, it is a ritual — and rituals protect nothing." data-zh="团队们对上下文窗口的预算斤斤计较——每个进来的 token、每个出去的 token、检索要裁剪、历史要压缩。然后，他们把人类的注意力当作无限的。它不是。一个人在一天里，真正能评估的后果级决策，大概只有十来个，之后审阅就会退化成模式匹配：这个对话框长得和前四十个一样，前四十次智能体都是对的，按钮在同一个位置，拇指点了下去。每一个新增的弹窗，并不增加监督。越过阈值之后，每一个新增的弹窗，都在削减那些关键弹窗本应得到的监督。这就是审批疲劳的核心算术：一次确认的价值不是恒定的。它随频率衰减。一天按一次的确认按钮，是检查点。一天按四十次，它是一场仪式——而仪式不保护任何东西。">Teams obsess over the context window budget — every token in, every token out, retrieval trimmed, history compressed. And then they treat human attention as infinite. A person can genuinely evaluate perhaps a dozen consequential decisions in a day before reviews degrade into pattern-matching. Each additional prompt does not add supervision. Past a threshold, it subtracts from the supervision the critical prompts were supposed to get.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrD1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE DECAY CURVE OF A CONFIRMATION" data-zh="一次确认的衰减曲线" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE DECAY CURVE OF A CONFIRMATION</text>
+<!-- axes -->
+<line stroke="var(--border)" stroke-width="1.2" x1="70" x2="70" y1="50" y2="240"></line>
+<line stroke="var(--border)" stroke-width="1.2" x1="70" x2="580" y1="240" x2="580" y2="240"></line>
+<path d="M70 50 L66 58 M70 50 L74 58" fill="none" stroke="var(--border)" stroke-width="1.2"></path>
+<path d="M580 240 L572 236 M580 240 L572 244" fill="none" stroke="var(--border)" stroke-width="1.2"></path>
+<text data-en="review quality" data-zh="审阅质量" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" transform="rotate(-90 40 145)" text-anchor="middle" x="40" y="145">review quality</text>
+<text data-en="prompts per day →" data-zh="每日弹窗数 →" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="325" y="266">prompts per day →</text>
+<!-- the decay curve -->
+<path d="M80 70 C160 74 220 90 280 130 C340 168 420 210 560 228" fill="none" stroke="var(--accent)" stroke-width="2.5"></path>
+<circle cx="80" cy="70" fill="var(--bg-surface)" r="5" stroke="var(--accent)" stroke-width="2"></circle>
+<text data-en="real scrutiny" data-zh="真正的审视" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9.5" font-weight="700" x="92" y="64">real scrutiny</text>
+<!-- rubber stamp threshold -->
+<line stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="5,4" x1="70" x2="580" y1="212" y2="212"></line>
+<text data-en="rubber-stamp threshold" data-zh="橡皮图章阈值" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9.5" font-weight="700" text-anchor="end" x="576" y="205">rubber-stamp threshold</text>
+<circle cx="335" cy="196" fill="var(--accent-3)" r="5" stroke="var(--accent-3)" stroke-width="2"></circle>
+<text data-en="≈ 12/day: past this point," data-zh="≈ 12次/天：越过此点，" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="330" y="164">≈ 12/day: past this point,</text>
+<text data-en="every click is a stamp" data-zh="每一次点击都是图章" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="330" y="178">every click is a stamp</text>
+<text data-en="thumb memory" data-zh="拇指记忆" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9.5" font-style="italic" x="480" y="248">thumb memory</text>
+</svg>
+<p class="diagram-caption" data-en="The first confirmations of the day receive real scrutiny — diffs read, consequences weighed. By the fifteenth, the human is matching shapes, not evaluating decisions. The curve crosses the rubber-stamp threshold far earlier than teams assume, which means the marginal safety of every additional prompt is negative: it trains the reflex that will one day approve the wrong thing." data-zh="一天里的最初几次确认，会得到真正的审视——读 diff、掂量后果。到第十五次，人类在做的是形状匹配，不是决策评估。这条曲线穿过橡皮图章阈值的时间，远早于团队的想象——这意味着每一个新增弹窗的边际安全性是负的：它在训练那个总有一天会批准错事的条件反射。">The first confirmations of the day receive real scrutiny. By the fifteenth, the human is matching shapes, not evaluating decisions. The curve crosses the rubber-stamp threshold far earlier than teams assume, which means the marginal safety of every additional prompt is negative.</p>
+</div>
+<blockquote data-en="A confirmation prompt is not a safety mechanism. It is a bet that the human will be careful, this time, every time. The system that respects its humans does not spend their carefulness on trivia — it hoards it for the one moment that matters, and builds reversibility for everything else." data-zh="一个确认弹窗不是安全机制。它是一个赌注——赌这个人这一次、每一次都会认真。尊重人的系统，不会把人的认真浪费在琐事上——它会把它囤积留给真正重要的那一刻，而为其他一切构建可逆性。">A confirmation prompt is not a safety mechanism. It is a bet that the human will be careful, this time, every time. The system that respects its humans does not spend their carefulness on trivia — it hoards it for the one moment that matters, and builds reversibility for everything else.</blockquote>
+<h3 data-en="Reversibility is the cheaper safety" data-zh="可逆性是更便宜的安全">Reversibility is the cheaper safety</h3>
+<p data-en="The deepest lesson of approval design is that the confirm button is what a team builds when it failed to build an undo. Asking 'may I?' before every action is the expensive way to be safe. Building the action so it can be taken back — a send-window on emails, a two-phase commit on payments, a shadow deploy that promotes on confidence, a trash-can semantics on every write — is the cheap way, because it converts catastrophic errors into ordinary ones. The economics are decisive: one well-engineered reversible primitive removes an entire category of confirmations, and every confirmation removed returns attention to the few that remain. The best agent systems are not the ones with the most rigorous approval gates. They are the ones engineered so that almost nothing is truly irreversible, and therefore almost nothing needs to interrupt a human at all." data-zh="审批设计最深的教训是：确认按钮，是一个团队没能构建出「撤销」时的产物。在每一个动作前问「我可以吗」，是昂贵的安全方式。把动作构建成可以被收回的——邮件加一个发送窗口、支付做两阶段提交、部署走影子模式达到置信度再晋升、每一次写入都带回收站语义——是便宜的方式，因为它把灾难性错误降级成普通错误。这笔账是决定性的：一个设计良好的可逆原语，能砍掉一整类确认；而每砍掉一个确认，就把注意力还给剩下的那几个。最好的智能体系统，不是审批关卡最严的系统。是被工程到几乎没有任何事真正不可逆、因此几乎没有任何事需要打断人类的系统。">The deepest lesson of approval design is that the confirm button is what a team builds when it failed to build an undo. Asking 'may I?' before every action is the expensive way to be safe. Building the action so it can be taken back is the cheap way, because it converts catastrophic errors into ordinary ones. The best agent systems are not the ones with the most rigorous approval gates. They are the ones engineered so that almost nothing is truly irreversible.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrE1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrE2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrE3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="TWO CONSENT ARCHITECTURES" data-zh="两种同意架构" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">TWO CONSENT ARCHITECTURES</text>
+<!-- LEFT: naive modal -->
+<text data-en="GATE EVERYTHING" data-zh="凡事都设闸" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="150" y="54">GATE EVERYTHING</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.4" width="72" x="114" y="68"></rect>
+<text data-en="agent" data-zh="智能体" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="150" y="86">agent</text>
+<path d="M150 96 L150 112" fill="none" marker-end="url(#arrE1)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1.4" width="120" x="90" y="114"></rect>
+<text data-en="modal ×40 / day" data-zh="弹窗 ×40 / 天" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="150" y="133">modal ×40 / day</text>
+<path d="M150 144 L150 160" fill="none" marker-end="url(#arrE1)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<circle cx="150" cy="184" fill="var(--bg-surface)" r="22" stroke="var(--accent-3)" stroke-width="1.6"></circle>
+<text data-en="human" data-zh="人" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="150" y="188">human</text>
+<path d="M150 206 C150 224 150 230 150 240" fill="none" marker-end="url(#arrE1)" stroke="var(--accent-3)" stroke-width="1.4" stroke-dasharray="3,2"></path>
+<rect fill="none" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1.4" stroke-dasharray="3,2" width="120" x="90" y="242"></rect>
+<text data-en="approve (always)" data-zh="批准（永远）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="150" y="261">approve (always)</text>
+<text data-en="latency ↑ · trust ↓" data-zh="延迟 ↑ · 信任 ↓" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9.5" font-style="italic" text-anchor="middle" x="150" y="296">latency ↑ · trust ↓</text>
+<text data-en="safety: theatrical" data-zh="安全性：戏剧性的" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9.5" font-style="italic" text-anchor="middle" x="150" y="312">safety: theatrical</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="44" y2="316"></line>
+<!-- RIGHT: engineered consent -->
+<text data-en="ENGINEER THE CONSENT" data-zh="把同意工程化" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="470" y="54">ENGINEER THE CONSENT</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent)" stroke-width="1.4" width="72" x="434" y="68"></rect>
+<text data-en="agent" data-zh="智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="470" y="86">agent</text>
+<path d="M470 96 L470 112" fill="none" marker-end="url(#arrE2)" stroke="var(--accent)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-2)" stroke-width="1.4" width="130" x="405" y="114"></rect>
+<text data-en="dry-run + diff" data-zh="试运行 + 差异" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="470" y="133">dry-run + diff</text>
+<path d="M445 144 C410 158 380 166 355 176" fill="none" marker-end="url(#arrE3)" stroke="var(--text-tertiary)" stroke-width="1.3"></path>
+<path d="M470 144 L470 176" fill="none" marker-end="url(#arrE2)" stroke="var(--accent)" stroke-width="1.3"></path>
+<path d="M495 144 C530 158 560 166 585 176" fill="none" marker-end="url(#arrE3)" stroke="var(--text-tertiary)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--text-tertiary)" stroke-width="1.2" width="76" x="317" y="178"></rect>
+<text data-en="undoable" data-zh="可撤销" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="355" y="197">undoable</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent)" stroke-width="1.6" width="96" x="422" y="178"></rect>
+<text data-en="execute now" data-zh="立即执行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="470" y="197">execute now</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1.6" width="76" x="547" y="178"></rect>
+<text data-en="irrevers.?" data-zh="不可逆？" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="585" y="197">irrevers.?</text>
+<path d="M585 208 C585 224 585 230 585 240" fill="none" marker-end="url(#arrE1)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<circle cx="585" cy="262" fill="var(--bg-surface)" r="20" stroke="var(--accent-3)" stroke-width="1.6"></circle>
+<text data-en="human" data-zh="人" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="585" y="266">human</text>
+<text data-en="≈1 / day · reads it" data-zh="≈1次/天 · 认真读" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="520" y="312">≈1 / day · reads it</text>
+<text data-en="everything else: logged + undo" data-zh="其余一切：留日志 + 可撤销" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9.5" font-style="italic" text-anchor="middle" x="450" y="296">everything else: logged + undo</text>
+<text data-en="safety: structural" data-zh="安全性：结构性的" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9.5" font-style="italic" text-anchor="middle" x="450" y="312">safety: structural</text>
+</svg>
+<p class="diagram-caption" data-en="Left: every action gated by a modal, every modal approved on reflex, safety dissolved by frequency. Right: actions run through a dry-run that shows the exact diff; reversible ones execute immediately with undo and an audit log; only the genuinely irreversible ones escalate — and because they arrive once a day instead of forty times, the human actually reads them." data-zh="左边：每个动作都被弹窗拦截，每个弹窗都被条件反射式批准，安全被频率溶解。右边：动作先经过一个展示精确 diff 的试运行；可逆的立即执行，带撤销和审计日志；只有真正不可逆的才上报人类——而因为它们一天只来一次而不是四十次，人真的会读。">Left: every action gated by a modal, every modal approved on reflex, safety dissolved by frequency. Right: actions run through a dry-run that shows the exact diff; reversible ones execute immediately; only the genuinely irreversible escalate — and because they arrive once a day, the human actually reads them.</p>
+</div>
+<h3 data-en="Anatomy of an interruption worth making" data-zh="一次值得做的打断的解剖">Anatomy of an interruption worth making</h3>
+<p data-en="When an action does deserve a human, the prompt itself is engineering, not copywriting. The failures are predictable: a dialog that says 'Agent wants to send an email. Approve?' forces the human to reconstruct the consequences from memory — so they don't, they approve. A good interruption carries the decision, pre-chewed: the exact diff of what will change, the recipients by name, the cost in currency, the last time this same action ran and how it went, and what happens on a timeout — because an approval request that silently expires is an outage dressed as caution. Approve and reject should be asymmetric on purpose: rejecting is always safe and immediate, approving the irreversible may require a typed confirmation or a second pair of eyes past a threshold. And every approval should leave an artifact — who approved, what they saw, what the agent claimed — because when the inevitable incident review comes, 'the human approved it' must mean something more than 'a button was clicked.'" data-zh="当一个动作确实需要一个人类时，弹窗本身是工程，不是文案。失败是可预测的：一个写着「智能体想发送一封邮件。批准吗？」的对话框，强迫人类凭记忆重建后果——所以他们不重建，直接批准。一次好的打断，携带的是被预先咀嚼过的决策：将要改变之事的精确 diff、按名字列出的收件人、以货币计的成本、同一个动作上一次运行的时间和结果、以及超时会发生什么——因为一个会悄悄过期的批准请求，是一场穿着谨慎外衣的宕机。批准和拒绝应当刻意做得不对称：拒绝永远安全且即时，批准不可逆动作在超过阈值后可能需要输入确认、或加上第二双眼睛。而每一次批准都应留下工件——谁批准的、他们看到了什么、智能体声称了什么——因为当不可避免的事故复盘到来时，「人类批准了它」必须意味着比「一个按钮被点过」更多的东西。">When an action does deserve a human, the prompt itself is engineering, not copywriting. A dialog that says 'Approve?' forces the human to reconstruct consequences from memory — so they approve. A good interruption carries the decision, pre-chewed: the exact diff, the recipients by name, the cost in currency, the last time this action ran and how it went, and what happens on timeout. Approve and reject should be asymmetric on purpose. And every approval should leave an artifact.</p>
+<p data-en="None of this is a plea for autonomy, and none of it is a plea against it. It is a plea to treat the consent flow as architecture — as real as the tool schema, as budgeted as the context window, as tested as the eval suite. The teams that get agents accepted in an organization are never the ones whose agents ask permission the most. They are the ones whose interruptions are so rare, so precise, and so obviously consequential that when the confirm button appears, everyone in the room leans in. That button is load-bearing. Build it like it is." data-zh="这些，不是对自主性的呼吁，也不是反对自主性的呼吁。它是一个请求：把同意流程当作架构来对待——和工具 schema 一样真实，和上下文窗口一样有预算，和评测套件一样经过测试。让智能体被组织接受的团队，从来不是那些智能体请求许可最多的团队。而是那些打断如此罕见、如此精准、如此明显后果重大，以至于确认按钮一出现，整个房间的人都凑过来的团队。那颗按钮是承重墙。就按承重墙的标准来造它。">None of this is a plea for autonomy, and none of it is a plea against it. It is a plea to treat the consent flow as architecture — as real as the tool schema, as budgeted as the context window, as tested as the eval suite. The teams that get agents accepted are never the ones whose agents ask permission the most. They are the ones whose interruptions are so rare, so precise, and so obviously consequential that when the confirm button appears, everyone leans in. That button is load-bearing. Build it like it is.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
