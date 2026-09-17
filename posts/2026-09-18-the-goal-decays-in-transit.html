@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Goal Decays in Transit — AI Frontlines</title>
+<meta content="Long agent runs don't fail at a single step. They drift — each locally reasonable decision bending the trajectory a few degrees off the original objective, until step forty is solving a different problem than step one. Drift is not noise. It is compounding. The fix is a beacon: the goal as a versioned artifact, re-injected at gates, checked by machines." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 18, 2026" data-zh="2026年9月18日">September 18, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Goal Decays in Transit" data-zh="目标会在途中衰减">The Goal Decays in Transit</h1>
+<p class="post-header-deck" data-en="Watch a long agent run and you will see a pattern that has nothing to do with model quality. The first ten steps are crisp — tightly aimed at the objective, each decision obviously serving the mission. Then something subtle happens. A tool result introduces a tempting adjacent problem. A partial success reframes what 'done' looks like. A subtask spawns a subtask. Each individual step remains locally reasonable, and yet by step forty the agent is diligently, competently, solve a different problem than the one it was given. This is goal drift, and it is the defining failure of long-horizon agents — not stupidity, not hallucination, but decay of the objective itself, a few degrees of bend per step, compounding." data-zh="观察一次长时间的智能体运行，你会看到一个与模型能力无关的模式。前十步干净利落——直指目标，每个决策显然都在为任务服务。然后，一些微妙的事情发生了。一个工具结果带来一个诱人的邻近问题。一次阶段性成功重新定义了「完成」的样子。一个子任务又派生出子任务。每一步在局部都依然合理，然而到了第四十步，智能体正在勤勉地、胜任地——解决一个和它领到的完全不同的问题。这就是目标漂移，它是长程智能体的决定性失败模式——不是愚蠢，不是幻觉，而是目标本身的衰减，每一步偏几度，不断复利。">Watch a long agent run and you will see a pattern that has nothing to do with model quality. The first ten steps are crisp. Then a tool result introduces a tempting adjacent problem, a partial success reframes what 'done' looks like, and by step forty the agent is diligently solving a different problem than the one it was given.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a strange comfort in the way short agents fail. They fail loudly — a malformed tool call, a hallucinated fact, a loop that spins in place. The failure is local, visible, and fixable with a prompt change or a guard. Long-horizon agents fail differently. They fail quietly, and often while producing work that looks, examined step by step, completely correct. The syntax is clean. The reasoning chains hold. Every intermediate artifact passes inspection. And yet the final deliverable answers a question nobody asked, because somewhere in the middle of the run, the goal itself quietly changed hands — from the objective the user stated, to the objective the agent inferred, to the objective the agent's most recent context happened to make most salient. Nobody decided to change the goal. It eroded." data-zh="短程智能体的失败方式，有一种奇怪的安慰感。它们失败得很响——一个格式错误的工具调用，一个幻觉的事实，一个原地打转的循环。失败是局部的、可见的，改一下 prompt 或加一个守卫就能修复。长程智能体的失败不一样。它们失败得很安静，而且往往在逐步检查时，产出的每一步看起来都完全正确。语法干净。推理链成立。每个中间产物都经得起审视。然而最终交付物回答的是一个没人问过的问题，因为在运行的中段某处，目标本身悄悄换了手——从用户陈述的目标，变成智能体推断的目标，再变成最近的上下文恰好使其最显眼的那个目标。没有人决定要改变目标。它是被侵蚀掉的。">There is a strange comfort in the way short agents fail. They fail loudly — a malformed tool call, a hallucinated fact, a loop that spins in place. The failure is local, visible, and fixable with a prompt change or a guard. Long-horizon agents fail differently. They fail quietly, and often while producing work that looks, examined step by step, completely correct. The syntax is clean. The reasoning chains hold. Every intermediate artifact passes inspection. And yet the final deliverable answers a question nobody asked.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrD1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrD2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="GOAL DRIFT: THE HEADING BENDS A FEW DEGREES PER STEP" data-zh="目标漂移：每一步偏几度" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">GOAL DRIFT: THE HEADING BENDS A FEW DEGREES PER STEP</text>
+<!-- intended path -->
+<line stroke="var(--accent)" stroke-width="2" x1="60" x2="540" y1="70" y2="70"></line>
+<polygon fill="var(--accent)" points="540,64 556,70 540,76"></polygon>
+<text data-en="the stated objective" data-zh="被陈述的目标" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="300" y="56">the stated objective</text>
+<!-- drift path -->
+<path d="M60 130 C160 128 220 140 290 168 C370 200 440 240 520 268" fill="none" marker-end="url(#arrD2)" stroke="var(--accent-3)" stroke-width="2"></path>
+<circle cx="60" cy="130" fill="var(--accent-3)" r="5"></circle>
+<text data-en="step 1" data-zh="第 1 步" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="60" y="152">step 1</text>
+<circle cx="290" cy="168" fill="var(--accent-3)" r="4"></circle>
+<text data-en="step 10 · still aimed" data-zh="第 10 步 · 仍然对准" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="290" y="190">step 10 · still aimed</text>
+<circle cx="430" cy="234" fill="var(--accent-3)" r="4"></circle>
+<text data-en="step 25 · redefined 'done'" data-zh="第 25 步 · 重定义了「完成」" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="430" y="256">step 25 · redefined 'done'</text>
+<!-- final point -->
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="150" x="380" y="284"></rect>
+<text data-en="step 40: wrong problem" data-zh="第 40 步：错误的问题" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="455" y="303">step 40: wrong problem</text>
+<!-- drift angle -->
+<path d="M470 70 A 120 120 0 0 1 500 250" fill="none" stroke="var(--text-tertiary)" stroke-width="1" stroke-dasharray="3,3"></path>
+<text data-en="angle of drift" data-zh="漂移角" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="590" y="160">angle of drift</text>
+<text data-en="each step locally reasonable — the sum diverges" data-zh="每一步局部都合理——总和却偏离了" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="330">each step locally reasonable — the sum diverges</text>
+</svg>
+<p class="diagram-caption" data-en="The intended path runs straight; the actual path bends a few degrees at every step. No single step contains the error — each transition was defensible given what the agent could see. Drift is not a mistake anywhere. It is the integral of many small, reasonable deflections." data-zh="预定的路径是笔直的；实际路径在每一步都偏几度。没有任何一步包含错误——就智能体当时所见而言，每一次转向都站得住脚。漂移不在于某一个地方的某个错误。它是许多微小而合理的偏转的积分。">The intended path runs straight; the actual path bends a few degrees at every step. No single step contains the error — each transition was defensible given what the agent could see. Drift is not a mistake anywhere. It is the integral of many small, reasonable deflections.</p>
+</div>
+<h3 data-en="Drift is not noise — it is compounding" data-zh="漂移不是噪声——它是复利">Drift is not noise — it is compounding</h3>
+<p data-en="The instinct is to treat drift as randomness: the model wandered, models do that, add more instructions. But drift is not random. It has a direction, and the direction is always the same — toward whatever the context window most recently made vivid. Agents are attention machines, and attention is a recency-biased cache. A forty-step run is a forty-round game of telephone between the original objective and whatever the last tool result happened to emphasize. The first prompt states the goal in full, with all its constraints, while the context is still small. Twenty steps later, that statement is buried under pages of intermediate artifacts, logs, partial outputs, and the debris of solved subproblems. The goal is still technically in context. Representation is not the same as salience. What the model 'reads past' a thousand times, it stops actually seeing." data-zh="直觉会把漂移当作随机性：模型乱走了，模型就是这样，多加点指令吧。但漂移不是随机的。它有方向，而且方向永远一样——朝着上下文窗口最近使之变得鲜活的那个东西。智能体是注意力机器，而注意力是一个偏向近期内容的缓存。一次四十步的运行，是原始目标与最近一次工具结果所强调之物之间的、四十轮的传话游戏。第一条 prompt 在上下文还很小的时候，完整陈述了目标及其全部约束。二十步之后，那段陈述被埋在几页的中间产物、日志、部分输出和已解决子问题的残骸之下。目标仍然在上下文里，这是技术事实。但「被表示」不等于「被看见」。一个被模型「读过去」一千次的东西，它会慢慢不再真正看到。">The instinct is to treat drift as randomness: the model wandered, models do that, add more instructions. But drift is not random. It has a direction, and the direction is always the same — toward whatever the context window most recently made vivid. Agents are attention machines, and attention is a recency-biased cache. A forty-step run is a forty-round game of telephone between the original objective and whatever the last tool result happened to emphasize.</p>
+<p data-en="This explains the strangest property of drift: it gets worse as the agent gets better. A weak model fails early and fails visibly, which triggers a human to intervene. A capable model survives every local challenge — it solves the adjacent problem, recovers from the refactor, closes the tangential ticket — and each success quietly raises the salience of the tangent. Competence compounds drift because competence manufactures successes along the wrong axis. The most dangerous agent is not the one that breaks at step five. It is the one that never breaks, and arrives at step forty having brilliantly executed a mission it invented for itself somewhere around step seventeen." data-zh="这解释了漂移最奇怪的性质：模型越强，漂移越严重。弱模型早早失败、失败得显眼，从而触发人类干预。而强模型能扛过每一个局部挑战——它解决了邻近的问题，从重构中恢复，关掉了跑偏的工单——而每一次成功，都悄悄提高了那条岔路的显著性。能力会放大漂移，因为能力会在错误的方向上制造成功。最危险的智能体，不是第五步就崩掉的那个。而是从不崩掉、在第四十步抵达时，已经精彩地执行了一个大约在第十七步时为自己发明出来的任务的那个。">This explains the strangest property of drift: it gets worse as the agent gets better. A weak model fails early and fails visibly, which triggers a human to intervene. A capable model survives every local challenge — it solves the adjacent problem, recovers from the refactor, closes the tangential ticket — and each success quietly raises the salience of the tangent. The most dangerous agent is not the one that breaks at step five. It is the one that never breaks.</p>
+<blockquote data-en="A goal stated once is a goal that decays. The context window is not a vault; it is a slow dissolve. If the objective is not periodically re-injected — deliberately, structurally, on a schedule the agent does not control — then the run's true objective becomes 'whatever the last three tool results were about.' That is not a misaligned agent. That is an unanchored one." data-zh="只陈述一次的目标，是一个会衰减的目标。上下文窗口不是保险库；它是一场缓慢的溶解。如果目标不被周期性地重新注入——有意识地、结构性地、按照一个智能体自己无法控制的节奏——那么这次运行的真实目标就会变成「最近三个工具结果所围绕的东西」。那不是一个未对齐的智能体。那是一个没有锚的智能体。">A goal stated once is a goal that decays. The context window is not a vault; it is a slow dissolve. If the objective is not periodically re-injected — deliberately, structurally, on a schedule the agent does not control — then the run's true objective becomes 'whatever the last three tool results were about.' That is not a misaligned agent. That is an unanchored one.</blockquote>
+<h3 data-en="The beacon pattern: re-anchoring on a schedule" data-zh="信标模式：按节奏重新锚定">The beacon pattern: re-anchoring on a schedule</h3>
+<p data-en="The teams that run long-horizon agents successfully share one structural habit: the goal is re-injected into the context on a schedule, not on demand. Call it the beacon pattern. Every N steps, or at every phase boundary, the harness — not the model — re-states the mission at the top of the working context: the objective, the constraints, the definition of done, and the current phase. This is different from writing a better system prompt. A better prompt optimizes the first injection; a beacon acknowledges that the first injection has a half-life, and schedules the refills. The distinction matters because the failure the beacon prevents is not misunderstanding — the model understood the goal perfectly at step one. The failure is forgetting-as-dilution: the goal remaining technically present while becoming operationally invisible." data-zh="成功运行长程智能体的团队，共享一个结构性习惯：目标按节奏被重新注入上下文，而不是按需。可以称之为信标模式。每 N 步，或每个阶段边界，由 harness——而不是模型——在工作上下文的顶部重新陈述任务：目标、约束、「完成」的定义、当前阶段。这和写一个更好的系统 prompt 不同。更好的 prompt 优化的是第一次注入；信标承认第一次注入有半衰期，并为补充注入排出时间表。这个区分很重要，因为信标所防止的失败不是误解——模型在第一步时对目标的理解完美无缺。它防止的是「稀释式遗忘」：目标在技术上仍然在场，在操作上却已不可见。">The teams that run long-horizon agents successfully share one structural habit: the goal is re-injected into the context on a schedule, not on demand. Call it the beacon pattern. Every N steps, or at every phase boundary, the harness — not the model — re-states the mission at the top of the working context. This is different from writing a better system prompt. A better prompt optimizes the first injection; a beacon acknowledges that the first injection has a half-life, and schedules the refills.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrB1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrB2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+</defs>
+<text data-en="THE BEACON PATTERN: REFUELING THE GOAL MID-FLIGHT" data-zh="信标模式：在飞行途中为目标补给" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE BEACON PATTERN: REFUELING THE GOAL MID-FLIGHT</text>
+<!-- agent work band -->
+<rect fill="var(--bg-surface)" height="70" opacity="0.6" rx="10" stroke="var(--border)" stroke-width="1" width="500" x="60" y="60"></rect>
+<text data-en="agent work: steps 1–40" data-zh="智能体工作：第 1–40 步" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="78">agent work: steps 1–40</text>
+<!-- work arrows -->
+<path d="M90 110 L520 110" fill="none" marker-end="url(#arrB1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- gates -->
+<rect fill="var(--accent-dim)" height="40" rx="8" stroke="var(--accent-2)" stroke-width="2" width="86" x="137" y="90"></rect>
+<text data-en="gate 1" data-zh="关卡 1" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="180" y="114">gate 1</text>
+<rect fill="var(--accent-dim)" height="40" rx="8" stroke="var(--accent-2)" stroke-width="2" width="86" x="267" y="90"></rect>
+<text data-en="gate 2" data-zh="关卡 2" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="114">gate 2</text>
+<rect fill="var(--accent-dim)" height="40" rx="8" stroke="var(--accent-2)" stroke-width="2" width="86" x="397" y="90"></rect>
+<text data-en="gate 3" data-zh="关卡 3" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="440" y="114">gate 3</text>
+<!-- beacon injections from above -->
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent)" stroke-width="2" width="330" x="145" y="180"></rect>
+<text data-en="MISSION BRIEF (versioned artifact)" data-zh="任务简报（带版本的产物）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="198">MISSION BRIEF (versioned artifact)</text>
+<text data-en="objective · constraints · definition of done" data-zh="目标 · 约束 · 「完成」的定义" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="214">objective · constraints · definition of done</text>
+<path d="M240 180 L195 134" fill="none" marker-end="url(#arrB2)" stroke="var(--accent-2)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<path d="M310 180 L310 134" fill="none" marker-end="url(#arrB2)" stroke="var(--accent-2)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<path d="M380 180 L425 134" fill="none" marker-end="url(#arrB2)" stroke="var(--accent-2)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<!-- verdicts -->
+<text data-en="✓ still on objective" data-zh="✓ 仍在目标上" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="180" y="156">still on objective</text>
+<text data-en="✓ re-anchored" data-zh="✓ 已重新锚定" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="156">re-anchored</text>
+<text data-en="✗ tangent detected → prune" data-zh="✗ 检测到跑偏 → 剪除" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="440" y="156">tangent detected → prune</text>
+<!-- harness note -->
+<text data-en="the harness injects — the model cannot skip it" data-zh="由 harness 注入——模型无法跳过" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="262">the harness injects — the model cannot skip it</text>
+<text data-en="drift half-life ≈ the interval between gates" data-zh="漂移半衰期 ≈ 关卡之间的间隔" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="282">drift half-life ≈ the interval between gates</text>
+</svg>
+<p class="diagram-caption" data-en="At each gate, the harness re-injects the mission brief at the top of the working context and runs a cheap alignment check against the stated definition of done. Gates are placed by the team, on a schedule — the model cannot defer, skip, or renegotiate them. Effective drift is bounded by the interval between gates: whatever bends off-course gets caught at the next beacon, not at the post-mortem." data-zh="在每个关卡，harness 把任务简报重新注入到工作上下文的顶部，并对照「完成」的定义跑一次廉价的对齐检查。关卡由团队按节奏放置——模型不能推迟、跳过或重新谈判。有效漂移被关卡间隔所限定：任何跑偏都会在下一个信标被抓住，而不是在事后复盘里。">At each gate, the harness re-injects the mission brief at the top of the working context and runs a cheap alignment check against the stated definition of done. Gates are placed by the team, on a schedule — the model cannot defer, skip, or renegotiate them. Effective drift is bounded by the interval between gates: whatever bends off-course gets caught at the next beacon, not at the post-mortem.</p>
+</div>
+<p data-en="The second half of the pattern is the check itself. Re-injection without verification is just a louder prompt. What gives the beacon teeth is a cheap, mechanical comparison between the current trajectory and the definition of done: a verifier that reads the mission brief and the last few actions, and answers one question — are these actions in service of this brief? The check does not need to be an oracle. It needs to be a tripwire. A small model, a rubric, even a keyword overlap against the success criteria will catch the gross drift that matters: the agent refactoring the build system when the mission was to fix the login bug. Gross drift is where the damage lives, and gross drift is exactly what an embarrassed-of-how-simple-it-is check will catch." data-zh="这个模式的第二半，是检查本身。只重新注入、不验证，不过是一个更响的 prompt。让信标有牙齿的，是当前轨迹与「完成」定义之间一次廉价的、机械的比对：一个验证器，读取任务简报和最近几个动作，回答一个问题——这些动作是在为这份简报服务吗？这个检查不需要成为先知。它只需要是一根绊线。一个小模型、一张评分表、甚至只是与成功标准的关键词重叠，都能抓住真正造成损害的粗粒度漂移：任务是修登录 bug，智能体却在重构构建系统。粗粒度漂移正是损害所在，而粗粒度漂移，恰恰是一个简单到让人不好意思的检查就能抓住的东西。">The second half of the pattern is the check itself. Re-injection without verification is just a louder prompt. What gives the beacon teeth is a cheap, mechanical comparison between the current trajectory and the definition of done: a verifier that reads the mission brief and the last few actions, and answers one question — are these actions in service of this brief? The check does not need to be an oracle. It needs to be a tripwire.</p>
+<h3 data-en="The goal is an artifact, not a vibe" data-zh="目标是产物，不是氛围">The goal is an artifact, not a vibe</h3>
+<p data-en="Underneath both the drift and the beacon sits the same root cause: most teams never write the goal down as a real artifact. It lives in the first user message, half-prose, half-implication, and everything downstream is interpretation. A mission brief worth re-injecting has to be worth reading: a versioned document with an objective stated as an outcome, constraints stated as testable rules, a definition of done stated as checkable criteria, and a scope boundary that names the tangents most likely to tempt the agent — the adjacent refactors, the discovered bugs, the 'while I'm in here' cleanups. Writing the anti-tangent list is the exercise that teaches the team where their agent will drift, because teams already know. They have watched it happen. The brief is just the accumulated scar tissue, made legible." data-zh="漂移与信标背后，是同一个根因：大多数团队从未把目标写成一份真正的产物。它活在第一条用户消息里，一半是散文，一半是暗示，下游的一切都是解读。一份值得重新注入的任务简报，必须值得一读：一份带版本的文档——目标被陈述为一个结果，约束被陈述为可测试的规则，「完成」的定义被陈述为可核对的判据，还有一条范围边界，点名最可能诱惑智能体的那些岔路——邻近的重构、被发现的 bug、「顺手修一下」的清理。写反岔路清单这个动作本身，就在教团队他们的智能体会往哪儿漂，因为团队其实早就知道。他们看着它发生过。任务简报，只是把这些伤痕组织变得可读。">Underneath both the drift and the beacon sits the same root cause: most teams never write the goal down as a real artifact. It lives in the first user message, half-prose, half-implication, and everything downstream is interpretation. A mission brief worth re-injecting has to be worth reading: a versioned document with an objective stated as an outcome, constraints stated as testable rules, a definition of done stated as checkable criteria, and a scope boundary that names the tangents most likely to tempt the agent.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 310" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE MISSION BRIEF AS A VERSIONED CONTRACT" data-zh="任务简报：一份带版本的契约" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE MISSION BRIEF AS A VERSIONED CONTRACT</text>
+<!-- the brief -->
+<rect fill="var(--bg-surface)" height="180" rx="12" stroke="var(--accent)" stroke-width="2" width="250" x="50" y="50"></rect>
+<text data-en="mission.md  v3" data-zh="mission.md  v3" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="175" y="76">mission.md  v3</text>
+<line stroke="var(--border)" stroke-width="1" x1="70" x2="280" y1="86" y2="86"></line>
+<text data-en="OUTCOME" data-zh="结果" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" x="70" y="106">OUTCOME</text>
+<text data-en="login bug fixed, users can auth" data-zh="登录 bug 修复，用户可认证" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" x="70" y="120">login bug fixed, users can auth</text>
+<text data-en="CONSTRAINTS (testable)" data-zh="约束（可测试）" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" x="70" y="142">CONSTRAINTS (testable)</text>
+<text data-en="no API changes · ≤200 LOC diff" data-zh="不改 API · 差异 ≤200 行" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" x="70" y="156">no API changes · ≤200 LOC diff</text>
+<text data-en="DEFINITION OF DONE" data-zh="「完成」的定义" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" x="70" y="178">DEFINITION OF DONE</text>
+<text data-en="e2e test green · reviewer sign-off" data-zh="端到端测试通过 · 评审签署" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" x="70" y="192">e2e test green · reviewer sign-off</text>
+<text data-en="OUT OF SCOPE" data-zh="范围之外" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" x="70" y="214">OUT OF SCOPE</text>
+<text data-en="build-system refactor · lint cleanup" data-zh="构建系统重构 · lint 清理" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" x="70" y="228">build-system refactor · lint cleanup</text>
+<!-- arrow to machine checks -->
+<path d="M300 140 L360 140" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<!-- gates column -->
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent)" stroke-width="1.5" width="210" x="368" y="58"></rect>
+<text data-en="machine-checkable at every gate" data-zh="每个关卡可机器核对" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="473" y="76">machine-checkable at every gate</text>
+<text data-en="diff size · API surface · test suite" data-zh="差异大小 · API 面 · 测试套件" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="473" y="92">diff size · API surface · test suite</text>
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent)" stroke-width="1.5" width="210" x="368" y="120"></rect>
+<text data-en="drift tripwire at every gate" data-zh="每个关卡的漂移绊线" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="473" y="138">drift tripwire at every gate</text>
+<text data-en="actions vs brief: still in service?" data-zh="动作 vs 简报：仍在服务吗？" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="473" y="154">actions vs brief: still in service?</text>
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="210" x="368" y="182"></rect>
+<text data-en="amendments are commits" data-zh="修订即提交" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="473" y="200">amendments are commits</text>
+<text data-en="scope changes are visible, reviewed" data-zh="范围变更可见、可评审" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="473" y="216">scope changes are visible, reviewed</text>
+<!-- version trail -->
+<text data-en="v1" data-zh="v1" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" x="52" y="256">v1</text>
+<line stroke="var(--border)" stroke-width="1" x1="68" x2="86" y1="252" y2="252"></line>
+<text data-en="v2" data-zh="v2" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" x="90" y="256">v2</text>
+<line stroke="var(--border)" stroke-width="1" x1="106" x2="124" y1="252" y2="252"></line>
+<text data-en="v3 ← current" data-zh="v3 ← 当前" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" x="128" y="256">v3 ← current</text>
+<text data-en="when the goal legitimately changes, the brief changes — visibly, with a diff" data-zh="当目标合理地变化时，简报随之变化——显式地、带着 diff" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="292">when the goal legitimately changes, the brief changes — visibly, with a diff</text>
+</svg>
+<p class="diagram-caption" data-en="The brief is a contract with three properties: it is versioned (every legitimate scope change is a visible commit, not a silent re-interpretation), it is checkable (constraints and done-criteria map to machine-runnable checks), and it is injected (the harness re-states it at every gate). Drift does not disappear — it becomes an auditable event with a timestamp, instead of a surprise in the final deliverable." data-zh="这份简报是一份契约，有三个属性：它是带版本的（每一次合理的范围变更都是一个可见的提交，而不是一次无声的重新解读）；它是可核对的（约束与完成判据映射到可机器运行的检查）；它是被注入的（harness 在每个关卡重新陈述它）。漂移不会消失——但它从一个最终交付物里的惊吓，变成了一个带时间戳的、可审计的事件。">The brief is a contract with three properties: it is versioned (every legitimate scope change is a visible commit, not a silent re-interpretation), it is checkable (constraints and done-criteria map to machine-runnable checks), and it is injected (the harness re-states it at every gate). Drift does not disappear — it becomes an auditable event with a timestamp, instead of a surprise in the final deliverable.</p>
+</div>
+<p data-en="There will be a objection: sometimes the goal should change mid-run. The mission was to fix the bug; fixing it properly requires the refactor; the refactor is the right call. True — and this is precisely why the brief is versioned. The answer to 'goals must evolve' is not 'let them evolve silently inside a context window.' It is 'evolve them the way code evolves: as a visible change to an artifact, made deliberately, ideally with a human review for the scope-widening ones.' The agent can propose an amendment. The harness applies it as a new version. The next gate re-anchors to the new brief. What is never allowed is the third path — the one most runs take today — where the goal mutates inside the accumulated context, no one can point to the moment it changed, and the deliverable arrives with a straight face and a different mission." data-zh="会有一个反对意见：有时目标就应该在运行中改变。任务是修 bug；要正确地修它需要那次重构；重构是对的决定。没错——而这正是简报要带版本的原因。对「目标必须演进」的回答，不是「让它在上下文窗口里无声地演进」。而是「像代码演进那样演进它：作为对一个产物的可见变更，被审慎地做出，对于扩大范围的变更，最好加上人类评审」。智能体可以提议一份修订。harness 把它应用为新版本。下一个关卡锚定到新简报。永远不被允许的，是第三条路——也是今天大多数运行走的那条路——目标在累积的上下文里突变，没有人能指出它改变的那一刻，而交付物带着一张坦然的脸和另一个任务抵达。">There will be an objection: sometimes the goal should change mid-run. The mission was to fix the bug; fixing it properly requires the refactor; the refactor is the right call. True — and this is precisely why the brief is versioned. The answer to 'goals must evolve' is not 'let them evolve silently inside a context window.' It is 'evolve them the way code evolves: as a visible change to an artifact, made deliberately.' The agent can propose an amendment. The harness applies it as a new version. The next gate re-anchors to the new brief.</p>
+<p data-en="None of this is glamorous. A versioned mission brief, a gate every few steps, a tripwire check that a small model could run — it looks like project management dressed up as AI engineering. But that is what long-horizon agent engineering increasingly is. The model supplies the intelligence; the hard problems are the ones intelligence cannot solve alone: what to keep visible, when to re-anchor, how to make a goal survive its own transit through forty steps of accumulating context. Short agents need prompts. Long agents need constitutions. The goal that arrives is never the goal that was sent — unless the system was built to carry it." data-zh="这些没有一样是光鲜的。一份带版本的任务简报、每隔几步的一个关卡、一个小模型就能跑的绊线检查——看起来像披着 AI 工程外衣的项目管理。但长程智能体工程，越来越多地正是如此。模型提供智能；而困难的问题是那些智能无法独自解决的问题：保持什么可见、何时重新锚定、如何让一个目标活着穿过四十步不断累积的上下文。短程智能体需要 prompt。长程智能体需要宪法。抵达的目标，永远不会是出发时的那个——除非这个系统，就是为了运载它而建造的。">None of this is glamorous. A versioned mission brief, a gate every few steps, a tripwire check that a small model could run — it looks like project management dressed up as AI engineering. But that is what long-horizon agent engineering increasingly is. The model supplies the intelligence; the hard problems are the ones intelligence cannot solve alone. Short agents need prompts. Long agents need constitutions. The goal that arrives is never the goal that was sent — unless the system was built to carry it.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
