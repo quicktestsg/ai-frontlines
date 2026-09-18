@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Agents That Remember to Forget — AI Frontlines</title>
+<meta content="Every agent accumulates context — tool results, partial drafts, dead-end explorations — and most systems never delete a thing. The context window becomes a landfill. The agents that survive long tasks are the ones with an explicit forgetting policy: what to keep, what to compress, what to discard, and when." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 19, 2026" data-zh="2026年9月19日">September 19, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="10 min read" data-zh="约 10 分钟">10 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Agents That Remember to Forget" data-zh="会记住去遗忘的智能体">Agents That Remember to Forget</h1>
+<p class="post-header-deck" data-en="Every agent accumulates context. Tool results pile up, half-finished drafts linger, dead-end explorations stay in the transcript long after they stopped mattering. Most systems never delete anything — the context window is treated as a landfill with a generous capacity, and the bet is that the model will somehow ignore the garbage. It will not. Attention is diluted, not redirected. The agents that survive long tasks are not the ones with bigger windows. They are the ones with an explicit forgetting policy: a deliberate answer to what gets kept, what gets compressed, what gets discarded — and when." data-zh="每一个智能体都在积累上下文。工具结果层层堆积，写了一半的草稿挥之不去，走进死胡同的探索在早已无关紧要之后，还留在对话记录里。大多数系统从不删除任何东西——上下文窗口被当成一个容量可观的垃圾填埋场，赌的是模型总归能忽略垃圾。它不能。注意力是被稀释的，不是被重定向的。能在长任务里活下来的智能体，不是窗口更大的那些，而是有明确遗忘策略的那些——对「什么保留、什么压缩、什么丢弃、何时执行」这个问题，给出过深思熟虑的回答。">Every agent accumulates context. Tool results pile up, half-finished drafts linger, dead-end explorations stay in the transcript long after they stopped mattering. Most systems never delete anything — and the bet is that the model will somehow ignore the garbage.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a strange asymmetry at the heart of agent engineering. On the input side, teams obsess over retrieval — embeddings, rerankers, hybrid search, query expansion, every technique imaginable to get the right facts into the context. On the output side, nothing leaves. The transcript only grows. A forty-step research agent carries the full text of every page it ever fetched, including the seven it fetched before realizing the search query was wrong. A coding agent carries every stack trace from every failed test run, even after the fix landed. The assumption buried in this design is that context is free — that a token which stops being useful simply costs nothing. But context is not free. Every token in the window is re-read, re-attended, re-priced on every single generation step. A useless token is not inert. It is a tax levied on every word the model produces for the rest of the run." data-zh="智能体工程的中心，藏着一个奇怪的不对称。输入这一侧，团队对检索近乎偏执——embedding、重排序、混合搜索、查询扩展，凡是能把正确事实送进上下文的技术，无所不用。输出这一侧，却什么都不会离开。对话记录只会增长。一个走了四十步的研究智能体，携带着它抓取过的每一个页面的全文，包括它在意识到搜索词写错之前抓的那七个页面。一个编程智能体，携带着每一次失败测试的完整堆栈跟踪，哪怕修复早已提交。埋在这个设计里的假设是：上下文是免费的——一个不再有用的 token，成本为零。但上下文不免费。窗口里的每一个 token，在之后的每一次生成步骤里，都会被重新读取、重新注意、重新计价。一个无用的 token 不是惰性的。它是向模型在本次运行剩余部分产出的每一个字，反复征收的税。">There is a strange asymmetry at the heart of agent engineering. On the input side, teams obsess over retrieval — embeddings, rerankers, hybrid search, every technique imaginable to get the right facts into the context. On the output side, nothing leaves. The transcript only grows. A forty-step research agent carries the full text of every page it ever fetched, including the seven it fetched before realizing the search query was wrong. The assumption buried in this design is that context is free. It is not. Every token in the window is re-read, re-attended, re-priced on every single generation step. A useless token is not inert. It is a tax levied on every word the model produces for the rest of the run.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrM1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrM2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrM3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE LANDFILL vs THE LEDGER" data-zh="垃圾填埋场 vs 记账本" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE LANDFILL vs THE LEDGER</text>
+<!-- LEFT: append-only landfill -->
+<text data-en="APPEND-ONLY CONTEXT" data-zh="只增不删的上下文" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="56">APPEND-ONLY CONTEXT</text>
+<g opacity="0.9">
+<rect fill="var(--bg-surface)" height="22" rx="4" stroke="var(--accent-3)" stroke-width="1.2" width="180" x="65" y="74"></rect>
+<rect fill="var(--bg-surface)" height="22" rx="4" stroke="var(--accent-3)" stroke-width="1.2" width="190" x="60" y="102"></rect>
+<rect fill="var(--bg-surface)" height="22" rx="4" stroke="var(--accent-3)" stroke-width="1.2" width="200" x="55" y="130"></rect>
+<rect fill="var(--bg-surface)" height="22" rx="4" stroke="var(--accent-3)" stroke-width="1.2" width="210" x="50" y="158"></rect>
+<rect fill="var(--bg-surface)" height="22" rx="4" stroke="var(--accent-3)" stroke-width="1.2" width="220" x="45" y="186"></rect>
+<rect fill="var(--accent-dim)" height="22" rx="4" stroke="var(--accent-3)" stroke-width="1.6" width="230" x="40" y="214"></rect>
+</g>
+<text data-en="turn 1 · turn 2 · turn 3 · ... turn 40 — nothing leaves" data-zh="第1轮 · 第2轮 · 第3轮 · ... 第40轮——无一离开" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="155" y="256">turn 1 · turn 2 · turn 3 · ... turn 40 — nothing leaves</text>
+<text data-en="cost grows linearly, signal shrinks" data-zh="成本线性增长，信号持续萎缩" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="280">cost grows linearly, signal shrinks</text>
+<path d="M60 300 C90 316 220 316 250 300" fill="none" stroke="var(--accent-3)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<text data-en="attention diluted across everything" data-zh="注意力被一切稀释" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="155" y="336">attention diluted across everything</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="330"></line>
+<!-- RIGHT: managed ledger -->
+<text data-en="MANAGED CONTEXT" data-zh="受管理的上下文" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="56">MANAGED CONTEXT</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="96" x="417" y="72"></rect>
+<text data-en="new result" data-zh="新结果" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="93">new result</text>
+<path d="M465 106 L465 124" fill="none" marker-end="url(#arrM2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="44" rx="9" stroke="var(--accent)" stroke-width="2" width="150" x="390" y="126"></rect>
+<text data-en="working set" data-zh="工作集" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="146">working set</text>
+<text data-en="bounded · curated · current" data-zh="有界 · 精选 · 时新" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="465" y="162">bounded · curated · current</text>
+<path d="M390 148 C340 148 320 170 318 194" fill="none" marker-end="url(#arrM2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M540 148 C590 148 606 170 608 194" fill="none" marker-end="url(#arrM1)" stroke="var(--text-tertiary)" stroke-width="1.3"></path>
+<text data-en="compress" data-zh="压缩" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="322" y="176">compress</text>
+<text data-en="forget" data-zh="遗忘" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="592" y="176">forget</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.4" width="120" x="258" y="196"></rect>
+<text data-en="distilled summary" data-zh="蒸馏摘要" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="318" y="215">distilled summary</text>
+<rect fill="none" height="30" rx="7" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="3,2" width="90" x="560" y="196"></rect>
+<text data-en="discarded" data-zh="已丢弃" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="605" y="215">discarded</text>
+<path d="M318 226 C360 246 440 246 462 230" fill="none" marker-end="url(#arrM3)" stroke="var(--accent-3)" stroke-width="1.3" stroke-dasharray="4,3"></path>
+<text data-en="re-injected on demand" data-zh="按需重新注入" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="390" y="256">re-injected on demand</text>
+<text data-en="cost stays flat, signal stays dense" data-zh="成本保持平稳，信号保持致密" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="290">cost stays flat, signal stays dense</text>
+<path d="M400 306 C430 322 500 322 530 306" fill="none" stroke="var(--accent)" stroke-width="1.4"></path>
+<text data-en="attention focused on what matters" data-zh="注意力聚焦于重要之事" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="465" y="336">attention focused on what matters</text>
+</svg>
+<p class="diagram-caption" data-en="Left: the landfill. Every turn's raw output is retained forever; the window fills with sediment and the model pays for all of it, every step. Right: the ledger. New results enter a bounded working set; stale material is either compressed into a distilled summary that can be re-injected on demand, or deliberately forgotten. The window stays small because the policy — not the model — decides what remains." data-zh="左边：垃圾填埋场。每一轮的原始输出被永久保留；窗口被沉积物填满，而模型在每一步都为全部内容付费。右边：记账本。新结果进入一个有界的工作集；过时的材料要么被压缩成可按需重新注入的蒸馏摘要，要么被有意遗忘。窗口保持小巧，因为决定「什么留下」的是策略，而不是模型。">Left: the landfill. Every turn's raw output is retained forever; the window fills with sediment and the model pays for all of it, every step. Right: the ledger. New results enter a bounded working set; stale material is compressed into a re-injectable summary, or deliberately forgotten. The window stays small because the policy — not the model — decides what remains.</p>
+</div>
+<h3 data-en="Forgetting is a design decision, not a failure" data-zh="遗忘是设计决策，不是失败">Forgetting is a design decision, not a failure</h3>
+<p data-en="Human memory does not work like a transcript, and this is not a limitation to be pitied but a feature to be studied. A person debugging a problem all afternoon does not retain verbatim memory of every error message they saw at 9am. They retain the conclusion those messages pointed to — the shape of the failure, the hypotheses that were eliminated, the one thread that still looks promising. The raw text is gone; the knowledge extracted from it remains. This compression is not loss in the sense engineers fear. It is the entire point. What makes an expert fast is not that they remember more, but that they remember less, better." data-zh="人类的记忆并不像对话记录那样工作，而这不是一个值得同情的局限，而是一个值得研究的设计。一个人调试了一下午的问题，并不会逐字记住早上九点看过的每一条报错。他保留的是那些报错指向的结论——失败的形状、被排除的假设、仍然看起来有希望的那条线索。原始文本消失了；从中提取出的知识留下了。这种压缩，并不是工程师所恐惧的那种「损失」。它恰恰是全部意义所在。让专家快的，不是记得更多，而是记得更少、更好。">Human memory does not work like a transcript, and this is not a limitation to be pitied but a feature to be studied. A person debugging a problem all afternoon does not retain verbatim memory of every error message they saw at 9am. They retain the conclusion those messages pointed to — the shape of the failure, the hypotheses that were eliminated, the one thread that still looks promising. The raw text is gone; the knowledge extracted from it remains. This compression is not loss in the sense engineers fear. It is the entire point.</p>
+<p data-en="Agent systems need the same discipline, and almost none of them have it. The default architecture treats the context window as sacred: everything that entered must remain, because deleting feels like destroying evidence. But there is a difference between evidence and sediment. The tool result that proved the API returns 404 on malformed input is evidence — once, when it happened. Twelve turns later, with the input fixed and the flow working, that same 3,000-token error dump is sediment. Keeping it does not preserve knowledge. It buries the knowledge that still matters under the corpse of a problem that was already solved." data-zh="智能体系统需要同样的纪律，而几乎没有任何一个拥有它。默认架构把上下文窗口奉为神圣：凡是进入的都必须留下，因为删除感觉像是在销毁证据。但证据和沉积物是两回事。那个证明了「API 在输入格式错误时返回 404」的工具结果，是证据——在它发生的那一刻。十二轮之后，输入已修复、流程已跑通，那坨三千 token 的错误转储，就是沉积物。留下它，并不能保存知识。它把仍然重要的知识，埋在一个早已解决的问题的尸体下面。">Agent systems need the same discipline, and almost none of them have it. The default architecture treats the context window as sacred: everything that entered must remain, because deleting feels like destroying evidence. But there is a difference between evidence and sediment. The tool result that proved the API returns 404 on malformed input is evidence — once, when it happened. Twelve turns later, with the input fixed and the flow working, that same 3,000-token error dump is sediment.</p>
+<blockquote data-en="A context window is not an archive. It is a desk. The best desks are not the biggest ones — they are the ones where someone decided what deserves to be on them. Forgetting is the price of focus, and focus is the currency of long tasks." data-zh="上下文窗口不是档案馆。它是书桌。最好的书桌，不是最大的那张——而是有人决定过「什么配摆在其上」的那张。遗忘是专注的代价，而专注，是长任务的硬通货。">A context window is not an archive. It is a desk. The best desks are not the biggest ones — they are the ones where someone decided what deserves to be on them. Forgetting is the price of focus, and focus is the currency of long tasks.</blockquote>
+<h3 data-en="The value curve of a fact" data-zh="一条事实的价值曲线">The value curve of a fact</h3>
+<p data-en="Not all context ages at the same rate, and a serious memory policy starts by admitting this. Some facts appreciate: the user's core goal, stated constraints, decisions already made and ratified. These should survive every compression pass, verbatim if possible, because they are the constitution of the run. Some facts hold steady: the schema of the database being queried, the API of the tool being driven. These compress well into reference form and can be re-expanded from documentation when needed. And some facts decay aggressively: search results superseded by better ones, intermediate drafts replaced by newer drafts, error states that were resolved. The policy's job is to sort incoming context into these classes — and to re-sort it periodically, because a fact can migrate. The draft that was the current answer becomes a dead draft the moment a better one exists. Nothing announces this migration. Either the system notices, or the model keeps politely consulting a corpse." data-zh="并非所有上下文以同样的速度老化，而一个严肃的记忆策略，从承认这一点开始。有些事实在增值：用户的核心目标、明说的约束、已做出并被确认的决策。它们应当在每一次压缩中幸存，尽可能逐字保留，因为它们是这次运行的宪法。有些事实保持平稳：正在查询的数据库的 schema、正在驱动的工具的 API。它们能很好地压缩成参考形式，需要时可以从文档重新展开。还有一些事实在剧烈衰减：被更好的结果取代的搜索结果、被更新草稿替换的中间草稿、已经被解决的错误状态。策略的职责，是把新进入的上下文分进这些类别——并且定期重新分类，因为事实会迁移。曾是最优答案的草稿，在更好的草稿出现的那一刻，就变成了死草稿。没有任何东西会宣告这次迁移。要么系统察觉，要么模型继续彬彬有礼地咨询一具尸体。">Not all context ages at the same rate. Some facts appreciate: the user's core goal, stated constraints, ratified decisions — these should survive every compression pass. Some hold steady: schemas, tool APIs — these compress into reference form. And some decay aggressively: superseded search results, replaced drafts, resolved error states. A fact can migrate between classes. The draft that was the current answer becomes a dead draft the moment a better one exists. Nothing announces this. Either the system notices, or the model keeps politely consulting a corpse.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrV1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="HOW CONTEXT VALUE DECAYS OVER TURNS" data-zh="上下文价值如何随轮次衰减" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">HOW CONTEXT VALUE DECAYS OVER TURNS</text>
+<!-- axes -->
+<line stroke="var(--border)" stroke-width="1.5" x1="70" x2="580" y1="270" y2="270"></line>
+<line stroke="var(--border)" stroke-width="1.5" x1="70" x2="70" y1="40" y2="270"></line>
+<text data-en="usefulness →" data-zh="有用度 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" transform="rotate(-90 40 155)" x="40" y="155">usefulness →</text>
+<text data-en="turns since the fact entered context →" data-zh="事实进入上下文后的轮次 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="325" y="298">turns since the fact entered context →</text>
+<!-- appreciating: constitution facts -->
+<path d="M70 90 C150 80 300 78 580 76" fill="none" stroke="var(--accent)" stroke-width="2.4"></path>
+<text data-en="constitution — goals, constraints, decisions" data-zh="宪法层——目标、约束、决策" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="325" y="62">constitution — goals, constraints, decisions</text>
+<!-- steady: reference facts -->
+<path d="M70 150 C160 146 260 152 580 148" fill="none" stroke="var(--accent-2)" stroke-width="2" stroke-dasharray="6,3"></path>
+<text data-en="reference — schemas, APIs, formats" data-zh="参考层——schema、API、格式" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="325" y="134">reference — schemas, APIs, formats</text>
+<!-- decaying: operational facts -->
+<path d="M70 100 C120 180 180 236 260 252 C330 264 380 266 580 266" fill="none" stroke="var(--accent-3)" stroke-width="2" stroke-dasharray="3,3"></path>
+<text data-en="sediment — old results, dead drafts, fixed errors" data-zh="沉积层——旧结果、死草稿、已修复的错误" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="end" x="578" y="240">sediment — old results, dead drafts, fixed errors</text>
+<!-- threshold -->
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="70" x2="580" y1="212" y2="212"></line>
+<text data-en="keep threshold" data-zh="保留阈值" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="start" x="76" y="226">keep threshold</text>
+<!-- annotation -->
+<circle cx="360" cy="258" fill="var(--accent-3)" r="4"></circle>
+<path d="M360 258 C380 220 420 190 470 176" fill="none" marker-end="url(#arrV1)" stroke="var(--accent-3)" stroke-width="1"></path>
+<text data-en="below threshold: compress or forget" data-zh="低于阈值：压缩或遗忘" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="470" y="166">below threshold: compress or forget</text>
+</svg>
+<p class="diagram-caption" data-en="Three classes of context, three fates. Constitution facts (goals, constraints, ratified decisions) hold their value across the whole run and must survive compression intact. Reference facts (schemas, tool APIs) hold steady and compress well. Operational facts — search results, drafts, error dumps — decay fast, cross the keep threshold within a handful of turns, and should be compressed into conclusions or forgotten outright. Most systems treat all three identically. That is the defect." data-zh="三类上下文，三种命运。宪法层事实（目标、约束、已确认的决策）在整个运行期间保持价值，必须在压缩中原样幸存。参考层事实（schema、工具 API）保持平稳，压缩表现良好。操作层事实——搜索结果、草稿、错误转储——衰减极快，几轮之内便跌破保留阈值，应当被压缩成结论，或被彻底遗忘。大多数系统对三者一视同仁。这正是缺陷所在。">Three classes of context, three fates. Constitution facts hold their value across the whole run and must survive compression intact. Reference facts hold steady and compress well. Operational facts decay fast, cross the keep threshold within a handful of turns, and should be compressed into conclusions or forgotten outright. Most systems treat all three identically. That is the defect.</p>
+</div>
+<h3 data-en="The three-tier recall architecture" data-zh="三层召回架构">The three-tier recall architecture</h3>
+<p data-en="In practice, a workable memory policy resolves into three tiers, and the interesting engineering lives in the transitions between them. The first tier is the working set: everything currently in the context window, raw and unsummarized. It is small, hot, and expensive. The second tier is the episodic store: compressed records of what happened — the distilled summaries of past turns, keyed by what they concluded, retrievable when a conclusion becomes relevant again. The third tier is the semantic store: durable knowledge about the task domain, the user, the codebase — the stuff that outlives any single run. Facts flow downward under pressure: when the working set exceeds its budget, the oldest sediment is compressed into the episodic store; when a pattern repeats across episodes, it is promoted into the semantic store as learned knowledge. Facts flow upward on demand: retrieval pulls from the semantic store into the working set, and episodic records are re-expanded when the current problem rhymes with a past one." data-zh="在实践中，一个可行的记忆策略落实为三层，而有趣的工程，恰好活在层与层之间的迁移里。第一层是工作集：当前处于上下文窗口中的一切，原始、未摘要。它小、热、贵。第二层是情景存储：关于「发生了什么」的压缩记录——过去各轮的蒸馏摘要，以它们得出的结论为键，当某个结论再次变得相关时可以检索。第三层是语义存储：关于任务领域、用户、代码库的持久知识——比任何一次运行都活得久的东西。事实在压力下向下流动：当工作集超出预算，最老的沉积物被压缩进情景存储；当一个模式在多个情景中重复出现，它被提升进语义存储，成为学到的知识。事实按需向上流动：检索把语义存储拉进工作集，当当前问题与过去某个问题押韵时，情景记录被重新展开。">In practice, a workable memory policy resolves into three tiers, and the interesting engineering lives in the transitions. The working set: everything currently in context, raw and unsummarized — small, hot, expensive. The episodic store: compressed records of what happened, keyed by conclusion, retrievable when relevant. The semantic store: durable knowledge that outlives any single run. Facts flow downward under pressure and upward on demand.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrT2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THREE TIERS, TWO DIRECTIONS" data-zh="三个层级，两个方向" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THREE TIERS, TWO DIRECTIONS</text>
+<!-- Tier 1 -->
+<rect fill="var(--accent-dim)" height="52" rx="10" stroke="var(--accent)" stroke-width="2.4" width="240" x="190" y="46"></rect>
+<text data-en="① WORKING SET" data-zh="① 工作集" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="310" y="68">WORKING SET</text>
+<text data-en="in-context · raw · hot · expensive" data-zh="在上下文内 · 原始 · 热 · 昂贵" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="86">in-context · raw · hot · expensive</text>
+<!-- Tier 2 -->
+<rect fill="var(--bg-surface)" height="52" rx="10" stroke="var(--accent-2)" stroke-width="1.8" width="240" x="190" y="142"></rect>
+<text data-en="② EPISODIC STORE" data-zh="② 情景存储" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="310" y="164">EPISODIC STORE</text>
+<text data-en="compressed turns · keyed by conclusion" data-zh="压缩后的轮次 · 以结论为键" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="182">compressed turns · keyed by conclusion</text>
+<!-- Tier 3 -->
+<rect fill="var(--bg-surface)" height="52" rx="10" stroke="var(--text-tertiary)" stroke-width="1.5" width="240" x="190" y="238"></rect>
+<text data-en="③ SEMANTIC STORE" data-zh="③ 语义存储" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="310" y="260">SEMANTIC STORE</text>
+<text data-en="durable knowledge · outlives the run" data-zh="持久知识 · 比运行活得更久" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="278">durable knowledge · outlives the run</text>
+<!-- downward arrows (left side) -->
+<path d="M240 98 C210 112 200 124 200 138" fill="none" marker-end="url(#arrT1)" stroke="var(--accent-3)" stroke-width="1.6" stroke-dasharray="5,3"></path>
+<path d="M240 194 C210 208 200 220 200 234" fill="none" marker-end="url(#arrT1)" stroke="var(--accent-3)" stroke-width="1.6" stroke-dasharray="5,3"></path>
+<text data-en="under pressure: compress" data-zh="压力之下：压缩" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" transform="rotate(-75 175 165)" x="175" y="165">under pressure: compress</text>
+<!-- upward arrows (right side) -->
+<path d="M380 98 C410 112 420 124 420 138" fill="none" marker-end="url(#arrT2)" stroke="var(--accent)" stroke-width="1.6"></path>
+<path d="M380 194 C410 208 420 220 420 234" fill="none" marker-end="url(#arrT2)" stroke="var(--accent)" stroke-width="1.6"></path>
+<text data-en="on demand: recall" data-zh="按需：召回" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" transform="rotate(75 445 165)" x="445" y="165">on demand: recall</text>
+<!-- promotion annotation -->
+<text data-en="pattern repeats across episodes → promote to durable knowledge" data-zh="模式跨情景重复 → 提升为持久知识" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="318">pattern repeats across episodes → promote to durable knowledge</text>
+</svg>
+<p class="diagram-caption" data-en="Three tiers, two flows. Downward, under pressure: when the working set exceeds its budget, sediment is compressed into the episodic store; when patterns repeat across episodes, they are promoted into the semantic store. Upward, on demand: retrieval pulls durable knowledge back into context, and episodic records are re-expanded when the current problem rhymes with a past one. The memory is not a place. It is a set of controlled transitions." data-zh="三个层级，两条流。向下，在压力之下：当工作集超出预算，沉积物被压缩进情景存储；当模式跨情景重复，它们被提升进语义存储。向上，按需发生：检索把持久知识拉回上下文，当当前问题与过去某个问题押韵时，情景记录被重新展开。记忆不是一个地方。它是一组受控的迁移。">Three tiers, two flows. Downward under pressure: sediment compresses into episodic records, repeating patterns promote into durable knowledge. Upward on demand: retrieval pulls knowledge back into context, episodic records re-expand when the current problem rhymes with a past one. The memory is not a place. It is a set of controlled transitions.</p>
+</div>
+<h3 data-en="Compression is lossy, and that is fine — if the losses are chosen" data-zh="压缩是有损的，而那没关系——只要损失是被选择的">Compression is lossy, and that is fine — if the losses are chosen</h3>
+<p data-en="The standard objection to any of this is that summarization loses information, and a lost detail might have mattered. True. But the alternative is not zero loss — the alternative is unchosen loss. A model wading through 150,000 tokens of sediment is not reading everything faithfully; attention is quietly allocated somewhere, and the allocation is invisible, unstable, and different on every run. Attention dilution is lossy compression with no audit trail. A deliberate summarization pass is also lossy, but the losses are explicit, inspectable, and testable: the summary can be reviewed, the compression policy can be versioned, and the failures — the case where the summary dropped the fact that mattered — have an address. You can fix a policy. You cannot fix a fog." data-zh="对所有这些做法的标准反对意见是：摘要会丢失信息，而丢失的细节可能恰恰重要。没错。但替代方案并不是零损失——替代方案是「未被选择的损失」。一个跋涉在十五万 token 沉积物中的模型，并不是在忠实地阅读一切；注意力被悄悄分配到了某处，而这次分配是看不见的、不稳定的、每次运行都不同的。注意力稀释，是一种没有审计记录的有损压缩。一次有意的摘要过程同样有损，但损失是显式的、可检查的、可测试的：摘要可以被审阅，压缩策略可以被版本化，而失败——摘要丢掉了关键事实的那种情况——有址可寻。你可以修复一个策略。你没法修复一场雾。">The standard objection is that summarization loses information, and a lost detail might have mattered. True. But the alternative is not zero loss — the alternative is unchosen loss. A model wading through 150,000 tokens of sediment is not reading everything faithfully; attention is quietly allocated somewhere, invisibly, differently on every run. Attention dilution is lossy compression with no audit trail. A deliberate summarization pass is also lossy, but the losses are explicit, inspectable, testable — and when the summary drops the fact that mattered, the failure has an address. You can fix a policy. You cannot fix a fog.</p>
+<p data-en="The practical implementation is smaller than the theory suggests. A budget check at the top of every loop iteration — if the working set exceeds N tokens, run the compression pass. A summary prompt that is itself engineered carefully: extract conclusions, not chronology; keep numbers and identifiers verbatim; mark unresolved questions as unresolved, because a forgotten open question is a silent wrong answer waiting to happen. A promotion rule that runs at the end of the run: which episodic conclusions showed up three times? Write them to the durable store. None of this requires new infrastructure. It requires something rarer — a decision that memory is a managed resource with a policy, an owner, and a budget, rather than a magical window that absorbs everything and is never audited." data-zh="实际实现，比理论所暗示的要小。在循环每次迭代的开头做一次预算检查——如果工作集超过 N 个 token，就执行一次压缩。一份本身被认真工程过的摘要 prompt：提取结论，而不是年表；数字和标识符逐字保留；把未解决的问题明确标记为未解决，因为一个被遗忘的开放问题，就是一个静静等待发生的错误答案。一条在运行结束时执行的提升规则：哪些情景结论出现了三次？把它们写进持久存储。这些没有一项需要新的基础设施。它需要的是更稀缺的东西——一个决定：记忆是一种被管理的资源，有策略、有归属、有预算，而不是一个吞下一切、从不停审计的魔法窗口。">The practical implementation is smaller than the theory suggests. A budget check at the top of every loop iteration. A summary prompt that is itself engineered carefully: extract conclusions, not chronology; keep numbers and identifiers verbatim; mark unresolved questions as unresolved. A promotion rule at the end of the run: which episodic conclusions showed up three times? Write them to the durable store. None of this requires new infrastructure. It requires a decision: that memory is a managed resource with a policy, an owner, and a budget.</p>
+<p data-en="The field's instinct is to reach for bigger windows whenever memory hurts, and the windows will keep growing. But a bigger landfill is not a memory system, and no window size makes sediment useful. The long tasks — the ones that actually matter, the multi-day research runs, the agents that live inside a codebase for a season — will not be won by capacity. They will be won by the teams that treated forgetting as a first-class engineering problem: deliberate, versioned, observable. Remembering everything is what databases are for. An agent's job is to remember the right things — which means, necessarily, choosing what to forget." data-zh="这个领域的直觉是：每当记忆吃紧，就去够更大的窗口，而窗口也会继续变大。但一个更大的垃圾填埋场并不是记忆系统，也没有任何窗口尺寸能让沉积物变得有用。那些长任务——真正重要的那些、持续多天的研究运行、整个季节活在代码库里的智能体——不会由容量赢得。它们会被那些把遗忘当作一等工程问题的团队赢得：深思熟虑、版本化、可观测。记住一切，是数据库的本职。智能体的职责，是记住对的东西——而这必然意味着，选择去遗忘什么。">The field's instinct is to reach for bigger windows whenever memory hurts, and the windows will keep growing. But a bigger landfill is not a memory system, and no window size makes sediment useful. The long tasks — the multi-day research runs, the agents that live inside a codebase for a season — will not be won by capacity. They will be won by the teams that treated forgetting as a first-class engineering problem: deliberate, versioned, observable. Remembering everything is what databases are for. An agent's job is to remember the right things — which means, necessarily, choosing what to forget.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
