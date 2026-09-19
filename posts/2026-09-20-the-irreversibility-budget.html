@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Irreversibility Budget — AI Frontlines</title>
+<meta content="Agents graduate from reading the world to writing it, and the moment they do, reversibility becomes the axis that matters. Risk is the wrong lens — an action either can be taken back or it cannot. Systems that survive treat undo as a designed capability: staged writes, two-phase applies, compensation edges, and a budget for the actions that can never be recalled." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 20, 2026" data-zh="2026年9月20日">September 20, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Irreversibility Budget" data-zh="不可逆预算">The Irreversibility Budget</h1>
+<p class="post-header-deck" data-en="Every agent eventually graduates from reading the world to writing it — sending the email, merging the PR, placing the order. The moment that happens, the most important property of any action stops being how risky it is and becomes whether it can be taken back. Most agent stacks have no concept of undo. They classify actions by severity, wrap the scary ones in a confirm dialog, and hope. But an action either has a path back or it does not, and engineering that path — staged writes, two-phase applies, compensation edges — is what separates an agent demo from agent infrastructure." data-zh="每一个智能体，最终都会从「读世界」毕业到「写世界」——发出那封邮件、合并那个 PR、下那笔订单。从那一刻起，任何动作最重要的属性，就不再是它有多危险，而是它能不能被收回。大多数智能体技术栈里没有「撤销」这个概念。它们按严重程度给动作分级，给吓人的那些包上一层确认弹窗，然后祈祷。但一个动作，要么有一条回去的路，要么没有——而把这条路工程化出来——暂存写入、两阶段提交、补偿边——正是区分智能体 demo 和智能体基础设施的东西。">Every agent eventually graduates from reading the world to writing it — sending the email, merging the PR, placing the order. The moment that happens, the most important property of any action stops being how risky it is and becomes whether it can be taken back.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a moment in the life of every agent project when the system stops being a toy. It is not when the model gets smart enough. It is not when the retrieval works. It is the first time the agent performs an action the world will remember — the first email actually sent, the first row actually deleted, the first dollar actually spent. Before that moment, every failure is a learning experience. After it, every failure is an incident. And yet almost nothing in the typical agent stack acknowledges this transition. The same loop that was calling search() last month is calling send_payment() this month, with one new paragraph in the system prompt and a boolean flag named allow_actions set to true. The stack treats a read and a write as the same kind of thing: a tool call, with a name and arguments and a result. The world does not treat them as the same kind of thing. The world keeps score." data-zh="每一个智能体项目的一生中，都有那么一个时刻，系统不再是玩具。那个时刻，不是模型变得足够聪明的时候。不是检索跑通的时候。而是智能体第一次执行一个世界会记住的动作——第一封真正发出的邮件、第一行真正删除的数据、第一笔真正花出去的钱。在那个时刻之前，每一次失败都是学习。在它之后，每一次失败都是事故。然而，典型的智能体技术栈里，几乎没有任何东西承认这个转变。上个月还在调 search() 的那个循环，这个月在调 send_payment()，区别只是系统 prompt 里多了一段话、和一个叫 allow_actions 的布尔值被设成了 true。技术栈把读和写当作同一类东西：一个工具调用，有名字、有参数、有返回值。而世界不把它们当作同一类东西。世界，是记账的。">There is a moment in the life of every agent project when the system stops being a toy. It is not when the model gets smart enough. It is the first time the agent performs an action the world will remember — the first email actually sent, the first row actually deleted, the first dollar actually spent. Before that moment, every failure is a learning experience. After it, every failure is an incident.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE REVERSIBILITY SPECTRUM" data-zh="可逆性光谱" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE REVERSIBILITY SPECTRUM</text>
+<!-- spectrum bar: three zones -->
+<rect fill="var(--accent-2)" height="14" opacity="0.55" rx="4" width="180" x="55" y="140"></rect>
+<rect fill="var(--accent)" height="14" opacity="0.55" width="170" x="235" y="140"></rect>
+<rect fill="var(--accent-3)" height="14" opacity="0.55" rx="4" width="160" x="405" y="140"></rect>
+<!-- zone labels -->
+<text data-en="fully reversible" data-zh="完全可逆" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="145" y="128">fully reversible</text>
+<text data-en="recoverable" data-zh="可挽回" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="320" y="128">recoverable</text>
+<text data-en="irreversible" data-zh="不可逆" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="485" y="128">irreversible</text>
+<!-- ticks -->
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="100" x2="100" y1="154" y2="176"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="195" x2="195" y1="154" y2="176"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="290" x2="290" y1="154" y2="176"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="385" x2="385" y1="154" y2="176"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="480" x2="480" y1="154" y2="176"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="530" x2="530" y1="154" y2="176"></line>
+<!-- action labels -->
+<text data-en="read" data-zh="读取" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="100" y="192">read</text>
+<text data-en="cache write" data-zh="缓存写入" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="195" y="192">cache write</text>
+<text data-en="DB txn" data-zh="数据库事务" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="290" y="192">DB txn</text>
+<text data-en="send email" data-zh="发送邮件" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="385" y="192">send email</text>
+<text data-en="payment" data-zh="支付" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="480" y="192">payment</text>
+<text data-en="delete" data-zh="删除" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="530" y="192">delete</text>
+<!-- undo method labels -->
+<text data-en="free" data-zh="免费" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="100" y="208">free</text>
+<text data-en="TTL evict" data-zh="TTL 过期" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="195" y="208">TTL evict</text>
+<text data-en="rollback" data-zh="回滚" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="290" y="208">rollback</text>
+<text data-en="compensate" data-zh="补偿" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="385" y="208">compensate</text>
+<text data-en="refund flow" data-zh="退款流程" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="480" y="208">refund flow</text>
+<text data-en="none" data-zh="无" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="530" y="208">none</text>
+<!-- axis arrow -->
+<path d="M55 236 L565 236" fill="none" marker-end="url(#arrR1)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<text data-en="cost of going back" data-zh="回退的成本" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="258">cost of going back</text>
+<text data-en="Note what this axis is not: it is not severity, not probability, not dollar value. It is the shape of the path home." data-zh="注意这条轴不是什么：它不是严重程度，不是概率，不是金额。它是回家的路的形状。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="296">Note what this axis is not: it is not severity, not probability, not dollar value. It is the shape of the path home.</text>
+</svg>
+<p class="diagram-caption" data-en="Actions are not risky or safe — they sit somewhere on a spectrum of how expensive it is to undo them. Reads cost nothing to undo. Cache writes expire on their own. Database transactions roll back. Emails can only be compensated by another email. Payments require an external refund flow. Deletions of unique data have no path home at all. The engineering work is knowing, for every tool in the agent's hands, which zone it lives in." data-zh="动作不是「危险」或「安全」——它们坐落在一条「撤销要多贵」的光谱上。读取的撤销零成本。缓存写入会自己过期。数据库事务可以回滚。邮件只能用另一封邮件去补偿。支付需要外部的退款流程。而唯一数据的删除，根本没有回家的路。工程工作，就是清楚地知道：智能体手中的每一个工具，住在哪个区。">Actions are not risky or safe — they sit somewhere on a spectrum of how expensive it is to undo them. Reads cost nothing to undo. Cache writes expire on their own. Database transactions roll back. Emails can only be compensated by another email. Payments require an external refund flow. Deletions of unique data have no path home at all.</p>
+</div>
+<h3 data-en="Risk is the wrong axis" data-zh="风险是错误的坐标轴">Risk is the wrong axis</h3>
+<p data-en="Most teams, when they first worry about agent actions, reach for a risk taxonomy. They sort tools into low, medium, and high risk. Low-risk tools run freely. Medium-risk tools require the model to explain itself. High-risk tools require a human confirmation. This feels responsible, and it is almost entirely useless, because risk conflates two questions that need separate answers: how likely is the action to be wrong, and what happens when it is. A high-impact action that is trivially reversible — writing a draft document, posting to an internal channel that can be deleted — deserves almost no ceremony. A low-impact action that can never be undone — sending a message to an external distribution list, where 'low impact' was the estimate right up until it wasn't — deserves all of it. Reversibility is the property you cannot buy back after the fact. Probability you can tune, impact you can bound, but an action with no path home is a permanent fact about the world from the moment it executes." data-zh="大多数团队第一次担心智能体的动作时，会伸手去拿风险分类法。他们把工具分成低危、中危、高危。低危工具自由运行。中危工具要求模型解释自己。高危工具要求人类确认。这看起来很负责，但它几乎完全没用——因为「风险」把两个需要分别回答的问题搅在了一起：这个动作有多大的概率是错的，以及当它错了会发生什么。一个影响很大、但撤销起来轻而易举的动作——写一份草稿文档、发一条可以删除的内部消息——几乎不需要任何仪式。一个影响很小、但永远无法撤销的动作——向一个外部邮件组发消息，在出事之前，「影响很小」一直是评估结论——需要全部的仪式。可逆性，是你事后买不回来的属性。概率可以调，影响可以设界，但一个没有回家路的动作，从它执行的那一刻起，就是关于世界的一个永久事实。">Most teams, when they first worry about agent actions, reach for a risk taxonomy. They sort tools into low, medium, and high risk. This feels responsible, and it is almost entirely useless, because risk conflates two questions that need separate answers: how likely is the action to be wrong, and what happens when it is.</p>
+<p data-en="The uncomfortable part is that reversibility is not a property of the action alone — it is a property of the action plus the harness around it. 'Delete a file' is irreversible on a raw filesystem and completely reversible in a system with trash, versioning, or snapshots. 'Send an email' is irreversible over SMTP and ninety-percent reversible in a system that queues outbound mail for thirty seconds, or supports recall within a domain, or keeps a suppression list. The same nominal action can sit at opposite ends of the spectrum depending on infrastructure the team controls. This reframes the whole problem: instead of asking 'which actions are we comfortable letting the agent take,' the question becomes 'which actions can we make reversible, and how far can we push the boundary.' Teams that do this well stop spending their energy classifying actions and start spending it building undo — staging areas, soft deletes, delayed queues, undo logs. The classification emerges from the infrastructure, not the other way around." data-zh="让人不舒服的部分在于：可逆性不是动作本身的属性——它是「动作 + 它周围的挂具」的属性。「删除一个文件」在裸文件系统上不可逆，而在有回收站、版本控制或快照的系统里完全可逆。「发一封邮件」在 SMTP 上不可逆，而在一个把外发邮件排队三十秒的系统里、在一个支持域内撤回的系统里、在一个维护抑制名单的系统里，是九成可逆的。同一个名义上的动作，可以坐在光谱的两端——取决于团队控制的基础设施。这重新定义了整个问题：不再是问「我们放心让智能体做哪些动作」，而是问「哪些动作我们能把它变可逆，边界能推多远」。做得好的团队，不再把精力花在给动作分类上，而是花在建造撤销上——暂存区、软删除、延迟队列、撤销日志。分类是从基础设施里长出来的，而不是反过来。">The uncomfortable part is that reversibility is not a property of the action alone — it is a property of the action plus the harness around it. 'Delete a file' is irreversible on a raw filesystem and completely reversible in a system with trash, versioning, or snapshots. The same nominal action can sit at opposite ends of the spectrum depending on infrastructure the team controls.</p>
+<blockquote data-en="An action without a path home is not a tool call. It is a promise the system can never take back — and every agent that makes one is spending from a budget it did not know it had." data-zh="一个没有回家路的动作，不是一个工具调用。它是一个系统永远无法收回的承诺——而每一个做出这种动作的智能体，都在从一个它自己都不知道存在的预算里花钱。">An action without a path home is not a tool call. It is a promise the system can never take back — and every agent that makes one is spending from a budget it did not know it had.</blockquote>
+<h3 data-en="Two-phase apply: the universal pattern" data-zh="两阶段提交：通用模式">Two-phase apply: the universal pattern</h3>
+<p data-en="There is one pattern that shows up in every serious action-taking system, under different names: two-phase apply. In databases it is prepare and commit. In Git it is stage and commit. In deployment it is canary and promote. In an agent harness it is: the agent proposes, the system disposes. The agent's tool call does not touch the world. It writes a staged intent — a record that says 'this action, with these arguments, is ready to execute.' The staged intent is fully inspectable, fully editable, fully discardable. Then a second, boring, deterministic mechanism — a timer, a policy check, a human, another agent with a narrower job — reviews the intent and either promotes it to execution or drops it. The genius of this split is that it converts the agent's unreliable, probabilistic judgment about whether to act into a reliable, inspectable artifact about what it intends to do. Intentions can be logged, diffed, replayed, audited, and above all, cancelled. Executions cannot." data-zh="有一个模式，出现在每一个严肃的、会采取动作的系统里，只是名字不同：两阶段提交。在数据库里，是 prepare 和 commit。在 Git 里，是 stage 和 commit。在部署里，是 canary 和 promote。在智能体挂具里，是：智能体提议，系统处置。智能体的工具调用不直接触碰世界。它写入一条暂存的意图——一条记录，写着「这个动作、带这些参数、已准备好执行」。暂存的意图，完全可检查、完全可编辑、完全可丢弃。然后，由第二个乏味、确定性的机制——一个定时器、一次策略检查、一个人、另一个职责更窄的智能体——审查这条意图，要么把它提升为执行，要么把它丢掉。这个拆分的精妙之处在于：它把智能体关于「要不要做」的不可靠的概率判断，转化为一个可靠的、可检查的「它打算做什么」的产物。意图，可以被记录、比对、重放、审计——最重要的，可以被取消。而执行不能。">There is one pattern that shows up in every serious action-taking system, under different names: two-phase apply. In databases it is prepare and commit. In Git it is stage and commit. In deployment it is canary and promote. In an agent harness it is: the agent proposes, the system disposes.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrT2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrT3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="TWO-PHASE APPLY IN AN AGENT HARNESS" data-zh="智能体挂具中的两阶段提交" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">TWO-PHASE APPLY IN AN AGENT HARNESS</text>
+<!-- agent node -->
+<rect fill="var(--accent-dim)" height="46" rx="10" stroke="var(--accent)" stroke-width="2" width="130" x="40" y="60"></rect>
+<text data-en="AGENT" data-zh="智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="105" y="80">AGENT</text>
+<text data-en="probabilistic" data-zh="概率性的" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="105" y="96">probabilistic</text>
+<!-- propose edge -->
+<path d="M170 83 L240 83" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="proposes" data-zh="提议" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="205" y="72">proposes</text>
+<!-- staged intent -->
+<rect fill="var(--bg-surface)" height="46" rx="10" stroke="var(--accent-2)" stroke-width="2" width="140" x="242" y="60"></rect>
+<text data-en="STAGED INTENT" data-zh="暂存意图" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="312" y="80">STAGED INTENT</text>
+<text data-en="inspect · edit · cancel" data-zh="可检查 · 可编辑 · 可取消" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="312" y="96">inspect · edit · cancel</text>
+<!-- gate -->
+<path d="M382 83 L440 83" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<polygon fill="var(--bg-surface)" points="500,55 545,83 500,111 455,83" stroke="var(--accent)" stroke-width="2"></polygon>
+<text data-en="gate" data-zh="关卡" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="500" y="87">gate</text>
+<text data-en="policy · human · timer" data-zh="策略 · 人 · 定时器" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="500" y="128">policy · human · timer</text>
+<!-- commit path -->
+<path d="M522 111 C522 170 480 180 400 185" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="promote" data-zh="提升执行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="520" y="152">promote</text>
+<!-- discard path -->
+<path d="M478 111 C478 150 380 150 330 160" fill="none" marker-end="url(#arrT3)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<text data-en="discard · TTL" data-zh="丢弃 · TTL" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="400" y="140">discard · TTL</text>
+<!-- world node -->
+<rect fill="var(--bg-surface)" height="46" rx="10" stroke="var(--accent-3)" stroke-width="2" width="130" x="265" y="168"></rect>
+<text data-en="THE WORLD" data-zh="真实世界" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="330" y="188">THE WORLD</text>
+<text data-en="keeps the score" data-zh="它会记账" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="330" y="204">keeps the score</text>
+<!-- undo log -->
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-2)" stroke-width="1.5" stroke-dasharray="5,3" width="150" x="60" y="172"></rect>
+<text data-en="UNDO LOG" data-zh="撤销日志" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="135" y="190">UNDO LOG</text>
+<text data-en="inverse · state · window" data-zh="逆操作 · 状态 · 窗口" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="135" y="204">inverse · state · window</text>
+<path d="M210 192 L262 192" fill="none" marker-end="url(#arrT2)" stroke="var(--accent-2)" stroke-width="1" stroke-dasharray="3,2"></path>
+<!-- bottom caption -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="540" x="40" y="262"></rect>
+<text data-en="The agent never touches the world directly. Every effect passes through a staged intent that can be killed before it fires — and every fired effect lands in an undo log that records how to go back." data-zh="智能体从不直接触碰世界。每一个副作用都要经过一道暂存意图——在它触发之前都可以被掐灭——而每一个已触发的副作用，都落进一册撤销日志，记录着如何回去。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="287">The agent never touches the world directly. Every effect passes through a staged intent that can be killed before it fires — and every fired effect lands in an undo log that records how to go back.</text>
+</svg>
+<p class="diagram-caption" data-en="The agent emits intents, not effects. A gate — deterministic policy, a timer, a human, or a narrow verifier agent — decides which intents become real. Discarded intents cost nothing. Promoted intents are recorded in an undo log: what was the inverse operation, what state is needed to run it, and how long the window stays open. The agent keeps its flexibility; the world gains a waiting room." data-zh="智能体发出的是意图，不是效果。一道关卡——确定性的策略、一个定时器、一个人、或一个职责狭窄的校验智能体——决定哪些意图变为现实。被丢弃的意图，成本为零。被提升的意图，记入撤销日志：逆操作是什么、运行它需要什么状态、窗口还开着多久。智能体保住了它的灵活性；世界，则获得了一个等候室。">The agent emits intents, not effects. A gate — deterministic policy, a timer, a human, or a narrow verifier agent — decides which intents become real. Discarded intents cost nothing. Promoted intents are recorded in an undo log: what was the inverse operation, what state is needed to run it, and how long the window stays open.</p>
+</div>
+<h3 data-en="Compensation is an edge, not an afterthought" data-zh="补偿是一条边，不是事后补救">Compensation is an edge, not an afterthought</h3>
+<p data-en="Some actions cannot be rolled back, only compensated. The email cannot be un-sent; a follow-up can be sent. The payment cannot be un-made; a refund can be initiated. The deploy cannot be un-run; a rollback deploy can be pushed. Compensation is the saga pattern's insight, carried over from distributed transactions: if you cannot undo an action, attach to it a second action that repairs its effects. But compensation in an agent system must be treated with more respect than it usually gets, because a compensating action is itself an action — it can fail, it can be wrong, it can arrive after the situation has changed. A compensation that sends 'please disregard the previous email' to ten thousand recipients is not recovery; it is a second incident. The design discipline is to draw compensation as a first-class edge in the agent's graph, attached to the action node at design time, with the same validation gates as the forward action — not as an emergency script a human runs at two in the morning when the dashboard goes red." data-zh="有些动作无法回滚，只能补偿。邮件无法被「取消发送」；但可以发一封跟进。支付无法被「撤销」；但可以发起退款。部署无法被「倒放」；但可以推一次回滚部署。补偿，是 saga 模式的洞见，从分布式事务继承而来：如果你无法撤销一个动作，就给它挂上第二个动作，去修复它的效果。但在智能体系统里，补偿必须得到比通常更多的尊重——因为补偿动作本身也是一个动作：它会失败、它可能是错的、它可能在局势已经变化之后才到达。一封发给一万个人的「请忽略上一封邮件」，不是恢复，而是第二起事故。设计纪律是：把补偿画成智能体图中的一等边，在设计时就连在动作节点上，带和正向动作同样的校验关卡——而不是一段让人类在凌晨两点、仪表盘变红时才去跑的应急脚本。">Some actions cannot be rolled back, only compensated. The email cannot be un-sent; a follow-up can be sent. The payment cannot be un-made; a refund can be initiated. Compensation is the saga pattern's insight, carried over from distributed transactions: if you cannot undo an action, attach to it a second action that repairs its effects.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrS1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrS2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE SAGA WITH COMPENSATION EDGES" data-zh="带补偿边的 Saga" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE SAGA WITH COMPENSATION EDGES</text>
+<!-- forward chain -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.5" width="96" x="60" y="80"></rect>
+<text data-en="reserve" data-zh="预留" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="108" y="102">reserve</text>
+<path d="M156 97 L206 97" fill="none" marker-end="url(#arrS1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.5" width="96" x="208" y="80"></rect>
+<text data-en="charge" data-zh="扣款" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="256" y="102">charge</text>
+<path d="M304 97 L354 97" fill="none" marker-end="url(#arrS1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.5" width="96" x="356" y="80"></rect>
+<text data-en="notify" data-zh="通知" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="404" y="102">notify</text>
+<path d="M452 97 L502 97" fill="none" marker-end="url(#arrS1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="done" data-zh="完成" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="530" y="101">done</text>
+<!-- failure marker on notify -->
+<circle cx="404" cy="130" fill="var(--accent-3)" r="5"></circle>
+<text data-en="fails here" data-zh="在这里失败" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="404" y="148">fails here</text>
+<!-- compensation chain (right to left, dashed) -->
+<path d="M404 138 C404 190 340 190 310 200 C280 210 256 190 256 196" fill="none" marker-end="url(#arrS2)" stroke="var(--accent-3)" stroke-width="1.3" stroke-dasharray="5,3"></path>
+<path d="M256 200 C256 250 180 250 150 240 C120 230 108 210 108 196" fill="none" marker-end="url(#arrS2)" stroke="var(--accent-3)" stroke-width="1.3" stroke-dasharray="5,3"></path>
+<!-- compensating nodes -->
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="110" x="201" y="204"></rect>
+<text data-en="refund()" data-zh="refund()" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="256" y="224">refund()</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="110" x="53" y="204"></rect>
+<text data-en="release()" data-zh="release()" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="108" y="224">release()</text>
+<!-- legend -->
+<line stroke="var(--accent)" stroke-width="1.5" x1="420" x2="452" y1="230" y2="230"></line>
+<text data-en="forward" data-zh="正向" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="start" x="458" y="234">forward</text>
+<line stroke="var(--accent-3)" stroke-dasharray="5,3" stroke-width="1.3" x1="420" x2="452" y1="250" y2="250"></line>
+<text data-en="compensate" data-zh="补偿" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="start" x="458" y="254">compensate</text>
+<!-- caption -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="540" x="40" y="282"></rect>
+<text data-en="Compensation walks the chain backwards: refund the charge, release the reservation. Each compensating step is a real action with its own failure modes — designed at the same time as the forward path, not improvised during an incident." data-zh="补偿沿链条倒着走：给扣款退款，释放预留。每一个补偿步骤，都是一个有自己的失败模式的真实动作——和正向路径同时被设计，而不是在事故中即兴发挥。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="307">Compensation walks the chain backwards: refund the charge, release the reservation. Each compensating step is a real action with its own failure modes — designed at the same time as the forward path, not improvised during an incident.</text>
+</svg>
+<p class="diagram-caption" data-en="A multi-step agent action is a saga: reserve, charge, notify, each step committing before the next. When a step fails, the compensation edges fire in reverse order. The critical design rule: every forward node gets its compensating twin at design time, tested with the same rigor. A saga without drawn compensation edges is not a saga — it is a wish." data-zh="一个多步的智能体动作，是一条 saga：预留、扣款、通知，每一步在下一步之前提交。当某一步失败，补偿边按相反顺序触发。关键的设计规则是：每一个正向节点，在设计时就要有它的补偿孪生兄弟，并以同样的严格程度被测试。一条没有画出补偿边的 saga，不是 saga——它是一个愿望。">A multi-step agent action is a saga: reserve, charge, notify, each step committing before the next. When a step fails, the compensation edges fire in reverse order. The critical design rule: every forward node gets its compensating twin at design time, tested with the same rigor.</p>
+</div>
+<h3 data-en="Budgeting the irreversible" data-zh="给不可逆做预算">Budgeting the irreversible</h3>
+<p data-en="After all of this infrastructure — staging, gates, undo logs, compensation edges — some actions will remain genuinely irreversible. Data deleted with no backup. Messages delivered to people who cannot un-read them. Money moved through systems with no refund path. For these, the honest mechanism is a budget. Each agent session carries an irreversibility budget: how many irreversible actions it may take, per run, per day, per user. The budget defaults to zero. Spending it requires explicit escalation — a configuration change, a human grant, a scoping decision — never a model's own judgment. This sounds bureaucratic until it is compared with the alternative, which is an implicit budget of infinity that nobody chose, enforced by nobody, discovered the first time an agent in a retry loop sends the same irreversible action forty times. Idempotency keys belong here too: a budget without idempotency is not a budget, because a single glitched loop can spend all of it in one second. Every irreversible action needs a key that makes retries free and duplicates impossible." data-zh="在所有这些基础设施——暂存、关卡、撤销日志、补偿边——之后，仍然会有一些真正不可逆的动作。没有备份就被删除的数据。发给了无法「取消阅读」的人的消息。流经无退款路径系统的钱。对于这些，诚实的机制是预算。每一个智能体会话，携带一个不可逆预算：每一次运行、每一天、每一个用户，最多可以采取多少个不可逆动作。预算默认为零。花它，需要显式的升级——一次配置变更、一次人类授权、一个范围决策——永远不是模型自己的判断。这听起来官僚，直到你和替代方案比较：一个没人选择过的、隐式的无穷预算，没人执行它，然后在某个重试循环里的智能体把同一个不可逆动作发了四十次的那个第一次里，被发现。幂等键也属于这里：没有幂等的预算，不是预算——因为一个出错的循环，可以在一秒内把它全部花光。每一个不可逆动作，都需要一把让重试免费、让重复不可能的钥匙。">After all of this infrastructure — staging, gates, undo logs, compensation edges — some actions will remain genuinely irreversible. For these, the honest mechanism is a budget. Each agent session carries an irreversibility budget: how many irreversible actions it may take, per run, per day, per user. The budget defaults to zero.</p>
+<p data-en="The deeper point is about what kind of system an agent is allowed to be. A system that can only do reversible things is safe but impotent — it can draft, propose, and prepare, but the last mile always belongs to a human, and the humans drown in the last mile. A system that can do irreversible things freely is powerful but unshippable — one bad run away from an outage with no rollback. The workable territory is in between, and it is not found by tuning prompts or hoping the model gets more careful. It is built: by moving actions left along the reversibility spectrum through infrastructure, by drawing the compensation edges before the forward edges are ever executed, and by treating the truly irreversible as a scarce, budgeted resource that no agent spends on its own authority. Undo is not a feature. It is the load-bearing wall of every system that acts. Build it first, or discover — the way teams always discover it — that the wall was needed the hard way." data-zh="更深的一层，关于一个智能体被允许成为什么样的系统。一个只能做可逆事情的系统，安全但无力——它能起草、提议、准备，但最后一公里永远属于人类，而人类在最后一公里里溺死。一个能自由做不可逆事情的系统，强大但不可发布——离一次无法回滚的事故，只差一次糟糕的运行。可行的疆域在两者之间，而它不是靠调 prompt、也不是靠指望模型变得更小心而找到的。它是建出来的：通过基础设施，把动作沿着可逆性光谱向左推；通过在正向边被执行之前，先画好补偿边；通过把真正不可逆的东西，当作一种稀缺的、有预算的资源——任何智能体都无权自行开销。撤销不是一个功能。它是每一个会行动的系统的承重墙。先建它，否则就会像所有团队那样，以最难堪的方式，发现这面墙是必需的。">The deeper point is about what kind of system an agent is allowed to be. A system that can only do reversible things is safe but impotent. A system that can do irreversible things freely is powerful but unshippable. The workable territory is in between, and it is not found by tuning prompts or hoping the model gets more careful. It is built.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

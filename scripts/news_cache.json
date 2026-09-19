@@ -1,6 +1,245 @@
 {
   "tweets": [
     {
+      "id": "2101233765179904007",
+      "url": "https://x.com/Alibaba_Qwen/status/2101233765179904007",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-09-19T20:03:22.123431+00:00",
+      "translation_zh": "Cerebras 用 Qwen3.8 27B 打造了 Money Agent 个人理财助手，跑在 Cerebras 超低延迟推理上——把「要不要买这套房」变成一场实时对话，再直接变成一个理财目标。实用 AI 落地的好例子。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 315,
+        "lang": "en",
+        "created_at": "2026-09-19T08:55:43.000Z",
+        "display_text_range": [
+          0,
+          147
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "751545566778171392",
+              "indices": [
+                110,
+                119
+              ],
+              "name": "Cerebras",
+              "screen_name": "cerebras"
+            }
+          ]
+        },
+        "id_str": "2101233765179904007",
+        "text": "A great example of practical AI solving real-world problems! Faster than ever. Thanks for building with Qwen. @cerebras Try it out for yourself! 🏠",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2101233765179904007"
+          ],
+          "editable_until_msecs": "1789811743000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 20,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 252,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 18,
+          "retweet_count": 25,
+          "created_at": "2026-09-18T17:15:00.000Z",
+          "display_text_range": [
+            0,
+            205
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/VxsTgc9a6I",
+                "expanded_url": "https://x.com/cerebras/status/2100997025773023403/video/1",
+                "indices": [
+                  206,
+                  229
+                ],
+                "url": "https://t.co/VxsTgc9a6I"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "1753339277386342400",
+                "indices": [
+                  62,
+                  75
+                ],
+                "name": "Qwen",
+                "screen_name": "Alibaba_Qwen"
+              }
+            ]
+          },
+          "id_str": "2100997025773023403",
+          "text": "We built Money Agent, a personal finance assistant powered by @Alibaba_Qwen 3.8 27B on Cerebras. \n\nNow you can turn a home-buying question into a real-time conversation, then into a financial goal, faster. https://t.co/VxsTgc9a6I",
+          "user": {
+            "id_str": "751545566778171392",
+            "name": "Cerebras",
+            "screen_name": "cerebras",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1894806880804913152/zLdh072p_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2100997025773023403"
+            ],
+            "editable_until_msecs": "1789755300000",
+            "edits_remaining": "5",
+            "is_edit_eligible": true
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/VxsTgc9a6I",
+              "expanded_url": "https://x.com/cerebras/status/2100997025773023403/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                206,
+                229
+              ],
+              "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2100990476665131008/img/V2STBZBKrKml6-jd.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 1506,
+                "width": 2230
+              },
+              "sizes": {
+                "large": {
+                  "h": 1383,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 810,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 459,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/VxsTgc9a6I",
+              "video_info": {
+                "aspect_ratio": [
+                  1115,
+                  753
+                ],
+                "duration_millis": 49600,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2100990476665131008/pl/oXrlJrx14Bo5ceUH.m3u8"
+                  },
+                  {
+                    "bitrate": 256000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2100990476665131008/vid/avc1/398x270/oi2ntunCXa9OaaaQ.mp4"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2100990476665131008/vid/avc1/532x360/vmqNYFApgkXp6lMC.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2100990476665131008/vid/avc1/1066x720/6ar8QHghIt7DO-id.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2100990476665131008/vid/avc1/1598x1080/03AnY6KFRZkH60o3.mp4"
+                  },
+                  {
+                    "bitrate": 25128000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2100990476665131008/vid/avc1/2230x1506/vWxkANtYnVvbx8eB.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              1115,
+              753
+            ],
+            "contentType": "media_entity",
+            "durationMs": 49600,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/amplify_video_thumb/2100990476665131008/img/V2STBZBKrKml6-jd.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2100990476665131008/pl/oXrlJrx14Bo5ceUH.m3u8"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2100990476665131008/vid/avc1/398x270/oi2ntunCXa9OaaaQ.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2100990476665131008/vid/avc1/532x360/vmqNYFApgkXp6lMC.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2100990476665131008/vid/avc1/1066x720/6ar8QHghIt7DO-id.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2100990476665131008/vid/avc1/1598x1080/03AnY6KFRZkH60o3.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2100990476665131008/vid/avc1/2230x1506/vWxkANtYnVvbx8eB.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2100997025773023403"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2101206705111757253",
       "url": "https://x.com/Alibaba_Qwen/status/2101206705111757253",
       "label": "Qwen",
