@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Tool Result Is a Prompt — AI Frontlines</title>
+<meta content="Every token a tool returns becomes part of the next prompt the model sees. Most teams treat tool output as data to be dumped into context. The teams that win treat it as a prompt to be designed — shaped for the next step, bounded in size, explicit about affordances." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 21, 2026" data-zh="2026年9月21日">September 21, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Tool Result Is a Prompt" data-zh="工具的返回结果，本身就是 prompt">The Tool Result Is a Prompt</h1>
+<p class="post-header-deck" data-en="Ask a team to show their prompt engineering process and they will produce system prompts with revision history, A/B tests, careful versions. Ask them to show the shape of a tool result and they will shrug: the tool returns what the tool returns. This is a category error. Every token a tool sends back is spliced verbatim into the model's context on the next turn. The tool result is not an output that happens to be logged — it is the next half of the conversation, written not by the user or the prompt engineer, but by whoever designed the return payload. Often, by nobody." data-zh="让一个团队展示他们的 prompt 工程流程，他们会拿出带修订历史、A/B 测试和精细版本号的系统 prompt。让他们展示工具返回结果的形状，他们会耸耸肩：工具返回什么，就是什么。这是一个范畴错误。工具发回的每一个 token，都会在下一轮被原封不动地拼接进模型的上下文。工具返回结果不是「顺带被记录下来的输出」——它是对话的下半场，写它的人不是用户，也不是 prompt 工程师，而是设计返回载荷的那个人。而很多时候，那个人根本不存在。">Ask a team to show their prompt engineering process and they will produce system prompts with revision history. Ask them to show the shape of a tool result and they will shrug.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a strange asymmetry in how agent systems are built. The system prompt — a few hundred tokens, shown once — gets drafted, reviewed, benchmarked, and tuned. The tool results — often thousands of tokens, shown on every single turn — get whatever the underlying library felt like returning. A database tool dumps forty kilobytes of JSON. A search tool returns ten links with raw snippets. An internal API returns its native error format, stack trace included. All of it flows into the model's context, unedited, and becomes the substrate the model reasons over. Then the team wonders why the agent gets confused after step four, why it forgets the original task, why it starts paraphrasing error messages at the user. The model is not failing. It is reading, with perfect attention, a prompt nobody wrote on purpose." data-zh="智能体系统的构建方式里，存在一种奇怪的不对称。系统 prompt——几百个 token，只展示一次——被起草、评审、跑基准、反复调优。工具返回结果——常常几千个 token，每一轮都展示——得到的却是底层库随手返回的任何东西。一个数据库工具倾倒四十 KB 的 JSON。一个搜索工具返回十个带原始摘要的链接。一个内部 API 返回它原生的错误格式，连堆栈跟踪一起。所有这些原封不动地流进模型的上下文，成为模型推理的基底。然后团队纳闷：为什么智能体走到第四步就糊涂了，为什么它忘了原始任务，为什么它开始向用户复述错误信息。模型没有失败。它只是在以完美的注意力，阅读一个没有人认真写过的 prompt。">There is a strange asymmetry in how agent systems are built. The system prompt — a few hundred tokens, shown once — gets drafted, reviewed, benchmarked, and tuned. The tool results — often thousands of tokens, shown on every single turn — get whatever the underlying library felt like returning.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrT2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrT3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="WHERE THE MODEL'S NEXT PROMPT COMES FROM" data-zh="模型的下一个 prompt 从哪里来" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHERE THE MODEL'S NEXT PROMPT COMES FROM</text>
+<!-- system prompt lane -->
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="40" y="56"></rect>
+<text data-en="system prompt" data-zh="系统 prompt" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="115" y="76">system prompt</text>
+<text data-en="~300 tokens · written on purpose" data-zh="约300 token · 有意撰写" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="115" y="104">~300 tokens · written on purpose</text>
+<!-- user lane -->
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="235" y="56"></rect>
+<text data-en="user message" data-zh="用户消息" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="76">user message</text>
+<text data-en="~50 tokens · small" data-zh="约50 token · 很小" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="104">~50 tokens · small</text>
+<!-- tool lane, emphasized -->
+<rect fill="var(--accent-dim)" height="30" rx="7" stroke="var(--accent)" stroke-width="2.5" width="150" x="430" y="56"></rect>
+<text data-en="tool results" data-zh="工具返回结果" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="505" y="76">tool results</text>
+<text data-en="1000s of tokens · every turn · written by nobody" data-zh="数千 token · 每轮都有 · 无人撰写" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="505" y="104">1000s of tokens · every turn · written by nobody</text>
+<!-- convergence into the model -->
+<path d="M115 112 C160 160 250 175 295 190" fill="none" marker-end="url(#arrT2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<path d="M310 112 L310 188" fill="none" marker-end="url(#arrT2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<path d="M505 112 C460 160 370 175 325 190" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="2.5"></path>
+<!-- the model context -->
+<rect fill="var(--bg-surface)" height="44" rx="10" stroke="var(--text-secondary)" stroke-width="1.5" width="220" x="200" y="192"></rect>
+<text data-en="next model call" data-zh="下一次模型调用" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="310" y="210">next model call</text>
+<text data-en="(the tool result is in it, verbatim)" data-zh="(工具结果原样在列)" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="227">(the tool result is in it, verbatim)</text>
+<!-- loop back -->
+<path d="M200 214 C120 214 90 150 130 92" fill="none" marker-end="url(#arrT3)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<text data-en="every tool call repeats this" data-zh="每次工具调用都重复这个过程" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="105" y="160">every tool call repeats this</text>
+<text data-en="By turn five, tool results dominate the context. The 'prompt' the team tuned is a minority shareholder." data-zh="到第五轮，工具结果已主导上下文。团队精心调优的那个「prompt」，只是个小股东。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="286">By turn five, tool results dominate the context. The 'prompt' the team tuned is a minority shareholder.</text>
+</svg>
+<p class="diagram-caption" data-en="Three streams feed every model call: the system prompt, the user message, and the accumulated tool results. The first two are engineered. The third — the largest, by far, after a few turns — is usually an accident of whatever the tool felt like returning." data-zh="三条流汇入每一次模型调用：系统 prompt、用户消息、累积的工具结果。前两条被精心设计。第三条——几轮之后体量远超前两条的那条——通常只是工具随手返回的偶然产物。">Three streams feed every model call: the system prompt, the user message, and the accumulated tool results. The first two are engineered. The third — the largest, by far, after a few turns — is usually an accident of whatever the tool felt like returning.</p>
+</div>
+<h3 data-en="The firehose, the cryptogram, and the shrug" data-zh="消防水管、密码电文与耸肩">The firehose, the cryptogram, and the shrug</h3>
+<p data-en="Bad tool results come in three recognizable species. The first is the firehose: the tool returns everything, on the theory that more data is more helpful. A status endpoint returns the full object graph. A file reader returns the whole file when the task needed one function. The model must now mine the relevant signal out of a wall of noise, and every token spent scanning is a token of attention not spent reasoning. Worse, the firehose compounds: each turn's dump stays in context, so by turn six the agent is reasoning inside its own landfill." data-zh="糟糕的工具返回结果，有三个可辨认的物种。第一种是消防水管：工具返回一切，理论依据是「数据越多越有帮助」。一个状态端点返回完整的对象图。一个文件读取器返回整个文件，尽管任务只需要一个函数。模型现在必须从一堵噪音墙里开采出相关信号，而每一个花在扫描上的 token，都是从推理那里偷走的注意力 token。更糟的是，水管会叠加：每一轮的倾倒都留在上下文里，到第六轮，智能体是在自己的垃圾填埋场里推理。">Bad tool results come in three recognizable species. The first is the firehose: the tool returns everything, on the theory that more data is more helpful. A status endpoint returns the full object graph. A file reader returns the whole file when the task needed one function.</p>
+<p data-en="The second is the cryptogram: the tool returns something technically accurate but semantically opaque. Error codes with no message. Booleans with no semantics — true of what? Paginated results with no indication that more pages exist. The model, being a model, will fill the semantic vacuum with a guess. It will invent a meaning for the error code, declare the task complete because the boolean was true, or treat a truncated list as exhaustive. The cryptogram does not fail loudly. It fails confidently, downstream, in a way that looks like the model's fault." data-zh="第二种是密码电文：工具返回的东西技术上准确，语义上不透明。没有消息的错误码。没有语义的布尔值——什么的 true？没有提示还有更多页的分页结果。模型，毕竟是模型，会用一个猜测来填补语义真空。它会为错误码发明一个含义，会因为布尔值是 true 就宣布任务完成，或者把一个被截断的列表当作完整列表。密码电文不会大声失败。它在下游自信地失败，而且看起来像是模型的错。">The second is the cryptogram: the tool returns something technically accurate but semantically opaque. Error codes with no message. Booleans with no semantics — true of what? The model will fill the semantic vacuum with a guess.</p>
+<p data-en="The third is the shrug: the tool returns a result with no affordance for action. It says what is, never what could be done next. A search returns matches but not the query parameters that would refine them. An upload succeeds but the response omits the URL where the file landed. A write fails validation but the error does not say which field. The agent is left holding a fact and no handle. Shrugs produce the most pathetic behavior in agent systems: the model calling the same tool again with identical arguments, hoping the result will explain itself this time." data-zh="第三种是耸肩：工具返回的结果里没有任何行动可供性。它说「是什么」，从不说「接下来能做什么」。一次搜索返回了匹配结果，却不返回能精化查询的参数。一次上传成功了，响应里却省略了文件落地的 URL。一次写入未通过校验，错误信息却不说是哪个字段。智能体捧着一个事实，却找不到把手。耸肩产出智能体系统中最可怜的行为：模型用一模一样的参数再次调用同一个工具，指望这一次结果会自己解释自己。">The third is the shrug: the tool returns a result with no affordance for action. It says what is, never what could be done next. The agent is left holding a fact and no handle.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 310" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrS1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THREE SPECIES OF BAD TOOL RESULTS" data-zh="糟糕工具结果的三种形态" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THREE SPECIES OF BAD TOOL RESULTS</text>
+<!-- FIREHOSE -->
+<text data-en="① THE FIREHOSE" data-zh="① 消防水管" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="110" y="54">THE FIREHOSE</text>
+<rect fill="var(--bg-surface)" height="72" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="130" x="45" y="68"></rect>
+<text data-en="{entire object graph}" data-zh="{完整对象图}" fill="var(--accent-3)" font-family="monospace" font-size="9" text-anchor="middle" x="110" y="98">{entire object}</text>
+<text data-en="40KB · one field needed" data-zh="40KB · 只需一个字段" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="110" y="116">40KB · one field needed</text>
+<text data-en="attention spent mining" data-zh="注意力耗于开采" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="110" y="168">attention spent mining</text>
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="210" x2="210" y1="40" y2="200"></line>
+<!-- CRYPTOGRAM -->
+<text data-en="② THE CRYPTOGRAM" data-zh="② 密码电文" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="54">THE CRYPTOGRAM</text>
+<rect fill="var(--bg-surface)" height="72" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="130" x="245" y="68"></rect>
+<text data-en="{&quot;error&quot;: 4402}" data-zh="{&quot;error&quot;: 4402}" fill="var(--accent-3)" font-family="monospace" font-size="10" text-anchor="middle" x="310" y="98">{"error": 4402}</text>
+<text data-en="accurate · meaningless" data-zh="准确 · 无意义" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="310" y="116">accurate · meaningless</text>
+<text data-en="model invents a meaning" data-zh="模型自行发明含义" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="168">model invents a meaning</text>
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="410" x2="410" y1="40" y2="200"></line>
+<!-- SHRUG -->
+<text data-en="③ THE SHRUG" data-zh="③ 耸肩" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="515" y="54">THE SHRUG</text>
+<rect fill="var(--bg-surface)" height="72" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="130" x="450" y="68"></rect>
+<text data-en="{&quot;ok&quot;: true}" data-zh="{&quot;ok&quot;: true}" fill="var(--accent-3)" font-family="monospace" font-size="10" text-anchor="middle" x="515" y="98">{"ok": true}</text>
+<text data-en="a fact · no handle" data-zh="一个事实 · 没有把手" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="515" y="116">a fact · no handle</text>
+<text data-en="agent calls it again, identically" data-zh="智能体原样再调一次" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="515" y="168">agent calls it again, identically</text>
+<!-- retry loop mini-diagram -->
+<path d="M515 186 C560 200 560 224 520 232" fill="none" marker-end="url(#arrS1)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="3,2"></path>
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="248"></rect>
+<text data-en="All three look like model failures in the trace. None of them are. They are return-payload designs that were never designed." data-zh="在追踪记录里，这三种看起来都像模型的失败。但没有一种是。它们是从未被设计过的返回载荷设计。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="273">All three look like model failures in the trace. None of them are. They are return-payload designs that were never designed.</text>
+</svg>
+<p class="diagram-caption" data-en="The firehose buries signal in volume. The cryptogram withholds semantics. The shrug withholds affordance. Each failure is invisible in the code review — the tool 'works' — and unmistakable in the agent trace, where it is always misfiled under model error." data-zh="消防水管把信号埋进体量。密码电文扣下语义。耸肩扣下可供性。每一种失败在代码评审里都不可见——工具「能用」——而在智能体追踪记录里一望即知，只是总被归错档，记在模型名下。">The firehose buries signal in volume. The cryptogram withholds semantics. The shrug withholds affordance. Each failure is invisible in the code review and unmistakable in the agent trace, where it is always misfiled under model error.</p>
+</div>
+<h3 data-en="Design the return like you design the prompt" data-zh="像设计 prompt 一样设计返回值">Design the return like you design the prompt</h3>
+<p data-en="The correction is a change of stance, not of tooling. Every tool result should be written as if it will be read by the model — because it will — and written for the decision the model is about to make. This yields a small set of principles. Bound the size: return the summary first, the detail on request; give the model a 'expand' affordance instead of a firehose. Speak in semantics: every error carries a human-readable cause and, where possible, the class of remedy; every boolean is named for what it proves. Point, don't carry: return references — ids, offsets, cursors — rather than bulk payloads, so the model can fetch precisely what the next step needs. Surface the affordances: after any result, tell the model what it can now do that it could not do before. The last one is the most underrated. A result that ends with 'next: refine_search with narrower dates, or fetch details for id 4471' converts a shrug into a handle." data-zh="纠正的方法是换一种姿态，而不是换工具。每一个工具返回结果，都应该被当作「将被模型阅读」来写——因为它一定会——并且为模型即将做出的决策而写。这引出一小组原则。限制体量：先返回摘要，细节按需取；给模型一个「展开」的可供性，而不是一条消防水管。用语义说话：每个错误都带人类可读的原因，可能的话带上补救的类别；每个布尔值都以它证明的东西命名。指过去，而不是扛过来：返回引用——id、偏移量、游标——而不是大块载荷，这样模型可以精确地取下一步需要的东西。亮出可供性：任何结果之后，告诉模型它现在能做什么、是之前做不了的。最后一条最被低估。一个以「下一步：可用更窄的日期 refine_search，或取 id 4471 的详情」结尾的结果，把一个耸肩变成一个把手。">The correction is a change of stance, not of tooling. Every tool result should be written as if it will be read by the model — because it will — and written for the decision the model is about to make.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrD1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="ANATOMY OF A RESULT WRITTEN FOR THE MODEL" data-zh="一个为模型而写的返回结果解剖图" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">ANATOMY OF A RESULT WRITTEN FOR THE MODEL</text>
+<!-- result card -->
+<rect fill="var(--bg-surface)" height="252" rx="12" stroke="var(--accent)" stroke-width="2" width="360" x="130" y="44"></rect>
+<!-- layer 1: summary -->
+<rect fill="var(--accent-dim)" height="46" rx="8" stroke="var(--accent)" stroke-width="1.5" width="320" x="150" y="60"></rect>
+<text data-en="1 · SUMMARY — the answer, first" data-zh="1 · 摘要 —— 答案在前" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="162" y="79">1 · SUMMARY — the answer, first</text>
+<text data-en="&quot;3 invoices match; 1 is overdue by 12 days&quot;" data-zh="「匹配到 3 张发票；1 张逾期 12 天」" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="162" y="96">"3 invoices match; 1 is overdue by 12 days"</text>
+<!-- layer 2: references -->
+<rect fill="var(--bg-surface)" height="46" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="320" x="150" y="116"></rect>
+<text data-en="2 · REFERENCES — ids, not payloads" data-zh="2 · 引用 —— id，而非载荷" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="162" y="135">2 · REFERENCES — ids, not payloads</text>
+<text data-en="&quot;inv_4471 (overdue) · inv_4502 · inv_4508&quot;" data-zh="「inv_4471(逾期) · inv_4502 · inv_4508」" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="162" y="152">"inv_4471 (overdue) · inv_4502 · inv_4508"</text>
+<!-- layer 3: semantics -->
+<rect fill="var(--bg-surface)" height="46" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="320" x="150" y="172"></rect>
+<text data-en="3 · CAVEATS — what this result is not" data-zh="3 · 限制 —— 这个结果不是什么" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="162" y="191">3 · CAVEATS — what this result is not</text>
+<text data-en="&quot;searched last 90 days only; 2 more pages exist&quot;" data-zh="「仅搜索最近 90 天；还有 2 页」" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="162" y="208">"searched last 90 days only; 2 more pages exist"</text>
+<!-- layer 4: affordances -->
+<rect fill="var(--accent-dim)" height="58" rx="8" stroke="var(--accent)" stroke-width="2" width="320" x="150" y="228"></rect>
+<text data-en="4 · NEXT ACTIONS — handles, not hints" data-zh="4 · 下一步动作 —— 把手，而非暗示" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="162" y="247">4 · NEXT ACTIONS — handles, not hints</text>
+<text data-en="&quot;get_invoice(inv_4471) · widen_dates() · page(2)&quot;" data-zh="「get_invoice(inv_4471) · widen_dates() · page(2)」" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="162" y="266">"get_invoice(inv_4471) · widen_dates() · page(2)"</text>
+<!-- side annotations -->
+<path d="M470 83 C510 83 520 100 540 112" fill="none" marker-end="url(#arrD1)" stroke="var(--accent)" stroke-width="1"></path>
+<text data-en="bounded size" data-zh="体量有界" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="545" y="126">bounded size</text>
+<path d="M470 195 C510 195 520 212 540 224" fill="none" marker-end="url(#arrD1)" stroke="var(--accent)" stroke-width="1"></path>
+<text data-en="no guessing" data-zh="无需猜测" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="545" y="238">no guessing</text>
+<path d="M120 257 C80 257 70 240 60 226" fill="none" marker-end="url(#arrD1)" stroke="var(--accent)" stroke-width="1"></path>
+<text data-en="a handle for" data-zh="为下一步" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="57" y="212">a handle for</text>
+<text data-en="the next decision" data-zh="那个决策递上把手" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="57" y="196">the next decision</text>
+<text data-en="Four layers, a few hundred tokens. The model reads it once and knows what is true, what is missing, and what to do next." data-zh="四个层次，几百个 token。模型读一遍，就知道什么是真的、缺了什么、下一步做什么。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="326">Four layers, a few hundred tokens. The model reads it once and knows what is true, what is missing, and what to do next.</text>
+</svg>
+<p class="diagram-caption" data-en="A tool result designed as a prompt: the summary answers the question, references enable precise fetching, caveats prevent confident misunderstandings, and next actions hand the model its options. Nothing here is generic 'context engineering' — it is the return payload, given the same design respect as the system prompt." data-zh="一个被当作 prompt 来设计的工具返回结果：摘要回答问题，引用支持精确取数，限制条款防止自信的误解，下一步动作把自己的选项递到模型手上。这里没有任何泛泛的「上下文工程」——它就是返回载荷，获得了与系统 prompt 同等的设计尊重。">A tool result designed as a prompt: the summary answers the question, references enable precise fetching, caveats prevent confident misunderstandings, and next actions hand the model its options.</p>
+</div>
+<p data-en="This stance also reframes the division of labor between the model and the harness. The model brings reasoning; the harness brings shape. Every moment spent by the model parsing an unstructured blob is reasoning capacity spent on a problem the tool author could have solved once, in code, deterministically. Compression, formatting, error translation, pagination hints — these are not prompts to write, they are boundaries to draw at the tool's edge. The strongest agent teams treat the return payload as part of the harness, versioned and reviewed like any other interface, because it is one: it is the interface between deterministic code and probabilistic reasoning, and the failure modes at that boundary — ambiguity, overflow, missing affordance — are exactly the failure modes that show up later as 'the model hallucinated.'" data-zh="这种姿态也重新划分了模型与 harness 之间的分工。模型带来推理；harness 带来形状。模型花在解析非结构化大块数据上的每一刻，都是花在一个工具作者本可以在代码里一次性、确定性解决的问题上的推理容量。压缩、格式化、错误翻译、分页提示——这些不是要写的 prompt，而是要在工具边缘画下的边界。最强的智能体团队把返回载荷当作 harness 的一部分，像任何其他接口一样版本化、评审，因为它本来就是接口：它是确定性代码与概率性推理之间的接口，而那个边界上的失败模式——歧义、溢出、缺失的可供性——恰恰就是后来被记录为「模型产生了幻觉」的那些失败模式。">This stance also reframes the division of labor between the model and the harness. The model brings reasoning; the harness brings shape. Every moment spent by the model parsing an unstructured blob is reasoning capacity spent on a problem the tool author could have solved once, in code, deterministically.</p>
+<blockquote data-en="The system prompt is what the team says to the model once. The tool results are what the system says to the model forever. If only one of them is written with care, the system is talking to the model in its sleep — and the model is listening." data-zh="系统 prompt，是团队对模型说一次的话。工具返回结果，是系统对模型永远在说的话。如果只有其中之一被认真撰写，那么这个系统是在睡梦中对模型说话——而模型，在听。">The system prompt is what the team says to the model once. The tool results are what the system says to the model forever. If only one of them is written with care, the system is talking to the model in its sleep — and the model is listening.</blockquote>
+<p data-en="None of this requires new infrastructure. It requires noticing that the boundary of prompt engineering does not stop at the system prompt's closing delimiter. In a multi-turn agent, most of the prompt — measured in tokens, measured in influence on the next action — is written by tools. The choice is not whether to write those prompts. The choice is whether to write them deliberately: bounded, semantic, affordance-rich, versioned — or to let them be written by accident, dump by dump, turn after turn, until the agent drowns in the accumulated output of its own hands. The model reads everything. The only question is who authored what it reads." data-zh="这些，没有一个需要新基础设施。它需要的是注意到：prompt 工程的边界，并不止于系统 prompt 的结束定界符。在一个多轮智能体里，prompt 的大部分——无论按 token 计量，还是按对下一步行动的影响力计量——是由工具写的。选择不是「要不要写这些 prompt」。选择是认真地写它们：有界、语义清晰、可供性丰富、有版本——还是让它们被偶然地写出来，一次倾倒接一次倾倒，一轮接一轮，直到智能体淹死在自己双手的累积输出里。模型什么都读。唯一的问题是：它读的东西，出自谁的手。">None of this requires new infrastructure. It requires noticing that the boundary of prompt engineering does not stop at the system prompt's closing delimiter. In a multi-turn agent, most of the prompt is written by tools. The model reads everything. The only question is who authored what it reads.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

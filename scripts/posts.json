@@ -1,5 +1,14 @@
 [
 {
+  "date": "2026-09-21",
+  "slug": "the-tool-result-is-a-prompt",
+  "title_en": "The Tool Result Is a Prompt",
+  "title_zh": "工具的返回结果，本身就是 prompt",
+  "read_time": 8,
+  "excerpt_en": "Teams tune their system prompts for weeks, then let tools dump raw JSON straight into the model's context. Every token a tool returns becomes part of the next prompt. The firehose, the cryptogram, and the shrug — three payload designs nobody designed — explain most 'model failures' in agent traces.",
+  "excerpt_zh": "团队花数周调优系统 prompt，却任由工具把原始 JSON 直接倾倒进模型上下文。工具返回的每一个 token，都会成为下一个 prompt 的一部分。消防水管、密码电文与耸肩——三种从未被设计过的返回载荷——解释了智能体追踪记录里大多数的「模型失败」。"
+},
+{
   "date": "2026-09-20",
   "slug": "the-irreversibility-budget",
   "title_en": "The Irreversibility Budget",
