@@ -1,6 +1,1361 @@
 {
   "tweets": [
     {
+      "id": "2101866688425984233",
+      "url": "https://x.com/Alibaba_Qwen/status/2101866688425984233",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-09-21T08:01:39.791425+00:00",
+      "translation_zh": "感谢 SGLang 团队首日支持！SGLang-Diffusion 现已可部署 Qwen-Image-2.1：文生图、多图编辑与透明 RGBA 输出，单卡 RTX 4090 即可运行。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 172,
+        "lang": "en",
+        "created_at": "2026-09-21T02:50:43.000Z",
+        "display_text_range": [
+          0,
+          180
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "1923440305703092226",
+              "indices": [
+                7,
+                19
+              ],
+              "name": "SGLang",
+              "screen_name": "sgl_project"
+            }
+          ]
+        },
+        "id_str": "2101866688425984233",
+        "text": "Thanks @sgl_project for the day-0 support! 🙌 SGLang-Diffusion now serves Qwen-Image-2.1: text-to-image generation, multi-image editing, and transparent RGBA output. Try it out! 🎨",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2101866688425984233"
+          ],
+          "editable_until_msecs": "1789962643000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 18,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 93,
+          "lang": "en",
+          "reply_count": 12,
+          "retweet_count": 8,
+          "created_at": "2026-09-20T15:37:45.000Z",
+          "display_text_range": [
+            0,
+            280
+          ],
+          "entities": {
+            "user_mentions": [
+              {
+                "id_str": "1753339277386342400",
+                "indices": [
+                  18,
+                  31
+                ],
+                "name": "Qwen",
+                "screen_name": "Alibaba_Qwen"
+              }
+            ]
+          },
+          "id_str": "2101697330420589054",
+          "text": "Day-0 support for @Alibaba_Qwen’s Qwen-Image 2.1 is here in SGLang-Diffusion!\n\n🖥️ Native precision on a single RTX 4090 24GB with CPU offload\n- 1024×1024 generation in 18.7s and image editing in 21.7s with 22.7 GiB peak GPU memory during requests. - On an RTX PRO 6000 96GB: 8.0s",
+          "user": {
+            "id_str": "1923440305703092226",
+            "name": "SGLang",
+            "screen_name": "sgl_project",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1923445139319685126/pyjcWZU7_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2101697330420589054"
+            ],
+            "editable_until_msecs": "1789922265000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2101866671900401913",
+      "url": "https://x.com/Alibaba_Qwen/status/2101866671900401913",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-09-21T08:01:39.791425+00:00",
+      "translation_zh": "Qwen-Image-2.1 登陆 Hugging Face Spaces 在线体验！一个 7B 检查点同时支持生成与编辑，浏览器即开即用。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 158,
+        "lang": "en",
+        "created_at": "2026-09-21T02:50:40.000Z",
+        "display_text_range": [
+          0,
+          148
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "2074096652873273344",
+              "indices": [
+                17,
+                29
+              ],
+              "name": "Hugging Apps",
+              "screen_name": "HuggingApps"
+            }
+          ]
+        },
+        "id_str": "2101866671900401913",
+        "text": "Qwen-Image-2.1 × @HuggingApps: live demo on Spaces! 🖼 One single checkpoint for generation and editing. Try it in your browser, no setup needed. 👇",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2101866671900401913"
+          ],
+          "editable_until_msecs": "1789962640000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 8,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 104,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 3,
+          "retweet_count": 10,
+          "created_at": "2026-09-20T16:21:47.000Z",
+          "display_text_range": [
+            0,
+            250
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/CwAODE6wMn",
+                "expanded_url": "https://x.com/HuggingApps/status/2101708412148990429/video/1",
+                "indices": [
+                  249,
+                  272
+                ],
+                "url": "https://t.co/CwAODE6wMn"
+              }
+            ],
+            "urls": [
+              {
+                "display_url": "huggingface.co/spaces/hugging…",
+                "expanded_url": "https://huggingface.co/spaces/hugging-apps/qwen-image-2-1",
+                "indices": [
+                  225,
+                  248
+                ],
+                "url": "https://t.co/ZuGlJr626j"
+              }
+            ]
+          },
+          "id_str": "2101708412148990429",
+          "text": "Qwen Image 2.1 is here! 🖼️\n\nA 7B params native image generation and editing model, with up to 10 image references\n\nThe model comes with it's own prompt enhancement LLMs, integrated with diffusers 🧨 and ComfyUI \n\n▶️ on Spaces https://t.co/ZuGlJr626j https://t.co/CwAODE6wMn",
+          "user": {
+            "id_str": "2074096652873273344",
+            "name": "Hugging Apps",
+            "screen_name": "HuggingApps",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2074158869522104320/Zb8nrY2y_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2101708412148990429"
+            ],
+            "editable_until_msecs": "1789924907000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/CwAODE6wMn",
+              "expanded_url": "https://x.com/HuggingApps/status/2101708412148990429/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                249,
+                272
+              ],
+              "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2101708348349435904/img/fF4LhTJOKWzzMRm0.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 1080,
+                "width": 1440
+              },
+              "sizes": {
+                "large": {
+                  "h": 1080,
+                  "resize": "fit",
+                  "w": 1440
+                },
+                "medium": {
+                  "h": 900,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 510,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/CwAODE6wMn",
+              "video_info": {
+                "aspect_ratio": [
+                  4,
+                  3
+                ],
+                "duration_millis": 30966,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2101708348349435904/pl/v1TbyI3sUg_FxraF.m3u8"
+                  },
+                  {
+                    "bitrate": 256000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2101708348349435904/vid/avc1/360x270/hQU-ZcmTF9w-yBaQ.mp4"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2101708348349435904/vid/avc1/480x360/UYZWnxG14vc2sa7U.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2101708348349435904/vid/avc1/960x720/dXA5Py47WfTxlF3U.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2101708348349435904/vid/avc1/1440x1080/nKRVw3vB7S3VqYDE.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              4,
+              3
+            ],
+            "contentType": "media_entity",
+            "durationMs": 30966,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/amplify_video_thumb/2101708348349435904/img/fF4LhTJOKWzzMRm0.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2101708348349435904/pl/v1TbyI3sUg_FxraF.m3u8"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2101708348349435904/vid/avc1/360x270/hQU-ZcmTF9w-yBaQ.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2101708348349435904/vid/avc1/480x360/UYZWnxG14vc2sa7U.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2101708348349435904/vid/avc1/960x720/dXA5Py47WfTxlF3U.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2101708348349435904/vid/avc1/1440x1080/nKRVw3vB7S3VqYDE.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2101708412148990429"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2101670814953455780",
+      "url": "https://x.com/Alibaba_Qwen/status/2101670814953455780",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-09-21T08:01:39.791425+00:00",
+      "translation_zh": "Qwen-Image-2.1 现已支持 ComfyUI！开放权重，单个 7B 检查点即可生成与编辑，快来试试吧。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1077,
+        "lang": "en",
+        "created_at": "2026-09-20T13:52:24.000Z",
+        "display_text_range": [
+          0,
+          84
+        ],
+        "entities": {},
+        "id_str": "2101670814953455780",
+        "text": "Qwen-Image-2.1 is now supported in ComfyUI! Try it now and share your creations! 🖼️",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2101670814953455780"
+          ],
+          "editable_until_msecs": "1789915944000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 43,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 1394,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 46,
+          "retweet_count": 121,
+          "created_at": "2026-09-20T13:18:37.000Z",
+          "display_text_range": [
+            0,
+            235
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/6kYI0ofeQ3",
+                "expanded_url": "https://x.com/ComfyUI/status/2101662316051997092/video/1",
+                "indices": [
+                  236,
+                  259
+                ],
+                "url": "https://t.co/6kYI0ofeQ3"
+              }
+            ]
+          },
+          "id_str": "2101662316051997092",
+          "text": "Qwen-Image-2.1 is now supported in ComfyUI!\n\nOpen weights. One 7B checkpoint that generates and edits.\n\n→ Image generation at native 2K\n→ Instruction editing from up to 10 reference images in a single pass\n→ RGBA output, alpha included https://t.co/6kYI0ofeQ3",
+          "user": {
+            "id_str": "1672990618526846976",
+            "name": "ComfyUI",
+            "screen_name": "ComfyUI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2047708517570887680/vasvAmZR_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2101662316051997092"
+            ],
+            "editable_until_msecs": "1789913917000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/6kYI0ofeQ3",
+              "expanded_url": "https://x.com/ComfyUI/status/2101662316051997092/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                236,
+                259
+              ],
+              "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2101662293155340289/img/oUYluQwxQfS_7a0K.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 1080,
+                "width": 1920
+              },
+              "sizes": {
+                "large": {
+                  "h": 1080,
+                  "resize": "fit",
+                  "w": 1920
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/6kYI0ofeQ3",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "duration_millis": 36301,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2101662293155340289/pl/KRg1_HScwW0Zqt3j.m3u8?tag=16"
+                  },
+                  {
+                    "bitrate": 288000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2101662293155340289/vid/avc1/480x270/kd4si1neYIOHq278.mp4?tag=16"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2101662293155340289/vid/avc1/640x360/LfUVyfLbPW88mv4V.mp4?tag=16"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2101662293155340289/vid/avc1/1280x720/Hspi6m7lPegsVWmp.mp4?tag=16"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2101662293155340289/vid/avc1/1920x1080/PfttP1nM0o05fa9E.mp4?tag=16"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              16,
+              9
+            ],
+            "contentType": "media_entity",
+            "durationMs": 36301,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/amplify_video_thumb/2101662293155340289/img/oUYluQwxQfS_7a0K.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2101662293155340289/pl/KRg1_HScwW0Zqt3j.m3u8?tag=16"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2101662293155340289/vid/avc1/480x270/kd4si1neYIOHq278.mp4?tag=16"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2101662293155340289/vid/avc1/640x360/LfUVyfLbPW88mv4V.mp4?tag=16"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2101662293155340289/vid/avc1/1280x720/Hspi6m7lPegsVWmp.mp4?tag=16"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2101662293155340289/vid/avc1/1920x1080/PfttP1nM0o05fa9E.mp4?tag=16"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2101662316051997092"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2101670804794884242",
+      "url": "https://x.com/Alibaba_Qwen/status/2101670804794884242",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-09-21T08:01:39.791425+00:00",
+      "translation_zh": "感谢 vLLM 团队首日支持！vLLM-Omni 现已可部署 Qwen-Image-2.1：7.1B DiT 搭配 Qwen3-VL-8B，一个模型搞定生成、编辑与透明图输出。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 322,
+        "lang": "en",
+        "created_at": "2026-09-20T13:52:21.000Z",
+        "display_text_range": [
+          0,
+          121
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "1774187564276289536",
+              "indices": [
+                7,
+                20
+              ],
+              "name": "vLLM",
+              "screen_name": "vllm_project"
+            }
+          ]
+        },
+        "id_str": "2101670804794884242",
+        "text": "Thanks @vllm_project for the day-0 support! 🙌 Generate, edit, transparent output — one model, ready to serve. Details 👇",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2101670804794884242"
+          ],
+          "editable_until_msecs": "1789915941000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 17,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 281,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 16,
+          "retweet_count": 31,
+          "created_at": "2026-09-20T13:32:57.000Z",
+          "display_text_range": [
+            0,
+            228
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/9t35OhUMNX",
+                "expanded_url": "https://x.com/vllm_project/status/2101665920565629318/photo/1",
+                "indices": [
+                  227,
+                  250
+                ],
+                "url": "https://t.co/9t35OhUMNX"
+              }
+            ],
+            "urls": [
+              {
+                "display_url": "recipes.vllm.ai/Qwen/Qwen-Imag…",
+                "expanded_url": "https://recipes.vllm.ai/Qwen/Qwen-Image-2.1",
+                "indices": [
+                  203,
+                  226
+                ],
+                "url": "https://t.co/T8Q8ZmO0Rp"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "1753339277386342400",
+                "indices": [
+                  20,
+                  33
+                ],
+                "name": "Qwen",
+                "screen_name": "Alibaba_Qwen"
+              }
+            ]
+          },
+          "id_str": "2101665920565629318",
+          "text": "Qwen-Image-2.1 from @Alibaba_Qwen has day-0 support in vLLM-Omni. 🎉\n\nGenerate, edit, and create transparent images with one model: a 7.1B DiT paired with Qwen3-VL-8B.\n\nSetup and supported combinations 👇\nhttps://t.co/T8Q8ZmO0Rp https://t.co/9t35OhUMNX",
+          "user": {
+            "id_str": "1774187564276289536",
+            "name": "vLLM",
+            "screen_name": "vllm_project",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2101665920565629318"
+            ],
+            "editable_until_msecs": "1789914777000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/9t35OhUMNX",
+              "expanded_url": "https://x.com/vllm_project/status/2101665920565629318/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                227,
+                250
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HSqdjndbcAEl4dU.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 886,
+                    "w": 1582,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 886,
+                    "w": 886,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 886,
+                    "w": 777,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 886,
+                    "w": 443,
+                    "x": 71,
+                    "y": 0
+                  },
+                  {
+                    "h": 886,
+                    "w": 2344,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 886,
+                "width": 2344
+              },
+              "sizes": {
+                "large": {
+                  "h": 774,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 454,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 257,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/9t35OhUMNX"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 886,
+                  "w": 1582,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 886,
+                  "w": 886,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 886,
+                  "w": 777,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 886,
+                  "w": 443,
+                  "x": 71,
+                  "y": 0
+                },
+                {
+                  "h": 886,
+                  "w": 2344,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/vllm_project/status/2101665920565629318/photo/1",
+              "url": "https://pbs.twimg.com/media/HSqdjndbcAEl4dU.jpg",
+              "width": 2344,
+              "height": 886
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2101659310598361194",
+      "url": "https://x.com/Alibaba_Qwen/status/2101659310598361194",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-09-21T08:01:39.791425+00:00",
+      "translation_zh": "Qwen-Image-2.1 原生支持透明图像生成，并可自然地编辑透明图像。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 292,
+        "in_reply_to_screen_name": "Alibaba_Qwen",
+        "in_reply_to_status_id_str": "2101659306341097575",
+        "in_reply_to_user_id_str": "1753339277386342400",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-20T13:06:41.000Z",
+        "display_text_range": [
+          0,
+          125
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/U7kpwnrGHE",
+              "expanded_url": "https://x.com/Alibaba_Qwen/status/2101659310598361194/photo/1",
+              "indices": [
+                126,
+                149
+              ],
+              "url": "https://t.co/U7kpwnrGHE"
+            }
+          ]
+        },
+        "id_str": "2101659310598361194",
+        "text": "Qwen-Image-2.1 now supports transparent image generation natively, and naturally supports editing transparent images as well. https://t.co/U7kpwnrGHE",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2101659310598361194"
+          ],
+          "editable_until_msecs": "1789913201000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/U7kpwnrGHE",
+            "expanded_url": "https://x.com/Alibaba_Qwen/status/2101659310598361194/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              126,
+              149
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HSqWfTWbEAAvY2s.png",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 430,
+                  "w": 767,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 767,
+                  "w": 767,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 768,
+                  "w": 674,
+                  "x": 46,
+                  "y": 0
+                },
+                {
+                  "h": 768,
+                  "w": 384,
+                  "x": 191,
+                  "y": 0
+                },
+                {
+                  "h": 768,
+                  "w": 767,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 768,
+              "width": 767
+            },
+            "sizes": {
+              "large": {
+                "h": 768,
+                "resize": "fit",
+                "w": 767
+              },
+              "medium": {
+                "h": 768,
+                "resize": "fit",
+                "w": 767
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 679
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/U7kpwnrGHE"
+          },
+          {
+            "display_url": "pic.x.com/U7kpwnrGHE",
+            "expanded_url": "https://x.com/Alibaba_Qwen/status/2101659310598361194/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              126,
+              149
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HSqWiCmbcAAjUR1.png",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 442,
+                  "w": 789,
+                  "x": 0,
+                  "y": 83
+                },
+                {
+                  "h": 789,
+                  "w": 789,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 813,
+                  "w": 713,
+                  "x": 70,
+                  "y": 0
+                },
+                {
+                  "h": 813,
+                  "w": 407,
+                  "x": 223,
+                  "y": 0
+                },
+                {
+                  "h": 813,
+                  "w": 789,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 813,
+              "width": 789
+            },
+            "sizes": {
+              "large": {
+                "h": 813,
+                "resize": "fit",
+                "w": 789
+              },
+              "medium": {
+                "h": 813,
+                "resize": "fit",
+                "w": 789
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 660
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/U7kpwnrGHE"
+          },
+          {
+            "display_url": "pic.x.com/U7kpwnrGHE",
+            "expanded_url": "https://x.com/Alibaba_Qwen/status/2101659310598361194/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              126,
+              149
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HSqWjo6aQAAmveP.png",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 421,
+                  "w": 751,
+                  "x": 0,
+                  "y": 80
+                },
+                {
+                  "h": 751,
+                  "w": 751,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 775,
+                  "w": 680,
+                  "x": 28,
+                  "y": 0
+                },
+                {
+                  "h": 775,
+                  "w": 388,
+                  "x": 174,
+                  "y": 0
+                },
+                {
+                  "h": 775,
+                  "w": 751,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 775,
+              "width": 751
+            },
+            "sizes": {
+              "large": {
+                "h": 775,
+                "resize": "fit",
+                "w": 751
+              },
+              "medium": {
+                "h": 775,
+                "resize": "fit",
+                "w": 751
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 659
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/U7kpwnrGHE"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 430,
+                "w": 767,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 767,
+                "w": 767,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 768,
+                "w": 674,
+                "x": 46,
+                "y": 0
+              },
+              {
+                "h": 768,
+                "w": 384,
+                "x": 191,
+                "y": 0
+              },
+              {
+                "h": 768,
+                "w": 767,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Alibaba_Qwen/status/2101659310598361194/photo/1",
+            "url": "https://pbs.twimg.com/media/HSqWfTWbEAAvY2s.png",
+            "width": 767,
+            "height": 768
+          },
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 442,
+                "w": 789,
+                "x": 0,
+                "y": 83
+              },
+              {
+                "h": 789,
+                "w": 789,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 813,
+                "w": 713,
+                "x": 70,
+                "y": 0
+              },
+              {
+                "h": 813,
+                "w": 407,
+                "x": 223,
+                "y": 0
+              },
+              {
+                "h": 813,
+                "w": 789,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Alibaba_Qwen/status/2101659310598361194/photo/1",
+            "url": "https://pbs.twimg.com/media/HSqWiCmbcAAjUR1.png",
+            "width": 789,
+            "height": 813
+          },
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 421,
+                "w": 751,
+                "x": 0,
+                "y": 80
+              },
+              {
+                "h": 751,
+                "w": 751,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 775,
+                "w": 680,
+                "x": 28,
+                "y": 0
+              },
+              {
+                "h": 775,
+                "w": 388,
+                "x": 174,
+                "y": 0
+              },
+              {
+                "h": 775,
+                "w": 751,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Alibaba_Qwen/status/2101659310598361194/photo/1",
+            "url": "https://pbs.twimg.com/media/HSqWjo6aQAAmveP.png",
+            "width": 751,
+            "height": 775
+          }
+        ],
+        "conversation_count": 4,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 310,
+          "in_reply_to_screen_name": "Alibaba_Qwen",
+          "in_reply_to_status_id_str": "2101659302792679789",
+          "in_reply_to_user_id_str": "1753339277386342400",
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 5,
+          "retweet_count": 12,
+          "created_at": "2026-09-20T13:06:40.000Z",
+          "display_text_range": [
+            0,
+            12
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/6bURiu9yaH",
+                "expanded_url": "https://x.com/Alibaba_Qwen/status/2101659306341097575/photo/1",
+                "indices": [
+                  13,
+                  36
+                ],
+                "url": "https://t.co/6bURiu9yaH"
+              }
+            ]
+          },
+          "id_str": "2101659306341097575",
+          "text": "Performance: https://t.co/6bURiu9yaH",
+          "user": {
+            "id_str": "1753339277386342400",
+            "name": "Qwen",
+            "screen_name": "Alibaba_Qwen",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2101659306341097575"
+            ],
+            "editable_until_msecs": "1789913200000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/6bURiu9yaH",
+              "expanded_url": "https://x.com/Alibaba_Qwen/status/2101659306341097575/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                13,
+                36
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HSqWValakAADKFk.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 1440,
+                    "w": 2571,
+                    "x": 1029,
+                    "y": 0
+                  },
+                  {
+                    "h": 1440,
+                    "w": 1440,
+                    "x": 1710,
+                    "y": 0
+                  },
+                  {
+                    "h": 1440,
+                    "w": 1263,
+                    "x": 1799,
+                    "y": 0
+                  },
+                  {
+                    "h": 1440,
+                    "w": 720,
+                    "x": 2070,
+                    "y": 0
+                  },
+                  {
+                    "h": 1440,
+                    "w": 3600,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 1440,
+                "width": 3600
+              },
+              "sizes": {
+                "large": {
+                  "h": 819,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 480,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 272,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/6bURiu9yaH"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 1440,
+                  "w": 2571,
+                  "x": 1029,
+                  "y": 0
+                },
+                {
+                  "h": 1440,
+                  "w": 1440,
+                  "x": 1710,
+                  "y": 0
+                },
+                {
+                  "h": 1440,
+                  "w": 1263,
+                  "x": 1799,
+                  "y": 0
+                },
+                {
+                  "h": 1440,
+                  "w": 720,
+                  "x": 2070,
+                  "y": 0
+                },
+                {
+                  "h": 1440,
+                  "w": 3600,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/Alibaba_Qwen/status/2101659306341097575/photo/1",
+              "url": "https://pbs.twimg.com/media/HSqWValakAADKFk.jpg",
+              "width": 3600,
+              "height": 1440
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2101659302792679789",
       "url": "https://x.com/Alibaba_Qwen/status/2101659302792679789",
       "label": "Qwen",
