@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Checkpoint Contract — AI Frontlines</title>
+<meta content="Every long agent run will eventually be interrupted — by a deploy, a rate limit, a context ceiling, a sleeping human. The question is not whether the run stops, but whether it can continue. Teams that treat interruption as a normal operating condition design their runs around checkpoints, and checkpoints are a contract with three clauses: what happened, what was committed, and what remains." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 22, 2026" data-zh="2026年9月22日">September 22, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Checkpoint Contract" data-zh="检查点契约">The Checkpoint Contract</h1>
+<p class="post-header-deck" data-en="Every sufficiently long agent run will be interrupted. A deploy ships mid-task. A rate limit trips. The context window fills. A human closes the laptop and goes to dinner, and the process holding the run's state dies with it. Most agent systems handle this the way a video game without save files handles a power cut: start over from the beginning and hope the second playthrough resembles the first. It won't. The fix is not resilience — it is a design decision made before the run starts: the run will be written down as it goes, in a form that lets any fresh process pick it up and continue. A checkpoint is not a log. It is a contract with three clauses." data-zh="每一个足够长的智能体运行，终会被打断。一次部署在任务中途上线。一次限流被触发。上下文窗口被填满。一个人类合上笔记本去吃晚饭，持有运行状态的进程随之而死。大多数智能体系统处理这件事的方式，就像一个没有存档功能的电子游戏遭遇断电：从头再来，并指望第二次通关与第一次相似。它不会相似。修复的办法不是「更强的韧性」，而是在运行开始之前就做好的一个设计决定：运行过程将被随手记录下来，记录成任何新进程都能接手并继续的形式。检查点不是日志。它是一份契约，只有三条条款。">Every sufficiently long agent run will be interrupted. A deploy ships mid-task. A rate limit trips. The context fills. A human closes the laptop.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a quiet assumption buried in most agent architectures: that the process which starts a task will be the process that finishes it. It is a reasonable assumption for a chatbot answering in fifteen seconds. It is fiction for anything interesting. Real agent work — migrating a codebase, reconciling a quarter of invoices, researching a market — runs for minutes to hours, across dozens of tool calls, several of which touch the outside world. Over that horizon, interruption is not an exceptional event to be defended against. It is a scheduled feature of the environment. The systems that survive are not the ones that never stop. They are the ones that can stop anywhere, and continue as if nothing happened — because somewhere, someone decided what 'continue' would mean." data-zh="大多数智能体架构里埋着一个安静的假设：启动任务的进程，将是完成任务的进程。对一个十五秒内作答的聊天机器人来说，这是个合理的假设。对任何真正有趣的任务，它是虚构。真正的智能体工作——迁移一个代码库、核对一个季度的发票、调研一个市场——要运行几分钟到几小时，跨越几十次工具调用，其中若干次还会触碰外部世界。在这个时间尺度上，打断不是需要防范的异常事件，而是环境的一项定时功能。活下来的系统，不是从不停止的系统，而是能在任何地方停下、又若无其事继续的系统——因为在某个地方，有人事先定义好了「继续」的含义。">There is a quiet assumption buried in most agent architectures: that the process which starts a task will be the process that finishes it. It is a reasonable assumption for a chatbot answering in fifteen seconds. It is fiction for anything interesting.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrC2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE LIFETIME OF A LONG AGENT RUN" data-zh="一次长智能体运行的生命周期" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE LIFETIME OF A LONG AGENT RUN</text>
+<!-- timeline -->
+<line stroke="var(--text-secondary)" stroke-width="2" x1="50" x2="570" y1="120" y2="120"></line>
+<path d="M570 120 L560 115 L560 125 Z" fill="var(--text-secondary)"></path>
+<circle cx="60" cy="120" fill="var(--accent)" r="6"></circle>
+<text data-en="start" data-zh="开始" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="60" y="146">start</text>
+<circle cx="560" cy="120" fill="var(--accent)" r="6"></circle>
+<text data-en="done" data-zh="完成" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="560" y="146">done</text>
+<!-- interruption events -->
+<line stroke="var(--accent-3)" stroke-width="2" x1="150" x2="150" y1="70" y2="112"></line>
+<line stroke="var(--accent-3)" stroke-width="2" x1="260" x2="260" y1="70" y2="112"></line>
+<line stroke="var(--accent-3)" stroke-width="2" x1="400" x2="400" y1="70" y2="112"></line>
+<line stroke="var(--accent-3)" stroke-width="2" x1="500" x2="500" y1="70" y2="112"></line>
+<circle cx="150" cy="120" fill="var(--accent-3)" r="5"></circle>
+<circle cx="260" cy="120" fill="var(--accent-3)" r="5"></circle>
+<circle cx="400" cy="120" fill="var(--accent-3)" r="5"></circle>
+<circle cx="500" cy="120" fill="var(--accent-3)" r="5"></circle>
+<text data-en="deploy" data-zh="部署" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="150" y="62">deploy</text>
+<text data-en="rate limit" data-zh="限流" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="260" y="62">rate limit</text>
+<text data-en="context full" data-zh="上下文满" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="400" y="62">context full</text>
+<text data-en="human leaves" data-zh="人类离场" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="500" y="62">human leaves</text>
+<!-- two outcomes -->
+<rect fill="var(--bg-surface)" height="64" rx="10" stroke="var(--text-secondary)" stroke-width="1.5" width="240" x="50" y="190"></rect>
+<text data-en="without checkpoints" data-zh="没有检查点" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="170" y="214">without checkpoints</text>
+<text data-en="restart from zero · re-pay for every call" data-zh="从零重启 · 每次调用重新付费" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="170" y="234">restart from zero · re-pay for every call</text>
+<text data-en="and a different playthrough this time" data-zh="而且这一次是另一场通关" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="170" y="248">and a different playthrough this time</text>
+<rect fill="var(--accent-dim)" height="64" rx="10" stroke="var(--accent)" stroke-width="2" width="240" x="330" y="190"></rect>
+<text data-en="with checkpoints" data-zh="有检查点" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="450" y="214">with checkpoints</text>
+<text data-en="resume at the last checkpoint" data-zh="从上一个检查点续跑" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="450" y="234">resume at the last checkpoint</text>
+<text data-en="state intact · committed work preserved" data-zh="状态完好 · 已提交的工作得以保留" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="450" y="248">state intact · committed work preserved</text>
+<path d="M170 178 C180 168 420 168 440 186" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<text data-en="The interruptions are identical. The cost of each is a design choice made on day one." data-zh="打断是一模一样的。每一次打断的代价，却是第一天就做出的设计选择。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="300">The interruptions are identical. The cost of each is a design choice made on day one.</text>
+</svg>
+<p class="diagram-caption" data-en="A long run is not a straight line but a line peppered with stops. Deploys, rate limits, context ceilings, and absent humans are not bugs; they are Tuesdays. The difference between a fragile system and a durable one is not whether these events arrive, but whether the run was written to be continued." data-zh="一次长运行不是一条直线，而是一条布满站点的线。部署、限流、上下文上限、离场的人类，都不是 bug，它们就是寻常的星期二。脆弱系统与耐用系统的区别，不在于这些事件是否到来，而在于这次运行是否被写成了「可以续跑」的样子。">A long run is not a straight line but a line peppered with stops. Deploys, rate limits, context ceilings, and absent humans are not bugs; they are Tuesdays.</p>
+</div>
+<h3 data-en="Replay is not resume" data-zh="重放不等于续跑">Replay is not resume</h3>
+<p data-en="The naive answer to interruption is replay: run the whole task again from the top. It feels safe because it requires no new machinery. It is actually the most dangerous option on the table, for two reasons. First, cost: every replayed step is re-paid — in tokens, in API calls, in wall-clock time, sometimes in real money moved by tools that charge. Second, and worse: agents are not deterministic. The second playthrough takes different intermediate steps, asks different tools, maybe reaches a different answer. Replaying a run that already emailed three customers does not just redo the thinking — it risks redoing the emails. Replay treats a stochastic process as though it had a script. It doesn't. It has dice." data-zh="对打断的天真回应是重放：从头把整个任务再跑一遍。它感觉安全，因为它不需要任何新机制。它其实是桌上最危险的选项，原因有二。第一，成本：每一个被重放的步骤都要重新付费——token、API 调用、墙上时钟的时间，有时是被收费工具真金白银动掉的钱。第二，更糟：智能体不是确定性的。第二次通关会走不同的中间步骤、调用不同的工具，甚至得出不同的答案。重放一个已经给三位客户发过邮件的运行，不只是重做思考——它可能重发邮件。重放把一个随机过程当作有剧本的东西来对待。它没有剧本。它只有骰子。">The naive answer to interruption is replay: run the whole task again from the top. It feels safe because it requires no new machinery. It is actually the most dangerous option on the table.</p>
+<p data-en="Resume is a different operation entirely. To resume is to restore a saved state and continue from it — which means the state must have been saved, which means someone had to decide what 'the state of an agent run' is. That decision is the real work. A run is not just a conversation transcript. It is a transcript plus a plan in progress plus a working set of facts plus a picture of the outside world plus — the part everyone forgets — the set of actions already committed to that outside world. A transcript can be re-read. Committed actions cannot be un-done. Any resume mechanism that restores the conversation but not the ledger of committed actions is a machine for accidentally sending the same email twice." data-zh="续跑则完全是另一种操作。续跑是恢复一个保存过的状态并从中继续——这意味着状态必须被保存过，这意味着必须有人决定「一个智能体运行的状态」到底是什么。那个决定才是真正的工作。一次运行不只是对话记录。它是对话记录，加上进行中的计划，加上事实工作集，加上外部世界的图景，再加上——所有人都忘掉的那部分——已向外部世界提交过的动作集合。对话记录可以重读。已提交的动作无法撤销。任何只恢复对话、不恢复已提交动作台账的续跑机制，都是一台会不小心把同一封邮件发两遍的机器。">Resume is a different operation entirely. To resume is to restore a saved state and continue from it — which means someone had to decide what 'the state of an agent run' is.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 310" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="TWO WAYS TO CONTINUE AFTER A CRASH AT STEP 7" data-zh="第 7 步崩溃后的两种继续方式" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">TWO WAYS TO CONTINUE AFTER A CRASH AT STEP 7</text>
+<!-- step dots shared -->
+<text data-en="steps 1 → 10" data-zh="步骤 1 → 10" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="46">steps 1 → 10</text>
+<!-- REPLAY row -->
+<text data-en="REPLAY" data-zh="重放" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" x="40" y="80">REPLAY</text>
+<circle cx="150" cy="76" fill="var(--accent-3)" opacity="0.35" r="6"></circle>
+<circle cx="185" cy="76" fill="var(--accent-3)" opacity="0.35" r="6"></circle>
+<circle cx="220" cy="76" fill="var(--accent-3)" opacity="0.35" r="6"></circle>
+<circle cx="255" cy="76" fill="var(--accent-3)" opacity="0.35" r="6"></circle>
+<circle cx="290" cy="76" fill="var(--accent-3)" opacity="0.35" r="6"></circle>
+<circle cx="325" cy="76" fill="var(--accent-3)" opacity="0.35" r="6"></circle>
+<circle cx="360" cy="76" fill="var(--accent-3)" opacity="0.35" r="6"></circle>
+<path d="M150 76 L360 76" fill="none" marker-end="url(#arrR1)" stroke="var(--accent-3)" stroke-width="1" stroke-dasharray="3,3"></path>
+<text data-en="steps 1–6 re-executed: re-billed, re-searched," data-zh="第 1–6 步重新执行：重新计费、重新搜索、" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" x="150" y="104">steps 1–6 re-executed: re-billed, re-searched,</text>
+<text data-en="and possibly re-emailed — with different dice" data-zh="甚至可能重新发邮件——骰子已然不同" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" x="150" y="118">and possibly re-emailed — with different dice</text>
+<!-- RESUME row -->
+<text data-en="RESUME" data-zh="续跑" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" x="40" y="160">RESUME</text>
+<circle cx="150" cy="156" fill="var(--accent)" r="6"></circle>
+<circle cx="185" cy="156" fill="var(--accent)" r="6"></circle>
+<circle cx="220" cy="156" fill="var(--accent)" r="6"></circle>
+<circle cx="255" cy="156" fill="var(--accent)" r="6"></circle>
+<circle cx="290" cy="156" fill="var(--accent)" r="6"></circle>
+<circle cx="325" cy="156" fill="var(--accent)" r="6"></circle>
+<!-- checkpoint diamond at step 6 -->
+<path d="M325 142 L338 156 L325 170 L312 156 Z" fill="var(--accent-dim)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="checkpoint" data-zh="检查点" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="325" y="188">checkpoint</text>
+<path d="M345 156 L500 156" fill="none" marker-end="url(#arrR2)" stroke="var(--accent)" stroke-width="2"></path>
+<circle cx="510" cy="156" fill="none" r="6" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="2,2"></circle>
+<text data-en="step 7 continues with restored state;" data-zh="第 7 步带着恢复的状态继续；" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" x="150" y="212">step 7 continues with restored state;</text>
+<text data-en="steps 1–6 are history, not work" data-zh="第 1–6 步是历史，不是待办" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" x="150" y="226">steps 1–6 are history, not work</text>
+<rect fill="var(--accent-dim)" height="44" opacity="0.5" rx="8" width="560" x="30" y="252"></rect>
+<text data-en="Replay re-runs a stochastic process and hopes. Resume restores a state and knows. The difference is whether anyone wrote the state down." data-zh="重放是重掷一个随机过程，然后祈祷。续跑是恢复一个状态，并且知道。区别只在于：有没有人把状态写下来。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="279">Replay re-runs a stochastic process and hopes. Resume restores a state and knows. The difference is whether anyone wrote the state down.</text>
+</svg>
+<p class="diagram-caption" data-en="A crash at step seven. Above: the run restarts from zero, re-paying for every step and re-rolling every decision — including the ones that already touched the world. Below: the run restores the checkpoint taken after step six and continues. Same crash, same environment; radically different bill and radically different risk." data-zh="第 7 步崩溃。上：运行从零重启，每一步重新付费，每一个决策重新掷骰——包括那些已经触碰过世界的。下：运行恢复第 6 步之后的检查点，继续前进。同样的崩溃，同样的环境；账单与风险天差地别。">A crash at step seven. Above: the run restarts from zero, re-paying for every step. Below: the run restores the checkpoint and continues. Same crash, different bill.</p>
+</div>
+<h3 data-en="The three clauses" data-zh="三条条款">The three clauses</h3>
+<p data-en="A useful checkpoint answers three questions, and only these three. What happened: the distilled trace — decisions taken, tool calls made, findings learned — compressed, not the raw transcript, because a resume is a fresh context window and it cannot afford to re-read everything. What was committed: the idempotency ledger — every action that changed the outside world, with a unique key, so that a resumed run can check 'was this already done?' before doing it again. What remains: the plan as it stands — open items, blocked items, the next intended action. Anything else is padding. Anything missing is a landmine. The ledger clause deserves special respect, because it is the one that fails silently: a missing plan item produces a confused agent, visible in minutes; a missing ledger entry produces a duplicate wire transfer, visible in a reconciliation meeting next month." data-zh="一个有用的检查点回答三个问题，而且只回答这三个。发生了什么：蒸馏后的轨迹——做过的决策、发过的工具调用、得到过的发现——经过压缩，而不是原始记录，因为续跑是一个全新的上下文窗口，它读不起所有东西。提交了什么：幂等台账——每一个改变了外部世界的动作，都带一个唯一键，这样续跑的进程在重做之前能先查一下「这是不是已经做过了」。还剩什么：当前状态下的计划——未完成项、被阻塞项、下一个打算执行的动作。任何别的东西都是赘肉。任何缺失的东西都是地雷。台账条款值得格外尊重，因为它失败得悄无声息：缺失的计划项会产生一个困惑的智能体，几分钟内就看得见；缺失的台账条目会产生一笔重复的银行转账，要到下个月的对账会议才看得见。">A useful checkpoint answers three questions, and only these three. What happened. What was committed. What remains. Anything else is padding. Anything missing is a landmine.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrK1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="ANATOMY OF A CHECKPOINT" data-zh="一个检查点的解剖图" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">ANATOMY OF A CHECKPOINT</text>
+<!-- checkpoint card -->
+<rect fill="var(--bg-surface)" height="252" rx="12" stroke="var(--accent)" stroke-width="2" width="360" x="130" y="44"></rect>
+<!-- clause 1 -->
+<rect fill="var(--accent-dim)" height="64" rx="8" stroke="var(--accent)" stroke-width="1.5" width="320" x="150" y="60"></rect>
+<text data-en="1 · WHAT HAPPENED — the distilled trace" data-zh="1 · 发生了什么 —— 蒸馏后的轨迹" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="162" y="79">1 · WHAT HAPPENED — the distilled trace</text>
+<text data-en="&quot;queried 3 sources; schema mismatch found in src/quotas.py&quot;" data-zh="「查了 3 个来源；在 src/quotas.py 发现 schema 不匹配」" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="162" y="96">"queried 3 sources; schema mismatch found in src/quotas.py"</text>
+<text data-en="compressed · readable by a fresh context" data-zh="已压缩 · 全新上下文可直接读" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" x="162" y="112">compressed · readable by a fresh context</text>
+<!-- clause 2 -->
+<rect fill="var(--bg-surface)" height="64" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="320" x="150" y="132"></rect>
+<text data-en="2 · WHAT WAS COMMITTED — the ledger" data-zh="2 · 提交了什么 —— 台账" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="162" y="151">2 · WHAT WAS COMMITTED — the ledger</text>
+<text data-en="&quot;email(customer_88, refund_notice) → key r7f2 · DONE&quot;" data-zh="「email(customer_88, refund_notice) → 键 r7f2 · 已完成」" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="162" y="168">"email(customer_88, refund_notice) → key r7f2 · DONE"</text>
+<text data-en="every world-touching action · idempotency keys" data-zh="每个触世动作 · 幂等键" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" x="162" y="184">every world-touching action · idempotency keys</text>
+<!-- clause 3 -->
+<rect fill="var(--bg-surface)" height="64" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="320" x="150" y="204"></rect>
+<text data-en="3 · WHAT REMAINS — the live plan" data-zh="3 · 还剩什么 —— 进行中的计划" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="162" y="223">3 · WHAT REMAINS — the live plan</text>
+<text data-en="&quot;next: patch quotas.py · then: rerun eval suite&quot;" data-zh="「下一步：修补 quotas.py · 之后：重跑评测套件」" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="162" y="240">"next: patch quotas.py · then: rerun eval suite"</text>
+<text data-en="open items · blockers · intended next action" data-zh="未完成项 · 阻塞项 · 下一步意图" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" x="162" y="256">open items · blockers · intended next action</text>
+<!-- side annotations -->
+<path d="M470 92 C510 92 520 108 540 120" fill="none" marker-end="url(#arrK1)" stroke="var(--accent)" stroke-width="1"></path>
+<text data-en="cheap to read" data-zh="读起来便宜" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="545" y="134">cheap to read</text>
+<path d="M470 164 C510 164 520 180 540 192" fill="none" marker-end="url(#arrK1)" stroke="var(--accent)" stroke-width="1"></path>
+<text data-en="expensive to" data-zh="漏掉它" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="545" y="206">expensive to</text>
+<text data-en="omit" data-zh="代价高昂" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="545" y="218">omit</text>
+<path d="M120 236 C80 236 70 220 60 206" fill="none" marker-end="url(#arrK1)" stroke="var(--accent)" stroke-width="1"></path>
+<text data-en="the resumed agent" data-zh="续跑的智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="57" y="182">the resumed agent</text>
+<text data-en="starts here, informed" data-zh="从这里出发，心中有数" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="57" y="168">starts here, informed</text>
+<text data-en="Three clauses, a few hundred tokens. Enough for a fresh process to continue as if it had been there all along." data-zh="三条条款，几百个 token。足以让一个全新进程表现得仿佛从头到尾都在场。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="326">Three clauses, a few hundred tokens. Enough for a fresh process to continue as if it had been there all along.</text>
+</svg>
+<p class="diagram-caption" data-en="The checkpoint contract: a distilled trace the new context can afford to read, a ledger of committed actions that makes re-execution safe, and a live plan that tells the resumed agent where to aim. Skip a clause and the resume still 'works' — until the exact situation the clause existed for arrives." data-zh="检查点契约：一份新上下文读得起的蒸馏轨迹，一本让重执行变得安全的已提交动作台账，还有一份告诉续跑智能体往哪瞄准的进行中计划。跳过任何一条，续跑依然「能用」——直到那条条款为之存在的那個确切场景到来。">The checkpoint contract: a distilled trace, a ledger of committed actions, and a live plan. Skip a clause and the resume still 'works' — until the exact situation the clause existed for arrives.</p>
+</div>
+<p data-en="None of this is exotic. Game engines have saved state since the 1980s; databases have had write-ahead logs for longer. The pattern arrives late to agents because the industry's mental model of an agent is still, at bottom, a conversation — and conversations are assumed ephemeral. But an agent that takes real actions is not a conversation. It is a distributed transaction between a model, a pile of tools, and the world, and the world does not roll back. Once that framing lands, the engineering follows naturally: checkpoint after every committed action, or at every plan-step boundary; write the checkpoint before the side effect, mark it done after, exactly like a two-phase commit; on resume, replay nothing, trust the ledger, and hand the model the three clauses as its opening context." data-zh="这些没有一样是奇技淫巧。游戏引擎从 1980 年代起就有存档；数据库的预写日志存在得更久。这个模式来到智能体世界之所以这么晚，是因为这个行业对智能体的心智模型，归根结底仍是一场对话——而对话被默认为转瞬即逝。但一个采取真实行动的智能体不是对话。它是模型、一堆工具与世界之间的一笔分布式事务，而世界不会回滚。这个框架一旦落地，工程做法便自然随之而来：每提交一个动作、或每个计划步骤边界处打一个检查点；先写检查点再产生副作用，完成之后再标记，恰如一次两阶段提交；续跑时，什么都不重放，信任台账，把三条条款作为开场上下文递给模型。">Game engines have saved state since the 1980s; databases have had write-ahead logs for longer. The pattern arrives late to agents because the industry's mental model of an agent is still a conversation — and conversations are assumed ephemeral.</p>
+<blockquote data-en="An agent that cannot be interrupted can only be abandoned. The systems worth building are the ones a human can walk away from at 6pm and a machine can pick up at 3am — with no duplicated emails to show for the handoff." data-zh="一个不能被打断的智能体，只能被抛弃。值得构建的系统，是人类可以在傍晚六点转身离开、机器可以在凌晨三点接手的系统——而且这次交接拿不出任何一封重复的邮件。">An agent that cannot be interrupted can only be abandoned. The systems worth building are the ones a human can walk away from at 6pm and a machine can pick up at 3am — with no duplicated emails to show for the handoff.</blockquote>
+<p data-en="The deeper point is about what long-running agents actually are. A forty-minute run is not a long request; it is a small project, and projects have always needed progress records, commit points, and a definition of 'where we left off.' The teams that internalize this stop asking 'how do we make the agent not die?' — the wrong question, since everything dies — and start asking 'what does the next process need to know to carry on?' That question has a stable answer, it fits in a few hundred tokens, and it can be written down on every step of every run, starting now. Interruption is an environmental constant. Continuity is a design choice." data-zh="更深的一层，关乎长时运行智能体的本质。一次四十分钟的运行不是一个长请求；它是一个小项目，而项目从来就需要进度记录、提交点和「我们做到了哪儿」的定义。真正领会了这一点的团队，不再问「怎么让智能体不死？」——这是个错误的问题，因为万物皆有一死——而是开始问「下一个进程需要知道什么，才能接得下去？」这个问题有一个稳定的答案，几百个 token 就装得下，而且从现在起，可以在每一次运行的每一步上随手写下。打断是环境的常量。连续性是设计的选择。">A forty-minute run is not a long request; it is a small project, and projects have always needed progress records, commit points, and a definition of 'where we left off.'</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
