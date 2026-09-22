@@ -1,6 +1,306 @@
 {
   "tweets": [
     {
+      "id": "2102248609106514355",
+      "url": "https://x.com/Alibaba_Qwen/status/2102248609106514355",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-09-22T08:00:42.780252+00:00",
+      "translation_zh": "Qwen-Image-2.1 获 Intel OpenVINO Day-0 支持！生成与编辑共用同一开源权重检查点，可在 Intel 硬件上优化运行。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 144,
+        "lang": "en",
+        "created_at": "2026-09-22T04:08:20.000Z",
+        "display_text_range": [
+          0,
+          165
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "5868402",
+              "indices": [
+                28,
+                38
+              ],
+              "name": "Intel Devs",
+              "screen_name": "inteldevs"
+            }
+          ]
+        },
+        "id_str": "2102248609106514355",
+        "text": "Day-0 OpenVINO support from @inteldevs! 🥳 Qwen-Image-2.1 is ready to run optimized on Intel hardware. One open-weight checkpoint for both generation and editing. 👇",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2102248609106514355"
+          ],
+          "editable_until_msecs": "1790053700000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 5,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 14,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 1,
+          "retweet_count": 2,
+          "created_at": "2026-09-21T18:57:47.000Z",
+          "display_text_range": [
+            0,
+            134
+          ],
+          "entities": {
+            "urls": [
+              {
+                "display_url": "ms.spr.ly/6019a5nm5",
+                "expanded_url": "https://ms.spr.ly/6019a5nm5",
+                "indices": [
+                  111,
+                  134
+                ],
+                "url": "https://t.co/5ClJPjxadu"
+              }
+            ]
+          },
+          "id_str": "2102110058360209902",
+          "text": "We're excited to offer Day0 OpenVINO support for Qwen-Image-2.1\n\nRead more about what you can accomplish here: https://t.co/5ClJPjxadu",
+          "user": {
+            "id_str": "5868402",
+            "name": "Intel Devs",
+            "screen_name": "inteldevs",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2060107501379444736/P4TOF87R_normal.png",
+            "highlighted_label": {
+              "badge": {
+                "url": "https://pbs.twimg.com/profile_images/1301199561713541120/7dPeX1gK_bigger.png"
+              },
+              "description": "Intel",
+              "url": {
+                "url": "https://twitter.com/intel",
+                "url_type": "DeepLink"
+              },
+              "user_label_display_type": "Badge",
+              "user_label_type": "BusinessLabel"
+            }
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2102110058360209902"
+            ],
+            "editable_until_msecs": "1790020667000",
+            "edits_remaining": "5",
+            "is_edit_eligible": true
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2102244258531213596",
+      "url": "https://x.com/Kimi_Moonshot/status/2102244258531213596",
+      "label": "Kimi",
+      "color": "#6366F1",
+      "fetched_at": "2026-09-22T08:00:42.780252+00:00",
+      "translation_zh": "Kimi K3 正式上线 Amazon Bedrock！支持编码、文档分析和长程 Agent 工作流，并原生支持显式提示缓存（prompt caching），可使用 Bedrock 的访问控制、加密与审计能力。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 358,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-22T03:51:03.000Z",
+        "display_text_range": [
+          0,
+          246
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/GxEGrgFAwL",
+              "expanded_url": "https://x.com/Kimi_Moonshot/status/2102244258531213596/photo/1",
+              "indices": [
+                246,
+                269
+              ],
+              "url": "https://t.co/GxEGrgFAwL"
+            }
+          ],
+          "urls": [
+            {
+              "display_url": "docs.aws.amazon.com/bedrock/latest…",
+              "expanded_url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k3.html",
+              "indices": [
+                222,
+                245
+              ],
+              "url": "https://t.co/vm32dU0TN1"
+            }
+          ]
+        },
+        "id_str": "2102244258531213596",
+        "text": "Kimi K3 is now on Amazon Bedrock!\n\nRun coding, document analysis, and extended agent workflows with Bedrock's access, encryption, and auditing controls.  Explicit prompt caching supported.\n\nStart building with K3 on AWS 👉 https://t.co/vm32dU0TN1 https://t.co/GxEGrgFAwL",
+        "user": {
+          "id_str": "1863959670169501696",
+          "name": "Kimi.ai",
+          "screen_name": "Kimi_Moonshot",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2086719038798102529/diJGKpOE_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2102244258531213596"
+          ],
+          "editable_until_msecs": "1790052663000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/GxEGrgFAwL",
+            "expanded_url": "https://x.com/Kimi_Moonshot/status/2102244258531213596/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              246,
+              269
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HSyrlYSaEAAsTr7.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 717,
+                  "w": 1280,
+                  "x": 0,
+                  "y": 3
+                },
+                {
+                  "h": 720,
+                  "w": 720,
+                  "x": 504,
+                  "y": 0
+                },
+                {
+                  "h": 720,
+                  "w": 632,
+                  "x": 548,
+                  "y": 0
+                },
+                {
+                  "h": 720,
+                  "w": 360,
+                  "x": 684,
+                  "y": 0
+                },
+                {
+                  "h": 720,
+                  "w": 1280,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 720,
+              "width": 1280
+            },
+            "sizes": {
+              "large": {
+                "h": 720,
+                "resize": "fit",
+                "w": 1280
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/GxEGrgFAwL"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 717,
+                "w": 1280,
+                "x": 0,
+                "y": 3
+              },
+              {
+                "h": 720,
+                "w": 720,
+                "x": 504,
+                "y": 0
+              },
+              {
+                "h": 720,
+                "w": 632,
+                "x": 548,
+                "y": 0
+              },
+              {
+                "h": 720,
+                "w": 360,
+                "x": 684,
+                "y": 0
+              },
+              {
+                "h": 720,
+                "w": 1280,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Kimi_Moonshot/status/2102244258531213596/photo/1",
+            "url": "https://pbs.twimg.com/media/HSyrlYSaEAAsTr7.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "conversation_count": 13,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2102093145051943229",
       "url": "https://x.com/OpenAI/status/2102093145051943229",
       "label": "OpenAI",
