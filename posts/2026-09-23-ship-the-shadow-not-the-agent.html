@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ship the Shadow, Not the Agent — AI Frontlines</title>
+<meta content="The demo worked, so the agent went live — and took over the job in one move. That leap, from zero autonomy to full autonomy, is where agent deployments die. The alternative is the shadow run: the agent works alongside the human, silently proposing every decision, while the system records where it would have diverged. Trust is not a switch. It is a dial, turned one notch at a time, and every notch is paid for in evidence." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=19" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 23, 2026" data-zh="2026年9月23日">September 23, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Ship the Shadow, Not the Agent" data-zh="先上线的，应该是影子，而不是智能体">Ship the Shadow, Not the Agent</h1>
+<p class="post-header-deck" data-en="The demo worked, so the agent went live — and took over the job in one move. That leap, from zero autonomy to full autonomy, is where agent deployments go to die. The alternative is the shadow run: the agent works alongside the human, silently proposing every decision, while the system records where it would have diverged. Not to judge the agent against a benchmark, but to judge it against the person it is about to replace. Trust is not a switch. It is a dial, turned one notch at a time, and every notch is paid for in evidence." data-zh="演示成功了，于是智能体直接上线——一步接管了整份工作。这个从零自主到完全自主的一跃，正是智能体部署葬身之地。替代方案是影子运行：智能体与人类并肩工作，悄悄对每一个决策给出自己的提案，而系统记录下所有它本会分歧的地方。不是拿智能体和基准测试比，而是拿它和它即将取代的那个人比。信任不是一个开关。它是一个旋钮，一次转一格，而每一格，都要用证据来换。">The demo worked, so the agent went live — and took over the job in one move. That leap, from zero autonomy to full autonomy, is where agent deployments die.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a moment in almost every agent project that deserves more fear than it gets. The demo has run. Stakeholders are impressed. Someone asks the question that sounds like progress: 'so when do we turn it on?' And the team, high on momentum, does exactly that — the agent goes from reading the world to writing to it, from suggesting actions to taking them, in a single deploy. No intermediate state. No period of observation. The binary flips from zero to one, and the first real evidence anyone collects about how the agent behaves in production is produced by the agent itself, acting on real users, in real time, with real consequences." data-zh="在几乎每个智能体项目里，都有一个时刻，值得比它现在得到的更多的敬畏。演示跑完了。决策者们印象深刻。有人问了一个听起来像进步的问题：「那我们什么时候把它打开？」于是团队，趁着势头上头，照做了——智能体从读取世界变成写入世界，从建议动作变成执行动作，一次部署完成。没有中间状态。没有观察期。开关从零拨到一，而任何人收集到的第一份关于这个智能体在生产环境中如何表现的证据，是由智能体自己生产的——作用在真实用户身上，实时，带着真实的后果。">There is a moment in almost every agent project that deserves more fear than it gets. The demo has run. Stakeholders are impressed. Someone asks the question that sounds like progress: 'so when do we turn it on?' And the team, high on momentum, does exactly that — the agent goes from reading the world to writing to it, in a single deploy. No intermediate state. No period of observation.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrS1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrS2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE BIG-BANG FLIP vs THE SHADOW RAMP" data-zh="一夜翻转 vs 影子渐进" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE BIG-BANG FLIP vs THE SHADOW RAMP</text>
+<!-- LEFT: big bang -->
+<text data-en="WHAT TEAMS ACTUALLY DO" data-zh="团队实际做的" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="150" y="56">WHAT TEAMS ACTUALLY DO</text>
+<line stroke="var(--border)" stroke-width="1" x1="50" x2="255" y1="110" y2="110"></line>
+<circle cx="70" cy="110" fill="var(--bg-surface)" r="7" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="agent off" data-zh="智能体关闭" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="70" y="90">agent off</text>
+<circle cx="235" cy="110" fill="var(--accent-dim)" r="7" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="agent on" data-zh="智能体开启" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="235" y="90">agent on</text>
+<path d="M140 100 L150 100" fill="none" stroke="var(--accent-3)" stroke-width="2"></path>
+<text data-en="one deploy" data-zh="一次部署" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="152" y="82">one deploy</text>
+<text data-en="first evidence = production" data-zh="第一份证据 = 生产事故" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="152" y="152">first evidence = production</text>
+<text data-en="no rollback rehearsal" data-zh="没有回滚演练" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="152" y="172">no rollback rehearsal</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="290"></line>
+<!-- RIGHT: ramp -->
+<text data-en="WHAT OPERATORS DO" data-zh="运维老手做的" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="56">WHAT OPERATORS DO</text>
+<line stroke="var(--border)" stroke-width="1" x1="355" x2="580" y1="110" y2="110"></line>
+<circle cx="365" cy="110" fill="var(--bg-surface)" r="7" stroke="var(--text-tertiary)" stroke-width="1.5"></circle>
+<circle cx="425" cy="110" fill="var(--bg-surface)" r="7" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<circle cx="485" cy="110" fill="var(--bg-surface)" r="7" stroke="var(--accent-2)" stroke-width="2"></circle>
+<circle cx="545" cy="110" fill="var(--accent-dim)" r="7" stroke="var(--accent)" stroke-width="2"></circle>
+<path d="M372 110 L418 110" fill="none" marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="1.2"></path>
+<path d="M432 110 L478 110" fill="none" marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="1.2"></path>
+<path d="M492 110 L538 110" fill="none" marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="1.2"></path>
+<text data-en="off" data-zh="关闭" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="365" y="90">off</text>
+<text data-en="shadow" data-zh="影子" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="425" y="90">shadow</text>
+<text data-en="suggest" data-zh="建议" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="485" y="90">suggest</text>
+<text data-en="act" data-zh="执行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="545" y="90">act</text>
+<text data-en="evidence at every notch" data-zh="每一格都有证据" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="465" y="152">evidence at every notch</text>
+<text data-en="rollback is one notch back" data-zh="回滚只需退一格" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="465" y="172">rollback is one notch back</text>
+<!-- bottom note -->
+<rect fill="var(--accent-dim)" height="44" opacity="0.5" rx="8" width="560" x="30" y="240"></rect>
+<text data-en="Autonomy is not granted at launch. It is earned in production, one notch at a time — and any notch can be turned back down without a fire drill." data-zh="自主权不是上线时授予的。它是在生产环境里一格一格挣来的——而任何一格，都可以在不救火的前提下旋回去。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="258">Autonomy is not granted at launch. It is earned in production, one notch at a time.</text>
+<text data-en="" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="274" data-zh="——而任何一格都可以安静地旋回去。"></text>
+</svg>
+<p class="diagram-caption" data-en="Left: the big-bang flip — one deploy takes the agent from observer to actor, and the first divergence is discovered by a customer. Right: the shadow ramp — shadow mode, suggestions, gated actions, full autonomy — with evidence collected between every pair of notches, and rollback always one notch away." data-zh="左边：一夜翻转——一次部署把智能体从观察者变成执行者，第一次分歧由客户发现。右边：影子渐进——影子模式、建议模式、带审批的执行、完全自主——每两格之间都收集证据，回滚永远只差一格。">Left: the big-bang flip — one deploy takes the agent from observer to actor, and the first divergence is discovered by a customer. Right: the shadow ramp — shadow mode, suggestions, gated actions, full autonomy — with evidence collected between every pair of notches, and rollback always one notch away.</p>
+</div>
+<h3 data-en="The shadow run: the agent works, the world doesn't" data-zh="影子运行：智能体在干活，世界却纹丝不动">The shadow run: the agent works, the world doesn't</h3>
+<p data-en="A shadow run is the cheapest evidence-generation machine an agent team can build, and almost nobody builds one. The mechanics are simple. Every decision a human makes — every ticket triaged, every refund approved, every line of code merged, every email answered — is mirrored, in real time, to the agent. The agent sees the same inputs, at the same moment, with the same context. It produces its own decision. And then its decision is thrown away. Nothing is executed. No user sees it. The only thing that persists is the record: what the human did, what the agent would have done, and the delta between them." data-zh="影子运行，是一个智能体团队能建造的最便宜的证据生产机器，而几乎没有人建造它。机制很简单。人类做的每一个决策——每一张被分类的工单、每一笔被批准的退款、每一行被合并的代码、每一封被回复的邮件——都实时镜像给智能体。智能体看到同样的输入、在同样的时刻、带着同样的上下文。它产出自己的决策。然后，它的决策被扔掉。什么都不执行。没有用户看到它。唯一留存的，是那份记录：人类做了什么，智能体会做什么，以及两者之间的分歧。">A shadow run is the cheapest evidence-generation machine an agent team can build, and almost nobody builds one. The mechanics are simple. Every decision a human makes — every ticket triaged, every refund approved, every line of code merged — is mirrored, in real time, to the agent. The agent sees the same inputs, at the same moment, with the same context. It produces its own decision. And then its decision is thrown away. Nothing is executed. The only thing that persists is the record.</p>
+<p data-en="This is not the same as an eval, and the difference matters. An eval measures the agent against a static dataset — a frozen set of questions with known answers, collected at some point in the past. A shadow run measures the agent against the present. Against the live distribution of work as it actually arrives, with all its weirdness, its ambiguity, its rare edge cases that no dataset builder ever anticipated. An eval tells you the agent can handle the past. A shadow run tells you what it will do on Tuesday. And because the human is right there, making the real decision, the ground truth is generated continuously, for free, by someone who already knows the job." data-zh="这不等于评测（eval），而这个区别很重要。评测衡量的是智能体与一个静态数据集的关系——一组有已知答案的冻结问题，在过去某个时刻收集。影子运行衡量的是智能体与「现在」的关系。与实际到来的、活的分布的关系——带着所有的怪异、所有的模糊、所有数据集构建者从未预料到的罕见边缘情况。评测告诉你，智能体能处理过去。影子运行告诉你，它在周二会做什么。而且，因为人类就在那里、做着真正的决策， ground truth 被持续地、免费地、由一个本来就会干这活的人生成着。">This is not the same as an eval, and the difference matters. An eval measures the agent against a static dataset — a frozen set of questions with known answers, collected at some point in the past. A shadow run measures the agent against the present. Against the live distribution of work as it actually arrives. An eval tells you the agent can handle the past. A shadow run tells you what it will do on Tuesday.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrP2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrP3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+</defs>
+<text data-en="THE SHADOW PIPELINE" data-zh="影子流水线" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE SHADOW PIPELINE</text>
+<!-- input event -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--text-tertiary)" stroke-width="1.5" width="120" x="40" y="120"></rect>
+<text data-en="work event" data-zh="工作事件" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="100" y="141">work event</text>
+<!-- fan to human and agent -->
+<path d="M160 128 C200 100 230 80 265 68" fill="none" marker-end="url(#arrP1)" stroke="var(--text-tertiary)" stroke-width="1.4"></path>
+<path d="M160 148 C200 176 230 196 265 208" fill="none" marker-end="url(#arrP3)" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<!-- human path -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--text-tertiary)" stroke-width="1.5" width="110" x="268" y="50"></rect>
+<text data-en="human decides" data-zh="人类决策" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="323" y="71">human decides</text>
+<path d="M378 67 C420 75 440 105 452 122" fill="none" marker-end="url(#arrP1)" stroke="var(--text-tertiary)" stroke-width="1.4"></path>
+<text data-en="effect applied ✓" data-zh="效果生效 ✓" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="323" y="108">effect applied ✓</text>
+<!-- agent path -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="110" x="268" y="200"></rect>
+<text data-en="agent proposes" data-zh="智能体提案" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="323" y="221">agent proposes</text>
+<path d="M378 217 C420 209 440 180 452 163" fill="none" marker-end="url(#arrP3)" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<text data-en="discarded · nothing executes" data-zh="丢弃 · 什么都不执行" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="323" y="258">discarded · nothing executes</text>
+<!-- comparator -->
+<rect fill="var(--accent-dim)" height="52" rx="10" stroke="var(--accent)" stroke-width="2" width="120" x="455" y="118"></rect>
+<text data-en="DELTA LOG" data-zh="分歧日志" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="515" y="140">DELTA LOG</text>
+<text data-en="agree · diverge · why" data-zh="一致 · 分歧 · 原因" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="515" y="158">agree · diverge · why</text>
+<path d="M515 170 L515 196" fill="none" marker-end="url(#arrP2)" stroke="var(--accent)" stroke-width="1.4"></path>
+<text data-en="promotion gate: evidence review" data-zh="晋升闸门：证据评审" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="515" y="216">promotion gate: evidence review</text>
+</svg>
+<p class="diagram-caption" data-en="Every work event fans out twice: to the human, whose decision takes effect, and to the agent, whose proposal is discarded. Both flow into a delta log — agreement rate, divergence cases, and the reasoning behind each divergence. The log is the only artifact the shadow run produces, and it is worth more than any benchmark score, because it was earned on tomorrow's distribution, not last quarter's." data-zh="每一个工作事件分流两次：给人类，其决策生效；给智能体，其提案被丢弃。两者都汇入一份分歧日志——一致率、分歧案例、每个分歧背后的原因。这份日志是影子运行产出的唯一产物，而它比任何基准分数都值钱，因为它是用明天的分布挣来的，不是上个季度的。">Every work event fans out twice: to the human, whose decision takes effect, and to the agent, whose proposal is discarded. Both flow into a delta log — agreement rate, divergence cases, and the reasoning behind each divergence. The log is worth more than any benchmark score, because it was earned on tomorrow's distribution, not last quarter's.</p>
+</div>
+<blockquote data-en="An eval proves the agent can pass a test it was allowed to study for. A shadow run proves what it will do when nobody is grading — except the person it is about to replace, whose every decision quietly becomes the answer key." data-zh="评测证明的是，智能体能通过一场它被允许提前复习的考试。影子运行证明的是，在没人打分的时候它会做什么——除了那个它即将取代的人，而那个人的每一个决策，都悄悄变成了标准答案。">An eval proves the agent can pass a test it was allowed to study for. A shadow run proves what it will do when nobody is grading — except the person it is about to replace, whose every decision quietly becomes the answer key.</blockquote>
+<h3 data-en="The agreement matrix: not all disagreement is failure" data-zh="一致矩阵：并非所有分歧都是失败">The agreement matrix: not all disagreement is failure</h3>
+<p data-en="The naive way to read a shadow run is to compute one number — the agreement rate — and promote the agent when it crosses a threshold. This is almost right, and dangerously incomplete. Agreement rate treats every disagreement as a defect. But when a shadow log is actually reviewed, the disagreements fall into categories with completely different meanings, and lumping them together produces exactly the wrong decision." data-zh="读影子运行的朴素方式，是算出一个数字——一致率——然后在它跨过阈值时晋升智能体。这几乎是对的，又危险地不完整。一致率把每一次分歧都当成缺陷。但当影子日志被真正评审时，分歧会落进含义完全不同的类别里，而把它们混为一谈，会产出恰恰错误的决策。">The naive way to read a shadow run is to compute one number — the agreement rate — and promote the agent when it crosses a threshold. This is almost right, and dangerously incomplete. Agreement rate treats every disagreement as a defect. But when a shadow log is actually reviewed, the disagreements fall into categories with completely different meanings.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+</defs>
+<text data-en="THE AGREEMENT MATRIX" data-zh="一致矩阵" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE AGREEMENT MATRIX</text>
+<!-- axes -->
+<line stroke="var(--border)" stroke-width="1.2" x1="330" x2="330" y1="60" y2="300"></line>
+<line stroke="var(--border)" stroke-width="1.2" x1="110" x2="550" y1="180" y2="180"></line>
+<text data-en="agent decides →" data-zh="智能体判定 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="330" y="318">agent decides →</text>
+<text data-en="human decides ↓" data-zh="人类判定 ↓" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="end" x="102" y="184">human decides ↓</text>
+<!-- quadrant labels -->
+<text data-en="wrong" data-zh="错" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="120" y="72">wrong</text>
+<text data-en="right" data-zh="对" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="540" y="72">right</text>
+<text data-en="wrong" data-zh="错" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="120" y="296">wrong</text>
+<text data-en="right" data-zh="对" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="540" y="296">right</text>
+<!-- Q1: human right, agent wrong -->
+<rect fill="var(--accent-3)" height="110" opacity="0.13" rx="10" width="210" x="115" y="62"></rect>
+<text data-en="① DANGEROUS" data-zh="① 危险" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="220" y="92">DANGEROUS</text>
+<text data-en="human right · agent wrong" data-zh="人对 · 智能体错" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="220" y="112">human right · agent wrong</text>
+<text data-en="the cases that block promotion." data-zh="阻止晋升的案例。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="220" y="132">the cases that block promotion.</text>
+<text data-en="cluster them, name them, fix them." data-zh="聚类、命名、修复。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="220" y="150">cluster them, name them, fix them.</text>
+<!-- Q2: both right -->
+<rect fill="var(--accent)" height="110" opacity="0.10" rx="10" width="210" x="330" y="62"></rect>
+<text data-en="② FINE" data-zh="② 无碍" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="435" y="92">FINE</text>
+<text data-en="both right" data-zh="都对" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="435" y="112">both right</text>
+<text data-en="agreement, or benign divergence." data-zh="一致，或无害的分歧。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="435" y="132">agreement, or benign divergence.</text>
+<text data-en="different paths, same outcome." data-zh="路径不同，结果相同。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="435" y="150">different paths, same outcome.</text>
+<!-- Q3: both wrong -->
+<rect fill="var(--text-tertiary)" height="110" opacity="0.08" rx="10" width="210" x="115" y="188"></rect>
+<text data-en="③ HARD CASES" data-zh="③ 硬骨头" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="220" y="218">HARD CASES</text>
+<text data-en="both wrong" data-zh="都错" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="220" y="238">both wrong</text>
+<text data-en="the work itself is ambiguous." data-zh="工作本身就是模糊的。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="220" y="258">the work itself is ambiguous.</text>
+<text data-en="no agent fixes this. nor does any human." data-zh="智能体救不了，人也救不了。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="220" y="276">no agent fixes this.</text>
+<!-- Q4: agent right, human wrong -->
+<rect fill="var(--accent-2)" height="110" opacity="0.12" rx="10" width="210" x="330" y="188"></rect>
+<text data-en="④ THE PRIZE" data-zh="④ 惊喜" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="435" y="218">THE PRIZE</text>
+<text data-en="agent right · human wrong" data-zh="智能体对 · 人错" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="435" y="238">agent right · human wrong</text>
+<text data-en="the reason the agent exists:" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="435" y="258">the reason the agent exists:</text>
+<text data-en="it catches what tired humans miss." data-zh="它接住了疲惫的人漏掉的。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="435" y="276">it catches what tired humans miss.</text>
+</svg>
+<p class="diagram-caption" data-en="Every shadow-log entry lands in one of four quadrants. Only quadrant one blocks promotion — and only when its cases cluster into named, fixable patterns. Quadrant four is not a defect but the entire business case: the moments where the agent is better than the person. And quadrant three is a property of the work, not of either actor. A single agreement number flattens all four into noise." data-zh="影子日志的每一条，都落在四个象限之一。只有第一象限会阻止晋升——而且只有当它的案例聚成可命名、可修复的模式时才如此。第四象限不是缺陷，而是整个商业理由：智能体比人更强的那些时刻。第三象限是工作本身的属性，不是任何一方的错。而单独一个一致率数字，会把这四个象限全部压扁成噪音。">Every shadow-log entry lands in one of four quadrants. Only quadrant one blocks promotion — and only when its cases cluster into named, fixable patterns. Quadrant four is not a defect but the entire business case. And quadrant three is a property of the work, not of either actor. A single agreement number flattens all four into noise.</p>
+</div>
+<p data-en="The dangerous quadrant — the human was right, the agent was wrong — is the one that deserves the most engineering attention, but with a specific posture: not blame, but taxonomy. A shadow log with a five percent divergence rate is not a failure report. It is a map. The divergences cluster. Some cluster around a specific input format the agent misreads. Some cluster around a class of request where the policy is genuinely ambiguous and the agent guessed differently than the human convention. Some are one-off noise. The clusters that recur, with names, become the work items: a tool fix, a context addition, a prompt clarification, or — most often — a discovered ambiguity in the underlying policy that the humans had been silently resolving by vibes for years. The agent does not create these ambiguities. It exposes them, by failing to inherit the vibes." data-zh="危险象限——人是对的，智能体是错的——是最值得投入工程注意力的象限，但要以一种特定的姿态：不是归咎，而是分类。一份分歧率百分之五的影子日志，不是一份失败报告。它是一张地图。分歧会聚类。有的聚在智能体误读的某种输入格式上。有的聚在一类政策真正模糊的请求上，而智能体猜的方向和人类惯例不同。有些是一次性的噪音。那些反复出现、可以命名的聚类，变成工作项：修一个工具、加一段上下文、澄清一句 prompt，或者——最常见的——挖出一条底层政策里真正的模糊，一条人类多年来靠默契悄悄消化掉的模糊。智能体没有制造这些模糊。它暴露了它们，因为它没能继承那份默契。">The dangerous quadrant — the human was right, the agent was wrong — is the one that deserves the most engineering attention, but with a specific posture: not blame, but taxonomy. A shadow log with a five percent divergence rate is not a failure report. It is a map. The divergences cluster. The clusters that recur, with names, become the work items: a tool fix, a context addition, a prompt clarification, or — most often — a discovered ambiguity in the underlying policy that the humans had been silently resolving by vibes for years.</p>
+<h3 data-en="The autonomy ladder" data-zh="自主阶梯">The autonomy ladder</h3>
+<p data-en="Once the shadow log stops producing new clusters, promotion is not a leap but a step — one notch up a ladder where every rung is safer than the one above it. Shadow mode becomes suggest mode: the agent's proposal is shown to the human before they decide, and the human can accept it with one click or overrule it. Every overrule feeds the same delta log. Suggest mode becomes gated mode: the agent acts, but certain classes of action — anything irreversible, anything above a cost threshold, anything touching a new kind of object — require human approval, which is asked for in batches, not one agonizing confirmation at a time. Gated mode becomes audited autonomy: the agent acts on everything, and a sample of its decisions is reviewed after the fact, with sampling weighted toward the unfamiliar. Only then, and only for the decision classes that have quietly earned it, does full autonomy arrive — and it arrives per class, never globally." data-zh="一旦影子日志不再产出新的聚类，晋升就不再是一跃，而是一步——沿着一个阶梯往上走一格，而每一格都比上面那格更安全。影子模式变成建议模式：智能体的提案在人类决策前展示给人类，人类可以一键采纳，也可以否决。每一次否决，喂进同一份分歧日志。建议模式变成带闸模式：智能体开始执行，但某些类别的动作——任何不可逆的、任何超过成本阈值的、任何触碰新类型对象的——仍需人类审批，而且批量提交，不是一次一个折磨人的确认。带闸模式变成抽审自主：智能体执行一切，但其决策样本事后被评审，抽样向陌生的案例倾斜。只有到那时，而且只对那些悄悄挣到了它的决策类别，完全自主才到来——而且按类别到来，永远不搞一刀切。">Once the shadow log stops producing new clusters, promotion is not a leap but a step — one notch up a ladder where every rung is safer than the one above it. Shadow mode becomes suggest mode. Suggest mode becomes gated mode. Gated mode becomes audited autonomy. Only then, and only for the decision classes that have quietly earned it, does full autonomy arrive — and it arrives per class, never globally.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE AUTONOMY LADDER" data-zh="自主阶梯" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE AUTONOMY LADDER</text>
+<!-- rung 4 -->
+<rect fill="var(--accent-dim)" height="44" rx="9" stroke="var(--accent)" stroke-width="2" width="380" x="200" y="46"></rect>
+<text data-en="④ FULL AUTONOMY — per decision class" data-zh="④ 完全自主 —— 按决策类别" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="390" y="66">FULL AUTONOMY — per decision class</text>
+<text data-en="earned · sampled audit · revertible per class" data-zh="挣来的 · 抽样审计 · 按类别可回退" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="390" y="82">earned · sampled audit · revertible per class</text>
+<!-- rung 3 -->
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="340" x="180" y="102"></rect>
+<text data-en="③ GATED ACTIONS — reversible ones run free" data-zh="③ 带闸执行 —— 可逆的动作自由跑" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="350" y="122">GATED ACTIONS — reversible ones run free</text>
+<text data-en="irreversible / costly / novel → human approval" data-zh="不可逆 / 高成本 / 全新 → 人类审批" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="350" y="138">irreversible / costly / novel → human approval</text>
+<!-- rung 2 -->
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="300" x="150" y="158"></rect>
+<text data-en="② SUGGESTIONS — shown before deciding" data-zh="② 建议 —— 决策前展示" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="300" y="178">SUGGESTIONS — shown before deciding</text>
+<text data-en="one click to accept, one to overrule, all logged" data-zh="一键采纳，一键否决，全部记录" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="300" y="194">one click to accept, one to overrule, all logged</text>
+<!-- rung 1 -->
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--text-tertiary)" stroke-width="1.5" width="260" x="120" y="214"></rect>
+<text data-en="① SHADOW — proposals discarded" data-zh="① 影子 —— 提案丢弃" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="250" y="234">SHADOW — proposals discarded</text>
+<text data-en="zero effect · pure evidence" data-zh="零影响 · 纯证据" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="250" y="250">zero effect · pure evidence</text>
+<!-- upward arrows on the left -->
+<path d="M80 236 L80 190" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.6"></path>
+<path d="M80 180 L80 134" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.6"></path>
+<path d="M80 124 L80 78" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.6"></path>
+<text data-en="promotion requires:" data-zh="晋升需要：" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="58" y="120" transform="rotate(-90 58 120)">promotion requires:</text>
+<!-- bottom annotation -->
+<text data-en="log shows no new clusters → climb one rung · any incident → drop one rung, quietly" data-zh="日志不再产出新聚类 → 上一格 · 任何事故 → 静悄悄下一格" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="292">log shows no new clusters → climb one rung · any incident → drop one rung, quietly</text>
+</svg>
+<p class="diagram-caption" data-en="Four rungs: shadow, suggest, gated, autonomous. Promotion happens per decision class, driven by the delta log going quiet — no new clusters of dangerous divergence. Demotion is one rung, triggered by any incident, and is a routine operation rather than an emergency. The ladder makes trust legible: anyone in the organization can ask which rung a given decision class sits on, and point at the log that put it there." data-zh="四级：影子、建议、带闸、自主。晋升按决策类别进行，由分歧日志的安静驱动——不再出现新的危险分歧聚类。降级是一格，由任何事故触发，而且是一次例行操作，而非紧急事件。阶梯让信任变得可读：组织里的任何人都可以问，某个决策类别现在站在哪一格上，并指向把它放到那里的那份日志。">Four rungs: shadow, suggest, gated, autonomous. Promotion happens per decision class, driven by the delta log going quiet. Demotion is one rung, triggered by any incident, and is a routine operation rather than an emergency. The ladder makes trust legible: anyone can ask which rung a given decision class sits on, and point at the log that put it there.</p>
+</div>
+<p data-en="Two properties make the ladder work. The first is that descent is boring. If an incident drops a decision class from autonomous to gated, that should be a config change and a Slack message, not a war room. The second is that the rungs are shared vocabulary. 'Is refunds autonomous?' becomes a well-formed question with a specific answer — 'refunds under S$50 are autonomous, above that they're gated' — instead of a shrug. Organizations that cannot answer that question precisely do not have an agent deployment; they have an agent loose in the building, and the shadow log is how they find out where it is standing." data-zh="两个属性让阶梯成立。第一，降级是无聊的。如果一次事故把某个决策类别从自主降到带闸，那应该是一次配置变更加一条 Slack 消息，而不是一间作战室。第二，阶梯是共享词汇。「退款是自主的吗？」变成了一个有意义、有具体答案的问题——「50 新元以下的退款是自主的，以上是带闸的」——而不是一个耸肩。无法精确回答这个问题的组织，并没有完成一次智能体部署；它们只是把一只智能体放进了大楼里到处跑，而影子日志，就是她们搞清它此刻站在哪里的方式。">Two properties make the ladder work. The first is that descent is boring. If an incident drops a decision class from autonomous to gated, that should be a config change and a Slack message, not a war room. The second is that the rungs are shared vocabulary. 'Is refunds autonomous?' becomes a well-formed question with a specific answer, instead of a shrug. Organizations that cannot answer that question precisely do not have an agent deployment; they have an agent loose in the building.</p>
+<h3 data-en="The shadow is also the demo" data-zh="影子，也是演示">The shadow is also the demo</h3>
+<p data-en="There is a quieter argument for shadow runs that has nothing to do with risk. A shadow log is the most honest demo an agent team will ever have. Not the curated recording, not the staged example — a live, growing record of the agent's decisions on real work, with the human's decisions right beside them. When the question comes — from leadership, from the affected team, from the auditor — 'what happens if we let it act?', the answer is not a slide about benchmark scores. It is the log: here are ten thousand decisions, here is where it agreed, here are the six clusters where it diverged, here is what changed after each fix. Evidence like that ends arguments in a way no demo ever will. The demo shows what the agent can do in the room someone prepared for it. The shadow shows what it does in every room, including the ones nobody prepared." data-zh="还有一个为影子运行辩护的理由，更安静，与风险无关。一份影子日志，是一个智能体团队所能拥有的最诚实的演示。不是精心剪辑的录屏，不是排练好的例子——而是一份活的、不断增长的真实工作上的决策记录，旁边就是人类的决策。当那个问题到来——来自管理层、来自受影响的团队、来自审计——「如果让它执行，会发生什么？」——答案不是一页关于基准分数的幻灯片。而是那份日志：这里是一万个决策，这里是它一致的地方，这里是它分歧的六个聚类，这里是每次修复之后改变了什么。这样的证据能终结争论，这是任何演示都做不到的。演示展示的是智能体在别人为它准备好的房间里能做什么。影子展示的是它在每一个房间里做什么——包括那些没人准备过的。">There is a quieter argument for shadow runs that has nothing to do with risk. A shadow log is the most honest demo an agent team will ever have. When the question comes — 'what happens if we let it act?' — the answer is not a slide about benchmark scores. It is the log: here are ten thousand decisions, here is where it agreed, here are the six clusters where it diverged, here is what changed after each fix.</p>
+<p data-en="None of this is complicated to build. A shadow mode is a routing flag, a read-only mirror of the work stream, a second execution path whose outputs terminate in a table instead of the world. A delta log is a diff viewer with a review queue. The autonomy ladder is a config file and a weekly meeting. What is rare is not the machinery but the discipline: the willingness to spend two weeks watching before acting, in a culture that measures progress by what has shipped. But the teams that treat turning the agent on as the finish line discover that launch day is not when the project ends — it is when the evidence collection should have started. The shadow run moves that day earlier. It replaces the loudest question in the room — 'will it work?' — with the only one that can actually be answered: 'here is everything it would have done, and here is everything that happened instead.' After that, autonomy is just bookkeeping." data-zh="这些，没有一个建造起来是复杂的。影子模式是一个路由开关、一条只读的工作流镜像、一条输出终结在一张表里而不是世界里的第二执行路径。分歧日志是一个带评审队列的 diff 查看器。自主阶梯是一个配置文件和一场周会。稀缺的不是机器，而是纪律：在一个用「上线了什么」衡量进步的文化里，愿意先花两周观察、再动手的纪律。但那些把「打开智能体」当作终点的团队会发现，上线日不是项目结束之时——它本该是证据收集开始之时。影子运行，把那一天提前了。它把房间里最响的那个问题——「它到底行不行？」——替换成唯一一个真正能回答的问题：「这是它本会做的一切，这是实际发生的一切。」在那之后，自主，不过是一本账。">None of this is complicated to build. A shadow mode is a routing flag, a read-only mirror of the work stream, a second execution path whose outputs terminate in a table instead of the world. The delta log is a diff viewer with a review queue. The autonomy ladder is a config file and a weekly meeting. What is rare is not the machinery but the discipline: the willingness to spend two weeks watching before acting, in a culture that measures progress by what has shipped.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
