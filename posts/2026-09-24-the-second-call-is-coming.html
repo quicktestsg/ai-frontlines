@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Second Call Is Coming — AI Frontlines</title>
+<meta content="Agents retry. They lose a response, re-issue a tool call, run branches in parallel that touch the same resource, and confidently call the same endpoint twice. Deterministic software assumed every operation happens exactly once — agents break that assumption by default. Idempotency is not a nicety in agent systems. It is the grammar." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 24, 2026" data-zh="2026年9月24日">September 24, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Second Call Is Coming" data-zh="第二次调用，终将到来">The Second Call Is Coming</h1>
+<p class="post-header-deck" data-en="Every piece of deterministic software ever written rests on one quiet assumption: an operation the program issues happens exactly once. Agents break this assumption by default. They lose a response in a network blip and retry. They re-plan mid-flight and re-issue a step they no longer remember completing. They run parallel branches that touch the same resource at the same moment. None of this is a bug in the model — it is the physics of a system where the caller is probabilistic and the network is hostile. The question is never whether the second call happens. It is whether the second call was designed for." data-zh="每一块确定性软件，都建立在一个安静的假设之上：程序发出的操作，恰好发生一次。而智能体，默认就打破这个假设。网络抖动丢了响应，于是重试。飞行途中重新规划，重新发出一个它已经不记得完成过的步骤。并行分支在同一时刻碰同一个资源。这些都不是模型的 bug——这是一个「调用者是概率性的、而网络是充满敌意」的系统的物理规律。问题从来不是第二次调用会不会发生，而是第二次调用，有没有被设计过。">Every piece of deterministic software rests on one quiet assumption: an operation happens exactly once. Agents break this assumption by default — and the question is never whether the second call happens, but whether it was designed for.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a class of production incidents that follows agent adoption like a shadow. The agent sends a payment request. The gateway accepts it, but the response drowns in a timeout. The harness — doing exactly what a good harness should — retries. The payment executes twice. Or: the agent drafts an email, queues it, then its context window is compacted mid-run, the plan is rebuilt from a summary, and the summary does not mention that the email was already sent. It sends again. Or: two speculative branches, both exploring the same repository, both decide to apply the same fix, and the second write clobbers the first. In every case the postmortem lands on the same line: the tool was not idempotent. And in every case the deeper cause is the same: the team designed their tools for a caller that reads code, when their caller is now one that samples from a distribution." data-zh="有一类生产事故，像影子一样跟着智能体的落地走。智能体发出一个支付请求。网关接收了它，但响应淹死在超时里。Harness——做了恰恰是好的 harness 该做的事——重试。支付被执行了两次。又或者：智能体写好一封邮件、排进队列，然后上下文窗口在运行中被压缩，计划从一份摘要里重建，而那份摘要没提到邮件已经发出。于是再发一次。又或者：两条投机执行的分支，都在探索同一个代码库，都决定应用同一个修复，第二次写入把第一次覆盖了。每一种情况，事后复盘都落在同一行：这个工具不是幂等的。而每一种情况，更深层的原因都一样：团队按照「一个会读代码的调用者」来设计工具，而他们现在的调用者，是从一个分布里采样的。">There is a class of production incidents that follows agent adoption like a shadow. The agent sends a payment request. The gateway accepts it, but the response drowns in a timeout. The harness retries. The payment executes twice. In every case the postmortem lands on the same line: the tool was not idempotent. And the deeper cause is the same: the team designed their tools for a caller that reads code, when their caller is now one that samples from a distribution.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrI1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrI2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrI3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE EXACTLY-ONCE ILLUSION" data-zh="「恰好一次」的幻觉" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE EXACTLY-ONCE ILLUSION</text>
+<!-- agent node -->
+<rect fill="var(--accent-dim)" height="42" rx="9" stroke="var(--accent)" stroke-width="2" width="130" x="60" y="60"></rect>
+<text data-en="agent" data-zh="智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="125" y="86">agent</text>
+<!-- first call -->
+<path d="M190 72 L290 72" fill="none" marker-end="url(#arrI3)" stroke="var(--accent)" stroke-width="1.6"></path>
+<text data-en="charge(user, $200)" data-zh="charge(user, $200)" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="240" y="62">charge(user, $200)</text>
+<!-- gateway -->
+<rect fill="var(--bg-surface)" height="42" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="120" x="292" y="51"></rect>
+<text data-en="gateway" data-zh="网关" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="352" y="70">gateway</text>
+<text data-en="✓ executed" data-zh="✓ 已执行" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="352" y="84">✓ executed</text>
+<!-- response lost -->
+<path d="M412 66 L490 66" fill="none" stroke="var(--accent-3)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<text data-en="response… ⏱ timeout" data-zh="响应…… ⏱ 超时" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="450" y="56">response… ⏱ timeout</text>
+<text data-en="✗ lost" data-zh="✗ 丢失" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="450" y="88">✗ lost</text>
+<!-- retry loop -->
+<path d="M125 102 C125 150 300 160 352 120" fill="none" marker-end="url(#arrI2)" stroke="var(--accent-3)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<text data-en="retry — 'no response, try again'" data-zh="重试——「没响应，再来一次」" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="205" y="150">retry — "no response, try again"</text>
+<!-- second execution -->
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="200" x="252" y="185"></rect>
+<text data-en="✓ executed — again" data-zh="✓ 又执行了一次" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="352" y="208">✓ executed — again</text>
+<!-- outcome -->
+<path d="M352 221 L352 250" fill="none" marker-end="url(#arrI2)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="250" x="227" y="252"></rect>
+<text data-en="user charged $400 for one $200 job" data-zh="一件 $200 的事，用户被扣了 $400" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="352" y="274">user charged $400 for one $200 job</text>
+<text data-en="no line of code is wrong — the caller is no longer exactly-once" data-zh="没有一行代码是错的——只是调用者不再「恰好一次」" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="316">no line of code is wrong — the caller is no longer exactly-once</text>
+</svg>
+<p class="diagram-caption" data-en="The harness did the right thing: it retried a call that appeared to fail. The gateway did the right thing: it executed a request it received. Every component behaved correctly, and the user was still charged twice. Exactly-once delivery was never real — it was an abstraction that held only while the caller's memory and the network's behavior were both trustworthy. An agent is a caller whose memory can be rebuilt mid-flight. The abstraction no longer holds." data-zh="Harness 做对了：它重试了一个看起来失败的调用。网关也做对了：它执行了一个收到的请求。每个组件都行为正确，用户还是被扣了两次款。「恰好一次投递」从来就不是真的——它只是一个抽象，只在调用者的记忆和网络的行为都可信时才成立。而智能体，是一个记忆可能在飞行途中被重建的调用者。这个抽象，不再成立。">The harness did the right thing: it retried a call that appeared to fail. The gateway did the right thing: it executed a request it received. Every component behaved correctly, and the user was still charged twice. Exactly-once delivery was never real — it was an abstraction that held only while the caller's memory and the network's behavior were both trustworthy.</p>
+</div>
+<h3 data-en="The caller changed; the contract didn't" data-zh="调用者变了，契约没变">The caller changed; the contract didn't</h3>
+<p data-en="Traditional software engineering spent fifty years building on the exactly-once assumption, and it mostly worked, because traditional callers have two properties agents lack. First, a traditional caller knows what it just did — the instruction pointer moved, the state is in front of it, a retry is a conscious, explicit decision. An agent's knowledge of what it just did lives in its context window, and context windows are lossy by design: they get compacted, summarized, rebuilt. A retried step is not a conscious decision; it is often a re-discovery. Second, a traditional caller executes one path. Agents are increasingly run as graphs with parallel branches, speculative execution, and verifier loops that deliberately re-run steps to check the work. The architecture itself multiplies calls to the same operation. Neither property is going away — they are the whole point of agents. So the fix has to live on the other side of the contract: in the tools." data-zh="传统软件工程在「恰好一次」的假设上盖了五十年的楼，而且大体上成立，因为传统调用者拥有两个智能体不具备的属性。第一，传统调用者知道自己刚做了什么——指令指针移动了，状态就在眼前，重试是一个有意识的、显式的决定。而智能体对「刚做了什么」的认知，活在它的上下文窗口里，而上下文窗口天生有损：它会被压缩、被摘要、被重建。一个被重试的步骤，不是一个有意识的决定，它常常是一次重新发现。第二，传统调用者只走一条路径。而智能体越来越多地以图的形式运行——并行分支、投机执行、故意重跑步骤来复核工作的验证循环。架构本身，就在让同一个操作的调用成倍增加。这两个属性都不会消失——它们正是智能体的意义所在。所以修复必须落在契约的另一边：工具上。">Traditional software engineering spent fifty years building on the exactly-once assumption, and it mostly worked, because traditional callers have two properties agents lack. First, a traditional caller knows what it just did — the instruction pointer moved, a retry is a conscious decision. An agent's knowledge of what it just did lives in its context window, and context windows are lossy by design. Second, a traditional caller executes one path; agents run as graphs with parallel branches and verifier loops that deliberately re-run steps. Neither property is going away. So the fix has to live on the other side of the contract: in the tools.</p>
+<blockquote data-en="Idempotency is the art of making the second call free. Not prevented — free. The agent will call twice. Build tools where twice costs the same as once, and the reliability problem dissolves into arithmetic instead of escalating into an incident." data-zh="幂等的艺术，是让第二次调用变得免费。不是被阻止——是免费。智能体一定会调用第二次。把工具做成「两次的代价等于一次」，可靠性问题就消解成了算术，而不是升级成事故。">Idempotency is the art of making the second call free. Not prevented — free. The agent will call twice. Build tools where twice costs the same as once, and the reliability problem dissolves into arithmetic instead of escalating into an incident.</blockquote>
+<h3 data-en="The operation token: name the effect, not the moment" data-zh="操作令牌：命名的是效果，不是时刻">The operation token: name the effect, not the moment</h3>
+<p data-en="The mechanics are old and battle-tested; payments infrastructure solved this decades ago. Every side-effecting tool call carries an operation token — a stable identifier for the intended effect, generated once when the plan is formed and reused by every retry, every re-issued step, every parallel branch that converges on the same intent. The tool's backend records the token with the outcome. First execution: perform the effect, store the result under the token. Second execution with the same token: skip the effect, return the stored result. From the caller's perspective, the call succeeded exactly once — regardless of how many times it physically arrived. The subtlety is what the token names. It is not a name for the request, or the attempt, or the moment in time. It is a name for the effect: 'activate subscription S for user U', not 'the third tool call in step seven'. Retries carry the same token because they intend the same effect. Two genuinely different intentions get different tokens, even if they are issued back to back. Get this right and the hardest race conditions in agent systems — compaction-triggered re-issues, speculative double-writes, verifier re-runs — collapse into cache hits." data-zh="机制本身古老且久经考验；支付基础设施几十年前就解决了这个问题。每一个有副作用的工具调用，都携带一个操作令牌——一个关于「预期效果」的稳定标识符，在计划形成时生成一次，然后被每一次重试、每一个重新发出的步骤、每一个汇聚到同一意图的并行分支复用。工具的后端把令牌和结果一起记录。第一次执行：执行效果，把结果存在令牌之下。带着同一令牌的第二次执行：跳过效果，返回存好的结果。在调用者看来，这个调用恰好成功了一次——不管它物理上到达了多少次。微妙之处在于令牌命名的对象。它不是给请求、给尝试、给某个时刻命名的。它给效果命名：「为用户 U 激活订阅 S」，而不是「第七步的第三次工具调用」。重试携带同一令牌，因为它们意图的是同一个效果。两个真正不同的意图，拿到不同的令牌，哪怕它们背靠背发出。把这个做对，智能体系统里最难的竞态条件——压缩触发的重发、投机的双重写入、验证器的重跑——全部塌缩成缓存命中。">The mechanics are old and battle-tested; payments infrastructure solved this decades ago. Every side-effecting tool call carries an operation token — a stable identifier for the intended effect, generated once when the plan is formed and reused by every retry, every re-issued step, every parallel branch that converges on the same intent. The backend records the token with the outcome. First execution: perform the effect, store the result. Second execution with the same token: skip the effect, return the stored result. The subtlety is what the token names — the effect, not the attempt.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrT2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+</defs>
+<text data-en="THE OPERATION TOKEN PATTERN" data-zh="操作令牌模式" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE OPERATION TOKEN PATTERN</text>
+<!-- plan node -->
+<rect fill="var(--accent-dim)" height="36" rx="8" stroke="var(--accent)" stroke-width="2" width="170" x="30" y="52"></rect>
+<text data-en="plan forms" data-zh="计划形成" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="115" y="75">plan forms</text>
+<!-- token mint -->
+<path d="M200 70 L262 70" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.6"></path>
+<rect fill="var(--bg-surface)" height="36" rx="18" stroke="var(--accent)" stroke-width="1.5" width="150" x="264" y="52"></rect>
+<text data-en="op-token: sub-U-8841" data-zh="op-token: sub-U-8841" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="339" y="75">op-token: sub-U-8841</text>
+<!-- three callers of same token -->
+<path d="M339 88 C330 120 300 130 280 142" fill="none" marker-end="url(#arrT2)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<path d="M352 88 L352 142" fill="none" marker-end="url(#arrT2)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<path d="M372 88 C395 120 415 130 430 142" fill="none" marker-end="url(#arrT2)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-2)" stroke-width="1" width="120" x="216" y="144"></rect>
+<text data-en="retry after timeout" data-zh="超时后重试" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="276" y="162">retry after timeout</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-2)" stroke-width="1" width="130" x="346" y="144"></rect>
+<text data-en="re-issue after compaction" data-zh="压缩后重新发出" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="411" y="162">re-issue after compaction</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-2)" stroke-width="1" width="120" x="488" y="144"></rect>
+<text data-en="speculative twin branch" data-zh="投机孪生分支" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="548" y="162">speculative twin branch</text>
+<!-- tool with ledger -->
+<path d="M276 172 C290 195 320 205 345 216" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.3"></path>
+<path d="M411 172 C400 195 370 205 350 216" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent)" stroke-width="2" width="190" x="256" y="218"></rect>
+<text data-en="tool · effects ledger" data-zh="工具 · 效果台账" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="351" y="237">tool · effects ledger</text>
+<text data-en="has sub-U-8841 run?" data-zh="sub-U-8841 跑过吗？" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="351" y="253">has sub-U-8841 run?</text>
+<!-- two outcomes -->
+<path d="M310 262 C280 278 250 284 225 292" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.3"></path>
+<path d="M392 262 C425 278 460 284 490 292" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent)" stroke-width="1.5" width="150" x="90" y="294"></rect>
+<text data-en="first arrival:" data-zh="首次到达：" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="165" y="310">first arrival:</text>
+<text data-en="execute · store result" data-zh="执行 · 存储结果" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="165" y="325">execute · store result</text>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent)" stroke-width="1.5" width="170" x="440" y="294"></rect>
+<text data-en="every arrival after:" data-zh="之后的每次到达：" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="525" y="310">every arrival after:</text>
+<text data-en="skip · return stored result" data-zh="跳过 · 返回已存结果" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="525" y="325">skip · return stored result</text>
+</svg>
+<p class="diagram-caption" data-en="The token is minted once, when the plan is formed. Every duplicate arrival — the retry, the post-compaction re-issue, the speculative twin — carries the same token and converges on the same ledger entry. The effect happens once; the answer comes back as many times as needed. The agent never needs to know that any of this happened." data-zh="令牌在计划形成时铸造一次。每一个重复到达——重试、压缩后的重发、投机孪生——都带着同一个令牌，汇聚到同一条台账记录上。效果发生一次；答案要多少次，就返回多少次。而智能体自己，从头到尾不需要知道这一切发生过。">The token is minted once, when the plan is formed. Every duplicate arrival — the retry, the post-compaction re-issue, the speculative twin — carries the same token and converges on the same ledger entry. The effect happens once; the answer comes back as many times as needed. The agent never needs to know that any of this happened.</p>
+</div>
+<h3 data-en="A grammar, not a checklist" data-zh="是一套语法，不是一张清单">A grammar, not a checklist</h3>
+<p data-en="Operation tokens are the verb conjugation, but the full grammar has four cases, and knowing which case a tool falls into is the daily discipline. Reads are free — calling a search or a fetch twice is harmless, so reads should never be guarded, and cluttering them with tokens only burns context. Overwrites are naturally idempotent — setting a field to a value twice converges, which is why so many agent frameworks quietly normalize every write into a put-the-whole-thing form. Creates are the dangerous case — 'make a new thing' executed twice makes two things — so creates get an operation token or, better, a client-supplied deterministic name: create-or-get, not create-maybe-twice. Destroys are the case tokens cannot fully save, because deletion is not reversible by re-running; destroys want soft states, tombstones, and a recovery window rather than a bare hard delete. Four cases, four different shapes of safety. A team that can look at any tool in its registry and instantly say which case it is, and what its duplicate-arrival behavior is, has a grammar. A team that cannot, has an incident queue with a delay on it." data-zh="操作令牌是动词变位，但完整的语法有四个格，而判断一个工具落在哪个格里，是日常的功课。读是免费的——搜索、取回，调用两次无害，所以读永远不该加防护，给它们挂令牌只会白白烧掉上下文。覆盖天然幂等——把一个字段设成一个值，设两次会收敛，这也是为什么很多智能体框架悄悄把所有写入规范成「整体放入」的形式。创建是危险的格——「造一个新东西」执行两次，就造出两个东西——所以创建要么带操作令牌，要么更好：带一个客户端提供的确定性名字——是「创建或获取」，不是「可能创建两次」。销毁是令牌也救不全的格，因为删除没法靠重跑来反悔；销毁想要的是软状态、墓碑记录、一个可恢复的窗口，而不是一个裸的硬删除。四个格，四种不同的安全形状。一个团队，如果看自己工具注册表里的任何一个工具，都能立刻说出它是哪个格、重复到达时行为如何——这个团队拥有的是语法。说不出的团队，拥有的只是一条有延迟的事故队列。">Operation tokens are the verb conjugation, but the full grammar has four cases. Reads are free — never guard them. Overwrites are naturally idempotent — setting a field twice converges. Creates are the dangerous case — 'make a new thing' twice makes two things — so creates get a token or a client-supplied deterministic name. Destroys cannot be saved by tokens alone — deletion is not reversible by re-running; they want soft states, tombstones, and a recovery window.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE FOUR CASES OF AGENT-SAFE TOOLS" data-zh="智能体安全工具的四个格" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE FOUR CASES OF AGENT-SAFE TOOLS</text>
+<!-- ladder spine -->
+<line stroke="var(--border)" stroke-width="1.5" x1="70" x2="70" y1="52" y2="300"></line>
+<!-- 1 READ -->
+<circle cx="70" cy="76" fill="var(--accent)" r="6"></circle>
+<rect fill="var(--bg-surface)" height="52" rx="9" stroke="var(--accent)" stroke-width="1.5" width="470" x="100" y="52"></rect>
+<text data-en="① READ — fetch · search · list" data-zh="① 读——取回 · 搜索 · 列举" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" x="120" y="74">① READ — fetch · search · list</text>
+<text data-en="duplicate arrival: harmless · never guard · no token needed" data-zh="重复到达：无害 · 永不加防护 · 无需令牌" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" x="120" y="93">duplicate arrival: harmless · never guard · no token needed</text>
+<!-- 2 OVERWRITE -->
+<circle cx="70" cy="146" fill="var(--accent)" r="6"></circle>
+<rect fill="var(--bg-surface)" height="52" rx="9" stroke="var(--accent)" stroke-width="1.5" width="470" x="100" y="122"></rect>
+<text data-en="② OVERWRITE — set config · save file · publish state" data-zh="② 覆盖——设配置 · 存文件 · 发布状态" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" x="120" y="144">② OVERWRITE — set config · save file · publish state</text>
+<text data-en="duplicate arrival: converges · prefer whole-object writes" data-zh="重复到达：收敛 · 优先整体写入" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" x="120" y="163">duplicate arrival: converges · prefer whole-object writes</text>
+<!-- 3 CREATE -->
+<circle cx="70" cy="216" fill="var(--accent-3)" r="6"></circle>
+<rect fill="var(--bg-surface)" height="52" rx="9" stroke="var(--accent-3)" stroke-width="1.5" width="470" x="100" y="192"></rect>
+<text data-en="③ CREATE — charge · provision · send · register" data-zh="③ 创建——扣款 · 开资源 · 发送 · 注册" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="700" x="120" y="214">③ CREATE — charge · provision · send · register</text>
+<text data-en="duplicate arrival: doubles the effect · operation token or deterministic name required" data-zh="重复到达：效果翻倍 · 必须带操作令牌或确定性名字" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" x="120" y="233">duplicate arrival: doubles the effect · operation token or deterministic name required</text>
+<!-- 4 DESTROY -->
+<circle cx="70" cy="286" fill="var(--accent-3)" r="6"></circle>
+<rect fill="var(--bg-surface)" height="52" rx="9" stroke="var(--accent-3)" stroke-width="1.5" width="470" x="100" y="262"></rect>
+<text data-en="④ DESTROY — delete · terminate · revoke" data-zh="④ 销毁——删除 · 终止 · 吊销" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="700" x="120" y="284">④ DESTROY — delete · terminate · revoke</text>
+<text data-en="duplicate arrival: cannot be undone by re-running · soft delete + tombstone + recovery window" data-zh="重复到达：无法靠重跑挽回 · 软删除 + 墓碑 + 恢复窗口" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" x="120" y="303">duplicate arrival: cannot be undone by re-running · soft delete + tombstone + recovery window</text>
+<!-- safety arrow -->
+<path d="M88 90 C64 150 64 230 88 292" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="3,4" opacity="0.7"></path>
+<text data-en="increasing danger →" data-zh="危险递增 →" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" transform="rotate(-90 42 200)" x="42" y="200">increasing danger →</text>
+</svg>
+<p class="diagram-caption" data-en="The four cases, ordered by what a duplicate arrival costs. Reads and overwrites are safe by shape. Creates need identity — a token that names the intended effect. Destroys need time — a window in which a mistake can be walked back. Most agent incidents live in case three; the ones that make the news live in case four." data-zh="四个格，按重复到达的代价排序。读和覆盖，靠形状就安全。创建需要身份——一个为预期效果命名的令牌。销毁需要时间——一个错误还能收回来的窗口。大多数智能体事故活在第三个格里；上了新闻的那些，活在第四个格。">The four cases, ordered by what a duplicate arrival costs. Reads and overwrites are safe by shape. Creates need identity — a token that names the intended effect. Destroys need time — a window in which a mistake can be walked back. Most agent incidents live in case three; the ones that make the news live in case four.</p>
+</div>
+<h3 data-en="Design for the rerun, not the run" data-zh="为重跑而设计，而不是为单次运行">Design for the rerun, not the run</h3>
+<p data-en="There is a posture shift here that goes beyond tokens and tombstones. Teams new to agents design for the happy path: one pass, one call per step, done. Teams that have been burned design for the rerun: they assume any step may execute again after the system has already forgotten it ran, and they build tools that answer the question 'what is the state of this intent' as readily as 'do this thing now'. A well-built agent tool suite is less a set of commands and more a set of convergent operations — every call moves the world toward the named intent, and arriving late, or twice, or out of order still lands in the same place. This is also why the strongest harnesses make verification cheap and separate: checking whether the email was sent is easier and safer than sending it again to find out. The agent's world is one where memory is soft, paths are many, and arrival is at-least-once. Tools built for that world do not need the agent to be perfect. They only need it to be persistent — and persistence is the one thing agents are guaranteed to have." data-zh="这里有一个超越令牌和墓碑的姿态转变。刚接触智能体的团队，为快乐路径设计：一遍过、每步一次调用、结束。被烧过的团队，为重跑设计：他们假设任何一步，都可能在系统已经忘了它跑过之后再次执行，于是他们构建的工具，回答「这个意图现在是什么状态」和回答「现在去做这件事」一样利索。一套造得好的智能体工具，与其说是一组命令，不如说是一组收敛操作——每一次调用都把世界往那个被命名的意图推进，而迟到的到达、重复的到达、乱序的到达，最终都落在同一个地方。这也正是最强的 harness 把验证做得廉价且独立的原因：查一下「邮件发出去没有」，比为了搞清楚而再发一次，又容易又安全。智能体的世界，是一个记忆是软的、路径是多的、到达是至少一次的世界。为那个世界造的工具，不需要智能体完美。它们只需要智能体执着——而执着，恰恰是智能体唯一被保证拥有的东西。">There is a posture shift here that goes beyond tokens and tombstones. Teams new to agents design for the happy path: one pass, one call per step, done. Teams that have been burned design for the rerun: they assume any step may execute again after the system has already forgotten it ran, and they build tools that answer 'what is the state of this intent' as readily as 'do this thing now'. A well-built agent tool suite is less a set of commands and more a set of convergent operations. The agent's world is one where memory is soft, paths are many, and arrival is at-least-once. Tools built for that world do not need the agent to be perfect — only persistent.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

@@ -1,5 +1,14 @@
 [
 {
+  "date": "2026-09-24",
+  "slug": "the-second-call-is-coming",
+  "title_en": "The Second Call Is Coming",
+  "title_zh": "第二次调用，终将到来",
+  "read_time": 8,
+  "excerpt_en": "Agents retry, re-issue after compaction, and race parallel branches into the same resource. Exactly-once was an abstraction for callers with trustworthy memory — agents are not those callers. The fix is a grammar of idempotency: operation tokens that name the effect, not the attempt.",
+  "excerpt_zh": "智能体会重试、会在压缩后重发、会让并行分支赛进同一个资源。「恰好一次」是为记忆可信的调用者准备的抽象——智能体不是那种调用者。修复是一套幂等语法：为效果而非尝试命名的操作令牌。"
+},
+{
   "date": "2026-09-23",
   "slug": "ship-the-shadow-not-the-agent",
   "title_en": "Ship the Shadow, Not the Agent",
