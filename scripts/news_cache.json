@@ -1,6 +1,238 @@
 {
   "tweets": [
     {
+      "id": "2102569821997346912",
+      "url": "https://x.com/Alibaba_Qwen/status/2102569821997346912",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-09-23T08:01:41.313156+00:00",
+      "translation_zh": "感谢 @arena 的认可！🏆 Qwen-Image-2.1 现已同时登顶图像编辑与文生图竞技场的开源模型第一名。快来试试，展示你的创作！🎨",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 279,
+        "lang": "en",
+        "created_at": "2026-09-23T01:24:44.000Z",
+        "display_text_range": [
+          0,
+          176
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "1641378826537295874",
+              "indices": [
+                7,
+                13
+              ],
+              "name": "Arena.ai",
+              "screen_name": "arena"
+            }
+          ]
+        },
+        "id_str": "2102569821997346912",
+        "text": "Thanks @arena for the recognition! 🏆 Qwen-Image-2.1 is now the #1 open-source model in both the Image Edit and Text-to-Image Arenas. Try it now and show us what you create! 🎨",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2102569821997346912"
+          ],
+          "editable_until_msecs": "1790130284000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 24,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 478,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 28,
+          "retweet_count": 26,
+          "created_at": "2026-09-22T15:13:34.000Z",
+          "display_text_range": [
+            0,
+            279
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/MV5USBrMa9",
+                "expanded_url": "https://x.com/arena/status/2102416020678008986/photo/1",
+                "indices": [
+                  280,
+                  303
+                ],
+                "url": "https://t.co/MV5USBrMa9"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "1753339277386342400",
+                "indices": [
+                  18,
+                  31
+                ],
+                "name": "Qwen",
+                "screen_name": "Alibaba_Qwen"
+              }
+            ]
+          },
+          "id_str": "2102416020678008986",
+          "text": "Qwen-Image-2.1 by @Alibaba_Qwen just landed as the #1 open source model in the Image Edit Arena and Text-to-Image Arena!\n\nWith 1367 pts in the Image Edit Arena, Qwen-Image-2.1 took the #1 spot among open. It landed #16 overall, just 3 pts from GPT-Image-1.5-high-fidelity at #15. https://t.co/MV5USBrMa9",
+          "user": {
+            "id_str": "1641378826537295874",
+            "name": "Arena.ai",
+            "screen_name": "arena",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2017015061454438400/iNKfXZ_I_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2102416020678008986"
+            ],
+            "editable_until_msecs": "1790093614000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/MV5USBrMa9",
+              "expanded_url": "https://x.com/arena/status/2102416020678008986/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                280,
+                303
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HS1G--pbsAAgJiy.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 2293,
+                    "w": 4095,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 4095,
+                    "w": 4095,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 4095,
+                    "w": 3592,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 4095,
+                    "w": 2048,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 4095,
+                    "w": 4095,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 4095,
+                "width": 4095
+              },
+              "sizes": {
+                "large": {
+                  "h": 2048,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 1200,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 680,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/MV5USBrMa9"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 2293,
+                  "w": 4095,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 4095,
+                  "w": 4095,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 4095,
+                  "w": 3592,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 4095,
+                  "w": 2048,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 4095,
+                  "w": 4095,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/arena/status/2102416020678008986/photo/1",
+              "url": "https://pbs.twimg.com/media/HS1G--pbsAAgJiy.jpg",
+              "width": 4095,
+              "height": 4095
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2102460995180663204",
       "url": "https://x.com/OpenAI/status/2102460995180663204",
       "label": "OpenAI",
@@ -733,6 +965,712 @@
         "note_tweet": {
           "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTAyNDYwOTc1NzEwMzM5MDcy"
         }
+      }
+    },
+    {
+      "id": "2102439262507725294",
+      "url": "https://x.com/elonmusk/status/2102439262507725294",
+      "label": "xAI",
+      "color": "#1DA1F2",
+      "fetched_at": "2026-09-23T08:01:41.313156+00:00",
+      "translation_zh": "Grok @Bot 现已上车特斯拉！通过 Connectors，你可以免手操作管理收件箱、整理日历、处理文件/聊天/任务。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 13651,
+        "lang": "en",
+        "created_at": "2026-09-22T16:45:56.000Z",
+        "display_text_range": [
+          0,
+          28
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "2085838061347217408",
+              "indices": [
+                5,
+                9
+              ],
+              "name": "Grok Bot",
+              "screen_name": "bot"
+            }
+          ]
+        },
+        "id_str": "2102439262507725294",
+        "text": "Grok @Bot now in your Tesla!",
+        "user": {
+          "id_str": "44196397",
+          "name": "Elon Musk",
+          "screen_name": "elonmusk",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+            },
+            "description": "X",
+            "url": {
+              "url": "https://twitter.com/X",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2102439262507725294"
+          ],
+          "editable_until_msecs": "1790099156000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 1484,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 7039,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 558,
+          "retweet_count": 839,
+          "created_at": "2026-09-22T16:11:44.000Z",
+          "display_text_range": [
+            0,
+            183
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/W1LuybQh0P",
+                "expanded_url": "https://x.com/Tesla/status/2102430656349544590/video/1",
+                "indices": [
+                  184,
+                  207
+                ],
+                "url": "https://t.co/W1LuybQh0P"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "1720665183188922368",
+                "indices": [
+                  1,
+                  6
+                ],
+                "name": "Grok",
+                "screen_name": "grok"
+              }
+            ]
+          },
+          "id_str": "2102430656349544590",
+          "text": ".@Grok in your Tesla can now do meaningful work for you\n\nWith Connectors, you can manage your inbox, clean up your calendar, or talk through existing files/chat/tasks – all hands-free https://t.co/W1LuybQh0P",
+          "user": {
+            "id_str": "13298072",
+            "name": "Tesla",
+            "screen_name": "Tesla",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1337607516008501250/6Ggc4S5n_normal.png"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2102430656349544590"
+            ],
+            "editable_until_msecs": "1790097104000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/W1LuybQh0P",
+              "expanded_url": "https://x.com/Tesla/status/2102430656349544590/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                184,
+                207
+              ],
+              "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2102430553047973888/img/fRlmoOqqT6cI3Q-T.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 3840,
+                "width": 2160
+              },
+              "sizes": {
+                "large": {
+                  "h": 2048,
+                  "resize": "fit",
+                  "w": 1152
+                },
+                "medium": {
+                  "h": 1200,
+                  "resize": "fit",
+                  "w": 675
+                },
+                "small": {
+                  "h": 680,
+                  "resize": "fit",
+                  "w": 383
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/W1LuybQh0P",
+              "video_info": {
+                "aspect_ratio": [
+                  9,
+                  16
+                ],
+                "duration_millis": 64066,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2102430553047973888/pl/Q2q88j4CW8WJySqP.m3u8?v=3d8"
+                  },
+                  {
+                    "bitrate": 632000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2102430553047973888/vid/avc1/320x568/KOA6vJwxMMFb9grV.mp4"
+                  },
+                  {
+                    "bitrate": 950000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2102430553047973888/vid/avc1/480x852/LGaISupegcgiqehg.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2102430553047973888/vid/avc1/720x1280/axERGvJ6qVf_SEZT.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2102430553047973888/vid/avc1/1080x1920/AsltCT7BXOStWf5X.mp4"
+                  },
+                  {
+                    "bitrate": 25128000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2102430553047973888/vid/avc1/2160x3840/0DwdpMfW5J9vEWCr.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              9,
+              16
+            ],
+            "contentType": "media_entity",
+            "durationMs": 64066,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/amplify_video_thumb/2102430553047973888/img/fRlmoOqqT6cI3Q-T.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2102430553047973888/pl/Q2q88j4CW8WJySqP.m3u8?v=3d8"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2102430553047973888/vid/avc1/320x568/KOA6vJwxMMFb9grV.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2102430553047973888/vid/avc1/480x852/LGaISupegcgiqehg.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2102430553047973888/vid/avc1/720x1280/axERGvJ6qVf_SEZT.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2102430553047973888/vid/avc1/1080x1920/AsltCT7BXOStWf5X.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2102430553047973888/vid/avc1/2160x3840/0DwdpMfW5J9vEWCr.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2102430656349544590"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2102435538120691886",
+      "url": "https://x.com/claudeai/status/2102435538120691886",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-09-23T08:01:41.313156+00:00",
+      "translation_zh": "再加一件事：Claude 正在提高 Pro、Max 和 Team 套餐的 5 小时用量上限，还为订阅用户提供一次速率限制重置，可以留着随时使用。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 13940,
+        "in_reply_to_screen_name": "claudeai",
+        "in_reply_to_status_id_str": "2102435535889523157",
+        "in_reply_to_user_id_str": "1943306828697550848",
+        "lang": "en",
+        "created_at": "2026-09-22T16:31:08.000Z",
+        "display_text_range": [
+          0,
+          192
+        ],
+        "entities": {},
+        "id_str": "2102435538120691886",
+        "text": "One more thing: we’re increasing five-hour usage limits on Pro, Max, and Team plans. We’re also providing subscription users a rate limit reset, which you can save and use whenever you choose.",
+        "user": {
+          "id_str": "1943306828697550848",
+          "name": "Claude",
+          "screen_name": "claudeai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2102435538120691886"
+          ],
+          "editable_until_msecs": "1790098268000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 496,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 2588,
+          "in_reply_to_screen_name": "claudeai",
+          "in_reply_to_status_id_str": "2102435529044250670",
+          "in_reply_to_user_id_str": "1943306828697550848",
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 10,
+          "retweet_count": 72,
+          "created_at": "2026-09-22T16:31:07.000Z",
+          "display_text_range": [
+            0,
+            158
+          ],
+          "entities": {
+            "urls": [
+              {
+                "display_url": "anthropic.com/claude-opus-5-5",
+                "expanded_url": "https://anthropic.com/claude-opus-5-5",
+                "indices": [
+                  135,
+                  158
+                ],
+                "url": "https://t.co/eiZkRTKnFV"
+              }
+            ]
+          },
+          "id_str": "2102435535889523157",
+          "text": "Together, these advances make Opus 5.5 a noticeably better collaborator. We’re excited to see what you build and discover.\n\nRead more: https://t.co/eiZkRTKnFV",
+          "user": {
+            "id_str": "1943306828697550848",
+            "name": "Claude",
+            "screen_name": "claudeai",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+            "highlighted_label": {
+              "badge": {
+                "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+              },
+              "description": "Anthropic",
+              "url": {
+                "url": "https://twitter.com/AnthropicAI",
+                "url_type": "DeepLink"
+              },
+              "user_label_display_type": "Badge",
+              "user_label_type": "BusinessLabel"
+            }
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2102435535889523157"
+            ],
+            "editable_until_msecs": "1790098267000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "card": {
+            "card_platform": {
+              "platform": {
+                "audience": {
+                  "name": "production"
+                },
+                "device": {
+                  "name": "iPhone",
+                  "version": "13"
+                }
+              }
+            },
+            "name": "summary_large_image",
+            "url": "https://t.co/eiZkRTKnFV",
+            "binding_values": {
+              "photo_image_full_size_large": {
+                "image_value": {
+                  "alt": "Anthropic logo",
+                  "height": 419,
+                  "url": "https://pbs.twimg.com/card_img/2102575995048062976/fErnwZ4a?format=jpg&name=800x419",
+                  "width": 800
+                },
+                "type": "IMAGE"
+              },
+              "thumbnail_image": {
+                "image_value": {
+                  "alt": "Anthropic logo",
+                  "height": 147,
+                  "url": "https://pbs.twimg.com/card_img/2102575995048062976/fErnwZ4a?format=jpg&name=280x150",
+                  "width": 280
+                },
+                "type": "IMAGE"
+              },
+              "description": {
+                "string_value": "Claude Opus 5.5 leads in agentic coding and knowledge work, and costs 40% less to run than Opus 5 on typical workloads.",
+                "type": "STRING"
+              },
+              "domain": {
+                "string_value": "www.anthropic.com",
+                "type": "STRING"
+              },
+              "thumbnail_image_large": {
+                "image_value": {
+                  "alt": "Anthropic logo",
+                  "height": 315,
+                  "url": "https://pbs.twimg.com/card_img/2102575995048062976/fErnwZ4a?format=jpg&name=600x600",
+                  "width": 600
+                },
+                "type": "IMAGE"
+              },
+              "summary_photo_image_small": {
+                "image_value": {
+                  "alt": "Anthropic logo",
+                  "height": 202,
+                  "url": "https://pbs.twimg.com/card_img/2102575995048062976/fErnwZ4a?format=jpg&name=386x202",
+                  "width": 386
+                },
+                "type": "IMAGE"
+              },
+              "thumbnail_image_original": {
+                "image_value": {
+                  "alt": "Anthropic logo",
+                  "height": 630,
+                  "url": "https://pbs.twimg.com/card_img/2102575995048062976/fErnwZ4a?format=jpg&name=orig",
+                  "width": 1200
+                },
+                "type": "IMAGE"
+              },
+              "site": {
+                "scribe_key": "publisher_id",
+                "type": "USER",
+                "user_value": {
+                  "id_str": "1353836358901501952",
+                  "path": []
+                }
+              },
+              "photo_image_full_size_small": {
+                "image_value": {
+                  "alt": "Anthropic logo",
+                  "height": 202,
+                  "url": "https://pbs.twimg.com/card_img/2102575995048062976/fErnwZ4a?format=jpg&name=386x202",
+                  "width": 386
+                },
+                "type": "IMAGE"
+              },
+              "summary_photo_image_large": {
+                "image_value": {
+                  "alt": "Anthropic logo",
+                  "height": 419,
+                  "url": "https://pbs.twimg.com/card_img/2102575995048062976/fErnwZ4a?format=jpg&name=800x419",
+                  "width": 800
+                },
+                "type": "IMAGE"
+              },
+              "thumbnail_image_small": {
+                "image_value": {
+                  "alt": "Anthropic logo",
+                  "height": 76,
+                  "url": "https://pbs.twimg.com/card_img/2102575995048062976/fErnwZ4a?format=jpg&name=144x144",
+                  "width": 144
+                },
+                "type": "IMAGE"
+              },
+              "creator": {
+                "type": "USER",
+                "user_value": {
+                  "id_str": "1353836358901501952",
+                  "path": []
+                }
+              },
+              "thumbnail_image_x_large": {
+                "image_value": {
+                  "alt": "Anthropic logo",
+                  "height": 630,
+                  "url": "https://pbs.twimg.com/card_img/2102575995048062976/fErnwZ4a?format=png&name=2048x2048_2_exp",
+                  "width": 1200
+                },
+                "type": "IMAGE"
+              },
+              "photo_image_full_size_original": {
+                "image_value": {
+                  "alt": "Anthropic logo",
+                  "height": 630,
+                  "url": "https://pbs.twimg.com/card_img/2102575995048062976/fErnwZ4a?format=jpg&name=orig",
+                  "width": 1200
+                },
+                "type": "IMAGE"
+              },
+              "photo_image_full_size_alt_text": {
+                "string_value": "Anthropic logo",
+                "type": "STRING"
+              },
+              "vanity_url": {
+                "scribe_key": "vanity_url",
+                "string_value": "anthropic.com",
+                "type": "STRING"
+              },
+              "photo_image_full_size": {
+                "image_value": {
+                  "alt": "Anthropic logo",
+                  "height": 314,
+                  "url": "https://pbs.twimg.com/card_img/2102575995048062976/fErnwZ4a?format=jpg&name=600x314",
+                  "width": 600
+                },
+                "type": "IMAGE"
+              },
+              "summary_photo_image_alt_text": {
+                "string_value": "Anthropic logo",
+                "type": "STRING"
+              },
+              "thumbnail_image_color": {
+                "image_color_value": {
+                  "palette": [
+                    {
+                      "percentage": 42.26,
+                      "rgb": {
+                        "blue": 18,
+                        "green": 18,
+                        "red": 20
+                      }
+                    },
+                    {
+                      "percentage": 19.3,
+                      "rgb": {
+                        "blue": 164,
+                        "green": 127,
+                        "red": 93
+                      }
+                    },
+                    {
+                      "percentage": 9.98,
+                      "rgb": {
+                        "blue": 50,
+                        "green": 188,
+                        "red": 235
+                      }
+                    },
+                    {
+                      "percentage": 7.95,
+                      "rgb": {
+                        "blue": 135,
+                        "green": 165,
+                        "red": 185
+                      }
+                    },
+                    {
+                      "percentage": 5.64,
+                      "rgb": {
+                        "blue": 38,
+                        "green": 67,
+                        "red": 164
+                      }
+                    }
+                  ]
+                },
+                "type": "IMAGE_COLOR"
+              },
+              "title": {
+                "string_value": "Introducing Claude Opus 5.5",
+                "type": "STRING"
+              },
+              "summary_photo_image_color": {
+                "image_color_value": {
+                  "palette": [
+                    {
+                      "percentage": 42.26,
+                      "rgb": {
+                        "blue": 18,
+                        "green": 18,
+                        "red": 20
+                      }
+                    },
+                    {
+                      "percentage": 19.3,
+                      "rgb": {
+                        "blue": 164,
+                        "green": 127,
+                        "red": 93
+                      }
+                    },
+                    {
+                      "percentage": 9.98,
+                      "rgb": {
+                        "blue": 50,
+                        "green": 188,
+                        "red": 235
+                      }
+                    },
+                    {
+                      "percentage": 7.95,
+                      "rgb": {
+                        "blue": 135,
+                        "green": 165,
+                        "red": 185
+                      }
+                    },
+                    {
+                      "percentage": 5.64,
+                      "rgb": {
+                        "blue": 38,
+                        "green": 67,
+                        "red": 164
+                      }
+                    }
+                  ]
+                },
+                "type": "IMAGE_COLOR"
+              },
+              "summary_photo_image_x_large": {
+                "image_value": {
+                  "alt": "Anthropic logo",
+                  "height": 630,
+                  "url": "https://pbs.twimg.com/card_img/2102575995048062976/fErnwZ4a?format=png&name=2048x2048_2_exp",
+                  "width": 1200
+                },
+                "type": "IMAGE"
+              },
+              "summary_photo_image": {
+                "image_value": {
+                  "alt": "Anthropic logo",
+                  "height": 314,
+                  "url": "https://pbs.twimg.com/card_img/2102575995048062976/fErnwZ4a?format=jpg&name=600x314",
+                  "width": 600
+                },
+                "type": "IMAGE"
+              },
+              "photo_image_full_size_color": {
+                "image_color_value": {
+                  "palette": [
+                    {
+                      "percentage": 42.26,
+                      "rgb": {
+                        "blue": 18,
+                        "green": 18,
+                        "red": 20
+                      }
+                    },
+                    {
+                      "percentage": 19.3,
+                      "rgb": {
+                        "blue": 164,
+                        "green": 127,
+                        "red": 93
+                      }
+                    },
+                    {
+                      "percentage": 9.98,
+                      "rgb": {
+                        "blue": 50,
+                        "green": 188,
+                        "red": 235
+                      }
+                    },
+                    {
+                      "percentage": 7.95,
+                      "rgb": {
+                        "blue": 135,
+                        "green": 165,
+                        "red": 185
+                      }
+                    },
+                    {
+                      "percentage": 5.64,
+                      "rgb": {
+                        "blue": 38,
+                        "green": 67,
+                        "red": 164
+                      }
+                    }
+                  ]
+                },
+                "type": "IMAGE_COLOR"
+              },
+              "photo_image_full_size_x_large": {
+                "image_value": {
+                  "alt": "Anthropic logo",
+                  "height": 630,
+                  "url": "https://pbs.twimg.com/card_img/2102575995048062976/fErnwZ4a?format=png&name=2048x2048_2_exp",
+                  "width": 1200
+                },
+                "type": "IMAGE"
+              },
+              "card_url": {
+                "scribe_key": "card_url",
+                "string_value": "https://t.co/eiZkRTKnFV",
+                "type": "STRING"
+              },
+              "summary_photo_image_original": {
+                "image_value": {
+                  "alt": "Anthropic logo",
+                  "height": 630,
+                  "url": "https://pbs.twimg.com/card_img/2102575995048062976/fErnwZ4a?format=jpg&name=orig",
+                  "width": 1200
+                },
+                "type": "IMAGE"
+              }
+            }
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
       }
     },
     {
