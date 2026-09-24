@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Fallback Ladder — AI Frontlines</title>
+<meta content="Every agent system fails eventually — a model times out, retrieval goes down, a tool returns garbage. The measure of the system is not how well it works at its best, but how gracefully it descends. Design the fallback ladder before designing the happy path." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 25, 2026" data-zh="2026年9月25日">September 25, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Fallback Ladder" data-zh="降级阶梯">The Fallback Ladder</h1>
+<p class="post-header-deck" data-en="Every demo is a demo of the happy path. The model responds in two seconds, retrieval returns the perfect document, the tool executes on the first try. Then the system meets production, and production is made of timeouts, outages, rate limits, and tools that return well-formed garbage. What happens in that moment is not an edge case. It is the majority of the user's experience of the system's character. The teams that ship durable agents do not design the happy path first and patch failures later. They design the descent — the ordered ladder of degraded modes the system walks down as the world degrades around it — and they design it before anything else." data-zh="每一场演示，演示的都是快乐路径。模型两秒响应，检索返回完美文档，工具一次执行成功。然后系统遇见了生产环境，而生产环境是由超时、故障、限流、和返回格式正确但内容是垃圾的工具构成的。那一刻发生什么，不是边缘情况。它是用户对系统品格的体验的主体。发布耐用智能体的团队，不会先设计快乐路径、再回头修补失败。他们设计的是下降——当世界在周围降级时，系统依次走下的、有序的降级模式阶梯——而且他们比什么都先设计它。">Every demo is a demo of the happy path. Then the system meets production, and production is made of timeouts, outages, rate limits, and tools that return well-formed garbage. What happens in that moment is not an edge case — it is the majority of the user's experience of the system's character.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a peculiar asymmetry in how agent systems are built. Engineers spend months on the ascent: better prompts, better retrieval, better tools, smarter models — every ounce of effort aimed at making the system more capable at its best. Almost no effort is spent on the descent. What happens when the frontier model returns a 429? When the vector database is down for eleven minutes? When the tool responds, but with data from yesterday because an upstream sync failed silently? These are not hypothetical questions. In any system running long enough, they are certainties. The only variable is what the user sees when they arrive." data-zh="智能体系统的构建方式里，存在一种奇特的不对称。工程师们把数月花在爬升上：更好的 prompt、更好的检索、更好的工具、更聪明的模型——每一分力气都旨在让系统在最佳状态更强大。几乎没有任何力气花在下降上。当前沿模型返回 429 时会发生什么？当向量数据库宕机十一分钟时？当工具响应了，但返回的是昨天的数据、因为上游同步悄悄失败时？这些不是假设性问题。在任何运行得足够久的系统里，它们是必然。唯一的变量，是它们到来时用户看见什么。">There is a peculiar asymmetry in how agent systems are built. Engineers spend months on the ascent: better prompts, better retrieval, better tools, smarter models — every ounce of effort aimed at making the system more capable at its best. Almost no effort is spent on the descent. What happens when the frontier model returns a 429? When the vector database is down for eleven minutes? These are not hypothetical questions. In any system running long enough, they are certainties.</p>
+<p data-en="The instinctive answer is error handling — a try/catch, a retry, a polite apology rendered in the failure state. But error handling is frame-level thinking: it catches the exception and admits defeat. What durable systems have instead is a ladder. A fallback ladder is an ordered sequence of degraded modes, each one cheaper and less capable than the last, each one entered by an explicit condition, each one honest about what it is. The system starts on the top rung — full capability, full freshness, full intelligence. As dependencies fail, it steps down. It does not fall. It descends." data-zh="直觉的答案是错误处理——一个 try/catch，一次重试，一条渲染在失败态里的礼貌致歉。但错误处理是帧级别的思维：它捕获异常，然后认输。耐用的系统拥有的，是一架阶梯。降级阶梯，是一串有序的降级模式，每一个都比上一个更便宜、更弱，每一个都由一个显式条件进入，每一个都对自己的身份诚实。系统从最上面一级开始——完整的能力、完整的新鲜度、完整的智能。随着依赖失效，它往下走。它不是坠落。它是下降。">The instinctive answer is error handling — a try/catch, a retry, a polite apology. But error handling is frame-level thinking: it catches the exception and admits defeat. What durable systems have instead is a ladder: an ordered sequence of degraded modes, each cheaper and less capable than the last, each entered by an explicit condition, each honest about what it is.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 380" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrL2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrL3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE FALLBACK LADDER" data-zh="降级阶梯" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE FALLBACK LADDER</text>
+<!-- RUNG 1 -->
+<rect fill="var(--accent-dim)" height="42" rx="9" stroke="var(--accent)" stroke-width="2" width="330" x="220" y="44"></rect>
+<text data-en="rung 1 · frontier model + live retrieval" data-zh="第 1 级 · 前沿模型 + 实时检索" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="385" y="63">rung 1 · frontier model + live retrieval</text>
+<text data-en="full capability · full freshness" data-zh="完整能力 · 完整新鲜度" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="385" y="78">full capability · full freshness</text>
+<path d="M385 86 L385 102" fill="none" marker-end="url(#arrL2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="if model timeout &gt; 2s" data-zh="若模型超时 &gt; 2 秒" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="460" y="98">if model timeout &gt; 2s</text>
+<!-- RUNG 2 -->
+<rect fill="var(--bg-surface)" height="42" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="330" x="220" y="104"></rect>
+<text data-en="rung 2 · fast model + live retrieval" data-zh="第 2 级 · 快速模型 + 实时检索" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="385" y="123">rung 2 · fast model + live retrieval</text>
+<text data-en="cheaper reasoning · same facts" data-zh="更便宜的推理 · 相同的事实" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="385" y="138">cheaper reasoning · same facts</text>
+<path d="M385 146 L385 162" fill="none" marker-end="url(#arrL2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="if retrieval is down" data-zh="若检索宕机" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="460" y="158">if retrieval is down</text>
+<!-- RUNG 3 -->
+<rect fill="var(--bg-surface)" height="42" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="330" x="220" y="164"></rect>
+<text data-en="rung 3 · fast model + stale cache" data-zh="第 3 级 · 快速模型 + 过期缓存" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="385" y="183">rung 3 · fast model + stale cache</text>
+<text data-en="slightly old facts · labeled as such" data-zh="略旧的事实 · 如实标注" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="385" y="198">slightly old facts · labeled as such</text>
+<path d="M385 206 L385 222" fill="none" marker-end="url(#arrL2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="if tools fail or return garbage" data-zh="若工具失败或返回垃圾" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="480" y="218">if tools fail or return garbage</text>
+<!-- RUNG 4 -->
+<rect fill="var(--bg-surface)" height="42" rx="9" stroke="var(--accent-3)" stroke-width="1.5" width="330" x="220" y="224"></rect>
+<text data-en="rung 4 · answer from memory, no tools" data-zh="第 4 级 · 凭记忆回答，不用工具" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="385" y="243">rung 4 · answer from memory, no tools</text>
+<text data-en="limited · hedged · flagged" data-zh="受限 · 有保留 · 有标记" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="385" y="258">limited · hedged · flagged</text>
+<path d="M385 266 L385 282" fill="none" marker-end="url(#arrL3)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<text data-en="if even that fails" data-zh="若连这也失败" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="445" y="278">if even that fails</text>
+<!-- RUNG 5 -->
+<rect fill="var(--bg-surface)" height="42" rx="9" stroke="var(--border)" stroke-width="1.5" stroke-dasharray="5,3" width="330" x="220" y="284"></rect>
+<text data-en="rung 5 · honest refusal + queue for human" data-zh="第 5 级 · 诚实拒绝 + 排队转人工" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="385" y="303">rung 5 · honest refusal + queue for human</text>
+<text data-en="no capability · no deception" data-zh="没有能力 · 也没有欺骗" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="385" y="318">no capability · no deception</text>
+<!-- left annotation -->
+<path d="M120 60 C120 170 120 290 218 305" fill="none" marker-end="url(#arrL1)" stroke="var(--text-tertiary)" stroke-width="1" stroke-dasharray="3,4"></path>
+<text data-en="capability" data-zh="能力" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="95" y="180">capability</text>
+<text data-en="decreases" data-zh="递减" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="95" y="196">decreases</text>
+<text data-en="dignity stays" data-zh="尊严不变" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="520" y="352">dignity stays</text>
+</svg>
+<p class="diagram-caption" data-en="Each rung is entered by an explicit condition — a timeout, a health check, a validation failure — and each rung is honest about what it lost. The system descends in capability but never in trustworthiness. The bottom rung is a refusal, not a hallucination." data-zh="每一级都由一个显式条件进入——超时、健康检查、验证失败——而每一级都对自己失去了什么保持诚实。系统的能力在下降，但可信度从不下降。最底下那一级，是一次拒绝，而不是一次幻觉。">Each rung is entered by an explicit condition — a timeout, a health check, a validation failure — and each rung is honest about what it lost. The system descends in capability but never in trustworthiness. The bottom rung is a refusal, not a hallucination.</p>
+</div>
+<h3 data-en="The failure is not the event, it is the silence" data-zh="失败不是事件本身，而是沉默">The failure is not the event, it is the silence</h3>
+<p data-en="What destroys trust in an agent is rarely the outage itself. Users understand outages; they live with them in every product. What destroys trust is silence about the outage — a system that keeps answering fluently while running on stale data, or confidently fabricates what a dead tool would have said, or swaps a frontier model for a small one and pretends nothing changed. The user cannot see the ladder, so the system must tell them where it stands. A one-line banner — 'search is temporarily unavailable; answers may be incomplete' — costs nothing and preserves everything. The systems that skip it are not saving their users from annoyance. They are spending their credibility to decorate a degraded state as a healthy one." data-zh="摧毁用户对智能体信任的，很少是故障本身。用户理解故障；他们在每一个产品里都与故障共处。摧毁信任的，是对故障的沉默——一个系统在过期数据上继续流利作答，或者自信地编造一个已死工具本会返回的内容，或者把前沿模型换成小模型却假装什么都没变。用户看不见阶梯，所以系统必须告诉他们自己站在哪一级。一行横幅——「搜索暂时不可用，回答可能不完整」——成本为零，却能保全一切。跳过它的系统，并不是在帮用户省去烦扰。它们是在挥霍自己的信誉，把一个降级态装点成健康态。">What destroys trust in an agent is rarely the outage itself. What destroys trust is silence about the outage — a system that keeps answering fluently while running on stale data, or confidently fabricates what a dead tool would have said. The user cannot see the ladder, so the system must tell them where it stands.</p>
+<blockquote data-en="Degradation is inevitable; deception is optional. A system that answers at 70% capability and says so is more trustworthy than one that answers at 100% and lies about the other 30%. The ladder's purpose is not to hide the descent. It is to make the descent legible." data-zh="降级不可避免；欺骗是可选的。一个以七成能力作答并如实相告的系统，比一个以十成作答、却对另外三成撒谎的系统，更值得信任。阶梯的目的不是隐藏下降。而是让下降变得可读。">Degradation is inevitable; deception is optional. A system that answers at 70% capability and says so is more trustworthy than one that answers at 100% and lies about the other 30%. The ladder's purpose is not to hide the descent. It is to make the descent legible.</blockquote>
+<h3 data-en="Three philosophies of descent" data-zh="三种下降哲学">Three philosophies of descent</h3>
+<p data-en="In practice, teams choose among three approaches, and the choice defines the product more than any model upgrade ever will. The first is the silent swap: route to a cheaper model or a cached answer when anything fails, and tell no one. It maximizes uptime on paper. It also maximizes the variance of the user's experience without explaining the variance — some answers are brilliant, some are flat, and nobody knows why. The second is the loud failure: any degradation aborts the request and shows an error. It is honest but brittle, and it teaches users that the product is fragile. The third — the one that works — is the labeled ladder: degrade deliberately, step by step, and label every step. Capability drops gracefully, the user always knows what tier they are getting, and recovery climbs back up the same rungs it came down. The difference between these philosophies is not technical. It is a decision about what the product owes the person using it." data-zh="在实践中，团队在三种做法中选择，而这个选择对产品的定义，超过任何一次模型升级。第一种是静默替换：任何环节失败时路由到更便宜的模型或缓存答案，且不告诉任何人。它在纸面上最大化了正常运行时间。它也在无人解释的情况下最大化了用户体验的方差——有些回答精彩，有些平庸，没人知道为什么。第二种是响亮失败：任何降级都中止请求、显示错误。它诚实但脆弱，并且教会用户这个产品易碎。第三种——真正有效的那种——是带标签的阶梯：逐步地、有意识地降级，并为每一级打上标签。能力优雅地下降，用户始终知道自己得到的是哪一档，而恢复时沿原路逐级爬回。这几种哲学之间的差异不是技术性的。它是一个关于产品对使用者负有什么义务的决定。">In practice, teams choose among three approaches, and the choice defines the product more than any model upgrade ever will. The first is the silent swap: route to a cheaper model or a cached answer when anything fails, and tell no one. The second is the loud failure: any degradation aborts the request and shows an error. The third — the one that works — is the labeled ladder.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrP2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrP3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THREE PHILOSOPHIES OF DESCENT" data-zh="三种下降哲学" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THREE PHILOSOPHIES OF DESCENT</text>
+<!-- COLUMN 1: SILENT SWAP -->
+<text data-en="① SILENT SWAP" data-zh="① 静默替换" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="105" y="52">SILENT SWAP</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="76" x="67" y="64"></rect>
+<text data-en="request" data-zh="请求" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="105" y="81">request</text>
+<path d="M105 90 L105 104" fill="none" marker-end="url(#arrP1)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="76" x="67" y="106"></rect>
+<text data-en="swap" data-zh="替换" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="105" y="123">swap</text>
+<path d="M105 132 L105 146" fill="none" marker-end="url(#arrP1)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="76" x="67" y="148"></rect>
+<text data-en="answer?" data-zh="回答?" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="105" y="165">answer?</text>
+<text data-en="no label · variance unexplained" data-zh="无标签 · 方差无法解释" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="105" y="200">no label · variance unexplained</text>
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="210" x2="210" y1="40" y2="220"></line>
+<!-- COLUMN 2: LOUD FAILURE -->
+<text data-en="② LOUD FAILURE" data-zh="② 响亮失败" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="52">LOUD FAILURE</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="76" x="272" y="64"></rect>
+<text data-en="request" data-zh="请求" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="81">request</text>
+<path d="M310 90 L310 104" fill="none" marker-end="url(#arrP2)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="76" x="272" y="106"></rect>
+<text data-en="degrade?" data-zh="降级?" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="123">degrade?</text>
+<path d="M310 132 L310 146" fill="none" marker-end="url(#arrP2)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="76" x="272" y="148"></rect>
+<text data-en="ERROR ✗" data-zh="错误 ✗" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="165">ERROR ✗</text>
+<text data-en="honest · brittle · teaches fragility" data-zh="诚实 · 脆弱 · 教会用户易碎" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="200">honest · brittle · teaches fragility</text>
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="415" x2="415" y1="40" y2="220"></line>
+<!-- COLUMN 3: LABELED LADDER -->
+<text data-en="③ LABELED LADDER" data-zh="③ 带标签的阶梯" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="515" y="52">LABELED LADDER</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent)" stroke-width="1.5" width="76" x="477" y="64"></rect>
+<text data-en="request" data-zh="请求" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="515" y="81">request</text>
+<path d="M515 90 L515 104" fill="none" marker-end="url(#arrP3)" stroke="var(--accent)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent)" stroke-width="1.5" width="76" x="477" y="106"></rect>
+<text data-en="step down" data-zh="降一级" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="515" y="123">step down</text>
+<path d="M515 132 L515 146" fill="none" marker-end="url(#arrP3)" stroke="var(--accent)" stroke-width="1.3"></path>
+<rect fill="var(--accent-dim)" height="26" rx="6" stroke="var(--accent)" stroke-width="1.8" width="76" x="477" y="148"></rect>
+<text data-en="answer ✓ + label" data-zh="回答 ✓ + 标签" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="515" y="165">answer ✓ + label</text>
+<text data-en="graceful · legible · recovers" data-zh="优雅 · 可读 · 可恢复" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="515" y="200">graceful · legible · recovers</text>
+<!-- bottom caption -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="250"></rect>
+<text data-en="Same outage, three products. The user cannot see your architecture — they can only see which philosophy you chose." data-zh="同一场故障，三种产品。用户看不见你的架构——他们只能看见你选择了哪种哲学。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="275">Same outage, three products. The user cannot see your architecture — they can only see which philosophy you chose.</text>
+</svg>
+<p class="diagram-caption" data-en="The silent swap preserves uptime and destroys explainability. The loud failure preserves honesty and destroys usability. The labeled ladder preserves both: it degrades in bounded, announced steps, and it climbs back the same way. Only the third philosophy survives contact with paying users." data-zh="静默替换保住了运行时间，毁掉了可解释性。响亮失败保住了诚实，毁掉了可用性。带标签的阶梯两者都保住了：它以有界的、被宣告的步骤降级，并以同样的方式爬回来。只有第三种哲学，能在付费用户面前活下来。">The silent swap preserves uptime and destroys explainability. The loud failure preserves honesty and destroys usability. The labeled ladder preserves both: it degrades in bounded, announced steps, and it climbs back the same way.</p>
+</div>
+<h3 data-en="Ladders are graphs with a direction" data-zh="阶梯，是有方向的图">Ladders are graphs with a direction</h3>
+<p data-en="It is tempting to think of the fallback ladder as infrastructure plumbing, beneath the dignity of agent architecture. The opposite is true. A ladder is a graph with a preferred direction — every rung a node, every degradation condition an edge, every recovery an edge traversed in reverse. The routing decision at the top of the ladder is as much an architectural act as the routing decision that picks a tool. And because it is a graph, it inherits all the graph's discipline: every rung needs an entry condition and an exit condition, every descent needs a bound (a system should not oscillate between rungs under flapping dependencies — hysteresis exists for a reason), and the bottom rung needs to be designed with the same care as the top. The bottom rung is what the user remembers. A refusal with a queued follow-up is a moment of disappointment. A hallucination is a moment of betrayal. The graph determines which one the team shipped." data-zh="人们容易把降级阶梯想成基础设施管道，认为它配不上智能体架构的地位。事实恰恰相反。阶梯是一张有优先方向的图——每一级是一个节点，每一个降级条件是一条边，每一次恢复是沿边反向的遍历。阶梯顶端的路由决策，和选择工具的路由决策一样，都是架构行为。而正因为它是图，它继承了图的所有纪律：每一级都需要入口条件和出口条件，每一次下降都需要一个界限（在抖动的依赖之下，系统不该在各级之间来回振荡——滞回的存在是有原因的），而最底下那一级，需要和最上面那一级被同等用心地设计。用户记住的，是最底下那一级。一个附带排队跟进的拒绝，是一次失望。一次幻觉，是一次背叛。团队发布的是哪一个，由图决定。" >It is tempting to think of the fallback ladder as infrastructure plumbing, beneath the dignity of agent architecture. The opposite is true. A ladder is a graph with a preferred direction — every rung a node, every degradation condition an edge, every recovery an edge traversed in reverse.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrH1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrH2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrH3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+</defs>
+<text data-en="HYSTERESIS: THE LADDER MUST NOT FLAP" data-zh="滞回：阶梯不能抖动" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">HYSTERESIS: THE LADDER MUST NOT FLAP</text>
+<!-- health signal -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="140" x="90" y="60"></rect>
+<text data-en="dependency health signal" data-zh="依赖健康信号" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="160" y="81">dependency health signal</text>
+<!-- flapping input -->
+<path d="M90 90 C60 110 60 140 90 160 C60 180 60 210 90 230" fill="none" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<text data-en="flapping" data-zh="抖动" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="48" y="160">flapping</text>
+<!-- hysteresis gate -->
+<path d="M230 77 L300 77" fill="none" marker-end="url(#arrH1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="56" rx="10" stroke="var(--accent)" stroke-width="2" width="150" x="302" y="49"></rect>
+<text data-en="hysteresis gate" data-zh="滞回门" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="377" y="72">hysteresis gate</text>
+<text data-en="down: 3 fails · up: 2 min healthy" data-zh="下降：3 次失败 · 上升：2 分钟健康" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="377" y="90">down: 3 fails · up: 2 min healthy</text>
+<!-- outputs -->
+<path d="M452 62 C500 55 530 55 560 62" fill="none" marker-end="url(#arrH3)" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="100" x="470" y="38"></rect>
+<text data-en="stable step-down" data-zh="稳定的降级" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="520" y="56">stable step-down</text>
+<path d="M452 92 C500 99 530 99 560 92" fill="none" marker-end="url(#arrH1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent)" stroke-width="1.5" width="100" x="470" y="88"></rect>
+<text data-en="stable recovery" data-zh="稳定的恢复" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="520" y="106">stable recovery</text>
+<!-- bottom comparison -->
+<text data-en="without hysteresis: rung 1 → rung 3 → rung 1 → rung 3 → ..." data-zh="无滞回：第 1 级 → 第 3 级 → 第 1 级 → 第 3 级 → ……" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="160">without hysteresis: rung 1 → rung 3 → rung 1 → rung 3 → ...</text>
+<path d="M200 185 L200 210" fill="none" marker-end="url(#arrH1)" stroke="var(--accent)" stroke-width="1.3"></path>
+<text data-en="with hysteresis: rung 1 → rung 3 (hold) → rung 1 (only after sustained health)" data-zh="有滞回：第 1 级 → 第 3 级（保持）→ 仅在持续健康后回到第 1 级" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="235">with hysteresis: rung 1 → rung 3 (hold) → rung 1 (only after sustained health)</text>
+<text data-en="a flapping system feels broken even when every rung works" data-zh="一个抖动的系统，即使每一级都正常，也给人一种坏掉的感觉" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="272">a flapping system feels broken even when every rung works</text>
+</svg>
+<p class="diagram-caption" data-en="Descent and recovery need different thresholds. A dependency must fail several times before the system steps down, and must stay healthy for a sustained window before the system climbs back. Without that asymmetry, a flapping dependency turns the ladder into a strobe light — and a strobing agent feels broken even when every individual rung works perfectly." data-zh="下降和恢复需要不同的阈值。一个依赖必须失败数次，系统才降级；必须保持健康一段时间，系统才爬回。没有这种不对称，一个抖动的依赖会把阶梯变成频闪灯——而一个频闪的智能体，即使每一级都完美工作，也给人一种坏掉的感觉。">Descent and recovery need different thresholds. A dependency must fail several times before the system steps down, and must stay healthy for a sustained window before the system climbs back. Without that asymmetry, a flapping dependency turns the ladder into a strobe light.</p>
+</div>
+<h3 data-en="Design the bottom rung first" data-zh="先设计最底下那一级">Design the bottom rung first</h3>
+<p data-en="Here is the practical inversion. Most teams design rung one — the glorious full-capability mode — first, in detail, with love. The bottom rung gets whatever error message is left over at the end of the sprint. Reverse the order. Design the bottom rung first: what the system says when it can do nothing, where the request goes, how the user gets followed up, what is promised and by when. If the bottom rung is dignified — honest, queued, recoverable — then every rung above it can be built with confidence, because the worst case is already acceptable. If the bottom rung is a shrug, no amount of frontier capability will save the product, because every user eventually visits the bottom. The happy path is a demo. The ladder is the product. And the bottom rung is its foundation, not its afterthought." data-zh="这就是实践中的倒置。大多数团队首先设计第一级——那个辉煌的、全能力的模式——细致地、充满爱意地。而最底下那一级，得到的是迭代收尾时剩下的随便一句错误提示。把这个顺序反过来。先设计最底下那一级：当系统什么都做不了时，它说什么；请求去哪里；用户如何被跟进；承诺什么、何时兑现。如果最底下那一级是有尊严的——诚实的、排队的、可恢复的——那么它之上的每一级都能被自信地构建，因为最坏的情况已经可以接受。如果最底下那一级是一个耸肩，再多的前沿能力也救不了这个产品，因为每一个用户最终都会造访最底层。快乐路径是一场演示。阶梯才是产品。而最底下那一级，是它的地基，不是它的事后补充。" >Here is the practical inversion. Most teams design rung one — the glorious full-capability mode — first, in detail, with love. The bottom rung gets whatever error message is left over at the end of the sprint. Reverse the order.</p>
+<p data-en="None of this is glamorous. Nobody demos a fallback ladder at a launch event. But the economics are unforgiving: capability is a commodity that every provider sells and every competitor can buy, while trust is accumulated only through the moments when things went wrong and the system behaved well anyway. The model will be outdated in six months. The ladder — the ordered, labeled, hysteretic descent from full capability to honest refusal — is durable engineering. It outlives the model it was built around. Build the ascent if there is time. But build the descent first, because the descent is the only part of the system every user is guaranteed to meet." data-zh="这些都不光鲜。没人在发布会上演示降级阶梯。但经济学是无情的：能力是一种商品，每个提供商都在卖、每个竞争者都买得到；而信任，只在事情出了错、系统却依然表现得体的那些时刻里积累。模型六个月后就过时。而阶梯——那个有序的、带标签的、带滞回的、从完整能力到诚实拒绝的下降——是耐用的工程。它比围绕它构建的模型活得更久。有时间的话，去建造爬升。但先建造下降，因为下降，是系统中每一个用户都注定会遇见的部分。" >None of this is glamorous. Nobody demos a fallback ladder at a launch event. But the economics are unforgiving: capability is a commodity every provider sells, while trust is accumulated only through the moments when things went wrong and the system behaved well anyway.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
