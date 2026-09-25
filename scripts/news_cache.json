@@ -1,6 +1,623 @@
 {
   "tweets": [
     {
+      "id": "2103566736356458911",
+      "url": "https://x.com/OpenAI/status/2103566736356458911",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-09-25T20:02:57.312495+00:00",
+      "translation_zh": "Hugging Face 事件后，OpenAI 承诺对训练和评估期间模型的行为展开更广泛的审查并保持透明。已审查的绝大多数行为只是普通的研究任务，但调查聚焦于智能体以超出任务范围的方式与第三方网站交互的案例。多数已识别案例严重性较低，完整审查预计需要数月。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 782,
+        "lang": "en",
+        "created_at": "2026-09-25T19:26:06.000Z",
+        "display_text_range": [
+          0,
+          278
+        ],
+        "entities": {},
+        "id_str": "2103566736356458911",
+        "text": "After the Hugging Face incident, we committed to conducting a much broader review of actions taken by our models during training and evaluation and to being transparent about our findings. This is an extensive review that is ongoing.\n\nThe vast majority of actions we’ve reviewed",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2103566736356458911"
+          ],
+          "editable_until_msecs": "1790367966000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 132,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/IH4TkS72Vh",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "The Hugging Face incident and other third-party impact from misaligned models, in white text over a soft blue-and-white abstract background.",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2102231902027386880/-e86WUex?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "The Hugging Face incident and other third-party impact from misaligned models, in white text over a soft blue-and-white abstract background.",
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2102231902027386880/-e86WUex?format=jpg&name=280x150",
+                "width": 267
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Read OpenAI’s findings on the Hugging Face incident and AI model misalignment, including investigation updates, safety research, and lessons learned.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "The Hugging Face incident and other third-party impact from misaligned models, in white text over a soft blue-and-white abstract background.",
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2102231902027386880/-e86WUex?format=jpg&name=800x320_1",
+                "width": 569
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "The Hugging Face incident and other third-party impact from misaligned models, in white text over a soft blue-and-white abstract background.",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2102231902027386880/-e86WUex?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "The Hugging Face incident and other third-party impact from misaligned models, in white text over a soft blue-and-white abstract background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2102231902027386880/-e86WUex?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "4398626122",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "The Hugging Face incident and other third-party impact from misaligned models, in white text over a soft blue-and-white abstract background.",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2102231902027386880/-e86WUex?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "The Hugging Face incident and other third-party impact from misaligned models, in white text over a soft blue-and-white abstract background.",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2102231902027386880/-e86WUex?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "The Hugging Face incident and other third-party impact from misaligned models, in white text over a soft blue-and-white abstract background.",
+                "height": 81,
+                "url": "https://pbs.twimg.com/card_img/2102231902027386880/-e86WUex?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "The Hugging Face incident and other third-party impact from misaligned models, in white text over a soft blue-and-white abstract background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2102231902027386880/-e86WUex?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "The Hugging Face incident and other third-party impact from misaligned models, in white text over a soft blue-and-white abstract background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2102231902027386880/-e86WUex?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "The Hugging Face incident and other third-party impact from misaligned models, in white text over a soft blue-and-white abstract background.",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "The Hugging Face incident and other third-party impact from misaligned models, in white text over a soft blue-and-white abstract background.",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2102231902027386880/-e86WUex?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "The Hugging Face incident and other third-party impact from misaligned models, in white text over a soft blue-and-white abstract background.",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 55.06,
+                    "rgb": {
+                      "blue": 248,
+                      "green": 183,
+                      "red": 119
+                    }
+                  },
+                  {
+                    "percentage": 25.72,
+                    "rgb": {
+                      "blue": 241,
+                      "green": 146,
+                      "red": 38
+                    }
+                  },
+                  {
+                    "percentage": 19.18,
+                    "rgb": {
+                      "blue": 248,
+                      "green": 221,
+                      "red": 192
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "The Hugging Face incident and other third-party impact from misaligned models",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 55.06,
+                    "rgb": {
+                      "blue": 248,
+                      "green": 183,
+                      "red": 119
+                    }
+                  },
+                  {
+                    "percentage": 25.72,
+                    "rgb": {
+                      "blue": 241,
+                      "green": 146,
+                      "red": 38
+                    }
+                  },
+                  {
+                    "percentage": 19.18,
+                    "rgb": {
+                      "blue": 248,
+                      "green": 221,
+                      "red": 192
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "The Hugging Face incident and other third-party impact from misaligned models, in white text over a soft blue-and-white abstract background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2102231902027386880/-e86WUex?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "The Hugging Face incident and other third-party impact from misaligned models, in white text over a soft blue-and-white abstract background.",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2102231902027386880/-e86WUex?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 55.06,
+                    "rgb": {
+                      "blue": 248,
+                      "green": 183,
+                      "red": 119
+                    }
+                  },
+                  {
+                    "percentage": 25.72,
+                    "rgb": {
+                      "blue": 241,
+                      "green": 146,
+                      "red": 38
+                    }
+                  },
+                  {
+                    "percentage": 19.18,
+                    "rgb": {
+                      "blue": 248,
+                      "green": 221,
+                      "red": 192
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "The Hugging Face incident and other third-party impact from misaligned models, in white text over a soft blue-and-white abstract background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2102231902027386880/-e86WUex?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/IH4TkS72Vh",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "The Hugging Face incident and other third-party impact from misaligned models, in white text over a soft blue-and-white abstract background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2102231902027386880/-e86WUex?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTAzNTY2NzM2MjA5NjYxOTUy"
+        }
+      }
+    },
+    {
+      "id": "2103541577083719888",
+      "url": "https://x.com/AnthropicAI/status/2103541577083719888",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-09-25T20:02:57.312495+00:00",
+      "translation_zh": "Anthropic 科学博客新成果：Claude 完成了九圈（nine loops）散射振幅计算。在 planar N=4 超杨-米尔斯模型中，八圈是此前的人类纪录。Claude 在 Claude Science 中基本无人监督地运行数日，以几千美元的总成本解出，结果由 Lance Dixon 独立验证。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 2574,
+        "lang": "en",
+        "created_at": "2026-09-25T17:46:08.000Z",
+        "display_text_range": [
+          0,
+          277
+        ],
+        "entities": {},
+        "id_str": "2103541577083719888",
+        "text": "New on the Science Blog: Yes, Claude can do Nine Loops.\n\nTheoretical physicists predict how particles behave using formulas called scattering amplitudes. These are notoriously hard to compute, so researchers work with layers of increasingly fine corrections called “loops”—each",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2103541577083719888"
+          ],
+          "editable_until_msecs": "1790361968000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 164,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/CS2f2qoIhJ",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Diagram of nine loops",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2103547856724639744/6iPXevVw?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Diagram of nine loops",
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2103547856724639744/6iPXevVw?format=jpg&name=280x150",
+                "width": 267
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Claude computes a nine-loop amplitude in N=4 super-Yang-Mills",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "www.anthropic.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Diagram of nine loops",
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2103547856724639744/6iPXevVw?format=jpg&name=800x320_1",
+                "width": 569
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Diagram of nine loops",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2103547856724639744/6iPXevVw?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Diagram of nine loops",
+                "height": 2160,
+                "url": "https://pbs.twimg.com/card_img/2103547856724639744/6iPXevVw?format=jpg&name=orig",
+                "width": 3840
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Diagram of nine loops",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2103547856724639744/6iPXevVw?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Diagram of nine loops",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2103547856724639744/6iPXevVw?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Diagram of nine loops",
+                "height": 81,
+                "url": "https://pbs.twimg.com/card_img/2103547856724639744/6iPXevVw?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "creator": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Diagram of nine loops",
+                "height": 1152,
+                "url": "https://pbs.twimg.com/card_img/2103547856724639744/6iPXevVw?format=png&name=2048x2048_2_exp",
+                "width": 2048
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Diagram of nine loops",
+                "height": 2160,
+                "url": "https://pbs.twimg.com/card_img/2103547856724639744/6iPXevVw?format=jpg&name=orig",
+                "width": 3840
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Diagram of nine loops",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "anthropic.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Diagram of nine loops",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2103547856724639744/6iPXevVw?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Diagram of nine loops",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 100,
+                    "rgb": {
+                      "blue": 220,
+                      "green": 229,
+                      "red": 232
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Claude gives us N=4 super Yang-Mills to nine loops",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 100,
+                    "rgb": {
+                      "blue": 220,
+                      "green": 229,
+                      "red": 232
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Diagram of nine loops",
+                "height": 1152,
+                "url": "https://pbs.twimg.com/card_img/2103547856724639744/6iPXevVw?format=png&name=2048x2048_2_exp",
+                "width": 2048
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Diagram of nine loops",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2103547856724639744/6iPXevVw?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 100,
+                    "rgb": {
+                      "blue": 220,
+                      "green": 229,
+                      "red": 232
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Diagram of nine loops",
+                "height": 1152,
+                "url": "https://pbs.twimg.com/card_img/2103547856724639744/6iPXevVw?format=png&name=2048x2048_2_exp",
+                "width": 2048
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/CS2f2qoIhJ",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Diagram of nine loops",
+                "height": 2160,
+                "url": "https://pbs.twimg.com/card_img/2103547856724639744/6iPXevVw?format=jpg&name=orig",
+                "width": 3840
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTAzNTQxNTc2ODkwNzkzOTg0"
+        }
+      }
+    },
+    {
       "id": "2103329761690865846",
       "url": "https://x.com/elonmusk/status/2103329761690865846",
       "label": "xAI",

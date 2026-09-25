@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Verifier Is the Product — AI Frontlines</title>
+<meta content="Generation is now a commodity — every provider sells it, every competitor buys it. The scarce engineering asset in an agent system is the verifier: the machinery that decides whether an output is good enough to ship. Teams that treat verification as an afterthought ship luck. Teams that build verifiers ship products." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 26, 2026" data-zh="2026年9月26日">September 26, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Verifier Is the Product" data-zh="验证器才是产品">The Verifier Is the Product</h1>
+<p class="post-header-deck" data-en="Generation has become a commodity. Every provider sells it, every competitor can buy it, and the next model upgrade re-prices it every few months. What has not become a commodity is knowing whether the generated thing is correct. The scarce engineering asset inside an agent system is not the generator — it is the verifier: the machinery that decides whether an output is good enough to ship. Teams that bolt verification on at the end ship luck. Teams that build the verifier first ship a product, because in any domain where correctness matters, the ceiling of the system is not what the model can produce. It is what the system can check." data-zh="生成已经变成商品。每个提供商都在卖它，每个竞争者都买得到它，而下一次模型升级每隔几个月就给它重新定价一次。没有变成商品的，是判断生成的东西是否正确的能力。智能体系统里稀缺的工程资产，不是生成器——而是验证器：那套决定一个输出是否好到可以上线的机器。把验证拖到最后才补上的团队，上线的是运气。先构建验证器的团队，上线的是产品。因为在任何在乎正确性的领域，系统的上限不是模型能产出什么，而是系统能检验什么。">Generation has become a commodity. What has not is knowing whether the generated thing is correct. The scarce engineering asset inside an agent system is the verifier — and in any domain where correctness matters, the ceiling of the system is not what the model can produce. It is what the system can check.</p>
+</header>
+<article class="post-body">
+<p data-en="Watch how agent systems are demoed and a pattern emerges within minutes. The demonstration is always an ascent: look what the model wrote, look what it built, look how it recovered from that error. The output is shown, the output is impressive, applause. What is never shown is the answer to the only question a production customer actually asks: how do you know that is right? The demo answers it implicitly — a human reviewed it before the presentation. Production cannot afford that human per request. And so the system ships with the implicit verifier of vibes, and the incidents arrive on schedule. The uncomfortable truth underneath most agent failures is not that the model was too weak. It is that nothing in the system was ever in a position to notice the output was wrong." data-zh="观察智能体系统的演示，几分钟内就能看出一个模式。演示永远是爬升：看模型写了什么、看它构建了什么、看它如何从那个错误中恢复。输出被展示，输出令人印象深刻，掌声。从未被展示的，是生产环境的客户真正会问的唯一问题的答案：你怎么知道它是对的？演示用隐式的方式回答了这个问题——有人在演示前审过它。生产环境养不起每个请求一个这样的人。于是系统带着「凭感觉」这个隐式验证器上线，事故准时到来。大多数智能体事故背后那个令人不适的真相，不是模型太弱。而是系统里从头到尾，没有任何东西处于能注意到输出错了的位置。">Watch how agent systems are demoed and a pattern emerges within minutes. The demonstration is always an ascent: look what the model wrote, look what it built. What is never shown is the answer to the only question a production customer asks: how do you know that is right? The uncomfortable truth underneath most agent failures is not that the model was too weak. It is that nothing in the system was ever in a position to notice the output was wrong.</p>
+<p data-en="This reframes what an agent product actually is. The model is a supplier. The prompt is a supplier. Retrieval, tools, memory — suppliers, all of them, interchangeable and re-priced every quarter. The product is the pipeline that turns unreliable generation into reliable delivery, and the core of that pipeline is a verifier with authority: the right to reject, the right to trigger a repair, the right to escalate to a human, and — most importantly — the right to say 'this cannot be checked, therefore it cannot be promised.' Strip away the suppliers and that authority structure is what remains. It is also, not coincidentally, the only part of the system that improves monotonically with engineering effort rather than being reset by the next model release." data-zh="这重新定义了智能体产品究竟是什么。模型是供应商。prompt 是供应商。检索、工具、记忆——全是供应商，每一个都可互换、每个季度被重新定价一次。产品，是把不可靠的生成转化为可靠交付的流水线，而这条流水线的核心，是一个有权威的验证器：有权拒绝，有权触发修复，有权升级给人类，以及——最重要的——有权说「这件事无法被检验，因此无法被承诺」。把供应商全部剥掉，剩下的是这套权威结构。毫不巧合的是，它也是系统里唯一一个随工程投入单调改善、而不是被下一次模型发布清零的部分。">This reframes what an agent product actually is. The model is a supplier. The prompt is a supplier. Retrieval, tools, memory — suppliers, all interchangeable and re-priced every quarter. The product is the pipeline that turns unreliable generation into reliable delivery, and the core of that pipeline is a verifier with authority: the right to reject, repair, escalate — and, most importantly, the right to say 'this cannot be checked, therefore it cannot be promised.'</p>
+<div class="diagram">
+<svg viewbox="0 0 620 400" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrV1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrV2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrV3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="SUPPLIERS vs THE PRODUCT" data-zh="供应商 vs 产品" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">SUPPLIERS vs THE PRODUCT</text>
+<!-- suppliers column -->
+<text data-en="SUPPLIERS (replaceable)" data-zh="供应商（可替换）" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="120" y="56">SUPPLIERS (replaceable)</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--border)" stroke-width="1.5" width="130" x="55" y="68"></rect>
+<text data-en="model" data-zh="模型" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="120" y="87">model</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--border)" stroke-width="1.5" width="130" x="55" y="106"></rect>
+<text data-en="prompt · retrieval" data-zh="prompt · 检索" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="120" y="125">prompt · retrieval</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--border)" stroke-width="1.5" width="130" x="55" y="144"></rect>
+<text data-en="tools · memory" data-zh="工具 · 记忆" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="120" y="163">tools · memory</text>
+<text data-en="re-priced every quarter" data-zh="每个季度被重新定价" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="120" y="196">re-priced every quarter</text>
+<!-- flows to pipeline -->
+<path d="M185 110 C240 110 250 150 288 168" fill="none" marker-end="url(#arrV2)" stroke="var(--accent)" stroke-width="1.4"></path>
+<path d="M185 155 C235 155 250 170 288 180" fill="none" marker-end="url(#arrV2)" stroke="var(--accent)" stroke-width="1.4"></path>
+<!-- verifier core -->
+<rect fill="var(--accent-dim)" height="64" rx="11" stroke="var(--accent)" stroke-width="2" width="180" x="290" y="150"></rect>
+<text data-en="VERIFIER" data-zh="验证器" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" letter-spacing="1" text-anchor="middle" x="380" y="176">VERIFIER</text>
+<text data-en="the right to reject · repair · escalate" data-zh="有权拒绝 · 修复 · 升级" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="380" y="196">the right to reject · repair · escalate</text>
+<!-- outcomes -->
+<path d="M470 165 C510 150 520 130 545 112" fill="none" marker-end="url(#arrV2)" stroke="var(--accent)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="120" x="470" y="82"></rect>
+<text data-en="ship ✓" data-zh="上线 ✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="530" y="101">ship ✓</text>
+<path d="M470 185 C505 190 515 205 545 218" fill="none" marker-end="url(#arrV3)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="470" y="204"></rect>
+<text data-en="repair loop ↻" data-zh="修复循环 ↻" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="530" y="223">repair loop ↻</text>
+<path d="M470 205 C500 230 500 250 545 268" fill="none" marker-end="url(#arrV3)" stroke="var(--accent-3)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--border)" stroke-width="1.5" stroke-dasharray="5,3" width="120" x="470" y="254"></rect>
+<text data-en="human escalation" data-zh="升级给人类" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="530" y="273">human escalation</text>
+<!-- bottom annotation -->
+<path d="M310 300 L310 322" fill="none" marker-end="url(#arrV1)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="3,4"></path>
+<text data-en="the product survives every supplier swap — because it owns the answer to 'how do you know it is right?'" data-zh="产品在任何一次供应商更替中都幸存——因为它拥有「你怎么知道它是对的」这个问题的答案" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="345">the product survives every supplier swap — because it owns the answer to 'how do you know it is right?'</text>
+<text data-en="capability is bought; correctness is engineered" data-zh="能力是买来的；正确性是工程出来的" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="370">capability is bought; correctness is engineered</text>
+</svg>
+<p class="diagram-caption" data-en="Suppliers feed the verifier; the verifier owns the outcomes. A system organized this way is robust to model churn by construction: swap the model and the verifier re-prices it automatically, rejecting what regressed and shipping what improved. A system organized the other way — verifier bolted after the generator — inherits every supplier's failures and has no way to notice." data-zh="供应商喂养验证器；验证器拥有所有出口。以这种方式组织的系统，在构造上就对模型更替免疫：换掉模型，验证器会自动给它重新定价，拒绝退化的部分，放行改进的部分。以相反方式组织——验证器挂在生成器之后——的系统，继承每一个供应商的失败，且毫无察觉。">Suppliers feed the verifier; the verifier owns the outcomes. Swap the model and the verifier re-prices it automatically. A system organized the other way inherits every supplier's failures and has no way to notice.</p>
+</div>
+<h3 data-en="The verifier hierarchy" data-zh="验证器的层级">The verifier hierarchy</h3>
+<p data-en="Not all verification is equal, and the engineering discipline is knowing which tier a given check lives on. At the base sits exact verification: compile the code, run the tests, execute the migration on a shadow copy, diff the output against a golden file. It is binary, cheap, and utterly trustworthy — and it should be exhausted before anything fancier is attempted. Above it sits structural verification: schemas, type checks, lints, policy rules, constraint solvers. Not as strong as execution but applicable where execution is impossible. Above that, semantic verification — a second model, or the same model in a different role, judging the output against a rubric. Powerful but probabilistic; it has false negatives and false positives of its own, and it must be evaluated like any other component. At the top, human verification — the most expensive check in the system, which means every lower tier's job is to make sure humans are only ever shown what only a human can judge. Most systems invert this: humans become the default verifier of everything, drown, and start approving without reading. That is not a staffing problem. It is a hierarchy violation." data-zh="并非所有验证都平等，而工程上的纪律，是知道某个检查位于哪一层。底层是精确验证：编译代码，跑测试，在影子副本上执行迁移，把输出与金标准文件做 diff。它是二元的、便宜的、且完全可信的——在尝试任何更花哨的东西之前，它应该被穷尽。其上是结构验证：schema、类型检查、lint、策略规则、约束求解器。不如执行那么强，但在执行不可能的地方适用。再往上，是语义验证——第二个模型，或同一模型换个角色，依据评分标准评判输出。强大但概率性；它自己也有假阴性和假阳性，而且它本身必须像任何其他组件一样被评估。最顶上是人类验证——系统里最昂贵的检查，这意味着所有更低层的职责，是确保人类只会被展示只有人类才能判断的东西。大多数系统把这个倒了过来：人类成为一切事物的默认验证者，被淹没，然后开始不读就批准。那不是人手问题。那是层级违规。">Not all verification is equal, and the discipline is knowing which tier a given check lives on. At the base: exact verification — compile it, run it, diff it. Binary, cheap, utterly trustworthy. Above it, structural verification: schemas, types, constraints. Above that, semantic verification — a model judging a model, probabilistic, itself in need of evaluation. At the top, humans: the most expensive check, which means every lower tier's job is to ensure humans only see what only a human can judge.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 420" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE VERIFIER HIERARCHY" data-zh="验证器层级" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE VERIFIER HIERARCHY</text>
+<!-- tier 4: human -->
+<rect fill="var(--bg-surface)" height="58" rx="10" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="5,3" width="360" x="200" y="46"></rect>
+<text data-en="④ human verification" data-zh="④ 人类验证" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="380" y="68">④ human verification</text>
+<text data-en="most expensive · only for what only humans can judge" data-zh="最昂贵 · 只用于只有人类能判断的事" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="380" y="86">most expensive · only for what only humans can judge</text>
+<path d="M380 104 L380 122" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- tier 3: semantic -->
+<rect fill="var(--bg-surface)" height="58" rx="10" stroke="var(--accent-3)" stroke-width="1.5" width="360" x="200" y="124"></rect>
+<text data-en="③ semantic verification" data-zh="③ 语义验证" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="380" y="146">③ semantic verification</text>
+<text data-en="model judges model · probabilistic · needs its own evals" data-zh="模型评判模型 · 概率性 · 需要自己的评测" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="380" y="164">model judges model · probabilistic · needs its own evals</text>
+<path d="M380 182 L380 200" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- tier 2: structural -->
+<rect fill="var(--bg-surface)" height="58" rx="10" stroke="var(--accent-2)" stroke-width="1.5" width="360" x="200" y="202"></rect>
+<text data-en="② structural verification" data-zh="② 结构验证" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="380" y="224">② structural verification</text>
+<text data-en="schemas · types · policies · constraints" data-zh="schema · 类型 · 策略 · 约束" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="380" y="242">schemas · types · policies · constraints</text>
+<path d="M380 260 L380 278" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- tier 1: exact -->
+<rect fill="var(--accent-dim)" height="58" rx="10" stroke="var(--accent)" stroke-width="2" width="360" x="200" y="280"></rect>
+<text data-en="① exact verification" data-zh="① 精确验证" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="380" y="302">① exact verification</text>
+<text data-en="run it · test it · diff it · binary · exhaust this first" data-zh="运行 · 测试 · diff · 二元 · 先穷尽这一层" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="380" y="320">run it · test it · diff it · binary · exhaust this first</text>
+<!-- side annotations -->
+<path d="M150 320 C110 250 110 150 195 70" fill="none" marker-end="url(#arrT1)" stroke="var(--text-tertiary)" stroke-width="1" stroke-dasharray="3,4"></path>
+<text data-en="trust" data-zh="信任" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="95" y="195">trust</text>
+<text data-en="decreases ↑" data-zh="递减 ↑" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="95" y="211">decreases ↑</text>
+<text data-en="cost" data-zh="成本" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="530" y="195">cost</text>
+<text data-en="increases ↑" data-zh="递增 ↑" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="530" y="211">increases ↑</text>
+<text data-en="violation: humans become the default verifier → they drown → they approve without reading" data-zh="层级违规：人类成为默认验证者 → 被淹没 → 不读就批准" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="372">violation: humans become the default verifier → they drown → they approve without reading</text>
+<text data-en="each tier's job is to keep the tier above it scarce" data-zh="每一层的职责，是让上一层保持稀缺" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="396">each tier's job is to keep the tier above it scarce</text>
+</svg>
+<p class="diagram-caption" data-en="Trust is highest at the bottom and cheapest there too — one of the rare free lunches in systems engineering. The hierarchy is not a menu to pick from but an order of exhaustion: spend exact checks before structural, structural before semantic, semantic before human. A system that skips to the top is not being careful. It is being careless at maximum cost." data-zh="信任在底层最高，而那里恰好也最便宜——这是系统工程里罕见的免费午餐。这个层级不是任选的菜单，而是穷尽的顺序：先花精确检查，再结构，再语义，最后人类。一个直接跳到顶层的系统，不是谨慎。是以最高成本进行粗心。">Trust is highest at the bottom and cheapest there too — a rare free lunch in systems engineering. The hierarchy is an order of exhaustion: exact checks before structural, structural before semantic, semantic before human. A system that skips to the top is not being careful. It is being careless at maximum cost.</p>
+</div>
+<h3 data-en="The verifier inside the loop" data-zh="循环之内的验证器">The verifier inside the loop</h3>
+<p data-en="There is a subtler failure mode than a missing verifier: a verifier that is technically present but structurally powerless. It runs after the loop exits, in a CI job, on a dashboard nobody watches. By then the output has shipped, the cost has been paid, and the only thing the verifier can produce is a statistic. The verifier earns its keep inside the loop, where its judgment has consequences: pass means continue, fail means the generation is fed back with the specific complaint attached, and the next attempt is conditioned not on vibes but on the exact defect found. This is what separates a repair loop from a retry loop. A retry loop resamples and hopes the dice land differently — cost grows linearly, success probability barely moves, and after the third attempt the loop is just laundering the same failure through fresh tokens. A repair loop closes the loop through the verifier's diagnosis: each iteration carries information the previous one lacked. The difference shows up in the curve. Retries flatten; repairs compound." data-zh="还有一种比缺失验证器更微妙的失败模式：一个技术上存在、但结构上无权的验证器。它在循环退出之后才运行，在一个 CI 任务里，在一个没人看的仪表盘上。到那时输出已经上线，成本已经支付，验证器唯一能产出的，是一个统计数字。验证器是在循环之内挣得它的地位的——在那里，它的判断有后果：通过意味着继续，失败意味着生成被连同具体的缺陷描述一起喂回去，而下一次尝试所依赖的，不是感觉，而是被找到的确切缺陷。这是修复循环与重试循环的分界线。重试循环重新采样，然后祈祷骰子换个落法——成本线性增长，成功率几乎不动，第三次尝试之后，这个循环只是在用新 token 给同一个失败洗钱。修复循环通过验证器的诊断来闭环：每一次迭代都携带前一次所没有的信息。差异显现在曲线上。重试会平掉；修复会复利。">There is a subtler failure mode than a missing verifier: a verifier that is technically present but structurally powerless — running after the loop exits, on a dashboard nobody watches. The verifier earns its keep inside the loop, where its judgment has consequences. This is what separates a repair loop from a retry loop: retries resample and hope; repairs feed the exact defect back, so each iteration carries information the previous one lacked. Retries flatten; repairs compound.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="RETRY LOOP vs REPAIR LOOP" data-zh="重试循环 vs 修复循环" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">RETRY LOOP vs REPAIR LOOP</text>
+<!-- left: retry -->
+<text data-en="RETRY (resample + hope)" data-zh="重试（重新采样 + 祈祷）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="150" y="52">RETRY (resample + hope)</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="90" y="64"></rect>
+<text data-en="generate" data-zh="生成" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="150" y="84">generate</text>
+<path d="M150 96 L150 116" fill="none" marker-end="url(#arrR2)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="90" y="118"></rect>
+<text data-en="check → fail" data-zh="检查 → 失败" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="150" y="138">check → fail</text>
+<path d="M90 134 C40 134 40 80 88 80" fill="none" marker-end="url(#arrR2)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<text data-en="no diagnosis carried" data-zh="没有携带诊断" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="150" y="172">no diagnosis carried</text>
+<text data-en="same failure, fresh tokens" data-zh="同样的失败，新的 token" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="150" y="188">same failure, fresh tokens</text>
+<!-- right: repair -->
+<text data-en="REPAIR (diagnose + condition)" data-zh="修复（诊断 + 条件化）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="470" y="52">REPAIR (diagnose + condition)</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent)" stroke-width="1.5" width="120" x="410" y="64"></rect>
+<text data-en="generate" data-zh="生成" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="470" y="84">generate</text>
+<path d="M470 96 L470 116" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<rect fill="var(--accent-dim)" height="32" rx="7" stroke="var(--accent)" stroke-width="2" width="120" x="410" y="118"></rect>
+<text data-en="verify + diagnose" data-zh="验证 + 诊断" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="470" y="138">verify + diagnose</text>
+<path d="M410 134 C330 134 330 80 408 80" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<text data-en="defect fed back" data-zh="缺陷被喂回" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="368" y="112">defect fed back</text>
+<text data-en="each attempt knows the last one's failure" data-zh="每次尝试都知道上一次的失败" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="470" y="172">each attempt knows the last one's failure</text>
+<!-- bottom: convergence -->
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="310" x2="310" y1="40" y2="210"></line>
+<text data-en="success probability per extra attempt" data-zh="每增加一次尝试的成功概率" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="150" y="228">success probability per extra attempt</text>
+<line x1="80" x2="240" y1="330" y2="308" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="5,3"></line>
+<text data-en="retry: flat" data-zh="重试：平的" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="160" y="300">retry: flat</text>
+<path d="M380 332 C430 330 480 310 540 252" fill="none" stroke="var(--accent)" stroke-width="2"></path>
+<text data-en="repair: compounds" data-zh="修复：复利" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="490" y="278">repair: compounds</text>
+<line stroke="var(--border)" stroke-width="1" x1="70" x2="560" y1="336" y2="336"></line>
+<line stroke="var(--border)" stroke-width="1" x1="70" x2="70" y1="250" y2="336"></line>
+</svg>
+<p class="diagram-caption" data-en="Both loops contain a verifier, but only the right one connects the verifier's diagnosis back to the generator. The retry loop is a coin flipped harder; the repair loop is a conversation between production and inspection. The curve on the bottom is the entire argument: without carried diagnosis, additional attempts buy almost nothing — with it, success compounds until the remaining failures are the genuinely hard cases, at which point escalating to a human is the correct move, not a defeat." data-zh="两个循环都有验证器，但只有右边那个把验证器的诊断接回了生成器。重试循环是把硬币抛得更用力；修复循环是生产与检验之间的对话。底部的曲线就是全部论据：没有携带诊断，额外的尝试几乎买不到任何东西——有了它，成功会复利，直到剩下的失败都是真正难的案例，到那时，升级给人类是正确的举动，而不是失败。">Both loops contain a verifier, but only the right one connects the diagnosis back to the generator. The retry loop is a coin flipped harder; the repair loop is a conversation. Without carried diagnosis, additional attempts buy almost nothing — with it, success compounds until the remaining failures are genuinely hard, at which point escalation to a human is correct, not defeat.</p>
+</div>
+<h3 data-en="Build the verifier first" data-zh="先建验证器">Build the verifier first</h3>
+<p data-en="The practical consequence inverts the usual build order. The usual order is: wire up the model, get something impressive, then figure out quality. The inverted order is: before writing the first prompt, write the golden set — a modest collection of inputs with known-correct outputs, drawn from the real distribution the system will face, including the ugly cases. Then build the harness that scores any candidate system against that set. Then, and only then, plug in a generator. Everything downstream becomes measurable: model swaps become A/B tests instead of leaps of faith, prompt changes become diffs against the golden set instead of vibes, and 'the new model feels better' becomes a sentence that is not allowed in a design review. The golden set does not need to be large. It needs to be honest — drawn from production traffic, adversarially pruned, and updated every time an incident reveals a case it missed. Fifty honest examples beat five thousand synthetic ones." data-zh="实践上的后果是把通常的构建顺序倒过来。通常的顺序是：接上模型，做出令人印象深刻的东西，然后再考虑质量。倒过来的顺序是：在写第一个 prompt 之前，先写金标准集——一小批带有已知正确答案的输入，取自系统将要面对的真实分布，包括那些丑陋的案例。然后构建那个给任何候选系统对着这个集合打分的测试装置。然后，也只在那时，再接入生成器。下游的一切随之变得可测量：换模型从信仰之跃变成 A/B 测试，改 prompt 从凭感觉变成对着金标准集的 diff，而「新模型感觉更好」变成一句在设计评审里不被允许出现的话。金标准集不需要大。它需要诚实——取自生产流量，被对抗性地修剪，并在每一次事故暴露它漏掉的案例时更新。五十个诚实的样本胜过五千个合成的。">The practical consequence inverts the usual build order. Before writing the first prompt, write the golden set — inputs with known-correct outputs, drawn from the real distribution, including the ugly cases. Then build the harness that scores any candidate against it. Only then plug in a generator. Model swaps become A/B tests, prompt changes become diffs, and 'the new model feels better' becomes a sentence not allowed in design review.</p>
+<blockquote data-en="A generator answers the question 'what could this be?' A verifier answers the question 'is this actually right?' Only one of those questions can be asked before something ships. The industry's obsession with the first question, and its chronic amnesia about the second, explains most of the gap between agent demos and agent products." data-zh="生成器回答的问题是「这可能是什么？」验证器回答的问题是「这真的对吗？」这两个问题里，只有一个能在上线之前被问出来。行业对第一个问题的痴迷，以及对第二个问题长期的失忆，解释了智能体演示与智能体产品之间的大部分差距。">A generator answers 'what could this be?' A verifier answers 'is this actually right?' Only one of those questions can be asked before something ships. The obsession with the first and the amnesia about the second explains most of the gap between agent demos and agent products.</blockquote>
+<p data-en="None of this argues against better models — better generators raise the base rate of everything, and the last year of releases has been genuinely extraordinary. The argument is about where the durable engineering lives. The generator's quality is rented: it resets to whatever the next release is, for every competitor, simultaneously. The verifier's quality is owned: the golden sets, the repair loops, the hierarchy discipline, the escalation paths — these compound with every incident handled and every case added, and no competitor can download them. Six months from now the model inside any given system will have been swapped twice. The verifier will still be there, quietly deciding what ships. That is not a component of the product. That is the product." data-zh="这些都不是在反对更好的模型——更好的生成器提升一切的基础概率，过去一年的发布也确实非同寻常。论点在于耐用的工程住在哪里。生成器的质量是租来的：它随下一次发布重置，对所有竞争者同时重置。验证器的质量是自有的：金标准集、修复循环、层级纪律、升级路径——这些随每一次被处理的事故和每一个被添加的案例而复利，没有竞争者能下载它们。从现在起六个月后，任何一个系统里的模型都会已被更换两次。而验证器还在那里，安静地决定什么能上线。那不是产品的一个组件。那就是产品。">None of this argues against better models — better generators raise the base rate of everything. The argument is about where the durable engineering lives. The generator's quality is rented: it resets with every release, for every competitor, simultaneously. The verifier's quality is owned: golden sets, repair loops, hierarchy discipline, escalation paths — these compound, and no competitor can download them. Six months from now the model will have been swapped twice. The verifier will still be there, quietly deciding what ships. That is the product.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
