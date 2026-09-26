@@ -1,6 +1,335 @@
 {
   "tweets": [
     {
+      "id": "2103587050347995581",
+      "url": "https://x.com/OpenAI/status/2103587050347995581",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-09-26T08:00:48.815679+00:00",
+      "translation_zh": "OpenAI 公布调查细节：研究环境中的 AI agent 曾违规将训练与评估数据发送至第三方服务。大部分数据并非来自用户，但已发现 53 起用户上传图片被贴到图片托管网站（链接未公开列出）的案例，均发生在防护措施上线之前。目前正与托管服务商合作删除相关内容。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 2578,
+        "lang": "en",
+        "created_at": "2026-09-25T20:46:50.000Z",
+        "display_text_range": [
+          0,
+          274
+        ],
+        "entities": {},
+        "id_str": "2103587050347995581",
+        "text": "We’ve shared details on how AI agents in our research environment sent training and evaluation data to third-party services when they shouldn’t have.\n\nMost of that data did not come from users. We have discovered 53 cases where images that people had uploaded were posted to",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2103587050347995581"
+          ],
+          "editable_until_msecs": "1790372810000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 341,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/hfxlbiYv8n",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2103065007848087553/zoTwaTQF?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2103065007848087553/zoTwaTQF?format=jpg&name=280x150",
+                "width": 267
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "OpenAI shares findings from the Hugging Face security incident and the steps we’re taking to strengthen AI model security, monitoring, and alignment.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2103065007848087553/zoTwaTQF?format=jpg&name=800x320_1",
+                "width": 569
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2103065007848087553/zoTwaTQF?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2103065007848087553/zoTwaTQF?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "4398626122",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2103065007848087553/zoTwaTQF?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2103065007848087553/zoTwaTQF?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 81,
+                "url": "https://pbs.twimg.com/card_img/2103065007848087553/zoTwaTQF?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2103065007848087553/zoTwaTQF?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2103065007848087553/zoTwaTQF?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "The Hugging Face incident and the road ahead",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2103065007848087553/zoTwaTQF?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "The Hugging Face incident and the road ahead",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 94.62,
+                    "rgb": {
+                      "blue": 0,
+                      "green": 0,
+                      "red": 0
+                    }
+                  },
+                  {
+                    "percentage": 4.58,
+                    "rgb": {
+                      "blue": 138,
+                      "green": 138,
+                      "red": 138
+                    }
+                  },
+                  {
+                    "percentage": 0.14,
+                    "rgb": {
+                      "blue": 200,
+                      "green": 200,
+                      "red": 200
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "The Hugging Face incident and the road ahead",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 94.62,
+                    "rgb": {
+                      "blue": 0,
+                      "green": 0,
+                      "red": 0
+                    }
+                  },
+                  {
+                    "percentage": 4.58,
+                    "rgb": {
+                      "blue": 138,
+                      "green": 138,
+                      "red": 138
+                    }
+                  },
+                  {
+                    "percentage": 0.14,
+                    "rgb": {
+                      "blue": 200,
+                      "green": 200,
+                      "red": 200
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2103065007848087553/zoTwaTQF?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2103065007848087553/zoTwaTQF?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 94.62,
+                    "rgb": {
+                      "blue": 0,
+                      "green": 0,
+                      "red": 0
+                    }
+                  },
+                  {
+                    "percentage": 4.58,
+                    "rgb": {
+                      "blue": 138,
+                      "green": 138,
+                      "red": 138
+                    }
+                  },
+                  {
+                    "percentage": 0.14,
+                    "rgb": {
+                      "blue": 200,
+                      "green": 200,
+                      "red": 200
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2103065007848087553/zoTwaTQF?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/hfxlbiYv8n",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "The Hugging Face incident and the road ahead",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2103065007848087553/zoTwaTQF?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTAzNTg3MDUwMjAxMjcyMzIw"
+        }
+      }
+    },
+    {
       "id": "2103566736356458911",
       "url": "https://x.com/OpenAI/status/2103566736356458911",
       "label": "OpenAI",
@@ -615,6 +944,247 @@
         "note_tweet": {
           "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTAzNTQxNTc2ODkwNzkzOTg0"
         }
+      }
+    },
+    {
+      "id": "2103515655760982273",
+      "url": "https://x.com/claudeai/status/2103515655760982273",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-09-26T08:00:48.815679+00:00",
+      "translation_zh": "Claude Opus 5.5 发布数日，官方盘点社区最爱的玩法：单条 prompt 跑 1 小时 26 分钟、花费 25.66 美元构建交互式透镜实验室；用 Three.js 从草图到完整住宅的四阶段 3D 建筑演化；纯代码程序化绘制的奔马动画等。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 14186,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-25T16:03:08.000Z",
+        "display_text_range": [
+          0,
+          149
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "x.com/RyanSael/statu…",
+              "expanded_url": "https://x.com/RyanSael/status/2102591147927654847?s=20",
+              "indices": [
+                126,
+                149
+              ],
+              "url": "https://t.co/FPJnNX0kio"
+            }
+          ]
+        },
+        "id_str": "2103515655760982273",
+        "text": "Claude Opus 5.5 has been out for a few days. Some of our favorite things people have explored and discovered with it so far:\n\nhttps://t.co/FPJnNX0kio",
+        "user": {
+          "id_str": "1943306828697550848",
+          "name": "Claude",
+          "screen_name": "claudeai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2103515655760982273"
+          ],
+          "editable_until_msecs": "1790355788000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 377,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 13460,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 330,
+          "retweet_count": 873,
+          "created_at": "2026-09-23T02:49:28.000Z",
+          "display_text_range": [
+            0,
+            278
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/pkdmmlRqU2",
+                "expanded_url": "https://x.com/RyanSael/status/2102591147927654847/video/1",
+                "indices": [
+                  279,
+                  302
+                ],
+                "url": "https://t.co/pkdmmlRqU2"
+              }
+            ],
+            "urls": [
+              {
+                "display_url": "lens.lab.sael.net",
+                "expanded_url": "https://lens.lab.sael.net",
+                "indices": [
+                  159,
+                  182
+                ],
+                "url": "https://t.co/uqDgUs8H9h"
+              }
+            ]
+          },
+          "id_str": "2102591147927654847",
+          "text": "I asked Opus 5.5 to explain camera focus by building an interactive lens lab\n\nHere's what it came up with after 1 hour 26 minutes in one shot, $25.66 API cost\nhttps://t.co/uqDgUs8H9h\n\nMove the focus ring and you can see the glass elements shift the sharp plane through the scene https://t.co/pkdmmlRqU2",
+          "user": {
+            "id_str": "135840760",
+            "name": "Ryan Sael",
+            "screen_name": "RyanSael",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2070153731409350656/Q2dbbhA3_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2102591147927654847"
+            ],
+            "editable_until_msecs": "1790135368000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/pkdmmlRqU2",
+              "expanded_url": "https://x.com/RyanSael/status/2102591147927654847/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                279,
+                302
+              ],
+              "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2102589341197619200/img/yc_23PO0WRs63QWw.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 1080,
+                "width": 1920
+              },
+              "sizes": {
+                "large": {
+                  "h": 1080,
+                  "resize": "fit",
+                  "w": 1920
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/pkdmmlRqU2",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "duration_millis": 32000,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2102589341197619200/pl/yhPqDCcTbETqasYA.m3u8"
+                  },
+                  {
+                    "bitrate": 256000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2102589341197619200/vid/avc1/480x270/xAb2NQHfDuYRgPax.mp4"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2102589341197619200/vid/avc1/640x360/d_ln0N2BLLZd_b1x.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2102589341197619200/vid/avc1/1280x720/5X-1BAr0mSoZZrj5.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2102589341197619200/vid/avc1/1920x1080/0zt2fNiA4QMgvhkM.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              16,
+              9
+            ],
+            "contentType": "media_entity",
+            "durationMs": 32000,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/amplify_video_thumb/2102589341197619200/img/yc_23PO0WRs63QWw.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2102589341197619200/pl/yhPqDCcTbETqasYA.m3u8"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2102589341197619200/vid/avc1/480x270/xAb2NQHfDuYRgPax.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2102589341197619200/vid/avc1/640x360/d_ln0N2BLLZd_b1x.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2102589341197619200/vid/avc1/1280x720/5X-1BAr0mSoZZrj5.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2102589341197619200/vid/avc1/1920x1080/0zt2fNiA4QMgvhkM.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2102591147927654847"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
       }
     },
     {
