@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Waiting Is a First-Class State — AI Frontlines</title>
+<meta content="Agents in production spend almost none of their existence thinking. They spend it waiting — for approvals, for external events, for long jobs to finish. Teams that treat waiting as a sleep call build fragile agents. Teams that treat waiting as a first-class state, with durable pauses and idempotent resumes, build systems that survive the weekend." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 28, 2026" data-zh="2026年9月28日">September 28, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Waiting Is a First-Class State" data-zh="等待，是一等公民状态">Waiting Is a First-Class State</h1>
+<p class="post-header-deck" data-en="Every demo of an agent is a conversation: a message goes in, thinking happens, an answer comes out. But agents in production live a different life. They spend minutes waiting for a human to approve a payment. Hours waiting for a batch job to finish. Days waiting for an external event that may never arrive. The thinking is a rounding error. The waiting is the system. And almost nobody designs for it — waiting is stuffed into a sleep call, a blocked thread, a timeout constant — until the process restarts mid-wait, the approval arrives to a dead listener, and the agent wakes up with no memory of what it was doing. Waiting is not the absence of computation. Waiting is a state, and it deserves a schema." data-zh="每一个智能体的演示，都是一场对话：一条消息进来，思考发生，一个答案出去。但生产环境里的智能体，过的是另一种生活。它们花几分钟等待一个人批准一笔付款。花几个小时等待一个批处理任务结束。花几天等待一个可能永远不会到来的外部事件。思考，只是零头。等待，才是系统本身。而几乎没人为它做设计——等待被塞进一个 sleep 调用、一个阻塞的线程、一个超时常量——直到进程在等待中途重启、批准抵达时监听者已经死去、智能体醒来时完全不记得自己在做什么。等待，不是计算的缺席。等待是一种状态，而它值得一个 schema。">Every demo of an agent is a conversation: a message goes in, thinking happens, an answer comes out. But agents in production live a different life. They spend minutes waiting for a human to approve a payment. Hours waiting for a batch job to finish. Days waiting for an external event that may never arrive. The thinking is a rounding error. The waiting is the system.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a strange gap between how agents are shown and how agents are used. In the demo, the agent is always mid-thought: streaming tokens, calling tools, chaining reasoning steps. Latency is the enemy. Everything is measured in seconds. This picture is accurate for exactly one kind of agent — the chat assistant, the one-shot coding task, the query that resolves inside a single session. The moment an agent touches the real world, the picture inverts. The real world does not respond in seconds. A human reviewer takes an afternoon. A warehouse system confirms a shipment tomorrow morning. A legal hold clears in a week. The agent's job stops being 'think fast' and becomes 'be here when the answer arrives, in the exact state you were in when you asked the question.' That second job has nothing to do with intelligence. It is an engineering problem, and it is the one that decides whether the agent survives contact with production." data-zh="智能体被展示的样子，和智能体被使用的样子，之间有一道奇怪的鸿沟。在演示里，智能体永远处于思考之中：流式输出 token、调用工具、串起推理步骤。延迟是敌人。一切都以秒计。这幅图景只对一种智能体成立——聊天助手、一次性的编程任务、在单个会话内解决的查询。而一旦智能体触碰真实世界，图景就翻转了。真实世界不以秒为单位响应。一个人类审核者需要一个下午。一个仓储系统明早才确认发货。一个法律冻结要一周后才解除。智能体的工作不再是「快思考」，而变成了「当答案抵达时，你还在这里，而且保持着提问那一刻的完整状态」。第二个工作与智能无关。它是一个工程问题，而正是它决定了智能体能否在生产环境中活下来。">There is a strange gap between how agents are shown and how agents are used. In the demo, the agent is always mid-thought: streaming tokens, calling tools, chaining reasoning steps. Latency is the enemy. Everything is measured in seconds. This picture is accurate for exactly one kind of agent — the chat assistant, the one-shot coding task, the query that resolves inside a single session. The moment an agent touches the real world, the picture inverts.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrW0" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="WHERE AN AGENT'S LIFE ACTUALLY GOES" data-zh="一个智能体的生命，实际花在哪里" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHERE AN AGENT'S LIFE ACTUALLY GOES</text>
+<!-- top: conversation model -->
+<text data-en="THE DEMO MODEL — always thinking" data-zh="演示模型 — 永远在思考" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="start" x="60" y="58">THE DEMO MODEL — always thinking</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--border)" stroke-width="1" width="500" x="60" y="70"></rect>
+<rect fill="var(--accent)" height="18" rx="4" opacity="0.9" width="150" x="64" y="74"></rect>
+<rect fill="var(--accent)" height="18" rx="4" opacity="0.75" width="190" x="218" y="74"></rect>
+<rect fill="var(--accent)" height="18" rx="4" opacity="0.9" width="145" x="412" y="74"></rect>
+<text data-en="think · act · answer" data-zh="思考 · 行动 · 回答" fill="var(--bg-surface)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="310" y="87">think · act · answer</text>
+<text data-en="one session, seconds long" data-zh="一个会话，几秒钟" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="start" x="60" y="112">one session, seconds long</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="60" x2="560" y1="128" y2="128"></line>
+<!-- bottom: production model -->
+<text data-en="THE PRODUCTION MODEL — mostly waiting" data-zh="生产模型 — 绝大多数时间在等待" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="start" x="60" y="152">THE PRODUCTION MODEL — mostly waiting</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--border)" stroke-width="1" width="500" x="60" y="164"></rect>
+<rect fill="var(--accent)" height="18" rx="4" width="30" x="64" y="168"></rect>
+<rect fill="var(--accent-3)" height="18" rx="4" opacity="0.5" stroke="var(--accent-3)" stroke-dasharray="3,2" stroke-width="1" width="180" x="98" y="168"></rect>
+<rect fill="var(--accent)" height="18" rx="4" width="24" x="282" y="168"></rect>
+<rect fill="var(--accent-3)" height="18" rx="4" opacity="0.5" stroke="var(--accent-3)" stroke-dasharray="3,2" stroke-width="1" width="230" x="310" y="168"></rect>
+<rect fill="var(--accent)" height="18" rx="4" width="12" x="544" y="168"></rect>
+<text data-en="wait: human approval" data-zh="等待：人工批准" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="188" y="180">wait: human approval</text>
+<text data-en="wait: external event" data-zh="等待：外部事件" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="425" y="180">wait: external event</text>
+<line marker-end="url(#arrW0)" stroke="var(--text-tertiary)" stroke-width="1" x1="64" x2="64" y1="200" y2="218"></line>
+<text data-en="thinking ≈ 4%" data-zh="思考 ≈ 4%" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="start" x="72" y="222">thinking ≈ 4%</text>
+<text data-en="waiting ≈ 96%" data-zh="等待 ≈ 96%" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="start" x="180" y="222">waiting ≈ 96%</text>
+<rect fill="var(--accent-dim)" height="44" opacity="0.5" rx="8" width="500" x="60" y="248"></rect>
+<text data-en="The demo optimizes the 4%. Production is decided by the 96%." data-zh="演示优化的是那 4%。决定生产成败的，是那 96%。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="274">The demo optimizes the 4%. Production is decided by the 96%.</text>
+</svg>
+<p class="diagram-caption" data-en="A conversational agent lives inside one session, and everything it does happens in seconds. A production agent touches humans, vendors, and long-running systems — and its timeline collapses into thin slivers of thinking separated by long deserts of waiting. The deserts are the system." data-zh="一个对话式智能体活在单个会话里，它做的一切都在几秒内发生。一个生产智能体触碰人类、供应商和长时间运行的系统——它的时间线塌缩成思考的细条，中间隔着漫长的等待荒漠。荒漠，才是系统。">A conversational agent lives inside one session, and everything it does happens in seconds. A production agent touches humans, vendors, and long-running systems — and its timeline collapses into thin slivers of thinking separated by long deserts of waiting. The deserts are the system.</p>
+</div>
+<h3 data-en="Three kinds of waiting, three different designs" data-zh="三种等待，三种不同的设计">Three kinds of waiting, three different designs</h3>
+<p data-en="'Waiting' is not one problem. It is at least three, and conflating them is where most systems go wrong. The first is waiting on a human: the agent needs an approval, a review, a decision that only a person can make. The person is slow, distractible, and lives in a different medium — email, chat, a dashboard they check twice a day. The design questions are about timeouts and escalation: how long before the agent gives up, who it tells, and what safe default it falls back to if no one answers. The second is waiting on the world: a file to land in a bucket, a status field to flip in a vendor's system, a webhook from a payment processor. The design questions are about registration and receipt: how the agent subscribes, how it proves the event really happened, how it handles events that arrive twice or out of order. The third is waiting on itself: the agent dispatched a long job — a fine-tune, a big migration, a deep research crawl — and now must wait for its own machinery. The design questions are about checkpoints and idempotency: how progress is recorded, and what happens when the job half-finishes and dies. Three waits, three contracts, three sets of failure modes. A design that says only 'sleep and retry' has answered none of them." data-zh="「等待」不是一个问题。它至少是三个，而把它们混为一谈，正是大多数系统出错的地方。第一种，是等待人类：智能体需要一个批准、一次审核、一个只有人能做的决定。人是慢的、易分心的，而且活在另一种媒介里——邮件、聊天、一个一天看两次的面板。设计问题关于超时与升级：多久之后智能体放弃、通知谁、以及在无人应答时回退到什么安全默认值。第二种，是等待世界：一个文件落进存储桶、一个供应商系统里的状态字段翻转、一个来自支付处理商的 webhook。设计问题关于注册与接收：智能体如何订阅、如何证明事件真的发生过、如何处理事件到达两次或乱序到达。第三种，是等待自己：智能体派出了一个长任务——一次微调、一场大迁移、一次深度研究爬取——现在必须等待它自己的机器。设计问题关于检查点与幂等：进度如何被记录、任务做了一半死掉之后怎么办。三种等待，三份契约，三组失败模式。一个只说「sleep 然后重试」的设计，一个问题都没回答。">'Waiting' is not one problem. It is at least three, and conflating them is where most systems go wrong. The first is waiting on a human: the agent needs an approval, a review, a decision that only a person can make. The second is waiting on the world: a file to land, a status to flip, a webhook to arrive. The third is waiting on itself: the agent dispatched a long job and must wait for its own machinery. Three waits, three contracts, three sets of failure modes.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrW1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrW2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrW3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THREE KINDS OF WAITING, THREE CONTRACTS" data-zh="三种等待，三份契约" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THREE KINDS OF WAITING, THREE CONTRACTS</text>
+<!-- col 1: waiting on a human -->
+<text data-en="① ON A HUMAN" data-zh="① 等待人类" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="110" y="54">ON A HUMAN</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent)" stroke-width="1.5" width="70" x="75" y="68"></rect>
+<text data-en="agent" data-zh="智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="110" y="86">agent</text>
+<path d="M110 96 L110 112" fill="none" marker-end="url(#arrW1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M70 130 L150 130 L135 148 L85 148 Z" fill="var(--bg-surface)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="approve?" data-zh="批准?" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="110" y="143">approve?</text>
+<path d="M110 148 L110 166" fill="none" marker-end="url(#arrW1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="yes → resume" data-zh="是 → 继续" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="110" y="180">yes → resume</text>
+<path d="M150 130 C185 130 185 205 150 205" fill="none" marker-end="url(#arrW1)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="3,2"></path>
+<text data-en="timeout → escalate" data-zh="超时 → 升级" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="110" y="222">timeout → escalate</text>
+<text data-en="contract: timeout + fallback" data-zh="契约：超时 + 回退" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="110" y="248">contract: timeout + fallback</text>
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="210" x2="210" y1="40" y2="260"></line>
+<!-- col 2: waiting on the world -->
+<text data-en="② ON THE WORLD" data-zh="② 等待世界" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="54">ON THE WORLD</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="70" x="275" y="68"></rect>
+<text data-en="agent" data-zh="智能体" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="86">agent</text>
+<path d="M310 96 L310 112" fill="none" marker-end="url(#arrW2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="84" x="268" y="114"></rect>
+<text data-en="subscribe" data-zh="订阅" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="132">subscribe</text>
+<path d="M310 142 L310 158" fill="none" marker-end="url(#arrW2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="28" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="84" x="268" y="160"></rect>
+<text data-en="event lands" data-zh="事件抵达" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="178">event lands</text>
+<path d="M310 188 L310 204" fill="none" marker-end="url(#arrW2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<text data-en="verify → resume" data-zh="验证 → 继续" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="218">verify → resume</text>
+<text data-en="dedupe · out-of-order · replay" data-zh="去重 · 乱序 · 重放" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="310" y="248">dedupe · out-of-order · replay</text>
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="410" x2="410" y1="40" y2="260"></line>
+<!-- col 3: waiting on itself -->
+<text data-en="③ ON ITSELF" data-zh="③ 等待自己" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="515" y="54">ON ITSELF</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="70" x="480" y="68"></rect>
+<text data-en="agent" data-zh="智能体" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="515" y="86">agent</text>
+<path d="M515 96 L515 112" fill="none" marker-end="url(#arrW3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="84" x="473" y="114"></rect>
+<text data-en="dispatch job" data-zh="派发任务" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="515" y="132">dispatch job</text>
+<path d="M515 142 L515 158" fill="none" marker-end="url(#arrW3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="84" x="473" y="160"></rect>
+<text data-en="checkpoint" data-zh="检查点" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="515" y="178">checkpoint</text>
+<path d="M515 188 L515 204" fill="none" marker-end="url(#arrW3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<text data-en="collect → resume" data-zh="收集 → 继续" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="515" y="218">collect → resume</text>
+<text data-en="idempotent if job dies" data-zh="任务死掉亦可幂等重试" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="515" y="248">idempotent if job dies</text>
+<!-- bottom caption -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="272"></rect>
+<text data-en="Same word, three contracts. A sleep call answers none of them." data-zh="同一个词，三份契约。一个 sleep 调用，一份都回答不了。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="296">Same word, three contracts. A sleep call answers none of them.</text>
+</svg>
+<p class="diagram-caption" data-en="Waiting on a human is an escalation design: timeout, notify, fall back. Waiting on the world is a subscription design: register, verify, deduplicate. Waiting on oneself is a durability design: checkpoint, resume, retry safely. Each has its own failure modes, and none of them are solved by polling harder." data-zh="等待人类，是一个升级设计：超时、通知、回退。等待世界，是一个订阅设计：注册、验证、去重。等待自己，是一个持久化设计：检查点、恢复、安全重试。每一种都有自己的失败模式，而没有任何一种，靠更用力地轮询能解决。">Waiting on a human is an escalation design: timeout, notify, fall back. Waiting on the world is a subscription design: register, verify, deduplicate. Waiting on oneself is a durability design: checkpoint, resume, retry safely. Each has its own failure modes, and none of them are solved by polling harder.</p>
+</div>
+<blockquote data-en="An agent that can only act is a toy. An agent that can act, pause for three days, and come back to finish the job — that is a system. The pause is not dead time between the interesting parts. The pause is load-bearing. It is where state must survive, where timeouts must fire, where the world is allowed to change the plan. Designing the wait is designing the agent." data-zh="一个只会行动的智能体，是个玩具。一个能行动、暂停三天、再回来完成任务的智能体——那才是一个系统。暂停，不是有趣部分之间的死时间。暂停是承重的。它就是状态必须存活的地方、超时必须触发的地方、世界被允许改变计划的地方。设计等待，就是设计智能体本身。">An agent that can only act is a toy. An agent that can act, pause for three days, and come back to finish the job — that is a system. The pause is not dead time between the interesting parts. The pause is load-bearing. It is where state must survive, where timeouts must fire, where the world is allowed to change the plan. Designing the wait is designing the agent.</blockquote>
+<h3 data-en="The sleep loop is a bet against your own infrastructure" data-zh="sleep 循环，是拿自己的基础设施下注">The sleep loop is a bet against your own infrastructure</h3>
+<p data-en="The default implementation of waiting, in nearly every agent codebase, looks innocent: run a loop, check the condition, sleep sixty seconds, check again. It is simple, it works in the demo, and it is a quiet disaster in production. The sleep loop holds the agent's entire state in the memory of one process. When that process is redeployed — and it will be redeployed, because the team ships fixes, because the platform recycles pods, because someone restarts the box — the waiting state evaporates. The approval email arrives an hour later and finds no one home. Or worse: the restart triggers a retry, the retry re-executes a step that was not idempotent, and the vendor gets charged twice. The sleep loop also polls, which means it pays for checks that almost always return nothing, generates logs full of noise, and teaches everyone to ignore the signal that matters. None of this is visible on day one. It becomes visible the first time the agent waits across a deploy, which is to say: the first time it is doing exactly the job it was built for." data-zh="在几乎每一个智能体代码库里，等待的默认实现看起来都人畜无害：跑一个循环，检查条件，sleep 六十秒，再检查。它简单，在演示里能跑，而它在生产环境里是一场安静的灾难。sleep 循环把智能体的全部状态，握在单个进程的内存里。当那个进程被重新部署——它一定会被重新部署，因为团队要发布修复，因为平台要回收容器，因为有人重启了机器——等待中的状态就蒸发了。批准邮件一小时后抵达，却发现无人在家。或者更糟：重启触发了一次重试，重试重新执行了一个不幂等的步骤，于是供应商被收了两次钱。sleep 循环还在轮询，这意味着它为几乎总是空手而归的检查付费，生成充满噪音的日志，并教会所有人忽略真正重要的信号。这些在第一天都看不见。它第一次变得可见，是在智能体第一次跨越一次部署去等待的时候——换句话说，正是在它第一次做自己被造出来做的那份工作的时候。">The default implementation of waiting, in nearly every agent codebase, looks innocent: run a loop, check the condition, sleep sixty seconds, check again. It is simple, it works in the demo, and it is a quiet disaster in production. The sleep loop holds the agent's entire state in the memory of one process. When that process is redeployed — and it will be — the waiting state evaporates. The approval email arrives an hour later and finds no one home. Or worse: the restart triggers a retry, the retry re-executes a non-idempotent step, and the vendor gets charged twice.</p>
+<p data-en="The alternative is to make the wait durable. Instead of a process that stays alive while nothing happens, the agent freezes itself: it serializes its state — the plan, the context worth keeping, the step it was on, the decision it is waiting for — into durable storage, and exits. Nothing is running. Nothing is being paid for. Then, when the event arrives — the approval, the webhook, the finished job — a fresh process is started, the state is loaded, and the agent continues as if no time had passed. This is not an exotic pattern. Workflow engines have done it for decades. What is new is that the 'state' of an agent is not a tidy set of typed fields; it is a conversation history, a pile of tool results, a partially formed plan. Making that serializable, deciding what survives the freeze and what is allowed to decay, is real engineering — and it is the difference between an agent that survives redeploys and an agent that loses its mind every Tuesday." data-zh="替代方案，是让等待变得持久。不是一个在无事发生时也保持存活的进程，而是智能体把自己冻结：把它的状态——计划、值得保留的上下文、它停在哪一步、它在等什么决定——序列化到持久存储里，然后退出。没有任何东西在运行。没有任何东西在被付费。然后，当事件抵达时——批准、webhook、完成的任务——一个全新的进程被启动，状态被加载，智能体继续，仿佛时间从未流逝。这不是什么奇异的模式。工作流引擎已经这么做了几十年。新的地方在于：一个智能体的「状态」，不是一组整齐的类型化字段；它是一段对话历史、一堆工具结果、一个尚未成形的计划。让它可序列化、决定什么能在冻结中幸存、什么被允许衰减——这才是真正的工程，而它正是一个「能扛住重新部署的智能体」和一个「每周二都失忆的智能体」之间的差别。">The alternative is to make the wait durable. Instead of a process that stays alive while nothing happens, the agent freezes itself: it serializes its state into durable storage, and exits. Nothing is running. Nothing is being paid for. Then, when the event arrives — the approval, the webhook, the finished job — a fresh process is started, the state is loaded, and the agent continues as if no time had passed. What is new is that the 'state' of an agent is not a tidy set of typed fields; it is a conversation history, a pile of tool results, a partially formed plan. Making that serializable is real engineering.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrW4" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrW5" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE SLEEP LOOP vs THE DURABLE PAUSE" data-zh="sleep 循环 vs 持久暂停" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE SLEEP LOOP vs THE DURABLE PAUSE</text>
+<!-- left: sleep loop -->
+<text data-en="STATE LIVES IN MEMORY" data-zh="状态活在内存里" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="56">STATE LIVES IN MEMORY</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="96" x="107" y="70"></rect>
+<text data-en="process" data-zh="进程" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="89">process</text>
+<rect fill="var(--accent-3)" height="20" rx="4" opacity="0.25" width="96" x="107" y="106"></rect>
+<text data-en="state" data-zh="状态" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="155" y="120">state</text>
+<path d="M155 130 C155 150 110 150 110 165" fill="none" marker-end="url(#arrW4)" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<text data-en="sleep(60)" data-zh="sleep(60)" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="95" y="152">sleep(60)</text>
+<path d="M110 190 C110 210 200 210 200 165" fill="none" marker-end="url(#arrW4)" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<text data-en="check?" data-zh="检查?" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="212" y="152">check?</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="3,2" width="96" x="107" y="168"></rect>
+<text data-en="redeploy? 💀" data-zh="重新部署? 💀" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="155" y="184">redeploy?</text>
+<text data-en="state lost · retry chaos" data-zh="状态丢失 · 重试混乱" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="155" y="232">state lost · retry chaos</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="300"></line>
+<!-- right: durable pause -->
+<text data-en="STATE LIVES IN STORAGE" data-zh="状态活在存储里" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="56">STATE LIVES IN STORAGE</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent)" stroke-width="1.5" width="96" x="417" y="70"></rect>
+<text data-en="agent runs" data-zh="智能体运行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="89">agent runs</text>
+<path d="M465 100 L465 116" fill="none" marker-end="url(#arrW5)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="freeze · serialize" data-zh="冻结 · 序列化" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="465" y="111">freeze · serialize</text>
+<rect fill="var(--accent-dim)" height="34" rx="7" stroke="var(--accent)" stroke-width="2" width="150" x="390" y="118"></rect>
+<text data-en="durable state" data-zh="持久状态" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="465" y="134">durable state</text>
+<text data-en="plan · context · pending decision" data-zh="计划 · 上下文 · 待定决策" fill="var(--accent)" font-family="Inter,sans-serif" font-size="7.5" text-anchor="middle" x="465" y="146">plan · context · pending decision</text>
+<text data-en="⋯ process exits · cost = $0 ⋯" data-zh="⋯ 进程退出 · 成本 = $0 ⋯" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="465" y="174">⋯ process exits · cost = $0 ⋯</text>
+<path d="M465 184 L465 198" fill="none" marker-end="url(#arrW5)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="110" x="410" y="200"></rect>
+<text data-en="event arrives" data-zh="事件抵达" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="217">event arrives</text>
+<path d="M465 226 L465 240" fill="none" marker-end="url(#arrW5)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent)" stroke-width="1.5" width="96" x="417" y="242"></rect>
+<text data-en="resume" data-zh="恢复" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="261">resume</text>
+<text data-en="survives redeploys · idempotent" data-zh="扛得住重新部署 · 幂等" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="465" y="292">survives redeploys · idempotent</text>
+<!-- bottom -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="312"></rect>
+<text data-en="The loop bets the agent's memory on one process never dying. The pause assumes it will die — and plans for the funeral." data-zh="循环把智能体的记忆，押在一个进程永不死掉的赌注上。暂停假设它一定会死——并且提前安排好了葬礼。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="337">The loop bets the agent's memory on one process never dying. The pause assumes it will die — and plans for the funeral.</text>
+</svg>
+<p class="diagram-caption" data-en="On the left, the sleep loop: state lives inside one process, polling in a circle, and a single redeploy destroys everything. On the right, the durable pause: the agent serializes itself, exits, and is reborn in a new process when the event arrives — carrying its plan, its context, and its pending decision forward. Waiting costs nothing, and death costs nothing either." data-zh="左边，是 sleep 循环：状态活在单个进程里，兜着圈子轮询，一次重新部署就摧毁一切。右边，是持久暂停：智能体把自己序列化、退出，当事件抵达时在一个新进程里重生——把它的计划、它的上下文、它的待定决策，一并带向前。等待不花一分钱，死亡也不花一分钱。">On the left, the sleep loop: state lives inside one process, polling in a circle, and a single redeploy destroys everything. On the right, the durable pause: the agent serializes itself, exits, and is reborn in a new process when the event arrives — carrying its plan, its context, and its pending decision forward. Waiting costs nothing, and death costs nothing either.</p>
+</div>
+<h3 data-en="The world changes while you wait" data-zh="你在等待时，世界在变">The world changes while you wait</h3>
+<p data-en="There is a second, subtler failure hiding inside long waits, and it has nothing to do with infrastructure. While the agent is paused, the world moves. The file it was waiting for has been superseded by a newer version. The price it verified before the pause is no longer the price. The user who requested the work changed their mind and said so — in a channel the agent is not listening to, because it is asleep. An agent that resumes blindly, treating its pre-pause context as gospel, will confidently act on stale facts. The fix is a re-validation step at every wake: before continuing the plan, re-check the assumptions the plan depends on. If they hold, proceed. If they do not, do not muscle through — re-plan, or surface the change to whoever needs to know. This turns the pause from a hole in the agent's awareness into a seam that gets inspected every time it is crossed. Cheap, boring, and the difference between an agent that is correct and an agent that was correct three days ago." data-zh="在漫长的等待里，还藏着第二个更隐蔽的失败，而它与基础设施无关。在智能体暂停的时候，世界在动。它等待的文件，已经被一个更新的版本取代。它在暂停前核实过的价格，已经不是现在的价格。提出这个需求的用户改了主意、也说了——却说的是智能体没在听的频道，因为它在睡觉。一个盲目恢复、把暂停前的上下文奉为圭臬的智能体，会自信地在过期的事实上行动。修复方法，是在每一次唤醒处加一个重新验证的步骤：在继续计划之前，重新检查计划所依赖的假设。如果成立，继续。如果不成立，不要硬闯——重新规划，或者把变化呈现给需要知道的人。这把暂停从智能体认知里的一个洞，变成了一道每次跨越都会被检查的接缝。便宜、无趣，却是一个「正确的智能体」和一个「三天前正确的智能体」之间的全部差别。">There is a second, subtler failure hiding inside long waits, and it has nothing to do with infrastructure. While the agent is paused, the world moves. The file it was waiting for has been superseded. The price it verified is no longer the price. The user changed their mind and said so — in a channel the agent is not listening to, because it is asleep. An agent that resumes blindly, treating its pre-pause context as gospel, will confidently act on stale facts. The fix is a re-validation step at every wake: before continuing the plan, re-check the assumptions the plan depends on.</p>
+<p data-en="None of this argues for cleverness. It argues for humility — the recognition that time passing is itself an event, that a process holding state hostage is a liability, that the interesting engineering in agent systems is migrating from the thinking to the pauses between the thinking. The models will get faster and cheaper, and the thinking slice will shrink toward nothing. The waiting will not shrink. Humans will still take afternoons to answer. Vendors will still batch their updates overnight. Long jobs will still be long. The teams that treat waiting as a first-class state — named, persisted, timed out, re-validated, resumed — will build agents that operate on the world's clock, not the demo's clock. Everyone else will keep building agents that can only live inside a single request, and keep wondering why they break the moment reality takes its time." data-zh="这些，没有一条是在主张精巧。它们主张的是谦逊——承认时间流逝本身就是事件，承认一个把状态扣在内存里当人质的进程是负债，承认智能体系统里有趣的工程，正在从思考迁移到思考之间的暂停。模型会变得更快、更便宜，思考的那一条细缝会缩到近乎于无。等待不会缩。人类仍然要一个下午才回复。供应商仍然连夜批量更新。长任务仍然长。那些把等待当作一等公民状态的团队——被命名、被持久化、有超时、会被重新验证、能被恢复——将造出按世界的时钟运转的智能体，而不是按演示的时钟。其他所有人，将继续造只能活在单次请求里的智能体，并继续困惑：为什么现实一慢下来，它们就碎。" >None of this argues for cleverness. It argues for humility — the recognition that time passing is itself an event, that a process holding state hostage is a liability, and that the interesting engineering in agent systems is migrating from the thinking to the pauses between the thinking. The models will get faster and cheaper, and the thinking slice will shrink toward nothing. The waiting will not shrink.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
