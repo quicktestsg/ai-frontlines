@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Retried Call Is Not the Same Call — AI Frontlines</title>
+<meta content="Every agent harness retries. Timeouts trigger retries, fallback ladders trigger retries, loops that see stale state trigger retries. But a retried call is not a replay — it is a second arrival in a world that already recorded the first one. Side effects do not dedupe themselves." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 29, 2026" data-zh="2026年9月29日">September 29, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Retried Call Is Not the Same Call" data-zh="被重试的调用，不再是同一个调用">The Retried Call Is Not the Same Call</h1>
+<p class="post-header-deck" data-en="Every agent harness retries. A tool call times out, so the loop calls it again. A fallback ladder fires, so a second provider gets the same request. A subagent sees stale state and decides to redo a step it believes failed. Each retry looks free to the caller — the same function, the same arguments, the same intent. But a retried call is not a replay. It is a second arrival in a world that already recorded the first one, and side effects do not dedupe themselves. The harness that treats retries as invisible is a harness that quietly double-charges, double-sends, and double-writes its way through production." data-zh="每一个智能体框架都会重试。一个工具调用超时，循环就再调一次。降级阶梯被触发，第二个提供商收到一模一样的请求。一个子智能体看到过期的状态，决定重做一个它以为失败了的步骤。在调用者看来，每次重试都是免费的——同一个函数、同样的参数、同样的意图。但被重试的调用，不是一次重放。它是这个世界迎来的第二次抵达，而这个世界早已记录了第一次。副作用不会自己去重。一个把重试当作隐形的框架，就是在生产环境里悄悄地双重扣款、双重发送、双重写入。">Every agent harness retries. A tool call times out, so the loop calls it again. A fallback ladder fires, so a second provider gets the same request. A subagent sees stale state and decides to redo a step it believes failed. Each retry looks free to the caller. But a retried call is not a replay — it is a second arrival in a world that already recorded the first one.</p>
+</header>
+<article class="post-body">
+<p data-en="Retries are the most normal thing in an agent system, and that is exactly the problem. Nobody designs for them, because nobody considers them interesting. The timeout fires, the harness retries, the call succeeds, the trace looks clean. The engineer moves on. What the trace does not show — and what the ledger very much does show — is that the first call did not fail. It timed out from the caller's chair while succeeding at the destination. The payment went through, the email went out, the row was written. Then the retry arrived, and the world, which is obliging and literal, did the same thing twice. This is not an exotic distributed-systems scenario. It is the default behavior of every agent that retries side-effecting tools with no idempotency discipline. The bug is not in the retry logic. The retry logic is correct. The bug is in the belief that a retry is a continuation of one operation rather than the start of a second one." data-zh="重试，是智能体系统里最平常的事，而这恰恰就是问题所在。没人针对它做设计，因为没人觉得它有趣。超时触发，框架重试，调用成功，追踪记录看起来干干净净。工程师继续往前走。而追踪记录没有显示、账本却清清楚楚显示的是：第一次调用并没有失败。它只是从调用者的椅子上看是超时了，在目的地那一端，它成功了。付款完成了，邮件发出去了，那一行写进去了。然后重试抵达，而这个殷勤而照章办事的世界，把同一件事又做了一遍。这不是什么冷门的分布式系统场景。这是每一个在不带幂等纪律的情况下、重试带副作用的工具的智能体的默认行为。bug 不在重试逻辑里。重试逻辑是对的。bug 在于那个信念——以为一次重试是同一个操作的延续，而不是第二个操作的开启。">Retries are the most normal thing in an agent system, and that is exactly the problem. Nobody designs for them, because nobody considers them interesting. The timeout fires, the harness retries, the call succeeds, the trace looks clean. The engineer moves on. What the trace does not show — and what the ledger very much does show — is that the first call did not fail. It timed out from the caller's chair while succeeding at the destination. The payment went through, the email went out, the row was written. Then the retry arrived, and the world, which is obliging and literal, did the same thing twice.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrR3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="ONE INTENT, TWO LEDGERS" data-zh="一个意图，两本账" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ONE INTENT, TWO LEDGERS</text>
+<!-- the single intent -->
+<rect fill="var(--accent-dim)" height="36" rx="8" stroke="var(--accent)" stroke-width="2" width="160" x="230" y="42"></rect>
+<text data-en="intent: charge S$49" data-zh="意图：扣款 S$49" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="64">intent: charge S$49</text>
+<!-- fan out to two attempts -->
+<path d="M270 78 C200 100 130 110 90 130" fill="none" marker-end="url(#arrR1)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<path d="M350 78 C420 100 490 110 530 130" fill="none" marker-end="url(#arrR2)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<!-- attempt 1 -->
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--text-tertiary)" stroke-width="1.5" width="120" x="30" y="132"></rect>
+<text data-en="attempt 1 · 30s timeout" data-zh="第 1 次 · 超时 30 秒" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="90" y="152">attempt 1 · 30s timeout</text>
+<!-- attempt 2 -->
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="470" y="132"></rect>
+<text data-en="attempt 2 · ok, 1.2s" data-zh="第 2 次 · 成功 1.2 秒" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="530" y="152">attempt 2 · ok, 1.2s</text>
+<!-- down to the two views -->
+<path d="M90 164 L90 200" fill="none" marker-end="url(#arrR1)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<path d="M530 164 L530 200" fill="none" marker-end="url(#arrR2)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<!-- caller's ledger -->
+<rect fill="var(--bg-surface)" height="66" rx="9" stroke="var(--border)" stroke-width="1.5" width="200" x="-10" y="202"></rect>
+<text data-en="WHAT THE TRACE SAYS" data-zh="追踪记录说的" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="90" y="222">WHAT THE TRACE SAYS</text>
+<text data-en="attempt 1: FAILED" data-zh="第 1 次：失败" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="90" y="240">attempt 1: FAILED</text>
+<text data-en="attempt 2: ok → done" data-zh="第 2 次：成功 → 完成" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="90" y="256">attempt 2: ok → done</text>
+<!-- world's ledger -->
+<rect fill="var(--bg-surface)" height="66" rx="9" stroke="var(--accent-3)" stroke-width="1.8" width="220" x="420" y="202"></rect>
+<text data-en="WHAT THE LEDGER SAYS" data-zh="账本说的" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="530" y="222">WHAT THE LEDGER SAYS</text>
+<text data-en="charge S$49 — 10:00:31" data-zh="扣款 S$49 — 10:00:31" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="530" y="240">charge S$49 — 10:00:31</text>
+<text data-en="charge S$49 — 10:01:04" data-zh="扣款 S$49 — 10:01:04" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="530" y="256">charge S$49 — 10:01:04</text>
+<!-- verdict -->
+<path d="M310 78 L310 286" fill="none" stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1"></path>
+<text data-en="the timeout was a point of view, not a fact about the world" data-zh="超时只是一种视角，不是世界的真相" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="308">the timeout was a point of view, not a fact about the world</text>
+</svg>
+<p class="diagram-caption" data-en="The caller's trace records one successful operation. The destination's ledger records two charges. Both are correct from where they sit: the timeout is real at the caller, and the success is real at the server. The defect lives in the gap between the two views — a gap the retry crossed without carrying any proof of which intent it belonged to." data-zh="调用者的追踪记录写着一次成功的操作。目的地的账本写着两笔扣款。两边从各自的座位上看，都是对的：超时在调用者这端是真的，成功在服务器那端也是真的。缺陷，就活在这两个视角之间的缝隙里——而重试穿过这条缝隙时，没有携带任何能证明自己属于哪个意图的证据。">The caller's trace records one successful operation. The destination's ledger records two charges. Both are correct from where they sit. The defect lives in the gap between the two views — a gap the retry crossed without carrying any proof of which intent it belonged to.</p>
+</div>
+<h3 data-en="A timeout is a point of view" data-zh="超时，只是一种视角">A timeout is a point of view</h3>
+<p data-en="The root confusion is treating a timeout as information about the operation. It is not. A timeout is information about the observation of the operation. The caller knows only that no response arrived within a window; it knows nothing about whether the work happened. The work is Schrödinger's side effect: possibly executed, possibly lost, permanently unobservable from the caller's chair. Every retry policy — exponential backoff, jitter, capped attempts — is built on top of this ambiguity, and every one of them converts it into duplicate executions at some rate. Backoff makes duplicates less frequent. Jitter makes storms less synchronized. Neither makes duplicates impossible, because impossibility is not a scheduling property. It is a semantic property, and it has to be designed into the interface itself." data-zh="根本的混淆，在于把超时当作关于这个操作的信息。它不是。超时，是关于「对这个操作的观察」的信息。调用者只知道在一个时间窗口内没有响应到来；对于工作到底有没有发生，它一无所知。这个副作用，是薛定谔的副作用：可能已执行，可能已丢失，且从调用者的椅子上永远无法观测。每一个重试策略——指数退避、抖动、次数上限——都建立在这份模糊之上，而它们中的每一个，都会以某种频率把模糊转化为重复执行。退避让重复更少见。抖动让风暴不同步。但没有一个能让重复不可能，因为「不可能」不是一个调度属性。它是一个语义属性，而它必须被设计进接口本身。">The root confusion is treating a timeout as information about the operation. It is not. A timeout is information about the observation of the operation. The caller knows only that no response arrived within a window; it knows nothing about whether the work happened. The work is Schrödinger's side effect: possibly executed, possibly lost, permanently unobservable from the caller's chair. Every retry policy is built on top of this ambiguity, and every one of them converts it into duplicate executions at some rate.</p>
+<p data-en="This is where agents are strictly worse than classic distributed systems, and it is worth being honest about why. A service-to-service call usually wraps one side effect: charge the card, write the row, send the message. One intent, one effect, one chance of duplication. An agent tool call, by contrast, is a language model's decision embedded in a loop that may execute it several times across planning, re-planning, fallback, and repair phases — sometimes within a single run, sometimes across a resume after a crash. The same logical step can be reached by three different code paths, each with its own retry semantics, none of them aware the others exist. Multi-agent systems multiply the surface again: two subagents given overlapping mandates will independently conclude that the charge still needs to happen. Neither is wrong about the state they can see. They just cannot see each other. Duplication in agent systems is not an edge case that better models will outgrow. It is a structural property of having many probabilistic reasoners sharing one mutable world." data-zh="这正是智能体严格劣于经典分布式系统的地方，值得坦白说清楚为什么。服务之间的调用，通常只包裹一个副作用：刷这张卡，写这一行，发这条消息。一个意图，一个效果，一次重复的可能。而一个智能体的工具调用，是一个语言模型的决策，被嵌入一个可能多次执行它的循环里——跨越规划、重新规划、降级、修复各个阶段——有时在一次运行之内，有时在崩溃恢复之后。同一个逻辑步骤，可以被三条不同的代码路径抵达，每条路径有自己的重试语义，且彼此不知道对方的存在。多智能体系统又把攻击面再翻一倍：两个被赋予重叠使命的子智能体，会各自独立地得出「那笔扣款仍然需要发生」的结论。相对于它们各自能看到的状态，谁都没有错。它们只是看不见彼此。智能体系统里的重复，不是一个更好的模型就能长出去的边缘情况。它是「多个概率性推理者共享同一个可变世界」的结构性属性。">This is where agents are strictly worse than classic distributed systems. A service-to-service call usually wraps one side effect. An agent tool call, by contrast, is a language model's decision embedded in a loop that may execute it several times across planning, re-planning, fallback, and repair phases. Multi-agent systems multiply the surface again: two subagents given overlapping mandates will independently conclude that the charge still needs to happen. Duplication in agent systems is not an edge case that better models will outgrow. It is a structural property of having many probabilistic reasoners sharing one mutable world.</p>
+<blockquote data-en="Exactly-once delivery does not exist. It has never existed. What exists is at-least-once delivery plus a filter that recognizes second arrivals and refuses to repeat the effect. Every reliable system in history — payments, queues, databases — is built this way, and the filter has a name: idempotency. The agent stack is not exempt from this. It is just the last one to find out." data-zh="精确一次投递不存在。它从来不曾存在过。存在的是「至少一次投递」加上一个能识别第二次抵达、并拒绝重复执行效果的过滤器。历史上每一个可靠的系统——支付、消息队列、数据库——都是这么建的，而这个过滤器有一个名字：幂等。智能体技术栈不能豁免于此。它只是最后一个知道这件事的。">Exactly-once delivery does not exist. It has never existed. What exists is at-least-once delivery plus a filter that recognizes second arrivals and refuses to repeat the effect. Every reliable system in history — payments, queues, databases — is built this way, and the filter has a name: idempotency. The agent stack is not exempt from this. It is just the last one to find out.</blockquote>
+<h3 data-en="Idempotency is a contract, not a flag" data-zh="幂等是一份契约，不是一个开关">Idempotency is a contract, not a flag</h3>
+<p data-en="The engineering community talks about idempotency as if it were a boolean attached to a function — idempotent: true, done. This misunderstands the mechanism. An operation is not idempotent because a comment says so. An operation is idempotent because the interface accepts a key that identifies the intent, and the destination remembers what it did with that key. The idempotency key is the interesting part, and it is a design decision with three dimensions most teams never consciously make. The first is scope: what does "the same operation" mean? The same charge, the same email, the same deployment? Two calls with identical arguments but different keys are two operations; two calls with different arguments but the same key are one operation whose second arrival should return the first result. Getting scope wrong in either direction produces duplicates or swallowed updates. The second is lifetime: how long does the destination remember the key? A TTL shorter than the system's longest retry window is decorative. The third is issuance: where does the key come from? A key generated at execution time is worthless, because each retry mints a fresh key and sails through the filter. The key must be minted once, at intent time — before the first attempt — and carried unchanged by every subsequent arrival." data-zh="工程界谈论幂等，仿佛它是贴在函数上的一个布尔值——idempotent: true，搞定。这误解了机制。一个操作不是因为注释这么写就幂等的。一个操作是幂等的，是因为接口接受一个标识意图的 key，而目的地记得它对这个 key 做过什么。幂等键才是有意思的部分，而它是一个有三个维度的设计决策，大多数团队从未有意识地做过。第一个维度是作用域：「同一个操作」是什么意思？同一笔扣款、同一封邮件、同一次部署？带着相同参数但不同 key 的两次调用，是两个操作；带着不同参数但相同 key 的两次调用，是一个操作——第二次抵达应当返回第一次的结果。作用域往哪个方向搞错，产出的要么是重复，要么是被吞掉的更新。第二个维度是生命周期：目的地把这个 key 记多久？比系统最长重试窗口还短的 TTL，只是装饰。第三个维度是签发：key 从哪里来？在执行时刻生成的 key 毫无价值，因为每次重试都会铸造一个崭新的 key，然后大摇大摆穿过过滤器。key 必须被铸造一次——在意图时刻、第一次尝试之前——并被之后的每一次抵达原封不动地携带。">The engineering community talks about idempotency as if it were a boolean attached to a function — idempotent: true, done. This misunderstands the mechanism. An operation is not idempotent because a comment says so. An operation is idempotent because the interface accepts a key that identifies the intent, and the destination remembers what it did with that key. The idempotency key is the interesting part, and it is a design decision with three dimensions: scope, lifetime, and issuance.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrI1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrI2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrI3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE IDEMPOTENCY KEY LIFECYCLE" data-zh="幂等键的生命周期" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE IDEMPOTENCY KEY LIFECYCLE</text>
+<!-- step 1: intent -->
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--text-tertiary)" stroke-width="1.5" width="110" x="30" y="46"></rect>
+<text data-en="intent created" data-zh="意图产生" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="85" y="66">intent created</text>
+<path d="M140 62 L180 62" fill="none" marker-end="url(#arrI1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- step 2: key minted -->
+<rect fill="var(--accent-dim)" height="32" rx="7" stroke="var(--accent)" stroke-width="2" width="140" x="182" y="46"></rect>
+<text data-en="mint key: op_7f3a" data-zh="铸造 key：op_7f3a" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="252" y="66">mint key: op_7f3a</text>
+<text data-en="at intent time — before any attempt" data-zh="在意图时刻——任何尝试之前" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="252" y="94">at intent time — before any attempt</text>
+<!-- step 3: attempt with key -->
+<path d="M322 62 L362 62" fill="none" marker-end="url(#arrI1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent)" stroke-width="1.5" width="130" x="364" y="46"></rect>
+<text data-en="attempt · carries key" data-zh="尝试 · 携带 key" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="429" y="66">attempt · carries key</text>
+<!-- step 4: the gate -->
+<path d="M494 62 L530 62" fill="none" marker-end="url(#arrI1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<polygon fill="var(--bg-surface)" points="590,38 650,62 590,86 530,62" stroke="var(--accent)" stroke-width="1.8" transform="translate(-58,0)"></polygon>
+<text data-en="key seen?" data-zh="见过此 key？" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="532" y="66">key seen?</text>
+<!-- no branch: execute and store -->
+<path d="M532 86 C532 120 380 118 350 132" fill="none" marker-end="url(#arrI2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<text data-en="no → execute" data-zh="否 → 执行" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="460" y="112">no → execute</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="275" y="134"></rect>
+<text data-en="execute + store result(key)" data-zh="执行并按 key 存结果" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="350" y="154">execute + store result(key)</text>
+<!-- retry arrival: same key, up to the gate -->
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="150" x="30" y="134"></rect>
+<text data-en="retry · same key op_7f3a" data-zh="重试 · 同一个 key op_7f3a" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="105" y="154">retry · same key op_7f3a</text>
+<path d="M180 150 C300 150 420 110 470 88" fill="none" marker-end="url(#arrI3)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<!-- yes branch: replay -->
+<path d="M532 86 C532 210 350 200 320 186" fill="none" marker-end="url(#arrI3)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<text data-en="yes → replay stored result" data-zh="是 → 重放已存结果" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="470" y="236">yes → replay stored result</text>
+<rect fill="var(--accent-dim)" height="34" rx="8" stroke="var(--accent-3)" stroke-width="1.8" width="190" x="225" y="248"></rect>
+<text data-en="second arrival: zero effects" data-zh="第二次抵达：零副作用" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="320" y="270">second arrival: zero effects</text>
+<!-- bottom rule -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="298"></rect>
+<text data-en="The key is minted once, at intent time. Every later arrival — retry, fallback, subagent redo — carries it, and the gate answers with the stored result instead of a second execution." data-zh="key 在意图时刻只铸造一次。之后的每一次抵达——重试、降级、子智能体重做——都带着它，而闸门用已存的结果作答，而不是第二次执行。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10.5" font-style="italic" text-anchor="middle" x="310" y="322">The key is minted once, at intent time. Every later arrival — retry, fallback, subagent redo — carries it, and the gate answers with the stored result instead of a second execution.</text>
+</svg>
+<p class="diagram-caption" data-en="The lifecycle of a well-designed key. The key is minted before the first attempt, carried by every arrival, checked at a gate before execution, and answered from storage on second sight. Note what this diagram implies: deduplication is a destination-side responsibility. A caller cannot make an operation idempotent by being careful. The world must participate." data-zh="一个设计良好的 key 的生命周期。key 在第一次尝试之前铸造，被每一次抵达携带，在执行之前于闸门处被检查，并在第二次被看见时从存储中作答。注意这张图暗示了什么：去重是目的地一侧的责任。调用者无法靠「小心」让一个操作变得幂等。世界必须参与。">The lifecycle of a well-designed key. The key is minted before the first attempt, carried by every arrival, checked at a gate before execution, and answered from storage on second sight. Note what this diagram implies: deduplication is a destination-side responsibility. A caller cannot make an operation idempotent by being careful. The world must participate.</p>
+</div>
+<p data-en="Notice what this demands of the tool contract. The tool definition is no longer just a name, a description, and a JSON schema of arguments. It needs a side-effect column: does this call mutate the world, and if so, what is the idempotency mechanism — a key parameter, a natural key derivable from the arguments, or an upstream guarantee? Tools without side effects need none of this; a retried search is merely wasteful, never harmful. Tools with side effects need it everywhere, and the harness needs to know which is which, because the harness is the thing doing the retrying. An agent platform that retries uniformly across all tools is making the most dangerous possible assumption: that every tool is as harmless as a search. The tool registry should mark each capability with its delivery semantics, and the retry policy should read that mark before firing a second attempt. This is not a nice-to-have layer that a mature team adds in year two. It is a column in the schema on day one, because retrofitting keys onto a system that has been duplicating for a year means reconciling a year of duplicates first." data-zh="注意，这对工具契约提出了什么要求。工具定义不再只是一个名字、一段描述、和一个参数的 JSON schema。它需要一列副作用：这个调用会不会改变世界？如果会，幂等机制是什么——一个 key 参数、一个可从参数推导出的自然键、还是一个上游保证？没有副作用的工具不需要这些；一次被重试的搜索只是浪费，永远不会有害。有副作用的工具在哪里都需要它，而框架需要知道谁是谁，因为做重试的正是框架本身。一个对所有工具一视同仁地重试的智能体平台，在做的是最危险的可能假设：每个工具都像搜索一样无害。工具注册表应当在每个能力上标注它的投递语义，而重试策略应当在扣动第二次尝试的扳机之前，先读那个标注。这不是一个成熟团队在第二年补上的锦上添花。这是第一天 schema 里的一列，因为给一个已经重复了一年的系统补挂 key，意味着先要核对清一年的重复。">Notice what this demands of the tool contract. The tool definition is no longer just a name, a description, and a JSON schema of arguments. It needs a side-effect column: does this call mutate the world, and if so, what is the idempotency mechanism? The harness needs to know which is which, because the harness is the thing doing the retrying. An agent platform that retries uniformly across all tools is making the most dangerous possible assumption: that every tool is as harmless as a search.</p>
+<h3 data-en="The replay must return the result, not silence" data-zh="重放必须返回结果，而不是沉默">The replay must return the result, not silence</h3>
+<p data-en="There is a subtlety that separates implementations that work from implementations that merely feel right: when the gate recognizes a key and refuses to execute again, what does it return? The wrong answer is an error — "duplicate request detected" — because the caller, usually a model in the middle of a loop, will interpret the error as a new problem requiring new action. It will mint fresh arguments, escalate, or route around the gate, and the duplication protection has now become a hallucination generator. The right answer is the original result, replayed verbatim. A retry is, from the intent's point of view, a request for the outcome — not a request for more work. The gate should respond as if the operation just succeeded, because semantically, for this key, it did. This is also why the storage behind the gate matters: it must record the result durably, before the effect is visible, so that a crash between execution and response still leaves a recoverable answer rather than a permanently ambiguous one. The write-ahead discipline that databases discovered decades ago arrives in the agent stack wearing a new coat." data-zh="有一个微妙之处，区分了「能用」的实现和「感觉对」的实现：当闸门认出一个 key、拒绝再次执行时，它返回什么？错误的答案是返回一个错误——「检测到重复请求」——因为调用者，通常是循环中间的一个模型，会把错误解读为一个需要新动作的新问题。它会铸造新的参数，升级，或者绕开闸门，而防重复保护就这样变成了一台幻觉生成器。正确的答案，是把原始结果原封不动地重放回去。从意图的角度看，一次重试是对结果的请求——不是对更多工作的请求。闸门应当像这个操作刚刚成功了一样作答，因为对这个 key 来说，语义上它确实成功了。这也是为什么闸门背后的存储很重要：它必须在效果可见之前，先把结果持久地记录下来，这样即使执行和响应之间发生崩溃，留下的也是一个可恢复的答案，而不是一个永远模糊的状态。数据库几十年前发现的预写日志纪律，换了件新外套，走进了智能体技术栈。">There is a subtlety that separates implementations that work from implementations that merely feel right: when the gate recognizes a key and refuses to execute again, what does it return? The wrong answer is an error — "duplicate request detected" — because the caller, usually a model in the middle of a loop, will interpret the error as a new problem requiring new action. The right answer is the original result, replayed verbatim. A retry is, from the intent's point of view, a request for the outcome — not a request for more work.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrP2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="WHAT THE GATE RETURNS ON SECOND SIGHT" data-zh="第二次被看见时，闸门返回什么" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">WHAT THE GATE RETURNS ON SECOND SIGHT</text>
+<!-- shared arrival -->
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--text-tertiary)" stroke-width="1.5" width="170" x="225" y="42"></rect>
+<text data-en="retry arrives · key op_7f3a" data-zh="重试抵达 · key op_7f3a" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="62">retry arrives · key op_7f3a</text>
+<path d="M250 74 C190 96 150 100 120 116" fill="none" marker-end="url(#arrP1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<path d="M370 74 C430 96 470 100 500 116" fill="none" marker-end="url(#arrP2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- wrong branch -->
+<rect fill="var(--bg-surface)" height="52" rx="9" stroke="var(--accent-3)" stroke-width="1.8" width="220" x="10" y="118"></rect>
+<text data-en="✗ RETURN AN ERROR" data-zh="✗ 返回错误" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="120" y="140">✗ RETURN AN ERROR</text>
+<text data-en='"duplicate detected"' data-zh="「检测到重复」" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="120" y="158">"duplicate detected"</text>
+<text data-en="the model reads a new problem →" data-zh="模型读到一个新问题 →" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="120" y="192">the model reads a new problem →</text>
+<text data-en="re-mints arguments, routes around the gate" data-zh="重造参数，绕开闸门" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="120" y="210">re-mints arguments, routes around the gate</text>
+<text data-en="protection becomes a hallucination engine" data-zh="保护机制变成了幻觉引擎" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9.5" font-style="italic" text-anchor="middle" x="120" y="232">protection becomes a hallucination engine</text>
+<!-- right branch -->
+<rect fill="var(--bg-surface)" height="52" rx="9" stroke="var(--accent)" stroke-width="1.8" width="220" x="390" y="118"></rect>
+<text data-en="✓ REPLAY THE RESULT" data-zh="✓ 重放结果" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="500" y="140">✓ REPLAY THE RESULT</text>
+<text data-en="200 OK · charge_id ch_9913" data-zh="200 OK · charge_id ch_9913" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="500" y="158">200 OK · charge_id ch_9913</text>
+<text data-en="the model reads success →" data-zh="模型读到成功 →" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="500" y="192">the model reads success →</text>
+<text data-en="continues the plan, one effect in the world" data-zh="继续推进计划，世界里只有一个效果" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="500" y="210">continues the plan, one effect in the world</text>
+<text data-en="the loop never learns there was a retry" data-zh="循环根本不知道发生过重试" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9.5" font-style="italic" text-anchor="middle" x="500" y="232">the loop never learns there was a retry</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="100" y2="250"></line>
+<text data-en="A retry asks for the outcome, not for more work." data-zh="重试要的是结果，不是更多的工作。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="276">A retry asks for the outcome, not for more work.</text>
+</svg>
+<p class="diagram-caption" data-en="Two possible answers when the gate recognizes a key. Returning an error converts a solved problem into an open one, and hands it to a reasoner that will happily improvise around the obstacle. Replaying the stored result closes the loop exactly where the first attempt closed it — the caller's plan continues, and the world keeps exactly one effect." data-zh="当闸门认出一个 key 时，两种可能的回答。返回错误，会把一个已解决的问题重新变成一个开放问题，并把它交给一个乐意绕开障碍物即兴发挥的推理者。重放已存的结果，则恰好在第一次尝试闭合的地方闭合了循环——调用者的计划继续，而世界里只保留一个效果。">Two possible answers when the gate recognizes a key. Returning an error converts a solved problem into an open one, and hands it to a reasoner that will happily improvise around the obstacle. Replaying the stored result closes the loop exactly where the first attempt closed it.</p>
+</div>
+<h3 data-en="Design the second arrival before it happens" data-zh="在第二次抵达发生之前，先设计它">Design the second arrival before it happens</h3>
+<p data-en="The uncomfortable summary is this: retries are not an edge of agent engineering; they are its steady state. Harnesses retry, loops re-enter, fallbacks re-issue, subagents redo, and resume-after-crash replays. A system that is only correct when every call happens exactly once is a system that is correct never, because no component in the stack can promise that. The teams that ship agents into domains where errors cost money — payments, provisioning, communications, anything with a ledger at the bottom — begin not with the happy path but with the second arrival. They ask, before the first line of the loop: when this call happens again, what will recognize it, and what will the answer be? If the answer is "nothing, and a duplicate," the tool is not ready. If the answer is "the key, and the stored result," it is. That is the whole discipline. The model will decide what to call. The harness decides what happens when everything is called twice." data-zh="不舒服的总结是这样的：重试不是智能体工程的边缘，而是它的稳态。框架会重试，循环会重入，降级会重发，子智能体会重做，崩溃恢复会重放。一个只有在每个调用恰好发生一次时才正确的系统，是一个永远不正确的系统，因为技术栈里没有任何组件能许诺这一点。那些把智能体发布到「错误要花钱」的领域——支付、资源开通、通信、任何底层有账本的东西——的团队，不是从快乐路径开始的，而是从第二次抵达开始的。他们在写下循环第一行之前就问：当这个调用再次发生时，谁会认出它？答案会是什么？如果答案是「没人，以及一个重复」，这个工具就没准备好。如果答案是「那个 key，以及存好的结果」，它就绪了。这就是全部纪律。模型决定调用什么。框架决定当一切都被调用两次时，会发生什么。</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
