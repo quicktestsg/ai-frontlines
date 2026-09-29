@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>What the Agent Forgets on Purpose — AI Frontlines</title>
+<meta content="Every long-running agent loop hits the same wall: the context window fills. What happens next is treated as plumbing — truncate, summarize, move on. But the choice of what leaves the window is one of the most consequential design decisions in the whole system, because it decides which facts the model can still attend to when it makes its next decision." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="September 30, 2026" data-zh="2026年9月30日">September 30, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="What the Agent Forgets on Purpose" data-zh="智能体的遗忘，是一种主动设计">What the Agent Forgets on Purpose</h1>
+<p class="post-header-deck" data-en="Every long-running agent loop hits the same wall: the context window fills. What happens next is treated as plumbing — truncate a little, summarize a little, move on. But the choice of what leaves the window is one of the most consequential design decisions in the entire system. It decides which facts the model can still attend to at decision N+100, which caveats survive, and which version of the truth the agent will confidently act on. Compaction is not cleanup. It is garbage collection for attention — and like every GC policy ever shipped, it silently encodes what the designers believed mattered." data-zh="每一个长时间运行的智能体循环，都会撞上同一堵墙：context window 满了。接下来发生的事，通常被当作管道细节——截掉一点，总结一点，继续跑。但「什么离开窗口」这个选择，是整个系统里影响最深远的架构决策之一。它决定了模型在第 N+100 次决策时还能注意到哪些事实、哪些限制条件得以幸存、以及智能体会笃定地依据哪个版本的真相行事。压缩不是清扫。它是针对 attention 的垃圾回收——而正如历史上每一个 GC 策略一样，它悄悄编码了设计者相信什么才是重要的。">Every long-running agent loop hits the same wall: the context window fills. What happens next is treated as plumbing. But the choice of what leaves the window is one of the most consequential design decisions in the entire system.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a moment in every extended agent run that nobody celebrates and everybody depends on. The loop is a hundred steps deep. The transcript holds every tool call, every result, every partial draft, every correction. The window is nearly full. Something has to go. In most harnesses, the something is chosen by code that was written in an afternoon: keep the system prompt, keep the last k turns, squeeze everything older into a summary paragraph, carry on. The run survives, the trace looks continuous, and nobody asks the uncomfortable question — which is not how much was compressed, but which kinds of truth were destroyed by the compression. Because compression is never neutral. A truncation discards recency. A summary discards provenance. A retrieval-augmented refresh discards ordering. Each eviction policy deletes a different dimension of the record, and the dimension it deletes is exactly the dimension the model will later be unable to reason about." data-zh="在每一次漫长的智能体运行中，都有一个无人庆祝、却人人依赖的时刻。循环已经走了一百步。transcript 里装着每一次工具调用、每一个结果、每一版草稿、每一次纠错。窗口快满了。总得有什么离开。在大多数框架里，这个「什么」是由某天下午随手写下的代码选定的：保住 system prompt，保住最近 k 轮，把更早的一切压成一段总结，继续跑。运行活了下来，trace 看起来连续完整，而没有人问那个令人不适的问题——问题不是压缩了多少，而是压缩毁掉了哪一类真相。因为压缩从来不是中立的。截断丢弃的是时序就近性。总结丢弃的是出处。检索式的刷新丢弃的是顺序。每一种驱逐策略删除的都是记录的不同维度，而它删除的那个维度，恰恰就是模型日后无法再据以推理的维度。">There is a moment in every extended agent run that nobody celebrates and everybody depends on. The loop is a hundred steps deep. The window is nearly full. Something has to go. In most harnesses, the something is chosen by code written in an afternoon: keep the system prompt, keep the last k turns, summarize everything older, carry on. The run survives — and nobody asks which kinds of truth were destroyed by the compression. Compression is never neutral.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrC2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="CONTEXT OCCUPANCY OVER A LONG RUN" data-zh="一次长运行中的上下文占用" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">CONTEXT OCCUPANCY OVER A LONG RUN</text>
+<!-- axes -->
+<line stroke="var(--border)" stroke-width="1" x1="50" x2="50" y1="40" y2="270"></line>
+<line stroke="var(--border)" stroke-width="1" x1="50" x2="590" y1="270" y2="270"></line>
+<text data-en="window limit" data-zh="窗口上限" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="end" x="585" y="58">window limit</text>
+<line stroke="var(--accent-3)" stroke-dasharray="5,4" stroke-width="1.5" x1="50" x2="590" y1="62" y2="62"></line>
+<!-- rising curve with compaction cliffs -->
+<path d="M50 268 C120 250 160 210 200 170 C230 140 250 110 268 78" fill="none" stroke="var(--accent)" stroke-width="2.5"></path>
+<!-- cliff 1 -->
+<line stroke="var(--accent-3)" stroke-width="1.5" x1="268" x2="268" y1="78" y2="150"></line>
+<path d="M268 268 C300 260 310 240 330 200 C350 165 365 120 385 82" fill="none" stroke="var(--accent)" stroke-width="2.5"></path>
+<!-- cliff 2 -->
+<line stroke="var(--accent-3)" stroke-width="1.5" x1="385" x2="385" y1="82" y2="170"></line>
+<path d="M385 268 C410 258 425 235 445 200 C470 155 490 115 520 80" fill="none" stroke="var(--accent)" stroke-width="2.5"></path>
+<!-- cliff 3 -->
+<line stroke="var(--accent-3)" stroke-width="1.5" x1="520" x2="520" y1="80" y2="185"></line>
+<path d="M520 268 C540 260 555 240 575 210" fill="none" stroke="var(--accent)" stroke-width="2.5"></path>
+<!-- labels on cliffs -->
+<text data-en="compaction" data-zh="压缩" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="268" y="166">compaction</text>
+<text data-en="compaction" data-zh="压缩" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="385" y="186">compaction</text>
+<text data-en="compaction" data-zh="压缩" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="520" y="201">compaction</text>
+<!-- axis labels -->
+<text data-en="turns →" data-zh="轮次 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="end" x="588" y="288">turns →</text>
+<text data-en="tokens ↑" data-zh="token 数 ↑" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="46" y="52" transform="rotate(-90 46 52)">tokens ↑</text>
+<!-- annotation -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="380" x="120" y="292"></rect>
+<text data-en="The sawtooth is not noise. Each cliff is a policy decision about what the agent may still think about." data-zh="锯齿不是噪音。每一次断崖，都是一次关于「智能体还能思考什么」的策略决策。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10.5" font-style="italic" text-anchor="middle" x="310" y="316">The sawtooth is not noise. Each cliff is a policy decision about what the agent may still think about.</text>
+</svg>
+<p class="diagram-caption" data-en="The occupancy signature of a long agent run: steady growth, a compaction cliff, regrowth, another cliff. The shape is familiar to anyone who has watched a garbage-collected process — allocation, collection, allocation. The difference is what lives inside the allocated bytes. In a GC heap, an object that survives is bit-for-bit identical. In a context window, what survives a compaction is a lossy retelling of what was there before, produced by a model, wearing the tone of authority." data-zh="一次长运行的占用曲线：稳定增长，压缩断崖，再增长，再断崖。这个形状，任何看过垃圾回收进程的人都熟悉——分配，回收，再分配。区别在于被分配的字节里装着什么。在 GC 堆里，一个存活下来的对象是逐比特相同的。而在 context window 里，从压缩中幸存下来的，是对原先内容的一次有损转述——由一个模型生成，还带着权威的口吻。">The occupancy signature of a long agent run: steady growth, a compaction cliff, regrowth, another cliff. The difference from a GC heap is what lives inside the allocated bytes. In a GC heap, a surviving object is bit-for-bit identical. In a context window, what survives is a lossy retelling — produced by a model, wearing the tone of authority.</p>
+</div>
+<h3 data-en="The window is a cache, not a record" data-zh="窗口是缓存，不是档案">The window is a cache, not a record</h3>
+<p data-en="The first conceptual error is treating the context window as the agent's memory. It is not memory; it is the current working set — the set of items the model can attend to right now, at full fidelity, with ordering and provenance intact. Everything else, whether it lives in a vector store, a scratchpad, or a previous session's transcript, is archive: reachable only through the deliberate act of retrieval, and re-entering the window as a quote rather than as a lived event. This distinction matters because caches have eviction policies and archives have indexes, and the failure modes are completely different. A cache miss costs latency. An archive miss costs knowledge the agent no longer knows it ever had. When a harness blurts old turns into a summary and calls it memory, it has converted archive-grade material into cache-shaped debris: the summary asserts, but cannot substantiate. The model will quote it with total confidence, because within the window there is nothing to contradict it — the contradiction was evicted." data-zh="第一个概念性错误，是把 context window 当成智能体的记忆。它不是记忆；它是当前的 working set——模型此刻能够全保真地注意到的一组内容，时序和出处都完整。其余的一切，无论存在向量库、scratchpad，还是上一个会话的 transcript 里，都是档案：只有通过「检索」这个主动动作才能触达，而且重新进入窗口时，是以引用的身份，而不是以亲历者的身份。这个区分很关键，因为缓存有驱逐策略，档案有索引，而两者的失败模式完全不同。缓存未命中，付出的是延迟。档案未命中，损失的是智能体已经不知道自己曾经拥有过的知识。当框架把旧的轮次揉成一段总结并称之为记忆时，它把档案级的材料变成了缓存形状的碎片：总结可以断言，却无法举证。模型会以十足的把握引用它，因为在窗口之内，没有任何东西能反驳它——能反驳它的那部分，已经被驱逐了。">The first conceptual error is treating the context window as the agent's memory. It is not memory; it is the current working set — the set of items the model can attend to right now, at full fidelity, with ordering and provenance intact. Everything else is archive: reachable only through retrieval, re-entering the window as a quote rather than a lived event. A cache miss costs latency. An archive miss costs knowledge the agent no longer knows it ever had.</p>
+<p data-en="Operating systems solved an isomorphic problem decades ago and left behind vocabulary worth stealing. The working set of a process is the set of pages it needs to avoid thrashing; the OS's job is to keep the working set resident and let the rest spill. The agent equivalent is equally crisp: at any point in a run, there is a minimal set of items the model must be able to attend to in order to choose the next action well — the current goal, the state of the artifacts it is editing, the constraints that guard against irreversible mistakes, the open questions it promised to resolve. That set is small. Most of what fills the window — verbose tool outputs, abandoned branches, duplicate reads — is not working set; it is allocation churn. A good compaction strategy does not ask what is oldest. It asks what is load-bearing, and externalizes everything else to a store that can bring it back verbatim when needed. The eviction policy should be informed by the plan, not by the page order." data-zh="操作系统在几十年前就解决过一个同构的问题，并留下了值得窃取的词汇。一个进程的 working set，是它为避免颠簸而需要常驻的那组页面；OS 的职责是让 working set 保持驻留，其余的换出去。智能体的对应物同样清晰：在一次运行中的任意时刻，存在一个最小集合——模型为了把下一个动作选好而必须能注意到的东西：当前目标、正在编辑的产物的状态、防止不可逆错误的约束条件、它承诺要去解决的悬而未决的问题。这个集合很小。窗口里装的大多数东西——冗长的工具输出、被放弃的分支、重复的读取——不是 working set，而是分配抖动。一个好的压缩策略不问什么最旧，而问什么是承重的，并把其余的一切外置到一个能在需要时逐字取回的存储里。驱逐策略应当由计划驱动，而不是由页面顺序驱动。">Operating systems solved an isomorphic problem decades ago and left behind vocabulary worth stealing. The working set of a process is the set of pages it needs to avoid thrashing. The agent equivalent is crisp: the minimal set of items the model must attend to in order to choose the next action well — the goal, the artifact state, the guardrail constraints, the open questions. That set is small. Most of what fills the window is allocation churn, not working set.</p>
+<blockquote data-en="A context window is not memory. It is attention, and attention is a budget. Every eviction policy is a theory of value — a claim about which facts deserve the model's finite gaze. The harness encodes that theory whether or not anyone wrote it down." data-zh="context window 不是记忆。它是 attention，而 attention 是一笔预算。每一个驱逐策略都是一套价值观——一份关于哪些事实配得上模型有限注视的主张。无论有没有人把它写下来，框架都在编码这套价值观。">A context window is not memory. It is attention, and attention is a budget. Every eviction policy is a theory of value — a claim about which facts deserve the model's finite gaze. The harness encodes that theory whether or not anyone wrote it down.</blockquote>
+<h3 data-en="Summaries lose the part that made the record true" data-zh="总结丢掉的，恰恰是让记录为真的那部分">Summaries lose the part that made the record true</h3>
+<p data-en="The standard compaction move — ask a model to summarize the old turns — fails in a specific, predictable way. A raw observation carries metadata that the summary flattens: which tool produced it, when, with what confidence, in what order relative to other observations. The summary keeps the claim and drops the certificate. Later, the agent encounters a conflict: the summary says the migration succeeded, but the database disagrees. With the original record, the model could notice that the success message came from a dry-run flag, or that the check ran before the write settled. With the summary, there is only an assertion in confident prose, and the conflict becomes unresolvable except by re-deriving everything from the world — which is to say, by paying the whole discovery cost again. Provenance is not decoration on top of facts. It is what turns a fact from an opinion into evidence, and summarization is a provenance shredder." data-zh="标准的压缩动作——让模型总结旧轮次——以一种特定的、可预测的方式失败。一条原始观察携带着总结会压平的元数据：哪个工具产出的、什么时候、以什么置信度、相对于其他观察处于什么顺序。总结留下了主张，丢掉了凭证。之后，智能体遇到冲突：总结说迁移成功了，但数据库说没有。如果有原始记录，模型可以注意到那条成功消息来自 dry-run 标志，或者检查发生在写入落盘之前。而面对总结，那里只有一段语气笃定的断言，冲突变得不可裁决，只能向世界重新推导一切——换句话说，把整个发现成本再付一遍。出处不是贴在事实上的装饰。它是让一个事实从观点变成证据的东西，而总结是一台出处粉碎机。">The standard compaction move — summarize the old turns — fails in a specific, predictable way. A raw observation carries metadata that the summary flattens: which tool produced it, when, with what confidence, in what order. The summary keeps the claim and drops the certificate. Later, when the summary says the migration succeeded and the database disagrees, the conflict is unresolvable except by re-deriving everything from the world.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrS1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrS2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="TWO WAYS TO EMPTY A WINDOW" data-zh="清空窗口的两种方式" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">TWO WAYS TO EMPTY A WINDOW</text>
+<!-- source record -->
+<rect fill="var(--bg-surface)" height="56" rx="9" stroke="var(--border)" stroke-width="1.5" width="220" x="200" y="40"></rect>
+<text data-en="THE RAW RECORD" data-zh="原始记录" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="60">THE RAW RECORD</text>
+<text data-en="claim + tool + time + order + flags" data-zh="主张 + 工具 + 时间 + 顺序 + 标志" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="310" y="78">claim + tool + time + order + flags</text>
+<!-- two branches -->
+<path d="M240 96 C160 120 120 130 90 148" fill="none" marker-end="url(#arrS1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<path d="M380 96 C460 120 500 130 530 148" fill="none" marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- summarize branch -->
+<rect fill="var(--bg-surface)" height="120" rx="10" stroke="var(--accent-3)" stroke-width="1.8" width="220" x="10" y="150"></rect>
+<text data-en="✗ SUMMARIZE IN PLACE" data-zh="✗ 就地总结" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="120" y="174">✗ SUMMARIZE IN PLACE</text>
+<text data-en="one paragraph, confident tone" data-zh="一段话，语气笃定" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="120" y="196">one paragraph, confident tone</text>
+<text data-en="source: none · order: none" data-zh="来源：无 · 顺序：无" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="120" y="214">source: none · order: none</text>
+<text data-en="conflicts become unresolvable" data-zh="冲突变得不可裁决" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="120" y="238">conflicts become unresolvable</text>
+<text data-en="the re-derivation cost returns" data-zh="重新推导的成本卷土重来" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9.5" font-style="italic" text-anchor="middle" x="120" y="258">the re-derivation cost returns</text>
+<!-- externalize branch -->
+<rect fill="var(--bg-surface)" height="120" rx="10" stroke="var(--accent)" stroke-width="1.8" width="220" x="390" y="150"></rect>
+<text data-en="✓ EXTERNALIZE + INDEX" data-zh="✓ 外置并建立索引" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="500" y="174">✓ EXTERNALIZE + INDEX</text>
+<text data-en="verbatim record → archive" data-zh="逐字记录 → 档案库" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="500" y="196">verbatim record → archive</text>
+<text data-en="hot summary stays in window" data-zh="热点摘要留在窗口" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="500" y="214">hot summary stays in window</text>
+<text data-en="conflicts: check the original" data-zh="冲突时：回查原文" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="500" y="238">conflicts: check the original</text>
+<text data-en="provenance retrievable on demand" data-zh="出处可按需取回" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9.5" font-style="italic" text-anchor="middle" x="500" y="258">provenance retrievable on demand</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="100" y2="280"></line>
+<!-- bottom line -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="480" x="70" y="288"></rect>
+<text data-en="Summaries belong in the window as an index, never as a replacement. The archive keeps the originals; the summary points at them." data-zh="总结可以作为索引留在窗口里，但永远不能作为替代品。档案库保留原文；总结只负责指向它们。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10.5" font-style="italic" text-anchor="middle" x="310" y="312">Summaries belong in the window as an index, never as a replacement. The archive keeps the originals; the summary points at them.</text>
+</svg>
+<p class="diagram-caption" data-en="The same overflow, handled two ways. Summarizing in place converts evidence into assertion and leaves the agent unable to audit its own past. Externalizing the verbatim record to an archive — keeping only a compact, pointed summary in the window — costs one extra mechanism and preserves the ability to check the original whenever the world disagrees with the story." data-zh="同样的溢出，两种处理方式。就地总结把证据变成了断言，让智能体无法审计自己的过去。把逐字记录外置到档案库——窗口里只留一份紧凑的、带指向的摘要——代价只是多一套机制，换来的是：每当世界与故事不一致时，仍然可以回查原文。">The same overflow, handled two ways. Summarizing in place converts evidence into assertion. Externalizing the verbatim record to an archive — keeping only a compact, pointed summary in the window — preserves the ability to check the original whenever the world disagrees with the story.</p>
+</div>
+<p data-en="This reframes what a good harness actually does at compaction time. It does not compress the transcript; it moves it. The old turns go to durable storage with their metadata intact, and what re-enters the window is not a retelling but a directory: a short list of what happened, each line carrying a pointer back to the full record. The directory is cheap to keep resident. The archive is cheap to query. The model navigates the two levels the way a program navigates memory hierarchy — most decisions hit the directory, and the rare case that needs the certificate of a specific observation pays one retrieval to get it back exactly as it was. The engineering insight is that retrieval should return the original, not another summary of the original. Every layer of re-telling between the event and the attention is a layer of potential confident error, and agents are already generating enough of those without the infrastructure contributing." data-zh="这重新定义了一个好的框架在压缩时刻真正该做的事。它不是压缩 transcript，而是搬运它。旧轮次带着完整的元数据进入持久存储，而重新进入窗口的不是一段转述，而是一份目录：一份简短的、发生过什么的清单，每一行都携带一个指回完整记录的指针。目录常驻的成本很低。档案查询的成本也很低。模型在这两层之间穿行，就像程序在存储层级之间穿行——大多数决策命中目录，而那个需要某条具体观察的凭证的罕见场景，付一次检索，把它分毫不差地取回来。这里的工程洞见是：检索应当返回原件，而不是原件的又一份总结。事件与 attention 之间的每一层转述，都是一层潜在的、语气笃定的错误来源，而智能体自己产生的这类错误已经够多了，不需要基础设施再来添砖加瓦。">This reframes what a good harness actually does at compaction time. It does not compress the transcript; it moves it. The old turns go to durable storage with metadata intact, and what re-enters the window is not a retelling but a directory: a short list of what happened, each line carrying a pointer back to the full record. Retrieval should return the original, not another summary of the original.</p>
+<h3 data-en="Eviction policy is product policy" data-zh="驱逐策略就是产品策略">Eviction policy is product policy</h3>
+<p data-en="Here is the uncomfortable part. There is no neutral way to decide what leaves the window. Keeping the last k turns is a policy that privileges recency over relevance. Summarizing by topic is a policy that privileges abstraction over sequence. Dropping tool outputs but keeping the calls is a policy that assumes results are re-derivable — an assumption that is false the moment a result came from a side-effecting tool. Each of these policies is defensible, and each one silently shapes the agent's behavior in ways its designers will only discover in production, usually as a bug report that reads like a personality change: the agent stopped checking the constraints, the agent forgot the user's instruction from the morning, the agent is confidently repeating a step it already completed. None of these are model failures. They are eviction policies whose consequences finally became visible. The right response is not a better default. It is making the policy explicit and task-shaped: a coding agent's working set includes the current file states and the failing test; a research agent's includes the claims and their sources; an operations agent's includes the invariants that must not be violated. What stays in the window should be derived from what the next decision will need, and that is a product question, not a plumbing one." data-zh="接下来是不舒服的部分。决定什么离开窗口，不存在中立的方式。保留最近 k 轮，是一个把就近性置于相关性之上的策略。按主题总结，是一个把抽象置于时序之上的策略。丢掉工具输出但保留调用，是一个假设结果皆可重新推导的策略——而这个假设，在结果来自带副作用的工具的那一刻起就是错的。这些策略每一个都站得住脚，而每一个都在悄悄塑造智能体的行为，其设计者往往要到生产环境里才会发现——通常是以一份读起来像性格突变的 bug 报告的形式：智能体不再检查约束了，智能体忘了用户早上说的要求，智能体在信心十足地重复一个早已完成的步骤。这些都不是模型失败。这些是驱逐策略的后果终于变得可见了。正确的回应不是更好的默认值，而是让策略显式化、任务化：编码智能体的 working set 包含当前文件状态和失败的测试；研究智能体的包含论断及其来源；运维智能体的包含不可违反的不变量。什么留在窗口里，应当从下一个决策需要什么来推导——而这是一个产品问题，不是管道问题。">There is no neutral way to decide what leaves the window. Keeping the last k turns privileges recency over relevance. Summarizing by topic privileges abstraction over sequence. Dropping tool outputs but keeping calls assumes results are re-derivable — false the moment a result came from a side-effecting tool. The bug reports read like personality changes: the agent stopped checking constraints, forgot the morning's instruction, confidently repeated a finished step. These are eviction policies whose consequences finally became visible.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrT2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrT3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE THREE-TIER ATTENTION HIERARCHY" data-zh="三层注意力层级" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE THREE-TIER ATTENTION HIERARCHY</text>
+<!-- hot tier -->
+<rect fill="var(--accent-dim)" height="64" rx="10" stroke="var(--accent)" stroke-width="2" width="180" x="60" y="48"></rect>
+<text data-en="HOT · THE WINDOW" data-zh="热 · 窗口" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="150" y="72">HOT · THE WINDOW</text>
+<text data-en="goal · artifacts · constraints" data-zh="目标 · 产物 · 约束" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="150" y="90">goal · artifacts · constraints</text>
+<text data-en="full fidelity, attended now" data-zh="全保真，当下被注视" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="150" y="106">full fidelity, attended now</text>
+<!-- warm tier -->
+<rect fill="var(--bg-surface)" height="64" rx="10" stroke="var(--accent-2)" stroke-width="1.8" width="180" x="220" y="48"></rect>
+<text data-en="WARM · THE DIRECTORY" data-zh="温 · 目录" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="72">WARM · THE DIRECTORY</text>
+<text data-en="one line per past event" data-zh="每个过往事件一行" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="310" y="90">one line per past event</text>
+<text data-en="pointers, not retellings" data-zh="是指针，不是转述" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="106">pointers, not retellings</text>
+<!-- cold tier -->
+<rect fill="var(--bg-surface)" height="64" rx="10" stroke="var(--accent-3)" stroke-width="1.8" width="180" x="380" y="48"></rect>
+<text data-en="COLD · THE ARCHIVE" data-zh="冷 · 档案库" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="470" y="72">COLD · THE ARCHIVE</text>
+<text data-en="verbatim records + metadata" data-zh="逐字记录 + 元数据" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="470" y="90">verbatim records + metadata</text>
+<text data-en="provenance on demand" data-zh="出处按需取回" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="470" y="106">provenance on demand</text>
+<!-- demotion arrows -->
+<path d="M242 130 C210 160 160 170 130 186" fill="none" marker-end="url(#arrT2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<text data-en="demote: not load-bearing" data-zh="降级：不承重" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="158" y="168">demote: not load-bearing</text>
+<path d="M402 130 C370 160 320 170 290 186" fill="none" marker-end="url(#arrT3)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<text data-en="archive: verbatim move" data-zh="归档：逐字搬运" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="356" y="168">archive: verbatim move</text>
+<!-- promotion arrows -->
+<path d="M110 186 C150 230 380 232 470 196" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="promote on conflict: fetch the original, not a summary" data-zh="冲突时升级：取回原件，而非摘要" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="300" y="232">promote on conflict: fetch the original, not a summary</text>
+<!-- bottom -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="500" x="60" y="262"></rect>
+<text data-en="Most decisions hit the hot tier. The rare conflict pays one retrieval and gets the original back — exactly as it happened." data-zh="大多数决策命中热层。罕见的冲突付一次检索，拿回原件——和当初发生的一模一样。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10.5" font-style="italic" text-anchor="middle" x="310" y="286">Most decisions hit the hot tier. The rare conflict pays one retrieval and gets the original back — exactly as it happened.</text>
+</svg>
+<p class="diagram-caption" data-en="A working-set architecture for agent context. The hot tier is small and task-shaped: whatever the next decision attends to. The warm tier is a directory of pointers into the cold tier, which holds verbatim records with their metadata. Demotion moves data down without loss; promotion brings the original back on demand. The loop between the tiers is the agent's memory — not the window alone, and not the archive alone, but the discipline that connects them." data-zh="一套面向智能体上下文的 working-set 架构。热层很小且任务化：下一个决策要注视的一切。温层是一份指向冷层的指针目录，冷层存放带着元数据的逐字记录。降级是无损下移；升级则按需取回原件。层级之间的这条回路，才是智能体的记忆——不是单独的窗口，也不是单独的档案库，而是把两者连接起来的那套纪律。">A working-set architecture for agent context. The hot tier is small and task-shaped. The warm tier is a directory of pointers into the cold tier, which holds verbatim records. Demotion moves data down without loss; promotion brings the original back on demand. The loop between the tiers is the agent's memory.</p>
+</div>
+<p data-en="The closing argument is simple and a little rude. Teams spend weeks tuning prompts and days choosing models, then let a fifty-line compaction routine decide, implicitly and invisibly, what their agent is allowed to know. That routine is doing more behavioral steering than half the prompt combined — it is the prompt, rewritten every few hundred turns, by code no one reviews. Designing the forget curve is not an optimization that comes after the agent works. It is part of the agent working. The question to ask before shipping any long-running loop is not how large the window is, but this: at turn four hundred, standing in front of a decision that matters, what exactly can the model still see — and who decided that?" data-zh="收尾的论点简单，而且有点冒犯。团队花数周调 prompt，花数天选模型，然后让一个五十行的压缩例程——隐式地、不可见地——决定他们的智能体被允许知道什么。那个例程所做的事情，比一半 prompt 加起来对行为的引导还多——它就是 prompt，每隔几百轮被一段无人评审的代码重写一次。设计遗忘曲线，不是智能体跑通之后再做的优化。它本身就是「跑通」的一部分。在发布任何长时间运行的循环之前，要问的不是窗口有多大，而是：在第 400 轮，站在一个重大决策面前，模型到底还能看见什么——以及，这是谁决定的？">Teams spend weeks tuning prompts and days choosing models, then let a fifty-line compaction routine decide, invisibly, what their agent is allowed to know. That routine steers behavior more than half the prompt combined — it is the prompt, rewritten every few hundred turns by code no one reviews. Designing the forget curve is part of the agent working.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

@@ -1,6 +1,2783 @@
 {
   "tweets": [
     {
+      "id": "2104993966043320759",
+      "url": "https://x.com/OpenAI/status/2104993966043320759",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-09-29T20:05:00.703445+00:00",
+      "translation_zh": "这就是 Ultrafast。我们的高端速度档位：Codex 中 token 生成速度最高提升 8 倍（每秒 300 token），API 中最高提升 6 倍。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 3635,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-29T17:57:25.000Z",
+        "display_text_range": [
+          0,
+          151
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/ekyzT1vFan",
+              "expanded_url": "https://x.com/OpenAI/status/2104993966043320759/video/1",
+              "indices": [
+                152,
+                175
+              ],
+              "url": "https://t.co/ekyzT1vFan"
+            }
+          ]
+        },
+        "id_str": "2104993966043320759",
+        "text": "This is Ultrafast.\n\nOur premium speed tier, Ultrafast offers up to 8x faster token generation (300 tokens per second) in Codex and up to 6x in the API. https://t.co/ekyzT1vFan",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2104993966043320759"
+          ],
+          "editable_until_msecs": "1790708245000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/ekyzT1vFan",
+            "expanded_url": "https://x.com/OpenAI/status/2104993966043320759/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              152,
+              175
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2104993936112779264/img/lmUTqfZ4cb7RxKfp.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/ekyzT1vFan",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 45056,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2104993936112779264/pl/QNG562uU1IRG_bWe.m3u8?v=cfc"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2104993936112779264/vid/avc1/480x270/zKKgCQ6Xj5iWKaUZ.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2104993936112779264/vid/avc1/640x360/kynNif_VbfLjZv2O.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2104993936112779264/vid/avc1/1280x720/fWZtBP-R1MKV4aIV.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2104993936112779264/vid/avc1/1920x1080/b-lrt-VyRDdcfdQC.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 45056,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2104993936112779264/img/lmUTqfZ4cb7RxKfp.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2104993936112779264/pl/QNG562uU1IRG_bWe.m3u8?v=cfc"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2104993936112779264/vid/avc1/480x270/zKKgCQ6Xj5iWKaUZ.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2104993936112779264/vid/avc1/640x360/kynNif_VbfLjZv2O.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2104993936112779264/vid/avc1/1280x720/fWZtBP-R1MKV4aIV.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2104993936112779264/vid/avc1/1920x1080/b-lrt-VyRDdcfdQC.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2104993966043320759"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 219,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2104993969486930015",
+      "url": "https://x.com/OpenAI/status/2104993969486930015",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-09-29T20:05:00.703445+00:00",
+      "translation_zh": "Pro 200 订阅重新开放，继续提供 Astra 等前沿模型的访问，包括新的 GPT-6.1 Sol——把接近 Astra 的能力带进你每天都在用的模型。同时承诺：不会恢复 5 小时限额。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 271,
+        "in_reply_to_screen_name": "OpenAI",
+        "in_reply_to_status_id_str": "2104993967985381673",
+        "in_reply_to_user_id_str": "4398626122",
+        "lang": "en",
+        "created_at": "2026-09-29T17:57:25.000Z",
+        "display_text_range": [
+          0,
+          280
+        ],
+        "entities": {},
+        "id_str": "2104993969486930015",
+        "text": "We’re also reopening Pro 200 subscriptions, with continued access to frontier models like Astra, including our new GPT-6.1 Sol model which brings near-Astra capabilities to a model you can use every day.\n\nOur commitment is that your subscription will continue to help you get more",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2104993969486930015"
+          ],
+          "editable_until_msecs": "1790708245000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 17,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 623,
+          "in_reply_to_screen_name": "OpenAI",
+          "in_reply_to_status_id_str": "2104993966043320759",
+          "in_reply_to_user_id_str": "4398626122",
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 66,
+          "retweet_count": 25,
+          "created_at": "2026-09-29T17:57:25.000Z",
+          "display_text_range": [
+            0,
+            280
+          ],
+          "entities": {
+            "urls": [
+              {
+                "display_url": "chatgpt.com/pricing",
+                "expanded_url": "https://chatgpt.com/pricing",
+                "indices": [
+                  257,
+                  280
+                ],
+                "url": "https://t.co/AjmAVwyUQI"
+              }
+            ]
+          },
+          "id_str": "2104993967985381673",
+          "text": "Ultrafast is available today for GPT-6 Astra in Codex, ChatGPT Work, and the API, with GPT-6.1 Sol coming soon.\n\nTo access it in Codex and ChatGPT Work, we’re introducing Pro 500—a new plan with our highest usage limits (25x Plus) and access to Ultrafast.\n\nhttps://t.co/AjmAVwyUQI",
+          "user": {
+            "id_str": "4398626122",
+            "name": "OpenAI",
+            "screen_name": "OpenAI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2104993967985381673"
+            ],
+            "editable_until_msecs": "1790708245000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTA0OTkzOTY5NDE5Nzk2NDgw"
+        }
+      }
+    },
+    {
+      "id": "2104986136745767160",
+      "url": "https://x.com/OpenAI/status/2104986136745767160",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-09-29T20:05:00.703445+00:00",
+      "translation_zh": "GPT-6.1 Sol 今天起向所有 Plus、Pro、Business、Enterprise 和 Edu 用户开放，可在 ChatGPT Work 和 Codex 中使用。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 568,
+        "in_reply_to_screen_name": "OpenAI",
+        "in_reply_to_status_id_str": "2104986135005192665",
+        "in_reply_to_user_id_str": "4398626122",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-29T17:26:18.000Z",
+        "display_text_range": [
+          0,
+          145
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "openai.com/index/introduc…",
+              "expanded_url": "https://openai.com/index/introducing-gpt-6-1-sol",
+              "indices": [
+                122,
+                145
+              ],
+              "url": "https://t.co/LErY9HxUTt"
+            }
+          ]
+        },
+        "id_str": "2104986136745767160",
+        "text": "GPT-6.1 Sol is available starting today to all Plus, Pro, Business, Enterprise, and Edu users in ChatGPT Work and Codex.\n\nhttps://t.co/LErY9HxUTt",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2104986136745767160"
+          ],
+          "editable_until_msecs": "1790706378000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 24,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 531,
+          "in_reply_to_screen_name": "OpenAI",
+          "in_reply_to_status_id_str": "2104986133004505373",
+          "in_reply_to_user_id_str": "4398626122",
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 12,
+          "retweet_count": 10,
+          "created_at": "2026-09-29T17:26:17.000Z",
+          "display_text_range": [
+            0,
+            238
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/1XWstBUXpW",
+                "expanded_url": "https://x.com/OpenAI/status/2104986135005192665/photo/1",
+                "indices": [
+                  239,
+                  262
+                ],
+                "url": "https://t.co/1XWstBUXpW"
+              }
+            ]
+          },
+          "id_str": "2104986135005192665",
+          "text": "GPT-6.1 Sol shows major improvements over GPT-6 Sol in our alignment evaluations, bringing it more in line with GPT-6 Astra. \n\nIt’s more transparent about its limitations and more reliable at respecting user intent and safety constraints. https://t.co/1XWstBUXpW",
+          "user": {
+            "id_str": "4398626122",
+            "name": "OpenAI",
+            "screen_name": "OpenAI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2104986135005192665"
+            ],
+            "editable_until_msecs": "1790706377000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/1XWstBUXpW",
+              "expanded_url": "https://x.com/OpenAI/status/2104986135005192665/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                239,
+                262
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HTZpQgZaoAAnqNr.png",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 834,
+                    "w": 1490,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1206,
+                    "w": 1206,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1206,
+                    "w": 1058,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1206,
+                    "w": 603,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1206,
+                    "w": 1490,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 1206,
+                "width": 1490
+              },
+              "sizes": {
+                "large": {
+                  "h": 1206,
+                  "resize": "fit",
+                  "w": 1490
+                },
+                "medium": {
+                  "h": 971,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 550,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/1XWstBUXpW"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 834,
+                  "w": 1490,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1206,
+                  "w": 1206,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1206,
+                  "w": 1058,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1206,
+                  "w": 603,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1206,
+                  "w": 1490,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/OpenAI/status/2104986135005192665/photo/1",
+              "url": "https://pbs.twimg.com/media/HTZpQgZaoAAnqNr.png",
+              "width": 1490,
+              "height": 1206
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/LErY9HxUTt",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2104981621233561601/MWoX5EfV?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2104981621233561601/MWoX5EfV?format=jpg&name=280x150",
+                "width": 267
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Meet GPT-6.1 Sol: near-Astra intelligence for coding, computer use, and professional work at one-fifth of Astra’s standard API input and output token prices.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2104981621233561601/MWoX5EfV?format=jpg&name=800x320_1",
+                "width": 569
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2104981621233561601/MWoX5EfV?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104981621233561601/MWoX5EfV?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "4398626122",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2104981621233561601/MWoX5EfV?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2104981621233561601/MWoX5EfV?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "height": 81,
+                "url": "https://pbs.twimg.com/card_img/2104981621233561601/MWoX5EfV?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104981621233561601/MWoX5EfV?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104981621233561601/MWoX5EfV?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2104981621233561601/MWoX5EfV?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 90.92,
+                    "rgb": {
+                      "blue": 25,
+                      "green": 18,
+                      "red": 9
+                    }
+                  },
+                  {
+                    "percentage": 4.45,
+                    "rgb": {
+                      "blue": 240,
+                      "green": 254,
+                      "red": 254
+                    }
+                  },
+                  {
+                    "percentage": 1.43,
+                    "rgb": {
+                      "blue": 30,
+                      "green": 59,
+                      "red": 83
+                    }
+                  },
+                  {
+                    "percentage": 0.76,
+                    "rgb": {
+                      "blue": 98,
+                      "green": 175,
+                      "red": 224
+                    }
+                  },
+                  {
+                    "percentage": 0.74,
+                    "rgb": {
+                      "blue": 52,
+                      "green": 35,
+                      "red": 14
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Introducing GPT-6.1 Sol",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 90.92,
+                    "rgb": {
+                      "blue": 25,
+                      "green": 18,
+                      "red": 9
+                    }
+                  },
+                  {
+                    "percentage": 4.45,
+                    "rgb": {
+                      "blue": 240,
+                      "green": 254,
+                      "red": 254
+                    }
+                  },
+                  {
+                    "percentage": 1.43,
+                    "rgb": {
+                      "blue": 30,
+                      "green": 59,
+                      "red": 83
+                    }
+                  },
+                  {
+                    "percentage": 0.76,
+                    "rgb": {
+                      "blue": 98,
+                      "green": 175,
+                      "red": 224
+                    }
+                  },
+                  {
+                    "percentage": 0.74,
+                    "rgb": {
+                      "blue": 52,
+                      "green": 35,
+                      "red": 14
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104981621233561601/MWoX5EfV?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2104981621233561601/MWoX5EfV?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 90.92,
+                    "rgb": {
+                      "blue": 25,
+                      "green": 18,
+                      "red": 9
+                    }
+                  },
+                  {
+                    "percentage": 4.45,
+                    "rgb": {
+                      "blue": 240,
+                      "green": 254,
+                      "red": 254
+                    }
+                  },
+                  {
+                    "percentage": 1.43,
+                    "rgb": {
+                      "blue": 30,
+                      "green": 59,
+                      "red": 83
+                    }
+                  },
+                  {
+                    "percentage": 0.76,
+                    "rgb": {
+                      "blue": 98,
+                      "green": 175,
+                      "red": 224
+                    }
+                  },
+                  {
+                    "percentage": 0.74,
+                    "rgb": {
+                      "blue": 52,
+                      "green": 35,
+                      "red": 14
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104981621233561601/MWoX5EfV?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/LErY9HxUTt",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104981621233561601/MWoX5EfV?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2104986129686741046",
+      "url": "https://x.com/OpenAI/status/2104986129686741046",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-09-29T20:05:00.703445+00:00",
+      "translation_zh": "GPT-6.1 Sol：以五分之一的价格，获得接近 Astra 的智能。这是当今同等性能下性价比最高的模型。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 12625,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-29T17:26:16.000Z",
+        "display_text_range": [
+          0,
+          135
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/hH8PnE2Oxk",
+              "expanded_url": "https://x.com/OpenAI/status/2104986129686741046/video/1",
+              "indices": [
+                136,
+                159
+              ],
+              "url": "https://t.co/hH8PnE2Oxk"
+            }
+          ]
+        },
+        "id_str": "2104986129686741046",
+        "text": "GPT-6.1 Sol: near-Astra intelligence for a fifth of the price.\n\nIt’s the most cost-efficient model for its performance available today. https://t.co/hH8PnE2Oxk",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2104986129686741046"
+          ],
+          "editable_until_msecs": "1790706376000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/hH8PnE2Oxk",
+            "expanded_url": "https://x.com/OpenAI/status/2104986129686741046/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              136,
+              159
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2104984622191067137/img/6xK8vFcs_vBe4SKN.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/hH8PnE2Oxk",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 8366,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2104984622191067137/pl/xyiDVHbFngK9MyLb.m3u8"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2104984622191067137/vid/avc1/480x270/uyrAkUjrNTf9xptq.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2104984622191067137/vid/avc1/640x360/xhrFAEant7kp7Rby.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2104984622191067137/vid/avc1/1280x720/372ish43FgU__j_R.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2104984622191067137/vid/avc1/1920x1080/XqwxcETJ-aUHrd3Q.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 8366,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2104984622191067137/img/6xK8vFcs_vBe4SKN.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2104984622191067137/pl/xyiDVHbFngK9MyLb.m3u8"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2104984622191067137/vid/avc1/480x270/uyrAkUjrNTf9xptq.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2104984622191067137/vid/avc1/640x360/xhrFAEant7kp7Rby.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2104984622191067137/vid/avc1/1280x720/372ish43FgU__j_R.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2104984622191067137/vid/avc1/1920x1080/XqwxcETJ-aUHrd3Q.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2104986129686741046"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 426,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2104984504133918973",
+      "url": "https://x.com/OpenAI/status/2104984504133918973",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-09-29T20:05:00.703445+00:00",
+      "translation_zh": "推出 dots，由 GPT-6 Astra 驱动。能力出众、全天候在线的智能体，为你打理一切。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 20332,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-29T17:19:49.000Z",
+        "display_text_range": [
+          0,
+          107
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/inY5BZj3Kz",
+              "expanded_url": "https://x.com/OpenAI/status/2104984504133918973/video/1",
+              "indices": [
+                108,
+                131
+              ],
+              "url": "https://t.co/inY5BZj3Kz"
+            }
+          ]
+        },
+        "id_str": "2104984504133918973",
+        "text": "Introducing dots, powered by GPT-6 Astra.\n\nRemarkably capable, always-on agents built to handle everything. https://t.co/inY5BZj3Kz",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2104984504133918973"
+          ],
+          "editable_until_msecs": "1790705989000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/inY5BZj3Kz",
+            "expanded_url": "https://x.com/OpenAI/status/2104984504133918973/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              108,
+              131
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2104984413113393152/img/ww-kV51l6J5DwxZJ.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/inY5BZj3Kz",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 147818,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2104984413113393152/pl/x8UqYt8x-MKR1dbE.m3u8"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2104984413113393152/vid/avc1/480x270/cxo3sYVXoawIWnzh.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2104984413113393152/vid/avc1/640x360/Ww9XLAWrd0NYv5JL.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2104984413113393152/vid/avc1/1280x720/E2MKKEW6Ja5bsYKD.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2104984413113393152/vid/avc1/1920x1080/9gGn_oekezTJaPRZ.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 147818,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2104984413113393152/img/ww-kV51l6J5DwxZJ.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2104984413113393152/pl/x8UqYt8x-MKR1dbE.m3u8"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2104984413113393152/vid/avc1/480x270/cxo3sYVXoawIWnzh.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2104984413113393152/vid/avc1/640x360/Ww9XLAWrd0NYv5JL.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2104984413113393152/vid/avc1/1280x720/E2MKKEW6Ja5bsYKD.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2104984413113393152/vid/avc1/1920x1080/9gGn_oekezTJaPRZ.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2104984504133918973"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 1092,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2104984505677430978",
+      "url": "https://x.com/OpenAI/status/2104984505677430978",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-09-29T20:05:00.703445+00:00",
+      "translation_zh": "你的 dot 能做订餐厅这类小事，也能以高主动性工程师或幕僚长的姿态，承接你最有野心的工作。它拥有自己的计算机，通过 ChatGPT 接入 4000+ 应用，在被你开口之前就开始干活，24/7 在后台默默运行。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1091,
+        "in_reply_to_screen_name": "OpenAI",
+        "in_reply_to_status_id_str": "2104984504133918973",
+        "in_reply_to_user_id_str": "4398626122",
+        "lang": "en",
+        "created_at": "2026-09-29T17:19:49.000Z",
+        "display_text_range": [
+          0,
+          279
+        ],
+        "entities": {},
+        "id_str": "2104984505677430978",
+        "text": "Your dot can do simple things like book a table—or take on your most ambitious work with the initiative of a high-agency engineer or chief of staff.\n\nIt has its own computer and works across 4,000+ apps through ChatGPT, using the plugins you connect.\n\nIt learns what you need and",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2104984505677430978"
+          ],
+          "editable_until_msecs": "1790705989000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 32,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 20335,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 1093,
+          "retweet_count": 1631,
+          "created_at": "2026-09-29T17:19:49.000Z",
+          "display_text_range": [
+            0,
+            107
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/inY5BZj3Kz",
+                "expanded_url": "https://x.com/OpenAI/status/2104984504133918973/video/1",
+                "indices": [
+                  108,
+                  131
+                ],
+                "url": "https://t.co/inY5BZj3Kz"
+              }
+            ]
+          },
+          "id_str": "2104984504133918973",
+          "text": "Introducing dots, powered by GPT-6 Astra.\n\nRemarkably capable, always-on agents built to handle everything. https://t.co/inY5BZj3Kz",
+          "user": {
+            "id_str": "4398626122",
+            "name": "OpenAI",
+            "screen_name": "OpenAI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2104984504133918973"
+            ],
+            "editable_until_msecs": "1790705989000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/inY5BZj3Kz",
+              "expanded_url": "https://x.com/OpenAI/status/2104984504133918973/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                108,
+                131
+              ],
+              "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2104984413113393152/img/ww-kV51l6J5DwxZJ.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 1080,
+                "width": 1920
+              },
+              "sizes": {
+                "large": {
+                  "h": 1080,
+                  "resize": "fit",
+                  "w": 1920
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/inY5BZj3Kz",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "duration_millis": 147818,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2104984413113393152/pl/x8UqYt8x-MKR1dbE.m3u8"
+                  },
+                  {
+                    "bitrate": 256000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2104984413113393152/vid/avc1/480x270/cxo3sYVXoawIWnzh.mp4"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2104984413113393152/vid/avc1/640x360/Ww9XLAWrd0NYv5JL.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2104984413113393152/vid/avc1/1280x720/E2MKKEW6Ja5bsYKD.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2104984413113393152/vid/avc1/1920x1080/9gGn_oekezTJaPRZ.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              16,
+              9
+            ],
+            "contentType": "media_entity",
+            "durationMs": 147818,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/amplify_video_thumb/2104984413113393152/img/ww-kV51l6J5DwxZJ.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2104984413113393152/pl/x8UqYt8x-MKR1dbE.m3u8"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2104984413113393152/vid/avc1/480x270/cxo3sYVXoawIWnzh.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2104984413113393152/vid/avc1/640x360/Ww9XLAWrd0NYv5JL.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2104984413113393152/vid/avc1/1280x720/E2MKKEW6Ja5bsYKD.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2104984413113393152/vid/avc1/1920x1080/9gGn_oekezTJaPRZ.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2104984504133918973"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/rbYds2fzIw",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=280x150",
+                "width": 267
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Dots by OpenAI are a proactive assistant that can keep working across complex projects and everyday tasks. Learn how dots help you stay in control while work moves forward.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=800x320_1",
+                "width": 569
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "4398626122",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                "height": 81,
+                "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 79.28,
+                    "rgb": {
+                      "blue": 0,
+                      "green": 0,
+                      "red": 0
+                    }
+                  },
+                  {
+                    "percentage": 3.9,
+                    "rgb": {
+                      "blue": 251,
+                      "green": 232,
+                      "red": 225
+                    }
+                  },
+                  {
+                    "percentage": 2.44,
+                    "rgb": {
+                      "blue": 249,
+                      "green": 122,
+                      "red": 10
+                    }
+                  },
+                  {
+                    "percentage": 1.56,
+                    "rgb": {
+                      "blue": 49,
+                      "green": 186,
+                      "red": 237
+                    }
+                  },
+                  {
+                    "percentage": 1.55,
+                    "rgb": {
+                      "blue": 71,
+                      "green": 215,
+                      "red": 173
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Introducing dots",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 79.28,
+                    "rgb": {
+                      "blue": 0,
+                      "green": 0,
+                      "red": 0
+                    }
+                  },
+                  {
+                    "percentage": 3.9,
+                    "rgb": {
+                      "blue": 251,
+                      "green": 232,
+                      "red": 225
+                    }
+                  },
+                  {
+                    "percentage": 2.44,
+                    "rgb": {
+                      "blue": 249,
+                      "green": 122,
+                      "red": 10
+                    }
+                  },
+                  {
+                    "percentage": 1.56,
+                    "rgb": {
+                      "blue": 49,
+                      "green": 186,
+                      "red": 237
+                    }
+                  },
+                  {
+                    "percentage": 1.55,
+                    "rgb": {
+                      "blue": 71,
+                      "green": 215,
+                      "red": 173
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 79.28,
+                    "rgb": {
+                      "blue": 0,
+                      "green": 0,
+                      "red": 0
+                    }
+                  },
+                  {
+                    "percentage": 3.9,
+                    "rgb": {
+                      "blue": 251,
+                      "green": 232,
+                      "red": 225
+                    }
+                  },
+                  {
+                    "percentage": 2.44,
+                    "rgb": {
+                      "blue": 249,
+                      "green": 122,
+                      "red": 10
+                    }
+                  },
+                  {
+                    "percentage": 1.56,
+                    "rgb": {
+                      "blue": 49,
+                      "green": 186,
+                      "red": 237
+                    }
+                  },
+                  {
+                    "percentage": 1.55,
+                    "rgb": {
+                      "blue": 71,
+                      "green": 215,
+                      "red": 173
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/rbYds2fzIw",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTA0OTg0NTA1NTUxNTg5Mzc2"
+        }
+      }
+    },
+    {
+      "id": "2104984507107717331",
+      "url": "https://x.com/OpenAI/status/2104984507107717331",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-09-29T20:05:00.703445+00:00",
+      "translation_zh": "主动权始终在你手中。可以设定边界：你的 dot 哪些事可以自己决定、哪些要先问你、哪些永远不许做。你选择连接哪些应用，而 dot 运行在它自己的云端计算机上——连接你的设备完全是可选的。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 595,
+        "in_reply_to_screen_name": "OpenAI",
+        "in_reply_to_status_id_str": "2104984505677430978",
+        "in_reply_to_user_id_str": "4398626122",
+        "lang": "en",
+        "created_at": "2026-09-29T17:19:49.000Z",
+        "display_text_range": [
+          0,
+          273
+        ],
+        "entities": {},
+        "id_str": "2104984507107717331",
+        "text": "You always stay in control. Set boundaries and specify what your dot can do on its own, when it should ask first, and what it should never do.\n\nSafety is built in. You choose which apps to connect, and your dot runs on its own cloud computer—so connecting yours is entirely",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2104984507107717331"
+          ],
+          "editable_until_msecs": "1790705989000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 13,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 1092,
+          "in_reply_to_screen_name": "OpenAI",
+          "in_reply_to_status_id_str": "2104984504133918973",
+          "in_reply_to_user_id_str": "4398626122",
+          "lang": "en",
+          "reply_count": 32,
+          "retweet_count": 59,
+          "created_at": "2026-09-29T17:19:49.000Z",
+          "display_text_range": [
+            0,
+            279
+          ],
+          "entities": {},
+          "id_str": "2104984505677430978",
+          "text": "Your dot can do simple things like book a table—or take on your most ambitious work with the initiative of a high-agency engineer or chief of staff.\n\nIt has its own computer and works across 4,000+ apps through ChatGPT, using the plugins you connect.\n\nIt learns what you need and",
+          "user": {
+            "id_str": "4398626122",
+            "name": "OpenAI",
+            "screen_name": "OpenAI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2104984505677430978"
+            ],
+            "editable_until_msecs": "1790705989000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "card": {
+            "card_platform": {
+              "platform": {
+                "audience": {
+                  "name": "production"
+                },
+                "device": {
+                  "name": "iPhone",
+                  "version": "13"
+                }
+              }
+            },
+            "name": "summary_large_image",
+            "url": "https://t.co/rbYds2fzIw",
+            "binding_values": {
+              "photo_image_full_size_large": {
+                "image_value": {
+                  "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                  "height": 419,
+                  "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=800x419",
+                  "width": 800
+                },
+                "type": "IMAGE"
+              },
+              "thumbnail_image": {
+                "image_value": {
+                  "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                  "height": 150,
+                  "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=280x150",
+                  "width": 267
+                },
+                "type": "IMAGE"
+              },
+              "description": {
+                "string_value": "Dots by OpenAI are a proactive assistant that can keep working across complex projects and everyday tasks. Learn how dots help you stay in control while work moves forward.",
+                "type": "STRING"
+              },
+              "domain": {
+                "string_value": "openai.com",
+                "type": "STRING"
+              },
+              "thumbnail_image_large": {
+                "image_value": {
+                  "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                  "height": 320,
+                  "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=800x320_1",
+                  "width": 569
+                },
+                "type": "IMAGE"
+              },
+              "summary_photo_image_small": {
+                "image_value": {
+                  "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                  "height": 202,
+                  "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=386x202",
+                  "width": 386
+                },
+                "type": "IMAGE"
+              },
+              "thumbnail_image_original": {
+                "image_value": {
+                  "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                  "height": 900,
+                  "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=orig",
+                  "width": 1600
+                },
+                "type": "IMAGE"
+              },
+              "site": {
+                "scribe_key": "publisher_id",
+                "type": "USER",
+                "user_value": {
+                  "id_str": "4398626122",
+                  "path": []
+                }
+              },
+              "photo_image_full_size_small": {
+                "image_value": {
+                  "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                  "height": 202,
+                  "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=386x202",
+                  "width": 386
+                },
+                "type": "IMAGE"
+              },
+              "summary_photo_image_large": {
+                "image_value": {
+                  "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                  "height": 419,
+                  "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=800x419",
+                  "width": 800
+                },
+                "type": "IMAGE"
+              },
+              "thumbnail_image_small": {
+                "image_value": {
+                  "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                  "height": 81,
+                  "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=144x144",
+                  "width": 144
+                },
+                "type": "IMAGE"
+              },
+              "thumbnail_image_x_large": {
+                "image_value": {
+                  "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                  "height": 900,
+                  "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=png&name=2048x2048_2_exp",
+                  "width": 1600
+                },
+                "type": "IMAGE"
+              },
+              "photo_image_full_size_original": {
+                "image_value": {
+                  "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                  "height": 900,
+                  "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=orig",
+                  "width": 1600
+                },
+                "type": "IMAGE"
+              },
+              "photo_image_full_size_alt_text": {
+                "string_value": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                "type": "STRING"
+              },
+              "vanity_url": {
+                "scribe_key": "vanity_url",
+                "string_value": "openai.com",
+                "type": "STRING"
+              },
+              "photo_image_full_size": {
+                "image_value": {
+                  "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                  "height": 314,
+                  "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=600x314",
+                  "width": 600
+                },
+                "type": "IMAGE"
+              },
+              "summary_photo_image_alt_text": {
+                "string_value": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                "type": "STRING"
+              },
+              "thumbnail_image_color": {
+                "image_color_value": {
+                  "palette": [
+                    {
+                      "percentage": 79.28,
+                      "rgb": {
+                        "blue": 0,
+                        "green": 0,
+                        "red": 0
+                      }
+                    },
+                    {
+                      "percentage": 3.9,
+                      "rgb": {
+                        "blue": 251,
+                        "green": 232,
+                        "red": 225
+                      }
+                    },
+                    {
+                      "percentage": 2.44,
+                      "rgb": {
+                        "blue": 249,
+                        "green": 122,
+                        "red": 10
+                      }
+                    },
+                    {
+                      "percentage": 1.56,
+                      "rgb": {
+                        "blue": 49,
+                        "green": 186,
+                        "red": 237
+                      }
+                    },
+                    {
+                      "percentage": 1.55,
+                      "rgb": {
+                        "blue": 71,
+                        "green": 215,
+                        "red": 173
+                      }
+                    }
+                  ]
+                },
+                "type": "IMAGE_COLOR"
+              },
+              "title": {
+                "string_value": "Introducing dots",
+                "type": "STRING"
+              },
+              "summary_photo_image_color": {
+                "image_color_value": {
+                  "palette": [
+                    {
+                      "percentage": 79.28,
+                      "rgb": {
+                        "blue": 0,
+                        "green": 0,
+                        "red": 0
+                      }
+                    },
+                    {
+                      "percentage": 3.9,
+                      "rgb": {
+                        "blue": 251,
+                        "green": 232,
+                        "red": 225
+                      }
+                    },
+                    {
+                      "percentage": 2.44,
+                      "rgb": {
+                        "blue": 249,
+                        "green": 122,
+                        "red": 10
+                      }
+                    },
+                    {
+                      "percentage": 1.56,
+                      "rgb": {
+                        "blue": 49,
+                        "green": 186,
+                        "red": 237
+                      }
+                    },
+                    {
+                      "percentage": 1.55,
+                      "rgb": {
+                        "blue": 71,
+                        "green": 215,
+                        "red": 173
+                      }
+                    }
+                  ]
+                },
+                "type": "IMAGE_COLOR"
+              },
+              "summary_photo_image_x_large": {
+                "image_value": {
+                  "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                  "height": 900,
+                  "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=png&name=2048x2048_2_exp",
+                  "width": 1600
+                },
+                "type": "IMAGE"
+              },
+              "summary_photo_image": {
+                "image_value": {
+                  "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                  "height": 314,
+                  "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=600x314",
+                  "width": 600
+                },
+                "type": "IMAGE"
+              },
+              "photo_image_full_size_color": {
+                "image_color_value": {
+                  "palette": [
+                    {
+                      "percentage": 79.28,
+                      "rgb": {
+                        "blue": 0,
+                        "green": 0,
+                        "red": 0
+                      }
+                    },
+                    {
+                      "percentage": 3.9,
+                      "rgb": {
+                        "blue": 251,
+                        "green": 232,
+                        "red": 225
+                      }
+                    },
+                    {
+                      "percentage": 2.44,
+                      "rgb": {
+                        "blue": 249,
+                        "green": 122,
+                        "red": 10
+                      }
+                    },
+                    {
+                      "percentage": 1.56,
+                      "rgb": {
+                        "blue": 49,
+                        "green": 186,
+                        "red": 237
+                      }
+                    },
+                    {
+                      "percentage": 1.55,
+                      "rgb": {
+                        "blue": 71,
+                        "green": 215,
+                        "red": 173
+                      }
+                    }
+                  ]
+                },
+                "type": "IMAGE_COLOR"
+              },
+              "photo_image_full_size_x_large": {
+                "image_value": {
+                  "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                  "height": 900,
+                  "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=png&name=2048x2048_2_exp",
+                  "width": 1600
+                },
+                "type": "IMAGE"
+              },
+              "card_url": {
+                "scribe_key": "card_url",
+                "string_value": "https://t.co/rbYds2fzIw",
+                "type": "STRING"
+              },
+              "summary_photo_image_original": {
+                "image_value": {
+                  "alt": "Glowing multicolor dots wordmark above four colorful plush dot characters on a black background.",
+                  "height": 900,
+                  "url": "https://pbs.twimg.com/card_img/2104981578820595712/pRuD4dBa?format=jpg&name=orig",
+                  "width": 1600
+                },
+                "type": "IMAGE"
+              }
+            }
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/0ZjtBVXMSo",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2104981047335362560/591x_5cu?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2104981047335362560/591x_5cu?format=jpg&name=280x150",
+                "width": 267
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Learn how OpenAI builds safety, security, and privacy into dots—always-on agents with controls, secure workspaces, and checks before they act.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2104981047335362560/591x_5cu?format=jpg&name=800x320_1",
+                "width": 569
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2104981047335362560/591x_5cu?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104981047335362560/591x_5cu?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "4398626122",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2104981047335362560/591x_5cu?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2104981047335362560/591x_5cu?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "height": 81,
+                "url": "https://pbs.twimg.com/card_img/2104981047335362560/591x_5cu?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104981047335362560/591x_5cu?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104981047335362560/591x_5cu?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2104981047335362560/591x_5cu?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 87.35,
+                    "rgb": {
+                      "blue": 253,
+                      "green": 184,
+                      "red": 19
+                    }
+                  },
+                  {
+                    "percentage": 8.11,
+                    "rgb": {
+                      "blue": 252,
+                      "green": 243,
+                      "red": 202
+                    }
+                  },
+                  {
+                    "percentage": 3.49,
+                    "rgb": {
+                      "blue": 253,
+                      "green": 225,
+                      "red": 140
+                    }
+                  },
+                  {
+                    "percentage": 0.65,
+                    "rgb": {
+                      "blue": 250,
+                      "green": 135,
+                      "red": 92
+                    }
+                  },
+                  {
+                    "percentage": 0.38,
+                    "rgb": {
+                      "blue": 245,
+                      "green": 165,
+                      "red": 4
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "How we build safety, security, and privacy into dots",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 87.35,
+                    "rgb": {
+                      "blue": 253,
+                      "green": 184,
+                      "red": 19
+                    }
+                  },
+                  {
+                    "percentage": 8.11,
+                    "rgb": {
+                      "blue": 252,
+                      "green": 243,
+                      "red": 202
+                    }
+                  },
+                  {
+                    "percentage": 3.49,
+                    "rgb": {
+                      "blue": 253,
+                      "green": 225,
+                      "red": 140
+                    }
+                  },
+                  {
+                    "percentage": 0.65,
+                    "rgb": {
+                      "blue": 250,
+                      "green": 135,
+                      "red": 92
+                    }
+                  },
+                  {
+                    "percentage": 0.38,
+                    "rgb": {
+                      "blue": 245,
+                      "green": 165,
+                      "red": 4
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104981047335362560/591x_5cu?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2104981047335362560/591x_5cu?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 87.35,
+                    "rgb": {
+                      "blue": 253,
+                      "green": 184,
+                      "red": 19
+                    }
+                  },
+                  {
+                    "percentage": 8.11,
+                    "rgb": {
+                      "blue": 252,
+                      "green": 243,
+                      "red": 202
+                    }
+                  },
+                  {
+                    "percentage": 3.49,
+                    "rgb": {
+                      "blue": 253,
+                      "green": 225,
+                      "red": 140
+                    }
+                  },
+                  {
+                    "percentage": 0.65,
+                    "rgb": {
+                      "blue": 250,
+                      "green": 135,
+                      "red": 92
+                    }
+                  },
+                  {
+                    "percentage": 0.38,
+                    "rgb": {
+                      "blue": 245,
+                      "green": 165,
+                      "red": 4
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104981047335362560/591x_5cu?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/0ZjtBVXMSo",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104981047335362560/591x_5cu?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTA0OTg0NTA2OTY5MjkyODAw"
+        }
+      }
+    },
+    {
+      "id": "2104982629884063840",
+      "url": "https://x.com/AnthropicAI/status/2104982629884063840",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-09-29T20:05:00.703445+00:00",
+      "translation_zh": "你想要 AI 做什么？Anthropic 用 Interviewer 启动新研究，了解人们使用 AI 的体验、希望它扮演的角色。去年 12 月有 8.1 万人参与，是有史以来最大规模的质性研究。本轮参与者可公开自己的回答。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1180,
+        "lang": "en",
+        "created_at": "2026-09-29T17:12:22.000Z",
+        "display_text_range": [
+          0,
+          280
+        ],
+        "entities": {},
+        "id_str": "2104982629884063840",
+        "text": "What do you want from AI?\n\nWe’re launching a new study with Anthropic Interviewer to learn more about your experiences using AI, what role you want it to play in your life and the world, and what you want from the companies building it.\n\nLast December, 81,000 people told us about",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2104982629884063840"
+          ],
+          "editable_until_msecs": "1790705542000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 165,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/MtdU7MZbeY",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2104981354148741120/ZM86RRzC?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "height": 147,
+                "url": "https://pbs.twimg.com/card_img/2104981354148741120/ZM86RRzC?format=jpg&name=280x150",
+                "width": 280
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "We want to hear how AI is showing up in your life. Take a 15-minute interview, with an option to contribute to a record of public responses.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "claude.ai",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "height": 315,
+                "url": "https://pbs.twimg.com/card_img/2104981354148741120/ZM86RRzC?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2104981354148741120/ZM86RRzC?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2104981354148741120/ZM86RRzC?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2104981354148741120/ZM86RRzC?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2104981354148741120/ZM86RRzC?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "height": 76,
+                "url": "https://pbs.twimg.com/card_img/2104981354148741120/ZM86RRzC?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2104981354148741120/ZM86RRzC?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2104981354148741120/ZM86RRzC?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Handwritten notes on a corkboard",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "claude.ai",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2104981354148741120/ZM86RRzC?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Handwritten notes on a corkboard",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 52.5,
+                    "rgb": {
+                      "blue": 51,
+                      "green": 83,
+                      "red": 121
+                    }
+                  },
+                  {
+                    "percentage": 24.76,
+                    "rgb": {
+                      "blue": 233,
+                      "green": 227,
+                      "red": 229
+                    }
+                  },
+                  {
+                    "percentage": 21.43,
+                    "rgb": {
+                      "blue": 89,
+                      "green": 220,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 0.73,
+                    "rgb": {
+                      "blue": 186,
+                      "green": 232,
+                      "red": 242
+                    }
+                  },
+                  {
+                    "percentage": 0.43,
+                    "rgb": {
+                      "blue": 119,
+                      "green": 125,
+                      "red": 132
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Share your thoughts on AI",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 52.5,
+                    "rgb": {
+                      "blue": 51,
+                      "green": 83,
+                      "red": 121
+                    }
+                  },
+                  {
+                    "percentage": 24.76,
+                    "rgb": {
+                      "blue": 233,
+                      "green": 227,
+                      "red": 229
+                    }
+                  },
+                  {
+                    "percentage": 21.43,
+                    "rgb": {
+                      "blue": 89,
+                      "green": 220,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 0.73,
+                    "rgb": {
+                      "blue": 186,
+                      "green": 232,
+                      "red": 242
+                    }
+                  },
+                  {
+                    "percentage": 0.43,
+                    "rgb": {
+                      "blue": 119,
+                      "green": 125,
+                      "red": 132
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2104981354148741120/ZM86RRzC?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2104981354148741120/ZM86RRzC?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 52.5,
+                    "rgb": {
+                      "blue": 51,
+                      "green": 83,
+                      "red": 121
+                    }
+                  },
+                  {
+                    "percentage": 24.76,
+                    "rgb": {
+                      "blue": 233,
+                      "green": 227,
+                      "red": 229
+                    }
+                  },
+                  {
+                    "percentage": 21.43,
+                    "rgb": {
+                      "blue": 89,
+                      "green": 220,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 0.73,
+                    "rgb": {
+                      "blue": 186,
+                      "green": 232,
+                      "red": 242
+                    }
+                  },
+                  {
+                    "percentage": 0.43,
+                    "rgb": {
+                      "blue": 119,
+                      "green": 125,
+                      "red": 132
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2104981354148741120/ZM86RRzC?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/MtdU7MZbeY",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2104981354148741120/ZM86RRzC?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTA0OTgyNjI5NzMyOTc4Njg4"
+        }
+      }
+    },
+    {
       "id": "2104815409522483470",
       "url": "https://x.com/OpenAI/status/2104815409522483470",
       "label": "OpenAI",
