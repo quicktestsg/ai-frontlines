@@ -1,6 +1,854 @@
 {
   "tweets": [
     {
+      "id": "2104815409522483470",
+      "url": "https://x.com/OpenAI/status/2104815409522483470",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-09-29T08:00:38.135249+00:00",
+      "translation_zh": "OpenAI 发布文章：如何为前沿 RL 训练运行做好安全防护。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1243,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-29T06:07:53.000Z",
+        "display_text_range": [
+          0,
+          78
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "openai.com/index/towards-…",
+              "expanded_url": "https://openai.com/index/towards-safety-cases-for-frontier-ai-training/",
+              "indices": [
+                55,
+                78
+              ],
+              "url": "https://t.co/yrvjpfa7Pd"
+            }
+          ]
+        },
+        "id_str": "2104815409522483470",
+        "text": "How we think about securing frontier RL training runs: https://t.co/yrvjpfa7Pd",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2104815409522483470"
+          ],
+          "editable_until_msecs": "1790665673000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 194,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/yrvjpfa7Pd",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Towards safety cases for frontier AI training",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2104815333093879808/EN5H4ACB?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Towards safety cases for frontier AI training",
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2104815333093879808/EN5H4ACB?format=jpg&name=280x150",
+                "width": 267
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Our early guidelines for safety cases in frontier AI training cover technical safeguards, operational practices, and investigating misalignment incidents",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Towards safety cases for frontier AI training",
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2104815333093879808/EN5H4ACB?format=jpg&name=800x320_1",
+                "width": 569
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Towards safety cases for frontier AI training",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2104815333093879808/EN5H4ACB?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Towards safety cases for frontier AI training",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104815333093879808/EN5H4ACB?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "4398626122",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Towards safety cases for frontier AI training",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2104815333093879808/EN5H4ACB?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Towards safety cases for frontier AI training",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2104815333093879808/EN5H4ACB?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Towards safety cases for frontier AI training",
+                "height": 81,
+                "url": "https://pbs.twimg.com/card_img/2104815333093879808/EN5H4ACB?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Towards safety cases for frontier AI training",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104815333093879808/EN5H4ACB?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Towards safety cases for frontier AI training",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104815333093879808/EN5H4ACB?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Towards safety cases for frontier AI training",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Towards safety cases for frontier AI training",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2104815333093879808/EN5H4ACB?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Towards safety cases for frontier AI training",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 74.02,
+                    "rgb": {
+                      "blue": 233,
+                      "green": 129,
+                      "red": 116
+                    }
+                  },
+                  {
+                    "percentage": 15.46,
+                    "rgb": {
+                      "blue": 236,
+                      "green": 157,
+                      "red": 178
+                    }
+                  },
+                  {
+                    "percentage": 6.86,
+                    "rgb": {
+                      "blue": 235,
+                      "green": 116,
+                      "red": 30
+                    }
+                  },
+                  {
+                    "percentage": 2.38,
+                    "rgb": {
+                      "blue": 248,
+                      "green": 214,
+                      "red": 203
+                    }
+                  },
+                  {
+                    "percentage": 0.75,
+                    "rgb": {
+                      "blue": 237,
+                      "green": 152,
+                      "red": 119
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Towards safety cases for frontier AI training",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 74.02,
+                    "rgb": {
+                      "blue": 233,
+                      "green": 129,
+                      "red": 116
+                    }
+                  },
+                  {
+                    "percentage": 15.46,
+                    "rgb": {
+                      "blue": 236,
+                      "green": 157,
+                      "red": 178
+                    }
+                  },
+                  {
+                    "percentage": 6.86,
+                    "rgb": {
+                      "blue": 235,
+                      "green": 116,
+                      "red": 30
+                    }
+                  },
+                  {
+                    "percentage": 2.38,
+                    "rgb": {
+                      "blue": 248,
+                      "green": 214,
+                      "red": 203
+                    }
+                  },
+                  {
+                    "percentage": 0.75,
+                    "rgb": {
+                      "blue": 237,
+                      "green": 152,
+                      "red": 119
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Towards safety cases for frontier AI training",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104815333093879808/EN5H4ACB?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Towards safety cases for frontier AI training",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2104815333093879808/EN5H4ACB?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 74.02,
+                    "rgb": {
+                      "blue": 233,
+                      "green": 129,
+                      "red": 116
+                    }
+                  },
+                  {
+                    "percentage": 15.46,
+                    "rgb": {
+                      "blue": 236,
+                      "green": 157,
+                      "red": 178
+                    }
+                  },
+                  {
+                    "percentage": 6.86,
+                    "rgb": {
+                      "blue": 235,
+                      "green": 116,
+                      "red": 30
+                    }
+                  },
+                  {
+                    "percentage": 2.38,
+                    "rgb": {
+                      "blue": 248,
+                      "green": 214,
+                      "red": 203
+                    }
+                  },
+                  {
+                    "percentage": 0.75,
+                    "rgb": {
+                      "blue": 237,
+                      "green": 152,
+                      "red": 119
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Towards safety cases for frontier AI training",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104815333093879808/EN5H4ACB?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/yrvjpfa7Pd",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Towards safety cases for frontier AI training",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2104815333093879808/EN5H4ACB?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2104715842319786148",
+      "url": "https://x.com/elonmusk/status/2104715842319786148",
+      "label": "xAI",
+      "color": "#1DA1F2",
+      "fetched_at": "2026-09-29T08:00:38.135249+00:00",
+      "translation_zh": "Grok 4.7 xHigh 在 Artificial Analysis 网络安全指数中排名第一，企业网络防御能力达到前沿模型最高水平。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 5449,
+        "lang": "en",
+        "created_at": "2026-09-28T23:32:15.000Z",
+        "display_text_range": [
+          0,
+          7
+        ],
+        "entities": {},
+        "id_str": "2104715842319786148",
+        "text": "Not bad",
+        "user": {
+          "id_str": "44196397",
+          "name": "Elon Musk",
+          "screen_name": "elonmusk",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2103567689515954176/aR-Kjpp4_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+            },
+            "description": "X",
+            "url": {
+              "url": "https://twitter.com/X",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2104715842319786148"
+          ],
+          "editable_until_msecs": "1790641935000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 720,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 676,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 72,
+          "retweet_count": 75,
+          "created_at": "2026-09-28T18:48:52.000Z",
+          "display_text_range": [
+            0,
+            234
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/UGYMdoJECl",
+                "expanded_url": "https://x.com/XFreeze/status/2104644527655145565/photo/1",
+                "indices": [
+                  235,
+                  258
+                ],
+                "url": "https://t.co/UGYMdoJECl"
+              }
+            ]
+          },
+          "id_str": "2104644527655145565",
+          "text": "Grok 4.7 xHigh ranks #1 in Artificial Analysis Cyber Index\n\nIt's a powerful frontier model performing at the highest level in enterprise cyber defense\n\nOutperforming Fable 5.1 Max, Opus 5.5, Astra 6, GPT-6 and other leading AI systems https://t.co/UGYMdoJECl",
+          "user": {
+            "id_str": "1818311005698678784",
+            "name": "X Freeze",
+            "screen_name": "XFreeze",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1876785200010539008/2_HFJjq9_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2104644527655145565"
+            ],
+            "editable_until_msecs": "1790624932000",
+            "edits_remaining": "5",
+            "is_edit_eligible": true
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/UGYMdoJECl",
+              "expanded_url": "https://x.com/XFreeze/status/2104644527655145565/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                235,
+                258
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HTUzCm7a0AAn0rC.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 2240,
+                    "w": 4000,
+                    "x": 0,
+                    "y": 260
+                  },
+                  {
+                    "h": 2500,
+                    "w": 2500,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2500,
+                    "w": 2193,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2500,
+                    "w": 1250,
+                    "x": 75,
+                    "y": 0
+                  },
+                  {
+                    "h": 2500,
+                    "w": 4000,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 2500,
+                "width": 4000
+              },
+              "sizes": {
+                "large": {
+                  "h": 1280,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 750,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 425,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/UGYMdoJECl"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 2240,
+                  "w": 4000,
+                  "x": 0,
+                  "y": 260
+                },
+                {
+                  "h": 2500,
+                  "w": 2500,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2500,
+                  "w": 2193,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2500,
+                  "w": 1250,
+                  "x": 75,
+                  "y": 0
+                },
+                {
+                  "h": 2500,
+                  "w": 4000,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/XFreeze/status/2104644527655145565/photo/1",
+              "url": "https://pbs.twimg.com/media/HTUzCm7a0AAn0rC.jpg",
+              "width": 4000,
+              "height": 2500
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2104709783999729911",
+      "url": "https://x.com/elonmusk/status/2104709783999729911",
+      "label": "xAI",
+      "color": "#1DA1F2",
+      "fetched_at": "2026-09-29T08:00:38.135249+00:00",
+      "translation_zh": "xAI 推出 Team Bots——共享 AI 队友，可配置技能、插件和凭证，在 Slack 或 Grok Bot 中与团队协作，并随团队使用不断学习。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 5181,
+        "lang": "en",
+        "created_at": "2026-09-28T23:08:10.000Z",
+        "display_text_range": [
+          0,
+          25
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "2085838061347217408",
+              "indices": [
+                4,
+                8
+              ],
+              "name": "Grok Bot",
+              "screen_name": "bot"
+            }
+          ]
+        },
+        "id_str": "2104709783999729911",
+        "text": "Now @Bot works as a team!",
+        "user": {
+          "id_str": "44196397",
+          "name": "Elon Musk",
+          "screen_name": "elonmusk",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2103567689515954176/aR-Kjpp4_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+            },
+            "description": "X",
+            "url": {
+              "url": "https://twitter.com/X",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2104709783999729911"
+          ],
+          "editable_until_msecs": "1790640490000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 628,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 4692,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 249,
+          "retweet_count": 412,
+          "created_at": "2026-09-28T19:56:33.000Z",
+          "display_text_range": [
+            0,
+            203
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/73RrG4xpaU",
+                "expanded_url": "https://x.com/bot/status/2104661562715967548/video/1",
+                "indices": [
+                  204,
+                  227
+                ],
+                "url": "https://t.co/73RrG4xpaU"
+              }
+            ]
+          },
+          "id_str": "2104661562715967548",
+          "text": "Introducing Team Bots, shared AI teammates that learn as your team works with them.\n\nGive your Team Bot the skills, plugins, and credentials it needs for its role, then work with it in Slack or Grok Bot. https://t.co/73RrG4xpaU",
+          "user": {
+            "id_str": "2085838061347217408",
+            "name": "Grok Bot",
+            "screen_name": "bot",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2087219239275069440/KW6C403V_normal.jpg",
+            "highlighted_label": {
+              "badge": {
+                "url": "https://pbs.twimg.com/profile_images/2074224934159876096/aelorWHq_bigger.jpg"
+              },
+              "description": "SpaceXAI",
+              "url": {
+                "url": "https://twitter.com/SpaceXAI",
+                "url_type": "DeepLink"
+              },
+              "user_label_display_type": "Badge",
+              "user_label_type": "BusinessLabel"
+            }
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2104661562715967548"
+            ],
+            "editable_until_msecs": "1790628993000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/73RrG4xpaU",
+              "expanded_url": "https://x.com/bot/status/2104661562715967548/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                204,
+                227
+              ],
+              "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2104654684527251457/img/7ZvdEODvazICBcqM.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 1080,
+                "width": 1920
+              },
+              "sizes": {
+                "large": {
+                  "h": 1080,
+                  "resize": "fit",
+                  "w": 1920
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/73RrG4xpaU",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "duration_millis": 26733,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2104654684527251457/pl/mqHg__v5UAzgmoz5.m3u8?v=cfc"
+                  },
+                  {
+                    "bitrate": 256000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2104654684527251457/vid/avc1/480x270/1xRaF0ijbLl5C-en.mp4"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2104654684527251457/vid/avc1/640x360/7LrtKk_452AKLr39.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2104654684527251457/vid/avc1/1280x720/ihOxFvKyc39f-dIg.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2104654684527251457/vid/avc1/1920x1080/ND4TiKpzSKI2vp3Q.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              16,
+              9
+            ],
+            "contentType": "media_entity",
+            "durationMs": 26733,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/amplify_video_thumb/2104654684527251457/img/7ZvdEODvazICBcqM.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2104654684527251457/pl/mqHg__v5UAzgmoz5.m3u8?v=cfc"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2104654684527251457/vid/avc1/480x270/1xRaF0ijbLl5C-en.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2104654684527251457/vid/avc1/640x360/7LrtKk_452AKLr39.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2104654684527251457/vid/avc1/1280x720/ihOxFvKyc39f-dIg.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2104654684527251457/vid/avc1/1920x1080/ND4TiKpzSKI2vp3Q.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2104661562715967548"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2104633259925630995",
       "url": "https://x.com/AnthropicAI/status/2104633259925630995",
       "label": "Anthropic",
@@ -318,6 +1166,462 @@
           },
           "isEdited": false,
           "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2104633140409192757",
+      "url": "https://x.com/claudeai/status/2104633140409192757",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-09-29T08:00:38.135249+00:00",
+      "translation_zh": "Claude Sonnet 5.5 今日全面上线；Claude Haiku 5.5 将在未来几周内加入家族。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 2356,
+        "in_reply_to_screen_name": "claudeai",
+        "in_reply_to_status_id_str": "2104633138731434424",
+        "in_reply_to_user_id_str": "1943306828697550848",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-09-28T18:03:37.000Z",
+        "display_text_range": [
+          0,
+          143
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "anthropic.com/claude-sonnet-…",
+              "expanded_url": "https://www.anthropic.com/claude-sonnet-5-5",
+              "indices": [
+                120,
+                143
+              ],
+              "url": "https://t.co/odPSZsw0eX"
+            }
+          ]
+        },
+        "id_str": "2104633140409192757",
+        "text": "Claude Sonnet 5.5 is available everywhere today; Claude Haiku 5.5 will join the family in the coming weeks.\n\nRead more: https://t.co/odPSZsw0eX",
+        "user": {
+          "id_str": "1943306828697550848",
+          "name": "Claude",
+          "screen_name": "claudeai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2104633140409192757"
+          ],
+          "editable_until_msecs": "1790622217000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 46,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 1424,
+          "in_reply_to_screen_name": "claudeai",
+          "in_reply_to_status_id_str": "2104633134117777818",
+          "in_reply_to_user_id_str": "1943306828697550848",
+          "lang": "en",
+          "reply_count": 17,
+          "retweet_count": 26,
+          "created_at": "2026-09-28T18:03:37.000Z",
+          "display_text_range": [
+            0,
+            274
+          ],
+          "entities": {},
+          "id_str": "2104633138731434424",
+          "text": "On our automated behavioral audit, Sonnet 5.5 improves on or matches Sonnet 5 on most measures of alignment and honesty. \n\nIt’s also the first Sonnet model with cyber safeguards and fallbacks like those on our most capable models. Routine software development is unaffected.",
+          "user": {
+            "id_str": "1943306828697550848",
+            "name": "Claude",
+            "screen_name": "claudeai",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+            "highlighted_label": {
+              "badge": {
+                "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+              },
+              "description": "Anthropic",
+              "url": {
+                "url": "https://twitter.com/AnthropicAI",
+                "url_type": "DeepLink"
+              },
+              "user_label_display_type": "Badge",
+              "user_label_type": "BusinessLabel"
+            }
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2104633138731434424"
+            ],
+            "editable_until_msecs": "1790622217000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/odPSZsw0eX",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2104663978139963393/xk2f2dnF?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 147,
+                "url": "https://pbs.twimg.com/card_img/2104663978139963393/xk2f2dnF?format=jpg&name=280x150",
+                "width": 280
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Claude Sonnet 5.5 is a clear upgrade over Claude Sonnet 5, runs 30%+ faster, and costs up to 30% less for most work.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "www.anthropic.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 315,
+                "url": "https://pbs.twimg.com/card_img/2104663978139963393/xk2f2dnF?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2104663978139963393/xk2f2dnF?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2104663978139963393/xk2f2dnF?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2104663978139963393/xk2f2dnF?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2104663978139963393/xk2f2dnF?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 76,
+                "url": "https://pbs.twimg.com/card_img/2104663978139963393/xk2f2dnF?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "creator": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2104663978139963393/xk2f2dnF?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2104663978139963393/xk2f2dnF?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "anthropic.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2104663978139963393/xk2f2dnF?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 69.25,
+                    "rgb": {
+                      "blue": 5,
+                      "green": 8,
+                      "red": 6
+                    }
+                  },
+                  {
+                    "percentage": 14,
+                    "rgb": {
+                      "blue": 172,
+                      "green": 142,
+                      "red": 110
+                    }
+                  },
+                  {
+                    "percentage": 7.16,
+                    "rgb": {
+                      "blue": 13,
+                      "green": 23,
+                      "red": 58
+                    }
+                  },
+                  {
+                    "percentage": 4.69,
+                    "rgb": {
+                      "blue": 106,
+                      "green": 108,
+                      "red": 104
+                    }
+                  },
+                  {
+                    "percentage": 2.75,
+                    "rgb": {
+                      "blue": 130,
+                      "green": 83,
+                      "red": 23
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Introducing Claude Sonnet 5.5",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 69.25,
+                    "rgb": {
+                      "blue": 5,
+                      "green": 8,
+                      "red": 6
+                    }
+                  },
+                  {
+                    "percentage": 14,
+                    "rgb": {
+                      "blue": 172,
+                      "green": 142,
+                      "red": 110
+                    }
+                  },
+                  {
+                    "percentage": 7.16,
+                    "rgb": {
+                      "blue": 13,
+                      "green": 23,
+                      "red": 58
+                    }
+                  },
+                  {
+                    "percentage": 4.69,
+                    "rgb": {
+                      "blue": 106,
+                      "green": 108,
+                      "red": 104
+                    }
+                  },
+                  {
+                    "percentage": 2.75,
+                    "rgb": {
+                      "blue": 130,
+                      "green": 83,
+                      "red": 23
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2104663978139963393/xk2f2dnF?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2104663978139963393/xk2f2dnF?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 69.25,
+                    "rgb": {
+                      "blue": 5,
+                      "green": 8,
+                      "red": 6
+                    }
+                  },
+                  {
+                    "percentage": 14,
+                    "rgb": {
+                      "blue": 172,
+                      "green": 142,
+                      "red": 110
+                    }
+                  },
+                  {
+                    "percentage": 7.16,
+                    "rgb": {
+                      "blue": 13,
+                      "green": 23,
+                      "red": 58
+                    }
+                  },
+                  {
+                    "percentage": 4.69,
+                    "rgb": {
+                      "blue": 106,
+                      "green": 108,
+                      "red": 104
+                    }
+                  },
+                  {
+                    "percentage": 2.75,
+                    "rgb": {
+                      "blue": 130,
+                      "green": 83,
+                      "red": 23
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2104663978139963393/xk2f2dnF?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/odPSZsw0eX",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2104663978139963393/xk2f2dnF?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            }
+          }
         },
         "isEdited": false,
         "isStaleEdit": false
