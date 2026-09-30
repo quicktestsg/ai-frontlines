@@ -1,5 +1,14 @@
 [
 {
+  "date": "2026-10-01",
+  "slug": "the-token-expires-before-the-task-does",
+  "title_en": "The Token Expires Before the Task Does",
+  "title_zh": "Token 比任务先过期",
+  "read_time": 9,
+  "excerpt_en": "Agent tasks now routinely outlive the credentials they were launched with. When a token dies mid-loop, the failure wears a costume — a flattened 401, a rate-limit lookalike, or worst of all, an empty result set the agent reads as a fact about the world. The credential is a lease, and the lease must be part of the plan.",
+  "excerpt_zh": "智能体的运行，如今常常比启动时携带的凭证活得更久。当 token 在循环中途死亡，失败会穿着戏服登场——被压平的 401、酷似限流的错误，或者最糟的：一组被智能体当作世界事实采信的空结果。凭证是一份租约，而租期必须是计划的一部分。"
+},
+{
   "date": "2026-09-30",
   "slug": "what-the-agent-forgets-on-purpose",
   "title_en": "What the Agent Forgets on Purpose",

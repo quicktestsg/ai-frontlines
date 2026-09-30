@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Token Expires Before the Task Does — AI Frontlines</title>
+<meta content="Agent tasks now run for hours, but the credentials they carry were designed for human attention spans. When a token dies mid-loop, the failure is rarely a clean crash — it is a 401 that walks through the retry ladder, or worse, a scope quietly lost so the tool returns empty results the agent believes. The credential is a lease, and the lease must be part of the plan." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 1, 2026" data-zh="2026年10月1日">October 1, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Token Expires Before the Task Does" data-zh="Token 比 任务 先过期">The Token Expires Before the Task Does</h1>
+<p class="post-header-deck" data-en="Agent tasks have crossed a threshold that infrastructure has not: runs now routinely outlive the credentials they were launched with. A three-hour research loop carrying a one-hour token, a weekend deploy holding a twelve-hour session, an overnight batch job whose OAuth consent quietly expired at 2am. The industry's answer has been to make tasks longer and tokens shorter — two trends moving in opposite directions, on a collision course that rarely announces itself as a crash. When the credential dies mid-loop, the failure arrives wearing the costume of something else: a tool error, a rate limit, or most dangerously, an empty result set the agent happily believes. The credential is not setup. It is a lease with a deadline, and the deadline is part of the task." data-zh="智能体任务已经跨过了一条基础设施还没跟上的门槛：运行本身，如今常常比启动它时所携带的凭证活得更久。一个带着一小时 token 的三小时研究循环，一个握着十二小时会话的周末部署，一个 OAuth 授权在凌晨两点悄悄过期的整夜批处理。行业的答案是让任务更长、让 token 更短——两股背向而行的趋势，正走向一场几乎从不以崩溃形式宣告自己的碰撞。当凭证在循环中途死亡，失败会穿着别的戏服登场：一个工具错误，一次限流，或者最危险的——一组被智能体欣然采信的空结果。凭证不是前置配置。它是一份带期限的租约，而期限属于任务的一部分。">Agent tasks now routinely outlive the credentials they were launched with. When the credential dies mid-loop, the failure arrives wearing the costume of something else — a tool error, a rate limit, or most dangerously, an empty result set the agent happily believes.</p>
+</header>
+<article class="post-body">
+<p data-en="Every authentication system in production was designed around a human attention span. Session tokens live for an hour because a person logs in, does something, and closes the tab. OAuth consent screens assume someone is standing there to click. Certificate rotation happens on schedules calibrated to business days. Then agents arrived and broke the assumption invisibly: nobody is standing there, nothing closes the tab, and the tab intends to stay open for a week. The result is a new class of failure that lives in the gap between task duration and credential lifetime. It does not show up in testing, because tests are short. It does not show up in logs as an auth error, because by the time the 401 reaches the model, three layers of harness code have rewritten it into something generic. And it does not show up in retrospectives, because the incident report says the agent 'hallucinated' or 'went off track' — when what actually happened is simpler and stranger: the agent kept working after its right to work had expired." data-zh="生产环境中的每一套身份验证系统，都是围绕人类的注意力时长设计的。会话 token 活一小时，因为人登录、做事、关掉标签页。OAuth 授权页假设有人站在那里点击。证书轮换的排期按工作日校准。然后智能体来了，而且是以不可见的方式打破了这些假设：没有人站在那里，没有任何东西会关掉标签页，而这个标签页打算开一整个星期。结果是一类新的失败，栖居在任务时长与凭证寿命之间的缝隙里。它不出现在测试中，因为测试都很短。它不以身份验证错误的形式出现在日志里，因为当 401 抵达模型时，三层框架代码已经把它改写成了某种通用的东西。它也不出现在复盘里，因为事故报告写的是智能体「产生幻觉」或「偏离轨道」——而实际发生的事情更简单也更奇怪：智能体在自己工作的权利过期之后，继续工作了。" >Every authentication system in production was designed around a human attention span. Session tokens live for an hour because a person logs in, does something, and closes the tab. Then agents arrived and broke the assumption invisibly: nobody is standing there, and the tab intends to stay open for a week.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="TASK DURATION VS CREDENTIAL LIFETIME" data-zh="任务时长 vs 凭证寿命" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">TASK DURATION VS CREDENTIAL LIFETIME</text>
+<!-- task bar -->
+<rect fill="var(--accent-dim)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.5" width="470" x="90" y="48"></rect>
+<text data-en="TASK · 4 hours of agentic work" data-zh="任务 · 4 小时的智能体工作" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="325" y="69">TASK · 4 hours of agentic work</text>
+<!-- token bars -->
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--border)" stroke-width="1.2" width="105" x="90" y="104"></rect>
+<text data-en="token 1h" data-zh="token 1小时" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="142" y="123">token 1h</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--border)" stroke-width="1.2" width="105" x="202" y="104"></rect>
+<text data-en="refresh" data-zh="刷新" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="254" y="123">refresh</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--border)" stroke-width="1.2" width="105" x="314" y="104"></rect>
+<text data-en="refresh" data-zh="刷新" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="366" y="123">refresh</text>
+<rect fill="none" height="30" rx="7" stroke="var(--accent-3)" stroke-dasharray="4,4" stroke-width="1.5" width="128" x="426" y="104"></rect>
+<text data-en="gap: no refresh path" data-zh="缺口：无刷新路径" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="490" y="123">gap: no refresh path</text>
+<!-- expiry cliffs -->
+<line stroke="var(--accent-3)" stroke-dasharray="3,4" stroke-width="1.2" x1="195" x2="195" y1="92" y2="146"></line>
+<line stroke="var(--accent-3)" stroke-dasharray="3,4" stroke-width="1.2" x1="307" x2="307" y1="92" y2="146"></line>
+<line stroke="var(--accent-3)" stroke-dasharray="3,4" stroke-width="1.2" x1="419" x2="419" y1="92" y2="146"></line>
+<line stroke="var(--accent-3)" stroke-dasharray="3,4" stroke-width="1.2" x1="554" x2="554" y1="92" y2="146"></line>
+<!-- second scenario: session cert -->
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--border)" stroke-width="1.2" width="228" x="90" y="158"></rect>
+<text data-en="session cert · 12h" data-zh="会话证书 · 12小时" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="204" y="177">session cert · 12h</text>
+<!-- timeline axis -->
+<line stroke="var(--border)" stroke-width="1" x1="70" x2="590" y1="230" y2="230"></line>
+<text data-en="start" data-zh="开始" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="90" y="248">start</text>
+<text data-en="1h" data-zh="1小时" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="195" y="248">1h</text>
+<text data-en="2h" data-zh="2小时" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="307" y="248">2h</text>
+<text data-en="3h" data-zh="3小时" fill="var(--text-tertiary)" font-size="10" font-family="Inter,sans-serif" text-anchor="middle" x="419" y="248">3h</text>
+<text data-en="4h" data-zh="4小时" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="554" y="248">4h</text>
+<!-- annotation -->
+<rect fill="var(--accent-dim)" height="44" opacity="0.5" rx="8" width="460" x="80" y="264"></rect>
+<text data-en="The task is one long bar. The credentials are many short bars. Somewhere the bars stop aligning — and the loop keeps running on top of the gap." data-zh="任务是一根长条。凭证是许多短条。在某处，短条不再对齐——而循环仍在缺口之上继续运转。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10.5" font-style="italic" text-anchor="middle" x="310" y="290">The task is one long bar. The credentials are many short bars. Somewhere the bars stop aligning — and the loop keeps running on top of the gap.</text>
+</svg>
+<p class="diagram-caption" data-en="The core mismatch, drawn to scale of the problem rather than the pixels. A task is a single continuous intention; its authority to act arrives in fragments, each with an expiry. Refresh tokens patch some of the gaps but introduce their own — refresh can fail silently when consent lapses, when the rotation races a running process, or when the refresh window itself is shorter than the sleep between two steps of a slow loop." data-zh="把核心错配按问题的比例画出（而非按像素）。任务是一段连续的意图；而它行动的权限是碎片式到场的，每一片都带着有效期。刷新令牌补上了一部分缺口，却也引入了自己的缺口——当授权同意失效时、当轮换与运行中的进程赛跑时、或当刷新窗口本身比慢循环两步之间的睡眠还短时，刷新都会无声地失败。">The core mismatch: a task is a single continuous intention; its authority to act arrives in fragments, each with an expiry. Refresh tokens patch some gaps and introduce others — consent lapses, rotation races, refresh windows shorter than the sleep between two steps of a slow loop.</p>
+</div>
+<h3 data-en="The 401 that dresses up as everything else" data-zh="伪装成一切的 401">The 401 that dresses up as everything else</h3>
+<p data-en="The first failure shape is at least honest: the call fails. But what happens next is where systems fall apart. The model receives a tool error. It does not receive the distinction between 'the server rejected your credentials' and 'the server hiccuped'. Most harnesses flatten both into the same error string, so the model does what it was taught to do with errors — it retries. Same credentials, same rejection, second verse. After the retry ladder exhausts itself, a well-behaved agent tries a fallback: a different tool, a cached copy, a public endpoint that needs no auth at all. Each fallback is a small degradation in data quality dressed as resilience. By the time a human looks at the transcript, the run has quietly migrated from the authoritative source it was supposed to use to a stale mirror scraped hours ago, and the final answer cites data that was wrong for reasons nobody designed. The bug report will say 'bad data'. The root cause is a token that died forty minutes earlier and a retry policy that cannot tell death from delay." data-zh="第一种失败形态至少还算诚实：调用失败了。但接下来发生的事，才是系统瓦解的地方。模型收到的是一个工具错误。它收到的并不是「服务器拒绝了你的凭证」与「服务器打了个嗝」之间的区分。大多数框架把两者压平成同一个错误字符串，于是模型按照它被教会的方式处理错误——重试。同样的凭证，同样的拒绝，第二遍。重试阶梯耗尽之后，一个表现良好的智能体会尝试降级：换一个工具，找一份缓存副本，访问一个根本不需要认证的公开端点。每一次降级，都是一次穿着韧性外衣的数据质量退化。等到有人查看 transcript 时，运行已经悄悄地从本应使用的权威数据源，迁移到了几小时前抓取的陈旧镜像，而最终答案引用的数据，出于没有任何人设计过的原因而是错的。bug 报告会写「数据有问题」。根因是四十分钟前死掉的 token，和一个分不清死亡与延迟的重试策略。" >The first failure shape is honest: the call fails. But the harness flattens 'server rejected your credentials' and 'server hiccuped' into the same error string, so the model retries — same credentials, same rejection. Then comes the fallback ladder: a different tool, a cached copy, a public endpoint. Each fallback is a small degradation dressed as resilience.</p>
+<h3 data-en="The empty result is worse than the error" data-zh="空结果比错误更可怕">The empty result is worse than the error</h3>
+<p data-en="The second failure shape is the one that should keep designers awake. Some authorization failures do not return errors — they return nothing. An expired scope on a calendar API returns an empty event list. A lapsed permission on a search backend returns zero hits. A revoked grant on a data warehouse returns an empty table instead of a refusal, because the backend treats 'not allowed to see' and 'nothing there' as the same answer for reasons that made sense to an API designer in 2016. For a human, the empty screen prompts suspicion. For an agent, the empty result is data — confident, well-formed, unambiguous data that says the world is empty. The model proceeds: the calendar is clear, schedule the meeting; the search found nothing, conclude the feature does not exist; the table is empty, report that no customers churned. Nobody in that chain failed. The tool returned what it was configured to return, the model reasoned correctly from its inputs, the summary was accurate. The only thing that went wrong is that an authentication artifact crossed the API boundary and impersonated a fact about the world." data-zh="第二种失败形态，才是真正该让设计者夜不能寐的那种。有些授权失败并不返回错误——它们返回空。日历 API 上一个过期的 scope，返回的是空的事件列表。搜索后端上一个失效的权限，返回的是零条结果。数据仓库上一个被撤销的授权，返回的是一张空表而不是一次拒绝——因为后端把「不许看」和「这里没有」当成了同一个答案，这在 2016 年的某位 API 设计师看来是说得通的。对人类来说，空白屏幕会唤起怀疑。而对智能体来说，空结果就是数据——笃定的、格式规整的、毫不含糊的数据，宣告世界是空的。于是一切照常推进：日历是空的，安排会议吧；搜索一无所获，结论是这个功能不存在；表格是空的，报告说没有任何客户流失。这条链上没有任何一环失败。工具返回了它被配置返回的东西，模型从输入正确地推理，总结也准确无误。唯一出错的，是一个身份验证的残骸穿越了 API 边界，冒充了一条关于世界的事实。" >Some authorization failures do not return errors — they return nothing. An expired scope returns an empty event list. A lapsed permission returns zero hits. The model treats the empty result as confident data: the calendar is clear, the feature does not exist, no customers churned. Nobody failed. An authentication artifact impersonated a fact about the world.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrF1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrF2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="ONE EXPIRY, TWO DISGUISES" data-zh="一次过期，两副伪装" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">ONE EXPIRY, TWO DISGUISES</text>
+<!-- source -->
+<rect fill="var(--bg-surface)" height="50" rx="9" stroke="var(--border)" stroke-width="1.5" width="200" x="210" y="40"></rect>
+<text data-en="CREDENTIAL EXPIRES MID-LOOP" data-zh="凭证在循环中过期" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" x="310" y="60">CREDENTIAL EXPIRES MID-LOOP</text>
+<text data-en="hour 2 of a 4-hour run" data-zh="4 小时运行中的第 2 小时" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="310" y="77">hour 2 of a 4-hour run</text>
+<!-- branch arrows -->
+<path d="M250 90 C170 110 130 120 100 136" fill="none" marker-end="url(#arrF1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<path d="M370 90 C450 110 490 120 520 136" fill="none" marker-end="url(#arrF2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- left: error path -->
+<rect fill="var(--bg-surface)" height="130" rx="10" stroke="var(--accent-3)" stroke-width="1.8" width="215" x="15" y="138"></rect>
+<text data-en="DISGUISE 1 · THE ERROR" data-zh="伪装一 · 错误" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="122" y="162">DISGUISE 1 · THE ERROR</text>
+<text data-en="tool returns 401 / 403" data-zh="工具返回 401 / 403" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="122" y="184">tool returns 401 / 403</text>
+<text data-en="harness flattens to generic error" data-zh="框架压平为通用错误" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="122" y="202">harness flattens to generic error</text>
+<text data-en="retry ladder burns itself out" data-zh="重试阶梯自行燃尽" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="122" y="220">retry ladder burns itself out</text>
+<text data-en="fallback: stale mirror, public API" data-zh="降级：陈旧镜像、公开 API" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="122" y="238">fallback: stale mirror, public API</text>
+<text data-en="symptom: wrong data, hours later" data-zh="症状：数小时后数据错误" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9.5" font-style="italic" text-anchor="middle" x="122" y="258">symptom: wrong data, hours later</text>
+<!-- right: empty path -->
+<rect fill="var(--bg-surface)" height="130" rx="10" stroke="var(--accent)" stroke-width="1.8" width="215" x="390" y="138"></rect>
+<text data-en="DISGUISE 2 · THE EMPTY SET" data-zh="伪装二 · 空集合" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="497" y="162">DISGUISE 2 · THE EMPTY SET</text>
+<text data-en="lapsed scope returns 200 OK" data-zh="失效的 scope 返回 200 OK" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="497" y="184">lapsed scope returns 200 OK</text>
+<text data-en="zero events · zero hits · empty table" data-zh="零事件 · 零结果 · 空表" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="497" y="202">zero events · zero hits · empty table</text>
+<text data-en="model reads it as fact" data-zh="模型把它当作事实" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="497" y="220">model reads it as fact</text>
+<text data-en="the world is empty — proceed" data-zh="世界是空的——继续推进" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="497" y="238">the world is empty — proceed</text>
+<text data-en="symptom: confident false conclusion" data-zh="症状：笃定的错误结论" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9.5" font-style="italic" text-anchor="middle" x="497" y="258">symptom: confident false conclusion</text>
+<!-- bottom -->
+<rect fill="var(--accent-dim)" height="44" opacity="0.5" rx="8" width="520" x="50" y="284"></rect>
+<text data-en="The error path corrupts the process. The empty path corrupts the conclusion — and only one of them leaves a trace in the transcript." data-zh="错误路径污染的是过程。空集合路径污染的是结论——而两者之中只有一个会在 transcript 里留下痕迹。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10.5" font-style="italic" text-anchor="middle" x="310" y="310">The error path corrupts the process. The empty path corrupts the conclusion — and only one of them leaves a trace in the transcript.</text>
+</svg>
+<p class="diagram-caption" data-en="One expiry event, two downstream disguises. The error disguise at least leaves evidence — a failed call in the trace that a reviewer can find. The empty-set disguise is worse precisely because it succeeds: every call returns 200, every step looks healthy, and the corruption only surfaces when someone in the real world notices that the conclusion was wrong. By then the transcript shows a spotless run." data-zh="同一次过期事件，两副下游伪装。错误这副伪装至少留下了证据——trace 里一次失败的调用，评审者可以找到。空集合这副伪装之所以更糟，恰恰因为它成功了：每一次调用都返回 200，每一个步骤看起来都健康，而污染只有在现实世界中有人发现结论错了的时候才会浮出水面。到那时，transcript 显示的是一次完美无瑕的运行。">One expiry event, two downstream disguises. The error disguise leaves evidence. The empty-set disguise is worse precisely because it succeeds: every call returns 200, and the corruption surfaces only when someone notices the conclusion was wrong — at which point the transcript shows a spotless run.</p>
+</div>
+<blockquote data-en="A credential that expires mid-task does not stop the agent. It stops the agent from being right — and lets it keep being confident. The most dangerous failure in a long-running loop is the one that produces no error at all." data-zh="一个在任务中途过期的凭证不会让智能体停下。它只是让智能体无法正确——同时允许它继续保持笃定。长时间运行的循环中最危险的失败，是那种根本不产生任何错误的失败。">A credential that expires mid-task does not stop the agent. It stops the agent from being right — and lets it keep being confident. The most dangerous failure in a long-running loop is the one that produces no error at all.</blockquote>
+<h3 data-en="The lease is the vocabulary that fits" data-zh="租约，才是恰如其分的词汇">The lease is the vocabulary that fits</h3>
+<p data-en="Distributed systems solved an isomorphic problem long ago and named it well: the lease. A lease is permission with a timer attached. The holder knows exactly when the permission ends, is expected to renew before it does, and — critically — is expected to stop acting as though it holds the lease after the timer runs out, even if no server has explicitly said so. Treating agent credentials as leases reframes the entire problem. A lease-aware harness does three things a session-aware one does not. First, it knows the expiry time of every credential it holds and treats that time as a scheduling constraint on the task — a step that will take ninety minutes should not begin against a token with forty minutes left. Second, it renews proactively rather than reactively: refresh happens at seventy percent of lifetime, not at the moment of rejection. Third, and least common, it fences: credentials carry a generation number, and a tool call made with a stale generation can be rejected by the executor even if the token itself still parses. This is the mechanism that closes the rotation race — the case where a secret is rotated while a long process holds the old one in memory and keeps succeeding with it, poisoning audit trails and state alike." data-zh="分布式系统在很久以前就解决过一个同构的问题，而且命名得很好：租约（lease）。租约是带着计时器的权限。持有者明确知道权限何时结束，被期望在结束之前续约，而且——关键在于——被期望在计时器走完之后停止以持有者自居行事，即使没有任何服务器明确地告知它这一点。把智能体的凭证视为租约，整个问题随之被重新框定。一个具备租约意识的框架，会做三件只有会话意识的框架不会做的事。第一，它知道自己持有的每一份凭证的到期时间，并把这个时间当作任务的调度约束——一个要花九十分钟的步骤，不应该带着只剩四十分钟的 token 开始。第二，它主动续约而非被动响应：刷新发生在生命周期的百分之七十处，而不是在遭到拒绝的那一刻。第三，也是最少见的一点，它加围栏：凭证携带一个世代号，即使旧 token 本身仍然能通过解析，执行器也可以拒绝一个携带着过期世代的工具调用。正是这个机制关闭了轮换竞态——那种一个密钥被轮换之后，某个长进程仍在内存里握着旧密钥并继续用它成功执行、同时污染审计记录与系统状态的情况。" >Distributed systems named this correctly long ago: the lease — permission with a timer attached. A lease-aware harness knows the expiry of every credential, renews at seventy percent of lifetime rather than at rejection, and fences with generation numbers so a rotated-out secret cannot keep succeeding from a stale process.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrG1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrG2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrG3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE LEASE-AWARE LOOP" data-zh="具备租约意识的循环" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE LEASE-AWARE LOOP</text>
+<!-- step 1 -->
+<rect fill="var(--bg-surface)" height="58" rx="10" stroke="var(--accent)" stroke-width="1.8" width="170" x="30" y="44"></rect>
+<text data-en="1 · LAUNCH" data-zh="1 · 启动" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="115" y="66">1 · LAUNCH</text>
+<text data-en="pre-flight: TTL ≥ task estimate" data-zh="预检：TTL ≥ 任务预估" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="115" y="84">pre-flight: TTL ≥ task estimate</text>
+<text data-en="else schedule re-auth as a step" data-zh="否则把重新认证排为一步" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="115" y="98">else schedule re-auth as a step</text>
+<!-- step 2 -->
+<rect fill="var(--bg-surface)" height="58" rx="10" stroke="var(--accent-2)" stroke-width="1.8" width="170" x="225" y="44"></rect>
+<text data-en="2 · RUN" data-zh="2 · 运行" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="66">2 · RUN</text>
+<text data-en="every call carries gen number" data-zh="每次调用携带世代号" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="310" y="84">every call carries gen number</text>
+<text data-en="401/403 never flattened" data-zh="401/403 绝不压平" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="98">401/403 never flattened</text>
+<!-- step 3 -->
+<rect fill="var(--bg-surface)" height="58" rx="10" stroke="var(--accent-3)" stroke-width="1.8" width="170" x="420" y="44"></rect>
+<text data-en="3 · RENEW" data-zh="3 · 续约" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="505" y="66">3 · RENEW</text>
+<text data-en="at 70% of lifetime, not at 401" data-zh="在寿命 70% 处，而非 401 时" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="505" y="84">at 70% of lifetime, not at 401</text>
+<text data-en="renewal failure = pause, not limp" data-zh="续约失败 = 暂停，而非跛行" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="505" y="98">renewal failure = pause, not limp</text>
+<!-- arrows top row -->
+<path d="M200 73 C212 73 213 73 225 73" fill="none" marker-end="url(#arrG1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M395 73 C407 73 408 73 420 73" fill="none" marker-end="url(#arrG2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<!-- renew loops back to run -->
+<path d="M505 102 C505 150 380 160 320 160 C240 160 130 140 115 110" fill="none" marker-end="url(#arrG3)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="5,4"></path>
+<text data-en="renewed lease re-enters the loop" data-zh="续约后的租约重回循环" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" text-anchor="middle" x="310" y="148">renewed lease re-enters the loop</text>
+<!-- expired branch -->
+<rect fill="var(--bg-surface)" height="66" rx="10" stroke="var(--accent-3)" stroke-width="1.8" width="250" x="185" y="200"></rect>
+<text data-en="4 · EXPIRY WITHOUT RENEWAL" data-zh="4 · 未续约的到期" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="222">4 · EXPIRY WITHOUT RENEWAL</text>
+<text data-en="durable pause, notify, fence gen N" data-zh="持久暂停、通知、给世代 N 加围栏" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="310" y="240">durable pause, notify, fence gen N</text>
+<text data-en="never: degrade to unauth source" data-zh="绝不：降级到无认证数据源" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9.5" font-weight="700" text-anchor="middle" x="310" y="256">never: degrade to unauth source</text>
+<path d="M470 200 C430 180 400 180 360 190" fill="none" marker-end="url(#arrG3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<!-- bottom -->
+<rect fill="var(--accent-dim)" height="42" opacity="0.5" rx="8" width="500" x="60" y="288"></rect>
+<text data-en="The loop plans for its own credentials the way it plans for tokens and tools: as a budgeted resource with a deadline, not as ambient infrastructure." data-zh="这个循环为自己的凭证做规划的方式，与它为 token 和工具做规划的方式相同：当作一种带期限的、需预算管理的资源，而不是当作环境自带的基础设施。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10.5" font-style="italic" text-anchor="middle" x="310" y="313">The loop plans for its own credentials the way it plans for tokens and tools: as a budgeted resource with a deadline, not as ambient infrastructure.</text>
+</svg>
+<p class="diagram-caption" data-en="A lease-aware loop. The pre-flight compares credential lifetime against the task estimate and schedules re-authentication as an explicit step when they diverge. Every tool call carries a generation number so the executor can fence calls from stale holders. Renewal fires at seventy percent of lifetime. And when renewal fails, the correct behavior is a durable pause — the same first-class waiting state a human approval would trigger — never a quiet fallback to an unauthenticated source." data-zh="一个具备租约意识的循环。预检将凭证寿命与任务预估做比较，一旦两者背离，就把重新认证排为一个显式步骤。每一次工具调用携带世代号，使执行器能够拦截来自过期持有者的调用。续约在寿命的百分之七十处触发。而当续约失败时，正确的行为是持久暂停——与人类审批触发的同一种一等公民等待状态——而绝不是悄悄降级到无认证数据源。">A lease-aware loop: pre-flight compares credential lifetime against the task estimate; every call carries a fenceable generation number; renewal fires at seventy percent of lifetime; and renewal failure triggers a durable pause — never a quiet fallback to an unauthenticated source.</p>
+</div>
+<p data-en="There is a design smell that predicts this entire class of failure, and it is worth naming because it appears in nearly every agent stack: the credential check happens at launch and never again. The harness authenticates, receives a token, stores it in the environment, and then treats it as a constant for the remainder of the run — like the path to the Python interpreter, or the name of the working directory. But the token is the one value in the environment that is guaranteed to change during the run, because changing is its job. Any long-lived loop that does not re-examine its credentials between steps has made an implicit promise it cannot keep: that nothing the agent does will outlast the permission to do it. The uncomfortable summary is that authentication left the perimeter and entered the loop. It is no longer a gate the agent passes through once on the way in; it is a resource the agent consumes continuously, like tokens and tool calls, and it deserves the same engineering: budgeted, monitored, scheduled, and fenced. The teams that internalize this will ship agents that survive their own credentials. The rest will ship agents that fail interestingly — empty calendars, missing features, phantom churn reports — and spend weeks hunting a hallucination that was, all along, an expired token doing its job." data-zh="有一个设计坏味道可以预判这一整类失败，而且值得点名，因为它出现在几乎每一个智能体技术栈里：凭证检查只发生在启动时，此后永不复检。框架完成认证，拿到 token，存进环境变量，然后在运行的剩余时间里把它当作常量——就像 Python 解释器的路径，或者工作目录的名字。但 token 是整个环境里唯一一个保证会在运行期间发生变化的值，因为变化正是它的职责。任何不在步骤之间重新审视凭证的长循环，都做了一个自己无法兑现的隐性承诺：智能体所做的任何事，都不会比做这件事的权限活得更久。令人不适的总结是：身份验证已经离开了边界，进入了循环。它不再是智能体进门时穿过的一次性闸门；它是一种被智能体持续消耗的资源，就像 token 和工具调用一样，理应得到同等的工程对待：预算、监控、排期、加围栏。消化了这一点的团队，会发布能活过自己凭证的智能体。其余的团队会发布以有趣方式失败的智能体——空日历、消失的功能、幻影流失报告——然后花上数周追捕一个「幻觉」，而它自始至终，只是一个尽职尽责令自己过期的 token。" >The design smell that predicts this failure class: the credential check happens at launch and never again. But the token is the one value in the environment guaranteed to change during the run — changing is its job. Authentication left the perimeter and entered the loop. It is a continuously consumed resource, and it deserves budgeting, monitoring, scheduling, and fencing like any other.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
