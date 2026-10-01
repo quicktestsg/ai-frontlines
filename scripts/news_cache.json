@@ -1,6 +1,969 @@
 {
   "tweets": [
     {
+      "id": "2105749349166661848",
+      "url": "https://x.com/elonmusk/status/2105749349166661848",
+      "label": "xAI",
+      "color": "#1DA1F2",
+      "fetched_at": "2026-10-01T20:03:00.521943+00:00",
+      "translation_zh": "Musk 表示，谨慎乐观地预计 SpaceX 版 VR72 可在接近 250kW 平均功率下运行（峰值约再高 10%），且同样适用于地面系统。与 Nvidia 工程团队的紧密协作和协同设计是实现这一目标的关键。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 226,
+        "in_reply_to_screen_name": "aaronburnett",
+        "in_reply_to_status_id_str": "2105720638514065830",
+        "in_reply_to_user_id_str": "331865640",
+        "lang": "en",
+        "created_at": "2026-10-01T19:59:02.000Z",
+        "display_text_range": [
+          14,
+          293
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "331865640",
+              "indices": [
+                0,
+                13
+              ],
+              "name": "Aaron Burnett",
+              "screen_name": "aaronburnett"
+            },
+            {
+              "id_str": "34743251",
+              "indices": [
+                73,
+                80
+              ],
+              "name": "SpaceX",
+              "screen_name": "SpaceX"
+            }
+          ]
+        },
+        "id_str": "2105749349166661848",
+        "text": "@aaronburnett I am cautiously optimistic that we will be able to run the @SpaceX version of the VR72 at close to 250kW average power, meaning peak power would be ~10% higher. \n\nThis is a big deal if it pans out and would apply to our ground-based systems too. The close working partnership and",
+        "user": {
+          "id_str": "44196397",
+          "name": "Elon Musk",
+          "screen_name": "elonmusk",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2103567689515954176/aR-Kjpp4_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+            },
+            "description": "X",
+            "url": {
+              "url": "https://twitter.com/X",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2105749349166661848"
+          ],
+          "editable_until_msecs": "1790888342000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 39,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 73,
+          "lang": "en",
+          "reply_count": 6,
+          "retweet_count": 4,
+          "created_at": "2026-10-01T18:04:57.000Z",
+          "display_text_range": [
+            0,
+            276
+          ],
+          "entities": {},
+          "id_str": "2105720638514065830",
+          "text": "That’s a lot of power.  And part (I suspect) of the expected move up to ~4t sat mass. Last we heard 250kw was battery supported peak. \n\nAlso my rough napkin math is that each StarMind (250kw Rubin NVL72 rack equivalent) can generate $25-$50M per sat (wide range I know) at 50%",
+          "user": {
+            "id_str": "331865640",
+            "name": "Aaron Burnett",
+            "screen_name": "aaronburnett",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2049987217477513216/GJx9_LdR_normal.jpg",
+            "highlighted_label": {
+              "badge": {
+                "url": "https://pbs.twimg.com/profile_images/2054270599107608576/SOrzE1wC_bigger.jpg"
+              },
+              "description": "Mach33 Financial Group",
+              "url": {
+                "url": "https://twitter.com/mach33",
+                "url_type": "DeepLink"
+              },
+              "user_label_display_type": "Badge",
+              "user_label_type": "BusinessLabel"
+            }
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2105720638514065830"
+            ],
+            "editable_until_msecs": "1790881497000",
+            "edits_remaining": "5",
+            "is_edit_eligible": true
+          },
+          "quoted_tweet": {
+            "__typename": "Tweet",
+            "favorite_count": 8116,
+            "lang": "en",
+            "reply_count": 823,
+            "retweet_count": 1082,
+            "created_at": "2026-10-01T17:57:40.000Z",
+            "display_text_range": [
+              0,
+              150
+            ],
+            "entities": {
+              "user_mentions": [
+                {
+                  "id_str": "34743251",
+                  "indices": [
+                    5,
+                    12
+                  ],
+                  "name": "SpaceX",
+                  "screen_name": "SpaceX"
+                }
+              ]
+            },
+            "id_str": "2105718806769512812",
+            "text": "Each @SpaceX Star Mind super intelligence spacecraft will have over 250kW of solar power, which is about 20% more than the International Space Station",
+            "user": {
+              "id_str": "44196397",
+              "name": "Elon Musk",
+              "screen_name": "elonmusk",
+              "is_blue_verified": true,
+              "profile_image_shape": "Circle",
+              "verified": false,
+              "profile_image_url_https": "https://pbs.twimg.com/profile_images/2103567689515954176/aR-Kjpp4_normal.jpg",
+              "highlighted_label": {
+                "badge": {
+                  "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+                },
+                "description": "X",
+                "url": {
+                  "url": "https://twitter.com/X",
+                  "url_type": "DeepLink"
+                },
+                "user_label_display_type": "Badge",
+                "user_label_type": "BusinessLabel"
+              }
+            }
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTA1NzQ5MzQ5MDkxMTIzMjAx"
+        }
+      }
+    },
+    {
+      "id": "2105733864152858919",
+      "url": "https://x.com/AnthropicAI/status/2105733864152858919",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-10-01T20:03:00.521943+00:00",
+      "translation_zh": "物理学中有「阻抗失配」的概念：两个系统各自运行良好，但彼此匹配不佳。哈佛物理学家 Matthew Schwartz 在这篇科学博客中指出，AI 与科学之间也存在类似失配——LLM 能力强大，但像对待人类合作者那样使用它们，并不能激发其科学优势。他为此构建了一套定量科学精确计算工具包，Claude 借此发现了生态学、群体遗传学等十余个领域的关联。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 893,
+        "lang": "en",
+        "created_at": "2026-10-01T18:57:30.000Z",
+        "display_text_range": [
+          0,
+          276
+        ],
+        "entities": {},
+        "id_str": "2105733864152858919",
+        "text": "In physics, an “impedance mismatch” occurs when two systems each work well but are poorly matched.\n\nIn this Science Blog guest post, Harvard physicist Matthew Schwartz argues that something similar is happening with AI and science. LLMs are capable at many things, but working",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2105733864152858919"
+          ],
+          "editable_until_msecs": "1790884650000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 87,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/UpgSwMCz7h",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2105707645143285760/FTpcDHgP?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2105707645143285760/FTpcDHgP?format=jpg&name=280x150",
+                "width": 267
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Matthew Schwartz describes what happened when he stopped fighting Claude and allowed Claude to find “Claude-shaped” problems. This led him to build BootLoops, a toolkit for exact calculations in...",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "www.anthropic.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2105707645143285760/FTpcDHgP?format=jpg&name=800x320_1",
+                "width": 569
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2105707645143285760/FTpcDHgP?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1125,
+                "url": "https://pbs.twimg.com/card_img/2105707645143285760/FTpcDHgP?format=jpg&name=orig",
+                "width": 2000
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2105707645143285760/FTpcDHgP?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2105707645143285760/FTpcDHgP?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 81,
+                "url": "https://pbs.twimg.com/card_img/2105707645143285760/FTpcDHgP?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "creator": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1125,
+                "url": "https://pbs.twimg.com/card_img/2105707645143285760/FTpcDHgP?format=png&name=2048x2048_2_exp",
+                "width": 2000
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1125,
+                "url": "https://pbs.twimg.com/card_img/2105707645143285760/FTpcDHgP?format=jpg&name=orig",
+                "width": 2000
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "anthropic.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2105707645143285760/FTpcDHgP?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 49.93,
+                    "rgb": {
+                      "blue": 221,
+                      "green": 232,
+                      "red": 221
+                    }
+                  },
+                  {
+                    "percentage": 42.14,
+                    "rgb": {
+                      "blue": 89,
+                      "green": 163,
+                      "red": 24
+                    }
+                  },
+                  {
+                    "percentage": 5.85,
+                    "rgb": {
+                      "blue": 168,
+                      "green": 128,
+                      "red": 88
+                    }
+                  },
+                  {
+                    "percentage": 1.51,
+                    "rgb": {
+                      "blue": 138,
+                      "green": 150,
+                      "red": 66
+                    }
+                  },
+                  {
+                    "percentage": 0.33,
+                    "rgb": {
+                      "blue": 166,
+                      "green": 201,
+                      "red": 142
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Working on Claude-shaped problems with BootLoops, a toolkit for exact calculations in quantitative...",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 49.93,
+                    "rgb": {
+                      "blue": 221,
+                      "green": 232,
+                      "red": 221
+                    }
+                  },
+                  {
+                    "percentage": 42.14,
+                    "rgb": {
+                      "blue": 89,
+                      "green": 163,
+                      "red": 24
+                    }
+                  },
+                  {
+                    "percentage": 5.85,
+                    "rgb": {
+                      "blue": 168,
+                      "green": 128,
+                      "red": 88
+                    }
+                  },
+                  {
+                    "percentage": 1.51,
+                    "rgb": {
+                      "blue": 138,
+                      "green": 150,
+                      "red": 66
+                    }
+                  },
+                  {
+                    "percentage": 0.33,
+                    "rgb": {
+                      "blue": 166,
+                      "green": 201,
+                      "red": 142
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1125,
+                "url": "https://pbs.twimg.com/card_img/2105707645143285760/FTpcDHgP?format=png&name=2048x2048_2_exp",
+                "width": 2000
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2105707645143285760/FTpcDHgP?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 49.93,
+                    "rgb": {
+                      "blue": 221,
+                      "green": 232,
+                      "red": 221
+                    }
+                  },
+                  {
+                    "percentage": 42.14,
+                    "rgb": {
+                      "blue": 89,
+                      "green": 163,
+                      "red": 24
+                    }
+                  },
+                  {
+                    "percentage": 5.85,
+                    "rgb": {
+                      "blue": 168,
+                      "green": 128,
+                      "red": 88
+                    }
+                  },
+                  {
+                    "percentage": 1.51,
+                    "rgb": {
+                      "blue": 138,
+                      "green": 150,
+                      "red": 66
+                    }
+                  },
+                  {
+                    "percentage": 0.33,
+                    "rgb": {
+                      "blue": 166,
+                      "green": 201,
+                      "red": 142
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1125,
+                "url": "https://pbs.twimg.com/card_img/2105707645143285760/FTpcDHgP?format=png&name=2048x2048_2_exp",
+                "width": 2000
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/UpgSwMCz7h",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1125,
+                "url": "https://pbs.twimg.com/card_img/2105707645143285760/FTpcDHgP?format=jpg&name=orig",
+                "width": 2000
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTA1NzMzODYzOTgwODU1Mjk2"
+        }
+      }
+    },
+    {
+      "id": "2105721630051692804",
+      "url": "https://x.com/claudeai/status/2105721630051692804",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-10-01T20:03:00.521943+00:00",
+      "translation_zh": "即日起至 10 月 15 日，在 Claude 应用中创建 design、deck 或 doc 后，该会话中的后续工作将消耗 50% 更少的用量限额（适用于 Pro、Max 和 Team 计划）。Sonnet 5.5 对设计有很强的眼光，做出的幻灯片几乎不需要再编辑。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 3436,
+        "lang": "en",
+        "created_at": "2026-10-01T18:08:53.000Z",
+        "display_text_range": [
+          0,
+          260
+        ],
+        "entities": {},
+        "id_str": "2105721630051692804",
+        "text": "For two weeks, start a design, deck, or doc in the Claude app, and the work that follows in that conversation uses 50% less of your usage limits.\n\nGive it a try with Claude Sonnet 5.5. It has a strong eye for design and builds slides that need minimal editing.",
+        "user": {
+          "id_str": "1943306828697550848",
+          "name": "Claude",
+          "screen_name": "claudeai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2105721630051692804"
+          ],
+          "editable_until_msecs": "1790881733000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 144,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 4204,
+          "in_reply_to_screen_name": "claudeai",
+          "in_reply_to_status_id_str": "2100258490740539730",
+          "in_reply_to_user_id_str": "1943306828697550848",
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 122,
+          "retweet_count": 315,
+          "created_at": "2026-09-16T16:20:20.000Z",
+          "display_text_range": [
+            0,
+            213
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/Y0JaJGT3G8",
+                "expanded_url": "https://x.com/claudeai/status/2100258492590207079/video/1",
+                "indices": [
+                  214,
+                  237
+                ],
+                "url": "https://t.co/Y0JaJGT3G8"
+              }
+            ]
+          },
+          "id_str": "2100258492590207079",
+          "text": "You can also now make decks, docs, and designs in your conversation.\n\nDraft the one-pager in Claude Docs, turn it into a deck with Claude Slides, and mock up a matching visual in Claude Design, all from one place. https://t.co/Y0JaJGT3G8",
+          "user": {
+            "id_str": "1943306828697550848",
+            "name": "Claude",
+            "screen_name": "claudeai",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+            "highlighted_label": {
+              "badge": {
+                "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+              },
+              "description": "Anthropic",
+              "url": {
+                "url": "https://twitter.com/AnthropicAI",
+                "url_type": "DeepLink"
+              },
+              "user_label_display_type": "Badge",
+              "user_label_type": "BusinessLabel"
+            }
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2100258492590207079"
+            ],
+            "editable_until_msecs": "1789579220000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/Y0JaJGT3G8",
+              "expanded_url": "https://x.com/claudeai/status/2100258492590207079/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                214,
+                237
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HSWePXcXQAAAj1F.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 1080,
+                "width": 1920
+              },
+              "sizes": {
+                "large": {
+                  "h": 1080,
+                  "resize": "fit",
+                  "w": 1920
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/Y0JaJGT3G8",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "duration_millis": 94625,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2100254736763019264/pl/m02Ly6s5NwphUz4e.m3u8?v=cfc"
+                  },
+                  {
+                    "bitrate": 256000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2100254736763019264/vid/avc1/480x270/dllnD7Nm_dp96V2n.mp4"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2100254736763019264/vid/avc1/640x360/JsHYtvdzZ9n2d7cZ.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2100254736763019264/vid/avc1/1280x720/YZSsOcDGi_FBFtAN.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2100254736763019264/vid/avc1/1920x1080/Fg2Up7FUeMvjEUuq.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              16,
+              9
+            ],
+            "contentType": "media_entity",
+            "durationMs": 94625,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/media/HSWePXcXQAAAj1F.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2100254736763019264/pl/m02Ly6s5NwphUz4e.m3u8?v=cfc"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2100254736763019264/vid/avc1/480x270/dllnD7Nm_dp96V2n.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2100254736763019264/vid/avc1/640x360/JsHYtvdzZ9n2d7cZ.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2100254736763019264/vid/avc1/1280x720/YZSsOcDGi_FBFtAN.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2100254736763019264/vid/avc1/1920x1080/Fg2Up7FUeMvjEUuq.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2100258492590207079"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2105624656170643854",
+      "url": "https://x.com/GoogleDeepMind/status/2105624656170643854",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-10-01T20:03:00.521943+00:00",
+      "translation_zh": "SynthID Bio 是全新的面向 AI 生成生物设计的水印方法家族。这是全球首次实现：在不影响生物学功能的前提下，将不可察觉的签名直接嵌入蛋白质序列。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 484,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-10-01T11:43:33.000Z",
+        "display_text_range": [
+          0,
+          238
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/R2bM7Jn5Qu",
+              "expanded_url": "https://x.com/GoogleDeepMind/status/2105624656170643854/video/1",
+              "indices": [
+                238,
+                261
+              ],
+              "url": "https://t.co/R2bM7Jn5Qu"
+            }
+          ]
+        },
+        "id_str": "2105624656170643854",
+        "text": "SynthID Bio is our new family of watermarking methods made for AI-generated biological designs.\n\nIn a world first, we can now embed an imperceptible signature directly into protein sequences without affecting their biological function. 🧵 https://t.co/R2bM7Jn5Qu",
+        "user": {
+          "id_str": "4783690002",
+          "name": "Google DeepMind",
+          "screen_name": "GoogleDeepMind",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2105624656170643854"
+          ],
+          "editable_until_msecs": "1790858613000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/R2bM7Jn5Qu",
+            "expanded_url": "https://x.com/GoogleDeepMind/status/2105624656170643854/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              238,
+              261
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2105624129139363840/img/aR-gb8NNMpiFdpln.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1080
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1080
+              },
+              "medium": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1080
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/R2bM7Jn5Qu",
+            "video_info": {
+              "aspect_ratio": [
+                1,
+                1
+              ],
+              "duration_millis": 60900,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2105624129139363840/pl/R-SPNNPMPpqqy_KN.m3u8?v=5a6"
+                },
+                {
+                  "bitrate": 432000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2105624129139363840/vid/avc1/320x320/TK0odZfxulgk1KtH.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2105624129139363840/vid/avc1/540x540/DMV5n5AmjqD2VAu4.mp4"
+                },
+                {
+                  "bitrate": 1280000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2105624129139363840/vid/avc1/720x720/ia5kirOlGzSruVtc.mp4"
+                },
+                {
+                  "bitrate": 8768000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2105624129139363840/vid/avc1/1080x1080/347JUG6jGDzztqAS.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            1,
+            1
+          ],
+          "contentType": "media_entity",
+          "durationMs": 60900,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2105624129139363840/img/aR-gb8NNMpiFdpln.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2105624129139363840/pl/R-SPNNPMPpqqy_KN.m3u8?v=5a6"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2105624129139363840/vid/avc1/320x320/TK0odZfxulgk1KtH.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2105624129139363840/vid/avc1/540x540/DMV5n5AmjqD2VAu4.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2105624129139363840/vid/avc1/720x720/ia5kirOlGzSruVtc.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2105624129139363840/vid/avc1/1080x1080/347JUG6jGDzztqAS.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2105624656170643854"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 134,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2105543421712843238",
       "url": "https://x.com/elonmusk/status/2105543421712843238",
       "label": "xAI",

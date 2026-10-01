@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Handoff Deletes the Why — AI Frontlines</title>
+<meta content="Multi-agent systems pass work like relay batons: the artifact arrives, the reasoning does not. Conclusions survive a handoff; rejected alternatives, confidence levels, and open questions die at the boundary. The fix is not bigger context — it is a rationale ledger that ships the why alongside the what." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 2, 2026" data-zh="2026年10月2日">October 2, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Handoff Deletes the Why" data-zh="交接，删掉了「为什么」">The Handoff Deletes the Why</h1>
+<p class="post-header-deck" data-en="Multi-agent systems pass work the way relay runners pass a baton: the artifact arrives, and everything the runner was thinking does not. A conclusion crosses the handoff boundary wearing the costume of a fact. By the third agent downstream, nobody in the system — human or model — can say why the decision was made, only that it was. That is not a context-window problem. It is a lossy compression performed at exactly the moment the system is most confident." data-zh="多智能体系统传递工作的方式，就像接力赛选手交接接力棒：工件抵达了，而选手脑子里想的一切没有。一个结论穿着「事实」的外衣，越过交接边界。到了下游第三个智能体那里，系统里已经没有任何人——无论人还是模型——能说出这个决定为什么被做出，只知道它被做出了。这不是上下文窗口的问题。这是在系统最有信心的那一刻，恰好被执行的一次有损压缩。">Multi-agent systems pass work the way relay runners pass a baton: the artifact arrives, and everything the runner was thinking does not.</p>
+</header>
+<article class="post-body">
+<p data-en="Watch a multi-agent system in production and pay attention to the seams. Agent One spends forty tool calls investigating a problem, weighs three hypotheses, rejects two of them for reasons that were locally excellent, and hands a summary to Agent Two. The summary says what was found and what was concluded. It does not say what was rejected, or how sure Agent One was, or which assumptions the conclusion quietly leans on. Agent Two reads the summary the way it reads everything: as ground truth. The baton has been passed. The race continues. And the single most valuable artifact Agent One produced — the map of what was ruled out, and why — evaporated at the boundary, because nobody defined a field for it." data-zh="观察一个生产环境中的多智能体系统，把注意力放在接缝上。智能体一号花了四十次工具调用调查一个问题，掂量了三个假设，出于当下极好的理由否决了其中两个，然后把一份摘要交给智能体二号。摘要写明了发现了什么、得出了什么结论。它没有写什么被否决了、一号有多确信、这个结论悄悄依赖着哪些假设。二号读这份摘要的方式，和它读一切的方式一样：当作既定事实。接力棒交出去了。比赛继续。而一号产出的最有价值的东西——那张「什么被排除了、为什么」的地图——在边界上蒸发了，因为没有人给它定义一个字段。">Watch a multi-agent system in production and pay attention to the seams. Agent One spends forty tool calls investigating a problem, weighs three hypotheses, rejects two of them for reasons that were locally excellent, and hands a summary to Agent Two. The summary says what was found and what was concluded. It does not say what was rejected, or how sure Agent One was, or which assumptions the conclusion quietly leans on.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrH1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrH2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="WHAT CROSSES THE HANDOFF BOUNDARY" data-zh="什么能越过交接边界" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHAT CROSSES THE HANDOFF BOUNDARY</text>
+<!-- LEFT: rich reasoning state -->
+<text data-en="WHAT AGENT ONE HOLDS" data-zh="一号智能体脑中的" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="160" y="56">WHAT AGENT ONE HOLDS</text>
+<g>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="85" y="70"></rect>
+<text data-en="hypotheses × 3" data-zh="假设 × 3" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="160" y="89">hypotheses × 3</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="85" y="108"></rect>
+<text data-en="2 rejected + reasons" data-zh="2 个被否 + 理由" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="160" y="127">2 rejected + reasons</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="85" y="146"></rect>
+<text data-en="confidence: medium" data-zh="置信度：中" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="160" y="165">confidence: medium</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="85" y="184"></rect>
+<text data-en="assumptions × 4" data-zh="假设前提 × 4" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="160" y="203">assumptions × 4</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="85" y="222"></rect>
+<text data-en="open questions × 2" data-zh="未解之问 × 2" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="160" y="241">open questions × 2</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="2" width="150" x="85" y="260"></rect>
+<text data-en="conclusion" data-zh="结论" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="160" y="279">conclusion</text>
+</g>
+<!-- boundary -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="310"></line>
+<text data-en="handoff" data-zh="交接" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" letter-spacing="2" text-anchor="middle" transform="rotate(-90 310 180)" x="310" y="180">handoff</text>
+<!-- RIGHT: what survives -->
+<text data-en="WHAT AGENT TWO RECEIVES" data-zh="二号智能体收到的" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="470" y="56">WHAT AGENT TWO RECEIVES</text>
+<rect fill="var(--accent-dim)" height="40" rx="9" stroke="var(--accent)" stroke-width="2" width="170" x="385" y="150"></rect>
+<text data-en="conclusion" data-zh="结论" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="470" y="175">conclusion</text>
+<text data-en="read as: fact" data-zh="被当作：事实" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="470" y="220">read as: fact</text>
+<!-- crossing arrows -->
+<path d="M235 275 C290 275 320 200 383 180" fill="none" marker-end="url(#arrH2)" stroke="var(--accent)" stroke-width="2"></path>
+<!-- blocked items -->
+<g opacity="0.45">
+<path d="M235 85 C270 85 270 140 383 158" fill="none" stroke="var(--accent-3)" stroke-dasharray="4,4" stroke-width="1.3"></path>
+<path d="M235 123 C265 123 265 148 383 162" fill="none" stroke="var(--accent-3)" stroke-dasharray="4,4" stroke-width="1.3"></path>
+<path d="M235 161 C260 161 260 166 383 167" fill="none" stroke="var(--accent-3)" stroke-dasharray="4,4" stroke-width="1.3"></path>
+<path d="M235 199 C262 199 262 178 383 172" fill="none" stroke="var(--accent-3)" stroke-dasharray="4,4" stroke-width="1.3"></path>
+<path d="M235 237 C268 237 268 212 383 185" fill="none" stroke="var(--accent-3)" stroke-dasharray="4,4" stroke-width="1.3"></path>
+<text data-en="✕ dropped at boundary" data-zh="✕ 在边界处丢失" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="308" y="120">✕ dropped at boundary</text>
+</g>
+<text data-en="the why never arrives" data-zh="「为什么」从未抵达" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="470" y="310">the why never arrives</text>
+</svg>
+<p class="diagram-caption" data-en="Agent One's working state is rich: hypotheses considered and rejected, calibrated confidence, load-bearing assumptions, questions left open. The handoff contract transmits exactly one row — the conclusion — and everything else is dropped, not because it was judged worthless, but because the interface never had a place to put it." data-zh="一号智能体的工作状态是丰富的：考虑过又否决的假设、校准过的置信度、承重的假设前提、留给未来的未解之问。而交接契约只传输一行——结论——其余全部丢弃。不是因为它们被判定为没有价值，而是因为接口里从来没有一个位置能放下它们。">Agent One's working state is rich: hypotheses considered and rejected, calibrated confidence, load-bearing assumptions, questions left open. The handoff contract transmits exactly one row — the conclusion — and everything else is dropped.</p>
+</div>
+<h3 data-en="Conclusions launders into facts" data-zh="结论被洗成了事实">Conclusions launder into facts</h3>
+<p data-en="There is a quiet semantic drift that happens inside every pipeline of agents, and it compounds. When Agent One states a conclusion, that statement is, properly understood, a probabilistic claim wearing specific clothes: this is what the evidence suggested, this is how much was checked, this is where the uncertainty lives. By the time the claim reaches Agent Three — summarized by Two, folded into a plan, cited as prior work — the clothes are gone. It reads as terrain. It reads as something that was verified rather than something that was guessed well. Nobody performed the upgrade from guess to fact. The handoff performed it, implicitly, by stripping the metadata that would have marked it as a guess." data-zh="在每一条智能体流水线里，都会发生一种安静的语义漂移，而且它会复利式累积。当一号智能体陈述一个结论时，这个陈述，严格来说，是一件穿着特定外衣的概率性主张：这是证据所暗示的，这是被检查过的程度，这是不确定性所在的位置。而当这个主张抵达三号时——被二号摘要过、折叠进一份计划、被当作既有工作引用过——外衣已经没了。它读起来像地形。读起来像一样被验证过的东西，而不是一个猜得不错的猜测。没有人执行过从「猜测」到「事实」的升级。是交接执行了它，以隐式的方式——通过剥掉那些本可以把它标记为猜测的元数据。">There is a quiet semantic drift that happens inside every pipeline of agents, and it compounds. When Agent One states a conclusion, that statement is, properly understood, a probabilistic claim wearing specific clothes. By the time the claim reaches Agent Three — summarized by Two, folded into a plan, cited as prior work — the clothes are gone.</p>
+<p data-en="This matters because the downstream agent is often the one holding the tools to refute the conclusion. Agent Two might have access to a check that would have falsified Agent One's guess in one call — but falsification is only attempted against claims that look falsifiable, and a naked conclusion doesn't. It looks like the premise. The system's sharpest critic is structurally blind to the system's weakest inference, because the inference arrived dressed as a premise. The engineering failure is not that Agent One guessed wrong. Models guess wrong constantly; that is what they do. The failure is that the architecture converted the guess into an unfalsifiable inheritance before anyone could inspect it." data-zh="这件事要紧，是因为下游的智能体，往往恰恰是手里握着能推翻该结论的工具的那个。二号可能有一条能一次调用就证伪一号猜测的检查路径——但证伪，只会被尝试于看起来可证伪的主张，而一个赤裸的结论不是。它看起来像前提。系统里最锋利的批评者，对系统里最薄弱的推论，在结构上是失明的——因为那个推论到达时，穿的是前提的衣服。工程上的失败，不在于一号猜错了。模型经常猜错；这就是它们的工作。失败在于：架构把这个猜测，在任何人来得及审视它之前，转换成了一份不可证伪的遗产。">This matters because the downstream agent is often the one holding the tools to refute the conclusion. Agent Two might have access to a check that would have falsified Agent One's guess in one call — but falsification is only attempted against claims that look falsifiable, and a naked conclusion doesn't.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="HOW A GUESS BECOMES TERRAIN" data-zh="一个猜测如何变成地形" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">HOW A GUESS BECOMES TERRAIN</text>
+<!-- stage 1 -->
+<rect fill="var(--bg-surface)" height="78" rx="10" stroke="var(--accent-3)" stroke-width="1.5" width="150" x="40" y="80"></rect>
+<text data-en="AGENT ONE" data-zh="智能体一号" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="115" y="104">AGENT ONE</text>
+<text data-en="&quot;maybe it's the cache&quot;" data-zh="「可能是缓存」" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="115" y="124">"maybe it's the cache"</text>
+<text data-en="confidence: 0.4" data-zh="置信度：0.4" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="115" y="144">confidence: 0.4</text>
+<!-- stage 2 -->
+<rect fill="var(--bg-surface)" height="78" rx="10" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="235" y="80"></rect>
+<text data-en="AGENT TWO" data-zh="智能体二号" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="104">AGENT TWO</text>
+<text data-en="&quot;cache is stale&quot;" data-zh="「缓存过期了」" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="124">"cache is stale"</text>
+<text data-en="confidence: omitted" data-zh="置信度：已省略" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="144">confidence: omitted</text>
+<!-- stage 3 -->
+<rect fill="var(--accent-dim)" height="78" rx="10" stroke="var(--accent)" stroke-width="2" width="170" x="410" y="80"></rect>
+<text data-en="AGENT THREE" data-zh="智能体三号" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="495" y="104">AGENT THREE</text>
+<text data-en="&quot;the cache is stale&quot;" data-zh="「缓存是过期的」" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="495" y="124">"the cache is stale"</text>
+<rect fill="var(--accent)" height="16" rx="8" width="52" x="469" y="134"></rect>
+<text data-en="FACT" data-zh="事实" fill="var(--bg-surface)" font-family="Inter,sans-serif" font-size="9" font-weight="800" text-anchor="middle" x="495" y="146">FACT</text>
+<path d="M190 119 L233 119" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M385 119 L408 119" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="handoff 1: hedge words fade" data-zh="交接 1：犹疑措辞褪去" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="212" y="185">handoff 1: hedge words fade</text>
+<text data-en="handoff 2: certainty badge awarded" data-zh="交接 2：确定性徽章授予" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="470" y="185">handoff 2: certainty badge awarded</text>
+<text data-en="nobody verified anything — the tone did all the work" data-zh="没有任何人验证过任何东西——是语气完成了全部工作" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-style="italic" font-weight="600" text-anchor="middle" x="310" y="245">nobody verified anything — the tone did all the work</text>
+<text data-en="a 0.4-confidence guess now controls a production decision" data-zh="一个 0.4 置信度的猜测，如今控制着一个生产决策" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="270">a 0.4-confidence guess now controls a production decision</text>
+</svg>
+<p class="diagram-caption" data-en="Each handoff launders a little more uncertainty out of the claim. The hedge words fade first, then the confidence score, then the memory that a confidence score ever existed. By the third hop the pipeline has minted a fact, and no verification occurred anywhere along the way — only transmission." data-zh="每一次交接，都从主张里洗掉一点点不确定性。先是犹疑的措辞褪色，然后是置信度分数，然后是「置信度分数曾经存在过」这段记忆本身。到第三跳，流水线已经铸造出一件事实，而一路上没有任何地方发生过验证——只有传输。">Each handoff launders a little more uncertainty out of the claim. By the third hop the pipeline has minted a fact, and no verification occurred anywhere along the way — only transmission.</p>
+</div>
+<h3 data-en="The rejected alternatives were the expensive part" data-zh="被否决的备选，才是昂贵的那部分">The rejected alternatives were the expensive part</h3>
+<p data-en="There is an accounting error hiding in most handoff designs. When the summary crosses the boundary, what gets billed as the deliverable is the conclusion. But compute what was actually spent: the forty tool calls, the three hypotheses, the two refutations. The refutations are the most expensive item on the invoice and the only one with negative space — they describe the shape of what the answer is not. A downstream agent that receives the conclusion plus the refutations inherits a constraint set; it will not waste twenty calls re-exploring the corridor that was already ruled out. A downstream agent that receives only the conclusion inherits a trivia answer. The system paid full price for the map and shipped the postcard." data-zh="在大多数交接设计里，藏着一笔账目错误。当摘要越过边界时，被计为交付物的是结论。但算一算实际花掉了什么：四十次工具调用、三个假设、两次反驳。反驳是账单上最昂贵的条目，也是唯一一个以负空间形式存在的条目——它们描绘的是「答案不是什么」的形状。一个收到「结论 + 反驳」的下游智能体，继承的是一组约束；它不会浪费二十次调用，去重新探索那条已经被排除的走廊。而一个只收到结论的下游智能体，继承的是一条冷知识。系统为整张地图付了全款，寄出去的却是明信片。">There is an accounting error hiding in most handoff designs. The refutations are the most expensive item on the invoice and the only one with negative space — they describe the shape of what the answer is not. The system paid full price for the map and shipped the postcard.</p>
+<blockquote data-en="The summary is not the work. The work is the space of paths not taken, carved away one refutation at a time. A handoff that transmits only the destination forces every downstream agent to re-derive the journey — and they will re-derive it worse, because they start from the answer instead of the question." data-zh="摘要不是工作本身。工作，是那条「未被选择的道路」的空间，被一次又一次的反驳雕刻出来。一个只传输终点的交接，会强迫每一个下游智能体重新推导整段旅程——而它们会推得更糟，因为它们是从答案出发，而不是从问题出发。">The summary is not the work. The work is the space of paths not taken, carved away one refutation at a time. A handoff that transmits only the destination forces every downstream agent to re-derive the journey — and they will re-derive it worse.</blockquote>
+<h3 data-en="The fix is a rationale ledger, not a bigger window" data-zh="解药是理由账本，不是更大的窗口">The fix is a rationale ledger, not a bigger window</h3>
+<p data-en="The reflexive fix is to ship the whole transcript — dump Agent One's full context into Agent Two's window and let it re-read everything. This rarely works. The transcript is chronological, not structured; the why is scattered across forty interleaved turns of reasoning, tool noise, and dead ends. A bigger window buys the downstream agent the ability to re-perform the archaeology, which is different from receiving the findings. The better contract is small and structured: a handoff envelope whose schema forces the sender to answer questions the summary format never asks. What was concluded, and with what confidence. What was rejected, and for what reason. What was assumed and never checked. What would change the conclusion if it turned out to be false. Four fields. Small enough to fit in any window, sharp enough to reopen exactly the decisions that deserve reopening." data-zh="条件反射式的解法，是把整份转录都传过去——把一号的完整上下文倒进二号的窗口里，让它重读一遍一切。这很少奏效。转录是按时间顺序组织的，不是按结构组织的；「为什么」散落在四十轮交错的推理、工具噪音和死胡同里。一个更大的窗口，给下游智能体买到的，是重新执行考古学的能力——这与收到现成的发现是两回事。更好的契约，小而结构化：一个交接信封，其 schema 强迫发送方回答那些摘要格式从不提问的问题。结论是什么，置信度多少。否决了什么，因为什么。假设了什么却从未检查。如果哪天它被证伪，什么会改变这个结论。四个字段。小到能塞进任何窗口，锋利到能精准撬开那些值得被重新打开的决定。">The reflexive fix is to ship the whole transcript — dump Agent One's full context into Agent Two's window. This rarely works. The transcript is chronological, not structured; the why is scattered across forty interleaved turns. A bigger window buys the ability to re-perform the archaeology, which is different from receiving the findings.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE HANDOFF ENVELOPE" data-zh="交接信封" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE HANDOFF ENVELOPE</text>
+<!-- sender -->
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="120" x="30" y="140"></rect>
+<text data-en="SENDER" data-zh="发送方" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="90" y="160">SENDER</text>
+<text data-en="concludes" data-zh="得出结论" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="90" y="176">concludes</text>
+<!-- envelope -->
+<rect fill="var(--accent-dim)" height="196" rx="12" stroke="var(--accent)" stroke-width="2" width="250" x="185" y="64"></rect>
+<text data-en="HANDOFF ENVELOPE" data-zh="交接信封" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="88">HANDOFF ENVELOPE</text>
+<g>
+<text data-en="conclusion" data-zh="结论" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="205" y="112">conclusion</text>
+<text data-en="+ confidence" data-zh="+ 置信度" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" x="205" y="127">+ confidence</text>
+<text data-en="rejected paths" data-zh="被否决的路径" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="205" y="152">rejected paths</text>
+<text data-en="+ refutation reasons" data-zh="+ 否决理由" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" x="205" y="167">+ refutation reasons</text>
+<text data-en="assumptions" data-zh="未验证的假设" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="205" y="192">assumptions</text>
+<text data-en="+ never checked" data-zh="+ 从未检查" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" x="205" y="207">+ never checked</text>
+<text data-en="falsifiers" data-zh="证伪条件" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="205" y="232">falsifiers</text>
+<text data-en="+ what would flip it" data-zh="+ 什么能推翻它" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" x="205" y="247">+ what would flip it</text>
+</g>
+<path d="M150 162 L183 162" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- receiver -->
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent)" stroke-width="1.5" width="120" x="470" y="140"></rect>
+<text data-en="RECEIVER" data-zh="接收方" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="530" y="160">RECEIVER</text>
+<text data-en="can disagree" data-zh="可以反驳了" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="530" y="176">can disagree</text>
+<path d="M435 162 L468 162" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- receiver actions -->
+<path d="M530 184 C530 230 480 235 445 240" fill="none" marker-end="url(#arrR2)" stroke="var(--text-tertiary)" stroke-width="1.2"></path>
+<path d="M530 184 C530 250 520 258 495 262" fill="none" marker-end="url(#arrR2)" stroke="var(--text-tertiary)" stroke-width="1.2"></path>
+<text data-en="tests a falsifier" data-zh="测试证伪条件" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="395" y="252">tests a falsifier</text>
+<text data-en="avoids ruled-out corridors" data-zh="避开已排除的走廊" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="395" y="290">avoids ruled-out corridors</text>
+<text data-en="four fields · fits any window · reopens what deserves reopening" data-zh="四个字段 · 塞得进任何窗口 · 撬开值得撬开的" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" font-weight="600" text-anchor="middle" x="310" y="316">four fields · fits any window · reopens what deserves reopening</text>
+</svg>
+<p class="diagram-caption" data-en="The envelope is deliberately small: conclusion with confidence, rejected paths with reasons, unverified assumptions, and the falsifiers that would flip the call. It costs the sender a few hundred tokens and gives the receiver the two capabilities a naked summary destroys — the ability to challenge the inference, and the ability to skip the work that was already done." data-zh="信封刻意保持很小：带置信度的结论、带理由的被否决路径、未验证的假设、以及能推翻这次判断的证伪条件。它花掉发送方几百个 token，却还给接收方两种被赤裸摘要毁掉的能力——挑战这个推论的能力，和跳过已完成工作的能力。">The envelope is deliberately small: conclusion with confidence, rejected paths with reasons, unverified assumptions, and the falsifiers that would flip the call. It gives the receiver the two capabilities a naked summary destroys — the ability to challenge the inference, and the ability to skip the work that was already done.</p>
+</div>
+<h3 data-en="Trust is downstream of traceability" data-zh="信任，是可追溯性的下游">Trust is downstream of traceability</h3>
+<p data-en="The deepest cost of the why-less handoff shows up when a human finally inspects the system. A multi-agent pipeline that transmits conclusions without provenance is, to the operator, a black box with extra steps: the output arrives with no way to ask which of its load-bearing beliefs were verified, which were inherited, and which were a 0.4-confidence guess wearing a fact's clothing by the third hop. The operator's only safe move is to distrust everything, which means the multi-agent system saved compute and spent trust. An envelope-carrying pipeline inverts this: every conclusion can be unfolded into its confidence, its rejected alternatives, its untested assumptions. Distrust becomes targeted instead of total. That is what traceability buys — not certainty, but the ability to spend doubt where it is actually owed. The baton was never the point. The point was always what the runner knew." data-zh="「为什么」缺席的交接，其最深的代价，在人终于来审视这个系统的那一刻显现。一条只传输结论、不传输出处溯源的多智能体流水线，对操作者来说，就是一个多了几个步骤的黑箱：输出抵达时，没有任何办法追问——它那些承重的信念里，哪些被验证过、哪些是继承来的、哪些是到第三跳还穿着事实外衣的 0.4 置信度猜测。操作者唯一安全的动作，是不信任一切，而这意味着多智能体系统省下了算力，花掉了信任。一条携带信封的流水线，把这件事反转过来：每一个结论都能被展开成它的置信度、它否决过的备选、它没测过的假设。不信任从全面变成了精准。这就是可追溯性买到的东西——不是确定性，而是把怀疑花在真正欠账处的能力。接力棒从来不是重点。重点一直是，那位选手知道些什么。">The deepest cost of the why-less handoff shows up when a human finally inspects the system. A multi-agent pipeline that transmits conclusions without provenance is a black box with extra steps. The operator's only safe move is to distrust everything — the system saved compute and spent trust.</p>
+</article>
+<footer class="post-footer">
+<a class="post-footer-link" href="../index.html" data-en="← Back to all posts" data-zh="← 返回全部文章">← Back to all posts</a>
+</footer>
+</div>
+<script src="../app.js?v=18"></script>
+</body>
+</html>
