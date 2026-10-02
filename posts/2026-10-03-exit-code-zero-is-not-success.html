@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Exit Code Zero Is Not Success — AI Frontlines</title>
+<meta content="An agent loop terminates on signals: an exit code, a 200, a model's declaration of done. None of them mean the goal was achieved. Errors are loud; success is silent — and silence is where agent systems fail quietly while reporting green." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 3, 2026" data-zh="2026年10月3日">October 3, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Exit Code Zero Is Not Success" data-zh="退出码为零，不等于成功">Exit Code Zero Is Not Success</h1>
+<p class="post-header-deck" data-en="Every agent loop terminates on a signal: an exit code, an HTTP 200, the model's own declaration that it is done. None of these mean the goal was achieved. Errors are loud and success is silent — and silence is precisely where agentic systems fail quietly, reporting green all the way down. Termination is a mechanical event. Completion is a claim about the world. Confusing the two is the most expensive off-by-one in loop engineering." data-zh="每一条智能体循环，都会终止于某个信号：一个退出码、一个 HTTP 200、或者模型自己宣布「完成了」。这些都不意味着目标已经达成。错误是喧哗的，成功是沉默的——而沉默，恰恰是智能体系统安静地失败的地方，而且一路绿灯地报告到底。终止是一个机械事件，完成是一个关于世界的主张。把这两者混为一谈，是循环工程里最昂贵的一次差之毫厘。">Every agent loop terminates on a signal: an exit code, an HTTP 200, the model's own declaration that it is done. None of these mean the goal was achieved.</p>
+</header>
+<article class="post-body">
+<p data-en="Ask what actually ends an agent loop and the honest answer is uncomfortable. Not the goal, usually. A signal ends it. The shell tool returns zero. The API returns 200. The model writes a final sentence beginning with a summary and stops emitting tokens. The loop was engineered to treat these signals as terminators, and the engineering is correct — a loop must end somehow. The trouble begins one step later, when the same signal is silently promoted from terminator to testimony: not just the loop ended, but the work succeeded. Those are different propositions. A tool can exit zero while writing to the wrong target. An API can return 200 with an error serialized in the body, because some API authors treat the transport layer and the business layer as separate jurisdictions. A model can declare done because the plan has no remaining steps — and the plan was written before the world had a chance to disagree." data-zh="去问一条智能体循环究竟是被什么终结的，诚实的答案会让人不太舒服。通常不是目标，而是信号。Shell 工具返回了零。API 返回了 200。模型写出一句以「总结」开头的收尾语，然后停止生成 token。循环被工程化成把这些信号当作终止符，而这份工程本身没有错——循环总得有个结束的办法。麻烦开始于再往后一步：同一个信号被悄悄从「终止符」提拔成了「证词」——不只是循环结束了，而是工作成功了。这是两个不同的命题。一个工具可以在退出码为零的同时，把东西写进错误的目标。一个 API 可以返回 200，而错误序列化在响应体里，因为某些 API 的作者把传输层和业务层当成两个互不管辖的领地。一个模型可以宣布完成，因为计划里已经没有剩余步骤——而这份计划是在世界来得及表达异议之前写下的。">Ask what actually ends an agent loop and the honest answer is uncomfortable. Not the goal, usually. A signal ends it. The shell tool returns zero. The API returns 200. The model writes a final sentence and stops emitting tokens. The loop was engineered to treat these signals as terminators, and that engineering is correct. The trouble begins when the same signal is silently promoted from terminator to testimony.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrE1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THREE SIGNALS, ONE BIT, ZERO MEANING" data-zh="三种信号，一个比特，零含义" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THREE SIGNALS, ONE BIT, ZERO MEANING</text>
+<!-- signal sources -->
+<rect fill="var(--bg-surface)" height="56" rx="9" stroke="var(--accent-3)" stroke-width="1.5" width="180" x="40" y="56"></rect>
+<text data-en="shell tool" data-zh="shell 工具" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="130" y="78">shell tool</text>
+<text data-en="exit code 0" data-zh="退出码 0" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="130" y="96">exit code 0</text>
+<rect fill="var(--bg-surface)" height="56" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="180" x="40" y="126"></rect>
+<text data-en="HTTP response" data-zh="HTTP 响应" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="130" y="148">HTTP response</text>
+<text data-en="status 200" data-zh="状态码 200" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="130" y="166">status 200</text>
+<rect fill="var(--bg-surface)" height="56" rx="9" stroke="var(--accent)" stroke-width="1.5" width="180" x="40" y="196"></rect>
+<text data-en="the model itself" data-zh="模型自己" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="130" y="218">the model itself</text>
+<text data-en="&quot;task complete&quot;" data-zh="「任务完成」" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="130" y="236">"task complete"</text>
+<!-- arrows to the single bit -->
+<path d="M222 84 C290 90 320 120 373 138" fill="none" marker-end="url(#arrE1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<path d="M222 154 C280 154 320 148 373 145" fill="none" marker-end="url(#arrE1)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<path d="M222 224 C290 218 320 170 373 152" fill="none" marker-end="url(#arrE1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- the single bit -->
+<rect fill="var(--accent-dim)" height="52" rx="10" stroke="var(--accent)" stroke-width="2" width="140" x="378" y="118"></rect>
+<text data-en="SUCCESS = true" data-zh="SUCCESS = true" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="448" y="140">SUCCESS = true</text>
+<text data-en="one boolean" data-zh="一个布尔值" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="448" y="158">one boolean</text>
+<!-- annotations -->
+<text data-en="wrote to the wrong file" data-zh="写进了错误的文件" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="130" y="286">wrote to the wrong file</text>
+<text data-en="error lives in the body" data-zh="错误藏在响应体里" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="286">error lives in the body</text>
+<text data-en="no steps left ≠ goal met" data-zh="没有剩余步骤 ≠ 目标达成" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="490" y="286">no steps left ≠ goal met</text>
+<text data-en="the loop terminates on transport, not on truth" data-zh="循环终止于传输，而非终止于事实" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="316">the loop terminates on transport, not on truth</text>
+</svg>
+<p class="diagram-caption" data-en="Three heterogeneous signals — a process exit code, a transport status, a generative model's self-assessment — are flattened into a single boolean that the harness treats as ground truth. Each signal answers a different question, and none of the questions is the one the loop actually cares about: did the world end up in the intended state?" data-zh="三种完全异构的信号——进程退出码、传输层状态、生成式模型的自我评估——被压平成一个布尔值，而框架把它当作既定事实。每种信号回答的是不同的问题，而且没有一个问题，是这条循环真正关心的那一个：世界最终是否进入了预期的状态？">Three heterogeneous signals — a process exit code, a transport status, a model's self-assessment — are flattened into a single boolean the harness treats as ground truth. None of them answers the question the loop actually cares about: did the world end up in the intended state?</p>
+</div>
+<h3 data-en="Errors are loud. Success is silent." data-zh="错误是喧哗的，成功是沉默的。">Errors are loud. Success is silent.</h3>
+<p data-en="The asymmetry is structural, and it is worth slowing down to see it. When a tool fails loudly — a stack trace, a 500, a timeout — the loop is forced to react. Loud failure is a gift: it carries a location, often a cause, always an interrupt. The harness notices, the retry policy fires, the failure becomes an event in the trace. But success produces no event. There is no stack trace for having written the record to the wrong tenant. There is no exception for having deleted three files when the plan said two. Nothing interrupts a loop that is silently achieving the wrong thing. The result is a verification vacuum: agents are engineered to be excellent at handling the failures that announce themselves and structurally incapable of noticing the failures that do not. And since the absence of an error is the only evidence available, absence gets promoted to achievement. This is not a model defect. A perfect model dropped into this harness inherits the same blind spot, because the blind spot lives in the loop, not in the weights." data-zh="这种不对称是结构性的，值得放慢速度看清楚。当一个工具大声地失败——一段堆栈、一个 500、一次超时——循环被迫做出反应。大声的失败是一份礼物：它带着位置，常常带着原因，永远带着一次中断。框架注意到了，重试策略触发了，失败变成了 trace 里的事件。但成功不产生任何事件。把记录写进错误的租户，不会留下堆栈。计划说删两个文件，却删掉了三个，不会抛出异常。没有任何东西，会去中断一条正在安静地做错事的循环。结果是一片验证真空：智能体被工程化得极擅长处理那些自我宣告的失败，却在结构上无法察觉那些不吭声的失败。而由于「没有错误」是当时唯一可用的证据，缺席就被提拔成了成就。这不是模型的缺陷。一个完美的模型被放进这样的框架，也会继承同一个盲点——因为盲点住在循环里，不住在权重里。">The asymmetry is structural. Loud failure carries a location, often a cause, always an interrupt. But success produces no event. There is no stack trace for having written the record to the wrong tenant, no exception for having deleted three files when the plan said two. Nothing interrupts a loop that is silently achieving the wrong thing.</p>
+<h3 data-en="The write path is mandatory. The check path is optional." data-zh="写入路径是必选的，检查路径是可选的。">The write path is mandatory. The check path is optional.</h3>
+<p data-en="Look at the tool surface of any agent framework and count. The write path — the tools that change the world, that create the record, send the message, deploy the service — is always present, always typed, always documented. The check path — the tools that re-read what was written, diff it against intent, assert the world is now in the promised state — exists, if it exists at all, as an afterthought the model is free to skip. A typical loop fires the write, receives an acknowledgment, and moves on. The acknowledgment says the request was received. It does not say the intended effect occurred. These are separated by an entire causal chain — queues, retries, asynchronous propagation, caching layers, other agents writing to the same targets concurrently — and every link in that chain is a place where the intended effect and the reported effect can quietly diverge. The discipline is simple to state and rare in practice: every write deserves a corresponding read, performed against the world rather than against memory, executed after the dust settles rather than in the same breath as the write. The check is not paranoia. It is the only thing standing between an acknowledgment and a fact." data-zh="去看任何一个智能体框架的工具面，数一数就明白了。写入路径——那些改变世界的工具，创建记录、发送消息、部署服务——永远在场，永远有类型定义，永远有文档。检查路径——那些重读所写内容、与意图做 diff、断言世界已进入承诺状态的工具——就算存在，也只是一种模型随时可以跳过的事后点缀。一条典型的循环：触发写入，收到确认，继续前进。确认说的是「请求已被接收」，它说的不是「预期效果已经发生」。这两者之间隔着一整条因果链——队列、重试、异步传播、缓存层、其他同时往同一目标写入的智能体——而这条链上的每一环，都是预期效果与被报告效果可以悄悄分道扬镳的地方。这条纪律说起来简单，实践中罕见：每一次写入，都应得一次对应的读取——对着世界读，而不是对着记忆读；在尘埃落定之后读，而不是与写入同一次呼吸里读。检查不是偏执。它是横在「一次确认」与「一个事实」之间的唯一一道防线。">Look at the tool surface of any agent framework and count. The write path — tools that change the world — is always present, always typed, always documented. The check path — tools that re-read what was written and diff it against intent — exists, if at all, as an afterthought the model is free to skip.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrW1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrW2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE ACK AND THE FACT ARE DIFFERENT OBJECTS" data-zh="确认与事实，是两种不同的东西" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE ACK AND THE FACT ARE DIFFERENT OBJECTS</text>
+<!-- write -->
+<rect fill="var(--bg-surface)" height="56" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="40" y="60"></rect>
+<text data-en="WRITE" data-zh="写入" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="115" y="82">WRITE</text>
+<text data-en="create · send · deploy" data-zh="创建 · 发送 · 部署" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="115" y="100">create · send · deploy</text>
+<!-- causal chain -->
+<rect fill="var(--bg-surface)" height="56" rx="9" stroke="var(--border)" stroke-width="1.5" width="160" x="240" y="60"></rect>
+<text data-en="queue · retry · cache" data-zh="队列 · 重试 · 缓存" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="320" y="82">queue · retry · cache</text>
+<text data-en="async · other writers" data-zh="异步 · 其他写入者" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="320" y="100">async · other writers</text>
+<!-- ack -->
+<rect fill="var(--accent-dim)" height="56" rx="9" stroke="var(--accent)" stroke-width="2" width="150" x="430" y="60"></rect>
+<text data-en="ACKNOWLEDGMENT" data-zh="确认回执" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="505" y="82">ACKNOWLEDGMENT</text>
+<text data-en="&quot;request received&quot;" data-zh="「请求已接收」" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="505" y="100">"request received"</text>
+<path d="M190 88 L238 88" fill="none" marker-end="url(#arrW1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M400 88 L428 88" fill="none" marker-end="url(#arrW1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- the gap -->
+<line stroke="var(--border)" stroke-dasharray="3,5" x1="60" x2="560" y1="160" y2="160"></line>
+<!-- check path -->
+<rect fill="var(--bg-surface)" height="56" rx="9" stroke="var(--accent-3)" stroke-width="1.5" width="150" x="40" y="190"></rect>
+<text data-en="CHECK" data-zh="检查" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="115" y="212">CHECK</text>
+<text data-en="read the world back" data-zh="把世界读回来" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="115" y="230">read the world back</text>
+<rect fill="var(--bg-surface)" height="56" rx="9" stroke="var(--border)" stroke-width="1.5" width="160" x="240" y="190"></rect>
+<text data-en="diff against intent" data-zh="与意图做比对" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="320" y="212">diff against intent</text>
+<text data-en="assert end state" data-zh="断言最终状态" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="320" y="230">assert end state</text>
+<rect fill="var(--accent-dim)" height="56" rx="9" stroke="var(--accent)" stroke-width="2" width="150" x="430" y="190"></rect>
+<text data-en="FACT (or not)" data-zh="事实（或不是）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="505" y="212">FACT (or not)</text>
+<text data-en="verified, not assumed" data-zh="被验证，而非被假定" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="505" y="230">verified, not assumed</text>
+<path d="M190 218 L238 218" fill="none" marker-end="url(#arrW2)" stroke="var(--text-tertiary)" stroke-width="1.5" stroke-dasharray="5,4"></path>
+<path d="M400 218 L428 218" fill="none" marker-end="url(#arrW2)" stroke="var(--text-tertiary)" stroke-width="1.5" stroke-dasharray="5,4"></path>
+<text data-en="mandatory path — always built" data-zh="必选路径——永远会被建" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="145">mandatory path — always built</text>
+<text data-en="optional path — rarely built" data-zh="可选路径——很少被建" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="180">optional path — rarely built</text>
+<text data-en="the ack costs nothing to obtain · the fact costs one read" data-zh="拿到确认不花成本 · 拿到事实只需一次读取" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-style="italic" font-weight="600" text-anchor="middle" x="310" y="290">the ack costs nothing to obtain · the fact costs one read</text>
+<text data-en="and one read is what almost nobody budgets for" data-zh="而这恰恰是几乎没人愿意付出的那一次" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="310">and one read is what almost nobody budgets for</text>
+</svg>
+<p class="diagram-caption" data-en="The write path is the product; the check path is the warranty. The acknowledgment answers a question about the request, while the fact answers a question about the world, and an entire causal chain of queues, retries, and concurrent writers stands between them. Building the second path costs one extra read per write — the cheapest insurance in the entire stack, and the one most often omitted." data-zh="写入路径是产品本身，检查路径是质保。确认回执回答的是关于请求的问题，而事实回答的是关于世界的问题，两者之间隔着一整条由队列、重试和并发写入者组成的因果链。把第二条路径建起来，每次写入只多花一次读取——整个技术栈里最便宜的保险，也是最常被省略的那一份。">The write path is the product; the check path is the warranty. The acknowledgment answers a question about the request; the fact answers a question about the world. Building the second path costs one extra read per write — the cheapest insurance in the stack, and the one most often omitted.</p>
+</div>
+<h3 data-en="Make done a predicate, not a mood" data-zh="让完成成为一个谓词，而不是一种心情">Make done a predicate, not a mood</h3>
+<p data-en="The repair is to stop asking the model how it feels and start asking the world how it is. A goal worth automating is worth expressing as a checkable predicate: a state of the world that can be re-derived from observation, independent of the transcript, independent of the plan, independent of the agent's confidence in its own craftsmanship. Done means the predicate holds. Not the plan is empty. Not the model produced a summary paragraph. Not the last tool exited zero. The predicate is evaluated by reading the world — the file on disk, the row in the database, the response from the deployed endpoint — because the world is the only witness that cannot be persuaded. Two properties make a predicate trustworthy in a loop. It must be derived from the goal, not from the steps; a checklist of completed actions can be fully green while the outcome is fully wrong. And it must be checked by something cheaper than the agent that did the work — a diff, a query, a schema assertion — so that verification scales as a flat cost while generation scales as a multiplying one." data-zh="修复之道，是停止询问模型自我感觉如何，转而询问世界现在如何。一个值得自动化的目标，就值得被表达成一个可检查的谓词：一种可以从观察中重新推导出来的世界状态——独立于对话转录，独立于计划，也独立于智能体对自己手艺的信心。完成，意味着谓词成立。而不是计划清空了，不是模型写出了一段总结，也不是最后一个工具退出码为零。谓词的求值方式是读取世界——磁盘上的文件、数据库里的行、已部署端点返回的响应——因为世界是唯一一个无法被说服的证人。要让一个谓词在循环里值得信任，它需要两个性质。第一，它必须从目标推导，而不是从步骤推导；一份「已执行动作」的清单可以全绿，而结果全错。第二，对它的检查必须比干活的那位智能体更便宜——一个 diff、一次查询、一条 schema 断言——这样，验证成本保持为平坦的一次性支出，而生成成本是不断翻倍的。">The repair is to stop asking the model how it feels and start asking the world how it is. A goal worth automating is worth expressing as a checkable predicate: a state of the world re-derived from observation, independent of the transcript. Done means the predicate holds — not the plan is empty, not the last tool exited zero.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrP2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE LOOP THAT EARNS ITS TERMINATION" data-zh="一条靠自己挣来终止权的循环" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE LOOP THAT EARNS ITS TERMINATION</text>
+<!-- act -->
+<rect fill="var(--bg-surface)" height="60" rx="10" stroke="var(--accent-2)" stroke-width="1.5" width="130" x="40" y="70"></rect>
+<text data-en="ACT" data-zh="行动" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="105" y="95">ACT</text>
+<text data-en="write to the world" data-zh="向世界写入" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="105" y="113">write to the world</text>
+<!-- settle -->
+<rect fill="var(--bg-surface)" height="60" rx="10" stroke="var(--border)" stroke-width="1.5" width="120" x="215" y="70"></rect>
+<text data-en="SETTLE" data-zh="落定" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="275" y="95">SETTLE</text>
+<text data-en="let the dust settle" data-zh="等尘埃落定" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="275" y="113">let the dust settle</text>
+<!-- observe -->
+<rect fill="var(--bg-surface)" height="60" rx="10" stroke="var(--accent)" stroke-width="1.5" width="130" x="380" y="70"></rect>
+<text data-en="OBSERVE" data-zh="观察" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="445" y="95">OBSERVE</text>
+<text data-en="read the world back" data-zh="把世界读回来" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="445" y="113">read the world back</text>
+<path d="M170 100 L213 100" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M335 100 L378 100" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- predicate diamond -->
+<polygon fill="var(--accent-dim)" points="310,170 400,215 310,260 220,215" stroke="var(--accent)" stroke-width="2"></polygon>
+<text data-en="predicate" data-zh="谓词" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="212">predicate</text>
+<text data-en="holds?" data-zh="成立？" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="228">holds?</text>
+<path d="M445 130 C445 150 380 175 345 190" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- done -->
+<rect fill="var(--accent-dim)" height="56" rx="10" stroke="var(--accent)" stroke-width="2" width="130" x="460" y="187"></rect>
+<text data-en="DONE" data-zh="完成" fill="var(--accent)" font-family="Inter,sans-serif" font-size="13" font-weight="800" text-anchor="middle" x="525" y="210">DONE</text>
+<text data-en="earned, not declared" data-zh="挣来的，不是宣布的" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="525" y="228">earned, not declared</text>
+<path d="M400 215 L458 215" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<!-- repair loop -->
+<path d="M225 235 C140 260 95 220 100 132" fill="none" marker-end="url(#arrP2)" stroke="var(--text-tertiary)" stroke-width="1.5" stroke-dasharray="6,4"></path>
+<text data-en="repair — the loop continues" data-zh="修复——循环继续" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="118" y="285">repair — the loop continues</text>
+<text data-en="exit codes end turns · predicates end tasks" data-zh="退出码结束的是回合 · 谓词结束的才是任务" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-style="italic" font-weight="600" text-anchor="middle" x="330" y="318">exit codes end turns · predicates end tasks</text>
+</svg>
+<p class="diagram-caption" data-en="The terminator is no longer a signal from a tool but an evaluation against the goal: act, let the changes settle, read the world back, and test the predicate. If it holds, termination was earned. If it does not, the loop continues with repair — the failure was caught at the moment of its birth, not three handoffs later when someone wonders why the report says green and the dashboard says otherwise." data-zh="终止符不再来自某个工具的信号，而是对目标的一次求值：行动，等变更落定，把世界读回来，测试谓词。谓词成立，终止是挣来的。不成立，循环带着修复继续——失败在它出生的那一刻就被抓住了，而不是在三次交接之后，当有人困惑于为什么报告里一片绿、而仪表盘说的是另一回事的时候。">The terminator is no longer a signal from a tool but an evaluation against the goal: act, let the changes settle, read the world back, and test the predicate. If it holds, termination was earned. If not, the loop continues with repair — the failure caught at birth, not three handoffs later.</p>
+</div>
+<blockquote data-en="Done is not the absence of error and not the end of the plan. Done is a property of the world, checked by reading it. Any loop that terminates on a declaration — the model's, the transport's, the process's — is not finishing tasks; it is filing them. The difference surfaces later, at exactly the moment nobody is watching the loop anymore." data-zh="完成，不是没有错误，也不是计划走到头了。完成是世界的一个属性，靠读取世界来检验。任何依赖「宣告」终止的循环——模型的宣告、传输层的宣告、进程的宣告——都不是在完成任务，只是在把任务归档。两者的差别会晚一点浮出水面，恰恰在已经没有人盯着这条循环的那一刻。">Done is not the absence of error and not the end of the plan. Done is a property of the world, checked by reading it. Any loop that terminates on a declaration is not finishing tasks; it is filing them.</blockquote>
+<p data-en="There is a budget question hiding here, and it deserves honesty. Verification reads cost tokens and latency, and a loop that verifies every write is slower than one that does not. But the comparison is misframed. The unverified loop is not cheaper; its cost is deferred and compounding — it surfaces as a silent data corruption discovered by a customer, a deployment that reports healthy while serving stale configuration, a multi-agent pipeline whose final artifact contradicts its intermediate claims. Debugging a silent failure means reconstructing, from scratch and after the fact, the check that would have cost one read in the moment. The economics are not close. The deeper point is about what an agent system is: a machine for making claims about the world at machine speed. A machine like that earns trust exactly one way — by being the kind of machine that checks. Exit code zero got the loop to stop. Only the predicate can say what stopping was worth." data-zh="这里还藏着一个预算问题，值得坦诚面对。验证读取要花 token 和延迟，一条每次写入都做验证的循环，确实比不验证的慢。但这个比较本身就框错了。不验证的循环并不是更便宜——它的成本只是被推迟了，而且在复利：它浮现为一个被客户先发现的静默数据损坏，一次一边报告健康、一边供着过期配置的部署，一条最终工件与中间主张相互矛盾的多智能体流水线。调试一个静默失败，意味着事后从零重建那项在当下只值一次读取的检查。这笔账根本不平衡。更深的一层，关乎智能体系统究竟是什么：它是一台以机器速度对世界做出主张的机器。这样一台机器，只有一种方式挣得信任——成为那种会去检查的机器。退出码为零，让循环停了下来。而只有谓词，能说出这次停下究竟值多少。">There is a budget question hiding here. A loop that verifies every write is slower than one that does not. But the unverified loop is not cheaper; its cost is deferred and compounding — silent data corruption discovered by a customer, a deployment reporting healthy while serving stale config. The economics are not close.</p>
+</article>
+<footer class="post-footer">
+<a class="post-footer-link" href="../index.html" data-en="← Back to all posts" data-zh="← 返回全部文章">← Back to all posts</a>
+</footer>
+</div>
+<script src="../app.js?v=18"></script>
+</body>
+</html>

@@ -1,5 +1,14 @@
 [
 {
+  "date": "2026-10-03",
+  "slug": "exit-code-zero-is-not-success",
+  "title_en": "Exit Code Zero Is Not Success",
+  "title_zh": "退出码为零，不等于成功",
+  "read_time": 9,
+  "excerpt_en": "Agent loops terminate on signals — an exit code, an HTTP 200, the model's declaration of done. None mean the goal was achieved. Errors are loud; success is silent, and silence is where agentic systems fail quietly while reporting green. The fix: make done a predicate checked against the world, not a mood declared by the model.",
+  "excerpt_zh": "智能体循环终止于信号——退出码、HTTP 200、模型宣布完成。它们都不意味着目标达成。错误是喧哗的，成功是沉默的，而沉默正是系统安静失败、却一路报绿的地方。解药：让「完成」成为对着世界求值的谓词，而不是模型宣布的一种心情。"
+},
+{
   "date": "2026-10-02",
   "slug": "the-handoff-deletes-the-why",
   "title_en": "The Handoff Deletes the Why",
