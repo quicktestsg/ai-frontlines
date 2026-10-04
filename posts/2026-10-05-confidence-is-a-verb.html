@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Confidence Is a Verb — AI Frontlines</title>
+<meta content="Agents express confidence in prose and hide it from the architecture. The strongest agent systems do the opposite: they extract a number, calibrate it against reality, and wire it into control flow. Confidence becomes a gate, a router, and an escalation trigger — a verb, not an adjective." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 5, 2026" data-zh="2026年10月5日">October 5, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Confidence Is a Verb" data-zh="置信度是一个动词">Confidence Is a Verb</h1>
+<p class="post-header-deck" data-en="Every agent produces confidence. It leaks into the prose — the confident answer, the hedged aside, the 'it appears that' vs the 'this is'. But in almost every system ever shipped, that signal dies in the output string. Nobody parses it. Nobody routes on it. Nobody checks it against what actually happened. The result is an agent that is either equally bold about everything, or equally meek about everything — and a team that treats both as the model's personality rather than as an engineering defect. Confidence is not a mood the model is in. It is a measurement the system is failing to take." data-zh="每一个智能体都会产生置信度。它渗漏在文字里——自信的答案、含糊的旁白、「看起来如此」与「事实如此」之别。但在几乎所有已发布的系统里，这个信号都死在输出字符串里。没人解析它。没人基于它路由。没人拿它对照实际发生的结果。于是，你要得到一个对所有事同样鲁莽、或对所有事同样怯懦的智能体——而团队把两者都当作模型的性格，而非工程缺陷。置信度不是模型的一种心情。它是系统没有去做的一项测量。">Every agent produces confidence. It leaks into the prose — but in almost every system ever shipped, that signal dies in the output string. Nobody parses it, routes on it, or checks it against what happened.</p>
+</header>
+<article class="post-body">
+<p data-en="Start with an observation about how agent failures actually present. A coding agent writes a patch. The patch works. A week later, the same agent writes a nearly identical patch for a nearly identical bug — and this time it deletes a directory. Nothing in the surrounding architecture distinguished the two moments. Both calls went through the same approval flow, consumed the same budget, wrote to the same logs. Yet the model itself almost certainly knew the difference. Even when the underlying probability estimates are imperfect, the distribution over outcomes was not the same in those two runs — and the model's own generation reflects that, in ways both subtle and measurable. The information existed. The system was simply not built to receive it." data-zh="从一个关于智能体失败如何呈现的观察说起。一个编程智能体写了一个补丁。补丁有效。一周后，同一个智能体为一个几乎相同的 bug 写了一个几乎相同的补丁——而这一次，它删掉了一个目录。周围架构里，没有任何东西区分了这两个时刻。两次调用经过同样的审批流、消耗同样的预算、写入同样的日志。但模型本身几乎肯定知道差别。即便底层的概率估计并不完美，那两次运行的结果分布也不一样——而模型自己的生成过程，以既微妙又可测的方式反映了这一点。信息是存在的。只是系统没有为接收它而建造。">Start with an observation about how agent failures actually present. A coding agent writes a patch. The patch works. A week later, the same agent writes a nearly identical patch for a nearly identical bug — and this time it deletes a directory. Nothing in the architecture distinguished the two moments. The information existed. The system was simply not built to receive it.</p>
+<p data-en="This is the gap: models emit uncertainty constantly, and architectures throw it away. The fix is not a better prompt that asks the model to be humble. The fix is structural. Confidence has to leave the prose and enter the control flow. That means three engineering moves: extract it as a number, calibrate it against observed outcomes, and gate actions on it. Each move is unglamorous. Together they turn a black box that is sometimes right into a system whose boldness scales with its evidence." data-zh="这就是那个缺口：模型持续散发不确定性，而架构把它扔掉了。修复不是用一个更好的 prompt 去要求模型谦逊。修复是结构性的。置信度必须离开散文、进入控制流。这意味着三个工程动作：把它提取成一个数字，拿它对照观察到的结果做校准，再让它给动作把关。每个动作都不光鲜。但合在一起，它们把一个「有时正确的黑箱」变成一个「胆量随证据增长的系统」。">This is the gap: models emit uncertainty constantly, and architectures throw it away. The fix is not a better prompt that asks the model to be humble. The fix is structural: extract confidence as a number, calibrate it against outcomes, and gate actions on it.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrC2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrC3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="WHERE THE CONFIDENCE SIGNAL DIES" data-zh="置信度信号死在哪里" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHERE THE CONFIDENCE SIGNAL DIES</text>
+<!-- model node -->
+<rect fill="var(--accent-dim)" height="52" rx="10" stroke="var(--accent)" stroke-width="2.5" width="180" x="30" y="60"></rect>
+<text data-en="MODEL" data-zh="模型" fill="var(--accent)" font-family="Inter,sans-serif" font-size="13" font-weight="800" text-anchor="middle" x="120" y="82">MODEL</text>
+<text data-en="distribution over outcomes" data-zh="结果上的概率分布" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="120" y="100">distribution over outcomes</text>
+<!-- the two channels -->
+<path d="M210 78 L300 78" fill="none" marker-end="url(#arrC2)" stroke="var(--accent)" stroke-width="1.8"></path>
+<text data-en="answer text" data-zh="答案文本" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="255" y="70">answer text</text>
+<path d="M210 100 L300 100" fill="none" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<text data-en="uncertainty — evaporates" data-zh="不确定性——蒸发" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="255" y="118">uncertainty — evaporates</text>
+<!-- output string -->
+<rect fill="var(--bg-surface)" height="64" rx="8" stroke="var(--text-tertiary)" stroke-width="1.5" width="200" x="302" y="60"></rect>
+<text data-en="OUTPUT STRING" data-zh="输出字符串" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="402" y="84">OUTPUT STRING</text>
+<text data-en="&quot;...it appears the fix...&quot;" data-zh="「…看起来这个修复…」" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="402" y="104">"...it appears the fix..."</text>
+<!-- flows onward -->
+<path d="M502 78 L560 78" fill="none" marker-end="url(#arrC1)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--text-tertiary)" stroke-width="1" width="50" x="562" y="58"></rect>
+<text data-en="UI" data-zh="界面" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="587" y="83">UI</text>
+<text data-en="confidence flattened into adjectives" data-zh="置信度被压扁成形容词" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="120" y="150">confidence flattened into adjectives</text>
+<!-- the engineered alternative, below -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="30" x2="590" y1="172" y2="172"></line>
+<text data-en="THE ENGINEERED PATH" data-zh="被工程化的路径" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="196">THE ENGINEERED PATH</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="100" x="30" y="214"></rect>
+<text data-en="extract" data-zh="提取" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="80" y="236">extract</text>
+<path d="M130 231 L178 231" fill="none" marker-end="url(#arrC2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="100" x="180" y="214"></rect>
+<text data-en="calibrate" data-zh="校准" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="230" y="236">calibrate</text>
+<path d="M280 231 L328 231" fill="none" marker-end="url(#arrC2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="100" x="330" y="214"></rect>
+<text data-en="gate" data-zh="把关" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="380" y="236">gate</text>
+<path d="M430 231 L478 231" fill="none" marker-end="url(#arrC2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="40" rx="9" stroke="var(--accent)" stroke-width="2" width="110" x="480" y="211"></rect>
+<text data-en="control flow" data-zh="控制流" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="535" y="236">control flow</text>
+<text data-en="a number that routes, throttles, and escalates" data-zh="一个能路由、限流、上报的数字" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="286">a number that routes, throttles, and escalates</text>
+<text data-en="not a mood — a measurement" data-zh="不是心情，是测量" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="308">not a mood — a measurement</text>
+</svg>
+<p class="diagram-caption" data-en="Top path, what ships today: the model holds a full distribution over outcomes, but only the argmax string survives — uncertainty evaporates into adjectives like 'appears' and 'likely', unreadable to code. Bottom path, the engineered alternative: the signal is extracted at generation time, calibrated against ground truth, and wired into control flow as a gate." data-zh="上路径，今天的做法：模型掌握着完整的结果分布，但只有 argmax 字符串存活下来——不确定性蒸发成「看起来」「大概」这类代码无法阅读的形容词。下路径，工程化的替代：信号在生成时被提取，对照真实结果校准，并作为一个闸门接入控制流。">Top path, what ships today: the model holds a full distribution over outcomes, but only the argmax string survives. Bottom path, the engineered alternative: extract, calibrate, gate.</p>
+</div>
+<h3 data-en="Extraction: make the model commit to a number" data-zh="提取：让模型对一个数字表态">Extraction: make the model commit to a number</h3>
+<p data-en="The first move is extraction, and it is stranger than it sounds, because the obvious versions are traps. Asking a model 'how confident are you, 0 to 100' in the same breath as the answer produces a number shaped more by politeness than by probability. The model wants to be helpful; a helpful model is a confident model; so the numbers cluster at 85 and stay there. The workaround is structural: separate the assessment from the answer. Run the evaluation after the draft exists, in a context that contains the evidence and not the performance of certainty. Ask narrow questions — will this patch compile, will this record exist by the time this read runs, does this citation support this sentence — and ask for the probability of a specific, checkable event, not a global self-grade. A specific question has a specific truth. 'How confident are you in this plan' has none." data-zh="第一个动作是提取，而它比听起来更微妙，因为显而易见的做法都是陷阱。在给出答案的同一口气里问模型「你有几成把握，0 到 100」，得到的是一个由礼貌而非概率塑造的数字。模型想显得有用，而一个有用的模型就是一个自信的模型，于是数字全挤在 85 附近，不再移动。出路是结构性的：把评估与答案分开。在草稿已存在之后再运行评估，上下文里只放证据、不放「表演确定性」的压力。问狭窄的问题——这个补丁能编译吗、这条记录在读操作运行时还存在吗、这条引用支撑这句话吗——要一个具体的、可检验事件的概率，而不是一个全局的自我打分。具体的问题有具体的真值。「你对这个计划有几成把握」没有。">The first move is extraction, and the obvious versions are traps: asking 'how confident are you' in the same breath as the answer produces a number shaped by politeness, not probability. Separate the assessment from the answer, and ask for the probability of specific, checkable events.</p>
+<p data-en="There is a second, quieter source of signal that most teams ignore entirely: the model's own generation statistics. Token-level probabilities, the entropy of the choice points, the hesitation visible when a model pads an answer with hedges. This signal is free — it is already computed and discarded on every call — but it requires access to the plumbing, and it is noisy. The honest engineering position is that neither channel, introspection or statistics, is trustworthy alone. What matters is that both are extracted as numbers at generation time, stamped into the trace, and made available to the code that runs after. Confidence that lives only inside the sentence is confidence the system cannot use, which is to say it does not exist." data-zh="还有第二个更安静的信号源，大多数团队完全忽略：模型自己的生成统计。token 级概率、选择点的熵、当模型用含糊措辞给答案注水时可见的犹豫。这个信号是免费的——每次调用它都已被计算、然后被丢弃——但它需要接入底层管道，而且噪声不小。诚实的工程立场是：内省和统计这两个通道，单独哪个都不可信。重要的是两者都在生成时被提取成数字、盖进追踪记录、并交给之后运行的代码。只活在句子里的置信度，是系统用不了的置信度——也就是说，它不存在。">A second, quieter source: generation statistics. Token-level probabilities, entropy at choice points, the hesitation visible when a model pads answers with hedges. This signal is free — already computed and discarded on every call. Neither channel is trustworthy alone; what matters is that both are extracted as numbers and stamped into the trace.</p>
+<blockquote data-en="Confidence that lives only inside the sentence is confidence the system cannot use. A hedge the code cannot parse is indistinguishable from a guarantee. The difference between 'it appears to work' and 'it works' is a branch statement that was never written." data-zh="只活在句子里的置信度，是系统用不了的置信度。代码无法解析的含糊，与保证无异。「看起来能用」与「能用」之间的差别，是一条从未被写出的分支语句。">Confidence that lives only inside the sentence is confidence the system cannot use. A hedge the code cannot parse is indistinguishable from a guarantee.</blockquote>
+<h3 data-en="Calibration: the number means nothing until reality weighs in" data-zh="校准：在现实称量之前，数字毫无意义">Calibration: the number means nothing until reality weighs in</h3>
+<p data-en="Extraction gives a number; calibration makes the number mean something. A model that says 80 percent is not promising that it is right 80 percent of the time. It is emitting a number whose relationship to truth is unknown, model-specific, task-specific, and — this is the part teams forget — prompt-specific. Rewrite the system prompt and you have silently re-zeroed the scale. Calibration is the practice of discovering that relationship and correcting for it: collect the predictions, watch the outcomes, and plot the two against each other. When a system says 70 percent, is it right 70 percent of the time, or 52 percent? The gap is not a footnote. Every downstream gate inherits it." data-zh="提取给出一个数字；校准让这个数字有了含义。一个说「80%」的模型，并不是在承诺它有八成的正确率。它发出的是一个与真相关系未知的数字——因模型而异、因任务而异，而且——这是团队最容易忘的——因 prompt 而异。重写一次系统 prompt，你就悄悄把刻度归零了。校准就是发现并修正这个关系的实践：收集预测、观察结果、把两者画在一起对照。当一个系统说 70%，它是七成正确，还是五成二？这个差距不是脚注。下游的每一个闸门都会继承它。">Extraction gives a number; calibration makes it mean something. A model that says 80 percent is not promising 80 percent accuracy — the relationship to truth is unknown, model-specific, task-specific, and prompt-specific. Calibration discovers that relationship and corrects for it.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrD1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="CALIBRATION: PROMISED vs DELIVERED" data-zh="校准：承诺 vs 兑现" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">CALIBRATION: PROMISED vs DELIVERED</text>
+<!-- axes: plot area x 70..570, y 50..300; map 0..1 to 70..570 and 300..50 -->
+<line stroke="var(--text-tertiary)" stroke-width="1.5" x1="70" x2="570" y1="300" y2="300"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1.5" x1="70" x2="70" y1="50" y2="300"></line>
+<!-- perfect diagonal -->
+<line stroke="var(--accent)" stroke-dasharray="5,4" stroke-width="1.5" x1="70" x2="570" y1="300" y2="50"></line>
+<text data-en="perfect" data-zh="完美" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="112" y="268">perfect</text>
+<!-- overconfident curve: says 90, right 55 -->
+<path d="M70 300 C160 285 260 232 380 190 C460 162 530 156 570 154" fill="none" stroke="var(--accent-3)" stroke-width="2.2"></path>
+<circle cx="520" cy="167" fill="var(--accent-3)" r="4"></circle>
+<text data-en="says 90% →" data-zh="说 90% →" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="start" x="360" y="142">says 90% →</text>
+<text data-en="right 55%" data-zh="实际 55%" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="start" x="360" y="156">right 55%</text>
+<!-- gap annotation -->
+<line stroke="var(--accent-3)" stroke-width="1" stroke-dasharray="2,3" x1="520" x2="520" y1="167" y2="85"></line>
+<circle cx="520" cy="85" fill="var(--accent-3)" r="3" opacity="0.6"></circle>
+<text data-en="the gap every gate inherits" data-zh="每个闸门继承的缺口" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="430" y="72">the gap every gate inherits</text>
+<!-- axis labels -->
+<text data-en="claimed probability →" data-zh="声称的概率 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="320" y="326">claimed probability →</text>
+<text data-en="observed accuracy →" data-zh="观测准确率 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="34" y="175" transform="rotate(-90 34 175)">observed accuracy →</text>
+<!-- ticks -->
+<text data-en="50%" data-zh="50%" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="320" y="313">50%</text>
+<text data-en="100%" data-zh="100%" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="570" y="313">100%</text>
+<text data-en="50%" data-zh="50%" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="end" x="64" y="180">50%</text>
+</svg>
+<p class="diagram-caption" data-en="A typical uncalibrated agent: the dashed diagonal is honesty — saying 70 and being right 70 percent of the time. The solid curve is what actually ships — claims run far ahead of outcomes, and the gap widens at the top, exactly where the irreversible actions live. Every threshold set on the raw number is set on a lie." data-zh="一个典型的未校准智能体：虚线对角线是诚实——说 70、就七成正确。实曲线才是实际发布的情形——声称远远跑在结果前面，而且缺口在顶端扩大，恰好是不可逆动作所在的位置。每一个设在原始数字上的阈值，都设在一个谎言上。">A typical uncalibrated agent: the dashed diagonal is honesty. The solid curve is what ships — claims run ahead of outcomes, and the gap widens at the top, exactly where irreversible actions live.</p>
+</div>
+<p data-en="The uncomfortable detail is that the failure is worst exactly where it matters most. Miscalibration is not uniform across the range. In the middle, where the model genuinely does not know, numbers scatter around the truth. At the top, where the model is performing certainty for a user who wants an answer, the numbers inflate. So the raw signal is least trustworthy precisely at the thresholds that guard the dangerous actions. Calibration corrects this by mapping the claimed number to the observed frequency — per task, per tool, per prompt version — and the corrected value is the one the gates see. This is not a research project. It is a lookup table, refreshed on a schedule, versioned like any other artifact the system depends on." data-zh="让人不安的细节是：失败恰好在最要紧的地方最严重。误校准在值域上并不均匀。在中间地带，模型确实不知道的地方，数字大致散布在真值周围。而在顶端——模型正在为一个想要答案的用户表演确定性的地方——数字膨胀。于是，原始信号最不可信之处，恰是守卫危险动作的阈值所在。校准通过把声称数字映射到观测频率来修正这一点——按任务、按工具、按 prompt 版本——而闸门看到的是修正后的值。这不是一个研究课题。它是一张查找表，按计划刷新，像系统依赖的任何其他产物一样有版本。">The uncomfortable detail: miscalibration is worst at the top, where the model performs certainty for a user who wants an answer. The raw signal is least trustworthy exactly at the thresholds guarding dangerous actions. Calibration maps claims to observed frequencies — a lookup table, refreshed on a schedule, versioned like any artifact.</p>
+<h3 data-en="Gating: boldness should scale with evidence, and only with evidence" data-zh="把关：胆量应随证据伸缩，且只随证据伸缩">Gating: boldness should scale with evidence, and only with evidence</h3>
+<p data-en="Once the number is real, it becomes the most useful wire in the machine. The pattern is a ladder: sort the agent's possible actions by reversibility, and set a calibrated-confidence threshold for each rung. Reads need no gate — cheap, harmless, and the primary way the agent converts uncertainty into evidence. Writes to scratch space need a low bar. Writes to shared state need a high one. Irreversible effects — sending, deploying, deleting, spending — sit above the highest bar, and below the bar the system does something more interesting than failing: it invests. It runs another retrieval. It executes the plan in a sandbox and observes. It calls a cheaper model to adversarially review the expensive one. Low confidence is not an error state. It is a budget line for gathering the evidence that would raise it." data-zh="一旦数字是真的，它就成了机器里最有用的一根导线。模式是一架梯子：把智能体可能的动作按可逆性排序，为每一级设一个校准后的置信度阈值。读操作不需要闸门——便宜、无害，而且是智能体把不确定性转化为证据的主要方式。对草稿空间的写操作需要低门槛。对共享状态的写操作需要高门槛。不可逆效果——发送、部署、删除、花钱——位于最高门槛之上；而在门槛之下，系统做的事比失败有趣得多：它投资。它再跑一次检索。它把计划放进沙箱执行并观察。它叫一个更便宜的模型来对抗式地审查那个贵的。低置信度不是错误状态。它是一笔用于收集证据的预算——那些能把置信度抬起来的证据。">The pattern is a ladder: sort actions by reversibility, set a calibrated threshold for each rung. Low confidence is not an error state — it is a budget line for gathering the evidence that would raise it.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrE1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrE2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE CONFIDENCE LADDER" data-zh="置信度阶梯" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE CONFIDENCE LADDER</text>
+<!-- rungs, bottom to top -->
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent-2)" stroke-width="1.2" width="230" x="40" y="262"></rect>
+<text data-en="read() — no gate" data-zh="read() —— 无闸门" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="155" y="285">read() — no gate</text>
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent-2)" stroke-width="1.4" width="230" x="40" y="212"></rect>
+<text data-en="write(scratch) — bar: low" data-zh="write(草稿) —— 门槛：低" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="155" y="235">write(scratch) — bar: low</text>
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent)" stroke-width="1.6" width="230" x="40" y="162"></rect>
+<text data-en="write(shared) — bar: high" data-zh="write(共享) —— 门槛：高" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="155" y="185">write(shared) — bar: high</text>
+<rect fill="var(--accent-dim)" height="36" rx="8" stroke="var(--accent)" stroke-width="2.2" width="230" x="40" y="112"></rect>
+<text data-en="send · deploy · delete · spend" data-zh="发送 · 部署 · 删除 · 花费" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="155" y="135">send · deploy · delete · spend</text>
+<!-- ladder side rail -->
+<line stroke="var(--text-tertiary)" stroke-width="2" x1="34" x2="34" y1="112" y2="298"></line>
+<text data-en="reversibility ↓" data-zh="可逆性 ↓" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="14" y="205" transform="rotate(-90 14 205)">reversibility ↓</text>
+<!-- the below-bar path: invest in evidence -->
+<path d="M270 130 L330 130" fill="none" marker-end="url(#arrE2)" stroke="var(--accent-3)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<text data-en="below bar" data-zh="低于门槛" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="300" y="122">below bar</text>
+<rect fill="var(--bg-surface)" height="56" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="332" y="102"></rect>
+<text data-en="INVEST" data-zh="投资" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="392" y="124">INVEST</text>
+<text data-en="not fail" data-zh="而非失败" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="392" y="140">not fail</text>
+<!-- invest fan-out -->
+<path d="M452 114 C480 106 500 92 520 78" fill="none" marker-end="url(#arrE1)" stroke="var(--accent)" stroke-width="1.2"></path>
+<path d="M452 130 L512 130" fill="none" marker-end="url(#arrE1)" stroke="var(--accent)" stroke-width="1.2"></path>
+<path d="M452 146 C480 154 500 168 520 182" fill="none" marker-end="url(#arrE1)" stroke="var(--accent)" stroke-width="1.2"></path>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent)" stroke-width="1.2" width="86" x="514" y="52"></rect>
+<text data-en="retrieve more" data-zh="再检索" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="557" y="70">retrieve more</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent)" stroke-width="1.2" width="86" x="514" y="116"></rect>
+<text data-en="sandbox run" data-zh="沙箱试跑" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="557" y="134">sandbox run</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent)" stroke-width="1.2" width="86" x="514" y="182"></rect>
+<text data-en="adversarial review" data-zh="对抗审查" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="557" y="200">adversarial review</text>
+<!-- loop back annotation -->
+<path d="M557 80 C557 46 460 40 392 46 C330 52 300 70 272 96" fill="none" marker-end="url(#arrE2)" stroke="var(--accent-3)" stroke-width="1" stroke-dasharray="2,3"></path>
+<text data-en="confidence rises → retry the rung" data-zh="置信度回升 → 重试这一级" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="420" y="60">confidence rises → retry the rung</text>
+<text data-en="escalate only when investment stops paying" data-zh="只有当投资不再回报时，才上报人类" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="326">escalate only when investment stops paying</text>
+</svg>
+<p class="diagram-caption" data-en="Actions sorted by reversibility, each guarded by a calibrated threshold. Below the bar, the system invests — more retrieval, a sandbox execution, an adversarial review by a cheaper model — and retries the rung only when confidence rises. Human escalation is the exit of last resort, taken only when further investment stops paying for itself." data-zh="动作按可逆性排序，每一级由校准后的阈值守卫。低于门槛时，系统投资——更多检索、一次沙箱执行、一次由更便宜模型进行的对抗审查——只在置信度回升后重试这一级。上报人类是最后的出口，只在进一步投资不再回本时启用。">Actions sorted by reversibility, each guarded by a calibrated threshold. Below the bar, the system invests and retries. Human escalation is the exit of last resort.</p>
+</div>
+<p data-en="Notice what this does to the human in the loop. Escalation stops being a lottery ticket the agent hands out at random and becomes a priced decision. Every escalation costs attention, and attention is the scarcest resource in any deployment. A system that escalates everything trains its operators to approve everything; a system that escalates nothing trains them to trust nothing. The calibrated ladder is what lands between the two: the agent escalates when it has exhausted the cheap ways of making itself worthy of trust. The human sees a request backed by a trace that shows the retrieval was done, the sandbox passed, the reviewer model signed off — and a number that has survived contact with reality. That is a queue worth reading." data-zh="注意这给「人在环中」带来了什么。上报不再是智能体随机派发的彩票，而变成一个被定价的决策。每次上报都消耗注意力，而注意力是任何部署里最稀缺的资源。什么都上报的系统，训练运营者什么都批准；什么都不上报的系统，训练他们什么都不信。校准的阶梯恰好落在两者之间：当智能体耗尽了让自己值得信任的廉价手段时，它才上报。人类看到的是一个有追踪记录背书的请求——检索做过了、沙箱通过了、审查模型签字了——以及一个经过现实检验的数字。那才是一个值得读的队列。">Notice what this does to the human in the loop. Escalation becomes a priced decision. A system that escalates everything trains operators to approve everything; a system that escalates nothing trains them to trust nothing. The calibrated ladder lands between the two.</p>
+<p data-en="There is a version of this argument that says none of it matters — the models are getting so good that the confidence gap will close on its own. It is half true and wholly irrelevant. Models are getting better calibrated on average, sure. But the deployment surface is expanding faster than the average improves: agents are being handed longer horizons, weirder tools, contexts stuffed with retrieved material of unknown provenance. The uncertainty does not disappear as capability rises. It moves — from syntax to semantics, from the sentence to the system, from the moment of generation to the moment of consequence. The question is never whether the model is confident. The question is whether the architecture knows what to do when it is not. Treat confidence as a verb — something the system does, continuously, with consequences — and the agent's boldness finally has something underneath it. Leave it as an adjective, and every failure will arrive pre-explained, in perfectly confident prose, with nothing in the logs to contradict it." data-zh="对这个论点，有一种反驳说：这些都无所谓——模型正在变得如此之好，置信度缺口会自己闭合。这话一半为真，一半毫不相干。平均而言，模型确实在校准上变好。但部署面的扩张比均值的改善更快：智能体被交予更长的视野、更奇怪的工具、塞满来历不明检索材料的上下文。不确定性不会随着能力上升而消失。它迁移——从语法到语义，从句子到系统，从生成的那一刻到产生后果的那一刻。问题从来不是模型自不自信。问题是：当它不自信时，架构知不知道该做什么。把置信度当作一个动词——一件系统持续在做、并带有后果的事——智能体的胆量下面才终于有了支撑。把它留作一个形容词，那么每一次失败都会带着完美自信的文字、预先解释好地抵达，而日志里没有任何东西能反驳它。">The uncertainty does not disappear as capability rises. It moves — from syntax to semantics, from the sentence to the system, from the moment of generation to the moment of consequence. The question is never whether the model is confident. The question is whether the architecture knows what to do when it is not.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
