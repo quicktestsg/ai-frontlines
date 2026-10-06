@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Name Is the Foreign Key — AI Frontlines</title>
+<meta content="Agents are fuzzy matchers running inside systems that need exact keys. When two agents, two tools, and two retrieval hits each refer to the same object by different names, nothing crashes — the work silently forks. The fix is the oldest idea in databases: a canonical identity, minted once, referenced everywhere." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 7, 2026" data-zh="2026年10月7日">October 7, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Name Is the Foreign Key" data-zh="名称就是外键">The Name Is the Foreign Key</h1>
+<p class="post-header-deck" data-en="An agent is a fuzzy matcher running inside a system that needs exact keys. The ticket is called AUTH-12 in one tool, 'the login bug' in a commit message, and issue #487 in another — and each mention becomes a separate object in the agent's working memory. Nothing crashes. The work silently forks: duplicate fixes, double-counted reports, one agent waiting on a ticket the other already closed. Identity is not an NLP garnish. It is the schema." data-zh="智能体是一个运行在精确键系统里的模糊匹配器。工单在这个工具里叫 AUTH-12，在提交信息里叫「那个登录 bug」，在另一个系统里是 issue #487——而每处提及都变成智能体工作记忆里的独立对象。没有任何东西崩溃。工作在悄悄分叉：重复的修复、被重复计数的报告、一个智能体在等待另一个早已关闭的工单。身份不是 NLP 的点缀。它是 schema 本身。">An agent is a fuzzy matcher running inside a system that needs exact keys. Nothing crashes when identity fails — the work silently forks.</p>
+</header>
+<article class="post-body">
+<p data-en="Consider a failure that never appears in any incident review, because nothing technically failed. A maintenance agent is asked to close out 'the login bug'. It searches the issue tracker and finds AUTH-12. It searches the codebase and finds a fix in progress on a branch whose description says 'fix session expiry'. It searches the team chat archive and finds a thread debating whether the bug is even real. Three sources, three phrasings, one underlying object. The agent treats them as three related-but-distinct things, reports all three in its summary, and files a fourth: a new ticket, 'verify the login fix', which duplicates a ticket that already exists and was assigned to someone two days ago. Every individual step was correct. The join failed. And the join failed because nothing in the system ever states, in a form code can check, that these three mentions point at one thing." data-zh="设想一个永远不会出现在任何事故复盘里的失败，因为严格来说没有任何东西失败了。一个维护智能体被要求收尾「那个登录 bug」。它搜索工单系统，找到 AUTH-12。它搜索代码库，发现一个分支上描述为「修复会话过期」的修复正在进行。它搜索团队聊天存档，找到一条争论这个 bug 是否真实存在的讨论。三个来源、三种措辞、同一个底层对象。智能体把它们当作三件相关但不同的事，在总结里报告了全部三个，然后又提交了第四个：一张新工单「验证登录修复」，它与一张两天前已存在并已指派给某人的工单重复。每一个单独的步骤都是对的。是 join 失败了。而 join 失败，是因为系统里没有任何东西——以代码能检查的形式——声明过：这三处提及指向同一个事物。">Consider a failure that never appears in any incident review, because nothing technically failed. Three sources, three phrasings, one underlying object — and the join failed, because nothing in the system ever states, in a form code can check, that these mentions point at one thing.</p>
+<p data-en="This is the identity gap, and it widens exactly as agent systems get more capable. A single agent with one tool can survive on vibes: it holds the whole picture in context, and paraphrase is harmless when there is only one mouth doing the paraphrasing. But the moment there are multiple tools, multiple retrieval sources, or — the real multiplier — multiple agents, every object in the world acquires a shadow cloud of names, and the system has no idea which shadows belong to which body. Databases solved this problem half a century ago with a boring, complete answer: every row gets a key, and every reference to the row uses the key, never the description. Agent architectures keep rediscovering why that rule exists, the expensive way." data-zh="这就是身份缺口，而且智能体系统越强，它裂得越宽。一个只用一个工具的单一智能体可以靠感觉活着：整幅图景都在它的上下文里，当只有一张嘴在做改写时，改写是无害的。但一旦出现多个工具、多个检索来源，或者——真正的放大器——多个智能体，世界里的每个对象都会获得一团名字的阴影，而系统完全不知道哪些阴影属于哪个本体。数据库在半个世纪前就用一个乏味而完备的答案解决了这个问题：每一行都有一个键，对这一行的每次引用都用键，绝不用描述。智能体架构正在不断重新发现这条规则存在的原因——以昂贵的方式。">This is the identity gap, and it widens exactly as agent systems get more capable. Databases solved it half a century ago: every row gets a key, and every reference uses the key, never the description.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrF1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrF2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="ONE OBJECT, FIVE SHADOWS" data-zh="一个对象，五道阴影" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ONE OBJECT, FIVE SHADOWS</text>
+<!-- five name nodes, top row -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-3)" stroke-width="1.4" width="120" x="30" y="52"></rect>
+<text data-en="AUTH-12" data-zh="AUTH-12" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="90" y="73">AUTH-12</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-3)" stroke-width="1.4" width="120" x="170" y="52"></rect>
+<text data-en="issue #487" data-zh="issue #487" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="230" y="73">issue #487</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-3)" stroke-width="1.4" width="120" x="310" y="52"></rect>
+<text data-en="&quot;the login bug&quot;" data-zh="「那个登录 bug」" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="370" y="73">"the login bug"</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-3)" stroke-width="1.4" width="120" x="450" y="52"></rect>
+<text data-en="fix/session-expiry" data-zh="fix/session-expiry" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="510" y="73">fix/session-expiry</text>
+<text data-en="…same bug, five mouths" data-zh="……同一个 bug，五张嘴" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="108">…same bug, five mouths</text>
+<!-- dashed ambiguous links down to two distinct working-memory objects -->
+<path d="M110 86 C130 130 180 150 220 160" fill="none" stroke="var(--accent-3)" stroke-width="1" stroke-dasharray="3,4"></path>
+<path d="M230 86 C240 120 240 140 240 160" fill="none" stroke="var(--accent-3)" stroke-width="1" stroke-dasharray="3,4"></path>
+<path d="M360 86 C330 130 300 150 280 162" fill="none" stroke="var(--accent-3)" stroke-width="1" stroke-dasharray="3,4"></path>
+<path d="M240 86 C200 130 160 155 130 164" fill="none" stroke="var(--accent-3)" stroke-width="1" stroke-dasharray="3,4"></path>
+<path d="M500 86 C460 130 380 155 300 164" fill="none" stroke="var(--accent-3)" stroke-width="1" stroke-dasharray="3,4"></path>
+<!-- working memory: object forked into two -->
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent)" stroke-width="2" width="170" x="80" y="164"></rect>
+<text data-en="ticket to close" data-zh="要关闭的工单" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="165" y="182">ticket to close</text>
+<text data-en="status: unknown" data-zh="状态：未知" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="165" y="198">status: unknown</text>
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent)" stroke-width="2" width="170" x="330" y="164"></rect>
+<text data-en="branch to review" data-zh="要审查的分支" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="415" y="182">branch to review</text>
+<text data-en="owner: unknown" data-zh="所有者：未知" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="415" y="198">owner: unknown</text>
+<text data-en="the object has forked — the system cannot tell" data-zh="对象已经分叉——系统看不出来" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="290" y="234">the object has forked — the system cannot tell</text>
+<!-- the fix row -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="30" x2="590" y1="252" y2="252"></line>
+<text data-en="THE FIX" data-zh="修复" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="276">THE FIX</text>
+<rect fill="var(--accent-dim)" height="40" rx="9" stroke="var(--accent)" stroke-width="2.2" width="130" x="245" y="290"></rect>
+<text data-en="ENTITY #e-1041" data-zh="实体 #e-1041" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="314">ENTITY #e-1041</text>
+<path d="M180 254 C210 272 230 286 243 296" fill="none" marker-end="url(#arrF2)" stroke="var(--accent)" stroke-width="1.4"></path>
+<path d="M440 254 C410 272 390 286 377 296" fill="none" marker-end="url(#arrF2)" stroke="var(--accent)" stroke-width="1.4"></path>
+<text data-en="one key, minted once, referenced everywhere" data-zh="一个键，铸造一次，处处引用" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="120" y="306">one key, minted once, referenced everywhere</text>
+</svg>
+<p class="diagram-caption" data-en="Top: the same underlying object surfaces under five different names across tools, tickets, branches, and chat. Middle: without a join key, working memory forks the object into disconnected shadows with unknown status and unknown ownership — nothing errors, everything degrades. Bottom: the fix is the oldest idea in databases — a canonical identity, minted once, that every reference points to." data-zh="上：同一个底层对象以五个不同名字出现在工具、工单、分支与聊天里。中：没有 join 键时，工作记忆把对象分叉成互不相连的阴影——状态未知、所有者未知。没有报错，只有全面退化。下：修复是数据库里最古老的思想——一个铸造一次的规范身份，让所有引用都指向它。">Top: one object, five names. Middle: without a join key, working memory forks it into disconnected shadows — nothing errors, everything degrades. Bottom: the fix is the oldest idea in databases.</p>
+</div>
+<h3 data-en="Paraphrase is a UI feature, not a data model" data-zh="改写是界面特性，不是数据模型">Paraphrase is a UI feature, not a data model</h3>
+<p data-en="The root confusion is treating the model's fluency as if it were a storage layer. Models are magnificent at fuzzy matching — it is arguably the whole trick — and that competence tempts architects into letting paraphrase do the work of keys. It works in demos, where the cast of objects is small and the session is short. It fails in production along three predictable seams. First, retrieval: a vector store returns the same document under different chunkings, and the agent cites it twice as two sources. Second, handoff: agent A describes the object to agent B in prose, B re-derives its own notion of the object, and the two now disagree about state neither of them created. Third, accumulation: long-running systems collect every phrasing ever used, and the probability that two mentions of different things read as identical grows with the corpus. Fuzziness at the edges of a system is a gift. Fuzziness in the middle of it is a rounding error on reality, compounding hourly." data-zh="根本的混淆，是把模型的流利当成了存储层。模型极其擅长模糊匹配——可以说这就是全部诀窍——而这份能力诱使架构师让改写去承担键的职能。这在演示里行得通：对象少、会话短。在生产环境里，它沿三条可预测的接缝失败。第一，检索：向量存储以不同的切块返回同一份文档，智能体把它当作两个来源引用了两次。第二，交接：智能体 A 用散文向 B 描述对象，B 重新推导出自己对对象的理解，现在两者对一个谁都没创建过的状态各执一词。第三，累积：长期运行的系统收集了有史以来用过的每一种措辞，而两个不同事物的提及被读成同一个的概率，随语料增长。系统边缘的模糊是天赋。系统中层的模糊，是对现实的舍入误差，按小时复利。">The root confusion is treating the model's fluency as a storage layer. Fuzziness at the edges of a system is a gift; fuzziness in the middle of it is a rounding error on reality, compounding hourly.</p>
+<blockquote data-en="A name that must be re-guessed on every use is not a name. It is a riddle the system pays to solve again and again — sometimes incorrectly, always silently." data-zh="一个每次使用都要重新去猜的名称不是名称。它是一道谜题，系统一次次付费去解——有时解错，永远无声。">A name that must be re-guessed on every use is not a name. It is a riddle the system pays to solve again and again — sometimes incorrectly, always silently.</blockquote>
+<h3 data-en="Mint identities at the edge, reference them in the core" data-zh="在边缘铸造身份，在内核引用身份">Mint identities at the edge, reference them in the core</h3>
+<p data-en="The architectural pattern is a split. All the fuzziness is pushed to the perimeter, where it belongs, and none of it is allowed into the loop. Concretely: the system maintains an entity registry. When any source mentions an object — a ticket, a server, a customer, a document — a resolution step decides whether this mention refers to a known entity or a new one, and returns a canonical ID. From that moment on, the transcript, the tool calls, the scratchpad, the final report: everything carries the ID. The model may still write 'the login bug' in its prose, but the structured envelope around that prose says entity:e-1041, and every automated check — does this duplicate an open ticket, is someone already assigned, has state changed since the last read — operates on the envelope, never on the words. This is precisely the division of labor databases landed on decades ago: humans may describe a row however they like, while every foreign key remains an integer. The fuzzy matcher resolves names to IDs at the edge. Exact keys drive every action in the core. Agents fail when this boundary blurs — when the same fuzzy faculty that found the object is also trusted to track it across a thousand steps." data-zh="架构模式是一次切分。所有模糊性被推到它该在的边界，一克都不许进入循环。具体来说：系统维护一个实体注册表。当任何来源提及一个对象——一张工单、一台服务器、一个客户、一份文档——一个解析步骤判断这次提及指向已知实体还是新实体，并返回一个规范 ID。从那一刻起，转录记录、工具调用、草稿本、最终报告：一切携带这个 ID。模型仍然可以在散文里写「那个登录 bug」，但散文外面的结构化信封写着 entity:e-1041，而所有自动化检查——这是否与未决工单重复、是否已有人被指派、状态自上次读取后是否变化——都作用在信封上，从不作用在词语上。这正是数据库几十年前达成的分工：人类可以随意描述一行数据，而每个外键始终是整数。模糊匹配器在边缘把名称解析成 ID。精确的键驱动核心里的每个动作。当这条边界模糊时——当找到对象的那个模糊能力，又被信任去在千步之后追踪它——智能体就失败了。">The pattern is a split: the fuzzy matcher resolves names to IDs at the edge; exact keys drive every action in the core. The model may still write 'the login bug' — but the structured envelope says entity:e-1041.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrG1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrG2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE IDENTITY PERIMETER" data-zh="身份边界" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE IDENTITY PERIMETER</text>
+<!-- left: fuzzy edge -->
+<rect fill="var(--bg-surface)" height="180" rx="12" stroke="var(--accent-3)" stroke-width="1.5" width="150" x="30" y="60"></rect>
+<text data-en="EDGE — fuzzy" data-zh="边缘——模糊" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="105" y="84">EDGE — fuzzy</text>
+<text data-en="new mention arrives" data-zh="新提及到达" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="105" y="110">new mention arrives</text>
+<text data-en="&quot;that auth thing&quot;" data-zh="「那个鉴权的玩意」" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="105" y="128">"that auth thing"</text>
+<text data-en="resolve →" data-zh="解析 →" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="105" y="156">resolve →</text>
+<text data-en="alias table" data-zh="别名表" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="105" y="174">alias table</text>
+<text data-en="known? → reuse ID" data-zh="已知？→ 复用 ID" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="105" y="198">known? → reuse ID</text>
+<text data-en="new? → mint ID" data-zh="新的？→ 铸造 ID" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="105" y="216">new? → mint ID</text>
+<!-- middle: the bridge -->
+<path d="M180 150 L280 150" fill="none" marker-end="url(#arrG1)" stroke="var(--accent)" stroke-width="2"></path>
+<text data-en="entity:e-1041" data-zh="entity:e-1041" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="230" y="140">entity:e-1041</text>
+<text data-en="fuzziness stops here" data-zh="模糊到此为止" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="230" y="166">fuzziness stops here</text>
+<!-- right: exact core -->
+<rect fill="var(--accent-dim)" height="180" rx="12" stroke="var(--accent)" stroke-width="2" width="300" x="284" y="60"></rect>
+<text data-en="CORE — exact" data-zh="内核——精确" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="434" y="84">CORE — exact</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.2" width="260" x="304" y="98"></rect>
+<text data-en="transcript entries carry IDs" data-zh="转录记录携带 ID" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="434" y="117">transcript entries carry IDs</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.2" width="260" x="304" y="136"></rect>
+<text data-en="tool calls key on IDs" data-zh="工具调用以 ID 为键" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="434" y="155">tool calls key on IDs</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.2" width="260" x="304" y="174"></rect>
+<text data-en="dup / state checks on IDs" data-zh="查重 / 状态检查基于 ID" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="434" y="193">dup / state checks on IDs</text>
+<text data-en="prose may paraphrase — envelopes never do" data-zh="散文可以改写——信封从不" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="434" y="222">prose may paraphrase — envelopes never do</text>
+<!-- bottom: handoff note -->
+<path d="M434 240 C434 262 380 270 330 272" fill="none" marker-end="url(#arrG2)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<text data-en="handoffs serialize entities, not adjectives" data-zh="交接序列化的是实体，不是形容词" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="290">handoffs serialize entities, not adjectives</text>
+<text data-en="two agents that share keys can disagree — but measurably" data-zh="共享键的两个智能体可以有分歧——但分歧可测量" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="316">two agents that share keys can disagree — but measurably</text>
+</svg>
+<p class="diagram-caption" data-en="The identity perimeter: every mention is resolved to a canonical ID at the boundary, using whatever fuzzy matching earns its keep there. Inside the core, everything — transcripts, tool calls, duplicate checks, state checks, handoffs between agents — keys on the ID. Prose may paraphrase freely; the structured envelope around it never does." data-zh="身份边界：每处提及在边界处被解析成规范 ID，用任何在那里站得住脚的模糊匹配。在内核里，一切——转录、工具调用、查重、状态检查、智能体之间的交接——都以 ID 为键。散文可以随意改写；它外面的结构化信封从不。">The identity perimeter: resolve every mention to a canonical ID at the boundary. Inside the core, everything keys on the ID. Prose may paraphrase; envelopes never do.</p>
+</div>
+<h3 data-en="Identity is half the problem — the other half is staleness" data-zh="身份只是一半——另一半是过期">Identity is half the problem — the other half is staleness</h3>
+<p data-en="Even with perfect keys, a second failure mode waits. The agent resolves 'the login bug' to e-1041, correct — but the copy of e-1041 sitting in its context is from twenty minutes ago, and in those twenty minutes someone else reassigned the ticket, or closed it, or escalated it. The agent acts on the stale version and reopens, re-comments, re-does. So entities need two fields, not one: identity and version. Every reference carried in working memory is a pair — the ID and the observed state version — and every consequential action begins with a compare. If the version matches, proceed; the context is truth. If it does not, the action is routed through a re-fetch and the plan is re-validated against the fresh state before anything irreversible happens. This is optimistic concurrency control, lifted from databases into agent loops, and it composes with the key system beautifully: the ID tells the system which object it is touching, the version tells it whether what it believes about that object is still true. Cheap to implement, trivial to log, and it converts an entire class of silent races — duplicate comments, reopened tickets, edits that clobber each other — into clean, observable retries." data-zh="即便键完美无缺，第二种失败模式仍在等候。智能体把「那个登录 bug」解析成 e-1041，没错——但它上下文里那份 e-1041 的副本来自二十分钟前，而在这二十分钟里，别人重新指派了工单，或者关闭了它，或者升级了它。智能体基于过期版本行动，重新打开、重新评论、重新做一遍。所以实体需要两个字段，不是一个：身份和版本。工作记忆里的每个引用都是一个二元组——ID 与观测到的状态版本——而每个有后果的动作都以一次比较开始。版本一致，则继续；上下文即真相。不一致，则动作被路由到一次重新抓取，并在任何不可逆的事发生之前，用新鲜状态重新校验计划。这是乐观并发控制，从数据库搬进智能体循环，而且它与键系统漂亮地组合：ID 告诉系统它在碰哪个对象，版本告诉它对这个对象的信念是否仍然为真。实现便宜，记录简单，并且它把一整类无声竞态——重复评论、重开的工单、互相覆盖的编辑——转化为干净、可观测的重试。">Entities need two fields: identity and version. The ID says which object is being touched; the version says whether what the agent believes about it is still true. Optimistic concurrency control, lifted from databases into agent loops.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrH1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrH2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="READ — COMPARE — MAYBE REFRESH" data-zh="读取——比较——或需刷新" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">READ — COMPARE — MAYBE REFRESH</text>
+<!-- context copy -->
+<rect fill="var(--bg-surface)" height="56" rx="10" stroke="var(--accent)" stroke-width="2" width="170" x="40" y="56"></rect>
+<text data-en="CONTEXT COPY" data-zh="上下文副本" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="125" y="78">CONTEXT COPY</text>
+<text data-en="e-1041 · v3 · open" data-zh="e-1041 · v3 · 打开" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="125" y="98">e-1041 · v3 · open</text>
+<!-- compare diamond -->
+<path d="M250 84 L300 84" fill="none" marker-end="url(#arrH1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<path d="M360 50 L410 84 L360 118 L310 84 Z" fill="var(--bg-surface)" stroke="var(--accent)" stroke-width="2"></path>
+<text data-en="version" data-zh="版本" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="385" y="80">version</text>
+<text data-en="match?" data-zh="一致？" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="385" y="94">match?</text>
+<!-- yes path -->
+<path d="M410 84 L470 84" fill="none" marker-end="url(#arrH1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<text data-en="yes" data-zh="是" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="440" y="74">yes</text>
+<rect fill="var(--accent-dim)" height="40" rx="9" stroke="var(--accent)" stroke-width="2" width="110" x="474" y="64"></rect>
+<text data-en="act" data-zh="执行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="529" y="89">act</text>
+<!-- no path: refresh -->
+<path d="M385 118 C385 150 385 160 385 170" fill="none" marker-end="url(#arrH2)" stroke="var(--accent-3)" stroke-width="1.8"></path>
+<text data-en="no — world moved" data-zh="否——世界动了" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="450" y="148">no — world moved</text>
+<rect fill="var(--bg-surface)" height="52" rx="10" stroke="var(--accent-3)" stroke-width="1.8" width="180" x="295" y="174"></rect>
+<text data-en="RE-FETCH + RE-VALIDATE" data-zh="重新抓取 + 重新校验" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="385" y="196">RE-FETCH + RE-VALIDATE</text>
+<text data-en="plan checked against fresh state" data-zh="计划对照最新状态检查" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="385" y="214">plan checked against fresh state</text>
+<!-- refresh feeds back to context copy and act -->
+<path d="M295 200 C220 200 140 170 122 116" fill="none" marker-end="url(#arrH2)" stroke="var(--accent-3)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<path d="M475 200 C520 200 545 170 540 110" fill="none" marker-end="url(#arrH1)" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<!-- race note -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="40" x2="590" y1="252" y2="252"></line>
+<text data-en="WHAT THIS RETIRES" data-zh="这淘汰了什么" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="276">WHAT THIS RETIRES</text>
+<text data-en="duplicate comments · reopened tickets · clobbered edits · double fixes" data-zh="重复评论 · 重开的工单 · 互相覆盖的编辑 · 重复修复" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="298">duplicate comments · reopened tickets · clobbered edits · double fixes</text>
+<text data-en="silent races become observable retries" data-zh="无声的竞态变成可观测的重试" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="322">silent races become observable retries</text>
+</svg>
+<p class="diagram-caption" data-en="Every consequential action starts with a compare: the version observed in context against the version now in the world. Match — act immediately. Mismatch — re-fetch, re-validate the plan against fresh state, then act. The check costs one read; skipping it costs races that no log ever explains." data-zh="每个有后果的动作都始于一次比较：上下文里观测到的版本，对照世界当前的版本。一致——立即执行。不一致——重新抓取，用最新状态重新校验计划，再执行。检查只花一次读取；跳过它，代价是任何日志都解释不了的竞态。">Every consequential action starts with a compare: context version against world version. Match — act. Mismatch — re-fetch, re-validate, act.</p>
+</div>
+<p data-en="A counterargument deserves air: models are improving at long-context coherence, and one could hope the identity problem dissolves as context windows grow. It will not, because the problem is not in the model — it is in the world. Context windows do not stop two tools from assigning different IDs to the same object. They do not freeze the ticket's state while the agent thinks. They do not make two agents, running in parallel with different snapshots, agree on which version of reality is current. These are coordination problems, and coordination problems live in the architecture, not the weights. The model's job is to be a brilliant interpreter between human language and machine keys. The system's job is to make sure that once a thing has a key, nothing ever has to guess it again. Teams that internalize this build agents that scale in number without forking reality. Teams that don't will keep debugging incidents that no traceback reproduces — where every step was locally reasonable, the prose was flawless, and the system, in the only sense that matters, did not know what it was talking about." data-zh="有一种反驳值得回应：模型的长上下文连贯性正在进步，可以寄望身份问题随上下文窗口扩大而消解。它不会，因为问题不在模型里——问题在世界里。上下文窗口不会阻止两个工具给同一对象分配不同 ID。它不会在智能体思考时冻结工单的状态。它也不会让两个拿着不同快照、并行运行的智能体，在哪个版本的现实是当前版本上达成一致。这些是协调问题，而协调问题住在架构里，不住在权重里。模型的职责是做人类语言与机器键之间出色的翻译官。系统的职责是确保：一旦一个事物有了键，再也没有任何东西需要去猜它。内化了这一点的团队，构建出的智能体可以在数量上扩展而不使现实分叉。没有内化的团队，将继续调试那些没有任何调用栈能复现的事故——其中每一步都局部合理、散文无懈可击，而这个系统，在唯一要紧的意义上，根本不知道自己在说什么。">The counterargument — that long-context models will dissolve the identity problem — fails because the problem is not in the model, it is in the world. Context windows do not freeze a ticket's state while the agent thinks. Coordination problems live in the architecture, not the weights.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
