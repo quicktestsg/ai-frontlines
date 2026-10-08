@@ -1,202 +1,211 @@
 [
-{
-  "date": "2026-10-07",
-  "slug": "the-name-is-the-foreign-key",
-  "title_en": "The Name Is the Foreign Key",
-  "title_zh": "名称就是外键",
-  "read_time": 9,
-  "excerpt_en": "Agents are fuzzy matchers running inside systems that need exact keys. When every tool calls the same object by a different name, nothing crashes — the work silently forks. The fix is the oldest idea in databases: canonical identity plus versioned reads.",
-  "excerpt_zh": "智能体是运行在精确键系统里的模糊匹配器。当每个工具用不同名字称呼同一对象时，什么也不会崩溃——工作只会悄然分叉。修复方案是数据库里最古老的思想：规范身份加上带版本的读取。"
-},
-{
-  "date": "2026-10-05",
-  "slug": "confidence-is-a-verb",
-  "title_en": "Confidence Is a Verb",
-  "title_zh": "置信度是一个动词",
-  "read_time": 9,
-  "excerpt_en": "Models emit uncertainty constantly and architectures throw it away. The fix is structural: extract confidence as a number, calibrate it against observed outcomes, and wire it into control flow as a gate on the irreversible actions.",
-  "excerpt_zh": "模型持续散发不确定性，而架构把它扔掉了。修复是结构性的：把置信度提取成数字、对照真实结果校准、并作为不可逆动作上的闸门接入控制流。"
-},
-{
-  "date": "2026-10-04",
-  "slug": "the-agent-has-no-undo-button",
-  "title_en": "The Agent Has No Undo Button",
-  "title_zh": "智能体没有撤销键",
-  "read_time": 9,
-  "excerpt_en": "Databases got transactions; agents got nothing. Every tool call that touches the world is a one-way door, and most tool inventories don't even tell the model which doors swing both ways. Undo has to be engineered: an effect taxonomy, a compensation plan, and a commit gate.",
-  "excerpt_zh": "数据库有事务，智能体什么都没有。每一个触碰世界的工具调用都是一扇单向门，而大多数工具清单甚至不告诉模型哪些门能双向打开。撤销必须被工程出来：效果分级、补偿预案、提交闸门。"
-},
-{
-  "date": "2026-10-03",
-  "slug": "exit-code-zero-is-not-success",
-  "title_en": "Exit Code Zero Is Not Success",
-  "title_zh": "退出码为零，不等于成功",
-  "read_time": 9,
-  "excerpt_en": "Agent loops terminate on signals — an exit code, an HTTP 200, the model's declaration of done. None mean the goal was achieved. Errors are loud; success is silent, and silence is where agentic systems fail quietly while reporting green. The fix: make done a predicate checked against the world, not a mood declared by the model.",
-  "excerpt_zh": "智能体循环终止于信号——退出码、HTTP 200、模型宣布完成。它们都不意味着目标达成。错误是喧哗的，成功是沉默的，而沉默正是系统安静失败、却一路报绿的地方。解药：让「完成」成为对着世界求值的谓词，而不是模型宣布的一种心情。"
-},
-{
-  "date": "2026-10-02",
-  "slug": "the-handoff-deletes-the-why",
-  "title_en": "The Handoff Deletes the Why",
-  "title_zh": "交接，删掉了「为什么」",
-  "read_time": 9,
-  "excerpt_en": "Multi-agent systems pass work like relay batons: the artifact arrives, the reasoning does not. Conclusions survive a handoff; rejected alternatives, confidence levels, and open questions die at the boundary. The fix is not a bigger context window — it is a rationale ledger that ships the why alongside the what.",
-  "excerpt_zh": "多智能体系统像接力棒一样传递工作：工件抵达了，推理没有。结论能活过一次交接；被否决的备选、置信度、悬而未决的问题，都死在边界上。解药不是更大的上下文窗口——而是一份让「为什么」随「是什么」一起上路 的理由账本。"
-},
-{
-  "date": "2026-10-01",
-  "slug": "the-token-expires-before-the-task-does",
-  "title_en": "The Token Expires Before the Task Does",
-  "title_zh": "Token 比任务先过期",
-  "read_time": 9,
-  "excerpt_en": "Agent tasks now routinely outlive the credentials they were launched with. When a token dies mid-loop, the failure wears a costume — a flattened 401, a rate-limit lookalike, or worst of all, an empty result set the agent reads as a fact about the world. The credential is a lease, and the lease must be part of the plan.",
-  "excerpt_zh": "智能体的运行，如今常常比启动时携带的凭证活得更久。当 token 在循环中途死亡，失败会穿着戏服登场——被压平的 401、酷似限流的错误，或者最糟的：一组被智能体当作世界事实采信的空结果。凭证是一份租约，而租期必须是计划的一部分。"
-},
-{
-  "date": "2026-09-30",
-  "slug": "what-the-agent-forgets-on-purpose",
-  "title_en": "What the Agent Forgets on Purpose",
-  "title_zh": "智能体的遗忘，是一种主动设计",
-  "read_time": 9,
-  "excerpt_en": "Every long-running loop hits the full-window wall, and what leaves the window is chosen by code nobody reviews. Compaction is not cleanup — it is garbage collection for attention, and every eviction policy is a theory of value.",
-  "excerpt_zh": "每一个长循环都会撞上窗口已满的墙，而什么离开窗口，是由一段无人评审的代码决定的。压缩不是清扫——它是针对 attention 的垃圾回收，而每一个驱逐策略都是一套价值观。"
-},
-{
-  "date": "2026-09-29",
-  "slug": "the-retried-call-is-not-the-same-call",
-  "title_en": "The Retried Call Is Not the Same Call",
-  "title_zh": "被重试的调用，不再是同一个调用",
-  "read_time": 9,
-  "excerpt_en": "Every harness retries — timeouts, fallback ladders, subagent redos. But a retry is a second arrival in a world that already recorded the first one, and side effects do not dedupe themselves. The idempotency key is the load-bearing contract.",
-  "excerpt_zh": "每个框架都会重试——超时、降级阶梯、子智能体重做。但重试是这个世界迎来的第二次抵达，而副作用不会自己去重。幂等键，才是那个承重的契约。"
-},
-{
-  "date": "2026-09-28",
-  "slug": "waiting-is-a-first-class-state",
-  "title_en": "Waiting Is a First-Class State",
-  "title_zh": "等待，是一等公民状态",
-  "read_time": 9,
-  "excerpt_en": "Agents in production spend 96% of their existence not thinking — waiting for approvals, events, and long jobs. The sleep loop is a bet against your own infrastructure. The durable pause, the timeout contract, and the wake-time re-validation are the real architecture.",
-  "excerpt_zh": "生产环境里的智能体，96% 的时间不在思考——而在等待批准、等待事件、等待长任务。sleep 循环是拿自己的基础设施下注。持久暂停、超时契约、唤醒时的重新验证，才是真正的架构。"
-},
-{
-  "date": "2026-09-27",
-  "slug": "the-sandbox-is-part-of-the-prompt",
-  "title_en": "The Sandbox Is Part of the Prompt",
-  "title_zh": "沙箱也是 Prompt 的一部分",
-  "read_time": 8,
-  "excerpt_en": "A model cannot distinguish 'allowed because it is safe' from 'allowed because nobody locked the door.' The sandbox, the egress allow-list, even the wording of a 403 are all behavioral instructions — obeyed more literally than anything in the system prompt.",
-  "excerpt_zh": "模型无法区分「被允许是因为安全」和「被允许是因为没人锁门」。沙箱、出站白名单、甚至一条 403 的措辞，全都是行为指令——被遵守的严格程度超过 system prompt 里的任何一句话。"
-},
-{
-  "date": "2026-09-26",
-  "slug": "the-verifier-is-the-product",
-  "title_en": "The Verifier Is the Product",
-  "title_zh": "验证器才是产品",
-  "read_time": 9,
-  "excerpt_en": "Generation is a commodity — every provider sells it, every competitor buys it, and the next model release re-prices it. The scarce engineering asset in an agent system is the verifier: the machinery that decides whether an output is good enough to ship, with real authority to reject, repair, or escalate.",
-  "excerpt_zh": "生成已是商品——每个提供商都在卖，每个竞争者都买得到，下一次模型发布还会重新定价。智能体系统里稀缺的工程资产是验证器：那套决定输出是否好到可以上线、并真正有权拒绝、修复或升级的机器。"
-},
-{
-  "date": "2026-09-25",
-  "slug": "the-fallback-ladder",
-  "title_en": "The Fallback Ladder",
-  "title_zh": "降级阶梯",
-  "read_time": 9,
-  "excerpt_en": "Every demo shows the happy path; production is made of timeouts, outages, and tools that return well-formed garbage. Durable agents don't patch failures after designing the happy path — they design the ordered, labeled descent first, and the bottom rung before the top.",
-  "excerpt_zh": "每一场演示都展示快乐路径，而生产环境由超时、故障和返回格式正确但内容是垃圾的工具构成。耐用的智能体不是先设计快乐路径再修补失败——它们先设计有序、带标签的下降，先设计最底下那一级。"
-},
-{
-  "date": "2026-09-24",
-  "slug": "the-second-call-is-coming",
-  "title_en": "The Second Call Is Coming",
-  "title_zh": "第二次调用，终将到来",
-  "read_time": 8,
-  "excerpt_en": "Agents retry, re-issue after compaction, and race parallel branches into the same resource. Exactly-once was an abstraction for callers with trustworthy memory — agents are not those callers. The fix is a grammar of idempotency: operation tokens that name the effect, not the attempt.",
-  "excerpt_zh": "智能体会重试、会在压缩后重发、会让并行分支赛进同一个资源。「恰好一次」是为记忆可信的调用者准备的抽象——智能体不是那种调用者。修复是一套幂等语法：为效果而非尝试命名的操作令牌。"
-},
-{
-  "date": "2026-09-23",
-  "slug": "ship-the-shadow-not-the-agent",
-  "title_en": "Ship the Shadow, Not the Agent",
-  "title_zh": "先上线的，应该是影子，而不是智能体",
-  "read_time": 9,
-  "excerpt_en": "The leap from zero autonomy to full autonomy is where agent deployments die. The shadow run mirrors every human decision to the agent, discards the agent's proposal, and logs the delta — evidence earned on tomorrow's distribution, not last quarter's benchmark. Trust is a dial, not a switch.",
-  "excerpt_zh": "从零自主一步跳到完全自主，正是智能体部署葬身之地。影子运行把人类的每个决策镜像给智能体、丢弃它的提案、记录分歧——用明天的分布挣证据，而不是上个季度的基准。信任是旋钮，不是开关。"
-},
-{
-  "date": "2026-09-22",
-  "slug": "the-checkpoint-contract",
-  "title_en": "The Checkpoint Contract",
-  "title_zh": "检查点契约",
-  "read_time": 9,
-  "excerpt_en": "Every long agent run gets interrupted — by deploys, rate limits, context ceilings, absent humans. Replay re-rolls the dice and re-sends the emails. Resume requires a checkpoint: a contract with three clauses — what happened, what was committed, what remains.",
-  "excerpt_zh": "每一次长智能体运行都会被打断——部署、限流、上下文上限、离场的人类。重放只会重掷骰子、重发邮件。续跑需要检查点：一份只有三条条款的契约——发生了什么、提交了什么、还剩什么。"
-},
-{
-  "date": "2026-09-21",
-  "slug": "the-tool-result-is-a-prompt",
-  "title_en": "The Tool Result Is a Prompt",
-  "title_zh": "工具的返回结果，本身就是 prompt",
-  "read_time": 8,
-  "excerpt_en": "Teams tune their system prompts for weeks, then let tools dump raw JSON straight into the model's context. Every token a tool returns becomes part of the next prompt. The firehose, the cryptogram, and the shrug — three payload designs nobody designed — explain most 'model failures' in agent traces.",
-  "excerpt_zh": "团队花数周调优系统 prompt，却任由工具把原始 JSON 直接倾倒进模型上下文。工具返回的每一个 token，都会成为下一个 prompt 的一部分。消防水管、密码电文与耸肩——三种从未被设计过的返回载荷——解释了智能体追踪记录里大多数的「模型失败」。"
-},
-{
-  "date": "2026-09-20",
-  "slug": "the-irreversibility-budget",
-  "title_en": "The Irreversibility Budget",
-  "title_zh": "不可逆预算",
-  "read_time": 9,
-  "excerpt_en": "Agents graduate from reading the world to writing it, and the moment they do, reversibility — not risk — becomes the axis that matters. Undo is a designed capability: staged writes, two-phase applies, compensation edges, and a hard budget for actions that can never be recalled.",
-  "excerpt_zh": "智能体从「读世界」毕业到「写世界」的那一刻起，真正重要的坐标轴就不是风险，而是可逆性。撤销是一种要被设计出来的能力：暂存写入、两阶段提交、补偿边，以及给永远收不回的动作设下的硬预算。"
-},
-{
-  "date": "2026-09-19",
-  "slug": "agents-that-remember-to-forget",
-  "title_en": "Agents That Remember to Forget",
-  "title_zh": "会记住去遗忘的智能体",
-  "read_time": 10,
-  "excerpt_en": "Every agent accumulates context and almost none of it ever leaves the window — old results, dead drafts, resolved errors all tax every generation step. The fix is a forgetting policy: classify facts by how they decay, compress the sediment, and treat memory as a managed resource with a budget.",
-  "excerpt_zh": "每个智能体都在积累上下文，而几乎没有任何内容会离开窗口——旧结果、死草稿、已解决的错误，都在向每一步生成征税。解法是遗忘策略：按衰减方式给事实分类，压缩沉积物，把记忆当作有预算的被管理资源。"
-},
-{
-  "date": "2026-09-18",
-  "slug": "the-goal-decays-in-transit",
-  "title_en": "The Goal Decays in Transit",
-  "title_zh": "目标会在途中衰减",
-  "read_time": 9,
-  "excerpt_en": "Long agent runs don't fail at a step — they drift, each locally reasonable decision bending the trajectory a few degrees until step forty solves a different problem. The fix is a beacon: the goal as a versioned artifact, re-injected at gates, checked by tripwires.",
-  "excerpt_zh": "长程智能体不会在某一步失败——它们漂移，每个局部合理的决策都让轨迹偏几度，直到第四十步在解决另一个问题。解法是信标：目标作为带版本的产物，在关卡处重新注入，由绊线检查。"
-},
-{
-  "date": "2026-09-17",
-  "slug": "the-confirm-button-is-load-bearing",
-  "title_en": "The Confirm Button Is Load-Bearing",
-  "title_zh": "确认按钮是承重墙",
-  "read_time": 8,
-  "excerpt_en": "Every agent that touches the real world grows a confirm button — and the moment it exists, a tired human glancing at a dialog for three seconds becomes the system's entire safety boundary. Approval fatigue isn't a UX nitpick; it's the collapse of the safety model, engineered in by teams who never budgeted consent.",
-  "excerpt_zh": "每一个接触真实世界的智能体都会长出确认按钮——而从它存在那一刻起，一个疲惫的人盯着对话框三秒钟，就成了系统全部的安全边界。审批疲劳不是 UX 小毛病，而是安全模型的崩塌，由从未给「同意」做过预算的团队亲手设计进去。"
-},
-{
-  "date": "2026-09-16",
-  "slug": "speculative-execution-in-agent-loops",
-  "title_en": "Speculate, Then Commit: Parallel Branches in Agent Loops",
-  "title_zh": "先推测，再提交：智能体循环中的并行分支",
-  "read_time": 9,
-  "excerpt_en": "Agent latency is a chain of serial round-trips, and most loops are written as if the world ended at each tool call. CPUs solved this with branch prediction and speculative execution decades ago — the same discipline maps cleanly onto agent harnesses: parallel fan-out, hedged requests, and speculative branches committed only behind a verification gate.",
-  "excerpt_zh": "智能体的延迟是一串串行往返，而大多数循环被写成好像世界在每次工具调用时就终结一次。CPU 几十年前就用分支预测和推测执行解决了这个问题——同一套纪律可以干净地映射到智能体 harness 上：并行扇出、对冲请求、以及只允许在验证门之后提交的推测分支。"
-},
-{
-  "date": "2026-09-15",
-  "slug": "the-blast-radius-budget",
-  "title_en": "The Blast Radius Budget",
-  "title_zh": "爆炸半径预算",
-  "read_time": 8,
-  "excerpt_en": "Agent safety is not a model property — it is an architecture property. Every capability has a blast radius, and irreversibility should be treated as a budget: allocated at design time, priced per action, auditable after the fact.",
-  "excerpt_zh": "智能体安全不是模型的属性，而是架构的属性。每项能力都有爆炸半径，不可逆性应当被当作预算：设计时分配、按动作计价、事后可审计。"
-},
+  {
+    "date": "2026-10-09",
+    "slug": "probabilities-have-a-half-life",
+    "title_en": "Probabilities Have a Half-Life",
+    "title_zh": "概率有半衰期",
+    "read_time": 9,
+    "excerpt_en": "Every belief in an agent plan was true when it was measured — and the world edits the evidence afterward. Staleness is three failure families on three clocks: drift, snaps, and the agent's own writes falsifying its own measurements.",
+    "excerpt_zh": "智能体计划里的每个信念在被测量那一刻都曾为真，而世界随后修改证据。过期是跑在三只钟上的三类失败：漂移、骤变，以及智能体自己的写入证伪自己的测量。"
+  },
+  {
+    "date": "2026-10-07",
+    "slug": "the-name-is-the-foreign-key",
+    "title_en": "The Name Is the Foreign Key",
+    "title_zh": "名称就是外键",
+    "read_time": 9,
+    "excerpt_en": "Agents are fuzzy matchers running inside systems that need exact keys. When every tool calls the same object by a different name, nothing crashes — the work silently forks. The fix is the oldest idea in databases: canonical identity plus versioned reads.",
+    "excerpt_zh": "智能体是运行在精确键系统里的模糊匹配器。当每个工具用不同名字称呼同一对象时，什么也不会崩溃——工作只会悄然分叉。修复方案是数据库里最古老的思想：规范身份加上带版本的读取。"
+  },
+  {
+    "date": "2026-10-05",
+    "slug": "confidence-is-a-verb",
+    "title_en": "Confidence Is a Verb",
+    "title_zh": "置信度是一个动词",
+    "read_time": 9,
+    "excerpt_en": "Models emit uncertainty constantly and architectures throw it away. The fix is structural: extract confidence as a number, calibrate it against observed outcomes, and wire it into control flow as a gate on the irreversible actions.",
+    "excerpt_zh": "模型持续散发不确定性，而架构把它扔掉了。修复是结构性的：把置信度提取成数字、对照真实结果校准、并作为不可逆动作上的闸门接入控制流。"
+  },
+  {
+    "date": "2026-10-04",
+    "slug": "the-agent-has-no-undo-button",
+    "title_en": "The Agent Has No Undo Button",
+    "title_zh": "智能体没有撤销键",
+    "read_time": 9,
+    "excerpt_en": "Databases got transactions; agents got nothing. Every tool call that touches the world is a one-way door, and most tool inventories don't even tell the model which doors swing both ways. Undo has to be engineered: an effect taxonomy, a compensation plan, and a commit gate.",
+    "excerpt_zh": "数据库有事务，智能体什么都没有。每一个触碰世界的工具调用都是一扇单向门，而大多数工具清单甚至不告诉模型哪些门能双向打开。撤销必须被工程出来：效果分级、补偿预案、提交闸门。"
+  },
+  {
+    "date": "2026-10-03",
+    "slug": "exit-code-zero-is-not-success",
+    "title_en": "Exit Code Zero Is Not Success",
+    "title_zh": "退出码为零，不等于成功",
+    "read_time": 9,
+    "excerpt_en": "Agent loops terminate on signals — an exit code, an HTTP 200, the model's declaration of done. None mean the goal was achieved. Errors are loud; success is silent, and silence is where agentic systems fail quietly while reporting green. The fix: make done a predicate checked against the world, not a mood declared by the model.",
+    "excerpt_zh": "智能体循环终止于信号——退出码、HTTP 200、模型宣布完成。它们都不意味着目标达成。错误是喧哗的，成功是沉默的，而沉默正是系统安静失败、却一路报绿的地方。解药：让「完成」成为对着世界求值的谓词，而不是模型宣布的一种心情。"
+  },
+  {
+    "date": "2026-10-02",
+    "slug": "the-handoff-deletes-the-why",
+    "title_en": "The Handoff Deletes the Why",
+    "title_zh": "交接，删掉了「为什么」",
+    "read_time": 9,
+    "excerpt_en": "Multi-agent systems pass work like relay batons: the artifact arrives, the reasoning does not. Conclusions survive a handoff; rejected alternatives, confidence levels, and open questions die at the boundary. The fix is not a bigger context window — it is a rationale ledger that ships the why alongside the what.",
+    "excerpt_zh": "多智能体系统像接力棒一样传递工作：工件抵达了，推理没有。结论能活过一次交接；被否决的备选、置信度、悬而未决的问题，都死在边界上。解药不是更大的上下文窗口——而是一份让「为什么」随「是什么」一起上路 的理由账本。"
+  },
+  {
+    "date": "2026-10-01",
+    "slug": "the-token-expires-before-the-task-does",
+    "title_en": "The Token Expires Before the Task Does",
+    "title_zh": "Token 比任务先过期",
+    "read_time": 9,
+    "excerpt_en": "Agent tasks now routinely outlive the credentials they were launched with. When a token dies mid-loop, the failure wears a costume — a flattened 401, a rate-limit lookalike, or worst of all, an empty result set the agent reads as a fact about the world. The credential is a lease, and the lease must be part of the plan.",
+    "excerpt_zh": "智能体的运行，如今常常比启动时携带的凭证活得更久。当 token 在循环中途死亡，失败会穿着戏服登场——被压平的 401、酷似限流的错误，或者最糟的：一组被智能体当作世界事实采信的空结果。凭证是一份租约，而租期必须是计划的一部分。"
+  },
+  {
+    "date": "2026-09-30",
+    "slug": "what-the-agent-forgets-on-purpose",
+    "title_en": "What the Agent Forgets on Purpose",
+    "title_zh": "智能体的遗忘，是一种主动设计",
+    "read_time": 9,
+    "excerpt_en": "Every long-running loop hits the full-window wall, and what leaves the window is chosen by code nobody reviews. Compaction is not cleanup — it is garbage collection for attention, and every eviction policy is a theory of value.",
+    "excerpt_zh": "每一个长循环都会撞上窗口已满的墙，而什么离开窗口，是由一段无人评审的代码决定的。压缩不是清扫——它是针对 attention 的垃圾回收，而每一个驱逐策略都是一套价值观。"
+  },
+  {
+    "date": "2026-09-29",
+    "slug": "the-retried-call-is-not-the-same-call",
+    "title_en": "The Retried Call Is Not the Same Call",
+    "title_zh": "被重试的调用，不再是同一个调用",
+    "read_time": 9,
+    "excerpt_en": "Every harness retries — timeouts, fallback ladders, subagent redos. But a retry is a second arrival in a world that already recorded the first one, and side effects do not dedupe themselves. The idempotency key is the load-bearing contract.",
+    "excerpt_zh": "每个框架都会重试——超时、降级阶梯、子智能体重做。但重试是这个世界迎来的第二次抵达，而副作用不会自己去重。幂等键，才是那个承重的契约。"
+  },
+  {
+    "date": "2026-09-28",
+    "slug": "waiting-is-a-first-class-state",
+    "title_en": "Waiting Is a First-Class State",
+    "title_zh": "等待，是一等公民状态",
+    "read_time": 9,
+    "excerpt_en": "Agents in production spend 96% of their existence not thinking — waiting for approvals, events, and long jobs. The sleep loop is a bet against your own infrastructure. The durable pause, the timeout contract, and the wake-time re-validation are the real architecture.",
+    "excerpt_zh": "生产环境里的智能体，96% 的时间不在思考——而在等待批准、等待事件、等待长任务。sleep 循环是拿自己的基础设施下注。持久暂停、超时契约、唤醒时的重新验证，才是真正的架构。"
+  },
+  {
+    "date": "2026-09-27",
+    "slug": "the-sandbox-is-part-of-the-prompt",
+    "title_en": "The Sandbox Is Part of the Prompt",
+    "title_zh": "沙箱也是 Prompt 的一部分",
+    "read_time": 8,
+    "excerpt_en": "A model cannot distinguish 'allowed because it is safe' from 'allowed because nobody locked the door.' The sandbox, the egress allow-list, even the wording of a 403 are all behavioral instructions — obeyed more literally than anything in the system prompt.",
+    "excerpt_zh": "模型无法区分「被允许是因为安全」和「被允许是因为没人锁门」。沙箱、出站白名单、甚至一条 403 的措辞，全都是行为指令——被遵守的严格程度超过 system prompt 里的任何一句话。"
+  },
+  {
+    "date": "2026-09-26",
+    "slug": "the-verifier-is-the-product",
+    "title_en": "The Verifier Is the Product",
+    "title_zh": "验证器才是产品",
+    "read_time": 9,
+    "excerpt_en": "Generation is a commodity — every provider sells it, every competitor buys it, and the next model release re-prices it. The scarce engineering asset in an agent system is the verifier: the machinery that decides whether an output is good enough to ship, with real authority to reject, repair, or escalate.",
+    "excerpt_zh": "生成已是商品——每个提供商都在卖，每个竞争者都买得到，下一次模型发布还会重新定价。智能体系统里稀缺的工程资产是验证器：那套决定输出是否好到可以上线、并真正有权拒绝、修复或升级的机器。"
+  },
+  {
+    "date": "2026-09-25",
+    "slug": "the-fallback-ladder",
+    "title_en": "The Fallback Ladder",
+    "title_zh": "降级阶梯",
+    "read_time": 9,
+    "excerpt_en": "Every demo shows the happy path; production is made of timeouts, outages, and tools that return well-formed garbage. Durable agents don't patch failures after designing the happy path — they design the ordered, labeled descent first, and the bottom rung before the top.",
+    "excerpt_zh": "每一场演示都展示快乐路径，而生产环境由超时、故障和返回格式正确但内容是垃圾的工具构成。耐用的智能体不是先设计快乐路径再修补失败——它们先设计有序、带标签的下降，先设计最底下那一级。"
+  },
+  {
+    "date": "2026-09-24",
+    "slug": "the-second-call-is-coming",
+    "title_en": "The Second Call Is Coming",
+    "title_zh": "第二次调用，终将到来",
+    "read_time": 8,
+    "excerpt_en": "Agents retry, re-issue after compaction, and race parallel branches into the same resource. Exactly-once was an abstraction for callers with trustworthy memory — agents are not those callers. The fix is a grammar of idempotency: operation tokens that name the effect, not the attempt.",
+    "excerpt_zh": "智能体会重试、会在压缩后重发、会让并行分支赛进同一个资源。「恰好一次」是为记忆可信的调用者准备的抽象——智能体不是那种调用者。修复是一套幂等语法：为效果而非尝试命名的操作令牌。"
+  },
+  {
+    "date": "2026-09-23",
+    "slug": "ship-the-shadow-not-the-agent",
+    "title_en": "Ship the Shadow, Not the Agent",
+    "title_zh": "先上线的，应该是影子，而不是智能体",
+    "read_time": 9,
+    "excerpt_en": "The leap from zero autonomy to full autonomy is where agent deployments die. The shadow run mirrors every human decision to the agent, discards the agent's proposal, and logs the delta — evidence earned on tomorrow's distribution, not last quarter's benchmark. Trust is a dial, not a switch.",
+    "excerpt_zh": "从零自主一步跳到完全自主，正是智能体部署葬身之地。影子运行把人类的每个决策镜像给智能体、丢弃它的提案、记录分歧——用明天的分布挣证据，而不是上个季度的基准。信任是旋钮，不是开关。"
+  },
+  {
+    "date": "2026-09-22",
+    "slug": "the-checkpoint-contract",
+    "title_en": "The Checkpoint Contract",
+    "title_zh": "检查点契约",
+    "read_time": 9,
+    "excerpt_en": "Every long agent run gets interrupted — by deploys, rate limits, context ceilings, absent humans. Replay re-rolls the dice and re-sends the emails. Resume requires a checkpoint: a contract with three clauses — what happened, what was committed, what remains.",
+    "excerpt_zh": "每一次长智能体运行都会被打断——部署、限流、上下文上限、离场的人类。重放只会重掷骰子、重发邮件。续跑需要检查点：一份只有三条条款的契约——发生了什么、提交了什么、还剩什么。"
+  },
+  {
+    "date": "2026-09-21",
+    "slug": "the-tool-result-is-a-prompt",
+    "title_en": "The Tool Result Is a Prompt",
+    "title_zh": "工具的返回结果，本身就是 prompt",
+    "read_time": 8,
+    "excerpt_en": "Teams tune their system prompts for weeks, then let tools dump raw JSON straight into the model's context. Every token a tool returns becomes part of the next prompt. The firehose, the cryptogram, and the shrug — three payload designs nobody designed — explain most 'model failures' in agent traces.",
+    "excerpt_zh": "团队花数周调优系统 prompt，却任由工具把原始 JSON 直接倾倒进模型上下文。工具返回的每一个 token，都会成为下一个 prompt 的一部分。消防水管、密码电文与耸肩——三种从未被设计过的返回载荷——解释了智能体追踪记录里大多数的「模型失败」。"
+  },
+  {
+    "date": "2026-09-20",
+    "slug": "the-irreversibility-budget",
+    "title_en": "The Irreversibility Budget",
+    "title_zh": "不可逆预算",
+    "read_time": 9,
+    "excerpt_en": "Agents graduate from reading the world to writing it, and the moment they do, reversibility — not risk — becomes the axis that matters. Undo is a designed capability: staged writes, two-phase applies, compensation edges, and a hard budget for actions that can never be recalled.",
+    "excerpt_zh": "智能体从「读世界」毕业到「写世界」的那一刻起，真正重要的坐标轴就不是风险，而是可逆性。撤销是一种要被设计出来的能力：暂存写入、两阶段提交、补偿边，以及给永远收不回的动作设下的硬预算。"
+  },
+  {
+    "date": "2026-09-19",
+    "slug": "agents-that-remember-to-forget",
+    "title_en": "Agents That Remember to Forget",
+    "title_zh": "会记住去遗忘的智能体",
+    "read_time": 10,
+    "excerpt_en": "Every agent accumulates context and almost none of it ever leaves the window — old results, dead drafts, resolved errors all tax every generation step. The fix is a forgetting policy: classify facts by how they decay, compress the sediment, and treat memory as a managed resource with a budget.",
+    "excerpt_zh": "每个智能体都在积累上下文，而几乎没有任何内容会离开窗口——旧结果、死草稿、已解决的错误，都在向每一步生成征税。解法是遗忘策略：按衰减方式给事实分类，压缩沉积物，把记忆当作有预算的被管理资源。"
+  },
+  {
+    "date": "2026-09-18",
+    "slug": "the-goal-decays-in-transit",
+    "title_en": "The Goal Decays in Transit",
+    "title_zh": "目标会在途中衰减",
+    "read_time": 9,
+    "excerpt_en": "Long agent runs don't fail at a step — they drift, each locally reasonable decision bending the trajectory a few degrees until step forty solves a different problem. The fix is a beacon: the goal as a versioned artifact, re-injected at gates, checked by tripwires.",
+    "excerpt_zh": "长程智能体不会在某一步失败——它们漂移，每个局部合理的决策都让轨迹偏几度，直到第四十步在解决另一个问题。解法是信标：目标作为带版本的产物，在关卡处重新注入，由绊线检查。"
+  },
+  {
+    "date": "2026-09-17",
+    "slug": "the-confirm-button-is-load-bearing",
+    "title_en": "The Confirm Button Is Load-Bearing",
+    "title_zh": "确认按钮是承重墙",
+    "read_time": 8,
+    "excerpt_en": "Every agent that touches the real world grows a confirm button — and the moment it exists, a tired human glancing at a dialog for three seconds becomes the system's entire safety boundary. Approval fatigue isn't a UX nitpick; it's the collapse of the safety model, engineered in by teams who never budgeted consent.",
+    "excerpt_zh": "每一个接触真实世界的智能体都会长出确认按钮——而从它存在那一刻起，一个疲惫的人盯着对话框三秒钟，就成了系统全部的安全边界。审批疲劳不是 UX 小毛病，而是安全模型的崩塌，由从未给「同意」做过预算的团队亲手设计进去。"
+  },
+  {
+    "date": "2026-09-16",
+    "slug": "speculative-execution-in-agent-loops",
+    "title_en": "Speculate, Then Commit: Parallel Branches in Agent Loops",
+    "title_zh": "先推测，再提交：智能体循环中的并行分支",
+    "read_time": 9,
+    "excerpt_en": "Agent latency is a chain of serial round-trips, and most loops are written as if the world ended at each tool call. CPUs solved this with branch prediction and speculative execution decades ago — the same discipline maps cleanly onto agent harnesses: parallel fan-out, hedged requests, and speculative branches committed only behind a verification gate.",
+    "excerpt_zh": "智能体的延迟是一串串行往返，而大多数循环被写成好像世界在每次工具调用时就终结一次。CPU 几十年前就用分支预测和推测执行解决了这个问题——同一套纪律可以干净地映射到智能体 harness 上：并行扇出、对冲请求、以及只允许在验证门之后提交的推测分支。"
+  },
+  {
+    "date": "2026-09-15",
+    "slug": "the-blast-radius-budget",
+    "title_en": "The Blast Radius Budget",
+    "title_zh": "爆炸半径预算",
+    "read_time": 8,
+    "excerpt_en": "Agent safety is not a model property — it is an architecture property. Every capability has a blast radius, and irreversibility should be treated as a budget: allocated at design time, priced per action, auditable after the fact.",
+    "excerpt_zh": "智能体安全不是模型的属性，而是架构的属性。每项能力都有爆炸半径，不可逆性应当被当作预算：设计时分配、按动作计价、事后可审计。"
+  },
   {
     "date": "2026-09-14",
     "slug": "the-transcript-is-the-debugger",

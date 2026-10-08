@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Probabilities Have a Half-Life — AI Frontlines</title>
+<meta content="Agent plans are built out of beliefs about a world that never stops moving. A confidence assembled at step one decays while the loop is still running, and the agent that acts on it is answering a question nobody asked anymore. The fix is not better guessing — it is treating every probability as perishable, stamped with when it was true." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 9, 2026" data-zh="2026年10月9日">October 9, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Probabilities Have a Half-Life" data-zh="概率有半衰期">Probabilities Have a Half-Life</h1>
+<p class="post-header-deck" data-en="Every belief inside an agent plan was true at the moment it was measured, and the world has been editing the evidence ever since. The rollout the plan depends on gets rolled back, the price the estimate was built on ticks, the API the route targets deprecates mid-run. None of this reaches the plan, because a probability, once written into context, looks eternal. It is not. It is a perishable good with no expiry date printed on it — and acting on an expired belief produces confident, well-reasoned work aimed at a world that no longer exists." data-zh="智能体计划里的每一个信念，在被测量的那一刻都曾为真，而世界从那之后一直在修改证据。计划所依赖的灰度发布被回滚了，估算所依据的价格跳动了，路由指向的 API 在运行中途被下线了。这些都没有传到计划那里，因为一个概率一旦写进上下文，看起来就是永恒的。它不是。它是一件没印保质期的易腐品——而基于过期信念行动，产出的会是自信十足、论证严密的成果，瞄准的却是一个已不存在的世界。">Every belief in an agent plan was true when it was measured. The world edits the evidence afterward — and the plan never hears about it.</p>
+</header>
+<article class="post-body">
+<p data-en="Picture a planning agent mid-task. At step one it surveyed the environment and assembled a small portfolio of beliefs: the migration is 80% likely to succeed, the cache is probably warm, the maintainer is likely to respond within the hour, the failing test is almost certainly flaky rather than real. Each of those numbers was an honest summary of the evidence available at the moment of measurement. Then the loop kept running — tool calls, subtasks, retries, forty minutes of wall-clock time — and every one of those quietly became a claim about the past. The migration got rolled back. The cache got evicted. The maintainer went to lunch. The flaky test found a real race. The plan downstream still consults the original numbers, because numbers in context don't wrinkle. The result is not an error. It is something stranger: a perfectly executed plan whose premises expired before its actions did." data-zh="设想一个正处于任务中途的规划智能体。第一步时它勘察了环境，组装出一小组信念：迁移有八成把握成功、缓存大概率是热的、维护者大概率一小时内回复、那个失败的测试几乎肯定是抖动而非真 bug。其中每一个数字，在测量那一刻都是对当时证据的诚实概括。然后循环继续运行——工具调用、子任务、重试，四十分钟的现实时间——而每一个数字都悄悄变成了对过去的陈述。迁移被回滚了。缓存被清掉了。维护者去吃午饭了。抖动的测试发现了一场真实的竞态。下游的计划仍在查阅最初的数字，因为上下文里的数字不会起皱。结果不是报错。而是某种更奇怪的东西：一份完美执行的计划，前提却在动作完成之前就已过期。">Picture a planning agent mid-task. At step one it assembled a portfolio of beliefs — each an honest summary of evidence at the moment of measurement. Then the loop kept running, and every one of those quietly became a claim about the past. Numbers in context don't wrinkle.</p>
+<p data-en="This is the staleness problem, and it is not about clocks — an agent can read a clock fine. It is about the fact that every probability an agent holds is indexed to an evidence state, and evidence states do not announce their own obsolescence. Classical software deals with this everywhere and has a name for the discipline: read freshness. A cache entry carries a TTL. A database read carries a snapshot. An HTTP response carries a validator. Industrial control systems take it further — measurements of physical processes come with an understood decay horizon, because a five-second-old temperature reading of a runaway reactor is not information, it is nostalgia. Agent architectures, which poll the world through the softest interface ever built — natural language over tools — routinely skip the discipline entirely. The beliefs go into context bare, undated, and stay there looking fresh forever." data-zh="这就是过期问题，而且它与钟表无关——智能体读个时间毫无困难。问题在于：智能体持有的每个概率都锚定于一个证据状态，而证据状态不会宣布自己的作废。经典软件处处在处理这件事，并给这门纪律起了名字：读取新鲜度。缓存条目带 TTL。数据库读取带快照。HTTP 响应带校验器。工业控制系统走得更远——对物理过程的测量自带一个公认的衰减视界，因为对失控反应堆的五秒前的温度读数不是信息，是怀旧。而智能体架构，通过有史以来最软的接口——架在工具之上的自然语言——轮询这个世界，却常常完全跳过这门纪律。信念裸着、不带日期地进入上下文，然后永远新鲜地待在那里。">This is not about clocks — an agent can read a clock fine. It is that every probability is indexed to an evidence state, and evidence states do not announce their own obsolescence. Caches have TTLs; agent beliefs go into context bare, undated, looking fresh forever.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrP2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrP3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--danger, #f87171)"></path>
+</marker>
+</defs>
+<text data-en="THE FRESHNESS LEDGER" data-zh="新鲜度台账" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE FRESHNESS LEDGER</text>
+<!-- timeline -->
+<line stroke="var(--border)" stroke-width="1.5" x1="40" x2="580" y1="70" y2="70"></line>
+<text data-en="t=0 — evidence gathered" data-zh="t=0 —— 证据采集完成" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="90" y="56">t=0 — evidence gathered</text>
+<circle cx="90" cy="70" fill="var(--accent)" r="5" stroke="var(--bg)" stroke-width="2"></circle>
+<text data-en="t=25m — the act" data-zh="t=25分钟 —— 动作发生" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="430" y="56">t=25m — the act</text>
+<circle cx="430" cy="70" fill="var(--accent)" r="5" stroke="var(--bg)" stroke-width="2"></circle>
+<!-- decay curves -->
+<path d="M90 130 C180 150 320 200 430 250" fill="none" stroke="var(--accent-3)" stroke-width="2"></path>
+<path d="M90 130 C160 138 260 148 430 165" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="6,3"></path>
+<text data-en="P(migration succeeds)" data-zh="P(迁移成功)" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="270" y="185">P(migration succeeds)</text>
+<text data-en="0.8 → 0.3 (rolled back at t=12)" data-zh="0.8 → 0.3（t=12 时被回滚）" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="270" y="200">0.8 → 0.3 (rolled back at t=12)</text>
+<text data-en="P(cache is warm)" data-zh="P(缓存是热的)" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="260" y="122">P(cache is warm)</text>
+<text data-en="slow decay — the kind nobody notices" data-zh="缓慢衰减——那种没人注意的" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="260" y="135">slow decay — the kind nobody notices</text>
+<!-- what context still says -->
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--danger, #f87171)" stroke-width="1.6" width="220" x="340" y="120"></rect>
+<text data-en="CONTEXT STILL SAYS" data-zh="上下文仍然写着" fill="var(--danger, #f87171)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="450" y="138">CONTEXT STILL SAYS</text>
+<text data-en="0.8 · warm · ~1h · flaky" data-zh="0.8 · 热 · 约1小时 · 抖动" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="450" y="155">0.8 · warm · ~1h · flaky</text>
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="40" x2="580" y1="286" y2="286"></line>
+<text data-en="the gap between the curve and the box is the risk nobody priced" data-zh="曲线与方框之间的落差，就是没人定价的风险" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="312">the gap between the curve and the box is the risk nobody priced</text>
+</svg>
+<p class="diagram-caption" data-en="Top: beliefs assembled at t=0, an act planned at t=25. Middle: the solid curve is a belief that collapsed when the world intervened (a rollback); the dashed curve is a belief decaying slowly with entropy — no single moment to blame, which is why it is never caught. The red box is what context still asserts at act time: the original numbers, undated, confident. The vertical distance between each curve and the box is the unpriced risk the agent is silently carrying." data-zh="上：t=0 时组装的信念，t=25 时计划的动作。中：实线是当世界出手（一次回滚）时瞬间崩塌的信念；虚线是随熵缓慢衰减的信念——没有哪个单独的时刻可以指责，所以永远不会被发现。红框是动作发生时上下文仍然主张的：原始数字，无日期，自信满满。每条曲线与方框之间的垂直距离，就是智能体默默扛着却没定价的风险。">Solid curve: a belief that collapsed when the world intervened. Dashed: a belief decaying with entropy. The red box is what context still asserts at act time. That gap is the unpriced risk.</p>
+</div>
+<h3 data-en="Three clocks, one loop" data-zh="三只钟，一个循环">Three clocks, one loop</h3>
+<p data-en="The mistake is treating staleness as one problem. It is three, running on different clocks, and they need different treatments. The first is evidence decay: the conditions the probability was conditioned on drift on their own — prices move, queues grow, disk fills. Nothing happened; entropy happened. The treatment is a freshness annotation and a cheap re-verify before any consequential action. The second is intervention decay: something in the world changes the object itself — the rollback, the reassignment, the config push. No amount of waiting would have predicted it, because it is not drift, it is an event. The treatment is subscription, not polling: the plan registers interest in the entities it depends on, and an intervening change invalidates the affected branch instead of silently poising the agent to act on fiction. The third, and the one almost never engineered, is self-decay: the agent's own intervening actions invalidate its own earlier beliefs. The test the plan ran at step two — the one that came back green — has been falsified by the code the plan itself wrote at step fourteen. Systems that treat their own measurements as stable facts about a world they are actively modifying are reasoning about a museum diorama of a battlefield." data-zh="错误在于把过期当成一个问题。它是三个问题，跑在三只不同的钟上，需要不同的对待。第一种是证据衰减：概率所依赖的条件自行漂移——价格动了、队列长了、磁盘满了。什么都没发生；是熵发生了。对待方式是新鲜度标注，加上在任何有后果的动作之前做一次廉价的重验证。第二种是干预衰减：世界中的某个东西改变了对象本身——回滚、重新指派、配置推送。等多久都预测不到它，因为它不是漂移，是事件。对待方式是订阅而非轮询：计划对它依赖的实体注册关注，一次介入性变化使受影响的分支失效，而不是让智能体无声地 poised 在虚构之上准备行动。第三种，也是几乎从未被工程化的那种，是自体衰减：智能体自己的中间动作，作废了它自己更早的信念。计划在第二步跑过的测试——那个返回绿色的测试——已经被计划自己在第十四步写的代码证伪了。把自己的测量当作稳定事实、而这个世界正被它自己修改着的系统，是在对一座战场博物馆布景做推理。">Staleness is three problems on three clocks. Evidence decay drifts (entropy), intervention decay snaps (events), and self-decay — the one never engineered — is when the agent's own actions falsify its own earlier measurements.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrQ1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrQ2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THREE CLOCKS, THREE TREATMENTS" data-zh="三只钟，三种对待" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THREE CLOCKS, THREE TREATMENTS</text>
+<!-- column 1: evidence decay -->
+<rect fill="var(--bg-surface)" height="210" rx="12" stroke="var(--accent-3)" stroke-width="1.4" width="170" x="36" y="50"></rect>
+<text data-en="EVIDENCE DECAY" data-zh="证据衰减" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="121" y="76">EVIDENCE DECAY</text>
+<text data-en="drift — entropy" data-zh="漂移——熵" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="121" y="96">drift — entropy</text>
+<text data-en="prices · queues · disk" data-zh="价格 · 队列 · 磁盘" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="121" y="120">prices · queues · disk</text>
+<text data-en="smooth curve," data-zh="平滑曲线，" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="121" y="144">smooth curve,</text>
+<text data-en="no villain" data-zh="没有反派" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="121" y="158">no villain</text>
+<rect fill="var(--accent-dim)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.6" width="140" x="51" y="182"></rect>
+<text data-en="re-verify before act" data-zh="动作前重验证" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="121" y="203">re-verify before act</text>
+<text data-en="(cheap, fixed cost)" data-zh="（廉价，固定成本）" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="121" y="228">(cheap, fixed cost)</text>
+<!-- column 2: intervention decay -->
+<rect fill="var(--bg-surface)" height="210" rx="12" stroke="var(--accent-3)" stroke-width="1.4" width="170" x="226" y="50"></rect>
+<text data-en="INTERVENTION DECAY" data-zh="干预衰减" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="311" y="76">INTERVENTION DECAY</text>
+<text data-en="snap — an event" data-zh="骤变——一次事件" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="311" y="96">snap — an event</text>
+<text data-en="rollback · reassign" data-zh="回滚 · 重新指派" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="311" y="120">rollback · reassign</text>
+<text data-en="waiting predicts" data-zh="等待预测不到" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="311" y="144">waiting predicts</text>
+<text data-en="nothing" data-zh="任何东西" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="311" y="158">nothing</text>
+<rect fill="var(--accent-dim)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.6" width="140" x="241" y="182"></rect>
+<text data-en="subscribe, don't poll" data-zh="订阅，别轮询" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="311" y="203">subscribe, don't poll</text>
+<text data-en="(invalidate the branch)" data-zh="（让分支失效）" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="311" y="228">(invalidate the branch)</text>
+<!-- column 3: self decay -->
+<rect fill="var(--bg-surface)" height="210" rx="12" stroke="var(--accent)" stroke-width="2.2" width="170" x="416" y="50"></rect>
+<text data-en="SELF-DECAY" data-zh="自体衰减" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="501" y="76">SELF-DECAY</text>
+<text data-en="the agent is the" data-zh="智能体自己就是" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="501" y="96">the agent is the</text>
+<text data-en="villain" data-zh="反派" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="501" y="110">villain</text>
+<text data-en="step 14 falsifies" data-zh="第14步证伪了" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="501" y="134">step 14 falsifies</text>
+<text data-en="step 2's green test" data-zh="第2步的绿色测试" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="501" y="148">step 2's green test</text>
+<rect fill="var(--accent-dim)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.6" width="140" x="431" y="182"></rect>
+<text data-en="model own writes" data-zh="对自己的写入建模" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="501" y="203">model own writes</text>
+<text data-en="(almost never done)" data-zh="（几乎无人做）" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="501" y="228">(almost never done)</text>
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="36" x2="586" y1="288" y2="288"></line>
+<text data-en="one loop, three clocks — mismatch them and the plan rots unevenly" data-zh="一个循环，三只钟——错配它们，计划就不均匀地腐烂" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="311" y="314">one loop, three clocks — mismatch them and the plan rots unevenly</text>
+</svg>
+<p class="diagram-caption" data-en="Staleness decomposes into three failure families. Evidence decay is smooth drift caused by entropy — treat with a cheap pre-action re-verify. Intervention decay is a snap caused by an external event — treat with subscriptions that invalidate dependent plan branches. Self-decay is the agent's own writes falsifying its own measurements — treat by tracking which observations the plan itself has perturbed. Most systems engineer none of the three; the few that try usually handle only the first." data-zh="过期分解为三个失败家族。证据衰减是由熵引起的平滑漂移——用动作前的廉价重验证来对待。干预衰减是由外部事件引起的骤变——用让依赖计划分支失效的订阅来对待。自体衰减是智能体自己的写入证伪自己的测量——通过追踪计划自己扰动了哪些观察来对待。大多数系统三者一个都没工程化；少数尝试的，通常也只处理了第一个。">Evidence decay: smooth drift, treat with cheap re-verify. Intervention decay: a snap, treat with subscriptions. Self-decay: the agent's own writes falsify its own measurements — almost never engineered.</p>
+</div>
+<h3 data-en="Date every number" data-zh="给每个数字标上日期">Date every number</h3>
+<p data-en="The core mechanic is almost embarrassingly small: every belief that enters context arrives wrapped in a record — what was observed, when it was observed, and what would change it. Not prose, and not a hopeful 'the model will keep track'. A structure the harness can read. The timestamp enables the arithmetic of staleness: elapsed time versus the belief's decay class, where a stock quote lives in the seconds class, a build status in the minutes class, a team's roadmap in the days class. The trigger field enables the event-driven half: register the entities the plan depends on, and when one of them changes, the beliefs conditioned on it are marked stale in place — the plan does not need to be regenerated, only the affected branch is re-derived. And the record enables self-decay accounting: every write the agent performs lists the observations it plausibly perturbed, and those observations are demoted from 'fact' back to 'hypothesis awaiting re-measurement'. None of this requires the model to be smarter. It requires the harness to stop laundering assertions of the past into premises of the present." data-zh="核心机制小到近乎难为情：进入上下文的每一个信念都裹在一条记录里——观察到了什么、何时观察的、什么会改变它。不是散文，也不是寄望于「模型自己会记住」。一种 harness 能读的结构。时间戳支撑过期的算术：流逝时间对照该信念的衰减等级——股票报价属于秒级，构建状态属于分钟级，团队路线图属于天级。触发器字段支撑事件驱动的那一半：注册计划所依赖的实体，当其中之一变化时，以它为条件的信念就地标记为过期——计划不需要重新生成，只需重新推导受影响的分支。而记录支撑自体衰减的记账：智能体执行的每次写入，列出它可能扰动的观察，这些观察从「事实」降级回「等待重新测量的假说」。这一切都不需要模型更聪明。它需要的是 harness 停止把对过去的断言，洗白成对当下的前提。">The mechanic is small: every belief enters context wrapped in a record — what was observed, when, and what would change it. A structure the harness reads, not prose. The timestamp enables staleness arithmetic; the trigger enables subscription; the record enables self-decay accounting.</p>
+<blockquote data-en="A number without a timestamp is not a fact about the world. It is a fact about a moment — and the loop was not built for that moment. It was built for this one." data-zh="一个没有时间戳的数字不是关于世界的事实。它是关于某个瞬间的事实——而这个循环不是为那个瞬间构建的。它是为这一个。">A number without a timestamp is not a fact about the world. It is a fact about a moment — and the loop was not built for that moment. It was built for this one.</blockquote>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE DATED-BELIEF GATE" data-zh="带日期信念的闸门" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE DATED-BELIEF GATE</text>
+<!-- belief record -->
+<rect fill="var(--bg-surface)" height="64" rx="10" stroke="var(--accent-3)" stroke-width="1.6" width="230" x="36" y="58"></rect>
+<text data-en="BELIEF RECORD" data-zh="信念记录" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="151" y="80">BELIEF RECORD</text>
+<text data-en="obs: migration live · p=0.8" data-zh="观察：迁移已上线 · p=0.8" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="151" y="98">obs: migration live · p=0.8</text>
+<text data-en="when: t=0 · class: minutes" data-zh="时间：t=0 · 等级：分钟级" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="151" y="114">when: t=0 · class: minutes</text>
+<!-- gate -->
+<path d="M266 90 L316 90" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<path d="M376 56 L426 90 L376 124 L326 90 Z" fill="var(--bg-surface)" stroke="var(--accent)" stroke-width="2"></path>
+<text data-en="still" data-zh="仍然" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="401" y="84">still</text>
+<text data-en="fresh?" data-zh="新鲜？" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="401" y="98">fresh?</text>
+<!-- fresh path -->
+<path d="M426 90 L486 90" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<text data-en="yes" data-zh="是" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="456" y="80">yes</text>
+<rect fill="var(--accent-dim)" height="40" rx="9" stroke="var(--accent)" stroke-width="2" width="96" x="490" y="70"></rect>
+<text data-en="act" data-zh="执行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="538" y="95">act</text>
+<!-- stale path -->
+<path d="M401 124 C401 156 401 166 401 176" fill="none" marker-end="url(#arrR2)" stroke="var(--accent-3)" stroke-width="1.8"></path>
+<text data-en="no — expired" data-zh="否——已过期" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="470" y="154">no — expired</text>
+<rect fill="var(--bg-surface)" height="50" rx="10" stroke="var(--accent-3)" stroke-width="1.8" width="230" x="286" y="180"></rect>
+<text data-en="RE-MEASURE (cheap probe)" data-zh="重新测量（廉价探测）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="401" y="202">RE-MEASURE (cheap probe)</text>
+<text data-en="new record · new timestamp" data-zh="新记录 · 新时间戳" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="401" y="220">new record · new timestamp</text>
+<!-- feedback to belief record -->
+<path d="M286 205 C180 205 120 170 118 126" fill="none" marker-end="url(#arrR2)" stroke="var(--accent-3)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<!-- event feed -->
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent)" stroke-width="1.4" width="230" x="36" y="180"></rect>
+<text data-en="EVENT FEED (subscription)" data-zh="事件流（订阅）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="151" y="198">EVENT FEED (subscription)</text>
+<text data-en="rollback@t=12 → mark stale" data-zh="t=12 回滚 → 标记过期" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="151" y="214">rollback@t=12 → mark stale</text>
+<path d="M266 202 C276 202 278 200 284 200" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="36" x2="586" y1="258" y2="258"></line>
+<text data-en="cost: one probe · alternative: acting on the past" data-zh="成本：一次探测 · 替代方案：基于过去行动" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="284">cost: one probe · alternative: acting on the past</text>
+<text data-en="the gate is the difference between a plan and a museum label" data-zh="这道闸门，就是计划与博物馆展签的区别" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="308">the gate is the difference between a plan and a museum label</text>
+</svg>
+<p class="diagram-caption" data-en="Every consequential action passes through a freshness gate. The belief record carries what was observed, when, and its decay class. The gate compares elapsed time against the class and consults the event feed for intervening changes. Fresh — act. Stale — re-measure with a cheap probe and mint a new dated record. The event feed works in parallel: subscriptions mark dependent beliefs stale the moment the world intervenes, so the gate catches snaps as well as drift." data-zh="每个有后果的动作都经过一道新鲜度闸门。信念记录携带观察内容、观察时间与衰减等级。闸门将流逝时间与等级比较，并查询事件流里有无介入性变化。新鲜——执行。过期——用廉价探测重新测量，铸造新的带日期记录。事件流并行工作：订阅在世界介入的那一刻将依赖信念标记为过期，因此闸门既能抓住漂移，也能抓住骤变。">Every consequential action passes a freshness gate: elapsed time versus decay class, plus the event feed for snaps. Fresh — act. Stale — re-measure, mint a new dated record.</p>
+</div>
+<p data-en="There is a temptation to believe this all dissolves with faster models — if the loop completes in seconds, the world has no time to move. The temptation is worth resisting on two counts. First, agents are being pointed at longer horizons, not shorter: migrations that take hours, campaigns that take days, systems that supervise other systems indefinitely. Speed of iteration does not compress the physics of the task. Second, even an instant loop reads stale evidence, because the sources themselves lag — status pages trail reality, caches serve yesterday, APIs return summaries computed who-knows-when. The half-life of a probability is a property of the world, not of the latency of the loop querying it. The mature position is not to outrun decay but to budget for it: know which beliefs the plan stands on, know how fast each one rots, and pay the small, boring, scheduled cost of re-measuring before the moments where being wrong stops being free. Agents that do this will still be surprised by the world — that is the world's prerogative. But they will never again be surprised by their own context, quietly asserting, in row after confident row, the state of a yesterday they mistook for now." data-zh="有一种诱惑，让人相信这一切会随模型变快而消解——如果循环几秒内完成，世界就来不及移动。这诱惑值得抵抗，理由有二。第一，智能体正被指向更长的视界，而非更短：需要数小时的迁移、需要数天的活动、无限期监督其他系统的系统。迭代速度不能压缩任务的物理。第二，即便是瞬时的循环，读到的也可能是过期证据，因为源头自己就在滞后——状态页落后于现实，缓存端出昨天，API 返回的是不知何时计算的摘要。概率的半衰期是世界的属性，不是查询它的循环的延迟属性。成熟的姿态不是跑赢衰减，而是为它做预算：知道计划站在哪些信念上，知道每一个腐烂得多快，并在「出错不再免费」的时刻之前，支付重新测量这份小额、乏味、按计划执行的成本。这样做的智能体仍会被世界惊到——那是世界的特权。但它们将永远不会再被自己的上下文惊到——那里面一排排自信的记录，悄悄断言着一个被误认成现在的昨天。">Faster models do not dissolve this: agents are pointed at longer horizons, and even an instant loop reads sources that lag. The half-life of a probability is a property of the world, not the loop. Budget for decay — re-measure before the moments where being wrong stops being free.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
