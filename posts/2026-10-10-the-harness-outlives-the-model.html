@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Harness Outlives the Model — AI Frontlines</title>
+<meta content="The model is the replaceable part. The harness — the context assembly, the tool contracts, the eval battery, the recovery paths — is the asset. Teams that treat the harness as scaffolding rebuild everything every six months. Teams that treat it as the product compound." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 10, 2026" data-zh="2026年10月10日">October 10, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Harness Outlives the Model" data-zh="比模型活得更久的，是 Harness">The Harness Outlives the Model</h1>
+<p class="post-header-deck" data-en="Every agent system is two artifacts stacked on top of each other: a model, which will be obsolete in six months, and a harness — the context assembly, the tool contracts, the eval battery, the recovery paths — which does not have to be. Most teams invest as if the ratio were reversed. They polish prompts tuned to one model's quirks, then watch the whole edifice collapse when the checkpoint updates. The harness is the asset. The model is the replaceable part." data-zh="每一个智能体系统，都是两个叠在一起的产物：一个模型——它六个月就会过时；和一个 harness——上下文组装、工具契约、评测集、恢复路径——它不必过时。大多数团队的投资比例却正好相反。他们打磨针对某一个模型怪癖调制的 prompt，然后在检查点更新的那一天，眼看着整座大厦倒塌。Harness 才是资产。模型，是可替换的零件。">Every agent system is two artifacts stacked on top of each other: a model, which will be obsolete in six months, and a harness — the context assembly, the tool contracts, the eval battery, the recovery paths — which does not have to be. The harness is the asset. The model is the replaceable part.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a strange amnesia in the field. Every six to twelve months, a new frontier model lands, and every team rediscovers the same thing: the demo they built on the old model still works on the new one, but differently. Not better in the ways that matter, not worse in the ways they expected — differently. The verbose model becomes terse. The model that loved JSON tolerates YAML. The model that needed three-shot examples to stay on task now gets distracted by them. The surrounding code — the context assembly, the retry logic, the output parsing, the tool plumbing — was never written for 'a model.' It was written for that model. And so the migration begins: prompts rewritten, parsers patched, few-shot examples recalibrated, evaluations re-baselined. Weeks of work, every cycle, forever. This is not a technology problem. It is an architectural one. The system was built with the dependencies inverted." data-zh="这个领域有一种奇怪的失忆。每六到十二个月，一个新的前沿模型落地，每个团队都会重新发现同一件事：他们在旧模型上搭的 demo，在新模型上还能跑，但方式变了。不是在要紧的维度上更好，也不是在预想的维度上更差——是变了。啰嗦的模型变简洁了。偏爱 JSON 的模型开始容忍 YAML。那个需要三个示例才能进入状态的模型，现在反而被示例带偏。而周围的代码——上下文组装、重试逻辑、输出解析、工具管道——从来不是为「一个模型」写的。它是为那个模型写的。于是迁移开始了：prompt 重写、解析器打补丁、few-shot 示例重新校准、评测重新定基线。每个周期几周的工作量，永远如此。这不是技术问题。这是架构问题。这个系统的依赖关系，装反了。">There is a strange amnesia in the field. Every six to twelve months, a new frontier model lands, and every team rediscovers the same thing: the demo they built on the old model still works on the new one, but differently. Not better in the ways that matter, not worse in the ways they expected — differently. The verbose model becomes terse. The model that loved JSON tolerates YAML. The model that needed three-shot examples to stay on task now gets distracted by them. The surrounding code was never written for 'a model.' It was written for that model. And so the migration begins: prompts rewritten, parsers patched, few-shot recalibrated, evaluations re-baselined. Weeks of work, every cycle, forever. This is not a technology problem. It is an architectural one. The system was built with the dependencies inverted.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrH1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrH2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE SYSTEM HAS TWO LIFETIMES" data-zh="一个系统，两条寿命" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE SYSTEM HAS TWO LIFETIMES</text>
+<rect fill="var(--bg-surface)" height="60" rx="10" stroke="var(--accent-3)" stroke-width="1.5" width="440" x="90" y="48"></rect>
+<text data-en="THE HARNESS — years" data-zh="HARNESS——以年计" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="310" y="74">THE HARNESS — years</text>
+<text data-en="context · tools · evals · recovery · observability" data-zh="上下文 · 工具 · 评测 · 恢复 · 可观测" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="94">context · tools · evals · recovery · observability</text>
+<rect fill="var(--accent-dim)" height="56" rx="10" stroke="var(--accent)" stroke-width="2" width="180" x="220" y="130"></rect>
+<text data-en="MODEL — months" data-zh="模型——以月计" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="310" y="155">MODEL — months</text>
+<text data-en="replaceable · versioned · hot-swappable" data-zh="可替换 · 有版本 · 可热插拔" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="173">replaceable · versioned · hot-swappable</text>
+<path d="M310 106 L310 126" fill="none" marker-end="url(#arrH2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M310 188 L310 206" fill="none" marker-end="url(#arrH1)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--text-tertiary)" stroke-width="1.5" width="200" x="210" y="208"></rect>
+<text data-en="capabilities delivered to users" data-zh="交付给用户的能力" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="230">capabilities delivered to users</text>
+<path d="M60 78 C30 110 30 210 60 232" fill="none" marker-end="url(#arrH2)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<path d="M560 78 C590 110 590 210 560 232" fill="none" marker-end="url(#arrH1)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<text data-en="compounds" data-zh="复利积累" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="38" y="160">compounds</text>
+<text data-en="churns" data-zh="轮换更替" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="582" y="160">churns</text>
+<text data-en="The harness accrues knowledge about the task. The model accrues nothing — it is replaced wholesale, and nothing of the task survives inside it." data-zh="Harness 积累的是关于任务的知识。模型什么也不积累——它被整体替换，任务的一切都不会在它体内存活。" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="286">The harness accrues knowledge about the task. The model accrues nothing — it is replaced wholesale, and nothing of the task survives inside it.</text>
+</svg>
+<p class="diagram-caption" data-en="Two lifetimes, one system. The harness layer — context assembly, tool contracts, evaluation, recovery — is where knowledge about the task accumulates, and it can live for years. The model layer churns every few months. Architecture that assumes the opposite spends its life rebuilding." data-zh="两条寿命，一个系统。Harness 层——上下文组装、工具契约、评测、恢复——是任务知识积累的地方，它可以活很多年。模型层每几个月轮换一次。假设相反的架构，一辈子都在重建。">Two lifetimes, one system. The harness layer — context assembly, tool contracts, evaluation, recovery — is where knowledge about the task accumulates, and it can live for years. The model layer churns every few months. Architecture that assumes the opposite spends its life rebuilding.</p>
+</div>
+<h3 data-en="The contract is what survives" data-zh="活下来的是契约">The contract is what survives</h3>
+<p data-en="What actually lasts across a model migration? Not the prompt — prompts are the most model-coupled artifact in the stack, full of folklore about a particular checkpoint's habits. Not the few-shot examples, which encode one model's error profile. Not the sampling parameters, tuned like a carburetor to one engine. What survives is structure: the context window budget and its allocation policy; the tool schemas with their error taxonomies; the contract that says an output is valid only when it parses, references real entities, and passes a verifier; the eval battery that encodes what 'correct' means for this task in a few hundred cases with teeth. These artifacts are written against the problem, not the model. They are the harness. When the new model arrives, the harness does not need rewriting — it needs running. It becomes the acceptance test for the migration itself." data-zh="一次模型迁移里，真正留下的是什么？不是 prompt——prompt 是整个技术栈里和模型耦合最深的产物，满是对某个特定检查点习性的民间传说。不是 few-shot 示例——它们编码的是一个模型的错误画像。不是采样参数——它们像化油器一样只对一台发动机调校过。留下来的，是结构：上下文窗口预算和它的分配策略；带着错误分类体系的工具 schema；那份「输出只有解析成功、引用真实实体、通过验证器才算有效」的契约；还有那套用几百个有牙齿的用例、编码了这个任务「正确」之义的评测集。这些产物是针对问题写的，不是针对模型写的。它们就是 harness。当新模型到来时，harness 不需要重写——它需要被运行。它自己就成了迁移的验收标准。">What actually lasts across a model migration? Not the prompt — prompts are the most model-coupled artifact in the stack, full of folklore about a particular checkpoint's habits. Not the few-shot examples, which encode one model's error profile. Not the sampling parameters, tuned like a carburetor to one engine. What survives is structure: the context window budget and its allocation policy; the tool schemas with their error taxonomies; the contract that says an output is valid only when it parses, references real entities, and passes a verifier; the eval battery that encodes what 'correct' means for this task. These artifacts are written against the problem, not the model. They are the harness. When the new model arrives, the harness does not need rewriting — it needs running. It becomes the acceptance test for the migration itself.</p>
+<blockquote data-en="A prompt is a letter to one model. A harness is a constitution for all of them. The letter expires with its recipient. The constitution is amended, stress-tested, and outlived by nothing." data-zh="Prompt，是写给某一个模型的信。Harness，是为所有模型立的宪法。信随收件人一起过期。宪法会被修订、被压力测试，且比一切都活得久。">A prompt is a letter to one model. A harness is a constitution for all of them. The letter expires with its recipient. The constitution is amended, stress-tested, and outlived by nothing.</blockquote>
+<h3 data-en="Four planes of model-independence" data-zh="模型无关性的四个平面">Four planes of model-independence</h3>
+<p data-en="Harness engineering means drawing a hard line between two kinds of code, and it helps to be precise about where the line runs. There are four planes where independence is won or lost. The first is context: whether the window is assembled by policy — budgeted sections, deterministic ordering, retrieval driven by the task graph — or by a prompt's private rituals. The second is tools: whether tools are contracts with declared failure modes, or functions the current model happens to call correctly. The third is evaluation: whether the eval suite runs against every candidate model before deployment, the same way a migration test guards a database change, or whether it is a slide in a launch review. The fourth is recovery: whether retry, fallback, and degradation paths are first-class code, or whether they are improvised at the incident. A system that is independent on all four planes treats a model swap the way a well-built server treats a hardware refresh — an afternoon, not a quarter." data-zh="Harness 工程意味着在两种代码之间划一条硬线，而精确知道这条线划在哪里很有帮助。独立性在四个平面上赢得或失去。第一个是上下文：窗口是由策略组装的——预算化的段落、确定性的排序、由任务图驱动的检索——还是由某个 prompt 的私人仪式组装的。第二个是工具：工具是带着声明好失败模式的契约，还是「当前模型碰巧能正确调用」的函数。第三个是评测：评测套件是否在部署前对每一个候选模型运行，就像迁移测试守护数据库变更那样——还是只是发布评审上的一页幻灯片。第四个是恢复：重试、回退、降级路径是不是一等公民代码，还是事故现场即兴发挥。一个在四个平面上都独立的系统，对待模型更换的方式，就像一台建造良好的服务器对待硬件刷新——一个下午，不是一个季度。">Harness engineering means drawing a hard line between two kinds of code. There are four planes where independence is won or lost. Context: whether the window is assembled by policy — budgeted sections, deterministic ordering, retrieval driven by the task graph — or by a prompt's private rituals. Tools: whether tools are contracts with declared failure modes, or functions the current model happens to call correctly. Evaluation: whether the eval suite runs against every candidate model before deployment, the way a migration test guards a database change, or whether it is a slide in a launch review. Recovery: whether retry, fallback, and degradation paths are first-class code, or improvised at the incident.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrP2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="FOUR PLANES OF MODEL-INDEPENDENCE" data-zh="模型无关性的四个平面" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">FOUR PLANES OF MODEL-INDEPENDENCE</text>
+<!-- PLANE 1: context -->
+<rect fill="var(--bg-surface)" height="66" rx="10" stroke="var(--accent)" stroke-width="1.8" width="560" x="30" y="46"></rect>
+<text data-en="① CONTEXT — assembled by policy, not ritual" data-zh="① 上下文——由策略组装，而非仪式" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="70">① CONTEXT — assembled by policy, not ritual</text>
+<rect fill="var(--accent-dim)" height="24" rx="5" width="150" x="50" y="80"></rect>
+<text data-en="budget: 15% system" data-zh="预算：15% 系统" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="125" y="96">budget: 15% system</text>
+<rect fill="var(--accent-dim)" height="24" rx="5" width="170" x="215" y="80"></rect>
+<text data-en="budget: 45% retrieved" data-zh="预算：45% 检索" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="300" y="96">budget: 45% retrieved</text>
+<rect fill="var(--accent-dim)" height="24" rx="5" width="160" x="400" y="80"></rect>
+<text data-en="budget: 20% scratchpad" data-zh="预算：20% 草稿区" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="480" y="96">budget: 20% scratchpad</text>
+<path d="M310 112 L310 126" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- PLANE 2: tools -->
+<rect fill="var(--bg-surface)" height="66" rx="10" stroke="var(--accent-2)" stroke-width="1.8" width="560" x="30" y="128"></rect>
+<text data-en="② TOOLS — contracts with declared failure modes" data-zh="② 工具——带失败模式的契约" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="152">② TOOLS — contracts with declared failure modes</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent-2)" stroke-width="1" width="120" x="70" y="162"></rect>
+<text data-en="typed args" data-zh="类型化参数" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="130" y="178">typed args</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent-2)" stroke-width="1" width="150" x="205" y="162"></rect>
+<text data-en="error taxonomy" data-zh="错误分类体系" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="280" y="178">error taxonomy</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent-2)" stroke-width="1" width="130" x="370" y="162"></rect>
+<text data-en="timeout + retry" data-zh="超时 + 重试" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="435" y="178">timeout + retry</text>
+<path d="M310 194 L310 208" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- PLANE 3: evals -->
+<rect fill="var(--bg-surface)" height="66" rx="10" stroke="var(--accent-3)" stroke-width="1.8" width="560" x="30" y="210"></rect>
+<text data-en="③ EVALS — the gate every candidate model must pass" data-zh="③ 评测——每个候选模型都必须过的闸门" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="234">③ EVALS — the gate every candidate model must pass</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent-3)" stroke-width="1" width="160" x="90" y="244"></rect>
+<text data-en="300 scored cases" data-zh="300 个评分用例" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="170" y="260">300 scored cases</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent-3)" stroke-width="1" width="130" x="265" y="244"></rect>
+<text data-en="regression set" data-zh="回归集" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="330" y="260">regression set</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent-3)" stroke-width="1" width="130" x="410" y="244"></rect>
+<text data-en="adversarial set" data-zh="对抗集" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="475" y="260">adversarial set</text>
+<path d="M310 276 L310 290" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- PLANE 4: recovery -->
+<rect fill="var(--bg-surface)" height="42" rx="10" stroke="var(--text-tertiary)" stroke-width="1.8" width="560" x="30" y="292"></rect>
+<text data-en="④ RECOVERY — retry · fallback · degradation as first-class code" data-zh="④ 恢复——重试 · 回退 · 降级，一等公民代码" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="318">④ RECOVERY — retry · fallback · degradation as first-class code</text>
+</svg>
+<p class="diagram-caption" data-en="Four planes, one discipline: every layer is written against the problem, not the checkpoint. Context arrives by budget and policy. Tools declare how they fail. Evals gate every model swap. Recovery is code, not heroics. A model that satisfies the evals can slide into this stack in an afternoon." data-zh="四个平面，一种纪律：每一层都针对问题而写，而非针对检查点。上下文按预算和策略抵达。工具声明自己如何失败。评测为每次模型更换把关。恢复是代码，不是英雄主义。一个通过评测的模型，可以在一个下午滑进这个技术栈。">Four planes, one discipline: every layer is written against the problem, not the checkpoint. Context arrives by budget and policy. Tools declare how they fail. Evals gate every model swap. Recovery is code, not heroics. A model that satisfies the evals can slide into this stack in an afternoon.</p>
+</div>
+<h3 data-en="The anti-pattern: model-shaped holes" data-zh="反模式：模型形状的洞">The anti-pattern: model-shaped holes</h3>
+<p data-en="The opposite of a harness is a system with model-shaped holes — logic contoured to one model's exact dimensions. The output parser that handles the specific way this checkpoint mangles markdown tables. The system prompt with a paragraph apologizing for a refusal pattern that was patched upstream two versions ago. The few-shot example included not because it teaches the task but because it suppresses one hallucination this model has. The temperature chosen by grid search over one eval set, never revisited. Each of these is a hole. They feel like engineering, because they required measurement and effort. But they are the opposite: they are debt denominated in the model's currency, and every release devalues them. The tell is simple — try to name the piece of the system that would survive a model swap unchanged. If the honest answer is 'not much,' the system is a hole, not a harness." data-zh="Harness 的反面，是一个满是模型形状的洞的系统——逻辑被凿成某一个模型的精确轮廓。那个能处理这个检查点特有的 markdown 表格损毁方式的输出解析器。系统 prompt 里那一段为某个拒绝模式道歉的文字——而那个模式早在两个版本前就在上游修掉了。那个并非为了教任务、而是为了压制这个模型某一个幻觉而存在的 few-shot 示例。那个在某一个评测集上网格搜索出来、从此再没回头看过的温度参数。每一个，都是一个洞。它们摸起来像工程，因为它们需要测量和努力。但它们恰恰相反：它们是以模型货币计价的债务，而每一次发布都在让它们贬值。判别方法很简单——试着说出系统中哪一块能在模型更换后原样存活。如果诚实的答案是「没多少」，那么这个系统是一个洞，不是一个 harness。">The opposite of a harness is a system with model-shaped holes — logic contoured to one model's exact dimensions. The output parser that handles the specific way this checkpoint mangles markdown tables. The system prompt with a paragraph apologizing for a refusal pattern patched upstream two versions ago. The few-shot example included not to teach the task but to suppress one hallucination. The temperature chosen by grid search over one eval set, never revisited. Each is a hole. They feel like engineering, because they required measurement and effort. But they are debt denominated in the model's currency, and every release devalues them. The tell is simple — try to name the piece of the system that would survive a model swap unchanged. If the honest answer is 'not much,' the system is a hole, not a harness.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrA1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrA2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="MODEL SWAP DAY: TWO ARCHITECTURES" data-zh="模型更换日：两种架构的遭遇" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">MODEL SWAP DAY: TWO ARCHITECTURES</text>
+<!-- left: hole -->
+<text data-en="MODEL-SHAPED HOLES" data-zh="模型形状的洞" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="54">MODEL-SHAPED HOLES</text>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="80" x="115" y="68"></rect>
+<text data-en="old model" data-zh="旧模型" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="93">old model</text>
+<path d="M155 108 L155 124" fill="none" marker-end="url(#arrA1)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<rect fill="none" height="36" rx="8" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="5,4" width="180" x="65" y="128"></rect>
+<text data-en="custom-fit logic" data-zh="定制贴合的逻辑" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="150">custom-fit logic</text>
+<text data-en="✗ does not fit" data-zh="✗ 不匹配" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="155" y="190">✗ does not fit</text>
+<text data-en="weeks of rework, every cycle" data-zh="每个周期数周返工" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="155" y="210">weeks of rework, every cycle</text>
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="44" y2="230"></line>
+<!-- right: harness -->
+<text data-en="THE HARNESS" data-zh="HARNESS" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="54">THE HARNESS</text>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent)" stroke-width="1.5" width="80" x="425" y="68"></rect>
+<text data-en="new model" data-zh="新模型" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="93">new model</text>
+<path d="M465 108 L465 124" fill="none" marker-end="url(#arrA2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="36" rx="8" stroke="var(--accent)" stroke-width="2" width="180" x="375" y="128"></rect>
+<text data-en="problem-shaped contract" data-zh="问题形状的契约" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="150">problem-shaped contract</text>
+<text data-en="✓ passes evals, ships same day" data-zh="✓ 过评测，当天上线" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="465" y="190">✓ passes evals, ships same day</text>
+<text data-en="evals · contracts · budgets hold" data-zh="评测 · 契约 · 预算都成立" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="465" y="210">evals · contracts · budgets hold</text>
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="240"></rect>
+<text data-en="The hole must be recarved every time the model changes. The harness accepts any model that passes its gates — that is the entire point of the gates." data-zh="模型每次更换，洞都要重新凿。Harness 接受任何通过它闸门的模型——这正是闸门存在的全部意义。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="265">The hole must be recarved every time the model changes. The harness accepts any model that passes its gates — that is the entire point of the gates.</text>
+</svg>
+<p class="diagram-caption" data-en="Swap day is the audit. On the left, a system of model-shaped holes: the new model does not fit the old contours, and every hole must be recarved by hand. On the right, a harness of problem-shaped contracts: the new model is judged by the eval gates and either passes or does not. One architecture pays a quarter of rework per cycle. The other pays an afternoon." data-zh="更换日就是审计日。左边，一个由模型形状的洞组成的系统：新模型套不进旧轮廓，每个洞都要手工重凿。右边，一个问题形状契约组成的 harness：新模型由评测闸门裁决，要么通过，要么不通过。一种架构每个周期付一个季度的返工。另一种，付一个下午。">Swap day is the audit. On the left, a system of model-shaped holes: the new model does not fit the old contours, and every hole must be recarved by hand. On the right, a harness of problem-shaped contracts: the new model is judged by the eval gates and either passes or does not. One architecture pays a quarter of rework per cycle. The other pays an afternoon.</p>
+</div>
+<h3 data-en="Pay the harness tax deliberately" data-zh="有意识地缴纳 harness 税">Pay the harness tax deliberately</h3>
+<p data-en="None of this is free. A harness is slower to build than a prompt. The first version of a system always ships faster when the context is hand-tuned, the failures are patched ad hoc, and the evals are vibes. That is the harness tax: the upfront cost of writing contracts, building the eval battery, and giving recovery paths real code. Teams feel the tax and conclude the harness is overhead. This is the wrong ledger. The tax is paid once; the alternative is a subscription — every model release, every price change, every deprecation invoice arrives as weeks of migration work. Six model cycles in, the harness team has shipped six upgrades and banked the compounding knowledge of the task in evals and contracts. The prompt team has rewritten the same system six times and learned nothing that survives. The models will keep improving, and that is precisely the argument for the harness: every improvement is only harvestable by the system that can actually receive it." data-zh="这些没有一样是免费的。建一个 harness 比写一个 prompt 慢。系统的第一个版本，总是这样出货最快：上下文手工调优，失败现场打补丁，评测全凭感觉。这就是 harness 税：写契约、建评测集、给恢复路径写真正代码的前期成本。团队感到这笔税，于是得出结论：harness 是开销。这是错误的账本。税只交一次；而另一个选项是订阅费——每一次模型发布、每一次价格变动、每一次下线，都以数周迁移工作的形式寄来账单。六个模型周期之后，harness 团队发布了六次升级，并把任务的复利知识存进了评测和契约里。Prompt 团队把同一个系统重写了六遍，却没有学到任何能存活的东西。模型会持续变强，而这恰恰是支持 harness 的论点：每一次进步，只有真正接得住它的系统，才收割得到。">None of this is free. A harness is slower to build than a prompt. The first version always ships faster when the context is hand-tuned, the failures are patched ad hoc, and the evals are vibes. That is the harness tax: the upfront cost of contracts, the eval battery, and real recovery code. Teams feel the tax and conclude the harness is overhead. This is the wrong ledger. The tax is paid once; the alternative is a subscription — every model release, every deprecation arrives as weeks of migration work. Six cycles in, the harness team has shipped six upgrades and banked the compounding knowledge of the task in evals and contracts. The prompt team has rewritten the same system six times and learned nothing that survives. The models will keep improving, and that is precisely the argument for the harness: every improvement is only harvestable by the system that can actually receive it.</p>
+<p data-en="The discipline is simple to state and rare to practice: write for the problem, verify against the evals, and let models come and go through the gate. Context assembly that follows policy. Tools that declare their failures. Evals with teeth, run on every candidate. Recovery that is code. None of it glamorous, all of it compounding. The teams that internalize this stop asking which model they are on, because it stopped being the interesting question. The interesting question is what their harness knows that no one else's does — because that is the only layer of the stack that is still theirs, and the only one that gets more valuable with every model that arrives." data-zh="这条纪律说出来简单，做起来罕见：为问题而写，用评测来验证，让模型从闸门里来了又走。遵循策略的上下文组装。声明自己失败方式的工具。有牙齿的、对每个候选模型都运行的评测。作为代码的恢复。没有一样光鲜，全部都在复利。内化了这一点的团队，不再问自己在用哪个模型——因为那不再是有趣的问题。有趣的问题是：他们的 harness 知道什么别人不知道的东西——因为那是整个技术栈里唯一还属于他们的层，也是唯一一层，随着每一个新模型的到来而变得更值钱。">The discipline is simple to state and rare to practice: write for the problem, verify against the evals, and let models come and go through the gate. Context assembly that follows policy. Tools that declare their failures. Evals with teeth, run on every candidate. Recovery that is code. None of it glamorous, all of it compounding. The teams that internalize this stop asking which model they are on, because it stopped being the interesting question. The interesting question is what their harness knows that no one else's does — because that is the only layer of the stack that is still theirs, and the only one that gets more valuable with every model that arrives.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
