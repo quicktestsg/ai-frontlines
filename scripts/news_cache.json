@@ -1,6 +1,627 @@
 {
   "tweets": [
     {
+      "id": "2108823477071303109",
+      "url": "https://x.com/elonmusk/status/2108823477071303109",
+      "label": "xAI",
+      "color": "#1DA1F2",
+      "fetched_at": "2026-10-10T08:00:37.808283+00:00",
+      "translation_zh": "马斯克透露 xAI 数字版 Optimus 进展：仅靠像人类一样看屏幕，已能通关《暗黑破坏神》约一半剧情，Counter-Strike 等快节奏游戏表现也不错，《英雄联盟》正在训练中。目标是跨所有游戏实现通用。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 573,
+        "in_reply_to_screen_name": "teslayoda",
+        "in_reply_to_status_id_str": "2108779986173993233",
+        "in_reply_to_user_id_str": "1427395053194907655",
+        "lang": "en",
+        "created_at": "2026-10-10T07:34:31.000Z",
+        "display_text_range": [
+          11,
+          291
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "1427395053194907655",
+              "indices": [
+                0,
+                10
+              ],
+              "name": "Yoda",
+              "screen_name": "teslayoda"
+            }
+          ]
+        },
+        "id_str": "2108823477071303109",
+        "text": "@teslayoda We’re making interesting progress here. \n\nDigital Optimus can play about halfway through the Diablo campaign so far just by looking at the screen like a human. \n\nSkill at Counter-Strike and other fast games is good too. \n\nLeague is also in training. \n\nGoal is to generalize across",
+        "user": {
+          "id_str": "44196397",
+          "name": "Elon Musk",
+          "screen_name": "elonmusk",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2103567689515954176/aR-Kjpp4_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+            },
+            "description": "X",
+            "url": {
+              "url": "https://twitter.com/X",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2108823477071303109"
+          ],
+          "editable_until_msecs": "1791621271000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 155,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 134,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 11,
+          "retweet_count": 13,
+          "created_at": "2026-10-10T04:41:42.000Z",
+          "display_text_range": [
+            0,
+            276
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/JJpCSAQCBd",
+                "expanded_url": "https://x.com/teslayoda/status/2108779986173993233/photo/1",
+                "indices": [
+                  277,
+                  300
+                ],
+                "url": "https://t.co/JJpCSAQCBd"
+              }
+            ]
+          },
+          "id_str": "2108779986173993233",
+          "text": "Tesla is hiring a Machine Learning Engineer for Realtime Games, Digital Optimus, in Palo Alto. The job: build agents that play AAA games, browse the web and use pro apps at superhuman levels. Why games? Digital Optimus, the Tesla and xAI project Musk announced in March, reads https://t.co/JJpCSAQCBd",
+          "user": {
+            "id_str": "1427395053194907655",
+            "name": "Yoda",
+            "screen_name": "teslayoda",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2000259921309278210/hkktXghC_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2108779986173993233"
+            ],
+            "editable_until_msecs": "1791610902000",
+            "edits_remaining": "5",
+            "is_edit_eligible": true
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/JJpCSAQCBd",
+              "expanded_url": "https://x.com/teslayoda/status/2108779986173993233/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                277,
+                300
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HUPkMlVbsAAaAJt.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 573,
+                    "w": 1024,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 700,
+                    "w": 700,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 700,
+                    "w": 614,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 700,
+                    "w": 350,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 700,
+                    "w": 1024,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 700,
+                "width": 1024
+              },
+              "sizes": {
+                "large": {
+                  "h": 700,
+                  "resize": "fit",
+                  "w": 1024
+                },
+                "medium": {
+                  "h": 700,
+                  "resize": "fit",
+                  "w": 1024
+                },
+                "small": {
+                  "h": 465,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/JJpCSAQCBd"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 573,
+                  "w": 1024,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 700,
+                  "w": 700,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 700,
+                  "w": 614,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 700,
+                  "w": 350,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 700,
+                  "w": 1024,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/teslayoda/status/2108779986173993233/photo/1",
+              "url": "https://pbs.twimg.com/media/HUPkMlVbsAAaAJt.jpg",
+              "width": 1024,
+              "height": 700
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTA4ODIzNDc3MDE2Nzk3MTg0"
+        }
+      }
+    },
+    {
+      "id": "2108680150556737819",
+      "url": "https://x.com/AnthropicAI/status/2108680150556737819",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-10-10T08:00:37.808283+00:00",
+      "translation_zh": "Anthropic 宣布将更频繁地发布模型行为报告，超出系统卡片和常规风险报告的范围。今日报告描述了评估和内部使用中发现的四类行为：Claude 在真实网站或系统上以非预期方式行动，有时会绕过限制而非停止。所有案例实际影响极小，严重程度远低于 7 月和 9 月报告的网络安全事件。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 2767,
+        "lang": "en",
+        "created_at": "2026-10-09T22:04:59.000Z",
+        "display_text_range": [
+          0,
+          280
+        ],
+        "entities": {},
+        "id_str": "2108680150556737819",
+        "text": "We’re beginning a process of publishing more frequent reports on model behavior, beyond what appears in our system cards and regular risk reports.\n\nToday’s report describes four types of behaviors we’ve identified during evaluations and internal use. In each, Claude acted on real",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2108680150556737819"
+          ],
+          "editable_until_msecs": "1791587099000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 330,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/mGeVIBgdou",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2108688403206164480/R-hQnUFd?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2108688403206164480/R-hQnUFd?format=jpg&name=280x150",
+                "width": 267
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "www.anthropic.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2108688403206164480/R-hQnUFd?format=jpg&name=800x320_1",
+                "width": 569
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2108688403206164480/R-hQnUFd?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1125,
+                "url": "https://pbs.twimg.com/card_img/2108688403206164480/R-hQnUFd?format=jpg&name=orig",
+                "width": 2000
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2108688403206164480/R-hQnUFd?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2108688403206164480/R-hQnUFd?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 81,
+                "url": "https://pbs.twimg.com/card_img/2108688403206164480/R-hQnUFd?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "creator": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1125,
+                "url": "https://pbs.twimg.com/card_img/2108688403206164480/R-hQnUFd?format=png&name=2048x2048_2_exp",
+                "width": 2000
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1125,
+                "url": "https://pbs.twimg.com/card_img/2108688403206164480/R-hQnUFd?format=jpg&name=orig",
+                "width": 2000
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "anthropic.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2108688403206164480/R-hQnUFd?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 63.18,
+                    "rgb": {
+                      "blue": 187,
+                      "green": 201,
+                      "red": 208
+                    }
+                  },
+                  {
+                    "percentage": 33.2,
+                    "rgb": {
+                      "blue": 99,
+                      "green": 141,
+                      "red": 183
+                    }
+                  },
+                  {
+                    "percentage": 2.48,
+                    "rgb": {
+                      "blue": 36,
+                      "green": 46,
+                      "red": 191
+                    }
+                  },
+                  {
+                    "percentage": 0.86,
+                    "rgb": {
+                      "blue": 79,
+                      "green": 94,
+                      "red": 179
+                    }
+                  },
+                  {
+                    "percentage": 0.12,
+                    "rgb": {
+                      "blue": 147,
+                      "green": 157,
+                      "red": 221
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Investigating unintended model actions in our evaluations and internal use",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 63.18,
+                    "rgb": {
+                      "blue": 187,
+                      "green": 201,
+                      "red": 208
+                    }
+                  },
+                  {
+                    "percentage": 33.2,
+                    "rgb": {
+                      "blue": 99,
+                      "green": 141,
+                      "red": 183
+                    }
+                  },
+                  {
+                    "percentage": 2.48,
+                    "rgb": {
+                      "blue": 36,
+                      "green": 46,
+                      "red": 191
+                    }
+                  },
+                  {
+                    "percentage": 0.86,
+                    "rgb": {
+                      "blue": 79,
+                      "green": 94,
+                      "red": 179
+                    }
+                  },
+                  {
+                    "percentage": 0.12,
+                    "rgb": {
+                      "blue": 147,
+                      "green": 157,
+                      "red": 221
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1125,
+                "url": "https://pbs.twimg.com/card_img/2108688403206164480/R-hQnUFd?format=png&name=2048x2048_2_exp",
+                "width": 2000
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2108688403206164480/R-hQnUFd?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 63.18,
+                    "rgb": {
+                      "blue": 187,
+                      "green": 201,
+                      "red": 208
+                    }
+                  },
+                  {
+                    "percentage": 33.2,
+                    "rgb": {
+                      "blue": 99,
+                      "green": 141,
+                      "red": 183
+                    }
+                  },
+                  {
+                    "percentage": 2.48,
+                    "rgb": {
+                      "blue": 36,
+                      "green": 46,
+                      "red": 191
+                    }
+                  },
+                  {
+                    "percentage": 0.86,
+                    "rgb": {
+                      "blue": 79,
+                      "green": 94,
+                      "red": 179
+                    }
+                  },
+                  {
+                    "percentage": 0.12,
+                    "rgb": {
+                      "blue": 147,
+                      "green": 157,
+                      "red": 221
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1125,
+                "url": "https://pbs.twimg.com/card_img/2108688403206164480/R-hQnUFd?format=png&name=2048x2048_2_exp",
+                "width": 2000
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/mGeVIBgdou",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1125,
+                "url": "https://pbs.twimg.com/card_img/2108688403206164480/R-hQnUFd?format=jpg&name=orig",
+                "width": 2000
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTA4NjgwMTUwNDI2ODA0MjI0"
+        }
+      }
+    },
+    {
       "id": "2108612939842511217",
       "url": "https://x.com/elonmusk/status/2108612939842511217",
       "label": "xAI",
