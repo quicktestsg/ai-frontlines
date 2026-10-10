@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Queue Is the Org Chart — AI Frontlines</title>
+<meta content="In a multi-agent system, the message topology is the organization chart. Every architectural decision about queues, topics, and direct calls is a decision about roles, ownership, and who is allowed to talk to whom. Teams that treat topology as an afterthought get the org their queue permits — usually a dysfunctional one." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 11, 2026" data-zh="2026年10月11日">October 11, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Queue Is the Org Chart" data-zh="队列，就是组织架构图">The Queue Is the Org Chart</h1>
+<p class="post-header-deck" data-en="Every multi-agent system has two org charts. One is drawn in the design doc — boxes labeled 'planner' and 'worker,' arrows meaning 'coordinates.' The other is the message topology: the queues, topics, and direct calls that dictate who actually talks to whom, about what, and when the conversation is allowed to drop. The first chart is aspirational. The second is law. Teams keep redrawing the first and wondering why behavior doesn't change, when the whole time the queue was the org." data-zh="每一个多智能体系统都有两张组织架构图。一张画在设计文档里——标着「规划者」「执行者」的方框，箭头的意思是「协调」。另一张是消息拓扑：队列、主题和点对点调用，它们规定了谁真正和谁对话、谈什么、以及对话何时允许被丢弃。第一张图是愿景。第二张图是法律。团队不断重画第一张，奇怪行为为什么不变——而自始至终，队列才是组织本身。">Every multi-agent system has two org charts. One is drawn in the design doc. The other is the message topology: the queues, topics, and direct calls that dictate who actually talks to whom, about what, and when the conversation is allowed to drop. The first chart is aspirational. The second is law.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a habit in multi-agent design that produces beautiful diagrams and terrible systems: drawing the org chart first, then bolting on messaging as an implementation detail. The planner box connects to four worker boxes, so obviously the planner calls four workers. A reviewer box watches everything, so obviously everything CC's the reviewer. The diagram describes reporting relationships; the code inherits them, one HTTP call at a time. What nobody notices is that each of those arrows is not just a line — it is a policy. A direct call is a policy that the callee must be alive right now, that the caller will sit and wait, that failure propagates backward to whoever pulled the trigger. A queue is a different policy: the work will wait if the worker is busy, the worker can crash and resume, and failure can be retried by a system that never appears in the diagram at all. Same boxes, same arrows, completely different organizations. The topology was never plumbing. It was always the org design, just wearing a trench coat." data-zh="多智能体设计里有一个习惯，能产出漂亮的图和糟糕的系统：先画组织架构图，再把消息机制当作实现细节补上去。规划者的方框连着四个执行者的方框，所以规划者当然要调用四个执行者。审查者的方框监督一切，所以一切当然都要抄送审查者。图描述的是汇报关系；代码继承了这些关系，一次一个 HTTP 调用。没人注意到的是：那些箭头不只是线——它们是策略。点对点调用是一条策略：被调用方此刻必须活着，调用方会坐着干等，失败沿着引信向后传播到扣扳机的人。队列是另一条策略：工人忙的时候工作会等，工人可以崩溃后接着干，失败可以被一个从不出现在图里的系统重试。同样的方框，同样的箭头，完全不同的组织。拓扑从来不是管道。它一直都是组织设计，只是穿了件风衣。">There is a habit in multi-agent design that produces beautiful diagrams and terrible systems: drawing the org chart first, then bolting on messaging as an implementation detail. The planner connects to four workers, so the planner calls four workers. A reviewer watches everything, so everything CC's the reviewer. What nobody notices is that each arrow is not just a line — it is a policy. A direct call is a policy that the callee must be alive right now and the caller will wait. A queue is a policy that work waits, workers can crash and resume, and failure gets retried by a system that never appears in the diagram. Same boxes, same arrows, completely different organizations.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrQ1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrQ2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="SAME DIAGRAM, TWO ORGANIZATIONS" data-zh="同一张图，两个组织" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">SAME DIAGRAM, TWO ORGANIZATIONS</text>
+<!-- left: direct calls -->
+<text data-en="DIRECT CALLS" data-zh="点对点调用" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="56">DIRECT CALLS</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="110" x="100" y="70"></rect>
+<text data-en="planner" data-zh="规划者" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="155" y="92">planner</text>
+<path d="M155 104 L155 118" fill="none" marker-end="url(#arrQ1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent-3)" stroke-width="1.2" width="80" x="40" y="122"></rect>
+<text data-en="worker A" data-zh="执行者 A" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="80" y="140">worker A</text>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent-3)" stroke-width="1.2" width="80" x="130" y="122"></rect>
+<text data-en="worker B" data-zh="执行者 B" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="170" y="140">worker B</text>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent-3)" stroke-width="1.2" width="80" x="220" y="122"></rect>
+<text data-en="worker C" data-zh="执行者 C" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="260" y="140">worker C</text>
+<text data-en="✗ callee must be alive" data-zh="✗ 被调用方必须活着" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="155" y="178">✗ callee must be alive</text>
+<text data-en="✗ caller blocks and waits" data-zh="✗ 调用方阻塞等待" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="155" y="194">✗ caller blocks and waits</text>
+<text data-en="✗ failure propagates backward" data-zh="✗ 失败向后传播" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="155" y="210">✗ failure propagates backward</text>
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="46" y2="230"></line>
+<!-- right: queues -->
+<text data-en="QUEUES + TOPICS" data-zh="队列 + 主题" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="56">QUEUES + TOPICS</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.5" width="110" x="410" y="70"></rect>
+<text data-en="producer" data-zh="生产者" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="465" y="92">producer</text>
+<path d="M465 104 L465 118" fill="none" marker-end="url(#arrQ2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="30" rx="7" stroke="var(--accent)" stroke-width="2" width="220" x="355" y="121"></rect>
+<text data-en="task queue — durable, ordered" data-zh="任务队列——持久、有序" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="465" y="140">task queue — durable, ordered</text>
+<path d="M420 151 L420 165 M465 151 L465 165 M510 151 L510 165" fill="none" marker-end="url(#arrQ2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent)" stroke-width="1.2" width="80" x="380" y="169"></rect>
+<text data-en="worker A" data-zh="执行者 A" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="420" y="187">worker A</text>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent)" stroke-width="1.2" width="80" x="470" y="169"></rect>
+<text data-en="worker B" data-zh="执行者 B" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="510" y="187">worker B</text>
+<text data-en="✓ work waits when workers are busy" data-zh="✓ 工人忙时工作在等" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="465" y="216">✓ work waits when workers are busy</text>
+<text data-en="✓ crash + resume, no lost tasks" data-zh="✓ 崩溃可恢复，任务不丢" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="465" y="230">✓ crash + resume, no lost tasks</text>
+<rect fill="var(--accent-dim)" height="52" opacity="0.5" rx="8" width="560" x="30" y="252"></rect>
+<text data-en="The arrows look identical in the design doc. The policies they encode — availability, blocking, failure propagation — are opposites." data-zh="在设计文档里，这些箭头看起来一模一样。它们编码的策略——可用性、阻塞、失败传播——却截然相反。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="273">The arrows look identical in the design doc. The policies they encode — availability, blocking, failure propagation — are opposites.</text>
+<text data-en="The topology is not plumbing. It is the organization." data-zh="拓扑不是管道。它是组织本身。" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="292">The topology is not plumbing. It is the organization.</text>
+</svg>
+<p class="diagram-caption" data-en="One diagram, two organizations. Direct calls create a rigid hierarchy where the planner is a single point of failure and every worker outage stalls the caller. Queues create a decoupled workforce where work buffers, workers are interchangeable, and failure is a retryable event rather than an incident. Choose the topology and you have chosen the org — whether or not anyone admits it." data-zh="一张图，两个组织。点对点调用造就一个僵硬的科层制：规划者是单点故障，任何一个执行者宕机都会卡住调用方。队列造就一支解耦的劳动力：工作可以缓冲，执行者可以互换，失败是一个可重试的事件而非一次事故。选定拓扑，就是选定了组织——无论是否有人承认这一点。">One diagram, two organizations. Direct calls create a rigid hierarchy where the planner is a single point of failure and every worker outage stalls the caller. Queues create a decoupled workforce where work buffers, workers are interchangeable, and failure is a retryable event rather than an incident. Choose the topology and you have chosen the org.</p>
+</div>
+<h3 data-en="Concurrency limits are headcount" data-zh="并发上限就是编制人数">Concurrency limits are headcount</h3>
+<p data-en="Here is a correspondence that holds almost embarrassingly well. A concurrency limit is headcount. A queue depth is the size of someone's inbox. Backpressure is a manager saying 'stop assigning me work, finish what's here first.' Once you see it, you cannot unsee it, and it turns vague capacity debates into concrete org design. Consider the system where a research agent fans out forty parallel sub-tasks and every one of them can call the retrieval tool. The retrieval backend dies at twelve concurrent requests. In org terms: forty employees, all with direct database access, on a floor that seats twelve. The fix is not a faster backend — it is an org chart. Introduce a retrieval queue with a concurrency limit of ten, and every agent that wants documents files a request and waits. The queue is a new department: small, specialized, protected from stampedes. It has a service-level identity (p95 latency), a staffing policy (max workers), and a hiring freeze mechanism (backpressure). The agents lost nothing but the illusion of unmediated access — an illusion that was only ever affordable at a scale the backend never supported." data-zh="有一组对应关系成立得几乎让人尴尬。并发上限是编制人数。队列深度是某人收件箱的厚度。背压就是经理说「别再派活了，先把手头的干完」。一旦看见，就无法再看不见——它把模糊的容量争论变成具体的组织设计。想想那个系统：一个研究型智能体扇出四十个并行子任务，每个都能调用检索工具。检索后端在十二个并发请求时就会倒下。翻译成组织语言：四十名员工，人人都有数据库直连权限，而机房只有十二个座位。解法不是更快的后端——是改组织架构图。引入一个并发上限为十的检索队列，任何想要文档的智能体都提交请求然后等待。这个队列就是一个新部门：小、专业、免受踩踏。它有服务水平指标（p95 延迟）、有编制政策（最大工人数）、有冻结招聘机制（背压）。智能体们失去的只是「无中介访问」的幻觉——一个只有在后端从未支持过的规模下才负担得起的幻觉。">A concurrency limit is headcount. A queue depth is the size of someone's inbox. Backpressure is a manager saying 'stop assigning me work, finish what's here first.' Consider the system where a research agent fans out forty parallel sub-tasks and every one can call retrieval, and the backend dies at twelve concurrent requests. In org terms: forty employees with direct database access on a floor that seats twelve. The fix is not a faster backend — it is an org chart.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrC2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="CAPACITY IS ORG DESIGN" data-zh="容量就是组织设计" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">CAPACITY IS ORG DESIGN</text>
+<!-- stampede -->
+<text data-en="THE STAMPEDE — 40 agents → 1 backend" data-zh="踩踏——40 个智能体 → 1 个后端" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="56">THE STAMPEDE — 40 agents → 1 backend</text>
+<path d="M80 70 L270 118 M160 70 L290 118 M240 70 L310 118 M320 70 L330 118 M400 70 L350 118 M480 70 L370 118 M540 70 L290 118" fill="none" marker-end="url(#arrC2)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-3)" stroke-width="1.8" width="160" x="230" y="122"></rect>
+<text data-en="retrieval backend" data-zh="检索后端" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="143">retrieval backend</text>
+<text data-en="✗ dies at 12 concurrent — org has no floor plan" data-zh="✗ 12 个并发即倒——组织没有平面图" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="178">✗ dies at 12 concurrent — org has no floor plan</text>
+<path d="M310 192 L310 212" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="restructure" data-zh="重组" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="345" y="206">restructure</text>
+<!-- queue dept -->
+<text data-en="THE QUEUE DEPARTMENT" data-zh="队列部门" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="234">THE QUEUE DEPARTMENT</text>
+<rect fill="var(--accent-dim)" height="32" rx="7" stroke="var(--accent)" stroke-width="2" width="200" x="60" y="248"></rect>
+<text data-en="requests queue (inbox)" data-zh="请求队列（收件箱）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="160" y="268">requests queue (inbox)</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent)" stroke-width="1.8" width="180" x="290" y="248"></rect>
+<text data-en="limiter: 10 concurrent" data-zh="限流器：10 并发" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="380" y="262">limiter: 10 concurrent</text>
+<text data-en="(staffing policy)" data-zh="（编制政策）" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="380" y="274">(staffing policy)</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-2)" stroke-width="1.8" width="110" x="480" y="248"></rect>
+<text data-en="backend, calm" data-zh="后端，安然" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="535" y="268">backend, calm</text>
+<path d="M260 264 L286 264 M470 264 L476 264" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="A queue with a concurrency limit is a department: it has an inbox, a staffing policy, and the authority to say 'wait.'" data-zh="一个带并发上限的队列就是一个部门：它有收件箱、有编制政策、有说「等一下」的权力。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="308">A queue with a concurrency limit is a department: it has an inbox, a staffing policy, and the authority to say 'wait.'</text>
+</svg>
+<p class="diagram-caption" data-en="Capacity problems read as infrastructure but resolve as organization. Forty agents stampeding one backend is not a backend problem — it is an org with no floor plan. Insert a queue department with a staffing policy (a concurrency limit) and an inbox (bounded queue depth), and the stampede becomes a line. The backend stops being a shared accident and becomes a service with a contract." data-zh="容量问题读起来像基础设施，解决起来像组织。四十个智能体踩踏一个后端，不是后端的问题——是一个没有平面图的组织。插入一个有编制政策（并发上限）和收件箱（有界队列深度）的队列部门，踩踏就变成排队。后端不再是一场共享的事故，而成为一项有契约的服务。">Capacity problems read as infrastructure but resolve as organization. Forty agents stampeding one backend is not a backend problem — it is an org with no floor plan. Insert a queue department with a staffing policy and an inbox, and the stampede becomes a line. The backend becomes a service with a contract.</p>
+</div>
+<h3 data-en="Failure domains are team boundaries" data-zh="故障域就是团队边界">Failure domains are team boundaries</h3>
+<p data-en="The correspondence gets sharper at failure. Watch what a system does when a task goes wrong and you can read its org chart without ever seeing the code. In one topology, a poisoned task — one whose payload sends the worker into a loop — blocks the queue behind it, and everything upstream grinds to a halt. That is a company where one broken process halts the whole floor because nobody has the authority to set it aside. In another topology, the same task trips a retry limit, lands in a dead-letter queue, and a triage process picks it up while the line keeps moving. That is a company with an escalation path. The dead-letter queue is not an infrastructure feature; it is an institutional one — it encodes the policy that suspicious work gets quarantined by procedure, not adjudicated by whoever happens to be standing there. Same incident, two organizations. The first resolves it with heroics. The second resolves it with structure, and the structure was decided the day someone chose the queue semantics — long before any incident arrived to test them." data-zh="到了失败这一环，对应关系变得更加锋利。观察一个系统在任务出错时的反应，不用看代码就能读出它的组织架构图。在一种拓扑里，一个毒任务——载荷会让执行者陷入死循环的那种——堵住它身后的队列，上游的一切都随之停摆。那是一家公司，一个坏掉的流程能瘫痪整层楼，因为没有人有权把它搁置。在另一种拓扑里，同一个任务触发重试上限，落进死信队列，一条分诊流程接手它，而主线继续运转。那是一家有升级路径的公司。死信队列不是一个基础设施特性；它是一个制度特性——它编码了这样一条政策：可疑的工作按程序隔离，而不是由碰巧站在那里的人来裁决。同一起事故，两个组织。第一个用英雄主义解决。第二个用结构解决，而结构早在某人选定队列语义的那天就定了——远在任何事故到来考验它之前。">Watch what a system does when a task goes wrong and you can read its org chart without ever seeing the code. A poisoned task that blocks the queue behind it is a company where one broken process halts the whole floor. The same task landing in a dead-letter queue while the line keeps moving is a company with an escalation path. The dead-letter queue is not an infrastructure feature; it is an institutional one.</p>
+<blockquote data-en="A retry policy is a hiring policy. A dead-letter queue is an escalation path. Backpressure is a manager's closed door. The queue was never plumbing — it was the company handbook, all along." data-zh="重试政策就是招聘政策。死信队列就是升级路径。背压就是经理关上的门。队列从来都不是管道——它自始至终都是员工手册。">A retry policy is a hiring policy. A dead-letter queue is an escalation path. Backpressure is a manager's closed door. The queue was never plumbing — it was the company handbook, all along.</blockquote>
+<h3 data-en="Design the org you want, then encode it" data-zh="先设计你想要的组织，再把它编码进去">Design the org you want, then encode it</h3>
+<p data-en="The practical inversion is this: stop designing message flows and start designing the organization, then implement the org as topology. Want workers to be interchangeable and replaceable at runtime? Then no worker may be addressed directly — all work enters through the queue and any qualified consumer may claim it. Want specialists? Separate topics per skill, and the subscription list is the roster. Want a promotion path for busy agents? Priority lanes in the same queue — seniority encoded as routing weight. Want to prevent the planner from becoming a bottleneck tyrant? Cap its outbound rate and force delegation through the shared queue, where its tasks compete with everyone else's on equal terms. Every one of these is a standard queue feature, and every one is simultaneously a statement about power, authority, and whose time is allowed to matter. The systems that feel well-run at scale are the ones where these statements were made deliberately. The systems that feel chaotic at ten agents made the same statements too — accidentally, in defaults, in whatever the framework's example code happened to do. Defaults are org design by inertia. Inertia ships." data-zh="实用的反转是这样的：别再设计消息流了，去设计组织，然后把组织实现为拓扑。希望执行者在运行时可互换、可替换？那么任何执行者都不得被直接寻址——所有工作经由队列进入，任何有资格的消费者都可以认领。想要专家？每种技能一个独立主题，订阅名单就是花名册。想给忙碌的智能体一条晋升通道？同一队列里的优先级车道——资历被编码为路由权重。想防止规划者变成瓶颈暴君？限制它的出站速率，强制它通过共享队列委派任务，在那里它的任务与其他人的任务在同等条件下竞争。每一条都是标准的队列特性，每一条同时也是一句关于权力、权威、以及谁的时间被允许重要的宣言。那些在规模扩大后依然感觉运转良好的系统，是把这些宣言有意说出口的系统。那些十个智能体就乱成一团的系统，也同样说了这些话——只是偶然地、通过默认值、通过框架示例代码碰巧怎么做就怎么落。默认值是靠惯性完成的组织设计。而惯性，是能出货的。">The practical inversion: stop designing message flows and start designing the organization, then implement the org as topology. Interchangeable workers means no direct addressing. Specialists means separate topics. A promotion path means priority lanes. Preventing a bottleneck tyrant means capping the planner's outbound rate. Every queue feature is simultaneously a statement about power and whose time matters. Defaults are org design by inertia — and inertia ships.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrO1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrO2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+</defs>
+<text data-en="ORG POLICY → TOPOLOGY FEATURE" data-zh="组织政策 → 拓扑特性" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ORG POLICY → TOPOLOGY FEATURE</text>
+<rect fill="var(--bg-surface)" height="38" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="250" x="40" y="48"></rect>
+<text data-en="interchangeable workers" data-zh="执行者可互换" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="165" y="66">interchangeable workers</text>
+<text data-en="org: anyone may resign, work survives" data-zh="组织：谁都可以走，工作还在" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="165" y="79">org: anyone may resign, work survives</text>
+<path d="M290 67 L330 67" fill="none" marker-end="url(#arrO1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="38" rx="8" stroke="var(--accent)" stroke-width="1.8" width="250" x="332" y="48"></rect>
+<text data-en="no direct addressing" data-zh="禁止直接寻址" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="457" y="66">no direct addressing</text>
+<text data-en="all work enters via the queue" data-zh="所有工作经队列进入" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="457" y="79">all work enters via the queue</text>
+<rect fill="var(--bg-surface)" height="38" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="250" x="40" y="102"></rect>
+<text data-en="specialists" data-zh="专家" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="165" y="120">specialists</text>
+<text data-en="org: deep skill, narrow mandate" data-zh="组织：技能深，职责窄" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="165" y="133">org: deep skill, narrow mandate</text>
+<path d="M290 121 L330 121" fill="none" marker-end="url(#arrO1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="38" rx="8" stroke="var(--accent)" stroke-width="1.8" width="250" x="332" y="102"></rect>
+<text data-en="topic per skill" data-zh="每种技能一个主题" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="457" y="120">topic per skill</text>
+<text data-en="subscription list = the roster" data-zh="订阅名单 = 花名册" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="457" y="133">subscription list = the roster</text>
+<rect fill="var(--bg-surface)" height="38" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="250" x="40" y="156"></rect>
+<text data-en="escalation path" data-zh="升级路径" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="165" y="174">escalation path</text>
+<text data-en="org: broken work is quarantined" data-zh="组织：坏工作被隔离" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="165" y="187">org: broken work is quarantined</text>
+<path d="M290 175 L330 175" fill="none" marker-end="url(#arrO1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="38" rx="8" stroke="var(--accent)" stroke-width="1.8" width="250" x="332" y="156"></rect>
+<text data-en="dead-letter queue" data-zh="死信队列" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="457" y="174">dead-letter queue</text>
+<text data-en="retry limit → triage, line moves on" data-zh="重试到限 → 分诊，主线不停" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="457" y="187">retry limit → triage, line moves on</text>
+<rect fill="var(--bg-surface)" height="38" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="250" x="40" y="210"></rect>
+<text data-en="no bottleneck tyrant" data-zh="没有瓶颈暴君" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="165" y="228">no bottleneck tyrant</text>
+<text data-en="org: delegate, don't hoard" data-zh="组织：委派，不要囤积" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="165" y="241">org: delegate, don't hoard</text>
+<path d="M290 229 L330 229" fill="none" marker-end="url(#arrO1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="38" rx="8" stroke="var(--accent)" stroke-width="1.8" width="250" x="332" y="210"></rect>
+<text data-en="outbound rate cap" data-zh="出站速率上限" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="457" y="228">outbound rate cap</text>
+<text data-en="tasks compete in the shared queue" data-zh="任务在共享队列中竞争" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="457" y="241">tasks compete in the shared queue</text>
+<rect fill="var(--accent-dim)" height="44" opacity="0.5" rx="8" width="540" x="40" y="262"></rect>
+<text data-en="Every row is a sentence about power, authority, and whose time matters. Sentences written in topology cannot be revised in a meeting." data-zh="每一行都是一句关于权力、权威、谁的时间重要的宣言。用拓扑写下的句子，无法在会议里修订。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="288">Every row is a sentence about power, authority, and whose time matters. Sentences written in topology cannot be revised in a meeting.</text>
+</svg>
+<p class="diagram-caption" data-en="The translation table between organizational intent and topology feature. Interchangeable staff becomes anonymous consumption. Specialization becomes topics. Escalation becomes dead-lettering. Anti-hoarding becomes rate caps. Each mapping is ordinary engineering — and each is simultaneously a constitutional decision about how this little society allocates attention, absorbs failure, and distributes authority." data-zh="组织意图与拓扑特性之间的翻译表。可互换的员工变成匿名消费。专业化变成主题。升级变成死信。反囤积变成速率上限。每一行映射都是寻常的工程——同时也是一个关于这个小小社会如何分配注意力、吸收失败、分布权力的宪法性决定。">The translation table between organizational intent and topology feature. Interchangeable staff becomes anonymous consumption. Specialization becomes topics. Escalation becomes dead-lettering. Anti-hoarding becomes rate caps. Each mapping is ordinary engineering — and each is a constitutional decision.</p>
+</div>
+<h3 data-en="The diagram is a lie the queue has to keep" data-zh="架构图是队列必须替你圆的谎">The diagram is a lie the queue has to keep</h3>
+<p data-en="There is a final, uncomfortable implication. Because the topology is the real org chart, the drawn one becomes a kind of promise — and someone has to keep it. The whiteboard says the reviewer sees everything, but the reviewer subscribes to only two of seven topics; four kinds of work flow past unexamined. The whiteboard says workers are supervised, but no consumer has visibility into who claimed what; supervision ended the moment direct addressing was banned without adding an audit topic. Every gap between the two charts is a quiet policy that nobody ratified. Auditing a multi-agent system, then, is not a matter of reading its documentation but of reconstructing its topology and asking the org-design questions directly: who can talk to whom, who can drop a message, who absorbs failure, whose queue can grow without bound, and who is allowed to say no. The answers are all in the plumbing. They were always in the plumbing. The field is slowly relearning what every operations group figured out decades ago: you do not get the organization you draw. You get the organization your message bus permits — and the sooner the drawing and the bus are made to agree, the sooner the system stops surprising the people who thought they designed it." data-zh="还有一个最后的、不太舒服的推论。因为拓扑才是真正的组织架构图，画出来的那张就成了一种承诺——而总得有人来兑现它。白板上写着审查者看得见一切，但审查者只订阅了七个主题中的两个；四类工作在无人检视下流过。白板上写着执行者受到监督，但没有任何消费者能看见谁认领了什么；监督在直接寻址被禁止、而审计主题却没有补上的那一刻就结束了。两张图之间的每一道缝隙，都是一条无人批准的沉默政策。于是，审计一个多智能体系统，不是去读它的文档，而是重构它的拓扑，然后直接问那些组织设计的问题：谁能和谁说话，谁能丢弃一条消息，谁吸收失败，谁的队列可以无界增长，谁有权说不。答案全在管道里。它们一直都在管道里。这个领域正在慢慢重新学会每个运维团队几十年前就想明白的事：你得到的不是你画的组织。你得到的是你的消息总线所允许的组织——画的那张和总线越早达成一致，这个系统就越早停止让那些自以为设计了它的人感到意外。">Because the topology is the real org chart, the drawn one becomes a kind of promise — and someone has to keep it. The whiteboard says the reviewer sees everything, but the reviewer subscribes to only two of seven topics. Every gap between the two charts is a quiet policy nobody ratified. Auditing a multi-agent system means reconstructing its topology and asking the org-design questions directly. The answers are all in the plumbing. They were always in the plumbing.</p>
+<p data-en="So the next time a multi-agent system needs redesigning, resist the whiteboard for the first hour. Go read the actual flows: which components hold direct references to which, where work buffers and where it drops, what happens on the third retry. That inventory — not the diagram — is the organization. Redesign it there first. Then, when the new org is settled, draw the pretty version for the design doc, and let it finally tell the truth." data-zh="所以，下一次需要重构一个多智能体系统时，头一个小时请抵制白板的诱惑。去读真实的流：哪些组件持有对哪些组件的直接引用，工作在哪里缓冲、在哪里丢弃，第三次重试时会发生什么。这份清单——而不是那张图——才是组织。先在那里重设计。等新的组织定下来，再给设计文档画那个漂亮的版本，让它终于说一次实话。">So the next time a multi-agent system needs redesigning, resist the whiteboard for the first hour. Go read the actual flows: who holds direct references to whom, where work buffers and where it drops, what happens on the third retry. That inventory — not the diagram — is the organization. Redesign it there first. Then draw the pretty version, and let it finally tell the truth.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
