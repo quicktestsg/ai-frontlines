@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Autonomy Is a Credit Line — AI Frontlines</title>
+<meta content="Teams argue about how much autonomy to give an agent, as if autonomy were a setting. It is not a setting. It is credit — issued by the system, earned by the agent through audited behavior in production. And like all credit, it has a limit, an interest rate, and a collections process." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 13, 2026" data-zh="2026年10月13日">October 13, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Autonomy Is a Credit Line" data-zh="自主权是一笔信贷额度">Autonomy Is a Credit Line</h1>
+<p class="post-header-deck" data-en="Every team eventually has the autonomy argument. How much should the agent be allowed to do on its own? The question is asked as if autonomy were a setting — a slider between 'asks permission for everything' and 'does whatever it wants.' It is not a setting. Autonomy behaves like credit: it is issued by the system, extended against evidence, and revoked when the evidence stops supporting it. Nobody grants a stranger a platinum card. Teams hand agents the equivalent every day." data-zh="每个团队最终都会争论自主权的问题。这个智能体应该被允许自己做多少事？这个问题被提出来时，仿佛自主权是一个设置项——一个介于「事事请示」和「为所欲为」之间的滑块。它不是设置项。自主权的行为方式像信贷：由系统发放，凭证据授予，并在证据不再支撑时被收回。没有人会给陌生人一张白金卡。而团队每天都在给智能体发等价物。">Every team eventually has the autonomy argument. How much should the agent be allowed to do on its own? The question is asked as if autonomy were a setting — a slider between 'asks permission for everything' and 'does whatever it wants.' It is not a setting. Autonomy behaves like credit: it is issued by the system, extended against evidence, and revoked when the evidence stops supporting it.</p>
+</header>
+<article class="post-body">
+<p data-en="Consider how a bank decides what a customer may do. The customer does not walk in and request a trust level. The bank starts small — a secured card, a low limit, a deposit held against the possibility of default. Every transaction is observed. Payment history accumulates. Limits rise gradually, and one missed cycle does not destroy the relationship, but a pattern of them does. Crucially, the bank never relies on the customer's own assessment of their reliability. It relies on the record. Agent systems invert every one of these principles. The agent is granted a broad permission set on day one, justified by a demo, a benchmark, and the conviction that the model has gotten good. There is no ledger, no graduated extension, no mechanism by which observed behavior changes what the agent is allowed to do next. The permission set is static while the agent's behavior is anything but." data-zh="想想银行是怎么决定客户能做什么的。客户不会走进银行,要求一个「信任等级」。银行从小处开始——一张担保卡,一个低额度,一笔押金,押着违约的可能性。每一笔交易都被观察。还款历史逐渐积累。额度逐步上升,一次逾期不会摧毁这段关系,但一系列逾期会。关键在于,银行从不依赖客户对自己可靠性的自我评估。它依赖的是记录。而智能体系统把这几条原则全部颠倒了。智能体在第一天就被授予一套宽泛的权限,理由是一场 demo、一个基准分数,以及「模型已经变强了」的信念。没有账本,没有渐进式提额,没有任何机制让被观察到的行为改变智能体接下来被允许做什么。权限集是静态的,而智能体的行为恰恰不是。">Consider how a bank decides what a customer may do. The customer does not walk in and request a trust level. The bank starts small — a secured card, a low limit, a deposit held against the possibility of default. Every transaction is observed. Payment history accumulates. Limits rise gradually. Crucially, the bank never relies on the customer's own assessment of their reliability. It relies on the record. Agent systems invert every one of these principles. The agent is granted a broad permission set on day one, justified by a demo, a benchmark, and the conviction that the model has gotten good. There is no ledger, no graduated extension, no mechanism by which observed behavior changes what the agent is allowed to do next.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrC2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrC3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="TWO WAYS TO ISSUE TRUST" data-zh="发放信任的两种方式" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">TWO WAYS TO ISSUE TRUST</text>
+<!-- LEFT: static grant -->
+<text data-en="THE STATIC GRANT" data-zh="静态授予" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="160" y="58">THE STATIC GRANT</text>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="200" x="60" y="80"></rect>
+<text data-en="day one: full permissions" data-zh="第一天：全部权限" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="160" y="105">day one: full permissions</text>
+<path d="M160 120 L160 148" fill="none" marker-end="url(#arrC2)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="200" x="60" y="150"></rect>
+<text data-en="behavior changes, permissions don't" data-zh="行为在变，权限不变" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="160" y="175">behavior changes, permissions don't</text>
+<path d="M160 190 L160 218" fill="none" marker-end="url(#arrC2)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="42" rx="8" stroke="var(--accent-3)" stroke-width="2" stroke-dasharray="4,3" width="200" x="60" y="220"></rect>
+<text data-en="incident → emergency revocation" data-zh="事故 → 紧急收回" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="160" y="246">incident → emergency revocation</text>
+<text data-en="trust is an argument, not a system" data-zh="信任是一场争论，不是一个系统" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="160" y="292">trust is an argument, not a system</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="300"></line>
+<!-- RIGHT: credit line -->
+<text data-en="THE CREDIT LINE" data-zh="信贷额度" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="58">THE CREDIT LINE</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--text-tertiary)" stroke-width="1.5" width="150" x="390" y="72"></rect>
+<text data-en="agent + small scope" data-zh="智能体 + 小范围" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="93">agent + small scope</text>
+<path d="M465 106 L465 122" fill="none" marker-end="url(#arrC3)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="390" y="124"></rect>
+<text data-en="ledger: every action audited" data-zh="账本：每个动作留痕" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="145">ledger: every action audited</text>
+<path d="M465 158 L465 174" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="390" y="176"></rect>
+<text data-en="review: outcomes vs. intent" data-zh="审查：结果 vs. 意图" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="197">review: outcomes vs. intent</text>
+<path d="M465 210 L465 226" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="36" rx="8" stroke="var(--accent)" stroke-width="2" width="150" x="390" y="228"></rect>
+<text data-en="autonomy tier ↑ or ↓" data-zh="自主层级 ↑ 或 ↓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="251">autonomy tier ↑ or ↓</text>
+<path d="M540 246 C580 246 580 140 540 140" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<text data-en="the loop never closes" data-zh="循环永不关闭" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="600" y="196" transform="rotate(90 600 196)">the loop never closes</text>
+<text data-en="evidence prices trust continuously" data-zh="证据持续为信任定价" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="465" y="292">evidence prices trust continuously</text>
+</svg>
+<p class="diagram-caption" data-en="On the left, the static grant: permissions set once, behavior drifts underneath them, and the first real signal of trouble is an incident. On the right, the credit line: a small initial scope, an audit ledger, a review step that compares outcomes against intent, and an autonomy tier that moves in both directions. The loop on the right never closes — pricing trust is a permanent process, not a milestone." data-zh="左边，是静态授予：权限设置一次，行为在其下漂移，而麻烦的第一个真实信号就是一次事故。右边，是信贷额度：一个较小的初始范围、一份审计账本、一个将结果与意图对照的审查步骤，以及一个可以双向移动的自主层级。右边的循环永不关闭——为信任定价是一个永久过程，不是一个里程碑。">On the left, the static grant: permissions set once, behavior drifts underneath them, and the first real signal of trouble is an incident. On the right, the credit line: a small initial scope, an audit ledger, a review step that compares outcomes against intent, and an autonomy tier that moves in both directions. The loop on the right never closes — pricing trust is a permanent process, not a milestone.</p>
+</div>
+<h3 data-en="Autonomy is not a number" data-zh="自主权不是一个数字">Autonomy is not a number</h3>
+<p data-en="The first mistake is treating autonomy as a scalar. Teams say an agent is 'level three autonomous' or 'runs with high autonomy,' as if trust collapsed onto a single axis. It does not. An agent can be perfectly trustworthy with a read-only database and catastrophic with a delete button. It can be reliable at two in the afternoon on a Tuesday and unreliable on a task it has never seen before. Autonomy is multidimensional, and the dimensions are not exotic. They are the axes of the action space: which tools, on which resources, at what rate, with what blast radius, under what rollback guarantees, with what spending limit, and with or without a human signature at the irreversible edges." data-zh="第一个错误,是把自主权当作一个标量。团队说一个智能体「三级自主」或「高自主权运行」,仿佛信任可以坍缩到一根轴上。它不能。一个智能体可能对只读数据库完全可靠,却对删除按钮是灾难性的。它可能在周二下午两点很可靠,却在一件它从未见过的任务上不可靠。自主权是多维的,而这些维度一点也不神秘。它们就是行动空间的坐标轴:哪些工具,作用在哪些资源上,以什么速率,带多大的爆炸半径,带什么样的回滚保障,限额多少,以及在不可逆的边缘处要不要一个人的签名。">The first mistake is treating autonomy as a scalar. Teams say an agent is 'level three autonomous' or 'runs with high autonomy,' as if trust collapsed onto a single axis. It does not. An agent can be perfectly trustworthy with a read-only database and catastrophic with a delete button. Autonomy is multidimensional, and the dimensions are not exotic. They are the axes of the action space: which tools, on which resources, at what rate, with what blast radius, with what rollback guarantees, with what spending limit, and with or without a human signature at the irreversible edges.</p>
+<p data-en="This is what a real autonomy configuration looks like: not 'the agent may act freely,' but a matrix. Read access to the production database: granted, because six months of logs show the agent's queries are well-formed and its explanations of query results match what a senior engineer finds. Write access to staging: granted at tier two, meaning every write is applied but also reverted nightly and diffed against what a human would have written. Write access to production: tier zero, which means the agent may draft the migration, attach the rollback plan, and hand it to a human — the signature is the product. External spending: a hard ceiling that scales with the verified savings the agent's decisions have produced, never with its confidence about future savings." data-zh="一份真正的自主权配置,看起来是这样的:不是「智能体可以自由行动」,而是一张矩阵。生产数据库的读权限:授予,因为六个月的日志显示智能体的查询格式良好,而它对查询结果的解释,与资深工程师看到的相符。staging 环境的写权限:以第二层级授予,意思是每次写入都会被执行,但也会在夜间被回滚,并与「人类会写什么」做 diff。生产环境的写权限:零层级,意思是智能体可以起草迁移、附上回滚方案、然后交给人——签名本身就是产品。外部支出:一个硬性上限,上限随智能体的决策已被验证省下的金额而扩展,绝不随它对未来节省的信心而扩展。">This is what a real autonomy configuration looks like: not 'the agent may act freely,' but a matrix. Read access to the production database: granted, because six months of logs show the agent's queries are well-formed and its explanations of query results match what a senior engineer finds. Write access to staging: granted at tier two, meaning every write is applied but also reverted nightly and diffed against what a human would have written. Write access to production: tier zero — the agent may draft the migration, attach the rollback plan, and hand it to a human. The signature is the product.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrM1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE AUTONOMY MATRIX" data-zh="自主权矩阵" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE AUTONOMY MATRIX</text>
+<!-- row labels -->
+<text data-en="read prod data" data-zh="读生产数据" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="end" x="150" y="70">read prod data</text>
+<text data-en="write staging" data-zh="写 staging" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="end" x="150" y="115">write staging</text>
+<text data-en="write prod" data-zh="写生产" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="end" x="150" y="160">write prod</text>
+<text data-en="spend money" data-zh="花钱" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="end" x="150" y="205">spend money</text>
+<text data-en="message customers" data-zh="联系客户" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="end" x="150" y="250">message customers</text>
+<!-- column headers -->
+<text data-en="tier 0 · draft only" data-zh="层级0 · 仅起草" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="235" y="44">tier 0 · draft only</text>
+<text data-en="tier 1 · shadow" data-zh="层级1 · 影子" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="330" y="44">tier 1 · shadow</text>
+<text data-en="tier 2 · gated" data-zh="层级2 · 设闸" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="425" y="44">tier 2 · gated</text>
+<text data-en="tier 3 · free" data-zh="层级3 · 自由" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="520" y="44">tier 3 · free</text>
+<!-- row 1 -->
+<rect fill="var(--bg-surface)" height="24" rx="6" stroke="var(--border)" stroke-width="1" width="72" x="199" y="54"></rect>
+<rect fill="var(--bg-surface)" height="24" rx="6" stroke="var(--border)" stroke-width="1" width="72" x="294" y="54"></rect>
+<rect fill="var(--accent-dim)" height="24" rx="6" stroke="var(--accent)" stroke-width="1.5" width="72" x="389" y="54"></rect>
+<text data-en="✓" data-zh="✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="425" y="70">✓</text>
+<rect fill="var(--accent-dim)" height="24" rx="6" stroke="var(--accent)" stroke-width="1.5" width="72" x="484" y="54"></rect>
+<text data-en="✓" data-zh="✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="520" y="70">✓</text>
+<!-- row 2 -->
+<rect fill="var(--bg-surface)" height="24" rx="6" stroke="var(--border)" stroke-width="1" width="72" x="199" y="99"></rect>
+<rect fill="var(--bg-surface)" height="24" rx="6" stroke="var(--border)" stroke-width="1" width="72" x="294" y="99"></rect>
+<rect fill="var(--accent-dim)" height="24" rx="6" stroke="var(--accent)" stroke-width="1.5" width="72" x="389" y="99"></rect>
+<text data-en="✓" data-zh="✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="425" y="115">✓</text>
+<rect fill="var(--bg-surface)" height="24" rx="6" stroke="var(--border)" stroke-width="1" width="72" x="484" y="99"></rect>
+<!-- row 3 -->
+<rect fill="var(--accent-dim)" height="24" rx="6" stroke="var(--accent)" stroke-width="1.5" width="72" x="199" y="144"></rect>
+<text data-en="✓" data-zh="✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="235" y="160">✓</text>
+<rect fill="var(--bg-surface)" height="24" rx="6" stroke="var(--border)" stroke-width="1" width="72" x="294" y="144"></rect>
+<rect fill="var(--bg-surface)" height="24" rx="6" stroke="var(--border)" stroke-width="1" width="72" x="389" y="144"></rect>
+<rect fill="var(--bg-surface)" height="24" rx="6" stroke="var(--border)" stroke-width="1" width="72" x="484" y="144"></rect>
+<!-- row 4 -->
+<rect fill="var(--bg-surface)" height="24" rx="6" stroke="var(--border)" stroke-width="1" width="72" x="199" y="189"></rect>
+<rect fill="var(--bg-surface)" height="24" rx="6" stroke="var(--border)" stroke-width="1" width="72" x="294" y="189"></rect>
+<rect fill="var(--accent-dim)" height="24" rx="6" stroke="var(--accent)" stroke-width="1.5" width="72" x="389" y="189"></rect>
+<text data-en="✓ cap" data-zh="✓ 限额" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="800" text-anchor="middle" x="425" y="205">✓ cap</text>
+<rect fill="var(--bg-surface)" height="24" rx="6" stroke="var(--border)" stroke-width="1" width="72" x="484" y="189"></rect>
+<!-- row 5 -->
+<rect fill="var(--bg-surface)" height="24" rx="6" stroke="var(--border)" stroke-width="1" width="72" x="199" y="234"></rect>
+<rect fill="var(--accent-dim)" height="24" rx="6" stroke="var(--accent)" stroke-width="1.5" width="72" x="294" y="234"></rect>
+<text data-en="✓" data-zh="✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="330" y="250">✓</text>
+<rect fill="var(--bg-surface)" height="24" rx="6" stroke="var(--border)" stroke-width="1" width="72" x="389" y="234"></rect>
+<rect fill="var(--bg-surface)" height="24" rx="6" stroke="var(--border)" stroke-width="1" width="72" x="484" y="234"></rect>
+<text data-en="each cell was earned separately — the matrix is the ledger, condensed" data-zh="每个格子都是单独挣来的——矩阵，就是压缩后的账本" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="284">each cell was earned separately — the matrix is the ledger, condensed</text>
+</svg>
+<p class="diagram-caption" data-en="A real autonomy configuration is a matrix of action classes against tiers, and every filled cell carries the history of how it was earned. Note the asymmetries that a single 'autonomy level' could never express: tier-three freedom on reads, tier-zero caution on production writes, a capped tier-two on spending. Trust is granular because failure is granular." data-zh="一份真正的自主权配置,是一张「行动类别 × 层级」的矩阵,而每一个被点亮的格子,都携带着它是如何被挣得的历史。注意那些单一「自主等级」永远无法表达的不对称:读操作的三级自由,生产写操作的零级谨慎,支出上设了上限的二级。信任是细粒度的,因为失败是细粒度的。">A real autonomy configuration is a matrix of action classes against tiers, and every filled cell carries the history of how it was earned. Note the asymmetries that a single 'autonomy level' could never express: tier-three freedom on reads, tier-zero caution on production writes, a capped tier-two on spending. Trust is granular because failure is granular.</p>
+</div>
+<h3 data-en="Interest, defaults, and collections" data-zh="利息、违约与催收">Interest, defaults, and collections</h3>
+<p data-en="Carrying the metaphor one step further pays off in unexpected places. Autonomy has interest: every hour an agent operates unsupervised, small deviations accumulate — a slightly stale assumption here, an unvalidated inference there — and the cost of auditing the run grows. Autonomy has a default condition: when the agent hits a situation outside everything it has been credit-scored on, it does not gracefully stop; it improvises, because improvisation is what the model does. And autonomy needs a collections process: when something goes wrong, the response cannot be to strip the agent to tier zero forever, which wastes the genuine trust that was earned, or to shrug and restore full access, which teaches the organization that incidents are free. The mature response is restructuring — a temporary tier reduction scoped exactly to the failure mode, with defined evidence for restoration. Not forgiveness. Not punishment. Repricing." data-zh="把这个比喻再往前推一步,会在意想不到的地方产生回报。自主权有利息:智能体每在无人监督下运行一小时,微小的偏差就在累积——这里一个略微过期的假设,那里一个未经验证的推断——审计这次运行的成本在增长。自主权有违约条件:当智能体撞上一个它在所有信用评分中从未覆盖的情形时,它不会优雅地停下;它会即兴发挥,因为即兴发挥正是模型会做的事。而自主权需要催收流程:当出了问题,回应不能是把智能体永久打回零层级——那浪费了真实挣得的信任;也不能耸耸肩恢复全部权限——那会教会整个组织「事故是免费的」。成熟的回应是债务重组——一次恰好限定在失败模式范围内的临时降级,并附上恢复所需的明确证据。不是宽恕。不是惩罚。是重新定价。">Carrying the metaphor one step further pays off in unexpected places. Autonomy has interest: every hour an agent operates unsupervised, small deviations accumulate, and the cost of auditing the run grows. Autonomy has a default condition: when the agent hits a situation outside everything it has been credit-scored on, it does not gracefully stop; it improvises, because improvisation is what the model does. And autonomy needs a collections process: the mature response to failure is restructuring — a temporary tier reduction scoped exactly to the failure mode, with defined evidence for restoration. Not forgiveness. Not punishment. Repricing.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 280" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrR3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE INCIDENT REPRICING LOOP" data-zh="事故后的重新定价循环" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE INCIDENT REPRICING LOOP</text>
+<!-- incident -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-3)" stroke-width="2" width="120" x="40" y="60"></rect>
+<text data-en="incident" data-zh="事故" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="100" y="81">incident</text>
+<path d="M160 77 L210 77" fill="none" marker-end="url(#arrR2)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<!-- scope analysis -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="212" y="60"></rect>
+<text data-en="classify the failure axis" data-zh="定位失败轴" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="287" y="81">classify the failure axis</text>
+<path d="M362 77 L412 77" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- tier reduction scoped -->
+<rect fill="var(--accent-dim)" height="34" rx="8" stroke="var(--accent)" stroke-width="2" width="160" x="414" y="60"></rect>
+<text data-en="tier ↓ on that axis only" data-zh="仅在该轴降级" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="494" y="81">tier ↓ on that axis only</text>
+<path d="M494 94 L494 140" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- evidence window -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="190" x="399" y="142"></rect>
+<text data-en="collect N clean runs on that axis" data-zh="在该轴收集 N 次干净运行" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="494" y="163">collect N clean runs on that axis</text>
+<path d="M399 159 L349 159" fill="none" marker-end="url(#arrR3)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<!-- restore -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.5" width="130" x="216" y="142"></rect>
+<text data-en="tier restored, repriced" data-zh="层级恢复，重新定价" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="281" y="163">tier restored, repriced</text>
+<path d="M281 176 C281 216 200 216 150 216" fill="none" marker-end="url(#arrR3)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<text data-en="the ledger keeps the scar" data-zh="账本留着伤疤" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="196" y="236">the ledger keeps the scar</text>
+<text data-en="reduce scope surgically · never globally · never permanently" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="264" data-zh="外科式缩小范围 · 绝不全局 · 绝不永久">reduce scope surgically · never globally · never permanently</text>
+</svg>
+<p class="diagram-caption" data-en="After an incident, the failure is mapped to a specific axis of the autonomy matrix, and only that axis is demoted. The agent collects clean runs on that axis, and the tier is restored — but the ledger keeps the scar, so future reviews see the history. Global, permanent revocation destroys earned trust; instant forgiveness destroys accountability. Repricing preserves both." data-zh="事故之后,失败被映射到自主权矩阵的某条具体的轴,且只有那条轴被降级。智能体在该轴上积累干净运行,层级随之恢复——但账本留着伤疤,所以未来的审查能看到历史。全局且永久的收回,摧毁已挣得的信任;即时的原谅,摧毁问责。重新定价,两者都保住。">After an incident, the failure is mapped to a specific axis of the autonomy matrix, and only that axis is demoted. The agent collects clean runs on that axis, and the tier is restored — but the ledger keeps the scar, so future reviews see the history. Global revocation destroys earned trust; instant forgiveness destroys accountability. Repricing preserves both.</p>
+</div>
+<h3 data-en="The ledger is the product" data-zh="账本才是产品">The ledger is the product</h3>
+<p data-en="Here is the uncomfortable conclusion. None of this machinery — the matrix, the tiers, the repricing loop — is the model's job, and none of it arrives with the model. The model is the applicant, not the bank. The ledger, the graduated scopes, the audit pipeline, the restoration criteria: these are harness features, and they are precisely the features most teams skip, because they are invisible in a demo and priceless in an incident. A team that builds the ledger can raise autonomy rationally, in public, with evidence — because every increase is backed by a number of clean runs, and every rollback is bounded by a defined restoration path. A team without one is left arguing vibes in a conference room about whether the agent has earned the right to touch production." data-zh="这里有一个不太舒服的结论。这套机制——矩阵、层级、重新定价循环——没有一样是模型的职责,也没有一样随模型附带而来。模型是申请人,不是银行。账本、渐进式范围、审计管道、恢复标准:这些是 harness 的特性,而它们恰恰是大多数团队跳过的特性,因为它们在 demo 里不可见,在事故中却价值连城。建了账本的团队,可以理性地、公开地、带着证据地提高自主权——因为每一次提升都有一定数量的干净运行背书,每一次收回都被一条明确的恢复路径框限。没有账本的团队,只能坐在会议室里,凭感觉争论智能体是否挣到了碰生产的权利。">Here is the uncomfortable conclusion. None of this machinery — the matrix, the tiers, the repricing loop — is the model's job, and none of it arrives with the model. The model is the applicant, not the bank. The ledger, the graduated scopes, the audit pipeline, the restoration criteria: these are harness features, and they are precisely the features most teams skip, because they are invisible in a demo and priceless in an incident.</p>
+<p data-en="So the next time the autonomy argument starts — and it will start, in every team, every quarter, forever — the strongest move is not to pick a side. It is to change the question. Not 'how much autonomy should the agent have,' but 'what would we need to see in the ledger to extend this specific permission, and what happens to the price when it fails.' Autonomy was never a philosophical threshold to be crossed. It is a line of credit, issued one axis at a time, repriced on evidence, and backed by a ledger that never forgets. The teams that figure this out stop having the argument. The ones that don't will keep having it, usually at three in the morning, standing in front of a whiteboard, asking each other why the agent was allowed to do that." data-zh="所以,下一次当自主权之争开始时——它一定会在每个团队、每个季度、永远地开始——最强的动作不是选边站,而是换掉问题。不是「智能体应该有多大的自主权」,而是「要在账本里看到什么,我们才敢授予这项具体的权限;以及当它失败时,价格会怎样变化」。自主权从来不是一个等待跨越的哲学门槛。它是一条信贷额度——一次只发放一条轴,凭证据重新定价,由一本永不遗忘的账本背书。想明白这一点的团队,不再有那场争论。没想明白的团队会继续争论下去,通常是在凌晨三点,站在白板前,互相质问:当初为什么会允许智能体那么做。">So the next time the autonomy argument starts, the strongest move is not to pick a side. It is to change the question. Not 'how much autonomy should the agent have,' but 'what would we need to see in the ledger to extend this specific permission, and what happens to the price when it fails.' Autonomy was never a philosophical threshold to be crossed. It is a line of credit, issued one axis at a time, repriced on evidence, and backed by a ledger that never forgets.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
