@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-14",
+    "slug": "no-semver-for-weights",
+    "title_en": "There Is No SemVer for Weights",
+    "title_zh": "权重，没有语义化版本号",
+    "read_time": 8,
+    "excerpt_en": "Libraries break loudly when they change; model weights break silently — same endpoint, same 200 OK, different system underneath. Model versions are dependencies without version numbers, and the fix is borrowed straight from dependency management: pin the snapshot, freeze golden traces, diff the behavior, canary the cutover.",
+    "excerpt_zh": "库升级会响亮地报错，模型权重的升级却悄无声息——同一个端点、同样的 200 OK、底下的系统已经变了。模型版本是没有版本号的依赖，解法直接搬自依赖管理：钉住快照、冻结黄金轨迹、比对行为差异、灰度切换。"
+  },
+  {
     "date": "2026-10-13",
     "slug": "autonomy-is-a-credit-line",
     "title_en": "Autonomy Is a Credit Line",

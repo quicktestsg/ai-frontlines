@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>There Is No SemVer for Weights — AI Frontlines</title>
+<meta content="Libraries break loudly when they change. Model weights break silently: same endpoint, same schema, same 200 OK — and a different system underneath. Model versions are dependencies without version numbers, and every agent team is running unpinned software whether they admit it or not." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 14, 2026" data-zh="2026年10月14日">October 14, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="There Is No SemVer for Weights" data-zh="权重，没有语义化版本号">There Is No SemVer for Weights</h1>
+<p class="post-header-deck" data-en="Every engineer learns one instinct early: dependencies change, and changes have consequences. So the industry built SemVer — a promise that breaking changes announce themselves, that the major version number is a tripwire. Model weights honor no such promise. A provider ships new weights behind the same endpoint, under the same model name, returning the same 200 OK — and the system underneath is different. The schema didn't change. The behavior did. And nobody's build breaks, because there is no build to break. There is just a product that quietly started answering differently on a Tuesday." data-zh="每个工程师都早早学会一种本能：依赖会变，而变化有后果。于是行业发明了语义化版本号——一个承诺：破坏性变更会自我宣告，主版本号是一道绊线。模型权重从不遵守这个承诺。提供商在同一个端点后面、用同一个模型名发布新权重，返回同样的 200 OK——而底下的系统已经变了。Schema 没变。行为变了。没有任何构建会挂掉，因为根本没有构建可以挂掉。只有一个产品，在某个周二，悄悄开始给出不同的回答。">Every engineer learns one instinct early: dependencies change, and changes have consequences. So the industry built SemVer — a promise that breaking changes announce themselves. Model weights honor no such promise.</p>
+</header>
+<article class="post-body">
+<p data-en="Consider how a normal dependency upgrade goes. A library bumps its major version. The API changed a function signature, renamed an enum, removed a deprecated path. The moment the code runs — or even the moment it compiles — the breakage surfaces. Type errors, stack traces, failed tests. The change is loud. It has to be, because the entire contract of the library is expressed in its interface, and the interface is machine-checked. This is why dependency management works at all: the contract is enforceable, so violations are visible." data-zh="想想一次普通的依赖升级是怎么进行的。一个库升了主版本号。API 改了函数签名、重命名了枚举、删掉了废弃路径。代码一运行——甚至一编译——破坏就浮出水面。类型错误、堆栈跟踪、挂掉的测试。这个变更是响亮的。它必须响亮，因为这个库的全部契约都表达在它的接口里，而接口是被机器检查的。依赖管理之所以能运作，正是因此：契约是可执行的，所以违约是可见的。">Consider how a normal dependency upgrade goes. A library bumps its major version. The API changed a function signature, renamed an enum, removed a deprecated path. The moment the code runs — or even compiles — the breakage surfaces. The change is loud. It has to be, because the entire contract of the library is expressed in its interface, and the interface is machine-checked.</p>
+<p data-en="A model exposes none of that. Its interface is a prompt in and a string out — a contract so loose it fits almost anything. The real contract, the one the product actually depends on, is the output distribution: how often the model chooses the right tool, how it formats results, how it handles ambiguity, where it tends to fail. That contract lives in the weights, and the weights are opaque. When the provider retrains, distills, patches a safety behavior, or quietly swaps in a cheaper mixture-of-experts routing, the interface stays perfectly stable while everything that matters shifts underneath it. API compatibility is not behavior compatibility. They are not even related." data-zh="模型不暴露这些。它的接口是一段 prompt 进、一个字符串出——这个契约松散到几乎什么都能装下。产品真正依赖的契约，是输出分布：模型选对工具的频率、它格式化结果的方式、它处理歧义的方式、它倾向于在哪里失败。那个契约住在权重里，而权重是不透明的。当提供商重新训练、蒸馏、修补某个安全行为，或者悄悄换上更便宜的混合专家路由时，接口保持完美稳定，而所有要紧的东西都在底下移动。API 兼容，不等于行为兼容。它们甚至毫无关系。">A model exposes none of that. Its interface is a prompt in and a string out — a contract so loose it fits almost anything. The real contract, the one the product actually depends on, is the output distribution: how often the model chooses the right tool, how it formats results, where it tends to fail. That contract lives in the weights, and the weights are opaque.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrS1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrS2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="TWO UPGRADES, TWO VOLUMES" data-zh="两种升级，两种音量" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">TWO UPGRADES, TWO VOLUMES</text>
+<!-- LEFT: library upgrade, loud -->
+<text data-en="THE LIBRARY UPGRADE" data-zh="库的升级" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="56">THE LIBRARY UPGRADE</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="100" x="105" y="72"></rect>
+<text data-en="code v1.0" data-zh="代码 v1.0" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="92">code v1.0</text>
+<path d="M155 102 L155 122" fill="none" marker-end="url(#arrS1)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="100" x="105" y="124"></rect>
+<text data-en="lib v2.0" data-zh="lib v2.0" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="144">lib v2.0</text>
+<path d="M155 154 L155 174" fill="none" marker-end="url(#arrS1)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--accent-3)" stroke-width="2" width="140" x="85" y="176"></rect>
+<text data-en="✗ COMPILE ERROR" data-zh="✗ 编译错误" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="155" y="196">✗ COMPILE ERROR</text>
+<text data-en="line 42: signature changed" data-zh="第42行：签名已变更" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="155" y="212">line 42: signature changed</text>
+<text data-en="loud · immediate · locatable" data-zh="响亮 · 即时 · 可定位" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="155" y="252">loud · immediate · locatable</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="300"></line>
+<!-- RIGHT: weights upgrade, silent -->
+<text data-en="THE WEIGHTS UPGRADE" data-zh="权重的升级" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="56">THE WEIGHTS UPGRADE</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="100" x="415" y="72"></rect>
+<text data-en="same code" data-zh="同样的代码" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="92">same code</text>
+<path d="M465 102 L465 122" fill="none" marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="120" x="405" y="124"></rect>
+<text data-en="same model name" data-zh="同一个模型名" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="144">same model name</text>
+<path d="M465 154 L465 174" fill="none" marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="44" rx="8" stroke="var(--accent)" stroke-width="2" width="140" x="395" y="176"></rect>
+<text data-en="✓ 200 OK" data-zh="✓ 200 OK" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="465" y="196">✓ 200 OK</text>
+<text data-en="...different system underneath" data-zh="…底下的系统已不同" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="465" y="212">...different system underneath</text>
+<text data-en="silent · delayed · unlocatable" data-zh="无声 · 延迟 · 无法定位" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="465" y="252">silent · delayed · unlocatable</text>
+<text data-en="Nothing breaks. Something changed." data-zh="没有东西坏掉。但有什么变了。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="296">Nothing breaks. Something changed.</text>
+</svg>
+<p class="diagram-caption" data-en="Left: a library upgrade breaks the interface, and the breakage is machine-detected within seconds. Right: a weights upgrade preserves the interface perfectly, so every automated check passes — while the output distribution, the thing the product actually depends on, moves invisibly. The louder failure is the safer one." data-zh="左边：一次库升级破坏了接口，破坏在几秒内被机器发现。右边：一次权重升级完美地保住了接口，所有自动化检查全部通过——而产品真正依赖的输出分布，在不可见地移动。更响的失败，反而是更安全的失败。">Left: a library upgrade breaks the interface, and the breakage is machine-detected within seconds. Right: a weights upgrade preserves the interface perfectly, so every automated check passes — while the output distribution moves invisibly. The louder failure is the safer one.</p>
+</div>
+<h3 data-en="The version number is the dependency" data-zh="版本号本身，就是依赖">The version number is the dependency</h3>
+<p data-en="Here is the uncomfortable detail most teams discover late: model version strings do not behave like version numbers. They behave like pointers. Some providers offer dated snapshots that genuinely pin behavior — a snapshot name is the closest thing weights have to a lockfile. Others expose a floating alias, a name that resolves to whatever the provider currently serves, and the provider reserves the right to update it at any time. Calling an alias is the equivalent of depending on a branch of someone else's repository. It will work, often for months. Then one day the branch moves, and the product inherits a migration it never scheduled." data-zh="这是大多数团队发现得太晚的一个不舒服的细节：模型的版本字符串，行为不像版本号。它们的行为像指针。有些提供商提供带日期的快照，能真正钉住行为——快照名是权重最接近锁文件的东西。另一些则暴露一个浮动别名，一个解析到「提供商当前在跑什么」的名字，而提供商保留随时更新它的权利。调用一个别名，等同于依赖别人仓库的一个分支。它能工作，常常一工作就是几个月。然后某一天分支移动了，产品就继承了一次从未排期的迁移。">Here is the uncomfortable detail most teams discover late: model version strings do not behave like version numbers. They behave like pointers. Some providers offer dated snapshots that genuinely pin behavior — a snapshot name is the closest thing weights have to a lockfile. Others expose a floating alias, a name that resolves to whatever the provider currently serves.</p>
+<p data-en="The alias is seductive because it feels like free improvement. New weights arrive, benchmarks go up, and the product gets smarter without a single pull request. Sometimes that is exactly what happens. But improvement is not uniform. A retrain that makes the model better at reasoning can make it worse at the specific format a tool parser expects. A safety patch can change how the model refuses, and a refusal phrased differently can break a downstream regex that never accounted for the new wording. Aggregate quality goes up while the product's particular slice of the distribution goes down. Nobody notices, because the metric that would have noticed — an eval running against production inputs — is not running, because nothing announced that today was different from yesterday." data-zh="别名很诱人，因为它感觉像免费的改进。新权重到来，基准分数上涨，产品没发一个 pull request 就变聪明了。有时确实如此。但改进从来不是均匀的。一次让模型推理更强的重训练，可能让它在某个工具解析器期待的具体格式上变得更差。一个安全补丁可能改变模型拒绝的方式，而一句措辞不同的拒绝，可能弄坏一个从没考虑过新措辞的下游正则表达式。总体质量在上升，而产品所依赖的那一小片分布在下降。没人注意到，因为本该注意到它的那个东西——一套跑在生产输入上的评测——没有在跑，因为没有任何东西宣告过：今天和昨天不一样。">The alias is seductive because it feels like free improvement. New weights arrive, benchmarks go up, and the product gets smarter without a single pull request. But improvement is not uniform. A retrain that makes the model better at reasoning can make it worse at the specific format a tool parser expects. Aggregate quality goes up while the product's particular slice of the distribution goes down.</p>
+<blockquote data-en="A pinned dependency is a promise you made to your future team: this behavior was verified, and it will not change without a decision. An alias is the opposite — it is a standing permission for someone else's deployment to become your incident. Teams that run agents in production do not get to skip this choice. They only get to make it consciously, or discover it during a postmortem." data-zh="一个被钉住的依赖，是你对未来的团队做出的承诺：这个行为被验证过，没有一次决策，它不会变。别名恰恰相反——它是一张长期许可，允许别人的部署变成你的事故。在生产环境运行智能体的团队，无权跳过这个选择。他们只能有意识地做它，或者在复盘会上发现它。">A pinned dependency is a promise you made to your future team: this behavior was verified, and it will not change without a decision. An alias is the opposite — it is a standing permission for someone else's deployment to become your incident.</blockquote>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrD1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE DRIFT YOU CANNOT SEE" data-zh="你看不见的漂移" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE DRIFT YOU CANNOT SEE</text>
+<!-- axis -->
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="70" x2="580" y1="250" y2="250"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="70" x2="70" y1="60" y2="250"></line>
+<text data-en="task success rate" data-zh="任务成功率" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" transform="rotate(-90 40 155)" x="40" y="155">task success rate</text>
+<text data-en="time — no code changes shipped" data-zh="时间——期间未发布任何代码变更" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="325" y="284">time — no code changes shipped</text>
+<!-- threshold line -->
+<line stroke="var(--accent-3)" stroke-dasharray="5,4" stroke-width="1.2" x1="70" x2="580" y1="150" y2="150"></line>
+<text data-en="SLO" data-zh="SLO" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" x="560" y="144">SLO</text>
+<!-- score curve: high, small wobble, then decaying after silent upgrades -->
+<path d="M70 110 C130 104 170 114 220 108 C260 104 290 118 330 116 C360 114 380 138 410 148 C440 158 470 172 500 184 C530 196 560 206 580 212" fill="none" stroke="var(--accent)" stroke-width="2.5"></path>
+<!-- silent upgrade markers -->
+<g>
+<line stroke="var(--accent-2)" stroke-dasharray="2,3" stroke-width="1" x1="330" x2="330" y1="60" y2="250"></line>
+<line stroke="var(--accent-2)" stroke-dasharray="2,3" stroke-width="1" x1="410" x2="410" y1="60" y2="250"></line>
+<line stroke="var(--accent-2)" stroke-dasharray="2,3" stroke-width="1" x1="500" x2="500" y1="60" y2="250"></line>
+</g>
+<circle cx="330" cy="116" fill="var(--accent-2)" r="5"></circle>
+<circle cx="410" cy="148" fill="var(--accent-2)" r="5"></circle>
+<circle cx="500" cy="184" fill="var(--accent-2)" r="5"></circle>
+<text data-en="weights update" data-zh="权重更新" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="330" y="78">weights update</text>
+<text data-en="distill + patch" data-zh="蒸馏 + 补丁" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="410" y="78">distill + patch</text>
+<text data-en="routing change" data-zh="路由变更" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="500" y="78">routing change</text>
+<text data-en="each marker: same endpoint · same name · same 200 OK" data-zh="每个标记：同一端点 · 同一名称 · 同样的 200 OK" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="308">each marker: same endpoint · same name · same 200 OK</text>
+</svg>
+<p class="diagram-caption" data-en="A product's task success rate under an unpinned model name. Nothing the team shipped changed. Three times, the provider moved the weights behind the same alias — a retrain, a distillation, a routing tweak. Each one nudged the distribution. Individually survivable, cumulatively fatal: the SLO is breached by a series of events that left no trace in the commit history." data-zh="一个使用未钉住模型名的产品，其任务成功率随时间的变化。团队没有发布任何变更。三次，提供商在同一个别名后面移动了权重——一次重训练、一次蒸馏、一次路由调整。每一次都推了一下分布。单独看都可以活，加起来是致命的：SLO 被击穿，而击穿它的一系列事件，没有在提交历史里留下任何痕迹。">A product's task success rate under an unpinned model name. Nothing the team shipped changed. Three times, the provider moved the weights behind the same alias. Each one nudged the distribution. Individually survivable, cumulatively fatal: the SLO is breached by a series of events that left no trace in the commit history.</p>
+</div>
+<h3 data-en="Golden traces are contract tests" data-zh="黄金轨迹，就是契约测试">Golden traces are contract tests</h3>
+<p data-en="If the interface cannot detect behavioral breakage, something else has to. The answer the industry has converged on, mostly by accident, is the eval — but the eval most teams run is a generic benchmark, and generic benchmarks measure the model, not the product. What is needed is something narrower and more honest: a corpus of golden traces. Real production inputs, recorded at the pinned model version, paired with the outputs the system produced — tool choices, structured fields, refusal patterns, formatting quirks, the exact slice of behavior the product depends on. The corpus does not need to be large. It needs to be representative of the failures that matter." data-zh="如果接口检测不到行为层面的破坏，就必须有别的东西来检测。行业基本出于偶然汇聚到的答案是评测——但大多数团队跑的评测是通用基准，而通用基准测量的是模型，不是产品。需要的是更窄、更诚实的东西：一套黄金轨迹语料库。真实的生产输入，在钉住的模型版本上录制，配上系统当时产出的输出——工具选择、结构化字段、拒绝模式、格式怪癖，也就是产品所依赖的那一片行为。这个语料库不需要大。它需要能代表那些要紧的失败。">If the interface cannot detect behavioral breakage, something else has to. The answer is a corpus of golden traces: real production inputs, recorded at the pinned model version, paired with the outputs the system produced — tool choices, structured fields, refusal patterns, the exact slice of behavior the product depends on.</p>
+<p data-en="A golden trace corpus turns a model upgrade from an act of faith into a diff. Run the new weights against every recorded input and compare. Most traces will match — fine. Some will differ in ways that do not matter — fine. A few will differ in ways that do: the model now calls the search tool before the compute tool, or emits JSON with a field renamed, or refuses a request it used to fulfill. Those diffs are the migration guide the provider never wrote. They are found in an afternoon, in staging, instead of over six weeks in support tickets. This is precisely what contract tests did for service-oriented architecture: not proving correctness, but surfacing change. The weights upgrade gets the same treatment, because it is the same problem — an opaque dependency with a stable interface." data-zh="一套黄金轨迹语料库，把模型升级从一次信仰行为，变成一次 diff。用新权重跑每一个录制过的输入，然后比较。大多数轨迹会一致——没问题。有些差异无关紧要——没问题。少数差异是要紧的：模型现在先调搜索工具再调计算工具，或者 JSON 里改了一个字段名，或者拒绝了一个它过去会满足的请求。这些 diff，就是提供商从未写过的迁移指南。它们在一个下午、在预发环境里被发现，而不是在六周里、在客服工单里被发现。这正是契约测试当年为面向服务的架构所做的事：不证明正确，而是让变更浮出水面。权重升级得到同样的待遇，因为它们是同一个问题——一个接口稳定、内部不透明的依赖。">A golden trace corpus turns a model upgrade from an act of faith into a diff. Run the new weights against every recorded input and compare. Those diffs are the migration guide the provider never wrote — found in an afternoon, in staging, instead of over six weeks in support tickets.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrM1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrM2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE MODEL MIGRATION LADDER" data-zh="模型迁移的阶梯" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE MODEL MIGRATION LADDER</text>
+<!-- step 1 -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.5" width="150" x="60" y="50"></rect>
+<text data-en="① pin the snapshot" data-zh="① 钉住快照" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="135" y="72">① pin the snapshot</text>
+<path d="M210 67 C250 67 250 90 250 97" fill="none" marker-end="url(#arrM1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- step 2 -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.5" width="150" x="235" y="100"></rect>
+<text data-en="② freeze golden traces" data-zh="② 冻结黄金轨迹" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="122">② freeze golden traces</text>
+<path d="M385 117 C425 117 425 140 425 147" fill="none" marker-end="url(#arrM1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- step 3 -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.5" width="150" x="410" y="150"></rect>
+<text data-en="③ replay on candidate" data-zh="③ 在候选版本上重放" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="485" y="172">③ replay on candidate</text>
+<!-- down to diff -->
+<path d="M485 184 C485 210 465 214 465 222" fill="none" marker-end="url(#arrM1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- step 4 -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="390" y="224"></rect>
+<text data-en="④ diff the behavior" data-zh="④ 比较行为差异" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="465" y="246">④ diff the behavior</text>
+<path d="M390 241 C350 241 350 264 340 271" fill="none" marker-end="url(#arrM1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- step 5 -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.5" width="150" x="190" y="273"></rect>
+<text data-en="⑤ canary 5% of traffic" data-zh="⑤ 5% 流量灰度" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="265" y="295">⑤ canary 5% of traffic</text>
+<path d="M190 290 C150 290 150 313 140 320" fill="none" marker-end="url(#arrM1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- step 6 -->
+<rect fill="var(--accent-dim)" height="34" rx="8" stroke="var(--accent)" stroke-width="2" width="130" x="10" y="322"></rect>
+<text data-en="⑥ full cutover" data-zh="⑥ 全量切换" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="75" y="344">⑥ full cutover</text>
+<!-- rollback edge -->
+<path d="M465 258 C465 310 300 330 165 339" fill="none" marker-end="url(#arrM2)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<text data-en="diff unacceptable → stay pinned" data-zh="差异不可接受 → 保持钉住" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="330" y="330">diff unacceptable → stay pinned</text>
+</svg>
+<p class="diagram-caption" data-en="A model upgrade treated the way mature teams treat a database migration: pin what exists, freeze the evidence, replay against the candidate, read the diff, canary, and only then cut over. The dashed edge is the most important one — the explicit, dignified decision to do nothing, because the diff said no." data-zh="一次模型升级，被以成熟团队对待数据库迁移的方式来对待：钉住现有的，冻结证据，在候选版本上重放，读懂 diff，灰度，然后才全量切换。那条虚线是最重要的一条——一个显式的、体面的「什么都不做」的决策，因为 diff 说了不。">A model upgrade treated the way mature teams treat a database migration: pin what exists, freeze the evidence, replay against the candidate, read the diff, canary, and only then cut over. The dashed edge is the most important one — the explicit decision to do nothing, because the diff said no.</p>
+</div>
+<h3 data-en="Pin, diff, canary — or schedule the outage" data-zh="钉住、比对、灰度——或者提前排期那次故障">Pin, diff, canary — or schedule the outage</h3>
+<p data-en="The practical playbook is short. Pin: run production on a dated snapshot, and treat every move off it as a release, with a changelog entry and an owner. Record: sample real traffic into the golden corpus continuously, because yesterday's traces age as the product's tasks evolve. Replay: every candidate version runs the full corpus in CI, and the diff report is part of the merge request. Canary: the new weights take a slice of traffic before they take all of it, watched by the same dashboards that watch everything else. This is not exotic discipline. It is dependency management, imported from a world where the industry already learned these lessons the hard way — one class of incident at a time." data-zh="实操手册很短。钉住：生产环境跑在带日期的快照上，每一次离开它的移动都当作一次发布，有变更日志条目，有负责人。录制：持续把真实流量采样进黄金语料库，因为昨天的轨迹会随着产品任务的演化而变旧。重放：每一个候选版本在 CI 里跑完整语料库，diff 报告是合并请求的一部分。灰度：新权重先接一片流量，再接全部流量，由盯其他一切的同几块仪表盘盯着。这不是什么高深的纪律。这就是依赖管理，从一个已经用血泪学会这些教训的行业里进口而来——一次一类事故。">The practical playbook is short. Pin: run production on a dated snapshot, and treat every move off it as a release. Record: sample real traffic into the golden corpus continuously. Replay: every candidate version runs the full corpus in CI. Canary: the new weights take a slice of traffic before they take all of it. This is not exotic discipline — it is dependency management, imported from a world that learned these lessons the hard way.</p>
+<p data-en="The deeper point is about what a model is. For a decade, software meant deterministic artifacts whose behavior was identical to their source. Weights break that equivalence: the artifact is the behavior, the source is inaccessible, and the provider controls both. A dependency you cannot read, cannot compile, and cannot pin is still a dependency — it is just one that demands trust be replaced with measurement. The teams that internalize this stop asking whether the new model is better, and start asking whether it is better on the traces that constitute their product. That question has an answer. It is computable. And it is the only version number that ever mattered." data-zh="更深的一层，关乎「模型是什么」。十年来，软件指的是行为与源码完全一致的确定性产物。权重打破了这个等价：产物即行为，源码不可触及，而提供商同时控制着两者。一个你读不了、编译不了、也钉不住的依赖，依然是依赖——它只是要求用测量来取代信任。真正领悟了这一点的团队，不再问「新模型是不是更好」，而是开始问「在构成我产品的那些轨迹上，它是不是更好」。这个问题有答案。它是可计算的。而它，才是唯一真正重要的版本号。" >The deeper point is about what a model is. For a decade, software meant deterministic artifacts whose behavior was identical to their source. Weights break that equivalence: the artifact is the behavior, the source is inaccessible, and the provider controls both. The teams that internalize this stop asking whether the new model is better, and start asking whether it is better on the traces that constitute their product.</p>
+<blockquote data-en="Every model call is a dependency resolution. Most teams just haven't noticed that they left the lockfile empty." data-zh="每一次模型调用，都是一次依赖解析。大多数团队只是还没发现，自己的锁文件一直是空的。">Every model call is a dependency resolution. Most teams just haven't noticed that they left the lockfile empty.</blockquote>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
