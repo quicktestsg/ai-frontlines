@@ -1,6 +1,410 @@
 {
   "tweets": [
     {
+      "id": "2110190101707858039",
+      "url": "https://x.com/GoogleDeepMind/status/2110190101707858039",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-10-14T08:01:19.082156+00:00",
+      "translation_zh": "新加坡超过一半的报案犯罪都采用精密的社会工程学手段。DeepMind 正与政府科技局（GovTech）合作，基于开源模型 Gemma 打造端侧诈骗检测——用本地诈骗手法微调后，可在不泄露个人隐私的前提下实时识别威胁。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 289,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-10-14T02:05:00.000Z",
+        "display_text_range": [
+          0,
+          273
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/pkAulZoJng",
+              "expanded_url": "https://x.com/GoogleDeepMind/status/2110190101707858039/photo/1",
+              "indices": [
+                274,
+                297
+              ],
+              "url": "https://t.co/pkAulZoJng"
+            }
+          ],
+          "user_mentions": [
+            {
+              "id_str": "123167035",
+              "indices": [
+                86,
+                96
+              ],
+              "name": "GovTech (Singapore)",
+              "screen_name": "GovTechSG"
+            }
+          ]
+        },
+        "id_str": "2110190101707858039",
+        "text": "Over half of reported crimes in Singapore use sophisticated social engineering.\n\nWith @GovTechSG, we’re building on-device fraud detection using our open model Gemma.\n\nBy fine-tuning it on local scam tactics, it identifies threats in real time without compromising personal https://t.co/pkAulZoJng",
+        "user": {
+          "id_str": "4783690002",
+          "name": "Google DeepMind",
+          "screen_name": "GoogleDeepMind",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2110190101707858039"
+          ],
+          "editable_until_msecs": "1791947100000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/pkAulZoJng",
+            "expanded_url": "https://x.com/GoogleDeepMind/status/2110190101707858039/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              274,
+              297
+            ],
+            "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/HUhw8WhWMAArsET.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 640,
+              "width": 640
+            },
+            "sizes": {
+              "large": {
+                "h": 640,
+                "resize": "fit",
+                "w": 640
+              },
+              "medium": {
+                "h": 640,
+                "resize": "fit",
+                "w": 640
+              },
+              "small": {
+                "h": 640,
+                "resize": "fit",
+                "w": 640
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "animated_gif",
+            "url": "https://t.co/pkAulZoJng",
+            "video_info": {
+              "aspect_ratio": [
+                1,
+                1
+              ],
+              "variants": [
+                {
+                  "bitrate": 0,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/tweet_video/HUhw8WhWMAArsET.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            1,
+            1
+          ],
+          "contentType": "gif",
+          "durationMs": 0,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/tweet_video_thumb/HUhw8WhWMAArsET.jpg",
+          "variants": [
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/tweet_video/HUhw8WhWMAArsET.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2110190101707858039"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 85,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTEwMTkwMTAxNTk0NTUwMjcy"
+        }
+      }
+    },
+    {
+      "id": "2110138567142113653",
+      "url": "https://x.com/elonmusk/status/2110138567142113653",
+      "label": "xAI",
+      "color": "#1DA1F2",
+      "fetched_at": "2026-10-14T08:01:19.082156+00:00",
+      "translation_zh": "Grok Bot 现在只需一句指令即可绑定你的 𝕏 账号，绑定后可以直接通过 X Chat 私信与你的 Bot 互动。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1880,
+        "in_reply_to_screen_name": "elonmusk",
+        "in_reply_to_status_id_str": "2110138164811833534",
+        "in_reply_to_user_id_str": "44196397",
+        "lang": "en",
+        "created_at": "2026-10-13T22:40:13.000Z",
+        "display_text_range": [
+          0,
+          93
+        ],
+        "entities": {},
+        "id_str": "2110138567142113653",
+        "text": "Connect Bot to your 𝕏 account (just by asking) and you can interact with them via X Chat DMs",
+        "user": {
+          "id_str": "44196397",
+          "name": "Elon Musk",
+          "screen_name": "elonmusk",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2103567689515954176/aR-Kjpp4_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+            },
+            "description": "X",
+            "url": {
+              "url": "https://twitter.com/X",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2110138567142113653"
+          ],
+          "editable_until_msecs": "1791934813000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 345,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 7116,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 1043,
+          "retweet_count": 560,
+          "created_at": "2026-10-13T22:38:37.000Z",
+          "display_text_range": [
+            0,
+            135
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/Sh6nTaMfJ8",
+                "expanded_url": "https://x.com/elonmusk/status/2110138164811833534/photo/1",
+                "indices": [
+                  136,
+                  159
+                ],
+                "url": "https://t.co/Sh6nTaMfJ8"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "1720665183188922368",
+                "indices": [
+                  52,
+                  57
+                ],
+                "name": "Grok",
+                "screen_name": "grok"
+              },
+              {
+                "id_str": "2085838061347217408",
+                "indices": [
+                  58,
+                  62
+                ],
+                "name": "Grok Bot",
+                "screen_name": "bot"
+              }
+            ]
+          },
+          "id_str": "2110138164811833534",
+          "text": "Lego sets that were researched and bought for me by @Grok @Bot have arrived and Bot automatically stopped checking the shipping status! https://t.co/Sh6nTaMfJ8",
+          "user": {
+            "id_str": "44196397",
+            "name": "Elon Musk",
+            "screen_name": "elonmusk",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2103567689515954176/aR-Kjpp4_normal.jpg",
+            "highlighted_label": {
+              "badge": {
+                "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+              },
+              "description": "X",
+              "url": {
+                "url": "https://twitter.com/X",
+                "url_type": "DeepLink"
+              },
+              "user_label_display_type": "Badge",
+              "user_label_type": "BusinessLabel"
+            }
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2110138164811833534"
+            ],
+            "editable_until_msecs": "1791934717000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/Sh6nTaMfJ8",
+              "expanded_url": "https://x.com/elonmusk/status/2110138164811833534/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                136,
+                159
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HUi3eh5bIAALdj8.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 528,
+                    "w": 942,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 942,
+                    "w": 942,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1074,
+                    "w": 942,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1884,
+                    "w": 942,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2048,
+                    "w": 942,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 2048,
+                "width": 942
+              },
+              "sizes": {
+                "large": {
+                  "h": 2048,
+                  "resize": "fit",
+                  "w": 942
+                },
+                "medium": {
+                  "h": 1200,
+                  "resize": "fit",
+                  "w": 552
+                },
+                "small": {
+                  "h": 680,
+                  "resize": "fit",
+                  "w": 313
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/Sh6nTaMfJ8"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 528,
+                  "w": 942,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 942,
+                  "w": 942,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1074,
+                  "w": 942,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1884,
+                  "w": 942,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2048,
+                  "w": 942,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/elonmusk/status/2110138164811833534/photo/1",
+              "url": "https://pbs.twimg.com/media/HUi3eh5bIAALdj8.jpg",
+              "width": 942,
+              "height": 2048
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2110078384617464201",
       "url": "https://x.com/GoogleDeepMind/status/2110078384617464201",
       "label": "Google",
