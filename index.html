@@ -70,6 +70,19 @@
             </div>
 
                     <div class="post-item fade-in">
+            <a href="posts/2026-10-15-compaction-is-garbage-collection.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">October 15, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
+                </div>
+                <h2 class="post-title" data-en="Compaction Is Garbage Collection" data-zh="上下文压缩，就是垃圾回收">Compaction Is Garbage Collection</h2>
+                <p class="post-excerpt" data-en="A context window is not a shelf — it is a heap. Every step allocates tokens, most die immediately, and the append-only pattern never frees them. The fix is the oldest idea in systems engineering: mark by meaning, sweep on a schedule, compact into a small all-live kernel, and page the rest to disk." data-zh="上下文窗口不是书架，是堆。每一步都在分配 token，大多数当步即死，而只追加的模式从不释放。解法是系统工程里最古老的思想：按意义标记、按计划清扫、压缩成小而全活的内核，其余换页到磁盘。">A context window is not a shelf — it is a heap. Every step allocates tokens, most die immediately, and the append-only pattern never frees them. The fix is the oldest idea in systems engineering:.</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="post-item fade-in">
             <a href="posts/2026-10-14-no-semver-for-weights.html" class="post-item-inner">
                 <div class="post-meta">
                     <span class="post-date">October 14, 2026</span>
@@ -108,19 +121,6 @@
             </a>
         </div>
 
-        <div class="post-item fade-in">
-            <a href="posts/2026-10-11-the-queue-is-the-org-chart.html" class="post-item-inner">
-                <div class="post-meta">
-                    <span class="post-date">October 11, 2026</span>
-                    <span class="post-dot"></span>
-                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
-                </div>
-                <h2 class="post-title" data-en="The Queue Is the Org Chart" data-zh="队列，就是组织架构图">The Queue Is the Org Chart</h2>
-                <p class="post-excerpt" data-en="Every multi-agent system has two org charts: the one in the design doc and the message topology. Concurrency limits are headcount, backpressure is a closed door, and the dead-letter queue is an escalation path." data-zh="每个多智能体系统都有两张组织架构图：设计文档里那张，和消息拓扑这张。并发上限是编制，背压是关上的门，死信队列是升级路径。">Every multi-agent system has two org charts: the one in the design doc and the message topology. Concurrency limits are headcount, backpressure is a closed door, and the dead-letter queue is an.</p>
-                <span class="post-arrow">→</span>
-            </a>
-        </div>
-
         </div>
 
         <div class="preview-section">
@@ -135,39 +135,35 @@
 
                         <article class="tweet-card fade-in">
             <div class="tweet-header">
-                <img src="https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <img src="https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
-                    <span class="tweet-name">Google DeepMind</span>
-                    <span class="tweet-handle">@GoogleDeepMind · Oct 14</span>
+                    <span class="tweet-name">OpenAI<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@OpenAI · Oct 15</span>
                 </div>
-                <span class="news-badge" style="background:#4285F4">Google</span>
+                <span class="news-badge" style="background:#10A37F">OpenAI</span>
             </div>
-            <div class="tweet-body" data-en="Over half of reported crimes in Singapore use sophisticated social engineering.
+            <div class="tweet-body" data-en="European businesses are rapidly expanding their use of AI agents. More than half of the AI use among our EU enterprise and business customers now involves these tools, and the number of small business users has grown 8x across the region.
 
-With <a href=&quot;https://x.com/GovTechSG&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@GovTechSG</a>, we’re building on-device fraud detection using our open model Gemma.
+Our latest Economic Research report https://t.co/m9LrrwNSo8" data-zh="OpenAI 最新经济研究报告：欧洲企业与商客户的 AI 使用中，超过一半已涉及智能体工具，小企业用户数在全区增长 8 倍。">European businesses are rapidly expanding their use of AI agents. More than half of the AI use among our EU enterprise and business customers now involves these tools, and the number of small business users has grown 8x across the region.
 
-By fine-tuning it on local scam tactics, it identifies threats in real time without compromising personal https://t.co/pkAulZoJng" data-zh="新加坡超过一半的报案犯罪都采用精密的社会工程学手段。DeepMind 正与政府科技局（GovTech）合作，基于开源模型 Gemma 打造端侧诈骗检测——用本地诈骗手法微调后，可在不泄露个人隐私的前提下实时识别威胁。">Over half of reported crimes in Singapore use sophisticated social engineering.
-
-With <a href="https://x.com/GovTechSG" target="_blank" rel="noopener">@GovTechSG</a>, we’re building on-device fraud detection using our open model Gemma.
-
-By fine-tuning it on local scam tactics, it identifies threats in real time without compromising personal https://t.co/pkAulZoJng</div>
-        <div class="tweet-media-link" data-full="https://pbs.twimg.com/tweet_video_thumb/HUhw8WhWMAArsET.jpg">
-            <img src="https://pbs.twimg.com/tweet_video_thumb/HUhw8WhWMAArsET.jpg" alt="" class="tweet-media" loading="lazy" />
+Our latest Economic Research report https://t.co/m9LrrwNSo8</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/media/HUnIm51bgAA9cT4.jpg">
+            <img src="https://pbs.twimg.com/media/HUnIm51bgAA9cT4.jpg" alt="" class="tweet-media" loading="lazy" />
         </div>
             <div class="tweet-footer">
-                <a href="https://x.com/GoogleDeepMind/status/2110190101707858039" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/OpenAI/status/2110442001749659890" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
                     0
                 </a>
-                <a href="https://x.com/GoogleDeepMind/status/2110190101707858039" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/OpenAI/status/2110442001749659890" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
                     0
                 </a>
-                <a href="https://x.com/GoogleDeepMind/status/2110190101707858039" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/OpenAI/status/2110442001749659890" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    289
+                    974
                 </a>
-                <a href="https://x.com/GoogleDeepMind/status/2110190101707858039" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                <a href="https://x.com/OpenAI/status/2110442001749659890" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
                     View on X →
                 </a>
             </div>
@@ -178,25 +174,25 @@ By fine-tuning it on local scam tactics, it identifies threats in real time with
                 <img src="https://pbs.twimg.com/profile_images/2103567689515954176/aR-Kjpp4_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
                     <span class="tweet-name">Elon Musk<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
-                    <span class="tweet-handle">@elonmusk · Oct 14</span>
+                    <span class="tweet-handle">@elonmusk · Oct 15</span>
                 </div>
                 <span class="news-badge" style="background:#1DA1F2">xAI</span>
             </div>
-            <div class="tweet-body" data-en="Connect Bot to your 𝕏 account (just by asking) and you can interact with them via X Chat DMs" data-zh="Grok Bot 现在只需一句指令即可绑定你的 𝕏 账号，绑定后可以直接通过 X Chat 私信与你的 Bot 互动。">Connect Bot to your 𝕏 account (just by asking) and you can interact with them via X Chat DMs</div>
+            <div class="tweet-body" data-en="Try Grok Voice" data-zh="马斯克推荐体验 Grok Voice 3.0——号称全球最智能的语音到语音模型，擅长处理客户来电，响应不到一秒，成本低于其他前沿模型。">Try Grok Voice</div>
             <div class="tweet-footer">
-                <a href="https://x.com/elonmusk/status/2110138567142113653" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/elonmusk/status/2110438877274259488" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
                     0
                 </a>
-                <a href="https://x.com/elonmusk/status/2110138567142113653" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/elonmusk/status/2110438877274259488" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
                     0
                 </a>
-                <a href="https://x.com/elonmusk/status/2110138567142113653" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/elonmusk/status/2110438877274259488" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    1.9K
+                    2.4K
                 </a>
-                <a href="https://x.com/elonmusk/status/2110138567142113653" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                <a href="https://x.com/elonmusk/status/2110438877274259488" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
                     View on X →
                 </a>
             </div>
@@ -207,32 +203,29 @@ By fine-tuning it on local scam tactics, it identifies threats in real time with
                 <img src="https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
                     <span class="tweet-name">Google DeepMind</span>
-                    <span class="tweet-handle">@GoogleDeepMind · Oct 14</span>
+                    <span class="tweet-handle">@GoogleDeepMind · Oct 15</span>
                 </div>
                 <span class="news-badge" style="background:#4285F4">Google</span>
             </div>
-            <div class="tweet-body" data-en="Gemini 4 Argon taught a robot to play cornhole just by watching a video.
+            <div class="tweet-body" data-en="To advance more research with Gemini 4 Argon, we’re offering 10,000 scientists access to our highest usage tier in <a href=&quot;https://x.com/GoogleAntigravity&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@GoogleAntigravity</a> free of charge for 6 months.
 
-It mapped the physics, coded its own simulation, and taught <a href=&quot;https://x.com/Apptronik&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@Apptronik</a>&#x27;s Apollo humanoid to sink 7 throws in a row. https://t.co/JIyoKnVc4q" data-zh="Gemini 4 Argon 仅通过观看一段视频，就教会了机器人玩沙包投掷：它自行推演物理规律、编写仿真程序，并让 Apptronik 的 Apollo 人形机器人连续投中 7 球。">Gemini 4 Argon taught a robot to play cornhole just by watching a video.
+Find out more → https://t.co/A9F2OZi4OJ" data-zh="为推动更多基于 Gemini 4 Argon 的研究，Google DeepMind 将向一万名科学家免费开放 Antigravity 最高用量套餐，为期六个月。">To advance more research with Gemini 4 Argon, we’re offering 10,000 scientists access to our highest usage tier in <a href="https://x.com/GoogleAntigravity" target="_blank" rel="noopener">@GoogleAntigravity</a> free of charge for 6 months.
 
-It mapped the physics, coded its own simulation, and taught <a href="https://x.com/Apptronik" target="_blank" rel="noopener">@Apptronik</a>&#x27;s Apollo humanoid to sink 7 throws in a row. https://t.co/JIyoKnVc4q</div>
-        <div class="tweet-media-link" data-full="https://pbs.twimg.com/media/HUiDGGjXkAEkJi6.jpg">
-            <img src="https://pbs.twimg.com/media/HUiDGGjXkAEkJi6.jpg" alt="" class="tweet-media" loading="lazy" />
-        </div>
+Find out more → https://t.co/A9F2OZi4OJ</div>
             <div class="tweet-footer">
-                <a href="https://x.com/GoogleDeepMind/status/2110078384617464201" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/GoogleDeepMind/status/2110421873242861711" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
                     0
                 </a>
-                <a href="https://x.com/GoogleDeepMind/status/2110078384617464201" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/GoogleDeepMind/status/2110421873242861711" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
                     0
                 </a>
-                <a href="https://x.com/GoogleDeepMind/status/2110078384617464201" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/GoogleDeepMind/status/2110421873242861711" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    676
+                    51
                 </a>
-                <a href="https://x.com/GoogleDeepMind/status/2110078384617464201" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                <a href="https://x.com/GoogleDeepMind/status/2110421873242861711" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
                     View on X →
                 </a>
             </div>
@@ -247,25 +240,25 @@ It mapped the physics, coded its own simulation, and taught <a href="https://x.c
                 </div>
                 <span class="news-badge" style="background:#D4A574">Anthropic</span>
             </div>
-            <div class="tweet-body" data-en="New on our Engineering blog: Creating in-house source control. 
+            <div class="tweet-body" data-en="We’ve opened an office in Singapore—our fifth in the Asia-Pacific region. We’ve also signed an MOU with the Government of Singapore on AI safety and responsible adoption.
 
-In May, we merged around 2,500 code changes per day. In September, we merged more than 30,000 per day. As a result, we became bottlenecked by developer infrastructure built for human (rather than agent) scale." data-zh="Anthropic 工程博客新文：自研源代码版本控制。5 月每天合并约 2,500 次代码变更，9 月已超过每天 30,000 次——为人类（而非智能体）规模构建的开发者基础设施成了瓶颈。文章分享团队如何在五个月内建成新的版本控制系统，并把整个 monorepo 从 git 完整迁移过去。">New on our Engineering blog: Creating in-house source control. 
+You can read more about our new office here: https://t.co/125mBgHLkM" data-zh="Anthropic 在新加坡开设办公室，这是其亚太区第五个办公室，同时与新加坡政府就 AI 安全与负责任应用签署了谅解备忘录。">We’ve opened an office in Singapore—our fifth in the Asia-Pacific region. We’ve also signed an MOU with the Government of Singapore on AI safety and responsible adoption.
 
-In May, we merged around 2,500 code changes per day. In September, we merged more than 30,000 per day. As a result, we became bottlenecked by developer infrastructure built for human (rather than agent) scale.</div>
+You can read more about our new office here: https://t.co/125mBgHLkM</div>
             <div class="tweet-footer">
-                <a href="https://x.com/AnthropicAI/status/2110047081414987957" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/AnthropicAI/status/2110289695888511368" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
                     0
                 </a>
-                <a href="https://x.com/AnthropicAI/status/2110047081414987957" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/AnthropicAI/status/2110289695888511368" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
                     0
                 </a>
-                <a href="https://x.com/AnthropicAI/status/2110047081414987957" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/AnthropicAI/status/2110289695888511368" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    9.7K
+                    3.0K
                 </a>
-                <a href="https://x.com/AnthropicAI/status/2110047081414987957" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                <a href="https://x.com/AnthropicAI/status/2110289695888511368" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
                     View on X →
                 </a>
             </div>
@@ -279,6 +272,19 @@ In May, we merged around 2,500 code changes per day. In September, we merged mor
     <section class="post-list tab-pane" id="pane-blog">
 
                 <div class="post-item fade-in">
+            <a href="posts/2026-10-15-compaction-is-garbage-collection.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">October 15, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
+                </div>
+                <h2 class="post-title" data-en="Compaction Is Garbage Collection" data-zh="上下文压缩，就是垃圾回收">Compaction Is Garbage Collection</h2>
+                <p class="post-excerpt" data-en="A context window is not a shelf — it is a heap. Every step allocates tokens, most die immediately, and the append-only pattern never frees them. The fix is the oldest idea in systems engineering: mark by meaning, sweep on a schedule, compact into a small all-live kernel, and page the rest to disk." data-zh="上下文窗口不是书架，是堆。每一步都在分配 token，大多数当步即死，而只追加的模式从不释放。解法是系统工程里最古老的思想：按意义标记、按计划清扫、压缩成小而全活的内核，其余换页到磁盘。">A context window is not a shelf — it is a heap. Every step allocates tokens, most die immediately, and the append-only pattern never frees them. The fix is the oldest idea in systems engineering:.</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="post-item fade-in">
             <a href="posts/2026-10-14-no-semver-for-weights.html" class="post-item-inner">
                 <div class="post-meta">
                     <span class="post-date">October 14, 2026</span>
@@ -1248,6 +1254,166 @@ In May, we merged around 2,500 code changes per day. In September, we merged mor
         <div class="news-list">
 
                     <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">OpenAI<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@OpenAI · Oct 15</span>
+                </div>
+                <span class="news-badge" style="background:#10A37F">OpenAI</span>
+            </div>
+            <div class="tweet-body" data-en="European businesses are rapidly expanding their use of AI agents. More than half of the AI use among our EU enterprise and business customers now involves these tools, and the number of small business users has grown 8x across the region.
+
+Our latest Economic Research report https://t.co/m9LrrwNSo8" data-zh="OpenAI 最新经济研究报告：欧洲企业与商客户的 AI 使用中，超过一半已涉及智能体工具，小企业用户数在全区增长 8 倍。">European businesses are rapidly expanding their use of AI agents. More than half of the AI use among our EU enterprise and business customers now involves these tools, and the number of small business users has grown 8x across the region.
+
+Our latest Economic Research report https://t.co/m9LrrwNSo8</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/media/HUnIm51bgAA9cT4.jpg">
+            <img src="https://pbs.twimg.com/media/HUnIm51bgAA9cT4.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/OpenAI/status/2110442001749659890" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/OpenAI/status/2110442001749659890" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/OpenAI/status/2110442001749659890" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    974
+                </a>
+                <a href="https://x.com/OpenAI/status/2110442001749659890" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/2103567689515954176/aR-Kjpp4_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Elon Musk<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@elonmusk · Oct 15</span>
+                </div>
+                <span class="news-badge" style="background:#1DA1F2">xAI</span>
+            </div>
+            <div class="tweet-body" data-en="Try Grok Voice" data-zh="马斯克推荐体验 Grok Voice 3.0——号称全球最智能的语音到语音模型，擅长处理客户来电，响应不到一秒，成本低于其他前沿模型。">Try Grok Voice</div>
+            <div class="tweet-footer">
+                <a href="https://x.com/elonmusk/status/2110438877274259488" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/elonmusk/status/2110438877274259488" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/elonmusk/status/2110438877274259488" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    2.4K
+                </a>
+                <a href="https://x.com/elonmusk/status/2110438877274259488" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Google DeepMind</span>
+                    <span class="tweet-handle">@GoogleDeepMind · Oct 15</span>
+                </div>
+                <span class="news-badge" style="background:#4285F4">Google</span>
+            </div>
+            <div class="tweet-body" data-en="To advance more research with Gemini 4 Argon, we’re offering 10,000 scientists access to our highest usage tier in <a href=&quot;https://x.com/GoogleAntigravity&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@GoogleAntigravity</a> free of charge for 6 months.
+
+Find out more → https://t.co/A9F2OZi4OJ" data-zh="为推动更多基于 Gemini 4 Argon 的研究，Google DeepMind 将向一万名科学家免费开放 Antigravity 最高用量套餐，为期六个月。">To advance more research with Gemini 4 Argon, we’re offering 10,000 scientists access to our highest usage tier in <a href="https://x.com/GoogleAntigravity" target="_blank" rel="noopener">@GoogleAntigravity</a> free of charge for 6 months.
+
+Find out more → https://t.co/A9F2OZi4OJ</div>
+            <div class="tweet-footer">
+                <a href="https://x.com/GoogleDeepMind/status/2110421873242861711" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/GoogleDeepMind/status/2110421873242861711" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/GoogleDeepMind/status/2110421873242861711" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    51
+                </a>
+                <a href="https://x.com/GoogleDeepMind/status/2110421873242861711" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Anthropic<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@AnthropicAI · Oct 14</span>
+                </div>
+                <span class="news-badge" style="background:#D4A574">Anthropic</span>
+            </div>
+            <div class="tweet-body" data-en="We’ve opened an office in Singapore—our fifth in the Asia-Pacific region. We’ve also signed an MOU with the Government of Singapore on AI safety and responsible adoption.
+
+You can read more about our new office here: https://t.co/125mBgHLkM" data-zh="Anthropic 在新加坡开设办公室，这是其亚太区第五个办公室，同时与新加坡政府就 AI 安全与负责任应用签署了谅解备忘录。">We’ve opened an office in Singapore—our fifth in the Asia-Pacific region. We’ve also signed an MOU with the Government of Singapore on AI safety and responsible adoption.
+
+You can read more about our new office here: https://t.co/125mBgHLkM</div>
+            <div class="tweet-footer">
+                <a href="https://x.com/AnthropicAI/status/2110289695888511368" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/AnthropicAI/status/2110289695888511368" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/AnthropicAI/status/2110289695888511368" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    3.0K
+                </a>
+                <a href="https://x.com/AnthropicAI/status/2110289695888511368" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Qwen<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@Alibaba_Qwen · Oct 14</span>
+                </div>
+                <span class="news-badge" style="background:#FF6B35">Qwen</span>
+            </div>
+            <div class="tweet-body" data-en="Congrats to <a href=&quot;https://x.com/lightseekorg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@lightseekorg</a> on the impressive TokenSpeed results! 🚀 Great to see Qwen3.8-Flash-Next reaching 685 output tokens/s per user on Nvida GPUs. Excited to see the community unlock more of Qwen’s inference potential!" data-zh="Qwen 祝贺社区 TokenSpeed 成果：Qwen3.8-Flash-Next 在 NVIDIA GPU 上实现每用户 685 输出 token/秒的推理速度。">Congrats to <a href="https://x.com/lightseekorg" target="_blank" rel="noopener">@lightseekorg</a> on the impressive TokenSpeed results! 🚀 Great to see Qwen3.8-Flash-Next reaching 685 output tokens/s per user on Nvida GPUs. Excited to see the community unlock more of Qwen’s inference potential!</div>
+            <div class="tweet-footer">
+                <a href="https://x.com/Alibaba_Qwen/status/2110214931559899630" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/Alibaba_Qwen/status/2110214931559899630" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/Alibaba_Qwen/status/2110214931559899630" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    860
+                </a>
+                <a href="https://x.com/Alibaba_Qwen/status/2110214931559899630" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
             <div class="tweet-header">
                 <img src="https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">

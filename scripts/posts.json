@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-15",
+    "slug": "compaction-is-garbage-collection",
+    "title_en": "Compaction Is Garbage Collection",
+    "title_zh": "上下文压缩，就是垃圾回收",
+    "read_time": 9,
+    "excerpt_en": "A context window is not a shelf — it is a heap. Every step allocates tokens, most die immediately, and the append-only pattern never frees them. The fix is the oldest idea in systems engineering: mark by meaning, sweep on a schedule, compact into a small all-live kernel, and page the rest to disk.",
+    "excerpt_zh": "上下文窗口不是书架，是堆。每一步都在分配 token，大多数当步即死，而只追加的模式从不释放。解法是系统工程里最古老的思想：按意义标记、按计划清扫、压缩成小而全活的内核，其余换页到磁盘。"
+  },
+  {
     "date": "2026-10-14",
     "slug": "no-semver-for-weights",
     "title_en": "There Is No SemVer for Weights",

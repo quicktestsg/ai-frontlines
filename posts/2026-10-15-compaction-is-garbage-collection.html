@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Compaction Is Garbage Collection — AI Frontlines</title>
+<meta content="A context window is not a shelf where facts sit safely until needed. It is a heap: every step of a run allocates tokens, most of them die immediately, and nothing reclaims them. Long-horizon agents fail not because the model is weak but because the heap fills with dead past — and the task drowns in its own history. The fix is the oldest idea in systems engineering: manage the memory." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 15, 2026" data-zh="2026年10月15日">October 15, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Compaction Is Garbage Collection" data-zh="上下文压缩，就是垃圾回收">Compaction Is Garbage Collection</h1>
+<p class="post-header-deck" data-en="A context window is not a shelf. Nothing sits safely in it waiting to be used. It is a heap: every step of a run allocates tokens, most of those tokens die the moment the step ends, and — in most agent systems — nothing ever reclaims them. The tool dump from step three is still squatting in the window at step forty. The failed approach that was abandoned at step twelve is still there, being attended over, taking attention that the live task needed. Long-horizon agents do not fail because the model is too weak. They fail because the heap fills with dead past, and the task drowns in its own history." data-zh="上下文窗口不是一个书架。没有什么东西能安然地摆在里面、等着被取用。它是一个堆：运行的每一步都在分配 token，其中大多数在当步结束的那一刻就已死去，而在大多数智能体系统里，永远没有谁来回收它们。第三步的工具原始输出，到第四十步还赖在窗口里。第十二步就被放弃的失败方案还躺在那儿，被反复地注意着，占用着活着的任务本该得到的注意力。长程智能体的失败，不是因为模型太弱，而是因为堆被死去的过往塞满，任务在自己的历史里溺了水。">A context window is not a shelf. Nothing sits safely in it waiting to be used. It is a heap: every step of a run allocates tokens, most of those tokens die the moment the step ends, and nothing reclaims them. Long-horizon agents fail not because the model is weak, but because the heap fills with dead past.</p>
+</header>
+<article class="post-body">
+<p data-en="Runtime systems solved this problem decades ago, and they solved it with a name that every engineer recognizes: garbage collection. Allocate freely, but track what is live, and periodically reclaim what is not. The heap stays bounded. The program keeps running. Agent systems need exactly this discipline applied to context, and almost none of them have it. Instead, the dominant pattern is the append-only transcript: the entire run history — every prompt, every tool call, every result, every dead end — accumulates in the window until the run ends or the window overflows. That pattern is the equivalent of a program that never frees memory and calls itself stable because it crashes before lunch instead of before breakfast." data-zh="运行时系统几十年前就解决了这个问题，而且解决得掷地有声——垃圾回收。放心地分配，但追踪哪些对象还活着，并周期性地回收那些不再活着的。堆保持有界，程序持续运行。智能体系统需要的，正是把这套纪律应用到上下文上，而几乎没有谁真的有。相反，主流模式是只追加的对话记录：整段运行历史——每一条 prompt、每一次工具调用、每一个结果、每一个死胡同——在窗口里不断累积，直到运行结束或窗口溢出。这个模式，等价于一个从不释放内存、还自称稳定的程序——只不过是因为它赶在早餐后而不是午餐前崩溃而已。">Runtime systems solved this problem decades ago, and they solved it with a name that every engineer recognizes: garbage collection. Allocate freely, but track what is live, and periodically reclaim what is not. Agent systems need exactly this discipline applied to context, and almost none of them have it. The dominant pattern is the append-only transcript, and it is the equivalent of a program that never frees memory.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrC2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="WHAT THE WINDOW ACTUALLY CONTAINS BY STEP 40" data-zh="到第 40 步时，窗口里到底是什么" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHAT THE WINDOW ACTUALLY CONTAINS BY STEP 40</text>
+<!-- LEFT: short run -->
+<text data-en="SHORT RUN · FITS" data-zh="短任务 · 装得下" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="130" y="52">SHORT RUN · FITS</text>
+<rect fill="none" height="240" rx="10" stroke="var(--accent-2)" stroke-width="1.5" width="120" x="70" y="64"></rect>
+<rect fill="var(--accent-dim)" height="40" rx="6" stroke="var(--accent)" stroke-width="1.5" width="106" x="77" y="258"></rect>
+<text data-en="system + task" data-zh="系统 + 任务" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="130" y="281">system + task</text>
+<rect fill="var(--bg-surface)" height="52" rx="6" stroke="var(--accent-2)" stroke-width="1.2" width="106" x="77" y="202"></rect>
+<text data-en="tool results," data-zh="工具结果，" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="130" y="224">tool results,</text>
+<text data-en="still relevant" data-zh="仍然相关" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="130" y="238">still relevant</text>
+<rect fill="var(--bg-surface)" height="42" rx="6" stroke="var(--accent-2)" stroke-width="1.2" width="106" x="77" y="156"></rect>
+<text data-en="working state" data-zh="工作状态" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="130" y="180">working state</text>
+<text data-en="mostly live" data-zh="大多活着" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="130" y="330">mostly live</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="46" y2="322"></line>
+<!-- RIGHT: long run -->
+<text data-en="LONG RUN · DROWNING" data-zh="长任务 · 溺水" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="480" y="52">LONG RUN · DROWNING</text>
+<rect fill="none" height="240" rx="10" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="420" y="64"></rect>
+<!-- evicted task, above the window, dashed -->
+<rect fill="none" height="34" rx="7" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3" width="120" x="420" y="70"></rect>
+<text data-en="task goal — evicted" data-zh="任务目标 —— 被挤出去" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="480" y="91">task goal — evicted</text>
+<path d="M480 104 L480 96" fill="none" marker-end="url(#arrC2)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="3,2"></path>
+<!-- dead segments -->
+<rect fill="var(--bg-surface)" height="46" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="106" x="427" y="106"></rect>
+<text data-en="failed attempt #2" data-zh="失败尝试 #2" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="480" y="125">failed attempt #2</text>
+<text data-en="(abandoned at step 12)" data-zh="（第 12 步已放弃）" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="480" y="139">(abandoned at step 12)</text>
+<rect fill="var(--bg-surface)" height="46" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="106" x="427" y="156"></rect>
+<text data-en="raw tool dumps" data-zh="工具原始输出" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="480" y="175">raw tool dumps</text>
+<text data-en="(6,000 tokens, used once)" data-zh="（六千 token，只用过一次）" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="480" y="189">(6,000 tokens, used once)</text>
+<rect fill="var(--bg-surface)" height="46" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="106" x="427" y="206"></rect>
+<text data-en="superseded results" data-zh="已被取代的结果" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="480" y="225">superseded results</text>
+<text data-en="(stale by step 30)" data-zh="（第 30 步起已过期）" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="480" y="239">(stale by step 30)</text>
+<rect fill="var(--accent-dim)" height="40" rx="6" stroke="var(--accent)" stroke-width="1.5" width="106" x="427" y="256"></rect>
+<text data-en="system + task" data-zh="系统 + 任务" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="480" y="279">system + task</text>
+<text data-en="mostly dead weight" data-zh="大多是死重" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="480" y="330">mostly dead weight</text>
+</svg>
+<p class="diagram-caption" data-en="Left: a short run, where the append-only transcript happens to fit and the live content still dominates. Right: a long run on the same window. The dead segments — abandoned attempts, raw dumps read once, results already superseded — crowd the heap, and the task itself is the first thing pushed out of attention. Nothing deleted the goal. The garbage did." data-zh="左边：一个短任务，只追加的对话记录恰好装得下，活内容仍占主导。右边：同一个窗口里的长任务。死掉的片段——被放弃的尝试、只读过一次的原始输出、早已被取代的结果——挤满了堆，而最先被挤出注意力的，恰恰是任务本身。没有什么删除了目标，是垃圾把它埋了。">Left: a short run, where the append-only transcript happens to fit. Right: a long run on the same window. The dead segments crowd the heap, and the task itself is the first thing pushed out of attention. Nothing deleted the goal. The garbage buried it.</p>
+</div>
+<h3 data-en="Every token pays rent, and the rent is attention" data-zh="每个 token 都在交租，租金就是注意力">Every token pays rent, and the rent is attention</h3>
+<p data-en="The naive model of a context window is storage: tokens go in, tokens are available for retrieval, more context is strictly better. The actual model is closer to a spotlight with a budget. Attention is finite at every forward pass, and every token in the window competes for a share of it. A six-thousand-token tool dump that was needed once at step three is not free storage at step forty — it is a tax on every subsequent generation, diluting the attention available to the tokens that actually matter. This is why long contexts degrade even when they technically fit: the model does not read the window like a database, it attends over it like a crowd, and in a crowd of dead tokens the living signal gets quieter with every append." data-zh="对上下文窗口的天真理解是存储：token 放进去，随时可以取，上下文越多越好。而真实的模型，更接近一个有预算的聚光灯。每一次前向传播中，注意力都是有限的，窗口里的每一个 token 都在争夺其中一份。一份在第三步只用过一次的六千 token 工具原始输出，到了第四十步并不是免费的存储——它是之后每一次生成的税，稀释着真正重要的 token 所能得到的注意力。这就是长上下文即使在「装得下」时也会退化的原因：模型并不像数据库那样读取窗口，它像面对一群人那样对窗口做注意，而在一群死 token 中间，活着的信号随着每一次追加都变得更轻。">The naive model of a context window is storage: tokens go in, tokens are available, more is strictly better. The actual model is a spotlight with a budget. Every token in the window competes for attention, and a six-thousand-token dump that was needed once is a tax on every subsequent generation. Long contexts degrade even when they fit: the model does not read the window like a database, it attends over it like a crowd.</p>
+<p data-en="This reframes the engineering problem completely. The question is not 'how do we fit more in' but 'what deserves to stay in.' A context window has a working set — the small collection of facts, decisions, and handles the task actually needs to proceed — and everything outside that working set is overhead. Operating systems understood this decades ago with paging: keep the working set resident, push the rest to disk, and performance survives workloads far larger than physical memory. The equivalent discipline for agents is stark: the full transcript should live outside the model, on disk, where it costs nothing per token; inside the window should live only the working set, maintained deliberately, reviewed on a schedule, kept small enough that attention stays sharp." data-zh="这彻底重构了工程问题。问题不再是「怎么装下更多」，而是「什么配留下来」。一个上下文窗口有一个工作集——任务继续推进真正需要的那一小撮事实、决策和句柄——工作集之外的一切，都是负担。操作系统几十年前就在分页机制里想明白了这件事：让工作集驻留内存，其余推到磁盘，性能就能扛住远超物理内存的工作负载。智能体对应的纪律非常鲜明：完整对话记录应该放在模型之外、放在磁盘上，那里每个 token 的成本为零；窗口里只放工作集——被刻意维护、按周期审查、保持小到注意力依然锐利。">This reframes the problem. The question is not 'how do we fit more in' but 'what deserves to stay in.' A context window has a working set, and everything outside it is overhead. Operating systems understood this with paging: keep the working set resident, push the rest to disk. The equivalent for agents is stark: the full transcript lives outside the model, on disk; inside the window lives only the working set, kept small enough that attention stays sharp.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE CONTEXT LEAK, OVER ONE LONG RUN" data-zh="一次长任务中的上下文泄漏" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE CONTEXT LEAK, OVER ONE LONG RUN</text>
+<!-- axes -->
+<line stroke="var(--border)" stroke-width="1.5" x1="70" x2="70" y1="46" y2="270"></line>
+<line stroke="var(--border)" stroke-width="1.5" x1="70" x2="580" y1="270" y2="270"></line>
+<text data-en="tokens" data-zh="token 数" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="42" y="160" transform="rotate(-90 42 160)">tokens</text>
+<text data-en="steps →" data-zh="步数 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="325" y="292">steps →</text>
+<!-- ceiling -->
+<line stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="6,4" x1="70" x2="580" y1="70" y2="70"></line>
+<text data-en="window capacity" data-zh="窗口容量" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="520" y="62">window capacity</text>
+<!-- leak region -->
+<path d="M70 260 C160 250 240 210 320 165 C420 112 500 82 580 70 L580 210 C500 214 420 220 320 228 C240 234 160 242 70 260 Z" fill="var(--accent-dim)" opacity="0.45"></path>
+<!-- working set line -->
+<path d="M70 260 C160 256 240 246 320 236 C420 226 500 218 580 210" fill="none" stroke="var(--accent)" stroke-width="2.5"></path>
+<!-- total context line -->
+<path d="M70 260 C160 250 240 210 320 165 C420 112 500 82 580 70" fill="none" marker-end="url(#arrL1)" stroke="var(--accent-3)" stroke-width="2"></path>
+<circle cx="320" cy="165" fill="var(--bg-surface)" r="4" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<circle cx="320" cy="228" fill="var(--bg-surface)" r="4" stroke="var(--accent)" stroke-width="1.5"></circle>
+<!-- labels -->
+<text data-en="total context in window" data-zh="窗口内上下文总量" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="150" y="130">total context in window</text>
+<text data-en="working set (what the task needs)" data-zh="工作集（任务真正需要的）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="330" y="248">working set (what the task needs)</text>
+<text data-en="the leak:" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="400" y="150">the leak:</text>
+<text data-en="dead ends · dumps · duplicates" data-zh="死胡同 · 原始输出 · 重复" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="400" y="164">dead ends · dumps · duplicates</text>
+</svg>
+<p class="diagram-caption" data-en="The working set — the context the task actually needs — stays nearly flat as a run proceeds: a goal, a handful of decisions, a few live handles. The total context in the window grows without bound, because the append-only pattern never frees anything. The gap between the two lines is the leak, and it is pure attention tax. Compaction's only job is to close that gap." data-zh="工作集——任务真正需要的上下文——在运行过程中几乎保持水平：一个目标、几条决策、几个活着的句柄。而窗口内的上下文总量无界增长，因为只追加的模式从不释放任何东西。两条线之间的缺口，就是泄漏，而它是纯粹的注意力税。压缩的唯一职责，就是关掉这个缺口。">The working set stays nearly flat as a run proceeds: a goal, a handful of decisions, a few live handles. The total context grows without bound, because the append-only pattern never frees anything. The gap between the two lines is the leak, and it is pure attention tax. Compaction's only job is to close that gap.</p>
+</div>
+<blockquote data-en="A context window is not memory. It is attention. Memory can be retrieved later at the same cost; attention spent on the dead past is gone, subtracted from the live task, on every single token the model generates. This is why context hygiene is not an optimization. It is the difference between an agent that finishes and an agent that forgets what it was doing." data-zh="上下文窗口不是内存，是注意力。内存在之后取回的成本不变；而花在死去过往上的注意力，是永远回不来的——模型每生成一个 token，它都从活着的任务里被扣掉一次。这就是为什么上下文卫生不是优化项，而是「一个能把事做完的智能体」和「一个忘了自己在干什么的智能体」之间的分界线。">A context window is not memory. It is attention. Memory can be retrieved later at the same cost; attention spent on the dead past is gone, subtracted from the live task, on every single token the model generates. Context hygiene is not an optimization. It is the difference between an agent that finishes and an agent that forgets what it was doing.</blockquote>
+<h3 data-en="Mark, sweep, compact — with judgment instead of pointers" data-zh="标记、清除、压缩——用判断力代替指针">Mark, sweep, compact — with judgment instead of pointers</h3>
+<p data-en="Garbage collection has three phases, and they translate to context with almost uncomfortable precision. Mark: determine what is live, what the program can still reach. Sweep: reclaim everything unmarked. Compact: rewrite the survivors into a dense block so allocation can continue. For context, marking is the hard part. A runtime uses pointers — an object is live if something references it. Context has no pointers. Liveness is semantic: this decision is live because later steps may still depend on it; this tool dump is dead because the fact it established has already been extracted; this failed approach is dead except for one sentence — do not try this again — that must survive. No reference counter can make that call. The agent, or a cheaper model watching the agent, must judge liveness the way a human engineer judges which parts of a whiteboard still matter three hours into a design session." data-zh="垃圾回收有三个阶段，而它们映射到上下文，精确得令人不安。标记：确定哪些对象还活着、程序仍能触达。清除：回收所有未标记的。压缩：把幸存者重写进一个紧凑块，让分配得以继续。对上下文来说，标记是最难的部分。运行时靠指针——一个对象活着，是因为有东西引用它。上下文没有指针。存活是语义性的：这条决策还活着，因为后续步骤可能仍依赖它；这份工具原始输出已经死了，因为它确立的事实已被提取走；这个失败方案死了，除了一句话——别再试这个——那一句必须活下来。没有任何引用计数器能做这个判断。必须由智能体自己，或一个盯着智能体的更便宜的模型，像人类工程师在设计会议进行了三小时后判断白板上哪些内容还有意义那样，去判断存活。">Garbage collection has three phases, and they translate to context with uncomfortable precision. Mark: determine what is live. Sweep: reclaim everything unmarked. Compact: rewrite the survivors densely. For context, marking is the hard part — a runtime uses pointers, but context has no pointers. Liveness is semantic: this decision is live because later steps may depend on it; this tool dump is dead because the fact it established was already extracted; this failed approach is dead except for one sentence — do not try this again — that must survive. No reference counter can make that call.</p>
+<p data-en="This is why compaction cannot be fully automatic, and why the systems that treat it as a mechanical truncation — keep the head, drop the tail, or summarize the middle with a fixed ratio — behave like badly tuned collectors: they free the wrong objects and preserve the wrong ones. A truncator keeps the six-thousand-token dump because it is recent, and discards the two-line decision from step five because it is old. The collector that works keeps the decision and frees the dump, because it marks by meaning, not by recency. The practical design that emerges in serious systems is a triage pass with three bins: retain verbatim, summarize to a line, and drop entirely — with the full original always preserved outside the window, so nothing is truly lost, only paged out. That last clause is what makes aggressive compaction safe. You are not deleting; you are swapping." data-zh="这就是为什么压缩不可能完全自动化，也是为什么那些把它当机械截断来做的系统——保留头部、丢掉尾部，或按固定比例摘要中间——表现得像调参失败的回收器：它们释放了错误的对象，保住了错误的对象。截断器会保留那份六千 token 的原始输出，因为它新；丢掉第五步的两行决策，因为它旧。而有效的回收器保留决策、释放原始输出，因为它按意义标记，不按新旧标记。严肃系统里沉淀出的实用设计，是一次三桶分拣：逐字保留、压缩成一行、彻底丢弃——完整原文始终保存在窗口之外，所以没有任何东西真正丢失，只是被换页出去了。最后这一条，正是让激进压缩变得安全的原因。你不是在删除，你是在换页。">This is why compaction cannot be fully automatic, and why systems that treat it as mechanical truncation behave like badly tuned collectors: they free the wrong objects and preserve the wrong ones. A truncator keeps the six-thousand-token dump because it is recent, and discards the two-line decision from step five because it is old. The practical design that emerges in serious systems is a triage pass with three bins — retain verbatim, summarize to a line, drop entirely — with the full original preserved outside the window. You are not deleting; you are paging out.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 370" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrT2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrT3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrT4" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE COMPACTION CYCLE" data-zh="压缩循环" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE COMPACTION CYCLE</text>
+<!-- running context -->
+<rect fill="var(--bg-surface)" height="58" rx="9" stroke="var(--accent-3)" stroke-width="1.8" width="150" x="60" y="60"></rect>
+<text data-en="running context" data-zh="运行中上下文" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="135" y="84">running context</text>
+<text data-en="mixed live + dead" data-zh="活的死的混杂" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="135" y="101">mixed live + dead</text>
+<path d="M210 89 L268 89" fill="none" marker-end="url(#arrT4)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<text data-en="threshold hit" data-zh="触发阈值" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="239" y="80">threshold hit</text>
+<!-- triage -->
+<rect fill="var(--accent-dim)" height="64" rx="10" stroke="var(--accent)" stroke-width="2.5" width="140" x="270" y="57"></rect>
+<text data-en="TRIAGE" data-zh="分拣" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="340" y="80">TRIAGE</text>
+<text data-en="mark by meaning," data-zh="按意义标记，" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="340" y="96">mark by meaning,</text>
+<text data-en="not by recency" data-zh="不按新旧" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="340" y="109">not by recency</text>
+<!-- three bins -->
+<path d="M410 70 L470 48" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M410 89 L470 89" fill="none" marker-end="url(#arrT2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<path d="M410 108 L470 128" fill="none" marker-end="url(#arrT3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="7" stroke="var(--accent)" stroke-width="1.8" width="112" x="472" y="30"></rect>
+<text data-en="retain verbatim" data-zh="逐字保留" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="528" y="45">retain verbatim</text>
+<text data-en="goal · decisions · IDs" data-zh="目标 · 决策 · ID" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="528" y="58">goal · decisions · IDs</text>
+<rect fill="var(--bg-surface)" height="34" rx="7" stroke="var(--accent-2)" stroke-width="1.8" width="112" x="472" y="72"></rect>
+<text data-en="summarize" data-zh="压缩成一行" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="528" y="87">summarize</text>
+<text data-en="one line each" data-zh="每项一句" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="528" y="100">one line each</text>
+<rect fill="var(--bg-surface)" height="34" rx="7" stroke="var(--accent-3)" stroke-width="1.8" width="112" x="472" y="118"></rect>
+<text data-en="drop from window" data-zh="移出窗口" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="528" y="133">drop from window</text>
+<text data-en="raw dumps · dead ends" data-zh="原始输出 · 死胡同" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="528" y="146">raw dumps · dead ends</text>
+<!-- compacted kernel -->
+<path d="M528 164 C528 200 420 208 340 200" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="52" rx="10" stroke="var(--accent)" stroke-width="2" width="170" x="255" y="206"></rect>
+<text data-en="compacted kernel" data-zh="压缩后的内核" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="340" y="228">compacted kernel</text>
+<text data-en="dense · all-live · small" data-zh="紧凑 · 全活 · 很小" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="340" y="246">dense · all-live · small</text>
+<!-- agent continues -->
+<path d="M340 258 L340 296" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="160" x="260" y="298"></rect>
+<text data-en="agent continues, sharp again" data-zh="智能体继续，注意力重新锐利" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="340" y="319">agent continues, sharp again</text>
+<!-- loop back -->
+<path d="M260 315 C130 315 135 150 152 122" fill="none" marker-end="url(#arrT4)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<text data-en="cycle repeats" data-zh="循环往复" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="150" y="330">cycle repeats</text>
+<!-- disk -->
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--border)" stroke-width="1.5" width="200" x="420" y="280"></rect>
+<text data-en="full transcript on disk" data-zh="完整记录在磁盘" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="520" y="297">full transcript on disk</text>
+<text data-en="nothing lost · retrievable · free" data-zh="不丢失 · 可检索 · 零成本" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="520" y="311">nothing lost · retrievable · free</text>
+<path d="M472 158 C430 200 430 260 450 280" fill="none" marker-end="url(#arrT4)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="3,3"></path>
+</svg>
+<p class="diagram-caption" data-en="When the running context crosses a threshold, a triage pass marks by meaning: goal, decisions, and live handles are retained verbatim; bulky but low-density history is summarized to one line each; dead weight leaves the window entirely. Everything swept lands in the on-disk transcript, retrievable if ever needed again. The kernel that returns to the agent is small and entirely live — which is the whole point." data-zh="当运行中的上下文越过阈值，一次分拣按意义标记：目标、决策和活着的句柄被逐字保留；臃肿而低密度的历史每项压缩成一行；死重彻底离开窗口。所有被清扫的东西都落进磁盘上的完整记录，需要时可再检索。回到智能体手里的内核，小而全活——这正是全部意义所在。">When the running context crosses a threshold, a triage pass marks by meaning: goal, decisions, and live handles retained verbatim; bulky history summarized to one line each; dead weight leaves the window. Everything swept lands in the on-disk transcript. The kernel that returns is small and entirely live — which is the whole point.</p>
+</div>
+<h3 data-en="The kernel is a designed artifact, not an accident" data-zh="内核是被设计的产物，不是意外">The kernel is a designed artifact, not an accident</h3>
+<p data-en="What survives compaction deserves to be said plainly: it is a specification. The compacted kernel — the goal, the decisions taken, the IDs and handles of things touched, the constraints discovered, the one-line obituaries of approaches that failed — is a complete-enough description of the task state that a fresh model instance could pick it up and continue. This is a higher bar than most teams ever articulate, and it changes how compaction is evaluated. A good compaction is not the one that shrinks the most; it is the one where the agent's behavior after compaction is indistinguishable, on the task, from its behavior before. That is a testable property. It can be run in CI: take a long trace, compact at step twenty, and verify the continuation still takes the right branch at step twenty-one." data-zh="什么能在压缩中幸存，值得直说：它是一份规格说明。压缩后的内核——目标、已做出的决策、接触过的事物的 ID 和句柄、发现的约束、失败方案的一行讣告——是一份足够完整的任务状态描述，完整到一个全新的模型实例可以接过来继续做。这是一个比大多数团队曾经明确表达过的都高的标准，而它改变了压缩的评估方式。一次好的压缩，不是缩得最狠的那次，而是压缩之后智能体在任务上的行为与之前无法区分的那次。这是一个可测试的属性，可以跑在 CI 里：取一段长追踪，在第二十步压缩，验证第二十一步的延续仍然走对分支。">What survives compaction deserves to be said plainly: it is a specification. The compacted kernel — the goal, the decisions taken, the IDs and handles, the constraints discovered, the one-line obituaries of failed approaches — is a complete-enough description of the task state that a fresh model instance could pick it up and continue. A good compaction is not the one that shrinks the most; it is the one where the agent's behavior after compaction is indistinguishable from before. That is a testable property, and it can run in CI.</p>
+<p data-en="The teams that internalize this stop arguing about prompt tricks and start arguing about information design. What belongs in the kernel and what belongs on disk? The answer follows a simple principle: keep handles, not contents. A file path is a handle; the file's body is contents. A run ID is a handle; the run's log is contents. A decision in one sentence is a handle to reasoning whose full text lives outside. The kernel becomes a directory of pointers into a rich external memory — small, stable, and cheap to attend over — while the bulky truth stays one retrieval away. This is not a hack around model limitations. It is the same architecture every large system has converged on, from databases to operating systems to caches: a small, fast, expensive tier holding references, and a large, slow, cheap tier holding bulk. The context window just joined the hierarchy." data-zh="真正把这件事内化的团队，不再争论 prompt 技巧，而开始争论信息设计。什么属于内核，什么属于磁盘？答案遵循一条简单的原则：留句柄，不留内容。一个文件路径是句柄，文件正文是内容。一个 run ID 是句柄，那次运行的日志是内容。一句概括的决策是指向推理全文的句柄，全文活在别处。内核变成一份指向丰富外部记忆的目录——小、稳定、注意力成本低——而臃肿的事实真相只隔一次检索的距离。这不是绕开模型局限的 hack。这是每一个大型系统都收敛到的同一架构：一个小的、快的、贵的高层级，存放引用；一个大的、慢的、便宜的低层级，存放体量。上下文窗口，只是刚刚加入了这个层级体系。">The teams that internalize this stop arguing about prompt tricks and start arguing about information design. What belongs in the kernel? The answer follows a simple principle: keep handles, not contents. A file path is a handle; the file's body is contents. A run ID is a handle; the run's log is contents. The kernel becomes a directory of pointers into rich external memory — small, stable, cheap to attend over — while the bulky truth stays one retrieval away. This is the architecture every large system has converged on: a small, fast, expensive tier holding references, and a large, slow, cheap tier holding bulk. The context window just joined the hierarchy.</p>
+<p data-en="And the argument only sharpens as windows grow. A million-token window does not eliminate the heap; it delays the crash and hides the tax. Attention still dilutes across everything present; the leak still grows with every append; the working set is still a few thousand tokens no matter what the capacity line says. The engineers who treat context as a managed resource — allocated deliberately, marked by meaning, swept on schedule, compacted into a designed kernel — get agents that survive long horizons on any window size. The ones who treat it as a shelf get agents that work beautifully in the demo, and drown, somewhere around step forty, in the wreckage of their own transcript." data-zh="而窗口越大，这个论点只会越锋利。一百万 token 的窗口没有消灭堆，它只是推迟了崩溃、藏起了税。注意力仍会在所有在场的内容上被稀释；泄漏仍随每一次追加而增长；无论容量线画在哪儿，工作集仍然只有几千 token。把上下文当作受管理资源的工程师——刻意分配、按意义标记、按计划清扫、压缩进被设计的内核——得到的智能体，在任何窗口大小下都能扛过长程。把上下文当书架的，得到的智能体在 demo 里美得发光，然后在第四十步附近的某处，淹死在自己对话记录的残骸里。">And the argument only sharpens as windows grow. A million-token window does not eliminate the heap; it delays the crash and hides the tax. The working set is still a few thousand tokens no matter what the capacity line says. Engineers who treat context as a managed resource get agents that survive long horizons on any window size. The ones who treat it as a shelf get agents that work beautifully in the demo, and drown, somewhere around step forty, in the wreckage of their own transcript.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
