@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Agents Need Transactions They Can't Have — AI Frontlines</title>
+<meta content="An agent that only reads is a toy. The moment one writes — to a database, a calendar, a payment API — it inherits the oldest problem in distributed systems: partial failure. Step three of five fails and there is no rollback. The database world solved this with transactions; agents cannot have them, and must live with sagas instead." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 16, 2026" data-zh="2026年10月16日">October 16, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Agents Need Transactions They Can't Have" data-zh="智能体需要它得不到的事务">Agents Need Transactions They Can't Have</h1>
+<p class="post-header-deck" data-en="An agent that only reads is a demo. The moment one writes — a row in a database, an event on a calendar, a charge on a card — it inherits the oldest problem in distributed systems: partial failure. Step three of a five-step plan succeeds, step four times out, and there is no rollback button. The database world spent forty years building transactions so that engineers could pretend failures never happen. Agents operate outside that sanctuary, across APIs owned by strangers, and the discipline that replaces transactions is older and harder: sagas, compensations, and idempotency designed in from the first tool call." data-zh="只会读的智能体是个 demo。一旦它开始写——数据库里的一行、日历上的一个事件、卡上的一笔扣款——它就继承了分布式系统最古老的问题：部分失败。五步计划的第三步成功了，第四步超时，而没有回滚按钮。数据库世界花了四十年建造事务，好让工程师可以假装失败从未发生。智能体活在那座圣殿之外，隔着陌生人的 API，而取代事务的纪律更古老也更难：saga、补偿动作，以及从第一个工具调用起就设计进去的幂等性。">An agent that only reads is a demo. The moment one writes, it inherits the oldest problem in distributed systems: partial failure. Step three succeeds, step four times out, and there is no rollback button. The discipline that replaces transactions is older and harder: sagas, compensations, and idempotency designed in from the first tool call.</p>
+</header>
+<article class="post-body">
+<p data-en="Consider a plan that any competent agent might produce: create the customer record, charge the card, reserve the inventory, send the confirmation email, update the CRM. Five tools, four external systems, one timeout on the third call. The customer exists but was never charged. The inventory was never reserved but the email might have gone out anyway if the failure had landed one step later. Nothing crashed loudly; the run simply stopped, and the world is now in a state that no single system owns and no single log explains. This is not an edge case of agent engineering. It is the default condition. Every long-horizon agent is a distributed transaction that nobody designed, executing against systems that were never coordinated, with a failure rate per step that is low but never zero — and low-per-step compounds into near-certain across a long enough plan." data-zh="看一个任何合格智能体都可能生成的计划：创建客户记录，扣款，锁定库存，发确认邮件，更新 CRM。五个工具、四个外部系统、第三次调用一次超时。客户存在了，但从没被扣款。库存从没被锁定，而如果失败晚落一步，邮件可能已经发出去了。没有什么东西大声崩溃；运行只是停了，世界进入了一个没有任何单一系统拥有、任何单一日志都解释不了的状态。这不是智能体工程的边角案例，而是默认状态。每一个长程智能体都是一笔没人设计过的分布式事务，跑在一组从未被协调过的系统上，单步失败率低但永远不为零——而单步很低，在足够长的计划上复利成几乎必然。">Consider a plan any competent agent might produce: create the customer, charge the card, reserve inventory, send the email, update the CRM. Five tools, four external systems, one timeout on the third call. The customer exists but was never charged. Nothing crashed loudly; the run simply stopped, and the world is now in a state that no single system owns and no single log explains. This is not an edge case of agent engineering. It is the default condition.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrS1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrS2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="PARTIAL FAILURE: THE STATE NOBODY OWNS" data-zh="部分失败：无主的状态" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">PARTIAL FAILURE: THE STATE NOBODY OWNS</text>
+<!-- agent node -->
+<rect fill="var(--accent-dim)" height="44" rx="10" stroke="var(--accent)" stroke-width="1.5" width="130" x="20" y="140"></rect>
+<text data-en="agent run" data-zh="智能体运行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="85" y="166">agent run</text>
+<!-- step 1 -->
+<path d="M150 148 L208 132" fill="none" marker-end="url(#arrS1)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent-2)" stroke-width="1.2" width="120" x="212" y="114"></rect>
+<text data-en="1 · create customer" data-zh="1 · 创建客户" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="272" y="136">1 · create customer</text>
+<!-- step 2 -->
+<path d="M150 162 L208 168" fill="none" marker-end="url(#arrS1)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent-2)" stroke-width="1.2" width="120" x="212" y="150"></rect>
+<text data-en="2 · charge card" data-zh="2 · 扣款" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="272" y="172">2 · charge card</text>
+<!-- step 3 -->
+<path d="M150 176 L208 204" fill="none" marker-end="url(#arrS1)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent-2)" stroke-width="1.2" width="120" x="212" y="186"></rect>
+<text data-en="3 · reserve stock" data-zh="3 · 锁定库存" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="272" y="208">3 · reserve stock</text>
+<!-- step 4 fails -->
+<path d="M332 150 L392 132" fill="none" marker-end="url(#arrS2)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<rect fill="none" height="36" rx="8" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3" width="120" x="396" y="114"></rect>
+<text data-en="4 · send email — ✕" data-zh="4 · 发邮件 —— ✕" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="456" y="136">4 · send email — ✕</text>
+<!-- step 5 never runs -->
+<path d="M332 204 L392 222" fill="none" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="2,4"></path>
+<rect fill="none" height="36" rx="8" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="2,4" width="120" x="396" y="204"></rect>
+<text data-en="5 · update CRM — never" data-zh="5 · 更新 CRM —— 未执行" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="456" y="226">5 · update CRM — never</text>
+<!-- resulting world state -->
+<rect fill="var(--bg-surface)" height="64" rx="10" stroke="var(--accent-3)" stroke-width="1.5" width="430" x="90" y="258"></rect>
+<text data-en="world state after the run:" data-zh="运行之后的世界状态：" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="106" y="280">world state after the run:</text>
+<text data-en="customer charged, nothing reserved, no email, no CRM record" data-zh="客户被扣了款，库存未锁，邮件未发，CRM 无记录" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" x="106" y="298">customer charged, nothing reserved, no email, no CRM record</text>
+<text data-en="no system owns this state — the agent left it here" data-zh="没有系统拥有这个状态——是智能体把它留在这儿的" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" x="106" y="314">no system owns this state — the agent left it here</text>
+</svg>
+<p class="diagram-caption" data-en="A five-step plan interrupted at step four. Each individual system is internally consistent; the composition is not. The customer was charged for inventory that was never reserved. Nothing rolled back, because nothing could: the tools exposed writes, not transactions, and the run simply stopped between them. The inconsistency is not visible from inside any one system — only from where the agent stood." data-zh="一个在第四步被打断的五步计划。每个系统各自内部自洽，组合却不是。客户为从未被锁定的库存付了钱。什么都没有回滚，因为什么都没法回滚：工具暴露的是写操作，不是事务，而运行只是在两次调用之间停住了。这种不一致从任何单一系统内部都看不见——只有从智能体站过的位置才看得见。">A five-step plan interrupted at step four. Each individual system is internally consistent; the composition is not. Nothing rolled back, because nothing could: the tools exposed writes, not transactions, and the run simply stopped between them. The inconsistency is only visible from where the agent stood.</p>
+</div>
+<h3 data-en="Retry does not save you — it multiplies you" data-zh="重试救不了你——它只会让你翻倍">Retry does not save you — it multiplies you</h3>
+<p data-en="The instinctive fix is retry, and retry is where agent systems go to die. A timeout is ambiguous: the request may have failed before reaching the server, or the server may have succeeded and the response may have been lost. The agent cannot tell these apart, so it calls again — and a write that succeeded once now succeeds twice. The email sends twice. The charge lands twice. The ticket is opened twice, assigned to two different engineers, one of whom closes it as a duplicate while the other is already working on it. Naive retry converts transient failures into permanent duplicates, which are strictly worse: a transient failure can be retried, but a duplicate side effect must be detected, reconciled, and apologized for." data-zh="本能的修复是重试，而重试正是智能体系统的葬身之地。超时是歧义的：请求可能在到达服务器之前就失败了，也可能服务器已经成功、只是响应丢了。智能体分不清这两种情况，于是再调一次——一个成功过一次的写操作，现在成功了两次。邮件发两遍。扣款落两笔。工单被开了两次、派给两个工程师，其中一个把它标为重复关掉时，另一个已经在修了。天真的重试把瞬态失败转换成永久重复，而这严格更糟：瞬态失败可以再试，重复的副作用却必须被检测、对账，然后道歉。">The instinctive fix is retry, and retry is where agent systems go to die. A timeout is ambiguous: the request may have failed before reaching the server, or the server may have succeeded and the response was lost. The agent cannot tell these apart, so it calls again — and a write that succeeded once now succeeds twice. Naive retry converts transient failures into permanent duplicates, which are strictly worse.</p>
+<p data-en="The escape from this trap is older than agents by decades: the idempotency key. Every write request carries a unique key generated once, at plan time; the receiving system records the key with the first execution and returns the recorded result for every replay. Same key, same effect, no matter how many times the call arrives. Stripe built payments on this; most internal APIs have not discovered it yet. This gives a hard design rule for agent tooling that few teams follow: a tool that writes and does not accept an idempotency key is not safe to retry, and a tool that is not safe to retry is not safe to hand to an agent, because the agent will retry — it is the correct response to ambiguity, and ambiguity is the water agents swim in." data-zh="逃出这个陷阱的办法比智能体早了几十年：幂等键。每个写请求携带一把在计划时刻一次性生成的唯一键；接收系统在首次执行时记录这把键，之后每次重放都返回记录的结果。键相同，效果就相同，无论调用到达多少次。Stripe 的支付建立在这上面；而大多数内部 API 还没发现它。由此得到一条少有团队遵守的硬规则：不接受幂等键的写工具，就不可以安全重试；不可以安全重试的工具，就不可以交给智能体——因为智能体一定会重试。重试是对歧义的正确反应，而歧义正是智能体游泳的水。">The escape is older than agents by decades: the idempotency key. Every write request carries a unique key generated once, at plan time; the receiving system records the key with the first execution and returns the recorded result for every replay. A tool that writes and does not accept an idempotency key is not safe to retry, and a tool not safe to retry is not safe to hand to an agent — because the agent will retry.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="SAME FAILURE, TWO TOOLS" data-zh="同一次失败，两种工具" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">SAME FAILURE, TWO TOOLS</text>
+<!-- left: no key -->
+<text data-en="WITHOUT IDEMPOTENCY KEY" data-zh="没有幂等键" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="160" y="52">WITHOUT IDEMPOTENCY KEY</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-3)" stroke-width="1.2" width="88" x="116" y="66"></rect>
+<text data-en="call → timeout" data-zh="调用 → 超时" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="160" y="86">call → timeout</text>
+<path d="M160 98 L160 122" fill="none" marker-end="url(#arrR1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-3)" stroke-width="1.2" width="88" x="116" y="126"></rect>
+<text data-en="retry → 200 OK" data-zh="重试 → 200 OK" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="160" y="146">retry → 200 OK</text>
+<rect fill="none" height="66" rx="9" stroke="var(--accent-3)" stroke-width="1.5" width="180" x="70" y="172"></rect>
+<text data-en="result: two charges" data-zh="结果：两笔扣款" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="160" y="198">result: two charges</text>
+<text data-en="(the first one worked;" data-zh="（第一笔其实成功了；" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="160" y="214">(the first one worked;</text>
+<text data-en="the timeout lied)" data-zh="超时说了谎）" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="160" y="228">the timeout lied)</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="44" y2="290"></line>
+<!-- right: with key -->
+<text data-en="WITH IDEMPOTENCY KEY" data-zh="有幂等键" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="470" y="52">WITH IDEMPOTENCY KEY</text>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-2)" stroke-width="1.2" width="88" x="426" y="66"></rect>
+<text data-en="call → timeout" data-zh="调用 → 超时" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="470" y="86">call → timeout</text>
+<path d="M470 98 L470 122" fill="none" marker-end="url(#arrR2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--accent-2)" stroke-width="1.2" width="88" x="426" y="126"></rect>
+<text data-en="retry · same key" data-zh="重试 · 同一把键" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="470" y="146">retry · same key</text>
+<rect fill="var(--accent-dim)" height="66" rx="9" stroke="var(--accent)" stroke-width="1.5" width="180" x="380" y="172"></rect>
+<text data-en="result: one charge" data-zh="结果：一笔扣款" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="470" y="198">result: one charge</text>
+<text data-en="(server recognized the key," data-zh="（服务器认出了这把键，" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="470" y="214">(server recognized the key,</text>
+<text data-en="replayed the recorded result)" data-zh="重放了记录的结果）" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="470" y="228">replayed the recorded result)</text>
+<!-- bottom line -->
+<text data-en="retry is safe exactly when every write is keyed — no exceptions" data-zh="重试恰好在每个写都带键时才安全——没有例外" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="278">retry is safe exactly when every write is keyed — no exceptions</text>
+</svg>
+<p class="diagram-caption" data-en="One ambiguous timeout, two worlds. Without an idempotency key, the retry duplicates the side effect and the system now holds a contradiction that only reconciliation can repair. With a key, the retry is a no-op: the server recognizes the request, replays the stored result, and the world stays consistent. The tool contract, not the model, decides which world the agent lives in." data-zh="同一次歧义超时，两个世界。没有幂等键，重试复制了副作用，系统从此握着一个只有对账才能修复的矛盾。有了键，重试就是空操作：服务器认出请求，重放存储的结果，世界保持一致。决定智能体活在哪个世界的，是工具的契约，不是模型。">One ambiguous timeout, two worlds. Without a key, the retry duplicates the side effect. With a key, the retry is a no-op: the server replays the stored result and the world stays consistent. The tool contract, not the model, decides which world the agent lives in.</p>
+</div>
+<blockquote data-en="A database gives you atomicity and hides the cost. An agent gives you the cost and hides the atomicity — every intermediate state is real, visible to users, and yours to explain. Agent engineering is distributed systems engineering with the safety nets removed and a nondeterministic scheduler in the middle." data-zh="数据库给你原子性，并藏起代价。智能体给你代价，并藏起原子性——每一个中间状态都是真实的、用户看得见的、由你来解释的。智能体工程，就是拆掉安全网、中间还塞进一个不确定调度器的分布式系统工程。">A database gives you atomicity and hides the cost. An agent gives you the cost and hides the atomicity — every intermediate state is real, visible to users, and yours to explain. Agent engineering is distributed systems engineering with the safety nets removed.</blockquote>
+<h3 data-en="Sagas: the plan includes its own undo" data-zh="Saga：计划里带上自己的撤销">Sagas: the plan includes its own undo</h3>
+<p data-en="Distributed systems that cannot lock the world still need multi-step consistency, and the pattern they converged on is the saga: a sequence of local transactions, each paired with a compensating action that semantically undoes it. Not a rollback — the original effects already happened, others may have seen them — but a second, deliberate effect that cancels the first: refund the charge, release the reservation, send the correction email. Sagas accept that intermediate states are visible and instead guarantee completion: the sequence either finishes, or every completed step is compensated. The plan is not five happy steps; it is five steps with five shadows." data-zh="锁不住整个世界的分布式系统，仍然需要多步一致性，而它们最终收敛的模式就是 saga：一串本地事务，每一个都配一个语义上撤销它的补偿动作。不是回滚——原始效果已经发生，别人可能已经看见——而第二个刻意为之、抵消第一个的效果：退款、释放锁定、发更正邮件。saga 接受中间状态可见，转而保证完成：序列要么走完，要么每一个已完成的步骤都被补偿。计划不是五个快乐的步骤，而是五个步骤加五道影子。">Distributed systems that cannot lock the world still need multi-step consistency, and the pattern they converged on is the saga: a sequence of local transactions, each paired with a compensating action that semantically undoes it. Not a rollback — the original effects already happened — but a second, deliberate effect that cancels the first: refund the charge, release the reservation, send the correction email. The plan is not five happy steps; it is five steps with five shadows.</p>
+<p data-en="Here is what makes this hard for agents, and interesting: compensation is not mechanical. A rollback reverses bytes; a compensation reverses meaning. Whether 'delete the customer record' correctly undoes 'create the customer record' depends on whether anything else touched that customer in between — an email replied to, a support ticket filed, a human who now remembers them. Compensations must be planned with the same judgment that plans the forward steps, which means the agent that executes a saga must also reason about its inverse. The practical architectures treat this explicitly: a step is not 'call the API' but a triple — the action, its compensation, and the evidence needed later to run that compensation. Tool design follows: a create tool that returns no ID is unusable in a saga, because the compensation has nothing to point at. Handles are not just context hygiene; they are the currency of undo." data-zh="让这件事对智能体来说又难又有趣的地方在于：补偿不是机械的。回滚逆转的是字节，补偿逆转的是意义。「删除客户记录」能否正确撤销「创建客户记录」，取决于这中间有没有别的东西碰过这个客户——一封被回复的邮件、一张被提交的工单、一个如今还记得他的人。补偿必须用规划正向步骤的同一份判断力来规划，这意味着执行 saga 的智能体，必须也能推理自己的逆运算。实际的架构把这一点摆到明面上：一个步骤不是「调 API」，而是一个三元组——动作、它的补偿、以及之后运行补偿所需的凭据。工具设计随之而来：不返回 ID 的 create 工具在 saga 里不可用，因为补偿无处指认。句柄不只是上下文卫生，它是撤销的货币。">Here is what makes this hard for agents, and interesting: compensation is not mechanical. A rollback reverses bytes; a compensation reverses meaning. Whether 'delete the record' undoes 'create the record' depends on what else touched that record in between. The agent that executes a saga must also reason about its inverse. A step is not 'call the API' but a triple: the action, its compensation, and the evidence needed to run it. A create tool that returns no ID is unusable in a saga — the compensation has nothing to point at.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 380" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrG1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrG2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrG3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE SAGA: FIVE STEPS AND FIVE SHADOWS" data-zh="SAGA：五个步骤与五道影子" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE SAGA: FIVE STEPS AND FIVE SHADOWS</text>
+<!-- forward chain -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.2" width="96" x="24" y="64"></rect>
+<text data-en="create cust" data-zh="创建客户" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="72" y="85">create cust</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.2" width="96" x="142" y="64"></rect>
+<text data-en="charge card" data-zh="扣款" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="190" y="85">charge card</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.2" width="96" x="260" y="64"></rect>
+<text data-en="reserve stock" data-zh="锁定库存" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="308" y="85">reserve stock</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.2" width="96" x="378" y="64"></rect>
+<text data-en="send email" data-zh="发邮件" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="426" y="85">send email</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.2" width="96" x="496" y="64"></rect>
+<text data-en="update CRM" data-zh="更新 CRM" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="544" y="85">update CRM</text>
+<path d="M120 81 L140 81" fill="none" marker-end="url(#arrG1)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<path d="M238 81 L258 81" fill="none" marker-end="url(#arrG1)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<path d="M356 81 L376 81" fill="none" marker-end="url(#arrG1)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<path d="M474 81 L494 81" fill="none" marker-end="url(#arrG1)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<!-- failure marker -->
+<path d="M426 100 L426 130" fill="none" marker-end="url(#arrG2)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<text data-en="failure here" data-zh="此处失败" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="426" y="146">failure here</text>
+<!-- compensation chain (reverse) -->
+<text data-en="COMPENSATION CASCADE →" data-zh="补偿级联 →" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="176">COMPENSATION CASCADE →</text>
+<rect fill="none" height="34" rx="8" stroke="var(--accent-3)" stroke-width="1.2" width="96" x="260" y="190"></rect>
+<text data-en="release stock" data-zh="释放库存" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="308" y="211">release stock</text>
+<rect fill="none" height="34" rx="8" stroke="var(--accent-3)" stroke-width="1.2" width="96" x="142" y="190"></rect>
+<text data-en="refund charge" data-zh="退款" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="190" y="211">refund charge</text>
+<rect fill="none" height="34" rx="8" stroke="var(--accent-3)" stroke-width="1.2" width="96" x="24" y="190"></rect>
+<text data-en="archive cust" data-zh="归档客户" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="72" y="211">archive cust</text>
+<path d="M308 106 C308 150 308 168 308 188" fill="none" marker-end="url(#arrG2)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<path d="M258 207 L240 207" fill="none" marker-end="url(#arrG2)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<path d="M140 207 L122 207" fill="none" marker-end="url(#arrG2)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<!-- ledger -->
+<rect fill="var(--bg-surface)" height="72" rx="10" stroke="var(--border)" stroke-width="1.5" width="420" x="100" y="258"></rect>
+<text data-en="the effects ledger — written as the saga runs:" data-zh="效果台账——随 saga 运行同步写入：" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="282">the effects ledger — written as the saga runs</text>
+<text data-en="step · tool · handle · idempotency key · compensation" data-zh="步骤 · 工具 · 句柄 · 幂等键 · 补偿动作" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="302">step · tool · handle · idempotency key · compensation</text>
+<text data-en="any process (or agent) can resume or compensate from this record" data-zh="任何进程（或智能体）都能凭这条记录续跑或补偿" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="320">any process (or agent) can resume or compensate from this record</text>
+<!-- resume arrow -->
+<path d="M100 294 C40 294 40 81 22 81" fill="none" marker-end="url(#arrG3)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="3,3"></path>
+</svg>
+<p class="diagram-caption" data-en="A saga-executing agent runs forward steps while recording, for each, the handle returned, the idempotency key used, and the compensation that undoes it. On failure, the cascade runs in reverse: release, refund, archive. The ledger on disk is the source of truth — a crashed run is not a disaster but a paused computation that any successor process can resume or unwind. Durability, not cleverness, is what makes the saga survivable." data-zh="执行 saga 的智能体向前跑步骤，同时为每一步记录：返回的句柄、使用的幂等键、撤销它的补偿动作。失败时，级联反向执行：释放、退款、归档。磁盘上的台账是事实来源——崩溃的运行不是灾难，而是一段暂停的计算，任何后继进程都能续跑或解开。让 saga 扛得住的，是持久性，不是聪明。">A saga-executing agent records, for each forward step, the handle returned, the idempotency key used, and the compensation that undoes it. On failure, the cascade runs in reverse. The on-disk ledger is the source of truth — a crashed run is a paused computation that any successor can resume or unwind. Durability, not cleverness, makes the saga survivable.</p>
+</div>
+<h3 data-en="The ledger is the agent's real memory" data-zh="台账才是智能体真正的记忆">The ledger is the agent's real memory</h3>
+<p data-en="Put the pieces together and a shape emerges that serious agent systems are quietly converging on. Every side effect goes through a keyed, compensable tool and lands in a durable ledger — the append-only record of what was done, under which key, with which handle. The context window holds the plan and the working set; the ledger holds the truth. A run that crashes resumes from the ledger rather than from memory, because memory is gone and the ledger is not. A run that fails compensates from the ledger, because compensation needs handles and the ledger has them. And an operator who asks 'what did the agent do to production yesterday' gets an answer in one query, instead of an archaeology project across five systems' logs." data-zh="把这些拼起来，一个形状浮现出来，严肃的智能体系统正悄悄向它收敛。每个副作用都经过带键、可补偿的工具，并落进一份持久台账——做过什么、用的哪把键、拿的哪个句柄的只追加记录。上下文窗口持有计划和工作集；台账持有真相。崩溃的运行从台账续跑，而不是从记忆，因为记忆没了而台账还在。失败的运行从台账补偿，因为补偿需要句柄而台账有。而问「昨天智能体对生产环境做了什么」的值班员，一条查询就得到答案，而不是横跨五个系统日志的考古项目。">Put the pieces together and a shape emerges that serious systems are converging on. Every side effect goes through a keyed, compensable tool and lands in a durable ledger. The context window holds the plan; the ledger holds the truth. A crashed run resumes from the ledger, because memory is gone and the ledger is not. A failed run compensates from the ledger, because compensation needs handles and the ledger has them.</p>
+<p data-en="None of this is glamorous, and that is precisely the point. The industry's attention goes to context engineering and reasoning budgets, but the difference between an agent that demos well and an agent that can be trusted with production is almost entirely this unglamorous layer: keyed writes, planned compensations, durable effects. Transactions were the invention that made databases trustworthy by making failure invisible. Sagas are the discipline that makes agents trustworthy by making failure visible, recorded, and reversible. Agents cannot have transactions. They can have something better than blind hope — if the engineering around the model is built to forgive the failures that are certain to come." data-zh="这些没有一样是光鲜的，而这恰恰是重点。行业的注意力都落在上下文工程和推理预算上，但一个 demo 惊艳的智能体和一个可以托付生产的智能体之间的差距，几乎全在这层不光鲜的东西上：带键的写、规划好的补偿、持久化的效果。事务是让数据库值得信任的发明，方式是让失败不可见。saga 是让智能体值得信任的纪律，方式是让失败可见、有记录、可逆转。智能体得不到事务，但它们可以拥有比盲目希望更好的东西——只要模型周围的工程，是为原谅那些必然到来的失败而造的。">None of this is glamorous, and that is the point. The difference between an agent that demos well and an agent trusted with production is almost entirely this unglamorous layer: keyed writes, planned compensations, durable effects. Transactions made databases trustworthy by making failure invisible. Sagas make agents trustworthy by making failure visible, recorded, and reversible. Agents cannot have transactions — but they can have something better than blind hope.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
