@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Subagent Is a Process — AI Frontlines</title>
+<meta content="Multi-agent systems did not invent a new paradigm. They reinvented the operating system's oldest idea: the process. A subagent is a forked context with a private address space, a budget, and a reaped result. Teams that understand this build agents like kernels. Teams that don't build them like group chats." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 17, 2026" data-zh="2026年10月17日">October 17, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Subagent Is a Process" data-zh="子智能体，就是进程">The Subagent Is a Process</h1>
+<p class="post-header-deck" data-en="Every few weeks the agent world announces multi-agent systems as a breakthrough. It is a breakthrough the way a rediscovered map is a breakthrough: the territory was charted in 1969. A subagent is a forked context with a private address space, a lifetime, and a result that gets reaped. The orchestrator is a scheduler. The handoff is IPC. The context window is memory. Teams that internalize this build agent systems the way kernels are built — with isolation, budgets, and reaping. Teams that don't build them the way group chats are built, and get the reliability of one." data-zh="每隔几周，智能体世界就会宣布多智能体系统是一项突破。这种突破，就像重新发现一张旧地图：这片疆域早在 1969 年就被绘制过了。一个子智能体，就是一次 fork 出来的上下文——有私有的地址空间、有生命周期、有一个最终会被回收的结果。编排者是调度器。交接是进程间通信。上下文窗口是内存。理解了这一点的团队，用内核的方式构建智能体系统——隔离、预算、回收。不理解的团队，用群聊的方式构建，然后得到群聊级别的可靠性。">Every few weeks the agent world announces multi-agent systems as a breakthrough. It is a breakthrough the way a rediscovered map is a breakthrough: the territory was charted in 1969. A subagent is a forked context with a private address space, a lifetime, and a result that gets reaped.</p>
+</header>
+<article class="post-body">
+<p data-en="Start with the problem subagents actually solve, because it is not the problem their marketing claims. The claim is parallelism — many agents working at once, dividing labor. That is real but secondary. The primary problem is memory pollution. A single context window doing a long task accumulates everything: the plan, the half-finished attempts, the tool outputs nobody needs anymore, the errors that were recovered from, the reasoning that was already compressed once and is now noise. Every token that enters the window stays in the window, and every subsequent inference pays attention across all of it. The context is not a notebook. It is memory that is never freed. By step forty of a research task, the model is reasoning over its own exhaust." data-zh="先从子智能体真正解决的问题说起，因为它并不是营销话术声称的那个问题。声称的是并行——多个智能体同时工作、分工协作。这确实存在，但是次要的。首要的问题是内存污染。一个上下文窗口在做长任务时，会积累一切：计划、半途而废的尝试、没人再需要的工具输出、已从中恢复的错误、已被压缩过一次、如今已成噪声的推理。每一个进入窗口的 token 都留在窗口里，而此后的每一次推理，都要对全部内容分配注意力。上下文不是笔记本。它是一块永不释放的内存。到研究任务的第四十步，模型是在对自己的废气进行推理。">Start with the problem subagents actually solve, because it is not the problem their marketing claims. The claim is parallelism — many agents working at once, dividing labor. That is real but secondary. The primary problem is memory pollution. A single context window doing a long task accumulates everything: the plan, the half-finished attempts, the tool outputs nobody needs anymore, the errors that were recovered from. Every token that enters the window stays in the window, and every subsequent inference pays attention across all of it. The context is not a notebook. It is memory that is never freed. By step forty of a research task, the model is reasoning over its own exhaust.</p>
+<p data-en="Subagents solve this the same way operating systems solved it sixty years ago: not by cleaning the memory, but by throwing it away entirely. A subagent gets a fresh context — a private address space where the task brief, and nothing else, lives. It thrashes, searches, errs, backtracks, fills its window with garbage. None of that garbage escapes. When the subagent finishes, only its distilled result crosses back to the parent. The messy middle — the fifty tool calls, the dead ends, the four reformulations of the query — dies with the process. The parent's context stays clean because the child's context was expendable. Isolation is not an organizational pattern. It is garbage collection by homicide." data-zh="子智能体解决这个问题的方法，和六十年前操作系统的方法一模一样：不是去清理内存，而是把它整个扔掉。一个子智能体得到一个全新的上下文——一块私有的地址空间，里面只有任务简报，没有别的。它折腾、搜索、犯错、回头、把窗口塞满垃圾。这些垃圾一个字都不会泄漏。当子智能体完成时，只有它蒸馏后的结果跨越边界回到父级。那些混乱的中间过程——五十次工具调用、那些死胡同、查询的四次重写——随进程一起消亡。父级的上下文保持干净，因为子级的上下文本来就是可牺牲的。隔离不是一种组织模式。它是通过「杀死进程」完成的垃圾回收。">Subagents solve this the same way operating systems solved it sixty years ago: not by cleaning the memory, but by throwing it away entirely. A subagent gets a fresh context — a private address space where the task brief, and nothing else, lives. It thrashes, searches, errs, backtracks, fills its window with garbage. None of that garbage escapes. When the subagent finishes, only its distilled result crosses back to the parent. The messy middle dies with the process. The parent's context stays clean because the child's context was expendable. Isolation is not an organizational pattern. It is garbage collection by homicide.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrP2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="ONE SHARED CONTEXT vs FORK / JOIN ISOLATION" data-zh="单一共享上下文 vs fork/join 隔离" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ONE SHARED CONTEXT vs FORK / JOIN ISOLATION</text>
+<!-- LEFT: shared polluted context -->
+<text data-en="MONOLITHIC CONTEXT" data-zh="单体上下文" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="150" y="56">MONOLITHIC CONTEXT</text>
+<rect fill="var(--bg-surface)" height="190" rx="10" stroke="var(--accent-3)" stroke-width="1.5" width="200" x="50" y="72"></rect>
+<text data-en="step 1: plan" data-zh="步骤1：计划" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" x="70" y="98">step 1: plan</text>
+<text data-en="step 7: dead end ✗" data-zh="步骤7：死路 ✗" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" x="70" y="120">step 7: dead end ✗</text>
+<text data-en="step 12: 40KB tool dump" data-zh="步骤12：40KB 工具输出" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" x="70" y="142">step 12: 40KB tool dump</text>
+<text data-en="step 18: retry ✗" data-zh="步骤18：重试 ✗" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" x="70" y="164">step 18: retry ✗</text>
+<text data-en="step 25: re-plan (again)" data-zh="步骤25：（又一次）重规划" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" x="70" y="186">step 25: re-plan</text>
+<text data-en="step 33: drift…" data-zh="步骤33：漂移…" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" x="70" y="208">step 33: drift…</text>
+<text data-en="every token still resident" data-zh="每个 token 仍驻留内存" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="150" y="243">every token still resident</text>
+<text data-en="attention paid across garbage" data-zh="注意力覆盖了垃圾" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="150" y="286">attention paid across garbage</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="310"></line>
+<!-- RIGHT: fork/join -->
+<text data-en="FORK → ISOLATED WORK → JOIN" data-zh="fork → 隔离执行 → join" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="56">FORK → ISOLATED WORK → JOIN</text>
+<rect fill="var(--accent-dim)" height="30" rx="8" stroke="var(--accent)" stroke-width="1.5" width="100" x="415" y="66"></rect>
+<text data-en="parent ctx" data-zh="父级上下文" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="465" y="85">parent ctx</text>
+<path d="M445 96 C420 108 405 112 390 118" fill="none" marker-end="url(#arrP2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M465 96 L465 118" fill="none" marker-end="url(#arrP2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M485 96 C510 108 525 112 540 118" fill="none" marker-end="url(#arrP2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="72" rx="8" stroke="var(--accent-2)" stroke-width="1.3" width="72" x="354" y="120"></rect>
+<text data-en="child A" data-zh="子进程 A" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="390" y="146">child A</text>
+<text data-en="trash dies" data-zh="垃圾消亡" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="390" y="162">trash dies here</text>
+<rect fill="var(--bg-surface)" height="72" rx="8" stroke="var(--accent-2)" stroke-width="1.3" width="72" x="429" y="120"></rect>
+<text data-en="child B" data-zh="子进程 B" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="465" y="146">child B</text>
+<text data-en="trash dies" data-zh="垃圾消亡" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="465" y="162">trash dies here</text>
+<rect fill="var(--bg-surface)" height="72" rx="8" stroke="var(--accent-2)" stroke-width="1.3" width="72" x="504" y="120"></rect>
+<text data-en="child C" data-zh="子进程 C" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="540" y="146">child C</text>
+<text data-en="trash dies" data-zh="垃圾消亡" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="540" y="162">trash dies here</text>
+<path d="M390 192 C420 208 440 212 455 216" fill="none" marker-end="url(#arrP2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M465 192 L465 216" fill="none" marker-end="url(#arrP2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M540 192 C510 208 490 212 475 216" fill="none" marker-end="url(#arrP2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="30" rx="8" stroke="var(--accent)" stroke-width="1.5" width="120" x="405" y="218"></rect>
+<text data-en="digest only joins" data-zh="只有摘要回流" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="465" y="237">digest only joins</text>
+<text data-en="parent stays clean" data-zh="父级保持干净" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="465" y="286">parent stays clean</text>
+</svg>
+<p class="diagram-caption" data-en="Left: one context does everything, so everything it ever did stays resident and taxes every future step. Right: the parent forks children with private contexts; each child burns its own window on the messy work, and only a distilled digest crosses back at the join point. The parent never sees the garbage. That is the whole point." data-zh="左边：一个上下文包办一切，于是它做过的一切都驻留内存，并向之后的每一步征税。右边：父级 fork 出拥有私有上下文的子进程；每个子进程在自己的窗口里烧掉那些混乱的工作，而只有一个蒸馏后的摘要在 join 点回流。父级永远看不见垃圾。这正是全部意义所在。">Left: one context does everything, so everything it ever did stays resident and taxes every future step. Right: the parent forks children with private contexts; each child burns its own window on the messy work, and only a distilled digest crosses back at the join point. The parent never sees the garbage. That is the whole point.</p>
+</div>
+<h3 data-en="The lifecycle is the contract" data-zh="生命周期，就是契约">The lifecycle is the contract</h3>
+<p data-en="Once the process metaphor clicks, the design questions change shape. A subagent needs the same four things a process needs, and a system that omits any of them will fail in the way operating systems failed before they learned these lessons. First, a spawn contract: the brief passed to the child must be complete and self-contained, because the child cannot see the parent's memory. A instruction like 'continue researching what we found earlier' is a segmentation fault — it dereferences memory the child does not have. Second, a budget: CPU time in kernels, tokens and steps in agents. An unbounded child is a fork bomb with a friendly face. Third, a lifetime: the child must know what 'done' means, or it will orbit the task forever, polishing a result nobody asked for. Fourth, a reaped result: a structured return value, not a stream of consciousness. The join point should receive a record, not a confession." data-zh="一旦进程这个比喻成立，设计问题的形状就变了。一个子智能体需要和一个进程一样的四样东西，而缺了任何一样的系统，都会以操作系统学会这些教训之前的那种方式失败。第一，spawn 契约：传给子级的任务简报必须是完整、自包含的，因为子级看不见父级的内存。一句「继续研究我们之前发现的」就是一次段错误——它解引用了子级并不拥有的内存。第二，预算：内核里是 CPU 时间，智能体里是 token 和步数。一个无上限的子级，就是一颗带着友善面孔的 fork 炸弹。第三，生命周期：子级必须知道什么叫「完成」，否则它会永远绕着任务打转，打磨一个没人要的结果。第四，被回收的结果：一个结构化的返回值，而不是一段意识流。join 点收到的应该是一条记录，不是一场忏悔。">Once the process metaphor clicks, the design questions change shape. A subagent needs the same four things a process needs, and a system that omits any of them will fail in the way operating systems failed before they learned these lessons. First, a spawn contract: the brief passed to the child must be complete and self-contained, because the child cannot see the parent's memory. An instruction like 'continue researching what we found earlier' is a segmentation fault — it dereferences memory the child does not have. Second, a budget: CPU time in kernels, tokens and steps in agents. An unbounded child is a fork bomb with a friendly face. Third, a lifetime: the child must know what 'done' means, or it will orbit the task forever. Fourth, a reaped result: a structured return value, not a stream of consciousness. The join point should receive a record, not a confession.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrL2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE SUBAGENT LIFECYCLE — FOUR CONTRACTS" data-zh="子智能体生命周期——四份契约" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE SUBAGENT LIFECYCLE — FOUR CONTRACTS</text>
+<rect fill="var(--bg-surface)" height="58" rx="9" stroke="var(--accent)" stroke-width="1.8" width="120" x="40" y="70"></rect>
+<text data-en="SPAWN" data-zh="SPAWN" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="100" y="94">SPAWN</text>
+<text data-en="complete brief" data-zh="完整简报" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="100" y="112">complete brief</text>
+<line marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.6" x1="160" x2="185" y1="99" y2="99"></line>
+<rect fill="var(--bg-surface)" height="58" rx="9" stroke="var(--accent-2)" stroke-width="1.8" width="120" x="188" y="70"></rect>
+<text data-en="BUDGET" data-zh="BUDGET" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="248" y="94">BUDGET</text>
+<text data-en="tokens · steps · wall clock" data-zh="token · 步数 · 时钟" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="248" y="112">tokens · steps · clock</text>
+<line marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.6" x1="308" x2="333" y1="99" y2="99"></line>
+<rect fill="var(--bg-surface)" height="58" rx="9" stroke="var(--accent-2)" stroke-width="1.8" width="120" x="336" y="70"></rect>
+<text data-en="LIFETIME" data-zh="LIFETIME" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="396" y="94">LIFETIME</text>
+<text data-en="defined 'done'" data-zh="明确的「完成」" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="396" y="112">defined 'done'</text>
+<line marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.6" x1="456" x2="481" y1="99" y2="99"></line>
+<rect fill="var(--accent-dim)" height="58" rx="9" stroke="var(--accent)" stroke-width="1.8" width="120" x="484" y="70"></rect>
+<text data-en="REAP" data-zh="REAP" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="544" y="94">REAP</text>
+<text data-en="structured result" data-zh="结构化结果" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="544" y="112">structured result</text>
+<!-- failure exits below -->
+<path d="M100 128 C100 170 170 178 200 172" fill="none" marker-end="url(#arrL2)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<path d="M248 128 C248 165 280 170 300 168" fill="none" marker-end="url(#arrL2)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<path d="M396 128 C396 160 380 165 365 164" fill="none" marker-end="url(#arrL2)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<rect fill="var(--bg-surface)" height="34" rx="7" stroke="var(--accent-3)" stroke-width="1.3" width="210" x="155" y="150"></rect>
+<text data-en="KILL: budget exhausted / no done" data-zh="KILL：预算耗尽 / 无完成条件" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="260" y="172">KILL: budget exhausted / no 'done'</text>
+<text data-en="a killed child must still return a record — what it tried, what it found, why it stopped — or the parent inherits an unexplainable hole" data-zh="被杀死的子进程也必须返回一条记录——试了什么、发现了什么、为何停止——否则父级继承的是一个无法解释的空洞" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10.5" font-style="italic" text-anchor="middle" x="310" y="232">a killed child must still return a record — what it tried, what it found, why it stopped</text>
+<text data-en="failures are results too" data-zh="失败，也是结果" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="256">failures are results too</text>
+</svg>
+<p class="diagram-caption" data-en="Spawn, budget, lifetime, reap — the four contracts of a subagent, mapped one-to-one onto the lifecycle of a process. The dashed exits matter as much as the happy path: a child that runs out of budget must be killed cleanly and must still report why. An agent system that can only handle children that succeed has not built isolation; it has built optimism." data-zh="Spawn、budget、lifetime、reap——子智能体的四份契约，与进程的生命周期一一对应。虚线的退出路径与主路径同样重要：一个耗尽预算的子进程必须被干净地杀死，并且仍然必须报告原因。一个只能处理「成功子进程」的智能体系统，构建的不是隔离，而是乐观主义。">Spawn, budget, lifetime, reap — the four contracts of a subagent, mapped one-to-one onto the lifecycle of a process. The dashed exits matter as much as the happy path: a child that runs out of budget must be killed cleanly and must still report why. An agent system that can only handle children that succeed has not built isolation; it has built optimism.</p>
+</div>
+<h3 data-en="IPC is where multi-agent systems die" data-zh="进程间通信，是多智能体系统的死因">IPC is where multi-agent systems die</h3>
+<p data-en="Operating systems history has a precise lesson here: process isolation was solved decades ago, and inter-process communication has been producing bugs ever since. Agent systems are replaying this exactly. Spawning a subagent is easy. Getting information back and forth — deciding what the child needs to know, what format results arrive in, how errors are represented, what happens when two children disagree — is the entire engineering problem. Most 'multi-agent frameworks' are, on inspection, mostly IPC machinery: message schemas, handoff protocols, shared blackboards, result contracts. The agents are the easy part. The pipes are the product." data-zh="操作系统的历史在这里有一个精确的教训：进程隔离几十年前就解决了，而进程间通信从那时起就一直在制造 bug。智能体系统正在一字不差地重演这一幕。spawn 一个子智能体很容易。让信息来回流动——决定子级需要知道什么、结果以什么格式抵达、错误如何表示、两个子级意见不合时怎么办——这才是工程问题的全部。细看之下，大多数「多智能体框架」的主体就是 IPC 机制：消息 schema、交接协议、共享黑板、结果契约。智能体是容易的部分。管道，才是产品。">Operating systems history has a precise lesson here: process isolation was solved decades ago, and inter-process communication has been producing bugs ever since. Agent systems are replaying this exactly. Spawning a subagent is easy. Getting information back and forth — deciding what the child needs to know, what format results arrive in, how errors are represented, what happens when two children disagree — is the entire engineering problem. Most 'multi-agent frameworks' are, on inspection, mostly IPC machinery. The agents are the easy part. The pipes are the product.</p>
+<p data-en="The failure mode to fear is the group chat. Two agents given a shared conversation become two processes sharing raw memory: each reads the other's half-formed thoughts, responds to them, and the shared context degrades into a mutual pollution spiral that no participant can escape, because neither can forget anything the other said. What looks like collaboration is contention. The fix is the same one kernels chose: structured channels instead of shared memory. Agents should exchange typed messages — claims with sources, results with confidence, errors with context — not streaming their cognition at each other. Every conversation between agents deserves a schema. Every handoff deserves a contract. Loose talk between agents is not richer communication; it is a race condition with vocabulary." data-zh="最需要警惕的失败模式，是群聊。两个共享同一段对话的智能体，就是两个共享裸内存的进程：各自读着对方半成品的想法、回应着它们，共享上下文退化为一场双方都无法逃脱的互相污染螺旋——因为谁也无法遗忘对方说过的任何话。看起来像协作的，其实是争用。修法和内核的选择一样：用结构化通道取代共享内存。智能体之间应该交换有类型的消息——带来源的论断、带置信度的结果、带上下文的错误——而不是向彼此直播自己的思维过程。智能体之间的每一场对话都值得一个 schema。每一次交接都值得一份契约。智能体之间的闲聊不是更丰富的沟通；它是一场带词汇表的竞态条件。">The failure mode to fear is the group chat. Two agents given a shared conversation become two processes sharing raw memory: each reads the other's half-formed thoughts, responds to them, and the shared context degrades into a mutual pollution spiral that no participant can escape. What looks like collaboration is contention. The fix is the same one kernels chose: structured channels instead of shared memory. Agents should exchange typed messages — claims with sources, results with confidence, errors with context — not streaming their cognition at each other. Loose talk between agents is not richer communication; it is a race condition with vocabulary.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrI1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrI2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="SHARED MEMORY vs STRUCTURED CHANNELS" data-zh="共享内存 vs 结构化通道" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">SHARED MEMORY vs STRUCTURED CHANNELS</text>
+<!-- LEFT: shared memory spiral -->
+<text data-en="THE GROUP CHAT" data-zh="群聊模式" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="150" y="54">THE GROUP CHAT</text>
+<circle cx="105" cy="120" fill="var(--bg-surface)" r="30" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="agent A" data-zh="智能体 A" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="105" y="124">agent A</text>
+<circle cx="195" cy="120" fill="var(--bg-surface)" r="30" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="agent B" data-zh="智能体 B" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="195" y="124">agent B</text>
+<path d="M133 106 C160 88 172 88 167 104" fill="none" marker-end="url(#arrI1)" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<path d="M167 134 C140 152 128 152 133 136" fill="none" marker-end="url(#arrI1)" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<rect fill="var(--bg-surface)" height="64" rx="8" stroke="var(--accent-3)" stroke-width="1.3" width="160" x="70" y="176"></rect>
+<text data-en="one shared window" data-zh="一个共享窗口" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="150" y="198">one shared window</text>
+<text data-en="half-thoughts, retries," data-zh="半成品想法、重试、" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="150" y="214">half-thoughts, retries,</text>
+<text data-en="nothing can be forgotten" data-zh="无物可被遗忘" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="150" y="228">nothing can be forgotten</text>
+<text data-en="contention, not collaboration" data-zh="是争用，不是协作" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="150" y="286">contention, not collaboration</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="46" y2="300"></line>
+<!-- RIGHT: structured channels -->
+<text data-en="THE KERNEL WAY" data-zh="内核的方式" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="54">THE KERNEL WAY</text>
+<circle cx="400" cy="120" fill="var(--bg-surface)" r="30" stroke="var(--accent)" stroke-width="1.5"></circle>
+<text data-en="agent A" data-zh="智能体 A" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="400" y="124">agent A</text>
+<circle cx="530" cy="120" fill="var(--bg-surface)" r="30" stroke="var(--accent)" stroke-width="1.5"></circle>
+<text data-en="agent B" data-zh="智能体 B" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="530" y="124">agent B</text>
+<rect fill="var(--accent-dim)" height="46" rx="8" stroke="var(--accent)" stroke-width="1.8" width="60" x="435" y="97"></rect>
+<text data-en="typed" data-zh="有类型" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="465" y="116">typed</text>
+<text data-en="channel" data-zh="通道" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="465" y="130">channel</text>
+<path d="M372 114 L431 114" fill="none" marker-end="url(#arrI2)" stroke="var(--accent)" stroke-width="1.4"></path>
+<path d="M499 126 L498 126" fill="none" stroke="var(--accent)" stroke-width="1.4"></path>
+<path d="M499 120 L528 122" fill="none" marker-end="url(#arrI2)" stroke="var(--accent)" stroke-width="1.4"></path>
+<text data-en="{claim, source," data-zh="{论断, 来源," fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="465" y="176">{claim, source,</text>
+<text data-en="confidence, cost}" data-zh="置信度, 成本}" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="465" y="190">confidence, cost}</text>
+<text data-en="each context private · exchange is a contract" data-zh="各上下文私有 · 交换即契约" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="465" y="240">each context private · exchange is a contract</text>
+<text data-en="collaboration without contamination" data-zh="协作，而非互相污染" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="465" y="286">collaboration without contamination</text>
+</svg>
+<p class="diagram-caption" data-en="Left: two agents in one shared window read each other's raw cognition — every half-thought permanent, every participant taxed, the conversation itself becoming the pollution. Right: private contexts joined by a typed channel carrying structured messages. The difference between the two diagrams is the difference between a system that degrades as it talks and a system that compounds as it talks." data-zh="左边：两个智能体共享一个窗口，读着彼此的原始思维——每个半成品想法都永久驻留，每个参与者都被征税，对话本身变成了污染源。右边：私有上下文，由一条承载结构化消息的有类型通道连接。两张图的差别，就是一个「越交谈越退化」的系统，和一个「越交谈越增值」的系统之间的差别。">Left: two agents in one shared window read each other's raw cognition — every half-thought permanent, every participant taxed, the conversation itself becoming the pollution. Right: private contexts joined by a typed channel carrying structured messages. The difference is the difference between a system that degrades as it talks and a system that compounds as it talks.</p>
+</div>
+<blockquote data-en="A multi-agent system is not a team of minds. It is a set of disposable contexts connected by contracts. Romance belongs in the demo; isolation belongs in production. The sooner an agent architecture stops pretending its subagents are colleagues and starts treating them as processes — spawned with a brief, bounded by a budget, killed on timeout, reaped for a record — the sooner it stops failing like a group chat and starts failing like a kernel: rarely, loudly, and for reasons you can read in a log." data-zh="多智能体系统不是一队心灵。它是一组由契约连接的、可抛弃的上下文。浪漫属于 demo，隔离属于生产环境。一个智能体架构越早停止假装它的子智能体是「同事」、越早把它们当作进程来对待——用简报 spawn、用预算设限、超时即杀、回收取记录——它就越早停止像群聊一样失败，并开始像内核一样失败：很少失败，失败时很响亮，而且原因能在一行日志里读明白。">A multi-agent system is not a team of minds. It is a set of disposable contexts connected by contracts. Romance belongs in the demo; isolation belongs in production. The sooner an agent architecture stops pretending its subagents are colleagues and starts treating them as processes — spawned with a brief, bounded by a budget, killed on timeout, reaped for a record — the sooner it stops failing like a group chat and starts failing like a kernel: rarely, loudly, and for reasons you can read in a log.</blockquote>
+<h3 data-en="What the kernel knows that the framework doesn't" data-zh="内核懂的，框架还不懂">What the kernel knows that the framework doesn't</h3>
+<p data-en="There is a counterargument worth taking seriously: models are not processes. A process is deterministic and stupid; a model is stochastic and smart. Why import sixty years of systems machinery for components that can, in principle, negotiate their own coordination? Because principle is not production. In practice, smart components under loose coordination produce emergent behavior that no one designed — conversations that never terminate, handoffs that lose their payload, two agents each certain the other is handling the edge case. Intelligence does not remove the need for boundaries; it raises the stakes of their absence, because an intelligent component fails in creative directions. The kernel's machinery — budgets, contracts, isolation, reaping — exists precisely because coordinating many actors is hard even when the actors are simple. It does not get easier when the actors are clever. It gets more important." data-zh="有一个值得认真对待的反驳：模型不是进程。进程是确定性且愚蠢的；模型是随机的且聪明的。为什么要为原则上能自己协商协调的组件，引入六十年的系统机制？因为「原则上」不等于「生产环境」。实践中，松散协调下的聪明组件，会产生没人设计过的涌现行为——永不终止的对话、丢失载荷的交接、两个智能体都确信对方在处理那个边缘情况。智能并没有移除对边界的需要；它抬高了边界缺席的代价，因为一个智能的组件会朝创造性的方向失败。内核的机制——预算、契约、隔离、回收——之所以存在，恰恰因为即使参与者很简单，协调许多参与者也很困难。参与者变聪明，这件事不会变容易。只会变得更重要。">There is a counterargument worth taking seriously: models are not processes. A process is deterministic and stupid; a model is stochastic and smart. Why import sixty years of systems machinery for components that can, in principle, negotiate their own coordination? Because principle is not production. In practice, smart components under loose coordination produce emergent behavior that no one designed — conversations that never terminate, handoffs that lose their payload, two agents each certain the other is handling the edge case. Intelligence does not remove the need for boundaries; it raises the stakes of their absence. The kernel's machinery exists precisely because coordinating many actors is hard even when the actors are simple. It does not get easier when the actors are clever. It gets more important.</p>
+<p data-en="The practical takeaway is unglamorous. When designing a multi-agent system, spend the minority of time on the agents and the majority on the seams. Define the spawn brief as a schema, not a paragraph. Give every child a token budget, a step budget, and a deadline, and make the kill path a first-class flow that returns a partial result and a reason. Make the join point a parser with validation, not a parent model trusted to read whatever arrives. Log the messages on every channel the way kernels log syscalls — boring, structured, greppable. None of this is exciting. None of it demos well. But the systems that survive contact with real workloads are the ones built by people who understood, early, that they were not designing a society of minds. They were writing a scheduler, and the scheduler's job is not to make the processes smart. It is to make their failures small, isolated, and over on time." data-zh="实际的做法毫不炫目。设计多智能体系统时，把少数时间花在智能体上，把多数时间花在接缝上。把 spawn 简报定义为 schema，而不是一段话。给每个子级 token 预算、步数预算和截止时间，并把杀死路径做成一等公民的流程——返回部分结果和一个原因。让 join 点是一个带校验的解析器，而不是一个被信任去「随便读读」的父级模型。像内核记录 syscall 那样记录每条通道上的消息——枯燥、结构化、可 grep。这些没有一样令人兴奋，没有一样在 demo 里好看。但能在真实负载下活下来的系统，是由那些早早明白这一点的人构建的：他们设计的不是一个心灵的社会。他们在写一个调度器，而调度器的职责不是让进程变聪明。是让进程的失败变小、被隔离、并且准时结束。" >The practical takeaway is unglamorous. When designing a multi-agent system, spend the minority of time on the agents and the majority on the seams. Define the spawn brief as a schema, not a paragraph. Give every child a token budget, a step budget, and a deadline, and make the kill path a first-class flow that returns a partial result and a reason. Make the join point a parser with validation, not a parent model trusted to read whatever arrives. Log the messages on every channel the way kernels log syscalls — boring, structured, greppable. None of this is exciting. But the systems that survive contact with real workloads are the ones built by people who understood, early, that they were not designing a society of minds. They were writing a scheduler, and the scheduler's job is not to make the processes smart. It is to make their failures small, isolated, and over on time.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
