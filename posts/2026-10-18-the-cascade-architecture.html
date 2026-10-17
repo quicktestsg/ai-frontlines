@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Cascade: Architecture of Affordable Intelligence — AI Frontlines</title>
+<meta content="Agent loops multiply tokens, and every token has a price. The teams that ship sustainable agents don't buy the smartest model for every step — they build cascades: routing graphs that send each step to the cheapest intelligence that can handle it, and escalate only when a verifier says so. Affordable intelligence is an architecture property, not a model property." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 18, 2026" data-zh="2026年10月18日">October 18, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Cascade: Architecture of Affordable Intelligence" data-zh="级联：可负担智能的架构">The Cascade: Architecture of Affordable Intelligence</h1>
+<p class="post-header-deck" data-en="An agent loop multiplies tokens. A fifty-step run at frontier-model prices is not a rounding error — it is a line item that decides whether the product survives. The reflex is to chase cheaper models. The correct move is stranger: stop thinking about models and start thinking about routing. A cascade sends every step of a run to the cheapest tier of intelligence that can handle it, and escalates upward only when a verifier — not a vibe — says the cheap tier has failed. Affordable intelligence is not a model property. It is a graph property." data-zh="智能体循环会让 token 成倍增加。一次五十步的运行、按旗舰模型的价格计费，不是四舍五入的零头——它是决定产品能否存活的一项成本。直觉反应是去追更便宜的模型。正确的动作却更反直觉：别再想模型，开始想路由。级联，把一次运行中的每一步，都发给能搞定它的最便宜的智能层级，并且只在一个验证器——而不是一种感觉——判定便宜层失败时，才向上升级。可负担的智能，不是模型的属性。它是图的属性。">An agent loop multiplies tokens. A fifty-step run at frontier-model prices is not a rounding error — it is a line item that decides whether the product survives.</p>
+</header>
+<article class="post-body">
+<p data-en="The economics of agents are brutal in a way that chatbots never had to face. A chatbot makes one model call per question. An agent makes one per step — and a step is cheap to take and easy to multiply. Retrieval, planning, tool selection, argument formatting, output checking, summarization: each is a model call, each call carries the whole context again, and each call is billed at the rate of whatever model sits inside the loop. Drop a frontier model into that loop and the arithmetic turns hostile. The same task that cost pennies as a single-shot prompt costs dollars as an agent run — not because the model got dumber, but because the loop multiplied it." data-zh="智能体的经济性，以一种聊天机器人从未面对过的方式残酷。聊天机器人每个问题调用一次模型。智能体每步调用一次——而一步的代价很低、很容易翻倍。检索、规划、工具选择、参数格式化、输出检查、总结：每一个都是一次模型调用，每次调用都要重新携带全部上下文，而每次调用都按循环里那个模型的费率计费。把一个旗舰模型放进这个循环，算术立刻变得充满敌意。同一个任务，作为单发 prompt 只要几分钱，作为智能体运行却要几美元——不是因为模型变笨了，而是循环把它乘了起来。">The economics of agents are brutal in a way that chatbots never had to face. A chatbot makes one model call per question. An agent makes one per step — and a step is cheap to take and easy to multiply.</p>
+<p data-en="Most teams discover this in production, when the invoice arrives. Then they swing to the other extreme: swap the frontier model for the cheapest fast model in every step, and watch quality collapse — because a few steps in every run genuinely do need the expensive reasoning, and cheapening those steps cheapens the whole run. Both failures share one root: the assumption that a run has one model. It doesn't. A run has steps, steps differ in difficulty, and difficulty is routable. That is the entire premise of the cascade." data-zh="大多数团队是在生产环境里、账单到达的那一刻才发现这一点。然后他们摆向另一个极端：把每一步都换成最便宜的快速模型，然后眼看质量崩塌——因为每次运行中，总有几步真的需要昂贵的推理，把那几步变廉价，整个运行就变廉价了。这两种失败有同一个根源：假设一次运行只有一个模型。不是的。一次运行有多个步骤，步骤难度各不相同，而难度是可以路由的。这就是级联的全部前提。">Most teams discover this in production, when the invoice arrives. Then they swing to the other extreme: swap the frontier model for the cheapest fast model in every step, and watch quality collapse.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 380" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrC2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrC3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrC4" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE CASCADE: ROUTE BY DIFFICULTY, ESCALATE ON EVIDENCE" data-zh="级联：按难度路由，凭证据升级" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE CASCADE: ROUTE BY DIFFICULTY, ESCALATE ON EVIDENCE</text>
+<!-- input -->
+<rect fill="var(--bg-surface)" height="32" rx="8" stroke="var(--text-tertiary)" stroke-width="1.5" width="110" x="255" y="44"></rect>
+<text data-en="step input" data-zh="步骤输入" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="65">step input</text>
+<path d="M310 76 L310 92" fill="none" marker-end="url(#arrC4)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<!-- triage -->
+<rect fill="var(--accent-dim)" height="38" rx="9" stroke="var(--accent)" stroke-width="2" width="160" x="230" y="94"></rect>
+<text data-en="triage node" data-zh="分诊节点" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="310" y="112">triage node</text>
+<text data-en="estimate difficulty" data-zh="评估难度" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="126">estimate difficulty</text>
+<!-- fan-out to tiers -->
+<path d="M250 132 C190 156 130 164 100 184" fill="none" marker-end="url(#arrC3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<path d="M310 132 L310 184" fill="none" marker-end="url(#arrC2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<path d="M370 132 C430 156 490 164 520 184" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- tier 1: flash -->
+<rect fill="var(--bg-surface)" height="42" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="130" x="35" y="186"></rect>
+<text data-en="tier 1 · flash" data-zh="层级 1 · 快速" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="100" y="204">tier 1 · flash</text>
+<text data-en="format · extract · route" data-zh="格式化 · 抽取 · 分流" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="100" y="219">format · extract · route</text>
+<text data-en="~1× cost" data-zh="约 1× 成本" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="100" y="250">~1× cost</text>
+<!-- tier 2: mid -->
+<rect fill="var(--bg-surface)" height="42" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="130" x="245" y="186"></rect>
+<text data-en="tier 2 · workhorse" data-zh="层级 2 · 主力" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="204">tier 2 · workhorse</text>
+<text data-en="tools · drafts · code" data-zh="工具 · 草稿 · 代码" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="219">tools · drafts · code</text>
+<text data-en="~10× cost" data-zh="约 10× 成本" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="250">~10× cost</text>
+<!-- tier 3: frontier -->
+<rect fill="var(--bg-surface)" height="42" rx="8" stroke="var(--accent)" stroke-width="1.5" width="130" x="455" y="186"></rect>
+<text data-en="tier 3 · frontier" data-zh="层级 3 · 旗舰" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="520" y="204">tier 3 · frontier</text>
+<text data-en="deep reason · hard bugs" data-zh="深度推理 · 疑难问题" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="520" y="219">deep reason · hard bugs</text>
+<text data-en="~100× cost" data-zh="约 100× 成本" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="520" y="250">~100× cost</text>
+<!-- verifier row -->
+<path d="M100 228 C100 268 200 278 243 284" fill="none" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="3,2"></path>
+<path d="M310 228 L310 276" fill="none" stroke="var(--accent-2)" stroke-width="1.2" stroke-dasharray="3,2"></path>
+<path d="M520 228 C520 268 420 278 377 284" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="3,2"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.5" width="140" x="240" y="278"></rect>
+<text data-en="verifier" data-zh="验证器" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="293">verifier</text>
+<text data-en="pass? · confidence?" data-zh="通过？· 置信度？" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="306">pass? · confidence?</text>
+<!-- outputs -->
+<path d="M240 295 C180 295 160 330 130 342" fill="none" marker-end="url(#arrC4)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<text data-en="✓ emit" data-zh="✓ 输出" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="105" y="352">✓ emit</text>
+<path d="M380 295 C440 295 460 330 490 342" fill="none" marker-end="url(#arrC3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<text data-en="✗ escalate ↑" data-zh="✗ 升级 ↑" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="520" y="352">✗ escalate ↑</text>
+</svg>
+<p class="diagram-caption" data-en="A triage node estimates the difficulty of each step and routes it to a tier. Every tier's output passes a verifier. A pass is emitted; a failure escalates one tier up, carrying the failed attempt as context. The expensive model is not the default — it is the last resort, reached only on evidence." data-zh="分诊节点评估每一步的难度，并把它路由到对应的层级。每个层级的输出都要经过验证器。通过就输出；失败就向上升级一层，并把失败的尝试作为上下文带上。昂贵的模型不是默认选项——它是最后的手段，只有凭证据才能到达。">A triage node estimates the difficulty of each step and routes it to a tier. Every tier's output passes a verifier. A pass is emitted; a failure escalates one tier up, carrying the failed attempt as context. The expensive model is not the default — it is the last resort, reached only on evidence.</p>
+</div>
+<h3 data-en="The step is the unit of accounting" data-zh="步骤，才是计费的单元">The step is the unit of accounting</h3>
+<p data-en="The first move in cascade design is to stop treating the run as an indivisible whole. Look at a real trace of a coding agent and count what the model is actually doing. In a representative fifty-step run, a large share of steps are mechanical: re-reading a file, formatting a tool argument, deciding which of three tools to call, summarizing a result for the next step. These steps barely need intelligence at all — they need reliability, speed, and price. A much smaller share are the load-bearing steps: the architectural decision, the subtle bug, the ambiguous requirement where reasoning quality decides the outcome. The distribution is not uniform, and it is not random — it is predictable by step type. Formatting is always cheap. Diagnosis is sometimes expensive. Routing steps by type, before any model is invoked, is where most of the savings live." data-zh="级联设计的第一步，是停止把一次运行当作不可分割的整体。看一条真实的编程智能体追踪记录，数一数模型到底在做什么。在一次典型的五十步运行里，很大一部分步骤是机械性的：重读一个文件、格式化一个工具参数、在三个工具里决定调用哪个、为下一步总结结果。这些步骤几乎不需要智能——它们需要的是可靠性、速度和价格。小得多的一部分，才是承重的步骤：架构决策、微妙的 bug、需求模糊之处——在这些地方，推理质量决定成败。这个分布不均匀，也不随机——它按步骤类型是可以预测的。格式化永远便宜。诊断有时昂贵。在任何模型被调用之前，就按类型路由步骤，最大的节省就在这里。">The first move in cascade design is to stop treating the run as an indivisible whole. Look at a real trace of a coding agent and count what the model is actually doing. In a representative fifty-step run, a large share of steps are mechanical: re-reading a file, formatting a tool argument, deciding which of three tools to call. These steps barely need intelligence at all — they need reliability, speed, and price.</p>
+<p data-en="This is also why the cascade belongs in the graph, not in the prompt. Telling a single all-purpose model to 'think briefly when the task is easy' is a wish, not a mechanism — the model bills the same rate whether it thinks briefly or at length, and its own estimate of difficulty is exactly the thing being distrusted. A cascade makes the decision structural: the triage node is a node, the tiers are nodes, the escalation edges are edges with conditions attached. Each one can be tested, priced, and improved independently. When a cheaper model lands next quarter, it drops into tier 1 without touching the rest of the graph. When a step type proves harder than expected, its routing rule changes in one place. The cascade is not a hack around model prices. It is the admission that pricing is a routing problem, and routing is an engineering discipline." data-zh="这也是为什么级联应该放在图里，而不是放在 prompt 里。对一个全能模型说「任务简单时简短思考」是一个愿望，不是一个机制——无论思考得长还是短，模型按同样的费率计费，而它自己对难度的估计，恰恰就是那个不被信任的东西。级联把决策变成结构性的：分诊节点是一个节点，各层级是节点，升级边是带条件的边。每一个都可以被独立测试、定价和改进。下季度更便宜的模型发布时，它直接落进层级 1，不用动图的其余部分。当某类步骤比预期更难时，它的路由规则只在一处修改。级联不是绕开模型价格的 hack。它是这样一个承认：定价是一个路由问题，而路由是一门工程学科。">This is also why the cascade belongs in the graph, not in the prompt. Telling a single all-purpose model to 'think briefly when the task is easy' is a wish, not a mechanism. A cascade makes the decision structural: the triage node is a node, the tiers are nodes, the escalation edges are edges with conditions attached.</p>
+<blockquote data-en="A cascade is not a hack around model prices. It is the admission that pricing is a routing problem — and routing is an engineering discipline. The model providers sell intelligence by the token. The engineering team's job is to decide which tokens are worth buying." data-zh="级联不是绕开模型价格的 hack。它是这样一个承认：定价是一个路由问题——而路由是一门工程学科。模型厂商按 token 出售智能。工程团队的职责，是判断哪些 token 值得买。">A cascade is not a hack around model prices. It is the admission that pricing is a routing problem — and routing is an engineering discipline. The model providers sell intelligence by the token. The engineering team's job is to decide which tokens are worth buying.</blockquote>
+<h3 data-en="Escalation is not failure" data-zh="升级不是失败">Escalation is not failure</h3>
+<p data-en="The heart of the cascade is the escalation edge, and the heart of the escalation edge is the verifier. Something must decide that tier 1's answer is not good enough — before the answer reaches the user or the next step consumes it. That something cannot be the tier 1 model grading its own work; self-assessed confidence is noisy at exactly the moments that matter. It works far better as a cheap, structural check: does the output parse, does the code compile, does the retrieved citation exist, does the tool call have valid arguments, does the answer satisfy the schema. Verifiers made of structure — tests, schemas, type checks, executable assertions — are more trustworthy than verifiers made of model opinions, and they cost nearly nothing. The cascade escalates on evidence: a failed check, a violated constraint, a retry budget exhausted. Not on a hunch." data-zh="级联的核心是升级边，升级边的核心是验证器。必须有某个东西判定层级 1 的答案不够好——在这个答案到达用户或被下一步消费之前。这个东西不能是层级 1 模型给自己的作业打分；自我评估的置信度，恰恰在最要命的时刻最不可靠。远为有效的，是廉价的结构性检查：输出能否解析、代码能否编译、引用的出处是否存在、工具参数是否合法、答案是否符合 schema。由结构构成的验证器——测试、schema、类型检查、可执行的断言——比由模型观点构成的验证器更可信，而成本几乎为零。级联凭证据升级：一次未通过的检查、一条被违反的约束、一个被耗尽的重试预算。而不是凭预感。">The heart of the cascade is the escalation edge, and the heart of the escalation edge is the verifier. Something must decide that tier 1's answer is not good enough — before the answer reaches the user or the next step consumes it.</p>
+<p data-en="Escalation should also carry its history. When a step escalates from tier 1 to tier 2, the higher tier should receive the failed attempt and the verifier's reason for rejecting it. This does two things. It makes the expensive call cheaper, because the strong model does not re-derive what the weak model already established — it debugs it. And it turns every escalation into labeled training data: a record of exactly what the cheap tier could not do, which is the precise boundary needed to tune the triage node. Teams that log escalations diligently watch their routing get sharper month over month, as patterns emerge — this tool combination always escalates, that document type never does. Teams that discard escalation traces are running the cascade blind, paying for a routing graph they never learn from." data-zh="升级还应该携带它的历史。当一步从层级 1 升级到层级 2 时，高一层应该收到失败的尝试，以及验证器拒绝它的理由。这带来两件事。它让昂贵的调用更便宜，因为强模型不必重新推导弱模型已经建立的东西——它是在调试。它还把每一次升级变成带标注的训练数据：一份关于便宜层级干不了什么的精确记录，而这正是调校分诊节点所需要的精确边界。认真记录升级日志的团队，会看着自己的路由逐月变利——这种工具组合总是升级，那类文档从来不升。丢弃升级痕迹的团队，是在盲跑级联，为一个他们从不从中学习的路由图付钱。">Escalation should also carry its history. When a step escalates from tier 1 to tier 2, the higher tier should receive the failed attempt and the verifier's reason for rejecting it. This does two things. It makes the expensive call cheaper, because the strong model does not re-derive what the weak model already established — it debugs it.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrE1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrE2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrE3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE ESCALATION EDGE: EVIDENCE IN, HISTORY OUT" data-zh="升级边：证据进，历史出" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE ESCALATION EDGE: EVIDENCE IN, HISTORY OUT</text>
+<!-- attempt -->
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="30" y="60"></rect>
+<text data-en="tier 1 attempt" data-zh="层级 1 尝试" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="90" y="83">tier 1 attempt</text>
+<path d="M150 78 L206 78" fill="none" marker-end="url(#arrE3)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<!-- structural verifier -->
+<rect fill="var(--bg-surface)" height="52" rx="9" stroke="var(--accent)" stroke-width="1.5" width="170" x="210" y="52"></rect>
+<text data-en="structural verifier" data-zh="结构性验证器" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="295" y="72">structural verifier</text>
+<text data-en="schema · compile · test" data-zh="schema · 编译 · 测试" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="295" y="88">schema · compile · test</text>
+<!-- pass path -->
+<path d="M295 104 C295 150 240 160 180 170" fill="none" marker-end="url(#arrE3)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="34" rx="8" stroke="var(--accent)" stroke-width="1" width="120" x="60" y="172"></rect>
+<text data-en="✓ emit & log" data-zh="✓ 输出并记录" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="120" y="194">✓ emit &amp; log</text>
+<!-- fail path -->
+<path d="M295 104 C295 150 350 160 410 170" fill="none" marker-end="url(#arrE2)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="150" x="410" y="172"></rect>
+<text data-en="✗ evidence of failure" data-zh="✗ 失败证据" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="485" y="194">✗ evidence of failure</text>
+<!-- escalate with context -->
+<path d="M485 206 C485 240 430 252 370 256" fill="none" marker-end="url(#arrE1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<rect fill="var(--bg-surface)" height="40" rx="9" stroke="var(--accent)" stroke-width="2" width="220" x="150" y="238"></rect>
+<text data-en="tier 2 call, with history" data-zh="层级 2 调用，带历史" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="260" y="256">tier 2 call, with history</text>
+<text data-en="failed attempt + reject reason" data-zh="失败尝试 + 拒绝原因" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="260" y="270">failed attempt + reject reason</text>
+<!-- training data note -->
+<path d="M370 258 C420 258 450 290 490 296" fill="none" marker-end="url(#arrE3)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="3,2"></path>
+<text data-en="→ labeled data for the triage node" data-zh="→ 分诊节点的标注数据" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="start" x="380" y="316">→ labeled data for the triage node</text>
+<text data-en="verify with structure," data-zh="用结构验证，" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="120" y="240">verify with structure,</text>
+<text data-en="not with opinions" data-zh="而不是用观点" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="120" y="256">not with opinions</text>
+</svg>
+<p class="diagram-caption" data-en="The escalation edge in detail. A structural verifier — schemas, compilers, tests, not model opinions — decides pass or fail. A pass is emitted and logged. A failure escalates with its history attached, so the stronger tier debugs instead of re-deriving. Every escalation is simultaneously labeled data for improving the triage node itself." data-zh="升级边的细节。一个结构性验证器——schema、编译器、测试，而非模型观点——判定通过或失败。通过则输出并记录。失败则带着历史升级，让更强的层级去调试、而不是重新推导。每一次升级，同时又是用来改进分诊节点本身的标注数据。">The escalation edge in detail. A structural verifier — schemas, compilers, tests, not model opinions — decides pass or fail. A pass is emitted and logged. A failure escalates with its history attached, so the stronger tier debugs instead of re-deriving. Every escalation is simultaneously labeled data for improving the triage node itself.</p>
+</div>
+<h3 data-en="The frontier region is narrow — and it moves" data-zh="旗舰区很窄——而且会移动">The frontier region is narrow — and it moves</h3>
+<p data-en="Plot task difficulty against required model tier and an uncomfortable picture emerges. The region where the frontier model is actually necessary is narrow: tasks hard enough to defeat mid-tier models, but tractable enough to be solvable at all. Below it, mid-tier and even flash models saturate — quality is flat while price climbs steeply. Above it, nothing solves the task, at any price. The frontier premium buys real capability, but only inside that narrow band. The engineering skill is mapping where the band lies for a particular workload, because it is workload-specific: code review might live mostly in mid-tier with a frontier spike for concurrency bugs; document extraction might never need anything above flash; research synthesis might sit in the band permanently." data-zh="把任务难度对着所需模型层级画一条曲线，会出现一幅让人不舒服的图。旗舰模型真正必要的区域，很窄：任务要难到中级模型搞不定，又要可行到至少有解。低于它，中级甚至快速模型已经饱和——质量走平，价格却在陡升。高于它，什么模型都解不了，出多少价都没用。旗舰溢价买到的是真实的能力，但只在那条窄带之内。工程功力，在于为一个具体工作负载画出这条带的位置，因为它是因负载而异的：代码审查可能大部分落在中级、只在并发 bug 上出现旗舰尖峰；文档抽取可能永远不需要快速模型以上的任何东西；研究综合可能常驻带内。">Plot task difficulty against required model tier and an uncomfortable picture emerges. The region where the frontier model is actually necessary is narrow: tasks hard enough to defeat mid-tier models, but tractable enough to be solvable at all.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrQ1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE FRONTIER BAND IS NARROW" data-zh="旗舰带很窄" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE FRONTIER BAND IS NARROW</text>
+<!-- axes -->
+<line stroke="var(--text-tertiary)" stroke-width="1.5" x1="90" x2="90" y1="50" y2="250"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1.5" x1="90" x2="560" y1="250" y2="250"></line>
+<polygon fill="var(--text-tertiary)" points="90,46 86,56 94,56"></polygon>
+<polygon fill="var(--text-tertiary)" points="564,250 554,246 554,254"></polygon>
+<text data-en="quality →" data-zh="质量 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="70" y="130" transform="rotate(-90 70 130)">quality →</text>
+<text data-en="task difficulty →" data-zh="任务难度 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="325" y="272">task difficulty →</text>
+<!-- flash curve: saturates low then fails -->
+<path d="M90 250 C140 250 160 170 210 165 C260 160 300 165 340 165 C360 165 370 200 390 235 C400 250 410 250 560 250" fill="none" stroke="var(--accent-3)" stroke-width="2"></path>
+<text data-en="flash" data-zh="快速模型" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="140" y="140">flash</text>
+<!-- mid curve: saturates higher then fails -->
+<path d="M90 250 C150 250 180 110 240 105 C300 100 340 108 390 108 C420 108 440 150 460 200 C470 230 490 248 560 250" fill="none" stroke="var(--accent-2)" stroke-width="2"></path>
+<text data-en="mid-tier" data-zh="中级模型" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="230" y="88">mid-tier</text>
+<!-- frontier curve: keeps rising into the band, fails at the wall -->
+<path d="M90 250 C160 250 200 70 280 62 C360 55 420 62 480 62 C520 62 535 120 560 240" fill="none" stroke="var(--accent)" stroke-width="2"></path>
+<text data-en="frontier" data-zh="旗舰模型" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="330" y="48">frontier</text>
+<!-- the narrow band: where frontier clearly wins -->
+<rect fill="var(--accent-dim)" height="200" opacity="0.45" rx="6" width="86" x="452" y="48"></rect>
+<text data-en="the band:" data-zh="窄带：" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="495" y="70">the band:</text>
+<text data-en="worth the premium" data-zh="值得付溢价" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="495" y="84">worth the premium</text>
+<!-- left annotation: saturation -->
+<text data-en="saturation —" data-zh="饱和区——" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="265" y="182">saturation —</text>
+<text data-en="paying more buys nothing" data-zh="多花钱买不到什么" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="265" y="196">paying more buys nothing</text>
+<!-- right annotation: unsolvable -->
+<text data-en="unsolvable —" data-zh="无解区——" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="540" y="120">unsolvable —</text>
+<text data-en="at any price" data-zh="多贵都没用" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="540" y="134">at any price</text>
+</svg>
+<p class="diagram-caption" data-en="Quality against difficulty for three tiers. On the left, cheap tiers saturate: quality is flat while price climbs, and the frontier premium buys nothing. On the right, every tier collapses. The frontier model earns its price only inside the narrow band in between — hard enough to defeat the cheaper tiers, tractable enough to be solvable. The band is workload-specific, and it moves every time a model release lands." data-zh="三个层级的质量随难度变化。左边，便宜的层级饱和了：质量走平、价格攀升，旗舰溢价什么都买不到。右边，所有层级一起崩塌。旗舰模型只在中间那条窄带里挣得回它的价格——难到便宜的层级搞不定，又可行到至少有解。这条带因工作负载而异，并且每一次新模型发布都会移动。">Quality against difficulty for three tiers. On the left, cheap tiers saturate: quality is flat while price climbs, and the frontier premium buys nothing. On the right, every tier collapses. The frontier model earns its price only inside the narrow band in between.</p>
+</div>
+<p data-en="The band also moves. Every model release shifts it: today's frontier capability becomes next quarter's mid-tier default, and the wall of unsolvability creeps right. This is why a cascade must be treated as a living routing table, not a one-time decision. The review cadence is simple: watch the escalation logs, watch the verifier pass rates per tier, and re-run the difficulty calibration whenever a new model lands in any tier. Teams that do this spend less every quarter for the same quality — the falling price of intelligence actually reaches them. Teams that picked one model, once, in a design doc two years ago, pay frontier rates forever for flash-grade steps, and never know it." data-zh="这条带还会移动。每一次模型发布都会挪动它：今天的旗舰能力，变成下个季度中级的默认配置，而「无解之墙」向右爬。这就是为什么级联必须被当作一张活的路由表，而不是一次性的决定。复盘的节奏很简单：盯升级日志，盯每个层级的验证器通过率，并且每当有新模型落进任何一层，就重跑一次难度校准。这样做的团队，每个季度都在以更低的价格买到同样的质量——智能价格的下跌，真的会落到他们头上。两年前在设计文档里一次性选定一个模型的团队，则在为快速级别的步骤永远支付旗舰费率，而且毫不知情。">The band also moves. Every model release shifts it: today's frontier capability becomes next quarter's mid-tier default, and the wall of unsolvability creeps right. This is why a cascade must be treated as a living routing table, not a one-time decision.</p>
+<h3 data-en="Give every edge a budget" data-zh="给每条边一个预算">Give every edge a budget</h3>
+<p data-en="The final piece of the architecture is the one most often skipped: a budget attribute on the graph itself. Every node declares what it is allowed to spend — in tokens, in calls, in wall-clock time — and the runtime enforces it. When a run's remaining budget runs low, the graph changes behavior deliberately: skip the optional verification pass, collapse the parallel branches, drop to a cheaper tier for the remaining steps, or stop and return the best partial answer with an honest explanation. Degradation should be designed, graceful, and visible in the trace. The alternative is what ships by default: a run that discovers its budget the way a car discovers a cliff — by going over it, at full speed, with the user in the passenger seat." data-zh="架构的最后一块，也是最常被跳过的一块：图本身携带的预算属性。每个节点声明它被允许花掉什么——以 token 计、以调用次数计、以墙上时钟计——由运行时来强制执行。当一次运行的剩余预算变少时，图会有意识地改变行为：跳过可选的验证轮次，收敛并行的分支，让剩下的步骤降级到更便宜的层级，或者干脆停下，带着一个诚实的说明返回当前最好的部分答案。降级应该被设计过、是优雅的、在追踪记录里可见。否则就会是默认发布出来的样子：一次运行以汽车发现悬崖的方式发现预算——全速冲下去，用户还坐在副驾上。">The final piece of the architecture is the one most often skipped: a budget attribute on the graph itself. Every node declares what it is allowed to spend — in tokens, in calls, in wall-clock time — and the runtime enforces it.</p>
+<p data-en="Put together — triage nodes, escalation edges with verifiers, a mapped frontier band, budgets on every node — the cascade reframes what an agent even is. An agent is not a model with tools bolted on. It is a routing system for intelligence, where different grades of intelligence are applied to different grades of work, at prices chosen deliberately, with evidence flowing between the grades. The models will keep getting cheaper and smarter, and none of it will arrive automatically in anyone's bill. The teams that internalize this build the graph once and get richer every quarter. The teams that don't will keep paying frontier prices to format tool arguments, forever, and call it the cost of intelligence." data-zh="把这些拼在一起——分诊节点、带验证器的升级边、被画出来的旗舰带、每个节点上的预算——级联重新定义了智能体究竟是什么。智能体不是一个钉着工具的模型。它是一个智能的路由系统：不同等级的智能，被应用到不同等级的工作上，价格是被有意选择的，而证据在各等级之间流动。模型会继续变得更便宜、更聪明，但这些进步不会自动出现在任何人的账单上。把这件事想透的团队，把图建一次，然后每个季度都变得更划算。没想透的团队，将永远为格式化工具参数支付旗舰价格，并称之为智能的成本。">Put together — triage nodes, escalation edges with verifiers, a mapped frontier band, budgets on every node — the cascade reframes what an agent even is. An agent is not a model with tools bolted on. It is a routing system for intelligence.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

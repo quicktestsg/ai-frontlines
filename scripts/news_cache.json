@@ -1,6 +1,1688 @@
 {
   "tweets": [
     {
+      "id": "2111375650414309859",
+      "url": "https://x.com/deepseek_ai/status/2111375650414309859",
+      "label": "DeepSeek",
+      "color": "#0EA5E9",
+      "fetched_at": "2026-10-17T20:03:58.947961+00:00",
+      "translation_zh": "DeepSeek 搜索与抓取 API 正式向所有人开放！由自研搜索引擎驱动，全球每日服务数亿次请求。每个端点每千次调用 0.75 美元，10 月 31 日起计费。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1552,
+        "in_reply_to_screen_name": "deepseek_ai",
+        "in_reply_to_status_id_str": "2111375646223933650",
+        "in_reply_to_user_id_str": "1714580962569588736",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-10-17T08:35:57.000Z",
+        "display_text_range": [
+          0,
+          287
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "api-docs.deepseek.com/guides/search",
+              "expanded_url": "https://api-docs.deepseek.com/guides/search",
+              "indices": [
+                199,
+                222
+              ],
+              "url": "https://t.co/jnihMCWbyg"
+            }
+          ]
+        },
+        "id_str": "2111375650414309859",
+        "text": "🔍 Search &amp; Fetch APIs are now open to everyone!\n\nPowered by our in-house search engine, serving hundreds of millions of requests daily worldwide.\n\n💰 Each endpoint: $0.75 per 1,000 calls.\n📖 Docs: https://t.co/jnihMCWbyg\n📌 Search &amp; Fetch calls via server-side tools in DeepSeek",
+        "user": {
+          "id_str": "1714580962569588736",
+          "name": "DeepSeek",
+          "screen_name": "deepseek_ai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1717417613775757312/Uk1zNOj4_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2111375650414309859"
+          ],
+          "editable_until_msecs": "1792229757000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 35,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 1665,
+          "in_reply_to_screen_name": "deepseek_ai",
+          "in_reply_to_status_id_str": "2111375640717033777",
+          "in_reply_to_user_id_str": "1714580962569588736",
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 41,
+          "retweet_count": 66,
+          "created_at": "2026-10-17T08:35:56.000Z",
+          "display_text_range": [
+            0,
+            215
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/Y5t4oGwq1x",
+                "expanded_url": "https://x.com/deepseek_ai/status/2111375646223933650/photo/1",
+                "indices": [
+                  214,
+                  237
+                ],
+                "url": "https://t.co/Y5t4oGwq1x"
+              }
+            ]
+          },
+          "id_str": "2111375646223933650",
+          "text": "🎮 Build complete projects from scratch\n\nDeepSeek-V4.1-Flash-1017 uses reinforcement learning with self-feedback to improve end-to-end project development—from game creation to 3D modeling.\n\nSee it in action 👇\n\n2/4 https://t.co/Y5t4oGwq1x",
+          "user": {
+            "id_str": "1714580962569588736",
+            "name": "DeepSeek",
+            "screen_name": "deepseek_ai",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1717417613775757312/Uk1zNOj4_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2111375646223933650"
+            ],
+            "editable_until_msecs": "1792229756000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/Y5t4oGwq1x",
+              "expanded_url": "https://x.com/deepseek_ai/status/2111375646223933650/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                214,
+                237
+              ],
+              "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/HU0b9EFawAA1w0R.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 206,
+                "width": 480
+              },
+              "sizes": {
+                "large": {
+                  "h": 206,
+                  "resize": "fit",
+                  "w": 480
+                },
+                "medium": {
+                  "h": 206,
+                  "resize": "fit",
+                  "w": 480
+                },
+                "small": {
+                  "h": 206,
+                  "resize": "fit",
+                  "w": 480
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "animated_gif",
+              "url": "https://t.co/Y5t4oGwq1x",
+              "video_info": {
+                "aspect_ratio": [
+                  240,
+                  103
+                ],
+                "variants": [
+                  {
+                    "bitrate": 0,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/tweet_video/HU0b9EFawAA1w0R.mp4"
+                  }
+                ]
+              }
+            },
+            {
+              "display_url": "pic.x.com/Y5t4oGwq1x",
+              "expanded_url": "https://x.com/deepseek_ai/status/2111375646223933650/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                214,
+                237
+              ],
+              "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/HU0b9qGaUAE7J3j.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 270,
+                "width": 480
+              },
+              "sizes": {
+                "large": {
+                  "h": 270,
+                  "resize": "fit",
+                  "w": 480
+                },
+                "medium": {
+                  "h": 270,
+                  "resize": "fit",
+                  "w": 480
+                },
+                "small": {
+                  "h": 270,
+                  "resize": "fit",
+                  "w": 480
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "animated_gif",
+              "url": "https://t.co/Y5t4oGwq1x",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "variants": [
+                  {
+                    "bitrate": 0,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/tweet_video/HU0b9qGaUAE7J3j.mp4"
+                  }
+                ]
+              }
+            },
+            {
+              "display_url": "pic.x.com/Y5t4oGwq1x",
+              "expanded_url": "https://x.com/deepseek_ai/status/2111375646223933650/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                214,
+                237
+              ],
+              "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/HU0b-TxboAA9W_E.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 270,
+                "width": 480
+              },
+              "sizes": {
+                "large": {
+                  "h": 270,
+                  "resize": "fit",
+                  "w": 480
+                },
+                "medium": {
+                  "h": 270,
+                  "resize": "fit",
+                  "w": 480
+                },
+                "small": {
+                  "h": 270,
+                  "resize": "fit",
+                  "w": 480
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "animated_gif",
+              "url": "https://t.co/Y5t4oGwq1x",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "variants": [
+                  {
+                    "bitrate": 0,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/tweet_video/HU0b-TxboAA9W_E.mp4"
+                  }
+                ]
+              }
+            },
+            {
+              "display_url": "pic.x.com/Y5t4oGwq1x",
+              "expanded_url": "https://x.com/deepseek_ai/status/2111375646223933650/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                214,
+                237
+              ],
+              "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/HU0b-84bAAAloEF.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 270,
+                "width": 480
+              },
+              "sizes": {
+                "large": {
+                  "h": 270,
+                  "resize": "fit",
+                  "w": 480
+                },
+                "medium": {
+                  "h": 270,
+                  "resize": "fit",
+                  "w": 480
+                },
+                "small": {
+                  "h": 270,
+                  "resize": "fit",
+                  "w": 480
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "animated_gif",
+              "url": "https://t.co/Y5t4oGwq1x",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "variants": [
+                  {
+                    "bitrate": 0,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/tweet_video/HU0b-84bAAAloEF.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              240,
+              103
+            ],
+            "contentType": "gif",
+            "durationMs": 0,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/tweet_video_thumb/HU0b9EFawAA1w0R.jpg",
+            "variants": [
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/tweet_video/HU0b9EFawAA1w0R.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2111375646223933650"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/jnihMCWbyg",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "height": 149,
+                "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=280x150",
+                "width": 280
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "The Search API and the Fetch API give agents and RAG applications access to live web content:",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "api-docs.deepseek.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "height": 319,
+                "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "height": 2038,
+                "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=orig",
+                "width": 3836
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "height": 77,
+                "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "height": 1088,
+                "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=png&name=2048x2048_2_exp",
+                "width": 2048
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "height": 2038,
+                "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=orig",
+                "width": 3836
+              },
+              "type": "IMAGE"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "api-docs.deepseek.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 85.88,
+                    "rgb": {
+                      "blue": 6,
+                      "green": 9,
+                      "red": 11
+                    }
+                  },
+                  {
+                    "percentage": 3.94,
+                    "rgb": {
+                      "blue": 22,
+                      "green": 37,
+                      "red": 69
+                    }
+                  },
+                  {
+                    "percentage": 3.62,
+                    "rgb": {
+                      "blue": 218,
+                      "green": 216,
+                      "red": 214
+                    }
+                  },
+                  {
+                    "percentage": 2.63,
+                    "rgb": {
+                      "blue": 81,
+                      "green": 46,
+                      "red": 56
+                    }
+                  },
+                  {
+                    "percentage": 0.8,
+                    "rgb": {
+                      "blue": 70,
+                      "green": 115,
+                      "red": 171
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Search & Fetch | DeepSeek API Docs",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 85.88,
+                    "rgb": {
+                      "blue": 6,
+                      "green": 9,
+                      "red": 11
+                    }
+                  },
+                  {
+                    "percentage": 3.94,
+                    "rgb": {
+                      "blue": 22,
+                      "green": 37,
+                      "red": 69
+                    }
+                  },
+                  {
+                    "percentage": 3.62,
+                    "rgb": {
+                      "blue": 218,
+                      "green": 216,
+                      "red": 214
+                    }
+                  },
+                  {
+                    "percentage": 2.63,
+                    "rgb": {
+                      "blue": 81,
+                      "green": 46,
+                      "red": 56
+                    }
+                  },
+                  {
+                    "percentage": 0.8,
+                    "rgb": {
+                      "blue": 70,
+                      "green": 115,
+                      "red": 171
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "height": 1088,
+                "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=png&name=2048x2048_2_exp",
+                "width": 2048
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 85.88,
+                    "rgb": {
+                      "blue": 6,
+                      "green": 9,
+                      "red": 11
+                    }
+                  },
+                  {
+                    "percentage": 3.94,
+                    "rgb": {
+                      "blue": 22,
+                      "green": 37,
+                      "red": 69
+                    }
+                  },
+                  {
+                    "percentage": 3.62,
+                    "rgb": {
+                      "blue": 218,
+                      "green": 216,
+                      "red": 214
+                    }
+                  },
+                  {
+                    "percentage": 2.63,
+                    "rgb": {
+                      "blue": 81,
+                      "green": 46,
+                      "red": 56
+                    }
+                  },
+                  {
+                    "percentage": 0.8,
+                    "rgb": {
+                      "blue": 70,
+                      "green": 115,
+                      "red": 171
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "height": 1088,
+                "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=png&name=2048x2048_2_exp",
+                "width": 2048
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/jnihMCWbyg",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "height": 2038,
+                "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=orig",
+                "width": 3836
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTExMzc1NjUwMjk2ODcyOTYw"
+        }
+      }
+    },
+    {
+      "id": "2111375653069259247",
+      "url": "https://x.com/deepseek_ai/status/2111375653069259247",
+      "label": "DeepSeek",
+      "color": "#0EA5E9",
+      "fetched_at": "2026-10-17T20:03:58.947961+00:00",
+      "translation_zh": "DeepSeek 开源发布：DeepSeek-V4.1-Flash-1017 模型权重现已上架 Hugging Face 与 ModelScope，可自由下载部署。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 2242,
+        "in_reply_to_screen_name": "deepseek_ai",
+        "in_reply_to_status_id_str": "2111375650414309859",
+        "in_reply_to_user_id_str": "1714580962569588736",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-10-17T08:35:57.000Z",
+        "display_text_range": [
+          0,
+          138
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "huggingface.co/deepseek-ai/De…",
+              "expanded_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+              "indices": [
+                69,
+                92
+              ],
+              "url": "https://t.co/PxjsLqLx2m"
+            },
+            {
+              "display_url": "modelscope.cn/models/deepsee…",
+              "expanded_url": "https://modelscope.cn/models/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+              "indices": [
+                107,
+                130
+              ],
+              "url": "https://t.co/ATub2olG2H"
+            }
+          ]
+        },
+        "id_str": "2111375653069259247",
+        "text": "🔓 Open-source release\n\nGet DeepSeek-V4.1-Flash-1017:\n🤗 Hugging Face: https://t.co/PxjsLqLx2m\n🔗 ModelScope: https://t.co/ATub2olG2H\n\n4/4",
+        "user": {
+          "id_str": "1714580962569588736",
+          "name": "DeepSeek",
+          "screen_name": "deepseek_ai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1717417613775757312/Uk1zNOj4_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2111375653069259247"
+          ],
+          "editable_until_msecs": "1792229757000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 35,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 1552,
+          "in_reply_to_screen_name": "deepseek_ai",
+          "in_reply_to_status_id_str": "2111375646223933650",
+          "in_reply_to_user_id_str": "1714580962569588736",
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 35,
+          "retweet_count": 81,
+          "created_at": "2026-10-17T08:35:57.000Z",
+          "display_text_range": [
+            0,
+            287
+          ],
+          "entities": {
+            "urls": [
+              {
+                "display_url": "api-docs.deepseek.com/guides/search",
+                "expanded_url": "https://api-docs.deepseek.com/guides/search",
+                "indices": [
+                  199,
+                  222
+                ],
+                "url": "https://t.co/jnihMCWbyg"
+              }
+            ]
+          },
+          "id_str": "2111375650414309859",
+          "text": "🔍 Search &amp; Fetch APIs are now open to everyone!\n\nPowered by our in-house search engine, serving hundreds of millions of requests daily worldwide.\n\n💰 Each endpoint: $0.75 per 1,000 calls.\n📖 Docs: https://t.co/jnihMCWbyg\n📌 Search &amp; Fetch calls via server-side tools in DeepSeek",
+          "user": {
+            "id_str": "1714580962569588736",
+            "name": "DeepSeek",
+            "screen_name": "deepseek_ai",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1717417613775757312/Uk1zNOj4_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2111375650414309859"
+            ],
+            "editable_until_msecs": "1792229757000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "card": {
+            "card_platform": {
+              "platform": {
+                "audience": {
+                  "name": "production"
+                },
+                "device": {
+                  "name": "iPhone",
+                  "version": "13"
+                }
+              }
+            },
+            "name": "summary_large_image",
+            "url": "https://t.co/jnihMCWbyg",
+            "binding_values": {
+              "photo_image_full_size_large": {
+                "image_value": {
+                  "height": 419,
+                  "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=800x419",
+                  "width": 800
+                },
+                "type": "IMAGE"
+              },
+              "thumbnail_image": {
+                "image_value": {
+                  "height": 149,
+                  "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=280x150",
+                  "width": 280
+                },
+                "type": "IMAGE"
+              },
+              "description": {
+                "string_value": "The Search API and the Fetch API give agents and RAG applications access to live web content:",
+                "type": "STRING"
+              },
+              "domain": {
+                "string_value": "api-docs.deepseek.com",
+                "type": "STRING"
+              },
+              "thumbnail_image_large": {
+                "image_value": {
+                  "height": 319,
+                  "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=600x600",
+                  "width": 600
+                },
+                "type": "IMAGE"
+              },
+              "summary_photo_image_small": {
+                "image_value": {
+                  "height": 202,
+                  "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=386x202",
+                  "width": 386
+                },
+                "type": "IMAGE"
+              },
+              "thumbnail_image_original": {
+                "image_value": {
+                  "height": 2038,
+                  "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=orig",
+                  "width": 3836
+                },
+                "type": "IMAGE"
+              },
+              "photo_image_full_size_small": {
+                "image_value": {
+                  "height": 202,
+                  "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=386x202",
+                  "width": 386
+                },
+                "type": "IMAGE"
+              },
+              "summary_photo_image_large": {
+                "image_value": {
+                  "height": 419,
+                  "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=800x419",
+                  "width": 800
+                },
+                "type": "IMAGE"
+              },
+              "thumbnail_image_small": {
+                "image_value": {
+                  "height": 77,
+                  "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=144x144",
+                  "width": 144
+                },
+                "type": "IMAGE"
+              },
+              "thumbnail_image_x_large": {
+                "image_value": {
+                  "height": 1088,
+                  "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=png&name=2048x2048_2_exp",
+                  "width": 2048
+                },
+                "type": "IMAGE"
+              },
+              "photo_image_full_size_original": {
+                "image_value": {
+                  "height": 2038,
+                  "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=orig",
+                  "width": 3836
+                },
+                "type": "IMAGE"
+              },
+              "vanity_url": {
+                "scribe_key": "vanity_url",
+                "string_value": "api-docs.deepseek.com",
+                "type": "STRING"
+              },
+              "photo_image_full_size": {
+                "image_value": {
+                  "height": 314,
+                  "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=600x314",
+                  "width": 600
+                },
+                "type": "IMAGE"
+              },
+              "thumbnail_image_color": {
+                "image_color_value": {
+                  "palette": [
+                    {
+                      "percentage": 85.88,
+                      "rgb": {
+                        "blue": 6,
+                        "green": 9,
+                        "red": 11
+                      }
+                    },
+                    {
+                      "percentage": 3.94,
+                      "rgb": {
+                        "blue": 22,
+                        "green": 37,
+                        "red": 69
+                      }
+                    },
+                    {
+                      "percentage": 3.62,
+                      "rgb": {
+                        "blue": 218,
+                        "green": 216,
+                        "red": 214
+                      }
+                    },
+                    {
+                      "percentage": 2.63,
+                      "rgb": {
+                        "blue": 81,
+                        "green": 46,
+                        "red": 56
+                      }
+                    },
+                    {
+                      "percentage": 0.8,
+                      "rgb": {
+                        "blue": 70,
+                        "green": 115,
+                        "red": 171
+                      }
+                    }
+                  ]
+                },
+                "type": "IMAGE_COLOR"
+              },
+              "title": {
+                "string_value": "Search & Fetch | DeepSeek API Docs",
+                "type": "STRING"
+              },
+              "summary_photo_image_color": {
+                "image_color_value": {
+                  "palette": [
+                    {
+                      "percentage": 85.88,
+                      "rgb": {
+                        "blue": 6,
+                        "green": 9,
+                        "red": 11
+                      }
+                    },
+                    {
+                      "percentage": 3.94,
+                      "rgb": {
+                        "blue": 22,
+                        "green": 37,
+                        "red": 69
+                      }
+                    },
+                    {
+                      "percentage": 3.62,
+                      "rgb": {
+                        "blue": 218,
+                        "green": 216,
+                        "red": 214
+                      }
+                    },
+                    {
+                      "percentage": 2.63,
+                      "rgb": {
+                        "blue": 81,
+                        "green": 46,
+                        "red": 56
+                      }
+                    },
+                    {
+                      "percentage": 0.8,
+                      "rgb": {
+                        "blue": 70,
+                        "green": 115,
+                        "red": 171
+                      }
+                    }
+                  ]
+                },
+                "type": "IMAGE_COLOR"
+              },
+              "summary_photo_image_x_large": {
+                "image_value": {
+                  "height": 1088,
+                  "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=png&name=2048x2048_2_exp",
+                  "width": 2048
+                },
+                "type": "IMAGE"
+              },
+              "summary_photo_image": {
+                "image_value": {
+                  "height": 314,
+                  "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=600x314",
+                  "width": 600
+                },
+                "type": "IMAGE"
+              },
+              "photo_image_full_size_color": {
+                "image_color_value": {
+                  "palette": [
+                    {
+                      "percentage": 85.88,
+                      "rgb": {
+                        "blue": 6,
+                        "green": 9,
+                        "red": 11
+                      }
+                    },
+                    {
+                      "percentage": 3.94,
+                      "rgb": {
+                        "blue": 22,
+                        "green": 37,
+                        "red": 69
+                      }
+                    },
+                    {
+                      "percentage": 3.62,
+                      "rgb": {
+                        "blue": 218,
+                        "green": 216,
+                        "red": 214
+                      }
+                    },
+                    {
+                      "percentage": 2.63,
+                      "rgb": {
+                        "blue": 81,
+                        "green": 46,
+                        "red": 56
+                      }
+                    },
+                    {
+                      "percentage": 0.8,
+                      "rgb": {
+                        "blue": 70,
+                        "green": 115,
+                        "red": 171
+                      }
+                    }
+                  ]
+                },
+                "type": "IMAGE_COLOR"
+              },
+              "photo_image_full_size_x_large": {
+                "image_value": {
+                  "height": 1088,
+                  "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=png&name=2048x2048_2_exp",
+                  "width": 2048
+                },
+                "type": "IMAGE"
+              },
+              "card_url": {
+                "scribe_key": "card_url",
+                "string_value": "https://t.co/jnihMCWbyg",
+                "type": "STRING"
+              },
+              "summary_photo_image_original": {
+                "image_value": {
+                  "height": 2038,
+                  "url": "https://pbs.twimg.com/card_img/2110054199958310912/0lt0fzZR?format=jpg&name=orig",
+                  "width": 3836
+                },
+                "type": "IMAGE"
+              }
+            }
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/PxjsLqLx2m",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2111368313154555904/zpusTwrN?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2111368313154555904/zpusTwrN?format=jpg&name=280x150",
+                "width": 278
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "We’re on a journey to advance and democratize artificial intelligence through open source and open science.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "huggingface.co",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2111368313154555904/zpusTwrN?format=jpg&name=800x320_1",
+                "width": 593
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2111368313154555904/zpusTwrN?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "height": 648,
+                "url": "https://pbs.twimg.com/card_img/2111368313154555904/zpusTwrN?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "778764142412984320",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2111368313154555904/zpusTwrN?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2111368313154555904/zpusTwrN?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "height": 78,
+                "url": "https://pbs.twimg.com/card_img/2111368313154555904/zpusTwrN?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "height": 648,
+                "url": "https://pbs.twimg.com/card_img/2111368313154555904/zpusTwrN?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "height": 648,
+                "url": "https://pbs.twimg.com/card_img/2111368313154555904/zpusTwrN?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "huggingface.co",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2111368313154555904/zpusTwrN?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 21.99,
+                    "rgb": {
+                      "blue": 218,
+                      "green": 100,
+                      "red": 72
+                    }
+                  },
+                  {
+                    "percentage": 15.58,
+                    "rgb": {
+                      "blue": 79,
+                      "green": 131,
+                      "red": 191
+                    }
+                  },
+                  {
+                    "percentage": 15.07,
+                    "rgb": {
+                      "blue": 146,
+                      "green": 122,
+                      "red": 25
+                    }
+                  },
+                  {
+                    "percentage": 14.8,
+                    "rgb": {
+                      "blue": 202,
+                      "green": 135,
+                      "red": 42
+                    }
+                  },
+                  {
+                    "percentage": 6.93,
+                    "rgb": {
+                      "blue": 112,
+                      "green": 48,
+                      "red": 35
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "deepseek-ai/DeepSeek-V4.1-Flash-1017 · Hugging Face",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 21.99,
+                    "rgb": {
+                      "blue": 218,
+                      "green": 100,
+                      "red": 72
+                    }
+                  },
+                  {
+                    "percentage": 15.58,
+                    "rgb": {
+                      "blue": 79,
+                      "green": 131,
+                      "red": 191
+                    }
+                  },
+                  {
+                    "percentage": 15.07,
+                    "rgb": {
+                      "blue": 146,
+                      "green": 122,
+                      "red": 25
+                    }
+                  },
+                  {
+                    "percentage": 14.8,
+                    "rgb": {
+                      "blue": 202,
+                      "green": 135,
+                      "red": 42
+                    }
+                  },
+                  {
+                    "percentage": 6.93,
+                    "rgb": {
+                      "blue": 112,
+                      "green": 48,
+                      "red": 35
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "height": 648,
+                "url": "https://pbs.twimg.com/card_img/2111368313154555904/zpusTwrN?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2111368313154555904/zpusTwrN?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 21.99,
+                    "rgb": {
+                      "blue": 218,
+                      "green": 100,
+                      "red": 72
+                    }
+                  },
+                  {
+                    "percentage": 15.58,
+                    "rgb": {
+                      "blue": 79,
+                      "green": 131,
+                      "red": 191
+                    }
+                  },
+                  {
+                    "percentage": 15.07,
+                    "rgb": {
+                      "blue": 146,
+                      "green": 122,
+                      "red": 25
+                    }
+                  },
+                  {
+                    "percentage": 14.8,
+                    "rgb": {
+                      "blue": 202,
+                      "green": 135,
+                      "red": 42
+                    }
+                  },
+                  {
+                    "percentage": 6.93,
+                    "rgb": {
+                      "blue": 112,
+                      "green": 48,
+                      "red": 35
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "height": 648,
+                "url": "https://pbs.twimg.com/card_img/2111368313154555904/zpusTwrN?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/PxjsLqLx2m",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "height": 648,
+                "url": "https://pbs.twimg.com/card_img/2111368313154555904/zpusTwrN?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTExMzc1NjUyOTYwMjE5MTM2"
+        }
+      }
+    },
+    {
+      "id": "2111375640717033777",
+      "url": "https://x.com/deepseek_ai/status/2111375640717033777",
+      "label": "DeepSeek",
+      "color": "#0EA5E9",
+      "fetched_at": "2026-10-17T20:03:58.947961+00:00",
+      "translation_zh": "DeepSeek-V4.1-Flash-1017 发布！基准性能更强、任务完成更快、输出更精简，性能与成本的双帕累托改进。已上线官网、App 和 API，并为 DeepSeek Harness、腾讯 CodeBuddy 等工具深度优化。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 28248,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-10-17T08:35:54.000Z",
+        "display_text_range": [
+          0,
+          280
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/MiqGbnCiVz",
+              "expanded_url": "https://x.com/deepseek_ai/status/2111375640717033777/photo/1",
+              "indices": [
+                279,
+                302
+              ],
+              "url": "https://t.co/MiqGbnCiVz"
+            }
+          ],
+          "user_mentions": [
+            {
+              "id_str": "2067518374469640193",
+              "indices": [
+                242,
+                258
+              ],
+              "name": "DeepSeek Harness",
+              "screen_name": "DeepSeekHarness"
+            }
+          ]
+        },
+        "id_str": "2111375640717033777",
+        "text": "🚀 DeepSeek-V4.1-Flash-1017 is here!\n\nStronger benchmark performance, faster task completion, and shorter outputs than the previous version—a Pareto improvement in performance and cost. Now live on our website, app, and API.\n\n🛠️ Optimized for @DeepSeekHarness, Tencent CodeBuddy, https://t.co/MiqGbnCiVz",
+        "user": {
+          "id_str": "1714580962569588736",
+          "name": "DeepSeek",
+          "screen_name": "deepseek_ai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1717417613775757312/Uk1zNOj4_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2111375640717033777"
+          ],
+          "editable_until_msecs": "1792229754000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/MiqGbnCiVz",
+            "expanded_url": "https://x.com/deepseek_ai/status/2111375640717033777/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              279,
+              302
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HU0b65KbsAAypqr.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 589,
+                  "w": 1052,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 889,
+                  "w": 889,
+                  "x": 55,
+                  "y": 0
+                },
+                {
+                  "h": 889,
+                  "w": 780,
+                  "x": 109,
+                  "y": 0
+                },
+                {
+                  "h": 889,
+                  "w": 445,
+                  "x": 277,
+                  "y": 0
+                },
+                {
+                  "h": 889,
+                  "w": 1052,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 889,
+              "width": 1052
+            },
+            "sizes": {
+              "large": {
+                "h": 889,
+                "resize": "fit",
+                "w": 1052
+              },
+              "medium": {
+                "h": 889,
+                "resize": "fit",
+                "w": 1052
+              },
+              "small": {
+                "h": 575,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/MiqGbnCiVz"
+          },
+          {
+            "display_url": "pic.x.com/MiqGbnCiVz",
+            "expanded_url": "https://x.com/deepseek_ai/status/2111375640717033777/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              279,
+              302
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HU0b7UfbwAAGXNH.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 1645,
+                  "w": 2937,
+                  "x": 0,
+                  "y": 886
+                },
+                {
+                  "h": 2531,
+                  "w": 2531,
+                  "x": 275,
+                  "y": 0
+                },
+                {
+                  "h": 2531,
+                  "w": 2220,
+                  "x": 430,
+                  "y": 0
+                },
+                {
+                  "h": 2531,
+                  "w": 1266,
+                  "x": 907,
+                  "y": 0
+                },
+                {
+                  "h": 2531,
+                  "w": 2937,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 2531,
+              "width": 2937
+            },
+            "sizes": {
+              "large": {
+                "h": 1765,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 1034,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 586,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/MiqGbnCiVz"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 589,
+                "w": 1052,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 889,
+                "w": 889,
+                "x": 55,
+                "y": 0
+              },
+              {
+                "h": 889,
+                "w": 780,
+                "x": 109,
+                "y": 0
+              },
+              {
+                "h": 889,
+                "w": 445,
+                "x": 277,
+                "y": 0
+              },
+              {
+                "h": 889,
+                "w": 1052,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/deepseek_ai/status/2111375640717033777/photo/1",
+            "url": "https://pbs.twimg.com/media/HU0b65KbsAAypqr.jpg",
+            "width": 1052,
+            "height": 889
+          },
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 1645,
+                "w": 2937,
+                "x": 0,
+                "y": 886
+              },
+              {
+                "h": 2531,
+                "w": 2531,
+                "x": 275,
+                "y": 0
+              },
+              {
+                "h": 2531,
+                "w": 2220,
+                "x": 430,
+                "y": 0
+              },
+              {
+                "h": 2531,
+                "w": 1266,
+                "x": 907,
+                "y": 0
+              },
+              {
+                "h": 2531,
+                "w": 2937,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/deepseek_ai/status/2111375640717033777/photo/1",
+            "url": "https://pbs.twimg.com/media/HU0b7UfbwAAGXNH.jpg",
+            "width": 2937,
+            "height": 2531
+          }
+        ],
+        "conversation_count": 1212,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTExMzc1NjQwNjI4OTY1Mzc2"
+        }
+      }
+    },
+    {
       "id": "2111192259073094035",
       "url": "https://x.com/OpenAI/status/2111192259073094035",
       "label": "OpenAI",
@@ -919,6 +2601,123 @@
         "note_tweet": {
           "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTExMTUyMTgzMTIzMTAzNzQ1"
         }
+      }
+    },
+    {
+      "id": "2111127991401247033",
+      "url": "https://x.com/GoogleDeepMind/status/2111127991401247033",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-10-17T20:03:58.947961+00:00",
+      "translation_zh": "四个 Gemini 4 Argon 智能体在 27 小时内从零通关 Minecraft。它们在沙盒中仅用代码和文本协作：写了 2783 个程序、通过聊天分工、共享笔记、共同调试，全程无人类干预。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 2354,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-10-16T16:11:50.000Z",
+        "display_text_range": [
+          0,
+          265
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "x.com/maxencefaldor/…",
+              "expanded_url": "https://x.com/maxencefaldor/status/2111023397106770026",
+              "indices": [
+                242,
+                265
+              ],
+              "url": "https://t.co/uyIhDOQXGT"
+            }
+          ]
+        },
+        "id_str": "2111127991401247033",
+        "text": "Four Gemini 4 Argon agents beat Minecraft from scratch in 27 hours.\n\nOperating in a sandbox using only code and text, they wrote 2,783 programs, divided up jobs over chat, shared notes, and debugged errors together - all with no human help ↓\nhttps://t.co/uyIhDOQXGT",
+        "user": {
+          "id_str": "4783690002",
+          "name": "Google DeepMind",
+          "screen_name": "GoogleDeepMind",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2111127991401247033"
+          ],
+          "editable_until_msecs": "1792170710000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 288,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 440,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 45,
+          "retweet_count": 49,
+          "created_at": "2026-10-16T09:16:13.000Z",
+          "display_text_range": [
+            0,
+            179
+          ],
+          "entities": {
+            "urls": [
+              {
+                "display_url": "x.com/i/article/2111…",
+                "expanded_url": "https://x.com/i/article/2111007444981645312",
+                "indices": [
+                  156,
+                  179
+                ],
+                "url": "https://t.co/Cx7Djg1VTx"
+              }
+            ]
+          },
+          "id_str": "2111023397106770026",
+          "text": "Four Gemini 4 Argon agents, one shared Minecraft world, one goal: defeat the Ender Dragon. 27 hours and 2,783 self-written programs later, the dragon fell. https://t.co/Cx7Djg1VTx",
+          "user": {
+            "id_str": "1414690531700101127",
+            "name": "Maxence Faldor",
+            "screen_name": "maxencefaldor",
+            "is_blue_verified": false,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1630242532272623620/A6wVavsz_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2111023397106770026"
+            ],
+            "editable_until_msecs": "1792145773000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "article": {
+            "cover_media": {
+              "id": "QXBpTWVkaWE6DAAFCgABHUvTSq3WcAAKAAITof2LERfQBwAA",
+              "media_info": {
+                "__typename": "ApiImage",
+                "original_img_height": 1200,
+                "original_img_url": "https://pbs.twimg.com/media/HUvTSq3WcAAF1Xo.jpg",
+                "original_img_width": 3000
+              }
+            },
+            "id": "QXJ0aWNsZUVudGl0eToyMTExMDA3NDQ0OTgxNjQ1MzEy",
+            "preview_text": "We placed four Gemini 4 Argon agents in a safely sandboxed Minecraft survival world and gave them one goal: defeat the Ender Dragon, the boss at the end of the game. These were our general-purpose",
+            "rest_id": "2111007444981645312",
+            "title": "A team of Gemini 4 Argon agents beats Minecraft"
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
       }
     },
     {
