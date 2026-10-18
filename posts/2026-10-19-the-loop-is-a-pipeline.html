@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Loop Is a Pipeline — AI Frontlines</title>
+<meta content="An agent step spends most of its wall-clock time waiting: for the model, for tools, for the harness shuttling context between them. The sequential loop is a turnstile — one stage runs, the rest idle. The fix is older than LLMs: overlap the stages. Speculative reads, prefetching, and a strict commit point turn latency from a fact of life into a graph property." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 19, 2026" data-zh="2026年10月19日">October 19, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Loop Is a Pipeline, Not a Turnstile" data-zh="循环是流水线，不是转闸门">The Loop Is a Pipeline, Not a Turnstile</h1>
+<p class="post-header-deck" data-en="Every discussion of agent costs eventually lands on tokens. Almost none of them lands on seconds — which is strange, because users experience the agent in seconds, and seconds are made mostly of waiting. A step finishes inference, then the harness wakes up, then a tool starts cold, then results are marshalled back. The loop runs one stage at a time while the others idle, like a turnstile admitting one person while the queue behind it stretches around the block. CPUs solved this decades ago with pipelines. Agent runtimes mostly haven't. Latency is not a fact of model life. It is a graph property — and graphs can be redrawn." data-zh="所有关于智能体成本的讨论，最后都会落到 token 上。几乎没有一场讨论落在秒上——这很奇怪，因为用户是用秒来体验智能体的，而秒里面装的几乎全是等待。一步推理结束，harness 才醒过来，工具冷启动，结果再被搬运回来。循环一次只跑一个阶段，其余阶段全部闲置，像一台转闸门，一次只放一个人进来，后面的队伍绕过整个街区。CPU 几十年前就用流水线解决了这个问题。智能体运行时大多还没有。延迟不是模型生活的既成事实。它是图的属性——而图可以重画。">Every discussion of agent costs eventually lands on tokens. Almost none of them lands on seconds — which is strange, because users experience the agent in seconds, and seconds are made mostly of waiting.</p>
+</header>
+<article class="post-body">
+<p data-en="Take an ordinary trace and color it by who is working. The picture is embarrassing. During model inference, every tool is idle. During tool execution, the model's weights sit cold in someone else's datacenter doing nothing for this run. Between them, the harness burns wall-clock on pure bookkeeping: serializing context, validating arguments, waiting on network round-trips that no one overlapped. In a representative run, the fraction of time when two or more stages are genuinely busy at once is tiny — a pipeline utilization that would get a silicon designer fired. The deep irony is that each stage in isolation is already fast. The loop is slow because it is polite: it insists on finishing one thing before starting the next, even when the next thing does not depend on the first." data-zh="拿一条普通的追踪记录，按「谁在干活」来上色，画面会让人难堪。模型推理期间，所有工具都在闲置。工具执行期间，模型的权重冷冷地躺在别人的数据中心里，不为这次运行出一点力。在两者之间，harness 把墙上时钟烧在纯粹的记账上：序列化上下文、校验参数、等待那些没人去重叠的网络往返。在一次典型运行里，两个或以上阶段真正同时忙碌的时间占比微乎其微——这种流水线利用率，放在芯片设计师身上是要被开除的。最深的讽刺在于：孤立地看，每个阶段都已经够快了。循环之所以慢，是因为它太讲礼貌：它坚持做完一件事再开始下一件，哪怕下一件根本不依赖第一件。">Take an ordinary trace and color it by who is working. The picture is embarrassing. During model inference, every tool is idle. During tool execution, the model's weights sit cold in someone else's datacenter doing nothing for this run.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrP2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrP3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="TURNSTILE VS PIPELINE: SAME STAGES, DIFFERENT CLOCK" data-zh="转闸门 vs 流水线：同样的阶段，不同的时钟" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">TURNSTILE VS PIPELINE: SAME STAGES, DIFFERENT CLOCK</text>
+<!-- turnstile: sequential blocks -->
+<text data-en="sequential loop" data-zh="串行循环" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="start" x="40" y="58">sequential loop</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent)" stroke-width="1.5" width="60" x="40" y="68"></rect>
+<text data-en="model" data-zh="模型" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="70" y="84">model</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--text-tertiary)" stroke-width="1.5" width="60" x="110" y="68"></rect>
+<text data-en="idle" data-zh="闲置" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="140" y="84">idle</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent-2)" stroke-width="1.5" width="60" x="180" y="68"></rect>
+<text data-en="tool" data-zh="工具" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="210" y="84">tool</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--text-tertiary)" stroke-width="1.5" width="60" x="250" y="68"></rect>
+<text data-en="idle" data-zh="闲置" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="280" y="84">idle</text>
+<text data-en="total: sum of all stages" data-zh="总时长：所有阶段之和" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="start" x="40" y="112">total: sum of all stages</text>
+<!-- pipeline: overlapped rows -->
+<text data-en="pipelined loop" data-zh="流水线循环" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="start" x="40" y="150">pipelined loop</text>
+<rect fill="var(--bg-surface)" height="22" rx="5" stroke="var(--accent)" stroke-width="1.5" width="110" x="40" y="160"></rect>
+<text data-en="model step n+1" data-zh="模型第 n+1 步" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="95" y="175">model step n+1</text>
+<rect fill="var(--bg-surface)" height="22" rx="5" stroke="var(--accent-2)" stroke-width="1.5" width="110" x="130" y="188"></rect>
+<text data-en="tool step n" data-zh="工具第 n 步" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="185" y="203">tool step n</text>
+<rect fill="var(--bg-surface)" height="22" rx="5" stroke="var(--accent-3)" stroke-width="1.5" width="110" x="220" y="160"></rect>
+<text data-en="prefetch n+2" data-zh="预取第 n+2 步" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="275" y="175">prefetch n+2</text>
+<!-- overlap bracket -->
+<path d="M95 186 C95 210 185 216 185 216" fill="none" marker-end="url(#arrP3)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="3,2"></path>
+<text data-en="overlap — two clocks run at once" data-zh="重叠——两个时钟同时走" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="start" x="40" y="236">overlap — two clocks run at once</text>
+<!-- divider -->
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="380" x2="380" y1="50" y2="290"></line>
+<!-- right: utilization bars -->
+<text data-en="who is busy, over time" data-zh="随时间推移，谁在忙" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="start" x="410" y="58">who is busy, over time</text>
+<rect fill="var(--accent)" height="16" rx="3" width="70" x="410" y="70"></rect>
+<rect fill="var(--accent)" height="16" rx="3" width="70" x="490" y="70" opacity="0.35"></rect>
+<text data-en="model" data-zh="模型" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="end" x="402" y="82">model</text>
+<rect fill="var(--accent-2)" height="16" rx="3" width="30" x="410" y="94" opacity="0.35"></rect>
+<rect fill="var(--accent-2)" height="16" rx="3" width="150" x="410" y="94"></rect>
+<text data-en="tools" data-zh="工具" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="end" x="402" y="106">tools</text>
+<rect fill="var(--accent-3)" height="16" rx="3" width="30" x="410" y="118"></rect>
+<rect fill="var(--accent-3)" height="16" rx="3" width="150" x="410" y="118" opacity="0.35"></rect>
+<text data-en="harness" data-zh="harness" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="end" x="402" y="130">harness</text>
+<text data-en="faded = idle. Fix the faded parts." data-zh="变淡 = 闲置。修掉变淡的部分。" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="start" x="410" y="156">faded = idle. Fix the faded parts.</text>
+<!-- verdict box -->
+<rect fill="var(--accent-dim)" height="56" rx="9" stroke="var(--accent)" stroke-width="1.5" width="480" x="70" y="266"></rect>
+<text data-en="The stages are not the bottleneck. The gaps between them are." data-zh="瓶颈不在各个阶段，而在它们之间的空隙。" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="310" y="290">The stages are not the bottleneck. The gaps between them are.</text>
+<text data-en="Latency is a scheduling decision, and scheduling is engineering." data-zh="延迟是一个调度决定，而调度是工程。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="310">Latency is a scheduling decision, and scheduling is engineering.</text>
+</svg>
+<p class="diagram-caption" data-en="The same four stages, scheduled two ways. On the left, the sequential loop: each stage completes, hands off, and waits — total time is the sum of all stages plus every gap. Below it, the pipelined loop: while the tool executes step n, the model is already reasoning about step n+1 and a prefetcher warms step n+2. On the right, a utilization view — faded regions are idle capacity being paid for and not used." data-zh="同样的四个阶段，两种排法。左边是串行循环：每个阶段做完、交接、然后等待——总时长是所有阶段之和，再加上每一道空隙。下面是流水线循环：当工具执行第 n 步时，模型已经在推理第 n+1 步，预取器在为第 n+2 步预热。右边是利用率视角——变淡的区域，是付了钱却没用的闲置产能。">The same four stages, scheduled two ways. On the left, the sequential loop: each stage completes, hands off, and waits — total time is the sum of all stages plus every gap. Below it, the pipelined loop: while the tool executes step n, the model is already reasoning about step n+1 and a prefetcher warms step n+2.</p>
+</div>
+<h3 data-en="Speculate on the next tool call" data-zh="对下一次工具调用进行投机">Speculate on the next tool call</h3>
+<p data-en="The most valuable overlap is also the most radical: start the next step before the current one confirms it. Agent behavior is far more predictable than it looks. A run that just read a file very likely reads a related file next; a run that found one search hit very likely fetches the same domain again; a run that decided to test something very likely installs dependencies first. This regularity is exactly what a prefetcher eats. While the current tool executes, a small model — or a plain frequency table — predicts the likeliest next calls and warms them: resolves the connection, primes the cache, precompiles the template, pre-authorizes the scope. If prediction hits, the next step starts warm instead of cold, and cold starts are where seconds hide." data-zh="最有价值的重叠，也是最激进的那种：在当前步骤确认之前，就开始下一步。智能体的行为远比表面看起来更可预测。刚读完一个文件的运行，下一步很可能读一个相关文件；刚找到一条搜索结果的运行，很可能再次抓取同一个域名；刚决定要测试某个东西的运行，很可能先装依赖。这种规律性，正是预取器赖以为生的东西。当前工具执行时，一个小模型——或者一张朴素的频次表——预测最可能的下一批调用并预热它们：建好连接、填充缓存、预编译模板、预授权权限范围。预测命中，下一步就是热启动而不是冷启动——而冷启动，正是藏秒数的地方。">The most valuable overlap is also the most radical: start the next step before the current one confirms it. Agent behavior is far more predictable than it looks. A run that just read a file very likely reads a related file next; a run that found one search hit very likely fetches the same domain again.</p>
+<p data-en="Speculation has a bad reputation in this context, earned by people who speculated with writes. The rule that keeps it honest is old and simple: speculate on reads, serialize writes. A read has no side effects — warming it costs electricity, not correctness. If the predictor guessed wrong, the prefetched result is dropped and nothing in the world has changed. A write is different: an email sent, a row updated, a deploy triggered, a payment taken. Those must wait for the model's actual, final decision — a commit point, deliberately narrow, deliberately late. The architecture that emerges is a wide, warm, parallel read path feeding a narrow, cold, serial write path. Most agent workloads are overwhelmingly reads; pipelining the read side alone reclaims most of the wasted clock." data-zh="投机在这个语境里名声不好，那是拿写操作去投机的人挣来的。让它保持诚实的规则古老而简单：读可以投机，写必须串行。读没有副作用——预热它花的是电，不是正确性。预测器猜错了，预取结果直接丢弃，世界毫无变化。写不同：发出的邮件、更新的行、触发的部署、划走的付款。这些必须等模型真正的、最终的决定——一个刻意收窄、刻意置后的提交点。由此浮现的架构是：一条宽阔、温暖、并行的读路径，汇入一条狭窄、冰冷、串行的写路径。智能体负载绝大多数是读；仅把读侧流水线化，就能收回大部分被浪费的时钟。">Speculation has a bad reputation in this context, earned by people who speculated with writes. The rule that keeps it honest is old and simple: speculate on reads, serialize writes. A read has no side effects — warming it costs electricity, not correctness.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrS1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrS2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrS3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="SPECULATE READS · SERIALIZE WRITES · COMMIT LATE" data-zh="读可投机 · 写须串行 · 提交置后" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">SPECULATE READS · SERIALIZE WRITES · COMMIT LATE</text>
+<!-- current execution -->
+<rect fill="var(--bg-surface)" height="38" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="40" y="48"></rect>
+<text data-en="tool executing" data-zh="工具执行中" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="115" y="64">tool executing</text>
+<text data-en="step n" data-zh="第 n 步" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="115" y="78">step n</text>
+<!-- predictor -->
+<path d="M190 67 L240 67" fill="none" marker-end="url(#arrS3)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="38" rx="9" stroke="var(--accent)" stroke-width="2" width="160" x="244" y="48"></rect>
+<text data-en="predictor" data-zh="预测器" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="324" y="64">predictor</text>
+<text data-en="small model · frequency table" data-zh="小模型 · 频次表" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="324" y="78">small model · frequency table</text>
+<!-- fan out to prefetches -->
+<path d="M404 67 C440 67 460 100 470 120" fill="none" marker-end="url(#arrS3)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<path d="M404 67 C460 67 500 90 530 104" fill="none" marker-end="url(#arrS3)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<path d="M404 67 C470 67 520 70 550 80" fill="none" marker-end="url(#arrS3)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="440" y="122"></rect>
+<text data-en="prefetch: file B" data-zh="预取：文件 B" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="500" y="141">prefetch: file B</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="470" y="160"></rect>
+<text data-en="prefetch: domain X" data-zh="预取：域名 X" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="530" y="179">prefetch: domain X</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="490" y="198"></rect>
+<text data-en="warm conn · cache" data-zh="热连接 · 缓存" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="550" y="217">warm conn · cache</text>
+<text data-en="read-only: guesses are free" data-zh="只读：猜错也不花钱" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="520" y="252">read-only: guesses are free</text>
+<!-- model decision -->
+<rect fill="var(--bg-surface)" height="42" rx="9" stroke="var(--accent)" stroke-width="2" width="170" x="40" y="150"></rect>
+<text data-en="model decides" data-zh="模型做决定" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="125" y="168">model decides</text>
+<text data-en="final tool choice for n+1" data-zh="第 n+1 步的最终工具选择" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="125" y="183">final tool choice for n+1</text>
+<!-- hit or miss -->
+<path d="M210 171 C280 171 340 150 436 137" fill="none" marker-end="url(#arrS1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<text data-en="hit → step n+1 starts warm" data-zh="命中 → 第 n+1 步热启动" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="300" y="128">hit → step n+1 starts warm</text>
+<path d="M210 181 C260 195 300 205 330 210" fill="none" marker-end="url(#arrS3)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="3,2"></path>
+<text data-en="miss → drop it, nothing happened" data-zh="未中 → 丢弃，什么都没发生" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="300" y="222">miss → drop it, nothing happened</text>
+<!-- commit point -->
+<path d="M125 192 L125 262" fill="none" marker-end="url(#arrS2)" stroke="var(--accent-2)" stroke-width="1.8"></path>
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent-2)" stroke-width="2" width="230" x="40" y="266"></rect>
+<text data-en="commit point (writes only)" data-zh="提交点（仅写操作）" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="284">commit point (writes only)</text>
+<text data-en="send · update · deploy · pay" data-zh="发送 · 更新 · 部署 · 付款" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="155" y="300">send · update · deploy · pay</text>
+<rect fill="var(--accent-dim)" height="30" rx="7" stroke="var(--accent)" stroke-width="1" width="180" x="330" y="274"></rect>
+<text data-en="narrow · serial · audited" data-zh="狭窄 · 串行 · 可审计" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="420" y="293">narrow · serial · audited</text>
+<path d="M270 289 L326 289" fill="none" marker-end="url(#arrS3)" stroke="var(--text-tertiary)" stroke-width="1.2"></path>
+<text data-en="reads fan out and guess; writes queue and wait. The asymmetry is the whole design." data-zh="读可以扇出、可以猜；写必须排队、必须等。这种不对称，就是全部设计。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="336">reads fan out and guess; writes queue and wait. The asymmetry is the whole design.</text>
+</svg>
+<p class="diagram-caption" data-en="Speculative execution, safely. While step n's tool runs, a cheap predictor warms the most likely reads for step n+1. Hits start warm; misses are dropped without a trace — reads have no side effects. Writes never speculate: they pass through a deliberately narrow commit point after the model's final decision, serialized and audited. The read path is wide and warm; the write path is narrow and cold, by design." data-zh="安全的投机执行。当第 n 步的工具在跑时，一个廉价的预测器为第 n+1 步最可能的读操作预热。命中则热启动；未中则无痕丢弃——读没有副作用。写从不投机：它们在模型做出最终决定之后，经过一个刻意收窄的提交点，串行且可审计。读路径宽而热；写路径窄而冷，这是有意为之。">Speculative execution, safely. While step n's tool runs, a cheap predictor warms the most likely reads for step n+1. Hits start warm; misses are dropped without a trace — reads have no side effects. Writes never speculate.</p>
+</div>
+<h3 data-en="Overlap starts in the harness, not the model" data-zh="重叠从 harness 开始，而不是从模型开始">Overlap starts in the harness, not the model</h3>
+<p data-en="None of this requires the model provider to change anything, which is the point. The harness owns the loop, and the loop is where the scheduling lives. Cheap first moves: batch independent tool calls instead of dribbling them one per turn — most modern models accept parallel calls and most harnesses serialize them anyway. Keep speculative decoding enabled and prompt caches warm by keeping prefixes stable. Pool connections to the tools that dominate the trace. Hide argument validation behind the inference window instead of after it. Every one of these is a harness patch, not a research problem, and together they routinely halve end-to-end latency without touching a single weight." data-zh="这些都不需要模型提供方改变任何东西——这正是关键所在。harness 拥有循环，而调度就住在循环里。便宜的第一步：把相互独立的工具调用批量发出，而不是一个回合挤一颗——大多数现代模型接受并行调用，而大多数 harness 照样把它们串行化。保持投机解码开启、保持前缀稳定以让 prompt 缓存常热。为追踪记录里占比最高的工具维护连接池。把参数校验藏到推理窗口背后，而不是推理之后。每一条都是 harness 补丁，不是研究问题，合在一起，经常能把端到端延迟砍半，一个权重都不用动。">None of this requires the model provider to change anything, which is the point. The harness owns the loop, and the loop is where the scheduling lives. Cheap first moves: batch independent tool calls instead of dribbling them one per turn.</p>
+<blockquote data-en="Cost gets optimized where it is measured in tokens. Latency gets optimized where it is measured in gaps. The teams that feel fast are not the teams with the fastest model — they are the teams that refused to leave their pipeline idle." data-zh="成本在按 token 计量处被优化。延迟在按空隙计量处被优化。让人觉得快的团队，不是模型最快的团队——是拒绝让自己的流水线闲置的团队。">Cost gets optimized where it is measured in tokens. Latency gets optimized where it is measured in gaps. The teams that feel fast are not the teams with the fastest model — they are the teams that refused to leave their pipeline idle.</blockquote>
+<h3 data-en="The accounting changes when the clock overlaps" data-zh="当时钟重叠，账目也随之改变">The accounting changes when the clock overlaps</h3>
+<p data-en="There is a second-order effect that deserves attention. Once reads are speculative, the marginal cost of an extra read collapses — a wrong guess costs milliseconds of prefetch, not a visible step in the user's trace. This changes model behavior at the margin: an agent that can afford to peek at three files instead of one, speculatively and in parallel, will sometimes know things a strictly sequential agent never learns, because the sequential agent's budget of visible steps forced it to guess. Speed and quality stop being a trade-off; overlap buys both. The catch is discipline: every speculative read must be marked as such in the trace, or debugging becomes archaeology. A trace that hides which reads were speculative and which were deliberate is lying about what the agent actually decided — and a trace that lies is worse than no trace." data-zh="还有一个值得注意的二阶效应。一旦读变成投机的，多读一次的边际成本就崩塌了——猜错花的是几毫秒的预取，而不是用户追踪记录里一个看得见的步骤。这在边际上改变了模型行为：一个有能力投机地、并行地瞄三份文件而不是一份的智能体，有时会知道严格串行的智能体永远不知道的东西，因为串行智能体的可见步骤预算逼着它去猜。速度和质量不再是一对权衡；重叠把两者一起买下。但纪律不可少：每一次投机读都必须在追踪记录里被标注，否则调试会变成考古。一条隐瞒了哪些读是投机、哪些是有意的追踪记录，是在对智能体真正决定了什么撒谎——而撒谎的记录比没有记录更糟。">There is a second-order effect that deserves attention. Once reads are speculative, the marginal cost of an extra read collapses — a wrong guess costs milliseconds of prefetch, not a visible step in the user's trace.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrQ1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="SPECULATION CHANGES THE MARGINAL COST OF KNOWING" data-zh="投机改变了「知道」的边际成本" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">SPECULATION CHANGES THE MARGINAL COST OF KNOWING</text>
+<!-- axes -->
+<line stroke="var(--text-tertiary)" stroke-width="1.5" x1="90" x2="90" y1="50" y2="250"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1.5" x1="90" x2="560" y1="250" y2="250"></line>
+<polygon fill="var(--text-tertiary)" points="90,46 86,56 94,56"></polygon>
+<polygon fill="var(--text-tertiary)" points="564,250 554,246 554,254"></polygon>
+<text data-en="cost of one more look →" data-zh="多看一眼的成本 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="72" y="150" transform="rotate(-90 72 150)">cost of one more look →</text>
+<text data-en="context breadth →" data-zh="上下文广度 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="325" y="272">context breadth →</text>
+<!-- serial curve: steep -->
+<path d="M90 250 C150 250 190 120 260 90 C330 62 420 58 560 56" fill="none" stroke="var(--accent-3)" stroke-width="2"></path>
+<text data-en="sequential: every look is a visible step" data-zh="串行：每一眼都是可见步骤" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="150" y="75">sequential: every look is a visible step</text>
+<!-- speculative curve: flat -->
+<path d="M90 250 C170 250 220 210 300 200 C380 191 470 188 560 186" fill="none" stroke="var(--accent)" stroke-width="2"></path>
+<text data-en="speculative: extra looks are nearly free" data-zh="投机：多看几眼几乎免费" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="250" y="230">speculative: extra looks are nearly free</text>
+<!-- annotation -->
+<rect fill="var(--accent-dim)" height="34" rx="8" stroke="var(--accent)" stroke-width="1" width="200" x="330" y="120"></rect>
+<text data-en="breadth bought here is" data-zh="在这里买到的广度" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="430" y="134">breadth bought here is</text>
+<text data-en="unaffordable sequentially" data-zh="在串行世界里买不起" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="430" y="148">unaffordable sequentially</text>
+</svg>
+<p class="diagram-caption" data-en="The marginal cost of gathering context, sequential versus speculative. Sequentially, every additional read is a full visible step — latency and token budget both — so the agent rations what it looks at and guesses the rest. With speculative reads, additional looks cost milliseconds and drop invisibly on a miss. The agent can afford to know more, and knowing more is usually the difference between guessing and being right." data-zh="获取上下文的边际成本：串行 vs 投机。串行世界里，每多读一次都是一个完整的可见步骤——延迟和 token 预算都要付——于是智能体给「看」配给限量，剩下的靠猜。有了投机读，多看一眼只花几毫秒，未中即无痕丢弃。智能体付得起「知道更多」，而知道更多，往往正是「靠猜」和「猜对」之间的差别。">The marginal cost of gathering context, sequential versus speculative. Sequentially, every additional read is a full visible step — latency and token budget both — so the agent rations what it looks at and guesses the rest.</p>
+</div>
+<p data-en="The uncomfortable summary: most agent latency is not model latency, and most of what is billed as 'thinking time' is actually scheduling debt — gaps the runtime left open because nobody owned them. CPUs learned to pipeline when clock speeds stalled; agent runtimes are learning it now that everyone's model latency converges to the same few seconds. When the models are equally fast, the product that wins is the one whose graph never idles. The loop was never a turnstile. It was always a pipeline, waiting to be drawn as one." data-zh="让人不舒服的总结是：智能体的延迟大多不是模型的延迟，而被记作「思考时间」的大部分，其实是调度债——运行时留下的、没人认领的空隙。CPU 在主频停顿时学会了流水线；当每家模型的延迟都收敛到同样那几秒，智能体运行时现在也开始学。当模型一样快，赢的产品，是那张图从不闲置的产品。循环从来就不是转闸门。它一直是流水线，只是在等有人把它画成流水线。">The uncomfortable summary: most agent latency is not model latency, and most of what is billed as 'thinking time' is actually scheduling debt — gaps the runtime left open because nobody owned them.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

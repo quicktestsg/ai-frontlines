@@ -70,6 +70,19 @@
             </div>
 
                     <div class="post-item fade-in">
+            <a href="posts/2026-10-19-the-loop-is-a-pipeline.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">October 19, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
+                </div>
+                <h2 class="post-title" data-en="The Loop Is a Pipeline, Not a Turnstile" data-zh="循环是流水线，不是转闸门">The Loop Is a Pipeline, Not a Turnstile</h2>
+                <p class="post-excerpt" data-en="Agent latency is mostly not model latency — it is scheduling debt: gaps between stages that nobody owns. The fix predates LLMs: pipeline the loop, speculate on reads with a cheap predictor, serialize writes behind a narrow commit point, and treat latency as a graph property you can redraw." data-zh="智能体的延迟大多不是模型的延迟——是调度债：阶段之间无人认领的空隙。解法早于大模型：把循环流水线化，用廉价预测器对读操作投机，让写操作排队通过狭窄的提交点，把延迟当作可以重画的图属性。">Agent latency is mostly not model latency — it is scheduling debt: gaps between stages that nobody owns. The fix predates LLMs: pipeline the loop, speculate on reads with a cheap predictor,.</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="post-item fade-in">
             <a href="posts/2026-10-18-the-cascade-architecture.html" class="post-item-inner">
                 <div class="post-meta">
                     <span class="post-date">October 18, 2026</span>
@@ -108,19 +121,6 @@
             </a>
         </div>
 
-        <div class="post-item fade-in">
-            <a href="posts/2026-10-15-compaction-is-garbage-collection.html" class="post-item-inner">
-                <div class="post-meta">
-                    <span class="post-date">October 15, 2026</span>
-                    <span class="post-dot"></span>
-                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
-                </div>
-                <h2 class="post-title" data-en="Compaction Is Garbage Collection" data-zh="上下文压缩，就是垃圾回收">Compaction Is Garbage Collection</h2>
-                <p class="post-excerpt" data-en="A context window is not a shelf — it is a heap. Every step allocates tokens, most die immediately, and the append-only pattern never frees them. The fix is the oldest idea in systems engineering: mark by meaning, sweep on a schedule, compact into a small all-live kernel, and page the rest to disk." data-zh="上下文窗口不是书架，是堆。每一步都在分配 token，大多数当步即死，而只追加的模式从不释放。解法是系统工程里最古老的思想：按意义标记、按计划清扫、压缩成小而全活的内核，其余换页到磁盘。">A context window is not a shelf — it is a heap. Every step allocates tokens, most die immediately, and the append-only pattern never frees them. The fix is the oldest idea in systems engineering:.</p>
-                <span class="post-arrow">→</span>
-            </a>
-        </div>
-
         </div>
 
         <div class="preview-section">
@@ -134,6 +134,39 @@
             <div class="news-list">
 
                         <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Anthropic<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@AnthropicAI · Oct 19</span>
+                </div>
+                <span class="news-badge" style="background:#D4A574">Anthropic</span>
+            </div>
+            <div class="tweet-body" data-en="We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new wholly owned entity dedicated entirely to the public benefit.
+
+It will start off with 5% of our shares. For every 50% increase in the company’s value over a set baseline, we can" data-zh="Anthropic 宣布将一部分公司股份注入新成立的 Anthropic 公共利益基金（Anthropic Public Benefit Fund）——一家完全致力于公共利益的独资实体。首期为 5% 的股份，此后公司价值每较基准增长 50%，可追加注入最多 2%。加上联合创始人已承诺捐出 80% 个人股权、约半数员工参与股权捐赠配对计划，累计约 20% 的 Anthropic 股份已承诺用于公共福祉。">We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new wholly owned entity dedicated entirely to the public benefit.
+
+It will start off with 5% of our shares. For every 50% increase in the company’s value over a set baseline, we can</div>
+            <div class="tweet-footer">
+                <a href="https://x.com/AnthropicAI/status/2111881963657412903" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/AnthropicAI/status/2111881963657412903" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/AnthropicAI/status/2111881963657412903" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    4.6K
+                </a>
+                <a href="https://x.com/AnthropicAI/status/2111881963657412903" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
             <div class="tweet-header">
                 <img src="https://pbs.twimg.com/profile_images/1717417613775757312/Uk1zNOj4_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
@@ -255,43 +288,6 @@ Stronger benchmark performance, faster task completion, and shorter outputs than
             </div>
         </article>
 
-        <article class="tweet-card fade-in">
-            <div class="tweet-header">
-                <img src="https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
-                <div class="tweet-author">
-                    <span class="tweet-name">OpenAI<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
-                    <span class="tweet-handle">@OpenAI · Oct 17</span>
-                </div>
-                <span class="news-badge" style="background:#10A37F">OpenAI</span>
-            </div>
-            <div class="tweet-body" data-en="GPT-6 Astra Pro in ChatGPT got an upgrade with faster responses and improved use of plugins and tools.
-
-And now, multiple agents can tackle different parts of a task in parallel. You can follow each agent’s progress and open completed tasks to review their work.
-
-Now available to" data-zh="ChatGPT 中的 GPT-6 Astra Pro 迎来升级：响应更快，插件与工具调用能力增强。现在多个 agent 可以并行处理同一任务的不同部分，用户可实时查看每个 agent 的进度，并打开已完成的任务检查结果。目前已面向 Pro 用户在 Chat 标签页开放。">GPT-6 Astra Pro in ChatGPT got an upgrade with faster responses and improved use of plugins and tools.
-
-And now, multiple agents can tackle different parts of a task in parallel. You can follow each agent’s progress and open completed tasks to review their work.
-
-Now available to</div>
-            <div class="tweet-footer">
-                <a href="https://x.com/OpenAI/status/2111192259073094035" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
-                    0
-                </a>
-                <a href="https://x.com/OpenAI/status/2111192259073094035" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
-                    0
-                </a>
-                <a href="https://x.com/OpenAI/status/2111192259073094035" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    8.9K
-                </a>
-                <a href="https://x.com/OpenAI/status/2111192259073094035" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
-                    View on X →
-                </a>
-            </div>
-        </article>
-
             </div>
         </div>
     </section>
@@ -300,6 +296,19 @@ Now available to</div>
     <section class="post-list tab-pane" id="pane-blog">
 
                 <div class="post-item fade-in">
+            <a href="posts/2026-10-19-the-loop-is-a-pipeline.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">October 19, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
+                </div>
+                <h2 class="post-title" data-en="The Loop Is a Pipeline, Not a Turnstile" data-zh="循环是流水线，不是转闸门">The Loop Is a Pipeline, Not a Turnstile</h2>
+                <p class="post-excerpt" data-en="Agent latency is mostly not model latency — it is scheduling debt: gaps between stages that nobody owns. The fix predates LLMs: pipeline the loop, speculate on reads with a cheap predictor, serialize writes behind a narrow commit point, and treat latency as a graph property you can redraw." data-zh="智能体的延迟大多不是模型的延迟——是调度债：阶段之间无人认领的空隙。解法早于大模型：把循环流水线化，用廉价预测器对读操作投机，让写操作排队通过狭窄的提交点，把延迟当作可以重画的图属性。">Agent latency is mostly not model latency — it is scheduling debt: gaps between stages that nobody owns. The fix predates LLMs: pipeline the loop, speculate on reads with a cheap predictor,.</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="post-item fade-in">
             <a href="posts/2026-10-18-the-cascade-architecture.html" class="post-item-inner">
                 <div class="post-meta">
                     <span class="post-date">October 18, 2026</span>
@@ -1321,6 +1330,39 @@ Now available to</div>
         <div class="news-list">
 
                     <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Anthropic<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@AnthropicAI · Oct 19</span>
+                </div>
+                <span class="news-badge" style="background:#D4A574">Anthropic</span>
+            </div>
+            <div class="tweet-body" data-en="We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new wholly owned entity dedicated entirely to the public benefit.
+
+It will start off with 5% of our shares. For every 50% increase in the company’s value over a set baseline, we can" data-zh="Anthropic 宣布将一部分公司股份注入新成立的 Anthropic 公共利益基金（Anthropic Public Benefit Fund）——一家完全致力于公共利益的独资实体。首期为 5% 的股份，此后公司价值每较基准增长 50%，可追加注入最多 2%。加上联合创始人已承诺捐出 80% 个人股权、约半数员工参与股权捐赠配对计划，累计约 20% 的 Anthropic 股份已承诺用于公共福祉。">We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new wholly owned entity dedicated entirely to the public benefit.
+
+It will start off with 5% of our shares. For every 50% increase in the company’s value over a set baseline, we can</div>
+            <div class="tweet-footer">
+                <a href="https://x.com/AnthropicAI/status/2111881963657412903" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/AnthropicAI/status/2111881963657412903" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/AnthropicAI/status/2111881963657412903" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    4.6K
+                </a>
+                <a href="https://x.com/AnthropicAI/status/2111881963657412903" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
             <div class="tweet-header">
                 <img src="https://pbs.twimg.com/profile_images/1717417613775757312/Uk1zNOj4_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">

@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-19",
+    "slug": "the-loop-is-a-pipeline",
+    "title_en": "The Loop Is a Pipeline, Not a Turnstile",
+    "title_zh": "循环是流水线，不是转闸门",
+    "read_time": 9,
+    "excerpt_en": "Agent latency is mostly not model latency — it is scheduling debt: gaps between stages that nobody owns. The fix predates LLMs: pipeline the loop, speculate on reads with a cheap predictor, serialize writes behind a narrow commit point, and treat latency as a graph property you can redraw.",
+    "excerpt_zh": "智能体的延迟大多不是模型的延迟——是调度债：阶段之间无人认领的空隙。解法早于大模型：把循环流水线化，用廉价预测器对读操作投机，让写操作排队通过狭窄的提交点，把延迟当作可以重画的图属性。"
+  },
+  {
     "date": "2026-10-18",
     "slug": "the-cascade-architecture",
     "title_en": "The Cascade: Architecture of Affordable Intelligence",
