@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Idempotency Tax — AI Frontlines</title>
+<meta content="Agents retry. Timeouts retry. Users resubmit. Models call the same tool twice. Every agent lives in an at-least-once world, which means every action either pays the idempotency tax up front — or pays it later, with interest, in duplicate side effects." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 20, 2026" data-zh="2026年10月20日">October 20, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Idempotency Tax" data-zh="幂等税">The Idempotency Tax</h1>
+<p class="post-header-deck" data-en="Agents retry. The infrastructure beneath them retries harder. Timeouts become retries, crashes become retries, an impatient user hitting submit twice becomes a retry. A model that lost track of its own history calls the same tool again, cheerfully, as if for the first time. The result is that every agent lives in an at-least-once world: any action may execute zero times, once, or several times, and the system must be correct anyway. Idempotency — making an action safe to repeat — is the tax that world charges. Most teams refuse to pay it up front. They pay it later, with interest, in duplicate invoices and double-sent emails and the quiet horror of a database with two of everything." data-zh="智能体会重试。它们脚下的基础设施重试得更狠。超时变成重试，崩溃变成重试，一个不耐烦的用户连点两次提交，也是重试。一个丢失了自身历史记录的模型，会兴高采烈地再次调用同一个工具，仿佛是第一次。结果是：每一个智能体都活在一个「至少一次」的世界里——任何动作都可能执行零次、一次或多次，而系统无论如何都必须保持正确。幂等——让一个动作可以安全地重复——是这个世界征收的税。大多数团队拒绝预先缴纳。他们后来补缴，还要带上复利：重复的发票、发两遍的邮件，以及一个「每样东西都有两份」的数据库带来的、安静的恐惧。">Agents retry. The infrastructure beneath them retries harder. Every agent lives in an at-least-once world, and idempotency is the tax that world charges.</p>
+</header>
+<article class="post-body">
+<p data-en="Here is a story that has happened to every team that has shipped an agent with write access to anything. The agent is asked to file a report. It calls the submission tool. The network hiccups; the request times out on the client side but completes on the server side. The agent, being sensible, retries. The tool succeeds again. Somewhere downstream, a second report is now filed, identical to the first. Nobody notices for a week. When someone does notice, the investigation reveals that the failure was not a bug in any single component. The timeout behaved correctly. The retry behaved correctly. The tool behaved correctly. The defect was in the seam between them — a system composed of correct parts that each assumed someone else was responsible for remembering what had already been done." data-zh="这是一个故事，每一个发布过「对任何东西有写权限」的智能体的团队，都经历过。智能体被要求提交一份报告。它调用了提交工具。网络打了个嗝；请求在客户端超时，却在服务端执行完成了。智能体很理性，于是重试。工具再次成功。在下游某处，第二份报告被提交了，和第一份一模一样。一周之内没人注意到。当有人注意到时，调查揭示出：这个故障不是任何单一组件里的 bug。超时的行为是正确的。重试的行为是正确的。工具的行为也是正确的。缺陷在它们之间的接缝里——一个由正确零件组成的系统，每个零件都以为「记住已经做过什么」是别人的责任。">Here is a story that has happened to every team that has shipped an agent with write access to anything. The agent is asked to file a report. It calls the submission tool. The network hiccups; the request times out on the client side but completes on the server side. The agent, being sensible, retries. The tool succeeds again. Somewhere downstream, a second report is now filed, identical to the first. Nobody notices for a week.</p>
+<p data-en="Distributed systems engineers solved this problem decades ago, and the solution has a name that sounds like homework: idempotency. An operation is idempotent if performing it twice has the same effect as performing it once. Turning a light switch to 'on' is idempotent. Pressing a doorbell is not. The entire discipline of designing reliable systems over unreliable networks reduces, in large part, to converting doorbells into light switches — to reshaping every action so that repetition is harmless. Human operators did this intuitively: a clerk who is unsure whether a letter was sent checks before sending again. Software made it explicit with operation IDs, deduplication windows, and upserts. And then agents arrived, and threw the lesson away." data-zh="分布式系统工程师几十年前就解决了这个问题，而这个解决方案有一个听起来像课后作业的名字：幂等。一个操作，如果执行两次的效果等同于执行一次，它就是幂等的。把灯的开关拨到「开」是幂等的。按门铃不是。在不可靠网络上设计可靠系统的全部学问，很大程度上可以归结为：把门铃改造成电灯开关——重塑每一个动作，让重复变得无害。人类操作员凭直觉就在这么做：一个不确定信有没有寄出的职员，会先查一下再寄。软件把这件事显式化了：操作 ID、去重窗口、upsert。然后，智能体来了，把这个教训扔掉了。">Distributed systems engineers solved this problem decades ago, and the solution has a name that sounds like homework: idempotency. An operation is idempotent if performing it twice has the same effect as performing it once. Turning a light switch to 'on' is idempotent. Pressing a doorbell is not. The entire discipline of designing reliable systems over unreliable networks reduces, in large part, to converting doorbells into light switches.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrI1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrI2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="ONE LOGICAL ACTION, MANY EXECUTIONS" data-zh="一个逻辑动作，多次实际执行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ONE LOGICAL ACTION, MANY EXECUTIONS</text>
+<!-- left: intent -->
+<rect fill="var(--accent-dim)" height="36" rx="8" stroke="var(--accent)" stroke-width="2" width="150" x="40" y="120"></rect>
+<text data-en="intent:" data-zh="意图：" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="115" y="134">intent:</text>
+<text data-en="file report #42" data-zh="提交报告 #42" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="115" y="150">file report #42</text>
+<text data-en="once" data-zh="一次" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="115" y="180">once</text>
+<!-- fan out to executions -->
+<path d="M190 128 C240 100 290 90 340 84" fill="none" marker-end="url(#arrI1)" stroke="var(--text-tertiary)" stroke-width="1.3"></path>
+<path d="M190 138 L338 138" fill="none" marker-end="url(#arrI1)" stroke="var(--text-tertiary)" stroke-width="1.3"></path>
+<path d="M190 148 C240 176 290 186 340 192" fill="none" marker-end="url(#arrI2)" stroke="var(--accent-3)" stroke-width="1.3" stroke-dasharray="4,3"></path>
+<!-- execution boxes -->
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--text-tertiary)" stroke-width="1.3" width="170" x="345" y="70"></rect>
+<text data-en="attempt 1 — timeout?" data-zh="尝试 1 — 超时？" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="430" y="89">attempt 1 — timeout?</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--text-tertiary)" stroke-width="1.3" width="170" x="345" y="123"></rect>
+<text data-en="attempt 2 — retry" data-zh="尝试 2 — 重试" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="430" y="142">attempt 2 — retry</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="170" x="345" y="177"></rect>
+<text data-en="attempt 3 — model forgot" data-zh="尝试 3 — 模型忘了" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="430" y="196">attempt 3 — model forgot</text>
+<!-- arrows to side effects -->
+<path d="M515 85 C550 100 555 115 558 128" fill="none" marker-end="url(#arrI1)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<path d="M515 138 L556 138" fill="none" marker-end="url(#arrI1)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<path d="M515 192 C550 177 555 162 558 148" fill="none" marker-end="url(#arrI2)" stroke="var(--accent-3)" stroke-width="1" stroke-dasharray="3,2"></path>
+<!-- side effects stack -->
+<g>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="56" x="560" y="100"></rect>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="56" x="560" y="125"></rect>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="2" width="56" x="560" y="150"></rect>
+</g>
+<text data-en="3 × report" data-zh="3 份报告" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="588" y="203">3 × report</text>
+<text data-en="the seam between correct parts is where duplicates are born" data-zh="正确零件之间的接缝，正是重复诞生的地方" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="260">the seam between correct parts is where duplicates are born</text>
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="280"></rect>
+<text data-en="Every layer had a reason to re-send. No layer was responsible for remembering." data-zh="每一层都有理由重发。没有一层负责记住。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="305">Every layer had a reason to re-send. No layer was responsible for remembering.</text>
+</svg>
+<p class="diagram-caption" data-en="One logical intent fans out into multiple physical executions: a timeout that half-succeeded, a defensive retry, and a model that simply lost count. Each path is individually reasonable. Together they triple every side effect. The duplicate is not caused by any component — it is caused by the absence of a shared memory of what already happened." data-zh="一个逻辑意图，扇出成多次物理执行：一个半成功的超时、一次防御性重试、以及一个单纯数丢了的模型。每条路径单独看都合理。合在一起，它们把每个副作用变成三倍。重复，不是由任何组件造成的——它是由「对已发生之事缺乏共享记忆」造成的。">One logical intent fans out into multiple physical executions: a timeout that half-succeeded, a defensive retry, and a model that simply lost count. Each path is individually reasonable. Together they triple every side effect.</p>
+</div>
+<h3 data-en="Agents make the old problem worse in a new way" data-zh="智能体用一种新方式，把老问题变本加厉">Agents make the old problem worse in a new way</h3>
+<p data-en="Classic distributed systems had one source of duplication: the infrastructure. Networks drop responses, processes crash mid-request, load balancers resend. Painful, but bounded — the infrastructure retries a bounded number of times, within a bounded window, with the same payload. Agents add a second source that is far stranger: the decision to act is now generated, not programmed. A model that has been through a long task, whose context has been compacted, whose earlier tool calls have been summarized into a sentence like 'the report was prepared,' may quite reasonably conclude the report has not been filed yet — and file it. The retry is not a mechanism anymore. It is a belief. And beliefs, unlike mechanisms, do not respect retry limits, backoff schedules, or deduplication headers." data-zh="经典的分布式系统只有一个重复来源：基础设施。网络会丢响应，进程会在请求中途崩溃，负载均衡器会重发。痛苦，但有界——基础设施在有限的窗口内、以相同的载荷、重试有限的次数。智能体增加了第二个怪异得多的来源：行动的决策现在是「生成」出来的，不是「编程」出来的。一个经历了长任务的模型，上下文被压缩过，早先的工具调用被总结成一句「报告已准备好」——它完全可能合理地推断出报告还没提交，然后去提交它。重试不再是一个机制。重试是一个信念。而信念，不像机制，它不尊重重试上限、退避调度或去重头。">Classic distributed systems had one source of duplication: the infrastructure. Agents add a second, stranger source: the decision to act is now generated, not programmed. A model whose context was compacted may conclude the report has not been filed yet — and file it. The retry is not a mechanism anymore. It is a belief.</p>
+<p data-en="This is why naive porting of the old solutions fails. An idempotency key attached to a request works only if the same key is attached to every replay of that request. When the replay originates from a model's fresh belief, it generates a fresh key — or no key at all — and the deduplication layer, working exactly as designed, waves it through. The infrastructure-level fix assumes a client that remembers. The agent-level problem is a client that forgets on purpose, every few thousand tokens, as a routine optimization. Any solution that does not account for this will fail in the exact moment it is needed most: long tasks, heavy compaction, high stakes." data-zz="" data-zh="这就是为什么生搬硬套老方案会失败。附着在请求上的幂等键，只有当同一把键被附着在该请求的每一次重放上时才有效。而当重放源于模型的一个新信念时，它会生成一把新键——或者压根不生成键——而去重层完全按设计运行，挥手放行。基础设施层的修复方案，假设的是一个「记得住」的客户端。而智能体层的问题，是一个每隔几千个 token 就会「故意失忆」的客户端——而且这是常规优化手段。任何没有考虑到这一点的方案，都会在最需要它的时刻失效：长任务、重压缩、高风险。">This is why naive porting of the old solutions fails. An idempotency key attached to a request works only if the same key is attached to every replay. When the replay originates from a model's fresh belief, it generates a fresh key — and the deduplication layer, working exactly as designed, waves it through.</p>
+<blockquote data-en="The old question was: what if the network replays this request? The new question is: what if the mind replays it? The first is an engineering problem with an engineering answer. The second requires the system to know what it has done even when the reasoner does not. Memory of action must live outside the actor." data-zh="老问题是：如果网络重放了这条请求，怎么办？新问题是：如果「心智」重放了它，怎么办？前者是一个有工程答案的工程问题。后者要求系统在推理者本人不知道的情况下，依然知道自己做过什么。行动的记忆，必须活在行动者之外。">The old question was: what if the network replays this request? The new question is: what if the mind replays it? The first is an engineering problem with an engineering answer. The second requires the system to know what it has done even when the reasoner does not. Memory of action must live outside the actor.</blockquote>
+<h3 data-en="Pay the tax at the edge, where the action meets the world" data-zh="在边界处缴税——动作与世界相遇的地方">Pay the tax at the edge, where the action meets the world</h3>
+<p data-en="The fix is not to make the model remember. Models will forget; that is their nature under compaction, and fighting it with longer prompts or stern instructions is a maintenance treadmill. The fix is to make the boundary between the agent and the world idempotent — to put the memory of action in the tool layer, where it survives anything the model does or forgets. Concretely, this means three things. First, every mutating tool takes an operation reference — a task-scoped identifier that is derived from the plan, not from the model's current belief state, so that 'file report #42' always carries the same reference no matter which iteration, compaction, or subagent produces the call. Second, the tool enforces the invariant: an operation reference that has already completed returns its recorded result instead of executing again. Third, the enforcement is visible to the model — the response says 'already completed, result attached' rather than silently succeeding — because a model that can see the ledger stops hallucinating about it." data-zh="修复方案不是让模型记住。模型会忘，这是它们在压缩机制下的天性，用更长的 prompt 或严厉的指令去对抗它，只是一台维护跑步机。修复方案，是让智能体与世界之间的边界本身幂等——把行动的记忆放进工具层，那里能在模型做任何事、忘任何事之后依然幸存。具体来说，这意味着三件事。第一，每一个有副作用的工具都接收一个操作引用——一个从计划中派生的、任务作用域内的标识符，而不是从模型当前的信念状态派生，这样「提交报告 #42」无论由哪一次迭代、哪一次压缩、哪一个子智能体发出，都永远带着同一个引用。第二，由工具来强制执行这个不变量：一个已经完成的操作引用，返回它记录过的结果，而不是再次执行。第三，这个强制执行对模型可见——响应里写着「已完成，结果附上」，而不是静默成功——因为一个能看见账本的模型，就不会对账本产生幻觉。">The fix is not to make the model remember. The fix is to make the boundary between the agent and the world idempotent — to put the memory of action in the tool layer, where it survives anything the model does or forgets.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrK1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrK2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrK3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE LEDGERED TOOL BOUNDARY" data-zh="带账本的工具边界" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE LEDGERED TOOL BOUNDARY</text>
+<!-- agent side -->
+<rect fill="var(--bg-surface)" height="60" rx="10" stroke="var(--text-tertiary)" stroke-width="1.5" width="180" x="40" y="120"></rect>
+<text data-en="AGENT" data-zh="智能体" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="130" y="145">AGENT</text>
+<text data-en="forgets · compacts · retries" data-zh="会忘 · 会压缩 · 会重试" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="130" y="164">forgets · compacts · retries</text>
+<!-- calls with same op ref -->
+<path d="M220 135 L360 135" fill="none" marker-end="url(#arrK1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M220 160 L360 160" fill="none" marker-end="url(#arrK1)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<path d="M220 185 L360 185" fill="none" marker-end="url(#arrK2)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="2,3"></path>
+<text data-en="op: file-report-42" data-zh="op: file-report-42" fill="var(--accent)" font-family="monospace" font-size="9" text-anchor="middle" x="290" y="128">op: file-report-42</text>
+<text data-en="op: file-report-42" data-zh="op: file-report-42" fill="var(--accent)" font-family="monospace" font-size="9" text-anchor="middle" x="290" y="155">op: file-report-42</text>
+<text data-en="op: file-report-42" data-zh="op: file-report-42" fill="var(--accent-3)" font-family="monospace" font-size="9" text-anchor="middle" x="290" y="212">op: file-report-42</text>
+<!-- dedupe barrier -->
+<rect fill="var(--accent-dim)" height="180" rx="10" stroke="var(--accent)" stroke-width="2.5" width="90" x="364" y="60"></rect>
+<text data-en="LEDGER" data-zh="账本" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="409" y="105">LEDGER</text>
+<text data-en="op → result" data-zh="操作 → 结果" fill="var(--accent)" font-family="monospace" font-size="9" text-anchor="middle" x="409" y="125">op → result</text>
+<text data-en="survives" data-zh="幸存于" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="409" y="150">survives</text>
+<text data-en="compaction" data-zh="压缩" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="409" y="164">compaction</text>
+<text data-en="crashes" data-zh="崩溃" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="409" y="178">crashes</text>
+<text data-en="belief" data-zh="信念漂移" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="409" y="192">belief</text>
+<!-- world side -->
+<rect fill="var(--bg-surface)" height="60" rx="10" stroke="var(--accent-2)" stroke-width="1.5" width="160" x="490" y="60"></rect>
+<text data-en="WORLD" data-zh="世界" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="570" y="85">WORLD</text>
+<text data-en="executes once" data-zh="只执行一次" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="570" y="104">executes once</text>
+<!-- replies back -->
+<path d="M490 140 C460 235 250 250 226 182" fill="none" marker-end="url(#arrK3)" stroke="var(--text-tertiary)" stroke-width="1.2"></path>
+<text data-en="1st: done, result attached" data-zh="第一次：已完成，结果附上" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="380" y="262">1st: done, result attached</text>
+<path d="M490 165 C480 235 460 258 300 262" fill="none" marker-end="url(#arrK3)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="3,3"></path>
+<text data-en="replays: already completed — same result" data-zh="重放：已完成 —— 返回同一结果" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="380" y="285">replays: already completed — same result</text>
+<text data-en="memory of action lives outside the actor" data-zh="行动的记忆，活在行动者之外" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="315">memory of action lives outside the actor</text>
+</svg>
+<p class="diagram-caption" data-en="Every call carries the same operation reference, derived from the plan rather than the model's belief state. A ledger at the tool boundary records completed operations and their results. The first call executes against the world; every replay — whether from a timeout, a retry, or a model that forgot — receives the recorded result and a visible 'already completed' receipt. The world sees one execution. The model sees a consistent history it can trust." data-zh="每一次调用都携带同一个操作引用——它从计划中派生，而非从模型的信念状态派生。工具边界处的一个账本，记录已完成的操作及其结果。第一次调用对世界执行；之后的每一次重放——无论来自超时、重试，还是一个忘了的模型——都收到记录过的结果，和一张可见的「已完成」回执。世界只看见一次执行。模型看见一份它可以信任的、一致的历史。">Every call carries the same operation reference, derived from the plan rather than the model's belief state. A ledger at the tool boundary records completed operations and their results. The world sees one execution. The model sees a consistent history it can trust.</p>
+</div>
+<h3 data-en="The ladder of repeatability" data-zh="可重复性阶梯">The ladder of repeatability</h3>
+<p data-en="Not every action needs the full ledger treatment, and a mature design does not pay maximum tax everywhere. Actions sit on a ladder of repeatability, and the engineering discipline is matching the rung to the stakes. At the bottom are pure reads and computations: retry them freely, they cost nothing but tokens. One rung up are upserts — actions addressed by a stable key, where 'set the title to X' is naturally idempotent because the second execution overwrites identical state. Above that sit appends to a keyed log, where a sequence number or deduplication window makes repetition detectable. Near the top are fenced creations: payments, sends, provisioning — actions with no natural key, where a reference must be invented before the action and enforced at the boundary. And at the very top sit irreversible actions, where the only honest answer is a confirmation step: render the exact diff, require an explicit approval, and make the approval itself carry the operation reference so that even a double-clicked confirmation lands once." data-zh="不是每个动作都需要全套账本待遇，成熟的设计也不会到处都缴最高档的税。动作坐落在一条可重复性阶梯上，而工程纪律，就是让档位与风险相匹配。最底层是纯读取和计算：随便重试，除了 token 之外什么都不耗费。往上一级是 upsert——以稳定键为地址的动作，「把标题设为 X」天然幂等，因为第二次执行覆写的是完全相同的状态。再往上是带键的日志追加，一个序列号或去重窗口就能让重复可被检测。接近顶部的是带围栏的创建：支付、发送、开通资源——这些动作没有天然键，引用必须在动作之前被发明出来，并在边界处被强制执行。而在最顶端，是不可逆动作：唯一诚实的答案是加一个确认步骤——渲染出确切的 diff，要求一次显式批准，并让批准本身携带操作引用，这样即使确认按钮被双击，也只落地一次。">Not every action needs the full ledger treatment. Actions sit on a ladder of repeatability, and the engineering discipline is matching the rung to the stakes — from free retries on reads, to upserts, to keyed logs, to fenced creations, to the confirmation gates that guard the irreversible.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE LADDER OF REPEATABILITY" data-zh="可重复性阶梯" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE LADDER OF REPEATABILITY</text>
+<!-- rung 1 -->
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--text-tertiary)" stroke-width="1.3" width="360" x="130" y="48"></rect>
+<text data-en="① read / compute" data-zh="① 读取 / 计算" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="66">① read / compute</text>
+<text data-en="retry freely — costs tokens, nothing else" data-zh="随便重试 —— 只耗费 token" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="81">retry freely — costs tokens, nothing else</text>
+<!-- rung 2 -->
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-2)" stroke-width="1.3" width="360" x="130" y="100"></rect>
+<text data-en="② upsert by stable key" data-zh="② 按稳定键 upsert" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="118">② upsert by stable key</text>
+<text data-en="second write overwrites identical state" data-zh="第二次写入覆写相同状态" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="133">second write overwrites identical state</text>
+<!-- rung 3 -->
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="360" x="130" y="152"></rect>
+<text data-en="③ keyed log + dedupe window" data-zh="③ 带键日志 + 去重窗口" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="170">③ keyed log + dedupe window</text>
+<text data-en="sequence numbers make repeats detectable" data-zh="序列号让重复可被检测" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="185">sequence numbers make repeats detectable</text>
+<!-- rung 4 -->
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent)" stroke-width="1.8" width="360" x="130" y="204"></rect>
+<text data-en="④ fenced creation (op reference)" data-zh="④ 带围栏的创建（操作引用）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="222">④ fenced creation (op reference)</text>
+<text data-en="payments · sends · provisioning" data-zh="支付 · 发送 · 开通资源" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="237">payments · sends · provisioning</text>
+<!-- rung 5 -->
+<rect fill="var(--accent-dim)" height="44" rx="8" stroke="var(--accent-3)" stroke-width="2.2" width="360" x="130" y="256"></rect>
+<text data-en="⑤ irreversible → confirm gate" data-zh="⑤ 不可逆 → 确认闸门" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="275">⑤ irreversible → confirm gate</text>
+<text data-en="render diff · explicit approval · approval carries the op ref" data-zh="渲染 diff · 显式批准 · 批准携带操作引用" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="291">render diff · explicit approval · approval carries the op ref</text>
+<!-- rising arrow -->
+<path d="M110 88 L110 276" fill="none" marker-end="url(#arrL1)" stroke="var(--text-tertiary)" stroke-width="1.3"></path>
+<text data-en="stakes" data-zh="风险" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" transform="rotate(-90 96 182)" text-anchor="middle" x="96" y="182">stakes</text>
+<text data-en="Match the rung to the stakes. Paying rung-4 tax on rung-1 reads is waste; paying rung-1 carelessness on rung-4 actions is an incident report." data-zh="让档位匹配风险。在第一档的读取上缴第四档的税，是浪费；在第四档的动作上保留第一档的随意，是一份事故报告。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="330" y="330">Match the rung to the stakes. Paying rung-4 tax on rung-1 reads is waste; paying rung-1 carelessness on rung-4 actions is an incident report.</text>
+</svg>
+<p class="diagram-caption" data-en="Every agent action sits somewhere on this ladder. Reads and computations can repeat freely. Upserts repeat harmlessly. Keyed logs detect repeats. Fenced creations refuse them. Irreversible actions demand a human confirm gate whose approval itself carries the operation reference. The design work is knowing which rung each tool lives on — and being honest about it, rather than hoping every action is secretly a rung below where it actually is." data-zh="每一个智能体动作，都坐在这条阶梯的某一级上。读取和计算可以自由重复。upsert 的重复无害。带键的日志能检测重复。带围栏的创建会拒绝重复。不可逆动作则要求一道人类确认闸门，而批准本身携带操作引用。设计工作，是知道每个工具住在哪一级——并且对此诚实，而不是寄希望于每个动作都秘密地比它实际的档位低一级。">Every agent action sits somewhere on this ladder. Reads repeat freely. Upserts repeat harmlessly. Keyed logs detect repeats. Fenced creations refuse them. Irreversible actions demand a confirm gate whose approval itself carries the operation reference.</p>
+</div>
+<p data-en="There is a deeper payoff beyond correctness, and it is easy to miss. An agent bounded by idempotent tools becomes braver, and bravery is performance. When retries are free of consequences, the agent can treat flaky tools as flaky — catch the error, call again, move on — instead of tiptoeing around every action with defensive paragraphs of prompt engineering. When the ledger replies 'already completed, result attached,' the compacted model reacquires its own history in one line instead of reconstructing it by guesswork. And when engineers review a failed run, the trace reads as a sequence of named operations with recorded outcomes, not a fog of near-identical calls that someone must archaeologically separate. The tax buys more than safety. It buys a system that can be aggressive about retrying the things that should be retried — which is, in the end, most of them." data-zh="在正确性之外，还有一个更深、也更容易被漏掉的回报。一个被幂等工具约束的智能体，会变得更勇敢，而勇敢就是性能。当重试不再有后果，智能体就能把不稳定的工具当作不稳定来对待——捕获错误，再调一次，继续前进——而不是在每个动作周围蹑手蹑脚地铺满防御性的 prompt 工程。当账本回复「已完成，结果附上」，被压缩的模型用一行就找回了自己的历史，而不是靠猜测去重建它。而当工程师复盘一次失败的运行时，追踪记录读起来是一串有名字、有记录结果的操作序列，而不是一团几乎一模一样的调用，需要有人做考古式甄别。这笔税买到的不只是安全。它买到的是一个可以对「该重试的事」大胆重试的系统——而那，终究是大多数的事。">There is a deeper payoff beyond correctness. An agent bounded by idempotent tools becomes braver, and bravery is performance. When retries are free of consequences, the agent can treat flaky tools as flaky — catch the error, call again, move on. The tax buys more than safety. It buys a system that can be aggressive about retrying the things that should be retried.</p>
+<p data-en="None of this is glamorous. Nobody demos a deduplication ledger at a conference. It is plumbing, and like all plumbing it is invisible when it works and infamous when it does not. But the industry is entering the phase where agents stop being chat interfaces and start being operators — systems that hold purchasing authority, push commits, send communications on behalf of people who assumed the system was sane. In that world, the question 'is this action safe to repeat' is not an operational detail. It is the load-bearing question, asked of every tool, on every rung of the ladder, before the first call is ever made. The at-least-once world does not negotiate. It only presents the bill — and it always charges less at design time than it does in production." data-zh="这些，没有一样是光鲜的。没有人在大会上演示一个去重账本。它是管道工程，而像所有管道一样，它工作时不可见，失灵时臭名远扬。但这个行业正在进入一个阶段：智能体不再是聊天界面，而是操作者——持有采购权限、推送 commit、替那些默认「系统是健全的」的人发送信息的系统。在那个世界里，「这个动作是否可以安全地重复」不是一个运营细节。它是承重问题——在第一次调用发出之前，对每一个工具、对阶梯的每一级提出。这个「至少一次」的世界不谈判。它只递上账单——而在设计时收的费，永远比在生产环境里收的少。">None of this is glamorous. Nobody demos a deduplication ledger at a conference. But the industry is entering the phase where agents stop being chat interfaces and start being operators. In that world, 'is this action safe to repeat' is the load-bearing question, asked of every tool, on every rung, before the first call is ever made. The at-least-once world does not negotiate. It only presents the bill — and it always charges less at design time than it does in production.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
