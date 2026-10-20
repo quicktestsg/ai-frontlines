@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-21",
+    "slug": "backpressure-the-missing-chapter",
+    "title_en": "Backpressure: The Chapter Nobody Wrote",
+    "title_zh": "背压：没人写的那一章",
+    "read_time": 9,
+    "excerpt_en": "Agents produce work at machine speed, but every downstream consumer — rate-limited APIs, connection pools, humans — consumes at its own fixed speed. The difference piles up somewhere. Design the four valves (buffer, degrade, shed, block) before the incident picks them for you.",
+    "excerpt_zh": "智能体以机器速度生产工作，而下游的一切——限流 API、连接池、人类——都以各自固定的速度消费。差额会在某处堆积。在事故替你选之前，先设计好四个阀门：缓冲、降级、丢弃、阻塞。"
+  },
+  {
     "date": "2026-10-20",
     "slug": "the-idempotency-tax",
     "title_en": "The Idempotency Tax",

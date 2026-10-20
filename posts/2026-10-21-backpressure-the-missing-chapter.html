@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Backpressure: The Chapter Nobody Wrote — AI Frontlines</title>
+<meta content="Agents produce work at machine speed, but everything downstream of them — APIs, databases, reviewers, humans — consumes at its own speed. When production outruns consumption, the difference doesn't disappear. It piles up somewhere invisible. That pile has a name, and designing for it is the difference between an agent system that scales and one that melts." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 21, 2026" data-zh="2026年10月21日">October 21, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Backpressure: The Chapter Nobody Wrote" data-zh="背压：没人写的那一章">Backpressure: The Chapter Nobody Wrote</h1>
+<p class="post-header-deck" data-en="Every systems-engineering textbook has a chapter on backpressure. Every agent-engineering guide skips it. The agent produces work at machine speed — API calls, database writes, review tickets, messages to humans — and everything downstream of it consumes at its own speed: a rate-limited API, a database that locks, a reviewer who reads at 300 words a minute. When production outruns consumption, the difference does not vanish. It accumulates somewhere: a queue, a connection pool, an inbox, a person's patience. Designing for that difference — propagating it backwards, deciding what to do with it — is the entire difference between an agent system that scales and one that melts at 2% load." data-zh="每一本系统工程教科书，都有关于背压的一章。每一本智能体工程指南，都跳过了它。智能体以机器速度生产工作——API 调用、数据库写入、审查工单、发给人类的消息——而它下游的一切，都在以自己的速度消费：一个有限流配额的 API、一个会锁死的数据库、一个每分钟只读 300 词的审查者。当生产超过消费，差额不会消失。它会在某个地方积累：一个队列、一个连接池、一个收件箱、一个人的耐心。为这个差额做设计——把它向后传播、决定拿它怎么办——正是「能扩展的智能体系统」和「在 2% 负载时就融化」之间的全部差别。">Every systems-engineering textbook has a chapter on backpressure. Every agent-engineering guide skips it. The agent produces work at machine speed, and everything downstream consumes at its own speed. The difference accumulates somewhere.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a pattern to how agent systems fail in production, and it is almost never the model. The demo works: one agent, one user, one task, the loop spins three times and returns an answer. Then the system meets volume. A hundred concurrent sessions. A batch job told to process a repository, a document store, a ticket backlog. And suddenly the failure is never where anyone looked. It is a third-party API returning 429s until the retry budget is gone. It is a database connection pool starved by fifty parallel tool calls that each hold a connection while waiting for a model response. It is a human reviewer with 400 items in their queue who has started approving things without reading them. None of these are model failures. They are flow-control failures. The system was designed to be intelligent and never designed to be paced." data-zh="智能体系统在生产环境里的失败，有一个模式，而它几乎从来不是模型的问题。Demo 能跑：一个智能体、一个用户、一个任务，循环转三圈，返回答案。然后系统遇到了量。一百个并发会话。一个被要求处理整个代码库、整个文档库、整个工单积压的批处理任务。突然之间，失败出现在谁都没看的地方。是一个第三方 API 开始返回 429，直到重试预算被烧光。是一个数据库连接池，被五十个并行的工具调用饿死——每一个都握着连接、等模型响应。是一个人类审查者，队列里堆了 400 条，已经开始不看内容直接批准。这些都不是模型的失败。它们是流控的失败。系统被设计得聪明，却从未被设计得有节奏。">There is a pattern to how agent systems fail in production, and it is almost never the model. The demo works: one agent, one user, one task. Then the system meets volume. A hundred concurrent sessions. A batch job told to process a repository. And suddenly the failure is never where anyone looked.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrB1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrB2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrB3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="PRODUCTION vs CONSUMPTION: WHERE THE DIFFERENCE GOES" data-zh="生产 vs 消费：差额去了哪里" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">PRODUCTION vs CONSUMPTION: WHERE THE DIFFERENCE GOES</text>
+<!-- producer: agent -->
+<rect fill="var(--accent-dim)" height="44" rx="10" stroke="var(--accent)" stroke-width="2.5" width="140" x="40" y="120"></rect>
+<text data-en="AGENT" data-zh="智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="13" font-weight="800" text-anchor="middle" x="110" y="140">AGENT</text>
+<text data-en="machine speed" data-zh="机器速度" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="110" y="156">machine speed</text>
+<!-- burst of work items -->
+<g opacity="0.9">
+<rect fill="var(--bg-surface)" height="16" rx="4" stroke="var(--accent)" stroke-width="1" width="34" x="200" y="92"></rect>
+<rect fill="var(--bg-surface)" height="16" rx="4" stroke="var(--accent)" stroke-width="1" width="34" x="200" y="118"></rect>
+<rect fill="var(--bg-surface)" height="16" rx="4" stroke="var(--accent)" stroke-width="1" width="34" x="200" y="144"></rect>
+<rect fill="var(--bg-surface)" height="16" rx="4" stroke="var(--accent)" stroke-width="1" width="34" x="200" y="170"></rect>
+<text data-en="work piling up" data-zh="工作在堆积" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="217" y="200">work piling up</text>
+</g>
+<!-- the narrow pipe -->
+<path d="M234 142 L290 142" fill="none" marker-end="url(#arrB1)" stroke="var(--accent)" stroke-width="2"></path>
+<path d="M290 100 L290 184" fill="none" stroke="var(--accent-2)" stroke-width="2"></path>
+<path d="M380 100 L380 184" fill="none" stroke="var(--accent-2)" stroke-width="2"></path>
+<text data-en="the pipe" data-zh="管道" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="335" y="92">the pipe</text>
+<text data-en="rate limit · pool · human" data-zh="限流 · 连接池 · 人类" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="335" y="204">rate limit · pool · human</text>
+<!-- consumers -->
+<path d="M380 120 C420 120 430 120 470 120" fill="none" marker-end="url(#arrB3)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--text-tertiary)" stroke-width="1.5" width="110" x="472" y="104"></rect>
+<text data-en="API · 10 rps" data-zh="API · 每秒10次" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="527" y="125">API · 10 rps</text>
+<path d="M380 152 C420 152 430 156 470 158" fill="none" marker-end="url(#arrB3)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="32" rx="7" stroke="var(--text-tertiary)" stroke-width="1.5" width="110" x="472" y="142"></rect>
+<text data-en="human · 4/hour" data-zh="人类 · 每小时4条" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="527" y="163">human · 4/hour</text>
+<!-- feedback arrow -->
+<path d="M527 182 C527 250 110 260 110 168" fill="none" marker-end="url(#arrB2)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="5,4"></path>
+<text data-en="backpressure — almost never built" data-zh="背压——几乎从来没人建" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" font-weight="600" text-anchor="middle" x="310" y="284">backpressure — almost never built</text>
+<text data-en="without it, the queue only grows: latency, retries, timeouts, trust" data-zh="没有它，队列只会增长：延迟、重试、超时、信任" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="308">without it, the queue only grows: latency, retries, timeouts, trust</text>
+</svg>
+<p class="diagram-caption" data-en="The agent emits work at machine speed. Every consumer downstream has a ceiling — a rate limit, a pool size, a human's reading speed. The gap between those two rates does not disappear; it accumulates as queue depth, and queue depth becomes latency, retries, and eventually failure. The dashed arrow — the signal that should travel backwards and slow the producer — is the one piece almost no agent system ships." data-zh="智能体以机器速度产出工作。下游每一个消费者都有天花板——限流配额、连接池大小、一个人的阅读速度。这两个速率之间的差额不会消失；它积累成队列深度，而队列深度变成延迟、重试，最终变成故障。那根虚线——那条本应向后传播、让生产者慢下来的信号——恰恰是几乎所有智能体系统都没发布的那一块。">The agent emits work at machine speed. Every consumer downstream has a ceiling. The gap between those two rates does not disappear; it accumulates as queue depth, and queue depth becomes latency, retries, and eventually failure. The dashed arrow — the signal that should travel backwards and slow the producer — is the one piece almost no agent system ships.</p>
+</div>
+<h3 data-en="Agents are the fastest producers ever built" data-zh="智能体是有史以来最快生产者">Agents are the fastest producers ever built</h3>
+<p data-en="It is worth being precise about why this problem is specific to agents, and not just inherited from backend engineering. A traditional service produces work in proportion to the requests it receives. Traffic doubles, work doubles. There is a natural coupling between demand and production, and decades of tooling — load balancers, autoscalers, circuit breakers — exist to manage it. An agent breaks that coupling. Give one agent a batch goal and it becomes a producer whose output rate is bounded only by its own loop speed and its token budget. One user request can fan out into hundreds of tool calls, subagent spawns, database writes, and notifications. Demand and production are decoupled by intelligence itself: the agent decides how much work is enough, and its judgment about 'enough' has no relationship to what the downstream systems can absorb. A backend engineer never had to worry that a single HTTP request would autonomously decide to become a thousand. For agent engineers, that is Tuesday." data-zh="值得精确说明的是：为什么这个问题是智能体特有的，而不只是从后端工程继承来的。一个传统服务，产出的工作与它收到的请求成正比。流量翻倍，工作翻倍。需求和产量之间存在天然的耦合，而几十年的工具——负载均衡、自动扩缩容、熔断器——都是为管理这种耦合而生的。智能体打破了这种耦合。给一个智能体一个批处理目标，它就变成了一个产出速率只受自身循环速度和 token 预算约束的生产者。一个用户请求，可以扇出成上百次工具调用、子智能体生成、数据库写入和通知。需求和产量被智能本身解耦了：智能体决定多少工作才够，而它对「够」的判断，与下游系统能吸收多少毫无关系。后端工程师从不需要担心一个 HTTP 请求会自主决定变成一千个。对智能体工程师来说，这是星期二。">It is worth being precise about why this problem is specific to agents. A traditional service produces work in proportion to the requests it receives. An agent breaks that coupling. Give one agent a batch goal and it becomes a producer whose output rate is bounded only by its own loop speed and its token budget. Demand and production are decoupled by intelligence itself.</p>
+<blockquote data-en="A backend engineer never had to worry that a single HTTP request would autonomously decide to become a thousand. For agent engineers, that is Tuesday. The producer is smart, and that is exactly the problem: intelligence makes the fan-out adaptive, and adaptive fan-out is unmodelable by any static capacity plan." data-zh="后端工程师从不需要担心一个 HTTP 请求会自主决定变成一千个。对智能体工程师来说，这是星期二。生产者是聪明的，而这恰恰是问题所在：智能让扇出变得自适应，而自适应的扇出，是任何静态容量规划都无法建模的。">A backend engineer never had to worry that a single HTTP request would autonomously decide to become a thousand. For agent engineers, that is Tuesday. The producer is smart, and that is exactly the problem: intelligence makes the fan-out adaptive, and adaptive fan-out is unmodelable by any static capacity plan.</blockquote>
+<p data-en="The failure arrives quietly, which is what makes it dangerous. There is no crash. The loop keeps running. What changes is invisible: queue depth creeps up, p99 latency stretches from two seconds to forty, the retry logic starts firing on requests that merely waited too long, and the retries add load, which makes latency worse, which triggers more retries. This is the retry storm, the classic death spiral of unmanaged flow, and agents are uniquely good at starting one because agents come with retries built into their instincts. A model that receives a timeout does not conclude 'the system is overloaded, back off.' It concludes 'the tool failed, try again' — because that is what a tool failure looked like in every example it was trained on. The model has no perception of the system it is drowning. It cannot see the queue. It only sees its own next step." data-zh="故障悄然而至，这正是它危险的地方。没有崩溃。循环还在跑。变化的只是看不见的东西：队列深度在爬，p99 延迟从两秒拉到四十秒，重试逻辑开始在那些只是等得太久的请求上触发，而重试增加负载，负载让延迟更糟，延迟又触发更多重试。这就是重试风暴——无管理流控的经典死亡螺旋——而智能体特别擅长引发它，因为智能体的本能里就内置了重试。一个收到超时的模型，不会得出「系统过载了，退避一下」的结论。它会得出「工具失败了，再试一次」的结论——因为在它训练时见过的所有例子里，工具失败就是这个样子。模型对它正在淹没的系统毫无感知。它看不见队列。它只看得见自己的下一步。">The failure arrives quietly, which is what makes it dangerous. There is no crash. What changes is invisible: queue depth creeps up, p99 latency stretches, the retry logic starts firing on requests that merely waited too long, and the retries add load, which makes latency worse, which triggers more retries. The model has no perception of the system it is drowning. It only sees its own next step.</p>
+<h3 data-en="Four valves, and the order to open them" data-zh="四个阀门，以及打开它们的顺序">Four valves, and the order to open them</h3>
+<p data-en="When production outruns consumption, there are only four things a system can do with the excess, and every agent architecture should decide — deliberately, in advance — which valve opens at which pressure. The first is to block: stop the producer until the consumer drains. The second is to shed: drop the excess work and be honest about what was dropped. The third is to buffer: absorb the burst into a queue with a defined maximum, and a defined behavior when the maximum is hit. The fourth is to degrade: keep accepting all the work but do less per item — cheaper models, shallower analysis, fewer verification passes. These are not interchangeable. Blocking preserves everything but stalls the loop; shedding keeps the system fast but loses coverage; buffering buys time but converts speed problems into memory problems; degradation trades quality for throughput and is only honest if the output is labeled as degraded. Most systems pick none of these deliberately, and therefore get all four at random: they block accidentally (connection pool exhaustion), shed accidentally (timeouts that discard finished work), buffer accidentally (an inbox with 400 items), and degrade accidentally (the reviewer who stopped reading)." data-zh="当生产超过消费，系统对多余的工作只有四件事可做，而每一个智能体架构都应该——有意识地、提前——决定哪个阀门在哪个压力下打开。第一是阻塞：让生产者停下，等消费者排空。第二是丢弃：扔掉多余的工作，并对扔掉了什么保持诚实。第三是缓冲：把突发吸收进一个有明确上限的队列，并对到达上限时的行为有明确定义。第四是降级：照单全收，但每件做得更少——更便宜的模型、更浅的分析、更少的验证轮次。这四者不可互换。阻塞保全一切但让循环停滞；丢弃保住系统速度但损失覆盖面；缓冲争取时间但把速度问题变成内存问题；降级用质量换吞吐，且只有输出被标注为「降级」时才算诚实。大多数系统没有有意选择任何一个，于是随机地得到全部四个：意外地阻塞（连接池耗尽）、意外地丢弃（把已完成工作扔掉的超时）、意外地缓冲（堆了 400 条的收件箱）、意外地降级（不再阅读的审查者）。">When production outruns consumption, there are only four things a system can do with the excess, and every agent architecture should decide — deliberately, in advance — which valve opens at which pressure: block, shed, buffer, or degrade. Most systems pick none deliberately, and therefore get all four at random.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrV1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+</defs>
+<text data-en="THE FOUR VALVES — AND WHEN EACH IS HONEST" data-zh="四个阀门——以及各自何时诚实" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE FOUR VALVES — AND WHEN EACH IS HONEST</text>
+<!-- pressure gauge -->
+<rect fill="var(--bg-surface)" height="60" rx="10" stroke="var(--text-tertiary)" stroke-width="1.5" width="120" x="30" y="130"></rect>
+<text data-en="queue depth" data-zh="队列深度" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="90" y="152">queue depth</text>
+<line stroke="var(--accent)" stroke-width="2" x1="50" x2="130" y1="166" y2="166"></line>
+<circle cx="70" cy="166" fill="var(--accent)" r="4"></circle>
+<text data-en="rising" data-zh="上升中" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="90" y="182">rising</text>
+<!-- valve 1: buffer -->
+<path d="M150 150 L195 118" fill="none" marker-end="url(#arrV1)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="56" rx="9" stroke="var(--accent-2)" stroke-width="1.8" width="115" x="197" y="82"></rect>
+<text data-en="① BUFFER" data-zh="① 缓冲" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="254" y="102">BUFFER</text>
+<text data-en="bounded queue" data-zh="有界队列" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="254" y="118">bounded queue</text>
+<text data-en="honest if max exists" data-zh="有上限才诚实" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="254" y="132">honest if max exists</text>
+<!-- valve 2: degrade -->
+<path d="M150 160 L195 160" fill="none" marker-end="url(#arrV1)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="56" rx="9" stroke="var(--accent-2)" stroke-width="1.8" width="115" x="197" y="132"></rect>
+<text data-en="② DEGRADE" data-zh="② 降级" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="254" y="152">DEGRADE</text>
+<text data-en="cheaper path per item" data-zh="每件走更便宜路径" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="254" y="168">cheaper path per item</text>
+<text data-en="honest if labeled" data-zh="有标注才诚实" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="254" y="182">honest if labeled</text>
+<!-- valve 3: shed -->
+<path d="M150 172 L195 202" fill="none" marker-end="url(#arrV1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="56" rx="9" stroke="var(--accent-3)" stroke-width="1.8" width="115" x="197" y="182"></rect>
+<text data-en="③ SHED" data-zh="③ 丢弃" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="254" y="202">SHED</text>
+<text data-en="drop + report what" data-zh="丢弃并报告丢了什么" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="254" y="218">drop + report what</text>
+<text data-en="honest if reported" data-zh="有报告才诚实" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="254" y="232">honest if reported</text>
+<!-- valve 4: block -->
+<path d="M90 190 L90 260 L195 260" fill="none" marker-end="url(#arrV1)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent-3)" stroke-width="1.8" width="115" x="197" y="238"></rect>
+<text data-en="④ BLOCK" data-zh="④ 阻塞" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="254" y="256">BLOCK</text>
+<text data-en="last resort — stalls the loop" data-zh="最后手段——让循环停摆" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="254" y="272">last resort — stalls the loop</text>
+<!-- right side: the rule -->
+<rect fill="var(--accent-dim)" height="180" opacity="0.6" rx="12" width="240" x="350" y="70"></rect>
+<text data-en="THE RULE" data-zh="法则" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" letter-spacing="1" text-anchor="middle" x="470" y="96">THE RULE</text>
+<text data-en="Open valves in order." data-zh="按顺序打开阀门。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="470" y="120">Open valves in order.</text>
+<text data-en="Buffer a burst." data-zh="缓冲突发。" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="470" y="144">Buffer a burst.</text>
+<text data-en="Degrade a spike." data-zh="降级尖峰。" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="470" y="164">Degrade a spike.</text>
+<text data-en="Shed a flood." data-zh="丢弃洪峰。" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="470" y="184">Shed a flood.</text>
+<text data-en="Block only to survive." data-zh="阻塞只为求生。" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="470" y="204">Block only to survive.</text>
+<text data-en="A system that decides this" data-zh="提前决定这些的系统，" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="470" y="232">A system that decides this</text>
+<text data-en="in advance degrades gracefully." data-zh="会优雅降级。" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="470" y="248">in advance degrades gracefully.</text>
+<text data-en="A system that doesn't," data-zh="不决定的系统，" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="470" y="270">A system that doesn't,</text>
+<text data-en="does all four at random." data-zh="会随机做全部四件事。" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="470" y="286">does all four at random.</text>
+</svg>
+<p class="diagram-caption" data-en="Flow control is not one mechanism but a ladder: buffer the burst, degrade the spike, shed the flood, block only to survive. Each rung is honest under different conditions, and each one must be paired with an admission — a bounded buffer declares its maximum, degradation labels its output, shedding reports what was dropped. The valve chosen by accident is always the most expensive one." data-zh="流控不是单一机制，而是一架梯子：缓冲突发、降级尖峰、丢弃洪峰、阻塞只为求生。每一级在不同的条件下才诚实，而每一级都必须配一个「承认」——有界缓冲声明自己的上限，降级标注自己的输出，丢弃报告丢了什么。意外选中的阀门，永远是最贵的那个。">Flow control is not one mechanism but a ladder: buffer the burst, degrade the spike, shed the flood, block only to survive. The valve chosen by accident is always the most expensive one.</p>
+</div>
+<h3 data-en="The human is the slowest consumer — and the only one that matters" data-zh="人类是最慢的消费者——也是唯一重要的那个">The human is the slowest consumer — and the only one that matters</h3>
+<p data-en="The most important queue in any agentic system is not made of requests. It is made of judgments. When an agent drafts fifty emails, flags thirty anomalies, opens twenty pull requests, the downstream consumer of all that work is a person, and the person's throughput is fixed. They will not read faster because the agent produced more. What actually happens is worse than a queue: the human adapts. They skim. They batch-approve. They build a heuristic — 'things from the agent are usually fine' — and stop checking. The queue looks short because the human has silently degraded their own quality valve to keep up. From the system's point of view, throughput is fine. From the system's purpose, everything is broken: the verification layer that justified the autonomy in the first place has quietly unbuilt itself. This is backpressure applied to trust, and trust is the one consumer whose queue, once overflowed, does not drain on its own." data-zh="任何智能体系统里最重要的队列，不是由请求组成的。它是由判断组成的。当一个智能体起草了五十封邮件、标记了三十个异常、开了二十个 PR，所有这些工作的下游消费者是一个人，而人的吞吐量是固定的。智能体生产得更多，人也不会读得更快。实际发生的比排队更糟：人会适应。他们略读。他们批量批准。他们形成一个启发式——「智能体产出的东西一般没问题」——然后不再检查。队列看起来很短，因为人悄悄拧开了自己的质量阀门来跟上节奏。从系统的视角看，吞吐量没问题。从系统的目的看，一切都坏了：当初证明自主性合理的那层验证，已经悄悄自我拆除了。这是施加在信任上的背压，而信任是唯一一个一旦溢出、就不会自行排空的消费者。">The most important queue in any agentic system is not made of requests. It is made of judgments. The human's throughput is fixed; they will not read faster because the agent produced more. So they adapt: they skim, they batch-approve, they stop checking. Trust is the one consumer whose queue, once overflowed, does not drain on its own.</p>
+<p data-en="The fix is to treat human attention as a first-class capacity constraint in the graph. An agent system designed with backpressure does not ask 'how much can the agent produce' but 'how much review can the system absorb, and what is the budget per hour.' Work that requires judgment is admitted at the rate the judgment supply can bear. Everything else has to be routed around the human — pre-checked, batched, or made reversible — because a human in the loop is not a safety mechanism if the loop feeds them faster than they can think. A rubber stamp is not a checkpoint. If the design assumes a careful reviewer and the flow control guarantees a skimmer, the design is lying about its own architecture, and the eventual audit will find the exact ticket where the skimming started." data-zh="修复方法，是把人类注意力当作图中一等公民的容量约束。一个带着背压设计的智能体系统，问的不是「智能体能产出多少」，而是「系统能吸收多少审查、每小时预算是多少」。需要判断的工作，按判断供给能承受的速率放行。其余的一切都必须绕开人类——预先检查、合并批量、或做成可逆的——因为如果一个循环喂给人的速度超过人思考的速度，那么「人在环中」就不再是安全机制。橡皮图章不是检查点。如果设计假设的是一位认真的审查者，而流控保证的是一个略读者，那这个设计就在对自己的架构撒谎，而最终的审计，会精确地找到略读开始的那一张工单。">The fix is to treat human attention as a first-class capacity constraint in the graph. Work that requires judgment is admitted at the rate the judgment supply can bear. A rubber stamp is not a checkpoint.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrH1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrH2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="CREDIT-BASED FLOW: THE LOOP THAT PACES ITSELF" data-zh="信用流控：自我配速的循环" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">CREDIT-BASED FLOW: THE LOOP THAT PACES ITSELF</text>
+<!-- agent node -->
+<rect fill="var(--accent-dim)" height="48" rx="10" stroke="var(--accent)" stroke-width="2.5" width="150" x="60" y="60"></rect>
+<text data-en="agent loop" data-zh="智能体循环" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="135" y="82">agent loop</text>
+<text data-en="wants to fan out" data-zh="想要扇出" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="135" y="98">wants to fan out</text>
+<!-- credit meter -->
+<path d="M210 84 L280 84" fill="none" marker-end="url(#arrH1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="64" rx="10" stroke="var(--accent)" stroke-width="2" width="120" x="282" y="52"></rect>
+<text data-en="credits: 3" data-zh="信用额度：3" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="342" y="76">credits: 3</text>
+<line stroke="var(--accent)" stroke-width="1.5" x1="300" x2="384" y1="88" y2="88"></line>
+<line stroke="var(--accent)" stroke-width="1.5" x1="300" x2="330" y1="88" y2="88"></line>
+<circle cx="300" cy="88" fill="var(--accent)" r="5"></circle>
+<circle cx="315" cy="88" fill="var(--accent)" r="5"></circle>
+<circle cx="330" cy="88" fill="var(--accent)" r="5"></circle>
+<text data-en="work emitted = credits spent" data-zh="发出工作 = 消耗信用" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="342" y="108">work emitted = credits spent</text>
+<!-- consumer -->
+<path d="M402 84 L472 84" fill="none" marker-end="url(#arrH1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="48" rx="10" stroke="var(--accent-2)" stroke-width="2" width="130" x="474" y="60"></rect>
+<text data-en="consumer" data-zh="消费者" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="539" y="80">consumer</text>
+<text data-en="API · DB · human" data-zh="API · 数据库 · 人类" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="539" y="96">API · DB · human</text>
+<!-- credit refill -->
+<path d="M539 108 C539 200 342 210 342 120" fill="none" marker-end="url(#arrH2)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="5,4"></path>
+<text data-en="credits refilled as work completes — never on a timer" data-zh="信用随工作完成而补充——绝不按定时器补充" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" font-weight="600" text-anchor="middle" x="430" y="188">credits refilled as work completes — never on a timer</text>
+<!-- bottom insight -->
+<rect fill="var(--accent-dim)" height="44" opacity="0.5" rx="8" width="560" x="30" y="228"></rect>
+<text data-en="The producer's speed is derived from the consumer's, not the reverse. The loop may spin as fast as it likes — but it may only emit as fast as it is permitted, and permission is earned by completion." data-zh="生产者的速度派生自消费者的速度，而非相反。循环想转多快都可以——但它只能按被允许的速度发出工作，而许可，要靠完成来挣得。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="248">The producer's speed is derived from the consumer's, not the reverse.</text>
+<text data-en="Permission is earned by completion." data-zh="许可，要靠完成来挣得。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="264">Permission is earned by completion.</text>
+</svg>
+<p class="diagram-caption" data-en="Credit-based flow control, applied to an agent: the loop holds a fixed budget of in-flight work. Every emitted item spends a credit; every completed item — confirmed done by the consumer, not merely sent — refunds one. When credits hit zero, the loop waits or re-plans at lower breadth. The system's throughput converges to the slowest consumer's, by construction, without anyone tuning a rate limiter." data-zh="应用于智能体的信用流控：循环持有一个固定的在途工作预算。每发出一项工作消耗一个信用；每完成一项——由消费者确认完成，而不只是「已发出」——归还一个。当信用归零，循环就等待，或以更小的广度重新规划。按构造，系统的吞吐量收敛到最慢消费者的速度，而不需要任何人去调限流器。">Credit-based flow control, applied to an agent: the loop holds a fixed budget of in-flight work. Every emitted item spends a credit; every completed item refunds one. The system's throughput converges to the slowest consumer's, by construction.</p>
+</div>
+<h3 data-en="Make the queue visible, then make it small" data-zh="先让队列可见，再让它变小">Make the queue visible, then make it small</h3>
+<p data-en="Backpressure cannot be designed by intuition, because intuition has no access to queue depth. The practical starting point is observability with an attitude: not dashboards that show requests per second, but a single number — work in flight — reported per consumer, per agent, per system, with an alert on the slope rather than the value. A deep queue that is draining is healthy. A shallow queue that is filling is an emergency. The value lies; the derivative tells the truth. Once in-flight work is visible, the design questions answer themselves in order: which consumers have no declared maximum, which loops can emit without spending anything, which retries fire without consulting the queue they are feeding. Every one of those is a valve left open, and each gets closed with a number the team chose, on a day nothing was on fire, instead of a number the incident chose for them." data-zh="背压无法靠直觉来设计，因为直觉接触不到队列深度。实际的起点是「带态度的可观测性」：不是展示每秒请求数的面板，而是一个单一的数字——在途工作——按消费者、按智能体、按系统上报，并且对斜率而非数值告警。一个正在排空的深队列，是健康的。一个正在填充的浅队列，是紧急情况。数值会说谎；导数说真话。一旦在途工作可见，设计问题就会按顺序自己回答：哪些消费者没有声明上限，哪些循环可以不付任何代价就发出工作，哪些重试在没有咨询它们正在喂养的队列的情况下触发。每一个，都是一个被遗忘关闭的阀门，而每一个都会被一个数字关上——由团队在风平浪静的一天选定的数字，而不是由事故替他们选定的数字。">Backpressure cannot be designed by intuition. The practical starting point is a single number — work in flight — reported per consumer, with an alert on the slope rather than the value. A deep queue that is draining is healthy. A shallow queue that is filling is an emergency. The value lies; the derivative tells the truth.</p>
+<p data-en="None of this is glamorous. There is no benchmark for it, no leaderboard, no demo where pacing the loop wins applause — a paced agent looks identical to an unpaced one until the day the unpaced one dies. But this is what distinguishes agent engineering from agent demonstration: the demonstration is judged by what the system does once, and the engineering is judged by what the system does ten thousand times, concurrently, against consumers that never got faster and users who never got more patient. Intelligence sets the ceiling of what a system could do. Flow control decides whether anyone ever gets to see it. The model writes the work. The pipes decide if it matters." data-zh="这些没有一样是光鲜的。没有为它设立的基准，没有排行榜，没有「给循环配速」能赢得掌声的 demo——一个被配速的智能体，和一个没被配速的智能体，看起来一模一样，直到没被配速的那个死掉的那一天。但这正是智能体工程与智能体演示的分野：演示由系统一次性做了什么来评判，而工程由系统并发地做一万次、面对从未变快的消费者和从未更有耐心的用户时做了什么来评判。智能决定了系统能做什么的天花板。流控决定有没有人能看到那个天花板。模型写下了工作。管道决定它重不重要。">None of this is glamorous. There is no benchmark for it, no demo where pacing the loop wins applause — a paced agent looks identical to an unpaced one until the day the unpaced one dies. Intelligence sets the ceiling of what a system could do. Flow control decides whether anyone ever gets to see it. The model writes the work. The pipes decide if it matters.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
