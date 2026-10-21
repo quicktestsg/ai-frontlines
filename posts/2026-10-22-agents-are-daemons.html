@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Your Agent Is a Daemon Now — AI Frontlines</title>
+<meta content="The first generation of agents was built like functions: invoked, executed, returned, forgotten. The next generation is built like daemons — always resident, watching, acting on their own schedule. That shift changes everything about how they must be engineered, because daemons don't fail like functions. They fail like services: quietly, cumulatively, and at 3 AM." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 22, 2026" data-zh="2026年10月22日">October 22, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Your Agent Is a Daemon Now" data-zh="你的智能体，现在是守护进程了">Your Agent Is a Daemon Now</h1>
+<p class="post-header-deck" data-en="The first generation of agents was built like functions: invoked with a prompt, executed, returned an answer, forgotten. The generation now arriving is built like daemons — always resident, watching event streams, acting on their own schedule, waking the human only when something matters. This is not a feature change; it is a category change. Functions are judged by what they return. Daemons are judged by what they do while nobody is looking. And five decades of operating-system engineering already wrote the playbook for surviving that: schedulers, priorities, interrupt coalescing, watchdogs. The agent world just hasn't read it yet." data-zh="第一代智能体被当作函数来构建：接收一个提示词，执行，返回答案，然后被遗忘。而正在到来的这一代，被当作守护进程来构建——常驻内存、监听事件流、按自己的时间表行动，只在真正要紧的事发生时才唤醒人类。这不是一个功能变化，而是一个范畴变化。函数由它返回什么来评判。守护进程由它在没人看的时候做了什么来评判。而关于如何在那种状态下存活，五十年的操作系统工程早已写好了手册：调度器、优先级、中断合并、看门狗。只是智能体世界还没读而已。">The first generation of agents was built like functions. The generation now arriving is built like daemons — always resident, watching, acting on their own schedule. Five decades of OS engineering already wrote the survival playbook for that. The agent world just hasn't read it.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a quiet architectural shift underway in how agents are deployed, and most teams have not noticed that it invalidates their assumptions. The agent of the last two years was a function: it existed only inside a request. State came in, a loop spun, an answer came out, and the process — having served its purpose — was torn down. Everything hard about that agent was hard inside the call. The new agent is a daemon. It starts when the system starts. It subscribes to mailboxes, repositories, calendars, logs. It holds long-lived memory and long-lived credentials. It does not wait to be invoked; it decides, continuously, whether now is a moment that deserves action. The engineering questions move accordingly: from 'how good is the answer' to 'what was it doing at 3 AM, why, and who gave it permission.'" data-zh="智能体的部署方式正在发生一场安静的架构转变，而大多数团队还没有意识到，这场转变推翻了他们的全部假设。过去两年的智能体是一个函数：它只存在于一次请求之内。状态进来，循环转起来，答案出去，进程——完成使命之后——被拆除。这个智能体的一切困难，都发生在函数调用内部。新的智能体是一个守护进程。系统启动时它就启动。它订阅邮箱、代码仓库、日历、日志。它持有长期记忆和长期凭证。它不等被调用；它持续地判断，此刻是否是一个值得行动的时刻。工程问题随之转移：从「答案有多好」变成「凌晨三点它在做什么、为什么、谁批准的」。">There is a quiet architectural shift underway in how agents are deployed. The agent of the last two years was a function: it existed only inside a request. The new agent is a daemon. It starts when the system starts, subscribes to mailboxes and repositories and logs, holds long-lived memory and long-lived credentials, and does not wait to be invoked.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrD1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrD2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE AGENT AS FUNCTION vs THE AGENT AS DAEMON" data-zh="函数式智能体 vs 守护进程式智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE AGENT AS FUNCTION vs THE AGENT AS DAEMON</text>
+<!-- top lane: function -->
+<text data-en="AGENT AS FUNCTION — 2024–2026" data-zh="函数式智能体 — 2024–2026" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="start" x="40" y="60">AGENT AS FUNCTION — 2024–2026</text>
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="40" x2="580" y1="100" y2="100"></line>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-2)" stroke-width="1.8" width="120" x="110" y="85"></rect>
+<text data-en="invoke → answer" data-zh="调用 → 回答" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="170" y="104">invoke → answer</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-2)" stroke-width="1.8" width="120" x="330" y="85"></rect>
+<text data-en="invoke → answer" data-zh="调用 → 回答" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="390" y="104">invoke → answer</text>
+<text data-en="no life between calls · state torn down each time" data-zh="调用之间没有生命 · 每次都拆除状态" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="140">no life between calls · state torn down each time</text>
+<!-- bottom lane: daemon -->
+<text data-en="AGENT AS DAEMON — ARRIVING NOW" data-zh="守护进程式智能体 — 正在到来" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="start" x="40" y="180">AGENT AS DAEMON — ARRIVING NOW</text>
+<line stroke="var(--accent)" stroke-width="1.5" x1="40" x2="580" y1="230" y2="230"></line>
+<rect fill="var(--accent-dim)" height="36" rx="8" stroke="var(--accent)" stroke-width="2.5" width="500" x="60" y="212"></rect>
+<text data-en="resident · subscribed · deciding when to act · holding credentials and memory" data-zh="常驻 · 订阅中 · 自主决定何时行动 · 持有凭证与记忆" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="234">resident · subscribed · deciding when to act · holding credentials and memory</text>
+<circle cx="150" cy="230" fill="var(--accent-2)" r="5"></circle>
+<circle cx="310" cy="230" fill="var(--accent-2)" r="5"></circle>
+<circle cx="470" cy="230" fill="var(--accent-2)" r="5"></circle>
+<text data-en="events in" data-zh="事件输入" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="150" y="252">events in</text>
+<text data-en="acts alone" data-zh="独自行动" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="252">acts alone</text>
+<text data-en="wakes the human" data-zh="唤醒人类" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="470" y="252">wakes the human</text>
+<text data-en="judged not by one answer, but by what it did while nobody was looking" data-zh="评判标准不再是一次回答，而是没人看的时候它做了什么" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="290">judged not by one answer, but by what it did while nobody was looking</text>
+</svg>
+<p class="diagram-caption" data-en="Top lane: the invoke-once agent. It has no life between calls, so every failure is bounded by the request that contained it. Bottom lane: the resident agent. It is alive the whole time, which means its failures are unbounded by any request — and its judgment about when to act becomes the single most load-bearing decision in the system." data-zh="上车道：一次性调用的智能体。它在调用之间没有生命，所以每一次失败都被承载它的请求所框限。下车道：常驻智能体。它一直活着，这意味着它的失败不再被任何请求所框限——而它关于「何时行动」的判断，变成了整个系统中承重最大的那一个决定。">Top lane: the invoke-once agent, whose every failure is bounded by the request that contained it. Bottom lane: the resident agent, whose failures are unbounded by any request — and whose judgment about when to act becomes the most load-bearing decision in the system.</p>
+</div>
+<h3 data-en="Daemons don't fail like functions" data-zh="守护进程的失败方式和函数不一样">Daemons don't fail like functions</h3>
+<p data-en="A function has three failure modes: it returns the wrong answer, it takes too long, or it crashes. All three are visible at the call site, attributable to a single invocation, and debuggable from one stack trace. A daemon fails differently. It fails by drift: a small preference encoded in a prompt compounds over ten thousand autonomous decisions into a behavior nobody chose. It fails by accumulation: a memory that grows one fact at a time until retrieval degrades and the daemon starts contradicting last month's commitments. It fails by wakefulness — the ambient agent equivalent of a busy loop — checking things that don't matter, burning tokens and patience at 4 AM because nothing in its design ever told it that quiet is an acceptable state. And it fails by silence: the worst daemon failure is the one where nothing visibly breaks, the daemon just quietly stops doing the thing it was supposed to keep doing, and the absence is only discovered weeks later when the thing it was watching goes wrong unannounced. None of these produce exceptions. All of them produce damage." data-zh="函数有三种失败方式：返回错误答案、耗时太长、或者崩溃。这三种都在调用点可见，都可以归因到一次调用，也都可以从一份调用栈里调试。守护进程的失败方式不同。它因漂移而失败：提示词里编码的一个微小偏好，经过一万次自主决策的复利，变成一个谁都没有选择过的行为。它因积累而失败：记忆一次一个事实地增长，直到检索退化，守护进程开始和自己上个月的承诺自相矛盾。它因过度清醒而失败——环境型智能体版本的忙循环——检查那些无关紧要的事，在凌晨四点烧掉 token 和耐心，因为它的设计里从未告诉过它：安静也是一种可接受的状态。它还会因沉默而失败：最糟的守护进程故障，是什么都没有明显坏掉，它只是悄悄不再做它本该持续去做的事，而这个缺席要等到几周后它负责看守的东西无人通报地出了问题才被发现。这些都不会抛出异常。但每一样都在制造损害。">A function has three failure modes: wrong answer, timeout, crash. All visible at the call site. A daemon fails differently: by drift, by accumulation, by wakefulness, and — worst of all — by silence, when it quietly stops doing the thing it was supposed to keep doing.</p>
+<blockquote data-en="The question that defines function-era engineering is 'how do I make this answer better?' The question that defines daemon-era engineering is 'how do I make this process survivable?' Those are different disciplines with different toolboxes, and borrowing the first to answer the second is why ambient agents keep embarrassing their makers." data-zh="定义函数时代工程的问题是「我如何让这个答案更好？」定义守护进程时代工程的问题是「我如何让这个进程可存活？」这是两门不同的学科，用着不同的工具箱——而拿第一个问题去回答第二个，正是环境型智能体不断让它们的制造者难堪的原因。">The question that defines function-era engineering is 'how do I make this answer better?' The question that defines daemon-era engineering is 'how do I make this process survivable?' Borrowing the first to answer the second is why ambient agents keep embarrassing their makers.</blockquote>
+<p data-en="Here is the good news, and it is genuinely good: this problem was solved once before, in the 1970s, by people managing timesharing systems. Unix daemons have run for fifty years — unattended, privileged, subscribed to sockets and signals — and the OS community developed a precise, unfashionable toolkit for keeping them honest. That toolkit has four instruments, and each one translates almost mechanically to agent engineering." data-zh="好消息来了，而且是真正的好消息：这个问题曾经被解决过一次——在上世纪七十年代，被那些管理分时系统的人。Unix 守护进程已经运行了五十年——无人值守、持有特权、监听着套接字和信号——而操作系统社区发展出了一整套精确、毫不时髦的工具箱来让它们保持本分。这个工具箱有四件器械，每一件都几乎可以机械地翻译到智能体工程里。">Here is the good news: this problem was solved once before, in the 1970s, by people managing timesharing systems. Unix daemons have run for fifty years, and the OS community developed a precise, unfashionable toolkit for keeping them honest. It has four instruments, and each translates almost mechanically to agent engineering.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrS1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+</defs>
+<text data-en="THE DAEMON TOOLKIT — FROM UNIX TO AGENTS" data-zh="守护进程工具箱——从 Unix 到智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE DAEMON TOOLKIT — FROM UNIX TO AGENTS</text>
+<!-- scheduler -->
+<rect fill="var(--bg-surface)" height="86" rx="10" stroke="var(--accent-2)" stroke-width="1.8" width="270" x="35" y="55"></rect>
+<text data-en="① SCHEDULER" data-zh="① 调度器" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="170" y="78">SCHEDULER</text>
+<text data-en="OS: which process runs next" data-zh="OS：下一个运行哪个进程" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="170" y="96">OS: which process runs next</text>
+<text data-en="Agent: which task deserves the" data-zh="智能体：哪个任务值得" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="170" y="112">Agent: which task deserves the</text>
+<text data-en="attention budget right now" data-zh="此刻的注意力预算" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="170" y="126">attention budget right now</text>
+<!-- interrupt coalescing -->
+<rect fill="var(--bg-surface)" height="86" rx="10" stroke="var(--accent-2)" stroke-width="1.8" width="270" x="315" y="55"></rect>
+<text data-en="② INTERRUPT COALESCING" data-zh="② 中断合并" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="450" y="78">INTERRUPT COALESCING</text>
+<text data-en="OS: batch signals, wake once" data-zh="OS：合并信号，唤醒一次" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="450" y="96">OS: batch signals, wake once</text>
+<text data-en="Agent: digest the day's events," data-zh="智能体：汇总一天的事件，" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="450" y="112">Agent: digest the day's events,</text>
+<text data-en="never ping per event" data-zh="绝不为单个事件打扰人" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="450" y="126">never ping per event</text>
+<!-- watchdog -->
+<rect fill="var(--bg-surface)" height="86" rx="10" stroke="var(--accent-3)" stroke-width="1.8" width="270" x="35" y="165"></rect>
+<text data-en="③ WATCHDOG" data-zh="③ 看门狗" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="170" y="188">WATCHDOG</text>
+<text data-en="OS: kill the process that hung" data-zh="OS：杀掉挂起的进程" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="170" y="206">OS: kill the process that hung</text>
+<text data-en="Agent: bounded loops, deadlines," data-zh="智能体：有界循环、截止时间、" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="170" y="222">Agent: bounded loops, deadlines,</text>
+<text data-en="a supervisor that can restart it" data-zh="以及能重启它的监督者" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="170" y="236">a supervisor that can restart it</text>
+<!-- permissions -->
+<rect fill="var(--bg-surface)" height="86" rx="10" stroke="var(--accent-3)" stroke-width="1.8" width="270" x="315" y="165"></rect>
+<text data-en="④ LEAST PRIVILEGE" data-zh="④ 最小权限" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="450" y="188">LEAST PRIVILEGE</text>
+<text data-en="OS: daemon runs as its own user" data-zh="OS：守护进程用独立用户运行" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="450" y="206">OS: daemon runs as its own user</text>
+<text data-en="Agent: ambient actions get their own" data-zh="智能体：环境动作用独立凭证，" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="450" y="222">Agent: ambient actions get their own</text>
+<text data-en="credentials, rate caps, and blast radius" data-zh="独立限速和独立爆炸半径" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="450" y="236">credentials, rate caps, and blast radius</text>
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="550" x="35" y="272"></rect>
+<text data-en="None of these make the daemon smarter. All of them make it survivable — and survivability, not intelligence, is what lets trust compound." data-zh="这些没有一件让守护进程更聪明。但每一件都让它更可存活——而可存活，而非聪明，才是让信任得以复利的东西。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="296">None of these make the daemon smarter. All of them make it survivable.</text>
+</svg>
+<p class="diagram-caption" data-en="Four instruments from fifty years of daemon engineering, translated: a scheduler decides what the agent attends to and in what order; interrupt coalescing decides when the human is woken; a watchdog bounds runaway loops and restarts the agent that hung; least privilege ensures that when — not if — the agent errs, the blast radius was decided by the designer on a calm day, not by the agent in the moment." data-zh="来自五十年守护进程工程的四件器械，翻译过来：调度器决定智能体关注什么、按什么顺序关注；中断合并决定何时唤醒人类；看门狗框限失控的循环、重启挂起的智能体；最小权限确保当——不是「如果」——智能体出错时，爆炸半径是由设计者在风平浪静的一天定下的，而不是由智能体在事发当场决定的。">Four instruments from fifty years of daemon engineering: a scheduler decides what the agent attends to; interrupt coalescing decides when the human is woken; a watchdog bounds runaway loops; least privilege ensures the blast radius was decided by the designer, not by the agent in the moment.</p>
+</div>
+<h3 data-en="Attention is a scheduler, not a feed" data-zh="注意力是调度器，不是信息流">Attention is a scheduler, not a feed</h3>
+<p data-en="The deep mistake in most ambient agent designs is treating attention as a feed: events arrive, each one gets processed, each one maybe gets surfaced. Feeds are honest when volume is low and dishonest forever after, because a feed has no notion of priority — only of recency. An operating system would never run this way. The kernel maintains run queues; it classifies work by urgency and cost; and the highest form of its art is deferral — deciding that a task can wait, batching it with its kin, and running the batch once when the cost of waiting is exceeded by the cost of waking. Agents need exactly this. An ambient agent should hold a queue of candidate actions with explicit priorities, should re-sort that queue every time it wakes, and should treat 'do nothing' as a first-class scheduling outcome rather than a failure of nerve. The daemon that acts on everything is not diligent. It is uniprocessful — a busy loop wearing a personality." data-zh="大多数环境型智能体设计里的深层错误，是把注意力当作信息流：事件到达，每个都被处理，每个都可能被上报。信息流在量小的时候是诚实的，之后永远不诚实，因为信息流没有优先级的概念——只有新近度。操作系统绝不会这样运行。内核维护运行队列；它按紧急程度和开销对工作分类；而它技艺的最高形式，是延迟——判断一个任务可以等，把它和同类合并成批，等到等待的代价超过唤醒的代价时，一次性执行这一批。智能体需要的恰恰是这个。一个环境型智能体应该持有一个带显式优先级的候选动作队列，应该在每次唤醒时重排这个队列，并且应该把「什么都不做」当作一个一等公民的调度结果，而不是勇气的失败。对每件事都采取行动的守护进程并不勤奋。它是无进程的——一个穿着人格外衣的忙循环。">The deep mistake in most ambient agent designs is treating attention as a feed. Feeds are honest when volume is low and dishonest forever after, because a feed has no notion of priority — only of recency. An ambient agent should hold a prioritized queue of candidate actions, re-sort it every time it wakes, and treat 'do nothing' as a first-class scheduling outcome. The daemon that acts on everything is not diligent. It is a busy loop wearing a personality.</p>
+<p data-en="Interrupt coalescing deserves special emphasis because it is the piece that most directly protects the human. The operating system does not deliver every network packet to every listener individually; it batches, because context switches are expensive and the expensive resource is the CPU. In an ambient agent system, the expensive resource is the human's focus, and the context switch is the notification. The design rule writes itself: the agent wakes the human on a schedule the human chose, with a digest of everything that accumulated, ordered by priority, with the actions it already took clearly separated from the actions awaiting a decision. Per-event pings are not responsiveness. They are the agent outsourcing its scheduling problem to the least scalable component in the system — the person it was supposed to be serving." data-zh="中断合并值得特别强调，因为它是保护人类最直接的那一块。操作系统不会把每一个网络数据包都单独投递给每一个监听者；它做合并，因为上下文切换是昂贵的，而昂贵的资源是 CPU。在环境型智能体系统里，昂贵的资源是人类的专注力，而上下文切换就是那条通知。设计规则不言自明：智能体按人类选定的时间表唤醒人类，带上这段时间积累起来的一切的摘要，按优先级排序，并且把「已经采取的行动」和「等待决策的行动」清晰分开。逐事件的推送不是响应性。那是智能体把它自己的调度问题，外包给整个系统中扩展性最差的组件——它本该服务的那个人。">Interrupt coalescing is the piece that most directly protects the human. In an ambient agent system, the expensive resource is the human's focus, and the context switch is the notification. Per-event pings are not responsiveness — they are the agent outsourcing its scheduling problem to the least scalable component in the system.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 310" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrW1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrW2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="WATCHDOG SUPERVISION: TRUST THROUGH RESTARTABILITY" data-zh="看门狗监督：以可重启赢得信任" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">WATCHDOG SUPERVISION: TRUST THROUGH RESTARTABILITY</text>
+<!-- agent daemon box -->
+<rect fill="var(--accent-dim)" height="60" rx="10" stroke="var(--accent)" stroke-width="2.5" width="170" x="60" y="90"></rect>
+<text data-en="AGENT DAEMON" data-zh="智能体守护进程" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="145" y="114">AGENT DAEMON</text>
+<text data-en="bounded loop · deadline on every run" data-zh="有界循环 · 每次运行有截止时间" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="145" y="132">bounded loop · deadline on every run</text>
+<!-- watchdog -->
+<path d="M230 120 L300 120" fill="none" marker-end="url(#arrW1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="heartbeat" data-zh="心跳" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="265" y="112">heartbeat</text>
+<rect fill="var(--bg-surface)" height="60" rx="10" stroke="var(--accent-2)" stroke-width="2" width="140" x="302" y="90"></rect>
+<text data-en="WATCHDOG" data-zh="看门狗" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="372" y="114">WATCHDOG</text>
+<text data-en="deadlines · progress proofs" data-zh="截止时间 · 进展证明" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="372" y="132">deadlines · progress proofs</text>
+<!-- restart path -->
+<path d="M372 150 C372 210 145 215 145 152" fill="none" marker-end="url(#arrW2)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="5,4"></path>
+<text data-en="hung or runaway → kill, checkpoint, restart from journal" data-zh="挂起或失控 → 终止、存档、从日志重启" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" font-weight="600" text-anchor="middle" x="310" y="200">hung or runaway → kill, checkpoint, restart from journal</text>
+<!-- decision journal -->
+<rect fill="var(--bg-surface)" height="54" rx="10" stroke="var(--text-tertiary)" stroke-width="1.5" width="150" x="460" y="93"></rect>
+<text data-en="DECISION JOURNAL" data-zh="决策日志" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="535" y="114">DECISION JOURNAL</text>
+<text data-en="every autonomous act," data-zh="每一次自主行为，" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="535" y="130">every autonomous act,</text>
+<text data-en="logged before execution" data-zh="执行前先落账" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="535" y="143">logged before execution</text>
+<path d="M442 120 L460 120" fill="none" marker-end="url(#arrW1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="52" opacity="0.5" rx="8" width="550" x="35" y="238"></rect>
+<text data-en="The daemon is trusted not because it never fails, but because failure is bounded, visible, and reversible." data-zh="守护进程之所以被信任，不是因为它从不失败，而是因为失败有界、可见、可逆。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="258">The daemon is trusted not because it never fails,</text>
+<text data-en="Failure is bounded, visible, and reversible — by construction." data-zh="失败有界、可见、可逆——靠的是构造，不是运气。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="276">but because failure is bounded, visible, and reversible — by construction.</text>
+</svg>
+<p class="diagram-caption" data-en="Supervision, the Unix way: the agent emits heartbeats and progress proofs; a separate, simpler watchdog enforces deadlines and kills the run that hung or spiraled; a decision journal records every autonomous act before execution, so restart is recovery rather than amnesia. None of this requires the agent to be smarter — it requires the system around the agent to be accountable, which is a far cheaper property to buy." data-zh="Unix 式的监督：智能体发出心跳和进展证明；一个独立的、更简单的看门狗强制执行截止时间，并终止挂起或螺旋失控的那次运行；一本决策日志在执行之前记录每一次自主行为，于是重启是恢复，而不是失忆。这一切都不要求智能体更聪明——它要求的是智能体周围的系统可问责，而这个属性，便宜得多。">Supervision, the Unix way: the agent emits heartbeats; a separate, simpler watchdog kills the run that hung; a decision journal records every autonomous act before execution, so restart is recovery rather than amnesia.</p>
+</div>
+<h3 data-en="Quiet is a feature" data-zh="安静是一种功能">Quiet is a feature</h3>
+<p data-en="The hardest culture shift in daemon-era agent engineering is aesthetic, not technical. Invoke-once agents were judged by liveliness: look how much it did, look how fast, look how it kept working. Resident agents must be judged by restraint. A well-scheduled daemon is mostly idle; a well-designed notification policy means most days end with nothing to report and that being the correct outcome; a healthy memory is one that forgot things on purpose. The demonstration economy hates this — an agent that did nothing is a terrible demo — which is precisely why restraint has to be an architectural property rather than an emergent hope. Build the scheduler, build the coalescing, build the watchdog, build the journal, and let the demo be boring. The systems that earn years of unattended trust will not be the ones that acted brilliantly once. They will be the ones that knew, ten thousand times in a row, when not to." data-zh="守护进程时代的智能体工程里，最难的文化转变是审美上的，不是技术上的。一次性调用的智能体由活跃度来评判：看它做了多少、看它多快、看它一直在干活。常驻智能体必须由克制来评判。一个被良好调度的守护进程大部分时间处于空闲；一个被良好设计的通知策略，意味着大多数日子以「无事可报」收尾，而这正是正确的结果；一份健康的记忆，是一份有意遗忘过东西的记忆。演示经济讨厌这一点——一个什么都没做的智能体是一场糟糕的 demo——而这恰恰说明克制必须是一种架构属性，而不是一种涌现的希望。把调度器建好，把中断合建好，把看门狗建好，把日志建好，然后让 demo 无聊去吧。赢得多年无人值守信任的系统，不会是曾经漂亮地行动过一次的那些。而是连续一万次都知道「何时不行动」的那些。">The hardest culture shift is aesthetic, not technical. Invoke-once agents were judged by liveliness; resident agents must be judged by restraint. A well-scheduled daemon is mostly idle, and most days correctly end with nothing to report. The systems that earn years of unattended trust will not be the ones that acted brilliantly once. They will be the ones that knew, ten thousand times in a row, when not to.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
