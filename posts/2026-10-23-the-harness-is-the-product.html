@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Harness Is the Product — AI Frontlines</title>
+<meta content="Frontier models are converging: swap one for another and benchmark scores barely move. Yet agent systems built on identical models behave nothing alike. The difference lives in the harness — the tool layer, permission model, memory, recovery paths, and observability wrapped around the model. That layer is not converging, because it encodes judgment, and judgment does not distill. The uncomfortable conclusion: the model is becoming a component, and the harness is becoming the product." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 23, 2026" data-zh="2026年10月23日">October 23, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Harness Is the Product" data-zh="线束才是产品">The Harness Is the Product</h1>
+<p class="post-header-deck" data-en="Frontier models are converging. Ask any team that has swapped one frontier model for another inside a real agent system: benchmark scores barely move, and the swap is now an afternoon of adapter code. Yet agent systems built on identical models behave nothing alike — one recovers from a flaky tool call, another falls over; one costs cents per task, another burns dollars on the same task; one is trusted to run overnight, another cannot be trusted past a demo. The difference is never the model. It is the harness: the tool layer, the permission model, the memory scheme, the recovery paths, the observability wrapped around the model. Models distill into commodities. Harnesses encode judgment, and judgment does not distill. The uncomfortable conclusion for an industry obsessed with model choice: the model is becoming a component, and the harness is becoming the product." data-zh="前沿模型正在趋同。去问任何一个在真实智能体系统里把一个前沿模型换成另一个的团队：基准分数几乎不动，而整个替换现在只是一下午的适配代码。可是，构建在完全相同模型上的智能体系统，行为却天差地别——一个能从抖动的工具调用里恢复，另一个直接倒下；一个每个任务花几分钱，另一个在同一个任务上烧掉几块钱；一个被信任整夜运行，另一个活不过一场演示。差异从来不在模型。差异在线束里：工具层、权限模型、记忆方案、恢复路径，以及包裹在模型外的一切可观测性设施。模型会蒸馏成大宗商品。线束编码的是判断力，而判断力蒸馏不掉。对于一个执着于模型选型的行业，这是一个不太舒服的结论：模型正在变成组件，线束正在变成产品。">Frontier models are converging: swap one for another and benchmarks barely move. Yet agent systems built on identical models behave nothing alike. The difference is the harness — tools, permissions, memory, recovery, observability — and that layer is not converging, because it encodes judgment, and judgment does not distill.</p>
+</header>
+<article class="post-body">
+<p data-en="A strange experiment has been running across the industry for the past year, mostly without anyone designing it. Teams build an agent system on one frontier model, then — for cost, for latency, for procurement reasons — swap in a competitor's model behind the same API contract. What they find is consistent enough to be a finding: on most tasks the delta is a few points of accuracy, noticeable in evals and invisible in production. What changes the system's behavior dramatically is everything they did not swap. The same tools, the same retry policy, the same context assembly, the same permission gates, sitting in front of a different brain, produce a system that feels ninety percent identical. The corollary is deflationary for model makers and clarifying for everyone else: the durable engineering has migrated out of the model and into the scaffolding. That scaffolding has a name borrowed from rocketry and test benches — the harness — and it deserves to be taken seriously as the actual site of product differentiation." data-zh="过去一年，整个行业一直在进行一场奇怪的实验，而且多半没人刻意设计它。团队先在一个前沿模型上构建智能体系统，然后——出于成本、延迟或采购原因——在同一个 API 契约后面换上竞争对手的模型。他们的发现一致到可以称之为结论：在大多数任务上，差异只是几个百分点的准确率，在评测里看得见，在生产里看不见。真正让系统行为发生剧烈变化的，是他们没有换掉的那些东西。同样的工具、同样的重试策略、同样的上下文组装、同样的权限闸门，摆在另一颗大脑前面，产出一个感觉上九成相同的系统。这个推论对模型厂商是通缩性的，对其他所有人则是醍醐灌顶的：耐久的工程已经从模型内部迁移到了脚手架里。这副脚手架有一个从火箭工程和测试台借来的名字——线束——而它值得被认真对待，因为它才是产品差异化的真正现场。">A strange experiment has been running across the industry for a year, mostly undesigned. Teams swap one frontier model for another behind the same API contract and find the delta is a few eval points — invisible in production. What changes behavior dramatically is everything they did not swap: the tools, the retry policy, the context assembly, the permission gates. The durable engineering has migrated out of the model and into the scaffolding.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrH1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrH2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="WHERE DIFFERENTIATION LIVES, 2023 → 2026" data-zh="差异化的所在，2023 → 2026" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHERE DIFFERENTIATION LIVES, 2023 → 2026</text>
+<!-- axes -->
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="70" x2="70" y1="50" y2="270"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="70" x2="580" y1="270" y2="270"></line>
+<text data-en="product-defining difference" data-zh="决定产品的差异" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" transform="rotate(-90 46 160)" text-anchor="middle" x="46" y="160">product-defining difference</text>
+<text data-en="time" data-zh="时间" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="325" y="288">time</text>
+<!-- model gap: converging lines -->
+<path d="M90 80 C250 150 400 205 560 225" fill="none" stroke="var(--accent-2)" stroke-width="2.5"></path>
+<path d="M90 180 C250 215 400 225 560 230" fill="none" stroke="var(--accent-2)" stroke-width="2.5" stroke-dasharray="6,4"></path>
+<text data-en="gap between frontier models →" data-zh="前沿模型之间的差距 →" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="180" y="122">gap between frontier models →</text>
+<text data-en="converging" data-zh="正在收敛" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="480" y="248">converging</text>
+<!-- harness gap: diverging lines -->
+<path d="M90 210 C250 170 400 110 560 70" fill="none" stroke="var(--accent)" stroke-width="3"></path>
+<path d="M90 215 C250 205 400 195 560 185" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3,3"></path>
+<text data-en="gap between harnesses →" data-zh="线束之间的差距 →" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="430" y="96">gap between harnesses →</text>
+<text data-en="diverging: tools, recovery, permissions, memory" data-zh="正在发散：工具、恢复、权限、记忆" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="440" y="112">diverging: tools, recovery, permissions, memory</text>
+<!-- crossover annotation -->
+<circle cx="300" cy="178" fill="none" r="26" stroke="var(--accent-3)" stroke-dasharray="4,3" stroke-width="1.5"></circle>
+<text data-en="the crossover: scaffolding" data-zh="交叉点：脚手架" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="300" y="174">the crossover: scaffolding</text>
+<text data-en="now matters more than the brain" data-zh="开始比大脑更重要" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="300" y="188">now matters more than the brain</text>
+</svg>
+<p class="diagram-caption" data-en="The convergence of frontier models is not a hypothesis; it is a procurement reality — swaps that once took quarters now take afternoons. But the harness layer runs the other way. Every quarter, the set of hard-won lessons about tool design, failure recovery, permission boundaries, and memory compounding makes the best harnesses pull further away from the average one. The lines cross somewhere in the last two years, and they are not crossing back." data-zh="前沿模型的趋同不是假设，而是采购现实——过去需要一个季度的换模型，现在一个下午就能完成。但线束这一层走向相反。每个季度，关于工具设计、故障恢复、权限边界和记忆复利的那些来之不易的教训，都让最好的线束把平庸的甩得更远。两条曲线在过去两年间的某处交叉了，而且不会再交叉回来。">The convergence of frontier models is not a hypothesis; it is a procurement reality — swaps that once took quarters now take afternoons. But the harness layer runs the other way: every quarter of hard-won lessons about tools, recovery, permissions, and memory pulls the best harnesses further from the average one. The lines crossed somewhere in the last two years, and they are not crossing back.</p>
+</div>
+<h3 data-en="What a harness actually is" data-zh="线束到底是什么">What a harness actually is</h3>
+<p data-en="Strip away the mystique and a harness is five subsystems, none of which contain a single model weight. First, the tool layer: not just which tools exist, but their error semantics — whether a failure returns a structured reason the model can reason over, or a stack trace that corrupts three turns of context. A well-designed tool is a conversation with the model; a poorly designed one is a trap. Second, the permission model: what the agent may do alone, what requires a human countersignature, and how those boundaries are enforced mechanically rather than requested politely in a system prompt. Third, memory: what is persisted, for how long, with what decay, and — hardest of all — what is deliberately forgotten. Fourth, recovery: what happens when a tool hangs, when a step half-completes, when the loop has spun for forty minutes without progress. Fifth, observability: whether a human can reconstruct, after the fact, why the agent did what it did — the decision journal, the trace, the receipts." data-zh="剥掉神秘感，线束就是五个子系统，其中没有一个包含任何模型权重。第一，工具层：不只是存在哪些工具，而是它们的错误语义——失败时返回的是模型可以据以推理的结构化原因，还是一段会污染三轮上下文的调用栈。一个设计良好的工具是和模型的一场对话；一个设计糟糕的工具是一个陷阱。第二，权限模型：智能体可以独自做什么，什么需要人类副署，以及这些边界如何被机械地强制执行，而不是在系统提示词里客气地请求。第三，记忆：什么被持久化、保存多久、以什么方式衰减，以及——最难的部分——什么被有意遗忘。第四，恢复：当工具挂起、当一步执行到一半、当循环空转了四十分钟毫无进展时，会发生什么。第五，可观测性：事后，一个人类能否重建智能体之所以这么做的完整因果——决策日志、调用轨迹、每一张收据。">Strip away the mystique and a harness is five subsystems, none of which contain a single model weight. The tool layer, defined less by which tools exist than by their error semantics. The permission model — boundaries enforced mechanically, not requested politely in a system prompt. Memory: what persists, what decays, what is deliberately forgotten. Recovery: what happens when a tool hangs or a step half-completes. And observability: whether a human can reconstruct, after the fact, why the agent did what it did.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrH3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="ANATOMY OF A HARNESS — FIVE SUBSYSTEMS, ZERO WEIGHTS" data-zh="线束解剖——五个子系统，零个权重" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ANATOMY OF A HARNESS — FIVE SUBSYSTEMS, ZERO WEIGHTS</text>
+<!-- model core -->
+<rect fill="var(--bg-surface)" height="56" rx="10" stroke="var(--text-tertiary)" stroke-width="1.5" width="180" x="220" y="48"></rect>
+<text data-en="MODEL (the component)" data-zh="模型（组件）" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="72">MODEL (the component)</text>
+<text data-en="swappable · converging · rented" data-zh="可替换 · 趋同中 · 租来的" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="90">swappable · converging · rented</text>
+<!-- five subsystems around -->
+<rect fill="var(--accent-dim)" height="58" rx="10" stroke="var(--accent)" stroke-width="2" width="150" x="35" y="130"></rect>
+<text data-en="① TOOL LAYER" data-zh="① 工具层" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="110" y="152">TOOL LAYER</text>
+<text data-en="error semantics the" data-zh="模型能据以推理的" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="110" y="168">error semantics the</text>
+<text data-en="model can reason over" data-zh="错误语义" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="110" y="181">model can reason over</text>
+<rect fill="var(--accent-dim)" height="58" rx="10" stroke="var(--accent)" stroke-width="2" width="150" x="435" y="130"></rect>
+<text data-en="② PERMISSIONS" data-zh="② 权限" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="510" y="152">PERMISSIONS</text>
+<text data-en="boundaries enforced" data-zh="机械强制执行" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="510" y="168">boundaries enforced</text>
+<text data-en="mechanically, not asked" data-zh="而非口头请求的边界" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="510" y="181">mechanically, not asked</text>
+<rect fill="var(--accent-dim)" height="58" rx="10" stroke="var(--accent-2)" stroke-width="2" width="150" x="35" y="212"></rect>
+<text data-en="③ MEMORY" data-zh="③ 记忆" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="110" y="234">MEMORY</text>
+<text data-en="persistence, decay, and" data-zh="持久化、衰减、" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="110" y="250">persistence, decay, and</text>
+<text data-en="deliberate forgetting" data-zh="以及有意遗忘" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="110" y="263">deliberate forgetting</text>
+<rect fill="var(--accent-dim)" height="58" rx="10" stroke="var(--accent-2)" stroke-width="2" width="150" x="435" y="212"></rect>
+<text data-en="④ RECOVERY" data-zh="④ 恢复" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="510" y="234">RECOVERY</text>
+<text data-en="hangs, half-done steps," data-zh="挂起、半完成的步骤、" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="510" y="250">hangs, half-done steps,</text>
+<text data-en="loops with no progress" data-zh="无进展的空转循环" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="510" y="263">loops with no progress</text>
+<rect fill="var(--accent-dim)" height="58" rx="10" stroke="var(--accent-3)" stroke-width="2" width="180" x="220" y="252"></rect>
+<text data-en="⑤ OBSERVABILITY" data-zh="⑤ 可观测性" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="310" y="274">OBSERVABILITY</text>
+<text data-en="decision journal · traces · receipts" data-zh="决策日志 · 轨迹 · 收据" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="310" y="290">decision journal · traces · receipts</text>
+<text data-en="why it did what it did, reconstructable" data-zh="它为何这么做，可事后重建" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="310" y="303">why it did what it did, reconstructable</text>
+<!-- connectors -->
+<path d="M110 188 C150 190 180 130 220 100" fill="none" stroke="var(--accent)" stroke-width="1.2"></path>
+<path d="M510 188 C470 190 440 130 400 100" fill="none" stroke="var(--accent)" stroke-width="1.2"></path>
+<path d="M110 212 C160 205 200 175 228 150" fill="none" stroke="var(--accent-2)" stroke-width="1.2"></path>
+<path d="M510 212 C460 205 420 175 392 150" fill="none" stroke="var(--accent-2)" stroke-width="1.2"></path>
+<path d="M310 252 L310 106" fill="none" marker-end="url(#arrH3)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+</svg>
+<p class="diagram-caption" data-en="The harness surrounds the model the way a test harness surrounds an engine under load. None of the five subsystems contains any intelligence of its own — they are policy, plumbing, and bookkeeping. Yet they determine whether the same model, given the same task, succeeds or fails, costs cents or dollars, earns trust or forfeits it. Teams that treat these as afterthoughts are renting a brilliant brain and wiring it into a lemon." data-zh="线束环绕模型的方式，就像测试台环绕一台带载运行的发动机。这五个子系统没有一个自带智能——它们是策略、管道和记账。但它们决定了同一个模型、面对同一个任务时，是成功还是失败、花几分钱还是几块钱、赢得信任还是失去信任。把这些当作事后补丁的团队，等于租了一颗绝顶聪明的大脑，然后把它接进了一辆破车。">The harness surrounds the model the way a test bench surrounds an engine under load. None of the five subsystems contains any intelligence — they are policy, plumbing, and bookkeeping. Yet they determine whether the same model succeeds or fails, costs cents or dollars, earns trust or forfeits it.</p>
+</div>
+<blockquote data-en="A model answers questions. A harness gets work done. The industry keeps optimizing the former and wondering why its agents still can't be trusted with the latter." data-zh="模型负责回答问题。线束负责把活干完。行业一直在优化前者，然后纳闷为什么自己的智能体还是没法被托付后者。">A model answers questions. A harness gets work done. The industry keeps optimizing the former and wondering why its agents still can't be trusted with the latter.</blockquote>
+<p data-en="The reason harnesses do not converge like models do is structural. Model capability is a target: everyone can measure it, everyone is aiming at it, and the frontier pulls everyone toward the same point. Harness quality is not a target — it is an accumulation of organizational scar tissue. The retry policy that works was learned from an incident at 2 AM. The permission boundary was drawn after an agent did something technically permitted and strategically catastrophic. The memory decay schedule encodes a hundred small discoveries about which facts rot. None of this publishes as a benchmark. It cannot be downloaded with the weights, bought with an API key, or copied from a paper. It compounds quietly inside teams that have been running agents in production long enough to get burned, and it is precisely the thing that the demo-driven part of the industry never sees, because demos are thirty minutes long and none of the five subsystems ever fails politely inside a demo window." data-zh="线束之所以不像模型那样趋同，原因在结构上。模型能力是一个靶子：所有人都能测量它，所有人都瞄准它，前沿把所有人拉向同一个点。线束质量不是靶子——它是组织伤疤的积累。那条有效的重试策略，是凌晨两点的一次事故教出来的。那道权限边界，是在某个智能体做了一件「技术上有权限、战略上是灾难」的事之后画下的。记忆的衰减时间表，编码着一百个关于「哪些事实会腐烂」的小发现。这一切都不会发表成一个基准。它无法随权重一起下载，无法用一把 API 密钥买到，也无法从论文里抄来。它在那些已经在生产环境里跑了足够久、被烫过足够多次的团队内部悄悄复利——而它恰恰是行业里被演示驱动的那一大部分人永远看不到的东西，因为演示只有三十分钟长，而那五个子系统里没有任何一个，会在演示窗口内礼貌地失败。">The reason harnesses do not converge is structural. Model capability is a target — everyone measures it, and the frontier pulls everyone toward the same point. Harness quality is an accumulation of organizational scar tissue: the retry policy learned from a 2 AM incident, the permission boundary drawn after an agent did something technically permitted and strategically catastrophic. It cannot be downloaded with the weights or copied from a paper. It compounds quietly inside teams that have been burned in production.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrH4" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="WHERE PRODUCTION FAILURES ACTUALLY LIVE" data-zh="生产故障究竟住在哪里" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHERE PRODUCTION FAILURES ACTUALLY LIVE</text>
+<!-- bar chart: failure attribution -->
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="90" x2="90" y1="50" y2="235"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="90" x2="580" y1="235" y2="235"></line>
+<rect fill="var(--accent-2)" height="22" opacity="0.85" rx="4" width="56" x="110" y="213"></rect>
+<text data-en="model" data-zh="模型" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="138" y="252">model</text>
+<text data-en="~15%" data-zh="~15%" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="138" y="204">~15%</text>
+<rect fill="var(--accent)" height="72" rx="4" width="56" x="182" y="163"></rect>
+<text data-en="tools &amp; contracts" data-zh="工具与契约" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="210" y="252">tools &amp; contracts</text>
+<text data-en="~30%" data-zh="~30%" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="210" y="154">~30%</text>
+<rect fill="var(--accent)" height="48" rx="4" width="56" x="254" y="187"></rect>
+<text data-en="permissions," data-zh="权限、状态、" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="282" y="252">permissions,</text>
+<text data-en="state &amp; recovery" data-zh="与恢复" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="282" y="264">state &amp; recovery</text>
+<text data-en="~20%" data-zh="~20%" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="282" y="178">~20%</text>
+<rect fill="var(--accent-3)" height="48" rx="4" width="56" x="326" y="187"></rect>
+<text data-en="context &amp;" data-zh="上下文与" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="354" y="252">context &amp;</text>
+<text data-en="memory assembly" data-zh="记忆组装" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="354" y="264">memory assembly</text>
+<text data-en="~20%" data-zh="~20%" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="354" y="178">~20%</text>
+<rect fill="var(--accent-3)" height="20" rx="4" width="56" x="398" y="215"></rect>
+<text data-en="everything" data-zh="其他" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="426" y="252">everything</text>
+<text data-en="~15%" data-zh="~15%" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="426" y="206">~15%</text>
+<text data-en="attributed root causes, from incident retros" data-zh="归因后的根因，来自事故复盘" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="335" y="286">attributed root causes, from incident retros</text>
+<!-- annotation arrow -->
+<path d="M138 196 C170 160 200 140 250 132" fill="none" marker-end="url(#arrH4)" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<text data-en="the bar everyone optimizes" data-zh="所有人都在优化的那一根" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="330" y="126">the bar everyone optimizes</text>
+</svg>
+<p class="diagram-caption" data-en="Sketch the root causes from any set of agent incident retrospectives and the shape is always the same: the model's raw competence is a small slice of the outage pie. The dominant slices are harness failures — tools whose errors confuse rather than inform, state that was lost at the wrong moment, permission gates that weren't actually gates, context assemblies that starved the model of the one fact it needed. Teams that blame the model for these are remodeling the kitchen while the house is on fire." data-zh="把任何一组智能体事故复盘的根因画出来，形状永远一样：模型的原始能力只是故障饼图里的一小块。占主导的是线束故障——错误只会添乱而不会提供信息的工具、在最不该丢的时刻丢掉的状态、其实并不是闸门的权限闸门、恰恰没把模型最需要的那个事实喂进去的上下文组装。把这些归咎于模型的团队，等于房子着火了还在装修厨房。">Sketch the root causes from any set of agent incident retrospectives and the shape is always the same: raw model competence is a small slice of the outage pie. The dominant slices are harness failures — tools whose errors confuse rather than inform, state lost at the wrong moment, permission gates that weren't actually gates.</p>
+</div>
+<h3 data-en="Harness engineering as a discipline" data-zh="作为一门学科的线束工程">Harness engineering as a discipline</h3>
+<p data-en="If the harness is the product, then harness engineering deserves the seriousness that product engineering gets — versioning, review, testing, and a career path. Three practices separate teams that are building harnesses from teams that are merely decorating prompts. First, they version the harness independently of the model: every change to a tool contract, a permission rule, or a context assembly is a reviewable diff with an owner, because these changes alter behavior as much as any weight update ever did. Second, they test the harness against model failures on purpose — injected wrong answers, corrupted tool outputs, mid-task crashes — the way chassis engineers crash cars to learn what the frame does. Third, they measure the harness with its own metrics: recovery rate after a tool failure, context efficiency per completed task, blast radius per permission tier, cost variance across identical runs. Model quality is a vendor's quarterly report. Harness quality is the number on your own dashboard, and it is the only one of the two that a competitor cannot rent." data-zh="如果线束就是产品，那么线束工程就应当得到产品工程那样的严肃对待——版本管理、评审、测试，以及一条职业路径。有三个实践，把真正在构建线束的团队和只在给提示词做装饰的团队区分开来。第一，他们让线束的版本独立于模型：工具契约、权限规则、上下文组装的每一次改动，都是一个有负责人的、可评审的 diff，因为这些改动对行为的改变，不亚于任何一次权重更新。第二，他们故意针对模型故障来测试线束——注入错误答案、污染工具输出、任务中途崩溃——就像底盘工程师撞毁汽车，只为弄清车架的受力。第三，他们用线束自己的指标来度量线束：工具故障后的恢复率、每完成一个任务的上下文效率、每个权限层级的爆炸半径、相同任务之间的成本方差。模型质量是供应商的季报。线束质量是你自己仪表盘上的数字——而且这两者当中，只有它是竞争对手租不来的。">If the harness is the product, harness engineering deserves versioning, review, testing, and a career path. Version the harness independently of the model — every change to a tool contract or permission rule is a reviewable diff with an owner. Test the harness against model failures on purpose, the way chassis engineers crash cars. Measure the harness with its own metrics: recovery rate, context efficiency, blast radius per permission tier, cost variance. Model quality is a vendor's quarterly report. Harness quality is the only number a competitor cannot rent.</p>
+<p data-en="None of this argues that models do not matter; frontier capability sets the ceiling of what any harness can deliver. But ceilings are shared. Every frontier lab rents the same ceiling to anyone with a credit card, and the gap between them shrinks on a schedule set by their own competitive dynamics. The floor — whether the system actually works, day after day, on real tasks, at predictable cost, with failures that are bounded and explainable — is set entirely by the harness. Products are rarely built on ceilings. They are built on floors. The teams that internalize this will stop asking 'which model should we use' and start asking 'what would have to be true of our harness for any sufficiently good model to be safe behind it' — and the moment that question becomes the default question, model choice becomes what it was always going to become: an implementation detail." data-zh="这些都不是在说模型不重要；前沿能力决定了任何线束所能交付的上限。但上限是共享的。每一家前沿实验室都把同一个上限，出租给任何一张刷得动的信用卡，而它们之间的差距，正按照它们自己的竞争节奏在缩小。至于下限——系统是否真的日复一日在真实任务上、以可预期的成本工作，故障是否有界、可解释——则完全由线束决定。产品很少构建在天花板上。产品构建在地板上。内化了这一点的团队，会停止问「我们该用哪个模型」，转而问「我们的线束必须满足什么条件，才能让任何一个足够好的模型在它后面都是安全的」——而当这个问题成为默认问题的那一刻，模型选型就会变成它终究要变成的东西：一个实现细节。">None of this argues models do not matter; frontier capability sets the ceiling. But ceilings are shared — every frontier lab rents the same ceiling to anyone with a credit card. The floor — whether the system works day after day, at predictable cost, with bounded, explainable failures — is set entirely by the harness. Products are rarely built on ceilings. They are built on floors.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
