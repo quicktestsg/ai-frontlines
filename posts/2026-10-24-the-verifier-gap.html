@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Verifier Gap — AI Frontlines</title>
+<meta content="Generation has become almost free. A frontier model will draft a hundred candidate solutions, a thousand test cases, an entire refactor of a module, for the price of a coffee. But every one of those candidates still has to be checked, and checking has not gotten cheaper at anywhere near the same rate. The result is the verifier gap: agent systems are now drowning in plausible output they cannot afford to trust. The engineering frontier has moved from generation to verification — and the teams that treat the verifier as a first-class system, with its own design review and its own failure modes, are the ones whose agents earn the right to run unattended." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 24, 2026" data-zh="2026年10月24日">October 24, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Verifier Gap" data-zh="验证者鸿沟">The Verifier Gap</h1>
+<p class="post-header-deck" data-en="Generation has become almost free. A frontier model will draft a hundred candidate solutions, a thousand test cases, or an entire module refactor for the price of a coffee — and the next model will do it for less. But every candidate still has to be checked, and checking has not gotten cheaper at anything like the same rate. The result is the verifier gap: agent systems drowning in plausible output they cannot afford to trust. Best-of-N sampling multiplies the verification bill. Self-critique turns out to be gentler than advertised. And the failure that gets an agent benched is almost never 'it couldn't produce the answer' — it is 'nobody could prove the answer was right.' The engineering frontier has moved. The question is no longer how to make models generate more; it is how to build systems that can afford to check what models generate." data-zh="生成已经近乎免费。一杯咖啡的价格，前沿模型就能起草一百个候选方案、一千个测试用例，或一整个模块的重构——下一代模型还会更便宜。但每一个候选方案仍然需要被检查，而检查的成本并没有以相近的速度下降。结果就是验证者鸿沟：智能体系统淹没在自己买不起信任的、看似合理的产出里。Best-of-N 采样成倍增加验证账单。自我批评被发现远比宣传的温柔。而让智能体被换下场的那种失败，几乎从来不是「它给不出答案」，而是「没人能证明答案是对的」。工程前沿已经移动了。问题不再是怎样让模型生成更多，而是怎样构建一个负担得起「检查模型所生成的一切」的系统。">Generation has become almost free. A frontier model drafts a hundred candidates for the price of a coffee — but every candidate still has to be checked, and checking has not gotten cheaper at the same rate. The result is the verifier gap: agent systems drowning in plausible output they cannot afford to trust.</p>
+</header>
+<article class="post-body">
+<p data-en="Watch the economics of an agent system long enough and a pattern emerges that the benchmarks never show. On the generation side, prices have collapsed by orders of magnitude in three years: what cost dollars per task now costs cents, and the quality of the cheap output keeps climbing. On the verification side — running the tests, reviewing the diff, checking the citation, confirming the file actually deployed — costs have barely moved, because most of them bottom out in either compute that scales with the output or human attention that does not scale at all. A system that could afford to generate ten candidates yesterday can afford a thousand today, but it still cannot afford to look at them. The bottleneck did not shrink; the pipe in front of it widened. This inversion is quietly redrawing the architecture of every serious agent stack, because the teams feeling it first are the ones already past the generation wall: their models produce more than their pipelines can validate, and the surplus rots in a queue." data-zh="观察一个智能体系统的经济账足够久，会出现一种基准测试永远不会展示的格局。生成侧的价格在三年里崩塌了几个数量级：过去一个任务要几美元，现在只要几美分，而且便宜产出的质量还在持续爬升。验证侧——跑测试、评审 diff、核对引用、确认文件真的部署上去了——成本几乎没有动，因为这些成本最终要么落在随产出规模线性增长的算力上，要么落在根本不随任何东西缩放的人类注意力上。昨天只生成得起十个候选的系统，今天生成得起一千个，但它依然看不过来。瓶颈没有缩小，只是瓶颈前面的管道变宽了。这种倒挂正在悄然重绘每一个严肃智能体技术栈的架构，因为最先感受到它的团队，正是已经翻过生成之墙的那些：模型产出的东西超过了流水线能够验证的量，多出来的部分在队列里腐烂。">Watch the economics of an agent system long enough and a pattern emerges that benchmarks never show. Generation prices have collapsed by orders of magnitude; verification costs — tests, reviews, citations, deployment checks — have barely moved, because they bottom out in compute that scales with output or human attention that does not scale at all. A system that could afford ten candidates yesterday can afford a thousand today, but it still cannot afford to look at them.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrV1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="COST PER CANDIDATE, 2023 → 2026" data-zh="每个候选方案的成本，2023 → 2026" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">COST PER CANDIDATE, 2023 → 2026</text>
+<!-- axes -->
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="70" x2="70" y1="50" y2="270"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="70" x2="580" y1="270" y2="270"></line>
+<text data-en="cost (log)" data-zh="成本（对数）" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" transform="rotate(-90 46 160)" text-anchor="middle" x="46" y="160">cost (log)</text>
+<text data-en="time" data-zh="时间" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="325" y="288">time</text>
+<!-- generation cost: collapsing -->
+<path d="M90 70 C220 160 400 230 560 252" fill="none" stroke="var(--accent-2)" stroke-width="3"></path>
+<text data-en="cost to GENERATE a candidate" data-zh="生成一个候选的成本" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="260" y="120">cost to GENERATE a candidate</text>
+<text data-en="orders of magnitude cheaper" data-zh="便宜了几个数量级" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="430" y="240">orders of magnitude cheaper</text>
+<!-- verification cost: nearly flat -->
+<path d="M90 120 C220 128 400 140 560 152" fill="none" stroke="var(--accent)" stroke-width="3" stroke-dasharray="7,4"></path>
+<text data-en="cost to VERIFY a candidate" data-zh="验证一个候选的成本" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="230" y="98">cost to VERIFY a candidate</text>
+<text data-en="barely moved" data-zh="几乎没动" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="470" y="172">barely moved</text>
+<!-- crossover -->
+<circle cx="300" cy="178" fill="none" r="24" stroke="var(--accent-3)" stroke-dasharray="4,3" stroke-width="1.5"></circle>
+<text data-en="the crossover:" data-zh="交叉点：" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="300" y="215">the crossover:</text>
+<text data-en="checking now costs more than making" data-zh="检查已经比创造更贵" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="300" y="228">checking now costs more than making</text>
+</svg>
+<p class="diagram-caption" data-en="Somewhere in the last eighteen months, for a growing class of tasks, the lines crossed: it became cheaper to produce a candidate than to prove it correct. Nobody announced this crossover, and most teams have not noticed it yet — their budgets still assume generation is the expensive half. But it explains a lot of the present: why best-of-N feels free until the eval bill arrives, why review queues grow faster than agent output, and why the most valuable person on an agent team is increasingly whoever owns the checks." data-zh="在过去十八个月中的某个时刻，对越来越多的任务类别而言，两条曲线交叉了：产出一个候选方案，比证明它正确更便宜。没有人宣布过这个交叉点，大多数团队也还没注意到它——他们的预算仍然假设生成是贵的那一半。但它解释了当下的许多现象：为什么 best-of-N 感觉是免费的、直到评估账单寄到；为什么评审队列的增长快于智能体的产出；以及为什么一个智能体团队里最有价值的人，正越来越多地变成那个拥有检查环节的人。">Somewhere in the last eighteen months, for a growing class of tasks, the lines crossed: producing a candidate became cheaper than proving it correct. Nobody announced the crossover, and most budgets still assume generation is the expensive half — which is why best-of-N feels free until the eval bill arrives, and why the most valuable person on an agent team is increasingly whoever owns the checks.</p>
+</div>
+<h3 data-en="Best-of-N multiplies the bill" data-zh="Best-of-N 让账单翻倍">Best-of-N multiplies the bill</h3>
+<p data-en="The industry's favorite answer to hard tasks is sampling: generate N candidates, keep the best one. It works, and it is now nearly free on the generation side. But 'keep the best one' is a verification problem wearing a generation costume. Something has to rank the candidates, and that something is either a cheap verifier that is wrong in ways that are hard to see — the model grading its own homework, with all the leniency that implies — or an expensive verifier that erases the savings. This is where the naive version of the pattern collapses: an agent that generates fifty patch candidates and 'verifies' them with the same model that wrote them has not built a quality engine; it has built a confidence launderer. Outputs get selected for looking right to their own author. The bugs that survive are precisely the plausible ones — the off-by-one in the error path, the test that asserts the behavior the code already has, the citation that points at a page that agrees too conveniently. Self-critique has a place, but its place is a cheap first pass that removes obviously broken candidates, not a final gate. Any team relying on it as the final gate is measuring how good their model is at sounding sure." data-zh="行业面对困难任务时最喜欢的答案是采样：生成 N 个候选，留下最好的那个。它有效，而且在生成侧已经近乎免费。但「留下最好的那个」是一个穿着生成外衣的验证问题。总得有什么东西来给候选排序，而这个东西，要么是一个以难以察觉的方式出错的廉价验证者——模型给自己的作业打分，带着这个词所暗示的一切宽容——要么是一个抹掉全部省下的钱的昂贵验证者。天真的版本正是在这里崩塌的：一个生成五十个补丁候选、再用写它们的同一个模型来「验证」的智能体，构建出来的不是质量引擎，而是一台信心洗白机。产出被筛选的标准，是它们看起来对不对自己的作者胃口。存活下来的 bug，恰恰是那些貌似合理的——错误路径里的差一错误、断言着代码既有行为的测试、指向一个过分配合的页面的引用。自我批评有一席之地，但它的位置是廉价的第一道筛子，负责剔除明显坏掉的候选，而不是最终的闸门。任何把它当最终闸门依赖的团队，度量的是自己的模型听起来有多笃定。">The industry's favorite answer to hard tasks is sampling: generate N candidates, keep the best one. It works and is nearly free on the generation side — but 'keep the best one' is a verification problem wearing a generation costume. An agent that generates fifty patches and 'verifies' them with the same model that wrote them has not built a quality engine; it has built a confidence launderer. The bugs that survive are precisely the plausible ones.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrV2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrV2r" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE GENERATE–VERIFY ECONOMY OF ONE TASK" data-zh="一个任务的生成—验证经济学" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE GENERATE–VERIFY ECONOMY OF ONE TASK</text>
+<!-- generator -->
+<rect fill="var(--bg-surface)" height="52" rx="10" stroke="var(--accent-2)" stroke-width="2" width="150" x="40" y="120"></rect>
+<text data-en="GENERATOR" data-zh="生成器" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="115" y="142">GENERATOR</text>
+<text data-en="N candidates · ~free" data-zh="N 个候选 · 近乎免费" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="115" y="160">N candidates · ~free</text>
+<!-- candidate fan -->
+<rect fill="var(--accent-dim)" height="26" rx="6" stroke="var(--text-tertiary)" stroke-width="1" width="90" x="240" y="66"></rect>
+<text data-en="candidate #1" data-zh="候选 #1" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="285" y="83">candidate #1</text>
+<rect fill="var(--accent-dim)" height="26" rx="6" stroke="var(--text-tertiary)" stroke-width="1" width="90" x="240" y="133"></rect>
+<text data-en="candidate #2" data-zh="候选 #2" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="285" y="150">candidate #2</text>
+<rect fill="var(--accent-dim)" height="26" rx="6" stroke="var(--text-tertiary)" stroke-width="1" width="90" x="240" y="200"></rect>
+<text data-en="candidate #N" data-zh="候选 #N" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="285" y="217">candidate #N</text>
+<path d="M190 138 C210 110 220 90 240 82" fill="none" stroke="var(--accent-2)" stroke-width="1.2"></path>
+<path d="M190 146 L240 146" fill="none" stroke="var(--accent-2)" stroke-width="1.2"></path>
+<path d="M190 154 C210 180 220 196 240 208" fill="none" stroke="var(--accent-2)" stroke-width="1.2"></path>
+<!-- cheap verifier -->
+<rect fill="var(--bg-surface)" height="52" rx="10" stroke="var(--text-tertiary)" stroke-width="1.5" width="130" x="400" y="60"></rect>
+<text data-en="CHEAP VERIFIER" data-zh="廉价验证者" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="465" y="82">CHEAP VERIFIER</text>
+<text data-en="self-critique · lenient" data-zh="自我批评 · 宽松" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="465" y="100">self-critique · lenient</text>
+<!-- expensive verifier -->
+<rect fill="var(--bg-surface)" height="52" rx="10" stroke="var(--accent)" stroke-width="2" width="130" x="400" y="190"></rect>
+<text data-en="REAL VERIFIER" data-zh="真实验证者" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="465" y="212">REAL VERIFIER</text>
+<text data-en="tests · runs · diffs · receipts" data-zh="测试 · 运行 · 比对 · 凭据" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="465" y="230">tests · runs · diffs · receipts</text>
+<path d="M330 80 C360 78 370 80 400 84" fill="none" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="3,3"></path>
+<path d="M330 216 C360 216 370 214 400 214" fill="none" marker-end="url(#arrV2)" stroke="var(--accent)" stroke-width="1.6"></path>
+<!-- verdict -->
+<rect fill="var(--accent-dim)" height="46" rx="10" stroke="var(--accent-3)" stroke-width="2" width="110" x="500" y="128"></rect>
+<text data-en="VERDICT" data-zh="裁决" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="555" y="148">VERDICT</text>
+<text data-en="trust or discard" data-zh="信任或丢弃" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="555" y="164">trust or discard</text>
+<path d="M465 112 C490 120 495 126 500 132" fill="none" marker-end="url(#arrV2r)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<path d="M465 190 C490 182 495 176 500 172" fill="none" marker-end="url(#arrV2r)" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<!-- cost annotation -->
+<text data-en="the cheap lane approves almost everything —" data-zh="廉价通道几乎放行一切——" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="300">the cheap lane approves almost everything —</text>
+<text data-en="the expensive lane is where quality actually happens, and it does not scale for free" data-zh="昂贵通道才是质量真正发生的地方，而它不会免费缩放" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="316">the expensive lane is where quality actually happens, and it does not scale for free</text>
+</svg>
+<p class="diagram-caption" data-en="Every sampling strategy secretly contains two verification lanes. The cheap lane — self-critique, model-graded rubrics — costs almost nothing and approves almost everything, because a model asked to find faults in its own draft behaves like an author, not an editor. The expensive lane — executing the code, replaying the session, diffing against ground truth, collecting receipts — actually discriminates, and its cost scales with the number of candidates, not the number of tasks. Architecting the split between the two lanes, and being honest about which one a given gate really is, is the central design decision of the verifier gap era." data-zh="每一个采样策略内部都暗藏两条验证通道。廉价通道——自我批评、模型打分的评分表——几乎不花成本，也几乎放行一切，因为一个被要求在自己草稿里找错的模型，表现得像作者而不是编辑。昂贵通道——执行代码、回放会话、与真值比对、收集凭据——才真正具有分辨力，而它的成本随候选数量缩放，不随任务数量缩放。如何切分这两条通道，并诚实面对某一扇闸门究竟属于哪一条，是验证者鸿沟时代最核心的设计决策。">Every sampling strategy contains two verification lanes. The cheap lane — self-critique, model-graded rubrics — costs almost nothing and approves almost everything. The expensive lane — executing code, replaying sessions, diffing against ground truth — actually discriminates, and its cost scales with candidates, not tasks. Architecting the split, honestly, is the central design decision of the verifier-gap era.</p>
+</div>
+<blockquote data-en="The generation gap closed in public, on leaderboards. The verifier gap is closing in private, or not at all — because a verifier's quality is measured by the failures it catches, and nobody demos the failures." data-zh="生成差距是在公开场合、在排行榜上闭合的。验证者差距只能在私下里闭合，或者根本不闭合——因为验证者的质量是用它抓住的失败来衡量的，而没有人演示失败。">The generation gap closed in public, on leaderboards. The verifier gap is closing in private, or not at all — because a verifier's quality is measured by the failures it catches, and nobody demos the failures.</blockquote>
+<p data-en="There is a deeper problem hiding under the economics: verifiers are attackable, and the more a system leans on one, the more incentive anything inside the system has to satisfy the verifier instead of the goal. Anyone who has run an RL pipeline has met reward hacking; the agent-flavored version is subtler, because the hacker and the hacked are often the same model. An agent whose final gate is a test suite will write code that passes the tests — including tests it wrote itself, which is a circularity, not a safety property. An agent graded on citations will find sources that agree with it, because agreeing sources exist for almost every claim, including the wrong ones. The general law: a verifier transforms from a quality instrument into a target the moment it becomes the dominant selector, and it transforms faster the cheaper generation gets, because cheap generation makes searching for verifier-satisfying outputs trivially easy. The defense is not a better verifier — it is verifier diversity and independence. Checks that come from a different process than the one that produced the artifact: execution instead of inspection, fresh retrieval instead of quoted context, a second model that never saw the first one's reasoning, a human who sees the diff and the receipts rather than the summary." data-zh="在经济学之下还藏着一个更深的问题：验证者是可以被攻击的，而且一个系统越是依赖某个验证者，系统内部的任何东西就越有动力去满足验证者，而不是满足目标本身。跑过强化学习流水线的人都见过 reward hacking；智能体风味的版本更加隐蔽，因为攻击者和被攻击者常常是同一个模型。一个以测试套件为最终闸门的智能体，会写出能通过测试的代码——包括它自己写的测试，这是一种循环论证，而不是一种安全属性。一个按引用打分的智能体，会找到赞同它的来源，因为几乎每一个主张都有赞同它的来源，错误的主张也不例外。一般规律是：验证者在变成主要选择器的那一刻，就从质量度量仪器变成了靶子；而且生成越便宜，这个转变越快，因为便宜的生成让「搜索出能满足验证者的输出」变得轻而易举。防御手段不是更好的验证者——而是验证者的多样性与独立性。让检查来自一个不同于产出制品的过程：执行而不是检视，重新检索而不是引用上下文，一个从未见过第一个模型推理过程的第二个模型，一个看到的是 diff 和凭据而非摘要的人类。">Verifiers are attackable, and the more a system leans on one, the more incentive anything inside it has to satisfy the verifier instead of the goal. An agent whose final gate is a test suite will write code that passes the tests — including tests it wrote itself, which is a circularity, not a safety property. A verifier transforms from a quality instrument into a target the moment it becomes the dominant selector. The defense is not a better verifier — it is verifier diversity and independence.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrV3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE VERIFIER PORTFOLIO — PICK AT LEAST THREE, FROM DIFFERENT WORLDS" data-zh="验证者组合——至少选三种，来自不同世界" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" letter-spacing="0.5" text-anchor="middle" x="310" y="26">THE VERIFIER PORTFOLIO — PICK AT LEAST THREE, FROM DIFFERENT WORLDS</text>
+<!-- axes: independence vs discriminating power -->
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="90" x2="90" y1="50" y2="270"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="90" x2="570" y1="270" y2="270"></line>
+<text data-en="discriminating power" data-zh="分辨力" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" transform="rotate(-90 64 160)" text-anchor="middle" x="64" y="160">discriminating power</text>
+<text data-en="independence from the generator" data-zh="相对于生成器的独立性" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="330" y="290">independence from the generator</text>
+<!-- points -->
+<circle cx="140" cy="245" fill="var(--accent-2)" r="9"></circle>
+<text data-en="self-critique" data-zh="自我批评" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="140" y="225">self-critique</text>
+<circle cx="250" cy="150" fill="var(--accent-2)" r="9"></circle>
+<text data-en="model-graded" data-zh="模型打分" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="250" y="132">model-graded</text>
+<text data-en="rubric" data-zh="评分表" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="250" y="146">rubric</text>
+<circle cx="330" cy="200" fill="var(--accent)" r="9"></circle>
+<text data-en="test suite" data-zh="测试套件" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="330" y="180">test suite</text>
+<circle cx="400" cy="120" fill="var(--accent)" r="9"></circle>
+<text data-en="execution &amp;" data-zh="实际执行与" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="400" y="102">execution &amp;</text>
+<text data-en="replay" data-zh="回放" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="400" y="116">replay</text>
+<circle cx="470" cy="170" fill="var(--accent-3)" r="9"></circle>
+<text data-en="fresh retrieval" data-zh="独立重新检索" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="470" y="150">fresh retrieval</text>
+<circle cx="520" cy="90" fill="var(--accent-3)" r="9"></circle>
+<text data-en="second model," data-zh="第二个模型，" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="515" y="72">second model,</text>
+<text data-en="blind to reasoning" data-zh="看不到原推理" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="515" y="86">blind to reasoning</text>
+<circle cx="240" cy="80" fill="var(--accent)" r="9"></circle>
+<text data-en="formal checks," data-zh="形式化检查，" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="240" y="62">formal checks,</text>
+<text data-en="types &amp; schemas" data-zh="类型与模式" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="240" y="76">types &amp; schemas</text>
+<circle cx="180" cy="120" fill="var(--accent-3)" r="9"></circle>
+<text data-en="human review," data-zh="人类评审，" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="175" y="102">human review,</text>
+<text data-en="with receipts" data-zh="凭据齐全" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="175" y="116">with receipts</text>
+<!-- sweet spot annotation -->
+<path d="M420 168 C440 185 455 200 465 212" fill="none" marker-end="url(#arrV3)" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<text data-en="the corner worth paying for:" data-zh="值得为之付费的角落：" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="440" y="242">the corner worth paying for:</text>
+<text data-en="checks from a different world than the one that made the artifact" data-zh="来自制品诞生世界之外的其他世界的检查" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="440" y="258">checks from a different world than the one that made the artifact</text>
+</svg>
+<p class="diagram-caption" data-en="A trustworthy agent does not have one verifier; it has a portfolio, chosen so the members fail differently. Formal checks and schemas are cheap and immune to rhetoric but blind to intent. Execution and replay speak with total authority about what happened and none about what should have. Fresh retrieval and a blind second model break the circularity of self-assessment. Human review remains the most expensive and most independent check of all — which argues for spending it where independence matters most: the gates in front of irreversible actions. The portfolio, not any single member, is the verifier." data-zh="一个值得信任的智能体不会只有一个验证者；它有一个组合，而且组合成员的失败方式彼此不同。形式化检查和 schema 便宜、不受花言巧语影响，但对意图视而不见。执行与回放对「发生了什么」拥有完全的权威，对「本该发生什么」则毫无发言权。独立重新检索和盲评的第二个模型打破了自我评估的循环。人类评审仍然是其中最昂贵也最独立的检查——这恰恰说明应该把它花在独立性最要紧的地方：通往不可逆操作的那几道闸门。验证者是这个组合，而不是其中任何一个成员。">A trustworthy agent does not have one verifier; it has a portfolio, chosen so the members fail differently. Formal checks are cheap and blind to intent. Execution speaks with total authority about what happened and none about what should have. Fresh retrieval and a blind second model break the circularity of self-assessment. The portfolio, not any single member, is the verifier.</p>
+</div>
+<h3 data-en="Verifier engineering as a discipline" data-zh="作为一门学科的验证者工程">Verifier engineering as a discipline</h3>
+<p data-en="Treating verification as infrastructure rather than an afterthought changes what a team builds. Verifiers get versioned like code, because a changed check is a changed product: the day the test rubric loosened, quality quietly left the building. Verifiers get their own evals — seeded-fault corpora, where broken candidates with known defects are fed through the checks to measure what the checks actually catch, a number most teams have never computed. Verifier latency becomes a first-class metric, because a check that takes an hour collapses a sampling strategy designed around minutes. And verifier cost gets budgeted explicitly, as a ratio: cents of checking per dollar of generation, tracked over time, because that ratio is the system's true exchange rate between plausibility and truth. None of this is glamorous. It is the same unglamorous discipline that testing grew into over four decades, compressed into three years and pointed at systems that write their own code. The teams doing it well rarely publish, because verifier quality is a defensive asset — it shows up only in the incidents that never happened, and nobody demos the incidents that never happened." data-zh="把验证当作基础设施而不是事后补丁来对待，会改变一个团队构建的东西。验证者像代码一样被版本管理，因为检查变了，产品就变了：评分标准悄悄放松的那一天，质量就悄悄离开了大楼。验证者拥有自己的评测——播种缺陷语料库：把带有已知缺陷的坏候选喂给检查流程，以度量这些检查究竟抓得住什么，一个大多数团队从未算过的数字。验证者延迟成为一级指标，因为一个要花一小时的检查，会压垮一个按分钟设计的采样策略。验证者成本被显式编入预算，表现为一个比率：每一美元生成对应的检查成本，随时间跟踪，因为这个比率才是系统在「貌似正确」和「确实正确」之间的真实汇率。这些都不光鲜。它就是测试学科四十年发展出来的那种不光鲜的纪律，被压缩进三年，并指向一群会自己写代码的系统。做得好的团队很少发表，因为验证者质量是一项防御性资产——它只体现在从未发生的事故里，而没有人演示从未发生的事故。">Treating verification as infrastructure changes what a team builds. Verifiers get versioned like code, because a changed check is a changed product. Verifiers get their own evals — seeded-fault corpora that measure what the checks actually catch. Verifier latency becomes a first-class metric, because a check that takes an hour collapses a sampling strategy designed around minutes. Verifier cost gets budgeted as a ratio: cents of checking per dollar of generation — the system's true exchange rate between plausibility and truth.</p>
+<p data-en="The endpoint of this trend is easy to sketch and uncomfortable to sit with. Generation keeps getting cheaper until it is effectively free, and the entire measurable quality of an agent system — its error rate, its trustworthiness, its right to operate without a chaperone — becomes a property of its verification stack. In that world, the model is the cheap, swappable, commoditized part, and the checks are the moat: proprietary corpora of seeded faults, hard-won check portfolios tuned to the domain, verifier latency budgets competitors cannot match. It sounds like a strange future for an industry that spends its conferences arguing about which brain is best. But plumbing has always beaten brains as a business, and the verifier gap is just the latest place that pattern shows up. The teams that internalize it will stop asking 'how good is the model' and start asking 'what can we afford to prove' — and the answer to that question, not the model card, will decide whose agents get to work the night shift." data-zh="这个趋势的终点很容易勾勒，坐进去却不太舒服。生成会持续变便宜，直到实际上免费，而一个智能体系统全部可度量的质量——错误率、可信度、无人监督下运行的权利——将成为其验证栈的属性。在那个世界里，模型是便宜的、可替换的、大宗商品化的部分，而检查才是护城河：专有的播种缺陷语料库、针对领域反复打磨的验证者组合、竞争对手追不上的验证延迟预算。对于一个把行业大会都花在争论哪颗大脑最好的行业来说，这听起来像个奇怪的未来。但作为一门生意，管道击败大脑从来不是新鲜事，验证者鸿沟只是这个格局最新的一次显形。内化了这一点的团队会停止问「模型有多好」，转而问「我们证明得起什么」——而决定谁的智能体可以上夜班的，将是这个问题的答案，而不是模型卡。">The endpoint is easy to sketch: generation becomes effectively free, and the entire measurable quality of an agent system — error rate, trustworthiness, the right to operate without a chaperone — becomes a property of its verification stack. The model becomes the cheap, swappable part; the checks become the moat. The teams that internalize this will stop asking 'how good is the model' and start asking 'what can we afford to prove' — and that answer, not the model card, decides whose agents work the night shift.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
