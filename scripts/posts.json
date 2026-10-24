@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-25",
+    "slug": "memory-is-a-schema",
+    "title_en": "Memory Is a Schema, Not a Dump",
+    "title_zh": "记忆是一套模式，不是一堆垃圾",
+    "read_time": 9,
+    "excerpt_en": "Every agent framework ships a memory feature, and almost all are the same product: an append-only pile of embeddings with similarity search on top. Trustworthy memory is not a storage problem — it is a schema problem: typed rows, keys, tombstones, provenance, and query plans instead of retrieval lotteries.",
+    "excerpt_zh": "每个智能体框架都自带记忆功能，内核却几乎都是同一个产品：只增不删的向量堆加相似度检索。值得信任的记忆不是存储问题，而是 schema 问题：有类型的行、键、墓碑、出处，以及用查询计划取代检索抽签。"
+  },
+  {
     "date": "2026-10-24",
     "slug": "the-verifier-gap",
     "title_en": "The Verifier Gap",

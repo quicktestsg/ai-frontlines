@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Memory Is a Schema, Not a Dump — AI Frontlines</title>
+<meta content="Every agent framework now ships a memory feature, and almost all of them are the same product: an append-only pile of embeddings with a similarity search bolted on top. The pitch is remember everything, retrieve by vibe. This essay argues the opposite: memory is a schema problem, not a storage problem. What makes an agent's memory trustworthy is not how much it keeps but how deliberately it is typed, versioned, invalidated, and joined. Writes need normalization, conflict resolution, and tombstones. Reads need query plans, not similarity scores. The teams that figure this out get debuggable memory with migrations and fixtures; everyone else gets incidents where the agent confidently remembers things that stopped being true a month ago." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 25, 2026" data-zh="2026年10月25日">October 25, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Memory Is a Schema, Not a Dump" data-zh="记忆是一套模式，不是一堆垃圾">Memory Is a Schema, Not a Dump</h1>
+<p class="post-header-deck" data-en="Every agent framework now ships a memory feature, and almost all of them are the same product underneath: an append-only pile of embeddings with a similarity search bolted on top. Remember everything, retrieve by vibe. It is a seductive pitch, and it fails in a characteristic way — the agent confidently recalls things that stopped being true, merges two different people into one, and nobody can debug any of it because a vector dump has no schema to inspect. The counter-position: memory is not a storage problem. It is a schema problem. What makes an agent's memory trustworthy is not how much it keeps, but how deliberately its contents are typed, keyed, versioned, invalidated, and joined. Databases spent fifty years learning how to remember under adversarial write patterns. Agent memory is now repeating that curriculum, at compression speed, and the teams that skip the classes are the ones whose agents remember the wrong things longest." data-zh="如今每个智能体框架都自带记忆功能，而它们的内核几乎都是同一个产品：一个只增不删的向量堆，外面焊一个相似度检索。「什么都记住，靠感觉召回」——这个卖点很有诱惑力，并以一种特征鲜明的方式失败：智能体言之凿凿地回忆起早已过时的事实，把两个不同的人合并成同一个，而没有人能调试这一切，因为一堆向量垃圾根本没有 schema 可以检查。反对立场是：记忆不是一个存储问题，而是一个 schema 问题。让智能体记忆值得信任的，不是它记了多少，而是它记下的东西被多么审慎地定义类型、赋予键、做版本管理、失效与联表。数据库花了五十年学习如何在对抗性的写入模式下正确地记住东西。智能体记忆正在以压缩十倍的速度重修这门课，而逃课的团队，他们的智能体会把错误的东西记得最久。">Every agent framework now ships a memory feature, and almost all of them are the same product underneath: an append-only pile of embeddings with a similarity search bolted on top. It is a seductive pitch, and it fails in a characteristic way — the agent confidently recalls things that stopped being true, and nobody can debug it, because a vector dump has no schema to inspect.</p>
+</header>
+<article class="post-body">
+<p data-en="The pattern is remarkably consistent across the ecosystem. A session ends; a summarizer model compresses it into 'memories'; the memories are embedded and written to a vector store; next session, a retrieval step similarity-searches the pile and pastes the top-k chunks into the prompt. It works, briefly, on demos. Then real usage arrives. The same fact gets written forty times in forty phrasings, and retrieval returns the most emphatic phrasing rather than the most current one. A preference the user stated once and a preference they retracted last week sit at identical coordinates in embedding space, and nothing in the system knows which one is alive. Two customers named the same get merged in recall because the store has no notion of identity, only proximity. Six months in, the memory is the least reliable component of the system, and the fix everyone reaches for is the same: more retrieval tuning, better rerankers, chunk-size experiments. But the disease is not in the read path. The disease is that nobody ever decided what a memory is. The store remembers everything and therefore knows nothing — it has volume without structure, and structure is the only thing that can carry the two properties memory actually needs: identity and time." data-zh="这个模式在整个生态里出奇地一致。会话结束；一个总结模型把会话压缩成若干条「记忆」；记忆被向量化写入向量库；下一次会话，检索步骤对这堆东西做相似度搜索，把 top-k 的片段贴进 prompt。在 demo 阶段它有效。然后真实使用来了。同一个事实被用四十种措辞写了四十遍，检索返回的是措辞最斩钉截铁的那条，而不是最新的那条。用户只提过一次的偏好和上周刚撤回的偏好，在嵌入空间里坐标几乎相同，而系统里没有任何东西知道哪条还活着。两个同名的客户在召回时被合并成同一个人，因为库里没有身份的概念，只有远近的概念。六个月之后，记忆成了整个系统里最不可靠的组件，而所有人伸手去拿的药方都一样：调检索参数、换 reranker、做 chunk 长度实验。但病根不在读路径上。病根是从来没有人决定过「一条记忆是什么」。这个库什么都记得，因此什么都不知道——它有体量而没有结构，而结构是唯一能承载记忆真正需要的两种属性的东西：身份与时间。">The pattern is remarkably consistent across the ecosystem. A session ends; a summarizer compresses it into 'memories'; the memories are embedded and written to a vector store; next session, retrieval similarity-searches the pile and pastes the top-k chunks into the prompt. It works, briefly, on demos. Then real usage arrives. The same fact gets written forty times in forty phrasings, and retrieval returns the most emphatic phrasing rather than the most current one. A preference stated once and a preference retracted last week sit at identical coordinates in embedding space, and nothing knows which one is alive. The disease is not in the read path — it is that nobody ever decided what a memory is.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrM1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="TWO MEMORY SYSTEMS, SAME SESSIONS, SIX MONTHS LATER" data-zh="两套记忆系统，同样的会话，六个月之后" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">TWO MEMORY SYSTEMS, SAME SESSIONS, SIX MONTHS LATER</text>
+<!-- left: the dump -->
+<rect fill="var(--bg-surface)" height="240" rx="12" stroke="var(--text-tertiary)" stroke-width="1.5" width="250" x="35" y="50"></rect>
+<text data-en="THE DUMP" data-zh="垃圾堆" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="160" y="76">THE DUMP</text>
+<rect fill="var(--accent-dim)" height="22" rx="5" stroke="var(--text-tertiary)" stroke-width="1" width="190" x="65" y="90"></rect>
+<text data-en="prefers dark mode (Jan)" data-zh="偏好深色模式（一月）" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="160" y="105">prefers dark mode (Jan)</text>
+<rect fill="var(--accent-dim)" height="22" rx="5" stroke="var(--text-tertiary)" stroke-width="1" width="190" x="65" y="120"></rect>
+<text data-en="likes dark theme (Jan)" data-zh="喜欢深色主题（一月）" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="160" y="135">likes dark theme (Jan)</text>
+<rect fill="var(--accent-dim)" height="22" rx="5" stroke="var(--text-tertiary)" stroke-width="1" width="190" x="65" y="150"></rect>
+<text data-en="prefers LIGHT mode now (Jun)" data-zh="现在偏好浅色模式（六月）" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="160" y="165">prefers LIGHT mode now (Jun)</text>
+<rect fill="var(--accent-dim)" height="22" rx="5" stroke="var(--text-tertiary)" stroke-width="1" width="190" x="65" y="180"></rect>
+<text data-en="use dark mode always!! (Jan)" data-zh="永远用深色模式！！（一月）" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="160" y="195">use dark mode always!! (Jan)</text>
+<text data-en="no keys · no time · no truth" data-zh="没有键 · 没有时间 · 没有真值" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="160" y="230">no keys · no time · no truth</text>
+<text data-en="retrieval picks by vibe" data-zh="检索靠感觉挑" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="160" y="248">retrieval picks by vibe</text>
+<!-- right: the schema -->
+<rect fill="var(--bg-surface)" height="240" rx="12" stroke="var(--accent)" stroke-width="2" width="250" x="335" y="50"></rect>
+<text data-en="THE SCHEMA" data-zh="模式" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="460" y="76">THE SCHEMA</text>
+<rect fill="var(--accent-dim)" height="34" rx="6" stroke="var(--accent)" stroke-width="1.5" width="200" x="360" y="88"></rect>
+<text data-en="user.theme = light" data-zh="user.theme = light" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="460" y="103">user.theme = light</text>
+<text data-en="key · one row · superseded Jun" data-zh="有键 · 只有一行 · 六月被覆盖" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="460" y="116">key · one row · superseded Jun</text>
+<rect fill="var(--accent-dim)" height="34" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="200" x="360" y="130"></rect>
+<text data-en="project.owner = team-b" data-zh="project.owner = team-b" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="460" y="145">project.owner = team-b</text>
+<text data-en="typed · source-linked · current" data-zh="有类型 · 有来源 · 当前有效" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="460" y="158">typed · source-linked · current</text>
+<rect fill="var(--bg-surface)" height="34" rx="6" stroke="var(--text-tertiary)" stroke-width="1" stroke-dasharray="4,3" width="200" x="360" y="172"></rect>
+<text data-en="deploy.freq = daily" data-zh="deploy.freq = daily" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="460" y="187">deploy.freq = daily</text>
+<text data-en="stale · TTL expiring" data-zh="已陈旧 · TTL 即将到期" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="460" y="200">stale · TTL expiring</text>
+<text data-en="identity + time on every row" data-zh="每一行都有身份和时间" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" font-weight="700" text-anchor="middle" x="460" y="230">identity + time on every row</text>
+<text data-en="retrieval picks by key, then by rank" data-zh="检索先按键、再按排序" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="460" y="248">retrieval picks by key, then by rank</text>
+<!-- verdict -->
+<text data-en="same storage budget —" data-zh="同样的存储预算——" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="316">same storage budget —</text>
+<text data-en="only one of them can answer &quot;what is true right now?&quot;" data-zh="但只有一边回答得了「现在什么是真的？」" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" font-weight="700" text-anchor="middle" x="310" y="332">only one of them can answer "what is true right now?"</text>
+</svg>
+<p class="diagram-caption" data-en="The two stores ingested identical traffic. The dump accumulated every phrasing of every statement, dead and alive, with no way to tell them apart; its retrieval answers enthusiasm, not recency, because embedding distance cannot read a timestamp it was never given. The schema kept one row per keyed fact, wrote a supersede chain when the fact changed, and carries a source link and a shelf life on every record. When the user flips a preference, the schema has an event; the dump has just acquired another neighbor. Six months of usage will expose this difference in every single recall, which is why memory design decides itself in production, never in the demo." data-zh="这两个库吃进了一模一样的流量。垃圾堆攒下了每句话的每种措辞，死活不分，也没有办法区分，因为嵌入距离读不到从未给过它的时间戳，它的检索回应的是语气的热烈程度，不是时效。模式库为每个有键的事实只保留一行，事实变化时写下一条覆盖链，并且每条记录都带着来源链接和保质期。当用户改变偏好的那一刻，模式库得到的是一个事件，垃圾堆得到的只是多了一个邻居。六个月的真实使用会在每一次召回中暴露这个差别，所以记忆系统的设计优劣只在生产环境里见分晓，从不在 demo 里。">The two stores ingested identical traffic. The dump accumulated every phrasing of every statement, dead and alive — embedding distance cannot read a timestamp it was never given. The schema kept one row per keyed fact, writes a supersede chain when facts change, and carries a source link and a shelf life on every record. When the user flips a preference, the schema has an event; the dump has just acquired another neighbor.</p>
+</div>
+<h3 data-en="Writes are the hard part" data-zh="写入才是最难的部分">Writes are the hard part</h3>
+<p data-en="The industry's mental model of memory is read-heavy: the interesting question is always 'how do we get the right memories back?' But every durable system built before LLMs learned the opposite lesson — writes are where correctness lives. A memory write is not an append; it is a transaction against a world model. It needs normalization, so 'the staging cluster is in Frankfurt' and 'staging lives in eu-central-1' collapse into one fact rather than two neighbors. It needs conflict resolution, an explicit policy for what happens when the new observation contradicts an existing row: last-write-wins for fast-moving facts, merge for additive ones, and human-flagging for the class where guessing is worse than asking. It needs tombstones, because 'this fact is no longer true' is itself a fact, and retract-by-overwrite is how stale knowledge goes from visible to merely hidden. And it needs provenance — every row remembering which session, which message, which tool call put it there — because a memory without provenance cannot be audited, and a memory that cannot be audited will eventually be trusted by exactly nobody. None of this comes free from a model. It comes from a schema, which is just the crystallized form of all these decisions." data-zh="行业对记忆的心智模型是读多写少的：有趣的问题永远是「怎么把对的记忆取回来？」但 LLM 出现之前构建的每一个持久化系统，学的都是相反的一课——正确性住在写入里。一次记忆写入不是一次追加，而是针对世界模型的一笔事务。它需要归一化，好让「staging 集群在法兰克福」和「staging 部署在 eu-central-1」坍缩成一条事实而不是两个邻居。它需要冲突解决策略，明确写下新观察与既有行相矛盾时怎么办：快变的事实用后写覆盖，可累加的事实用合并，还有一类事实猜错的代价高于追问，必须升级给人类。它需要墓碑，因为「这条事实已不再成立」本身也是一条事实，用覆盖来假装撤回，只会让过期的知识从看得见变成悄悄藏起来。它还需要出处——每一行都要记得自己是哪次会话、哪条消息、哪个工具调用放进去的——因为没有出处的记忆无法审计，而无法审计的记忆迟早不会被任何人信任。这些都不会从模型里免费流出来，它们来自 schema，而 schema 就是所有这些决策的结晶形态。">The industry's mental model of memory is read-heavy: the interesting question is always 'how do we get the right memories back?' But every durable system built before LLMs learned the opposite lesson — writes are where correctness lives. A memory write is not an append; it is a transaction against a world model. It needs normalization, conflict resolution, tombstones — because 'this fact is no longer true' is itself a fact — and provenance, because a memory without provenance cannot be audited, and a memory that cannot be audited will eventually be trusted by exactly nobody.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrM2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrM2r" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE WRITE PATH — WHERE MEMORY QUALITY IS ACTUALLY DECIDED" data-zh="写入路径——记忆质量真正被决定的地方" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="0.5" text-anchor="middle" x="310" y="26">THE WRITE PATH — WHERE MEMORY QUALITY IS ACTUALLY DECIDED</text>
+<!-- pipeline -->
+<rect fill="var(--bg-surface)" height="46" rx="10" stroke="var(--accent-2)" stroke-width="2" width="105" x="25" y="90"></rect>
+<text data-en="EXTRACT" data-zh="抽取" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="77" y="108">EXTRACT</text>
+<text data-en="observation" data-zh="观察" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="77" y="123">observation</text>
+<rect fill="var(--bg-surface)" height="46" rx="10" stroke="var(--accent-2)" stroke-width="2" width="105" x="150" y="90"></rect>
+<text data-en="NORMALIZE" data-zh="归一化" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="202" y="108">NORMALIZE</text>
+<text data-en="canonical form" data-zh="规范形态" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="202" y="123">canonical form</text>
+<rect fill="var(--bg-surface)" height="46" rx="10" stroke="var(--accent)" stroke-width="2" width="105" x="275" y="90"></rect>
+<text data-en="VALIDATE" data-zh="校验" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="327" y="108">VALIDATE</text>
+<text data-en="type · source · TTL" data-zh="类型 · 来源 · TTL" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="327" y="123">type · source · TTL</text>
+<rect fill="var(--bg-surface)" height="46" rx="10" stroke="var(--accent)" stroke-width="2" width="105" x="400" y="90"></rect>
+<text data-en="RESOLVE" data-zh="冲突解决" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="452" y="108">RESOLVE</text>
+<text data-en="vs existing rows" data-zh="对照既有行" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="452" y="123">vs existing rows</text>
+<rect fill="var(--accent-dim)" height="46" rx="10" stroke="var(--accent-3)" stroke-width="2" width="80" x="525" y="90"></rect>
+<text data-en="COMMIT" data-zh="提交" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="565" y="108">COMMIT</text>
+<text data-en="one row" data-zh="一行" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="565" y="123">one row</text>
+<path d="M130 113 L150 113" fill="none" marker-end="url(#arrM2)" stroke="var(--accent-2)" stroke-width="1.6"></path>
+<path d="M255 113 L275 113" fill="none" marker-end="url(#arrM2)" stroke="var(--accent-2)" stroke-width="1.6"></path>
+<path d="M380 113 L400 113" fill="none" marker-end="url(#arrM2)" stroke="var(--accent)" stroke-width="1.6"></path>
+<path d="M505 113 L525 113" fill="none" marker-end="url(#arrM2)" stroke="var(--accent)" stroke-width="1.6"></path>
+<!-- outcomes -->
+<path d="M452 136 C452 170 300 175 220 185" fill="none" marker-end="url(#arrM2r)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<rect fill="var(--bg-surface)" height="30" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="170" x="30" y="180"></rect>
+<text data-en="SUPERSEDE — rewrite + tombstone" data-zh="覆盖——改写并留墓碑" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="115" y="199">SUPERSEDE — rewrite + tombstone</text>
+<path d="M452 136 C470 165 500 175 520 182" fill="none" marker-end="url(#arrM2r)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<rect fill="var(--bg-surface)" height="30" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="170" x="420" y="180"></rect>
+<text data-en="FLAG — contradiction for review" data-zh="标记——矛盾待审" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="505" y="199">FLAG — contradiction for review</text>
+<text data-en="most framework write paths are a straight line from extract to store —" data-zh="多数框架的写入路径是从抽取到入库的一条直线——" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="248">most framework write paths are a straight line from extract to store —</text>
+<text data-en="every skipped stage becomes a recall hallucination six months later" data-zh="每一个被跳过的环节，都会在六个月后变成一次召回幻觉" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" font-weight="700" text-anchor="middle" x="310" y="264">every skipped stage becomes a recall hallucination six months later</text>
+</svg>
+<p class="diagram-caption" data-en="The stages most products skip are precisely the ones that make recall trustworthy later. Normalization decides whether the system has one fact in three costumes or three facts in one trench coat. Validation attaches the metadata that the read path will someday depend on: type, source, and a shelf life — because 'the API rate limit is 60/min' is a fact with an expiry, not a truth. Resolution is where the world model actually updates: a contradiction must either supersede, merge, or escalate, and silently doing none of the three is how memory rots while looking healthy. The commit is the least interesting box on the diagram, which is exactly the point — storage was never the problem." data-zh="大多数产品跳过的环节，恰恰是日后让召回变得可信的环节。归一化决定系统拥有的是「换了三套戏服的一条事实」，还是「穿同一件风衣的三条事实」。校验负责贴上读路径将来要依赖的元数据：类型、来源和保质期——因为「API 速率限制是每分钟 60 次」是一条会过期的事实，不是一条真理。冲突解决是世界模型真正更新的地方：一个矛盾必须要么覆盖、要么合并、要么上报，悄悄地三样都不做，就是记忆一边腐烂一边看起来健康的原因。提交是图里最无聊的框，而这正是重点——存储从来不是问题。">The stages most products skip are precisely the ones that make recall trustworthy later. Normalization decides whether the system has one fact in three costumes or three facts in one trench coat. Validation attaches the metadata the read path will depend on: type, source, and a shelf life. Resolution is where the world model actually updates: a contradiction must supersede, merge, or escalate — silently doing none of the three is how memory rots while looking healthy.</p>
+</div>
+<blockquote data-en="A store that remembers everything and forgets nothing knows nothing. Trustworthy memory is not recall of the past — it is a maintained model of the present, with receipts." data-zh="一个什么都记得、什么都不忘的库，其实什么都不知道。值得信任的记忆不是对过去的复述——而是一个被持续维护的、带着凭据的当下世界模型。">A store that remembers everything and forgets nothing knows nothing. Trustworthy memory is not recall of the past — it is a maintained model of the present, with receipts.</blockquote>
+<p data-en="The read path inherits everything the write path earned. Once facts have keys, retrieval stops being a similarity lottery and becomes a query plan: resolve the entities in the request first, look up their rows directly, and fall back to semantic search only for the genuinely fuzzy residue. This is the same shape database engines converged on decades ago — index seek before table scan — and it has the same property agents need: deterministic hits for the things that matter most. Provenance turns every recalled fact into a citable claim, so the agent can say not just 'deploys happen on Thursdays' but 'per the ops session on the 4th' — and a wrong memory becomes traceable to the message that planted it, which is the difference between a bug report and a mystery. Shelf lives let confidence decay instead of going binary: a six-month-old fact about a fast-moving system should arrive in the prompt pre-discounted, or not arrive at all. None of this requires exotic machinery; it requires the discipline to treat the memory store as a database with a schema, migrations, and a query planner — because that is what it is." data-zh="读路径继承写入路径挣来的一切。一旦事实有了键，检索就不再是一场相似度抽签，而变成一份查询计划：先解析请求里的实体，直接查它们的行，只对真正模糊的残余才退回语义搜索。这正是几十年前数据库引擎收敛出的同一个形状——先索引查找、后全表扫描——而且它拥有智能体最需要的同一种性质：最重要的事命中是确定性的。出处让每条被召回的事实变成可以引用的主张，于是智能体说出的不只是「部署在周四」，而是「根据 4 号的运维会话」——一条错误的记忆因此可以一路追溯到种下它的那条消息，这是一份 bug 报告和一桩悬案之间的区别。保质期让置信度可以衰减，而不是非黑即白：一条关于高速变化系统的六个月前的事实，应该在进入 prompt 之前就被打折，或者干脆不来。这些都不需要什么奇异装置；它需要的是把记忆库当作一个有 schema、有迁移、有查询计划器的数据库来对待的纪律——因为它本来就是。">The read path inherits everything the write path earned. Once facts have keys, retrieval stops being a similarity lottery and becomes a query plan: resolve entities first, look up rows directly, fall back to semantic search only for the genuinely fuzzy residue — index seek before table scan, the same shape database engines converged on decades ago. Provenance turns every recalled fact into a citable claim, so a wrong memory becomes traceable to the message that planted it: the difference between a bug report and a mystery.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 310" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrM3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrM3g" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE READ PATH — A QUERY PLAN, NOT A LOTTERY" data-zh="读路径——一份查询计划，不是一次抽签" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="0.5" text-anchor="middle" x="310" y="26">THE READ PATH — A QUERY PLAN, NOT A LOTTERY</text>
+<!-- request -->
+<rect fill="var(--bg-surface)" height="46" rx="10" stroke="var(--accent-2)" stroke-width="2" width="120" x="30" y="80"></rect>
+<text data-en="INCOMING TASK" data-zh="到来的任务" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="90" y="98">INCOMING TASK</text>
+<text data-en="entities inside" data-zh="内含实体" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="90" y="113">entities inside</text>
+<!-- entity resolution -->
+<rect fill="var(--bg-surface)" height="46" rx="10" stroke="var(--accent)" stroke-width="2" width="130" x="195" y="45"></rect>
+<text data-en="ENTITY LOOKUP" data-zh="实体查找" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="260" y="63">ENTITY LOOKUP</text>
+<text data-en="exact key hits" data-zh="键的精确命中" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="260" y="78">exact key hits</text>
+<!-- semantic fallback -->
+<rect fill="var(--bg-surface)" height="46" rx="10" stroke="var(--text-tertiary)" stroke-width="1.5" stroke-dasharray="5,3" width="130" x="195" y="115"></rect>
+<text data-en="SEMANTIC FALLBACK" data-zh="语义兜底" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="260" y="133">SEMANTIC FALLBACK</text>
+<text data-en="only the fuzzy residue" data-zh="只处理模糊残余" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="260" y="148">only the fuzzy residue</text>
+<!-- provenance merge -->
+<rect fill="var(--accent-dim)" height="56" rx="10" stroke="var(--accent-3)" stroke-width="2" width="150" x="400" y="75"></rect>
+<text data-en="ASSEMBLE" data-zh="组装" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="475" y="95">ASSEMBLE</text>
+<text data-en="confidence decay +" data-zh="置信度衰减 +" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="475" y="110">confidence decay +</text>
+<text data-en="provenance attached" data-zh="附上出处" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="475" y="122">provenance attached</text>
+<!-- context -->
+<rect fill="var(--bg-surface)" height="46" rx="10" stroke="var(--accent)" stroke-width="2" width="110" x="480" y="190"></rect>
+<text data-en="PROMPT CONTEXT" data-zh="PROMPT 上下文" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="535" y="208">PROMPT CONTEXT</text>
+<text data-en="citable, current" data-zh="可引用、且是最新的" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="535" y="223">citable, current</text>
+<path d="M150 95 C170 85 175 78 195 72" fill="none" marker-end="url(#arrM3)" stroke="var(--accent)" stroke-width="1.6"></path>
+<path d="M150 110 C170 122 175 128 195 133" fill="none" marker-end="url(#arrM3g)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<path d="M325 68 C355 72 370 80 400 90" fill="none" marker-end="url(#arrM3)" stroke="var(--accent)" stroke-width="1.6"></path>
+<path d="M325 138 C355 132 370 122 400 112" fill="none" marker-end="url(#arrM3g)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<path d="M475 131 C478 155 480 170 530 190" fill="none" marker-end="url(#arrM3)" stroke="var(--accent-3)" stroke-width="1.6"></path>
+<!-- annotation -->
+<text data-en="index seek before table scan —" data-zh="先索引查找，后全表扫描——" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" font-weight="700" text-anchor="middle" x="180" y="235">index seek before table scan —</text>
+<text data-en="deterministic hits for what matters, fuzzy search for the rest" data-zh="重要的事确定命中，其余的才交给模糊搜索" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="200" y="251">deterministic hits for what matters, fuzzy search for the rest</text>
+<text data-en="a wrong memory arrives with its own paper trail" data-zh="一条错误的记忆会自带完整的档案链" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" font-weight="700" text-anchor="middle" x="330" y="278">a wrong memory arrives with its own paper trail</text>
+</svg>
+<p class="diagram-caption" data-en="Retrieval designed as a query plan changes the failure profile of the whole system. Entity lookup gives deterministic answers for the facts the task most depends on, instead of gambling them on cosine similarity. Semantic search is demoted to what it is actually good at: the long tail of vague relevance that no schema anticipated. Assembly applies the metadata the write path stored — discounting stale rows, attaching sources — so everything that reaches the prompt is citable and time-stamped. The payoff is operational: when recall is wrong, there is a row, a key, a supersede chain, and an originating message to look at. Memory incidents stop being folklore and start being tickets." data-zh="把检索设计成一份查询计划，会改变整个系统的失败画像。实体查找为任务最依赖的那些事实给出确定性答案，而不是拿它们去赌余弦相似度。语义搜索被降级到它真正擅长的位置：任何 schema 都预料不到的模糊相关的长尾。组装环节应用写入路径存下的元数据——给陈旧的行打折、附上来源——于是所有进入 prompt 的内容都是可引用、带时间戳的。回报体现在运维上：当召回出错时，有一行、一个键、一条覆盖链和一条最初的消息可以查看。记忆事故从民间传说变成了工单。">Retrieval designed as a query plan changes the failure profile of the whole system. Entity lookup gives deterministic answers for the facts the task most depends on. Semantic search is demoted to what it is good at: the long tail of vague relevance no schema anticipated. Assembly discounts stale rows and attaches sources, so everything that reaches the prompt is citable. When recall is wrong, there is a row, a key, a supersede chain, and an originating message to look at. Memory incidents stop being folklore and start being tickets.</p>
+</div>
+<p data-en="There is a reasonable objection: schemas are rigid, and the whole promise of LLM agents is flexibility — a schema decided in advance cannot anticipate what will turn out to matter. But this misreads where the flexibility belongs. The model is the flexible part; the memory is the part that must not be. A person is perfectly capable of improvising a response to a surprise — what they cannot do is improvise their own past. The durable engineering move is a two-tier design: a small, rigidly schematized core of keyed facts, identities, and commitments that the system is willing to defend, and a large, loosely structured annex of episodic detail that the system treats as advisory. The core carries the agent's idea of the present; the annex carries its texture. Errors in the annex cost fluency; errors in the core cost trust. Conflating the two tiers — which is what every one-pile memory product does — guarantees the failure mode where a confidently wrong 'fact' is recalled with the same authority as a verified one. Memory engineering, done right, is just deciding what the agent is allowed to be sure about." data-zh="有一个合理的反对意见：schema 是僵硬的，而 LLM 智能体的全部承诺就是灵活——预先定下的 schema 无法预料到什么将来会变得重要。但这看错了灵活性的归属。模型才是灵活的部分；记忆恰恰是不能灵活的部分。一个人完全可以临场应对意外——但没有人能够临场编造自己的过去。耐用的工程答案是双层设计：一个小而严格 schema 化的核心，存放有键的事实、身份和承诺，是系统愿意为之背书的部分；外加一个大而松散的附属区，存放情节性的细节，系统只把它当作参考。核心承载智能体对当下的认知，附属区承载质感。附属区出错的代价是不够流畅，核心出错的代价是失去信任。把两层混为一谈——所有单堆记忆产品干的正是这件事——必然导致那种失败模式：一条错误却言之凿凿的「事实」，被用和已验证事实同等的权威召回。做得好的记忆工程，说到底只是在决定：智能体被允许对什么保持笃定。">There is a reasonable objection: schemas are rigid, and the promise of LLM agents is flexibility. But this misreads where flexibility belongs. The model is the flexible part; the memory is the part that must not be. A person can improvise a response to a surprise — what they cannot do is improvise their own past. The durable move is a two-tier design: a small, rigidly schematized core of keyed facts, identities, and commitments the system is willing to defend, and a large, loosely structured annex of episodic detail treated as advisory. Errors in the annex cost fluency; errors in the core cost trust.</p>
+<p data-en="The endpoint of this line of thinking is that memory stops being a feature and becomes an owned asset with a lifecycle. It has migrations, because the schema of 2024 cannot hold what the product learned to track in 2026. It has test fixtures, because the only way to keep a write path honest is to replay known sessions against it and diff the resulting rows. It has garbage collection with policy, not vibes: superseded rows archived, expired rows dropped, the annex periodically re-summarized before it outgrows its usefulness. And it has an interface that other systems can join against, which is what eventually turns one agent's memory into an organization's shared world model. None of this is speculative — it is the standard biography of any storage system that survived contact with production. The only open question is how many 'the agent remembered it wrong' incidents each team needs before it stops shopping for better embeddings and starts hiring the discipline databases already learned. The pile remembers everything. The schema knows what happened. Only one of those is a product." data-zh="这条思路的终点是：记忆不再是一个功能，而是一个拥有生命周期的被持有资产。它有迁移，因为 2024 年的 schema 装不下产品在 2026 年学会追踪的东西。它有测试夹具，因为让写入路径保持诚实的唯一办法，是把已知的会话回放进去、对拍产出的行。它的垃圾回收靠策略而不是感觉：被覆盖的行归档，过期的行清除，附属区在被撑爆之前周期性地重新摘要。它还有一个可供其他系统联表的接口——正是这个接口，最终把某一个智能体的记忆变成一个组织的共享世界模型。这些没有一样是空想——它只是任何在生产环境里幸存下来的存储系统的标准传记。唯一悬而未决的问题是：每个团队要经历多少次「智能体记错了」的事故，才会停止采购更好的嵌入模型，转而雇用数据库早已学会的那种纪律。垃圾堆记得一切，schema 知道发生了什么。这两者中只有一个是产品。">The endpoint: memory stops being a feature and becomes an owned asset with a lifecycle — migrations, test fixtures, garbage collection with policy, and an interface other systems can join against. It is the standard biography of any storage system that survived production. The open question is how many 'the agent remembered it wrong' incidents each team needs before it stops shopping for better embeddings and starts hiring the discipline databases already learned. The pile remembers everything. The schema knows what happened. Only one of those is a product.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
