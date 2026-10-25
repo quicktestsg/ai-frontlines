@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-26",
+    "slug": "checkpoints-not-retries",
+    "title_en": "Agents Need Checkpoints, Not Retries",
+    "title_zh": "智能体需要检查点，而不是重试",
+    "read_time": 9,
+    "excerpt_en": "When a forty-minute agent run dies at minute thirty-eight, the only recovery most systems offer is starting over — paying full price twice, blind to the first attempt's effects. The fix is older than LLMs: a durable ledger of intents and effects, a context window demoted to cache, and recovery that resumes from the seam instead of restarting from the prompt.",
+    "excerpt_zh": "当一个四十分钟的智能体运行在第三十八分钟死去时，多数系统提供的唯一恢复方式是从头再来——全额付费两次，且对第一次尝试的效果视而不见。解法比 LLM 更古老：一份持久的意图与效果账本，把上下文窗口降级为缓存，以及从接缝处恢复而不是从 prompt 重启的恢复语义。"
+  },
+  {
     "date": "2026-10-25",
     "slug": "memory-is-a-schema",
     "title_en": "Memory Is a Schema, Not a Dump",

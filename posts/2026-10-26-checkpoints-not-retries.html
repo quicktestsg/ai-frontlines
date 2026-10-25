@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Agents Need Checkpoints, Not Retries — AI Frontlines</title>
+<meta content="Every long-running agent system eventually meets the same moment: a forty-minute run dies at minute thirty-eight, and the only recovery mechanism anyone built is to start over. Retries are the right tool for cheap, idempotent, fast operations — and the wrong tool for stateful runs that touched dozens of systems along the way. This essay argues that agent runs need checkpoints: a durable ledger of intents and effects, a derived context window that can be rebuilt from that ledger, and recovery semantics that resume instead of restart. Event sourcing solved this for databases and stream processors. Agent infrastructure is behind, and paying for it in tokens." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 26, 2026" data-zh="2026年10月26日">October 26, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Agents Need Checkpoints, Not Retries" data-zh="智能体需要检查点，而不是重试">Agents Need Checkpoints, Not Retries</h1>
+<p class="post-header-deck" data-en="Every long-running agent system eventually meets the same moment: a forty-minute run dies at minute thirty-eight — a context overflow, a provider timeout, a host that decided to update — and the only recovery mechanism anyone built is to start over from zero. The retry costs another forty minutes of tokens, re-does work whose effects are already sitting in the world, and, because sampling is not deterministic, does not even follow the same path as the first attempt. Retries are the correct tool for cheap, idempotent, fast operations. They are the wrong tool for stateful runs that touched dozens of systems on the way to dying. The alternative is older than LLMs: checkpoint the run. Persist a ledger of intents and effects as they happen, treat the context window as a derived view that can always be rebuilt from that ledger, and give the harness recovery semantics that resume from the last durable state instead of restarting from the prompt. Databases and stream processors solved this decades ago. Agent infrastructure is behind, and paying for it at token prices." data-zh="每一个长时间运行的智能体系统，迟早都会撞上同一个时刻：一个四十分钟的任务跑到第三十八分钟死了——上下文溢出、服务商超时、宿主机决定更新——而系统里唯一被人建出来的恢复机制，是从头再来。重试要再花四十分钟的 token，把效果早已落在外部世界的工作重做一遍，而且由于采样并非确定性，它甚至不会沿着与第一次相同的路径走。重试是廉价、幂等、快速操作的正确工具，却是那种一路触碰了数十个系统才死掉的有状态任务的错误工具。替代方案比 LLM 更古老：给任务做检查点。把意图与效果的账本随执行持久化，把上下文窗口当作一份随时可以从账本重建的派生视图，并给 harness 赋予从最后一个持久状态恢复的语义，而不是从 prompt 重新启动。数据库和流处理器几十年前就解决了这个问题。智能体基础设施落后了，并且正在按 token 的价格为此买单。">Every long-running agent system eventually meets the same moment: a forty-minute run dies at minute thirty-eight, and the only recovery mechanism anyone built is to start over from zero.</p>
+</header>
+<article class="post-body">
+<p data-en="The retry culture around agents is worth examining, because it is not an engineering decision so much as an inherited reflex. The mental model comes from HTTP: a request fails, you retry it, the second request is identical to the first, and the cost of failure is one round trip. None of those properties hold for an agent run. A run is not a request; it is a session — forty minutes of exploration, tool calls, file edits, half-finished refactors, decisions made and unmade. When it dies, everything it did to the outside world survives, and everything it knew about what it did evaporates. The retry therefore begins from a worse position than the original run did: the world now contains the first attempt's effects, but the second attempt has no memory of them. It will rediscover the changed files one edit at a time, sometimes colliding with its own predecessor's work, sometimes reasoning about artifacts whose origin it cannot see. Teams interpret this as flakiness and respond with the only lever they have — more retries, higher temperature tolerance, longer timeouts — when the actual defect is architectural: the run's state lived exactly as long as the process did. A system whose truth is held only in RAM and a context window has not failed when it crashes; it was never durable to begin with." data-zh="围绕智能体的重试文化值得审视，因为它与其说是一个工程决策，不如说是一种继承来的条件反射。这个心智模型来自 HTTP：一个请求失败了，重试它，第二个请求和第一个一模一样，失败的代价只是一次往返。这些性质没有一条适用于智能体的运行。一次运行不是一个请求，而是一段会话——四十分钟的探索、工具调用、文件修改、做到一半的重构、做了又推翻的决定。它死去的那一刻，它对外部世界做过的一切都还活着，而它对自己做过什么的一切认知都蒸发了。于是重试从一个比原始运行更糟糕的起点开始：世界里现在躺着第一次尝试的效果，而第二次尝试对这些效果毫无记忆。它会一个编辑一个编辑地重新发现那些被改过的文件，有时与自己前身的成果相撞，有时对一些来历不明的产物进行推理。团队把这理解为不稳定，并动用手里唯一的杠杆来回应——更多重试、更高的容忍度、更长的超时——而真正的缺陷是架构性的：这个运行的状态，寿命和进程一模一样。一个真相只活在内存和上下文窗口里的系统，崩溃时并不算失败；它从一开始就不是持久的。">The retry culture around agents is worth examining, because it is not an engineering decision so much as an inherited reflex. The mental model comes from HTTP: a request fails, you retry it, the second request is identical to the first. None of those properties hold for an agent run. A run is not a request; it is a session — forty minutes of exploration, tool calls, half-finished refactors. When it dies, everything it did to the outside world survives, and everything it knew about what it did evaporates. The retry begins from a worse position than the original run: the world now contains the first attempt's effects, but the second attempt has no memory of them.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrC1r" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="ONE CRASH AT MINUTE 38 — TWO RECOVERY PHILOSOPHIES" data-zh="第 38 分钟的一次崩溃——两种恢复哲学" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ONE CRASH AT MINUTE 38 — TWO RECOVERY PHILOSOPHIES</text>
+<!-- timeline axis -->
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="70" x2="580" y1="60" y2="60"></line>
+<text data-en="min 0" data-zh="第 0 分钟" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="70" y="50">min 0</text>
+<text data-en="min 38" data-zh="第 38 分钟" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="390" y="50">min 38</text>
+<text data-en="min 40" data-zh="第 40 分钟" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="560" y="50">min 40</text>
+<!-- retry bar -->
+<rect fill="var(--bg-surface)" height="42" rx="9" stroke="var(--text-tertiary)" stroke-width="1.5" width="320" x="70" y="82"></rect>
+<text data-en="ATTEMPT 1" data-zh="第一次尝试" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="800" x="80" y="100">ATTEMPT 1</text>
+<text data-en="32 tool calls · 214K tokens · world already changed" data-zh="32 次工具调用 · 21.4 万 token · 世界已被改变" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" x="80" y="114">32 tool calls · 214K tokens · world already changed</text>
+<circle cx="390" cy="103" fill="none" r="10" stroke="var(--accent-3)" stroke-width="2"></circle>
+<line stroke="var(--accent-3)" stroke-width="2" x1="383" x2="397" y1="96" y2="110"></line>
+<line stroke="var(--accent-3)" stroke-width="2" x1="397" x2="383" y1="96" y2="110"></line>
+<!-- retry restart -->
+<rect fill="var(--bg-surface)" height="42" rx="9" stroke="var(--text-tertiary)" stroke-width="1.5" stroke-dasharray="5,3" width="490" x="70" y="140"></rect>
+<text data-en="ATTEMPT 2 (RETRY) — starts over, different path" data-zh="第二次尝试（重试）——从零开始，路径已不同" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="800" x="80" y="158">ATTEMPT 2 (RETRY) — starts over, different path</text>
+<text data-en="pays for 38 minutes again · blind to attempt 1's effects · new failure modes" data-zh="再付一遍 38 分钟 · 对第一次的效果视而不见 · 带来新的失败模式" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" x="80" y="172">pays for 38 minutes again · blind to attempt 1's effects · new failure modes</text>
+<path d="M390 124 C390 132 200 130 170 140" fill="none" marker-end="url(#arrC1r)" stroke="var(--accent-3)" stroke-width="1.3" stroke-dasharray="4,3"></path>
+<!-- resume bar -->
+<rect fill="var(--accent-dim)" height="42" rx="9" stroke="var(--accent)" stroke-width="2" width="490" x="70" y="218"></rect>
+<text data-en="RESUME FROM CHECKPOINT — picks up at step 32" data-zh="从检查点恢复——从第 32 步继续" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" x="80" y="236">RESUME FROM CHECKPOINT — picks up at step 32</text>
+<text data-en="rebuilds context from ledger · 2 minutes of work to redo · same world view" data-zh="从账本重建上下文 · 只需重做 2 分钟 · 世界视图一致" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" x="80" y="250">rebuilds context from ledger · 2 minutes of work to redo · same world view</text>
+<path d="M390 124 C390 180 420 200 440 218" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="1.6"></path>
+<!-- verdict -->
+<text data-en="retry restarts the run; resume restarts only the last step —" data-zh="重试重启整个运行，恢复只重启最后一步——" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="300">retry restarts the run; resume restarts only the last step —</text>
+<text data-en="the difference is 38 minutes of tokens and one confused agent" data-zh="差别是 38 分钟的 token，和一头雾水的智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" font-weight="700" text-anchor="middle" x="310" y="318">the difference is 38 minutes of tokens and one confused agent</text>
+</svg>
+<p class="diagram-caption" data-en="Both recovery philosophies respond to the same crash, but they disagree about what a run is. The retry treats the run as a request — atomic, replayable, identical on the second attempt — so it pays the full cost twice and inherits a world that no longer matches its assumptions. The resume treats the run as a process with durable state: the ledger records every intent and effect up to the crash, so recovery rebuilds context from the log, checks whether the interrupted step actually happened, and continues from there. The retry's second attempt is a stranger retracing a predecessor's footsteps through a landscape the predecessor already altered. The resume is the same traveler, picking up their own backpack." data-zh="两种恢复哲学回应的是同一次崩溃，但它们对「一次运行是什么」的答案不同。重试把运行当作一个请求——原子的、可重放的、第二次与第一次完全相同——于是它把全部成本付了两遍，还继承了一个不再符合其假设的世界。恢复则把运行当作一个拥有持久状态的进程：账本记录了崩溃之前的每一次意图与效果，所以恢复过程从日志重建上下文，核实被打断的那一步是否真的发生过，然后从那里继续。重试的第二次尝试是一个陌生人，在前人已经改动过的地貌上重走前人的足迹；恢复则是同一个旅人，捡起自己的背包。">Both philosophies respond to the same crash, but they disagree about what a run is. The retry treats the run as a request — atomic, replayable, identical on the second attempt — so it pays the full cost twice and inherits a world that no longer matches its assumptions. The resume treats the run as a process with durable state: the ledger records every intent and effect up to the crash, recovery rebuilds context from the log, verifies the interrupted step, and continues. The retry's second attempt is a stranger retracing a predecessor's footsteps. The resume is the same traveler, picking up their own backpack.</p>
+</div>
+<h3 data-en="The run is a ledger before it is a conversation" data-zh="运行首先是一本账，然后才是一场对话">The run is a ledger before it is a conversation</h3>
+<p data-en="The central move is to demote the context window from source of truth to cache. What actually defines a run is an append-only ledger of events, persisted as they happen: the task, each model decision, each tool intent written before execution, each tool result written after, each file diff, each external side effect with its idempotency key. This is the write-ahead log pattern, applied at agent granularity — journal first, then act — and it buys exactly what it buys in databases. Crash detection becomes trivial: a ledger entry with intent but no result marks the exact seam where the run died. Recovery becomes bounded: everything before the seam is fact, everything after is unknowable until verified. The context window, meanwhile, becomes a projection of this ledger — a materialized view that can be rebuilt at any moment, and, crucially, compacted. Every team running long tasks has discovered ad-hoc context compaction: summarize the old transcript, stuff the summary into the prompt, hope nothing load-bearing was lost. Done from a ledger, compaction stops being lossy guesswork and becomes re-projection — the same events, rendered at lower resolution, with the full-fidelity original still on disk. The teams that lack the ledger are not doing compaction; they are doing irreversible destruction of their only copy of the run's history, in exchange for a few thousand tokens of room." data-zh="核心动作，是把上下文窗口从「事实之源」降级为「缓存」。真正定义一次运行的，是一份随执行同步追加的只增账本：任务本身、模型的每一次决策、每一次在执行之前先写下的工具意图、每一次执行之后写回的工具结果、每一处文件 diff、每一个带着幂等键的外部副作用。这就是预写日志模式在智能体粒度上的应用——先记账，后行动——而它换来的，也正是它在数据库里换来的东西。崩溃检测变得微不足道：一条有意图、无结果的账目，精确标出了运行断气的接缝。恢复变得有界：接缝之前的都是事实，接缝之后的在核实之前都是未知。与此同时，上下文窗口变成了这本账的一个投影——一个随时可以重建的物化视图，而且，关键在于，可以压缩。每个跑长任务的团队都自发发现过上下文压缩：把旧对话摘要一下，塞进 prompt，然后祈祷没丢掉什么承重墙。在账本之上做，压缩就不再是有损的赌博，而变成重新投影——同一批事件，以更低的分辨率渲染，而全保真的原件还在磁盘上。没有账本的团队做的不是压缩，而是对自己唯一一份运行历史的不可逆销毁，换来几千 token 的腾挪空间。">The central move is to demote the context window from source of truth to cache. What defines a run is an append-only ledger of events, persisted as they happen: the task, each model decision, each tool intent written before execution, each result written after, each side effect with its idempotency key. This is the write-ahead log pattern at agent granularity — journal first, then act — and it buys what it buys in databases. Crash detection becomes trivial: an entry with intent but no result marks the exact seam where the run died. The context window becomes a projection of this ledger — a materialized view that can be rebuilt at any moment and, crucially, compacted. Compaction done from a ledger is re-projection, not the irreversible destruction of the run's only history in exchange for a few thousand tokens of room.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 310" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrC2g" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE LEDGER IS THE SOURCE OF TRUTH — THE CONTEXT IS A CACHE" data-zh="账本才是事实之源——上下文只是缓存" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="0.5" text-anchor="middle" x="310" y="26">THE LEDGER IS THE SOURCE OF TRUTH — THE CONTEXT IS A CACHE</text>
+<!-- ledger column -->
+<rect fill="var(--bg-surface)" height="230" rx="12" stroke="var(--accent)" stroke-width="2" width="270" x="25" y="45"></rect>
+<text data-en="RUN LEDGER (durable, append-only)" data-zh="运行账本（持久、只增）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="160" y="68">RUN LEDGER (durable, append-only)</text>
+<rect fill="var(--accent-dim)" height="24" rx="5" stroke="var(--text-tertiary)" stroke-width="1" width="230" x="45" y="80"></rect>
+<text data-en="INTENT  write api.ts:142  key=k31" data-zh="意图  写 api.ts:142  键=k31" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="160" y="96">INTENT  write api.ts:142  key=k31</text>
+<rect fill="var(--accent-dim)" height="24" rx="5" stroke="var(--text-tertiary)" stroke-width="1" width="230" x="45" y="110"></rect>
+<text data-en="RESULT  214 lines · diff stored" data-zh="结果  214 行 · diff 已存" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="160" y="126">RESULT  214 lines · diff stored</text>
+<rect fill="var(--accent-dim)" height="24" rx="5" stroke="var(--text-tertiary)" stroke-width="1" width="230" x="45" y="140"></rect>
+<text data-en="INTENT  run tests  key=k32" data-zh="意图  跑测试  键=k32" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="160" y="156">INTENT  run tests  key=k32</text>
+<rect fill="none" height="24" rx="5" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3" width="230" x="45" y="170"></rect>
+<text data-en="RESULT  ✗ missing — crash seam" data-zh="结果  ✗ 缺失——崩溃接缝" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" text-anchor="middle" x="160" y="186">RESULT  ✗ missing — crash seam</text>
+<text data-en="replayable · auditable · compactable" data-zh="可重放 · 可审计 · 可压缩" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" text-anchor="middle" x="160" y="228">replayable · auditable · compactable</text>
+<text data-en="survives any crash" data-zh="任何崩溃都带不走它" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" font-weight="700" text-anchor="middle" x="160" y="246">survives any crash</text>
+<!-- projection -->
+<rect fill="var(--bg-surface)" height="100" rx="12" stroke="var(--text-tertiary)" stroke-width="1.5" stroke-dasharray="6,3" width="200" x="395" y="55"></rect>
+<text data-en="CONTEXT WINDOW" data-zh="上下文窗口" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="495" y="80">CONTEXT WINDOW</text>
+<text data-en="a projection of the ledger" data-zh="账本的一个投影" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="495" y="100">a projection of the ledger</text>
+<text data-en="rebuild · trim · re-render" data-zh="重建 · 裁剪 · 重新渲染" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="495" y="118">rebuild · trim · re-render</text>
+<text data-en="disposable by design" data-zh="设计上就是可弃的" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" text-anchor="middle" x="495" y="140">disposable by design</text>
+<path d="M295 105 C330 105 360 100 395 95" fill="none" marker-end="url(#arrC2)" stroke="var(--accent)" stroke-width="1.6"></path>
+<text data-en="project" data-zh="投影" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" text-anchor="middle" x="345" y="90">project</text>
+<!-- world effects -->
+<rect fill="var(--bg-surface)" height="100" rx="12" stroke="var(--accent-2)" stroke-width="2" width="200" x="395" y="180"></rect>
+<text data-en="THE WORLD" data-zh="外部世界" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="495" y="205">THE WORLD</text>
+<text data-en="edits · deploys · messages sent" data-zh="修改 · 部署 · 已发出的消息" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="495" y="225">edits · deploys · messages sent</text>
+<text data-en="outlives the run — always" data-zh="永远比运行活得久" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" text-anchor="middle" x="495" y="245">outlives the run — always</text>
+<path d="M255 190 C300 200 350 215 395 222" fill="none" marker-end="url(#arrC2g)" stroke="var(--text-tertiary)" stroke-width="1.3" stroke-dasharray="4,3"></path>
+<text data-en="apply" data-zh="落地" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="325" y="215">apply</text>
+<!-- verdict -->
+<text data-en="when the process dies, the ledger and the world remain —" data-zh="进程死去时，账本和世界都还在——" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="300">when the process dies, the ledger and the world remain —</text>
+<text data-en="those two are enough to reconstruct everything else" data-zh="有这两样，其余一切都可以重建" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" font-weight="700" text-anchor="middle" x="310" y="318">those two are enough to reconstruct everything else</text>
+</svg>
+<p class="diagram-caption" data-en="Three artifacts outlive any crash, and only one of them is usually persisted. The world's changes persist whether anyone likes it or not — that is what makes crashes expensive. The ledger persists only if the harness writes it, and it is the piece most frameworks treat as optional logging rather than the run's actual definition. The context window never persists, and should not: it is derivable. Written this way, every long-standing agent problem gets a cleaner formulation. Compaction is re-projection. Crash recovery is log replay plus one idempotency check at the seam. Session forking — running two continuations from the same point — is just two projections sharing one prefix. None of this is exotic infrastructure; it is the accidental complexity that comes from persisting the derived artifact and discarding the source." data-zh="任何崩溃之后，有三样东西可以幸存，而通常只有一样被持久化。世界的变化想不幸存都不行——这正是崩溃昂贵的原因。账本只有 harness 主动去写才会幸存，而多数框架恰恰把这一块当作可有可无的日志，而不是运行真正的定义。上下文窗口从不幸存，也不应该幸存：它是可推导的。照这样写下来，智能体的每个老问题都获得了更干净的表述。压缩就是重新投影。崩溃恢复就是日志重放，外加在接缝处做一次幂等核查。会话分叉——从同一点跑出两个续篇——不过是共享同一段前缀的两个投影。这些没有一样是稀奇的基础设施；全部的意外复杂度，只来自于把派生物存了下来、把源头扔掉了。">Three artifacts outlive any crash, and only one is usually persisted. The world's changes persist whether anyone likes it or not. The ledger persists only if the harness writes it — and most frameworks treat it as optional logging rather than the run's definition. The context window never persists, and should not: it is derivable. Written this way, compaction is re-projection, crash recovery is log replay plus one idempotency check, and session forking is two projections sharing one prefix.</p>
+</div>
+<blockquote data-en="A context window is a cache that everyone treats as a database. The crash does not destroy the run — it reveals that the run was never stored anywhere." data-zh="上下文窗口是一个被所有人当作数据库用的缓存。崩溃并没有毁掉运行——它只是揭示了运行从来就没有被存储在任何地方。">A context window is a cache that everyone treats as a database. The crash does not destroy the run — it reveals that the run was never stored anywhere.</blockquote>
+<p data-en="The obvious objection is determinism: you cannot replay a model call, so how can you replay a run? You cannot, and you should not try. The ledger is not recorded for the model's benefit — sampled tokens are logged as opaque facts, not re-sampled on recovery. What replay means here is narrower and more useful: deterministic reconstruction of the run's context from its logged events, followed by exactly one new sampling step at the seam. The recovery procedure writes itself once the ledger exists. Rebuild the context projection up to the last complete entry. Find the trailing intent without a result. Ask the world, not the model, whether that intent took effect — the idempotency key written into the intent exists precisely for this question. Then continue the loop with a context that contains its own full history, at whatever resolution the projection chose. The cost of a crash collapses from 'the entire run' to 'the seam step', and a run that would have needed three blind retries to survive a flaky afternoon instead needs one clean resume. There is a second-order benefit that teams do not anticipate: resumed runs are calm. A retried run is hectically rediscovering a world it half-remembers; a resumed run knows exactly where it is, because its ledger told it. Agents crash-loop less from recovered states than from fresh starts, for the same reason a person with notes repeats fewer mistakes than a person relying on déjà vu." data-zh="最明显的反对意见是确定性：模型调用没法重放，那运行怎么重放？确实不能，也不该尝试。这本账不是为模型记的——采样出来的 token 被记为不透明的事实，恢复时不会重新采样。这里「重放」的含义更窄也更有用：从日志事件出发，确定性地重建运行的上下文，然后在接缝处恰好发起一次新的采样。账本一旦存在，恢复流程几乎是自动写出来的。把上下文投影重建到最后一条完整条目。找到末尾那条只有意图、没有结果的记录。向世界而不是向模型求证那条意图是否已生效——写进意图里的幂等键，正是为这个问题准备的。然后带着一份包含自己完整历史的上下文继续循环，分辨率由投影自己决定。一次崩溃的代价从「整个运行」坍缩为「接缝一步」；一个在动荡的下午原本要瞎着重试三次才能活下来的运行，现在只需要一次干净的恢复。还有个团队事先想不到的二阶好处：被恢复的运行是镇定的。被重试的运行在慌乱地重新发现一个它半记得的世界；被恢复的运行确切知道自己在哪里，因为账本告诉过它。智能体从恢复态里比从全新起点里更少陷入崩溃循环，原因和拿着笔记的人比依赖既视感的人少犯重复错误是一样的。">The obvious objection is determinism: you cannot replay a model call, so how can you replay a run? You cannot, and should not try. The ledger is not recorded for the model's benefit — sampled tokens are logged as opaque facts, not re-sampled. What replay means here is narrower: deterministic reconstruction of the run's context from logged events, followed by exactly one new sampling step at the seam. Rebuild the projection to the last complete entry, find the trailing intent without a result, ask the world — via the idempotency key — whether that intent took effect, then continue. The cost of a crash collapses from 'the entire run' to 'the seam step'. And resumed runs are calm: a resumed run knows exactly where it is, because its ledger told it.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrC3r" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrC3g" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="CRASH RECOVERY AS A PROCEDURE, NOT A PRAYER" data-zh="崩溃恢复是一套流程，不是一次祈祷" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="0.5" text-anchor="middle" x="310" y="26">CRASH RECOVERY AS A PROCEDURE, NOT A PRAYER</text>
+<!-- step 1 -->
+<rect fill="var(--bg-surface)" height="42" rx="9" stroke="var(--accent)" stroke-width="2" width="150" x="30" y="55"></rect>
+<text data-en="1 · DETECT" data-zh="1 · 检测" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="105" y="73">1 · DETECT</text>
+<text data-en="intent with no result" data-zh="有意图、无结果" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="105" y="88">intent with no result</text>
+<!-- step 2 -->
+<rect fill="var(--bg-surface)" height="42" rx="9" stroke="var(--accent-2)" stroke-width="2" width="150" x="30" y="125"></rect>
+<text data-en="2 · VERIFY SEAM" data-zh="2 · 核查接缝" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="105" y="143">2 · VERIFY SEAM</text>
+<text data-en="idempotency key → the world" data-zh="幂等键 → 问世界" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="105" y="158">idempotency key → the world</text>
+<!-- step 3 -->
+<rect fill="var(--bg-surface)" height="42" rx="9" stroke="var(--accent-3)" stroke-width="2" width="150" x="30" y="195"></rect>
+<text data-en="3 · REBUILD" data-zh="3 · 重建" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="105" y="213">3 · REBUILD</text>
+<text data-en="context = project(ledger)" data-zh="上下文 = 投影(账本)" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="105" y="228">context = project(ledger)</text>
+<!-- step 4 -->
+<rect fill="var(--accent-dim)" height="42" rx="9" stroke="var(--accent)" stroke-width="2" width="150" x="30" y="265"></rect>
+<text data-en="4 · RESUME" data-zh="4 · 继续" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="105" y="283">4 · RESUME</text>
+<text data-en="one new sample at the seam" data-zh="在接缝处恰好采一次样" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="105" y="298">one new sample at the seam</text>
+<path d="M105 97 L105 125" fill="none" marker-end="url(#arrC3)" stroke="var(--accent)" stroke-width="1.6"></path>
+<path d="M105 167 L105 195" fill="none" marker-end="url(#arrC3)" stroke="var(--accent-2)" stroke-width="1.6"></path>
+<path d="M105 237 L105 265" fill="none" marker-end="url(#arrC3)" stroke="var(--accent-3)" stroke-width="1.6"></path>
+<!-- outcomes of verify -->
+<rect fill="var(--bg-surface)" height="38" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="180" x="270" y="110"></rect>
+<text data-en="took effect → record result" data-zh="已生效 → 补记结果" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="360" y="126">took effect → record result</text>
+<text data-en="no duplicate side effect" data-zh="不重复副作用" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="360" y="140">no duplicate side effect</text>
+<rect fill="var(--bg-surface)" height="38" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="180" x="270" y="160"></rect>
+<text data-en="never ran → re-execute intent" data-zh="没执行过 → 重新执行意图" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="360" y="176">never ran → re-execute intent</text>
+<text data-en="world and ledger stay in sync" data-zh="世界与账本保持一致" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="360" y="190">world and ledger stay in sync</text>
+<path d="M180 146 C220 142 235 138 270 133" fill="none" marker-end="url(#arrC3g)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<path d="M180 146 C220 150 235 156 270 170" fill="none" marker-end="url(#arrC3r)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<!-- naive path -->
+<rect fill="var(--bg-surface)" height="56" rx="8" stroke="var(--text-tertiary)" stroke-width="1.5" stroke-dasharray="5,3" width="180" x="410" y="230"></rect>
+<text data-en="the naive alternative:" data-zh="朴素替代方案：" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="500" y="250">the naive alternative:</text>
+<text data-en="re-run from step 0 and hope" data-zh="从第 0 步重跑，然后祈祷" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="500" y="266">re-run from step 0 and hope</text>
+<text data-en="cost: everything · determinism: none" data-zh="代价：全部 · 确定性：没有" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="500" y="280">cost: everything · determinism: none</text>
+<text data-en="the model is not re-run — only the seam is —" data-zh="模型不会被重跑——只有接缝会被——" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" font-weight="700" text-anchor="middle" x="330" y="316">the model is not re-run — only the seam is —</text>
+</svg>
+<p class="diagram-caption" data-en="Recovery reads as a four-step procedure once the ledger exists, and every step asks a question that has a checkable answer. Detection is a log query, not a guess. Seam verification is the payoff of writing idempotency keys into intents before execution: the world, not the model, answers whether the interrupted step happened, and either answer updates the ledger honestly. Rebuilding the context is a pure function of the log — the same events always produce the same context, which is the only determinism recovery actually needs. Resuming costs one sampling step. The naive path in the corner is what most systems do today, and its cost line is the entire argument: it re-buys everything and guarantees nothing. The difference between the two columns is not model capability, prompting, or luck. It is whether anyone wrote the log." data-zh="账本一旦存在，恢复就成了一套四步流程，而每一步问的问题都有可核验的答案。检测是一次日志查询，不是一次猜测。接缝核查是「在执行前把幂等键写进意图」这件事的回报：回答「被打断的那一步有没有发生」的是世界，不是模型，而且无论答案是什么，账本都会被诚实地更新。重建上下文是日志的纯函数——同样的事件永远产出同样的上下文，而这正是恢复真正需要的唯一的确定性。继续执行只花一次采样。角落里的朴素路径是今天大多数系统的做法，而它那行「代价」就是全部论据：它重新买下一切，却什么也不保证。两栏之间的差别不在模型能力、不在 prompt、不在运气，只在于有没有人把日志写下来。">Recovery reads as a four-step procedure once the ledger exists, and every step asks a question with a checkable answer. Detection is a log query. Seam verification is the payoff of writing idempotency keys into intents: the world, not the model, answers whether the interrupted step happened. Rebuilding the context is a pure function of the log — the only determinism recovery needs. Resuming costs one sampling step. The naive path re-buys everything and guarantees nothing; the difference is not model capability or luck, only whether anyone wrote the log.</p>
+</div>
+<p data-en="There is a design boundary worth respecting: checkpointing is a harness responsibility, not a model capability. The temptation is to ask the model to checkpoint itself — 'periodically summarize your progress' — and some products ship exactly that. It is better than nothing and worse than nothing at the same time: better, because some state survives; worse, because the survival is probabilistic, the summaries are lossy in unpredictable places, and the mechanism fails precisely when the context is most overloaded, which is precisely when it is needed. Persistence is not a judgment call; it is plumbing. The harness sees every tool call before the model makes it and every result after — it is the one component positioned to journal without being asked, and asking the model to do it instead is like asking a program to remember to write its own core dump. The correct division of labor is unchanged from every previous generation of systems: the model provides intelligence about what to do next, the harness provides guarantees about what was already done. Teams that blur this boundary get agents that remember their progress right up until it matters." data-zh="有一条设计边界值得守住：检查点是 harness 的职责，不是模型的能力。诱惑在于让模型自己做检查点——「定期总结你的进度」——而有些产品发布的恰恰就是这个。它同时比没有好，也比没有糟：好歹有些状态活了下来；可它的幸存是概率性的，摘要的失真位置不可预测，而且这个机制恰恰在上下文最过载的时候失效——恰恰是在最需要它的时候。持久化不是一个判断题，它是管道工程。harness 在模型发出每个工具调用之前看得到它，在结果回来之后也看得到它——它是唯一一个无须被叮嘱就能记账的组件，而让模型去做这件事，就像让一个程序记得自己写 core dump。正确的分工与之前每一代系统毫无二致：模型提供「下一步做什么」的智能，harness 提供「已经做过了什么」的保证。模糊这条边界的团队，得到的智能体会把自己的进度记得很好——一直记到要紧关头为止。">There is a design boundary worth respecting: checkpointing is a harness responsibility, not a model capability. The temptation is to ask the model to checkpoint itself — 'periodically summarize your progress' — and some products ship exactly that. It is better than nothing and worse than nothing: some state survives, but the survival is probabilistic, the summaries are lossy in unpredictable places, and the mechanism fails precisely when the context is most overloaded. Persistence is not a judgment call; it is plumbing. The harness sees every tool call before and after — it is the one component positioned to journal without being asked. Asking the model to do it is like asking a program to write its own core dump.</p>
+<p data-en="The endpoint is a change in what a run even is. Once the ledger is the run and the process is merely its current executor, properties appear that retry-based systems cannot have. Runs become inspectable while dead — a crashed run is a readable document, not a mystery. Runs become forkable — two continuations from one checkpoint, A/B tested against the same history. Runs become auditable end to end, because the ledger that enables recovery is the same artifact a reviewer or a verifier walks. And the economics invert: instead of budgeting for the occasional doubling of a forty-minute run, the worst case becomes a two-minute seam repair. None of this requires a research breakthrough — append-only logs, write-ahead discipline, idempotency keys, and projections are the collected furniture of forty years of systems engineering, sitting in the room while the industry re-invents the retry loop. The crash is not an exception state to be retried away. The crash is a scheduled event. Systems built on that assumption stop apologizing for minute thirty-eight — and start charging for minute thirty-nine." data-zh="终点是「一次运行是什么」本身的改变。一旦账本就是运行，进程只是它此刻的执行者，一批重试体系里不可能存在的性质就出现了。运行在死后变得可检视——一个崩溃的运行是一份可读的文档，不是一桩悬案。运行变得可分叉——从同一个检查点跑出两个续篇，在同一段历史上做 A/B 测试。运行变得端到端可审计，因为让恢复成为可能的那本账，正是评审者或验证者要通读的那份材料。经济学也随之倒转：不再是偶尔为一次四十分钟运行翻倍而做预算，最坏情况变成一次两分钟的接缝修补。这些没有一样需要研究突破——只增日志、预写纪律、幂等键和投影，是系统工程四十年攒下的全部家当，就摆在房间里，而行业正在一旁重新发明重试循环。崩溃不是一个需要被重试掉异常状态。崩溃是一场早已排定日程的事件。建立在这个假设之上的系统，不再为第三十八分钟道歉——并开始为第三十九分钟收费。">The endpoint is a change in what a run even is. Once the ledger is the run and the process is merely its current executor, runs become inspectable while dead, forkable from any checkpoint, auditable end to end — the same artifact a reviewer walks. The economics invert: the worst case becomes a two-minute seam repair instead of a doubled forty-minute run. None of this requires a research breakthrough; append-only logs, write-ahead discipline, idempotency keys, and projections are forty years of systems engineering, sitting in the room while the industry re-invents the retry loop. The crash is not an exception to be retried away. It is a scheduled event.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
