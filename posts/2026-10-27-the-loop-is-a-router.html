@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Loop Is a Router — AI Frontlines</title>
+<meta content="Most agent systems are built around a single model, and the loop that drives them treats every step as equally expensive. That era is ending. When capable fast models cost a tenth of frontier ones, the interesting question stops being which model to pick and becomes where in the loop each model belongs. Routing is not an optimization layered on top of agent architecture — it is the architecture. This essay argues that every step of an agent loop is a routing decision, that the signals which should drive it are engineering signals (complexity, stakes, reversibility, budget), and that the hard problem is not choosing the model but handing context between models without losing the plot." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 27, 2026" data-zh="2026年10月27日">October 27, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Loop Is a Router" data-zh="循环本身就是路由器">The Loop Is a Router</h1>
+<p class="post-header-deck" data-en="Most agent systems are built around one model, and the loop that drives them treats every step as if it cost the same: the same model plans the file rename and the cross-service migration, the same model reads the two-line config diff and the 40,000-line test failure. For a while that uniformity was a convenience — frontier capability was scarce enough that you paid the premium everywhere or accepted failure anywhere. It is becoming a liability. Capable fast models now cost a fraction of frontier ones, and the spread is wide enough that a single-model loop is no longer a simplification; it is a pricing error repeated every step of every run. The interesting design question has moved upstream of model choice. It is no longer which model to use — it is where in the loop each model belongs. Routing is not an optimization bolted onto agent architecture. It is the architecture: every step of the loop is a routing decision, whether the harness makes it consciously or by omission. The hard problems follow: what signals justify escalation, how a cheaper model inherits a context written for a different one, and what happens to reliability when the loop's brain can change shape mid-run." data-zh="大多数智能体系统都围绕一个模型构建，驱动它们的循环把每一步都当作同样昂贵：同一个模型既规划文件重命名，也规划跨服务迁移；同一个模型既读两行的配置 diff，也读四万行的测试失败。有一阵子，这种整齐划一是一种便利——前沿能力足够稀缺，你要么在所有地方都付溢价，要么在任何地方都接受失败。如今它正在变成一种负担。能干的快速模型价格已降至前沿模型的零头，差距大到单模型循环不再是一种简化，而是每次运行每一步都在重复的一个定价错误。有趣的设计问题已经移到了模型选择的上游：不再是用哪个模型，而是每个模型属于循环的哪个位置。路由不是拧在智能体架构之上的优化，它就是架构本身：循环的每一步都是一次路由决策——无论 harness 是有意识地做这个决策，还是用「不做」来默认做了。难题随之而来：什么信号才配触发升级？一个更便宜的模型如何继承一份为另一个模型写下的上下文？当循环的大脑可以在运行中途改变形状时，可靠性会发生什么？">Most agent systems are built around one model, and the loop that drives them treats every step as if it cost the same. It is becoming a liability — and a pricing error repeated every step of every run.</p>
+</header>
+<article class="post-body">
+<p data-en="Start with the observation that agent loops are already heterogeneous in everything except the model. The same run reads files, writes code, shells out, parses errors, decides what to do next. Any engineer looking at this sequence without knowing an LLM was involved would immediately partition it: parsing a two-line error is regex work, deciding whether a failing migration means a bug in the plan or a bug in the world is judgment work. Humans do exactly this partition internally — System 1 handles the routine, System 2 gets recruited for the strange. Single-model agent loops collapse this partition and pay frontier prices for regex work, then, perversely, also pay frontier latency for it. The cost problem is the obvious symptom, but the latency problem is the more interesting one: a fast model that resolves the routine ninety percent of steps in two seconds each changes the character of the loop. Runs stop feeling like ceremonies — invoke the oracle, wait, sacrifice a context window — and start feeling like processes. The frontier model stops being the engine and becomes a component that the loop spins up the way an interpreter calls into a slow syscall: rarely, deliberately, with the input prepared and the stakes understood. This inversion is worth stating as a principle: the unit of design is the loop, the models are instructions inside it." data-zh="先从一个观察开始：智能体循环在除了模型之外的一切上，早已是异构的了。同一次运行既读文件、写代码、调 shell，也解析报错、决定下一步。任何一个不知道这里面有 LLM 的工程师看到这段序列，都会立刻动手切分：解析两行报错是正则表达式的活，判断一次失败的迁移意味着计划有 bug 还是世界有 bug，是判断力的活。人类在内部做的正是这种切分——系统一处理常规，系统二在被怪事召唤时登场。单模型的智能体循环抹平了这种切分，为正则的活付前沿的价格，然后，荒谬的是，还要为它付前沿的延迟。成本是显眼的症状，但延迟才是更有意思的问题：一个快速模型用两秒解决掉九成的常规步骤，会改变循环的气质。运行不再像一场仪式——召唤神谕、等待、献祭一个上下文窗口——而开始像一个进程。前沿模型不再是引擎，而变成循环中的一个组件，被调用的方式就像解释器调用一次缓慢的系统调用：稀少、审慎、输入已备好、利害已明确。这个倒转值得被表述为一条原则：设计的单位是循环，模型只是循环里的指令。">Start with the observation that agent loops are already heterogeneous in everything except the model. The same run reads files, writes code, shells out, parses errors, decides what to do next. Any engineer looking at this sequence would immediately partition it: parsing a two-line error is regex work; deciding whether a failing migration means a bug in the plan or a bug in the world is judgment work. Humans do this internally — System 1 handles the routine, System 2 gets recruited for the strange. Single-model loops collapse the partition: they pay frontier prices for regex work, then, perversely, frontier latency for it too.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrR1f" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrR1r" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="ONE LOOP, TWO PHILOSOPHIES — UNIFORM VS ROUTED" data-zh="同一个循环，两种哲学——均一 vs 路由" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ONE LOOP, TWO PHILOSOPHIES — UNIFORM VS ROUTED</text>
+<!-- uniform loop -->
+<rect fill="var(--bg-surface)" height="110" rx="12" stroke="var(--text-tertiary)" stroke-width="1.5" width="540" x="40" y="45"></rect>
+<text data-en="UNIFORM LOOP — one model, every step" data-zh="均一循环——一个模型走完每一步" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="800" x="60" y="68">UNIFORM LOOP — one model, every step</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--text-tertiary)" stroke-width="1" width="90" x="60" y="85"></rect>
+<text data-en="read cfg" data-zh="读配置" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="105" y="104">read cfg</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--text-tertiary)" stroke-width="1" width="90" x="180" y="85"></rect>
+<text data-en="ls diff" data-zh="列差异" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="225" y="104">ls diff</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="110" x="300" y="85"></rect>
+<text data-en="plan migrate" data-zh="规划迁移" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="355" y="104">plan migrate</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--text-tertiary)" stroke-width="1" width="90" x="440" y="85"></rect>
+<text data-en="fmt output" data-zh="格式化输出" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="485" y="104">fmt output</text>
+<text data-en="every box pays the same $ and latency — including the trivial ones" data-zh="每个方框付同样的美元和延迟——包括那些琐碎的" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" x="60" y="140">every box pays the same $ and latency — including the trivial ones</text>
+<!-- routed loop -->
+<rect fill="var(--accent-dim)" height="150" rx="12" stroke="var(--accent)" stroke-width="2" width="540" x="40" y="165"></rect>
+<text data-en="ROUTED LOOP — fast model holds the wheel, frontier rides shotgun" data-zh="路由循环——快速模型握方向盘，前沿模型坐副驾" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" x="60" y="188">ROUTED LOOP — fast model holds the wheel, frontier rides shotgun</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="90" x="60" y="205"></rect>
+<text data-en="read cfg" data-zh="读配置" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="105" y="224">read cfg</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="90" x="180" y="205"></rect>
+<text data-en="ls diff" data-zh="列差异" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="225" y="224">ls diff</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="2" width="110" x="300" y="205"></rect>
+<text data-en="plan migrate" data-zh="规划迁移" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" text-anchor="middle" x="355" y="224">plan migrate</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="90" x="440" y="205"></rect>
+<text data-en="fmt output" data-zh="格式化输出" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="485" y="224">fmt output</text>
+<!-- escalation arrows -->
+<path d="M355 235 L355 258" fill="none" marker-end="url(#arrR1r)" stroke="var(--accent-3)" stroke-width="1.6"></path>
+<path d="M355 292 L355 269" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="4,3"></path>
+<rect fill="var(--bg-surface)" height="38" rx="8" stroke="var(--accent-3)" stroke-width="2" width="240" x="245" y="258"></rect>
+<text data-en="FRONTIER — only the strange steps" data-zh="前沿模型——只处理怪异的步骤" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="800" text-anchor="middle" x="365" y="275">FRONTIER — only the strange steps</text>
+<text data-en="escalate ↓ · resume ↑ with decision + rationale" data-zh="升级 ↓ · 带着决策与理由返回 ↑" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="365" y="289">escalate ↓ · resume ↑ with decision + rationale</text>
+<!-- side annotation -->
+<text data-en="routine steps: seconds, cents" data-zh="常规步骤：秒级、几美分" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" x="470" y="300">routine steps: seconds, cents</text>
+<text data-en="the loop keeps its shape — the model becomes a per-step choice" data-zh="循环保持形状——模型变成了每一步的选择" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" font-weight="700" text-anchor="middle" x="310" y="322">the loop keeps its shape — the model becomes a per-step choice</text>
+</svg>
+<p class="diagram-caption" data-en="Both loops execute the same steps; they differ only in who executes each one. The uniform loop is an artifact of an era when capability was scarce enough that hedging everywhere was rational. The routed loop keeps the fast model as the default executor — the loop is its home turf, its latency is the loop's heartbeat — and escalates to the frontier model only for the steps that earn it: ambiguous plans, cross-cutting refactors, judgment under uncertainty. Note the direction of the arrows: escalation is not a takeover. The frontier model returns a decision and a rationale, and the fast model continues driving. Confusing escalation with delegation of the whole run reintroduces the ceremony the routing was supposed to remove." data-zh="两个循环执行的是同样的步骤，区别只在谁来执行每一步。均一循环是一个时代的产物——那个时代能力足够稀缺，到处都上保险是理性的。路由循环让快速模型作为默认执行者——循环是它的主场，它的延迟就是循环的心跳——只在配得上前沿模型的步骤上升级：含糊的计划、跨模块的重构、不确定性下的判断。注意箭头的方向：升级不是接管。前沿模型返回的是一份决策和一条理由，然后快速模型继续开车。把升级当成整段运行的移交，等于把路由本想拆掉的仪式又请了回来。">Both loops execute the same steps; they differ only in who executes each one. The routed loop keeps the fast model as the default executor — escalation is reserved for steps that earn it. And escalation is not a takeover: the frontier model returns a decision and a rationale, and the fast model keeps driving.</p>
+</div>
+<h3 data-en="What earns an escalation" data-zh="什么才配触发一次升级">What earns an escalation</h3>
+<p data-en="The failure mode of naive routing is escalation by vibes: a classifier guesses whether a step is hard, guesses wrong in both directions, and the system pays frontier prices for easy steps while fast models confidently wreck hard ones. The fix is to notice that the signals which justify escalation are mostly already present in the harness, because they are the same signals any senior engineer would use. Complexity is one signal, but it is the weakest: long prompts are often easy, and short ones lethal. The load-bearing signals are stranger. Stakes: does this step touch the outside world, and is the effect reversible? Reversibility is the single best routing feature ever invented — a sandboxed, idempotent, undoable step can be trusted to a cheap model precisely because its failures are information rather than damage, while an irreversible send belongs to the most careful brain available, whatever it costs. Novelty: has this loop seen this pattern before? A step shape that appears forty times in the ledger is routine no matter how gnarly it looks; a step shape appearing for the first time deserves the upgrade. And budget: the loop should know how much run remains, because the right model for step three of a forty-step plan is different from the right model for step thirty-nine of a stalled one. These signals are not model outputs. They are harness facts — cheap, deterministic, and auditable — which is what makes routing an engineering discipline rather than a coin flip with extra steps." data-zh="朴素路由的失败模式是凭感觉升级：一个分类器猜这一步难不难，往两个方向都猜错，于是系统为简单步骤付前沿的价格，而快速模型信心十足地毁掉困难步骤。修法在于注意到，升级所依据的信号大多已经存在于 harness 之中，因为它们正是任何资深工程师都会用的信号。复杂度是一个信号，但最弱：长的 prompt 往往简单，短的反而致命。真正承重的信号更怪一些。利害：这一步碰不碰外部世界，效果可不可逆？可逆性是有史以来最好的路由特征——一个沙箱里、幂等、可撤销的步骤可以放心交给便宜模型，正因为它失败的成本是信息而不是损失；而一次不可逆的发送，无论多贵，都属于手上最谨慎的大脑。新颖度：这个循环以前见过这个模式吗？在账本里出现过四十次的步骤形状，不管看起来多狰狞都是常规；第一次出现的步骤形状才配得上升级。还有预算：循环应该知道自己还剩多少行程，因为四十步计划的第三步和搁浅计划的第三十九步，配的上不同的模型。这些信号都不是模型的输出。它们是 harness 的事实——廉价、确定、可审计——正是这一点让路由成为一门工程学科，而不是多绕了几步的抛硬币。">The failure mode of naive routing is escalation by vibes: a classifier guesses whether a step is hard, guesses wrong in both directions. The fix is to notice that the signals which justify escalation are mostly already present in the harness. Stakes: does the step touch the world, and is the effect reversible? Novelty: has the ledger seen this pattern before? Budget: how much run remains? These are harness facts — cheap, deterministic, auditable — which is what makes routing an engineering discipline.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 310" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrR2t" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="FOUR HARNESS SIGNALS DECIDE — NONE OF THEM COME FROM THE MODEL" data-zh="四个 harness 信号说了算——没有一个来自模型" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="0.5" text-anchor="middle" x="310" y="26">FOUR HARNESS SIGNALS DECIDE — NONE OF THEM COME FROM THE MODEL</text>
+<!-- four signal boxes -->
+<rect fill="var(--bg-surface)" height="64" rx="10" stroke="var(--accent-2)" stroke-width="2" width="270" x="30" y="50"></rect>
+<text data-en="REVERSIBILITY" data-zh="可逆性" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" x="45" y="72">REVERSIBILITY</text>
+<text data-en="sandboxed · idempotent-keyed · undoable" data-zh="沙箱内 · 有幂等键 · 可撤销" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" x="45" y="90">sandboxed · idempotent-keyed · undoable</text>
+<text data-en="cheap failure = information → fast model" data-zh="便宜的失败=信息 → 快速模型" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" x="45" y="105">cheap failure = information → fast model</text>
+<rect fill="var(--bg-surface)" height="64" rx="10" stroke="var(--accent-3)" stroke-width="2" width="270" x="320" y="50"></rect>
+<text data-en="STAKES" data-zh="利害" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" x="335" y="72">STAKES</text>
+<text data-en="emails sent · deploys · payments" data-zh="发出的邮件 · 部署 · 支付" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" x="335" y="90">emails sent · deploys · payments</text>
+<text data-en="irreversible effects → careful model" data-zh="不可逆效果 → 谨慎模型" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" x="335" y="105">irreversible effects → careful model</text>
+<rect fill="var(--bg-surface)" height="64" rx="10" stroke="var(--accent-2)" stroke-width="2" width="270" x="30" y="135"></rect>
+<text data-en="NOVELTY" data-zh="新颖度" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" x="45" y="157">NOVELTY</text>
+<text data-en="pattern count in the run ledger" data-zh="模式在运行账本中的出现次数" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" x="45" y="175">pattern count in the run ledger</text>
+<text data-en="first sighting → escalate · 40th → routine" data-zh="初见 → 升级 · 第 40 次 → 常规" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" x="45" y="190">first sighting → escalate · 40th → routine</text>
+<rect fill="var(--bg-surface)" height="64" rx="10" stroke="var(--accent-3)" stroke-width="2" width="270" x="320" y="135"></rect>
+<text data-en="BUDGET" data-zh="预算" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" x="335" y="157">BUDGET</text>
+<text data-en="tokens · wall-clock · retries left" data-zh="token · 墙钟时间 · 剩余重试" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" x="335" y="175">tokens · wall-clock · retries left</text>
+<text data-en="stalled run → spend where it counts" data-zh="搁浅的运行 → 把钱花在刀刃上" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" x="335" y="190">stalled run → spend where it counts</text>
+<!-- router -->
+<path d="M300 114 L300 218" fill="none" stroke="var(--text-tertiary)" stroke-width="1" stroke-dasharray="3,3"></path>
+<path d="M165 199 L165 218" fill="none" stroke="var(--text-tertiary)" stroke-width="1" stroke-dasharray="3,3"></path>
+<path d="M455 199 L455 218" fill="none" stroke="var(--text-tertiary)" stroke-width="1" stroke-dasharray="3,3"></path>
+<rect fill="var(--accent-dim)" height="52" rx="12" stroke="var(--accent)" stroke-width="2" width="380" x="120" y="218"></rect>
+<text data-en="THE ROUTER (harness code, not a model)" data-zh="路由器（harness 代码，不是模型）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="240">THE ROUTER (harness code, not a model)</text>
+<text data-en="deterministic · auditable · testable per step" data-zh="确定性 · 可审计 · 每一步可测试" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8.5" text-anchor="middle" x="310" y="258">deterministic · auditable · testable per step</text>
+<!-- outcomes -->
+<path d="M180 270 C150 280 120 282 95 278" fill="none" marker-end="url(#arrR2)" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="20" y="262"></rect>
+<text data-en="fast model · default" data-zh="快速模型 · 默认" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="95" y="277">fast model · default</text>
+<text data-en="~90% of steps" data-zh="约 90% 的步骤" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="95" y="290">~90% of steps</text>
+<path d="M440 270 C470 280 500 282 525 278" fill="none" marker-end="url(#arrR2)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="150" x="450" y="262"></rect>
+<text data-en="frontier · earned" data-zh="前沿模型 · 靠实力挣来的" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="525" y="277">frontier · earned</text>
+<text data-en="the strange ~10%" data-zh="怪异的约 10%" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="525" y="290">the strange ~10%</text>
+<text data-en="complexity is the weakest signal — the strange-looking routine is where naive routers bleed" data-zh="复杂度是最弱的信号——长得吓人的常规步骤正是朴素路由器的失血点" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" font-weight="700" text-anchor="middle" x="310" y="308">complexity is the weakest signal — the strange-looking routine is where naive routers bleed</text>
+</svg>
+<p class="diagram-caption" data-en="The router sits in the harness, between the ledger and the model call, and consumes signals that cost nothing to compute: reversibility is known from the tool's contract, stakes from the tool's category, novelty from a pattern count over the ledger, budget from the run's own accounting. This is why routing belongs beside the loop rather than inside the model: every input it needs is a fact the harness already holds, and every decision it makes is one a reviewer can later replay and critique. A router built on harness facts fails legibly — the post-mortem says the stakes flag was missing — where a vibe classifier fails mysteriously. The percentages are illustrative, not canonical: what matters is that the default is cheap and the escalation is earned, never the reverse." data-zh="路由器坐在 harness 里，位于账本与模型调用之间，消费的是那些计算成本为零的信号：可逆性从工具的契约里就能知道，利害从工具的类别里就知道，新颖度来自对账本做一次模式计数，预算来自运行自己的账目。这就是路由应该待在循环旁边而不是模型内部的原因：它需要的每个输入都是 harness 已经握在手里的事实，它做的每个决定都是评审者事后可以重放和批评的。一个建立在 harness 事实上的路由器失败得清清楚楚——事后复盘会写明「利害标记缺失」——而凭感觉的分类器失败得云里雾里。图中的百分比只是示意，不是金科玉律：要紧的是默认便宜、升级凭本事，永远不要反过来。">The router sits in the harness, between the ledger and the model call, and consumes signals that cost nothing: reversibility from the tool contract, stakes from the tool category, novelty from a pattern count over the ledger, budget from the run's accounting. A router built on harness facts fails legibly — the post-mortem says which flag was missing — where a vibe classifier fails mysteriously.</p>
+</div>
+<blockquote data-en="Escalation is not a takeover. The expensive model returns a decision, not the steering wheel — the moment it keeps the wheel, the system is no longer routed; it is a frontier loop with a cheap warm-up act." data-zh="升级不是接管。昂贵的模型交回的是一份决策，而不是方向盘——一旦它握着方向盘不放，这个系统就不再是路由式的，而是一个把便宜模型当暖场嘉宾的前沿循环。">Escalation is not a takeover. The expensive model returns a decision, not the steering wheel — the moment it keeps the wheel, the system is no longer routed; it is a frontier loop with a cheap warm-up act.</blockquote>
+<h3 data-en="Context is the currency the router spends" data-zh="上下文是路由器花掉的货币">Context is the currency the router spends</h3>
+<p data-en="The genuinely hard problem is neither the economics nor the signals — it is the handoff. A routed loop swaps models mid-run, and each swap forces a question that single-model systems never face: in whose voice is the shared context written? Every model has a dialect: preferred phrasings, assumptions about what needs spelling out, house habits in how it reports tool results and hedges conclusions. When the fast model inherits a context full of frontier-model prose, it does not read it as a peer's notes; it reads it as gospel, and the loop acquires a subtle failure mode — the cheap model defers to the expensive model's framing even when new evidence has outdated it, because the prose is confident and provenance is invisible. The reverse is worse: the frontier model inherits a context of terse fast-model fragments, missing exactly the ambient reasoning it is being paid to supply, and answers the letter of the question rather than the situation. The mitigation is not a universal dialect; it is structure. Route the handoff through the same ledger that the rest of the system already trusts: the escalated model receives not a transcript but a projection — task, world state, open questions, decision log with rationales — and what it returns is appended as a first-class decision event, attributed and dated, not smeared into the conversation as if the run had thought of it itself. Provenance is the whole game. A routed loop where every entry says which model wrote it, and why, can degrade gracefully when routing was wrong. A routed loop with one blended context degrades the way soup degrades: everything in it tastes like everything else, and nothing can be un-tasted." data-zh="真正难的问题既不是经济学也不是信号——而是交接。一个路由式循环会在运行中途更换模型，而每次更换都逼出一个单模型系统永远不会面对的问题：共享的上下文是用谁的语言写的？每个模型都有自己的方言：偏好的措辞、对什么需要说破的假设、汇报工具结果和给结论留余地的习惯。当快速模型继承一份满是前沿模型文风的上下文时，它不会把它当作同行的笔记来读，而是当作福音来读，于是循环获得了一种隐蔽的失败模式——便宜模型对贵模型的框架言听计从，哪怕新的证据早已过时，因为那段文字语气笃定，而来历不可见。反过来更糟：前沿模型继承一份全是快速模型简略片段的上下文，恰恰缺了那份人家付钱让它提供的弥散推理，于是它回答的是问题的字面而不是局面。缓解办法不是发明一种通用方言，而是结构化。让交接走系统其余部分已经在信任的那本账：被升级的模型收到的不是一份对话记录，而是一个投影——任务、世界状态、未决问题、带理由的决策日志——而它返回的内容作为一等公民的决策事件被追加进去，署名、标日期，而不是被搅进对话里，仿佛是运行自己想出来的。来龙去脉就是全部的关键。一个每条记录都写明哪个模型写的、为什么写的路由式循环，在路由出错时可以体面地降级。一个上下文搅成一锅的路由式循环，降级的方式和汤变质一模一样：每样东西都有每样东西的味道，而且再也捞不出来。">The genuinely hard problem is the handoff. Each model has a dialect, and when the fast model inherits a context full of frontier-model prose it reads it as gospel, deferring to an expensive framing even after new evidence has outdated it. The mitigation is not a universal dialect but structure: route the handoff through the ledger — the escalated model receives a projection, not a transcript, and what it returns is appended as an attributed decision event. Provenance is the whole game.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrR3r" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrR3t" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE HANDOFF — TRANSCRIPT SOUP VS ATTRIBUTED PROJECTION" data-zh="交接——对话浓汤 vs 署名投影" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="0.5" text-anchor="middle" x="310" y="26">THE HANDOFF — TRANSCRIPT SOUP VS ATTRIBUTED PROJECTION</text>
+<!-- left: naive -->
+<rect fill="var(--bg-surface)" height="200" rx="12" stroke="var(--text-tertiary)" stroke-width="1.5" stroke-dasharray="5,3" width="260" x="30" y="45"></rect>
+<text data-en="NAIVE: SHARED TRANSCRIPT" data-zh="朴素：共享对话记录" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="160" y="68">NAIVE: SHARED TRANSCRIPT</text>
+<rect fill="var(--bg-surface)" height="26" rx="5" stroke="var(--text-tertiary)" stroke-width="1" width="220" x="50" y="80"></rect>
+<text data-en="fast model fragments …" data-zh="快速模型的碎片……" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="160" y="97">fast model fragments …</text>
+<rect fill="var(--bg-surface)" height="26" rx="5" stroke="var(--text-tertiary)" stroke-width="1" width="220" x="50" y="112"></rect>
+<text data-en="frontier prose, no signature …" data-zh="前沿模型的文风，没有署名……" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="160" y="129">frontier prose, no signature …</text>
+<rect fill="var(--bg-surface)" height="26" rx="5" stroke="var(--text-tertiary)" stroke-width="1" width="220" x="50" y="144"></rect>
+<text data-en="more fragments, blended …" data-zh="更多碎片，搅在一起……" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="160" y="161">more fragments, blended …</text>
+<text data-en="who concluded what? on what evidence?" data-zh="谁下的结论？依据什么证据？" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" font-weight="700" text-anchor="middle" x="160" y="195">who concluded what? on what evidence?</text>
+<text data-en="unreadable provenance → inherited dogma" data-zh="来历不可读 → 继承来的教条" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" text-anchor="middle" x="160" y="212">unreadable provenance → inherited dogma</text>
+<text data-en="older entries outvote newer facts" data-zh="旧的条目压制新的事实" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" text-anchor="middle" x="160" y="229">older entries outvote newer facts</text>
+<!-- right: structured -->
+<rect fill="var(--accent-dim)" height="200" rx="12" stroke="var(--accent)" stroke-width="2" width="260" x="330" y="45"></rect>
+<text data-en="STRUCTURED: LEDGER PROJECTION" data-zh="结构化：账本投影" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="460" y="68">STRUCTURED: LEDGER PROJECTION</text>
+<rect fill="var(--bg-surface)" height="26" rx="5" stroke="var(--accent)" stroke-width="1" width="220" x="350" y="80"></rect>
+<text data-en="TASK + world state (facts only)" data-zh="任务 + 世界状态（只有事实）" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="460" y="97">TASK + world state (facts only)</text>
+<rect fill="var(--bg-surface)" height="26" rx="5" stroke="var(--accent)" stroke-width="1" width="220" x="350" y="112"></rect>
+<text data-en="OPEN QUESTIONS (unresolved)" data-zh="未决问题（悬而未决）" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="460" y="129">OPEN QUESTIONS (unresolved)</text>
+<rect fill="var(--bg-surface)" height="26" rx="5" stroke="var(--accent)" stroke-width="1" width="220" x="350" y="144"></rect>
+<text data-en="DECISION LOG — each entry signed" data-zh="决策日志——每条都有署名" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="460" y="161">DECISION LOG — each entry signed</text>
+<text data-en="“D7 · frontier · because tls handshake mismatch …”" data-zh="「D7 · 前沿模型 · 因为 TLS 握手不匹配……」" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="460" y="195">“D7 · frontier · because tls handshake mismatch …”</text>
+<text data-en="provenance visible → defer correctly," data-zh="来龙去脉可见 → 该 defer 时才 defer，" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" font-weight="700" text-anchor="middle" x="460" y="212">provenance visible → defer correctly,</text>
+<text data-en="and outvote stale decisions with new evidence" data-zh="并用新证据推翻过时的决策" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8.5" font-style="italic" text-anchor="middle" x="460" y="229">and outvote stale decisions with new evidence</text>
+<!-- handoff arrows -->
+<path d="M290 130 L330 130" fill="none" marker-end="url(#arrR3)" stroke="var(--accent)" stroke-width="1.6"></path>
+<path d="M330 165 C310 180 290 185 265 185" fill="none" marker-end="url(#arrR3r)" stroke="var(--accent-3)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<text data-en="escalate" data-zh="升级" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" text-anchor="middle" x="310" y="122">escalate</text>
+<text data-en="decision + rationale" data-zh="决策 + 理由" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="297" y="200">decision + rationale</text>
+<!-- verdict -->
+<text data-en="the context is not a conversation between equals —" data-zh="上下文不是一场平起平坐的对话——" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="280">the context is not a conversation between equals —</text>
+<text data-en="it is a document with authors, and the router must keep the bylines" data-zh="它是一份有作者的文档，而路由器必须保住署名栏" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" font-weight="700" text-anchor="middle" x="310" y="300">it is a document with authors, and the router must keep the bylines</text>
+</svg>
+<p class="diagram-caption" data-en="The naive handoff shares a transcript, and the transcript blends voices until attribution is unrecoverable — which is exactly when the fast model starts treating confident old prose as load-bearing truth. The structured handoff is not more polite; it is more lossless. Facts, open questions, and signed decisions travel; dialect does not. The escalated model reads the situation rather than the vibes, and its return value enters the ledger as a decision with an author and a rationale, which the next model — cheap or frontier — can weigh, revisit, or overturn on the strength of newer evidence. This is the same discipline version control taught software: merge histories, attribute changes, and never let the artifact's history become folklore. The routed loop that keeps bylines can debug its own routing later. The one that blends voices can only wonder." data-zh="朴素的交接共享一份对话记录，而对话记录会把各种嗓音搅到归属无法挽回的地步——而这恰恰就是便宜模型开始把笃定的旧文风当作承重真理的时刻。结构化的交接不是更有礼貌，而是更无损。事实、未决问题和署了名的决策会随行，方言不会。被升级的模型读到的是局面而不是气氛，它的返回值作为一条带作者、带理由的决策进入账本，下一个模型——无论便宜还是前沿——都可以掂量它、重审它、或凭更新的证据推翻它。这与版本控制教给软件业的纪律一模一样：合并历史、标注变更、绝不让工件的历史沦为口口相传的传说。保留署名栏的路由式循环，事后能调试自己的路由；把嗓音搅成一锅的，只能干瞪眼。">The naive handoff shares a transcript, and the transcript blends voices until attribution is unrecoverable — exactly when the fast model starts treating confident old prose as load-bearing truth. The structured handoff is not more polite; it is more lossless: facts, open questions, and signed decisions travel, dialect does not. Same discipline version control taught software — never let the artifact's history become folklore.</p>
+</div>
+<p data-en="Two objections deserve answers. The first: is this not just premature optimization, adding a routing layer before any model bill justifies it? The response is that the routing layer's value is only partly economic — it is also where the loop's judgment lives. Reversibility checks, stakes flags, novelty counts, and budget awareness are correctness machinery that a single-model loop needs anyway; routing simply gives them an output to actuate. A harness that can route can also gate, throttle, and abort; a harness that cannot route can only watch. The second objection: does model-swapping mid-run not wreck reliability, since each model has different failure modes? Yes, if the loop pretends the models are interchangeable tokens. But heterogeneity is honest about what single-model loops obscure: the same step is genuinely different work depending on what surrounds it. The reliability question was never whether the system has one failure profile or several — it is whether every failure profile is exercised in tests before it is exercised in production. A routed loop has more corners, and each corner is individually cheap to test because the router's decisions are deterministic. The single-model loop has one corner, and it is tested only by incidents. There is a closing observation that the pricing trend makes hard to ignore. The spread between fast-capable and frontier is widening, not narrowing, and every point of spread is a tax on uniformity. The loops that treat model choice as a per-step engineering decision will spend the difference on more steps, deeper runs, wider exploration. The loops that do not will spend it standing still — and will call the resulting simplicity an architecture." data-zh="有两个反对意见值得回应。第一个：这不就是过早优化吗，模型账单还没大到那个份上，就先加一层路由？回应是，路由层的价值只有一部分是经济上的——它同时也是这个循环判断力的栖身之处。可逆性检查、利害标记、新颖度计数、预算感知，这些是单模型循环反正也需要的正确性机器；路由只是给了它们一个可以驱动的输出。一个能路由的 harness 同时也能门控、限流、中止；一个不能路由的 harness 只能旁观。第二个反对：运行中途换模型不会毁掉可靠性吗，毕竟每个模型的失败模式都不同？会的，如果循环假装这些模型是可以互换的代币的话。但异构性恰恰诚实面对了单模型循环所遮蔽的事实：同一个步骤，随着周围环境不同，本来就是不同的工作。可靠性问题从来不是系统有一个还是几个失败画像——而是每个失败画像有没有在测试里被演练过，而不是在生产里。路由式循环的犄角旮旯更多，而每个犄角旮旯单独测试起来都便宜，因为路由器的决定是确定性的。单模型循环只有一个犄角旮旯，而且只有事故才测得到它。结尾还有一个越来越难忽视的观察：快速可用模型与前沿模型之间的价差在拉大，不是收窄，而价差每扩大一点，都是对整齐划一多收一笔税。把模型选择当作每一步工程决策的循环，会把省下的差价花在更多的步骤、更深的运行、更宽的探索上。不这么做的循环会把差价花在原地踏步上——然后把这份单纯称作架构。">Two objections deserve answers. Is this premature optimization? No — the routing layer is also where the loop's judgment lives; a harness that can route can also gate, throttle, and abort, while a harness that cannot route can only watch. Does model-swapping wreck reliability? Only if the loop pretends the models are interchangeable tokens. A routed loop has more corners, and each is individually cheap to test because the router's decisions are deterministic. The single-model loop has one corner, and it is tested only by incidents.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
