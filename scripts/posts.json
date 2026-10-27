@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-10-28",
+    "slug": "the-hidden-prompt",
+    "title_en": "The Hidden Prompt",
+    "title_zh": "隐藏的 prompt",
+    "read_time": 9,
+    "excerpt_en": "The prompt you wrote is not the prompt the model reads. Tool schemas, error strings, file trees, retry artifacts — every harness surface flows into the window and steers behavior, usually outweighing the reviewed system prompt by orders of magnitude. The fix is to govern the assembled context, not the file: audit the full window like the model reads it — linearly, every token.",
+    "excerpt_zh": "你写下的 prompt，并不是模型读到的 prompt。工具 schema、错误字符串、文件树、重试痕迹——harness 的每一个界面都在流进窗口、支配行为，通常以数量级优势压过被审阅过的系统 prompt。解法是治理组装完成的上下文，而不是那个文件：像模型那样审计完整窗口——线性地，逐 token。"
+  },
+  {
     "date": "2026-10-27",
     "slug": "the-loop-is-a-router",
     "title_en": "The Loop Is a Router",

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Hidden Prompt — AI Frontlines</title>
+<meta content="The prompt you wrote is not the prompt the model reads. Tool schemas, error messages, file trees, retry artifacts — every surface in the harness is context, and most teams never audit it. Behavior is being steered by text nobody reviewed." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 28, 2026" data-zh="2026年10月28日">October 28, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Hidden Prompt" data-zh="隐藏的 prompt">The Hidden Prompt</h1>
+<p class="post-header-deck" data-en="The prompt you wrote is not the prompt the model reads. A team writes eight hundred words of careful instruction, ships it, and assumes behavior flows from those words. But the model also reads the tool schemas, the error messages, the directory listings, the timestamps, the artifacts of every failed retry. The real prompt — the full context that actually steers the model — is often fifty times longer than the one in the repo, and almost none of it was written by anyone who thought about how it shapes behavior. Every surface in the harness is context. Most of it has never been audited." data-zh="你写下的 prompt，并不是模型读到的 prompt。一个团队写下八百字的精心指令，发布上线，然后假设行为就来自那些文字。但模型还会读到工具的 schema、错误信息、目录列表、时间戳、每一次失败重试留下的痕迹。真正的 prompt——那个实际引导着模型行为的完整上下文——往往比仓库里那份长五十倍，而其中几乎没有任何一部分，出自一个认真思考过「它如何塑造行为」的人之手。harness 里的每一个界面，都是上下文。而它们中的大多数，从未被审计过。">The prompt you wrote is not the prompt the model reads. A team writes eight hundred words of careful instruction, ships it, and assumes behavior flows from those words. But the real prompt is often fifty times longer, and almost none of it was reviewed.</p>
+</header>
+<article class="post-body">
+<p data-en="Start with an exercise that most teams have never done. Take a production agent, freeze a single run mid-task, and dump everything in the context window — every token, from the first system message to the current step. Then take out the part the team wrote: the system prompt, pasted into the codebase, reviewed in pull requests, argued over in meetings. What remains is the hidden prompt. It is enormous. It contains the JSON schema of every tool, with every field description. It contains the error strings thrown by the APIs those tools wrap. It contains the file tree the agent listed on step two, the forty results from the search on step five, the truncated output of a tool that hit a size limit, the note left by the context compactor summarizing what was evicted an hour ago. Every one of those tokens influences the next one the model produces. The team reviews half a percent of the surface that steers its product." data-zh="从一个大多数团队从未做过的练习开始。取一个生产环境的智能体，在一次任务中途冻结一次运行，把上下文窗口里的所有东西全部导出——从第一条系统消息到当前步骤的每一个 token。然后，把团队写的那部分拿出来：写进代码库、在 pull request 里被审阅、在会议里被争论过的系统 prompt。剩下的，就是隐藏的 prompt。它巨大无比。它包含每个工具的 JSON schema，连同每个字段的描述。它包含那些工具所封装的 API 抛出的错误字符串。它包含智能体在第二步列出的文件树、第五步搜索返回的四十条结果、一个撞上大小限制的工具被截断的输出、以及一小时前上下文压缩器留下的、关于被驱逐内容的摘要。这些 token 中的每一个，都在影响模型产生的下一个 token。而团队审阅的，是引导着产品的整个界面的百分之零点五。">Start with an exercise that most teams have never done. Take a production agent, freeze a single run mid-task, and dump everything in the context window. Then take out the part the team wrote. What remains is the hidden prompt. It is enormous — tool schemas, error strings, file trees, search results, truncated outputs, compactor notes. Every one of those tokens influences the next one the model produces.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 380" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrH1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrH2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="WHAT YOU WROTE vs WHAT THE MODEL READS" data-zh="你写的 vs 模型读到的" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHAT YOU WROTE vs WHAT THE MODEL READS</text>
+<!-- LEFT: the written prompt -->
+<text data-en="THE WRITTEN PROMPT" data-zh="写下的 prompt" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="140" y="56">THE WRITTEN PROMPT</text>
+<rect fill="var(--bg-surface)" height="120" rx="10" stroke="var(--accent-2)" stroke-width="1.5" width="180" x="50" y="70"></rect>
+<text data-en="system prompt" data-zh="系统 prompt" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="140" y="102">system prompt</text>
+<text data-en="~800 words" data-zh="约 800 词" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="140" y="124">~800 words</text>
+<text data-en="reviewed · versioned" data-zh="被审阅 · 有版本" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="140" y="146">reviewed · versioned</text>
+<text data-en="argued over in PRs" data-zh="在 PR 里反复争论" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="140" y="164">argued over in PRs</text>
+<text data-en="≈ 2% of context" data-zh="≈ 上下文的 2%" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="140" y="220">≈ 2% of context</text>
+<!-- RIGHT: the hidden prompt -->
+<text data-en="THE HIDDEN PROMPT" data-zh="隐藏的 prompt" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="450" y="56">THE HIDDEN PROMPT</text>
+<g opacity="0.92">
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="150" x="300" y="66"></rect>
+<text data-en="tool schemas × 24" data-zh="工具 schema × 24" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="375" y="83">tool schemas × 24</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="150" x="300" y="98"></rect>
+<text data-en="error strings from APIs" data-zh="API 抛出的错误串" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="375" y="115">error strings from APIs</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="150" x="300" y="130"></rect>
+<text data-en="file trees · listings" data-zh="文件树 · 目录列表" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="375" y="147">file trees · listings</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="150" x="300" y="162"></rect>
+<text data-en="search results × 40" data-zh="搜索结果 × 40" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="375" y="179">search results × 40</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="150" x="300" y="194"></rect>
+<text data-en="truncated outputs · retries" data-zh="截断输出 · 重试痕迹" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="375" y="211">truncated outputs · retries</text>
+</g>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-dasharray="3,2" stroke-width="1.2" width="150" x="470" y="130"></rect>
+<text data-en="compactor notes" data-zh="压缩器摘要" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="545" y="147">compactor notes</text>
+<text data-en="≈ 98% of context" data-zh="≈ 上下文的 98%" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="450" y="254">≈ 98% of context</text>
+<text data-en="written by nobody · read by the model" data-zh="没人写 · 却被模型读" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="450" y="272">written by nobody · read by the model</text>
+<!-- funnel into model -->
+<path d="M140 240 C140 300 250 320 295 328" fill="none" marker-end="url(#arrH2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<path d="M450 282 C450 308 400 318 360 328" fill="none" marker-end="url(#arrH1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="36" rx="9" stroke="var(--accent)" stroke-width="2" width="130" x="230" y="326"></rect>
+<text data-en="THE MODEL" data-zh="模型" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="295" y="349">THE MODEL</text>
+<text data-en="it cannot tell them apart" data-zh="它分不清两者的区别" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="465" y="349">it cannot tell them apart</text>
+</svg>
+<p class="diagram-caption" data-en="The written prompt is a small, carefully governed artifact. The hidden prompt is everything else in the window — schemas, errors, listings, leftovers — and it is usually one to two orders of magnitude larger. The model reads it all with equal attention. It has no way to know which tokens were reviewed and which were accidental." data-zh="写下的 prompt，是一个小巧、被严格治理的产物。隐藏的 prompt，是窗口里其余的一切——schema、错误、列表、残留——通常比前者大一到两个数量级。模型以同等的注意力阅读它们全部。它无从知道哪些 token 被审阅过，哪些只是意外混入。">The written prompt is a small, carefully governed artifact. The hidden prompt is everything else in the window — schemas, errors, listings, leftovers — and it is usually one to two orders of magnitude larger. The model reads it all with equal attention. It has no way to know which tokens were reviewed and which were accidental.</p>
+</div>
+<h3 data-en="The model cannot tell governed text from garbage" data-zh="模型分不清被治理的文本和垃圾">The model cannot tell governed text from garbage</h3>
+<p data-en="There is a comfortable fiction in agent engineering: that instructions live in the system prompt, and everything else is just data. The model, so the fiction goes, reads the instructions and uses the data. In practice no such distinction exists. To a language model, context is context. A tool description that says 'use this for all financial calculations' is an instruction. An error string that says 'Error 429: rate limit exceeded, please retry' is an instruction. A file named DRAFT_DO_NOT_SHIP.txt is an instruction. A search result whose first line reads 'deprecated, use v2' is an instruction. The model does not weigh these by their provenance — whether a principal engineer wrote them or a load balancer emitted them — it weighs them by salience, recency, and repetition. A warning repeated forty times in the context window will outshout eight hundred carefully reviewed words every single time." data-zh="智能体工程里有一个令人安心的虚构：指令住在系统 prompt 里，其他一切都只是数据。按照这个虚构，模型读指令、用数据。但实际上，这种区分并不存在。对一个语言模型来说，上下文就是上下文。一段写着「所有财务计算都用这个工具」的工具描述，是指令。一条写着「Error 429: rate limit exceeded, please retry」的错误串，是指令。一个名为 DRAFT_DO_NOT_SHIP.txt 的文件，是指令。一条首行写着「已弃用，请用 v2」的搜索结果，是指令。模型不会按来源给它们加权——不管它是首席工程师写的，还是负载均衡器吐的——它按显著性、新近性和重复次数加权。一条在上下文窗口里重复了四十次的警告，每一次都能盖过八百个被认真审阅过的词。">There is a comfortable fiction in agent engineering: that instructions live in the system prompt, and everything else is just data. In practice no such distinction exists. To a language model, context is context. A tool description is an instruction. An error string is an instruction. A file named DRAFT_DO_NOT_SHIP.txt is an instruction. The model does not weigh these by provenance — it weighs them by salience, recency, and repetition.</p>
+<p data-en="This is why agents so often behave in ways that baffle their creators. The team investigates a run where the agent refused to call a perfectly good tool, or called a deprecated one, or insisted on a workflow the system prompt explicitly forbade. The prompt looks innocent. The behavior looks insane. Nobody thinks to check what the tool's own description said — the one generated by an intern three months ago from an outdated README, still claiming the tool is 'the preferred path for all imports.' Or what the error handler returned on a transient failure: a paragraph of defensive logging that reads, to a model, like a strong instruction to abandon the approach. The bug was never in the prompt. The bug was in the hidden prompt, governing behavior at a scale the written prompt cannot compete with." data-zh="这正是智能体经常让它们的创造者摸不着头脑的原因。团队去调查一次运行：智能体拒绝调用一个完全正常的工具，或者调用了一个已弃用的，或者坚持一套系统 prompt 明令禁止的流程。prompt 看起来无辜。行为看起来疯狂。没人想到去查那个工具自己的描述——三个月前一个实习生照着过时的 README 生成的、至今还声称该工具是「所有导入的首选路径」的那段话。也没人想到去查错误处理器在一次瞬时故障时返回了什么：一大段防御性日志，在一个模型读来，像一条放弃当前方法的强指令。bug 从来不在 prompt 里。bug 在隐藏的 prompt 里，以一种写下的 prompt 根本无力抗衡的规模，支配着行为。">This is why agents so often behave in ways that baffle their creators. The team investigates a run where the agent refused a perfectly good tool, or called a deprecated one, or insisted on a workflow the system prompt explicitly forbade. The prompt looks innocent. The behavior looks insane. Nobody checks the tool's own description — generated months ago from an outdated README, still claiming to be 'the preferred path for all imports.' The bug was never in the prompt. The bug was in the hidden prompt.</p>
+<blockquote data-en="Treat every byte that can reach the context window as part of your prompt — because the model already does. An error message you did not write is still an instruction you gave. A directory listing you did not curate is still an example you showed. The harness does not merely transport context. It authors it." data-zh="把每一个可能进入上下文窗口的字节，都当作你 prompt 的一部分——因为模型早已如此。一条你没写的错误信息，仍然是你给出的指令。一个你没有整理过的目录列表，仍然是你展示的范例。harness 不只是搬运上下文。它在创作上下文。">Treat every byte that can reach the context window as part of your prompt — because the model already does. An error message you did not write is still an instruction you gave. A directory listing you did not curate is still an example you showed. The harness does not merely transport context. It authors it.</blockquote>
+<h3 data-en="The five surfaces of the hidden prompt" data-zh="隐藏 prompt 的五个界面">The five surfaces of the hidden prompt</h3>
+<p data-en="The hidden prompt enters through surfaces, and there are five that matter. The first is tool surface: every schema, every field description, every parameter name. This is the largest and most neglected surface — most tool descriptions are written once, at creation, and never revised when behavior drifts. The second is failure surface: every error string, stack trace, and retry artifact that flows back into context. An error message is a zero-shot instruction delivered at the moment of maximum model attention — right after a failure it wants to fix. The third is environment surface: file trees, timestamps, machine names, repository metadata. To the model, these are facts about the world, and it will happily condition behavior on them — treating a stale date as a deadline, a test directory as the production one. The fourth is memory surface: summaries injected by retrieval, notes left by past runs, compactor digests of evicted context — all of it reads as authoritative history, even when it was wrong. The fifth is ordering surface: what appears where, what repeats, what came last. Repetition reads as emphasis. Recency reads as priority. None of this is written by anyone, and all of it is read by the model." data-zh="隐藏的 prompt 通过界面进入，而重要的界面有五个。第一个是工具界面：每一个 schema、每一段字段描述、每一个参数名。这是最大也最被忽视的界面——大多数工具描述在创建时写一次，行为漂移之后就再没改过。第二个是失败界面：每一条流回上下文的错误字符串、堆栈跟踪、重试痕迹。一条错误信息，是一条在模型注意力最高峰——刚失败、正想修复——的时刻送达的零样本指令。第三个是环境界面：文件树、时间戳、机器名、仓库元数据。对模型来说，这些是关于世界的事实，而它会很乐意基于它们调整行为——把一个过期的日期当作截止期限，把一个测试目录当成生产目录。第四个是记忆界面：检索注入的摘要、过往运行留下的笔记、压缩器对被驱逐上下文的摘要——它们全部被当作权威历史来读，哪怕它们是错的。第五个是排序界面：什么出现在哪里、什么在重复、什么排在最后。重复读起来像强调。新近读起来像优先。这些没有一个出自任何人之手，而模型在读它们全部。">The hidden prompt enters through surfaces, and there are five that matter. Tool surface: every schema and field description, written once and never revised. Failure surface: every error string and retry artifact — a zero-shot instruction delivered at the moment of maximum model attention. Environment surface: file trees, timestamps, metadata — facts about the world the model will condition on. Memory surface: injected summaries and compactor digests that read as authoritative history. Ordering surface: repetition reads as emphasis, recency as priority.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrS1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrS2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="FIVE SURFACES, ONE CONTEXT WINDOW" data-zh="五个界面，一个上下文窗口" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">FIVE SURFACES, ONE CONTEXT WINDOW</text>
+<!-- five surface boxes across the top -->
+<rect fill="var(--bg-surface)" height="54" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="102" x="30" y="52"></rect>
+<text data-en="TOOL" data-zh="工具" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="81" y="74">TOOL</text>
+<text data-en="schemas · fields" data-zh="schema · 字段" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="81" y="90">schemas · fields</text>
+<rect fill="var(--bg-surface)" height="54" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="102" x="146" y="52"></rect>
+<text data-en="FAILURE" data-zh="失败" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="197" y="74">FAILURE</text>
+<text data-en="errors · retries" data-zh="错误 · 重试" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="197" y="90">errors · retries</text>
+<rect fill="var(--bg-surface)" height="54" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="102" x="262" y="52"></rect>
+<text data-en="ENVIRONMENT" data-zh="环境" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="313" y="74">ENVIRONMENT</text>
+<text data-en="trees · timestamps" data-zh="文件树 · 时间戳" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="313" y="90">trees · timestamps</text>
+<rect fill="var(--bg-surface)" height="54" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="102" x="378" y="52"></rect>
+<text data-en="MEMORY" data-zh="记忆" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="429" y="74">MEMORY</text>
+<text data-en="summaries · digests" data-zh="摘要 · 摘编" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="429" y="90">summaries · digests</text>
+<rect fill="var(--bg-surface)" height="54" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="102" x="494" y="52"></rect>
+<text data-en="ORDERING" data-zh="排序" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="545" y="74">ORDERING</text>
+<text data-en="repetition · recency" data-zh="重复 · 新近" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="545" y="90">repetition · recency</text>
+<!-- arrows converging into context window -->
+<path d="M81 106 C81 150 170 165 230 178" fill="none" marker-end="url(#arrS1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<path d="M197 106 C197 145 230 160 260 176" fill="none" marker-end="url(#arrS1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<path d="M313 106 L313 174" fill="none" marker-end="url(#arrS1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<path d="M429 106 C429 145 395 160 365 176" fill="none" marker-end="url(#arrS1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<path d="M545 106 C545 150 455 165 395 178" fill="none" marker-end="url(#arrS1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<!-- context window -->
+<rect fill="var(--accent-dim)" height="58" rx="10" stroke="var(--accent)" stroke-width="2" width="200" x="213" y="180"></rect>
+<text data-en="CONTEXT WINDOW" data-zh="上下文窗口" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="313" y="204">CONTEXT WINDOW</text>
+<text data-en="no provenance · no priority" data-zh="无来源 · 无优先级" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="313" y="222">no provenance · no priority</text>
+<path d="M313 238 L313 262" fill="none" marker-end="url(#arrS2)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<!-- model behavior -->
+<rect fill="var(--bg-surface)" height="40" rx="9" stroke="var(--accent-3)" stroke-width="1.5" width="220" x="203" y="264"></rect>
+<text data-en="BEHAVIOR YOU DID NOT DESIGN" data-zh="你并未设计的行为" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="313" y="289">BEHAVIOR YOU DID NOT DESIGN</text>
+<text data-en="salience beats provenance: an error string repeated 40× outranks a reviewed instruction" data-zh="显著性胜过来源：一条重复 40 次的错误串，压过一条被审阅的指令" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="334">salience beats provenance: an error string repeated 40× outranks a reviewed instruction</text>
+</svg>
+<p class="diagram-caption" data-en="Five surfaces feed one window, and inside the window there are no labels marking what was governed and what leaked in. The model's attention allocates by salience and repetition, not by authorship. Whichever surface shouts loudest wins — and error surfaces, by nature, shout." data-zh="五个界面汇入同一个窗口，而窗口内部没有任何标签，标记什么是被治理的、什么是漏进来的。模型的注意力按显著性和重复度分配，而不按作者身份。哪个界面喊得最响，哪个就赢——而失败界面，天生喊得最响。">Five surfaces feed one window, and inside the window there are no labels marking what was governed and what leaked in. The model's attention allocates by salience and repetition, not by authorship. Whichever surface shouts loudest wins — and error surfaces, by nature, shout.</p>
+</div>
+<p data-en="Consider the failure surface more closely, because it deserves special fear. When a tool call fails, what enters the context next? In most harnesses, it is the raw exception: a stack trace, a framework error code, a wall of defensive logging. The model reads this at the exact moment it is most motivated to act, and it treats the text as a specification of what went wrong and what to do next. 'Connection refused' produces one behavior. 'Connection refused (is the service running?)' produces another. The difference between those two strings is a prompt-engineering decision — made by whoever wrote the error handler, who was thinking about logs and humans, not about models. Every error path in the harness is an unwritten branch of the system prompt, and most teams have never read their own error strings from the model's side of the window." data-zh="把失败界面再看得细一点，因为它值得格外警惕。当一次工具调用失败，接下来进入上下文的是什么？在大多数 harness 里，是原始异常：一段堆栈跟踪、一个框架错误码、一大墙防御性日志。模型恰好在它最想行动的时刻读到这些，并把这段文本当作「出了什么问题、接下来该做什么」的规格说明。「Connection refused」产生一种行为。「Connection refused（服务在运行吗？）」产生另一种。这两个字符串之间的差异，是一个 prompt 工程决策——由写错误处理器的人做出，而那个人想的是日志和人类读者，不是模型。harness 里的每一条错误路径，都是系统 prompt 一条没有落笔的分支，而大多数团队，从未从窗口的模型那一侧，读过自己的错误字符串。">Consider the failure surface more closely, because it deserves special fear. When a tool call fails, what enters the context next? In most harnesses, it is the raw exception: a stack trace, an error code, a wall of defensive logging. The model reads this at the exact moment it is most motivated to act, and treats the text as a specification of what to do next. Every error path in the harness is an unwritten branch of the system prompt — and most teams have never read their own error strings from the model's side of the window.</p>
+<h3 data-en="Audit the window, not the file" data-zh="审计窗口，而不是文件">Audit the window, not the file</h3>
+<p data-en="The corrective is not more prompt review. It is a different unit of governance. Most teams version their system prompt the way they version code: it lives in a file, changes go through pull requests, diffs are reviewed. That discipline is correct and insufficient, because the file is two percent of the window. The unit of governance should be the assembled context itself. Freeze real runs in production, dump the full window, and read it — not skim, read, the way the model does, linearly, every token. Teams that do this for the first time are uniformly shocked: outdated tool descriptions contradicting the prompt, error messages instructing the model to do exactly what the prompt forbids, environment details leaking in that read like deadlines, memory summaries asserting facts the current run has already disproven. The hidden prompt is not a theoretical risk. It is a document that exists right now, in production, and nobody has read it." data-zh="纠正的办法，不是更多的 prompt 审阅。而是换一个治理单元。大多数团队像管理代码一样管理系统 prompt：它住在一个文件里，改动走 pull request，diff 被人审。这个纪律是对的，但不够——因为那个文件只占窗口的百分之二。治理的单元，应该是组装完成的上下文本身。在生产环境冻结真实的运行，导出完整窗口，然后读它——不是略读，是读，像模型那样，线性地，每一个 token。第一次这样做的团队，无一例外被震惊：过时的工具描述和 prompt 相互矛盾，错误信息正指挥模型去做 prompt 明令禁止的事，环境细节像截止期限一样漏进来，记忆摘要断言着当前运行已经推翻的事实。隐藏的 prompt 不是理论风险。它是一份此刻就存在于生产环境中的文档，而没人读过它。">The corrective is not more prompt review. It is a different unit of governance. Most teams version their system prompt the way they version code — correct, and insufficient, because the file is two percent of the window. The unit of governance should be the assembled context itself: freeze real runs, dump the full window, and read it the way the model does — linearly, every token. Teams that do this for the first time are uniformly shocked.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrA1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE CONTEXT AUDIT LOOP" data-zh="上下文审计循环" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE CONTEXT AUDIT LOOP</text>
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent)" stroke-width="1.5" width="140" x="40" y="60"></rect>
+<text data-en="freeze real runs" data-zh="冻结真实运行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="110" y="79">freeze real runs</text>
+<text data-en="in production" data-zh="在生产环境" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="110" y="95">in production</text>
+<path d="M180 82 L222 82" fill="none" marker-end="url(#arrA1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent)" stroke-width="1.5" width="140" x="224" y="60"></rect>
+<text data-en="dump the full" data-zh="导出完整" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="294" y="79">dump the full</text>
+<text data-en="context window" data-zh="上下文窗口" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="294" y="95">context window</text>
+<path d="M364 82 L406 82" fill="none" marker-end="url(#arrA1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent)" stroke-width="1.5" width="140" x="408" y="60"></rect>
+<text data-en="read it linearly," data-zh="逐 token 线性阅读" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="478" y="79">read it linearly,</text>
+<text data-en="every token" data-zh="一个不落" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="478" y="95">every token</text>
+<path d="M478 104 C478 150 478 160 478 168" fill="none" marker-end="url(#arrA1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="44" rx="9" stroke="var(--accent)" stroke-width="2" width="170" x="393" y="170"></rect>
+<text data-en="flag contradictions," data-zh="标记矛盾" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="478" y="189">flag contradictions,</text>
+<text data-en="stale text, leakage" data-zh="过期文本、泄漏" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="478" y="205">stale text, leakage</text>
+<path d="M393 192 C300 192 250 192 218 192" fill="none" marker-end="url(#arrA1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="66" y="170"></rect>
+<text data-en="fix the surface," data-zh="修复界面" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="141" y="189">fix the surface,</text>
+<text data-en="not the prompt" data-zh="而不是 prompt" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="141" y="205">not the prompt</text>
+<path d="M141 214 C141 250 110 250 110 244" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<text data-en="repeat monthly — the hidden prompt regrows" data-zh="每月重复——隐藏的 prompt 会再生" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="282">repeat monthly — the hidden prompt regrows</text>
+</svg>
+<p class="diagram-caption" data-en="The audit treats the assembled window as the artifact under review. Freeze runs, dump context, read every token, and when behavior smells wrong, look for the surface that said so — then fix the surface, because adding prompt text to fight leaked context is a race that salience will always win." data-zh="这个审计，把组装完成的窗口当作被审对象。冻结运行、导出上下文、逐 token 阅读，当行为不对劲时，去找那个说了话的界面——然后修复界面本身，因为想靠往 prompt 里加文字去对抗漏进来的上下文，是一场显著性永远会赢的竞赛。">The audit treats the assembled window as the artifact under review. Freeze runs, dump context, read every token, and when behavior smells wrong, look for the surface that said so — then fix the surface, because adding prompt text to fight leaked context is a race that salience will always win.</p>
+</div>
+<p data-en="From the audit, practical rules follow. Write error messages for models, not just logs: short, factual, actionable, never speculative, never containing advice you would not put in the system prompt. Treat tool descriptions as living documentation with owners and review cadence, because they drift as behavior drifts. Curate environment surfaces — filter file trees, normalize timestamps, strip metadata that reads as instruction. Validate injected memory against the current run before it enters the window, because a confident stale summary is worse than no summary. And watch repetition: if the same warning or boilerplate appears many times in a window, it is not noise — it is the loudest instruction the model is receiving. None of this is exotic. It is the ordinary discipline of treating every token that can reach the window as part of the product's instruction set." data-zh="从这个审计出发，实用的规则随之而来。为模型写错误信息，而不只为日志：短、 factual、可行动，绝不猜测，绝不包含你不会放进系统 prompt 的建议。把工具描述当作有 owner、有审阅节奏的活文档，因为它们会随行为漂移而漂移。治理环境界面——过滤文件树、规范化时间戳、剥除读起来像指令的元数据。让注入的记忆在进入窗口之前，先对照当前运行做校验，因为一份自信的过期摘要，比没有摘要更糟。还有，盯住重复：如果同一条警告或样板文字在窗口里出现多次，那它不是噪音——它是模型正在接收的最响亮的指令。这些没有一样是奇技淫巧。它是把「每一个可能进入窗口的 token，都当作产品指令集的一部分」的普通纪律。">From the audit, practical rules follow. Write error messages for models, not just logs: short, factual, actionable, never speculative. Treat tool descriptions as living documentation with owners and review cadence. Curate environment surfaces — filter file trees, normalize timestamps, strip metadata that reads as instruction. Validate injected memory against the current run. And watch repetition: a warning that appears many times in a window is not noise — it is the loudest instruction the model is receiving.</p>
+<p data-en="The deeper point is about where the product actually lives. A team that thinks its agent's behavior is defined by the system prompt has confused the map with the territory. The behavior is defined by the window — everything in it, every time, all at once. The system prompt is merely the only part that is convenient to edit. The harness around it is silently authoring the rest, run after run, and the model is obeying all of it with perfect impartiality. The teams that internalize this stop asking 'what should the prompt say' and start asking 'what does the window say' — and once that question is asked, it can never be unasked. Every error string becomes a decision. Every schema field, a sentence in a manual nobody admits to writing. The hidden prompt is always there. The only question is whether anyone has read it." data-zh="更深的一层，关乎产品到底住在哪里。一个认为智能体的行为由系统 prompt 定义的团队，把地图当成了疆域。行为是由窗口定义的——窗口里的一切，每一次，同时。系统 prompt 只不过是唯一方便编辑的部分。包裹它的 harness，正在一次又一次运行中，默默地创作着其余部分，而模型以完美的不偏不倚，服从着它的全部。领悟了这一点的团队，不再问「prompt 应该说什么」，而是开始问「窗口正在说什么」——而这个问题一旦被问出，就再也收不回去了。每一条错误字符串，都变成一个决策。每一个 schema 字段，都变成一本没人承认写过的手册里的一句话。隐藏的 prompt 永远在那儿。唯一的问题是：有没有人读过它。">The deeper point is about where the product actually lives. A team that thinks its agent's behavior is defined by the system prompt has confused the map with the territory. Behavior is defined by the window — everything in it, every time, all at once. The system prompt is merely the only part that is convenient to edit. The harness around it is silently authoring the rest. The teams that internalize this stop asking 'what should the prompt say' and start asking 'what does the window say' — and once that question is asked, it can never be unasked.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
