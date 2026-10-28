@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Context Is a Budget, Not a Bucket — AI Frontlines</title>
+<meta content="The context window looks like memory, but it behaves like a stage that charges rent. Every resident token is re-read, re-attended, and re-paid for on every single generation step. Teams that run long-horizon agents treat context like a budget with an allocation policy, an eviction rule, and a ledger — because the agents that fail at hour forty rarely ran out of intelligence. They ran out of solvent context." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 29, 2026" data-zh="2026年10月29日">October 29, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Context Is a Budget, Not a Bucket" data-zh="上下文是预算，不是桶">Context Is a Budget, Not a Bucket</h1>
+<p class="post-header-deck" data-en="The context window looks like memory, but it is nothing like memory. Memory stores a byte once and lets you read it for free. Context rehearses every resident token on every generation step — every system sentence, every tool schema, every stale tool result is re-read, re-attended, and re-paid for, again and again, until the run ends. A context window is not a bucket you fill. It is a stage that charges rent, and the rent compounds. The agents that fail at hour forty rarely ran out of intelligence. They ran out of solvent context — drowned in their own history, unable to afford the tokens that would have mattered." data-zh="上下文窗口看起来像内存，但它完全不是内存。内存把一个字节存一次，之后随便读、零成本。而上下文，会在每一个生成步上把所有在场的 token 全部重演一遍——每一句系统提示、每一个工具 schema、每一条早已过时的工具结果，都被重新读取、重新计算注意力、重新付费，一遍又一遍，直到运行结束。上下文窗口不是一个随便装的桶。它是一个收租金的舞台，而且租金是复利计算的。那些在第四十个小时失败的智能体，很少是因为智力不够。它们是耗尽了有偿付能力的上下文——淹没在自己的历史里，再也付不起那些真正重要的 token 的房租。">The context window looks like memory, but it is nothing like memory. Memory stores a byte once and lets you read it for free. Context rehearses every resident token on every generation step — and the rent compounds. The agents that fail at hour forty rarely ran out of intelligence. They ran out of solvent context.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a category error at the bottom of most agent failures, and it is almost never named. Engineers are trained to think of capacity as storage. A disk fills up; you delete something; life continues. The cost of a file sitting on a disk is effectively zero. So when engineers meet a context window, they instinctively apply the storage mental model: there is a limit, the limit is large, therefore the limit is not a design constraint. Documents get pasted in whole. Tool results land in context at full length. Every tool schema ever defined rides along on every call, because why not — the window is 200k tokens and the task only needs 30k. This reasoning is silent about the one thing that matters: in a transformer, residence is not free. A token in context is not stored. It is rehearsed. On every single forward pass, that token is attended to by every other token, and every other token is attended to by it. The bill arrives at generation time, every time, for the entire contents." data-zh="大多数智能体的失败底下，藏着一个几乎从未被点破的范畴错误。工程师从小接受的训练，是把容量当存储来想。磁盘满了，删掉一点东西，生活继续。一个文件躺在磁盘上的成本约等于零。所以当工程师遇到上下文窗口时，会本能地套用存储的心智模型：有个上限，上限很大，所以上限不构成设计约束。于是整个文档被原样粘进去。工具结果以完整长度落入上下文。所有定义过的工具 schema 每次调用都全程随行——为什么不呢，窗口有 20 万 token，任务只用 3 万。这个推理漏掉了唯一重要的一点：在 Transformer 里，驻留不是免费的。上下文里的一个 token，不是被存储的，而是被排演的。在每一个前向传播中，这个 token 被所有其他 token 注意，所有其他 token 也被它注意。账单在生成时刻送达，每一次，针对全部内容。">There is a category error at the bottom of most agent failures, and it is almost never named. Engineers are trained to think of capacity as storage. A disk fills up; you delete something; life continues. This reasoning is silent about the one thing that matters: in a transformer, residence is not free. A token in context is not stored. It is rehearsed. On every single forward pass, that token is attended to by every other token, and every other token is attended to by it. The bill arrives at generation time, every time, for the entire contents.</p>
+<p data-en="Two currencies are being spent, and teams usually only track one. The first is compute: attention cost grows with the square of sequence length, so a context that doubles does not cost twice as much per step — it costs roughly four times as much, multiplied across every step of the run. The second currency is subtler and more expensive: attention itself. A model's ability to use its context is finite and degrades as context fills. Every irrelevant resident token competes for attention against the tokens that matter. Retrieval quality drops in the middle of long contexts; instructions get diluted; the model starts obeying the loudest residue of its history rather than the sharpest signal of its task. The bucket mental model says the failure threshold is the window limit. The budget mental model says the threshold arrives far earlier — at the point where the signal the task needs can no longer win the attention auction against everything else resident. Most long-running agents go bankrupt that way: not full, but insolvent." data-zh="这里花的是两种货币，而团队通常只追踪其中一种。第一种是算力：注意力成本随序列长度平方增长，上下文翻倍，每一步的成本不是翻一倍，而是大约翻四倍，再乘以运行的全部步数。第二种货币更隐蔽，也更昂贵：注意力本身。一个模型使用其上下文的能力是有限的，并随上下文变满而退化。每一个不相关的驻留 token，都在和那些重要的 token 抢注意力。长上下文中部的检索质量会下降，指令被稀释，模型开始服从历史里最响亮的残余，而不是任务里最尖锐的信号。桶的心智模型说，失败阈值是窗口上限。预算的心智模型说，阈值来得远比那早——在任务所需的信号，再也赢不了和其他所有驻留内容的注意力竞拍的那一刻。大多数长运行智能体就是这样破产的：不是满了，而是资不抵债。">Two currencies are being spent, and teams usually only track one. The first is compute: attention cost grows with the square of sequence length. The second currency is subtler and more expensive: attention itself. Every irrelevant resident token competes for attention against the tokens that matter. The bucket mental model says the failure threshold is the window limit. The budget mental model says the threshold arrives far earlier — at the point where the signal the task needs can no longer win the attention auction against everything else resident. Most long-running agents go bankrupt that way: not full, but insolvent.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 380" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrB1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrB2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE CONTEXT LEDGER — WHO PAYS RENT" data-zh="上下文账本——谁在付租金" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE CONTEXT LEDGER — WHO PAYS RENT</text>
+<!-- the window frame -->
+<rect fill="none" height="280" rx="10" stroke="var(--border)" stroke-width="1.5" width="440" x="60" y="46"></rect>
+<text data-en="THE WINDOW" data-zh="窗口" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" letter-spacing="1" text-anchor="middle" x="280" y="64">THE WINDOW</text>
+<!-- fixed costs -->
+<rect fill="var(--bg-surface)" height="46" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="410" x="75" y="76"></rect>
+<text data-en="system prompt · 4k" data-zh="系统提示 · 4k" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" x="90" y="96">system prompt · 4k</text>
+<text data-en="FIXED — paid every pass, forever" data-zh="固定成本——每一步都付，永远付" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="90" y="112">FIXED — paid every pass, forever</text>
+<rect fill="var(--bg-surface)" height="46" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="410" x="75" y="128"></rect>
+<text data-en="tool schemas × 40 · 11k" data-zh="工具 schema × 40 · 11k" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="600" x="90" y="148">tool schemas × 40 · 11k</text>
+<text data-en="FIXED — most tools unused this run" data-zh="固定成本——本次运行大多未用" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="90" y="164">FIXED — most tools unused this run</text>
+<!-- discretionary -->
+<rect fill="var(--bg-surface)" height="46" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="410" x="75" y="180"></rect>
+<text data-en="retrieved docs · 22k" data-zh="检索到的文档 · 22k" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="600" x="90" y="200">retrieved docs · 22k</text>
+<text data-en="DISCRETIONARY — half of it stale" data-zh="可支配——其中一半已过时" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="90" y="216">DISCRETIONARY — half of it stale</text>
+<rect fill="var(--bg-surface)" height="46" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="410" x="75" y="232"></rect>
+<text data-en="tool results · 60k" data-zh="工具结果 · 60k" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="600" x="90" y="252">tool results · 60k</text>
+<text data-en="DISCRETIONARY — raw, never summarized" data-zh="可支配——原始未摘要" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="90" y="268">DISCRETIONARY — raw, never summarized</text>
+<!-- what's left -->
+<rect fill="var(--accent-dim)" height="38" rx="6" stroke="var(--accent)" stroke-width="2" width="410" x="75" y="284"></rect>
+<text data-en="working space for the actual task" data-zh="留给任务本身的工作空间" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="280" y="308">working space for the actual task</text>
+<!-- rent arrow -->
+<path d="M445 155 C500 155 520 200 540 240" fill="none" marker-end="url(#arrB1)" stroke="var(--text-tertiary)" stroke-width="1.3" stroke-dasharray="4,3"></path>
+<text data-en="rent," fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="545" y="180">rent</text>
+<text data-en="paid per" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="545" y="196">paid per</text>
+<text data-en="step" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="545" y="212">step</text>
+<text data-en="× every token" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="545" y="228">× every token</text>
+<text data-en="generated" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="545" y="244">generated</text>
+<text data-en="97k tokens of residents before the task begins." data-zh="任务还没开始，驻留内容已达 9.7 万 token。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="354">97k tokens of residents before the task begins.</text>
+</svg>
+<p class="diagram-caption" data-en="A typical long-run ledger. Fixed residents — the system prompt and every tool schema — pay rent on every forward pass whether or not they are used. Discretionary residents — retrieved documents and raw tool results — accumulate over the run and never leave. What remains for the actual work of the task is the residue. The window was never the constraint. The ledger was." data-zh="一张典型的长运行账本。固定驻留者——系统提示和全部工具 schema——无论是否被用到，都在每个前向传播里付租金。可支配驻留者——检索来的文档和原始的工具结果——随运行不断累积，且从不离开。留给任务真正要做的事的，只是残余。窗口从来不是约束。账本才是。">A typical long-run ledger. Fixed residents pay rent on every forward pass whether or not they are used. Discretionary residents accumulate over the run and never leave. What remains for the actual work of the task is the residue. The window was never the constraint. The ledger was.</p>
+</div>
+<h3 data-en="Fixed costs crowd out the work" data-zh="固定成本会挤掉真正的工作">Fixed costs crowd out the work</h3>
+<p data-en="The first discipline is to notice how much of the ledger is fixed, and how little scrutiny those fixed costs receive. The system prompt is the most-read document in the entire system — re-hearsed on every step of every run — and in most codebases it is the least-tested artifact, edited casually, grown by accretion, paragraphs answering incidents from months ago. Tool schemas are worse, because they multiply. Every tool added to the harness ships its full JSON definition into every future call, and the cost is paid by every task, including the thousands of tasks that never touch that tool. A harness with forty tools where the median task uses three is carrying a permanent tax of thirty-seven irrelevant passengers. The fix is not fewer capabilities — it is tiered residency: a minimal core of always-present tools, with the rest loaded on demand, discovered through a catalog tool, mounted only for the steps that need them. Tools become pages brought in on fault, not resident libraries." data-zh="第一条纪律，是看清账本里有多少是固定成本，而这些固定成本受到的审查又何其之少。系统提示是整个系统里被阅读次数最多的文档——每一次运行的每一个步都在重演它——而在大多数代码库里，它却是测试最少的产物：随手编辑、只增不减、一段又一段地回应几个月前的事故。工具 schema 更糟，因为它们会繁殖。每个加入测试架的工具，都把完整的 JSON 定义塞进之后每一次调用，而这笔成本由所有任务共同承担，包括那几千个从未碰过这个工具的任务。一个有四十个工具的测试架，如果任务中位数只用三个，就永久背负着三十七个无关乘客的税。修复的方法不是减少能力——而是分级驻留：一个始终在场的最小核心工具集，其余按需加载、通过一个目录工具被发现、只在实际需要的步骤里挂载。工具变成缺页时才调入的页面，而不是常驻的库。">The first discipline is to notice how much of the ledger is fixed, and how little scrutiny those fixed costs receive. The system prompt is the most-read document in the entire system and the least-tested artifact. Tool schemas are worse, because they multiply. A harness with forty tools where the median task uses three is carrying a permanent tax of thirty-seven irrelevant passengers. The fix is not fewer capabilities — it is tiered residency. Tools become pages brought in on fault, not resident libraries.</p>
+<blockquote data-en="A token in context is not stored, it is rehearsed. Storage is paid once; rehearsal is paid per performance, and the model performs at every step. Budget accordingly: anything that rides along for a thousand steps must justify itself a thousand times, not once." data-zh="上下文里的 token 不是被存储，而是被排演。存储只付一次；排演每上演一次就付一次，而模型每一步都在上演。请据此做预算：任何随行一千步的东西，必须证明自己一千次，而不是一次。">A token in context is not stored, it is rehearsed. Storage is paid once; rehearsal is paid per performance, and the model performs at every step. Budget accordingly: anything that rides along for a thousand steps must justify itself a thousand times, not once.</blockquote>
+<h3 data-en="Eviction is a policy, not an accident" data-zh="逐出是策略，不是意外">Eviction is a policy, not an accident</h3>
+<p data-en="The discretionary side of the ledger — documents, results, history — is where runs die. The default eviction policy in most agent frameworks is, astonishingly, none: everything stays until the window fills, then something crude happens — oldest-first truncation, a hard clip, or an error. Oldest-first is the worst sensible policy, because in an agent run the oldest tokens are often the most load-bearing: the original task statement, the plan, the constraints the user stated once and never repeated. Clipping history from the front is evicting the lease while keeping the furniture. What belongs in context at any moment is a question with a real answer, and the answer changes as the run progresses. Early: task, plan, constraints — full fidelity. Middle: decisions taken, invariants established, results condensed. Late: invariants, the current sub-goal, and a short path back to anything important. A serious harness treats this as an explicit eviction policy with named tiers: pinned (never evicted — task, constraints, plan), summarized (condensed on a schedule — history, exploration), and volatile (evicted at the earliest boundary — raw tool output, intermediate scratch)." data-zh="账本里可支配的那一侧——文档、结果、历史——正是运行死亡的地方。大多数智能体框架的默认逐出策略，令人惊讶地，是「没有」：一切原地不动，直到窗口填满，然后某个粗暴的事情发生——最旧的先截断、硬裁剪、或者直接报错。最旧先逐出是最糟的合理策略，因为在智能体运行里，最旧的 token 往往是承重墙：最初的任务陈述、计划、用户只说过一次便再未重复的约束。从头部裁剪历史，等于保留家具、退掉租约。任一时刻什么应该留在上下文里，是一个有真实答案的问题，而且答案随运行推进而变化。早期：任务、计划、约束——全保真。中期：已做的决策、已确立的不变量、压缩后的结果。后期：不变量、当前子目标、以及一条能回到任何重要内容的短路径。一个严肃的测试架把这当作显式的逐出策略，且有命名的层级：钉住（永不逐出——任务、约束、计划）、摘要化（按计划压缩——历史、探索过程）、易失（在最早的边界逐出——原始工具输出、中间草稿）。">The discretionary side of the ledger — documents, results, history — is where runs die. The default eviction policy in most agent frameworks is, astonishingly, none. Oldest-first is the worst sensible policy, because in an agent run the oldest tokens are often the most load-bearing. Clipping history from the front is evicting the lease while keeping the furniture. A serious harness treats eviction as an explicit policy with named tiers: pinned, summarized, and volatile.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrE1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THREE EVICTION POLICIES, ONE LONG RUN" data-zh="三种逐出策略，同一场长运行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THREE EVICTION POLICIES, ONE LONG RUN</text>
+<!-- axis -->
+<line stroke="var(--border)" stroke-width="1" x1="60" x2="60" y1="50" y2="300"></line>
+<line marker-end="url(#arrE1)" stroke="var(--border)" stroke-width="1" x1="60" x2="580" y1="300" y2="300"></line>
+<text data-en="run progress →" data-zh="运行推进 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="320" y="318">run progress →</text>
+<text data-en="context load" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" transform="rotate(-90)" text-anchor="middle" x="-175" y="46">context load</text>
+<!-- policy 1: never evict -->
+<text data-en="① NEVER EVICT" data-zh="① 从不逐出" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" x="90" y="66">① NEVER EVICT</text>
+<path d="M90 280 L200 240 L300 200 L400 150 L480 90 L520 60" fill="none" stroke="var(--accent-3)" stroke-width="2"></path>
+<circle cx="520" cy="60" fill="var(--accent-3)" r="4"></circle>
+<text data-en="hits the ceiling" data-zh="撞上天花板" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="500" y="50">hits the ceiling</text>
+<line stroke="var(--accent-3)" stroke-dasharray="3,4" stroke-width="1" x1="90" x2="520" y1="60" y2="60"></line>
+<!-- policy 2: FIFO clip -->
+<text data-en="② CLIP OLDEST-FIRST" data-zh="② 最旧先裁剪" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" x="90" y="146">② CLIP OLDEST-FIRST</text>
+<path d="M90 240 L180 200 L180 260 L280 215 L280 268 L380 220 L380 270 L480 222" fill="none" stroke="var(--accent-2)" stroke-width="2"></path>
+<text data-en="load stays flat," data-zh="负载持平，" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="440" y="200">load stays flat,</text>
+<text data-en="but the task drifts" data-zh="任务却在漂移" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="440" y="214">but the task drifts</text>
+<!-- policy 3: tiered eviction -->
+<text data-en="③ TIERED: PIN · SUMMARIZE · EVICT" data-zh="③ 分级：钉住 · 摘要 · 逐出" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" x="90" y="226">③ TIERED: PIN · SUMMARIZE · EVICT</text>
+<path d="M90 260 L150 170 L200 210 L260 160 L320 200 L380 158 L440 196 L500 156" fill="none" stroke="var(--accent)" stroke-width="2"></path>
+<text data-en="sawtooth of compaction —" data-zh="压缩的锯齿——" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="400" y="140">sawtooth of compaction —</text>
+<text data-en="invariants never evicted" data-zh="不变量永不逐出" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" x="400" y="154">invariants never evicted</text>
+<!-- verdicts -->
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1" width="150" x="90" y="96"></rect>
+<text data-en="✗ window-full crash" data-zh="✗ 窗口满崩溃" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="165" y="115">✗ window-full crash</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-2)" stroke-width="1" width="170" x="90" y="176"></rect>
+<text data-en="✗ forgets its own task" data-zh="✗ 忘记自己的任务" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="175" y="195">✗ forgets its own task</text>
+<rect fill="var(--accent-dim)" height="30" rx="6" stroke="var(--accent)" stroke-width="1.5" width="170" x="90" y="256"></rect>
+<text data-en="✓ runs for days" data-zh="✓ 连续运行数天" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="175" y="275">✓ runs for days</text>
+</svg>
+<p class="diagram-caption" data-en="One long run under three policies. Never-evicting grows until the run hits the ceiling and dies. Oldest-first clipping keeps the load flat but amputates the task statement and the plan — the agent keeps working, on the wrong problem. Tiered eviction produces the compaction sawtooth: load rises, summary collapses it, pinned invariants survive every collapse. Only the third shape reaches hour forty still knowing what it is for." data-zh="同一场长运行，三种策略。从不逐出：一路增长，直到撞上天花板，运行死亡。最旧先裁剪：负载保持平坦，却截掉了任务陈述和计划——智能体继续工作，只是在错误的问题上。分级逐出产生压缩锯齿：负载上升，摘要将其折叠，钉住的不变量在每次折叠中幸存。只有第三种形状，能在第四十个小时仍然知道自己是为了什么而来。">One long run under three policies. Never-evicting grows until the run hits the ceiling and dies. Oldest-first clipping keeps the load flat but amputates the task statement and the plan — the agent keeps working, on the wrong problem. Tiered eviction produces the compaction sawtooth: load rises, summary collapses it, pinned invariants survive every collapse. Only the third shape reaches hour forty still knowing what it is for.</p>
+</div>
+<h3 data-en="Compaction is amortization — carry invariants, not narrative" data-zh="压缩是摊销——携带不变量，而非叙事">Compaction is amortization — carry invariants, not narrative</h3>
+<p data-en="When history is summarized, something is always lost, so the design question is not whether to lose information but which information. Bad compaction compresses narrative: a chronological story of what happened, step by step, losing fidelity uniformly. Good compaction compresses like a closing accountant: the ledger is closed, the balances are carried forward. What survives is not the story of the exploration but its settled facts — decisions taken and their reasons, constraints discovered (a file that must not be edited, an API that paginates strangely, a user preference surfaced mid-run), results established and their confidence, and the current plan with its next step. Everything else — the raw traces, the dead ends, the full text of every document read — is amortized to zero. This is what separates a compacted context from a lossy one: the run can afford to forget how it knows, as long as it never forgets what it knows. Teams should audit compaction the way finance audits closing entries: after each summary, check that every invariant survived the collapse. If a constraint can be silently lost by compaction, the agent will eventually violate it — not because the model was weak, but because the budget office shredded the contract." data-zh="当历史被摘要化，总有东西会丢失，所以设计问题不是要不要丢信息，而是丢哪些信息。糟糕的压缩压的是叙事：一步一步、按时间顺序讲一遍发生了什么故事，保真度均匀地流失。好的压缩像结账的会计：账本被关闭，余额被结转。幸存下来的不是探索的故事，而是已确定的事实——已做出的决策及其理由、已发现的约束（一个绝不能改的文件、一个分页行为诡异的 API、运行中途浮现的用户偏好）、已确立的结果及其置信度、以及带着下一步的当前计划。其余的一切——原始追踪、走过的死胡同、每一篇读过的文档全文——都被摊销归零。这就是压缩后的上下文与有损上下文的区别：运行可以负担得起忘记「自己是怎么知道的」，前提是它永远不忘记「自己知道什么」。团队应当像财务审计结账分录那样审计压缩：每次摘要之后，检查每一条不变量是否在折叠中幸存。如果一条约束可能被压缩悄悄丢掉，智能体终将违反它——不是因为模型太弱，而是因为预算办公室把合同绞碎了。">When history is summarized, something is always lost, so the design question is not whether to lose information but which information. Bad compaction compresses narrative. Good compaction compresses like a closing accountant: the ledger is closed, the balances are carried forward. The run can afford to forget how it knows, as long as it never forgets what it knows. Teams should audit compaction the way finance audits closing entries: after each summary, check that every invariant survived the collapse.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrC2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE COMPACTION PIPELINE" data-zh="压缩流水线" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE COMPACTION PIPELINE</text>
+<!-- raw history -->
+<rect fill="var(--bg-surface)" height="88" rx="9" stroke="var(--accent-3)" stroke-width="1.5" width="130" x="40" y="80"></rect>
+<text data-en="raw history" data-zh="原始历史" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="105" y="104">raw history</text>
+<text data-en="80k tokens" data-zh="8 万 token" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="105" y="122">80k tokens</text>
+<text data-en="every step, every" data-zh="每一步、每个" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="105" y="142">every step, every</text>
+<text data-en="doc, every dead end" data-zh="文档、每条死胡同" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="105" y="156">doc, every dead end</text>
+<path d="M170 124 L218 124" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<!-- filter: what survives -->
+<rect fill="var(--bg-surface)" height="150" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="222" y="50"></rect>
+<text data-en="WHAT SURVIVES" data-zh="什么幸存" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="297" y="74">WHAT SURVIVES</text>
+<text data-en="✓ decisions + reasons" data-zh="✓ 决策与理由" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9.5" x="238" y="96">✓ decisions + reasons</text>
+<text data-en="✓ discovered constraints" data-zh="✓ 发现的约束" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9.5" x="238" y="114">✓ discovered constraints</text>
+<text data-en="✓ results + confidence" data-zh="✓ 结果与置信度" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9.5" x="238" y="132">✓ results + confidence</text>
+<text data-en="✓ plan + next step" data-zh="✓ 计划与下一步" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9.5" x="238" y="150">✓ plan + next step</text>
+<text data-en="✗ narrative of the work" data-zh="✗ 工作的叙事" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9.5" x="238" y="172">✗ narrative of the work</text>
+<text data-en="✗ raw documents" data-zh="✗ 原始文档" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9.5" x="238" y="190">✗ raw documents</text>
+<path d="M372 124 L420 124" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<!-- carried forward -->
+<rect fill="var(--accent-dim)" height="88" rx="9" stroke="var(--accent)" stroke-width="2" width="150" x="424" y="80"></rect>
+<text data-en="carried ledger" data-zh="结转的账本" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="499" y="104">carried ledger</text>
+<text data-en="6k tokens" data-zh="6 千 token" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="499" y="122">6k tokens</text>
+<text data-en="settled facts only," data-zh="只有已定事实，" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="499" y="142">settled facts only,</text>
+<text data-en="pinned &amp; audited" data-zh="钉住并审计" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="499" y="156">pinned &amp; audited</text>
+<!-- loss annotation -->
+<path d="M40 176 C120 210 180 230 222 208" fill="none" marker-end="url(#arrC2)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<text data-en="amortized to zero:" data-zh="摊销归零：" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" x="40" y="196">amortized to zero:</text>
+<text data-en="the how, not the what" data-zh="丢的是「怎么知道」，不是「知道什么」" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" x="40" y="212">the how, not the what</text>
+<!-- loop back -->
+<path d="M499 168 C499 250 320 260 180 240 C110 231 90 210 78 190" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="5,4"></path>
+<text data-en="the run continues on the carried ledger — compaction repeats at every threshold" data-zh="运行在结转的账本上继续——每个阈值处重复压缩" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="292">the run continues on the carried ledger — compaction repeats at every threshold</text>
+<text data-en="80k → 6k, and the run loses nothing it cannot re-derive." data-zh="从 8 万到 6 千，运行没有失去任何无法重新推导的东西。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="320">80k → 6k, and the run loses nothing it cannot re-derive.</text>
+</svg>
+<p class="diagram-caption" data-en="Compaction as closing the books. Raw history flows in; a filter separates settled facts from narrative; a small carried ledger flows out and the run continues on it. The loop repeats at every threshold. What is amortized to zero is the story of the work — how each fact was learned — never the facts themselves. A well-audited compaction is why an hour-forty agent still behaves like minute-one: it stopped paying rent on everything except what is true." data-zh="压缩，即结账。原始历史流入；一道滤网把已定事实与叙事分开；一小本结转的账本流出，运行在它之上继续。这个循环在每个阈值处重复。被摊销归零的，是工作的故事——每个事实是怎么知道的——而永远不是事实本身。一次审计良好的压缩，正是第四十小时的智能体仍然像第一分钟一样行事的原因：除了那些为真的东西，它不再为任何东西付租金。">Compaction as closing the books. Raw history flows in; a filter separates settled facts from narrative; a small carried ledger flows out and the run continues on it. What is amortized to zero is the story of the work — how each fact was learned — never the facts themselves. A well-audited compaction is why an hour-forty agent still behaves like minute-one.</p>
+</div>
+<h3 data-en="Run the budget like a budget" data-zh="像管理预算一样管理上下文">Run the budget like a budget</h3>
+<p data-en="None of this requires a new framework. It requires a posture change: context allocation is an engineering artifact with owners, reviews, and metrics — not ambient padding that grows by accident. Practically, three habits are enough to start. Instrument the ledger: log the composition of context at every step — pinned, summarized, volatile, free — so that a long run produces a chart of where its tokens went, the way a profiler shows where the milliseconds went. Review fixed costs on a schedule: every quarter, the system prompt and the resident tool set defend their residency, and anything that cannot justify its per-step rent is demoted to on-demand. Test compaction for invariant survival: before a summary policy ships, run the suite of known constraints through it and assert that every one is still present on the other side. These are not exotic practices; they are the ordinary disciplines of any system with a scarce, contended resource — brought to the one resource that modern engineering culture still treats as infinite. The window will keep getting bigger. It does not matter. Budgets are not about the size of the account; they are about the decision of what deserves to live in it. The teams that internalize this build agents that run for days on any window. The teams that do not build agents that fit in any window, briefly." data-zh="这些，没有一个需要新框架。它需要的是姿态的转变：上下文分配是一个有负责人、有评审、有指标的工程产物——不是随运行自然膨胀的背景填充物。实践中，三个习惯足以起步。为账本埋点：在每一步记录上下文的构成——钉住、摘要、易失、空闲——让一次长运行产出一幅「token 都去了哪里」的图表，如同 profiler 展示毫秒都去了哪里。定期评审固定成本：每个季度，系统提示和常驻工具集都要为自己的驻留权辩护，任何说不出每步租金理由的东西，都降级为按需加载。测试压缩的不变量幸存率：一个摘要策略上线前，把已知的约束清单穿过它，断言每一条都还出现在另一侧。这些都不是什么冷门技巧——它们是任何「资源稀缺且被争用」的系统早就有的寻常纪律，只是被带到了现代工程文化仍然当作无限的那一种资源面前。窗口会继续变大。这无所谓。预算从来不关乎账户的规模；它关乎「什么配活在里面」的决策。内化了这一点的团队，构建的智能体在任何窗口上都能连跑数天。没有内化的团队，构建的智能体在任何窗口里都待得短暂。">None of this requires a new framework. It requires a posture change: context allocation is an engineering artifact with owners, reviews, and metrics. Practically, three habits: instrument the ledger; review fixed costs on a schedule; test compaction for invariant survival. The window will keep getting bigger. It does not matter. Budgets are not about the size of the account; they are about the decision of what deserves to live in it. The teams that internalize this build agents that run for days on any window. The teams that do not build agents that fit in any window, briefly.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
