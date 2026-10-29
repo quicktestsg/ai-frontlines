@@ -34,6 +34,7 @@ import build_index
 # Leave empty [] to just rebuild from existing cache.
 NEW_TWEETS = [
 ]
+# (list cleared after each run — add new tweets here before running)
 
 
 

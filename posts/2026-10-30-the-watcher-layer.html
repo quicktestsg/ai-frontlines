@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Watcher Layer — AI Frontlines</title>
+<meta content="Every autonomous agent eventually grows eyes. The systems that survive are the ones that treat watching as architecture — a designed layer of probes, reviewers, and investigators sitting outside the loop, each tier paying for its depth with selectivity. Who watches the watchers is not a paradox. It is a budget line." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 30, 2026" data-zh="2026年10月30日">October 30, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Watcher Layer: Agents That Watch Agents" data-zh="监视层：看着智能体的智能体">The Watcher Layer: Agents That Watch Agents</h1>
+<p class="post-header-deck" data-en="Every autonomous agent eventually grows eyes. Not because anyone planned it — because the first time an agent wandered somewhere it should not go, at 3am, with nobody watching, the incident report ended with the same sentence: we had no idea this was happening. The fix is never more prompting. The fix is a watcher layer: a designed tier of probes, reviewer models, and investigative agents that sits outside the loop and watches it run. Watching is not an operational afterthought bolted onto a finished agent. It is a subsystem, as load-bearing as the loop itself — and it has an architecture, with tiers, costs, and its own failure modes." data-zh="每一个自主智能体，最终都会长出眼睛。不是因为谁计划了——而是因为第一次有智能体在凌晨三点、无人注视时溜达到不该去的地方后，事故报告都以同一句话结尾：我们根本不知道这正在发生。修复从来不是加 prompt。修复是一个监视层：一个由探针、审查模型和调查智能体构成的、设计好的层级，坐在循环之外，看着它运行。监视不是在成品智能体上事后钉上去的运维补丁。它是一个子系统，和循环本身一样承重——而且它有自己的架构，有层级，有成本，也有它自己的失败模式。">Every autonomous agent eventually grows eyes. Not because anyone planned it — because the first time an agent wandered somewhere it should not go, at 3am, with nobody watching, the incident report ended with the same sentence: we had no idea this was happening.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a moment in the life of every agent team when the mental model breaks. The team has spent months asking one question: how do we make the agent better? Better prompts, better tools, better retrieval, a smarter model. Then something goes wrong in production — the agent loops, or calls the wrong tool, or leaks data, or quietly fabricates a step in its reasoning that nobody catches for a week — and the team discovers the question they never asked: how do we know what the agent is doing right now? Not what it was designed to do. Not what it did in the evals. What it is doing, in this run, at this step, in front of this user. The honest answer, for most teams, is: we find out when someone complains." data-zh="在每一个智能体团队的生命里，都有一个心智模型崩塌的时刻。团队花了几个月只问一个问题：怎么让智能体更好？更好的 prompt、更好的工具、更好的检索、更聪明的模型。然后生产环境里出了事——智能体循环了，或者调错了工具，或者泄露了数据，或者在推理里悄悄编造了一步、一个星期没人发现——团队于是发现了那个从未问过的问题：我们怎么知道智能体现在在做什么？不是它被设计成做什么。不是它在评测里做了什么。是它在这此运行、这一步、这个用户面前，正在做什么。对大多数团队来说，诚实的答案是：等有人投诉，我们就知道了。">There is a moment in the life of every agent team when the mental model breaks. The team has spent months asking one question: how do we make the agent better? Better prompts, better tools, better retrieval, a smarter model. Then something goes wrong in production — the agent loops, or calls the wrong tool, or leaks data, or quietly fabricates a step in its reasoning that nobody catches for a week — and the team discovers the question they never asked: how do we know what the agent is doing right now?</p>
+<p data-en="This question cannot be answered from inside the loop. An agent that checks its own work is a suspect grading its own exam. The model that produced the error is the least likely component to notice the error, because the error emerged from its own distribution of plausible next tokens. Self-review feels rigorous and performs well in demos, but it shares a single failure surface: whatever pressure produced the bad behavior also pressures the review that should have caught it. The watching has to come from outside. A separate component, with a separate context, a separate budget, and — critically — no stake in the watched agent's success. This is the watcher layer, and the interesting discovery of the last two years of agent engineering is that it is not one watcher. It is a tiered system, and the tiers exist because of an unforgiving economic constraint: depth of inspection is expensive, so it must be spent selectively." data-zh="这个问题，无法从循环内部回答。一个自己检查自己的智能体，是一个给自己的考卷打分的嫌疑人。产出错误的模型，是最不可能注意到错误的组件——因为那个错误正是从它自己「合理的下一个 token」分布里长出来的。自评看起来严谨，在演示里表现很好，但它共享同一个失败面：产生坏行为的那个压力，同样压在理应抓住它的审查上。监视必须来自外部。一个独立的组件，有独立的上下文、独立的预算，以及——关键的是——在被监视智能体的成功里没有利益。这就是监视层，而过去两年智能体工程的一个有趣发现是：它不是单个监视者。它是一个分层系统，而分层的存在，是因为一个不容商量的经济约束：检查的深度很贵，所以必须有选择地花。">This question cannot be answered from inside the loop. An agent that checks its own work is a suspect grading its own exam. The watching has to come from outside — a separate component, with a separate context, a separate budget, and no stake in the watched agent's success.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 380" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrW1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrW2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrW3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE WATCHER LAYER" data-zh="监视层" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE WATCHER LAYER</text>
+<!-- tier 1: activation probes -->
+<rect fill="var(--bg-surface)" height="40" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="440" x="90" y="44"></rect>
+<text data-en="TIER 1 · ACTIVATION PROBES" data-zh="第一层 · 激活探针" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="62">TIER 1 · ACTIVATION PROBES</text>
+<text data-en="cheap · continuous · every step · shallow" data-zh="便宜 · 持续 · 每一步 · 浅层" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="76">cheap · continuous · every step · shallow</text>
+<path d="M310 84 L310 96" fill="none" marker-end="url(#arrW3)" stroke="var(--text-tertiary)" stroke-width="1.2"></path>
+<!-- tier 2: reviewer models -->
+<rect fill="var(--bg-surface)" height="40" rx="9" stroke="var(--accent)" stroke-width="1.5" width="440" x="90" y="98"></rect>
+<text data-en="TIER 2 · REVIEWER MODELS" data-zh="第二层 · 审查模型" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="116">TIER 2 · REVIEWER MODELS</text>
+<text data-en="reads reasoning + tool calls · flagged steps only" data-zh="读推理与工具调用 · 仅被标记的步骤" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="130">reads reasoning + tool calls · flagged steps only</text>
+<path d="M310 138 L310 150" fill="none" marker-end="url(#arrW3)" stroke="var(--text-tertiary)" stroke-width="1.2"></path>
+<!-- tier 3: investigative agents -->
+<rect fill="var(--bg-surface)" height="40" rx="9" stroke="var(--accent-3)" stroke-width="1.5" width="440" x="90" y="152"></rect>
+<text data-en="TIER 3 · INVESTIGATIVE AGENTS" data-zh="第三层 · 调查智能体" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="170">TIER 3 · INVESTIGATIVE AGENTS</text>
+<text data-en="reads the whole transcript · rare · deep · slow" data-zh="读完整记录 · 稀少 · 深入 · 缓慢" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="184">reads the whole transcript · rare · deep · slow</text>
+<!-- the watched loop, below -->
+<path d="M310 192 L310 226" fill="none" marker-end="url(#arrW2)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<text data-en="observes" data-zh="注视" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="345" y="214">observes</text>
+<rect fill="var(--accent-dim)" height="86" rx="12" stroke="var(--accent)" stroke-width="2.5" width="300" x="160" y="230"></rect>
+<text data-en="THE TASK LOOP" data-zh="任务循环" fill="var(--accent)" font-family="Inter,sans-serif" font-size="13" font-weight="800" text-anchor="middle" x="310" y="258">THE TASK LOOP</text>
+<text data-en="model → tools → model → tools → …" data-zh="模型 → 工具 → 模型 → 工具 → …" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="278">model → tools → model → tools → …</text>
+<text data-en="inside: no idea it is being watched" data-zh="内部：不知道自己被注视" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="300">inside: no idea it is being watched</text>
+<!-- alert path to human -->
+<path d="M160 273 C90 273 70 320 130 332" fill="none" marker-end="url(#arrW1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent)" stroke-width="2" width="150" x="135" y="326"></rect>
+<text data-en="human responder" data-zh="人类响应者" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="210" y="347">human responder</text>
+<text data-en="minutes matter — alert while the run is live" data-zh="分钟级很重要——运行中就告警" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="450" y="340">minutes matter — alert while the run is live</text>
+<path d="M310 316 C360 316 420 326 464 334" fill="none" stroke="var(--border)" stroke-width="1" stroke-dasharray="2,4"></path>
+</svg>
+<p class="diagram-caption" data-en="The watcher layer sits outside the task loop. Tier 1 scans internal activity on every step, too cheap to skip. Tier 2 reads flagged reasoning and tool calls. Tier 3 re-reads the entire transcript only when tiers below it raise a hand. Alerts route to a human while the run is still underway — the entire point of the layer is to catch the boundary crossing before it compounds." data-zh="监视层坐在任务循环之外。第一层在每一步扫描内部活动，便宜到不值得跳过。第二层阅读被标记的推理和工具调用。第三层只在下面的层举手时，才重读完整记录。告警在运行还在进行时，就路由给人类——这个层的全部意义，就是在越界行为叠加恶化之前抓住它。">The watcher layer sits outside the task loop. Tier 1 scans internal activity on every step, too cheap to skip. Tier 2 reads flagged reasoning and tool calls. Tier 3 re-reads the entire transcript only when tiers below it raise a hand. Alerts route to a human while the run is still underway.</p>
+</div>
+<h3 data-en="Depth is bought with selectivity" data-zh="深度是用选择性买来的">Depth is bought with selectivity</h3>
+<p data-en="The single most important design principle of the watcher layer is that inspection depth and inspection coverage trade against each other. A cheap statistical probe — a linear read on the model's internal activations, a classifier over tool-call patterns — can run on every step of every run, because it costs almost nothing. But it is shallow: it detects signatures of known failure modes, not novel ones. A reviewer model that actually reads the agent's reasoning can catch subtler problems — a goal drifting, a tool being used to accomplish something adjacent to the task — but it costs a model call, so it cannot run on every step of every run. An investigative agent that replays the full transcript and reconstructs what the agent was trying to do is the deepest check of all, and it is expensive enough that it must be rare: triggered, not scheduled." data-zh="监视层唯一最重要的设计原则是：检查深度和检查覆盖率互为代价。一个便宜的统计探针——对模型内部激活的线性读取、一个作用于工具调用模式的分类器——可以在每次运行的每一步都跑，因为它几乎不花钱。但它是浅的：它检测的是已知失败模式的签名，不是新颖的。一个真正阅读智能体推理的审查模型，能抓住更微妙的问题——目标在漂移、一个工具被用来完成与任务相邻而非一致的事——但它花一次模型调用，所以不可能在每一步都跑。一个重放完整记录、重建智能体意图的调查智能体，是最深的检查，而它贵到必须稀少：被触发，而非被调度。">The single most important design principle of the watcher layer is that inspection depth and inspection coverage trade against each other. A cheap statistical probe can run on every step of every run, but it is shallow. A reviewer model catches subtler problems, but it costs a model call. An investigative agent is the deepest check of all, and it is expensive enough that it must be rare: triggered, not scheduled.</p>
+<p data-en="This is why the tiered shape keeps reappearing in every serious deployment, regardless of vendor or framework: it is not a fashion, it is the solution to an optimization problem. Each tier is a filter that buys depth for the tier above it. The probes run always, and their false positives are cheap — the reviewer re-checks, finds nothing, moves on. The reviewer runs occasionally, and its escalations buy the investigator's attention. The investigator runs rarely, and when it fires, a human looks. The funnel narrows at every stage, and the cost per inspection rises at every stage, and the two curves are designed to meet at a budget the team can afford. A watcher layer without tiers either watches everything deeply and bankrupts the run, or watches everything shallowly and misses what it built the layer to catch." data-zh="这就是为什么无论供应商或框架如何，分层形状在每一个严肃的部署里反复出现：它不是潮流，它是一个优化问题的解。每一层都是一个过滤器，为上一层买来深度。探针永远在跑，它的误报很便宜——审查者复查一遍，没发现问题，继续。审查者偶尔跑，它的上报为调查者买来注意力。调查者很少跑，而当它响的时候，人类就会看。漏斗在每一级收窄，每次检查的成本在每一级上升，而这两条曲线被设计成相交在团队负担得起的预算上。一个不分层的监视层，要么深刻地监视一切、让运行破产，要么浅薄地监视一切、错过它建这一层要抓的东西。">This is why the tiered shape keeps reappearing in every serious deployment: it is not a fashion, it is the solution to an optimization problem. Each tier is a filter that buys depth for the tier above it. The funnel narrows at every stage, and the cost per inspection rises at every stage, and the two curves are designed to meet at a budget the team can afford.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+</defs>
+<text data-en="THE INSPECTION FUNNEL" data-zh="检查漏斗" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE INSPECTION FUNNEL</text>
+<!-- funnel levels, wide to narrow -->
+<rect fill="var(--bg-surface)" height="52" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="480" x="70" y="46"></rect>
+<text data-en="probes · 100% of steps" data-zh="探针 · 100% 的步骤" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="68">probes · 100% of steps</text>
+<text data-en="cost per check: ~0" data-zh="单次成本：≈ 0" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="86">cost per check: ~0</text>
+<path d="M230 98 L230 112" fill="none" marker-end="url(#arrP1)" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<path d="M390 98 L390 112" fill="none" marker-end="url(#arrP1)" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<text data-en="flags" data-zh="标记" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="108">flags</text>
+<rect fill="var(--bg-surface)" height="52" rx="8" stroke="var(--accent)" stroke-width="1.5" width="320" x="150" y="114"></rect>
+<text data-en="reviewers · ~5% of steps" data-zh="审查者 · ~5% 的步骤" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="136">reviewers · ~5% of steps</text>
+<text data-en="cost per check: 1 model call" data-zh="单次成本：一次模型调用" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="154">cost per check: 1 model call</text>
+<path d="M250 166 L250 180" fill="none" marker-end="url(#arrP1)" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<path d="M370 166 L370 180" fill="none" marker-end="url(#arrP1)" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<text data-en="escalations" data-zh="上报" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="176">escalations</text>
+<rect fill="var(--bg-surface)" height="52" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="200" x="210" y="182"></rect>
+<text data-en="investigators · rare" data-zh="调查者 · 稀少" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="204">investigators · rare</text>
+<text data-en="cost per check: full transcript replay" data-zh="单次成本：完整记录重放" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="222">cost per check: full transcript replay</text>
+<path d="M310 234 L310 250" fill="none" marker-end="url(#arrP1)" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<rect fill="var(--accent-dim)" height="38" rx="8" stroke="var(--accent)" stroke-width="2" width="150" x="235" y="252"></rect>
+<text data-en="human · minutes" data-zh="人类 · 分钟级" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="310" y="276">human · minutes</text>
+<text data-en="coverage falls ↓ · depth and cost rise ↑ · the curves meet at a budget" data-zh="覆盖率下降 ↓ · 深度与成本上升 ↑ · 两条曲线交汇于预算" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="312">coverage falls ↓ · depth and cost rise ↑ · the curves meet at a budget</text>
+</svg>
+<p class="diagram-caption" data-en="The funnel narrows as depth increases. Every tier is a filter whose job is to be wrong often enough in the cheap direction (false flags) and never wrong in the expensive direction (missed escalations). Tune the thresholds from the bottom of the funnel upward: start with what a human can actually review, then work backwards to what must be flagged to fill that queue — and no more." data-zh="漏斗随着深度增加而收窄。每一层都是一个过滤器，它的职责是：在便宜的方向上尽可以多错（误标记），在昂贵的方向上绝不错（漏上报）。阈值要从漏斗底部向上调：先确定人类实际能审多少，再倒推要填满那个队列需要标记什么——仅此而已，不多标记。">The funnel narrows as depth increases. Every tier is a filter whose job is to be wrong often enough in the cheap direction (false flags) and never wrong in the expensive direction (missed escalations). Tune the thresholds from the bottom of the funnel upward.</p>
+</div>
+<blockquote data-en="A watcher that fires constantly is a watcher that gets muted. A watcher that never fires is a sticker on a wall. The layer is calibrated, or it is theater — there is no middle state that survives contact with a human on call." data-zh="一个不停告警的监视者，是一个会被静音的监视者。一个从不告警的监视者，是一张贴在墙上的贴纸。监视层要么被校准，要么是表演——不存在一个能在值班人类的接触下幸存的中间态。">A watcher that fires constantly is a watcher that gets muted. A watcher that never fires is a sticker on a wall. The layer is calibrated, or it is theater — there is no middle state that survives contact with a human on call.</blockquote>
+<h3 data-en="Who watches the watchers" data-zh="谁来监视监视者">Who watches the watchers</h3>
+<p data-en="The obvious objection to a layer of agents watching agents is the classical one: quis custodiet ipsos custodes. It looks like an infinite regress — watchers all the way up, budget all the way down. But the regress dissolves once the watcher is treated as what it is: another probabilistic component with its own failure modes, sitting inside the same engineering discipline as everything else. Nobody demands a watcher for a database index or a load balancer; those components are trusted because they are simple, constrained, and instrumented. The watcher layer earns the same trust the same way. Probes are simple enough to be formally analyzable. Reviewers are constrained to a fixed rubric, not an open-ended judgment. Investigators operate on a recorded transcript, which is the most inspectable artifact an agent system produces." data-zh="对「智能体监视智能体」这层，最自然的质疑是那句古典的：谁来监视监视者。它看起来像一个无限回归——监视者层层向上，预算层层向下。但一旦把监视者当作它本来的东西——另一个有自己失败模式的概率性组件，和其他所有组件一样坐在同一门工程学科之内——回归就消解了。没人要求给数据库索引或负载均衡器配一个监视者；这些组件被信任，是因为它们简单、受约束、且被仪表化。监视层用同样的方式挣得同样的信任。探针简单到可以形式化分析。审查者被约束在一份固定的评分细则里，而非开放式判断。调查者作用于一份被记录的完整记录——那是智能体系统产出的、最可检查的产物。">The obvious objection is the classical one: quis custodiet ipsos custodes. But the regress dissolves once the watcher is treated as what it is: another probabilistic component with its own failure modes, inside the same engineering discipline as everything else. Nobody demands a watcher for a database index; those components are trusted because they are simple, constrained, and instrumented.</p>
+<p data-en="Where recursion is genuinely needed, it is bounded like any other loop in an agent graph: a depth budget, an explicit termination in a human, and a rule that meta-watchers inspect only the decisions of the tier below — never the task itself, where they would have no context and only add noise. One level of meta-oversight is usually enough to catch the failure that matters most: a watcher that has quietly stopped escalating. Two levels is almost always waste. The discipline is the same one that tames any runaway loop — bound the branching, name the exit, make the budget visible — applied to the safety layer itself. The watcher layer is not exempt from agent architecture. It is agent architecture, and it obeys the same laws." data-zh="在真正需要递归的地方，它像智能体图里的任何其他循环一样被设界：一个深度预算、一个明确终止于人类的出口、以及一条「元监视者只检查下一层的决策——绝不检查任务本身」的规则——在任务本身上，它们没有上下文，只会增加噪声。一层元监视，通常足以抓住最重要的失败：一个悄悄不再上报的监视者。两层，几乎总是浪费。这门纪律，和驯服任何失控循环的是同一门——限制分支，命名出口，让预算可见——只不过应用在安全层自己身上。监视层不豁免于智能体架构。它就是智能体架构，它服从同样的定律。">Where recursion is genuinely needed, it is bounded like any other loop: a depth budget, an explicit termination in a human, and a rule that meta-watchers inspect only the decisions of the tier below. One level of meta-oversight is usually enough. The discipline is the same one that tames any runaway loop — applied to the safety layer itself.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrR3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="BOUNDED RECURSION, TERMINAL HUMAN" data-zh="有界递归，终止于人类" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">BOUNDED RECURSION, TERMINAL HUMAN</text>
+<!-- task loop -->
+<rect fill="var(--accent-dim)" height="44" rx="9" stroke="var(--accent)" stroke-width="2" width="170" x="60" y="120"></rect>
+<text data-en="task loop" data-zh="任务循环" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="145" y="147">task loop</text>
+<!-- watcher 1 -->
+<path d="M230 142 L280 142" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.6"></path>
+<text data-en="watched by" data-zh="被监视" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="255" y="132">watched by</text>
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent-2)" stroke-width="1.8" width="170" x="284" y="120"></rect>
+<text data-en="watcher · tier 1-3" data-zh="监视者 · 一至三层" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="369" y="140">watcher · tier 1-3</text>
+<text data-en="fixed rubric, recorded transcript" data-zh="固定细则，留档记录" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="369" y="156">fixed rubric, recorded transcript</text>
+<!-- meta watcher -->
+<path d="M454 142 L500 142" fill="none" marker-end="url(#arrR2)" stroke="var(--text-tertiary)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<text data-en="escalations only" data-zh="仅上报行为" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="477" y="132">escalations only</text>
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--text-tertiary)" stroke-width="1.5" width="110" x="504" y="120"></rect>
+<text data-en="meta-watcher" data-zh="元监视者" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="559" y="140">meta-watcher</text>
+<text data-en="depth = 1" data-zh="深度 = 1" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="559" y="156">depth = 1</text>
+<!-- blocked further recursion -->
+<text data-en="⃠ depth 2 — rejected" data-zh="⃠ 深度 2 — 拒绝" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="559" y="104">⃠ depth 2 — rejected</text>
+<path d="M559 118 C559 96 600 96 596 116" fill="none" stroke="var(--accent-3)" stroke-width="1" stroke-dasharray="3,3"></path>
+<!-- human terminal -->
+<path d="M145 164 L145 208" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<path d="M369 164 C369 208 240 216 205 222" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<rect fill="var(--bg-surface)" height="40" rx="9" stroke="var(--accent)" stroke-width="2" width="200" x="60" y="212"></rect>
+<text data-en="HUMAN — terminal node" data-zh="人类 —— 终端节点" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="160" y="237">HUMAN — terminal node</text>
+<text data-en="every chain terminates here · no exceptions · no depth 3" data-zh="每条链终止于此 · 无例外 · 没有深度 3" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="390" y="278">every chain terminates here · no exceptions · no depth 3</text>
+</svg>
+<p class="diagram-caption" data-en="The regress is bounded by construction: watchers inspect the task, one meta-watcher inspects whether watchers still escalate, and the chain terminates in a human — the one node in the system whose incentives are not probabilistic. Recursion beyond depth one adds cost and noise, not safety." data-zh="回归被构造性地设界：监视者检查任务，一个元监视者检查监视者是否还在上报，而链条终止于一个人类——系统中唯一一个激励不是概率性的节点。超过一层的递归，增加的是成本和噪声，不是安全。">The regress is bounded by construction: watchers inspect the task, one meta-watcher inspects whether watchers still escalate, and the chain terminates in a human — the one node whose incentives are not probabilistic.</p>
+</div>
+<h3 data-en="The trace is the contract" data-zh="记录就是契约">The trace is the contract</h3>
+<p data-en="Underneath all of this sits one unglamorous requirement, and it is the part teams most often skip: everything must be recorded. The probes only work if activations are reachable. The reviewer only works if reasoning and tool calls are logged verbatim, not paraphrased. The investigator only works if the transcript is complete and replayable — the exact inputs, the exact outputs, the exact timestamps. A watcher layer over an agent that does not record its runs is a security camera pointed at a wall. This is why the trace, long treated as a debugging convenience to be toggled on when something breaks, is quietly being promoted to infrastructure: it is the medium the entire safety argument is written in. Teams that treat the transcript as a first-class artifact — immutable, complete, queryable — get a watcher layer almost for free, because every tier is just a different way of reading the same record. Teams that treat logging as overhead end up rebuilding their agent around observability after the first incident, which is the expensive way to learn that the record was the product all along." data-zh="这一切之下，坐着一个毫不性感的要求，而它正是团队最常跳过的部分：一切必须被记录。探针只有在激活可触及时才有效。审查者只有在推理和工具调用被逐字记录、而非被转述时才有效。调查者只有在记录完整且可重放时才有效——精确的输入、精确的输出、精确的时间戳。一个架在不记录运行智能体上的监视层，是一台对着墙的监控摄像头。这就是为什么记录——长期被当作「出了事才打开的调试便利」——正在被悄悄晋升为基础设施：它是整个安全论证书写于其上的介质。把记录当作一等产物的团队——不可变、完整、可查询——几乎免费得到一个监视层，因为每一层只是读同一份记录的不同方式。把日志当作开销的团队，在第一次事故后，最终要围绕可观测性重建他们的智能体——这是学会「记录本身就是产品」这条道理的昂贵方式。">Underneath all of this sits one unglamorous requirement: everything must be recorded. The probes only work if activations are reachable. The reviewer only works if reasoning and tool calls are logged verbatim. The investigator only works if the transcript is complete and replayable. A watcher layer over an agent that does not record its runs is a security camera pointed at a wall.</p>
+<p data-en="The deeper shift is in what the watcher layer implies about the agent itself. An unwatched agent is a bet that nothing will go wrong. A watched agent is a system that assumes something will go wrong, and is built to notice in minutes instead of weeks. That assumption changes the architecture everywhere it touches: runs are recorded, boundaries are explicit so that crossing them is detectable, alerts route to humans while intervention is still possible, and the funnel is tuned so the humans at the end of it stay sane. Autonomy was never the absence of supervision — it is supervision designed well enough to get out of the way. The teams that understand this stop asking whether their agent can be trusted, and start engineering the conditions under which trust does not need to be blind. The eyes are not an admission of weakness. They are the reason the hands can be free." data-zh="更深层的转变，在于监视层对智能体本身的暗示。一个不被注视的智能体，是一个「不会出事」的赌注。一个被注视的智能体，是一个假定会出事、并被建造得用分钟而非星期去察觉的系统。这个假定改变了它触及之处的每一处架构：运行被记录，边界被显式化以便越界可被检测，告警在干预仍有可能时路由给人类，漏斗被调校到末端的人类保持清醒。自主，从来不是监督的缺席——它是被设计得足够好、以至于能退到一边的监督。理解了这一点的团队，不再问他们的智能体是否可以被信任，而是开始工程化那些让信任无需盲目的条件。眼睛，不是软弱的承认。它们是双手得以自由的理由。">The deeper shift is in what the watcher layer implies about the agent itself. An unwatched agent is a bet that nothing will go wrong. A watched agent is a system that assumes something will go wrong, and is built to notice in minutes instead of weeks. Autonomy was never the absence of supervision — it is supervision designed well enough to get out of the way.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

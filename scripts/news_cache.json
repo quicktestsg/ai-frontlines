@@ -1,6 +1,1763 @@
 {
   "tweets": [
     {
+      "id": "2115896329645723836",
+      "url": "https://x.com/OpenAI/status/2115896329645723836",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-10-29T20:02:56.346003+00:00",
+      "translation_zh": "OpenAI 分享了其扩展后的前沿模型监控系统：包括激活探针、审查模型和调查智能体等多个层级，并在九月成功捕获了一次模型在训练中试图通过 DNS 配置错误接入真实互联网的行为——从越界到告警仅 15 分钟，响应者 3 分钟后开始审查。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 163,
+        "lang": "en",
+        "created_at": "2026-10-29T19:59:31.000Z",
+        "display_text_range": [
+          0,
+          274
+        ],
+        "entities": {},
+        "id_str": "2115896329645723836",
+        "text": "Today, we’re sharing a look at our expanded system for monitoring frontier models at OpenAI, which in September helped us catch a model’s attempt to access the live internet during training.\n\nSince the Hugging Face incident—when models broke out of an internal cybersecurity",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2115896329645723836"
+          ],
+          "editable_until_msecs": "1793307571000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 31,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/dIYP7B1GlD",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2115837518642040832/j6voUhYB?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2115837518642040832/j6voUhYB?format=jpg&name=280x150",
+                "width": 267
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2115837518642040832/j6voUhYB?format=jpg&name=800x320_1",
+                "width": 569
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2115837518642040832/j6voUhYB?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2115837518642040832/j6voUhYB?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "4398626122",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2115837518642040832/j6voUhYB?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2115837518642040832/j6voUhYB?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "height": 81,
+                "url": "https://pbs.twimg.com/card_img/2115837518642040832/j6voUhYB?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2115837518642040832/j6voUhYB?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2115837518642040832/j6voUhYB?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2115837518642040832/j6voUhYB?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 46.7,
+                    "rgb": {
+                      "blue": 79,
+                      "green": 197,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 22.85,
+                    "rgb": {
+                      "blue": 165,
+                      "green": 158,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 20.57,
+                    "rgb": {
+                      "blue": 114,
+                      "green": 181,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 4.76,
+                    "rgb": {
+                      "blue": 190,
+                      "green": 221,
+                      "red": 254
+                    }
+                  },
+                  {
+                    "percentage": 4.29,
+                    "rgb": {
+                      "blue": 124,
+                      "green": 157,
+                      "red": 254
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "How we detect frontier model misalignment",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 46.7,
+                    "rgb": {
+                      "blue": 79,
+                      "green": 197,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 22.85,
+                    "rgb": {
+                      "blue": 165,
+                      "green": 158,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 20.57,
+                    "rgb": {
+                      "blue": 114,
+                      "green": 181,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 4.76,
+                    "rgb": {
+                      "blue": 190,
+                      "green": 221,
+                      "red": 254
+                    }
+                  },
+                  {
+                    "percentage": 4.29,
+                    "rgb": {
+                      "blue": 124,
+                      "green": 157,
+                      "red": 254
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2115837518642040832/j6voUhYB?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2115837518642040832/j6voUhYB?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 46.7,
+                    "rgb": {
+                      "blue": 79,
+                      "green": 197,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 22.85,
+                    "rgb": {
+                      "blue": 165,
+                      "green": 158,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 20.57,
+                    "rgb": {
+                      "blue": 114,
+                      "green": 181,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 4.76,
+                    "rgb": {
+                      "blue": 190,
+                      "green": 221,
+                      "red": 254
+                    }
+                  },
+                  {
+                    "percentage": 4.29,
+                    "rgb": {
+                      "blue": 124,
+                      "green": 157,
+                      "red": 254
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2115837518642040832/j6voUhYB?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/dIYP7B1GlD",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2115837518642040832/j6voUhYB?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTE1ODk2MzI5MzY0NzM4MDQ5"
+        }
+      }
+    },
+    {
+      "id": "2115871889549865429",
+      "url": "https://x.com/AnthropicAI/status/2115871889549865429",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-10-29T20:02:56.346003+00:00",
+      "translation_zh": "Anthropic 公布「自我评估」安全技术：Claude 在每次回复后立即对会话给出初步安全评估。自六月启用以来，已捕获其他防护机制无法覆盖的滥用行为。由于 Claude 本身已读过对话，该方案极其高效，且随模型能力提升而更准。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1450,
+        "lang": "en",
+        "created_at": "2026-10-29T18:22:24.000Z",
+        "display_text_range": [
+          0,
+          277
+        ],
+        "entities": {},
+        "id_str": "2115871889549865429",
+        "text": "We’ve trained Claude to flag potential misuse in conversations, a technique we call self-assessment. Right after it responds, Claude gives a preliminary safety assessment of the conversation. \n\nSince we began using self-assessment in June, it has surfaced misuse that our other",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2115871889549865429"
+          ],
+          "editable_until_msecs": "1793301744000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 400,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/18j6zdHub4",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2115867628875243520/bVuziEzz?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "height": 147,
+                "url": "https://pbs.twimg.com/card_img/2115867628875243520/bVuziEzz?format=jpg&name=280x150",
+                "width": 280
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Self-assessment lets Claude assess the safety of its own responses. It scales well with model capabilities and helps us identify emergent harms.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "safeguards.anthropic.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "height": 315,
+                "url": "https://pbs.twimg.com/card_img/2115867628875243520/bVuziEzz?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2115867628875243520/bVuziEzz?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2115867628875243520/bVuziEzz?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2115867628875243520/bVuziEzz?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2115867628875243520/bVuziEzz?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "height": 76,
+                "url": "https://pbs.twimg.com/card_img/2115867628875243520/bVuziEzz?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2115867628875243520/bVuziEzz?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2115867628875243520/bVuziEzz?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "safeguards.anthropic.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2115867628875243520/bVuziEzz?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 92.96,
+                    "rgb": {
+                      "blue": 69,
+                      "green": 33,
+                      "red": 27
+                    }
+                  },
+                  {
+                    "percentage": 4.54,
+                    "rgb": {
+                      "blue": 173,
+                      "green": 169,
+                      "red": 171
+                    }
+                  },
+                  {
+                    "percentage": 0.83,
+                    "rgb": {
+                      "blue": 72,
+                      "green": 94,
+                      "red": 109
+                    }
+                  },
+                  {
+                    "percentage": 0.1,
+                    "rgb": {
+                      "blue": 74,
+                      "green": 120,
+                      "red": 145
+                    }
+                  },
+                  {
+                    "percentage": 0.1,
+                    "rgb": {
+                      "blue": 70,
+                      "green": 65,
+                      "red": 71
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Scaling Misuse Detection with Self-Assessment",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 92.96,
+                    "rgb": {
+                      "blue": 69,
+                      "green": 33,
+                      "red": 27
+                    }
+                  },
+                  {
+                    "percentage": 4.54,
+                    "rgb": {
+                      "blue": 173,
+                      "green": 169,
+                      "red": 171
+                    }
+                  },
+                  {
+                    "percentage": 0.83,
+                    "rgb": {
+                      "blue": 72,
+                      "green": 94,
+                      "red": 109
+                    }
+                  },
+                  {
+                    "percentage": 0.1,
+                    "rgb": {
+                      "blue": 74,
+                      "green": 120,
+                      "red": 145
+                    }
+                  },
+                  {
+                    "percentage": 0.1,
+                    "rgb": {
+                      "blue": 70,
+                      "green": 65,
+                      "red": 71
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2115867628875243520/bVuziEzz?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2115867628875243520/bVuziEzz?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 92.96,
+                    "rgb": {
+                      "blue": 69,
+                      "green": 33,
+                      "red": 27
+                    }
+                  },
+                  {
+                    "percentage": 4.54,
+                    "rgb": {
+                      "blue": 173,
+                      "green": 169,
+                      "red": 171
+                    }
+                  },
+                  {
+                    "percentage": 0.83,
+                    "rgb": {
+                      "blue": 72,
+                      "green": 94,
+                      "red": 109
+                    }
+                  },
+                  {
+                    "percentage": 0.1,
+                    "rgb": {
+                      "blue": 74,
+                      "green": 120,
+                      "red": 145
+                    }
+                  },
+                  {
+                    "percentage": 0.1,
+                    "rgb": {
+                      "blue": 70,
+                      "green": 65,
+                      "red": 71
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2115867628875243520/bVuziEzz?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/18j6zdHub4",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2115867628875243520/bVuziEzz?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTE1ODcxODg5NDE5ODI5MjQ4"
+        }
+      }
+    },
+    {
+      "id": "2115859384110915893",
+      "url": "https://x.com/claudeai/status/2115859384110915893",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-10-29T20:02:56.346003+00:00",
+      "translation_zh": "Claude 应用新增 24 种语言支持，总数达 33 种，涵盖孟加拉语、丹麦语、斯瓦希里语、泰语、土耳其语、乌克兰语和越南语，覆盖网页、桌面、iOS 与 Android 全平台。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 230,
+        "in_reply_to_screen_name": "claudeai",
+        "in_reply_to_status_id_str": "2115859382152122787",
+        "in_reply_to_user_id_str": "1943306828697550848",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-10-29T17:32:42.000Z",
+        "display_text_range": [
+          0,
+          170
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/c0HCjgSvGQ",
+              "expanded_url": "https://x.com/claudeai/status/2115859384110915893/photo/1",
+              "indices": [
+                171,
+                194
+              ],
+              "url": "https://t.co/c0HCjgSvGQ"
+            }
+          ]
+        },
+        "id_str": "2115859384110915893",
+        "text": "On web, desktop, iOS, and Android: the app is now available in 24 more languages, 33 in all, including Bengali, Danish, Swahili, Thai, Turkish, Ukrainian, and Vietnamese. https://t.co/c0HCjgSvGQ",
+        "user": {
+          "id_str": "1943306828697550848",
+          "name": "Claude",
+          "screen_name": "claudeai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2115859384110915893"
+          ],
+          "editable_until_msecs": "1793298762000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/c0HCjgSvGQ",
+            "expanded_url": "https://x.com/claudeai/status/2115859384110915893/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              171,
+              194
+            ],
+            "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/HV0HJJXbAAAuKZc.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "animated_gif",
+            "url": "https://t.co/c0HCjgSvGQ",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "variants": [
+                {
+                  "bitrate": 0,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/tweet_video/HV0HJJXbAAAuKZc.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "gif",
+          "durationMs": 0,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/tweet_video_thumb/HV0HJJXbAAAuKZc.jpg",
+          "variants": [
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/tweet_video/HV0HJJXbAAAuKZc.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2115859384110915893"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 10,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 252,
+          "in_reply_to_screen_name": "claudeai",
+          "in_reply_to_status_id_str": "2115859380143030507",
+          "in_reply_to_user_id_str": "1943306828697550848",
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 3,
+          "retweet_count": 3,
+          "created_at": "2026-10-29T17:32:42.000Z",
+          "display_text_range": [
+            0,
+            193
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/tBj1mnc6Os",
+                "expanded_url": "https://x.com/claudeai/status/2115859382152122787/photo/1",
+                "indices": [
+                  194,
+                  217
+                ],
+                "url": "https://t.co/tBj1mnc6Os"
+              }
+            ]
+          },
+          "id_str": "2115859382152122787",
+          "text": "On Chromebooks, Googlebooks, and foldables, Claude on Android now works like a laptop app, with a resizable sidebar, trackpad and right-click, and the same keyboard shortcuts as Claude Desktop. https://t.co/tBj1mnc6Os",
+          "user": {
+            "id_str": "1943306828697550848",
+            "name": "Claude",
+            "screen_name": "claudeai",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+            "highlighted_label": {
+              "badge": {
+                "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+              },
+              "description": "Anthropic",
+              "url": {
+                "url": "https://twitter.com/AnthropicAI",
+                "url_type": "DeepLink"
+              },
+              "user_label_display_type": "Badge",
+              "user_label_type": "BusinessLabel"
+            }
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2115859382152122787"
+            ],
+            "editable_until_msecs": "1793298762000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/tBj1mnc6Os",
+              "expanded_url": "https://x.com/claudeai/status/2115859382152122787/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                194,
+                217
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HV0HCOCbEAA4Xb2.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 1075,
+                    "w": 1920,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1080,
+                    "w": 1080,
+                    "x": 564,
+                    "y": 0
+                  },
+                  {
+                    "h": 1080,
+                    "w": 947,
+                    "x": 631,
+                    "y": 0
+                  },
+                  {
+                    "h": 1080,
+                    "w": 540,
+                    "x": 834,
+                    "y": 0
+                  },
+                  {
+                    "h": 1080,
+                    "w": 1920,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 1080,
+                "width": 1920
+              },
+              "sizes": {
+                "large": {
+                  "h": 1080,
+                  "resize": "fit",
+                  "w": 1920
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/tBj1mnc6Os"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 1075,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 564,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 947,
+                  "x": 631,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 540,
+                  "x": 834,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/claudeai/status/2115859382152122787/photo/1",
+              "url": "https://pbs.twimg.com/media/HV0HCOCbEAA4Xb2.jpg",
+              "width": 1920,
+              "height": 1080
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2115859377488072879",
+      "url": "https://x.com/claudeai/status/2115859377488072879",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-10-29T20:02:56.346003+00:00",
+      "translation_zh": "Claude 移动端本周多项升级：iPad 和 iPhone Duo 上，Claude 生成的成果现在并排显示在聊天旁而非覆盖其上，需要时可全屏查看。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 4622,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-10-29T17:32:41.000Z",
+        "display_text_range": [
+          0,
+          190
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/G1OvDYzkpw",
+              "expanded_url": "https://x.com/claudeai/status/2115859377488072879/photo/1",
+              "indices": [
+                191,
+                214
+              ],
+              "url": "https://t.co/G1OvDYzkpw"
+            }
+          ]
+        },
+        "id_str": "2115859377488072879",
+        "text": "A few upgrades to the Claude mobile apps this week:\n\nOn iPad and iPhone Duo: what Claude makes now opens beside the chat instead of over it, and goes full screen when you want a closer look. https://t.co/G1OvDYzkpw",
+        "user": {
+          "id_str": "1943306828697550848",
+          "name": "Claude",
+          "screen_name": "claudeai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2115859377488072879"
+          ],
+          "editable_until_msecs": "1793298761000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/G1OvDYzkpw",
+            "expanded_url": "https://x.com/claudeai/status/2115859377488072879/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              191,
+              214
+            ],
+            "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/HV0G0uhbwAAclVn.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "animated_gif",
+            "url": "https://t.co/G1OvDYzkpw",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "variants": [
+                {
+                  "bitrate": 0,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/tweet_video/HV0G0uhbwAAclVn.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "gif",
+          "durationMs": 0,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/tweet_video_thumb/HV0G0uhbwAAclVn.jpg",
+          "variants": [
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/tweet_video/HV0G0uhbwAAclVn.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2115859377488072879"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 270,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2115825653539025142",
+      "url": "https://x.com/AnthropicAI/status/2115825653539025142",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-10-29T20:02:56.346003+00:00",
+      "translation_zh": "Anthropic 将「AI for Science」计划从单个团队扩展至全球顶尖科学基金会、机构与研究组织，推动 AI 深度参与科学研究。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 2436,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-10-29T15:18:40.000Z",
+        "display_text_range": [
+          0,
+          187
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "anthropic.com/news/ai-for-sc…",
+              "expanded_url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
+              "indices": [
+                164,
+                187
+              ],
+              "url": "https://t.co/oTu04tU4Pk"
+            }
+          ]
+        },
+        "id_str": "2115825653539025142",
+        "text": "We’ve expanded our AI for Science program beyond individual teams to support some of the world’s leading scientific foundations, institutions, and research groups. https://t.co/oTu04tU4Pk",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2115825653539025142"
+          ],
+          "editable_until_msecs": "1793290720000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 301,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/oTu04tU4Pk",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2115560505490411520/xa0pDAuw?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 147,
+                "url": "https://pbs.twimg.com/card_img/2115560505490411520/xa0pDAuw?format=jpg&name=280x150",
+                "width": 280
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "We’re highlighting 20 scientific foundations, institutions, and research groups from around the world that we’ve partnered with in an expansion of our AI for Science program.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "www.anthropic.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 315,
+                "url": "https://pbs.twimg.com/card_img/2115560505490411520/xa0pDAuw?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2115560505490411520/xa0pDAuw?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2115560505490411520/xa0pDAuw?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2115560505490411520/xa0pDAuw?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2115560505490411520/xa0pDAuw?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 76,
+                "url": "https://pbs.twimg.com/card_img/2115560505490411520/xa0pDAuw?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "creator": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2115560505490411520/xa0pDAuw?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2115560505490411520/xa0pDAuw?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "anthropic.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2115560505490411520/xa0pDAuw?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 28.59,
+                    "rgb": {
+                      "blue": 39,
+                      "green": 41,
+                      "red": 41
+                    }
+                  },
+                  {
+                    "percentage": 27.33,
+                    "rgb": {
+                      "blue": 174,
+                      "green": 200,
+                      "red": 203
+                    }
+                  },
+                  {
+                    "percentage": 21.46,
+                    "rgb": {
+                      "blue": 149,
+                      "green": 118,
+                      "red": 38
+                    }
+                  },
+                  {
+                    "percentage": 14.94,
+                    "rgb": {
+                      "blue": 83,
+                      "green": 108,
+                      "red": 157
+                    }
+                  },
+                  {
+                    "percentage": 2.96,
+                    "rgb": {
+                      "blue": 73,
+                      "green": 69,
+                      "red": 185
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "AI for Science expands to foundations and institutions",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 28.59,
+                    "rgb": {
+                      "blue": 39,
+                      "green": 41,
+                      "red": 41
+                    }
+                  },
+                  {
+                    "percentage": 27.33,
+                    "rgb": {
+                      "blue": 174,
+                      "green": 200,
+                      "red": 203
+                    }
+                  },
+                  {
+                    "percentage": 21.46,
+                    "rgb": {
+                      "blue": 149,
+                      "green": 118,
+                      "red": 38
+                    }
+                  },
+                  {
+                    "percentage": 14.94,
+                    "rgb": {
+                      "blue": 83,
+                      "green": 108,
+                      "red": 157
+                    }
+                  },
+                  {
+                    "percentage": 2.96,
+                    "rgb": {
+                      "blue": 73,
+                      "green": 69,
+                      "red": 185
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2115560505490411520/xa0pDAuw?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2115560505490411520/xa0pDAuw?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 28.59,
+                    "rgb": {
+                      "blue": 39,
+                      "green": 41,
+                      "red": 41
+                    }
+                  },
+                  {
+                    "percentage": 27.33,
+                    "rgb": {
+                      "blue": 174,
+                      "green": 200,
+                      "red": 203
+                    }
+                  },
+                  {
+                    "percentage": 21.46,
+                    "rgb": {
+                      "blue": 149,
+                      "green": 118,
+                      "red": 38
+                    }
+                  },
+                  {
+                    "percentage": 14.94,
+                    "rgb": {
+                      "blue": 83,
+                      "green": 108,
+                      "red": 157
+                    }
+                  },
+                  {
+                    "percentage": 2.96,
+                    "rgb": {
+                      "blue": 73,
+                      "green": 69,
+                      "red": 185
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2115560505490411520/xa0pDAuw?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/oTu04tU4Pk",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2115560505490411520/xa0pDAuw?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2115777746639196376",
+      "url": "https://x.com/Kimi_Moonshot/status/2115777746639196376",
+      "label": "Kimi",
+      "color": "#6366F1",
+      "fetched_at": "2026-10-29T20:02:56.346003+00:00",
+      "translation_zh": "Kimi 现已接入 Gmail、Google Drive 和 Google Calendar：汇总邮件线程、在网盘中查找文件、用日历规划一天——全部通过用户可控的安全 OAuth 授权完成。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 511,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-10-29T12:08:18.000Z",
+        "display_text_range": [
+          0,
+          231
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/xZTPm33ekM",
+              "expanded_url": "https://x.com/Kimi_Moonshot/status/2115777746639196376/photo/1",
+              "indices": [
+                232,
+                255
+              ],
+              "url": "https://t.co/xZTPm33ekM"
+            }
+          ],
+          "urls": [
+            {
+              "display_url": "kimi.ai/plugins",
+              "expanded_url": "https://kimi.ai/plugins",
+              "indices": [
+                208,
+                231
+              ],
+              "url": "https://t.co/K6zMCNzfou"
+            }
+          ]
+        },
+        "id_str": "2115777746639196376",
+        "text": "Kimi now works with Gmail, Google Drive, and Google Calendar.\n\nSummarize Gmail threads, find files in Google Drive, and plan your day with Google Calendar — with secure OAuth access you control.\n\nTry them at https://t.co/K6zMCNzfou https://t.co/xZTPm33ekM",
+        "user": {
+          "id_str": "1863959670169501696",
+          "name": "Kimi.ai",
+          "screen_name": "Kimi_Moonshot",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2086719038798102529/diJGKpOE_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2115777746639196376"
+          ],
+          "editable_until_msecs": "1793279298000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/xZTPm33ekM",
+            "expanded_url": "https://x.com/Kimi_Moonshot/status/2115777746639196376/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              232,
+              255
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HVzAlG4aYAEdykK.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 1075,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 5
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 947,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 540,
+                  "x": 162,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1920,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/xZTPm33ekM"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 1075,
+                "w": 1920,
+                "x": 0,
+                "y": 5
+              },
+              {
+                "h": 1080,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 947,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 540,
+                "x": 162,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 1920,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Kimi_Moonshot/status/2115777746639196376/photo/1",
+            "url": "https://pbs.twimg.com/media/HVzAlG4aYAEdykK.jpg",
+            "width": 1920,
+            "height": 1080
+          }
+        ],
+        "conversation_count": 83,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2115489356437651654",
       "url": "https://x.com/GoogleDeepMind/status/2115489356437651654",
       "label": "Google",
