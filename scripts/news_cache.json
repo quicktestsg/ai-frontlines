@@ -1,6 +1,555 @@
 {
   "tweets": [
     {
+      "id": "2116220869479428500",
+      "url": "https://x.com/claudeai/status/2116220869479428500",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-10-30T20:03:14.937885+00:00",
+      "translation_zh": "Claude 订阅计划更名：Max 5x 变为 Max，Max 20x 变为 Ultra，价格不变（Max 每月 $100，Ultra $200）。已验证的 Ultra 账户从今天起取消 5 小时使用限制，周限额保持不变。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 17381,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-10-30T17:29:07.000Z",
+        "display_text_range": [
+          0,
+          268
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/9QR5ASBbeb",
+              "expanded_url": "https://x.com/claudeai/status/2116220869479428500/photo/1",
+              "indices": [
+                269,
+                292
+              ],
+              "url": "https://t.co/9QR5ASBbeb"
+            }
+          ]
+        },
+        "id_str": "2116220869479428500",
+        "text": "We’re renaming our Max plans: \n\nMax 5x → Max\nMax 20x → Ultra\n\nMax is still $100/month, and Ultra is still $200. If you’re a subscriber, there’s nothing you need to do.\n\nWe’re also removing the 5-hour limit for verified Ultra accounts, starting today with most existing https://t.co/9QR5ASBbeb",
+        "user": {
+          "id_str": "1943306828697550848",
+          "name": "Claude",
+          "screen_name": "claudeai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2116220869479428500"
+          ],
+          "editable_until_msecs": "1793384947000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/9QR5ASBbeb",
+            "expanded_url": "https://x.com/claudeai/status/2116220869479428500/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              269,
+              292
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HV5MwwNWAAA5hUI.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 2150,
+                  "w": 3840,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 2160,
+                  "x": 1512,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 1895,
+                  "x": 1645,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 1080,
+                  "x": 2052,
+                  "y": 0
+                },
+                {
+                  "h": 2160,
+                  "w": 3840,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 2160,
+              "width": 3840
+            },
+            "sizes": {
+              "large": {
+                "h": 1152,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/9QR5ASBbeb"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 2150,
+                "w": 3840,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 2160,
+                "x": 1512,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 1895,
+                "x": 1645,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 1080,
+                "x": 2052,
+                "y": 0
+              },
+              {
+                "h": 2160,
+                "w": 3840,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/claudeai/status/2116220869479428500/photo/1",
+            "url": "https://pbs.twimg.com/media/HV5MwwNWAAA5hUI.jpg",
+            "width": 3840,
+            "height": 2160
+          }
+        ],
+        "conversation_count": 1496,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTE2MjIwODY5MzQ5NDM3NDQw"
+        }
+      }
+    },
+    {
+      "id": "2116214866444943853",
+      "url": "https://x.com/sundarpichai/status/2116214866444943853",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-10-30T20:03:14.937885+00:00",
+      "translation_zh": "Project Suncatcher 的「hello world」时刻：Google 成功向轨道上的原型卫星发送指令、启动 TPU、运行 prompt，并在地球上收到第一条完整回复——一首俳句。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 12661,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-10-30T17:05:16.000Z",
+        "display_text_range": [
+          0,
+          261
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/kOFmETUskm",
+              "expanded_url": "https://x.com/sundarpichai/status/2116214866444943853/video/1",
+              "indices": [
+                261,
+                284
+              ],
+              "url": "https://t.co/kOFmETUskm"
+            }
+          ]
+        },
+        "id_str": "2116214866444943853",
+        "text": "A ‘hello world’ milestone for Project Suncatcher 🚀\n\nAfter launching our prototype satellite a few weeks ago, we’ve now successfully sent a command up to orbit, booted up the TPU, ran the prompt, and received our first complete response back on earth - a haiku! https://t.co/kOFmETUskm",
+        "user": {
+          "id_str": "14130366",
+          "name": "Sundar Pichai",
+          "screen_name": "sundarpichai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2051799620062429184/AL8CoAUG_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/2042749771337564160/AgOFPEL3_bigger.jpg"
+            },
+            "description": "Google",
+            "url": {
+              "url": "https://twitter.com/Google",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2116214866444943853"
+          ],
+          "editable_until_msecs": "1793383516000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/kOFmETUskm",
+            "expanded_url": "https://x.com/sundarpichai/status/2116214866444943853/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              261,
+              284
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2116214727835828224/img/b4pQhbjRd5EDKtkl.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/kOFmETUskm",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 16021,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2116214727835828224/pl/07JXM8ulMm0kEsHt.m3u8?v=cfc"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2116214727835828224/vid/avc1/480x270/e8jmsZmdNof2yy8U.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2116214727835828224/vid/avc1/640x360/U9KH9sdF6YE6rJsG.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2116214727835828224/vid/avc1/1280x720/zG1J8hKWLBVeO2Wl.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2116214727835828224/vid/avc1/1920x1080/pEIO6vAh51GKep_W.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 16021,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2116214727835828224/img/b4pQhbjRd5EDKtkl.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2116214727835828224/pl/07JXM8ulMm0kEsHt.m3u8?v=cfc"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2116214727835828224/vid/avc1/480x270/e8jmsZmdNof2yy8U.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2116214727835828224/vid/avc1/640x360/U9KH9sdF6YE6rJsG.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2116214727835828224/vid/avc1/1280x720/zG1J8hKWLBVeO2Wl.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2116214727835828224/vid/avc1/1920x1080/pEIO6vAh51GKep_W.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2116214866444943853"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 738,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2116186509384815084",
+      "url": "https://x.com/OpenAI/status/2116186509384815084",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-10-30T20:03:14.937885+00:00",
+      "translation_zh": "OpenAI 发布 Private Intelligence（私密智能）：让企业在使用最强模型的同时，对自身数据拥有更强的管控能力，并与最大客户群合作构建这些隐私保护机制。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 2058,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-10-30T15:12:35.000Z",
+        "display_text_range": [
+          0,
+          280
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/RWhIX72c09",
+              "expanded_url": "https://x.com/OpenAI/status/2116186509384815084/video/1",
+              "indices": [
+                281,
+                304
+              ],
+              "url": "https://t.co/RWhIX72c09"
+            }
+          ]
+        },
+        "id_str": "2116186509384815084",
+        "text": "Privacy should advance as fast as intelligence. OpenAI Private Intelligence gives businesses stronger controls over their data while using our most capable models.\n\nWe’re building these protections in close collaboration with some of our largest customers to help businesses apply https://t.co/RWhIX72c09",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2116186509384815084"
+          ],
+          "editable_until_msecs": "1793376755000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/RWhIX72c09",
+            "expanded_url": "https://x.com/OpenAI/status/2116186509384815084/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              281,
+              304
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2116186389536788480/img/hbO4g10coOsa0Gy3.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1400,
+              "width": 2200
+            },
+            "sizes": {
+              "large": {
+                "h": 1303,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 764,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 433,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/RWhIX72c09",
+            "video_info": {
+              "aspect_ratio": [
+                11,
+                7
+              ],
+              "duration_millis": 6078,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2116186389536788480/pl/sg-D5lwSmaKokHI9.m3u8"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2116186389536788480/vid/avc1/424x270/ttm2bYRnKysSAIhU.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2116186389536788480/vid/avc1/564x360/XLwAY0WntubkG4Tz.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2116186389536788480/vid/avc1/1130x720/-MDWJSPS8a1pmTjB.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2116186389536788480/vid/avc1/2200x1400/ebhP3w8awbmD1FrY.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            11,
+            7
+          ],
+          "contentType": "media_entity",
+          "durationMs": 6078,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2116186389536788480/img/hbO4g10coOsa0Gy3.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2116186389536788480/pl/sg-D5lwSmaKokHI9.m3u8"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2116186389536788480/vid/avc1/424x270/ttm2bYRnKysSAIhU.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2116186389536788480/vid/avc1/564x360/XLwAY0WntubkG4Tz.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2116186389536788480/vid/avc1/1130x720/-MDWJSPS8a1pmTjB.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2116186389536788480/vid/avc1/2200x1400/ebhP3w8awbmD1FrY.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2116186509384815084"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 379,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTE2MTg2NTA5MjcxNTgwNjcy"
+        }
+      }
+    },
+    {
       "id": "2116005725814280570",
       "url": "https://x.com/Kimi_Moonshot/status/2116005725814280570",
       "label": "Kimi",

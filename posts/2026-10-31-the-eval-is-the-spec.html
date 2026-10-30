@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Eval Is the Spec — AI Frontlines</title>
+<meta content="Nobody ships an agent against a written specification. The specification is the eval suite — the only description of intended behavior that actually executes. Teams that understand this treat their evals like a legal document: versioned, reviewed, and mined from production traces. Teams that don't discover their real spec the day a grader fails." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="October 31, 2026" data-zh="2026年10月31日">October 31, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Eval Is the Spec: Your Test Suite Is Your Only Contract" data-zh="评测即规格：你的测试套件是你唯一的契约">The Eval Is the Spec: Your Test Suite Is Your Only Contract</h1>
+<p class="post-header-deck" data-en="No agent team ships against a written specification. The requirements doc stopped being true three model versions ago, the design doc was aspirational the day it was written, and the prompt has been patched so many times it resembles sedimentary rock. There is exactly one artifact that describes what the system is supposed to do, executes on every change, and blocks the merge when the system disagrees: the eval suite. That makes it the specification — not metaphorically, but functionally. And almost every team treats it like an afterthought." data-zh="没有任何智能体团队是对着一份书面规格说明书交付的。需求文档在三个模型版本之前就已失真，设计文档从写成那天起就是愿望式的，而 prompt 被打了太多补丁，已经像一块沉积岩。真正描述系统应该做什么、在每次变更时执行、并在系统不认同时挡下合并的产物，只有一个：评测套件。这使它成为规格——不是比喻意义上的，而是功能意义上的。而几乎每个团队，都把它当作事后的点缀。">No agent team ships against a written specification. There is exactly one artifact that describes what the system is supposed to do, executes on every change, and blocks the merge when the system disagrees: the eval suite. That makes it the specification — not metaphorically, but functionally.</p>
+</header>
+<article class="post-body">
+<p data-en="Traditional software has a chain of artifacts that keep behavior honest: types, contracts, tests, and a spec that predates the code. Agent systems inherit almost none of this. The behavior of the system is not written down anywhere that a compiler can check — it lives in a distribution. Weights are not typed, tool use is not typed, judgment is not typed. What the team has instead is a pile of intentions: a prompt that states them, a wiki that paraphrases them, and a set of examples that demonstrates them. When intentions conflict — and they always conflict — the conflict is resolved by whichever artifact actually runs in CI. That is the eval suite. Every other document is a wish. The suite is the contract, enforced nightly whether anyone reads it or not." data-zh="传统软件有一条让行为保持诚实的产物链：类型、契约、测试，以及先于代码存在的规格。智能体系统几乎没有继承到这些。系统的行为，没有被写任何编译器能检查的地方——它活在一个分布里。权重没有类型，工具使用没有类型，判断没有类型。团队手里有的是一堆意图：一个陈述意图的 prompt、一个转述意图的 wiki、一组演示意图的样例。当意图之间冲突时——它们总是冲突——裁决者，是那个真正在 CI 里跑起来的产物。那就是评测套件。其他所有文档都是愿望。套件才是契约，无论有没有人读它，它每晚都在被强制执行。">Traditional software has types, contracts, tests, and a spec. Agent systems inherit almost none of this — behavior lives in a distribution, not a document. When intentions conflict, the conflict is resolved by whichever artifact actually runs in CI. Every other document is a wish. The suite is the contract.</p>
+<p data-en="This sounds like a platitude until you trace what it implies. If the eval suite is the spec, then the quality of the spec is the quality of the suite — and most suites are terrible in exactly the ways a spec written by an intern would be terrible. They cover the happy path demonstrated in the demo. They grade with an under-specified rubric that a strong answer and a confident wrong answer both pass. They encode the taste of whoever wrote the last grader prompt, which is often the same person who wrote the agent prompt — judge and judged sharing one brain. And they age invisibly: the suite keeps passing while the product keeps getting worse, because the suite stopped describing the product months ago. A spec that drifts from the system it governs is worse than no spec. It lends false confidence to every decision made in its name." data-zh="这听起来像句空话——直到你顺着它推演下去。如果评测套件就是规格，那么规格的质量，就是套件的质量——而大多数套件之糟糕，恰恰像一份由实习生写出的规格那样糟糕。它们覆盖的是演示里展示过的主路径。它们用一个欠规范的评分标准来打分——一个优秀的答案和一个自信的错误答案，都能通过。它们固化的是最后一个写评分 prompt 的人的品味——而这个人往往正是写智能体 prompt 的那个人，裁判和选手共用一个大脑。而且它们在无形中老化：套件一直在通过，产品却一直在变差，因为套件几个月前就不再描述这个产品了。一份从它所治理的系统中漂走的规格，比没有规格更糟。它以自己的名义，给每一个基于它做出的决定，都注入了虚假的信心。">This sounds like a platitude until you trace what it implies. If the eval suite is the spec, then the quality of the spec is the quality of the suite — and most suites are terrible in exactly the ways a spec written by an intern would be. They cover the demo's happy path, grade with a rubric a confident wrong answer can pass, and age invisibly while lending false confidence.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrE1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrE2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrE3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="WHICH DOCUMENT ACTUALLY GOVERNS?" data-zh="哪份文档真正在治理？" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">WHICH DOCUMENT ACTUALLY GOVERNS?</text>
+<!-- stated intent -->
+<rect fill="var(--bg-surface)" height="66" rx="10" stroke="var(--text-tertiary)" stroke-width="1.5" width="180" x="50" y="52"></rect>
+<text data-en="STATED INTENT" data-zh="陈述的意图" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="140" y="76">STATED INTENT</text>
+<text data-en="docs · tickets · prompts" data-zh="文档 · 工单 · prompt" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="140" y="94">docs · tickets · prompts</text>
+<text data-en="drifts silently · enforces nothing" data-zh="无声漂移 · 什么都不强制" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="140" y="108">drifts silently · enforces nothing</text>
+<!-- the agent -->
+<path d="M230 85 L280 85" fill="none" marker-end="url(#arrE2)" stroke="var(--text-tertiary)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<text data-en="describes" data-zh="描述" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="255" y="76">describes</text>
+<rect fill="var(--accent-dim)" height="66" rx="10" stroke="var(--accent)" stroke-width="2.5" width="150" x="284" y="52"></rect>
+<text data-en="THE AGENT" data-zh="智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="359" y="76">THE AGENT</text>
+<text data-en="weights · harness · tools" data-zh="权重 · 框架 · 工具" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="359" y="94">weights · harness · tools</text>
+<text data-en="behavior lives in a distribution" data-zh="行为活在一个分布里" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="359" y="108">behavior lives in a distribution</text>
+<!-- the enforced path: agent -> evals -->
+<path d="M359 118 L359 150" fill="none" marker-end="url(#arrE1)" stroke="var(--accent)" stroke-width="2"></path>
+<text data-en="runs against · enforced" data-zh="被运行 · 被强制" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="418" y="138">runs against · enforced</text>
+<!-- eval suite -->
+<rect fill="var(--bg-surface)" height="76" rx="12" stroke="var(--accent)" stroke-width="2.5" width="380" x="169" y="154"></rect>
+<text data-en="THE EVAL SUITE — THE EXECUTABLE SPEC" data-zh="评测套件 —— 可执行的规格" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="359" y="180">THE EVAL SUITE — THE EXECUTABLE SPEC</text>
+<text data-en="task × environment × rubric × threshold" data-zh="任务 × 环境 × 评分标准 × 阈值" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="359" y="200">task × environment × rubric × threshold</text>
+<text data-en="runs in CI · gates the merge · cannot be ignored" data-zh="在 CI 里运行 · 把守合并 · 无法被无视" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="359" y="218">runs in CI · gates the merge · cannot be ignored</text>
+<!-- ship -->
+<path d="M549 192 L549 250" fill="none" marker-end="url(#arrE1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<path d="M549 85 L549 148" fill="none" stroke="var(--border)" stroke-width="1" stroke-dasharray="2,4"></path>
+<text data-en="blocks the merge" data-zh="挡下合并" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="549" y="130">blocks the merge</text>
+<rect fill="var(--bg-surface)" height="40" rx="9" stroke="var(--accent-2)" stroke-width="2" width="120" x="489" y="254"></rect>
+<text data-en="ship / roll back" data-zh="发布 / 回滚" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="549" y="279">ship / roll back</text>
+<!-- dashed wishful arrow from intent directly to ship -->
+<path d="M140 118 C140 200 300 280 482 286" fill="none" marker-end="url(#arrE3)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,4"></path>
+<text data-en="the wishful path — never enforced" data-zh="愿望路径——从未被强制" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="175" y="262">the wishful path — never enforced</text>
+<text data-en="the docs claim to govern; the suite actually does" data-zh="文档声称在治理；真正治理的是套件" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="338">the docs claim to govern; the suite actually does</text>
+</svg>
+<p class="diagram-caption" data-en="The chain of governance in an agent system. Documents describe intent, but description is not enforcement. The only path from the agent to a ship decision runs through the eval suite — which means the suite, not the docs, defines what the system is required to be. The dashed wishful path, where good intentions translate directly into good products, exists in every team charter and in no CI config." data-zh="智能体系统中的治理链。文档描述意图，但描述不等于强制。从智能体到发布决策的唯一路径，经过评测套件——这意味着定义系统必须是什么的，是套件，不是文档。那条虚线的愿望路径——好意图直接转化为好产品——存在于每一个团队的章程里，却不存在于任何一份 CI 配置里。">The chain of governance in an agent system. The only path from the agent to a ship decision runs through the eval suite — which means the suite, not the docs, defines what the system is required to be.</p>
+</div>
+<h3 data-en="An eval is a clause, and most clauses are vague" data-zh="一条评测就是一个条款，而大多数条款是含糊的">An eval is a clause, and most clauses are vague</h3>
+<p data-en="Strip an eval down and it has four parts: a task, an environment, a rubric, and a threshold. Each part is a clause in the contract. The task says when the contract applies. The environment says under what conditions. The rubric says what counts as satisfaction. The threshold says how often satisfaction is required. Most teams obsess over the task and sleep on the other three — which is backwards, because the rubric and threshold are where the contract's actual teeth are. A task like 'refactor this module' with a rubric of 'the code looks better' is not a clause; it is a vibe. Under it, an agent that renames every variable and adds comments passes with honors. The failure was not in the model. It was in a contract clause vague enough that both excellent and catastrophic behavior were compliant." data-zh="把一条评测拆开，它有四个部分：任务、环境、评分标准、阈值。每个部分都是契约里的一个条款。任务说明契约何时适用，环境说明在什么条件下，评分标准说明什么算作履约，阈值说明履约被要求的频率。大多数团队痴迷于任务，却在另外三项上睡大觉——这恰恰是反的，因为评分标准和阈值，才是契约真正长牙的地方。一个「重构这个模块」的任务，配一条「代码看起来更好」的评分标准，不是一个条款；它是一种氛围。在它之下，一个把每个变量都改名并加上注释的智能体，能以优等成绩通过。失败不在模型。失败在一条含糊到让卓越行为和灾难行为都合规的契约条款里。">Strip an eval down and it has four parts: task, environment, rubric, threshold. Most teams obsess over the task and sleep on the other three — backwards, because the rubric and threshold are where the contract's teeth are. A task with a rubric of 'the code looks better' is not a clause; it is a vibe.</p>
+<p data-en="The hardest of the four is the rubric, because someone has to grade judgment. The strong pattern that has emerged is a ladder of graders: deterministic checks wherever determinism is possible — tests run, files changed, APIs called, budgets respected — then model-graded rubrics with fixed criteria and adversarial phrasing for the judgment calls, and human grading reserved for the small set of cases that define the product's taste. The ladder exists for the same reason every tiered system exists: the top of the ladder is expensive and slow, so it must be spent on few cases. But note what the ladder really is. It is a specification written in three different formalisms, and the deterministic floor is the only part that never argues back. Every behavior pushed down to a deterministic check becomes law; everything left to model grading stays case law, revisited every run with a small chance of a different verdict." data-zh="四者之中最难的是评分标准，因为总得有人给判断打分。实践中沉淀出的强模式，是一座评分者的梯子：凡可能确定的地方用确定性检查——测试是否跑通、文件是否改动、API 是否调用、预算是否守住——然后，判断类的问题交给带固定标准和对抗性措辞的模型评分，而人类评分，只留给那组定义产品品味的小样本。这座梯子存在的原因，和一切分层系统存在的原因相同：梯子顶端又贵又慢，所以必须省着花在少数案例上。但注意这座梯子真正是什么。它是一份用三种不同形式语言写成的规格，而确定性那一层，是唯一从不开口争辩的部分。每一个被压到确定性检查之下的行为，都成为成文法；留给模型评分的一切，仍是判例法——每次运行都被重新审视，且总有一个小概率得出不同的裁决。">The strong pattern is a ladder of graders: deterministic checks wherever possible, model-graded rubrics for judgment calls, humans for taste. The ladder is a specification written in three formalisms — and the deterministic floor is the only part that never argues back. Everything pushed to a deterministic check becomes law; everything left to model grading stays case law.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrG1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+</defs>
+<text data-en="THE GRADER LADDER" data-zh="评分者之梯" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE GRADER LADDER</text>
+<!-- rung 3: human -->
+<rect fill="var(--bg-surface)" height="54" rx="9" stroke="var(--accent-3)" stroke-width="1.8" width="230" x="195" y="44"></rect>
+<text data-en="HUMAN GRADERS · taste" data-zh="人类评分者 · 品味" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="66">HUMAN GRADERS · taste</text>
+<text data-en="~dozens of cases · defines the product" data-zh="~几十个案例 · 定义产品" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="84">~dozens of cases · defines the product</text>
+<path d="M310 98 L310 112" fill="none" marker-end="url(#arrG1)" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<!-- rung 2: model graded -->
+<rect fill="var(--bg-surface)" height="54" rx="9" stroke="var(--accent)" stroke-width="1.8" width="330" x="145" y="114"></rect>
+<text data-en="MODEL-GRADED RUBRICS · judgment" data-zh="模型评分标准 · 判断" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="136">MODEL-GRADED RUBRICS · judgment</text>
+<text data-en="fixed criteria · case law · small verdict variance" data-zh="固定标准 · 判例法 · 裁决有微小方差" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="154">fixed criteria · case law · small verdict variance</text>
+<path d="M310 168 L310 182" fill="none" marker-end="url(#arrG1)" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<!-- rung 1: deterministic -->
+<rect fill="var(--accent-dim)" height="54" rx="9" stroke="var(--accent)" stroke-width="2.5" width="440" x="90" y="184"></rect>
+<text data-en="DETERMINISTIC CHECKS · statute" data-zh="确定性检查 · 成文法" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="206">DETERMINISTIC CHECKS · statute</text>
+<text data-en="tests run · files changed · budgets kept · never argues back" data-zh="测试跑通 · 文件改动 · 预算守住 · 从不争辩" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="224">tests run · files changed · budgets kept · never argues back</text>
+<!-- annotation -->
+<text data-en="push every behavior as far DOWN the ladder as it will go" data-zh="把每个行为尽量往梯子下方压" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="272">push every behavior as far DOWN the ladder as it will go</text>
+<path d="M310 280 L310 240" fill="none" marker-end="url(#arrG1)" stroke="var(--accent-2)" stroke-width="1.6"></path>
+<text data-en="width = coverage · height = cost · the floor is law" data-zh="宽度 = 覆盖 · 高度 = 成本 · 底层是法律" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="310">width = coverage · height = cost · the floor is law</text>
+</svg>
+<p class="diagram-caption" data-en="Every eval's rubric is a ladder. Deterministic checks at the bottom: cheap, total, and unambiguous — statute law. Model-graded rubrics in the middle: scalable judgment with fixed criteria and residual variance — case law. Human graders on top: few cases, decisive, expensive — constitutional review. The engineering discipline is migration: every time a behavior's grading can be pushed one rung down without losing fidelity, the contract gets tighter and the suite gets cheaper." data-zh="每条评测的评分标准，都是一座梯子。底层是确定性检查：便宜、全覆盖、无歧义——成文法。中层是模型评分：可扩展的判断，带固定标准和残余方差——判例法。顶层是人类评分：案例少、裁决性强、昂贵——宪法审查。这里的工程纪律是迁移：每当一个行为的评分，能在不损失保真度的前提下被压下一级，契约就更紧一分，套件就更便宜一分。">Every eval's rubric is a ladder. Deterministic checks are statute law, model-graded rubrics are case law, human graders are constitutional review. The discipline is migration: push every behavior as far down the ladder as it will go.</p>
+</div>
+<blockquote data-en="A grader you have not adversarially tested is a clause you have not read. If a confident wrong answer cannot fail your rubric, the rubric is the bug — and it ships with every merge." data-zh="一个没有被对抗性测试过的评分者，就是一条你没有读过的条款。如果一个自信的错误答案都无法让你的评分标准不通过，那评分标准本身就是 bug——而且它随每一次合并一起发布。">A grader you have not adversarially tested is a clause you have not read. If a confident wrong answer cannot fail your rubric, the rubric is the bug — and it ships with every merge.</blockquote>
+<h3 data-en="Spec rot, and the flywheel that prevents it" data-zh="规格腐化，与阻止它的飞轮">Spec rot, and the flywheel that prevents it</h3>
+<p data-en="The failure that ends careers is not the bad eval — it is the stale one. The suite was written when the product did one thing; the product now does five. Every case in the suite still passes. Dashboards are green. Meanwhile users encounter situations the suite has never heard of, and the agent's behavior there is, from the contract's point of view, undefined — not prohibited, not required, simply unspecified. Undefined behavior in classical software yields a crash or garbage; undefined behavior in an agent yields confident, fluent, plausible output that is wrong in ways no test was ever written to notice. Green dashboards over unspecified territory are the most dangerous artifact in the field." data-zh="足以终结职业生涯的失败，不是糟糕的评测，而是过期的评测。套件写就时，产品只做一件事；现在产品做五件。套件里的每个案例依然通过。仪表盘一片绿色。与此同时，用户遇到的是套件从未听说过的情境，而智能体在那里的行为，从契约的角度看，是未定义的——不被禁止，不被要求，只是未被规定。经典软件里的未定义行为，给你一次崩溃或一堆乱码；智能体里的未定义行为，给你自信、流利、貌似有理的输出，以没有任何测试被写下要去注意的方式错着。覆盖在未规定疆域之上的绿色仪表盘，是这个领域里最危险的产物。">The failure that ends careers is not the bad eval — it is the stale one. Every case passes, dashboards are green, while users encounter situations the suite has never heard of — and the agent's behavior there is, from the contract's point of view, undefined. Green dashboards over unspecified territory are the most dangerous artifact in the field.</p>
+<p data-en="The fix is mechanical, not clever: production traces flow back into the suite. This is the same move classical engineering made decades ago — every crash report becomes a regression test — but with agent systems it must go further, because the space of inputs is unbounded and the interesting failures are not crashes but quiet misses. The flywheel: record every run, mine the traces for novel situations and graded failures, distill them into new cases, and let each new case permanently shrink the territory of undefined behavior. A team that runs this loop has a spec that converges toward its users. A team that does not has a spec that converges toward its own demo — increasingly airtight, increasingly irrelevant." data-zh="修复是机械的，而非聪明的：让生产环境的记录流回套件。这正是经典工程几十年前做过的同一个动作——每一份崩溃报告都变成一个回归测试——但智能体系统必须走得更远，因为输入空间无界，而有趣的失败不是崩溃，是安静的失手。飞轮是：记录每一次运行，从记录里挖掘新颖情境和被评出的失败，把它们蒸馏成新案例，让每一个新案例永久地缩小未定义行为的疆域。跑这个循环的团队，有一份向用户收敛的规格。不跑的团队，有一份向自己的演示收敛的规格——越来越严密，越来越无关。">The fix is mechanical: production traces flow back into the suite. Record every run, mine the traces for novel situations and graded failures, distill them into new cases, and let each case permanently shrink the territory of undefined behavior. A team running this loop has a spec that converges toward its users. One that doesn't has a spec that converges toward its own demo.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrF1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrF2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+</defs>
+<text data-en="THE SPEC FLYWHEEL" data-zh="规格飞轮" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE SPEC FLYWHEEL</text>
+<!-- production traces -->
+<rect fill="var(--bg-surface)" height="62" rx="10" stroke="var(--accent)" stroke-width="2" width="200" x="60" y="56"></rect>
+<text data-en="PRODUCTION TRACES" data-zh="生产记录" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="160" y="80">PRODUCTION TRACES</text>
+<text data-en="every run recorded, verbatim" data-zh="每次运行逐字留档" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="160" y="98">every run recorded, verbatim</text>
+<!-- mining -->
+<path d="M260 87 L330 87" fill="none" marker-end="url(#arrF1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<text data-en="mine" data-zh="挖掘" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="295" y="78">mine</text>
+<rect fill="var(--bg-surface)" height="62" rx="10" stroke="var(--accent-2)" stroke-width="1.8" width="200" x="334" y="56"></rect>
+<text data-en="TRACE MINING" data-zh="记录挖掘" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="434" y="80">TRACE MINING</text>
+<text data-en="novel inputs · quiet misses · drift" data-zh="新颖输入 · 安静失手 · 漂移" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="434" y="98">novel inputs · quiet misses · drift</text>
+<!-- new cases -->
+<path d="M434 118 L434 168" fill="none" marker-end="url(#arrF2)" stroke="var(--accent-2)" stroke-width="1.8"></path>
+<text data-en="distill into cases" data-zh="蒸馏成案例" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="497" y="146">distill into cases</text>
+<rect fill="var(--accent-dim)" height="62" rx="10" stroke="var(--accent)" stroke-width="2.5" width="220" x="324" y="172"></rect>
+<text data-en="EVAL SUITE v(n+1)" data-zh="评测套件 v(n+1)" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="434" y="196">EVAL SUITE v(n+1)</text>
+<text data-en="undefined territory shrinks — permanently" data-zh="未定义疆域永久缩小" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="434" y="214">undefined territory shrinks — permanently</text>
+<!-- gate -->
+<path d="M324 203 L266 203" fill="none" marker-end="url(#arrF1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<text data-en="gates" data-zh="把守" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="295" y="194">gates</text>
+<rect fill="var(--bg-surface)" height="62" rx="10" stroke="var(--accent)" stroke-width="2" width="170" x="94" y="172"></rect>
+<text data-en="AGENT v(n+1)" data-zh="智能体 v(n+1)" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="179" y="196">AGENT v(n+1)</text>
+<text data-en="prompts · tools · model · harness" data-zh="prompt · 工具 · 模型 · 框架" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="179" y="214">prompts · tools · model · harness</text>
+<!-- back to production -->
+<path d="M179 234 L179 300 L434 300 L434 234" fill="none" marker-end="url(#arrF1)" stroke="var(--accent)" stroke-width="1.8" stroke-dasharray="5,4"></path>
+<text data-en="ships · generates new traces · the loop closes" data-zh="发布 · 产生新记录 · 回路闭合" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="322">ships · generates new traces · the loop closes</text>
+</svg>
+<p class="diagram-caption" data-en="The flywheel that keeps the spec alive. Production traces are mined for situations the suite has never seen; each one becomes a permanent case; the gated suite shrinks the territory of undefined behavior with every rotation. Teams that run this loop converge on their users. Teams whose evals only descend from their original demo converge on a fiction — airtight, green, and increasingly beside the point." data-zh="让规格保持存活的飞轮。从生产记录中挖掘套件从未见过的情境；每一个都成为永久的案例；被把守的套件，随每次旋转缩小未定义行为的疆域。跑这个循环的团队，向用户收敛。评测只从最初演示繁衍下来的团队，向一个虚构收敛——严密、绿色、且越来越不得要领。">The flywheel that keeps the spec alive. Traces are mined for situations the suite has never seen; each becomes a permanent case; undefined territory shrinks with every rotation.</p>
+</div>
+<p data-en="None of this requires new infrastructure so much as a new posture. The eval suite is a legal document: it defines obligations, its amendments are code reviews, its precedents are failure cases, and its jurisdiction is every environment it runs in. Written that way, the practical rules fall out naturally. Version the suite and diff it like code, because a changed grader is a changed contract. Give every case a provenance — written by hand, or mined from trace such-and-such — because a spec full or orphaned clauses is a spec nobody trusts. Adversarially test the graders with wrong-but-confident answers before trusting a single green run. And when a production incident occurs, the first artifact to update is the suite, not the prompt: an incident that leaves the spec unchanged will happen again with a clean conscience." data-zh="这一切需要的与其说是新基础设施，不如说是一种新姿态。评测套件是一份法律文件：它定义义务，它的修正案就是代码评审，它的判例就是失败案例，它的管辖范围就是它运行的每一个环境。这样写下来，实际的规则便自然浮现。给套件做版本管理、像代码一样 diff 它，因为改了评分者，就是改了契约。给每个案例一个出处——手写的，还是从某份记录里挖出来的——因为一份满是孤立条款的规格，是一份没人信任的规格。在相信任何一次绿色运行之前，先用错误但自信的答案对抗性地测试评分者。而当生产事故发生时，第一个要更新的产物是套件，不是 prompt：一场没有改变规格的事故，会带着清白的良心再次发生。">None of this requires new infrastructure so much as a new posture. The eval suite is a legal document: version it and diff it like code, give every case a provenance, adversarially test the graders, and update the suite — not the prompt — first after every incident.</p>
+<p data-en="The uncomfortable conclusion is that an agent team's real product is two artifacts: the system, and the specification that governs it — and the second is written in eval cases whether or not anyone chooses to write it well. Teams that accept this stop arguing about what the agent 'should' do, an argument that resolves nothing because both sides cite intentions, and start arguing about specific cases with specific graders, which resolves everything because the winner has to encode their position in a clause that runs forever. That is the quiet gift of the eval-as-spec worldview: it converts taste disputes into engineering disputes, and engineering disputes are the only kind that end. The contract was always there, executing nightly. The only question is whether it was written on purpose." data-zh="令人不适的结论是：智能体团队真正的产品，是两份产物——系统本身，以及治理它的规格——而第二份，无论有没有人选择好好写它，都早已用一个个评测案例写就。接受了这一点的团队，不再争论智能体「应该」做什么——那是一场什么也解决不了的争论，因为双方引用的都是意图——而是开始争论带具体评分者的具体案例，而这场争论能解决一切，因为胜者必须把自己的立场，编码进一条永远运行的条款。这就是「评测即规格」世界观悄悄馈赠的礼物：它把品味之争转化为工程之争，而工程之争，是唯一会结束的争论。契约一直都在，每晚都在执行。唯一的问题是：它是不是被有意写下的。">An agent team's real product is two artifacts: the system, and the specification that governs it. Teams that accept this stop arguing about what the agent 'should' do and start arguing about specific cases with specific graders — disputes that end, because the winner encodes their position in a clause that runs forever. The contract was always there. The only question is whether it was written on purpose.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
