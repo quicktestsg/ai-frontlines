@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Errors Are Prompts — AI Frontlines</title>
+<meta content="Every error message a tool returns is injected straight into the agent's context and conditions its next action. Engineers still write those messages for humans. Treating error text as a prompt — with recovery hints, retry classification, and stable structure — is one of the highest-leverage, cheapest upgrades available in agent engineering." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 1, 2026" data-zh="2026年11月1日">November 1, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Errors Are Prompts: Tool Messages Written for a Reader Made of Weights" data-zh="错误即提示词：为权重构成的读者写下工具报错">Errors Are Prompts: Tool Messages Written for a Reader Made of Weights</h1>
+<p class="post-header-deck" data-en="Somewhere between the demo and production, every agent system discovers the same thing: its most frequently read document is its own error output. Tool results go straight into context, and the agent's next move is conditioned on whatever comes back. An error message is not UI copy anymore — it is a prompt injected into the loop at the exact moment the agent is deciding what to do next. Teams that grasp this write errors that steer. Teams that don't write 'An unexpected error occurred' and then wonder why the agent retries the same call nine times with escalating confidence." data-zh="从演示到生产之间，每个智能体系统都会发现同一件事：被读得最多的一份文档，是它自己的报错输出。工具结果直接进入上下文，智能体的下一步，取决于返回了什么。报错信息不再是界面文案——它是一条提示词，恰好在智能体决定下一步做什么的时刻被注入循环。理解这一点的团队，写出的报错能引导行为。不理解的团队，写下一句「发生意外错误」，然后困惑于智能体为何带着不断升级的自信，把同一个调用重试了九次。">Somewhere between the demo and production, every agent system discovers the same thing: its most frequently read document is its own error output. An error message is not UI copy anymore — it is a prompt injected into the loop at the exact moment the agent is deciding what to do next.</p>
+</header>
+<article class="post-body">
+<p data-en="The mechanics are unavoidable. An agent in a tool-use loop emits a call, the harness executes it, and the result — success or failure — is appended verbatim to the context window. The model then generates its next action conditioned on that text. Which means the engineer who wrote the tool's error string has more influence over the agent's behavior in that moment than the engineer who wrote the system prompt. The system prompt speaks once, at the top, diluted by everything after it. The error message speaks last, at maximum attention, right before the decision. In every sense that matters mechanically, the error message is the prompt — the most recent one, the most trusted one, the one written by the system itself. Treating it with less care than a marketing tagline is a category error about who, exactly, is reading it." data-zh="这其中的机制无法回避。处于工具循环中的智能体发出一次调用，执行框架运行它，结果——无论成败——被逐字追加进上下文窗口。模型随后基于这段文本，生成下一个动作。这意味着，写下工具报错字符串的工程师，在那一刻对智能体行为的影响力，超过了写系统提示词的工程师。系统提示词只在开头说一次，被其后的所有内容稀释。报错信息则是最后发言的，处在注意力的顶点，恰好在决策之前。在一切有机械意义的意义上，报错信息就是提示词——最新的那条、最被信任的那条、由系统自己写下的那条。用还不如一句营销标语的认真程度对待它，是对「读者究竟是谁」这一问题的认知错位。">An agent in a tool-use loop emits a call, the harness executes it, and the result is appended verbatim to context. The engineer who wrote the tool's error string has more influence over the agent's next move than the engineer who wrote the system prompt. The system prompt speaks once, diluted by everything after it; the error message speaks last, right before the decision.</p>
+<p data-en="Watch what a bad error does to the loop. The agent calls an API; the API returns something opaque. The agent has no information about whether the failure is transient or permanent, whether retrying is safe, or what a corrected call would look like — so it does what a language model does with ambiguity: it generates a plausible continuation. Usually that means calling again, perhaps with cosmetic variations, burning tokens, latency, and money on a failure mode that a two-line error message would have closed. The failure is then attributed to the model being dumb, when it is closer to a user being handed a dialog box that says 'no' and nothing else. Agents do not fail on bad errors because they are weak reasoners; they fail because the error gave them nothing to reason with. Opaque errors convert a decision problem with an obvious answer — stop, fix this specific field, wait this many seconds — into an open-ended generation problem. Open-ended generation is the most expensive thing a language model does." data-zh="看看一条糟糕的报错会对循环做什么。智能体调用一个 API，API 返回某种不透明的东西。智能体不知道失败是瞬态还是永久、重试是否安全、修正后的调用长什么样——于是它做语言模型面对歧义时总会做的事：生成一个貌似合理的后续。通常这意味着再次调用，也许带上些表面的变化，在一个两行报错就能关闭的失败模式上，烧掉 token、延迟和钱。然后这次失败被归咎于模型太笨——尽管这更接近于一个用户拿到了只写着「不行」两个字、其余什么都没有的弹窗。智能体不是因为推理能力弱才在坏报错上失败；它们失败，是因为报错没有给它们任何可供推理的材料。不透明的报错，把一个答案显而易见的决策问题——停下、修这个字段、等这几秒——变成一个开放式的生成问题。而开放式生成，是语言模型做的最贵的事。">A bad error converts a decision problem with an obvious answer — stop, fix this field, wait these seconds — into an open-ended generation problem. Open-ended generation is the most expensive thing a language model does. Opaque errors burn tokens, latency, and money on failures a two-line message would have closed.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrP2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrP3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="WHERE THE ERROR TEXT ACTUALLY GOES" data-zh="报错文本真正的去向" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">WHERE THE ERROR TEXT ACTUALLY GOES</text>
+<!-- context window -->
+<rect fill="var(--bg-surface)" height="70" rx="10" stroke="var(--text-tertiary)" stroke-width="1.5" width="150" x="50" y="48"></rect>
+<text data-en="CONTEXT WINDOW" data-zh="上下文窗口" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="125" y="74">CONTEXT WINDOW</text>
+<text data-en="system prompt · history" data-zh="系统提示词 · 历史" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="125" y="92">system prompt · history</text>
+<text data-en="speaks once, gets diluted" data-zh="只说一次，不断被稀释" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="125" y="108">speaks once, gets diluted</text>
+<!-- agent -->
+<path d="M200 83 L268 83" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<text data-en="next call" data-zh="下一次调用" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="234" y="74">next call</text>
+<rect fill="var(--accent-dim)" height="70" rx="10" stroke="var(--accent)" stroke-width="2.5" width="140" x="272" y="48"></rect>
+<text data-en="THE AGENT" data-zh="智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="342" y="74">THE AGENT</text>
+<text data-en="decides what to do next" data-zh="决定下一步做什么" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="342" y="92">decides what to do next</text>
+<text data-en="conditioned on last input" data-zh="以最近的输入为条件" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="342" y="108">conditioned on last input</text>
+<!-- tool -->
+<path d="M412 83 L480 83" fill="none" marker-end="url(#arrP1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<rect fill="var(--bg-surface)" height="70" rx="10" stroke="var(--accent)" stroke-width="2" width="120" x="484" y="48"></rect>
+<text data-en="THE TOOL" data-zh="工具" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="544" y="74">THE TOOL</text>
+<text data-en="validates · executes" data-zh="校验 · 执行" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="544" y="92">validates · executes</text>
+<text data-en="fails 1–5% of calls" data-zh="1–5% 的调用会失败" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="544" y="108">fails 1–5% of calls</text>
+<!-- error returns -->
+<path d="M544 118 L544 168 L342 168 L342 122" fill="none" marker-end="url(#arrP3)" stroke="var(--accent-3)" stroke-width="2.2"></path>
+<rect fill="var(--bg-surface)" height="46" rx="9" stroke="var(--accent-3)" stroke-width="1.8" width="330" x="394" y="146"></rect>
+<text data-en="THE ERROR STRING" data-zh="那条报错字符串" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="559" y="166">THE ERROR STRING</text>
+<text data-en="injected at max attention, right before the decision" data-zh="以最高注意力注入，恰在决策之前" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="559" y="182">injected at max attention, right before the decision</text>
+<!-- error into context -->
+<path d="M394 168 L200 168 L125 168 L125 118" fill="none" marker-end="url(#arrP3)" stroke="var(--accent-3)" stroke-width="2.2" stroke-dasharray="6,4"></path>
+<text data-en="re-enters context verbatim — a prompt the system wrote to itself" data-zh="逐字回到上下文——系统写给自己的提示词" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="158">re-enters context verbatim — a prompt the system wrote to itself</text>
+<text data-en="the error message is the most recent, most trusted instruction in the window" data-zh="报错信息是窗口里最新、最被信任的指令" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="210">the error message is the most recent, most trusted instruction in the window</text>
+<!-- outcome comparison -->
+<rect fill="var(--bg-surface)" height="76" rx="10" stroke="var(--text-tertiary)" stroke-width="1.5" width="260" x="60" y="240"></rect>
+<text data-en="OPAQUE: 'unexpected error'" data-zh="不透明：「意外错误」" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="190" y="264">OPAQUE: "unexpected error"</text>
+<text data-en="agent invents a continuation" data-zh="智能体自行编造后续" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="190" y="282">agent invents a continuation</text>
+<text data-en="retry loop · burned budget · drift" data-zh="重试循环 · 烧掉预算 · 行为漂移" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="190" y="300">retry loop · burned budget · drift</text>
+<rect fill="var(--bg-surface)" height="76" rx="10" stroke="var(--accent)" stroke-width="2" width="260" x="340" y="240"></rect>
+<text data-en="STEERING: what · why · next step · retry?" data-zh="引导：什么 · 为何 · 下一步 · 可否重试" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="470" y="264">STEERING: what · why · next step · retry?</text>
+<text data-en="agent has a closed-form move" data-zh="智能体得到一个闭式解动作" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="470" y="282">agent has a closed-form move</text>
+<text data-en="one turn · cheap · deterministic" data-zh="一回合 · 便宜 · 确定性" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="470" y="300">one turn · cheap · deterministic</text>
+</svg>
+<p class="diagram-caption" data-en="The error message's real position in the loop. Tool output re-enters the context window verbatim and conditions the very next action — making the error string the most recent instruction the model receives, arriving at the point of maximum attention. An opaque message turns the next turn into open-ended generation; a steering message hands the agent a closed-form move. Same failure, same model — radically different loop economics." data-zh="报错信息在循环中的真实位置。工具输出逐字回到上下文窗口，并直接制约下一个动作——这使报错字符串成为模型收到的最新指令，且抵达于注意力的顶点。一条不透明的信息把下一回合变成开放式生成；一条引导性的信息则递给智能体一个闭式解动作。同样的失败、同样的模型，循环的经济学却天差地别。">The error message re-enters context verbatim and conditions the very next action — making it the most recent instruction the model receives, at the point of maximum attention. Opaque errors turn the next turn into open-ended generation; steering errors hand the agent a closed-form move.</p>
+</div>
+<h3 data-en="Anatomy of an error an agent can use" data-zh="一条智能体用得上的报错的解剖">Anatomy of an error an agent can use</h3>
+<p data-en="If the error is a prompt, it can be engineered like one. The pattern that works is almost embarrassingly simple, and it has four slots. What failed, as a stable machine-readable category — not a sentence, a key. Why it failed, in one specific sentence, naming the actual field or condition. What to do next, as an imperative. And whether retrying is safe — plus, for anything on a write path, an idempotency token so a retry cannot double-charge. Compare the two registers: 'Validation failed' versus 'invalid_parameter: date must be ISO-8601; received 31/02/2027 — set date to a valid calendar date and retry; this call has no side effects.' The first is a shrug. The second is a plan. The agent that receives the second does not need to be clever; the error has already done the reasoning, and the model merely executes it. The cheapest capability upgrade available in most stacks is not a better model — it is better error strings on the twenty tools the current model already calls." data-zh="既然报错是提示词，它就可以像提示词一样被工程化。有效的模式简单得近乎尴尬，只有四个槽位。失败了什么——一个稳定的、机器可读的类别，不是一句话，是一个键。为何失败——一句具体的话，点名实际的字段或条件。下一步做什么——以祈使句给出。以及重试是否安全——并且，对任何写入路径，附上一个幂等令牌，让重试不可能重复扣费。对比两种措辞：「校验失败」，与「invalid_parameter：日期必须为 ISO-8601，收到的是 31/02/2027——请将日期设为有效的日历日期后重试；本次调用无副作用」。前者是一个耸肩。后者是一份计划。收到第二条的智能体不需要聪明；报错已经替它完成了推理，模型只需执行。多数技术栈里能买到的最便宜的能力升级，不是更好的模型——是现有模型已经在调用的那二十个工具上，更好的报错字符串。">The pattern has four slots: a stable machine-readable category, one specific sentence naming the field, an imperative next step, and a retry-safety verdict with an idempotency token on write paths. 'Validation failed' is a shrug; the structured version is a plan. The cheapest capability upgrade in most stacks is not a better model — it is better error strings on the twenty tools the current model already calls.</p>
+<p data-en="The retry verdict deserves special obsession, because retry behavior is where agent loops visibly hemorrhage money. Every error should classify itself along two axes: transient versus permanent, and idempotent versus destructive. Transient and idempotent — network blip, rate limit — means retry with the specified backoff, and the error should say what the backoff is. Permanent — bad parameter, missing permission, nonexistent resource — means retrying is insane, and the error must say so in words the model cannot misread. Destructive and uncertain — the call may or may not have committed — is the dangerous quadrant, and the only honest answer there is an idempotency key: return the key in the error, let the retry carry it, let the server deduplicate. Teams that skip the key eventually meet an agent that double-sent an invoice and then, having received 'unexpected error' both times, helpfully tried a third." data-zh="重试裁定值得被特别着迷，因为重试行为，是智能体循环肉眼可见地大出血的地方。每条报错都应沿两条轴为自己分类：瞬态还是永久，幂等还是破坏性。瞬态且幂等——网络抖动、限流——意味着按指定的退避策略重试，而报错应该写明退避是什么。永久——参数错误、权限缺失、资源不存在——意味着重试毫无理性，报错必须用模型无法误读的措辞说清楚。破坏性且不确定——调用可能已提交、也可能没有——是危险象限，那里唯一诚实的答案是幂等键：报错里返回这个键，让重试带上它，让服务端去重。跳过这个键的团队，迟早会遇见一个重复发送了发票的智能体——而且它在两次都收到「意外错误」之后，还贴心地试了第三次。">Every error should classify itself: transient versus permanent, idempotent versus destructive. Transient and idempotent means retry with the stated backoff; permanent means the error must say so in words the model cannot misread. The dangerous quadrant — destructive and uncertain — has one honest answer: an idempotency key. Teams that skip it eventually meet an agent that double-sent an invoice and then helpfully tried a third time.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrQ1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+</defs>
+<text data-en="THE RETRY DECISION QUADRANTS" data-zh="重试决策四象限" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE RETRY DECISION QUADRANTS</text>
+<!-- axes -->
+<line stroke="var(--border)" stroke-width="1.2" x1="310" x2="310" y1="48" y2="300"></line>
+<line stroke="var(--border)" stroke-width="1.2" x1="80" x2="540" y1="174" y2="174"></line>
+<text data-en="TRANSIENT →" data-zh="→ 瞬态" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="195" y="42">TRANSIENT →</text>
+<text data-en="← PERMANENT" data-zh="永久 ←" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="425" y="42">← PERMANENT</text>
+<text data-en="↑ RETRY SAFE" data-zh="重试安全 ↑" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="74" y="112">↑ RETRY SAFE</text>
+<text data-en="↓ DESTRUCTIVE RISK" data-zh="破坏性风险 ↓" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="74" y="244">↓ DESTRUCTIVE RISK</text>
+<!-- Q1: transient + safe -->
+<rect fill="var(--accent-dim)" height="100" rx="10" stroke="var(--accent)" stroke-width="2" width="200" x="96" y="58"></rect>
+<text data-en="RETRY WITH BACKOFF" data-zh="按退避重试" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="196" y="86">RETRY WITH BACKOFF</text>
+<text data-en="rate limit · timeout · 5xx" data-zh="限流 · 超时 · 5xx" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="196" y="106">rate limit · timeout · 5xx</text>
+<text data-en="error states the backoff" data-zh="报错写明退避策略" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="196" y="126">error states the backoff</text>
+<!-- Q2: permanent + safe -->
+<rect fill="var(--bg-surface)" height="100" rx="10" stroke="var(--text-tertiary)" stroke-width="1.5" width="200" x="324" y="58"></rect>
+<text data-en="DO NOT RETRY — FIX" data-zh="不要重试——修正" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="424" y="86">DO NOT RETRY — FIX</text>
+<text data-en="bad parameter · 404 · auth" data-zh="参数错误 · 404 · 鉴权" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="424" y="106">bad parameter · 404 · auth</text>
+<text data-en="error names the exact field" data-zh="报错点名确切字段" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="424" y="126">error names the exact field</text>
+<!-- Q3: transient + destructive -->
+<rect fill="var(--bg-surface)" height="100" rx="10" stroke="var(--accent-3)" stroke-width="2" width="200" x="96" y="190"></rect>
+<text data-en="UNKNOWN — RESOLVE FIRST" data-zh="状态未知——先查询" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="196" y="218">UNKNOWN — RESOLVE FIRST</text>
+<text data-en="write may have committed" data-zh="写入可能已提交" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="196" y="238">write may have committed</text>
+<text data-en="check status, then decide" data-zh="先查状态，再做决定" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="196" y="258">check status, then decide</text>
+<!-- Q4: permanent + destructive -->
+<rect fill="var(--bg-surface)" height="100" rx="10" stroke="var(--accent-3)" stroke-width="1.5" width="200" x="324" y="190"></rect>
+<text data-en="ABORT — HUMAN MAY OWE" data-zh="中止——可能已有副作用" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="424" y="218">ABORT — HUMAN MAY OWE</text>
+<text data-en="schema rejected mid-write" data-zh="写入中途被 schema 拒绝" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="424" y="238">schema rejected mid-write</text>
+<text data-en="surface it; never paper over" data-zh="如实上报，绝不掩饰" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="424" y="258">surface it; never paper over</text>
+<!-- idempotency key note -->
+<path d="M196 158 L196 184" fill="none" marker-end="url(#arrQ1)" stroke="var(--accent-2)" stroke-width="1.4" stroke-dasharray="3,3"></path>
+<text data-en="the fix for the bottom half: idempotency keys returned in the error" data-zh="下半区的解法：报错中返回幂等键" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="322">the fix for the bottom half: idempotency keys returned in the error</text>
+</svg>
+<p class="diagram-caption" data-en="Every tool error should place itself on this grid and say so explicitly. Transient and retry-safe: retry with a stated backoff. Permanent: name the exact field and forbid retries in unreadable-proof wording. Anything touching a write path lives in the dangerous lower half, where the only scalable answer is idempotency keys — returned in the error, carried by the retry, deduplicated by the server. The quadrants convert the model's hardest in-flight judgment call into a lookup it can make in one turn." data-zh="每条工具报错都应在这张网格上标出自己的位置，并明说出来。瞬态且重试安全：按写明的退避策略重试。永久：点名确切的字段，用无法误读的措辞禁止重试。任何触碰写入路径的报错都住在危险的下半区，那里唯一可扩展的答案是幂等键——在报错中返回、由重试携带、被服务端去重。这四个象限，把模型飞行中最难的判断，变成了一回合内就能完成的查表。">Every tool error should place itself on this grid and say so. Transient and retry-safe: retry with stated backoff. Permanent: name the field and forbid retries. Write paths live in the dangerous lower half, where the only scalable answer is idempotency keys. The quadrants convert the model's hardest in-flight judgment into a one-turn lookup.</p>
+</div>
+<h3 data-en="Stable structure beats eloquent prose" data-zh="稳定的结构胜过雄辩的散文">Stable structure beats eloquent prose</h3>
+<p data-en="There is a subtle failure that bites teams who upgrade their errors enthusiastically: the error text becomes so good, so detailed, that engineers start editing it. Wording gets polished between versions, categories get renamed, fields move — and every edit silently invalidates whatever the agent, or the harness, or the prompt guidance had learned about the old shape. The lesson from prompt engineering transfers exactly: agents do not read meaning the way humans do; they read structure, and they anchor hard on whatever structure was present at training and at tuning time. So treat the error contract like a schema, not like copy. Machine-readable category keys that never rename. Fixed field order. Human-readable detail quarantined into its own field, explicitly labeled as safe to ignore. A version marker, so the harness can migrate guidance when the contract changes. Emotional prose is for status pages; the loop wants a shape it can parse in one glance at ten thousand tokens of context." data-zh="还有一个隐蔽的失败模式，专咬那些热情升级了报错的团队：报错文本变得太好、太详细，以至于工程师开始反复修改它。措辞在版本之间被润色，类别被改名，字段被挪动——而每一次编辑，都在悄悄作废智能体、执行框架或提示词指引对旧结构的全部认知。提示词工程里的教训在这里原样成立：智能体不是像人类那样读含义的；它们读结构，并且死死锚定在训练与调优时出现过的结构上。所以要把报错契约当作 schema 对待，而不是当作文案。机器可读的类别键，永不改名。固定的字段顺序。人类可读的细节隔离进自己的字段，并明确标注可以忽略。再放一个版本标记，让框架在契约变更时能迁移指引。煽情的散文留给状态页；循环要的，是一个在十万 token 上下文里一瞥就能解析的形状。">A subtle failure bites teams who upgrade errors enthusiastically: the text becomes so good that engineers keep editing it — and every polish silently invalidates what the agent and harness had learned. Treat the error contract like a schema: category keys that never rename, fixed field order, human-readable detail quarantined and labeled ignorable, a version marker for migration. The loop wants a shape it can parse in one glance.</p>
+<p data-en="The same logic extends to success paths, because agents also misbehave on information-poor successes. A tool that returns an enormous unsorted payload is not neutral — it forces the model to spend turns searching the result, and every search turn is another opportunity to hallucinate a fact that was not quite there. Paginated results with continuation tokens, filtered queries with narrow returns, summaries with counts — these are not conveniences; they are context-budget engineering on the read path. The deep principle is symmetric: tool results are the system's most expensive prompts, on both the happy path and the sad one. Every byte returned is a byte the model must attend to, and attention spent scanning is attention not spent deciding." data-zh="同样的逻辑也延伸到成功路径，因为智能体在信息贫乏的成功上同样会行为失常。一个返回海量无序数据的工具并不是中性的——它迫使模型花好几个回合在结果里翻找，而每一个翻找的回合，都是又一次把并不存在的事实幻觉成存在的契机。带续读令牌的分页结果、收窄返回的过滤查询、带计数的摘要——这些不是锦上添花；它们是读取路径上的上下文预算工程。深层的原则是对称的：工具结果是系统里最昂贵的提示词，无论顺境逆境。返回的每一个字节，都是模型必须分配注意力的字节，而花在扫描上的注意力，就是没有花在决策上的注意力。">The same logic extends to success paths. A tool returning an enormous unsorted payload forces the model to spend turns searching — and every search turn is a chance to hallucinate. Pagination with continuation tokens, filtered queries, counts in summaries: this is context-budget engineering on the read path. Tool results are the system's most expensive prompts, on both paths.</p>
+<blockquote data-en="Write every error message as if it were the only instruction the agent would receive that turn — because mechanically, it is. If the message does not contain the next move, the model will invent one, and you will have shipped the invention." data-zh="写每一条报错信息时，都当作它是智能体这一回合收到的唯一指令——因为在机制上，它就是。如果这条信息里没有下一步，模型会自己发明一个，而你发布的就是那个发明。">Write every error message as if it were the only instruction the agent would receive that turn — because mechanically, it is. If the message does not contain the next move, the model will invent one, and you will have shipped the invention.</blockquote>
+<h3 data-en="The error ledger: failures as free tooling feedback" data-zh="错误台账：失败是免费的设计反馈">The error ledger: failures as free tooling feedback</h3>
+<p data-en="The final move turns the whole thing into a flywheel. Every error an agent receives in production is a datum about the tooling: something the schema failed to reject early, a validation that fires after side effects, a category the agent had to guess about. Record them. Rank error categories by frequency, and the top of that list is the tool roadmap — not a guess at what users want, but a measurement of where the loop bleeds. A validation error appearing forty thousand times means the schema should have made the invalid call unrepresentable, or that the field's format is undocumented where the model reads it. A timeout cluster means the tool's latency contract is a fiction. Each fix removes an entire class of turns from every future run: fewer wasted calls, shorter contexts, lower spend, faster answers. Error design is the rare discipline where the compassionate option for the model, the cheap option for the budget, and the robust option for the product are all the same option — a loop that fails well." data-zh="最后一步，是把这一切转成飞轮。智能体在生产中收到的每一条报错，都是关于工具的一个数据点：某个 schema 没能尽早拒绝的输入、某个在副作用之后才触发的校验、某个逼智能体去猜的类别。把它们记下来。按频率给报错类别排序，这份榜单的顶端就是工具的路线图——不是对用户想要什么的猜测，而是对循环在哪里失血的测量。一条校验错误出现四万次，意味着 schema 本该让那个非法调用根本无法表达，或者那个字段的格式没有写在模型读得到的地方。一片超时聚集，意味着工具的延迟承诺是虚构的。每一个修复，都从未来的每次运行中移除一整类回合：更少的浪费调用、更短的上下文、更低的开销、更快的答案。报错设计是罕见的、三赢的学科：对模型最仁慈的选项、对预算最便宜的选项、对产品最稳健的选项，是同一个选项——一个失败得很好的循环。">Every error an agent receives in production is a datum about the tooling. Record them, rank categories by frequency, and the top of that list is the tool roadmap — a measurement of where the loop bleeds. Each fix removes an entire class of turns from every future run. Error design is the rare discipline where the compassionate option for the model, the cheap option for the budget, and the robust option for the product are the same option.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+</defs>
+<text data-en="THE ERROR LEDGER FLYWHEEL" data-zh="错误台账飞轮" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE ERROR LEDGER FLYWHEEL</text>
+<!-- production loop -->
+<rect fill="var(--bg-surface)" height="62" rx="10" stroke="var(--accent)" stroke-width="2" width="200" x="60" y="56"></rect>
+<text data-en="PRODUCTION RUNS" data-zh="生产运行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="160" y="80">PRODUCTION RUNS</text>
+<text data-en="every error logged verbatim" data-zh="每条报错逐字留档" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="160" y="98">every error logged verbatim</text>
+<path d="M260 87 L330 87" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<text data-en="rank by frequency" data-zh="按频率排序" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="295" y="78">rank by frequency</text>
+<rect fill="var(--bg-surface)" height="62" rx="10" stroke="var(--accent-2)" stroke-width="1.8" width="200" x="334" y="56"></rect>
+<text data-en="THE ERROR LEDGER" data-zh="错误台账" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="434" y="80">THE ERROR LEDGER</text>
+<text data-en="top of list = where the loop bleeds" data-zh="榜首 = 循环失血之处" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="434" y="98">top of list = where the loop bleeds</text>
+<!-- redesign -->
+<path d="M434 118 L434 168" fill="none" marker-end="url(#arrR2)" stroke="var(--accent-2)" stroke-width="1.8"></path>
+<text data-en="drives" data-zh="驱动" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="462" y="146">drives</text>
+<rect fill="var(--accent-dim)" height="62" rx="10" stroke="var(--accent)" stroke-width="2.5" width="220" x="324" y="172"></rect>
+<text data-en="TOOL REDESIGN" data-zh="工具重设计" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="434" y="196">TOOL REDESIGN</text>
+<text data-en="schemas · validations · error contracts" data-zh="schema · 校验 · 报错契约" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="434" y="214">schemas · validations · error contracts</text>
+<!-- fewer errors -->
+<path d="M324 203 L266 203" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<text data-en="removes classes of failure" data-zh="整类地移除失败" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="295" y="194">removes classes of failure</text>
+<rect fill="var(--bg-surface)" height="62" rx="10" stroke="var(--accent)" stroke-width="2" width="170" x="94" y="172"></rect>
+<text data-en="LEANER LOOPS" data-zh="更精简的循环" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="179" y="196">LEANER LOOPS</text>
+<text data-en="fewer turns · shorter context · lower spend" data-zh="更少回合 · 更短上下文 · 更低开销" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="179" y="214">fewer turns · shorter context · lower spend</text>
+<!-- loop close -->
+<path d="M179 234 L179 300 L434 300 L434 234" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.8" stroke-dasharray="5,4"></path>
+<text data-en="better runs feed the ledger again — the loop closes" data-zh="更好的运行再次滋养台账——回路闭合" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="322">better runs feed the ledger again — the loop closes</text>
+</svg>
+<p class="diagram-caption" data-en="The error ledger turns failures into a tooling roadmap. Production runs are mined for error frequency; the top of the ranking marks exactly where the loop wastes turns; each targeted fix — a stricter schema, an earlier validation, a better error contract — removes an entire class of failures from every future run. Fewer wasted turns compound into shorter contexts, lower spend, and faster answers, which in turn produce cleaner traces. Compassion for the model, budget discipline, and product robustness turn out to be one dial." data-zh="错误台账把失败变成工具的路线图。从生产运行中挖掘报错频率；榜单的顶端，精确标出循环在哪里浪费回合；每一个针对性的修复——更严格的 schema、更前置的校验、更好的报错契约——都从未来的每次运行中，整类地移除失败。更少的浪费回合，复利式地变成更短的上下文、更低的开销、更快的答案，进而产生更干净的轨迹。对模型的仁慈、对预算的克制、对产品的稳健，原来是同一个旋钮。">The error ledger turns failures into a tooling roadmap: mine error frequency from production, fix where the loop wastes turns, and each fix removes an entire class of failures from every future run. Compassion for the model, budget discipline, and robustness turn out to be one dial.</p>
+</div>
+<p data-en="The uncomfortable summary: most agent systems are running with a steering surface nobody designed. Thousands of error strings, written over years for human eyes, now land in the attention of a reader that takes them literally, follows them eagerly, and improvises when they say nothing. That surface is already a prompt — the only question is whether it is authored or accidental. The teams that audit it, structure it, and version it get a strange kind of leverage: every improvement is read perfectly by every model, old and new, strong and weak, on every call, forever. There is no prompt in the system prompt with that reach. The error contract is the quietest large surface in the stack, and it is waiting, one 'unexpected error' at a time, to be written on purpose." data-zh="令人不适的总结是：大多数智能体系统，正运行在一个从未被设计过的操控界面上。成千上万条报错字符串，多年来为人类之眼而写，如今落进一位逐字当真、热心照办、并在无话可说时即兴发挥的读者的注意力里。这个界面早已是一条提示词——唯一的问题是，它是有意写就的，还是意外的产物。审计它、结构化它、给它做版本管理的团队，获得的是一种奇特的杠杆：每一处改进，都会被每一个模型完美读到——旧的与新的，强的与弱的——在每一次调用上，永远有效。系统提示词里没有任何一句话有这样的覆盖面。报错契约是整个技术栈里最安静的大型界面，而它正等着——以一条又一条「意外错误」的方式——被有意地写下。">Most agent systems run with a steering surface nobody designed: thousands of error strings written for human eyes, now landing in the attention of a reader that takes them literally and improvises when they say nothing. That surface is already a prompt — the only question is whether it is authored or accidental. The error contract is the quietest large surface in the stack, waiting to be written on purpose.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

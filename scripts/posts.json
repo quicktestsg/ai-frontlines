@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-01",
+    "slug": "errors-are-prompts",
+    "title_en": "Errors Are Prompts: Tool Messages Written for a Reader Made of Weights",
+    "title_zh": "错误即提示词：为权重构成的读者写下工具报错",
+    "read_time": 8,
+    "excerpt_en": "Tool results land in the context window verbatim, which makes every error message a prompt injected at the moment of maximum attention. Retry classifications, idempotency keys, and stable error schemas are the cheapest capability upgrade in most agent stacks.",
+    "excerpt_zh": "工具结果逐字进入上下文窗口，使每条报错都成为在注意力顶点注入的提示词。重试裁定、幂等键与稳定的报错 schema，是多数智能体技术栈里最便宜的能力升级。"
+  },
+  {
     "date": "2026-10-31",
     "slug": "the-eval-is-the-spec",
     "title_en": "The Eval Is the Spec: Your Test Suite Is Your Only Contract",
