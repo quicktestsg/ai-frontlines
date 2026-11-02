@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Fan-Out Tax — AI Frontlines</title>
+<meta content="Multi-agent fan-out looks like free parallelism, but every parallel branch must re-serialize into a single context window. The fan-in is the bottleneck, and it charges a tax on attention, verification, and merge quality that most architectures never account for." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 3, 2026" data-zh="2026年11月3日">November 3, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Fan-Out Tax" data-zh="扇出税">The Fan-Out Tax</h1>
+<p class="post-header-deck" data-en="Multi-agent systems are sold on a seductive image: one orchestrator spawning a dozen subagents, each burning through its own context, all working in parallel while the wall clock barely moves. The image is true right up to the moment the work comes back. Because every branch that fans out must fan in — and the fan-in happens through a single context window, one attention head at a time. Parallelism on the way out; serialization on the way back. The tax is levied at the border, and almost no architecture budgets for it." data-zh="多智能体系统被一张诱人的图景推销着：一个编排者派出十几个子智能体，各自烧着各自的上下文，全部并行推进，而墙上时钟几乎不动。这张图景一直到「工作交回来」的那一刻都是真的。因为每一条扇出的分支，都必须扇入——而扇入要经过同一个上下文窗口，一次一个注意力头。出去时是并行，回来时是串行。税在边境上征收，而几乎没有架构为它编列过预算。">Multi-agent systems are sold on a seductive image: one orchestrator spawning a dozen subagents, each burning through its own context, all working in parallel while the wall clock barely moves. The image is true right up to the moment the work comes back. Because every branch that fans out must fan in — and the fan-in happens through a single context window, one attention head at a time. Parallelism on the way out; serialization on the way back. The tax is levied at the border, and almost no architecture budgets for it.</p>
+</header>
+<article class="post-body">
+<p data-en="Start with the ledger everyone quotes. A subagent gets a fresh context: it does not inherit the parent's cluttered transcript, so it thinks cleanly, and its scratch work does not pollute the main thread. Ten subagents mean ten isolated windows, ten parallel chains of thought, ten tool budgets. On paper this is a tenfold multiplication of thinking. The paper is not wrong about the fan-out. It is silent about the fan-in. When those ten branches finish, their results must return somewhere, and the only somewhere that can act on them is the orchestrator's context window — a fixed-size attention budget that now has to absorb ten reports, reconcile their contradictions, track their provenance, and decide what to do next. The work was parallel; the understanding is not." data-zh="先从人人都在引用的那本账说起。子智能体获得一个全新的上下文：它不继承父级杂乱的轨迹记录，所以它思考得干净，它的草稿也不会污染主线程。十个子智能体意味着十个隔离的窗口、十条并行的思维链、十份工具预算。纸面上，这是思考力的十倍乘法。这张纸没有说错扇出。它对扇入只字未提。当这十条分支完成时，它们的结果必须回到某个地方，而唯一能对它们采取行动的地方，是编排者的上下文窗口——一个固定大小的注意力预算，此刻必须吞下十份报告、调和它们之间的矛盾、追踪它们的来路、然后决定下一步。工作是并行的，理解不是。">Start with the ledger everyone quotes. A subagent gets a fresh context: it does not inherit the parent's cluttered transcript, so it thinks cleanly, and its scratch work does not pollute the main thread. Ten subagents mean ten isolated windows, ten parallel chains of thought, ten tool budgets. On paper this is a tenfold multiplication of thinking. The paper is not wrong about the fan-out. It is silent about the fan-in. When those ten branches finish, their results must return somewhere, and the only somewhere that can act on them is the orchestrator's context window — a fixed-size attention budget that now has to absorb ten reports, reconcile their contradictions, track their provenance, and decide what to do next. The work was parallel; the understanding is not.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrF1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrF2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="FAN-OUT IS PARALLEL. FAN-IN IS A TOLLBOOTH." data-zh="扇出是并行的。扇入是一个收费站。" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">FAN-OUT IS PARALLEL. FAN-IN IS A TOLLBOOTH.</text>
+<!-- orchestrator -->
+<rect fill="var(--accent-dim)" height="42" rx="10" stroke="var(--accent)" stroke-width="2" width="150" x="30" y="60"></rect>
+<text data-en="orchestrator" data-zh="编排者" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11.5" font-weight="700" text-anchor="middle" x="105" y="86">orchestrator</text>
+<!-- fan-out edges -->
+<path d="M180 70 C240 40 260 40 300 46" fill="none" marker-end="url(#arrF1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<path d="M180 81 L300 81" fill="none" marker-end="url(#arrF1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<path d="M180 92 C240 122 260 122 300 116" fill="none" marker-end="url(#arrF1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<text data-en="spawn ×5 — parallel, cheap" data-zh="派出 ×5——并行，便宜" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="240" y="30">spawn ×5 — parallel, cheap</text>
+<!-- subagents column -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="130" x="303" y="34"></rect>
+<text data-en="subagent A" data-zh="子智能体 A" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" text-anchor="middle" x="368" y="55">subagent A</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="130" x="303" y="74"></rect>
+<text data-en="subagent B" data-zh="子智能体 B" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" text-anchor="middle" x="368" y="95">subagent B</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="130" x="303" y="114"></rect>
+<text data-en="subagent C…" data-zh="子智能体 C…" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" text-anchor="middle" x="368" y="135">subagent C…</text>
+<!-- fan-in edges -->
+<path d="M433 51 C480 60 480 130 520 152" fill="none" marker-end="url(#arrF2)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<path d="M433 91 L520 165" fill="none" marker-end="url(#arrF2)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<path d="M433 131 C480 135 480 180 520 178" fill="none" marker-end="url(#arrF2)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<text data-en="return ×5 — serialized" data-zh="返回 ×5——串行" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="480" y="118">return ×5 — serialized</text>
+<!-- parent context -->
+<rect fill="var(--accent-dim)" height="120" rx="10" stroke="var(--accent-3)" stroke-width="2" width="76" x="523" y="105"></rect>
+<text data-en="parent" data-zh="父级" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" x="561" y="150">parent</text>
+<text data-en="context" data-zh="上下文" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" x="561" y="166">context</text>
+<text data-en="(fixed)" data-zh="（固定大小）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9.5" font-style="italic" text-anchor="middle" x="561" y="184">(fixed)</text>
+<!-- toll banner -->
+<rect fill="var(--accent-dim)" height="44" opacity="0.55" rx="9" width="540" x="40" y="285"></rect>
+<text data-en="Five windows of work, one window of understanding. The merge is the system." data-zh="五份窗口的工作，一份窗口的理解。合并，才是系统本身。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11.5" font-style="italic" text-anchor="middle" x="310" y="304">Five windows of work, one window of understanding.</text>
+<text data-en="The merge is the system." data-zh="合并，才是系统本身。" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11.5" font-weight="600" font-style="italic" text-anchor="middle" x="310" y="322">The merge is the system.</text>
+</svg>
+<p class="diagram-caption" data-en="The textbook diagram of multi-agent systems draws only the left half: one node becoming many. The right half is where systems live or die. Every spawned branch produces a result that must be read, believed or verified, reconciled against its siblings, and folded into a decision — inside one context window whose size did not grow just because the organization chart did. Spawning is O(1) in attention. Merging is O(n) in attention, O(n) in tokens, and — because contradictory results must be adjudicated — occasionally O(n²) in reasoning." data-zh="教科书里多智能体系统的图，只画了左半边：一个节点变成许多个。右半边才是系统生死存亡的地方。每一条被派出的分支都会产出一个结果，而每个结果都必须被阅读、被相信或被验证、与其兄弟分支相互调和、并折叠进一个决定——这一切都发生在一个上下文窗口里，而窗口的大小并不因为组织架构图变大而变大。派出的注意力成本是 O(1)。合并的注意力成本是 O(n)，token 成本是 O(n)，而且——因为相互矛盾的结果必须有人裁决——推理成本偶尔是 O(n²)。">The textbook diagram of multi-agent systems draws only the left half: one node becoming many. The right half is where systems live or die. Every spawned branch produces a result that must be read, believed or verified, reconciled against its siblings, and folded into a decision — inside one context window whose size did not grow just because the organization chart did. Spawning is O(1) in attention. Merging is O(n) in attention, O(n) in tokens, and — because contradictory results must be adjudicated — occasionally O(n²) in reasoning.</p>
+</div>
+<h3 data-en="Three line items on the tax bill" data-zh="税单上的三个条目">Three line items on the tax bill</h3>
+<p data-en="The fan-out tax is not one cost but three, and they compound. The first is the transport cost: raw results are the wrong currency. A subagent that spent twenty tool calls arriving at a conclusion wants to return its journey; the parent can afford only the destination. Someone must compress, and compression is where nuance dies — the caveat that would have changed the decision is exactly the sentence that gets cut. The second is the attention cost: context is not storage, it is spotlight. Every result that enters the window competes for attention with everything already there. Insert five dense reports and the model's effective recall of the original task — the goal, the constraints, the definition of done — measurably degrades. The window did not overflow; the focus did. The third is the verification cost, the one nobody prices. A result from a branch is a claim. The orchestrator can trust it, or it can check it, and checking is itself work that lands in the same exhausted window. Most systems quietly choose trust, which is why multi-agent pipelines fail not loudly, at the branch, but softly, at the merge — where a plausible wrong answer from subagent C gets folded into the final report without anyone, human or model, ever reading the evidence." data-zh="扇出税不是一笔费用，而是三笔，而且它们会复利叠加。第一笔是运输成本：原始结果是错误的货币。一个花了二十次工具调用才走到结论的子智能体，想交回的是它的整段旅程；而父级负担得起的，只有终点。必须有人做压缩，而压缩正是细微差别死去的地方——那个本可以改变决定的限定条件，恰好就是被删掉的那一句。第二笔是注意力成本：上下文不是仓库，它是聚光灯。每一个进入窗口的结果，都在和已经在那里的东西争夺注意力。插入五份密集的报告，模型对原始任务——目标、约束、完成定义——的有效记忆就会可测量地下降。窗口没有溢出；焦点溢出了。第三笔是验证成本，也是没人给它定价的一笔。来自分支的结果是一个主张。编排者可以信任它，也可以核查它，而核查本身就是落进同一个疲惫窗口里的工作。大多数系统悄悄选择了信任，这就是为什么多智能体管线不是在分支上、大声地失败，而是在合并处、轻轻地失败——子智能体 C 给出的一个貌似有理的错误答案，被折进最终报告，而没有任何人——无论人类还是模型——读过它的证据。">The fan-out tax is not one cost but three, and they compound. The first is the transport cost: raw results are the wrong currency. A subagent that spent twenty tool calls arriving at a conclusion wants to return its journey; the parent can afford only the destination. Someone must compress, and compression is where nuance dies — the caveat that would have changed the decision is exactly the sentence that gets cut. The second is the attention cost: context is not storage, it is spotlight. Every result that enters the window competes for attention with everything already there. Insert five dense reports and the model's effective recall of the original task measurably degrades. The window did not overflow; the focus did. The third is the verification cost, the one nobody prices. A result from a branch is a claim. The orchestrator can trust it, or it can check it, and checking is itself work that lands in the same exhausted window. Most systems quietly choose trust, which is why multi-agent pipelines fail not loudly, at the branch, but softly, at the merge.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE FAN-OUT TAX BILL" data-zh="扇出税账单" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE FAN-OUT TAX BILL</text>
+<!-- item 1: transport -->
+<rect fill="var(--bg-surface)" height="72" rx="10" stroke="var(--accent-2)" stroke-width="1.8" width="170" x="35" y="52"></rect>
+<text data-en="1 · TRANSPORT" data-zh="1 · 运输" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11.5" font-weight="800" text-anchor="middle" x="120" y="76">1 · TRANSPORT</text>
+<text data-en="journey → destination" data-zh="旅程 → 终点" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="120" y="96">journey → destination</text>
+<text data-en="compression kills caveats" data-zh="压缩杀死限定条件" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9.5" font-style="italic" text-anchor="middle" x="120" y="114">compression kills caveats</text>
+<!-- item 2: attention -->
+<rect fill="var(--bg-surface)" height="72" rx="10" stroke="var(--accent)" stroke-width="1.8" width="170" x="225" y="52"></rect>
+<text data-en="2 · ATTENTION" data-zh="2 · 注意力" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11.5" font-weight="800" text-anchor="middle" x="310" y="76">2 · ATTENTION</text>
+<text data-en="window ≠ storage" data-zh="窗口 ≠ 仓库" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="310" y="96">window ≠ storage</text>
+<text data-en="focus dilutes as O(n)" data-zh="焦点以 O(n) 稀释" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9.5" font-style="italic" text-anchor="middle" x="310" y="114">focus dilutes as O(n)</text>
+<!-- item 3: verification -->
+<rect fill="var(--bg-surface)" height="72" rx="10" stroke="var(--accent-3)" stroke-width="2.2" width="170" x="415" y="52"></rect>
+<text data-en="3 · VERIFICATION" data-zh="3 · 验证" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11.5" font-weight="800" text-anchor="middle" x="500" y="76">3 · VERIFICATION</text>
+<text data-en="a result is a claim" data-zh="结果即主张" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="500" y="96">a result is a claim</text>
+<text data-en="checking lands in the same window" data-zh="核查落在同一个窗口里" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9.5" font-style="italic" text-anchor="middle" x="500" y="114">checking lands in the same window</text>
+<!-- flow down -->
+<path d="M120 124 C120 160 200 165 240 172" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<path d="M310 124 L310 165" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<path d="M500 124 C500 160 420 165 380 172" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<!-- outcome -->
+<rect fill="var(--accent-dim)" height="70" rx="10" stroke="var(--accent)" stroke-width="2" width="380" x="120" y="170"></rect>
+<text data-en="The naive ledger: 10 agents × parallel = 10× thinking" data-zh="天真的账本：10 个智能体 × 并行 = 10 倍思考" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="310" y="196">The naive ledger: 10 agents × parallel = 10× thinking</text>
+<text data-en="The real ledger: 10× doing − transport − attention − verification" data-zh="真实的账本：10 倍执行 − 运输 − 注意力 − 验证" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="218">The real ledger: 10× doing − transport − attention − verification</text>
+<text data-en="The difference is the tax. It is paid at the merge." data-zh="差额就是税。它在合并处缴纳。" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="238">The difference is the tax. It is paid at the merge.</text>
+<!-- failure mode -->
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent-3)" stroke-width="1.5" width="440" x="90" y="268"></rect>
+<text data-en="Failure signature: every branch succeeds, the merged answer is wrong," data-zh="失败签名：每条分支都成功，合并后的答案是错的，" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10.5" text-anchor="middle" x="310" y="286">Failure signature: every branch succeeds, the merged answer is wrong,</text>
+<text data-en="and no trace shows where the truth was lost." data-zh="而且没有任何痕迹显示真相是在哪里丢的。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10.5" font-weight="600" text-anchor="middle" x="310" y="303">and no trace shows where the truth was lost.</text>
+</svg>
+<p class="diagram-caption" data-en="Three costs, one merge point. Transport strips the caveats that mattered; attention dilutes the goal the whole system was supposed to serve; verification gets skipped because there is no budget left to pay for it. The result is the characteristic multi-agent failure that shows up in the wild: every subagent's transcript looks impeccable, every intermediate result is defensible, and the final output is confidently, tracelessly wrong. The postmortem finds no bug — because the defect was never in a component. It was in the accounting." data-zh="三笔费用，一个合并点。运输剥掉了真正重要的限定条件；注意力稀释了整个系统本该服务的目标；验证被跳过，因为已经没有预算来付它。结果就是野外最典型的多智能体失败：每个子智能体的轨迹都无懈可击，每个中间结果都站得住脚，而最终输出自信地、无迹可寻地错了。复盘找不到任何 bug——因为缺陷从来不在某个组件里。它在账本里。">Three costs, one merge point. Transport strips the caveats that mattered; attention dilutes the goal the whole system was supposed to serve; verification gets skipped because there is no budget left to pay for it. The result is the characteristic multi-agent failure that shows up in the wild: every subagent's transcript looks impeccable, every intermediate result is defensible, and the final output is confidently, tracelessly wrong. The postmortem finds no bug — because the defect was never in a component. It was in the accounting.</p>
+</div>
+<blockquote data-en="A multi-agent system is not a team of thinkers. It is a team of workers and a single reader. The architecture does not scale thinking; it scales labor — and then hopes the one context window left standing can hold the whole world the labor uncovered." data-zh="一个多智能体系统，不是一个思考者的团队。它是一个工人的团队，加一个唯一的读者。这种架构放大的不是思考，而是劳动——然后祈祷最后剩下的那个上下文窗口，能装下这些劳动所揭示的整个世界。">A multi-agent system is not a team of thinkers. It is a team of workers and a single reader. The architecture does not scale thinking; it scales labor — and then hopes the one context window left standing can hold the whole world the labor uncovered.</blockquote>
+<h3 data-en="When fan-out actually wins" data-zh="扇出什么时候真的赢">When fan-out actually wins</h3>
+<p data-en="None of this is an argument against multi-agent systems; it is an argument for knowing what they are good at. Fan-out wins when the task is embarrassingly parallel — when branches need almost nothing from each other and the merge is cheap. Searching forty files for the same pattern. Checking two hundred endpoints for the same bug class. Running the same verification over ten configurations. In each case the result is a uniform shape, contradictions are rare, verification is mechanical, and the merge is closer to a concatenation than a synthesis. Fan-out also wins on isolation grounds: when a branch might get poisoned — by a hostile document, a confusing codebase, an adversarial web page — a disposable context is a containment boundary, and burning it is cheaper than cleaning the main thread. The pattern to internalize: parallelize the doing, never the deciding. Subagents should gather evidence, not render verdicts. The moment branches return opinions that must be argued into a consensus, the merge has become the hardest reasoning problem in the system — and it is being solved by the most overloaded context window in the system, which is exactly backwards." data-zh="以上都不是反对多智能体系统的论据；它是主张看清它们擅长什么。当任务是「尴尬并行」的——分支之间几乎不需要彼此、合并很便宜——扇出就赢。在四十个文件里搜同一个模式。在两百个端点上检查同一类 bug。在十种配置上跑同一个验证。这些场景里，结果形状统一、矛盾罕见、验证是机械的、合并更像拼接而非综合。扇出还赢在隔离：当分支可能被污染——被一份恶意的文档、一个令人困惑的代码库、一个对抗性的网页——一个一次性的上下文就是一道隔离屏障，烧掉它比清洗主线程便宜。需要内化的模式是：并行化「执行」，永远不并行化「裁决」。子智能体应该收集证据，而不是下判决。一旦分支返回的是必须被辩论成共识的「观点」，合并就成了整个系统里最难的推理题——而它正被整个系统里最过载的那个上下文窗口解答着，这完全是颠倒的。">None of this is an argument against multi-agent systems; it is an argument for knowing what they are good at. Fan-out wins when the task is embarrassingly parallel — when branches need almost nothing from each other and the merge is cheap. Searching forty files for the same pattern. Checking two hundred endpoints for the same bug class. Running the same verification over ten configurations. In each case the result is a uniform shape, contradictions are rare, verification is mechanical, and the merge is closer to a concatenation than a synthesis. Fan-out also wins on isolation grounds: when a branch might get poisoned — by a hostile document, a confusing codebase, an adversarial web page — a disposable context is a containment boundary, and burning it is cheaper than cleaning the main thread. The pattern to internalize: parallelize the doing, never the deciding. Subagents should gather evidence, not render verdicts. The moment branches return opinions that must be argued into a consensus, the merge has become the hardest reasoning problem in the system — and it is being solved by the most overloaded context window in the system, which is exactly backwards.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrW1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrW2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="TWO SHAPES OF DELEGATION" data-zh="两种委派形态" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">TWO SHAPES OF DELEGATION</text>
+<!-- left: evidence fan-out -->
+<text data-en="FAN-OUT FOR EVIDENCE ✓" data-zh="为证据而扇出 ✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="160" y="56">FAN-OUT FOR EVIDENCE ✓</text>
+<rect fill="var(--accent-dim)" height="32" rx="8" stroke="var(--accent)" stroke-width="1.8" width="120" x="100" y="70"></rect>
+<text data-en="parent" data-zh="父级" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" x="160" y="90">parent</text>
+<path d="M160 102 L160 122" fill="none" marker-end="url(#arrW1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent-2)" stroke-width="1.3" width="110" x="30" y="126"></rect>
+<text data-en="find · fact A" data-zh="找 · 事实 A" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="85" y="144">find · fact A</text>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent-2)" stroke-width="1.3" width="110" x="105" y="126"></rect>
+<text data-en="find · fact B" data-zh="找 · 事实 B" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="160" y="144">find · fact B</text>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent-2)" stroke-width="1.3" width="110" x="180" y="126"></rect>
+<text data-en="find · fact C" data-zh="找 · 事实 C" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="235" y="144">find · fact C</text>
+<path d="M85 154 C85 180 120 185 140 192" fill="none" marker-end="url(#arrW1)" stroke="var(--accent)" stroke-width="1.2"></path>
+<path d="M160 154 L160 190" fill="none" marker-end="url(#arrW1)" stroke="var(--accent)" stroke-width="1.2"></path>
+<path d="M235 154 C235 180 200 185 180 192" fill="none" marker-end="url(#arrW1)" stroke="var(--accent)" stroke-width="1.2"></path>
+<rect fill="var(--accent-dim)" height="56" rx="9" stroke="var(--accent)" stroke-width="2" width="180" x="70" y="196"></rect>
+<text data-en="merge = concatenation" data-zh="合并 = 拼接" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" x="160" y="218">merge = concatenation</text>
+<text data-en="uniform facts, no verdicts" data-zh="形状统一的事实，没有判决" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9.5" font-style="italic" text-anchor="middle" x="160" y="236">uniform facts, no verdicts</text>
+<text data-en="deciding stays with the parent" data-zh="裁决权留在父级" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="160" y="270">deciding stays with the parent</text>
+<!-- right: verdict fan-out -->
+<text data-en="FAN-OUT FOR VERDICTS ✗" data-zh="为判决而扇出 ✗" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="460" y="56">FAN-OUT FOR VERDICTS ✗</text>
+<rect fill="var(--bg-surface)" height="32" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="400" y="70"></rect>
+<text data-en="parent" data-zh="父级" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" x="460" y="90">parent</text>
+<path d="M460 102 L460 122" fill="none" marker-end="url(#arrW2)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent-3)" stroke-width="1.3" width="110" x="330" y="126"></rect>
+<text data-en="opinion: use X" data-zh="观点：用 X" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="385" y="144">opinion: use X</text>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent-3)" stroke-width="1.3" width="110" x="405" y="126"></rect>
+<text data-en="opinion: use Y" data-zh="观点：用 Y" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="460" y="144">opinion: use Y</text>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent-3)" stroke-width="1.3" width="110" x="480" y="126"></rect>
+<text data-en="opinion: use Z" data-zh="观点：用 Z" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="535" y="144">opinion: use Z</text>
+<path d="M385 154 C385 180 420 185 440 192" fill="none" marker-end="url(#arrW2)" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<path d="M460 154 L460 190" fill="none" marker-end="url(#arrW2)" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<path d="M535 154 C535 180 500 185 480 192" fill="none" marker-end="url(#arrW2)" stroke="var(--accent-3)" stroke-width="1.2"></path>
+<rect fill="var(--bg-surface)" height="56" rx="9" stroke="var(--accent-3)" stroke-width="2.2" width="180" x="370" y="196"></rect>
+<text data-en="merge = adjudication" data-zh="合并 = 裁决" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10.5" font-weight="700" text-anchor="middle" x="460" y="218">merge = adjudication</text>
+<text data-en="conflicting verdicts, no evidence" data-zh="互相冲突的判决，没有证据" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9.5" font-style="italic" text-anchor="middle" x="460" y="236">conflicting verdicts, no evidence</text>
+<text data-en="hardest reasoning, most tired window" data-zh="最难的推理，最累的窗口" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9.5" text-anchor="middle" x="460" y="270">hardest reasoning, most tired window</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-width="1" x1="310" x2="310" y1="44" y2="286"></line>
+<!-- bottom rule -->
+<rect fill="var(--accent-dim)" height="38" opacity="0.55" rx="9" width="540" x="40" y="288"></rect>
+<text data-en="Rule of thumb: if the merge would still work as a Python function, fan out. If it needs judgment, don't." data-zh="经验法则：如果合并用一段 Python 函数就能完成，就扇出。如果它需要判断力，就不要。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="312">Rule of thumb: if the merge would still work as a Python function, fan out. If it needs judgment, don't.</text>
+</svg>
+<p class="diagram-caption" data-en="The same topology, two different systems. Left: branches return facts in a uniform schema, and the merge is mechanical — this is fan-out paying for itself. Right: branches return conclusions, the conclusions disagree, and the orchestrator must now run a debate, weigh evidence it never saw, and pick a winner — using attention that was already spent. The geometry is identical; the economics are opposite. What separates them is not the org chart but the shape of what crosses the border on the way back." data-zh="同一个拓扑，两种不同的系统。左边：分支以统一的格式返回事实，合并是机械的——这是扇出在回本。右边：分支返回结论，结论彼此分歧，编排者现在必须主持一场辩论、掂量它从未见过的证据、并选出赢家——用的是早已花掉的注意力。几何形状完全相同；经济学完全相反。区分它们的不是组织架构图，而是「回程时跨过边境的东西」的形状。">The same topology, two different systems. Left: branches return facts in a uniform schema, and the merge is mechanical — this is fan-out paying for itself. Right: branches return conclusions, the conclusions disagree, and the orchestrator must now run a debate, weigh evidence it never saw, and pick a winner — using attention that was already spent. The geometry is identical; the economics are opposite. What separates them is not the org chart but the shape of what crosses the border on the way back.</p>
+</div>
+<h3 data-en="Designing around the tollbooth" data-zh="绕着收费站做设计">Designing around the tollbooth</h3>
+<p data-en="If the merge is the bottleneck, the design moves are all ways to keep the border crossing cheap. First, dictate the shape of returns: a subagent should be contractually bound to a schema — findings, confidence, evidence pointer — so that merging is parsing, not reading. Second, merge outside the window: results land in a shared workspace — a file, a table, a structured store — and the parent queries summaries rather than ingesting reports; the context window reads the index, not the archive. Third, appoint a reducer: when many results must become one, let a dedicated context do the folding in stages — a tree of merges rather than one heroic gulp — so no single window ever holds the whole harvest. Fourth, keep verification out of band: checkers that read the workspace and grade the merge against the original spec, returning a pass or fail rather than an essay. None of this removes the tax. It converts it from a surprise, paid in attention at the worst possible moment, into a budgeted line item, paid in storage and extra passes at the edges where it is cheap." data-zh="如果瓶颈在合并，那么所有设计动作，都是让「过境」保持便宜的方法。第一，规定返回的形状：子智能体应当被契约性地绑定到一个格式上——发现、置信度、证据指针——这样合并就是解析，而不是阅读。第二，在窗口之外合并：结果落进一个共享工作区——一个文件、一张表、一个结构化存储——父级查询的是摘要，而不是吞下报告；上下文窗口读的是索引，不是档案库。第三，指定一个归约者：当许多结果必须变成一个时，让一个专门的上下文分阶段折叠——一棵合并树，而不是一次豪迈的吞咽——这样没有任何单个窗口需要握住整个收成。第四，把验证放到带外：让检查者读取工作区、对照原始规格为合并结果打分，返回通过或不通过，而不是一篇小作文。这些都不会取消税。它们把税从一笔「在最糟时刻用注意力支付」的意外支出，变成一笔预算内的条目——用存储和在边缘的额外遍历来支付，而那里是便宜的。">If the merge is the bottleneck, the design moves are all ways to keep the border crossing cheap. First, dictate the shape of returns: a subagent should be contractually bound to a schema — findings, confidence, evidence pointer — so that merging is parsing, not reading. Second, merge outside the window: results land in a shared workspace — a file, a table, a structured store — and the parent queries summaries rather than ingesting reports; the context window reads the index, not the archive. Third, appoint a reducer: when many results must become one, let a dedicated context do the folding in stages — a tree of merges rather than one heroic gulp — so no single window ever holds the whole harvest. Fourth, keep verification out of band: checkers that read the workspace and grade the merge against the original spec, returning a pass or fail rather than an essay. None of this removes the tax. It converts it from a surprise, paid in attention at the worst possible moment, into a budgeted line item, paid in storage and extra passes at the edges where it is cheap.</p>
+<p data-en="The deepest of these moves is the second, because it reframes what a multi-agent system is. The naive picture is agents talking to agents — intelligence wired to intelligence, and the context window as the meeting room. The durable picture is agents writing to a world — a shared, structured, queryable state that outlives any window — and talking only through it. Organizations of humans discovered this a long time ago: the way to coordinate a thousand people is not a thousand-person meeting, it is a library, a ticket queue, a shared ledger, a status board. Context windows are meetings. Workspaces are institutions. The fan-out tax is what a system pays when it tries to run an institution through a meeting. Build the institution instead, and the meeting gets short: who is doing what, what changed since yesterday, what needs a decision. That is a meeting a single window can survive — and a system that runs overnight can afford." data-zh="这些动作里最深的是第二条，因为它重新定义了多智能体系统是什么。天真的图景是智能体对智能体说话——智能连着智能，上下文窗口就是会议室。可持续的图景是智能体向一个「世界」书写——一个共享的、结构化的、可查询的状态，比任何窗口都活得久——并且只通过它交谈。人类的组织很久以前就发现了这一点：协调一千个人的方法，不是开一个一千人的会，而是建一座图书馆、一个工单队列、一本共享账本、一块状态板。上下文窗口是会议。工作区是制度。扇出税，就是一个系统试图「用会议来运转制度」时付出的代价。去建制度，会议就变短了：谁在做什么、比起昨天有什么变化、什么需要拍板。这样的会，单个窗口承受得起——而一个整夜运行的系统，也负担得起。">The deepest of these moves is the second, because it reframes what a multi-agent system is. The naive picture is agents talking to agents — intelligence wired to intelligence, and the context window as the meeting room. The durable picture is agents writing to a world — a shared, structured, queryable state that outlives any window — and talking only through it. Organizations of humans discovered this a long time ago: the way to coordinate a thousand people is not a thousand-person meeting, it is a library, a ticket queue, a shared ledger, a status board. Context windows are meetings. Workspaces are institutions. The fan-out tax is what a system pays when it tries to run an institution through a meeting. Build the institution instead, and the meeting gets short: who is doing what, what changed since yesterday, what needs a decision. That is a meeting a single window can survive — and a system that runs overnight can afford.</p>
+<p data-en="So the accounting discipline for multi-agent architecture, in one paragraph: before adding a branch, price the return. Ask what crosses the border on the way back — facts or verdicts — and how much attention the merge will cost the window that has to hold the goal. Give every subagent a return schema and a shared workspace to write into, so the parent reads an index instead of an archive. Parallelize gathering, isolating, and verifying; never parallelize deciding. And when a design starts drawing org charts with more than a handful of agents, remember that every arrow pointing back at the orchestrator is a toll. The systems that scale are not the ones that spawn the most. They are the ones that designed the cheapest way home." data-zh="于是，多智能体架构的记账纪律，可以放进一段话里：在添加一条分支之前，先给「返回」定价。问一问：回程跨过边境的是什么——事实，还是判决；合并要花掉那个必须握住目标的窗口多少注意力。给每个子智能体一个返回格式，和一个可以写入的共享工作区，让父级读到的是索引而不是档案库。并行化收集、隔离与验证；永远不并行化裁决。而当一个设计开始画出超过一小撮智能体的组织架构图时，记住：每一条指回编排者的箭头，都是一个收费站。能扩展的系统，不是派出最多的那些。而是把回家的路设计得最便宜的那些。">So the accounting discipline for multi-agent architecture, in one paragraph: before adding a branch, price the return. Ask what crosses the border on the way back — facts or verdicts — and how much attention the merge will cost the window that has to hold the goal. Give every subagent a return schema and a shared workspace to write into, so the parent reads an index instead of an archive. Parallelize gathering, isolating, and verifying; never parallelize deciding. And when a design starts drawing org charts with more than a handful of agents, remember that every arrow pointing back at the orchestrator is a toll. The systems that scale are not the ones that spawn the most. They are the ones that designed the cheapest way home.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
