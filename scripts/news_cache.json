@@ -1,6 +1,625 @@
 {
   "tweets": [
     {
+      "id": "2117444048227123277",
+      "url": "https://x.com/OpenAI/status/2117444048227123277",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-11-03T08:01:05.574588+00:00",
+      "translation_zh": "随着 AI 发现漏洞的能力越来越强，防守方必须抢在攻击者之前把它用起来。OpenAI 宣布筹备下一次内部安全冲刺，并与 Cathedral Systems 合作，由其研究员与内部团队并肩使用 OpenAI 模型挑战自身防御。同时大幅提高漏洞赏金：关键漏洞奖励提高超过四倍，杰出发现最高可获 17.2 万美元（含奖金）。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 2271,
+        "lang": "en",
+        "created_at": "2026-11-03T02:29:35.000Z",
+        "display_text_range": [
+          0,
+          278
+        ],
+        "entities": {},
+        "id_str": "2117444048227123277",
+        "text": "As AI becomes more capable at finding vulnerabilities, defenders need to put it to work before attackers do.\n\nWe’re planning our next internal security sprint at OpenAI and partnering with Cathedral Systems, whose researchers will use our models alongside our teams to challenge",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2117444048227123277"
+          ],
+          "editable_until_msecs": "1793676575000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 340,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/vcaoHROTt2",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Preparing our next security sprint to harden OpenAI in white text on an abstract orange, yellow, and pink background.",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2117443408222429184/TXOYoJ4i?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Preparing our next security sprint to harden OpenAI in white text on an abstract orange, yellow, and pink background.",
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2117443408222429184/TXOYoJ4i?format=jpg&name=280x150",
+                "width": 267
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "OpenAI is preparing its next internal security sprint with Cathedral Systems to test and strengthen its defenses using AI.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Preparing our next security sprint to harden OpenAI in white text on an abstract orange, yellow, and pink background.",
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2117443408222429184/TXOYoJ4i?format=jpg&name=800x320_1",
+                "width": 569
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Preparing our next security sprint to harden OpenAI in white text on an abstract orange, yellow, and pink background.",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2117443408222429184/TXOYoJ4i?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Preparing our next security sprint to harden OpenAI in white text on an abstract orange, yellow, and pink background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2117443408222429184/TXOYoJ4i?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "4398626122",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Preparing our next security sprint to harden OpenAI in white text on an abstract orange, yellow, and pink background.",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2117443408222429184/TXOYoJ4i?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Preparing our next security sprint to harden OpenAI in white text on an abstract orange, yellow, and pink background.",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2117443408222429184/TXOYoJ4i?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Preparing our next security sprint to harden OpenAI in white text on an abstract orange, yellow, and pink background.",
+                "height": 81,
+                "url": "https://pbs.twimg.com/card_img/2117443408222429184/TXOYoJ4i?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Preparing our next security sprint to harden OpenAI in white text on an abstract orange, yellow, and pink background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2117443408222429184/TXOYoJ4i?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Preparing our next security sprint to harden OpenAI in white text on an abstract orange, yellow, and pink background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2117443408222429184/TXOYoJ4i?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Preparing our next security sprint to harden OpenAI in white text on an abstract orange, yellow, and pink background.",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Preparing our next security sprint to harden OpenAI in white text on an abstract orange, yellow, and pink background.",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2117443408222429184/TXOYoJ4i?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Preparing our next security sprint to harden OpenAI in white text on an abstract orange, yellow, and pink background.",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 39.4,
+                    "rgb": {
+                      "blue": 149,
+                      "green": 170,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 33.3,
+                    "rgb": {
+                      "blue": 85,
+                      "green": 191,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 18.5,
+                    "rgb": {
+                      "blue": 117,
+                      "green": 185,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 4.68,
+                    "rgb": {
+                      "blue": 119,
+                      "green": 172,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 4.65,
+                    "rgb": {
+                      "blue": 214,
+                      "green": 225,
+                      "red": 254
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Preparing our next security sprint to harden OpenAI",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 39.4,
+                    "rgb": {
+                      "blue": 149,
+                      "green": 170,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 33.3,
+                    "rgb": {
+                      "blue": 85,
+                      "green": 191,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 18.5,
+                    "rgb": {
+                      "blue": 117,
+                      "green": 185,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 4.68,
+                    "rgb": {
+                      "blue": 119,
+                      "green": 172,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 4.65,
+                    "rgb": {
+                      "blue": 214,
+                      "green": 225,
+                      "red": 254
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Preparing our next security sprint to harden OpenAI in white text on an abstract orange, yellow, and pink background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2117443408222429184/TXOYoJ4i?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Preparing our next security sprint to harden OpenAI in white text on an abstract orange, yellow, and pink background.",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2117443408222429184/TXOYoJ4i?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 39.4,
+                    "rgb": {
+                      "blue": 149,
+                      "green": 170,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 33.3,
+                    "rgb": {
+                      "blue": 85,
+                      "green": 191,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 18.5,
+                    "rgb": {
+                      "blue": 117,
+                      "green": 185,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 4.68,
+                    "rgb": {
+                      "blue": 119,
+                      "green": 172,
+                      "red": 253
+                    }
+                  },
+                  {
+                    "percentage": 4.65,
+                    "rgb": {
+                      "blue": 214,
+                      "green": 225,
+                      "red": 254
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Preparing our next security sprint to harden OpenAI in white text on an abstract orange, yellow, and pink background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2117443408222429184/TXOYoJ4i?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/vcaoHROTt2",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Preparing our next security sprint to harden OpenAI in white text on an abstract orange, yellow, and pink background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2117443408222429184/TXOYoJ4i?format=jpg&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTE3NDQ0MDQ4MDY3NzEwOTc3"
+        }
+      }
+    },
+    {
+      "id": "2117422818648555595",
+      "url": "https://x.com/elonmusk/status/2117422818648555595",
+      "label": "xAI",
+      "color": "#1DA1F2",
+      "fetched_at": "2026-11-03T08:01:05.574588+00:00",
+      "translation_zh": "马斯克晒出 Grok Bot 最新改进：新增购物卡片与商品页面等功能。团队每周七天持续上线数十项修复、新特性和新能力，并根据用户反馈快速迭代打磨。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 5337,
+        "lang": "en",
+        "created_at": "2026-11-03T01:05:14.000Z",
+        "display_text_range": [
+          0,
+          22
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "2085838061347217408",
+              "indices": [
+                5,
+                9
+              ],
+              "name": "Grok Bot",
+              "screen_name": "bot"
+            }
+          ]
+        },
+        "id_str": "2117422818648555595",
+        "text": "Grok @Bot improvements",
+        "user": {
+          "id_str": "44196397",
+          "name": "Elon Musk",
+          "screen_name": "elonmusk",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2103567689515954176/aR-Kjpp4_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1955359038532653056/OSHY3ewP_bigger.jpg"
+            },
+            "description": "X",
+            "url": {
+              "url": "https://twitter.com/X",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2117422818648555595"
+          ],
+          "editable_until_msecs": "1793671514000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 970,
+        "news_action_type": "conversation",
+        "quoted_tweet": {
+          "favorite_count": 4285,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 446,
+          "retweet_count": 316,
+          "created_at": "2026-11-02T17:07:47.000Z",
+          "display_text_range": [
+            0,
+            253
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/HvmfEtHZ1K",
+                "expanded_url": "https://x.com/mattyp/status/2117302664799396177/video/1",
+                "indices": [
+                  254,
+                  277
+                ],
+                "url": "https://t.co/HvmfEtHZ1K"
+              }
+            ]
+          },
+          "id_str": "2117302664799396177",
+          "text": "What's New in Grok Bot\n\n00:14 Shopping cards\n00:27 Product pages\n00:39 Order tracking\n00:53 Payments\n01:33 Custom modes\n01:52 Team Bot logins and setup\n02:09 Share and find Team Bots\n02:51 Connector asks in Slack\n03:12 Contacts in Vault\n03:31 Rapid fire https://t.co/HvmfEtHZ1K",
+          "user": {
+            "id_str": "1518984544421965824",
+            "name": "matt palmer",
+            "screen_name": "mattyp",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2111918243460030464/aVMpxoAo_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2117302664799396177"
+            ],
+            "editable_until_msecs": "1793642867000",
+            "edits_remaining": "5",
+            "is_edit_eligible": true
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {
+                "description": "What's new in Grok Bot - Nov 2, 2026",
+                "embeddable": true,
+                "title": "What's new in Grok Bot - Nov 2, 2026"
+              },
+              "display_url": "pic.x.com/HvmfEtHZ1K",
+              "expanded_url": "https://x.com/mattyp/status/2117302664799396177/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                254,
+                277
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HWIcU5pbIAIQ15R.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 720,
+                "width": 1280
+              },
+              "sizes": {
+                "large": {
+                  "h": 720,
+                  "resize": "fit",
+                  "w": 1280
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/HvmfEtHZ1K",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "duration_millis": 265045,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2117284064025772032/pl/k5fWvqF81sq4lIbz.m3u8?v=54a"
+                  },
+                  {
+                    "bitrate": 256000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2117284064025772032/vid/avc1/480x270/suYsQD1EuEtN69Yt.mp4"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2117284064025772032/vid/avc1/640x360/NUa3_ZjKq7mAn9g8.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2117284064025772032/vid/avc1/1280x720/LDb61XZVhQhz1y9N.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2117284064025772032/vid/avc1/1920x1080/WdkB7l3f2vGO0BaU.mp4"
+                  },
+                  {
+                    "bitrate": 25128000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2117284064025772032/vid/avc1/3840x2160/Ir2RKulro-fYPEch.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              16,
+              9
+            ],
+            "contentType": "media_entity",
+            "durationMs": 265045,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/media/HWIcU5pbIAIQ15R.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2117284064025772032/pl/k5fWvqF81sq4lIbz.m3u8?v=54a"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2117284064025772032/vid/avc1/480x270/suYsQD1EuEtN69Yt.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2117284064025772032/vid/avc1/640x360/NUa3_ZjKq7mAn9g8.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2117284064025772032/vid/avc1/1280x720/LDb61XZVhQhz1y9N.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2117284064025772032/vid/avc1/1920x1080/WdkB7l3f2vGO0BaU.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2117284064025772032/vid/avc1/3840x2160/Ir2RKulro-fYPEch.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2117302664799396177"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2117343929960112486",
       "url": "https://x.com/AnthropicAI/status/2117343929960112486",
       "label": "Anthropic",
