@@ -1,6 +1,1137 @@
 {
   "tweets": [
     {
+      "id": "2117707052948898271",
+      "url": "https://x.com/AnthropicAI/status/2117707052948898271",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-11-03T20:03:17.085737+00:00",
+      "translation_zh": "Anthropic 新研究：FlashProve，可验证推理的新进展。基于成熟的密码学技术，开发者可以验证某条回复是否真的来自某个特定模型，效率远超此前的开源方案。可用于防止对话被劫持，也能让安全评估者确认测试的模型与线上服务的是同一个。代码已开源。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 288,
+        "lang": "en",
+        "created_at": "2026-11-03T19:54:41.000Z",
+        "display_text_range": [
+          0,
+          279
+        ],
+        "entities": {},
+        "id_str": "2117707052948898271",
+        "text": "New Anthropic research: progress on provable inference for large language models.\n\nHere, we introduce FlashProve. Building on established cryptographic techniques, FlashProve allows developers to verify whether a given response came from a given AI model. It’s substantially more",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2117707052948898271"
+          ],
+          "editable_until_msecs": "1793739281000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 59,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/7ky3Ir8V06",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2117496752580521984/8LaF6OJA?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "height": 200,
+                "url": "https://pbs.twimg.com/card_img/2117496752580521984/8LaF6OJA?format=jpg&name=400x400",
+                "width": 400
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "A research prototype for zero-knowledge proofs of AI inference. Not maintained. - anthropics/FlashProve",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "github.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "height": 300,
+                "url": "https://pbs.twimg.com/card_img/2117496752580521984/8LaF6OJA?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2117496752580521984/8LaF6OJA?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "height": 600,
+                "url": "https://pbs.twimg.com/card_img/2117496752580521984/8LaF6OJA?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "13334762",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2117496752580521984/8LaF6OJA?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2117496752580521984/8LaF6OJA?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "height": 72,
+                "url": "https://pbs.twimg.com/card_img/2117496752580521984/8LaF6OJA?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "height": 600,
+                "url": "https://pbs.twimg.com/card_img/2117496752580521984/8LaF6OJA?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "height": 600,
+                "url": "https://pbs.twimg.com/card_img/2117496752580521984/8LaF6OJA?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "A research prototype for zero-knowledge proofs of AI inference. Not maintained. - anthropics/FlashProve",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "github.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2117496752580521984/8LaF6OJA?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "A research prototype for zero-knowledge proofs of AI inference. Not maintained. - anthropics/FlashProve",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 92.97,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 255,
+                      "red": 255
+                    }
+                  },
+                  {
+                    "percentage": 4.86,
+                    "rgb": {
+                      "blue": 30,
+                      "green": 30,
+                      "red": 30
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "GitHub - anthropics/FlashProve: A research prototype for zero-knowledge proofs of AI inference. Not...",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 92.97,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 255,
+                      "red": 255
+                    }
+                  },
+                  {
+                    "percentage": 4.86,
+                    "rgb": {
+                      "blue": 30,
+                      "green": 30,
+                      "red": 30
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "height": 600,
+                "url": "https://pbs.twimg.com/card_img/2117496752580521984/8LaF6OJA?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2117496752580521984/8LaF6OJA?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 92.97,
+                    "rgb": {
+                      "blue": 255,
+                      "green": 255,
+                      "red": 255
+                    }
+                  },
+                  {
+                    "percentage": 4.86,
+                    "rgb": {
+                      "blue": 30,
+                      "green": 30,
+                      "red": 30
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "height": 600,
+                "url": "https://pbs.twimg.com/card_img/2117496752580521984/8LaF6OJA?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/7ky3Ir8V06",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "height": 600,
+                "url": "https://pbs.twimg.com/card_img/2117496752580521984/8LaF6OJA?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTE3NzA3MDUyNzQ3NTQyNTI4"
+        }
+      }
+    },
+    {
+      "id": "2117692477947641954",
+      "url": "https://x.com/OpenAI/status/2117692477947641954",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-11-03T20:03:17.085737+00:00",
+      "translation_zh": "OpenAI 两名团队成员与 GPT-6 Astra 合作，不到一周就设计出一台可对话 Codex 的原型设备。外壳、电路板、界面和软件均由 Astra 完成，制造环节仍需数轮人工审查与迭代。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 283,
+        "in_reply_to_screen_name": "OpenAI",
+        "in_reply_to_status_id_str": "2117692475775258785",
+        "in_reply_to_user_id_str": "4398626122",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-03T18:56:46.000Z",
+        "display_text_range": [
+          0,
+          272
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/h7e8I0KwHT",
+              "expanded_url": "https://x.com/OpenAI/status/2117692477947641954/video/1",
+              "indices": [
+                273,
+                296
+              ],
+              "url": "https://t.co/h7e8I0KwHT"
+            }
+          ]
+        },
+        "id_str": "2117692477947641954",
+        "text": "Two OpenAI team members worked with GPT-6 Astra to design a prototype device for talking to Codex in under a week, as a side project.\n\nAstra designed the enclosure, circuit board, interface, and software. Getting it manufactured still required several rounds of review and https://t.co/h7e8I0KwHT",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2117692477947641954"
+          ],
+          "editable_until_msecs": "1793735806000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/h7e8I0KwHT",
+            "expanded_url": "https://x.com/OpenAI/status/2117692477947641954/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              273,
+              296
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2117690472357388288/img/tiv-gRDj5geStNWX.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 640,
+              "width": 1280
+            },
+            "sizes": {
+              "large": {
+                "h": 640,
+                "resize": "fit",
+                "w": 1280
+              },
+              "medium": {
+                "h": 600,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 340,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/h7e8I0KwHT",
+            "video_info": {
+              "aspect_ratio": [
+                2,
+                1
+              ],
+              "duration_millis": 18960,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2117690472357388288/pl/C0oeSCT3tnwektFd.m3u8"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2117690472357388288/vid/avc1/540x270/7_kT_jiCjudaVYsl.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2117690472357388288/vid/avc1/720x360/catlBkytcQqFLPjl.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2117690472357388288/vid/avc1/1280x640/39qKYmxegZc4b7Ps.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            2,
+            1
+          ],
+          "contentType": "media_entity",
+          "durationMs": 18960,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2117690472357388288/img/tiv-gRDj5geStNWX.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2117690472357388288/pl/C0oeSCT3tnwektFd.m3u8"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2117690472357388288/vid/avc1/540x270/7_kT_jiCjudaVYsl.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2117690472357388288/vid/avc1/720x360/catlBkytcQqFLPjl.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2117690472357388288/vid/avc1/1280x640/39qKYmxegZc4b7Ps.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2117692477947641954"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 24,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 1957,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 218,
+          "retweet_count": 139,
+          "created_at": "2026-11-03T18:56:45.000Z",
+          "display_text_range": [
+            0,
+            263
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/b3rW9zYJGA",
+                "expanded_url": "https://x.com/OpenAI/status/2117692475775258785/video/1",
+                "indices": [
+                  264,
+                  287
+                ],
+                "url": "https://t.co/b3rW9zYJGA"
+              }
+            ]
+          },
+          "id_str": "2117692475775258785",
+          "text": "ChatGPT and Codex are helping engineers build for the physical world.\n\nWe’re sharing our progress across mechanical design, electrical engineering, and simulation—from helping our hardware teams iterate faster to testing new workflows with industry collaborators. https://t.co/b3rW9zYJGA",
+          "user": {
+            "id_str": "4398626122",
+            "name": "OpenAI",
+            "screen_name": "OpenAI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2117692475775258785"
+            ],
+            "editable_until_msecs": "1793735805000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/b3rW9zYJGA",
+              "expanded_url": "https://x.com/OpenAI/status/2117692475775258785/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                264,
+                287
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HWOOL0QWwAA5B61.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 1080,
+                "width": 1920
+              },
+              "sizes": {
+                "large": {
+                  "h": 1080,
+                  "resize": "fit",
+                  "w": 1920
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/b3rW9zYJGA",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "duration_millis": 81706,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2117690285073301505/pl/V0r5bY6rB2SLURBw.m3u8"
+                  },
+                  {
+                    "bitrate": 256000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2117690285073301505/vid/avc1/480x270/_yPt5v_vb3WCoBP5.mp4"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2117690285073301505/vid/avc1/640x360/M7yWj5eAC7-R8Amg.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2117690285073301505/vid/avc1/1280x720/x-Ev-IB4dFPIHkXw.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2117690285073301505/vid/avc1/1920x1080/g_3dQMk7a62dw_qW.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              16,
+              9
+            ],
+            "contentType": "media_entity",
+            "durationMs": 81706,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/media/HWOOL0QWwAA5B61.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2117690285073301505/pl/V0r5bY6rB2SLURBw.m3u8"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2117690285073301505/vid/avc1/480x270/_yPt5v_vb3WCoBP5.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2117690285073301505/vid/avc1/640x360/M7yWj5eAC7-R8Amg.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2117690285073301505/vid/avc1/1280x720/x-Ev-IB4dFPIHkXw.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2117690285073301505/vid/avc1/1920x1080/g_3dQMk7a62dw_qW.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2117692475775258785"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTE3NjkyNDc3ODcyMjU5MDcy"
+        }
+      }
+    },
+    {
+      "id": "2117692480590373245",
+      "url": "https://x.com/OpenAI/status/2117692480590373245",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-11-03T20:03:17.085737+00:00",
+      "translation_zh": "OpenAI 正与 Chip Ganassi Racing 的工程师合作，把 3D 扫描转为可编辑的 CAD 模型和制造图纸，并与 Mazda 合作通过仿真探索新车型设计。工程师审查输出，帮助定位模型需要改进的地方。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 219,
+        "in_reply_to_screen_name": "OpenAI",
+        "in_reply_to_status_id_str": "2117692477947641954",
+        "in_reply_to_user_id_str": "4398626122",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-03T18:56:46.000Z",
+        "display_text_range": [
+          0,
+          274
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/pZGtKjnC5e",
+              "expanded_url": "https://x.com/OpenAI/status/2117692480590373245/video/1",
+              "indices": [
+                275,
+                298
+              ],
+              "url": "https://t.co/pZGtKjnC5e"
+            }
+          ]
+        },
+        "id_str": "2117692480590373245",
+        "text": "We’re also working with engineers at Chip Ganassi Racing to turn 3D scans into editable CAD models and manufacturing drawings, and with Mazda to explore new vehicle designs through simulation.\n\nEngineers review the outputs and help identify where the models need to improve. https://t.co/pZGtKjnC5e",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2117692480590373245"
+          ],
+          "editable_until_msecs": "1793735806000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/pZGtKjnC5e",
+            "expanded_url": "https://x.com/OpenAI/status/2117692480590373245/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              275,
+              298
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2117690613969649664/img/zhU7X_rHGwUWpZTz.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/pZGtKjnC5e",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 37000,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2117690613969649664/pl/uLjgUsvp9VfaXcoX.m3u8"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2117690613969649664/vid/avc1/480x270/1XjC8Ac0bzG_5VTk.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2117690613969649664/vid/avc1/640x360/M2v0CzJ7hmJu5sFN.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2117690613969649664/vid/avc1/1280x720/MjGHWjsywRhNTHzi.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2117690613969649664/vid/avc1/1920x1080/pDjHu-l6kJMYbeBT.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 37000,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2117690613969649664/img/zhU7X_rHGwUWpZTz.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2117690613969649664/pl/uLjgUsvp9VfaXcoX.m3u8"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2117690613969649664/vid/avc1/480x270/1XjC8Ac0bzG_5VTk.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2117690613969649664/vid/avc1/640x360/M2v0CzJ7hmJu5sFN.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2117690613969649664/vid/avc1/1280x720/MjGHWjsywRhNTHzi.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2117690613969649664/vid/avc1/1920x1080/pDjHu-l6kJMYbeBT.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2117692480590373245"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 3,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 283,
+          "in_reply_to_screen_name": "OpenAI",
+          "in_reply_to_status_id_str": "2117692475775258785",
+          "in_reply_to_user_id_str": "4398626122",
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 24,
+          "retweet_count": 15,
+          "created_at": "2026-11-03T18:56:46.000Z",
+          "display_text_range": [
+            0,
+            272
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/h7e8I0KwHT",
+                "expanded_url": "https://x.com/OpenAI/status/2117692477947641954/video/1",
+                "indices": [
+                  273,
+                  296
+                ],
+                "url": "https://t.co/h7e8I0KwHT"
+              }
+            ]
+          },
+          "id_str": "2117692477947641954",
+          "text": "Two OpenAI team members worked with GPT-6 Astra to design a prototype device for talking to Codex in under a week, as a side project.\n\nAstra designed the enclosure, circuit board, interface, and software. Getting it manufactured still required several rounds of review and https://t.co/h7e8I0KwHT",
+          "user": {
+            "id_str": "4398626122",
+            "name": "OpenAI",
+            "screen_name": "OpenAI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2117692477947641954"
+            ],
+            "editable_until_msecs": "1793735806000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/h7e8I0KwHT",
+              "expanded_url": "https://x.com/OpenAI/status/2117692477947641954/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                273,
+                296
+              ],
+              "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2117690472357388288/img/tiv-gRDj5geStNWX.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 640,
+                "width": 1280
+              },
+              "sizes": {
+                "large": {
+                  "h": 640,
+                  "resize": "fit",
+                  "w": 1280
+                },
+                "medium": {
+                  "h": 600,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 340,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/h7e8I0KwHT",
+              "video_info": {
+                "aspect_ratio": [
+                  2,
+                  1
+                ],
+                "duration_millis": 18960,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2117690472357388288/pl/C0oeSCT3tnwektFd.m3u8"
+                  },
+                  {
+                    "bitrate": 256000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2117690472357388288/vid/avc1/540x270/7_kT_jiCjudaVYsl.mp4"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2117690472357388288/vid/avc1/720x360/catlBkytcQqFLPjl.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2117690472357388288/vid/avc1/1280x640/39qKYmxegZc4b7Ps.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              2,
+              1
+            ],
+            "contentType": "media_entity",
+            "durationMs": 18960,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/amplify_video_thumb/2117690472357388288/img/tiv-gRDj5geStNWX.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2117690472357388288/pl/C0oeSCT3tnwektFd.m3u8"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2117690472357388288/vid/avc1/540x270/7_kT_jiCjudaVYsl.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2117690472357388288/vid/avc1/720x360/catlBkytcQqFLPjl.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2117690472357388288/vid/avc1/1280x640/39qKYmxegZc4b7Ps.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2117692477947641954"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2117692475775258785",
+      "url": "https://x.com/OpenAI/status/2117692475775258785",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-11-03T20:03:17.085737+00:00",
+      "translation_zh": "OpenAI 分享 ChatGPT 和 Codex 在实体工程领域的进展：机械设计、电气工程与仿真——既加速自家硬件团队迭代，也与行业伙伴测试新工作流。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1957,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-03T18:56:45.000Z",
+        "display_text_range": [
+          0,
+          263
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/b3rW9zYJGA",
+              "expanded_url": "https://x.com/OpenAI/status/2117692475775258785/video/1",
+              "indices": [
+                264,
+                287
+              ],
+              "url": "https://t.co/b3rW9zYJGA"
+            }
+          ]
+        },
+        "id_str": "2117692475775258785",
+        "text": "ChatGPT and Codex are helping engineers build for the physical world.\n\nWe’re sharing our progress across mechanical design, electrical engineering, and simulation—from helping our hardware teams iterate faster to testing new workflows with industry collaborators. https://t.co/b3rW9zYJGA",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2117692475775258785"
+          ],
+          "editable_until_msecs": "1793735805000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/b3rW9zYJGA",
+            "expanded_url": "https://x.com/OpenAI/status/2117692475775258785/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              264,
+              287
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HWOOL0QWwAA5B61.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/b3rW9zYJGA",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 81706,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2117690285073301505/pl/V0r5bY6rB2SLURBw.m3u8"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2117690285073301505/vid/avc1/480x270/_yPt5v_vb3WCoBP5.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2117690285073301505/vid/avc1/640x360/M7yWj5eAC7-R8Amg.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2117690285073301505/vid/avc1/1280x720/x-Ev-IB4dFPIHkXw.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2117690285073301505/vid/avc1/1920x1080/g_3dQMk7a62dw_qW.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 81706,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/media/HWOOL0QWwAA5B61.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2117690285073301505/pl/V0r5bY6rB2SLURBw.m3u8"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2117690285073301505/vid/avc1/480x270/_yPt5v_vb3WCoBP5.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2117690285073301505/vid/avc1/640x360/M7yWj5eAC7-R8Amg.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2117690285073301505/vid/avc1/1280x720/x-Ev-IB4dFPIHkXw.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2117690285073301505/vid/avc1/1920x1080/g_3dQMk7a62dw_qW.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2117692475775258785"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 218,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2117444048227123277",
       "url": "https://x.com/OpenAI/status/2117444048227123277",
       "label": "OpenAI",

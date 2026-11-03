@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Warm Loop — AI Frontlines</title>
+<meta content="Agent latency is not a model problem. It is a cache problem. Every token the harness re-sends, re-orders, or rewrites is a token the provider must recompute from scratch. The teams that feel fast are the teams whose prompts hold still." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 4, 2026" data-zh="2026年11月4日">November 4, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Warm Loop" data-zh="温热的循环">The Warm Loop</h1>
+<p class="post-header-deck" data-en="Every agent team eventually has the same conversation. The model is slow, someone says. Buy a faster model, someone else says. But when the trace is pulled apart, the model is rarely the slow part. The slow part is everything the harness does to the prompt between turns — re-sending tokens the provider already computed, re-ordering blocks that were fine where they stood, injecting fresh text into the middle of a history that had finally gone quiet. Latency in agent systems is not a model problem. It is a cache problem. And the cache in question is one almost nobody on the team has ever been shown: the key-value cache that lives inside the inference provider, holding the computed state of every token sequence it has seen recently — silently, invisibly, deciding whether each request starts warm or starts cold." data-zh="每个智能体团队，最终都会有同一场对话。模型太慢了，有人说。买个更快的模型，另一个人说。但当追踪记录被拆开来看时，模型很少是慢的那部分。慢的，是 harness 在两轮之间对 prompt 做的一切——重新发送提供商早已算过的 token，重新排列本来放得好好的文本块，往一段终于安静下来的历史中间，注入新的内容。智能体系统的延迟，不是模型问题。是缓存问题。而那个缓存，团队里几乎没人被展示过：它住在推理提供商内部，叫键值缓存，默默保存着它最近见过的每个 token 序列的计算状态——无声、无形地，决定着每一个请求是温着开始，还是冷着开始。">Every agent team eventually has the same conversation. The model is slow, someone says. Buy a faster model, someone else says. But when the trace is pulled apart, the model is rarely the slow part. The slow part is everything the harness does to the prompt between turns — re-sending tokens the provider already computed, re-ordering blocks that were fine where they stood. Latency in agent systems is not a model problem. It is a cache problem.</p>
+</header>
+<article class="post-body">
+<p data-en="Start with a fact that is easy to state and hard to internalize: generating a response is two operations, not one. The first is prefill — the provider ingests the entire prompt and computes the internal state for every token in it. The second is decode — the model generates new tokens, one at a time, each conditioned on the state built during prefill. For a chat agent with a long system prompt, tool definitions, and forty turns of history, the prompt can easily run to tens of thousands of tokens while the answer is a few hundred. The arithmetic is unforgiving. Most of the compute in a long-context agent call is spent not on thinking, but on re-reading. And here is the part that changes everything: providers cache the state computed during prefill. If the next request's prompt begins with the exact same token sequence, the cached state is reused and prefill collapses to almost nothing. The request starts warm. If even one token near the front differs, everything after that point must be recomputed. The request starts cold, and cold is slow in a way users feel." data-zh="先从一个说起来容易、内化起来很难的事实开始：生成一次响应，是两个操作，不是一个。第一个是 prefill——提供商接收整个 prompt，为其中每一个 token 计算内部状态。第二个是 decode——模型逐个生成新 token，每一个都依赖于 prefill 期间建立的状态。对于一个带着长系统 prompt、一堆工具定义和四十轮历史的对话智能体来说，prompt 轻松上万 token，而答案只有几百。这笔账毫不留情：长上下文智能体的调用，大部分算力不是花在思考上，而是花在重新阅读上。而真正改变一切的在这里：提供商会缓存 prefill 期间算出的状态。如果下一个请求的 prompt 以完全相同的 token 序列开头，缓存的状态被复用，prefill 几乎瞬间完成。请求温着开始。哪怕开头附近有一个 token 不同，那个点之后的一切都必须重算。请求冷着开始——而冷，是用户能感觉到的慢。">Start with a fact that is easy to state and hard to internalize: generating a response is two operations, not one. The first is prefill — the provider ingests the entire prompt and computes the internal state for every token in it. The second is decode — the model generates new tokens, one at a time, each conditioned on the state built during prefill. For a chat agent with a long system prompt, tool definitions, and forty turns of history, the prompt can easily run to tens of thousands of tokens while the answer is a few hundred. The arithmetic is unforgiving: most of the compute in a long-context agent call is spent not on thinking, but on re-reading.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrW1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrW2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="ONE REQUEST, TWO COSTS" data-zh="一次请求，两种开销" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ONE REQUEST, TWO COSTS</text>
+<!-- COLD REQUEST -->
+<text data-en="COLD START" data-zh="冷启动" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="56">COLD START</text>
+<rect fill="var(--accent-3)" height="30" opacity="0.25" rx="6" width="200" x="40" y="72"></rect>
+<text data-en="prefill: 20,000 tokens recomputed" data-zh="prefill：重算 20,000 token" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="140" y="91">prefill: 20,000 tokens recomputed</text>
+<rect fill="var(--accent-3)" height="26" opacity="0.5" rx="6" width="60" x="40" y="110"></rect>
+<text data-en="decode" data-zh="decode" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="70" y="127">decode</text>
+<text data-en="the harness rewrote turn 1" data-zh="harness 改写了第 1 轮" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="140" y="160">the harness rewrote turn 1</text>
+<text data-en="→ everything after: cold" data-zh="→ 其后全部：冷" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="140" y="180">→ everything after: cold</text>
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="300"></line>
+<!-- WARM REQUEST -->
+<text data-en="WARM START" data-zh="温启动" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="56">WARM START</text>
+<rect fill="var(--accent-dim)" height="30" rx="6" stroke="var(--accent)" stroke-dasharray="4,3" stroke-width="1.2" width="200" x="380" y="72"></rect>
+<text data-en="19,800 tokens: cache hit, ~free" data-zh="19,800 token：缓存命中，近乎免费" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="480" y="91">19,800 tokens: cache hit, ~free</text>
+<rect fill="var(--accent)" height="26" opacity="0.7" rx="6" width="26" x="380" y="110"></rect>
+<text data-en="new" data-zh="新增" fill="var(--bg)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="393" y="127">new</text>
+<rect fill="var(--accent)" height="26" opacity="0.35" rx="6" width="60" x="412" y="110"></rect>
+<text data-en="decode" data-zh="decode" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="442" y="127">decode</text>
+<text data-en="prompt only ever appends" data-zh="prompt 只做追加" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="480" y="160">prompt only ever appends</text>
+<text data-en="→ prefill: 200 tokens" data-zh="→ prefill：仅 200 token" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="480" y="180">→ prefill: 200 tokens</text>
+<!-- comparison bar -->
+<text data-en="TIME TO FIRST TOKEN" data-zh="首 token 延迟" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="222">TIME TO FIRST TOKEN</text>
+<rect fill="var(--accent-3)" height="22" opacity="0.4" rx="5" width="440" x="60" y="236"></rect>
+<text data-en="cold: seconds" data-zh="冷：数秒" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="70" y="251">cold: seconds</text>
+<rect fill="var(--accent)" height="22" opacity="0.85" rx="5" width="70" x="60" y="268"></rect>
+<text data-en="warm: a blink" data-zh="温：一眨眼" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" x="140" y="283">warm: a blink</text>
+<text data-en="same model · same answer · different cache behavior" data-zh="同一个模型 · 同样的答案 · 不同的缓存行为" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="312">same model · same answer · different cache behavior</text>
+</svg>
+<p class="diagram-caption" data-en="Same model, same conversation, same answer. On the left, the harness mutated an early turn, so the provider recomputed twenty thousand tokens of prefill. On the right, the harness only appended, so nearly the entire prompt was a cache hit and prefill shrank to the delta. The difference is not milliseconds — it is the difference between an agent that feels instant and one that feels broken." data-zh="同一个模型，同一段对话，同一个答案。左边，harness 改动了早期的一轮，于是提供商重算了两万个 token 的 prefill。右边，harness 只做了追加，几乎整个 prompt 都命中缓存，prefill 缩到只剩增量。差别不是几毫秒——而是一个「快得像瞬间」的智能体，和一个「感觉坏了」的智能体之间的差别。">Same model, same conversation, same answer. On the left, the harness mutated an early turn, so the provider recomputed twenty thousand tokens of prefill. On the right, the harness only appended, so nearly the entire prompt was a cache hit. The difference is not milliseconds — it is the difference between an agent that feels instant and one that feels broken.</p>
+</div>
+<h3 data-en="The prompt is a stack, and order is destiny" data-zh="prompt 是一个栈，顺序即命运">The prompt is a stack, and order is destiny</h3>
+<p data-en="Once this is understood, the prompt stops being a bag of text and becomes a layered structure whose order is an engineering decision. At the bottom sit the layers that never change: the system prompt, the tool definitions, the persona, the output contract. Above them, the append-only layers: the conversation history, the tool calls and their results, growing at the tail with every turn. At the very top sits the volatile layer: the current user message, the freshly retrieved context, whatever the harness assembled seconds ago. This ordering is not a style preference. It is the difference between a cache that hits and a cache that misses. Stable-first means every new request shares the longest possible prefix with the one before it. Volatile-first means every request invalidates everything below it. A harness that puts a timestamp at the top of the system prompt, or shuffles tool definitions, or injects retrieval results ahead of the history, has quietly opted out of warmth for every subsequent call in the session — and is paying full price, in latency and often in dollars, on every single turn." data-zh="一旦理解了这一点，prompt 就不再是一袋文本，而变成了一个分层结构——它的顺序，本身就是一个工程决策。最底下，是从不变化的层：系统 prompt、工具定义、人设、输出契约。往上，是只增不改的层：对话历史、工具调用及其结果，每一轮在尾部增长。最顶上，是易变层：当前用户消息、刚检索到的上下文、harness 几秒前才拼好的东西。这个排序不是风格偏好。它是缓存命中与缓存未命中之间的差别。稳定层在前，意味着每个新请求与前一个共享尽可能长的前缀。易变层在前，意味着每个请求都让它下面的全部内容失效。一个把时间戳放在系统 prompt 顶部的 harness，一个打乱工具定义顺序的 harness，一个把检索结果插到历史之前的 harness，已经悄悄让这个会话之后的每一次调用都冷启动——并且在每一轮上，都以延迟、而且常常以真金白银，付全价。">Once this is understood, the prompt stops being a bag of text and becomes a layered structure whose order is an engineering decision. At the bottom sit the layers that never change: the system prompt, the tool definitions, the persona, the output contract. Above them, the append-only layers: the conversation history, growing at the tail. At the very top, the volatile layer: the current message, the freshly retrieved context. This ordering is not a style preference. It is the difference between a cache that hits and a cache that misses.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrS1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE PROMPT AS A CACHE LADDER" data-zh="prompt：一架缓存的梯子" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE PROMPT AS A CACHE LADDER</text>
+<!-- layer 4: volatile -->
+<rect fill="var(--bg-surface)" height="52" rx="8" stroke="var(--accent-3)" stroke-width="2" width="360" x="180" y="48"></rect>
+<text data-en="VOLATILE — current turn · fresh retrieval · just-in-time context" data-zh="易变层 — 当前轮 · 新检索 · 即时上下文" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="360" y="70">VOLATILE — current turn · fresh retrieval</text>
+<text data-en="changes every request" data-zh="每个请求都变" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="360" y="88">changes every request</text>
+<!-- layer 3: append-only -->
+<rect fill="var(--bg-surface)" height="52" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="360" x="180" y="110"></rect>
+<text data-en="APPEND-ONLY — history · tool calls · results" data-zh="只增层 — 历史 · 工具调用 · 结果" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="360" y="132">APPEND-ONLY — history · tool calls · results</text>
+<text data-en="grows at the tail, never rewrites" data-zh="尾部增长，绝不重写" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="360" y="150">grows at the tail, never rewrites</text>
+<!-- layer 2: session-static -->
+<rect fill="var(--bg-surface)" height="52" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="360" x="180" y="172"></rect>
+<text data-en="SESSION-STATIC — loaded documents · workspace snapshot · env state" data-zh="会话静态层 — 已加载文档 · 工作区快照 · 环境状态" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="360" y="194">SESSION-STATIC — documents · workspace state</text>
+<text data-en="fixed once the session begins" data-zh="会话一开始就固定" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="360" y="212">fixed once the session begins</text>
+<!-- layer 1: frozen -->
+<rect fill="var(--accent-dim)" height="52" rx="8" stroke="var(--accent)" stroke-width="2" width="360" x="180" y="234"></rect>
+<text data-en="FROZEN — system prompt · tool schemas · contracts" data-zh="冻结层 — 系统 prompt · 工具 schema · 契约" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="360" y="256">FROZEN — system prompt · tool schemas</text>
+<text data-en="identical for every request, forever" data-zh="每个请求永远相同" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="360" y="274">identical for every request, forever</text>
+<!-- hit / miss arrows -->
+<path d="M180 260 C120 260 110 100 178 76" fill="none" marker-end="url(#arrS1)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<text data-en="cache hit region" data-zh="缓存命中区" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="92" y="170">cache hit region</text>
+<text data-en="stable bottom → warm requests" data-zh="底部稳定 → 请求温热" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="92" y="188">stable bottom → warm requests</text>
+<text data-en="Rule: nothing above may change what sits below it. The moment a layer rewrites a lower layer, the ladder snaps and the whole request runs cold." data-zh="规则：上层永远不许改动下层。一旦某层重写了更低的层，梯子断裂，整个请求冷启动。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="322">Rule: nothing above may change what sits below it. The moment a layer rewrites a lower layer, the ladder snaps and the whole request runs cold.</text>
+</svg>
+<p class="diagram-caption" data-en="The prompt arranged as a ladder of decreasing stability. Frozen content at the bottom, volatile content at the top, and a strict rule between them: upper layers may append, but never rewrite what lies beneath. Every violation of that rule — a timestamp injected low, a history entry reformatted, a tool schema reordered — snaps the ladder at that point and forces a full recompute of everything above it." data-zh="prompt 被排成一架稳定性递减的梯子。底部是冻结内容，顶部是易变内容，中间是一条铁律：上层可以追加，但绝不重写更低的层。每一条对铁律的违反——低处注入的时间戳、被重新格式化的历史条目、被重排的工具 schema——都会在那一点折断梯子，强制重算其上的一切。">The prompt arranged as a ladder of decreasing stability. Frozen content at the bottom, volatile content at the top, and a strict rule between them: upper layers may append, but never rewrite what lies beneath. Every violation snaps the ladder at that point and forces a full recompute of everything above it.</p>
+</div>
+<h3 data-en="The cache murder list" data-zh="缓存谋杀名单">The cache murder list</h3>
+<p data-en="The failures have a pattern, and they deserve to be named, because they keep recurring in code reviews wearing innocent disguises. The timestamp: a harness that stamps the current time into the system prompt so the model knows what day it is — noble intent, and every request now differs in token position four. The dynamic few-shot: examples selected per-query and prepended, so no two requests share a prefix. The mid-history injection: retrieval results spliced between old turns to 'keep context organized,' invalidating the entire tail. The reformatter: a cleanup pass that normalizes whitespace in past tool outputs, changing one character and re-flooding the river. The reordering def: tools sorted by relevance before each call, shuffling the schemas every turn. None of these are bugs in the ordinary sense. Each one was added for a reason. Together they guarantee that a forty-turn session pays for forty cold starts, and the team concludes the model is slow — when the harness was the one holding the match." data-zh="这些失败有一个共同的模式，值得被一一点名，因为它们在代码评审里不断出现，而且总是穿着无辜的伪装。时间戳：harness 把当前时间盖进系统 prompt，好让模型知道今天几号——动机高尚，但从此每个请求在第四个 token 的位置就分道扬镳。动态 few-shot：每次查询临时挑选示例放在最前面，于是没有任何两个请求共享前缀。历史中注入：把检索结果插到旧对话轮之间，说是「让上下文更有条理」，结果整条尾部全部失效。重排工具：每次调用前按相关度给工具排序，schema 每轮洗一次牌。这些都不是通常意义上的 bug。每一个都是为了某个理由加进来的。但它们合在一起，保证了一个四十轮的会话付四十次冷启动的钱——然后团队得出结论：模型真慢。而举着火柴的，其实是 harness。">The failures have a pattern: the timestamp stamped into the system prompt, so every request differs at token four. The dynamic few-shot, so no two requests share a prefix. The mid-history injection of retrieval results, invalidating the entire tail. The reordering of tool schemas every turn. None of these are bugs in the ordinary sense. Each was added for a reason. Together they guarantee that a forty-turn session pays for forty cold starts — and the team concludes the model is slow, when the harness was the one holding the match.</p>
+<blockquote data-en="A prompt is not just a message to the model. It is a cache key. Every harness decision — what to include, where to put it, whether it changes next turn — is simultaneously a decision about whether the next request recomputes a hundred thousand tokens or two hundred. Teams that internalize this stop asking 'what should the prompt say' and start asking 'what may move, and what must hold still.'" data-zh="prompt 不只是发给模型的消息。它同时是一把缓存键。harness 的每一个决策——包含什么、放在哪里、下一轮会不会变——同时都是一个关于「下一个请求要重算十万 token，还是两百 token」的决策。真正内化了这一点的团队，不再问「prompt 该说什么」，而开始问「什么可以动，什么必须不动」。">A prompt is not just a message to the model. It is a cache key. Every harness decision — what to include, where to put it, whether it changes next turn — is simultaneously a decision about whether the next request recomputes a hundred thousand tokens or two hundred. Teams that internalize this stop asking 'what should the prompt say' and start asking 'what may move, and what must hold still.'</blockquote>
+<h3 data-en="Pin the session, warm the replica" data-zh="钉住会话，焐热副本">Pin the session, warm the replica</h3>
+<p data-en="There is a second half to warmth, and it lives outside the prompt. The key-value cache is per-replica: the state from a request lives on the specific machine that served it. A naive load balancer sprays requests across the fleet for utilization, which is correct for stateless web traffic and quietly catastrophic for agents — every hop lands on a machine that has never seen this conversation, and any provider-side reuse evaporates. The fix is session affinity: route all requests in a conversation to the same replica, so each turn starts from the warmed state of the turn before it. This is not a niche trick; it is the difference between an agent loop that accelerates as it runs — each iteration reusing the last — and one that pays the cold tax on every tool call, every reflection, every self-correction. An agent that takes ten model turns to finish a task is not ten independent requests. It is one conversation, and the infrastructure should treat it that way." data-zh="温热还有另一半，住在 prompt 之外。键值缓存是按副本（replica）算的：一个请求的状态，留在服务它的那台具体机器上。一个天真的负载均衡器为了利用率把请求喷向整个集群——对无状态的 web 流量这是对的，对智能体却是悄无声息的灾难：每一跳都落在一台从没见过这段对话的机器上，提供商侧的任何复用瞬间蒸发。解法是会话亲和（session affinity）：把一段对话的所有请求路由到同一个副本，让每一轮都从上一轮焐热的状态上起步。这不是什么冷门技巧；它是一个越跑越快的智能体循环——每次迭代复用上一次——和一个每次工具调用、每次反思、每次自我纠正都交一遍冷税的循环之间的差别。一个要走十轮模型调用才能完成任务的智能体，不是十个独立请求。它是一段对话，而基础设施也应该这样对待它。">There is a second half to warmth, and it lives outside the prompt. The key-value cache is per-replica: the state from a request lives on the specific machine that served it. A naive load balancer sprays requests across the fleet for utilization — correct for stateless web traffic, quietly catastrophic for agents. The fix is session affinity: route all requests in a conversation to the same replica, so each turn starts from the warmed state of the turn before it. An agent that takes ten model turns to finish a task is not ten independent requests. It is one conversation, and the infrastructure should treat it that way.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="ROUTING DECIDES THE TEMPERATURE" data-zh="路由决定温度" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ROUTING DECIDES THE TEMPERATURE</text>
+<!-- LEFT: scatter -->
+<text data-en="SPRAYED" data-zh="乱喷" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="56">SPRAYED</text>
+<circle cx="90" cy="90" fill="var(--bg-surface)" r="24" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="r1" data-zh="r1" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="90" y="94">r1</text>
+<circle cx="155" cy="90" fill="var(--bg-surface)" r="24" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="r2" data-zh="r2" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="94">r2</text>
+<circle cx="220" cy="90" fill="var(--bg-surface)" r="24" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="r3" data-zh="r3" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="220" y="94">r3</text>
+<path d="M155 160 L98 116" fill="none" marker-end="url(#arrR1)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<path d="M155 160 L155 116" fill="none" marker-end="url(#arrR1)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<path d="M155 160 L212 116" fill="none" marker-end="url(#arrR1)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--text-tertiary)" stroke-width="1.5" width="110" x="100" y="160"></rect>
+<text data-en="turn n" data-zh="第 n 轮" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="181">turn n</text>
+<text data-en="each hop: state gone" data-zh="每跳一次：状态全失" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="222">each hop: state gone</text>
+<text data-en="full price, every turn" data-zh="每一轮都付全价" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="155" y="240">full price, every turn</text>
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="290"></line>
+<!-- RIGHT: pinned -->
+<text data-en="PINNED" data-zh="钉住" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="56">PINNED</text>
+<circle cx="465" cy="100" fill="var(--accent-dim)" r="34" stroke="var(--accent)" stroke-width="2.5"></circle>
+<text data-en="r2" data-zh="r2" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="465" y="98">r2</text>
+<text data-en="warm" data-zh="温热" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="465" y="112">warm</text>
+<path d="M465 160 L465 138" fill="none" marker-end="url(#arrR2)" stroke="var(--accent)" stroke-width="1.8"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--text-tertiary)" stroke-width="1.5" width="110" x="410" y="160"></rect>
+<text data-en="turn n" data-zh="第 n 轮" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="181">turn n</text>
+<path d="M410 177 C370 177 370 140 396 128" fill="none" marker-end="url(#arrR2)" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="3,3"></path>
+<text data-en="state carried forward" data-zh="状态一路延续" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="222">state carried forward</text>
+<text data-en="delta price, every turn" data-zh="每一轮只付增量" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="465" y="240">delta price, every turn</text>
+<text data-en="Same fleet. Same model. The left treats every agent turn as a stranger; the right treats the session as the unit of work — and gets faster the longer the task runs." data-zh="同样的集群，同样的模型。左边把每一轮当陌生人；右边把会话当作工作单位——任务越久，跑得越快。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="312">Same fleet. Same model. The left treats every agent turn as a stranger; the right treats the session as the unit of work — and gets faster the longer the task runs.</text>
+</svg>
+<p class="diagram-caption" data-en="Two routing policies for the same agent loop. Sprayed routing maximizes fleet utilization and minimizes cache hits — every turn lands on a cold replica. Pinned routing keeps the session on one machine, so each turn inherits the computed state of the last. For workloads measured in hours of context, pinning is not an optimization. It is the design." data-zh="同一个智能体循环的两种路由策略。乱喷式路由最大化集群利用率、最小化缓存命中——每一轮都落在冷的副本上。钉住式路由让会话留在一台机器上，每一轮都继承上一轮的已算状态。对于以上下文小时计的工作负载，钉住不是优化。它就是设计本身。">Two routing policies for the same agent loop. Sprayed routing maximizes fleet utilization and minimizes cache hits — every turn lands on a cold replica. Pinned routing keeps the session on one machine, so each turn inherits the computed state of the last. For workloads measured in hours of context, pinning is not an optimization. It is the design.</p>
+</div>
+<p data-en="Put together, the warm loop is a discipline, not a feature. Order the prompt so stability increases toward the bottom. Append, never rewrite. Put time and freshness at the top, where change is cheap. Hash the frozen layers in tests, so a refactor that accidentally reorders a tool schema fails the build instead of quietly doubling latency. Measure cache hit rate the way database teams measure hit rate — as a first-class metric with an owner and a dashboard. Route sessions, not requests. None of this makes the model faster. All of it makes the system faster, often by an order of magnitude on long sessions, without touching a single weight. The model was never the bottleneck. The space between the turns was." data-zh="综合起来，温热的循环是一种纪律，不是一个功能。把 prompt 排成越往下越稳定的样子。只追加，绝不重写。把时间和新鲜度放在顶部——在那里，变化是便宜的。在测试里给冻结层算哈希，让一次不小心重排工具 schema 的重构直接挂掉构建，而不是悄悄让延迟翻倍。像数据库团队监控命中率那样监控缓存命中率——一个有一等公民地位、有负责人、有仪表盘的指标。路由会话，而不是路由请求。这些没有一条让模型变快。但每一条都让系统变快——在长会话上常常快一个数量级——而不动任何一个权重。瓶颈从来不是模型。是两轮之间的那段时间。">Put together, the warm loop is a discipline, not a feature. Order the prompt so stability increases toward the bottom. Append, never rewrite. Put time and freshness at the top, where change is cheap. Hash the frozen layers in tests, so a refactor that accidentally reorders a tool schema fails the build instead of quietly doubling latency. Measure cache hit rate the way database teams measure hit rate — as a first-class metric with an owner and a dashboard. Route sessions, not requests. None of this makes the model faster. All of it makes the system faster, often by an order of magnitude on long sessions, without touching a single weight. The model was never the bottleneck. The space between the turns was.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
