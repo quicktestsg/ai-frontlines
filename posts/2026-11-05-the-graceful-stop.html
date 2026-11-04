@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Graceful Stop — AI Frontlines</title>
+<meta content="Every agent gets interrupted. The user hits escape, the budget runs out, a watchdog fires, a newer request supersedes an older one. Most harnesses treat this as an error condition — a lost connection, a null response, a half-written file. But interruption is not exceptional in agent systems. It is routine traffic. The harnesses that survive are the ones designed to stop on purpose." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 5, 2026" data-zh="2026年11月5日">November 5, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Graceful Stop" data-zh="优雅的停止">The Graceful Stop</h1>
+<p class="post-header-deck" data-en="Every agent gets interrupted. The user hits escape ninety seconds into a task. A budget ceiling trips. A watchdog decides the loop is stuck. A newer request supersedes an older one. Most harnesses treat each of these as an error — a dropped connection, a null response, a task row forever marked running. But interruption is not exceptional traffic in agent systems. It is normal traffic. An agent that runs for twenty minutes without being stopped is the anomaly, not the rule. The harnesses that survive contact with real users are the ones designed to stop on purpose: to know what state they were in, to finish or safely abandon what they were holding, and to leave behind a system that can be resumed rather than one that must be cleaned up by hand." data-zh="每个智能体都会被打断。用户在任务开始九十秒后按下 escape。预算上限触发了。看门狗判定循环卡死了。一个更新的请求取代了旧的。大多数 harness 把这些统统当作错误——一个断掉的连接、一个空响应、一条永远停在 running 状态的任务记录。但在智能体系统里，打断不是异常流量。它是正常流量。一个跑了二十分钟没被叫停的智能体，才是反常。能在真实用户手下活下来的 harness，是那些被刻意设计成「会停止」的：知道自己当时处于什么状态，把手里正在做的事做完或安全地放弃，留下一个可以恢复的系统，而不是一个需要人工收拾残局的系统。">Every agent gets interrupted. The user hits escape ninety seconds into a task. A budget ceiling trips. A watchdog decides the loop is stuck. Most harnesses treat each of these as an error. But interruption is not exceptional traffic in agent systems — it is normal traffic. The harnesses that survive contact with real users are the ones designed to stop on purpose.</p>
+</header>
+<article class="post-body">
+<p data-en="Begin with an uncomfortable observation from any production agent fleet: the median task does not end with a result. It ends with a stop. Users change their minds mid-run and rephrase. Orchestration layers cancel subtasks whose parent already failed. Rate limits pause a pipeline and a supervisor decides to restart rather than wait. Timeout budgets — turns, tokens, wall-clock minutes, dollars — expire quietly and constantly. If the harness's only model of ending is 'the model returned a final answer,' then most endings are handled by whatever code path was never tested: the exception handler that swallows the task, the thread that never joins, the tool call whose side effect landed but whose result was never recorded. A stopped agent that leaves the world half-changed is worse than no agent at all, because nobody knows which half." data-zh="先从任何生产级智能体集群都能得出的一个不舒服的观察开始：中位数的任务，并不是以结果收场的。它以停止收场。用户跑到一半改了主意，换了说法重新问。编排层把父任务已经失败的子任务批量取消。限流让管道暂停，而主管进程决定重启而不是干等。超时预算——轮数、token、墙钟分钟数、美元——在无声无息地、持续不断地耗尽。如果 harness 对「结束」的唯一想象是「模型返回了最终答案」，那么大多数结束，都落在了那条从未被测试过的代码路径上：吞掉任务的异常处理器、永远不 join 的线程、副作用已经落地却从未被记录的工具调用。一个被叫停却让世界停留在半改动状态的智能体，比没有智能体还糟糕——因为没有人知道是哪一半。">Begin with an uncomfortable observation from any production agent fleet: the median task does not end with a result. It ends with a stop. Users change their minds mid-run and rephrase. Orchestration layers cancel subtasks whose parent already failed. Rate limits pause a pipeline and a supervisor decides to restart rather than wait. Timeout budgets — turns, tokens, wall-clock minutes, dollars — expire quietly and constantly. If the harness's only model of ending is 'the model returned a final answer,' then most endings are handled by whatever code path was never tested. A stopped agent that leaves the world half-changed is worse than no agent at all, because nobody knows which half.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrG1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrG2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="WHERE THE STOP FINDS THE LOOP" data-zh="停止会落在循环的哪里" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHERE THE STOP FINDS THE LOOP</text>
+<!-- loop track -->
+<rect fill="var(--bg-surface)" height="44" rx="10" stroke="var(--border)" stroke-width="1.5" width="470" x="90" y="52"></rect>
+<text data-en="model call — streaming tokens" data-zh="模型调用 — 正在流式输出" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="200" y="78">model call — streaming tokens</text>
+<rect fill="var(--bg-surface)" height="44" rx="10" stroke="var(--border)" stroke-width="1.5" width="470" x="90" y="130"></rect>
+<text data-en="tool call — side effect in flight" data-zh="工具调用 — 副作用进行中" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="240" y="156">tool call — side effect in flight</text>
+<rect fill="var(--bg-surface)" height="44" rx="10" stroke="var(--border)" stroke-width="1.5" width="470" x="90" y="208"></rect>
+<text data-en="harness turn — history being written" data-zh="harness 轮次 — 历史正在写入" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="250" y="234">harness turn — history being written</text>
+<!-- interruption markers -->
+<circle cx="440" cy="74" fill="var(--accent-3)" r="9"></circle>
+<text data-en="✕" data-zh="✕" fill="var(--bg)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="440" y="78">✕</text>
+<text data-en="safe: nothing changed yet" data-zh="安全：什么都没改" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="520" y="70">safe: nothing changed yet</text>
+<text data-en="drop the stream, keep partial" data-zh="丢弃流，保留部分输出" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="520" y="84">drop the stream, keep partial</text>
+<circle cx="440" cy="152" fill="var(--accent-3)" r="9"></circle>
+<text data-en="⚠" data-zh="⚠" fill="var(--bg)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="440" y="156">⚠</text>
+<text data-en="danger: effect may land anyway" data-zh="危险：副作用可能照样落地" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="520" y="148">danger: effect may land anyway</text>
+<text data-en="the hardest stop in the system" data-zh="全系统最难的一次停止" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="520" y="162">the hardest stop in the system</text>
+<circle cx="440" cy="230" fill="var(--accent)" r="9"></circle>
+<text data-en="✓" data-zh="✓" fill="var(--bg)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="440" y="234">✓</text>
+<text data-en="safe: memory only, atomic" data-zh="安全：只写内存，原子操作" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="520" y="226">safe: memory only, atomic</text>
+<text data-en="checkpoint here, always" data-zh="检查点永远打在这里" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="520" y="240">checkpoint here, always</text>
+<!-- flow arrow -->
+<path d="M310 96 L310 126" fill="none" marker-end="url(#arrG1)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<path d="M310 174 L310 204" fill="none" marker-end="url(#arrG1)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<path d="M90 230 C40 230 40 74 86 74" fill="none" marker-end="url(#arrG2)" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<text data-en="The stop signal can arrive during any of the three phases — and each phase demands a different answer to the same question: what is true about the world right now?" data-zh="停止信号可能在三个阶段的任何一个里到来——而每个阶段，对同一个问题——「此刻世界是什么状态？」——需要的是不同的答案。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="296">The stop signal can arrive during any of the three phases — and each phase demands a different answer to the same question: what is true about the world right now?</text>
+</svg>
+<p class="diagram-caption" data-en="One agent turn, three interruption windows. Stopping during a model call is cheap — the world is untouched and a partial transcript is still useful evidence. Stopping between turns is nearly free, because the harness is only writing to its own memory. Stopping during a tool call is where systems die: the request may already be committed on the far side, and the harness cannot know unless the stop was designed in advance. The graceful stop is not one mechanism. It is three, one per window." data-zh="一个智能体轮次，三个可被打断的窗口。在模型调用期间停止是便宜的——世界未被触碰，部分转写也还是有用的证据。在两轮之间停止几乎免费，因为 harness 只是在写自己的内存。而在工具调用期间停止，是系统死掉的地方：请求可能早已在远端被提交，除非停止机制是提前设计好的，否则 harness 无从知晓。优雅的停止不是一种机制。它是三种，每个窗口一种。">One agent turn, three interruption windows. Stopping during a model call is cheap — the world is untouched. Stopping between turns is nearly free. Stopping during a tool call is where systems die: the request may already be committed on the far side, and the harness cannot know unless the stop was designed in advance.</p>
+</div>
+<h3 data-en="The stop is a protocol, not an exception" data-zh="停止是一个协议，不是一个异常">The stop is a protocol, not an exception</h3>
+<p data-en="The instinctive implementation — kill the task, catch the exception, log an error — is the wrong shape entirely. A kill answers the question 'how do I make this stop?' but never the questions that actually matter: 'what was in flight?', 'what did it already change?', 'can it be resumed?'. A well-designed stop is a protocol the harness runs deliberately, with phases. First, quiesce: stop issuing new work. No new model calls, no new tool invocations, no new subtasks spawned. Second, drain: let in-flight side effects complete or fail on their own terms, and record which was which. Third, reconcile: walk the ledger of intended effects against the ledger of observed effects, and mark every discrepancy explicitly — 'the email was sent; the summary was not written; the follow-up was never scheduled.' Fourth, persist: write the stop state — partial transcript, reconciliation result, reason for the stop — to the same durable store that would have held the final answer. Only after all four phases does the task actually end. Notice what this buys: a stopped task is now indistinguishable, structurally, from a finished one. It has a record. It has a reason. It can be inspected, audited, resumed. The exception handler gave none of that." data-zh="直觉性的实现——杀掉任务、捕获异常、记一条错误日志——在形状上就完全错了。一次 kill 回答的是「怎么让它停下来？」，却从不回答那些真正要紧的问题：「刚才有什么在途？」「它已经改了什么？」「它能不能被恢复？」一个设计良好的停止，是一个 harness 有意执行的协议，而且分阶段。第一，静止：停止发出新工作。不再发新的模型调用、不再发新的工具调用、不再派生子任务。第二，排空：让在途的副作用按照它们自己的节奏跑完或者失败，并记下各自是哪一种。第三，对账：把「预期效果」的账本和「观察到的效果」的账本对一遍，把每一处出入明确标出——「邮件已发出；摘要未写入；跟进事项从未被排上」。第四，落盘：把停止状态——部分转写、对账结果、停止原因——写进本来要存放最终答案的那个持久存储。四个阶段全部走完，任务才算真正结束。注意这买到了什么：一个被停止的任务，在结构上和一个完成的任务已无区别。它有记录。它有原因。它可以被检查、被审计、被恢复。买回来的是异常处理器一样都没给。">The instinctive implementation — kill the task, catch the exception, log an error — is the wrong shape entirely. A kill answers 'how do I make this stop?' but never 'what was in flight?', 'what did it already change?', 'can it be resumed?'. A well-designed stop is a protocol with phases: quiesce, drain, reconcile, persist. A stopped task becomes structurally indistinguishable from a finished one — it has a record, a reason, and a future.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrG3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrG4" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="HARD KILL vs GRACEFUL STOP" data-zh="硬杀 vs 优雅停止" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">HARD KILL vs GRACEFUL STOP</text>
+<!-- LEFT: hard kill -->
+<text data-en="HARD KILL" data-zh="硬杀" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="56">HARD KILL</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="200" x="55" y="70"></rect>
+<text data-en="terminate everything, now" data-zh="立刻终止一切" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="89">terminate everything, now</text>
+<path d="M155 100 L155 118" fill="none" marker-end="url(#arrG3)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="30" opacity="0.6" rx="6" stroke="var(--accent-3)" stroke-width="1" width="200" x="55" y="120"></rect>
+<text data-en="in-flight effect: lost or orphaned" data-zh="在途副作用：丢失或孤儿化" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="155" y="139">in-flight effect: lost or orphaned</text>
+<path d="M155 150 L155 168" fill="none" marker-end="url(#arrG3)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="30" opacity="0.6" rx="6" stroke="var(--accent-3)" stroke-width="1" width="200" x="55" y="170"></rect>
+<text data-en="task row: running, forever" data-zh="任务记录：永远 running" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="155" y="189">task row: running, forever</text>
+<text data-en="→ nobody knows which half landed" data-zh="→ 没人知道哪一半落了地" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="238">→ nobody knows which half landed</text>
+<!-- RIGHT: graceful -->
+<text data-en="GRACEFUL STOP" data-zh="优雅停止" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="56">GRACEFUL STOP</text>
+<rect fill="var(--accent-dim)" height="26" rx="6" stroke="var(--accent)" stroke-width="1.4" width="200" x="365" y="68"></rect>
+<text data-en="1 · quiesce — no new work" data-zh="1 · 静止 — 不再发新工作" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="85">1 · quiesce — no new work</text>
+<rect fill="var(--accent-dim)" height="26" rx="6" stroke="var(--accent)" stroke-width="1.4" width="200" x="365" y="102"></rect>
+<text data-en="2 · drain — let effects settle" data-zh="2 · 排空 — 让副作用落定" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="119">2 · drain — let effects settle</text>
+<rect fill="var(--accent-dim)" height="26" rx="6" stroke="var(--accent)" stroke-width="1.4" width="200" x="365" y="136"></rect>
+<text data-en="3 · reconcile — ledger vs world" data-zh="3 · 对账 — 账本 vs 世界" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="153">3 · reconcile — ledger vs world</text>
+<rect fill="var(--accent-dim)" height="26" rx="6" stroke="var(--accent)" stroke-width="1.4" width="200" x="365" y="170"></rect>
+<text data-en="4 · persist — stop state, durably" data-zh="4 · 落盘 — 停止状态持久化" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="187">4 · persist — stop state, durably</text>
+<text data-en="→ stopped ≠ finished, but stopped = inspectable" data-zh="→ 停止 ≠ 完成，但停止 = 可检查" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="238">→ stopped ≠ finished, but stopped = inspectable</text>
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="260"></line>
+<text data-en="same interrupt signal · two different disciplines" data-zh="同一个中断信号 · 两种不同的纪律" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="278">same interrupt signal · two different disciplines</text>
+</svg>
+<p class="diagram-caption" data-en="The same interruption, handled two ways. A hard kill optimizes for latency of stopping and pays for it forever: orphaned effects, phantom tasks, unknown state. The graceful stop costs a few extra seconds — quiesce, drain, reconcile, persist — and purchases certainty: the system can say exactly what happened, exactly what did not, and exactly where a resume would pick up. In agent fleets, certainty about the past is worth more than speed of forgetting." data-zh="同一次打断，两种处理。硬杀为「停止的速度」做优化，然后永远为之付费：孤儿副作用、幽灵任务、未知状态。优雅停止多花几秒——静止、排空、对账、落盘——买回来的是确定性：系统能准确说出发生了什么、没发生什么、恢复将从哪里接续。在智能体集群里，对过去的确定性，比遗忘的速度值钱得多。">The same interruption, handled two ways. A hard kill optimizes for latency of stopping and pays for it forever: orphaned effects, phantom tasks, unknown state. The graceful stop costs a few extra seconds and purchases certainty: the system can say exactly what happened, exactly what did not, and exactly where a resume would pick up.</p>
+</div>
+<h3 data-en="The ledger is what makes stopping safe" data-zh="账本，才是让停止变安全的东西">The ledger is what makes stopping safe</h3>
+<p data-en="Underneath the protocol sits one load-bearing idea: the harness keeps a ledger of intended effects, and tools are designed so the ledger can be checked. This is where tool design and stop design turn out to be the same design. Every side-effecting tool should return enough identity to answer two questions later — 'did it happen?' and 'can it be undone or completed?'. An email tool that returns a message id, a payment tool that returns an operation id, a file writer that writes to a temp name and renames — these are not conveniences, they are the difference between a reconcilable stop and an archaeological dig through production logs. Idempotency keys complete the picture: a tool that is safe to re-invoke converts the resume question from 'what is safe to redo?' into 'just redo it and see.' The teams that fear stopping least are the teams whose tools carry identity, support idempotent re-invocation, and keep their effects either atomic or explicitly staged. The teams that fear stopping most built their tools as one-way doors and now treat every interruption as an incident." data-zh="协议之下，压着一个承重的想法：harness 维护一本「预期效果」的账本，而工具被设计得让这本账本可以被核对。这正是工具设计与停止设计最终合流为同一个设计的地方。每一个有副作用的工具，都应该返回足够的标识信息，让之后的两个问题能被回答——「它发生了吗？」和「它能被撤销或补完吗？」。一个返回 message id 的邮件工具、一个返回 operation id 的支付工具、一个先写临时文件再改名的文件写入器——这些不是锦上添花，而是「可对账的停止」和「在生产日志里考古」之间的差别。幂等键补全了整幅图：一个可以安全重试的工具，把恢复问题从「重做哪些是安全的？」变成「直接重做就是了」。最不怕停止的团队，是那些工具自带标识、支持幂等重调、副作用要么原子要么显式分段的团队。最怕停止的团队，把工具建成了单程门，于是把每次打断都当成一次事故。">Underneath the protocol sits one load-bearing idea: the harness keeps a ledger of intended effects, and tools are designed so the ledger can be checked. Every side-effecting tool should return enough identity to answer 'did it happen?' and 'can it be undone or completed?'. Idempotency keys complete the picture: a tool safe to re-invoke converts resume from a forensic investigation into a retry.</p>
+<blockquote data-en="Stopping is not the opposite of running. It is a phase of running. An agent system has two interfaces with the world — the work it does and the way it ends that work — and the second interface is exercised far more often than the first. Design it with the same care, because it is not the edge case. It is the median case." data-zh="停止不是运行的反面。它是运行的一个阶段。一个智能体系统与世界的接口有两个——它做的工作，和它结束工作的方式——而第二个接口被使用的频率，远高于第一个。用同样的认真去设计它，因为它不是边缘情况。它是中位情况。">Stopping is not the opposite of running. It is a phase of running. An agent system has two interfaces with the world — the work it does and the way it ends that work — and the second interface is exercised far more often than the first. It is not the edge case. It is the median case.</blockquote>
+<h3 data-en="Resume is the payoff" data-zh="恢复，是回报">Resume is the payoff</h3>
+<p data-en="Everything above converges on a capability that separates toys from infrastructure: the stop-resume cycle. A user interrupts a research task, reads the partial transcript, refines the question, and says continue — and the agent picks up from the last checkpoint with full knowledge of what it already did, rather than starting from zero or, worse, redoing side effects that already landed. This is only possible because the stop was treated as a first-class event: the checkpoint exists because stops were persisted, the reconciliation exists because effects were ledged, the refinement works because the partial transcript was kept instead of discarded. Interruptibility even becomes a product feature — the ability to steer mid-run is one of the most visceral advantages agents hold over batch jobs, but only in harnesses where interruption leaves usable state. In the others, mid-run steering just means mid-run destruction." data-zh="以上一切，最终汇聚成一种把玩具和基础设施区分开的能力：停止-恢复循环。用户打断一个研究任务，读一遍部分转写，把问题改得更精确，然后说继续——智能体从上一个检查点接续，完整知道自己已经做过什么，而不是从零开始，更糟的是，重新做一遍早已落地的副作用。这之所以可能，只因停止被当成了一等公民事件：检查点存在，是因为停止被落了盘；对账存在，是因为副作用记了账；问题的精修可行，是因为部分转写被保留而不是丢弃。可打断性甚至成了产品功能——「跑到一半还能转向」是智能体相对批处理任务最直观的优势之一，但只在那些打断会留下可用状态的 harness 里成立。在其他的 harness 里，中途转向只意味着中途毁灭。">Everything above converges on a capability that separates toys from infrastructure: the stop-resume cycle. A user interrupts, reads the partial transcript, refines the question, and says continue — and the agent picks up from the last checkpoint with full knowledge of what it already did. Interruptibility even becomes a product feature: the ability to steer mid-run is one of the most visceral advantages agents hold over batch jobs — but only in harnesses where interruption leaves usable state.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrG5" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrG6" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE STOP-RESUME CYCLE" data-zh="停止-恢复循环" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE STOP-RESUME CYCLE</text>
+<!-- checkpoints as circles -->
+<circle cx="90" cy="120" fill="var(--accent-dim)" r="26" stroke="var(--accent)" stroke-width="2"></circle>
+<text data-en="ckpt 1" data-zh="检查点 1" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="90" y="118">ckpt 1</text>
+<text data-en="plan" data-zh="规划" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="90" y="130">plan</text>
+<circle cx="230" cy="120" fill="var(--accent-dim)" r="26" stroke="var(--accent)" stroke-width="2"></circle>
+<text data-en="ckpt 2" data-zh="检查点 2" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="230" y="118">ckpt 2</text>
+<text data-en="3 tools done" data-zh="3 个工具已完成" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="230" y="130">3 tools done</text>
+<circle cx="390" cy="120" fill="var(--bg-surface)" r="26" stroke="var(--accent-3)" stroke-width="2" stroke-dasharray="4,3"></circle>
+<text data-en="STOP" data-zh="停止" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="390" y="118">STOP</text>
+<text data-en="user steers" data-zh="用户转向" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="390" y="130">user steers</text>
+<circle cx="530" cy="120" fill="var(--accent-dim)" r="26" stroke="var(--accent)" stroke-width="2"></circle>
+<text data-en="resume" data-zh="恢复" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="530" y="118">resume</text>
+<text data-en="from ckpt 2" data-zh="从检查点 2 接续" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="530" y="130">from ckpt 2</text>
+<!-- arrows -->
+<path d="M116 120 L200 120" fill="none" marker-end="url(#arrG5)" stroke="var(--accent)" stroke-width="1.6"></path>
+<path d="M256 120 L360 120" fill="none" marker-end="url(#arrG5)" stroke="var(--accent)" stroke-width="1.6"></path>
+<path d="M416 120 L500 120" fill="none" marker-end="url(#arrG5)" stroke="var(--accent)" stroke-width="1.6" stroke-dasharray="5,3"></path>
+<!-- loop back -->
+<path d="M230 146 C230 210 530 210 530 150" fill="none" marker-end="url(#arrG5)" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="3,4"></path>
+<text data-en="not from zero — the ledger says 3 effects already landed" data-zh="不是从零开始——账本写着 3 个副作用已落地" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="380" y="238">not from zero — the ledger says 3 effects already landed</text>
+<text data-en="The resume path is the product of everything before it: checkpoints made it possible, the ledger made it safe, and treating stops as first-class events made it routine." data-zh="恢复路径，是此前一切努力的产物：检查点让它成为可能，账本让它变得安全，而把停止当一等公民事件，让它变成例行公事。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="276">The resume path is the product of everything before it: checkpoints made it possible, the ledger made it safe, and treating stops as first-class events made it routine.</text>
+</svg>
+<p class="diagram-caption" data-en="A steerable agent run. Checkpoints are written between turns, so a stop always has a known-good point behind it. When the user interrupts and refines, resume returns to the last checkpoint — with the effect ledger ruling out double-work — instead of restarting the task or blindly replaying side effects. The cycle turns interruption from a hazard into the interaction model itself." data-zh="一次可转向的智能体运行。检查点写在轮与轮之间，所以停止的身后总有一个已知良好的回退点。当用户打断并精修指令时，恢复回到上一个检查点——由效果账本排除重复劳动——而不是重启任务，也不是盲目重放副作用。这个循环，把打断从一种风险，变成了交互模式本身。">A steerable agent run. Checkpoints are written between turns, so a stop always has a known-good point behind it. When the user interrupts and refines, resume returns to the last checkpoint — with the effect ledger ruling out double-work. The cycle turns interruption from a hazard into the interaction model itself.</p>
+</div>
+<p data-en="The practical checklist is short enough to tape to a monitor. Make every stop follow the protocol: quiesce, drain, reconcile, persist. Give every side-effecting tool an identity and an idempotency story. Write checkpoints at turn boundaries, where stopping is nearly free. Treat 'stopped' as a legitimate terminal state in the task store, with a reason and a transcript — not as a stain to be cleaned up. And test the stop paths as rigorously as the happy path, because in production they are not the minority of runs. None of this makes an agent smarter. It makes an agent trustworthy in the dimension that matters most once agents start touching the real world: not what it can do while it runs, but what state it leaves behind when it is told, as it constantly will be, to stop." data-zh="实操清单短到可以贴在显示器边上。让每一次停止都走协议：静止、排空、对账、落盘。给每个有副作用的工具一个标识和一套幂等方案。在轮次边界写检查点——在那里，停止几乎是免费的。把「已停止」当成任务存储里一个正当的终态，带原因、带转写——而不是一个需要擦掉的污渍。并且像测试快乐路径一样严格地测试停止路径，因为在生产环境里，它们不是少数派。这些没有一条让智能体更聪明。但它们让智能体在最重要的维度上变得可信——一旦智能体开始触碰真实世界，重要的不是它运行时能做什么，而是当它被告知停下来时（这样的时刻会不断到来），它留下了什么样的状态。">The practical checklist is short enough to tape to a monitor. Make every stop follow the protocol: quiesce, drain, reconcile, persist. Give every side-effecting tool an identity and an idempotency story. Write checkpoints at turn boundaries. Treat 'stopped' as a legitimate terminal state, with a reason and a transcript. And test the stop paths as rigorously as the happy path — because in production they are not the minority of runs. None of this makes an agent smarter. It makes an agent trustworthy in the dimension that matters most: not what it can do while it runs, but what state it leaves behind when it is told, as it constantly will be, to stop.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
