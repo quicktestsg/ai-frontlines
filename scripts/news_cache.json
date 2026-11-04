@@ -1,6 +1,398 @@
 {
   "tweets": [
     {
+      "id": "2117710942826123294",
+      "url": "https://x.com/AnthropicAI/status/2117710942826123294",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-11-04T08:01:10.435164+00:00",
+      "translation_zh": "Anthropic 发布新研究：推出 FlashProve，一种「可验证推理」技术。基于密码学方法，开发者可以验证某条回复是否真的出自指定 AI 模型，效率远超此前开源方案。可用于防止对话劫持、让安全评估者确认被测模型与线上服务一致。代码已开源。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 4067,
+        "lang": "en",
+        "created_at": "2026-11-03T20:10:08.000Z",
+        "display_text_range": [
+          0,
+          279
+        ],
+        "entities": {},
+        "id_str": "2117710942826123294",
+        "text": "New Anthropic research: progress on provable inference for large language models.\n\nHere, we introduce FlashProve. Building on established cryptographic techniques, FlashProve allows developers to verify whether a given response came from a given AI model. It’s substantially more",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "initial_tweet_id": "2117707052948898271",
+          "edit_tweet_ids": [
+            "2117707052948898271",
+            "2117710942826123294"
+          ],
+          "editable_until_msecs": "1793739281000",
+          "edits_remaining": "4",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 429,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/OIZWPb6QZa",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2117608382136016896/yCjVOTUf?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2117608382136016896/yCjVOTUf?format=jpg&name=280x150",
+                "width": 267
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Sharing progress on a powerful type of cryptographic proof known as a zkSNARK, which is uniquely fit for provable inference.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "www.anthropic.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2117608382136016896/yCjVOTUf?format=jpg&name=800x320_1",
+                "width": 569
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2117608382136016896/yCjVOTUf?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1125,
+                "url": "https://pbs.twimg.com/card_img/2117608382136016896/yCjVOTUf?format=jpg&name=orig",
+                "width": 2000
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2117608382136016896/yCjVOTUf?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2117608382136016896/yCjVOTUf?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 81,
+                "url": "https://pbs.twimg.com/card_img/2117608382136016896/yCjVOTUf?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "creator": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1125,
+                "url": "https://pbs.twimg.com/card_img/2117608382136016896/yCjVOTUf?format=png&name=2048x2048_2_exp",
+                "width": 2000
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1125,
+                "url": "https://pbs.twimg.com/card_img/2117608382136016896/yCjVOTUf?format=jpg&name=orig",
+                "width": 2000
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "anthropic.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2117608382136016896/yCjVOTUf?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 70.63,
+                    "rgb": {
+                      "blue": 192,
+                      "green": 205,
+                      "red": 211
+                    }
+                  },
+                  {
+                    "percentage": 22.48,
+                    "rgb": {
+                      "blue": 96,
+                      "green": 179,
+                      "red": 222
+                    }
+                  },
+                  {
+                    "percentage": 4.71,
+                    "rgb": {
+                      "blue": 94,
+                      "green": 98,
+                      "red": 90
+                    }
+                  },
+                  {
+                    "percentage": 1.5,
+                    "rgb": {
+                      "blue": 148,
+                      "green": 148,
+                      "red": 137
+                    }
+                  },
+                  {
+                    "percentage": 0.36,
+                    "rgb": {
+                      "blue": 96,
+                      "green": 112,
+                      "red": 127
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Progress on provable inference for large language models",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 70.63,
+                    "rgb": {
+                      "blue": 192,
+                      "green": 205,
+                      "red": 211
+                    }
+                  },
+                  {
+                    "percentage": 22.48,
+                    "rgb": {
+                      "blue": 96,
+                      "green": 179,
+                      "red": 222
+                    }
+                  },
+                  {
+                    "percentage": 4.71,
+                    "rgb": {
+                      "blue": 94,
+                      "green": 98,
+                      "red": 90
+                    }
+                  },
+                  {
+                    "percentage": 1.5,
+                    "rgb": {
+                      "blue": 148,
+                      "green": 148,
+                      "red": 137
+                    }
+                  },
+                  {
+                    "percentage": 0.36,
+                    "rgb": {
+                      "blue": 96,
+                      "green": 112,
+                      "red": 127
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1125,
+                "url": "https://pbs.twimg.com/card_img/2117608382136016896/yCjVOTUf?format=png&name=2048x2048_2_exp",
+                "width": 2000
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2117608382136016896/yCjVOTUf?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 70.63,
+                    "rgb": {
+                      "blue": 192,
+                      "green": 205,
+                      "red": 211
+                    }
+                  },
+                  {
+                    "percentage": 22.48,
+                    "rgb": {
+                      "blue": 96,
+                      "green": 179,
+                      "red": 222
+                    }
+                  },
+                  {
+                    "percentage": 4.71,
+                    "rgb": {
+                      "blue": 94,
+                      "green": 98,
+                      "red": 90
+                    }
+                  },
+                  {
+                    "percentage": 1.5,
+                    "rgb": {
+                      "blue": 148,
+                      "green": 148,
+                      "red": 137
+                    }
+                  },
+                  {
+                    "percentage": 0.36,
+                    "rgb": {
+                      "blue": 96,
+                      "green": 112,
+                      "red": 127
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1125,
+                "url": "https://pbs.twimg.com/card_img/2117608382136016896/yCjVOTUf?format=png&name=2048x2048_2_exp",
+                "width": 2000
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/OIZWPb6QZa",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1125,
+                "url": "https://pbs.twimg.com/card_img/2117608382136016896/yCjVOTUf?format=jpg&name=orig",
+                "width": 2000
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": true,
+        "isStaleEdit": false,
+        "previous_counts": {
+          "favorite_count": 487,
+          "quote_count": 25,
+          "reply_count": 90,
+          "retweet_count": 32
+        },
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTE3NzEwOTQyNjkxODMxODA4"
+        }
+      }
+    },
+    {
       "id": "2117707052948898271",
       "url": "https://x.com/AnthropicAI/status/2117707052948898271",
       "label": "Anthropic",
