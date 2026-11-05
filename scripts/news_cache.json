@@ -1,6 +1,612 @@
 {
   "tweets": [
     {
+      "id": "2118403114890137895",
+      "url": "https://x.com/claudeai/status/2118403114890137895",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-11-05T20:03:29.016571+00:00",
+      "translation_zh": "Claude 推出 Personal Finance 功能（美国 beta）：连接你选择的账户，用日常语言回答财务问题。只读权限，Claude 无法动用、管理或投资你的钱，无广告、无赞助推荐，逐步向 Pro/Max/Ultra 用户开放。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 12821,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-05T18:00:35.000Z",
+        "display_text_range": [
+          0,
+          269
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/V1JLYuWwrS",
+              "expanded_url": "https://x.com/claudeai/status/2118403114890137895/video/1",
+              "indices": [
+                270,
+                293
+              ],
+              "url": "https://t.co/V1JLYuWwrS"
+            }
+          ]
+        },
+        "id_str": "2118403114890137895",
+        "text": "Introducing Personal Finance in Claude, in beta in the US.\n\nConnect the accounts you choose, and Claude answers your money questions in everyday language, from your own balances and transactions. Access is read-only, and Claude can't move, manage, or invest your money. https://t.co/V1JLYuWwrS",
+        "user": {
+          "id_str": "1943306828697550848",
+          "name": "Claude",
+          "screen_name": "claudeai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2118403114890137895"
+          ],
+          "editable_until_msecs": "1793905235000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/V1JLYuWwrS",
+            "expanded_url": "https://x.com/claudeai/status/2118403114890137895/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              270,
+              293
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HWYUk7ZWwAAcrVe.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 2160,
+              "width": 3841
+            },
+            "sizes": {
+              "large": {
+                "h": 1152,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 382,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/V1JLYuWwrS",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 91166,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2118401044841390080/pl/AmSQ5bgp_75bEbTt.m3u8?v=cfc"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2118401044841390080/vid/avc1/480x270/xKwe6dS0sj4gokYA.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2118401044841390080/vid/avc1/640x360/WXL9zd_-7MVyqbxg.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2118401044841390080/vid/avc1/1280x720/BnJl4Fn6WCBMB-WT.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2118401044841390080/vid/avc1/1920x1080/lQ99Zn7JR9hyYGA6.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 91166,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/media/HWYUk7ZWwAAcrVe.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2118401044841390080/pl/AmSQ5bgp_75bEbTt.m3u8?v=cfc"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2118401044841390080/vid/avc1/480x270/xKwe6dS0sj4gokYA.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2118401044841390080/vid/avc1/640x360/WXL9zd_-7MVyqbxg.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2118401044841390080/vid/avc1/1280x720/BnJl4Fn6WCBMB-WT.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2118401044841390080/vid/avc1/1920x1080/lQ99Zn7JR9hyYGA6.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2118403114890137895"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 538,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2118390190246879554",
+      "url": "https://x.com/OpenAI/status/2118390190246879554",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-11-05T20:03:29.016571+00:00",
+      "translation_zh": "OpenAI 发布 GPT-6 Cyber：安全研究的重大进展，更强能力配更好对齐。它驱动了昨天公布的 Linux 内核研究，Mozilla、Cisco、Palo Alto Networks 等安全团队已开始使用，先向部分 Daybreak Red 客户开放。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 9846,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-05T17:09:13.000Z",
+        "display_text_range": [
+          0,
+          269
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/34uAeNnhwP",
+              "expanded_url": "https://x.com/OpenAI/status/2118390190246879554/video/1",
+              "indices": [
+                270,
+                293
+              ],
+              "url": "https://t.co/34uAeNnhwP"
+            }
+          ]
+        },
+        "id_str": "2118390190246879554",
+        "text": "Introducing GPT‑6 Cyber: a major advance in security research that pairs stronger capabilities with better model alignment.\n\nThe model powered the Linux kernel research we announced yesterday, and security teams at companies like Mozilla, Palo Alto Networks, Calif, and https://t.co/34uAeNnhwP",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2118390190246879554"
+          ],
+          "editable_until_msecs": "1793902153000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/34uAeNnhwP",
+            "expanded_url": "https://x.com/OpenAI/status/2118390190246879554/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              270,
+              293
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2118387217588465664/img/N2grMUmP0O_EMvS2.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/34uAeNnhwP",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 7000,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2118387217588465664/pl/OT3cEN27r5tms8VU.m3u8"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2118387217588465664/vid/avc1/480x270/_03wR4bjsWs2Zpye.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2118387217588465664/vid/avc1/640x360/8VQ75nYFaMDyW_hX.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2118387217588465664/vid/avc1/1280x720/_Bwsy8lRf0qMlY0X.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2118387217588465664/vid/avc1/1920x1080/ggeDE9iY9Trxb8kO.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 7000,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2118387217588465664/img/N2grMUmP0O_EMvS2.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2118387217588465664/pl/OT3cEN27r5tms8VU.m3u8"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2118387217588465664/vid/avc1/480x270/_03wR4bjsWs2Zpye.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2118387217588465664/vid/avc1/640x360/8VQ75nYFaMDyW_hX.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2118387217588465664/vid/avc1/1280x720/_Bwsy8lRf0qMlY0X.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2118387217588465664/vid/avc1/1920x1080/ggeDE9iY9Trxb8kO.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2118390190246879554"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 684,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTE4MzkwMTkwMTEyNzE0NzUy"
+        }
+      }
+    },
+    {
+      "id": "2118284488841232440",
+      "url": "https://x.com/Kimi_Moonshot/status/2118284488841232440",
+      "label": "Kimi",
+      "color": "#6366F1",
+      "fetched_at": "2026-11-05T20:03:29.016571+00:00",
+      "translation_zh": "Kimi 与阿里云达成合作，Kimi K3.1 Pro 上线阿里云，开发者可以在云端直接调用。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 35,
+        "in_reply_to_screen_name": "alibaba_cloud",
+        "in_reply_to_status_id_str": "2118191804843782479",
+        "in_reply_to_user_id_str": "3421843274",
+        "lang": "en",
+        "created_at": "2026-11-05T10:09:12.000Z",
+        "display_text_range": [
+          15,
+          115
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "3421843274",
+              "indices": [
+                0,
+                14
+              ],
+              "name": "Alibaba Cloud",
+              "screen_name": "alibaba_cloud"
+            },
+            {
+              "id_str": "3421843274",
+              "indices": [
+                40,
+                54
+              ],
+              "name": "Alibaba Cloud",
+              "screen_name": "alibaba_cloud"
+            }
+          ]
+        },
+        "id_str": "2118284488841232440",
+        "text": "@alibaba_cloud Thrilled to partner with @alibaba_cloud! Can't wait to see what developers build with Kimi K3.1 Pro！",
+        "user": {
+          "id_str": "1863959670169501696",
+          "name": "Kimi.ai",
+          "screen_name": "Kimi_Moonshot",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2086719038798102529/diJGKpOE_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2118284488841232440"
+          ],
+          "editable_until_msecs": "1793876952000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 2,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 116,
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 10,
+          "retweet_count": 5,
+          "created_at": "2026-11-05T04:00:55.000Z",
+          "display_text_range": [
+            0,
+            281
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/WAQnPCEOEE",
+                "expanded_url": "https://x.com/alibaba_cloud/status/2118191804843782479/photo/1",
+                "indices": [
+                  282,
+                  305
+                ],
+                "url": "https://t.co/WAQnPCEOEE"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "1863959670169501696",
+                "indices": [
+                  104,
+                  118
+                ],
+                "name": "Kimi.ai",
+                "screen_name": "Kimi_Moonshot"
+              }
+            ]
+          },
+          "id_str": "2118191804843782479",
+          "text": "Kimi K3.1 Pro is now live on Alibaba Cloud Model Studio &amp; Qwen Cloud!\nWe're excited to partner with @Kimi_Moonshot as a Day-0 launch partner, bringing production-ready inference to developers and enterprises from day one.\nBuild with confidence, scale with ease, and get started https://t.co/WAQnPCEOEE",
+          "user": {
+            "id_str": "3421843274",
+            "name": "Alibaba Cloud",
+            "screen_name": "alibaba_cloud",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/2116051285304840192/BDe11Cez_normal.jpg"
+          },
+          "edit_control": {
+            "initial_tweet_id": "2118189108254445919",
+            "edit_tweet_ids": [
+              "2118189108254445919",
+              "2118191804843782479"
+            ],
+            "editable_until_msecs": "1793854212000",
+            "edits_remaining": "4",
+            "is_edit_eligible": true
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/WAQnPCEOEE",
+              "expanded_url": "https://x.com/alibaba_cloud/status/2118191804843782479/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                282,
+                305
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HWVRvV7bEAECn4n.jpg",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 1147,
+                    "w": 2048,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2048,
+                    "w": 2048,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 2048,
+                    "w": 1796,
+                    "x": 252,
+                    "y": 0
+                  },
+                  {
+                    "h": 2048,
+                    "w": 1024,
+                    "x": 1024,
+                    "y": 0
+                  },
+                  {
+                    "h": 2048,
+                    "w": 2048,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 2048,
+                "width": 2048
+              },
+              "sizes": {
+                "large": {
+                  "h": 2048,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 1200,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 680,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/WAQnPCEOEE"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 1147,
+                  "w": 2048,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2048,
+                  "w": 2048,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 2048,
+                  "w": 1796,
+                  "x": 252,
+                  "y": 0
+                },
+                {
+                  "h": 2048,
+                  "w": 1024,
+                  "x": 1024,
+                  "y": 0
+                },
+                {
+                  "h": 2048,
+                  "w": 2048,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/alibaba_cloud/status/2118191804843782479/photo/1",
+              "url": "https://pbs.twimg.com/media/HWVRvV7bEAECn4n.jpg",
+              "width": 2048,
+              "height": 2048
+            }
+          ],
+          "isEdited": true,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2118124964197114039",
       "url": "https://x.com/OpenAI/status/2118124964197114039",
       "label": "OpenAI",
@@ -521,6 +1127,92 @@
         "news_action_type": "conversation",
         "isEdited": false,
         "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2118119461345739018",
+      "url": "https://x.com/OpenAI/status/2118119461345739018",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-11-05T20:03:29.016571+00:00",
+      "translation_zh": "OpenAI 的智能体在 Linux 内核研究中发现并使用了至少 10 种前所未见的漏洞利用技术——说明前沿模型能发现全新的利用路径，而不只是套用已知手法。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 671,
+        "in_reply_to_screen_name": "OpenAI",
+        "in_reply_to_status_id_str": "2118119459772862490",
+        "in_reply_to_user_id_str": "4398626122",
+        "lang": "en",
+        "created_at": "2026-11-04T23:13:26.000Z",
+        "display_text_range": [
+          0,
+          278
+        ],
+        "entities": {},
+        "id_str": "2118119461345739018",
+        "text": "The agents also discovered and used at least 10 Linux exploitation techniques that, to the best of our knowledge and all of the experts that we consulted, are novel.\n\nThis suggests frontier LLMs can discover and patch new approaches to exploitation, beyond simply applying known",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2118119461345739018"
+          ],
+          "editable_until_msecs": "1793837606000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 11,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 655,
+          "in_reply_to_screen_name": "OpenAI",
+          "in_reply_to_status_id_str": "2118119458149634360",
+          "in_reply_to_user_id_str": "4398626122",
+          "lang": "en",
+          "reply_count": 12,
+          "retweet_count": 22,
+          "created_at": "2026-11-04T23:13:26.000Z",
+          "display_text_range": [
+            0,
+            279
+          ],
+          "entities": {},
+          "id_str": "2118119459772862490",
+          "text": "The full run cost $1,213,430 in API credits—about $1,279 per distinct local privilege escalation vulnerability.\n\nFor context, applying historical Pwn2Own and TyphoonPWN bounty rates gives a hypothetical value of $18.9M–$66.3M.\n\nThis demonstrates the relative efficacy of using AI",
+          "user": {
+            "id_str": "4398626122",
+            "name": "OpenAI",
+            "screen_name": "OpenAI",
+            "is_blue_verified": true,
+            "profile_image_shape": "Square",
+            "verified": false,
+            "verified_type": "Business",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2118119459772862490"
+            ],
+            "editable_until_msecs": "1793837606000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTE4MTE5NDYxMjkxMjc0MjQw"
+        }
       }
     },
     {

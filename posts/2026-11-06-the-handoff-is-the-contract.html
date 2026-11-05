@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Handoff Is the Contract — AI Frontlines</title>
+<meta content="Multi-agent systems don't fail at the agents. They fail at the seams — the moment one agent hands work to another. The handoff is not a function call; it is a contract, and teams that treat it like one get systems that compose. Teams that don't get systems that gossip." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 6, 2026" data-zh="2026年11月6日">November 6, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Handoff Is the Contract" data-zh="交接，就是契约">The Handoff Is the Contract</h1>
+<p class="post-header-deck" data-en="Multi-agent systems rarely fail at the agents. They fail at the seams — the precise moment one agent hands work to another. Most teams treat the handoff as a function call: pass a blob of text, hope the other side figures it out. The teams that build systems which actually compose treat the handoff as a contract — a typed, bounded, versioned agreement about what is being asked, what context crosses the boundary, and what shape the answer must come back in. The agents are replaceable. The contract is the system." data-zh="多智能体系统很少败在智能体本身。它们败在接缝处——一个智能体把工作交给另一个智能体的那个精确瞬间。大多数团队把交接当成一次函数调用：扔过去一坨文本，指望对面自己看懂。而真正能把系统组合起来的团队，把交接当成一份契约——一份有类型、有边界、有版本的协议，规定了在请求什么、什么上下文可以跨越边界、答案必须以什么形状回来。智能体是可以替换的。契约才是系统。">Multi-agent systems rarely fail at the agents. They fail at the seams — the precise moment one agent hands work to another. The teams that build systems which actually compose treat the handoff as a contract.</p>
+</header>
+<article class="post-body">
+<p data-en="Every multi-agent system is a set of agents plus the gaps between them. The agents get all the attention — which model powers them, how clever their prompts are, how many tools they can reach. But watch a real system run and you will see that almost nothing interesting happens inside a single agent. Each one is a short burst of reasoning, a few tool calls, a small conclusion. What determines whether the whole thing works is what happens in the gaps: the moment the orchestrator delegates a task to a researcher, the moment the researcher returns its findings to the writer, the moment the writer asks the verifier to check a claim. These moments are handoffs, and they are where multi-agent systems live or die." data-zh="每一个多智能体系统，都是一组智能体，加上它们之间的缝隙。智能体得到了所有的关注——用什么模型驱动、prompt 写得多聪明、能调用多少工具。但观察一个真实系统运行，你会发现几乎没有什么有趣的事情发生在单个智能体内部。每个智能体都只是一小段推理、几次工具调用、一个小结论。决定整体能否工作的，是缝隙里发生的事：编排者把任务委托给研究员的那一刻、研究员把发现交回给撰写者的那一刻、撰写者请验证者核查一条断言的那一刻。这些瞬间，就是交接，而多智能体系统的生死，就在这里。">Every multi-agent system is a set of agents plus the gaps between them. The agents get all the attention — but watch a real system run and you will see that almost nothing interesting happens inside a single agent. What determines whether the whole thing works is what happens in the gaps.</p>
+<p data-en="A handoff looks trivial. One agent has accumulated some context — a goal, some findings, some half-formed plan — and needs another agent to continue the work. The naive implementation passes everything: the entire conversation history, all tool outputs, every intermediate thought, copied wholesale into the other agent's context window. This is not a handoff; it is a context dump. And it fails in a characteristic way: the receiving agent drowns. It cannot tell which parts of the inherited context matter, so it treats all of it as equally relevant, which means equally irrelevant. The signal — the actual task, the actual constraints — is buried in the noise of another agent's process. The dump also fails in a second way: the receiving agent inherits the sender's frame of reference, including its confusions. If the first agent misunderstood the task at step three, the second agent now works diligently inside that misunderstanding. Errors don't just propagate through dumps. They get laundered into apparent authority, because the receiving agent treats inherited context as ground truth." data-zh="交接看起来很简单。一个智能体积累了一些上下文——一个目标、一些发现、一个半成品的计划——需要另一个智能体继续这项工作。天真的实现是全部传过去：整段对话历史、所有工具输出、每一个中间念头，原封不动地拷进另一个智能体的上下文窗口。这不是交接，这是上下文倾倒。它会以一种典型的方式失败：接收方溺水了。它分不清继承来的上下文里哪些重要，于是把所有部分当作同等相关——这也就意味着同等无关。信号——真正的任务、真正的约束——被埋在另一个智能体过程的噪音之下。倾倒还有第二种失败方式：接收方继承了发送方的参考系，包括它的困惑。如果第一个智能体在第三步误解了任务，第二个智能体就会在那个误解里勤勤恳恳地工作。错误不只是通过倾倒传播——它被洗成了表面的权威，因为接收方会把继承的上下文当作既定事实。">A handoff looks trivial. The naive implementation passes everything: the entire conversation history, all tool outputs, every intermediate thought. This is not a handoff; it is a context dump. The receiving agent drowns, and worse — it inherits the sender's confusions, laundered into apparent authority.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrH1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrH2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrH3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="ANATOMY OF A HANDOFF" data-zh="交接的解剖" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ANATOMY OF A HANDOFF</text>
+<!-- orchestrator -->
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent)" stroke-width="2" width="150" x="30" y="120"></rect>
+<text data-en="orchestrator" data-zh="编排者" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="105" y="139">orchestrator</text>
+<text data-en="goal + progress" data-zh="目标 + 进度" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="105" y="155">goal + progress</text>
+<!-- the packet -->
+<rect fill="var(--accent-dim)" height="170" rx="10" stroke="var(--accent)" stroke-width="2" width="200" x="210" y="58"></rect>
+<text data-en="THE HANDOFF PACKET" data-zh="交接数据包" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="82">THE HANDOFF PACKET</text>
+<text data-en="goal — one sentence" data-zh="目标 —— 一句话" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="start" x="230" y="108">goal — one sentence</text>
+<text data-en="context slice — only what's needed" data-zh="上下文切片 —— 只带必需的" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="start" x="230" y="130">context slice — only what's needed</text>
+<text data-en="tool scope — what it may touch" data-zh="工具范围 —— 能碰什么" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="start" x="230" y="152">tool scope — what it may touch</text>
+<text data-en="return schema — answer's shape" data-zh="返回 schema —— 答案的形状" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="start" x="230" y="174">return schema — answer's shape</text>
+<text data-en="budget — steps, tokens, time" data-zh="预算 —— 步数、token、时间" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="start" x="230" y="196">budget — steps, tokens, time</text>
+<text data-en="defined · bounded · inspectable" data-zh="明确 · 有界 · 可检查" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="216">defined · bounded · inspectable</text>
+<!-- worker -->
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent-2)" stroke-width="2" width="150" x="440" y="120"></rect>
+<text data-en="worker" data-zh="工作者" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="515" y="139">worker</text>
+<text data-en="fresh context" data-zh="干净的上下文" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="515" y="155">fresh context</text>
+<!-- arrows -->
+<path d="M180 142 L206 142" fill="none" marker-end="url(#arrH1)" stroke="var(--accent)" stroke-width="2"></path>
+<path d="M410 142 L436 142" fill="none" marker-end="url(#arrH1)" stroke="var(--accent)" stroke-width="2"></path>
+<!-- return path -->
+<path d="M515 164 C515 250 310 260 105 168" fill="none" marker-end="url(#arrH2)" stroke="var(--text-tertiary)" stroke-width="1.5" stroke-dasharray="5,3"></path>
+<text data-en="result validates against schema — or the contract is broken" data-zh="结果按 schema 校验 —— 否则契约即被打破" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="262">result validates against schema — or the contract is broken</text>
+<!-- exclusion note -->
+<text data-en="✗ what never crosses: full history · reasoning traces · the sender's doubts" data-zh="✗ 永远不过界的东西：完整历史 · 推理痕迹 · 发送方的疑虑" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="308">✗ what never crosses: full history · reasoning traces · the sender's doubts</text>
+</svg>
+<p class="diagram-caption" data-en="A real handoff is a packet with five fields: the goal, compressed to one sentence; a context slice containing only what the receiving agent needs; the tool scope it is allowed to touch; the schema its answer must satisfy; and a budget. Everything else stays behind. The packet is the contract — it can be logged, tested, versioned, and replayed, which no context dump can ever be." data-zh="一次真正的交接，是一个有五个字段的数据包：目标，压缩成一句话；上下文切片，只包含接收方需要的部分；允许触碰的工具范围；答案必须满足的 schema；以及一份预算。其他一切，都留在边界之外。这个数据包就是契约——它可以被记录、测试、版本化、重放，而任何上下文倾倒都做不到这些。">A real handoff is a packet with five fields: the goal, compressed to one sentence; a context slice containing only what the receiving agent needs; the tool scope it is allowed to touch; the schema its answer must satisfy; and a budget. Everything else stays behind. The packet is the contract — it can be logged, tested, versioned, and replayed, which no context dump can ever be.</p>
+</div>
+<h3 data-en="Why fresh context beats inherited context" data-zh="为什么干净的上下文胜过继承的上下文">Why fresh context beats inherited context</h3>
+<p data-en="The instinct to pass everything comes from a reasonable place: context seems free, and more information seems strictly better. Both halves of that intuition are wrong. Context is not free — every inherited token competes for attention, dilutes the task, and costs money on every subsequent call. And more information is not strictly better — an agent that receives a precisely sliced context with exactly the facts it needs will outperform an agent wading through another agent's entire session, every time. A worker that starts with a clean window reads the one-sentence goal as the goal. A worker that starts with forty inherited messages must first reconstruct what the goal even is, and it will often reconstruct it wrong." data-zh="「全部传过去」的直觉来自一个合理的地方：上下文看起来是免费的，而且信息越多似乎严格越好。这个直觉的两半都是错的。上下文不免费——每一个继承来的 token 都在争夺注意力、稀释任务、并在后续每一次调用里花钱。信息也不是严格越多越好——一个收到精确切片、只带所需事实的智能体，每次都会胜过一个在另一个智能体完整会话里跋涉的智能体。带着干净窗口启动的工作者，会把那一句目标当作目标。带着四十条继承消息启动的工作者，必须先重建「目标到底是什么」，而它经常重建错。">The instinct to pass everything comes from a reasonable place: context seems free, and more information seems strictly better. Both halves of that intuition are wrong. Context is not free — every inherited token competes for attention, dilutes the task, and costs money on every subsequent call.</p>
+<p data-en="There is a deeper principle at work. A handoff is a compression act. The sending agent knows a lot — the full conversation, the dead ends it explored, the reasons it chose this subtask, the doubts it has about the plan. The receiving agent needs almost none of this. It needs the goal, the constraints that shape the goal, and any artifacts already produced. The sender's job at the moment of handoff is to compress: to take everything it knows and produce the smallest packet that makes the receiving agent effective. This compression is not overhead. It is the intellectual work. An agent that cannot compress its state into a one-sentence goal and a clean context slice does not understand its own state. Forcing the compression is how you find out." data-zh="这里有一个更深的原则在起作用。交接，是一种压缩行为。发送方知道很多——完整的对话、走过的死胡同、选择这个子任务的原因、对计划的疑虑。而接收方几乎不需要这些。它需要的是目标、塑造目标的约束、以及已经产出的工件。在交接那一刻，发送方的职责是压缩：把它知道的一切，变成能让接收方高效工作的最小数据包。这种压缩不是额外开销，它本身就是智力工作。一个无法把自己的状态压缩成一句话目标和干净上下文切片的智能体，根本不理解自己的状态。强制压缩，正是你发现这一点的方式。">A handoff is a compression act. The sender's job at the moment of handoff is to compress: to take everything it knows and produce the smallest packet that makes the receiving agent effective. This compression is not overhead. It is the intellectual work.</p>
+<blockquote data-en="A handoff is a boundary, and a boundary is a feature. On one side, one agent's confusion, history, and doubt. On the other, a clean window and a single sentence. The seam is where noise dies. Teams that blur the seam import the noise. Teams that honor the seam get focus for free — and focus, not intelligence, is the scarce resource in every multi-agent run." data-zh="交接是一条边界，而边界是一个特性。一边，是某个智能体的困惑、历史与疑虑。另一边，是干净的窗口和一句话。接缝，是噪音死亡的地方。模糊接缝的团队，把噪音也引进来了。尊重接缝的团队，免费获得了专注——而在每一次多智能体运行里，稀缺的资源从来不是智能，而是专注。">A handoff is a boundary, and a boundary is a feature. The seam is where noise dies. Teams that blur the seam import the noise. Teams that honor the seam get focus for free — and focus, not intelligence, is the scarce resource in every multi-agent run.</blockquote>
+<h3 data-en="The return schema is the half everyone forgets" data-zh="返回 schema，是被所有人遗忘的那一半">The return schema is the half everyone forgets</h3>
+<p data-en="Teams that get the outbound half right often still fail on the return. The worker finishes its task and sends back... something. A paragraph of prose. A list of bullet points. A summary of what it did and why. The orchestrator receives this and must now parse it — must read natural language and extract the facts it needs to continue. This parsing is itself a probabilistic act performed by a model, which means it is itself a place where the system can misread, over-trust, or hallucinate structure that is not there. The result flows back into the orchestrator's context as authoritative, and the error compounds quietly." data-zh="把出站方向做对的团队，往往还是败在返回上。工作者完成了任务，发回来……某种东西。一段散文。一串要点。一个关于它做了什么、为什么做的总结。编排者收到这些，现在必须解析它——必须阅读自然语言，提取继续工作所需的事实。这种解析本身就是由模型执行的概率行为，这意味着它本身就是一个系统可能误读、轻信、或幻觉出不存在的结构的地方。然后结果作为权威内容流回编排者的上下文，错误在无声中复利。">Teams that get the outbound half right often still fail on the return. The worker finishes its task and sends back... something. A paragraph of prose. The orchestrator must now parse it — a probabilistic act, which means another place where the system can misread or hallucinate structure that is not there.</p>
+<p data-en="The fix is the return schema: the contract's clause about the shape of the answer. Not 'summarize your findings' but 'return a JSON object with fields findings: array of {claim, source, confidence}, gaps: array of strings, next_action: enum'. A schema does three things at once. It forces the worker to decide what it actually found, because it cannot emit a schema field it cannot fill. It lets the orchestrator trust the result mechanically — validation is code, not another model call. And it makes the handoff testable: you can replay any handoff in isolation, check the packet against the schema, and know precisely which seam broke. Prose is for humans. Contracts are for agents. When agent talks to agent, the wire format is the schema." data-zh="修复方法是返回 schema：契约中关于答案形状的条款。不是「总结你的发现」，而是「返回一个 JSON 对象，字段为 findings: {claim, source, confidence} 数组、gaps: 字符串数组、next_action: 枚举」。schema 同时做了三件事。它迫使工作者决定自己到底发现了什么，因为它无法填出一个它填不出的字段。它让编排者可以机械地信任结果——校验是代码，不是又一次模型调用。它还让交接变得可测试：你可以单独重放任何一次交接，把数据包对着 schema 检查，精确地知道是哪条接缝断了。散文是给人的。契约是给智能体的。当智能体与智能体对话时，线上传输的格式，就是 schema。">The fix is the return schema: the contract's clause about the shape of the answer. A schema forces the worker to decide what it actually found, lets the orchestrator trust the result mechanically, and makes the handoff testable. Prose is for humans. Contracts are for agents.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="TWO WIRES, TWO OUTCOMES" data-zh="两种线路，两种结局" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">TWO WIRES, TWO OUTCOMES</text>
+<!-- TOP: prose wire -->
+<text data-en="THE PROSE WIRE" data-zh="散文线路" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="56">THE PROSE WIRE</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="80" x="30" y="76"></rect>
+<text data-en="worker" data-zh="工作者" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="70" y="95">worker</text>
+<path d="M110 91 L190 91" fill="none" marker-end="url(#arrR1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="42" rx="7" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3" width="170" x="196" y="70"></rect>
+<text data-en="“So, I looked around and" data-zh="“呃，我四处看了看，" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="start" x="208" y="86">“So, I looked around and</text>
+<text data-en="basically found some stuff" data-zh="基本上找到了一些东西，" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="start" x="208" y="100">basically found some stuff</text>
+<text data-en="that might be relevant...”" data-zh="可能有点关系……”" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="start" x="208" y="114">that might be relevant...”</text>
+<path d="M366 91 L446 91" fill="none" marker-end="url(#arrR1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="90" x="450" y="76"></rect>
+<text data-en="orchestrator" data-zh="编排者" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="495" y="95">orchestrator</text>
+<text data-en="parses with a model → guesses → trusts" data-zh="用模型解析 → 猜 → 轻信" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="142">parses with a model → guesses → trusts</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="40" y2="260"></line>
+<!-- BOTTOM: schema wire -->
+<text data-en="THE SCHEMA WIRE" data-zh="schema 线路" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="170">THE SCHEMA WIRE</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent)" stroke-width="1.5" width="80" x="340" y="190"></rect>
+<text data-en="worker" data-zh="工作者" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="380" y="209">worker</text>
+<path d="M420 205 L500 205" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="44" rx="7" stroke="var(--accent)" stroke-width="1.5" width="110" x="504" y="183"></rect>
+<text data-en="{ findings: [...]," data-zh="{ findings: [...]," fill="var(--accent)" font-family="Inter,monospace" font-size="9" font-weight="600" text-anchor="start" x="514" y="200">{ findings: [...],</text>
+<text data-en="  gaps: [...]," data-zh="  gaps: [...]," fill="var(--accent)" font-family="Inter,monospace" font-size="9" font-weight="600" text-anchor="start" x="514" y="214">  gaps: [...],</text>
+<text data-en="  confidence }" data-zh="  confidence }" fill="var(--accent)" font-family="Inter,monospace" font-size="9" font-weight="600" text-anchor="start" x="514" y="228">confidence }</text>
+<text data-en="validates in code → exact → replayable" data-zh="代码校验 → 精确 → 可重放" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="256">validates in code → exact → replayable</text>
+<!-- bottom callout -->
+<text data-en="same worker · same work — the wire format decides whether trust is checked or guessed" data-zh="同样的工作者 · 同样的工作 —— 信任是被校验还是被猜测，取决于线上的格式" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="284">same worker · same work — the wire format decides whether trust is checked or guessed</text>
+</svg>
+<p class="diagram-caption" data-en="Two wires, same work. On the prose wire, the orchestrator must re-read every result with a model and hope it extracted the right facts — trust is guessed, one parse at a time. On the schema wire, validation is code: the packet either conforms or it doesn't, and a non-conforming result is returned to the worker, not absorbed into the plan. The wire format is not a detail. It is the difference between a system you can trust mechanically and a system you have to read." data-zh="两条线路，同样的工作。在散文线路上，编排者必须用模型重新阅读每一个结果，并祈祷它提取对了事实——信任是一次一次猜出来的。在 schema 线路上，校验就是代码：数据包要么符合，要么不符合，不符合的结果被打回给工作者，而不是被吸收进计划。线上格式不是细节。它是「你可以机械信任的系统」和「你必须逐字阅读的系统」之间的分界线。">Two wires, same work. On the prose wire, trust is guessed, one parse at a time. On the schema wire, validation is code: the packet either conforms or it doesn't, and a non-conforming result is returned to the worker, not absorbed into the plan.</p>
+</div>
+<h3 data-en="Three anti-patterns, named" data-zh="三种反模式，给它们起个名字">Three anti-patterns, named</h3>
+<p data-en="Once you start looking at handoffs as contracts, the failure modes become easy to name. The whisper: a handoff with no explicit packet at all — the orchestrator merely continues talking in the same context, and the 'worker' is just the same agent wearing a different system prompt. Nothing was compressed, nothing was bounded, and the boundary that should have killed noise never existed. The fire-and-forget: a packet with a goal but no return schema — work is delegated, results come back in whatever shape the worker felt like, and the orchestrator absorbs prose it cannot verify. And the boomerang: the worker, uncertain or over-eager, returns not an answer but its process — everything it tried, every dead end, every intermediate thought — dumping its own confusion back upstream and forcing the orchestrator to do the very reasoning it delegated. Each anti-pattern is a broken clause in the contract. Each has the same repair: write the clause." data-zh="一旦你开始把交接看作契约，失败模式就变得容易命名了。「耳语」：根本没有显式数据包的交接——编排者只是在同一个上下文里继续说话，而「工作者」只是同一个智能体换了一套系统 prompt。没有任何东西被压缩，没有任何东西被限定，那道本该消灭噪音的边界从未存在。「射后不理」：有目标但没有返回 schema 的数据包——工作被委托出去了，结果以工作者喜欢的任何形状回来，编排者吸收了一段它无法验证的散文。还有「回旋镖」：工作者因为不确定或过于热情，返回的不是答案而是它的过程——它尝试的一切、每一条死胡同、每一个中间念头——把它自己的困惑倒回上游，逼着编排者做它刚刚委托出去的推理。每一种反模式，都是契约里一条被打破的条款。每一种的修复方式都一样：把条款写出来。">Once you start looking at handoffs as contracts, the failure modes become easy to name. The whisper, the fire-and-forget, the boomerang. Each anti-pattern is a broken clause in the contract. Each has the same repair: write the clause.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrA1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrA2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THREE HANDOFF ANTI-PATTERNS" data-zh="三种交接反模式" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THREE HANDOFF ANTI-PATTERNS</text>
+<!-- 1: whisper -->
+<text data-en="① THE WHISPER" data-zh="① 耳语" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="110" y="56">THE WHISPER</text>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="130" x="45" y="74"></rect>
+<text data-en="one shared context" data-zh="同一个共享上下文" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="110" y="90">one shared context</text>
+<text data-en="no boundary at all" data-zh="完全没有边界" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="110" y="104">no boundary at all</text>
+<text data-en="noise rides along" data-zh="噪音一路随行" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="110" y="140">noise rides along</text>
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="210" x2="210" y1="42" y2="160"></line>
+<!-- 2: fire-and-forget -->
+<text data-en="② FIRE-AND-FORGET" data-zh="② 射后不理" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="56">FIRE-AND-FORGET</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="64" x="205" y="76"></rect>
+<text data-en="goal →" data-zh="目标 →" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="237" y="94">goal →</text>
+<path d="M269 90 L325 90" fill="none" marker-end="url(#arrA1)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="70" x="330" y="76"></rect>
+<text data-en="???" data-zh="???" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="365" y="94">???</text>
+<text data-en="no return schema" data-zh="没有返回 schema" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="140">no return schema</text>
+<line stroke="var(--border)" stroke-dasharray="2,4" stroke-width="1" x1="420" x2="420" y1="42" y2="160"></line>
+<!-- 3: boomerang -->
+<text data-en="③ THE BOOMERANG" data-zh="③ 回旋镖" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="515" y="56">THE BOOMERANG</text>
+<rect fill="var(--bg-surface)" height="28" rx="6" stroke="var(--accent)" stroke-width="1.5" width="64" x="445" y="76"></rect>
+<text data-en="worker" data-zh="工作者" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="477" y="94">worker</text>
+<path d="M509 82 C560 60 590 92 540 108" fill="none" marker-end="url(#arrA2)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<text data-en="process, not answer" data-zh="返回过程，不是答案" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="540" y="126">process, not answer</text>
+<text data-en="confusion dumped upstream" data-zh="困惑倒回上游" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="515" y="140">confusion dumped upstream</text>
+<!-- repair bar -->
+<rect fill="var(--accent-dim)" height="36" opacity="0.5" rx="8" width="560" x="30" y="176"></rect>
+<text data-en="The repair is always the same: write the missing clause — packet, schema, or budget — before the next handoff ships." data-zh="修复方式永远相同：在下一次交接发布之前，把缺失的条款写出来——数据包、schema，或预算。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="199">The repair is always the same: write the missing clause — packet, schema, or budget — before the next handoff ships.</text>
+</svg>
+<p class="diagram-caption" data-en="The whisper never creates a boundary, so nothing is compressed and noise rides along. The fire-and-forget delegates without a return schema, so results come back unverifiable. The boomerang returns process instead of answers, pushing the delegated reasoning back upstream. Every anti-pattern is a missing clause — and every clause is cheap to write compared to the debugging it prevents." data-zh="耳语从未建立边界，所以没有任何压缩，噪音一路随行。射后不理在没有返回 schema 的情况下委托，结果回来时无法验证。回旋镖返回的是过程而非答案，把委托出去的推理又推回上游。每一种反模式都是一条缺失的条款——而与它避免的调试相比，每一条条款的书写成本都微不足道。">The whisper never creates a boundary, so nothing is compressed and noise rides along. The fire-and-forget delegates without a return schema, so results come back unverifiable. The boomerang returns process instead of answers. Every anti-pattern is a missing clause.</p>
+</div>
+<p data-en="There is a test for whether a team has real contracts or just vibes, and it is embarrassingly simple: take a completed multi-agent run and delete the agents. If the handoff packets and return schemas still exist — logged, inspectable, replayable without executing a single model — the team has contracts. Anyone can read the seams and understand what was asked and what was answered. If deleting the agents deletes all evidence of the collaboration, there were never any handoffs, only one long improvisation wearing several hats. The agents are ephemeral; they are spawned, they burn their budget, they vanish. The contracts are the durable artifact. They are what you debug at midnight, what you replay after a failure, what you version when the system grows. Multi-agent systems don't run on intelligence. They run on the seams. Honor the seam, and the agents become interchangeable parts in a machine that composes. Neglect it, and no model, however brilliant, will save a system whose parts cannot talk to each other." data-zh="检验一个团队拥有的是真契约还是凭感觉，有一个简单得令人尴尬的测试：拿一次完成的多智能体运行记录，把智能体删掉。如果交接数据包和返回 schema 仍然存在——被记录、可检查、可以在不执行任何模型的情况下重放——这个团队拥有契约。任何人都可以阅读那些接缝，理解什么被请求、什么被回答。如果删掉智能体、协作的所有证据也随之消失，那就从来没有过交接，只有一场戴着好几顶帽子的长时间即兴表演。智能体是短暂的：被生成、烧完预算、然后消失。契约才是持久的工件。它是你半夜调试的东西，是失败后重放的东西，是系统长大时做版本管理的东西。多智能体系统不是运行在智能之上。它运行在接缝之上。尊重接缝，智能体就成了一台可组合机器里可互换的零件。忽视它，再聪明的模型，也救不了一个零件之间无法对话的系统。">There is a test for whether a team has real contracts or just vibes: take a completed multi-agent run and delete the agents. If the handoff packets and return schemas still exist — logged, inspectable, replayable — the team has contracts. The agents are ephemeral. The contracts are the durable artifact. Multi-agent systems don't run on intelligence. They run on the seams.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

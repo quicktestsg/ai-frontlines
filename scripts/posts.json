@@ -1,31 +1,40 @@
 [
-{
-  "date": "2026-11-05",
-  "slug": "the-graceful-stop",
-  "title_en": "The Graceful Stop",
-  "title_zh": "优雅的停止",
-  "read_time": 8,
-  "excerpt_en": "Interruption is normal traffic in agent systems, not an exception. Quiesce, drain, reconcile, persist — the protocol that turns a killed task into an inspectable, resumable one.",
-  "excerpt_zh": "在智能体系统里，打断是正常流量，不是异常。静止、排空、对账、落盘——这套协议，把一个被杀掉的任务，变成可检查、可恢复的任务。"
-},
-{
-  "date": "2026-11-04",
-  "slug": "the-warm-loop",
-  "title_en": "The Warm Loop",
-  "title_zh": "温热的循环",
-  "read_time": 9,
-  "excerpt_en": "Agent latency is not a model problem — it is a cache problem. Prefill caching, prompt layering, and session affinity decide whether every turn starts warm or pays the cold tax in full.",
-  "excerpt_zh": "智能体的延迟不是模型问题——是缓存问题。前缀缓存、prompt 分层与会话亲和，决定了每一轮是温着开始，还是全额支付冷启动的税。"
-},
-{
-  "date": "2026-11-03",
-  "slug": "the-fan-out-tax",
-  "title_en": "The Fan-Out Tax",
-  "title_zh": "扇出税",
-  "read_time": 9,
-  "excerpt_en": "Multi-agent fan-out looks like free parallelism, but every branch must re-serialize into one fixed context window. The fan-in is the real bottleneck — and its tax on transport, attention, and verification is almost never budgeted.",
-  "excerpt_zh": "多智能体扇出看起来是免费的并行，但每条分支都必须重新串行地汇入同一个固定大小的上下文窗口。扇入才是真正的瓶颈——而它在运输、注意力和验证上的税，几乎从没被编入预算。"
-},
+  {
+    "date": "2026-11-06",
+    "slug": "the-handoff-is-the-contract",
+    "title_en": "The Handoff Is the Contract",
+    "title_zh": "交接，就是契约",
+    "read_time": 8,
+    "excerpt_en": "Multi-agent systems don't fail at the agents — they fail at the seams. The handoff is not a function call but a typed, bounded, versioned contract: goal, context slice, tool scope, return schema, budget. The agents are ephemeral; the contracts are the durable artifact.",
+    "excerpt_zh": "多智能体系统很少败在智能体本身，而是败在接缝处。交接不是一次函数调用，而是一份有类型、有边界、有版本的契约：目标、上下文切片、工具范围、返回 schema、预算。智能体是短暂的，契约才是持久的工件。"
+  },
+  {
+    "date": "2026-11-05",
+    "slug": "the-graceful-stop",
+    "title_en": "The Graceful Stop",
+    "title_zh": "优雅的停止",
+    "read_time": 8,
+    "excerpt_en": "Interruption is normal traffic in agent systems, not an exception. Quiesce, drain, reconcile, persist — the protocol that turns a killed task into an inspectable, resumable one.",
+    "excerpt_zh": "在智能体系统里，打断是正常流量，不是异常。静止、排空、对账、落盘——这套协议，把一个被杀掉的任务，变成可检查、可恢复的任务。"
+  },
+  {
+    "date": "2026-11-04",
+    "slug": "the-warm-loop",
+    "title_en": "The Warm Loop",
+    "title_zh": "温热的循环",
+    "read_time": 9,
+    "excerpt_en": "Agent latency is not a model problem — it is a cache problem. Prefill caching, prompt layering, and session affinity decide whether every turn starts warm or pays the cold tax in full.",
+    "excerpt_zh": "智能体的延迟不是模型问题——是缓存问题。前缀缓存、prompt 分层与会话亲和，决定了每一轮是温着开始，还是全额支付冷启动的税。"
+  },
+  {
+    "date": "2026-11-03",
+    "slug": "the-fan-out-tax",
+    "title_en": "The Fan-Out Tax",
+    "title_zh": "扇出税",
+    "read_time": 9,
+    "excerpt_en": "Multi-agent fan-out looks like free parallelism, but every branch must re-serialize into one fixed context window. The fan-in is the real bottleneck — and its tax on transport, attention, and verification is almost never budgeted.",
+    "excerpt_zh": "多智能体扇出看起来是免费的并行，但每条分支都必须重新串行地汇入同一个固定大小的上下文窗口。扇入才是真正的瓶颈——而它在运输、注意力和验证上的税，几乎从没被编入预算。"
+  },
   {
     "date": "2026-11-02",
     "slug": "everything-runs-twice",
