@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Retrieval Bet — AI Frontlines</title>
+<meta content="Every answer an agent gives comes from one of two places: the weights, or the world. Choosing which is a wager — with odds, stakes, and a payout that depends on how fast the knowledge decays. Most teams place this bet implicitly, on every single call, without ever noticing there was a decision to make." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 7, 2026" data-zh="2026年11月7日">November 7, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Retrieval Bet" data-zh="检索是一场赌注">The Retrieval Bet</h1>
+<p class="post-header-deck" data-en="Every answer an agent gives is sourced from one of two places: the weights, or the world. Answering from memory is fast, cheap, and sometimes wrong in ways nobody can see. Answering from retrieval is slower, costlier, and sometimes wrong in different ways — stale, noisy, off-topic. Choosing between them is not an implementation detail. It is a wager, placed silently on every single call, and most teams have never once looked at the odds." data-zh="智能体给出的每一个答案，都来自两个地方之一：权重，或者世界。凭记忆作答，快、便宜，但有时会以无人察觉的方式出错。靠检索作答，更慢、更贵，但有时会以另一种方式出错——过时、嘈杂、跑题。在两者之间选择，不是一个实现细节。它是一场赌注，在每一次调用上被无声地下注，而大多数团队从未看过赔率。">Every answer an agent gives is sourced from one of two places: the weights, or the world. Choosing between them is a wager, placed silently on every single call.</p>
+</header>
+<article class="post-body">
+<p data-en="Watch an agent answer a question and ask one uncomfortable question: where did that come from? There are only two possibilities. Either the answer was already inside the model — compressed into the weights during training, frozen at some past moment — or it was fetched from outside: a search result, a database row, a document, a tool output. There is no third source. And yet the choice between these two sources is rarely made deliberately. It is made by default, by whatever the harness happens to do, by whether someone wired up a retrieval tool and mentioned it in the prompt. Teams agonize over prompts and models while the sourcing decision — the one that determines whether the answer reflects the world as it is or the world as it was during training — is left to habit." data-zh="观察一个智能体回答问题，然后问一个不舒服的问题：这个答案是从哪儿来的？只有两种可能。要么答案本来就在模型里——在训练时被压缩进权重、冻结在某个过去的时刻——要么它从外部被抓取而来：一条搜索结果、一行数据库记录、一份文档、一个工具输出。没有第三个来源。然而这两种来源之间的选择，很少被有意识地做出。它由默认行为决定，由 harness 恰好做了什么决定，由有没有人接上检索工具、有没有在 prompt 里提到它决定。团队为 prompt 和模型痛苦纠结，而 sourcing 这个决定——那个决定答案反映的是当下的世界、还是训练时的世界的决定——被留给了习惯。">Watch an agent answer a question and ask one uncomfortable question: where did that come from? There are only two possibilities. Either the answer was already inside the model — compressed into the weights during training, frozen at some past moment — or it was fetched from outside. There is no third source.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR0" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="TWO SOURCES, NO THIRD" data-zh="两个来源，没有第三个" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">TWO SOURCES, NO THIRD</text>
+<!-- query node -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--text-tertiary)" stroke-width="1.5" width="120" x="250" y="44"></rect>
+<text data-en="question in" data-zh="问题输入" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="66">question in</text>
+<!-- fork arrows -->
+<path d="M285 78 C230 100 190 110 165 122" fill="none" marker-end="url(#arrR1)" stroke="var(--accent-2)" stroke-width="1.6"></path>
+<path d="M335 78 C390 100 430 110 455 122" fill="none" marker-end="url(#arrR2)" stroke="var(--accent-3)" stroke-width="1.6"></path>
+<!-- left: weights -->
+<rect fill="var(--accent-dim)" height="46" rx="10" stroke="var(--accent-2)" stroke-width="2" width="170" x="80" y="126"></rect>
+<text data-en="THE WEIGHTS" data-zh="权重" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="165" y="147">THE WEIGHTS</text>
+<text data-en="frozen at training time" data-zh="冻结于训练时刻" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="165" y="163">frozen at training time</text>
+<!-- right: world -->
+<rect fill="var(--accent-dim)" height="46" rx="10" stroke="var(--accent-3)" stroke-width="2" width="170" x="370" y="126"></rect>
+<text data-en="THE WORLD" data-zh="世界" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="455" y="147">THE WORLD</text>
+<text data-en="fetched at answer time" data-zh="作答时抓取" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="455" y="163">fetched at answer time</text>
+<!-- odds columns -->
+<text data-en="fast · cheap · fluent" data-zh="快 · 便宜 · 流畅" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="165" y="200">fast · cheap · fluent</text>
+<text data-en="silently stale" data-zh="无声地过时" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="165" y="218">silently stale</text>
+<text data-en="unverifiable" data-zh="不可验证" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="165" y="236">unverifiable</text>
+<text data-en="slow · costly · noisy" data-zh="慢 · 昂贵 · 嘈杂" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="455" y="200">slow · costly · noisy</text>
+<text data-en="current · citable" data-zh="新鲜 · 可引用" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="455" y="218">current · citable</text>
+<text data-en="distracts the model" data-zh="会分散模型注意力" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="455" y="236">distracts the model</text>
+<!-- bottom -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="520" x="50" y="262"></rect>
+<text data-en="The choice is not &#8220;retrieve or not.&#8221; It is a per-question wager on how fast the relevant knowledge decays." data-zh="选择不是「检索或不检索」，而是对「相关知识衰减得多快」的逐题下注。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="287">The choice is not "retrieve or not." It is a per-question wager on how fast the relevant knowledge decays.</text>
+</svg>
+<p class="diagram-caption" data-en="Both sources fail differently. The weights fail silently — the answer is stale but delivered with full confidence, and nothing in the output signals decay. Retrieval fails loudly — the fetch is visible, its cost is visible, and its noise pollutes the context that reasoning has to survive. Neither source is safe. The engineering task is placing the right bet per question." data-zh="两个来源以不同的方式失败。权重无声地失败——答案过时，却以十足的信心交付，输出里没有任何衰减的信号。检索则大声地失败——抓取是可见的，成本是可见的，而它的噪声污染着推理必须赖以生存的上下文。两个来源都不安全。工程任务，是为每个问题下对注。">Both sources fail differently. The weights fail silently — the answer is stale but delivered with full confidence. Retrieval fails loudly — the fetch is visible, its cost is visible, and its noise pollutes the context. Neither source is safe. The engineering task is placing the right bet per question.</p>
+</div>
+<h3 data-en="The odds are set by the half-life" data-zh="赔率由半衰期决定">The odds are set by the half-life</h3>
+<p data-en="Knowledge decays at different speeds, and the speed is the whole game. The boiling point of water at sea level has a half-life measured in centuries — answering it from the weights is not a gamble at all. The syntax of a programming language changes every few years — the weights are probably fine, maybe. The price of an API call, the current president of a company, the version of a dependency in a live repository, the status of an incident — these have half-lives measured in weeks, days, sometimes minutes. For knowledge in that last category, answering from the weights is not a risk. It is a guaranteed loss dressed up as an answer." data-zh="知识以不同的速度衰减，而速度就是全部关键。海平面上水的沸点，半衰期以世纪计——凭权重作答根本不算赌博。一门编程语言的语法，几年一变——权重大概没问题，也许。一次 API 调用的价格、一家公司的现任总裁、线上仓库里某个依赖的版本、一起事故的状态——这些的半衰期以周、以天、有时以分钟计。对最后一类知识，凭权重作答不是风险，而是一场被包装成答案的必输之局。">Knowledge decays at different speeds, and the speed is the whole game. The boiling point of water at sea level has a half-life measured in centuries. The syntax of a programming language changes every few years. The price of an API call, the current version of a dependency, the status of an incident — these have half-lives measured in weeks, days, sometimes minutes.</p>
+<p data-en="Here is the part most teams miss: the half-life is a property of the question, not of the system. The same agent, in the same loop, will face questions with half-lives of centuries and questions with half-lives of minutes, sometimes inside a single task. A coding agent needs stable language semantics (long half-life) and the current contents of a config file (vanishingly short half-life) within the same breath. A blanket policy — always retrieve, or never retrieve — is therefore guaranteed to be wrong somewhere. Always-retrieve burns latency and money on questions the model already answers perfectly, and floods the context with noise that degrades the questions it would have answered well. Never-retrieve produces answers that are fluent, confident, and describe a world that no longer exists. The policy must be per-question. Which means the agent — or its harness — must be able to tell which kind of question it is holding." data-zh="大多数团队漏掉的是：半衰期是问题的属性，不是系统的属性。同一个智能体、在同一个循环里，会面对半衰期以世纪计的问题和以分钟计的问题，有时就在同一个任务之内。一个编程智能体在同一口气里，既需要稳定的语言语义（长半衰期），又需要某个配置文件的当前内容（半衰期趋近于零）。因此一刀切的策略——总是检索，或从不检索——注定在某些地方出错。总是检索，在模型已经能完美回答的问题上烧掉延迟和金钱，还用噪声淹没上下文，拖垮那些它本来能答好的问题。从不检索，产出的答案流畅、自信，但描述的是一个已不存在的世界。策略必须是逐题的。这意味着智能体——或它的 harness——必须能分辨自己手里握着的是哪一种问题。">Here is the part most teams miss: the half-life is a property of the question, not of the system. The same agent, in the same loop, will face questions with half-lives of centuries and questions with half-lives of minutes, sometimes inside a single task. A blanket policy is therefore guaranteed to be wrong somewhere.</p>
+<blockquote data-en="Retrieval is not a feature you bolt on. It is a bet you place, and the stake is the agent's credibility. The model that answers from stale weights does not hedge — it states the obsolete as fact, with the same fluency as the true. Confidence is not evidence of freshness. It never was." data-zh="检索不是一个外挂的功能。它是一场你亲自下注的赌博，赌注是智能体的信誉。凭过时权重作答的模型不会对冲——它把陈旧当作事实来陈述，用的却和陈述真相时同样的流畅语气。自信不是新鲜度的证据。从来都不是。">Retrieval is not a feature you bolt on. It is a bet you place, and the stake is the agent's credibility. The model that answers from stale weights does not hedge — it states the obsolete as fact, with the same fluency as the true. Confidence is not evidence of freshness. It never was.</blockquote>
+<h3 data-en="Retrieval has its own way of losing" data-zh="检索也有自己的输法">Retrieval has its own way of losing</h3>
+<p data-en="The obvious fix — retrieve for everything — fails for reasons that are less famous but just as fatal. Retrieved content is not clean signal. It arrives stale in its own ways, ranked by a retriever that optimizes similarity rather than truth, mixed with marketing copy and outdated forum posts and documents that were wrong when they were written. Every fetch spends context budget that reasoning needed. And the presence of retrieved text changes the model's behavior: it anchors on the passage, defers to it even when it conflicts with correct knowledge, and reproduces its errors with higher fidelity than it would ever generate on its own. A bad retrieval does not return nothing. It returns something plausible. That is worse." data-zh="显而易见的修复——什么都要检索——之所以失败，原因没那么出名，却同样致命。检索到的内容不是干净的信号。它以自己的方式过时，由一个优化「相似度」而非「真实度」的检索器排序，混杂着营销文案、过时的论坛帖子、以及写下时就错的文档。每一次抓取，都在消耗推理本需要的上下文预算。而检索文本的存在会改变模型的行为：它会锚定在那段文字上，即使检索内容与正确的知识冲突也让位于它，并以比它自己凭空生成高得多的保真度复制其中的错误。一次糟糕的检索不会返回「无」，它返回「貌似可信」。这更糟。">The obvious fix — retrieve for everything — fails for reasons that are less famous but just as fatal. Retrieved content is not clean signal. It arrives stale in its own ways, ranked by a retriever that optimizes similarity rather than truth, mixed with marketing copy and outdated forum posts. Every fetch spends context budget that reasoning needed. A bad retrieval does not return nothing. It returns something plausible. That is worse.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrQ1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE DECISION QUADRANT" data-zh="决策象限" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE DECISION QUADRANT</text>
+<!-- axes -->
+<line stroke="var(--text-tertiary)" stroke-width="1.2" x1="310" x2="310" y1="44" y2="290"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1.2" x1="70" x2="550" y1="167" y2="167"></line>
+<text data-en="knowledge half-life &#8594;" data-zh="知识半衰期 &#8594;" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="308">knowledge half-life →</text>
+<text data-en="cost of being wrong &#8594;" data-zh="出错代价 &#8594;" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" transform="rotate(-90 52 167)" x="52" y="167">cost of being wrong →</text>
+<!-- quadrant 1: top-left = short half-life, high cost -->
+<rect fill="var(--accent-dim)" height="113" opacity="0.55" rx="6" width="228" x="76" y="48"></rect>
+<text data-en="ALWAYS FETCH" data-zh="必须检索" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="190" y="76">ALWAYS FETCH</text>
+<text data-en="prices · versions · status" data-zh="价格 · 版本 · 状态" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="190" y="94">prices · versions · status</text>
+<text data-en="the weights lie here" data-zh="权重在此说谎" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="190" y="110">the weights lie here</text>
+<!-- quadrant 2: top-right = long half-life, high cost -->
+<rect fill="var(--bg-surface)" height="113" opacity="0.7" rx="6" width="228" x="316" y="48" stroke="var(--accent-2)" stroke-width="1"></rect>
+<text data-en="FETCH, THEN VERIFY" data-zh="检索后验证" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="430" y="76">FETCH, THEN VERIFY</text>
+<text data-en="legal · medical · financial" data-zh="法律 · 医疗 · 金融" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="430" y="94">legal · medical · financial</text>
+<text data-en="both sources face audit" data-zh="两个来源都要接受审计" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="430" y="110">both sources face audit</text>
+<!-- quadrant 3: bottom-left = short half-life, low cost -->
+<rect fill="var(--bg-surface)" height="113" opacity="0.7" rx="6" width="228" x="76" y="174" stroke="var(--accent-3)" stroke-width="1"></rect>
+<text data-en="CHEAP CHECK FIRST" data-zh="先做廉价校验" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="190" y="202">CHEAP CHECK FIRST</text>
+<text data-en="chitchat · trivia · drafts" data-zh="闲聊 · 冷知识 · 草稿" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="190" y="220">chitchat · trivia · drafts</text>
+<text data-en="fetch only on doubt" data-zh="有疑虑才抓取" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="190" y="236">fetch only on doubt</text>
+<!-- quadrant 4: bottom-right = long half-life, low cost -->
+<rect fill="var(--bg-surface)" height="113" opacity="0.7" rx="6" width="228" x="316" y="174" stroke="var(--text-tertiary)" stroke-width="1"></rect>
+<text data-en="ANSWER FROM WEIGHTS" data-zh="凭权重作答" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="430" y="202">ANSWER FROM WEIGHTS</text>
+<text data-en="math · logic · stable facts" data-zh="数学 · 逻辑 · 稳定事实" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="430" y="220">math · logic · stable facts</text>
+<text data-en="retrieval adds only noise" data-zh="检索只会添加噪声" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="430" y="236">retrieval adds only noise</text>
+<!-- corner annotation -->
+<path d="M550 300 C560 300 560 268 545 262" fill="none" marker-end="url(#arrQ1)" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="3,2"></path>
+<text data-en="every question lands somewhere here" data-zh="每个问题都落在这里某处" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="end" x="552" y="318">every question lands somewhere here</text>
+</svg>
+<p class="diagram-caption" data-en="Two axes decide the bet: how fast the relevant knowledge decays, and what it costs to be wrong. Where the axes cross, the policy changes — from answering directly, to a cheap freshness check, to a mandatory fetch, to a fetch plus independent verification. The quadrant is not static, either: the same question moves quadrants as the world moves. A library API is stable until its maintainers ship a breaking release — overnight, mid-task, without telling the agent." data-zh="两根轴决定赌注：相关知识衰减得多快，以及答错的代价有多大。两轴相交之处，策略随之改变——从直接作答，到廉价的新鲜度检查，到强制抓取，再到抓取加独立验证。而且象限不是静态的：同一个问题会随着世界的移动而换象限。一个库的 API 一直很稳定，直到它的维护者发布了一个破坏性版本——一夜之间、任务进行中、没有任何人通知智能体。">Two axes decide the bet: how fast the relevant knowledge decays, and what it costs to be wrong. Where the axes cross, the policy changes. The quadrant is not static, either: the same question moves quadrants as the world moves.</p>
+</div>
+<h3 data-en="Bet like a portfolio, not a coin flip" data-zh="像管理组合一样下注，而不是掷硬币">Bet like a portfolio, not a coin flip</h3>
+<p data-en="Mature systems do not choose a source. They stage their exposure, the way a trader stages a position. The first stage is the model answering from its weights — cheap, instant, and usually fine for anything with a long half-life. The second stage is a lightweight doubt check: the model, or a smaller model, asks whether any part of this answer depends on knowledge that could have moved since training. Only if the doubt check trips does the system pay for a targeted fetch — not a generic search, but the narrowest retrieval that settles the specific fact in question. And for questions where being wrong is expensive, there is a final stage: the fetched evidence is checked against the generated claim before either reaches the user. Each stage costs more than the last, and each is entered only when the previous one signals uncertainty. Most questions exit at stage one. The few that need the full ladder get it." data-zh="成熟的系统不选择来源。它们分阶段地暴露风险，就像交易员分阶段建仓。第一阶段，是模型凭权重作答——便宜、即时，对任何长半衰期的东西通常都没问题。第二阶段，是一次轻量的疑虑检查：由模型、或一个更小的模型，判断这个答案里是否有任何部分依赖于「训练之后可能已经变了」的知识。只有疑虑检查被触发，系统才为目标明确的抓取付费——不是泛泛的搜索，而是能解决当前具体事实疑问的最窄检索。而对于答错代价高昂的问题，还有最后一阶段：抓取到的证据与生成的断言先核对，然后才把两者送到用户面前。每个阶段都比上一个贵，且只有在前一个发出不确定信号时才进入。大多数问题在第一阶段就离场。少数需要走完整条阶梯的，得到完整的阶梯。">Mature systems do not choose a source. They stage their exposure, the way a trader stages a position. Each stage costs more than the last, and each is entered only when the previous one signals uncertainty. Most questions exit at stage one. The few that need the full ladder get it.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrL2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE STAGED RETRIEVAL LADDER" data-zh="分级检索阶梯" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE STAGED RETRIEVAL LADDER</text>
+<!-- stage 1 -->
+<rect fill="var(--bg-surface)" height="38" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="200" x="60" y="52"></rect>
+<text data-en="① answer from weights" data-zh="① 凭权重作答" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="160" y="76">① answer from weights</text>
+<!-- gate -->
+<path d="M260 71 L300 71" fill="none" marker-end="url(#arrL2)" stroke="var(--accent-3)" stroke-width="1.4"></path>
+<rect fill="none" height="34" rx="17" stroke="var(--accent-3)" stroke-width="1.3" stroke-dasharray="3,2" width="86" x="302" y="54"></rect>
+<text data-en="doubt?" data-zh="有疑虑?" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="345" y="76">doubt?</text>
+<path d="M388 71 L428 71" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<!-- stage 2 -->
+<rect fill="var(--bg-surface)" height="38" rx="8" stroke="var(--accent)" stroke-width="1.8" width="130" x="430" y="52"></rect>
+<text data-en="② targeted fetch" data-zh="② 定向抓取" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="495" y="76">② targeted fetch</text>
+<!-- down to verify -->
+<path d="M495 90 C495 120 495 130 495 142" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<!-- stage 3 -->
+<rect fill="var(--accent-dim)" height="38" rx="8" stroke="var(--accent)" stroke-width="2" width="170" x="410" y="144"></rect>
+<text data-en="③ verify claim vs source" data-zh="③ 断言对照来源" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="495" y="168">③ verify claim vs source</text>
+<!-- exit labels -->
+<text data-en="✓ most questions exit here —" data-zh="✓ 大多数问题在此离场 —" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="160" y="122">✓ most questions exit here —</text>
+<text data-en="0 ms extra, 0 tokens extra" data-zh="0 ms 额外延迟，0 token 额外开销" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="160" y="138">0 ms extra, 0 tokens extra</text>
+<text data-en="✓ fetch only what changed —" data-zh="✓ 只抓取变化的部分 —" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="495" y="206">✓ fetch only what changed —</text>
+<text data-en="narrow query, fresh evidence" data-zh="窄查询，新证据" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="495" y="222">narrow query, fresh evidence</text>
+<!-- cost arrow -->
+<line stroke="var(--accent-3)" stroke-width="1" x1="80" x2="560" y1="252" y2="252"></line>
+<path d="M560 252 L552 248 L552 256 Z" fill="var(--accent-3)"></path>
+<text data-en="cost per stage &#8594; each rung entered only on uncertainty" data-zh="逐级成本 &#8594; 只有不确定才进入下一级" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="276">cost per stage → each rung entered only on uncertainty</text>
+</svg>
+<p class="diagram-caption" data-en="The ladder spends its budget where the risk is. Stage one is free and covers the long half-life. The doubt gate costs one cheap call and catches most of the rest. Only genuine volatility pays for a fetch, and only high stakes pay for verification. This is the difference between an agent that retrieves and an agent that retrieves intelligently — the former spends the same on every question, the latter prices each question at its actual risk." data-zh="阶梯把预算花在风险所在之处。第一阶段免费，覆盖长半衰期。疑虑门花一次廉价调用，拦下大部分剩余风险。只有真正的易变性才为抓取付费，只有高风险才为验证付费。这就是「会检索的智能体」和「聪明地检索的智能体」的区别——前者在每个问题上花一样的钱，后者按每个问题的真实风险来定价。">The ladder spends its budget where the risk is. Stage one is free and covers the long half-life. The doubt gate costs one cheap call and catches most of the rest. Only genuine volatility pays for a fetch, and only high stakes pay for verification.</p>
+</div>
+<p data-en="None of this requires exotic machinery. The doubt check is a classification the model can do itself, given a prompt that asks the right question: which parts of this claim depend on something that changes? The targeted fetch is a tool whose interface forces narrowness — fetch this price, this version, this status — rather than a generic search box that returns the whole internet. Verification is a second pass that compares claim against evidence and reports the deltas. What it requires is the admission that sourcing is a decision with stakes. Once that admission is made, the decision can be engineered: measured, tuned, and audited like any other part of the system." data-zh="这些都不需要什么奇异的机制。疑虑检查是一次模型自己就能完成的分类，只要 prompt 问对了问题：这个断言的哪些部分依赖于会变的东西？定向抓取是一个接口上强制收窄的工具——抓这个价格、这个版本、这个状态——而不是一个返回整个互联网的通用搜索框。验证是一趟第二遍流程，把断言与证据对照，报告差异。它真正要求的，是承认 sourcing 是一个有赌注的决策。一旦承认了这一点，这个决策就可以被工程化：像系统的其他任何部分一样被测量、调优和审计。">None of this requires exotic machinery. What it requires is the admission that sourcing is a decision with stakes. Once that admission is made, the decision can be engineered: measured, tuned, and audited like any other part of the system.</p>
+<p data-en="The uncomfortable conclusion is that there is no safe side of this bet. The weights are a snapshot of a world that has moved on; retrieval is a live feed of a world that lies sometimes. Every agent output is a blend of the two, and the blend was chosen somewhere — by a prompt, by a default, by whoever wired the tools. The only question is whether the blend was chosen on purpose. The teams that treat retrieval as a per-question wager — with odds read off the half-life, stakes read off the cost of being wrong, and exposure staged like a portfolio — will build agents whose wrong answers are at least wrong in checkable ways, with citations pointing at the moment the world was sampled. The teams that never look at the odds will get answers that are fluent either way, and will never know which side of the bet they were on until the fluency breaks." data-zh="不舒服的结论是：这场赌注没有安全的一侧。权重是一个已经走远了的世界的快照，检索是一个有时会说谎的世界的实时流。每一个智能体的输出都是两者的混合，而这个混合是在某处被决定的——被一个 prompt，被一个默认值，被某个接线的人。唯一的问题是：这个混合是不是被有意决定的。把检索当作逐题赌注的团队——赔率读自半衰期，赌注读自答错的代价，敞口像组合一样分级——他们构建的智能体，即使答错，也至少错得可核查，引用指向世界被采样的那一刻。而从不看赔率的团队，得到的答案无论对错都一样流畅，直到流畅碎裂的那一天，都不知道自己一直站在赌注的哪一侧。">The uncomfortable conclusion is that there is no safe side of this bet. The weights are a snapshot of a world that has moved on; retrieval is a live feed of a world that lies sometimes. Every agent output is a blend of the two, and the blend was chosen somewhere. The only question is whether it was chosen on purpose.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
