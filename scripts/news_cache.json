@@ -1,6 +1,376 @@
 {
   "tweets": [
     {
+      "id": "2118814753154064501",
+      "url": "https://x.com/AnthropicAI/status/2118814753154064501",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-11-07T08:01:29.194195+00:00",
+      "translation_zh": "记忆让 Claude 能够从经验中学习。Anthropic 工程博客新发文，介绍“做梦”（dreaming）机制如何帮助 Claude 整理所学知识、纠正错误，并更快检索所需信息。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 8336,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-06T21:16:17.000Z",
+        "display_text_range": [
+          0,
+          247
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "anthropic.com/research/compo…",
+              "expanded_url": "https://www.anthropic.com/research/components-of-agent-memory",
+              "indices": [
+                224,
+                247
+              ],
+              "url": "https://t.co/uUEN4bNkr9"
+            }
+          ]
+        },
+        "id_str": "2118814753154064501",
+        "text": "Memory is what allows Claude to learn from experience. In a new Engineering Blog post, we share how “dreaming” helps Claude organize what it’s learned, correct its mistakes, and find what it needs more easily the next time. https://t.co/uUEN4bNkr9",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2118814753154064501"
+          ],
+          "editable_until_msecs": "1794003377000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 592,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/uUEN4bNkr9",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Illustration of two offset half circles with a grid pattern, one green and one pink, facing each other across a gap on a light blue background.",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2118814754613645312/MfDDSmzB?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Illustration of two offset half circles with a grid pattern, one green and one pink, facing each other across a gap on a light blue background.",
+                "height": 147,
+                "url": "https://pbs.twimg.com/card_img/2118814754613645312/MfDDSmzB?format=jpg&name=280x150",
+                "width": 280
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "For Claude to learn from experience, it has to decide what’s worth remembering before it knows what’s next. Here’s how “dreaming” helps it organize memory and correct mistakes.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "www.anthropic.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Illustration of two offset half circles with a grid pattern, one green and one pink, facing each other across a gap on a light blue background.",
+                "height": 315,
+                "url": "https://pbs.twimg.com/card_img/2118814754613645312/MfDDSmzB?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Illustration of two offset half circles with a grid pattern, one green and one pink, facing each other across a gap on a light blue background.",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2118814754613645312/MfDDSmzB?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Illustration of two offset half circles with a grid pattern, one green and one pink, facing each other across a gap on a light blue background.",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2118814754613645312/MfDDSmzB?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Illustration of two offset half circles with a grid pattern, one green and one pink, facing each other across a gap on a light blue background.",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2118814754613645312/MfDDSmzB?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Illustration of two offset half circles with a grid pattern, one green and one pink, facing each other across a gap on a light blue background.",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2118814754613645312/MfDDSmzB?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Illustration of two offset half circles with a grid pattern, one green and one pink, facing each other across a gap on a light blue background.",
+                "height": 76,
+                "url": "https://pbs.twimg.com/card_img/2118814754613645312/MfDDSmzB?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "creator": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Illustration of two offset half circles with a grid pattern, one green and one pink, facing each other across a gap on a light blue background.",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2118814754613645312/MfDDSmzB?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Illustration of two offset half circles with a grid pattern, one green and one pink, facing each other across a gap on a light blue background.",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2118814754613645312/MfDDSmzB?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Illustration of two offset half circles with a grid pattern, one green and one pink, facing each other across a gap on a light blue background.",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "anthropic.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Illustration of two offset half circles with a grid pattern, one green and one pink, facing each other across a gap on a light blue background.",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2118814754613645312/MfDDSmzB?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Illustration of two offset half circles with a grid pattern, one green and one pink, facing each other across a gap on a light blue background.",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 71.79,
+                    "rgb": {
+                      "blue": 232,
+                      "green": 172,
+                      "red": 113
+                    }
+                  },
+                  {
+                    "percentage": 13.43,
+                    "rgb": {
+                      "blue": 154,
+                      "green": 139,
+                      "red": 201
+                    }
+                  },
+                  {
+                    "percentage": 13.32,
+                    "rgb": {
+                      "blue": 95,
+                      "green": 155,
+                      "red": 72
+                    }
+                  },
+                  {
+                    "percentage": 1.18,
+                    "rgb": {
+                      "blue": 180,
+                      "green": 167,
+                      "red": 98
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "The components of agent memory",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 71.79,
+                    "rgb": {
+                      "blue": 232,
+                      "green": 172,
+                      "red": 113
+                    }
+                  },
+                  {
+                    "percentage": 13.43,
+                    "rgb": {
+                      "blue": 154,
+                      "green": 139,
+                      "red": 201
+                    }
+                  },
+                  {
+                    "percentage": 13.32,
+                    "rgb": {
+                      "blue": 95,
+                      "green": 155,
+                      "red": 72
+                    }
+                  },
+                  {
+                    "percentage": 1.18,
+                    "rgb": {
+                      "blue": 180,
+                      "green": 167,
+                      "red": 98
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Illustration of two offset half circles with a grid pattern, one green and one pink, facing each other across a gap on a light blue background.",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2118814754613645312/MfDDSmzB?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Illustration of two offset half circles with a grid pattern, one green and one pink, facing each other across a gap on a light blue background.",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2118814754613645312/MfDDSmzB?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 71.79,
+                    "rgb": {
+                      "blue": 232,
+                      "green": 172,
+                      "red": 113
+                    }
+                  },
+                  {
+                    "percentage": 13.43,
+                    "rgb": {
+                      "blue": 154,
+                      "green": 139,
+                      "red": 201
+                    }
+                  },
+                  {
+                    "percentage": 13.32,
+                    "rgb": {
+                      "blue": 95,
+                      "green": 155,
+                      "red": 72
+                    }
+                  },
+                  {
+                    "percentage": 1.18,
+                    "rgb": {
+                      "blue": 180,
+                      "green": 167,
+                      "red": 98
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Illustration of two offset half circles with a grid pattern, one green and one pink, facing each other across a gap on a light blue background.",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2118814754613645312/MfDDSmzB?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/uUEN4bNkr9",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Illustration of two offset half circles with a grid pattern, one green and one pink, facing each other across a gap on a light blue background.",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2118814754613645312/MfDDSmzB?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2118795218099253606",
       "url": "https://x.com/OpenAI/status/2118795218099253606",
       "label": "OpenAI",
@@ -960,6 +1330,181 @@
           "isEdited": false,
           "isStaleEdit": false
         },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2118674834632978755",
+      "url": "https://x.com/Alibaba_Qwen/status/2118674834632978755",
+      "label": "Qwen",
+      "color": "#FF6B35",
+      "fetched_at": "2026-11-07T08:01:29.194195+00:00",
+      "translation_zh": "Qwen 官方发布神秘预告：“The becoming begins.”（蜕变，自此开始。）配图暗示新一代模型即将揭晓。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 15971,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-06T12:00:18.000Z",
+        "display_text_range": [
+          0,
+          20
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/SdWEEuG8F3",
+              "expanded_url": "https://x.com/Alibaba_Qwen/status/2118674834632978755/photo/1",
+              "indices": [
+                21,
+                44
+              ],
+              "url": "https://t.co/SdWEEuG8F3"
+            }
+          ]
+        },
+        "id_str": "2118674834632978755",
+        "text": "The becoming begins. https://t.co/SdWEEuG8F3",
+        "user": {
+          "id_str": "1753339277386342400",
+          "name": "Qwen",
+          "screen_name": "Alibaba_Qwen",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2118674834632978755"
+          ],
+          "editable_until_msecs": "1793970018000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/SdWEEuG8F3",
+            "expanded_url": "https://x.com/Alibaba_Qwen/status/2118674834632978755/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              21,
+              44
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HWcJWyabAAAzP6_.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 860,
+                  "w": 1536,
+                  "x": 0,
+                  "y": 1157
+                },
+                {
+                  "h": 1536,
+                  "w": 1536,
+                  "x": 0,
+                  "y": 512
+                },
+                {
+                  "h": 1751,
+                  "w": 1536,
+                  "x": 0,
+                  "y": 297
+                },
+                {
+                  "h": 2048,
+                  "w": 1024,
+                  "x": 256,
+                  "y": 0
+                },
+                {
+                  "h": 2048,
+                  "w": 1536,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 2048,
+              "width": 1536
+            },
+            "sizes": {
+              "large": {
+                "h": 2048,
+                "resize": "fit",
+                "w": 1536
+              },
+              "medium": {
+                "h": 1200,
+                "resize": "fit",
+                "w": 900
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 510
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/SdWEEuG8F3"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 860,
+                "w": 1536,
+                "x": 0,
+                "y": 1157
+              },
+              {
+                "h": 1536,
+                "w": 1536,
+                "x": 0,
+                "y": 512
+              },
+              {
+                "h": 1751,
+                "w": 1536,
+                "x": 0,
+                "y": 297
+              },
+              {
+                "h": 2048,
+                "w": 1024,
+                "x": 256,
+                "y": 0
+              },
+              {
+                "h": 2048,
+                "w": 1536,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Alibaba_Qwen/status/2118674834632978755/photo/1",
+            "url": "https://pbs.twimg.com/media/HWcJWyabAAAzP6_.jpg",
+            "width": 1536,
+            "height": 2048
+          }
+        ],
+        "conversation_count": 1412,
+        "news_action_type": "conversation",
         "isEdited": false,
         "isStaleEdit": false
       }
