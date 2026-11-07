@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Agents Need to Sleep — AI Frontlines</title>
+<meta content="A live agent loop only ever accumulates: context grows, tool debris piles up, stale plans linger. The systems that stay coherent over months are the ones with a deliberate offline phase — a sleep cycle that compresses, reorganizes, and prunes what the waking hours collected. Consolidation is not maintenance. It is architecture." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 8, 2026" data-zh="2026年11月8日">November 8, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Agents Need to Sleep" data-zh="智能体也需要睡觉">Agents Need to Sleep</h1>
+<p class="post-header-deck" data-en="Every long-lived agent system eventually faces the same quiet crisis: it runs hot, always on, always accumulating. Context swells. Tool debris piles up in the transcript. Plans from Tuesday linger under plans from Friday. Nothing is ever removed while the agent is awake, because removal is risky and latency is billed by the second. The fix is not a bigger window. The fix is a phase most teams never design: a deliberate sleep cycle — an offline pass that compresses what mattered, reorganizes what remains, and prunes what rots. Consolidation is not housekeeping. It is half the architecture." data-zh="每一个长期运行的智能体系统，终会迎来同一场安静的危机：它一直高负荷运转，永远在线，永远在累积。上下文膨胀。工具残骸在记录里堆积。周二的计划压在周五的计划底下。智能体醒着的时候，什么都不曾移除——因为移除有风险，而延迟按秒计费。解法不是更大的窗口。解法是一个大多数团队从未设计过的阶段：一个刻意的睡眠周期——一次离线的过程，压缩重要的，重组留下的，修剪腐烂的。整合不是内务。它是架构的一半。">Every long-lived agent system eventually faces the same quiet crisis: it runs hot, always on, always accumulating. Context swells. Tool debris piles up. Plans from Tuesday linger under plans from Friday. Nothing is ever removed while the agent is awake.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a reason biological brains do not learn online. Sensory streams flood in continuously, but the durable rewriting of memory — deciding what to keep, what to connect, what to discard — happens offline, during sleep, when the flood has stopped. Engineering teams building long-horizon agents keep rediscovering this pattern, usually the hard way. The agent that worked beautifully in week one becomes sluggish and strange by week four. It quotes stale constraints from old tasks. It insists on plans that were already abandoned. Its context, once a lean instruction set, has become an archaeological dig through its own history. The model did not get worse. The memory around it did — because nothing was ever allowed to settle." data-zh="生物大脑不在线学习，是有原因的。感官数据持续涌入，但对记忆的持久改写——决定留下什么、连接什么、丢弃什么——发生在离线状态，发生在睡眠期间，发生在洪水停止之后。构建长程智能体的工程团队，总在重新发现这个模式，而且通常是以最痛的方式。第一周表现优雅的智能体，到第四周变得迟钝而怪异。它引用旧任务里过时的约束。它坚持早已被放弃的计划。它的上下文，曾经是一份精简的指令集，如今变成了对自身历史的考古挖掘。模型没有变差。是它周围的记忆变差了——因为什么都不曾被允许沉淀。">There is a reason biological brains do not learn online. Sensory streams flood in continuously, but the durable rewriting of memory — deciding what to keep, what to connect, what to discard — happens offline, during sleep, when the flood has stopped. Engineering teams building long-horizon agents keep rediscovering this pattern, usually the hard way.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrS1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrS2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrS3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE ALWAYS-ON SYSTEM vs THE CONSOLIDATING SYSTEM" data-zh="永远在线 vs 会整合的系统" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE ALWAYS-ON SYSTEM vs THE CONSOLIDATING SYSTEM</text>
+<!-- LEFT: always-on accumulation -->
+<text data-en="ALWAYS-ON" data-zh="永远在线" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="155" y="56">ALWAYS-ON</text>
+<g opacity="0.9">
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="70" x="120" y="70"></rect>
+<text data-en="wake" data-zh="唤醒" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="89">wake</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="70" x="120" y="120"></rect>
+<text data-en="act" data-zh="行动" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="139">act</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="70" x="120" y="170"></rect>
+<text data-en="act" data-zh="行动" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="189">act</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-3)" stroke-width="1.5" width="70" x="120" y="220"></rect>
+<text data-en="act" data-zh="行动" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="155" y="239">act</text>
+<path d="M155 100 L155 118" fill="none" marker-end="url(#arrS1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<path d="M155 150 L155 168" fill="none" marker-end="url(#arrS1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<path d="M155 200 L155 218" fill="none" marker-end="url(#arrS1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<path d="M190 235 C220 235 220 105 190 105" fill="none" marker-end="url(#arrS1)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="3,2"></path>
+</g>
+<text data-en="context only grows" data-zh="上下文只增不减" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="155" y="278">context only grows</text>
+<text data-en="week 4: slow, stale, strange" data-zh="第四周：迟钝、过时、怪异" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="155" y="298">week 4: slow, stale, strange</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="310"></line>
+<!-- RIGHT: consolidating system -->
+<text data-en="CONSOLIDATING" data-zh="会整合的" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="56">CONSOLIDATING</text>
+<g>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent)" stroke-width="1.5" width="70" x="430" y="70"></rect>
+<text data-en="wake" data-zh="唤醒" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="89">wake</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent)" stroke-width="1.5" width="70" x="430" y="120"></rect>
+<text data-en="act" data-zh="行动" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="139">act</text>
+<rect fill="var(--accent-dim)" height="34" rx="8" stroke="var(--accent)" stroke-width="2" width="110" x="410" y="170"></rect>
+<text data-en="SLEEP" data-zh="睡眠" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="465" y="192">SLEEP</text>
+<rect fill="var(--bg-surface)" height="30" rx="6" stroke="var(--accent-2)" stroke-width="1.5" width="90" x="420" y="220"></rect>
+<text data-en="compact · tidy" data-zh="压缩 · 归整" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="465" y="239">compact · tidy</text>
+<path d="M465 100 L465 118" fill="none" marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M465 150 L465 168" fill="none" marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M465 204 L465 218" fill="none" marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M420 235 C370 235 370 105 428 103" fill="none" marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+</g>
+<text data-en="memory settles between runs" data-zh="记忆在运行之间沉淀" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="465" y="278">memory settles between runs</text>
+<text data-en="week 4: sharp as week 1" data-zh="第四周：仍如第一周般锋利" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="465" y="298">week 4: sharp as week 1</text>
+</svg>
+<p class="diagram-caption" data-en="On the left, the always-on agent: wake, act, act, act, forever — context monotonically growing, nothing ever settling. On the right, the consolidating agent: the same wake-act loop, but with a deliberate sleep phase between runs, where the day's accumulation is compacted and tidied before the next wake. Same model. Same tools. Different lifecycle — and a completely different trajectory over a month." data-zh="左边，是永远在线的智能体：唤醒、行动、行动、行动，无限循环——上下文单调增长，什么都不沉淀。右边，是会整合的智能体：同样的唤醒-行动循环，但运行之间多了一个刻意的睡眠阶段，当天的累积在下一次唤醒前被压缩和归整。同样的模型。同样的工具。不同的生命周期——以及一个月后完全不同的轨迹。">On the left, the always-on agent: wake, act, act, act, forever — context monotonically growing, nothing ever settling. On the right, the consolidating agent: the same wake-act loop, but with a deliberate sleep phase between runs, where the day's accumulation is compacted and tidied before the next wake.</p>
+</div>
+<h3 data-en="Hot state rots" data-zh="热状态会腐烂">Hot state rots</h3>
+<p data-en="Start with the observation that a running agent is a closed system with an intake valve and no exhaust. Every user message enters. Every tool result enters. Every intermediate plan, every retry, every apology for a failed call — all of it enters, and none of it leaves. Engineers respond to this the only way the live loop permits: they truncate. Chop the oldest messages. Summarize the middle. Cap the tool output at some arbitrary number of lines. These are emergency measures dressed up as policy — they run mid-flight, under latency pressure, using the same model that is supposed to be doing the actual work, and they make irreversible decisions about what to keep with almost no deliberation." data-zh="从一个观察开始：一个运行中的智能体，是一个只有进气阀、没有排气管的封闭系统。每条用户消息都进来。每个工具结果都进来。每个中间计划、每次重试、每次为失败调用的道歉——全都进来，而且全都不出去。工程师对此的应对，是直播循环唯一允许的方式：截断。砍掉最老的消息。总结中段。把工具输出限制在某个任意行数。这些是穿着策略外衣的急救措施——它们在飞行途中执行，顶着延迟压力，用的是本该去干正事的同一个模型，而且几乎不加思考地做出关于「保留什么」的不可逆决定。">Start with the observation that a running agent is a closed system with an intake valve and no exhaust. Every user message enters. Every tool result enters. Every intermediate plan, every retry, every apology for a failed call — all of it enters, and none of it leaves. Engineers respond the only way the live loop permits: they truncate.</p>
+<p data-en="The result is memory scar tissue. The truncation kept the last forty messages and the first ten, so the agent remembers how the conversation started and how it is going, but not why it chose the approach it chose. The summary compressed three hours of debugging into two sentences, and the nuance that would have prevented tomorrow's identical bug evaporated with it. Worse, the things that survive are not the things that mattered — they are the things that happened to be near the boundaries of the window. Selection by position is not curation. It is memory by accident." data-zh="结果是记忆的疤痕组织。截断保留了最后四十条消息和最前十条，于是智能体记得对话如何开始、眼下如何进行，却不记得它为什么选择了当时的方法。摘要把三个小时的调试压成两句话，而那个本可以防止明天同样 bug 再次发生的细微之处，随之蒸发了。更糟的是，活下来的东西不是重要的东西——是碰巧位于窗口边界附近的东西。按位置选择，不是策展。那是偶然形成的记忆。">The result is memory scar tissue. The truncation kept the last forty messages and the first ten, so the agent remembers how the conversation started and how it is going, but not why it chose the approach it chose. Worse, the things that survive are not the things that mattered — they are the things that happened to be near the boundaries of the window. Selection by position is not curation. It is memory by accident.</p>
+<blockquote data-en="A model that forgets by truncation has not been given a memory. It has been given a slot machine: what survives is whatever lands nearest the window's edge. Real memory is chosen, not sampled." data-zh="一个靠截断来遗忘的模型，得到的不是记忆。它得到的是一台老虎机：活下来的，是碰巧落在窗口边缘的东西。真正的记忆是被选择的，不是被采样的。">A model that forgets by truncation has not been given a memory. It has been given a slot machine: what survives is whatever lands nearest the window's edge. Real memory is chosen, not sampled.</blockquote>
+<h3 data-en="Sleep is a phase, not a hack" data-zh="睡眠是一个阶段，不是一个补丁">Sleep is a phase, not a hack</h3>
+<p data-en="The alternative is to give the system a second mode and design it with the same seriousness as the first. The waking mode is the one everyone builds: the live loop, latency-bound, user-facing, doing the work. The sleeping mode is its counterpart: an offline pass that runs when no user is waiting, under no latency pressure, whose entire job is to transform the residue of waking hours into durable structure. This is not a cron job bolted on when the context overflow alarms start firing. It is a first-class phase of the lifecycle, with its own inputs, its own operations, and — critically — its own budget. Teams that treat consolidation as a hack get hack-shaped results: lossy, unpredictable, and impossible to debug. Teams that treat it as a phase get a memory system that compounds instead of decays." data-zh="替代方案，是给系统第二种模式，并且用与第一种同等的严肃去设计它。醒着的模式，是每个人都在建的那个：直播循环，延迟受限，面向用户，干活。睡着的模式，是它的对应面：一次离线的运行，在没有用户等待时执行，没有延迟压力，唯一的职责，是把醒着时分的残余转化为持久的结构。这不是一个在上下文溢出警报开始响起时才钉上去的 cron 任务。它是生命周期里一个一等公民的阶段，有自己的输入、自己的操作，以及——关键在于——自己的预算。把整合当补丁的团队，得到补丁形状的结果：有损、不可预测、无法调试。把它当作阶段的团队，得到一个复利增长而非衰减的记忆系统。">The alternative is to give the system a second mode and design it with the same seriousness as the first. The waking mode is the one everyone builds: the live loop, latency-bound, user-facing, doing the work. The sleeping mode is its counterpart: an offline pass that runs when no user is waiting, whose entire job is to transform the residue of waking hours into durable structure.</p>
+<p data-en="What does the sleeping pass actually do? Three operations, in increasing order of difficulty. Compress: rewrite the day's transcript into distilled facts — decisions made, reasons given, outcomes observed — and store the distillation, not the transcript. Reorganize: take the accumulated distillations and restructure them, merging duplicates, resolving contradictions, promoting repeatedly-used facts to standing context and demoting one-offs to cold storage. Prune: delete — really delete — the entries that no longer earn their tokens: superseded plans, expired state, corrections whose wrong versions have already been forgotten. Every long-lived memory system that works, from databases to brains, does some version of these three. Agents mostly do none of them, and then wonder why October's agent seems dumber than May's." data-zh="睡眠过程究竟做什么？三个操作，按难度递增。压缩：把当天的记录重写为蒸馏后的事实——做过的决定、给出的理由、观察到的结果——并存储蒸馏物，而非记录本身。重组：把累积的蒸馏物重新构建结构，合并重复，消解矛盾，把反复使用的事实提升为常驻上下文，把一次性的降级到冷存储。修剪：删除——真正地删除——那些不再配得上自己 token 的条目：被取代的计划、过期的状态、错误版本早已被遗忘的更正。每一个能长期工作的记忆系统，从数据库到大脑，都在做这三件事的某个版本。智能体大多一件都不做，然后纳闷为什么十月的智能体看起来比五月的笨。">What does the sleeping pass actually do? Three operations, in increasing order of difficulty. Compress: rewrite the day's transcript into distilled facts. Reorganize: restructure the accumulated distillations. Prune: delete — really delete — the entries that no longer earn their tokens. Every long-lived memory system that works, from databases to brains, does some version of these three.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrT2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrT3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE SLEEPING PASS: THREE OPERATIONS" data-zh="睡眠过程：三个操作" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE SLEEPING PASS: THREE OPERATIONS</text>
+<!-- input: raw day -->
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--text-tertiary)" stroke-width="1.5" width="120" x="20" y="120"></rect>
+<text data-en="raw day" data-zh="原始的一天" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="80" y="138">raw day</text>
+<text data-en="92k tokens" data-zh="92k token" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="80" y="154">92k tokens</text>
+<path d="M140 142 L182 142" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- COMPRESS -->
+<rect fill="var(--accent-dim)" height="44" rx="9" stroke="var(--accent)" stroke-width="2" width="96" x="184" y="48"></rect>
+<text data-en="① COMPRESS" data-zh="① 压缩" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="232" y="66">COMPRESS</text>
+<text data-en="transcript → facts" data-zh="记录 → 事实" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="232" y="82">transcript → facts</text>
+<!-- REORGANIZE -->
+<rect fill="var(--accent-dim)" height="44" rx="9" stroke="var(--accent-2)" stroke-width="2" width="96" x="184" y="120"></rect>
+<text data-en="② REORGANIZE" data-zh="② 重组" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="232" y="138">REORGANIZE</text>
+<text data-en="merge · resolve · rank" data-zh="合并 · 消解 · 排序" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="232" y="154">merge · resolve · rank</text>
+<!-- PRUNE -->
+<rect fill="var(--accent-dim)" height="44" rx="9" stroke="var(--accent-3)" stroke-width="2" width="96" x="184" y="192"></rect>
+<text data-en="③ PRUNE" data-zh="③ 修剪" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="232" y="210">PRUNE</text>
+<text data-en="delete what rots" data-zh="删除腐烂的" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="232" y="226">delete what rots</text>
+<!-- outputs -->
+<path d="M280 70 C330 70 330 110 368 122" fill="none" marker-end="url(#arrT2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<path d="M280 142 L368 142" fill="none" marker-end="url(#arrT2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<path d="M280 214 C330 214 330 172 368 160" fill="none" marker-end="url(#arrT2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<!-- memory store -->
+<rect fill="var(--bg-surface)" height="90" rx="10" stroke="var(--accent)" stroke-width="2" width="150" x="370" y="97"></rect>
+<text data-en="DURABLE MEMORY" data-zh="持久记忆" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="445" y="120">DURABLE MEMORY</text>
+<rect fill="none" height="16" rx="4" stroke="var(--accent)" stroke-width="1" width="120" x="385" y="130"></rect>
+<text data-en="standing facts" data-zh="常驻事实" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="445" y="141">standing facts</text>
+<rect fill="none" height="16" rx="4" stroke="var(--text-tertiary)" stroke-width="1" stroke-dasharray="3,2" width="120" x="385" y="152"></rect>
+<text data-en="cold archive" data-zh="冷归档" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="445" y="163">cold archive</text>
+<text data-en="6k tokens" data-zh="6k token" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="445" y="180">6k tokens</text>
+<!-- next morning arrow -->
+<path d="M445 97 C445 40 310 30 235 44" fill="none" marker-end="url(#arrT3)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3"></path>
+<text data-en="next morning: wake sharp" data-zh="次日清晨：清醒地唤醒" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="335" y="30">next morning: wake sharp</text>
+<!-- waste -->
+<path d="M232 236 C232 280 380 290 460 262" fill="none" marker-end="url(#arrT3)" stroke="var(--accent-3)" stroke-width="1" stroke-dasharray="2,3"></path>
+<text data-en="discarded: superseded · expired · dead" data-zh="丢弃：被取代 · 已过期 · 已失效" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="340" y="300">discarded: superseded · expired · dead</text>
+</svg>
+<p class="diagram-caption" data-en="The sleeping pass transforms the day's raw residue into durable structure. Compress distills the transcript into facts. Reorganize merges, resolves contradictions, and ranks what remains. Prune deletes what no longer earns its tokens. The next morning's wake starts from six thousand sharp tokens instead of ninety-two thousand foggy ones — and crucially, the choices were made offline, under no latency pressure, and can be inspected, diffed, and rolled back." data-zh="睡眠过程把当天的原始残余转化为持久的结构。压缩把记录蒸馏成事实。重组合并、消解矛盾、并对留下的排序。修剪删掉不再配得上 token 的内容。第二天清晨的唤醒，从六千个锋利的 token 出发，而不是九万二千个模糊的 token——更关键的是，这些选择是在离线状态下、没有延迟压力时做出的，并且可以被检查、被 diff、被回滚。">The sleeping pass transforms the day's raw residue into durable structure. Compress distills the transcript into facts. Reorganize merges, resolves contradictions, and ranks what remains. Prune deletes what no longer earns its tokens.</p>
+</div>
+<h3 data-en="Waking up wrong: the failure modes of sleep" data-zh="醒错：睡眠的失败模式">Waking up wrong: the failure modes of sleep</h3>
+<p data-en="Consolidation has its own failure modes, and they deserve names, because they are quieter than the failures of the waking loop. The first is amnesia by compression: the distillation drops a fact that mattered, and the agent wakes up ignorant of something it once knew. The second is fossilization: the pruning pass deletes corrections but keeps the stale claim they corrected, so the wrong version outlives the right one. The third is drift: each night's reorganization rewrites the memory slightly, and after fifty rewrites, the standing facts have quietly mutated into something no human ever said. All three are invisible in the moment — the agent still responds fluently, the context still fits in the window — and all three surface weeks later as behavior nobody can explain." data-zh="整合有它自己的失败模式，而且值得被命名，因为它们比醒着循环的失败更安静。第一种是「压缩失忆」：蒸馏丢掉了一个重要的事实，智能体醒来时忘记了自己曾经知道的东西。第二种是「化石比」：修剪删除了更正，却留下了被更正的过时论断，于是错误版本活得比正确版本更久。第三种是「漂移」：每晚的重组都轻微地改写记忆，五十次改写之后，常驻事实已经悄悄变异成没有任何人说过的话。这三种在当下都不可见——智能体依然流利应答，上下文依然装得进窗口——而它们都在几周之后，以没人能解释的行为浮出水面。">Consolidation has its own failure modes: amnesia by compression, fossilization, and drift. All three are invisible in the moment — the agent still responds fluently, the context still fits — and all three surface weeks later as behavior nobody can explain.</p>
+<p data-en="The defenses against these failures are the same disciplines that guard any stateful system. Version every consolidation: the memory that wakes up should be a named generation, and the previous generation should be one command away, so a bad night is a rollback rather than a mystery. Log the diffs, not just the results: when the sleeping pass deletes or rewrites a fact, that decision is an event in an audit trail, reviewable by a human, challengeable by a test. And keep the raw transcripts in cold storage even after distillation — the distilled memory is the working copy; the transcript is the source of truth. Losing the transcript to save storage is saving pennies by burning the ledger." data-zh="对这些失败的防御，和守护任何有状态系统的纪律是一样的。给每次整合做版本：醒来时使用的记忆，应该是一个有名字的世代，上一个世代应该只隔着一条命令，于是一个糟糕的夜晚是一次回滚，而不是一个谜。记录 diff，而不只是结果：当睡眠过程删除或改写一个事实时，那个决定是审计追踪里的一个事件，可以被人类审阅、被测试质疑。并且，即使在蒸馏之后，也要把原始记录保留在冷存储——蒸馏后的记忆是工作副本；记录才是事实源。为了省存储而丢掉记录，是烧掉账本省硬币。">The defenses are the same disciplines that guard any stateful system. Version every consolidation. Log the diffs, not just the results. Keep the raw transcripts in cold storage — the distilled memory is the working copy; the transcript is the source of truth.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrU1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrU2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="MEMORY GENERATIONS: A BAD NIGHT IS A ROLLBACK" data-zh="记忆世代：糟糕的一晚只需回滚" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">MEMORY GENERATIONS: A BAD NIGHT IS A ROLLBACK</text>
+<!-- generations timeline -->
+<g>
+<rect fill="var(--bg-surface)" height="70" rx="8" stroke="var(--text-tertiary)" stroke-width="1.5" width="88" x="40" y="60"></rect>
+<text data-en="gen 47" data-zh="世代 47" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="84" y="82">gen 47</text>
+<text data-en="6.1k tok" data-zh="6.1k token" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="84" y="98">6.1k tok</text>
+<text data-en="verified" data-zh="已验证" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="84" y="116">verified</text>
+<rect fill="var(--bg-surface)" height="70" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="88" x="158" y="60"></rect>
+<text data-en="gen 48" data-zh="世代 48" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="202" y="82">gen 48</text>
+<text data-en="5.9k tok" data-zh="5.9k token" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="202" y="98">5.9k tok</text>
+<text data-en="verified" data-zh="已验证" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="202" y="116">verified</text>
+<rect fill="var(--bg-surface)" height="70" rx="8" stroke="var(--accent-3)" stroke-width="2.5" width="88" x="276" y="60"></rect>
+<text data-en="gen 49" data-zh="世代 49" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="320" y="82">gen 49</text>
+<text data-en="2.2k tok" data-zh="2.2k token" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="320" y="98">2.2k tok</text>
+<text data-en="⚠ 64% dropped" data-zh="⚠ 丢了 64%" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="320" y="116">64% dropped</text>
+<rect fill="var(--accent-dim)" height="70" rx="8" stroke="var(--accent)" stroke-width="2" width="88" x="394" y="60"></rect>
+<text data-en="gen 50" data-zh="世代 50" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="438" y="82">gen 50</text>
+<text data-en="restored" data-zh="已恢复" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="438" y="98">restored</text>
+<text data-en="= gen 48 + fix" data-zh="= 世代 48 + 修复" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="438" y="116">= gen 48 + fix</text>
+</g>
+<path d="M128 95 L156 95" fill="none" marker-end="url(#arrU1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M246 95 L274 95" fill="none" marker-end="url(#arrU1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M364 95 L392 95" fill="none" marker-end="url(#arrU2)" stroke="var(--text-tertiary)" stroke-width="1.5" stroke-dasharray="3,2"></path>
+<!-- rollback arrow -->
+<path d="M320 130 C320 170 438 170 438 132" fill="none" marker-end="url(#arrU1)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<text data-en="rollback + replay of one diff" data-zh="回滚 + 重放一条 diff" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="379" y="182">rollback + replay of one diff</text>
+<!-- audit trail -->
+<rect fill="var(--bg-surface)" height="56" rx="8" stroke="var(--text-tertiary)" stroke-width="1" width="420" x="100" y="212"></rect>
+<text data-en="AUDIT TRAIL" data-zh="审计追踪" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="232">AUDIT TRAIL</text>
+<text data-en="gen 49: −3.7k tok · 2 fossilizations flagged · 1 fact dropped without successor → rejected by test #41" data-zh="世代 49：−3.7k token · 标记 2 处化石化 · 1 个事实无后继被丢弃 → 被测试 #41 拒绝" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="250">gen 49: −3.7k tok · 2 fossilizations flagged · 1 fact dropped without successor → rejected</text>
+</svg>
+<p class="diagram-caption" data-en="Memory as generations, not a mutable blob. Each night's consolidation produces a named version with a diff against its parent. A guard test inspects the diff — size of deletion, facts dropped without successors, corrections that outlived their claims — and can reject the generation before the agent ever wakes on it. A bad night costs one rollback, not one mystery." data-zh="把记忆当作世代，而不是一个可变的团块。每晚的整合产出一个有名字的版本，并带有相对父版本的 diff。一个守卫测试检查这个 diff——删除的规模、没有后继就被丢弃的事实、活得比论断更久的更正——并且可以在智能体醒来之前拒绝这个世代。一个糟糕的夜晚，代价是一次回滚，不是一个谜。">Memory as generations, not a mutable blob. Each night's consolidation produces a named version with a diff against its parent. A guard test inspects the diff and can reject the generation before the agent ever wakes on it. A bad night costs one rollback, not one mystery.</p>
+</div>
+<h3 data-en="Design the night before it is needed" data-zh="在需要之前，先设计夜晚">Design the night before it is needed</h3>
+<p data-en="The pattern generalizes. Anything an agent accumulates during waking hours — context, memory, learned tool preferences, indexes over its own history — deserves a corresponding offline pass that settles it. The specific operations vary. The principle does not: hot systems degrade, and only cold passes repair them. The teams that get this right do not add sleep when the degradation alarms fire. They design the night at the same time they design the day — same rigor, same tests, same versioning — because they understand that an agent's long-run coherence is not a property of its model. It is a property of its lifecycle. The waking loop earns the intelligence. The sleeping pass keeps it." data-zh="这个模式可以推广。智能体在醒着的时段累积的任何东西——上下文、记忆、学到的工具偏好、对自身历史的索引——都值得一个对应的离线过程来让它沉淀。具体的操作各不相同。原则不变：热系统会退化，只有冷过程能修复它们。做对了这一点的团队，不会在退化警报响起时才加上睡眠。他们在设计白天的同时设计夜晚——同样的严谨、同样的测试、同样的版本管理——因为他们明白，智能体的长期连贯性不是模型的属性。它是生命周期的属性。醒着的循环挣来智能。睡着的旅程守住它。">The pattern generalizes. Anything an agent accumulates during waking hours deserves a corresponding offline pass that settles it. The teams that get this right do not add sleep when the degradation alarms fire. They design the night at the same time they design the day — because an agent's long-run coherence is not a property of its model. It is a property of its lifecycle.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
