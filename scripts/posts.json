@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-09",
+    "slug": "every-tool-call-is-a-transaction",
+    "title_en": "Every Tool Call Is a Transaction",
+    "title_zh": "每次工具调用都是一笔事务",
+    "read_time": 8,
+    "excerpt_en": "A talking model that fails loses a sentence; an acting agent that fails leaves the world changed anyway. Timeouts carry no information about whether a write landed, and blind retries duplicate side effects. The fix is older than agents: idempotency keys, side-effect spectra, and transaction ledgers.",
+    "excerpt_zh": "一个只会说话的模型失败时丢掉一句话；一个会行动的智能体失败时，世界照样被改变。超时不携带任何关于写入是否已送达的信息，盲目重试则会让副作用翻倍。解法比智能体更古老：幂等键、副作用光谱与事务账本。"
+  },
+  {
     "date": "2026-11-08",
     "slug": "agents-need-to-sleep",
     "title_en": "Agents Need to Sleep",

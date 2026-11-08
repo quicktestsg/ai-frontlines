@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Every Tool Call Is a Transaction — AI Frontlines</title>
+<meta content="A talking model that fails loses a sentence. An acting agent that fails leaves the world changed anyway. Timeouts tell you nothing about whether the side effect landed, and the loop's instinct — retry — is exactly wrong for non-idempotent actions. The durable fix is older than agents: treat every tool call as a transaction, with keys, ledgers, and guardrails that scale with blast radius." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 9, 2026" data-zh="2026年11月9日">November 9, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Every Tool Call Is a Transaction" data-zh="每次工具调用都是一笔事务">Every Tool Call Is a Transaction</h1>
+<p class="post-header-deck" data-en="A talking model that fails loses a sentence. An acting agent that fails leaves the world changed anyway. The tool timed out — but did the invoice get sent? The loop cannot know, and its reflex, retry, is precisely the wrong move for anything that mutates state. The durable answer is older than agents: treat each tool call as a transaction, give it a key, write it to a ledger, and let guardrails scale with the blast radius of the tool. Agents did not invent distributed systems problems. They just made them conversational." data-zh="一个只会说话的模型失败时，丢掉的是一句话。一个会行动的智能体失败时，世界照样被改变了。工具超时了——但发票发出去了吗？循环无从得知，而它的本能反应——重试——对任何会改变状态的操作恰恰是错的。耐用的答案比智能体更古老：把每次工具调用当作一笔事务，给它一个键，把它写进账本，并让防护手段随工具的影响范围而升级。智能体并没有发明分布式系统问题。它只是把这些问题变成了对话。">A talking model that fails loses a sentence. An acting agent that fails leaves the world changed anyway. The tool timed out — but did the invoice get sent? The loop cannot know, and its reflex, retry, is precisely the wrong move for anything that mutates state.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a genre of agent failure that never appears in demos. The agent is filing the quarterly invoices. It calls the billing tool, the request sails off, and then the network hiccups — no response, no error, nothing. The harness does what harnesses do: it retries. The second call succeeds, a green checkmark lands in the transcript, the agent reports completion. Somewhere downstream, a customer has been charged twice. Nobody notices for nine days. When someone finally does, the investigation reads the transcript and finds, absurdly, that the agent did everything right. The failure was not in the model's reasoning. It was in the assumption, baked into almost every agent harness ever shipped, that a tool call is a function call — a tidy request-response pair. It is not. A tool call is a message sent into a distributed system, and every lesson distributed systems learned about messages applies with full force." data-zh="有一类智能体失败，永远不会出现在演示里。智能体在整理季度发票。它调用计费工具，请求发出去了，然后网络打了个嗝——没有响应，没有报错，什么都没有。框架做了框架该做的事：重试。第二次调用成功了，记录里落下一个绿色的对勾，智能体报告任务完成。在下游某处，一位客户被扣了两次款。九天里没人发现。终于有人发现时，调查者读遍执行记录，却荒谬地得出结论：智能体每一步都做对了。失败不在模型的推理里。失败在那个被写进几乎所有智能体框架的假设里——工具调用是一次函数调用，一对整齐的请求与响应。它不是。工具调用是一条被发进分布式系统的消息，而分布式系统关于消息学到的一切教训，都以全部力度适用。">There is a genre of agent failure that never appears in demos. The agent is filing the quarterly invoices. It calls the billing tool, the request sails off, and then the network hiccups — no response, no error, nothing. The harness does what harnesses do: it retries. The second call succeeds, a green checkmark lands in the transcript, the agent reports completion. Somewhere downstream, a customer has been charged twice.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrX1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrX2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE RETRY STORM" data-zh="重试风暴" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE RETRY STORM</text>
+<!-- agent -->
+<rect fill="var(--bg-surface)" height="56" rx="10" stroke="var(--accent)" stroke-width="2" width="110" x="30" y="60"></rect>
+<text data-en="AGENT" data-zh="智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="85" y="82">AGENT</text>
+<text data-en="loop step 14" data-zh="循环第 14 步" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="85" y="100">loop step 14</text>
+<!-- call 1 -->
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="130" x="200" y="42"></rect>
+<text data-en="call #1  send_invoice" data-zh="调用 #1  send_invoice" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="265" y="60">call #1  send_invoice</text>
+<text data-en="result: TIMEOUT" data-zh="结果：超时" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="265" y="74">result: TIMEOUT</text>
+<!-- call 2 -->
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent)" stroke-width="1.5" width="130" x="200" y="118"></rect>
+<text data-en="call #2  send_invoice" data-zh="调用 #2  send_invoice" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="265" y="136">call #2  send_invoice</text>
+<text data-en="result: OK ✓" data-zh="结果：成功 ✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="265" y="150">result: OK ✓</text>
+<!-- world -->
+<rect fill="var(--accent-dim)" height="72" rx="10" stroke="var(--accent)" stroke-width="2" width="150" x="430" y="70"></rect>
+<text data-en="THE WORLD" data-zh="外部世界" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="505" y="92">THE WORLD</text>
+<rect fill="none" height="18" rx="4" stroke="var(--accent)" stroke-width="1" width="120" x="445" y="102"></rect>
+<text data-en="invoice #1 ✓" data-zh="发票 #1 ✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="505" y="115">invoice #1 ✓</text>
+<rect fill="none" height="18" rx="4" stroke="var(--accent-3)" stroke-width="1" stroke-dasharray="3,2" width="120" x="445" y="124"></rect>
+<text data-en="invoice #2  (nobody asked)" data-zh="发票 #2（没人要）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="505" y="137">invoice #2  (nobody asked)</text>
+<!-- arrows -->
+<path d="M140 76 L198 66" fill="none" marker-end="url(#arrX1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<path d="M330 66 C390 66 400 96 428 106" fill="none" marker-end="url(#arrX1)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<text data-en="the timeout lied — it landed" data-zh="超时说了谎——它其实送达了" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="380" y="58">the timeout lied — it landed</text>
+<path d="M265 82 L265 116" fill="none" marker-end="url(#arrX2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="retry (harness reflex)" data-zh="重试（框架的本能）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="265" y="104">retry (harness reflex)</text>
+<path d="M330 136 C390 136 400 126 428 122" fill="none" marker-end="url(#arrX2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- verdict -->
+<rect fill="var(--bg-surface)" height="46" rx="8" stroke="var(--text-tertiary)" stroke-width="1" width="480" x="70" y="200"></rect>
+<text data-en="transcript verdict: every step green. ledger verdict: two invoices." data-zh="执行记录的结论：每一步都是绿的。账本的结论：两张发票。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="219">transcript verdict: every step green. ledger verdict: two invoices.</text>
+<text data-en="the bug is not in the model — it is in the call semantics" data-zh="bug 不在模型里——在调用语义里" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="236">the bug is not in the model — it is in the call semantics</text>
+</svg>
+<p class="diagram-caption" data-en="The canonical acting-agent failure. Call one times out, but the timeout carries no information about whether the effect landed. The harness retries — the correct move for a read, a destructive one for a write. Both calls mutate the world; only one is recorded as having succeeded. The transcript shows a clean run. The world shows a duplicate. Every engineer who has built payment systems knows this diagram. Most engineers building agent harnesses have not met it yet." data-zh="行动智能体的经典失败。第一次调用超时，但超时不携带任何关于效果是否已送达的信息。框架选择重试——对读操作这是正确动作，对写操作却是毁灭性的。两次调用都改变了世界；只有一次被记录为成功。执行记录显示一次干净的运行。世界显示一张重复的发票。每一个做过支付系统的工程师都认识这张图。大多数正在构建智能体框架的工程师还没遇到过它。">The canonical acting-agent failure. Call one times out, but the timeout carries no information about whether the effect landed. The harness retries — the correct move for a read, a destructive one for a write. The transcript shows a clean run. The world shows a duplicate.</p>
+</div>
+<h3 data-en="Timeouts are lies" data-zh="超时是谎言">Timeouts are lies</h3>
+<p data-en="The root confusion is about what a timeout means. To the harness, a timeout looks like failure: the call did not work, so try again. But a timeout is not a report from the remote system — it is a local decision, made by a clock, that waiting any longer is too expensive. Between those two interpretations lies every failed write in the history of networking. The truth is always one of three states, never two: the request never arrived; it arrived and the effect happened; it arrived and the effect failed. A timeout collapses all three into one bit, and the agent's retry policy then bets the customer's money on a guess. For a read-only call the bet is free — worst case, the data comes back twice and nobody cares. For a write, the bet is the entire difference between a system and a litigation record." data-zh="根本的混淆在于超时到底意味着什么。对框架来说，超时看起来像失败：调用没成功，那就再试一次。但超时并不是来自远端系统的报告——它是一个本地决定，由一个时钟做出：再等下去就太贵了。在这两种解读之间，躺着网络史上每一次失败的写入。真相永远是三种状态之一，从来不是两种：请求从未到达；请求到达且效果已发生；请求到达且效果失败。超时把这三种状态压扁成一个比特，然后智能体的重试策略就把客户的资金押在一个猜测上。对只读调用来说，这个赌注是免费的——最坏情况，数据回来两次，没人在乎。对写入来说，这个赌注就是一个系统与一份诉讼证据之间的全部差别。">The root confusion is about what a timeout means. To the harness, a timeout looks like failure. But a timeout is not a report from the remote system — it is a local decision, made by a clock, that waiting any longer is too expensive. The truth is always one of three states, never two. A timeout collapses all three into one bit, and the retry policy then bets the customer's money on a guess.</p>
+<blockquote data-en="A read can be retried blindly because the world owes it nothing. A write cannot, because the world keeps score. Any harness that treats them identically has not designed its actions — it has merely scheduled them." data-zh="读操作可以盲目重试，因为世界不欠它什么。写操作不行，因为世界在记账。任何把两者同等对待的框架，都没有设计过自己的行动——它只是在排期而已。">A read can be retried blindly because the world owes it nothing. A write cannot, because the world keeps score. Any harness that treats them identically has not designed its actions — it has merely scheduled them.</blockquote>
+<h3 data-en="The side-effect spectrum" data-zh="副作用光谱">The side-effect spectrum</h3>
+<p data-en="The fix starts with admitting that tools are not interchangeable. Line them up on a spectrum of blast radius. At the far left sit pure reads — search, fetch, query. They are free, infinitely retryable, cacheable, parallelizable; throw them away and re-run them at will. One step right are reversible writes: draft an email, stage a file, create an unmerged branch. These mutate state, but a designed undo exists. Further right, hard-to-reverse writes: send the email, charge the card, deploy to production. Undo here is manual, expensive, or impossible. And at the far right sit the irreversible ones: delete the dataset, publish the post, transfer the funds. The single most useful artifact an agent team can produce is this classification for their own toolset — because every property of the call should follow from its position. Retry policy, confirmation gates, logging depth, blast-radius limits, who gets paged when it fails at 3am: all of it should be a function of where the tool sits on the spectrum. Instead, most harnesses give all tools the same two-line JSON schema and the same retry decorator, and hope." data-zh="修复始于承认工具并非可以互换。把它们按影响范围排成一条光谱。最左端是纯读操作——搜索、抓取、查询。它们是免费的，可以无限重试、可以缓存、可以并行；随手丢弃、随时重跑。往右一步是可逆写操作：起草一封邮件、暂存一个文件、创建一个未合并的分支。这些会改变状态，但存在一个被设计过的撤销。再往右，是难以逆转的写操作：发出邮件、扣款、部署到生产环境。这里的撤销是手动的、昂贵的，或不可能的。而在最右端，是不可逆操作：删除数据集、发布文章、转账。一个智能体团队能产出的最有用的产物，就是针对自家工具集的这份分类——因为调用的一切属性都应该由它所处的位置决定。重试策略、确认门槛、日志深度、影响范围上限、凌晨三点它失败时该叫醒谁：这一切都应该是工具在光谱上位置的函数。而大多数框架给所有工具的是同样的两行 JSON schema 和同一个重试装饰器，然后祈祷。">The fix starts with admitting that tools are not interchangeable. Line them up on a spectrum of blast radius. The single most useful artifact an agent team can produce is this classification for their own toolset — because every property of the call should follow from its position.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrY1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<linearGradient id="spectrumGrad" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0" stop-color="var(--accent-2)"></stop>
+<stop offset="1" stop-color="var(--accent-3)"></stop>
+</linearGradient>
+</defs>
+<text data-en="THE SIDE-EFFECT SPECTRUM" data-zh="副作用光谱" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE SIDE-EFFECT SPECTRUM</text>
+<!-- gradient bar -->
+<rect fill="url(#spectrumGrad)" height="14" rx="7" width="540" x="40" y="70"></rect>
+<text data-en="harmless" data-zh="无害" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="start" x="40" y="58">harmless</text>
+<text data-en="catastrophic if wrong" data-zh="错了就是灾难" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="end" x="580" y="58">catastrophic if wrong</text>
+<!-- tier boxes -->
+<rect fill="var(--bg-surface)" height="108" rx="10" stroke="var(--accent-2)" stroke-width="1.5" width="126" x="46" y="104"></rect>
+<text data-en="PURE READS" data-zh="纯读操作" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="109" y="126">PURE READS</text>
+<text data-en="search · fetch · query" data-zh="搜索 · 抓取 · 查询" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="109" y="142">search · fetch · query</text>
+<text data-en="retry freely" data-zh="随意重试" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="109" y="160">retry freely</text>
+<text data-en="cache · parallelize" data-zh="可缓存 · 可并行" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="109" y="174">cache · parallelize</text>
+<text data-en="no gate" data-zh="无需门禁" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="109" y="188">no gate</text>
+<text data-en="fail = noise" data-zh="失败 = 噪音" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="109" y="204">fail = noise</text>
+<rect fill="var(--bg-surface)" height="108" rx="10" stroke="var(--accent)" stroke-width="1.5" width="126" x="185" y="104"></rect>
+<text data-en="REVERSIBLE WRITES" data-zh="可逆写操作" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="248" y="126">REVERSIBLE WRITES</text>
+<text data-en="draft · stage · branch" data-zh="草稿 · 暂存 · 分支" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="248" y="142">draft · stage · branch</text>
+<text data-en="idempotency key" data-zh="幂等键" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="248" y="160">idempotency key</text>
+<text data-en="designed undo" data-zh="设计过的撤销" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="248" y="174">designed undo</text>
+<text data-en="retry after undo" data-zh="先撤销再重试" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="248" y="188">retry after undo</text>
+<text data-en="fail = rollback" data-zh="失败 = 回滚" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="248" y="204">fail = rollback</text>
+<rect fill="var(--bg-surface)" height="108" rx="10" stroke="var(--accent-3)" stroke-width="1.5" width="126" x="324" y="104"></rect>
+<text data-en="HARD WRITES" data-zh="难以逆转的写操作" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="387" y="126">HARD WRITES</text>
+<text data-en="send · charge · deploy" data-zh="发送 · 扣款 · 部署" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="387" y="142">send · charge · deploy</text>
+<text data-en="key + confirm gate" data-zh="幂等键 + 确认门" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="387" y="160">key + confirm gate</text>
+<text data-en="no blind retry —" data-zh="禁止盲目重试——" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="387" y="174">no blind retry —</text>
+<text data-en="reconcile first" data-zh="先对账" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="387" y="188">reconcile first</text>
+<text data-en="fail = incident" data-zh="失败 = 事故" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="387" y="204">fail = incident</text>
+<rect fill="var(--bg-surface)" height="108" rx="10" stroke="var(--accent-3)" stroke-width="2.5" width="126" x="463" y="104"></rect>
+<text data-en="IRREVERSIBLE" data-zh="不可逆操作" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="526" y="126">IRREVERSIBLE</text>
+<text data-en="delete · publish · transfer" data-zh="删除 · 发布 · 转账" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="526" y="142">delete · publish · transfer</text>
+<text data-en="human sign-off" data-zh="人工签署" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="526" y="160">human sign-off</text>
+<text data-en="rate + amount caps" data-zh="频率 + 金额上限" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="526" y="174">rate + amount caps</text>
+<text data-en="two-person rule" data-zh="双人规则" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="526" y="188">two-person rule</text>
+<text data-en="fail = headline" data-zh="失败 = 头条新闻" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="526" y="204">fail = headline</text>
+<!-- arrows from bar to boxes -->
+<path d="M109 84 L109 102" fill="none" marker-end="url(#arrY1)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<path d="M248 84 L248 102" fill="none" marker-end="url(#arrY1)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<path d="M387 84 L387 102" fill="none" marker-end="url(#arrY1)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<path d="M526 84 L526 102" fill="none" marker-end="url(#arrY1)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<!-- bottom note -->
+<text data-en="guardrails scale with position on the bar — not with the model's confidence" data-zh="防护随位置升级——而不是随模型的自信升级" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="248">guardrails scale with position on the bar — not with the model's confidence</text>
+</svg>
+<p class="diagram-caption" data-en="Tools ranked by blast radius. Pure reads are free and need nothing. Reversible writes need an idempotency key and a designed undo. Hard writes need keys plus reconciliation before any retry. Irreversible actions need human sign-off, caps, and the two-person rule — the same controls banks learned to demand a century before language models. The position on this bar should decide retry policy, logging, and confirmation gates. If all four boxes currently share one retry decorator, the harness is the vulnerability." data-zh="按影响范围排列的工具。纯读操作是免费的，什么都不需要。可逆写操作需要一个幂等键和一个被设计过的撤销。难以逆转的写操作需要幂等键，加上重试之前的对账。不可逆操作需要人工签署、上限和双人规则——这些是银行在语言模型出现一个世纪之前就学会要求的控制。在这条 bar 上的位置，应当决定重试策略、日志和确认门槛。如果这四个框目前共用同一个重试装饰器，那么框架本身就是漏洞。">Tools ranked by blast radius. Pure reads are free. Reversible writes need an idempotency key and a designed undo. Hard writes need reconciliation before any retry. Irreversible actions need human sign-off, caps, and the two-person rule. The position on this bar should decide everything else.</p>
+</div>
+<h3 data-en="Keys and ledgers" data-zh="键与账本">Keys and ledgers</h3>
+<p data-en="For everything right of pure reads, two mechanisms do most of the work. The first is the idempotency key: before the agent calls a write tool, the harness mints a unique key for the intended effect — not for the call, for the effect — and passes it along. The remote system records the key when it acts; if the same key arrives twice, it returns the original result instead of acting again. This is not exotic; it is how payment APIs have worked for a decade. What is new is that agents mint intents far faster than humans do, so the key must be minted by the harness at plan time, not improvised by the model at call time — a model under context pressure will happily invent a fresh key for a retry and thereby defeat the entire mechanism." data-zh="对纯读操作右侧的一切，两个机制承担了大部分工作。第一个是幂等键：在智能体调用写工具之前，框架为预期的效果铸造一个唯一的键——是为效果，不是为调用——并把它一并传过去。远端系统在执行时记录这个键；如果同一个键再次到达，它返回最初的结果，而不是再执行一次。这并不新奇；支付 API 十年来就是这么工作的。新鲜的是，智能体产生意图的速度远快于人类，所以这个键必须由框架在规划时铸造，而不是由模型在调用时即兴发挥——一个顶着上下文压力的模型，会毫不犹豫地为重试发明一个新键，从而让整个机制失效。">For everything right of pure reads, two mechanisms do most of the work. The first is the idempotency key: the harness mints a unique key for the intended effect and passes it along. The remote system records the key when it acts; if the same key arrives twice, it returns the original result instead of acting again. The key must be minted by the harness at plan time — a model under context pressure will happily invent a fresh key for a retry and defeat the entire mechanism.</p>
+<p data-en="The second is the transaction ledger. Every write, keyed, timestamped, with its arguments and its status — intended, in flight, confirmed, compensated — appended to a durable log before the call is made, not after. The ledger converts recovery from guesswork into replay. When an agent crashes mid-task and wakes up fresh, it does not ask the model to reconstruct what probably happened; it reads the ledger, sees that invoice #1 is confirmed and invoice #2 is in flight with no confirmation, and reconciles against the world before doing anything else. Reconciliation — querying the actual remote state and comparing it against the ledger — is the only honest answer to the three-states problem, because the world, unlike the transcript, cannot be summarized into being wrong." data-zh="第二个是事务账本。每一次写入，带键、带时间戳，连同参数与状态——已意图、执行中、已确认、已补偿——在调用发起之前追加到一份持久日志里，而不是之后。账本把恢复从猜测变成重放。当智能体在任务中途崩溃、从头唤醒时，它不需要让模型去重建「大概发生了什么」；它读账本，看到发票 #1 已确认、发票 #2 执行中且没有确认，于是在做任何其他事情之前先与世界对账。对账——查询真实的远端状态并与账本比对——是三态问题唯一诚实的答案，因为世界不像执行记录，无法被总结成错的。">The second is the transaction ledger. Every write, keyed, timestamped, with its arguments and its status — appended to a durable log before the call is made. The ledger converts recovery from guesswork into replay. Reconciliation — querying the actual remote state against the ledger — is the only honest answer to the three-states problem.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrZ1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrZ2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="RECOVERY AS REPLAY, NOT REASONING" data-zh="恢复即重放，而非推理" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">RECOVERY AS REPLAY, NOT REASONING</text>
+<!-- ledger -->
+<rect fill="var(--bg-surface)" height="150" rx="10" stroke="var(--accent)" stroke-width="2" width="220" x="40" y="60"></rect>
+<text data-en="TRANSACTION LEDGER" data-zh="事务账本" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="150" y="84">TRANSACTION LEDGER</text>
+<rect fill="none" height="18" rx="4" stroke="var(--accent)" stroke-width="1" width="190" x="55" y="96"></rect>
+<text data-en="key=inv-114 · CONFIRMED" data-zh="key=inv-114 · 已确认" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="150" y="109">key=inv-114 · CONFIRMED</text>
+<rect fill="none" height="18" rx="4" stroke="var(--accent-3)" stroke-width="1" stroke-dasharray="4,2" width="190" x="55" y="122"></rect>
+<text data-en="key=inv-115 · IN FLIGHT" data-zh="key=inv-115 · 执行中" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="150" y="135">key=inv-115 · IN FLIGHT</text>
+<rect fill="none" height="18" rx="4" stroke="var(--text-tertiary)" stroke-width="1" width="190" x="55" y="148"></rect>
+<text data-en="key=inv-116 · INTENDED" data-zh="key=inv-116 · 已意图" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="150" y="161">key=inv-116 · INTENDED</text>
+<text data-en="written BEFORE the call" data-zh="在调用之前写入" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="150" y="192">written BEFORE the call</text>
+<!-- wake up -->
+<rect fill="var(--accent-dim)" height="44" rx="9" stroke="var(--accent)" stroke-width="2" width="120" x="40" y="230"></rect>
+<text data-en="AGENT RESTARTS" data-zh="智能体重启" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="100" y="248">AGENT RESTARTS</text>
+<text data-en="fresh context" data-zh="空白上下文" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="100" y="262">fresh context</text>
+<path d="M100 230 L100 214" fill="none" marker-end="url(#arrZ1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- reconcile -->
+<rect fill="var(--bg-surface)" height="60" rx="10" stroke="var(--accent-2)" stroke-width="2" width="140" x="280" y="105"></rect>
+<text data-en="RECONCILE" data-zh="对账" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="350" y="128">RECONCILE</text>
+<text data-en="query the world" data-zh="查询真实世界" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="350" y="144">query the world</text>
+<text data-en="compare to ledger" data-zh="与账本比对" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="350" y="156">compare to ledger</text>
+<path d="M260 135 L278 135" fill="none" marker-end="url(#arrZ1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- outcomes -->
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent)" stroke-width="1.5" width="170" x="440" y="56"></rect>
+<text data-en="landed → resume at #116" data-zh="已送达 → 从 #116 继续" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="525" y="74">landed → resume at #116</text>
+<text data-en="key #115 returns original" data-zh="键 #115 返回原结果" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="525" y="88">key #115 returns original</text>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="170" x="440" y="116"></rect>
+<text data-en="never landed → retry safely" data-zh="从未送达 → 安全重试" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="525" y="134">never landed → retry safely</text>
+<text data-en="same key, no duplicate" data-zh="同一个键，不会重复" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="525" y="148">same key, no duplicate</text>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--text-tertiary)" stroke-width="1.5" width="170" x="440" y="176"></rect>
+<text data-en="unknown → stop, escalate" data-zh="未知 → 停下，上报" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="525" y="194">unknown → stop, escalate</text>
+<text data-en="never guess with money" data-zh="永远别拿钱去猜" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="525" y="208">never guess with money</text>
+<path d="M420 128 C432 100 428 84 438 78" fill="none" marker-end="url(#arrZ1)" stroke="var(--accent)" stroke-width="1.3"></path>
+<path d="M420 138 C432 138 428 134 438 134" fill="none" marker-end="url(#arrZ2)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<path d="M420 148 C432 156 428 180 438 192" fill="none" marker-end="url(#arrZ2)" stroke="var(--text-tertiary)" stroke-width="1.3"></path>
+</svg>
+<p class="diagram-caption" data-en="A crashed agent wakes with empty context and one honest asset: the ledger. Entries written before the calls were made show what was intended, what was in flight, what was confirmed. Reconciliation resolves each ambiguous entry by querying the world — then three, and only three, outcomes: landed, resume; never landed, retry with the same key; unknown, stop and escalate. Recovery becomes replay of a log rather than reconstruction of a memory, and the model's eloquence is never mistaken for evidence." data-zh="崩溃的智能体醒来时上下文一片空白，却握有一份诚实的资产：账本。在调用发起之前写入的条目，显示了什么已意图、什么执行中、什么已确认。对账通过查询真实世界来消解每一条含糊的记录——然后只有三种结局：已送达，继续；从未送达，用同一个键重试；未知，停下并上报。恢复变成了日志的重放，而不是记忆的重建，模型的雄辩再也不会被误当作证据。">A crashed agent wakes with empty context and one honest asset: the ledger. Reconciliation resolves each ambiguous entry by querying the world — three outcomes only: landed, resume; never landed, retry with the same key; unknown, stop and escalate.</p>
+</div>
+<h3 data-en="The harness is the accounting department" data-zh="框架就是财务部门">The harness is the accounting department</h3>
+<p data-en="None of this is a limitation on agent capability; it is the precondition for it. The industry's instinct is to make agents more powerful by giving them more tools and longer horizons, but every additional tool widens the spectrum and every additional step multiplies the odds of a timeout landing on a write. The teams that ship acting agents people actually trust will not be the ones with the smartest models. They will be the ones whose harnesses treat a tool call the way a bank treats a wire transfer: keyed, logged, reconciled, capped, and occasionally refused. Intelligence chooses the action. The harness guarantees that the action happens exactly once — or not at all, loudly. That second guarantee is not glamorous. It is also the entire difference between an agent and an outage with a personality." data-zh="这一切都不是对智能体能力的限制，而是能力的前提。行业的本能是给智能体更多工具、更长的视野，以此让它更强大；但每多一个工具，光谱就变宽一分；每多一步，超时落在写操作上的几率就翻一倍。能交付出人们真正信任的行动智能体的团队，不会是模型最聪明的团队。而是那些框架像银行对待电汇一样对待工具调用的团队：带键、记账、对账、设限、必要时拒绝。智能选择行动。框架保证行动恰好发生一次——或者根本不发生，并且大声说出来。第二个保证并不光鲜。但它也正是「智能体」与「一个带人格的宕机事故」之间的全部差别。">None of this is a limitation on agent capability; it is the precondition for it. The teams that ship acting agents people actually trust will not be the ones with the smartest models. Intelligence chooses the action. The harness guarantees that it happens exactly once — or not at all, loudly.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
