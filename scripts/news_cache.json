@@ -1,6 +1,1389 @@
 {
   "tweets": [
     {
+      "id": "2119867138987176141",
+      "url": "https://x.com/claudeai/status/2119867138987176141",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-11-09T20:02:39.083165+00:00",
+      "translation_zh": "Claude Fable 5.2 今日上线所有付费计划、Claude 平台及各大云平台。定价降至每百万输入 token 8 美元、输出 40 美元（原价 10/50 美元）。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 2314,
+        "in_reply_to_screen_name": "claudeai",
+        "in_reply_to_status_id_str": "2119867136361316437",
+        "in_reply_to_user_id_str": "1943306828697550848",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-09T18:58:05.000Z",
+        "display_text_range": [
+          0,
+          240
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "anthropic.com/claude-fable-a…",
+              "expanded_url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+              "indices": [
+                217,
+                240
+              ],
+              "url": "https://t.co/50jMVOnsvF"
+            }
+          ]
+        },
+        "id_str": "2119867138987176141",
+        "text": "Claude Fable 5.2 is available today on all paid plans, on the Claude Platform, and on all major cloud platforms.\n\nIt’s $8 per million input tokens and $40 per million output tokens, down from $10 and $50.\n\nRead more: https://t.co/50jMVOnsvF",
+        "user": {
+          "id_str": "1943306828697550848",
+          "name": "Claude",
+          "screen_name": "claudeai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2119867138987176141"
+          ],
+          "editable_until_msecs": "1794254285000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 63,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 1118,
+          "in_reply_to_screen_name": "claudeai",
+          "in_reply_to_status_id_str": "2119867134864162995",
+          "in_reply_to_user_id_str": "1943306828697550848",
+          "lang": "en",
+          "reply_count": 9,
+          "retweet_count": 19,
+          "created_at": "2026-11-09T18:58:05.000Z",
+          "display_text_range": [
+            0,
+            268
+          ],
+          "entities": {},
+          "id_str": "2119867136361316437",
+          "text": "Fable and Mythos are the same underlying model. Fable has strong safeguards to guard against misuse.\n\nOrganizations pursuing beneficial applications in cybersecurity or biomedical research can apply for Mythos through our Life Sciences and Cyber Verification Programs.",
+          "user": {
+            "id_str": "1943306828697550848",
+            "name": "Claude",
+            "screen_name": "claudeai",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+            "highlighted_label": {
+              "badge": {
+                "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+              },
+              "description": "Anthropic",
+              "url": {
+                "url": "https://twitter.com/AnthropicAI",
+                "url_type": "DeepLink"
+              },
+              "user_label_display_type": "Badge",
+              "user_label_type": "BusinessLabel"
+            }
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2119867136361316437"
+            ],
+            "editable_until_msecs": "1794254285000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/50jMVOnsvF",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2119866768931823616/sb0dLlF2?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 147,
+                "url": "https://pbs.twimg.com/card_img/2119866768931823616/sb0dLlF2?format=jpg&name=280x150",
+                "width": 280
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Claude Fable 5.2 and Claude Mythos 5.2, our new models for the hardest technical challenges. Fable 5.2 sets a new bar in coding, finance, and the sciences.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "www.anthropic.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 315,
+                "url": "https://pbs.twimg.com/card_img/2119866768931823616/sb0dLlF2?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2119866768931823616/sb0dLlF2?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2119866768931823616/sb0dLlF2?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2119866768931823616/sb0dLlF2?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2119866768931823616/sb0dLlF2?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 76,
+                "url": "https://pbs.twimg.com/card_img/2119866768931823616/sb0dLlF2?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "creator": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2119866768931823616/sb0dLlF2?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2119866768931823616/sb0dLlF2?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "anthropic.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2119866768931823616/sb0dLlF2?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 84.07,
+                    "rgb": {
+                      "blue": 14,
+                      "green": 14,
+                      "red": 14
+                    }
+                  },
+                  {
+                    "percentage": 4.19,
+                    "rgb": {
+                      "blue": 166,
+                      "green": 160,
+                      "red": 178
+                    }
+                  },
+                  {
+                    "percentage": 2.44,
+                    "rgb": {
+                      "blue": 119,
+                      "green": 33,
+                      "red": 46
+                    }
+                  },
+                  {
+                    "percentage": 2.02,
+                    "rgb": {
+                      "blue": 18,
+                      "green": 33,
+                      "red": 81
+                    }
+                  },
+                  {
+                    "percentage": 0.93,
+                    "rgb": {
+                      "blue": 43,
+                      "green": 15,
+                      "red": 16
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Introducing Claude Fable 5.2 and Claude Mythos 5.2",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 84.07,
+                    "rgb": {
+                      "blue": 14,
+                      "green": 14,
+                      "red": 14
+                    }
+                  },
+                  {
+                    "percentage": 4.19,
+                    "rgb": {
+                      "blue": 166,
+                      "green": 160,
+                      "red": 178
+                    }
+                  },
+                  {
+                    "percentage": 2.44,
+                    "rgb": {
+                      "blue": 119,
+                      "green": 33,
+                      "red": 46
+                    }
+                  },
+                  {
+                    "percentage": 2.02,
+                    "rgb": {
+                      "blue": 18,
+                      "green": 33,
+                      "red": 81
+                    }
+                  },
+                  {
+                    "percentage": 0.93,
+                    "rgb": {
+                      "blue": 43,
+                      "green": 15,
+                      "red": 16
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2119866768931823616/sb0dLlF2?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2119866768931823616/sb0dLlF2?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 84.07,
+                    "rgb": {
+                      "blue": 14,
+                      "green": 14,
+                      "red": 14
+                    }
+                  },
+                  {
+                    "percentage": 4.19,
+                    "rgb": {
+                      "blue": 166,
+                      "green": 160,
+                      "red": 178
+                    }
+                  },
+                  {
+                    "percentage": 2.44,
+                    "rgb": {
+                      "blue": 119,
+                      "green": 33,
+                      "red": 46
+                    }
+                  },
+                  {
+                    "percentage": 2.02,
+                    "rgb": {
+                      "blue": 18,
+                      "green": 33,
+                      "red": 81
+                    }
+                  },
+                  {
+                    "percentage": 0.93,
+                    "rgb": {
+                      "blue": 43,
+                      "green": 15,
+                      "red": 16
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2119866768931823616/sb0dLlF2?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/50jMVOnsvF",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2119866768931823616/sb0dLlF2?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2119867132452221045",
+      "url": "https://x.com/claudeai/status/2119867132452221045",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-11-09T20:02:39.083165+00:00",
+      "translation_zh": "Fable 5.2 在控制实体机器人上表现出显著提升，甚至能胜任从未专门训练过的任务。在双臂机器人仿真基准 RoboDojo 上，它超越了其他模型及多数专用机器人 AI 系统。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 2270,
+        "in_reply_to_screen_name": "claudeai",
+        "in_reply_to_status_id_str": "2119867129751056485",
+        "in_reply_to_user_id_str": "1943306828697550848",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-09T18:58:04.000Z",
+        "display_text_range": [
+          0,
+          267
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/VEiQiQrcxq",
+              "expanded_url": "https://x.com/claudeai/status/2119867132452221045/video/1",
+              "indices": [
+                268,
+                291
+              ],
+              "url": "https://t.co/VEiQiQrcxq"
+            }
+          ]
+        },
+        "id_str": "2119867132452221045",
+        "text": "Fable 5.2 shows substantially improved skills in controlling physical robots, even on tasks it has never explicitly been trained to do.\n\nOn RoboDojo, a benchmark with a simulated two-arm robot, it outperformed other models and most AI systems built to control robots. https://t.co/VEiQiQrcxq",
+        "user": {
+          "id_str": "1943306828697550848",
+          "name": "Claude",
+          "screen_name": "claudeai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2119867132452221045"
+          ],
+          "editable_until_msecs": "1794254284000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/VEiQiQrcxq",
+            "expanded_url": "https://x.com/claudeai/status/2119867132452221045/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              268,
+              291
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2119864431383322625/img/PnRKfjtscPIIN_mq.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/VEiQiQrcxq",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 23033,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2119864431383322625/pl/a37-aeJf0lOTpwm2.m3u8?v=cfc"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2119864431383322625/vid/avc1/480x270/eSibxA-P5tVqAAKg.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2119864431383322625/vid/avc1/640x360/w70-u0q_6o7hPszs.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2119864431383322625/vid/avc1/1280x720/c5YlYMy_Fm2WN8x_.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2119864431383322625/vid/avc1/1920x1080/tzrw8C16ux5Q94dN.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 23033,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2119864431383322625/img/PnRKfjtscPIIN_mq.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2119864431383322625/pl/a37-aeJf0lOTpwm2.m3u8?v=cfc"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2119864431383322625/vid/avc1/480x270/eSibxA-P5tVqAAKg.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2119864431383322625/vid/avc1/640x360/w70-u0q_6o7hPszs.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2119864431383322625/vid/avc1/1280x720/c5YlYMy_Fm2WN8x_.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2119864431383322625/vid/avc1/1920x1080/tzrw8C16ux5Q94dN.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2119867132452221045"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 23,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 2142,
+          "in_reply_to_screen_name": "claudeai",
+          "in_reply_to_status_id_str": "2119867126613954736",
+          "in_reply_to_user_id_str": "1943306828697550848",
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 17,
+          "retweet_count": 108,
+          "created_at": "2026-11-09T18:58:03.000Z",
+          "display_text_range": [
+            0,
+            270
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/Lqq8ZYXd52",
+                "expanded_url": "https://x.com/claudeai/status/2119867129751056485/photo/1",
+                "indices": [
+                  271,
+                  294
+                ],
+                "url": "https://t.co/Lqq8ZYXd52"
+              }
+            ]
+          },
+          "id_str": "2119867129751056485",
+          "text": "A team of 1,000 Fable 5.2 agents fully formalized Fermat’s Last Theorem in 30 hours, translating the proof into a language a computer can check step by step.\n\nWith the same setup, Opus 5.5 completed only 26% in 18 hours, and barely made any more progress after 30 hours. https://t.co/Lqq8ZYXd52",
+          "user": {
+            "id_str": "1943306828697550848",
+            "name": "Claude",
+            "screen_name": "claudeai",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+            "highlighted_label": {
+              "badge": {
+                "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+              },
+              "description": "Anthropic",
+              "url": {
+                "url": "https://twitter.com/AnthropicAI",
+                "url_type": "DeepLink"
+              },
+              "user_label_display_type": "Badge",
+              "user_label_type": "BusinessLabel"
+            }
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2119867129751056485"
+            ],
+            "editable_until_msecs": "1794254283000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "display_url": "pic.x.com/Lqq8ZYXd52",
+              "expanded_url": "https://x.com/claudeai/status/2119867129751056485/photo/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                271,
+                294
+              ],
+              "media_url_https": "https://pbs.twimg.com/media/HWtFZLnX0AApUdy.png",
+              "original_info": {
+                "focus_rects": [
+                  {
+                    "h": 896,
+                    "w": 1600,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1600,
+                    "w": 1600,
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "h": 1600,
+                    "w": 1404,
+                    "x": 138,
+                    "y": 0
+                  },
+                  {
+                    "h": 1600,
+                    "w": 800,
+                    "x": 440,
+                    "y": 0
+                  },
+                  {
+                    "h": 1600,
+                    "w": 1600,
+                    "x": 0,
+                    "y": 0
+                  }
+                ],
+                "height": 1600,
+                "width": 1600
+              },
+              "sizes": {
+                "large": {
+                  "h": 1600,
+                  "resize": "fit",
+                  "w": 1600
+                },
+                "medium": {
+                  "h": 1200,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 680,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "photo",
+              "url": "https://t.co/Lqq8ZYXd52"
+            }
+          ],
+          "photos": [
+            {
+              "backgroundColor": {
+                "red": 204,
+                "green": 214,
+                "blue": 221
+              },
+              "cropCandidates": [
+                {
+                  "h": 896,
+                  "w": 1600,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1600,
+                  "w": 1600,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1600,
+                  "w": 1404,
+                  "x": 138,
+                  "y": 0
+                },
+                {
+                  "h": 1600,
+                  "w": 800,
+                  "x": 440,
+                  "y": 0
+                },
+                {
+                  "h": 1600,
+                  "w": 1600,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "expandedUrl": "https://x.com/claudeai/status/2119867129751056485/photo/1",
+              "url": "https://pbs.twimg.com/media/HWtFZLnX0AApUdy.png",
+              "width": 1600,
+              "height": 1600
+            }
+          ],
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2119867129751056485",
+      "url": "https://x.com/claudeai/status/2119867129751056485",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-11-09T20:02:39.083165+00:00",
+      "translation_zh": "1000 个 Fable 5.2 智能体组成的团队在 30 小时内完成了费马大定理的完整形式化——将证明翻译成计算机可逐步验证的语言。同样配置下 Opus 5.5 在 18 小时仅完成 26%，30 小时后几乎无进展。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 2141,
+        "in_reply_to_screen_name": "claudeai",
+        "in_reply_to_status_id_str": "2119867126613954736",
+        "in_reply_to_user_id_str": "1943306828697550848",
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-09T18:58:03.000Z",
+        "display_text_range": [
+          0,
+          270
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/Lqq8ZYXd52",
+              "expanded_url": "https://x.com/claudeai/status/2119867129751056485/photo/1",
+              "indices": [
+                271,
+                294
+              ],
+              "url": "https://t.co/Lqq8ZYXd52"
+            }
+          ]
+        },
+        "id_str": "2119867129751056485",
+        "text": "A team of 1,000 Fable 5.2 agents fully formalized Fermat’s Last Theorem in 30 hours, translating the proof into a language a computer can check step by step.\n\nWith the same setup, Opus 5.5 completed only 26% in 18 hours, and barely made any more progress after 30 hours. https://t.co/Lqq8ZYXd52",
+        "user": {
+          "id_str": "1943306828697550848",
+          "name": "Claude",
+          "screen_name": "claudeai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2119867129751056485"
+          ],
+          "editable_until_msecs": "1794254283000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/Lqq8ZYXd52",
+            "expanded_url": "https://x.com/claudeai/status/2119867129751056485/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              271,
+              294
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HWtFZLnX0AApUdy.png",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 896,
+                  "w": 1600,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1600,
+                  "w": 1600,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1600,
+                  "w": 1404,
+                  "x": 138,
+                  "y": 0
+                },
+                {
+                  "h": 1600,
+                  "w": 800,
+                  "x": 440,
+                  "y": 0
+                },
+                {
+                  "h": 1600,
+                  "w": 1600,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1600,
+              "width": 1600
+            },
+            "sizes": {
+              "large": {
+                "h": 1600,
+                "resize": "fit",
+                "w": 1600
+              },
+              "medium": {
+                "h": 1200,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/Lqq8ZYXd52"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 896,
+                "w": 1600,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1600,
+                "w": 1600,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1600,
+                "w": 1404,
+                "x": 138,
+                "y": 0
+              },
+              {
+                "h": 1600,
+                "w": 800,
+                "x": 440,
+                "y": 0
+              },
+              {
+                "h": 1600,
+                "w": 1600,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/claudeai/status/2119867129751056485/photo/1",
+            "url": "https://pbs.twimg.com/media/HWtFZLnX0AApUdy.png",
+            "width": 1600,
+            "height": 1600
+          }
+        ],
+        "conversation_count": 17,
+        "news_action_type": "conversation",
+        "parent": {
+          "favorite_count": 1796,
+          "in_reply_to_screen_name": "claudeai",
+          "in_reply_to_status_id_str": "2119867122683953298",
+          "in_reply_to_user_id_str": "1943306828697550848",
+          "lang": "en",
+          "possibly_sensitive": false,
+          "reply_count": 10,
+          "retweet_count": 67,
+          "created_at": "2026-11-09T18:58:02.000Z",
+          "display_text_range": [
+            0,
+            272
+          ],
+          "entities": {
+            "media": [
+              {
+                "display_url": "pic.x.com/4cIR2lEOtW",
+                "expanded_url": "https://x.com/claudeai/status/2119867126613954736/video/1",
+                "indices": [
+                  273,
+                  296
+                ],
+                "url": "https://t.co/4cIR2lEOtW"
+              }
+            ]
+          },
+          "id_str": "2119867126613954736",
+          "text": "Gene therapies can be delivered in a protein shell called a capsid. Mythos 5.2 found a new way to predict a whole capsid’s structure.\n\nIn our tests, it accurately modeled 28 of the 34 capsids it attempted. Biologists could use it to design capsids faster and more cheaply. https://t.co/4cIR2lEOtW",
+          "user": {
+            "id_str": "1943306828697550848",
+            "name": "Claude",
+            "screen_name": "claudeai",
+            "is_blue_verified": true,
+            "profile_image_shape": "Circle",
+            "verified": false,
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+            "highlighted_label": {
+              "badge": {
+                "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+              },
+              "description": "Anthropic",
+              "url": {
+                "url": "https://twitter.com/AnthropicAI",
+                "url_type": "DeepLink"
+              },
+              "user_label_display_type": "Badge",
+              "user_label_type": "BusinessLabel"
+            }
+          },
+          "edit_control": {
+            "edit_tweet_ids": [
+              "2119867126613954736"
+            ],
+            "editable_until_msecs": "1794254282000",
+            "edits_remaining": "5",
+            "is_edit_eligible": false
+          },
+          "mediaDetails": [
+            {
+              "additional_media_info": {},
+              "display_url": "pic.x.com/4cIR2lEOtW",
+              "expanded_url": "https://x.com/claudeai/status/2119867126613954736/video/1",
+              "ext_media_availability": {
+                "status": "Available"
+              },
+              "indices": [
+                273,
+                296
+              ],
+              "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2119864272045928448/img/zlHYo1yUuafoK0Cg.jpg",
+              "original_info": {
+                "focus_rects": [],
+                "height": 2160,
+                "width": 3840
+              },
+              "sizes": {
+                "large": {
+                  "h": 1152,
+                  "resize": "fit",
+                  "w": 2048
+                },
+                "medium": {
+                  "h": 675,
+                  "resize": "fit",
+                  "w": 1200
+                },
+                "small": {
+                  "h": 383,
+                  "resize": "fit",
+                  "w": 680
+                },
+                "thumb": {
+                  "h": 150,
+                  "resize": "crop",
+                  "w": 150
+                }
+              },
+              "type": "video",
+              "url": "https://t.co/4cIR2lEOtW",
+              "video_info": {
+                "aspect_ratio": [
+                  16,
+                  9
+                ],
+                "duration_millis": 57291,
+                "variants": [
+                  {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/2119864272045928448/pl/teEEmRE8VNqjOTmt.m3u8?v=cfc"
+                  },
+                  {
+                    "bitrate": 256000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2119864272045928448/vid/avc1/480x270/SXqFhz77Rz1fjTnz.mp4"
+                  },
+                  {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2119864272045928448/vid/avc1/640x360/CG3XSqlSl6yrkklh.mp4"
+                  },
+                  {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2119864272045928448/vid/avc1/1280x720/trvOIMoVMMSxswbR.mp4"
+                  },
+                  {
+                    "bitrate": 10368000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2119864272045928448/vid/avc1/1920x1080/KGpZSMn59r0NqDqn.mp4"
+                  },
+                  {
+                    "bitrate": 25128000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/2119864272045928448/vid/avc1/3840x2160/aZmxmPMv6YcnWafg.mp4"
+                  }
+                ]
+              }
+            }
+          ],
+          "photos": [],
+          "video": {
+            "aspectRatio": [
+              16,
+              9
+            ],
+            "contentType": "media_entity",
+            "durationMs": 57291,
+            "mediaAvailability": {
+              "status": "available"
+            },
+            "poster": "https://pbs.twimg.com/amplify_video_thumb/2119864272045928448/img/zlHYo1yUuafoK0Cg.jpg",
+            "variants": [
+              {
+                "type": "application/x-mpegURL",
+                "src": "https://video.twimg.com/amplify_video/2119864272045928448/pl/teEEmRE8VNqjOTmt.m3u8?v=cfc"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2119864272045928448/vid/avc1/480x270/SXqFhz77Rz1fjTnz.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2119864272045928448/vid/avc1/640x360/CG3XSqlSl6yrkklh.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2119864272045928448/vid/avc1/1280x720/trvOIMoVMMSxswbR.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2119864272045928448/vid/avc1/1920x1080/KGpZSMn59r0NqDqn.mp4"
+              },
+              {
+                "type": "video/mp4",
+                "src": "https://video.twimg.com/amplify_video/2119864272045928448/vid/avc1/3840x2160/aZmxmPMv6YcnWafg.mp4"
+              }
+            ],
+            "videoId": {
+              "type": "tweet",
+              "id": "2119867126613954736"
+            },
+            "viewCount": 0
+          },
+          "isEdited": false,
+          "isStaleEdit": false
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2119867114450268322",
+      "url": "https://x.com/claudeai/status/2119867114450268322",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-11-09T20:02:39.083165+00:00",
+      "translation_zh": "Anthropic 发布 Claude Fable 5.2 与 Claude Mythos 5.2，专为攻克最棘手的技术难题而设计。两者在编码、推理与视觉等方向均有提升，是雄心勃勃项目中的得力协作者。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 36884,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-09T18:57:59.000Z",
+        "display_text_range": [
+          0,
+          246
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/jP0AutLxXb",
+              "expanded_url": "https://x.com/claudeai/status/2119867114450268322/video/1",
+              "indices": [
+                247,
+                270
+              ],
+              "url": "https://t.co/jP0AutLxXb"
+            }
+          ]
+        },
+        "id_str": "2119867114450268322",
+        "text": "Introducing Claude Fable 5.2 and Claude Mythos 5.2, designed to tackle the most daunting technical challenges.\n\nThey’re capable collaborators on ambitious projects in many fields, and show improvements in areas like coding, reasoning, and vision. https://t.co/jP0AutLxXb",
+        "user": {
+          "id_str": "1943306828697550848",
+          "name": "Claude",
+          "screen_name": "claudeai",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2119867114450268322"
+          ],
+          "editable_until_msecs": "1794254279000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/jP0AutLxXb",
+            "expanded_url": "https://x.com/claudeai/status/2119867114450268322/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              247,
+              270
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HWtIJNLWUAAcc7I.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 2160,
+              "width": 3840
+            },
+            "sizes": {
+              "large": {
+                "h": 1152,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/jP0AutLxXb",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 18520,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2119862225028452352/pl/HaJmi5jdpm9uu9F7.m3u8?v=cfc"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/480x270/KuRIV9T6U3sjUxh8.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/640x360/bBFaSOnx8pVZ2kVi.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/1280x720/7r7y5hn-S0neCXHa.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/1920x1080/E6naF0FCPw_qRYv0.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 18520,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/media/HWtIJNLWUAAcc7I.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2119862225028452352/pl/HaJmi5jdpm9uu9F7.m3u8?v=cfc"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/480x270/KuRIV9T6U3sjUxh8.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/640x360/bBFaSOnx8pVZ2kVi.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/1280x720/7r7y5hn-S0neCXHa.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/1920x1080/E6naF0FCPw_qRYv0.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2119867114450268322"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 1611,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2119617455102333206",
       "url": "https://x.com/elonmusk/status/2119617455102333206",
       "label": "Grok",

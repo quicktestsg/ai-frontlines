@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-10",
+    "slug": "context-is-a-cache",
+    "title_en": "Context Is a Cache — Treat It Like One",
+    "title_zh": "上下文是一块缓存——请按缓存来对待它",
+    "read_time": 9,
+    "excerpt_en": "The context window is not memory — it is a cache: small, expensive, and forced to evict. Agents that stay coherent at step 300 are not the ones with the biggest windows, but the ones with a working set, an admission policy, and an eviction rule per class of content.",
+    "excerpt_zh": "上下文窗口不是内存——它是一块缓存：小、昂贵、不得不逐出。在第 300 步依然连贯的智能体，靠的不是最大的窗口，而是工作集、准入策略，以及按内容类别划分的逐出规则。"
+  },
+  {
     "date": "2026-11-09",
     "slug": "every-tool-call-is-a-transaction",
     "title_en": "Every Tool Call Is a Transaction",

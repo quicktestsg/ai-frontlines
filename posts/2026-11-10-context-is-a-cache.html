@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Context Is a Cache — AI Frontlines</title>
+<meta content="The context window is not memory. It is a cache — small, fast, expensive, and constantly evicting. Teams that treat it as a database stuff it until quality collapses; teams that treat it as a cache design admission policies, eviction rules, and prefetch. The working set, not the window size, decides whether an agent stays coherent." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 10, 2026" data-zh="2026年11月10日">November 10, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Context Is a Cache — Treat It Like One" data-zh="上下文是一块缓存——请按缓存来对待它">Context Is a Cache — Treat It Like One</h1>
+<p class="post-header-deck" data-en="Everyone talks about the context window as if it were memory, and every long-horizon agent fails as if it were a database stuffed past capacity. The window is not memory. It is a cache: small, fast, expensive per byte, and forced to evict. The teams whose agents stay coherent at step 300 are not the ones with the biggest windows — they are the ones who noticed that computer science solved this exact problem decades ago. Working sets, admission policies, eviction rules, prefetch. The vocabulary is waiting. Most harnesses just refuse to use it." data-zh="所有人都把上下文窗口当作内存来谈论，而所有长视野智能体都像一台被塞爆的数据库一样失败。窗口不是内存。它是一块缓存：小、快、每字节昂贵，并且不得不逐出。那些智能体在第 300 步依然保持连贯的团队，靠的不是最大的窗口——而是他们注意到，计算机科学几十年前就解决了这个一模一样的问题。工作集、准入策略、逐出规则、预取。词汇都在那里等着。只是大多数框架拒绝使用而已。">Everyone talks about the context window as if it were memory, and every long-horizon agent fails as if it were a database stuffed past capacity. The window is not memory. It is a cache.</p>
+</header>
+<article class="post-body">
+<p data-en="Watch a long-running agent degrade and the pattern is always the same. Steps 1 through 40 are sharp. Around step 80, it starts re-reading files it already read. By step 150 it forgets a constraint stated at the top of the session, invents a variable name that conflicts with an earlier one, and reopens a ticket it already closed. Nothing crashed. No error fired. The transcript just kept growing, and quality quietly bent under its weight. The instinctive diagnosis is that the model has a bad memory. The correct diagnosis is that the harness has a bad cache. Everything the agent knows at step 150 must fit, simultaneously, in the context window alongside everything it is doing. That is not a memory requirement — that is a cache hit-rate problem, and it has a known shape." data-zh="观察一个长时间运行的智能体退化，模式总是相同的。第 1 到 40 步很敏锐。大约第 80 步，它开始重读已经读过的文件。到第 150 步，它忘记了会话开头声明的约束，发明了一个与早前冲突的变量名，还重新打开了一张已经关闭的工单。没有崩溃。没有报错。执行记录只是一直在变长，而质量在它的重量下悄悄弯折。直觉的诊断是：模型记性差。正确的诊断是：框架缓存差。智能体在第 150 步知道的一切，必须与它正在做的一切同时塞进上下文窗口。这不是内存需求——这是缓存命中率问题，而它有已知的形状。">Watch a long-running agent degrade and the pattern is always the same. Steps 1 through 40 are sharp. Around step 80, it starts re-reading files it already read. By step 150 it forgets a constraint stated at the top of the session. Nothing crashed. The transcript just kept growing, and quality quietly bent under its weight.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrC2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE CONTEXT CACHE OVER A LONG RUN" data-zh="长任务中的上下文缓存" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE CONTEXT CACHE OVER A LONG RUN</text>
+<!-- window frame -->
+<rect fill="var(--bg-surface)" height="150" rx="10" stroke="var(--accent)" stroke-width="2" width="520" x="70" y="56"></rect>
+<text data-en="CONTEXT WINDOW (fixed capacity)" data-zh="上下文窗口（容量固定）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="330" y="78">CONTEXT WINDOW (fixed capacity)</text>
+<!-- early state: plenty of room -->
+<rect fill="var(--accent-2)" height="88" rx="6" width="150" x="86" y="94"></rect>
+<text data-en="step 20" data-zh="第 20 步" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="161" y="112">step 20</text>
+<text data-en="task ✓  tool calls ✓" data-zh="任务 ✓ 工具调用 ✓" fill="var(--text)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="161" y="128">task ✓  tool calls ✓</text>
+<text data-en="everything fits." data-zh="一切放得下。" fill="var(--text)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="161" y="142">everything fits.</text>
+<text data-en="room to spare" data-zh="还有余量" fill="var(--text)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="161" y="156">room to spare</text>
+<!-- late state: compressed mess -->
+<rect fill="var(--accent-3)" height="88" rx="6" width="290" x="286" y="94"></rect>
+<text data-en="step 200 — everything, truncated" data-zh="第 200 步——一切，被截断" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="431" y="112">step 200 — everything, truncated</text>
+<text data-en="old tool outputs  summaries-of-summaries" data-zh="旧工具输出  摘要的摘要" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="431" y="128">old tool outputs  summaries-of-summaries</text>
+<text data-en="duplicate re-reads  stale plans" data-zh="重复的重读  过期的计划" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="431" y="142">duplicate re-reads  stale plans</text>
+<text data-en="the constraint from step 3 → evicted" data-zh="第 3 步的约束 → 已被逐出" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-weight="700" text-anchor="middle" x="431" y="160">the constraint from step 3 → evicted</text>
+<!-- arrow between states -->
+<path d="M240 138 L282 138" fill="none" marker-end="url(#arrC1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- fallout -->
+<rect fill="var(--bg-surface)" height="54" rx="8" stroke="var(--text-tertiary)" stroke-width="1" width="520" x="70" y="228"></rect>
+<text data-en="symptoms: re-reads, drift, forgotten constraints, hallucinated state" data-zh="症状：重读、漂移、遗忘约束、虚构状态" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="330" y="250">symptoms: re-reads, drift, forgotten constraints, hallucinated state</text>
+<text data-en="root cause: no admission policy, no eviction policy — just append" data-zh="根因：没有准入策略，没有逐出策略——只有追加" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="330" y="268">root cause: no admission policy, no eviction policy — just append</text>
+<path d="M330 206 L330 226" fill="none" marker-end="url(#arrC2)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+</svg>
+<p class="diagram-caption" data-en="The same window, early and late in a run. Early, everything relevant fits and reasoning is sharp. Late, the window holds the residue of two hundred steps — truncated tool outputs, summaries of summaries, duplicate reads, stale plans — while the one constraint that mattered got evicted. The model did not get worse. The cache got dirty. In CPUs this failure has a name: thrashing. In agents it has a shrug." data-zh="同一个窗口，任务的前期与后期。前期，一切相关内容都放得下，推理敏锐。后期，窗口里装着两百步的残渣——截断的工具输出、摘要的摘要、重复的读取、过期的计划——而唯一重要的那条约束已被逐出。模型没有变差。缓存变脏了。在 CPU 里，这种失败有名字：颠簸。在智能体里，它只配得到一个耸肩。">The same window, early and late in a run. Early, everything fits. Late, the window holds the residue of two hundred steps while the one constraint that mattered got evicted. The model did not get worse. The cache got dirty.</p>
+</div>
+<h3 data-en="The working set, not the window" data-zh="关键在工作集，不在窗口">The working set, not the window</h3>
+<p data-en="Operating systems taught this in the sixties: a process does not need all of its memory at once, it needs a working set — the small collection of pages it is actively touching. Performance is governed not by total memory but by whether the working set fits in the cache. Agents are the same animal. A coding agent at step 200 does not need the full transcript of step 12; it needs roughly five things: the current goal, the constraints that still bind, the current state of the files, the last few tool results, and the plan's next move. That is the working set. It is small. It is stable. And almost no harness computes it explicitly — instead, the working set is whatever happens to survive in the window by accident, which is why quality degrades smoothly instead of failing cleanly. A bigger window does not fix this. It delays the reckoning and makes it fuzzier, the way a bigger desk does not organize a messy person." data-zh="操作系统在六十年代就教会了这一课：一个进程并不需要同时用到全部内存，它需要的是一个工作集——它正在活跃触碰的那一小撮页面。决定性能的不是总内存，而是工作集是否装得进缓存。智能体是同一种动物。一个编码智能体在第 200 步并不需要第 12 步的完整记录；它大致需要五样东西：当前目标、仍然生效的约束、文件的当前状态、最近几次工具结果、以及计划的下一步。这就是工作集。它很小。它很稳定。而几乎没有框架会显式地计算它——工作集只是碰巧残留在窗口里的东西，所以质量的退化是平滑的，而不是干脆的失败。更大的窗口修不了这个问题。它只是推迟了清算并让它更模糊，就像一张更大的桌子并不能让邋遢的人变得有条理。">Operating systems taught this in the sixties: a process needs a working set — the small collection of pages it is actively touching. A coding agent at step 200 needs roughly five things: the current goal, the binding constraints, the file state, the last few tool results, and the plan's next move. Almost no harness computes this explicitly.</p>
+<blockquote data-en="A bigger window does not give an agent a better memory. It gives its garbage a longer lease. Coherence at distance is an eviction policy, not a token count." data-zh="更大的窗口不会给智能体更好的记忆。它只会给垃圾更长的租期。远距离的连贯性是一种逐出策略，而不是 token 数量。">A bigger window does not give an agent a better memory. It gives its garbage a longer lease. Coherence at distance is an eviction policy, not a token count.</blockquote>
+<h3 data-en="Eviction is a design decision, not a default" data-zh="逐出是设计决策，不是默认行为">Eviction is a design decision, not a default</h3>
+<p data-en="When context pressure rises, every harness does something — but most do it accidentally. Truncation is an eviction policy: drop-the-oldest, blind and cruel, and the constraint stated at step 3 is exactly as old as the irrelevant log line next to it. Summarization is an eviction policy too, and a subtler one: it evicts detail and keeps a lossy sketch, which is fine until the agent needs the detail back and must re-derive it by re-reading the world. Even 'let the model decide what to remember' is an eviction policy — one with the cache itself as the eviction engine, which is a strange loop that works better than it should. The point is not that these are wrong. The point is that they should be chosen, deliberately, per category of content. Raw tool outputs should be demoted to summaries the moment their step has closed. Summaries-of-summaries should be collapsed on a schedule. Constraints and decisions should be pinned — never evicted, only superseded by an explicit later decision. And the loop should carry a compact, always-regenerated state block — goal, constraints, current facts, next action — so the working set is reconstructed on every turn instead of being inferred from sediment." data-zh="当上下文压力上升时，每个框架都会做点什么——但大多数是碰巧做的。截断是一种逐出策略：丢掉最旧的，盲目而残忍，第 3 步声明的约束和旁边那条无关的日志一样旧。摘要也是一种逐出策略，而且更隐蔽：它逐出细节，保留一张有损的草图，直到智能体需要那份细节、不得不通过重读世界来重新推导之前，一切安好。就连「让模型自己决定记住什么」也是一种逐出策略——一个用缓存本身作为逐出引擎的策略，这是一个运转得比理应更好的怪圈。重点不在于这些是错的。重点在于它们应该被针对每类内容、有意识地选择。原始工具输出应在其步骤闭合的那一刻降级为摘要。摘要的摘要应按计划坍缩。约束与决策应被钉住——永不逐出，只被明确的后续决策取代。而循环应携带一个紧凑的、每次都重新生成的状态块——目标、约束、当前事实、下一步——让工作集每一轮都被重建，而不是从沉积物中推断。">When context pressure rises, every harness does something — but most do it accidentally. Truncation is an eviction policy. Summarization is an eviction policy. Even 'let the model decide' is an eviction policy. The point is that these should be chosen deliberately, per category of content.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrD1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<linearGradient id="evictGrad" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0" stop-color="var(--accent-3)"></stop>
+<stop offset="1" stop-color="var(--accent-2)"></stop>
+</linearGradient>
+</defs>
+<text data-en="EVICTION POLICIES, RANKED BY OUTCOME" data-zh="逐出策略，按结果排序" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">EVICTION POLICIES, RANKED BY OUTCOME</text>
+<rect fill="url(#evictGrad)" height="14" rx="7" width="540" x="40" y="70"></rect>
+<text data-en="accidental" data-zh="碰巧" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="start" x="40" y="58">accidental</text>
+<text data-en="designed" data-zh="被设计" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="end" x="580" y="58">designed</text>
+<!-- four policy boxes -->
+<rect fill="var(--bg-surface)" height="120" rx="10" stroke="var(--accent-3)" stroke-width="1.5" width="126" x="46" y="104"></rect>
+<text data-en="TRUNCATE" data-zh="截断" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="109" y="126">TRUNCATE</text>
+<text data-en="drop oldest" data-zh="丢最旧的" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="109" y="142">drop oldest</text>
+<text data-en="kills constraints" data-zh="误杀约束" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="109" y="160">kills constraints</text>
+<text data-en="free, instant," fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="109" y="176">free, instant,</text>
+<text data-en="blind" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="109" y="188">blind</text>
+<text data-en="result: drift" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="109" y="210">result: drift</text>
+<rect fill="var(--bg-surface)" height="120" rx="10" stroke="var(--accent)" stroke-width="1.5" width="126" x="185" y="104"></rect>
+<text data-en="SUMMARIZE" data-zh="摘要" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="248" y="126">SUMMARIZE</text>
+<text data-en="lossy compress" data-zh="有损压缩" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="248" y="142">lossy compress</text>
+<text data-en="loses detail" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="248" y="160">loses detail</text>
+<text data-en="re-reads to" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="248" y="176">re-reads to</text>
+<text data-en="recover it" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="248" y="188">recover it</text>
+<text data-en="result: mostly ok" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="248" y="210">result: mostly ok</text>
+<rect fill="var(--bg-surface)" height="120" rx="10" stroke="var(--accent-2)" stroke-width="1.5" width="126" x="324" y="104"></rect>
+<text data-en="PIN + DEMOTE" data-zh="钉住 + 降级" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="387" y="126">PIN + DEMOTE</text>
+<text data-en="by category" data-zh="按内容类别" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="387" y="142">by category</text>
+<text data-en="constraints stay" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="387" y="160">constraints stay</text>
+<text data-en="stale output goes" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="387" y="176">stale output goes</text>
+<text data-en="supersede, not" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="387" y="188">supersede, not</text>
+<text data-en="delete" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="387" y="200">delete</text>
+<text data-en="result: coherent" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="387" y="216">result: coherent</text>
+<rect fill="var(--bg-surface)" height="120" rx="10" stroke="var(--accent-2)" stroke-width="2.5" width="126" x="463" y="104"></rect>
+<text data-en="STATE BLOCK" data-zh="状态块" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="526" y="126">STATE BLOCK</text>
+<text data-en="regenerate each turn" data-zh="每轮重新生成" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="526" y="142">regenerate each turn</text>
+<text data-en="goal · constraints" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="526" y="160">goal · constraints</text>
+<text data-en="facts · next action" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="526" y="174">facts · next action</text>
+<text data-en="working set is built," fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="526" y="192">working set is built,</text>
+<text data-en="not inherited" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="526" y="204">not inherited</text>
+<text data-en="result: stable at step 500" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="526" y="218">result: stable at step 500</text>
+<path d="M109 84 L109 102" fill="none" marker-end="url(#arrD1)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<path d="M248 84 L248 102" fill="none" marker-end="url(#arrD1)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<path d="M387 84 L387 102" fill="none" marker-end="url(#arrD1)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<path d="M526 84 L526 102" fill="none" marker-end="url(#arrD1)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<text data-en="every harness has an eviction policy — most have never read their own" data-zh="每个框架都有逐出策略——大多数从没读过自己的那一份" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="262">every harness has an eviction policy — most have never read their own</text>
+</svg>
+<p class="diagram-caption" data-en="Four ways to deal with a full window, from accidental to designed. Truncation drops the oldest bytes with no regard for meaning. Summarization compresses lossily and pays re-reads to recover detail. Pin-and-demote classifies content: constraints and decisions are pinned until superseded, stale tool output is demoted on schedule. The state block goes further — the working set is regenerated every turn from durable state, so the window no longer carries the agent's memory by inheritance. The further right, the less the agent's coherence depends on luck." data-zh="应对窗口被填满的四种方式，从碰巧到被设计。截断毫无意义地丢掉最旧的字节。摘要有损地压缩，再付出重读的代价换回细节。钉住与降级对内容分类：约束与决策被钉住，直到被取代；过期的工具输出按计划降级。状态块更进一步——工作集每一轮都从持久状态重新生成，窗口不再靠继承来携带智能体的记忆。越往右，智能体的连贯性就越不依赖运气。">Four ways to deal with a full window, from accidental to designed. Truncation is blind. Summarization is lossy. Pin-and-demote classifies content. The state block regenerates the working set every turn, so coherence stops depending on luck.</p>
+</div>
+<h3 data-en="Admission and prefetch" data-zh="准入与预取">Admission and prefetch</h3>
+<p data-en="The other half of cache design happens before anything enters the window. Admission policy asks: should this content be in context at all? Tool outputs are the worst offenders — a search returns forty results, the agent reads two, and thirty-eight dead links sit in the window for the rest of the run. The fix is mechanical: outputs get a one-line stub in context and their full bodies in external storage, retrieved again only if the stub is referenced. Retrieval should fetch pointers, not payloads. Prefetch is the mirror skill: the harness knows what the next step probably needs — the file about to be edited, the ticket about to be consulted, the API doc for the call about to be made — and stages it before the model asks. A cache that only ever reacts misses; a cache that anticipates hits. None of this requires new research. It requires admitting that the window is a scarce resource with a physics of its own, and putting someone in charge of it — a memory manager, sitting between the tools and the model, with a budget, a policy, and telemetry on what actually got used." data-zh="缓存设计的另一半，发生在任何内容进入窗口之前。准入策略问的是：这段内容到底该不该进上下文？工具输出是最严重的惯犯——一次搜索返回四十条结果，智能体读了两条，三十八条死链接在窗口里坐到任务结束。修复是机械性的：输出在上下文里只留一行存根，完整正文放进外部存储，只有当存根被引用时才重新取回。检索应该取回指针，而不是载荷。预取是镜像的技能：框架知道下一步大概需要什么——即将被编辑的文件、即将被查询的工单、即将被调用的 API 文档——并在模型开口之前先把它备好。一个只懂得反应的缓存会 miss；一个懂得预判的缓存会 hit。这些都不需要新研究。它只需要承认：窗口是一种有着自身物理规律的稀缺资源，并且需要有专人对它负责——一个内存管理器，坐在工具与模型之间，带着预算、策略，以及对「什么真的被用到了」的遥测。">The other half of cache design happens before anything enters the window. Admission policy asks: should this content be in context at all? Tool outputs get a one-line stub in context and full bodies in external storage. Retrieval should fetch pointers, not payloads. Prefetch is the mirror skill: stage what the next step probably needs before the model asks.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrE1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrE2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrE3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+</defs>
+<text data-en="THE MEMORY MANAGER" data-zh="内存管理器" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE MEMORY MANAGER</text>
+<!-- tools -->
+<rect fill="var(--bg-surface)" height="72" rx="10" stroke="var(--accent-3)" stroke-width="2" width="120" x="30" y="70"></rect>
+<text data-en="TOOLS" data-zh="工具" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="90" y="92">TOOLS</text>
+<text data-en="search · read · run" data-zh="搜索 · 读取 · 执行" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="90" y="108">search · read · run</text>
+<text data-en="40 results, full logs" data-zh="40 条结果，完整日志" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="90" y="122">40 results, full logs</text>
+<!-- manager -->
+<rect fill="var(--accent-dim)" height="120" rx="12" stroke="var(--accent)" stroke-width="2.5" width="170" x="225" y="46"></rect>
+<text data-en="MEMORY MANAGER" data-zh="内存管理器" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="70">MEMORY MANAGER</text>
+<text data-en="admission: stub or full?" data-zh="准入：存根还是全文？" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="310" y="90">admission: stub or full?</text>
+<text data-en="eviction: pin · demote" data-zh="逐出：钉住 · 降级" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="310" y="104">eviction: pin · demote</text>
+<text data-en="prefetch: next step's needs" data-zh="预取：下一步所需" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="310" y="118">prefetch: next step's needs</text>
+<text data-en="state block: rebuilt each turn" data-zh="状态块：每轮重建" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="310" y="132">state block: rebuilt each turn</text>
+<text data-en="telemetry: what got used" data-zh="遥测：什么被用到了" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="310" y="146">telemetry: what got used</text>
+<!-- model -->
+<rect fill="var(--bg-surface)" height="72" rx="10" stroke="var(--accent-2)" stroke-width="2" width="120" x="470" y="70"></rect>
+<text data-en="MODEL" data-zh="模型" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="530" y="92">MODEL</text>
+<text data-en="sees: working set" data-zh="看到的：工作集" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="530" y="108">sees: working set</text>
+<text data-en="not: the landfill" data-zh="而不是：垃圾填埋场" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="530" y="122">not: the landfill</text>
+<!-- store -->
+<rect fill="var(--bg-surface)" height="56" rx="10" stroke="var(--text-tertiary)" stroke-width="1.5" width="200" x="210" y="200"></rect>
+<text data-en="EXTERNAL STATE STORE" data-zh="外部状态存储" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="310" y="222">EXTERNAL STATE STORE</text>
+<text data-en="full outputs · file snapshots · ledgers" data-zh="完整输出 · 文件快照 · 账本" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="310" y="240">full outputs · file snapshots · ledgers</text>
+<!-- flows -->
+<path d="M150 96 L223 96" fill="none" marker-end="url(#arrE2)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<text data-en="raw payload" data-zh="原始载荷" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="186" y="88">raw payload</text>
+<path d="M395 96 L468 96" fill="none" marker-end="url(#arrE3)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<text data-en="curated context" data-zh="精选后的上下文" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="431" y="88">curated context</text>
+<path d="M310 166 L310 198" fill="none" marker-end="url(#arrE1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="spill · recall" data-zh="溢出 · 取回" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="336" y="186">spill · recall</text>
+<path d="M470 128 C420 168 380 190 410 202" fill="none" marker-end="url(#arrE1)" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3,2"></path>
+<text data-en="stub referenced → refetch" data-zh="存根被引用 → 重新取回" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="495" y="180">stub referenced → refetch</text>
+</svg>
+<p class="diagram-caption" data-en="The component almost no agent stack has: a memory manager between tools and model. Raw tool payloads spill to an external store; only stubs enter context. Admission decides stub versus full text. Prefetch stages what the next step needs before the model asks. The state block is rebuilt every turn from the store. The model never sees the landfill — only the working set — and telemetry closes the loop by reporting which context entries actually influenced decisions. This is a database-cache diagram. It works because the problems are the same problems." data-zh="几乎没有任何智能体技术栈拥有的组件：一个位于工具与模型之间的内存管理器。原始工具载荷溢出到外部存储；只有存根进入上下文。准入决定存根还是全文。预取在模型开口之前备好下一步所需。状态块每一轮都从存储重建。模型永远看不到垃圾填埋场——只看得到工作集——而遥测通过报告哪些上下文条目真正影响了决策来闭合回路。这是一张数据库缓存图。它行得通，因为问题是同一批问题。">The component almost no agent stack has: a memory manager between tools and model. Raw payloads spill to an external store; only stubs enter context. Prefetch stages what the next step needs. The model never sees the landfill — only the working set.</p>
+</div>
+<h3 data-en="Windows will grow. The discipline will not expire." data-zh="窗口会变大。这门纪律不会过期。">Windows will grow. The discipline will not expire.</h3>
+<p data-en="The obvious objection is that windows are getting bigger — a million tokens, then more — and the cache problem will simply be outgrown. It will not. Longer horizons expand to fill whatever window exists, because the tasks worth automating are the long ones, and every new capability (sub-agents, tool graphs, multi-hour sessions) multiplies the bytes per step. Caches did not disappear when memory got cheap; they multiplied, because the economics of fast-and-small versus slow-and-large never went away. The context window sits on the expensive side of that divide and always will. The practical takeaway for anyone building agents is unglamorous and decisive: measure the working set, not the window. Instrument what the model actually references each turn. Classify content and give each class an eviction rule. Regenerate state instead of inheriting sediment. The models will keep improving. The agents that stay coherent at step five hundred will be the ones whose builders stopped pretending the window was memory — and started managing it like the cache it has always been." data-zh="最显然的反驳是：窗口正在变大——一百万 token，然后更多——缓存问题会被简单地长过去。不会的。更长的视野会膨胀到填满任何存在的窗口，因为值得自动化的任务本来就是长任务，而每一项新能力（子智能体、工具图、数小时的会话）都在成倍增加每一步的字节。内存变便宜之后，缓存并没有消失；它们反而增多了，因为「快而小」对「慢而大」的经济学从未消失。上下文窗口站在这道分界的昂贵一侧，并且永远会。对任何构建智能体的人来说，实用的结论朴素而决定性：测量工作集，而不是窗口。给模型每一轮真正引用的内容埋点。给内容分类，并给每一类一条逐出规则。重新生成状态，而不是继承沉积物。模型会继续进步。而那些在第 500 步依然连贯的智能体，属于那些不再假装窗口是内存、开始把它当作它一直以来的样子——一块缓存——来管理的建造者。">The obvious objection is that windows are getting bigger and the problem will be outgrown. It will not. Longer horizons expand to fill whatever window exists. Caches did not disappear when memory got cheap; they multiplied. Measure the working set, not the window.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

@@ -70,6 +70,19 @@
             </div>
 
                     <div class="post-item fade-in">
+            <a href="posts/2026-11-10-context-is-a-cache.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">November 10, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
+                </div>
+                <h2 class="post-title" data-en="Context Is a Cache — Treat It Like One" data-zh="上下文是一块缓存——请按缓存来对待它">Context Is a Cache — Treat It Like One</h2>
+                <p class="post-excerpt" data-en="The context window is not memory — it is a cache: small, expensive, and forced to evict. Agents that stay coherent at step 300 are not the ones with the biggest windows, but the ones with a working set, an admission policy, and an eviction rule per class of content." data-zh="上下文窗口不是内存——它是一块缓存：小、昂贵、不得不逐出。在第 300 步依然连贯的智能体，靠的不是最大的窗口，而是工作集、准入策略，以及按内容类别划分的逐出规则。">The context window is not memory — it is a cache: small, expensive, and forced to evict. Agents that stay coherent at step 300 are not the ones with the biggest windows, but the ones with a.</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="post-item fade-in">
             <a href="posts/2026-11-09-every-tool-call-is-a-transaction.html" class="post-item-inner">
                 <div class="post-meta">
                     <span class="post-date">November 9, 2026</span>
@@ -108,19 +121,6 @@
             </a>
         </div>
 
-        <div class="post-item fade-in">
-            <a href="posts/2026-11-06-the-handoff-is-the-contract.html" class="post-item-inner">
-                <div class="post-meta">
-                    <span class="post-date">November 6, 2026</span>
-                    <span class="post-dot"></span>
-                    <span class="post-read" data-i18n="blog.read8">8 min read</span>
-                </div>
-                <h2 class="post-title" data-en="The Handoff Is the Contract" data-zh="交接，就是契约">The Handoff Is the Contract</h2>
-                <p class="post-excerpt" data-en="Multi-agent systems don't fail at the agents — they fail at the seams. The handoff is not a function call but a typed, bounded, versioned contract: goal, context slice, tool scope, return schema, budget. The agents are ephemeral; the contracts are the durable artifact." data-zh="多智能体系统很少败在智能体本身，而是败在接缝处。交接不是一次函数调用，而是一份有类型、有边界、有版本的契约：目标、上下文切片、工具范围、返回 schema、预算。智能体是短暂的，契约才是持久的工件。">Multi-agent systems don't fail at the agents — they fail at the seams. The handoff is not a function call but a typed, bounded, versioned contract: goal, context slice, tool scope, return schema,.</p>
-                <span class="post-arrow">→</span>
-            </a>
-        </div>
-
         </div>
 
         <div class="preview-section">
@@ -135,32 +135,36 @@
 
                         <article class="tweet-card fade-in">
             <div class="tweet-header">
-                <img src="https://pbs.twimg.com/profile_images/2103567689515954176/aR-Kjpp4_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <img src="https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
-                    <span class="tweet-name">Elon Musk<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
-                    <span class="tweet-handle">@elonmusk · Nov 9</span>
+                    <span class="tweet-name">Claude<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@claudeai · Nov 10</span>
                 </div>
-                <span class="news-badge" style="background:#1DA1F2">Grok</span>
+                <span class="news-badge" style="background:#D4A574">Claude</span>
             </div>
-            <div class="tweet-body" data-en="Just did a round table review with the Grok <a href=&quot;https://x.com/Bot&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@Bot</a> engineering team. 
+            <div class="tweet-body" data-en="Claude Fable 5.2 is available today on all paid plans, on the Claude Platform, and on all major cloud platforms.
 
-Fixes are being implemented overnight and you should notice a dramatic improvement by tomorrow. If not, reply to this post and we will address any remaining issues right away." data-zh="刚与 Grok Bot 工程团队做了一轮圆桌评审。修复工作正在连夜实施，明天应该能看到显著改善。如果还有问题，请在本帖下回复，我们会立即处理。">Just did a round table review with the Grok <a href="https://x.com/Bot" target="_blank" rel="noopener">@Bot</a> engineering team. 
+It’s $8 per million input tokens and $40 per million output tokens, down from $10 and $50.
 
-Fixes are being implemented overnight and you should notice a dramatic improvement by tomorrow. If not, reply to this post and we will address any remaining issues right away.</div>
+Read more: https://t.co/50jMVOnsvF" data-zh="Claude Fable 5.2 今日上线所有付费计划、Claude 平台及各大云平台。定价降至每百万输入 token 8 美元、输出 40 美元（原价 10/50 美元）。">Claude Fable 5.2 is available today on all paid plans, on the Claude Platform, and on all major cloud platforms.
+
+It’s $8 per million input tokens and $40 per million output tokens, down from $10 and $50.
+
+Read more: https://t.co/50jMVOnsvF</div>
             <div class="tweet-footer">
-                <a href="https://x.com/elonmusk/status/2119617455102333206" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/claudeai/status/2119867138987176141" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
                     0
                 </a>
-                <a href="https://x.com/elonmusk/status/2119617455102333206" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/claudeai/status/2119867138987176141" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
                     0
                 </a>
-                <a href="https://x.com/elonmusk/status/2119617455102333206" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/claudeai/status/2119867138987176141" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    34.3K
+                    2.3K
                 </a>
-                <a href="https://x.com/elonmusk/status/2119617455102333206" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                <a href="https://x.com/claudeai/status/2119867138987176141" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
                     View on X →
                 </a>
             </div>
@@ -168,28 +172,35 @@ Fixes are being implemented overnight and you should notice a dramatic improveme
 
         <article class="tweet-card fade-in">
             <div class="tweet-header">
-                <img src="https://pbs.twimg.com/profile_images/2103567689515954176/aR-Kjpp4_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <img src="https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
-                    <span class="tweet-name">Elon Musk<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
-                    <span class="tweet-handle">@elonmusk · Nov 8</span>
+                    <span class="tweet-name">Claude<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@claudeai · Nov 10</span>
                 </div>
-                <span class="news-badge" style="background:#1DA1F2">Grok</span>
+                <span class="news-badge" style="background:#D4A574">Claude</span>
             </div>
-            <div class="tweet-body" data-en="Grok Bot fixes for improved token efficiency and smarter behavior are underway" data-zh="Grok Bot 的修复工作正在进行中，将提升 token 效率并优化行为表现。">Grok Bot fixes for improved token efficiency and smarter behavior are underway</div>
+            <div class="tweet-body" data-en="Fable 5.2 shows substantially improved skills in controlling physical robots, even on tasks it has never explicitly been trained to do.
+
+On RoboDojo, a benchmark with a simulated two-arm robot, it outperformed other models and most AI systems built to control robots. https://t.co/VEiQiQrcxq" data-zh="Fable 5.2 在控制实体机器人上表现出显著提升，甚至能胜任从未专门训练过的任务。在双臂机器人仿真基准 RoboDojo 上，它超越了其他模型及多数专用机器人 AI 系统。">Fable 5.2 shows substantially improved skills in controlling physical robots, even on tasks it has never explicitly been trained to do.
+
+On RoboDojo, a benchmark with a simulated two-arm robot, it outperformed other models and most AI systems built to control robots. https://t.co/VEiQiQrcxq</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/amplify_video_thumb/2119864431383322625/img/PnRKfjtscPIIN_mq.jpg">
+            <img src="https://pbs.twimg.com/amplify_video_thumb/2119864431383322625/img/PnRKfjtscPIIN_mq.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
             <div class="tweet-footer">
-                <a href="https://x.com/elonmusk/status/2119419126045454531" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/claudeai/status/2119867132452221045" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
                     0
                 </a>
-                <a href="https://x.com/elonmusk/status/2119419126045454531" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/claudeai/status/2119867132452221045" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
                     0
                 </a>
-                <a href="https://x.com/elonmusk/status/2119419126045454531" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/claudeai/status/2119867132452221045" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    29.8K
+                    2.3K
                 </a>
-                <a href="https://x.com/elonmusk/status/2119419126045454531" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                <a href="https://x.com/claudeai/status/2119867132452221045" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
                     View on X →
                 </a>
             </div>
@@ -197,28 +208,35 @@ Fixes are being implemented overnight and you should notice a dramatic improveme
 
         <article class="tweet-card fade-in">
             <div class="tweet-header">
-                <img src="https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <img src="https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
-                    <span class="tweet-name">Anthropic<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
-                    <span class="tweet-handle">@AnthropicAI · Nov 7</span>
+                    <span class="tweet-name">Claude<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@claudeai · Nov 10</span>
                 </div>
-                <span class="news-badge" style="background:#D4A574">Anthropic</span>
+                <span class="news-badge" style="background:#D4A574">Claude</span>
             </div>
-            <div class="tweet-body" data-en="Memory is what allows Claude to learn from experience. In a new Engineering Blog post, we share how “dreaming” helps Claude organize what it’s learned, correct its mistakes, and find what it needs more easily the next time. https://t.co/uUEN4bNkr9" data-zh="记忆让 Claude 能够从经验中学习。Anthropic 工程博客新发文，介绍“做梦”（dreaming）机制如何帮助 Claude 整理所学知识、纠正错误，并更快检索所需信息。">Memory is what allows Claude to learn from experience. In a new Engineering Blog post, we share how “dreaming” helps Claude organize what it’s learned, correct its mistakes, and find what it needs more easily the next time. https://t.co/uUEN4bNkr9</div>
+            <div class="tweet-body" data-en="A team of 1,000 Fable 5.2 agents fully formalized Fermat’s Last Theorem in 30 hours, translating the proof into a language a computer can check step by step.
+
+With the same setup, Opus 5.5 completed only 26% in 18 hours, and barely made any more progress after 30 hours. https://t.co/Lqq8ZYXd52" data-zh="1000 个 Fable 5.2 智能体组成的团队在 30 小时内完成了费马大定理的完整形式化——将证明翻译成计算机可逐步验证的语言。同样配置下 Opus 5.5 在 18 小时仅完成 26%，30 小时后几乎无进展。">A team of 1,000 Fable 5.2 agents fully formalized Fermat’s Last Theorem in 30 hours, translating the proof into a language a computer can check step by step.
+
+With the same setup, Opus 5.5 completed only 26% in 18 hours, and barely made any more progress after 30 hours. https://t.co/Lqq8ZYXd52</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/media/HWtFZLnX0AApUdy.png">
+            <img src="https://pbs.twimg.com/media/HWtFZLnX0AApUdy.png" alt="" class="tweet-media" loading="lazy" />
+        </div>
             <div class="tweet-footer">
-                <a href="https://x.com/AnthropicAI/status/2118814753154064501" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/claudeai/status/2119867129751056485" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
                     0
                 </a>
-                <a href="https://x.com/AnthropicAI/status/2118814753154064501" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/claudeai/status/2119867129751056485" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
                     0
                 </a>
-                <a href="https://x.com/AnthropicAI/status/2118814753154064501" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/claudeai/status/2119867129751056485" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    8.3K
+                    2.1K
                 </a>
-                <a href="https://x.com/AnthropicAI/status/2118814753154064501" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                <a href="https://x.com/claudeai/status/2119867129751056485" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
                     View on X →
                 </a>
             </div>
@@ -226,32 +244,35 @@ Fixes are being implemented overnight and you should notice a dramatic improveme
 
         <article class="tweet-card fade-in">
             <div class="tweet-header">
-                <img src="https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <img src="https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
-                    <span class="tweet-name">OpenAI<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
-                    <span class="tweet-handle">@OpenAI · Nov 7</span>
+                    <span class="tweet-name">Claude<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@claudeai · Nov 10</span>
                 </div>
-                <span class="news-badge" style="background:#10A37F">OpenAI</span>
+                <span class="news-badge" style="background:#D4A574">Claude</span>
             </div>
-            <div class="tweet-body" data-en="We partnered with <a href=&quot;https://x.com/fmf_org&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@fmf_org</a> and its member firms on a new framework to help identify when bypassing an AI system&#x27;s safeguards could enable serious cyber harm, and prioritize stronger protections.
+            <div class="tweet-body" data-en="Introducing Claude Fable 5.2 and Claude Mythos 5.2, designed to tackle the most daunting technical challenges.
 
-&quot;...This framework is an important step toward a common methodology for evaluating" data-zh="OpenAI 与 FMF 及其成员机构合作发布新框架，用于判断绕过 AI 安全防护何时可能造成严重网络危害，并帮助优先加固防护。OpenAI 国家安全政策负责人称，这为评估和比较网络越狱严重程度提供了通用方法论。">We partnered with <a href="https://x.com/fmf_org" target="_blank" rel="noopener">@fmf_org</a> and its member firms on a new framework to help identify when bypassing an AI system&#x27;s safeguards could enable serious cyber harm, and prioritize stronger protections.
+They’re capable collaborators on ambitious projects in many fields, and show improvements in areas like coding, reasoning, and vision. https://t.co/jP0AutLxXb" data-zh="Anthropic 发布 Claude Fable 5.2 与 Claude Mythos 5.2，专为攻克最棘手的技术难题而设计。两者在编码、推理与视觉等方向均有提升，是雄心勃勃项目中的得力协作者。">Introducing Claude Fable 5.2 and Claude Mythos 5.2, designed to tackle the most daunting technical challenges.
 
-&quot;...This framework is an important step toward a common methodology for evaluating</div>
+They’re capable collaborators on ambitious projects in many fields, and show improvements in areas like coding, reasoning, and vision. https://t.co/jP0AutLxXb</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/media/HWtIJNLWUAAcc7I.jpg">
+            <img src="https://pbs.twimg.com/media/HWtIJNLWUAAcc7I.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
             <div class="tweet-footer">
-                <a href="https://x.com/OpenAI/status/2118795218099253606" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/claudeai/status/2119867114450268322" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
                     0
                 </a>
-                <a href="https://x.com/OpenAI/status/2118795218099253606" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/claudeai/status/2119867114450268322" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
                     0
                 </a>
-                <a href="https://x.com/OpenAI/status/2118795218099253606" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/claudeai/status/2119867114450268322" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    178
+                    36.9K
                 </a>
-                <a href="https://x.com/OpenAI/status/2118795218099253606" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                <a href="https://x.com/claudeai/status/2119867114450268322" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
                     View on X →
                 </a>
             </div>
@@ -265,6 +286,19 @@ Fixes are being implemented overnight and you should notice a dramatic improveme
     <section class="post-list tab-pane" id="pane-blog">
 
                 <div class="post-item fade-in">
+            <a href="posts/2026-11-10-context-is-a-cache.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">November 10, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
+                </div>
+                <h2 class="post-title" data-en="Context Is a Cache — Treat It Like One" data-zh="上下文是一块缓存——请按缓存来对待它">Context Is a Cache — Treat It Like One</h2>
+                <p class="post-excerpt" data-en="The context window is not memory — it is a cache: small, expensive, and forced to evict. Agents that stay coherent at step 300 are not the ones with the biggest windows, but the ones with a working set, an admission policy, and an eviction rule per class of content." data-zh="上下文窗口不是内存——它是一块缓存：小、昂贵、不得不逐出。在第 300 步依然连贯的智能体，靠的不是最大的窗口，而是工作集、准入策略，以及按内容类别划分的逐出规则。">The context window is not memory — it is a cache: small, expensive, and forced to evict. Agents that stay coherent at step 300 are not the ones with the biggest windows, but the ones with a.</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="post-item fade-in">
             <a href="posts/2026-11-09-every-tool-call-is-a-transaction.html" class="post-item-inner">
                 <div class="post-meta">
                     <span class="post-date">November 9, 2026</span>
@@ -1572,6 +1606,151 @@ Fixes are being implemented overnight and you should notice a dramatic improveme
         <div class="news-list">
 
                     <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Claude<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@claudeai · Nov 10</span>
+                </div>
+                <span class="news-badge" style="background:#D4A574">Claude</span>
+            </div>
+            <div class="tweet-body" data-en="Claude Fable 5.2 is available today on all paid plans, on the Claude Platform, and on all major cloud platforms.
+
+It’s $8 per million input tokens and $40 per million output tokens, down from $10 and $50.
+
+Read more: https://t.co/50jMVOnsvF" data-zh="Claude Fable 5.2 今日上线所有付费计划、Claude 平台及各大云平台。定价降至每百万输入 token 8 美元、输出 40 美元（原价 10/50 美元）。">Claude Fable 5.2 is available today on all paid plans, on the Claude Platform, and on all major cloud platforms.
+
+It’s $8 per million input tokens and $40 per million output tokens, down from $10 and $50.
+
+Read more: https://t.co/50jMVOnsvF</div>
+            <div class="tweet-footer">
+                <a href="https://x.com/claudeai/status/2119867138987176141" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/claudeai/status/2119867138987176141" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/claudeai/status/2119867138987176141" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    2.3K
+                </a>
+                <a href="https://x.com/claudeai/status/2119867138987176141" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Claude<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@claudeai · Nov 10</span>
+                </div>
+                <span class="news-badge" style="background:#D4A574">Claude</span>
+            </div>
+            <div class="tweet-body" data-en="Fable 5.2 shows substantially improved skills in controlling physical robots, even on tasks it has never explicitly been trained to do.
+
+On RoboDojo, a benchmark with a simulated two-arm robot, it outperformed other models and most AI systems built to control robots. https://t.co/VEiQiQrcxq" data-zh="Fable 5.2 在控制实体机器人上表现出显著提升，甚至能胜任从未专门训练过的任务。在双臂机器人仿真基准 RoboDojo 上，它超越了其他模型及多数专用机器人 AI 系统。">Fable 5.2 shows substantially improved skills in controlling physical robots, even on tasks it has never explicitly been trained to do.
+
+On RoboDojo, a benchmark with a simulated two-arm robot, it outperformed other models and most AI systems built to control robots. https://t.co/VEiQiQrcxq</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/amplify_video_thumb/2119864431383322625/img/PnRKfjtscPIIN_mq.jpg">
+            <img src="https://pbs.twimg.com/amplify_video_thumb/2119864431383322625/img/PnRKfjtscPIIN_mq.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/claudeai/status/2119867132452221045" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/claudeai/status/2119867132452221045" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/claudeai/status/2119867132452221045" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    2.3K
+                </a>
+                <a href="https://x.com/claudeai/status/2119867132452221045" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Claude<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@claudeai · Nov 10</span>
+                </div>
+                <span class="news-badge" style="background:#D4A574">Claude</span>
+            </div>
+            <div class="tweet-body" data-en="A team of 1,000 Fable 5.2 agents fully formalized Fermat’s Last Theorem in 30 hours, translating the proof into a language a computer can check step by step.
+
+With the same setup, Opus 5.5 completed only 26% in 18 hours, and barely made any more progress after 30 hours. https://t.co/Lqq8ZYXd52" data-zh="1000 个 Fable 5.2 智能体组成的团队在 30 小时内完成了费马大定理的完整形式化——将证明翻译成计算机可逐步验证的语言。同样配置下 Opus 5.5 在 18 小时仅完成 26%，30 小时后几乎无进展。">A team of 1,000 Fable 5.2 agents fully formalized Fermat’s Last Theorem in 30 hours, translating the proof into a language a computer can check step by step.
+
+With the same setup, Opus 5.5 completed only 26% in 18 hours, and barely made any more progress after 30 hours. https://t.co/Lqq8ZYXd52</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/media/HWtFZLnX0AApUdy.png">
+            <img src="https://pbs.twimg.com/media/HWtFZLnX0AApUdy.png" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/claudeai/status/2119867129751056485" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/claudeai/status/2119867129751056485" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/claudeai/status/2119867129751056485" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    2.1K
+                </a>
+                <a href="https://x.com/claudeai/status/2119867129751056485" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Claude<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@claudeai · Nov 10</span>
+                </div>
+                <span class="news-badge" style="background:#D4A574">Claude</span>
+            </div>
+            <div class="tweet-body" data-en="Introducing Claude Fable 5.2 and Claude Mythos 5.2, designed to tackle the most daunting technical challenges.
+
+They’re capable collaborators on ambitious projects in many fields, and show improvements in areas like coding, reasoning, and vision. https://t.co/jP0AutLxXb" data-zh="Anthropic 发布 Claude Fable 5.2 与 Claude Mythos 5.2，专为攻克最棘手的技术难题而设计。两者在编码、推理与视觉等方向均有提升，是雄心勃勃项目中的得力协作者。">Introducing Claude Fable 5.2 and Claude Mythos 5.2, designed to tackle the most daunting technical challenges.
+
+They’re capable collaborators on ambitious projects in many fields, and show improvements in areas like coding, reasoning, and vision. https://t.co/jP0AutLxXb</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/media/HWtIJNLWUAAcc7I.jpg">
+            <img src="https://pbs.twimg.com/media/HWtIJNLWUAAcc7I.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/claudeai/status/2119867114450268322" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/claudeai/status/2119867114450268322" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/claudeai/status/2119867114450268322" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    36.9K
+                </a>
+                <a href="https://x.com/claudeai/status/2119867114450268322" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
             <div class="tweet-header">
                 <img src="https://pbs.twimg.com/profile_images/2103567689515954176/aR-Kjpp4_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
