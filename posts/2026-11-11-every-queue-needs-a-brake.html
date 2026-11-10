@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Every Queue Needs a Brake — AI Frontlines</title>
+<meta content="Multi-agent systems fail the way pipelines fail: a fast producer, a slow consumer, and an unbounded queue between them. Queue depth grows, latency compounds, work goes stale, and everything still 'succeeds'. Backpressure is not infrastructure plumbing — it is the signal that tells a pipeline when to slow down, shed, or degrade. Agents need brake pedals, not just engines." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 11, 2026" data-zh="2026年11月11日">November 11, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Every Queue Needs a Brake — Backpressure for Agents" data-zh="每条队列都需要刹车——智能体系统的背压">Every Queue Needs a Brake — Backpressure for Agents</h1>
+<p class="post-header-deck" data-en="Multi-agent systems rarely die of errors. They die of speed differentials: a producer that fans out work faster than any consumer can absorb it, an unbounded queue growing silently between them, and latency that compounds until every result arrives too stale to use. Streaming systems solved this decades ago with backpressure — the humble brake pedal that lets a slow consumer tell a fast producer to ease off. Agent stacks have the engines, the wheels, and the maps. What they are missing is the brake. Queue depth is not an implementation detail. It is the single most honest performance metric a pipeline has, and almost nobody's harness is reading it." data-zh="多智能体系统很少死于报错。它们死于速度差：一个生产者以远超任何消费者吸收能力的速度分发任务，一条无界队列在两者之间悄悄生长，延迟不断复合，直到每个结果送达时都已过期到无法使用。流式系统几十年前就用背压解决了这个问题——那个朴素的刹车踏板，让慢的消费者得以告诉快的生产者收敛一点。智能体技术栈有了引擎、车轮和地图。缺的是刹车。队列深度不是实现细节。它是管道所拥有的最诚实的性能指标，而几乎没有人框架在读它。">Multi-agent systems rarely die of errors. They die of speed differentials: a fast producer, a slow consumer, an unbounded queue, and latency that compounds until every result arrives stale.</p>
+</header>
+<article class="post-body">
+<p data-en="The failure arrives on a schedule. A planner agent decomposes a large goal into two hundred subtasks and dispatches them to a pool of worker agents. Each worker takes forty seconds — reading files, running tools, verifying its own output. The planner, being a single model call, produces tasks a hundred times faster than the pool can finish them. Every unprocessed task lands in a queue. The queue has no maximum size, because nobody thought it needed one. Twenty minutes in, the queue holds a hundred and fifty pending tasks; the first results are coming back for work the planner has already revised twice. An hour in, workers are executing subtasks whose parent plan has been abandoned. The system reports ninety-seven percent task completion. The system has also produced nothing usable. No error fired at any point. The diagnosis is not that agents are dumb. The diagnosis is that the pipeline has no brake." data-zh="这种失败总是如期而至。一个规划者智能体把一个大目标分解成两百个子任务，分发给一个工作者智能体池。每个工作者需要四十秒——读文件、跑工具、验证自己的输出。而规划者作为一次模型调用，产出任务的速度是池子消化速度的一百倍。每一个未被处理的任务都落进一条队列。这条队列没有容量上限，因为没有人想过它需要上限。二十分钟后，队列里积压着一百五十个待处理任务；最先返回的结果，对应的却是规划者已经修改过两遍的工作。一小时后，工作者们还在执行那些父计划早已被放弃的子任务。系统报告任务完成率百分之九十七。系统也什么可用的产出都没有。自始至终没有一条报错。诊断不是智能体太笨。诊断是这条管道没有刹车。">A planner decomposes a large goal into two hundred subtasks and dispatches them to a worker pool. The planner produces tasks a hundred times faster than the pool can finish them. Every unprocessed task lands in a queue with no maximum size. Twenty minutes in, the first results are coming back for work the planner has already revised twice. An hour in, workers are executing subtasks whose parent plan has been abandoned. The system reports ninety-seven percent completion — and produces nothing usable.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrB1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrB2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<linearGradient id="queueGrad" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0" stop-color="var(--accent-2)"></stop>
+<stop offset="1" stop-color="var(--accent-3)"></stop>
+</linearGradient>
+</defs>
+<text data-en="AN UNBOUNDED QUEUE, OVER ONE HOUR" data-zh="一条无界队列的一小时" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">AN UNBOUNDED QUEUE, OVER ONE HOUR</text>
+<!-- producer -->
+<rect fill="var(--bg-surface)" height="72" rx="10" stroke="var(--accent-2)" stroke-width="2" width="130" x="30" y="60"></rect>
+<text data-en="PLANNER" data-zh="规划者" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="95" y="84">PLANNER</text>
+<text data-en="emits ~10 tasks/min" data-zh="每分钟产出约 10 个任务" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="95" y="102">emits ~10 tasks/min</text>
+<text data-en="never looks back" data-zh="从不回头看" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="95" y="116">never looks back</text>
+<!-- queue, growing -->
+<rect fill="url(#queueGrad)" height="64" rx="8" stroke="var(--accent)" stroke-width="1.5" width="260" x="190" y="64"></rect>
+<text data-en="QUEUE (unbounded)" data-zh="队列（无界）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="320" y="86">QUEUE (unbounded)</text>
+<text data-en="t=10min: 80 pending" data-zh="第 10 分钟：积压 80" fill="var(--text)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="320" y="104">t=10min: 80 pending</text>
+<text data-en="t=60min: 340 pending" data-zh="第 60 分钟：积压 340" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-weight="700" text-anchor="middle" x="320" y="118">t=60min: 340 pending</text>
+<!-- consumer -->
+<rect fill="var(--bg-surface)" height="72" rx="10" stroke="var(--accent-3)" stroke-width="2" width="130" x="480" y="60"></rect>
+<text data-en="WORKER POOL" data-zh="工作者池" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="545" y="84">WORKER POOL</text>
+<text data-en="finishes ~6 tasks/min" data-zh="每分钟完成约 6 个" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="545" y="102">finishes ~6 tasks/min</text>
+<text data-en="blind to the pile" data-zh="对积压一无所知" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="545" y="116">blind to the pile</text>
+<!-- flows -->
+<path d="M160 92 L188 92" fill="none" marker-end="url(#arrB1)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<path d="M450 92 L478 92" fill="none" marker-end="url(#arrB2)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<!-- staleness note -->
+<path d="M320 128 L320 168" fill="none" marker-end="url(#arrB2)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="92" rx="10" stroke="var(--text-tertiary)" stroke-width="1" width="560" x="30" y="172"></rect>
+<text data-en="what actually happens, hour by hour:" data-zh="实际发生的事，一小时接一小时：" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="194">what actually happens, hour by hour:</text>
+<text data-en="latency grows linearly  →  results arrive for plans already revised" data-zh="延迟线性增长 → 结果返回时计划早已被改写" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="214">latency grows linearly  →  results arrive for plans already revised</text>
+<text data-en="context fills with stale results  →  planner decisions drift" data-zh="上下文塞满过期结果 → 规划者的决策开始漂移" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="232">context fills with stale results  →  planner decisions drift</text>
+<text data-en="money burns on work nobody will read  →  and the metrics stay green" data-zh="钱烧在没人会读的工作上 → 而指标依然全绿" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="310" y="250">money burns on work nobody will read  →  and the metrics stay green</text>
+</svg>
+<p class="diagram-caption" data-en="A producer ten times faster than its consumer, joined by a queue with no limit. Nothing crashes. The queue simply grows, latency compounds, and by the time results return they describe a plan that no longer exists. The workers were never slow and the planner was never wrong — the system just had no mechanism for the word 'enough'. In stream processing this graph is a textbook incident; in agent engineering it is a Tuesday." data-zh="一个比消费者快十倍的生产者，中间由一条没有上限的队列连接。没有东西崩溃。队列只是不断增长，延迟不断复合，等到结果返回时，它们描述的是一个已不存在的计划。工作者从来不算慢，规划者也没有错——这个系统只是缺少一个说「够了」的机制。在流处理领域，这张图是一起教科书级事故；在智能体工程里，它只是又一个星期二。">A producer ten times faster than its consumer, joined by a queue with no limit. Nothing crashes — the queue grows, latency compounds, and results describe a plan that no longer exists. The system just had no mechanism for the word 'enough'.</p>
+</div>
+<h3 data-en="Queue depth is information" data-zh="队列深度本身就是信息">Queue depth is information</h3>
+<p data-en="The instinctive fix is to cap the queue and reject overflow. That is better than silence, but it treats the queue as a problem. The deeper truth is that queue depth is a measurement — the pipeline's most honest one. A growing queue means the producer's model of the work is wrong: it believes tasks are cheap, and reality is billing it differently. A shrinking queue means spare capacity. An oscillating queue means the consumer is intermittently blocked, usually on a rate limit or a human approval. These are exactly the signals a control system wants, and they arrive for free. A harness that exposes queue depth to the planner — not as a log line, but as a first-class input to its next decision — converts a storage detail into steering. The planner that sees 'backlog: 340, drain rate: 6/min' will stop decomposing and start prioritizing, because now it can feel the pile. Backpressure is not throttling bolted on from outside. It is closing the loop that should never have been open." data-zh="直觉的修法是给队列设上限、拒绝溢出。这比沉默好，但它把队列当成了问题。更深的事实是：队列深度是一种测量——管道所拥有的最诚实的测量。一条增长的队列意味着生产者对这项工作的建模是错的：它以为任务很便宜，而现实开出了不同的账单。一条收缩的队列意味着有空余容量。一条振荡的队列意味着消费者间歇性阻塞，通常卡在限流或某个人工审批上。这些恰恰是控制系统想要的信号，而且它们是免费到达的。一个把队列深度暴露给规划者的框架——不是作为一行日志，而是作为它下一次决策的一等输入——就把一个存储细节变成了转向装置。看到「积压：340，消化速率：每分钟 6」的规划者会停止分解、开始排序，因为它现在摸得到那座堆了。背压不是从外面拧上去的节流阀。它是把那个本不该开着的回路闭合起来。">The instinctive fix is to cap the queue. Better than silence — but it treats the queue as a problem. The deeper truth is that queue depth is a measurement. A growing queue means the producer's model of the work is wrong. These are exactly the signals a control system wants, and they arrive for free.</p>
+<blockquote data-en="An unbounded queue does not buy capacity. It buys time — and spends it on work that will be stale by the moment it finishes. Backpressure is what converts a speed differential from a silent failure into a steering signal." data-zh="无界队列买不来容量。它买来的是时间——并把时间花在完成那一刻就已过期的工作上。背压的作用，是把速度差从一种沉默的失败，变成一个可以用来转向的信号。">An unbounded queue does not buy capacity. It buys time — and spends it on work that will be stale by the moment it finishes. Backpressure converts a speed differential from a silent failure into a steering signal.</blockquote>
+<h3 data-en="Five things a pipeline can do when told to slow down" data-zh="被要求减速时，管道能做的五件事">Five things a pipeline can do when told to slow down</h3>
+<p data-en="Backpressure is one word for a family of behaviors, and choosing among them is real design work. Block: the producer waits until the queue drains below a watermark — correct when every task matters and ordering does not, costly when the producer is idle-but-blocked. Shed: drop low-value tasks outright, with the drop rate published to the planner — correct when work is speculative, brutal if it silently eats the important ten percent. Degrade: shrink the tasks themselves — fewer subagents per task, cheaper models, shallower verification — trading quality for throughput transparently. Sample: process a fraction and extrapolate — the map/reduce pattern, correct when results are statistical, wrong when they are load-bearing. Buffer externally: spill to durable storage with priorities attached, so nothing is lost but nothing pretends to be real-time. The best agent stacks do not pick one. They classify work at dispatch time — critical, useful, speculative — and let the class choose the behavior. That classification is itself a prompt-engineering decision, which is the quiet joke of backpressure: the brake pedal turns out to be another place where judgment lives." data-zh="背压这个词背后是一整个家族的行为，在其中做选择是实打实的设计工作。阻塞：生产者等到队列降到低水位以下——当每个任务都重要且顺序无关时正确，代价是生产者闲着也得干等。丢弃：直接丢掉低价值任务，并把丢弃率公开给规划者——当工作是投机性的时候正确，若悄悄吃掉重要的那百分之十就很残忍。降级：缩小任务本身——每个任务用更少的子智能体、更便宜的模型、更浅的验证——透明地用质量换吞吐。采样：处理一小部分再外推——map/reduce 模式，当结果是统计性的时候正确，当它们是承重墙的时候就错。外置缓冲：带着优先级溢写到持久存储，不丢任何东西，也不假装自己是实时的。最好的智能体技术栈不会只选一个。它们在派发时给工作分类——关键、有用、投机——然后让类别决定行为。这个分类本身就是一个提示工程决策，这也是背压安静的玩笑之处：刹车踏板最终被发现是另一个住着判断力的地方。">Backpressure is one word for a family of behaviors. Block: the producer waits. Shed: drop low-value tasks, publicly. Degrade: shrink the tasks themselves — cheaper models, shallower verification. Sample: process a fraction and extrapolate. Buffer externally: spill to durable storage with priorities. The best stacks classify work at dispatch and let the class choose the behavior.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1b" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<linearGradient id="brakeGrad" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0" stop-color="var(--accent-3)"></stop>
+<stop offset="1" stop-color="var(--accent-2)"></stop>
+</linearGradient>
+</defs>
+<text data-en="OVERLOAD BEHAVIORS, FROM CRUDEST TO MOST DESIGNED" data-zh="过载行为，从最粗到最被设计" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">OVERLOAD BEHAVIORS, FROM CRUDEST TO MOST DESIGNED</text>
+<rect fill="url(#brakeGrad)" height="14" rx="7" width="540" x="40" y="70"></rect>
+<text data-en="reactive" data-zh="被动" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="start" x="40" y="58">reactive</text>
+<text data-en="deliberate" data-zh="有意识地" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="end" x="580" y="58">deliberate</text>
+<!-- five boxes -->
+<rect fill="var(--bg-surface)" height="122" rx="10" stroke="var(--accent-3)" stroke-width="1.5" width="98" x="42" y="104"></rect>
+<text data-en="BLOCK" data-zh="阻塞" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="91" y="126">BLOCK</text>
+<text data-en="producer waits" data-zh="生产者等待" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="91" y="142">producer waits</text>
+<text data-en="simple, safe" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="91" y="158">simple, safe</text>
+<text data-en="idle capacity" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="91" y="170">idle capacity</text>
+<text data-en="while blocked" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="91" y="182">while blocked</text>
+<text data-en="fits: critical work" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="91" y="206">fits: critical work</text>
+<rect fill="var(--bg-surface)" height="122" rx="10" stroke="var(--accent-3)" stroke-width="1.5" width="98" x="152" y="104"></rect>
+<text data-en="SHED" data-zh="丢弃" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="201" y="126">SHED</text>
+<text data-en="drop overflow" data-zh="丢弃溢出" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="201" y="142">drop overflow</text>
+<text data-en="must publish" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="201" y="158">must publish</text>
+<text data-en="what was dropped" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="201" y="170">what was dropped</text>
+<text data-en="silent loss = rot" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="201" y="188">silent loss = rot</text>
+<text data-en="fits: speculative" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="201" y="206">fits: speculative</text>
+<rect fill="var(--bg-surface)" height="122" rx="10" stroke="var(--accent)" stroke-width="1.5" width="98" x="262" y="104"></rect>
+<text data-en="DEGRADE" data-zh="降级" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="311" y="126">DEGRADE</text>
+<text data-en="smaller tasks" data-zh="更小的任务" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="311" y="142">smaller tasks</text>
+<text data-en="cheaper model" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="311" y="158">cheaper model</text>
+<text data-en="shallower verify" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="311" y="170">shallower verify</text>
+<text data-en="quality ⇄ speed" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="311" y="188">quality ⇄ speed</text>
+<text data-en="fits: useful work" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="311" y="206">fits: useful work</text>
+<rect fill="var(--bg-surface)" height="122" rx="10" stroke="var(--accent-2)" stroke-width="1.5" width="98" x="372" y="104"></rect>
+<text data-en="SAMPLE" data-zh="采样" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="421" y="126">SAMPLE</text>
+<text data-en="fraction + extrapolate" data-zh="抽一部分再外推" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="421" y="142">fraction + extrapolate</text>
+<text data-en="map/reduce shape" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="421" y="158">map/reduce shape</text>
+<text data-en="wrong when each" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="421" y="174">wrong when each</text>
+<text data-en="result is unique" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="421" y="186">result is unique</text>
+<text data-en="fits: statistics" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="421" y="206">fits: statistics</text>
+<rect fill="var(--bg-surface)" height="122" rx="10" stroke="var(--accent-2)" stroke-width="2.5" width="98" x="482" y="104"></rect>
+<text data-en="SPILL + CLASSIFY" data-zh="溢写 + 分类" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="800" text-anchor="middle" x="531" y="126">SPILL + CLASSIFY</text>
+<text data-en="durable store" data-zh="持久存储" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="531" y="142">durable store</text>
+<text data-en="priority per task" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="531" y="158">priority per task</text>
+<text data-en="planner sees the" data-zh="规划者看得见" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="531" y="174">planner sees the</text>
+<text data-en="backlog and re-steers" data-zh="积压并重新转向" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="531" y="186">backlog and re-steers</text>
+<text data-en="fits: everything, with a ledger" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="7.5" font-style="italic" text-anchor="middle" x="531" y="206">fits: everything, with a ledger</text>
+<path d="M91 84 L91 102" fill="none" marker-end="url(#arrC1b)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<path d="M201 84 L201 102" fill="none" marker-end="url(#arrC1b)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<path d="M311 84 L311 102" fill="none" marker-end="url(#arrC1b)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<path d="M421 84 L421 102" fill="none" marker-end="url(#arrC1b)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<path d="M531 84 L531 102" fill="none" marker-end="url(#arrC1b)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<text data-en="none of these are retries — a retry under load is throwing gasoline on it" data-zh="这些都不是重试——负载之下重试，等于往火上浇汽油" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="262">none of these are retries — a retry under load is throwing gasoline on it</text>
+</svg>
+<p class="diagram-caption" data-en="Five overload behaviors, from the crudest to the most designed. Blocking is safe but strands the producer. Shedding is fast but must publish its losses or it becomes silent rot. Degrading shrinks the work itself — cheaper models, shallower checks — and is the honest trade most agent systems should make more often. Sampling bets results are statistical. Spill-and-classify keeps everything in a durable, prioritized store and lets the planner see the backlog and re-steer. Note what is not on this list: retrying. Under overload, a retry is not resilience — it is load wearing a costume." data-zh="五种过载行为，从最粗到最被设计。阻塞安全，却让生产者闲置。丢弃很快，但必须公开它丢了什么，否则就成了沉默的腐烂。降级缩小工作本身——更便宜的模型、更浅的检查——这是大多数智能体系统本该更常做的诚实交易。采样赌的是结果具有统计性。溢写加分类把一切保存在带优先级的持久存储里，让规划者看得见积压并重新转向。注意这份清单上没有的东西：重试。过载之下，重试不是韧性——它是穿着戏服的负载。">Five overload behaviors, from crudest to most designed. Note what is not on the list: retrying. Under overload, a retry is not resilience — it is load wearing a costume.</p>
+</div>
+<h3 data-en="Credit where credit is due" data-zh="该给信用时给信用">Credit where credit is due</h3>
+<p data-en="There is one mechanism worth stealing wholesale from streaming systems: credit-based flow control. The consumer — not the producer — decides how many tasks it can hold, and grants exactly that many credits upstream. The planner may dispatch only against credits it holds; when workers finish, credits return with the results. No queue can grow, because no unearned work can exist. Applied to agents, the pattern maps cleanly: a worker pool of size N with a small per-worker buffer issues N×buffer credits; the planner's fan-out width is not a prompt suggestion but an enforced budget. The elegance is that the throttle moves with reality — fast workers return credits quickly and the planner accelerates; a worker stuck on a rate limit simply stops granting, and the planner feels the friction within one round trip. No central monitor, no polling loop, no heuristics. The constraint propagates through the same channel as the work itself. Distributed systems people built this for TCP in the seventies; agent frameworks are still shipping the equivalent of UDP and calling it orchestration." data-zh="有一个机制值得从流式系统里整个偷来：基于信用的流控。由消费者——而不是生产者——决定自己能接住多少任务，并向上游授予恰好那么多信用。规划者只能凭手中的信用派发任务；工作者完成任务时，信用随结果一起返还。队列不可能增长，因为不存在未经授权的工作。把这个模式应用到智能体上，映射得干干净净：一个大小为 N、每个工作者带小缓冲的池子，签发 N×缓冲 个信用；规划者的扇出宽度就不再是一句提示词建议，而是一笔被强制执行的预算。妙处在于，节流阀跟着现实走——快的工作者迅速返还信用，规划者随之加速；一个卡在限流上的工作者干脆停止签发，规划者在一个往返之内就摸到了那股摩擦力。不需要中央监控，不需要轮询循环，不需要启发式。约束沿着与工作本身相同的信道传播。分布式系统的人在七十年代为 TCP 造出了这个；智能体框架至今还在发布相当于 UDP 的东西，并称之为编排。">Credit-based flow control: the consumer decides how many tasks it can hold and grants exactly that many credits upstream. The planner may dispatch only against credits it holds. No unearned work can exist. The throttle moves with reality — fast workers return credits quickly; a stuck worker stops granting and the planner feels the friction within one round trip.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrD1b" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrD2b" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrD3b" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="CREDIT-BASED FLOW CONTROL FOR A PLANNER + POOL" data-zh="面向规划者与工作池的信用流控" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">CREDIT-BASED FLOW CONTROL FOR A PLANNER + POOL</text>
+<!-- planner -->
+<rect fill="var(--bg-surface)" height="86" rx="10" stroke="var(--accent-2)" stroke-width="2" width="170" x="40" y="70"></rect>
+<text data-en="PLANNER" data-zh="规划者" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="125" y="94">PLANNER</text>
+<text data-en="decomposes goals" data-zh="分解目标" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="125" y="112">decomposes goals</text>
+<text data-en="dispatch budget:" data-zh="派发预算：" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="125" y="130">dispatch budget:</text>
+<text data-en="= credits held, nothing else" data-zh="= 手中信用，别无其他" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" font-weight="700" text-anchor="middle" x="125" y="144">= credits held, nothing else</text>
+<!-- pool -->
+<rect fill="var(--bg-surface)" height="86" rx="10" stroke="var(--accent-3)" stroke-width="2" width="170" x="410" y="70"></rect>
+<text data-en="WORKER POOL (N=4)" data-zh="工作池（N=4）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="495" y="94">WORKER POOL (N=4)</text>
+<text data-en="each worker: 1 slot" data-zh="每个工作者：1 个槽位" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="495" y="112">each worker: 1 slot</text>
+<text data-en="grants credits when idle" data-zh="空闲时签发信用" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="495" y="130">grants credits when idle</text>
+<text data-en="stuck → stops granting" data-zh="卡住 → 停止签发" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" font-weight="700" text-anchor="middle" x="495" y="144">stuck → stops granting</text>
+<!-- task arrow -->
+<path d="M212 96 L408 96" fill="none" marker-end="url(#arrD1b)" stroke="var(--accent-2)" stroke-width="2"></path>
+<text data-en="task (spends 1 credit)" data-zh="任务（消耗 1 信用）" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="88">task (spends 1 credit)</text>
+<!-- credit arrow -->
+<path d="M408 136 L212 136" fill="none" marker-end="url(#arrD3b)" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5,3"></path>
+<text data-en="result + credit returned" data-zh="结果 + 信用一并返还" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="128">result + credit returned</text>
+<!-- invariant -->
+<rect fill="var(--bg-surface)" height="58" rx="10" stroke="var(--accent)" stroke-width="1.5" width="540" x="40" y="200"></rect>
+<text data-en="invariant: tasks in flight ≤ credits issued" data-zh="不变量：在途任务 ≤ 已签发信用" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="224">invariant: tasks in flight ≤ credits issued</text>
+<text data-en="the queue cannot grow, because unearned work cannot exist" data-zh="队列不可能增长，因为未经授权的工作不存在" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="244">the queue cannot grow, because unearned work cannot exist</text>
+<!-- adaptive note -->
+<text data-en="worker speeds up → credits return faster → planner accelerates automatically" data-zh="工作者加速 → 信用更快返还 → 规划者自动提速" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="288">worker speeds up → credits return faster → planner accelerates automatically</text>
+<text data-en="no monitor, no polling — the constraint rides the same channel as the work" data-zh="没有监控，没有轮询——约束顺着与工作相同的信道传递" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="306">no monitor, no polling — the constraint rides the same channel as the work</text>
+</svg>
+<p class="diagram-caption" data-en="Credit-based flow control, mapped onto a planner-and-pool agent system. The pool grants credits when workers go idle; the planner may only dispatch against credits it holds. Tasks and credits flow through the same channel in opposite directions, so the dispatch budget tracks reality with one round trip of lag. A worker stuck on a rate limit simply stops granting credits, and the planner slows without any monitoring infrastructure knowing why. This is TCP's window control, rediscovered for orchestration — the brake pedal wired directly to the wheels." data-zh="把基于信用的流控映射到规划者加工作池的智能体系统上。工作池在工作者空闲时签发信用；规划者只能凭手中的信用派发。任务与信用沿同一信道反向流动，派发预算只需一个往返的延迟就能跟上现实。一个卡在限流上的工作者干脆停止签发信用，规划者随之减速，而任何监控设施都不必知道原因。这就是 TCP 的窗口控制，为编排重新发明了一遍——刹车踏板直接连着车轮。">Credit-based flow control mapped onto a planner-and-pool system. Tasks and credits flow through the same channel in opposite directions. A stuck worker stops granting, and the planner slows without any monitoring infrastructure — TCP's window control for orchestration.</p>
+</div>
+<h3 data-en="Faster models make the problem worse" data-zh="更快的模型只会让问题更糟">Faster models make the problem worse</h3>
+<p data-en="It is tempting to believe that faster, cheaper inference dissolves the problem — that the consumer will catch up with the producer and the queues will drain. The opposite happens. When the planner gets faster, it fans out wider; when workers get faster, the planner adds another layer of decomposition because now it can afford to. Speed differentials do not shrink with capability — they migrate up the stack, from token generation to task generation to strategy generation. Meanwhile the staleness threshold stays fixed, because it is set by the world: files change underneath, tickets get closed, prices move, requirements get rewritten by humans who do not care about the pipeline. The workable stance is to treat flow control as a first-class part of harness design, alongside prompts and tools: bounded buffers everywhere, queue depth surfaced to whoever decides, explicit overload behavior per class of work, and credits instead of hope. Engines got cheap. The scarce engineering is now in the drivetrain — and every drivetrain needs brakes, not because the engine is bad, but because it is good." data-zh="很容易相信更快、更便宜的推理会消解这个问题——以为消费者终将追上生产者，队列终将排空。实际发生的是相反的事。规划者变快时，它的扇出变得更宽；工作者变快时，规划者又加了一层分解，因为它现在负担得起。速度差不随能力提升而缩小——它只会沿着技术栈向上迁移，从生成 token，到生成任务，再到生成策略。与此同时，过期阈值纹丝不动，因为它由世界设定：文件在下面被改动，工单被关闭，价格在波动，需求被毫不在意这条管道的人类重写。可行的立场，是把流控当作框架设计的一等公民，与提示词和工具并列：处处有界缓冲，队列深度呈现给做决策的那一方，每类工作有显式的过载行为，用信用代替祈祷。引擎已经便宜了。稀缺的工程现在在传动系统里——而每套传动系统都需要刹车，不是因为引擎差，恰恰是因为它好。">It is tempting to believe faster inference will let the consumer catch up. The opposite happens: the planner fans out wider, decomposition gets deeper, and speed differentials migrate up the stack. Meanwhile the staleness threshold stays fixed, because it is set by the world. Bounded buffers, queue depth surfaced to the decider, explicit overload behavior per class of work, and credits instead of hope.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
