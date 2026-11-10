@@ -1,6 +1,335 @@
 {
   "tweets": [
     {
+      "id": "2119913172039868579",
+      "url": "https://x.com/OpenAI/status/2119913172039868579",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-11-10T08:05:05.597931+00:00",
+      "translation_zh": "我们打造了 Control Room——一个中央控制系统，用于跟踪整个研究基础设施中的模型工作负载，并在出现安全或安保问题时快速叫停。它连接每一个研究推理工作负载，包括用于模型训练与评估的智能体采样、数据处理等。该系统与我们的失调监测系统协同工作，可在决定干预后的 35 秒内停止或暂停任务的模型输出。Control Room 只是我们前沿模型安全训练与部署整体方案中的一环。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 3667,
+        "lang": "en",
+        "created_at": "2026-11-09T22:01:00.000Z",
+        "display_text_range": [
+          0,
+          276
+        ],
+        "entities": {},
+        "id_str": "2119913172039868579",
+        "text": "We built Control Room, a central system to track model workloads across our research infrastructure and stop them quickly when safety or security concerns arise.\n\nIt connects every research inference workload, including agentic sampling for model training and evaluation, data",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2119913172039868579"
+          ],
+          "editable_until_msecs": "1794265260000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 599,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/tc0lBqFdS5",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Control Room in black text surrounded by routed lines and pastel diamonds on a light dotted background.",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2119909546282143744/g9352X5Z?format=png&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Control Room in black text surrounded by routed lines and pastel diamonds on a light dotted background.",
+                "height": 150,
+                "url": "https://pbs.twimg.com/card_img/2119909546282143744/g9352X5Z?format=png&name=280x150",
+                "width": 267
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Learn how OpenAI’s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Control Room in black text surrounded by routed lines and pastel diamonds on a light dotted background.",
+                "height": 320,
+                "url": "https://pbs.twimg.com/card_img/2119909546282143744/g9352X5Z?format=png&name=800x320_1",
+                "width": 569
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Control Room in black text surrounded by routed lines and pastel diamonds on a light dotted background.",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2119909546282143744/g9352X5Z?format=png&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Control Room in black text surrounded by routed lines and pastel diamonds on a light dotted background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2119909546282143744/g9352X5Z?format=png&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "4398626122",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Control Room in black text surrounded by routed lines and pastel diamonds on a light dotted background.",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2119909546282143744/g9352X5Z?format=png&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Control Room in black text surrounded by routed lines and pastel diamonds on a light dotted background.",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2119909546282143744/g9352X5Z?format=png&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Control Room in black text surrounded by routed lines and pastel diamonds on a light dotted background.",
+                "height": 81,
+                "url": "https://pbs.twimg.com/card_img/2119909546282143744/g9352X5Z?format=png&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Control Room in black text surrounded by routed lines and pastel diamonds on a light dotted background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2119909546282143744/g9352X5Z?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Control Room in black text surrounded by routed lines and pastel diamonds on a light dotted background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2119909546282143744/g9352X5Z?format=png&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Control Room in black text surrounded by routed lines and pastel diamonds on a light dotted background.",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "openai.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Control Room in black text surrounded by routed lines and pastel diamonds on a light dotted background.",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2119909546282143744/g9352X5Z?format=png&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Control Room in black text surrounded by routed lines and pastel diamonds on a light dotted background.",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 98.51,
+                    "rgb": {
+                      "blue": 246,
+                      "green": 246,
+                      "red": 246
+                    }
+                  },
+                  {
+                    "percentage": 1.05,
+                    "rgb": {
+                      "blue": 79,
+                      "green": 79,
+                      "red": 79
+                    }
+                  },
+                  {
+                    "percentage": 0.18,
+                    "rgb": {
+                      "blue": 216,
+                      "green": 199,
+                      "red": 186
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Control Room: A central system to track and stop model workloads across our research infrastructure",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 98.51,
+                    "rgb": {
+                      "blue": 246,
+                      "green": 246,
+                      "red": 246
+                    }
+                  },
+                  {
+                    "percentage": 1.05,
+                    "rgb": {
+                      "blue": 79,
+                      "green": 79,
+                      "red": 79
+                    }
+                  },
+                  {
+                    "percentage": 0.18,
+                    "rgb": {
+                      "blue": 216,
+                      "green": 199,
+                      "red": 186
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Control Room in black text surrounded by routed lines and pastel diamonds on a light dotted background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2119909546282143744/g9352X5Z?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Control Room in black text surrounded by routed lines and pastel diamonds on a light dotted background.",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2119909546282143744/g9352X5Z?format=png&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 98.51,
+                    "rgb": {
+                      "blue": 246,
+                      "green": 246,
+                      "red": 246
+                    }
+                  },
+                  {
+                    "percentage": 1.05,
+                    "rgb": {
+                      "blue": 79,
+                      "green": 79,
+                      "red": 79
+                    }
+                  },
+                  {
+                    "percentage": 0.18,
+                    "rgb": {
+                      "blue": 216,
+                      "green": 199,
+                      "red": 186
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Control Room in black text surrounded by routed lines and pastel diamonds on a light dotted background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2119909546282143744/g9352X5Z?format=png&name=2048x2048_2_exp",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/tc0lBqFdS5",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Control Room in black text surrounded by routed lines and pastel diamonds on a light dotted background.",
+                "height": 900,
+                "url": "https://pbs.twimg.com/card_img/2119909546282143744/g9352X5Z?format=png&name=orig",
+                "width": 1600
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTE5OTEzMTcxODg0NjQyMzA0"
+        }
+      }
+    },
+    {
       "id": "2119867138987176141",
       "url": "https://x.com/claudeai/status/2119867138987176141",
       "label": "Claude",
