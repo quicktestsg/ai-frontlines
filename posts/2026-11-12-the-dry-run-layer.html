@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Dry-Run Layer — AI Frontlines</title>
+<meta content="Agent systems are biased toward action: the plan looks sound, the tools are wired, so the agent fires. The cheapest safety mechanism available is not better alignment — it is rehearsal. Run the plan against a cheap shadow of the world first, diff the predicted end-state against the intended one, and only then spend the real world. The dry-run layer is static analysis for actions." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 12, 2026" data-zh="2026年11月12日">November 12, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Dry-Run Layer — Rehearsal Before Irreversible Acts" data-zh="预演层——不可逆动作之前的彩排">The Dry-Run Layer — Rehearsal Before Irreversible Acts</h1>
+<p class="post-header-deck" data-en="Agent stacks are biased toward action. The plan parses, the tools are wired, the loop is warm — so the agent fires. Then a rate limit flips mid-flight, a file that existed at planning time is gone by execution time, and a forty-step migration turns into a forty-step partial application. Software engineering solved a version of this long ago: compilers do not run your program to find type errors, and engineers do not discover schema mismatches in production. The cheapest safety mechanism an agent harness can add is not better alignment — it is rehearsal. Execute the plan against a cheap shadow of the world, diff the predicted end-state against the intended one, and only then spend the real one. A dry run is static analysis for actions." data-zh="智能体技术栈天然偏向行动。计划解析通过、工具接线完毕、循环已经热身——于是智能体开火了。然后某个限流在半路翻转，规划时还在的文件到执行时已经消失，一场四十步的迁移变成了一场四十步的半途应用。软件工程早就解决过这个问题的另一个版本：编译器不会靠运行你的程序来找类型错误，工程师也不会在生产环境里才发现 schema 不匹配。一个智能体框架能加上的最便宜的安全机制，不是更好的对齐——而是预演。先对着一个廉价的世界影子执行计划，把预测的终态与意图中的终态做 diff，然后再去动真实的世界。预演，就是面向动作的静态分析。">Agent stacks are biased toward action. The plan parses, the tools are wired, the loop is warm — so the agent fires. The cheapest safety mechanism is not better alignment. It is rehearsal: run the plan against a cheap shadow of the world before spending the real one.</p>
+</header>
+<article class="post-body">
+<p data-en="The incident always reads the same in the postmortem. An agent was handed a database migration — rename a column, backfill values, swap the readers. It decomposed the work into forty ordered steps. Each step was individually correct; the planner had verified them one by one. But the plan was authored against a snapshot of the world, and the world kept moving while the agent queued behind a rate limit. By the time step thirty-one executed, a deploy had already restarted half the readers against the old schema. The agent, following its plan with perfect fidelity, completed all forty steps. The checklist stayed green the entire way down. The failure was not intelligence and it was not tools. The failure was that the first time this plan ever truly ran was in production. Nobody — human or model — had ever executed it against anything cheaper than reality." data-zh="这类事故在事后复盘里读起来永远一模一样。一个智能体接手了一次数据库迁移——重命名一个列、回填数据、切换读取方。它把工作分解成四十个有序步骤。每一步单独看都是对的；规划者逐一验证过。但计划是针对世界的一个快照编写的，而当智能体在限流前排队时，世界还在继续转动。等到第三十一步执行时，一次部署已经让一半读取方在旧 schema 上重启了。智能体以完美的保真度追随着它的计划，执行完了全部四十步。清单一路绿灯直到沉底。失败不是智力问题，也不是工具问题。失败在于：这份计划第一次真正运行，就是在生产环境里。没有任何人——无论人类还是模型——曾在比现实更便宜的东西上执行过它。">The incident always reads the same. An agent was handed a database migration — forty ordered steps, each individually verified. But the plan was authored against a snapshot, and the world kept moving. The agent followed its plan with perfect fidelity and completed all forty steps. The checklist stayed green the entire way down. The failure was that the first time this plan ever truly ran was in production.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrDR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrDR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<linearGradient id="shadowGrad" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0" stop-color="var(--accent-2)" stop-opacity="0.25"></stop>
+<stop offset="1" stop-color="var(--accent-2)" stop-opacity="0.05"></stop>
+</linearGradient>
+</defs>
+<text data-en="TWO PIPELINES, SAME TASK" data-zh="两条管道，同一份任务" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">TWO PIPELINES, SAME TASK</text>
+<!-- top lane: act-first -->
+<rect fill="var(--bg-surface)" height="30" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="470" x="140" y="46"></rect>
+<text data-en="ACT-FIRST (default harness)" data-zh="直接行动（默认框架）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="375" y="65">ACT-FIRST (default harness)</text>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--text-tertiary)" stroke-width="1" width="96" x="30" y="130"></rect>
+<text data-en="PLAN" data-zh="计划" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="78" y="154">PLAN</text>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="96" x="160" y="130"></rect>
+<text data-en="EXECUTE" data-zh="执行" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="208" y="154">EXECUTE</text>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="96" x="290" y="130"></rect>
+<text data-en="PRODUCTION" data-zh="生产环境" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="338" y="154">PRODUCTION</text>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--text-tertiary)" stroke-width="1" width="96" x="420" y="130"></rect>
+<text data-en="DISCOVER" data-zh="事后发现" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="468" y="148">DISCOVER</text>
+<text data-en="the hard way" data-zh="以最贵的方式" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="468" y="162">the hard way</text>
+<path d="M126 150 L158 150" fill="none" marker-end="url(#arrDR1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<path d="M256 150 L288 150" fill="none" marker-end="url(#arrDR1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<path d="M386 150 L418 150" fill="none" marker-end="url(#arrDR1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<!-- bottom lane: rehearse -->
+<rect fill="var(--bg-surface)" height="30" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="470" x="140" y="200"></rect>
+<text data-en="REHEARSE-THEN-ACT (dry-run layer)" data-zh="先预演后行动（预演层）" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="375" y="219">REHEARSE-THEN-ACT (dry-run layer)</text>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--text-tertiary)" stroke-width="1" width="96" x="30" y="284"></rect>
+<text data-en="PLAN" data-zh="计划" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="78" y="308">PLAN</text>
+<rect fill="url(#shadowGrad)" height="40" rx="8" stroke="var(--accent-2)" stroke-width="1.5" stroke-dasharray="4,3" width="120" x="152" y="284"></rect>
+<text data-en="SHADOW WORLD" data-zh="世界影子" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="212" y="302">SHADOW WORLD</text>
+<text data-en="cheap, disposable" data-zh="廉价，可丢弃" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="212" y="316">cheap, disposable</text>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent)" stroke-width="1.5" width="96" x="306" y="284"></rect>
+<text data-en="DIFF" data-zh="比对" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="354" y="302">DIFF</text>
+<text data-en="predicted vs intent" data-zh="预测 vs 意图" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="354" y="316">predicted vs intent</text>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="96" x="436" y="284"></rect>
+<text data-en="COMMIT" data-zh="提交" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="484" y="302">COMMIT</text>
+<text data-en="only if clean" data-zh="只有干净才放行" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="484" y="316">only if clean</text>
+<path d="M126 304 L150 304" fill="none" marker-end="url(#arrDR2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<path d="M272 304 L304 304" fill="none" marker-end="url(#arrDR2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<path d="M402 304 L434 304" fill="none" marker-end="url(#arrDR2)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<!-- middle annotation -->
+<text data-en="the only difference: one rehearsal pass against a world that costs nothing to break" data-zh="唯一的区别：多了一次预演，且这个世界砸了也不要钱" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="270">the only difference: one rehearsal pass against a world that costs nothing to break</text>
+</svg>
+<p class="diagram-caption" data-en="Two pipelines, same task. The top lane is the default: plan, execute against production, and discover mismatches at maximum cost. The bottom lane inserts one pass against a shadow world — a copy of the database, a mocked API, a sandbox filesystem — and gates the real execution on the diff between what the plan predicted and what the rehearsal produced. The shadow does not need to be faithful everywhere. It only needs to be faithful in the places the plan intends to touch." data-zh="两条管道，同一份任务。上层是默认做法：规划、对生产环境执行、再以最高昂的代价发现错配。下层插入了一次对世界影子的执行——数据库副本、模拟 API、沙箱文件系统——并用「计划所预测的」与「预演所产生的」之间的 diff 来为真实执行把关。影子不需要处处逼真。它只需要在计划打算触碰的那些地方逼真。">Two pipelines, same task. The top lane discovers mismatches at maximum cost. The bottom lane inserts one pass against a shadow world and gates real execution on the diff. The shadow does not need to be faithful everywhere — only in the places the plan intends to touch.</p>
+</div>
+<h3 data-en="A rehearsal ladder, from cheapest to realest" data-zh="一条预演阶梯，从最便宜到最真实">A rehearsal ladder, from cheapest to realest</h3>
+<p data-en="Dry-running is not one mechanism but a ladder, and the design decision is how high up the ladder each class of action must climb before it earns the right to touch reality. The bottom rung is plan validation: re-read the plan as a critic, check ordering, permissions, and prerequisites — no execution at all, nearly free, catches a surprising share of nonsense. The next rung is shadow execution: run every step against stubs and copies — a cloned database, a mock of the payment API, a temp directory standing in for the filesystem — and record what each step would have done. Higher still is sandbox execution: run the real tools, but inside an environment where side effects are contained and reversible, so the plan meets actual code, actual latency, actual error messages. The top rungs are canary and two-key: execute a slice of the work for real and compare, or pause before the last irreversible step and require a second approval. The mistake is treating the ladder as a fixed policy. The correct mapping is per action class — reading climbs zero rungs, writing climbs two, deleting and sending climb to the top. Most harnesses fail by having no ladder at all: every action, from rm to rename, gets the same amount of rehearsal, which is to say none." data-zh="预演不是单一机制，而是一道阶梯，设计决策在于：每一类动作必须爬到阶梯的第几级，才赢得触碰现实的权利。最底一级是计划校验：以批评者的身份重读计划，检查顺序、权限与前置条件——完全不执行，几乎免费，却能抓住相当比例的荒谬。再往上是影子执行：对桩和副本跑完每一步——克隆的数据库、支付 API 的 mock、顶替文件系统的临时目录——并记录每一步本会造成什么。更高一级是沙箱执行：跑真实的工具，但副作用被限制在可回滚的环境里，让计划遇见真实的代码、真实的延迟、真实的报错。最顶上两级是金丝雀与双钥匙：真实执行一小片工作并比对，或在最后一个不可逆步骤前停下，要求第二次批准。错误在于把阶梯当成固定策略。正确的映射是按动作类别来——读取不爬级，写入爬两级，删除和发送爬到顶。多数框架的失败在于根本没有阶梯：从 rm 到 rename，每个动作得到的预演量完全相同——也就是说，都是零。">Dry-running is a ladder: plan validation (re-read as a critic, check ordering and permissions — no execution), shadow execution (stub every side effect, record what each step would have done), sandbox execution (real tools, contained and reversible effects), and at the top, canary and two-key. The mistake is treating the ladder as fixed policy. Reading climbs zero rungs; deleting and sending climb to the top.</p>
+<blockquote data-en="A compiler refuses to guess whether your program is type-correct — it checks, before the program ever runs. An agent harness that executes plans without rehearsal is an interpreter with the type checker deleted: fast, obliging, and wrong in production." data-zh="编译器从不猜测你的程序类型是否正确——它在程序运行之前就检查。一个不做预演就直接执行计划的智能体框架，就是删掉了类型检查器的解释器：快，顺从，然后在生产环境里翻车。">A compiler refuses to guess whether your program is type-correct — it checks, before the program ever runs. An agent harness without rehearsal is an interpreter with the type checker deleted: fast, obliging, and wrong in production.</blockquote>
+<h3 data-en="The diff is the product" data-zh="diff 本身才是产物">The diff is the product</h3>
+<p data-en="The naive framing of a dry run is pass/fail: the rehearsal succeeded, so proceed. That wastes most of the value. The product of a rehearsal is the diff — the structured comparison between the end-state the planner intended, the end-state the shadow predicted, and the end-state the sandbox actually produced. Three outcomes matter. Match: prediction and reality agree, commit. Drift: the actions succeeded but touched things the plan did not name — extra files modified, an unexpected API called — which means the plan's world model is stale; re-plan before committing. Surprise: an action failed in the sandbox that the planner believed impossible, which is the single most valuable signal in the entire pipeline, because it is a discovered unknown. A harness that treats the diff as a first-class artifact — logged, classified, and fed back into the next planning cycle — converts every near-miss into training data for its own judgment. The pass/fail framing throws that away and keeps only a bit." data-zh="对预演的天真理解是过或不挂：预演成功，于是继续。这浪费了大部分价值。预演的产物是 diff——规划者意图的终态、影子预测的终态、与沙箱实际产出的终态，三者之间的结构化比对。有三种结果要紧。吻合：预测与现实一致，提交。漂移：动作都成功了，但触碰了计划没有点名的东西——额外的文件被改动、一个意外的 API 被调用——这意味着计划的世界模型过期了；提交之前先重规划。意外：某个在沙箱里失败的动作，是规划者认为不可能失败的那个——这是整条管道里最值钱的信号，因为它是一个被发现的未知。一个把 diff 当作一等产物的框架——记录、分类、并回喂给下一轮规划——会把每一次险情都变成自身判断力的训练数据。过或不挂的理解把这些全部扔掉，只留下一个比特。">The naive framing is pass/fail. The product is the diff: intended end-state vs shadow prediction vs sandbox reality. Match — commit. Drift — actions succeeded but touched things the plan never named; the world model is stale, re-plan. Surprise — an action failed that the planner believed impossible; the single most valuable signal in the pipeline, a discovered unknown.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrDR3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrDR4" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE THREE OUTCOMES OF A REHEARSAL DIFF" data-zh="预演 diff 的三种结果" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE THREE OUTCOMES OF A REHEARSAL DIFF</text>
+<!-- intent -->
+<rect fill="var(--bg-surface)" height="56" rx="10" stroke="var(--text-tertiary)" stroke-width="1.5" width="170" x="40" y="56"></rect>
+<text data-en="INTENDED STATE" data-zh="意图终态" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="125" y="78">INTENDED STATE</text>
+<text data-en="what the planner believes" data-zh="规划者所相信的" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="125" y="94">what the planner believes</text>
+<!-- rehearsal -->
+<rect fill="var(--bg-surface)" height="56" rx="10" stroke="var(--accent-2)" stroke-width="1.5" stroke-dasharray="4,3" width="170" x="40" y="140"></rect>
+<text data-en="REHEARSAL RESULT" data-zh="预演结果" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="125" y="162">REHEARSAL RESULT</text>
+<text data-en="what the shadow produced" data-zh="影子所产出的" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="125" y="178">what the shadow produced</text>
+<path d="M125 112 L125 138" fill="none" marker-end="url(#arrDR3)" stroke="var(--text-tertiary)" stroke-width="1.3"></path>
+<text data-en="diff" data-zh="diff" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="142" y="128">diff</text>
+<!-- three outcomes -->
+<rect fill="var(--bg-surface)" height="88" rx="10" stroke="var(--accent-2)" stroke-width="2" width="120" x="290" y="52"></rect>
+<text data-en="MATCH" data-zh="吻合" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="350" y="76">MATCH</text>
+<text data-en="prediction = reality" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="350" y="92">prediction = reality</text>
+<text data-en="→ commit" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="350" y="112">→ commit</text>
+<text data-en="spend the real world" data-zh="去动真实世界" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="350" y="128">spend the real world</text>
+<rect fill="var(--bg-surface)" height="88" rx="10" stroke="var(--accent)" stroke-width="2" width="120" x="290" y="152"></rect>
+<text data-en="DRIFT" data-zh="漂移" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="350" y="176">DRIFT</text>
+<text data-en="unnamed side effects" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="350" y="192">unnamed side effects</text>
+<text data-en="→ re-plan" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="350" y="212">→ re-plan</text>
+<text data-en="world model is stale" data-zh="世界模型过期了" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="350" y="228">world model is stale</text>
+<rect fill="var(--bg-surface)" height="88" rx="10" stroke="var(--accent-3)" stroke-width="2" width="120" x="290" y="252"></rect>
+<text data-en="SURPRISE" data-zh="意外" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="350" y="276">SURPRISE</text>
+<text data-en="believed-impossible failed" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="350" y="292">believed-impossible failed</text>
+<text data-en="→ stop, escalate" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="350" y="312">→ stop, escalate</text>
+<text data-en="a discovered unknown" data-zh="一个被发现的未知" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="350" y="328">a discovered unknown</text>
+<path d="M212 84 L288 96" fill="none" marker-end="url(#arrDR4)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<path d="M212 168 L288 196" fill="none" marker-end="url(#arrDR4)" stroke="var(--accent)" stroke-width="1.3"></path>
+<path d="M212 196 L288 296" fill="none" marker-end="url(#arrDR4)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<!-- value annotation -->
+<text data-en="surprise is the most valuable output — an unknown the planner" data-zh="意外是最有价值的产出——一个规划者此前" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="start" x="440" y="290">surprise is the most valuable output — an unknown the planner</text>
+<text data-en="did not know it did not know, bought at sandbox prices" data-zh="不知道自己不知道的未知，且只花了沙箱的价格" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="start" x="440" y="306">did not know it did not know, bought at sandbox prices</text>
+</svg>
+<p class="diagram-caption" data-en="The diff between intended state and rehearsal result resolves into three outcomes with three different responses. Match earns a commit. Drift — everything succeeded, but the world was touched in places the plan never named — forces a re-plan, because the planner's world model has quietly expired. Surprise — an action failed that the planner rated as impossible — is worth more than both: it is a discovered unknown, purchased at sandbox prices instead of production prices, and it should flow back into the planner's priors for every future plan." data-zh="意图终态与预演结果之间的 diff，会落成三种结果、三种回应。吻合赢得提交。漂移——一切都成功了，但世界被触碰在计划从未点名的地方——强制重规划，因为规划者的世界模型已经悄悄过期。意外——某个规划者判定不可能失败的动作失败了——比前两者都值钱：它是一个被发现的未知，且是以沙箱的价格、而非生产环境的价格买下的；它应该回流进规划者对所有未来计划的先验里。">The diff resolves into three outcomes. Match earns a commit. Drift forces a re-plan — the world model quietly expired. Surprise is worth more than both: a discovered unknown, bought at sandbox prices, that should flow back into the planner's priors.</p>
+</div>
+<h3 data-en="Risk times reversibility sets the rung" data-zh="风险乘以可逆性，决定爬到第几级">Risk times reversibility sets the rung</h3>
+<p data-en="Rehearsing everything is how dry-run layers die in design review: someone prices the latency of a full sandbox pass per action and the feature gets cut. The way out is that rehearsal is not allocated by habit but by a two-axis classification made at dispatch time. One axis is blast radius — how much of the world this action can touch. The other is reversibility — how cheaply the touch can be undone. Their product picks the rung. Reading a file: trivial radius, perfectly reversible, no rehearsal — the loop would become unusable otherwise. Writing a scratch file: small radius, reversible, plan validation at most. Migrating a database: maximal radius, poorly reversible, sandbox plus canary plus two-key. Sending a message to a customer: small radius but effectively zero reversibility — there is no unsend — so it climbs high despite looking innocent. This is also where the honesty of the harness is tested: an action's reversibility must be measured against the existence of an undo path that actually works, not one that exists in a wiki page. Most 'reversible' actions in an agent's toolbox are reversible only by another agent executing correctly, which is to say they are not." data-zh="对一切做预演，正是预演层死在设计评审里的方式：有人算出每个动作跑一次完整沙箱的延迟成本，这个功能就被砍掉了。出路在于：预演的分配不靠习惯，而靠派发时完成的一个双轴分类。一轴是爆炸半径——这个动作能触碰世界的多大范围。另一轴是可逆性——这次触碰能以多低的代价被撤销。两者的乘积决定爬到第几级。读一个文件：半径微不足道，完全可逆，不预演——否则循环没法用。写一个临时文件：半径小，可逆，至多做计划校验。迁移一个数据库：半径最大，几乎不可逆，沙箱加金丝雀加双钥匙。给客户发一条消息：半径小，但实际可逆性为零——世界上没有撤回——所以它看似无害，却必须爬得很高。这也是检验框架诚实度的地方：一个动作的可逆性，必须对照一条真正可用的撤销路径来度量，而不是对照一篇 wiki 里的存在声明。智能体工具箱里大多数「可逆」动作，其可逆性只存在于另一个智能体正确执行的假设里——也就是说，并不可逆。">Rehearsing everything kills the feature in design review. Allocate by a two-axis classification at dispatch: blast radius times reversibility. Reading a file: no rehearsal. Writing scratch: plan validation. Migrating a database: sandbox, canary, two-key. Sending a customer message climbs high despite looking innocent — there is no unsend. And reversibility must be measured against an undo path that actually works; most 'reversible' actions are reversible only by another agent executing correctly, which is to say they are not.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrDR5" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<linearGradient id="cellA" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0" stop-color="var(--accent-2)" stop-opacity="0.35"></stop>
+<stop offset="1" stop-color="var(--accent-2)" stop-opacity="0.12"></stop>
+</linearGradient>
+<linearGradient id="cellB" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0" stop-color="var(--accent)" stop-opacity="0.4"></stop>
+<stop offset="1" stop-color="var(--accent)" stop-opacity="0.15"></stop>
+</linearGradient>
+<linearGradient id="cellC" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0" stop-color="var(--accent-3)" stop-opacity="0.45"></stop>
+<stop offset="1" stop-color="var(--accent-3)" stop-opacity="0.18"></stop>
+</linearGradient>
+</defs>
+<text data-en="DISPATCH-TIME CLASSIFICATION: BLAST RADIUS × REVERSIBILITY" data-zh="派发时分类：爆炸半径 × 可逆性" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">DISPATCH-TIME CLASSIFICATION: BLAST RADIUS × REVERSIBILITY</text>
+<!-- axis labels -->
+<text data-en="reversibility →" data-zh="可逆性 →" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="330" y="316">reversibility →</text>
+<text data-en="blast radius →" data-zh="爆炸半径 →" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="30" y="170" transform="rotate(-90 30 170)">blast radius →</text>
+<!-- row 1: small radius -->
+<rect fill="url(#cellA)" height="74" rx="10" stroke="var(--accent-2)" stroke-width="1.5" width="250" x="80" y="46"></rect>
+<text data-en="NO REHEARSAL" data-zh="不预演" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="205" y="70">NO REHEARSAL</text>
+<text data-en="read a file, list a directory," fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="205" y="86">read a file, list a directory,</text>
+<text data-en="query an index — just do it" data-zh="查索引——直接做" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="205" y="100">query an index — just do it</text>
+<rect fill="url(#cellB)" height="74" rx="10" stroke="var(--accent)" stroke-width="1.5" width="250" x="340" y="46"></rect>
+<text data-en="PLAN VALIDATION" data-zh="计划校验" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="465" y="70">PLAN VALIDATION</text>
+<text data-en="write scratch files, move files," fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="465" y="86">write scratch files, move files,</text>
+<text data-en="run tests in a branch" data-zh="在分支里跑测试" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="465" y="100">run tests in a branch</text>
+<!-- row 2: large radius -->
+<rect fill="url(#cellB)" height="74" rx="10" stroke="var(--accent)" stroke-width="1.5" width="250" x="80" y="136"></rect>
+<text data-en="SHADOW EXECUTION" data-zh="影子执行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="205" y="160">SHADOW EXECUTION</text>
+<text data-en="bulk edits, dependency upgrades," fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="205" y="176">bulk edits, dependency upgrades,</text>
+<text data-en="config changes on staging" data-zh="预发环境的配置变更" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="205" y="190">config changes on staging</text>
+<rect fill="url(#cellC)" height="74" rx="10" stroke="var(--accent-3)" stroke-width="2.5" width="250" x="340" y="136"></rect>
+<text data-en="SANDBOX + CANARY + TWO-KEY" data-zh="沙箱 + 金丝雀 + 双钥匙" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9.5" font-weight="800" text-anchor="middle" x="465" y="160">SANDBOX + CANARY + TWO-KEY</text>
+<text data-en="schema migrations, mass deletes," fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="465" y="176">schema migrations, mass deletes,</text>
+<text data-en="messages to customers, spending" data-zh="群发客户消息、花钱" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="465" y="190">messages to customers, spending</text>
+<!-- footnote -->
+<path d="M465 210 L465 234" fill="none" marker-end="url(#arrDR5)" stroke="var(--text-tertiary)" stroke-width="1"></path>
+<rect fill="var(--bg-surface)" height="66" rx="10" stroke="var(--text-tertiary)" stroke-width="1" width="510" x="70" y="238"></rect>
+<text data-en="'reversible' counts only if the undo path itself has been rehearsed —" data-zh="「可逆」只有在撤销路径本身也被预演过时才算数——" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="325" y="260">'reversible' counts only if the undo path itself has been rehearsed —</text>
+<text data-en="an undo that exists only as a wiki page is a wish," data-zh="只存在于 wiki 页面里的撤销是一个愿望，" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="325" y="276">an undo that exists only as a wiki page is a wish,</text>
+<text data-en="and wishes are not rungs on the ladder" data-zh="而愿望不是阶梯上的横档" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="325" y="292">and wishes are not rungs on the ladder</text>
+</svg>
+<p class="diagram-caption" data-en="Every action is classified at dispatch time along two axes — blast radius and reversibility — and the cell it lands in picks its rung on the rehearsal ladder. Reads skip rehearsal entirely; the loop would be unusable otherwise. Scratch writes get a critic pass. Bulk irreversible work goes to the corner with the heaviest gates: sandbox, canary, and a second key before the last irreversible step. The quiet trap is the reversibility axis: it must be scored against undo paths that have themselves been rehearsed. An undo that has never been executed is a hypothesis, not a control." data-zh="每个动作在派发时沿两轴分类——爆炸半径与可逆性——它落入的格子决定它在预演阶梯上的档位。读取完全跳过预演，否则循环没法用。临时写入只需一次批评式审阅。大范围不可逆的工作进入最重门禁的角落：沙箱、金丝雀，以及在最后一个不可逆步骤前的第二把钥匙。安静的陷阱在可逆性这条轴上：它必须对照那些自身也被预演过的撤销路径来打分。一条从未被执行过的撤销路径，是一个假设，而不是一道控制。">Every action is classified at dispatch along two axes — blast radius and reversibility — and the cell picks the rung. Reads skip rehearsal. Bulk irreversible work gets sandbox, canary, and a second key. The trap: reversibility must be scored against undo paths that have themselves been rehearsed. An undo never executed is a hypothesis, not a control.</p>
+</div>
+<h3 data-en="Rehearsal rot" data-zh="预演也会腐烂">Rehearsal rot</h3>
+<p data-en="A shadow world is a cache of reality, and it decays like one. The staged database drifts behind production, the mocked API stops matching its real error codes, the sandbox image ages out of compatibility — and the dry run keeps reporting MATCH on plans that would fail in production, which is strictly worse than no dry run at all, because it launders bad plans through a trusted gate. The countermeasure is the same one streaming systems use for their consumers: measure the fidelity, continuously. Take a sample of recently committed executions and replay them against the shadow; wherever the rehearsal result disagrees with the recorded reality, the gap is the shadow's rot, expressed as a number that can be tracked, alerted on, and given a budget. A dry-run layer that does not measure itself is not a safety mechanism — it is a confidence theater with a dashboard. The rehearsal ladder, the diff taxonomy, the fidelity budget: none of this is glamorous. But the teams shipping agents into production are converging on the same discovery the compilers people made decades ago. Checking a plan is always cheaper than cleaning up after it, and the world is perfectly happy to grade unrehearsed work at full price." data-zh="影子世界是现实的一份缓存，并且像缓存一样腐坏。预发数据库落后于生产环境，mock 的 API 不再匹配真实的错误码，沙箱镜像逐渐失去兼容性——而预演还在对那些本会在生产环境失败的计划报告「吻合」，这比没有预演还要糟，因为它把坏计划洗白过了一道受信任的门。对策与流式系统对消费者的做法相同：持续测量保真度。抽取一部分近期已提交的真实执行，在影子上重放它们；凡是预演结果与被记录的现实不一致的地方，这个差距就是影子的腐烂度——一个可被追踪、可被告警、可被给定预算的数字。一个不测量自己的预演层，不是安全机制——它是带仪表盘的信心表演。预演阶梯、diff 分类法、保真度预算：这些都不光鲜。但把智能体送进生产的团队，正在收敛到编译器领域几十年前就得出的同一个结论：检查一份计划，永远比收拾它的残局便宜；而这个世界，非常乐意以全价为未经预演的工作打分。">A shadow world is a cache of reality, and it decays like one. When the dry run keeps reporting MATCH on plans that would fail in production, that is strictly worse than no dry run — it launders bad plans through a trusted gate. Countermeasure: replay recently committed executions against the shadow and track the disagreement rate as a fidelity budget. A dry-run layer that does not measure itself is confidence theater with a dashboard. Checking a plan is always cheaper than cleaning up after it.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
