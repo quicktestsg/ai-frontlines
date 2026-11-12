@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Watchdog Layer — AI Frontlines</title>
+<meta content="Every autonomous agent has a blind spot the exact shape of itself. The loop that executes the task cannot also observe the loop — attention is consumed by the work, and degradation never announces itself from inside. The systems that survive autonomy are the ones with an observer on the outside: heartbeats, tripwires, and a kill switch held by something that is not the agent." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 13, 2026" data-zh="2026年11月13日">November 13, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Watchdog Layer" data-zh="看门狗层">The Watchdog Layer</h1>
+<p class="post-header-deck" data-en="Every autonomous agent has a blind spot the exact shape of itself. The loop that executes the task cannot also observe the loop — its attention is consumed by the work, and degradation never announces itself from inside. A drifting agent does not know it is drifting. A looping agent does not know it is looping. The system that says 'stop me if I go wrong' is asking the component most likely to fail to be the one that detects the failure. The systems that survive autonomy are built differently: they put an observer on the outside. Heartbeats, tripwires, and a kill switch held by something that is not the agent — and does not think like one." data-zh="每一个自主智能体，都有一个和它自身形状一模一样的盲区。执行任务的循环，无法同时观察这个循环——它的注意力被工作本身占满，而劣化从来不会从内部自我宣告。一个正在漂移的智能体，不知道自己在漂移。一个正在打转的智能体，不知道自己在打转。一个说「如果我出问题就拦住我」的系统，是在让最容易失败的组件，去负责检测失败。能在自主性下存活下来的系统，构建方式不同：它们把观察者放在外面。心跳、绊线、以及一个握在不属于智能体、也不像智能体那样思考的东西手里的停止开关。">Every autonomous agent has a blind spot the exact shape of itself. The loop that executes the task cannot also observe the loop — its attention is consumed by the work, and degradation never announces itself from inside.</p>
+</header>
+<article class="post-body">
+<p data-en="Here is a pattern that recurs in every postmortem of a runaway agent. The system was given a goal. It worked, for a while. Then something shifted — a tool started returning errors, a retrieval step came back empty, the task turned out to be harder than the context allowed — and the agent's behavior quietly changed shape. It began repeating itself. It burned through its step budget, then the extended budget, then the emergency budget. Nobody noticed for forty minutes, because nobody was watching, and the agent itself was the last party capable of noticing. The postmortem always ends with the same recommendation: better prompts, more evaluation, stricter limits. Almost never with the one that matters: the system had no observer that was not the agent." data-zh="在每一次失控智能体的事后复盘里，都重复着同一个模式。系统拿到一个目标。它工作了一阵子。然后某些东西偏移了——一个工具开始返回错误，一个检索步骤空手而归，任务比上下文允许的更难——而智能体的行为悄然变了形。它开始重复自己。它烧完了步数预算，然后是加急预算，然后是应急预算。四十分钟里没人发现，因为没人在看，而智能体本身，是最不可能发现的那一方。复盘的结论，总是落在同样的建议上：更好的 prompt，更多的评估，更严的限额。几乎从来不是那条真正要紧的：这个系统，没有一个独立于智能体之外的观察者。">Here is a pattern that recurs in every postmortem of a runaway agent. The system was given a goal. It worked, for a while. Then something shifted — a tool started returning errors, a retrieval step came back empty, the task turned out to be harder than the context allowed — and the agent's behavior quietly changed shape. It began repeating itself. It burned through its step budget, then the extended budget, then the emergency budget.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrW1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrW2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="WHY SELF-OBSERVATION FAILS" data-zh="为什么自我观察会失败" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHY SELF-OBSERVATION FAILS</text>
+<!-- LEFT: agent watching itself -->
+<text data-en="THE AGENT WATCHING ITSELF" data-zh="智能体观察自己" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="150" y="56">THE AGENT WATCHING ITSELF</text>
+<circle cx="150" cy="150" fill="none" r="62" stroke="var(--accent-3)" stroke-dasharray="6,5" stroke-width="1.5"></circle>
+<polygon fill="var(--accent-3)" points="190,110 200,110 200,120" transform="rotate(45 195 115)"></polygon>
+<path d="M150 88 A62 62 0 0 1 208 138" fill="none" marker-end="url(#arrW1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="40" rx="9" stroke="var(--accent-3)" stroke-width="1.5" width="92" x="104" y="130"></rect>
+<text data-en="agent" data-zh="智能体" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="150" y="148">agent</text>
+<text data-en="busy with the task" data-zh="忙于任务" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="150" y="162">busy with the task</text>
+<!-- blind eye -->
+<circle cx="150" cy="215" fill="none" r="13" stroke="var(--text-tertiary)" stroke-width="1.5"></circle>
+<circle cx="150" cy="215" fill="none" r="4" stroke="var(--text-tertiary)" stroke-width="1.2"></circle>
+<line stroke="var(--text-tertiary)" stroke-width="1.5" x1="139" x2="161" y1="205" y2="225"></line>
+<text data-en="cannot see its own drift" data-zh="看不见自己的漂移" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="150" y="256">cannot see its own drift</text>
+<text data-en="observer inside the failure" data-zh="观察者身处失败之内" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="150" y="276">observer inside the failure</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="290"></line>
+<!-- RIGHT: external watchdog -->
+<text data-en="THE EXTERNAL WATCHDOG" data-zh="外部看门狗" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="470" y="56">THE EXTERNAL WATCHDOG</text>
+<rect fill="var(--accent-dim)" height="42" rx="9" stroke="var(--accent)" stroke-width="2" width="120" x="410" y="72"></rect>
+<text data-en="WATCHDOG" data-zh="看门狗" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="470" y="90">WATCHDOG</text>
+<text data-en="outside the loop" data-zh="在循环之外" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="470" y="106">outside the loop</text>
+<path d="M470 114 L470 148" fill="none" stroke="var(--accent)" stroke-dasharray="2,3" stroke-width="1.4"></path>
+<text data-en="reads the trace" data-zh="读取追踪记录" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="470" y="132">reads the trace</text>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="130" x="405" y="150"></rect>
+<text data-en="agent loop · trace log" data-zh="智能体循环 · 追踪日志" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="470" y="172">agent loop · trace log</text>
+<path d="M470 184 L470 214" fill="none" marker-end="url(#arrW2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="halt · alert · flag" data-zh="停止 · 告警 · 标记" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="497" y="203">halt · alert · flag</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="110" x="415" y="216"></rect>
+<text data-en="action taken" data-zh="采取行动" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="470" y="236">action taken</text>
+<text data-en="sees the drift the agent cannot" data-zh="看见智能体看不见的漂移" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="470" y="276">sees the drift the agent cannot</text>
+</svg>
+<p class="diagram-caption" data-en="Left: the agent trying to observe itself — the observer sits inside the same context that is degrading, so the failure and the detection of the failure fail together. Right: a watchdog outside the loop, reading only the trace — it shares no state with the agent, so it cannot be corrupted by whatever corrupted the agent." data-zh="左边：智能体试图观察自己——观察者坐在同一个正在劣化的上下文里，于是失败的检测与失败本身一起失败。右边：循环之外的看门狗，只读取追踪记录——它与智能体不共享任何状态，所以无论什么腐蚀了智能体，都腐蚀不了它。">Left: the agent trying to observe itself — the observer sits inside the same context that is degrading, so the failure and the detection of the failure fail together. Right: a watchdog outside the loop, reading only the trace — it shares no state with the agent, so it cannot be corrupted by whatever corrupted the agent.</p>
+</div>
+<h3 data-en="The observer cannot share a skull with the observed" data-zh="观察者不能和被观察者共用一个颅骨">The observer cannot share a skull with the observed</h3>
+<p data-en="The instinctive fix for runaway agents is to add monitoring instructions to the system prompt: 'if you find yourself repeating, stop and reconsider.' This feels reasonable and does almost nothing, for a structural reason that has nothing to do with model capability. The agent's attention is a finite resource, and it is already fully allocated to the task. Asking the model to watch itself while it works is asking one process to be both the worker and the inspector — and when the work gets hard, the inspection is the first thing abandoned, because the next token is generated under the pressure of the task, not the pressure of self-review. Worse, the failure modes that need catching are invisible from inside. Repetition looks like diligence when you are the one repeating. Context rot feels like thoroughness when you are the one rotting. The judge is downstream of the corruption it is supposed to judge." data-zh="对失控智能体的本能修复，是往系统 prompt 里加监控指令：「如果你发现自己在重复，就停下来反思。」这听起来合理，但几乎无用，原因在结构层面，与模型能力无关。智能体的注意力是有限资源，而它已经被任务全额占用了。要求模型一边工作一边盯着自己，是要求一个进程同时当工人和质检员——而当工作变得困难，最先被抛弃的就是质检，因为下一个 token 是在任务的压力下生成的，不是在自我审视的压力下。更糟的是，需要被捕捉的失败模式，从内部是看不见的。当你就是那个在重复的人，重复看起来像勤勉。当你就是那个在腐烂的人，上下文腐烂感觉像详尽。法官，坐在它本该审判的腐败的下游。">The instinctive fix for runaway agents is to add monitoring instructions to the system prompt: 'if you find yourself repeating, stop and reconsider.' This feels reasonable and does almost nothing, for a structural reason that has nothing to do with model capability. The agent's attention is a finite resource, and it is already fully allocated to the task. Asking the model to watch itself while it works is asking one process to be both the worker and the inspector — and when the work gets hard, the inspection is the first thing abandoned.</p>
+<blockquote data-en="A system that depends on the failing component to report its own failure has not one system but zero. The watchdog's defining property is not intelligence — it is separation. It must not share state, share context, or share incentives with the thing it watches. An observer that can be corrupted by the same event that corrupted the agent is not an observer. It is a passenger." data-zh="一个依赖失败组件来报告自身失败的系统，拥有的不是一个系统，而是零个。看门狗的定义性属性不是智能——是隔离。它不能与被观察者共享状态、共享上下文、或共享激励。一个能被「腐蚀智能体的那个事件」一并腐蚀的观察者，不是观察者。它是乘客。">A system that depends on the failing component to report its own failure has not one system but zero. The watchdog's defining property is not intelligence — it is separation. It must not share state, share context, or share incentives with the thing it watches. An observer that can be corrupted by the same event that corrupted the agent is not an observer. It is a passenger.</blockquote>
+<h3 data-en="The triad: heartbeat, tripwire, kill switch" data-zh="三件套：心跳、绊线、停止开关">The triad: heartbeat, tripwire, kill switch</h3>
+<p data-en="Watchdog engineering, as it has converged across mature agent deployments, rests on three primitives. The heartbeat is the agent's proof of life: a periodic signal emitted between steps — step count, tokens consumed, tools called, a one-line progress claim. The watchdog owns the other half of the contract: if no heartbeat arrives within a window, the run is presumed hung and escalated. This is plumbing so old that embedded systems engineers would recognize it instantly; the novelty is only that agents need it as badly as firmware does. The tripwire is a pre-declared invariant placed on the trace, checked outside the agent: total steps below N, cumulative cost below X, no tool called more than twice in a row with identical arguments, elapsed wall-clock under T. The kill switch is the watchdog's authority to stop the run — pause, snapshot state, escalate to a human or to a slower, cheaper recovery path. The order matters. Heartbeat detects silence. Tripwires detect noise. The kill switch converts detection into consequence. Any one of them alone is decoration; the three together form a loop of accountability that does not pass through the agent at all." data-zh="在成熟的智能体部署中，看门狗工程已经收敛到三个原语。心跳，是智能体的存活证明：一个在步骤之间发出的周期性信号——步数、消耗的 token、调用的工具、一行进度陈述。看门狗拥有契约的另一半：如果一个窗口内没有心跳到达，这次运行被推定为挂起，并被上报。这套管道古老到嵌入式系统工程师一眼就能认出；新颖之处只在于，智能体对它的需要，和固件一样迫切。绊线，是预先声明、放在追踪记录上的不变量，在智能体之外被检查：总步数低于 N，累计成本低于 X，没有任何工具被以完全相同的参数连续调用超过两次，实际耗时低于 T。停止开关，是看门狗制止运行的权力——暂停、快照状态、上报给人类，或交给一条更慢、更便宜的恢复路径。顺序很重要。心跳检测沉默。绊线检测噪音。停止开关把检测转化为后果。它们中任何一个单独存在，都只是装饰；三者合在一起，才构成一个完全不经过智能体的问责回路。">Watchdog engineering, as it has converged across mature agent deployments, rests on three primitives. The heartbeat is the agent's proof of life: a periodic signal emitted between steps. The tripwire is a pre-declared invariant placed on the trace, checked outside the agent. The kill switch is the watchdog's authority to stop the run — pause, snapshot state, escalate. The order matters: heartbeat detects silence, tripwires detect noise, the kill switch converts detection into consequence.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrT2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE WATCHDOG TRIAD" data-zh="看门狗三件套" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE WATCHDOG TRIAD</text>
+<!-- agent loop -->
+<circle cx="200" cy="200" fill="none" r="58" stroke="var(--accent-2)" stroke-dasharray="5,4" stroke-width="1.5"></circle>
+<path d="M200 142 A58 58 0 0 1 256 178" fill="none" marker-end="url(#arrT1)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="38" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="88" x="156" y="181"></rect>
+<text data-en="agent loop" data-zh="智能体循环" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="200" y="198">agent loop</text>
+<text data-en="goal-driven" data-zh="目标驱动" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="200" y="212">goal-driven</text>
+<text data-en="① HEARTBEAT" data-zh="① 心跳" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="130" y="120">① HEARTBEAT</text>
+<path d="M170 148 C140 138 120 130 92 126" fill="none" marker-end="url(#arrT2)" stroke="var(--text-tertiary)" stroke-dasharray="2,3" stroke-width="1.3"></path>
+<text data-en="step n · tokens · cost" data-zh="步数 · token · 成本" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="105" y="112">step n · tokens · cost</text>
+<!-- trace stream -->
+<rect fill="var(--bg-surface)" height="70" rx="8" stroke="var(--accent-2)" stroke-width="1.2" width="104" x="288" y="188"></rect>
+<text data-en="trace log" data-zh="追踪日志" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="340" y="208">trace log</text>
+<line stroke="var(--border)" stroke-width="1" x1="298" x2="382" y1="216" y2="216"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="298" x2="372" y1="226" y2="226"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="298" x2="378" y1="236" y2="236"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="298" x2="366" y1="246" y2="246"></line>
+<path d="M258 200 L286 200" fill="none" marker-end="url(#arrT2)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<!-- tripwires -->
+<text data-en="② TRIPWIRES" data-zh="② 绊线" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="480" y="170">② TRIPWIRES</text>
+<path d="M470 180 C470 200 460 210 440 214" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent)" stroke-width="1.2" width="150" x="405" y="182"></rect>
+<text data-en="steps &lt; N · cost &lt; X" data-zh="步数 &lt; N · 成本 &lt; X" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="480" y="198">steps &lt; N · cost &lt; X</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent)" stroke-width="1.2" width="150" x="405" y="212"></rect>
+<text data-en="no identical repeat calls" data-zh="禁止相同参数重复调用" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="480" y="228">no identical repeat calls</text>
+<rect fill="var(--bg-surface)" height="24" rx="5" stroke="var(--accent)" stroke-width="1.2" width="150" x="405" y="242"></rect>
+<text data-en="wall-clock &lt; T" data-zh="耗时 &lt; T" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="480" y="258">wall-clock &lt; T</text>
+<!-- watchdog box -->
+<rect fill="var(--accent-dim)" height="44" rx="10" stroke="var(--accent)" stroke-width="2" width="150" x="405" y="282"></rect>
+<text data-en="WATCHDOG · ③ KILL SWITCH" data-zh="看门狗 · ③ 停止开关" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="480" y="300">WATCHDOG · ③ KILL SWITCH</text>
+<text data-en="pause · snapshot · escalate" data-zh="暂停 · 快照 · 上报" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="480" y="316">pause · snapshot · escalate</text>
+<path d="M340 258 C340 290 390 300 403 304" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M170 252 C130 270 110 290 100 304" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="halt" data-zh="停止" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="88" y="322">halt</text>
+<text data-en="the loop of accountability never passes through the agent" data-zh="这条问责回路，从不经过智能体" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="60">the loop of accountability never passes through the agent</text>
+</svg>
+<p class="diagram-caption" data-en="The heartbeat flows out of the loop between steps. The trace log streams alongside it. Tripwires — declared before the run, evaluated by ordinary code — sit on the trace, not in the prompt. When one snaps, the watchdog exercises the kill switch: pause, snapshot, escalate. Every arrow of accountability routes around the agent, never through it." data-zh="心跳在步骤之间流出循环。追踪日志在一旁同步流淌。绊线——在运行前声明、由普通代码求值——架在追踪记录上，而不是写在 prompt 里。当一根绊线绷断，看门狗行使停止开关：暂停、快照、上报。问责的每一支箭，都绕开智能体，绝不穿过它。">The heartbeat flows out of the loop between steps. The trace log streams alongside it. Tripwires — declared before the run, evaluated by ordinary code — sit on the trace, not in the prompt. When one snaps, the watchdog exercises the kill switch: pause, snapshot, escalate. Every arrow of accountability routes around the agent, never through it.</p>
+</div>
+<h3 data-en="Tripwires are declared, not improvised" data-zh="绊线是预先声明的，不是临场发挥的">Tripwires are declared, not improvised</h3>
+<p data-en="There is a temptation, once the watchdog exists, to make it clever — to give it a model, have it read the trace, and decide whether the agent 'seems to be doing well.' Resist this. A watchdog that reasons probabilistically about the run inherits every property that made the agent unsafe in the first place: nondeterminism, hallucinated confidence, susceptibility to the very confusion it is meant to detect. The tripwires that earn their keep are embarrassingly simple, and they work because they are declared before the run and evaluated by unglamorous code. A step ceiling. A cost ceiling. A clock. A repetition check on the last k tool calls. A monotonicity check — the progress metric the heartbeat reports should, on the whole, advance; if it oscillates or flatlines for m consecutive beats, the run is circling. Each of these is a few lines of code, each is auditable by reading, and none of them can be sweet-talked by the agent, because none of them listens to the agent. The cleverness budget for a watchdog is zero. Spend it all on the agent." data-zh="一旦有了看门狗，就会有一种诱惑——让它变聪明：给它一个模型，让它读追踪记录，判断智能体「看起来是否进展顺利」。抵制这个。一个对运行进行概率推理的看门狗，会继承让智能体不安全的每一个属性：非确定性、幻觉出的自信、以及被它本该察觉的那种迷惑所感染。真正值回票价的绊线，简单到令人尴尬，而它们有效，正因为它们在运行前声明、由朴实无华的代码求值。一个步数上限。一个成本上限。一个时钟。一个对最近 k 次工具调用的重复检查。一个单调性检查——心跳上报的进度指标，总体上应该前进；如果它在连续 m 次心跳里震荡或走平，这次运行就是在绕圈。这些每一个都只有几行代码，每一个都能靠阅读来审计，而且没有一个能被智能体哄骗，因为没有一个在听智能体说话。看门狗的聪明预算是零。把聪明全部花在智能体身上。">There is a temptation, once the watchdog exists, to make it clever — to give it a model, have it read the trace, and decide whether the agent 'seems to be doing well.' Resist this. A watchdog that reasons probabilistically about the run inherits every property that made the agent unsafe in the first place. The tripwires that earn their keep are embarrassingly simple, and they work because they are declared before the run and evaluated by unglamorous code.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrP1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="TRIPWIRES ON THE TRACE" data-zh="架在追踪记录上的绊线" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">TRIPWIRES ON THE TRACE</text>
+<!-- trace timeline -->
+<line stroke="var(--text-tertiary)" stroke-width="1.5" x1="60" x2="560" y1="170" y2="170"></line>
+<g>
+<circle cx="90" cy="170" fill="var(--bg-surface)" r="6" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<circle cx="150" cy="170" fill="var(--bg-surface)" r="6" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<circle cx="210" cy="170" fill="var(--bg-surface)" r="6" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<circle cx="270" cy="170" fill="var(--bg-surface)" r="6" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<circle cx="330" cy="170" fill="var(--bg-surface)" r="6" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<circle cx="390" cy="170" fill="var(--bg-surface)" r="6" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+</g>
+<text data-en="healthy run · progress advances" data-zh="健康运行 · 进度在前进" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="240" y="148">healthy run · progress advances</text>
+<!-- degrading tail -->
+<circle cx="450" cy="170" fill="var(--bg-surface)" r="6" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<circle cx="472" cy="170" fill="var(--bg-surface)" r="6" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<circle cx="494" cy="170" fill="var(--bg-surface)" r="6" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<circle cx="516" cy="170" fill="var(--bg-surface)" r="6" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<circle cx="538" cy="170" fill="var(--bg-surface)" r="6" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<path d="M494 158 C500 130 520 120 540 116" fill="none" marker-end="url(#arrP1)" stroke="var(--accent-3)" stroke-dasharray="3,3" stroke-width="1.2"></path>
+<text data-en="same tool, same args — circling" data-zh="同一个工具，同样的参数——在绕圈" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="470" y="206">same tool, same args — circling</text>
+<!-- tripwire thresholds -->
+<line stroke="var(--accent)" stroke-dasharray="5,4" stroke-width="1.5" x1="360" x2="360" y1="60" y2="286"></line>
+<text data-en="step ceiling" data-zh="步数上限" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="360" y="80">step ceiling</text>
+<line stroke="var(--accent)" stroke-dasharray="5,4" stroke-width="1.5" x1="440" x2="440" y1="60" y2="286"></line>
+<text data-en="cost ceiling" data-zh="成本上限" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="440" y="98">cost ceiling</text>
+<line stroke="var(--accent)" stroke-dasharray="5,4" stroke-width="1.5" x1="500" x2="500" y1="60" y2="286"></line>
+<text data-en="repeat window" data-zh="重复窗口" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="500" y="80">repeat window</text>
+<text data-en="declared before the run · evaluated by plain code" data-zh="运行前声明 · 由普通代码求值" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="120">declared before the run · evaluated by plain code</text>
+<!-- alarm -->
+<rect fill="var(--accent-dim)" height="34" rx="8" stroke="var(--accent)" stroke-width="2" width="190" x="345" y="248"></rect>
+<text data-en="⚠ tripwire snapped → halt" data-zh="⚠ 绊线绷断 → 停止" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="440" y="270">⚠ tripwire snapped → halt</text>
+<text data-en="the agent noticed nothing — that was the point" data-zh="智能体什么也没察觉——这正是问题所在" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="440" y="308">the agent noticed nothing — that was the point</text>
+</svg>
+<p class="diagram-caption" data-en="A trace that degrades: the first steps advance, then the run starts circling — the same tool, the same arguments, the same result, feeding the same decision. The agent registers none of it, because from inside each step looks locally reasonable. The tripwires — a step ceiling, a cost ceiling, a repetition window — were declared before the run began, and they snap on schedule, indifferent to how reasonable each step looked." data-zh="一条劣化的追踪记录：前几步在前进，随后运行开始绕圈——同一个工具、同样的参数、同样的结果，喂给同样的决策。智能体对此毫无察觉，因为从内部看，每一步都显得局部合理。而绊线——步数上限、成本上限、重复窗口——在运行开始前就已声明，并如期绷断，全然不在乎每一步看起来多么合理。">A trace that degrades: the first steps advance, then the run starts circling — the same tool, the same arguments, the same result, feeding the same decision. The agent registers none of it, because from inside each step looks locally reasonable. The tripwires snap on schedule, indifferent to how reasonable each step looked.</p>
+</div>
+<h3 data-en="Fail static, not silent" data-zh="要静止失败，不要无声失败">Fail static, not silent</h3>
+<p data-en="The last property of a real watchdog is the most counterintuitive: when the watchdog itself fails, the system should stop, not continue unobserved. A watchdog that crashes quietly and leaves the agent running unsupervised has converted a small failure — one monitoring process — into the exact catastrophic mode it existed to prevent. This means the watchdog is in the critical path by design. Its health is checked the way the heartbeat checks the agent's: a meta-heartbeat, an external probe, a deployment where the watchdog's absence is itself a trip condition. Operators hate this at first, because it couples availability of the observer to availability of the run. That coupling is not a cost. It is the entire meaning of supervision. An observation layer whose absence changes nothing observes nothing." data-zh="真正的看门狗的最后一个属性，最反直觉：当看门狗自身失败时，系统应该停下，而不是在无人观察中继续。一个悄悄崩溃、留下智能体在无监督下继续运行的看门狗，把一个小失败——一个监控进程——转化成了它存在于此要防止的那种灾难模式。这意味着看门狗在设计上就位于关键路径上。它的健康以心跳检查智能体的方式被检查：一个元心跳，一个外部探针，一种「看门狗的缺席本身就是绊线条件」的部署。运维者起初讨厌这一点，因为它把观察者的可用性与运行的可用性耦合在一起。这个耦合不是成本。它就是监督的全部含义。一个缺席了也改变不了任何东西的观察层，什么也没观察。">The last property of a real watchdog is the most counterintuitive: when the watchdog itself fails, the system should stop, not continue unobserved. A watchdog that crashes quietly and leaves the agent running unsupervised has converted a small failure into the exact catastrophic mode it existed to prevent. The watchdog is in the critical path by design.</p>
+<p data-en="None of this is a statement about models being untrustworthy. It is a statement about topology: any process sufficiently complex to be useful is insufficiently positioned to observe itself, and the more capable the process, the more expensive its quiet failure modes become. The industry's instinct is to solve this with capability — smarter models that know when to stop. Capability helps at the margins. But the structural answer has been known since long before language models: the observer must sit outside the observed, share nothing with it, and hold the switch. Build the agent to be clever. Build the watchdog to be bored, suspicious, and always on. The pairing is not redundant. It is the first honest architecture autonomy has ever had." data-zh="这些，没有一句是在说模型不可信。这是在说拓扑：任何复杂到有用的进程，都不处于能观察自身的位置，而进程越强，它无声失败模式的代价就越昂贵。这个行业的本能是用能力来解决这个问题——更聪明的模型，知道自己何时该停。能力在边缘上确实有帮助。但结构性的答案，早在语言模型出现之前就已为人所知：观察者必须坐在被观察者之外，与它不共享任何东西，并握着那个开关。把智能体造得聪明。把看门狗造得无趣、多疑、永不休息。这个搭配不是冗余。这是自主性有史以来第一个诚实的架构。">None of this is a statement about models being untrustworthy. It is a statement about topology: any process sufficiently complex to be useful is insufficiently positioned to observe itself, and the more capable the process, the more expensive its quiet failure modes become. Build the agent to be clever. Build the watchdog to be bored, suspicious, and always on. The pairing is not redundant. It is the first honest architecture autonomy has ever had.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
