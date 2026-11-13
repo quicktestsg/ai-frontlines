@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Tournament Layer — AI Frontlines</title>
+<meta content="The most powerful inference knob left is not the prompt — it is the number of attempts bought. Best-of-N at the harness level means racing parallel agent trajectories and letting a scorer pick the winner. It works when branches diverge genuinely and the judge is more reliable than the players. It wastes money everywhere else." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 14, 2026" data-zh="2026年11月14日">November 14, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Tournament Layer" data-zh="锦标赛层">The Tournament Layer</h1>
+<p class="post-header-deck" data-en="Every generation of models narrows the gap between a mediocre prompt and a brilliant one, and what remains controllable shifts one level up. The most powerful inference knob left is not the prompt — it is the number of attempts bought. Sampling N candidates and picking the best is old news at the token level; the interesting version lives at the harness level: race N complete agent trajectories against the same goal, score them with something trustworthy, and ship the winner. This is not brute force. It is a bet that variance between attempts is cheaper than reliability within one — a bet that pays handsomely in some terrains and burns budget to nothing in others. The engineering discipline is knowing exactly which is which." data-zh="每一代模型，都在缩小平庸 prompt 和精妙 prompt 之间的差距，而可控的部分则整体上移一层。如今剩下的最强推理旋钮，不是 prompt——是你买下的尝试次数。在 token 层面采样 N 个候选再挑最好的，早已是旧闻；真正有趣的版本，位于 harness 层：让 N 条完整的智能体轨迹朝着同一个目标并行赛跑，用一个可信的东西给它们打分，然后只交付胜者。这不是暴力。这是一个押注：尝试之间的方差，比单次尝试内部的可靠性更便宜——这笔押注在某些地形里回报丰厚，在另一些地形里把预算烧得一分不剩。工程上的功力，正在于分清楚哪边是哪边。">Every generation of models narrows the gap between a mediocre prompt and a brilliant one, and what remains controllable shifts one level up. The most powerful inference knob left is not the prompt — it is the number of attempts bought.</p>
+</header>
+<article class="post-body">
+<p data-en="There is an uncomfortable measurement buried in most agent evaluation harnesses: run the same task twice with the same model and the same tools, and the success rate moves not by decimals but by tens of points. Trajectory quality is dominated by early decisions — which file gets read first, which hypothesis gets entertained, which tool gets tried — and each of these is sampled, not decided. The industry's reflex is to treat this variance as noise to be suppressed: tighter prompts, lower temperature, stricter schemas. But variance is not only noise. It is the raw material of search. A system that runs one trajectory and commits to it has placed a single bet on a stochastic process. A system that runs five, scores them, and keeps the best has converted the same stochasticity into a selection advantage. The first system is asking the model to be reliable. The second is asking the harness to be a good judge — and judges are cheaper to build than saints." data-zh="在大多数智能体评测 harness 里，埋着一个让人不适的测量结果：同一个任务、同一个模型、同一套工具跑两遍，成功率的变化不是小数点后的量级，而是几十个百分点。轨迹质量被早期的决策所主导——先读哪个文件、先采信哪个假设、先试哪个工具——而这些都是被采样出来的，不是被决定的。这个行业的条件反射，是把这种方差当作需要压制的噪声：更紧的 prompt、更低的温度、更严的 schema。但方差不只是噪声。它是搜索的原材料。只跑一条轨迹然后押上去的系统，是在对一个随机过程下了单注。跑五条、打分、留下最好的系统，则把同一种随机性转化成了选择优势。前者在要求模型成为圣徒，后者只要求 harness 成为好裁判——而裁判，比圣徒便宜得多。">There is an uncomfortable measurement buried in most agent evaluation harnesses: run the same task twice with the same model and the same tools, and the success rate moves not by decimals but by tens of points. Trajectory quality is dominated by early decisions — which file gets read first, which hypothesis gets entertained, which tool gets tried — and each of these is sampled, not decided.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrV1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrV2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="ONE DEEP PATH VS MANY RACED ONES" data-zh="一条深路，还是多条赛跑的路" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ONE DEEP PATH VS MANY RACED ONES</text>
+<!-- LEFT: single trajectory -->
+<text data-en="COMMIT TO ONE" data-zh="单注押一条" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="145" y="56">COMMIT TO ONE</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="80" x="105" y="70"></rect>
+<text data-en="task" data-zh="任务" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="145" y="89">task</text>
+<path d="M145 100 C145 130 120 145 135 175 C150 205 110 220 130 250" fill="none" marker-end="url(#arrV1)" stroke="var(--accent-3)" stroke-width="1.6"></path>
+<text data-en="all budget, one sample" data-zh="全部预算，一次采样" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="145" y="290">all budget, one sample</text>
+<text data-en="a wrong first turn is final" data-zh="第一次走错，便是终局" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="145" y="308">a wrong first turn is final</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="300"></line>
+<!-- RIGHT: tournament -->
+<text data-en="RACE N, KEEP THE BEST" data-zh="赛 N 条，留最好" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="470" y="56">RACE N, KEEP THE BEST</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="80" x="430" y="70"></rect>
+<text data-en="task" data-zh="任务" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="470" y="89">task</text>
+<path d="M470 100 C470 118 405 122 395 140" fill="none" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<path d="M470 100 L470 140" fill="none" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<path d="M470 100 C470 118 535 122 545 140" fill="none" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<path d="M395 140 C395 165 385 185 390 210" fill="none" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<path d="M470 140 L470 210" fill="none" marker-end="url(#arrV2)" stroke="var(--accent)" stroke-width="2"></path>
+<path d="M545 140 C545 165 555 185 550 210" fill="none" stroke="var(--accent-2)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.2" width="52" x="364" y="210"></rect>
+<text data-en="b1" data-zh="分支1" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="390" y="227">b1</text>
+<rect fill="var(--accent-dim)" height="26" rx="6" stroke="var(--accent)" stroke-width="2" width="52" x="444" y="210"></rect>
+<text data-en="b2 ✓" data-zh="分支2 ✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="470" y="227">b2 ✓</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.2" width="52" x="524" y="210"></rect>
+<text data-en="b3" data-zh="分支3" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="550" y="227">b3</text>
+<path d="M470 236 L470 258" fill="none" marker-end="url(#arrV2)" stroke="var(--accent)" stroke-width="1.6"></path>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent)" stroke-width="1.5" width="110" x="415" y="260"></rect>
+<text data-en="SCORER" data-zh="评分器" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="470" y="278">SCORER</text>
+<text data-en="selection converts variance into quality" data-zh="选择把方差转化为质量" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="470" y="308">selection converts variance into quality</text>
+</svg>
+<p class="diagram-caption" data-en="Left: the default architecture — the entire budget spent on a single sampled trajectory, where an unlucky first decision compounds silently into the final result. Right: the tournament layer — the same budget split across divergent branches, each free to be wrong, with a scorer choosing what survives. The stochasticity is identical in both diagrams. Only one of them gets to be surprised in the right direction." data-zh="左边：默认架构——全部预算花在一条被采样出来的轨迹上，一次不走运的早期决策，会无声地复利成最终结果。右边：锦标赛层——同样的预算摊到多条真正分叉的分支上，每条都允许犯错，再由评分器决定谁能存活。两幅图里的随机性完全相同。但只有其中一幅，有机会被朝好的方向意外到。">Left: the default architecture — the entire budget spent on a single sampled trajectory, where an unlucky first decision compounds silently into the final result. Right: the tournament layer — the same budget split across divergent branches, each free to be wrong, with a scorer choosing what survives.</p>
+</div>
+<h3 data-en="Correlated failure is the silent killer" data-zh="相关性失败是无声杀手">Correlated failure is the silent killer</h3>
+<p data-en="A tournament multiplies nothing if the branches agree. Two trajectories that read the same files in the same order, form the same hypothesis, and fail against the same wall are not two samples — they are one sample, paid for twice. The failure mode is invisible in dashboards, because every metric looks healthy: N branches launched, N completed, cost as expected. The quality of a tournament is set before any of it runs, by how genuinely the branches are forced to diverge. Temperature alone is the weakest lever: it reshuffles phrasing more than strategy. The levers that matter change the information the branch starts with — different retrieval shards, different tool orderings, different decompositions of the task, a different model entirely for some branches, or simply a different random seed on a search tool. The design goal is brutal and measurable: branches should fail differently. When postmortems of parallel attempts show three distinct failure signatures, the width is real. When they show one signature three times, the system is an expensive echo." data-zh="如果各条分支意见一致，锦标赛就什么也没放大。两条轨迹以同样的顺序读同样的文件、形成同样的假设、撞上同一堵墙——这不是两个样本，这是一个样本，付了两次钱。这种失败模式在仪表盘上是隐形的，因为每个指标都健康：N 条分支启动、N 条完成、成本符合预期。而锦标赛的质量，在任何东西开跑之前就已被决定——取决于分支被逼得多真地分岔。温度是最弱的杠杆：它重洗的是措辞，不是策略。真正起作用的杠杆，改变的是每条分支出发时手里的信息——不同的检索分片、不同的工具排序、不同的任务拆解、某些分支干脆换一个模型，或者仅仅是给搜索工具换一个随机种子。设计目标残酷而可测：各分支应当以不同的方式失败。当并行尝试的事后复盘显示出三种不同的失败特征，宽度是真的。当同一种特征出现三次，这个系统只是一次昂贵的回声。">A tournament multiplies nothing if the branches agree. Two trajectories that read the same files in the same order, form the same hypothesis, and fail against the same wall are not two samples — they are one sample, paid for twice.</p>
+<blockquote data-en="Width without diversity is theater. Five identical attempts dressed as five options produce the confidence of exploration and the results of a coin flip. Before funding a second branch, ask the only question that matters: what mechanism guarantees this branch can succeed where the first one failed? If the answer is 'luck', the tournament is a slot machine with extra steps." data-zh="没有多样性的宽度，只是一场表演。五次一模一样的尝试，装扮成五个选项，带来的是探索的自信，产出的是抛硬币的结果。在为第二条分支投入预算之前，只问一个问题：是什么机制，保证这条分支能在第一条失败的地方成功？如果答案是「运气」，那这场锦标赛，只是一台多了几个步骤的老虎机。">Width without diversity is theater. Five identical attempts dressed as five options produce the confidence of exploration and the results of a coin flip.</blockquote>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrD1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrD2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="WHERE DIVERGENCE COMES FROM" data-zh="分岔从哪里来" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHERE DIVERGENCE COMES FROM</text>
+<!-- divergence sources -->
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.2" width="96" x="50" y="52"></rect>
+<text data-en="retrieval shard" data-zh="检索分片" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="98" y="69">retrieval shard</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.2" width="96" x="50" y="92"></rect>
+<text data-en="task decomposition" data-zh="任务拆解" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="98" y="109">task decomposition</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.2" width="96" x="50" y="132"></rect>
+<text data-en="tool ordering" data-zh="工具排序" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="98" y="149">tool ordering</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-2)" stroke-width="1.2" width="96" x="50" y="172"></rect>
+<text data-en="model swap" data-zh="更换模型" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="98" y="189">model swap</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-dasharray="4,3" stroke-width="1.2" width="96" x="50" y="212"></rect>
+<text data-en="temperature alone" data-zh="只调温度" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="98" y="229">temperature alone</text>
+<text data-en="weak — reshuffles words," data-zh="弱——只重洗措辞" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="98" y="252">weak — reshuffles words,</text>
+<text data-en="not strategy" data-zh="不改变策略" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="98" y="264">not strategy</text>
+<!-- branches -->
+<path d="M146 65 C200 65 210 105 248 108" fill="none" marker-end="url(#arrD1)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<path d="M146 105 C190 105 210 118 248 120" fill="none" marker-end="url(#arrD1)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<path d="M146 145 C190 145 210 132 248 132" fill="none" marker-end="url(#arrD1)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<path d="M146 185 C200 185 210 145 248 144" fill="none" marker-end="url(#arrD1)" stroke="var(--accent-2)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="62" rx="9" stroke="var(--accent)" stroke-width="1.8" width="92" x="250" y="92"></rect>
+<text data-en="N BRANCHES" data-zh="N 条分支" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="296" y="116">N BRANCHES</text>
+<text data-en="same goal," data-zh="同一个目标" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="296" y="132">same goal,</text>
+<text data-en="different priors" data-zh="不同的先验" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="296" y="146">different priors</text>
+<path d="M342 123 C370 123 375 123 398 123" fill="none" marker-end="url(#arrD2)" stroke="var(--accent)" stroke-width="1.6"></path>
+<!-- scorer -->
+<rect fill="var(--accent-dim)" height="78" rx="10" stroke="var(--accent)" stroke-width="2" width="180" x="400" y="86"></rect>
+<text data-en="SCORER" data-zh="评分器" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="490" y="110">SCORER</text>
+<text data-en="tests that run · invariants held" data-zh="测试通过 · 不变量成立" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="490" y="128">tests that run · invariants held</text>
+<text data-en="specs satisfied · diffs reviewed" data-zh="规格满足 · diff 已审" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="490" y="142">specs satisfied · diffs reviewed</text>
+<text data-en="must out-rank the players" data-zh="必须强过选手" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="490" y="158">must out-rank the players</text>
+<!-- outcome -->
+<path d="M490 164 L490 196" fill="none" marker-end="url(#arrD2)" stroke="var(--accent)" stroke-width="1.6"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="150" x="415" y="198"></rect>
+<text data-en="winner shipped · rest discarded" data-zh="交付胜者 · 其余丢弃" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="490" y="217">winner shipped · rest discarded</text>
+<text data-en="branches should fail differently — one signature three times is an echo, not a sample" data-zh="分支应当以不同方式失败——同一特征出现三次是回声，不是样本" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="290">branches should fail differently — one signature three times is an echo, not a sample</text>
+<text data-en="diversity is injected at the inputs, before the first token" data-zh="多样性在第一个 token 之前，从输入端注入" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="312">diversity is injected at the inputs, before the first token</text>
+</svg>
+<p class="diagram-caption" data-en="Diversity is a property of inputs, not of hopes. The strong levers — retrieval sharding, task decomposition, tool ordering, model choice — change what each branch knows before it starts thinking, which is the only thing that reliably changes how it fails. Temperature is drawn last and dashed on purpose: it decorates the tree rather than growing a new one. Everything converges on the scorer, whose job is to be more right about quality than the branches were about the task." data-zh="多样性是输入的属性，不是愿望的属性。强杠杆——检索分片、任务拆解、工具排序、模型选择——改变的是每条分支在开始思考之前知道什么，而这是唯一能可靠改变它如何失败的东西。温度被画在最后、用虚线，是故意的：它装饰这棵树，而不是长出一棵新的。所有分支最终汇聚到评分器，它的职责，是在「质量」这件事上，比各分支在「任务」上更正确。">Diversity is a property of inputs, not of hopes. The strong levers — retrieval sharding, task decomposition, tool ordering, model choice — change what each branch knows before it starts thinking, which is the only thing that reliably changes how it fails.</p>
+</div>
+<h3 data-en="The scorer is the product" data-zh="评分器才是产品">The scorer is the product</h3>
+<p data-en="A tournament never produces the best answer. It produces the answer that looks best to the scorer. The distinction is where systems live or die. In verifiable domains — code with tests, math with checkable steps, data with schemas — the scorer can be ordinary deterministic code, and the tournament is close to free quality: the ceiling rises with width, more or less monotonically, because dumb execution of a reliable signal compounds beautifully. In preference domains — prose quality, design taste, strategic judgment — the scorer is usually a model, and the tournament inherits every weakness of that model. A judge that prefers confident formatting rewards confident garbage. A judge with a length bias selects verbosity. A judge that agrees with the branch's framing cannot detect that the framing was wrong. The uncomfortable arithmetic: if the players succeed at rate p and the judge misranks at rate j, widening the tournament improves outcomes only while the marginal gain from another sample exceeds the marginal risk of another misranking. Past that point, more width purchases more opportunities for the judge to be persuasively wrong. The best operators spend their engineering budget exactly there — not on more branches, but on making the signal cheaper, sharper, and harder to flatter." data-zh="锦标赛从来不会产出最好的答案。它产出的是「在评分器眼里最好」的答案。这个区别，正是系统生死之地。在可验证的领域——带测试的代码、可检验步骤的数学、有 schema 的数据——评分器可以就是普通的确定性代码，锦标赛几乎是白捡的质量：天花板随宽度上升，而且大体单调，因为对可靠信号的朴素执行，复利得非常漂亮。而在偏好的领域——文字质量、设计品味、战略判断——评分器通常是一个模型，锦标赛也就继承了这个模型的每一个弱点。偏好自信排版的裁判，奖励的是自信的垃圾。带长度偏见的裁判，选出的是冗长。认同分支框架的裁判，察觉不到框架本身错了。这笔让人不适的算术是：如果选手的成功率是 p，裁判的误判率是 j，那么加宽锦标赛只在「多一个样本的边际收益」超过「多一次误判的边际风险」时改善结果。过了这个点，更多的宽度，买到的只是更多让裁判被花言巧语骗到的机会。最好的运维者，把工程预算恰恰花在这里——不是买更多分支，而是把信号做得更便宜、更锋利、更难被讨好。">A tournament never produces the best answer. It produces the answer that looks best to the scorer. In verifiable domains the scorer can be ordinary deterministic code, and the tournament is close to free quality. In preference domains the scorer is a model, and the tournament inherits every weakness of that model.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="WHEN WIDTH BEATS DEPTH" data-zh="宽度何时胜过深度" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">WHEN WIDTH BEATS DEPTH</text>
+<!-- axes -->
+<line stroke="var(--text-tertiary)" stroke-width="1.5" x1="70" x2="70" y1="50" y2="270"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1.5" x1="70" x2="580" y1="270" y2="270"></line>
+<path d="M70 50 L66 58 M70 50 L74 58" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<path d="M580 270 L572 266 M580 270 L572 274" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<text data-en="quality" data-zh="质量" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="40" y="160">quality</text>
+<text data-en="compute budget" data-zh="算力预算" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="292">compute budget</text>
+<!-- width curve: fast rise, plateau -->
+<path d="M70 260 C130 180 200 140 300 128 C400 118 480 116 560 114" fill="none" stroke="var(--accent)" stroke-width="2.4"></path>
+<text data-en="WIDTH — race branches" data-zh="宽度——分支赛跑" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="480" y="100">WIDTH — race branches</text>
+<!-- depth curve: slower, later crossover -->
+<path d="M70 264 C160 236 260 210 360 190 C440 174 520 162 560 156" fill="none" stroke="var(--accent-2)" stroke-dasharray="6,4" stroke-width="2"></path>
+<text data-en="DEPTH — one longer run" data-zh="深度——单次长跑" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="480" y="180">DEPTH — one longer run</text>
+<!-- crossover -->
+<circle cx="468" cy="140" fill="var(--bg-surface)" r="5" stroke="var(--accent-3)" stroke-width="1.8"></circle>
+<line stroke="var(--accent-3)" stroke-dasharray="3,4" stroke-width="1.2" x1="468" x2="468" y1="140" y2="270"></line>
+<text data-en="crossover: past this budget," data-zh="交叉点：超过此预算" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="468" y="238">crossover: past this budget,</text>
+<text data-en="depth catches up" data-zh="深度会追上来" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="468" y="252">depth catches up</text>
+<!-- annotation left region -->
+<rect fill="var(--accent-dim)" height="24" rx="6" stroke="none" width="170" x="100" y="62"></rect>
+<text data-en="width wins: high variance, cheap scoring" data-zh="宽度赢：高方差，评分便宜" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="185" y="78">width wins: high variance, cheap scoring</text>
+</svg>
+<p class="diagram-caption" data-en="The same compute can be spent two ways: width, split across raced branches with selection; or depth, poured into one long trajectory. Width rises fast — one strong sample among five rescues a task that one trajectory fails at half the time — but plateaus when branches exhaust their diversity or the judge exhausts its judgment. Depth starts slow and keeps climbing as long as the single run can still metabolize extra context. Neither dominates. The crossover moves left when scoring is cheap and reliable, and right when it is a model with taste." data-zh="同样的算力，有两种花法：宽度，摊到赛跑的分支和选择上；或深度，灌进一条长轨迹。宽度起步快——当单条轨迹有一半概率失败时，五条里出现一条好样本就足以救场——但当分支耗尽多样性、或裁判耗尽判断力时，宽度就会走平。深度起步慢，但只要单次运行还消化得了更多上下文，它就一直往上爬。两者谁也不通吃。评分便宜且可靠时，交叉点左移；评分是一个有品味的模型时，交叉点右移。">The same compute can be spent two ways: width, split across raced branches with selection; or depth, poured into one long trajectory. Width rises fast but plateaus; depth starts slow and keeps climbing. Neither dominates — the crossover moves with the cost and reliability of the score.</p>
+</div>
+<h3 data-en="Where tournaments must not run" data-zh="哪些地方绝不能开锦标赛">Where tournaments must not run</h3>
+<p data-en="The tournament layer has a hard boundary: side effects. Racing five trajectories is only safe while the world sees one. The moment a branch sends the email, charges the card, merges the pull request, or writes to the shared database, the other four branches stop being discarded samples and start being uncommitted consequences. Yet the boundary is routinely violated by accident, because agents are chatty and tools are eager: one branch logs an observability event, another creates a placeholder record, and by selection time the 'loser' branches have left residue in four systems. The rule that survives contact with production: tournaments run inside a membrane — a sandbox, a dry-run mode, a shadow namespace — and the winning trajectory is then re-executed or committed against reality exactly once. This also reshapes what gets scored. A branch that only won because it mutated the world mid-race did not win; it cheated, and the scorer must be able to see that. Anything the branch did to make itself look better that a sibling could not have done is a foul, and fouls propagate through the final ranking." data-zh="锦标赛层有一条硬边界：副作用。让五条轨迹赛跑，只在「世界只看到一条」时是安全的。一旦某条分支发出了邮件、刷了卡、合并了 pull request、写进了共享数据库，另外四条分支就不再是「被丢弃的样本」，而成了「未提交的后果」。但这条边界经常是被意外突破的，因为智能体话多、工具又殷勤：一条分支记了条可观测性事件，另一条建了条占位记录，等到选择时，「落败」的分支已经在四个系统里留下了残渣。能在生产环境活下来的规则是：锦标赛在膜内进行——沙箱、dry-run 模式、影子命名空间——然后胜出的那条轨迹，再对真实世界重放或提交，恰好一次。这也改变了什么该被打分。一条分支如果是因为在赛跑中途改写了世界而获胜，那不叫赢，叫犯规，而评分器必须看得见这一点。凡是分支做出「兄弟分支做不到的、让自己显得更好」的事，都是犯规，犯规要穿透最终排名去处罚。">The tournament layer has a hard boundary: side effects. Racing five trajectories is only safe while the world sees one. The moment a branch sends the email, charges the card, or merges the pull request, the other four branches stop being discarded samples and start being uncommitted consequences.</p>
+<p data-en="None of this argues for tournaments everywhere, and the economics decide most cases without sentiment. Racing multiplies the cost floor by N and buys a distributional edge whose size is set by variance, diversity, and judge quality. For long-horizon compositional work — migration, refactors, anything where step two depends on step one — width usually loses to depth, because parallel branches cannot share a spine. For tasks with high attempt-to-attempt variance and a trustworthy score — one-shot code, extraction under ambiguity, adversarial review — width is the highest-leverage lever left in the harness. The mature position is not a religion of parallelism. It is a per-task decision, made on measured variance and scorer reliability, with the membrane around the arena and a single commit on the way out. Buy attempts where attempts are cheap and honest. Buy certainty everywhere else." data-zh="这些，没有一句是在主张处处开锦标赛，而且经济学因素会不带感情地决定大多数案例。赛跑把成本下限乘以 N，换来的是一种分布上的优势，其大小由方差、多样性和裁判质量决定。对于长程的组合式工作——迁移、重构、任何第二步依赖第一步的活——宽度通常输给深度，因为并行的分支无法共用一条脊柱。而对于「尝试间方差大、又存在可信评分」的任务——一次性代码、歧义下的抽取、对抗式审查——宽度是 harness 里剩下的杠杆率最高的一根。成熟的立场，不是并行主义的宗教。而是一个逐任务的决策，基于实测方差与评分器可靠性来定，竞技场外围着一层膜，出口处恰好一次提交。在尝试便宜且诚实的地方，买尝试。在其余一切地方，买确定。">None of this argues for tournaments everywhere, and the economics decide most cases without sentiment. Racing multiplies the cost floor by N and buys a distributional edge whose size is set by variance, diversity, and judge quality. The mature position is a per-task decision, made on measured variance and scorer reliability, with the membrane around the arena and a single commit on the way out.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
