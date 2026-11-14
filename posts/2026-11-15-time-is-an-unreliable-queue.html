@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Time Is an Unreliable Queue — AI Frontlines</title>
+<meta content="Scheduled agents treat cron as transport, but time is a message bus with at-least-once delivery, no ordering, and a consumer that writes to the world. Duplicate runs, silent gaps, and stale wakes are not edge cases — they are the delivery semantics. The scheduler is part of the harness." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 15, 2026" data-zh="2026年11月15日">November 15, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Time Is an Unreliable Queue" data-zh="时间，是一条不可靠的队列">Time Is an Unreliable Queue</h1>
+<p class="post-header-deck" data-en="The second wave of agent deployment is not chat — it is cron. Agents that wake on a schedule, do work while nobody watches, and go back to sleep. Teams treat the scheduler as transport, a detail beneath the architecture. But time is a message bus, and a badly behaved one: at-least-once delivery, no ordering guarantees, silent gaps, and a consumer that writes to the real world. The duplicate run, the missed run, and the stale wake are not edge cases. They are the delivery semantics of the queue you already depend on." data-zh="智能体部署的第二波，不是对话——是 cron。那些按时刻表醒来、在无人注视时干活、干完再睡去的智能体。团队们把调度器当成传输层，一个架构之下的细节。但时间是一条消息总线，而且是一条行为恶劣的消息总线：至少一次的投递、没有顺序保证、沉默的空档，以及一个会向真实世界写入的消费者。重复运行、漏掉的运行、过期的唤醒——这些不是边缘情况。它们是你早已依赖的那条队列的投递语义。">The second wave of agent deployment is not chat — it is cron. Agents that wake on a schedule, do work while nobody watches, and go back to sleep. Teams treat the scheduler as transport, a detail beneath the architecture. But time is a message bus, and a badly behaved one.</p>
+</header>
+<article class="post-body">
+<p data-en="The first generation of agents answered questions. The generation now being deployed does chores: every morning it compiles a briefing, reconciles a ledger, sweeps the queues, drafts the report, checks the dashboards. Nothing about this is interactive. The human is not in the loop — the human is asleep. What triggers the work is not a prompt but a tick: a line in a crontab, a cloud scheduler rule, a workflow engine firing on the hour. And because the trigger feels like infrastructure, teams wire it up the way they wire up infrastructure: casually, once, at the beginning, and never look at it again." data-zh="第一代智能体回答问题。正在被部署的这一代，做的是杂务：每天清晨汇总简报、对账、清扫队列、起草报告、巡检仪表盘。这一切都不是交互式的。人类不在循环里——人类在睡觉。触发工作的不是 prompt，而是一次滴答：crontab 里的一行、云调度器的一条规则、整点触发的工作流引擎。而正因为这个触发器感觉像基础设施，团队也就用接基础设施的方式去接它：随随便便、一次、在开头，然后再也不看它一眼。">The first generation of agents answered questions. The generation now being deployed does chores: every morning it compiles a briefing, reconciles a ledger, sweeps the queues, drafts the report, checks the dashboards. Nothing about this is interactive. The human is not in the loop — the human is asleep. What triggers the work is not a prompt but a tick.</p>
+<p data-en="This is a mistake, because the scheduler is not transport. The scheduler is a producer on a message bus that delivers wake-up events, and it is a producer with terrible manners. It will occasionally deliver the same event twice — a retry after a lost acknowledgment, a restarted orchestrator that lost track of what it already fired, two HA instances that both believed they were primary. It will occasionally deliver nothing at all — a paused schedule nobody remembers pausing, a worker pool that was down at the fire time, a timezone bug that only manifests on one day a year. It will deliver late, after the world the run was supposed to observe has already changed. Every one of these behaviors has a name in messaging literature: duplication, loss, reordering, staleness. Teams that would never build a Kafka consumer without handling redelivery build scheduled agents that assume the tick arrives exactly once, in order, on time, into a ready world. The queue never promised that. It never will." data-zh="这是一个错误，因为调度器不是传输层。调度器是一条消息总线上的生产者，投递的是唤醒事件——而且是一个举止极差的生产者。它偶尔会把同一个事件投递两次——一次丢了确认之后的重试、一个重启后忘了自己已经触发过什么的编排器、两个都以为自己是主实例的高可用节点。它偶尔什么都不投递——一条没人记得暂停过的被暂停的调度、一个在触发时刻整体宕机的工作池、一个一年只发作一天的时区 bug。它还会迟到——在这次运行本应观察的世界已经变了之后才到。这些行为在消息队列的文献里个个有名字：重复、丢失、乱序、过期。那些绝不敢不处理重投就去写 Kafka 消费者的团队，却构建着「滴答恰好一次、按序、准时、落在一个就绪世界里」的定时智能体。队列从未承诺过这些。永远也不会。">This is a mistake, because the scheduler is not transport. The scheduler is a producer on a message bus that delivers wake-up events, and it is a producer with terrible manners. It will occasionally deliver the same event twice. It will occasionally deliver nothing at all. It will deliver late, after the world the run was supposed to observe has already changed.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrT2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrT3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE SCHEDULE YOU WROTE vs THE DELIVERY YOU GET" data-zh="你写下的时刻表 vs 你实际拿到的投递" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE SCHEDULE YOU WROTE vs THE DELIVERY YOU GET</text>
+<!-- LEFT: the fantasy -->
+<text data-en="THE FANTASY" data-zh="幻想" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="150" y="56">THE FANTASY</text>
+<circle cx="150" cy="92" fill="var(--bg-surface)" r="22" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<text data-en="clock" data-zh="时钟" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="150" y="96">clock</text>
+<line marker-end="url(#arrT1)" stroke="var(--accent-2)" stroke-width="1.5" x1="150" x2="150" y1="114" y2="142"></line>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="100" x="100" y="144"></rect>
+<text data-en="tick №1" data-zh="滴答 №1" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="150" y="163">tick №1</text>
+<line marker-end="url(#arrT1)" stroke="var(--accent-2)" stroke-width="1.5" x1="150" x2="150" y1="174" y2="200"></line>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="100" x="100" y="202"></rect>
+<text data-en="one run" data-zh="一次运行" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="150" y="221">one run</text>
+<line marker-end="url(#arrT1)" stroke="var(--accent-2)" stroke-width="1.5" x1="150" x2="150" y1="232" y2="258"></line>
+<text data-en="✓ done" data-zh="✓ 完成" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="150" y="276">✓ done</text>
+<text data-en="exactly once · on time" data-zh="恰好一次 · 准时" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="150" y="306">exactly once · on time</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="330"></line>
+<!-- RIGHT: reality -->
+<text data-en="THE DELIVERY" data-zh="现实的投递" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="470" y="56">THE DELIVERY</text>
+<circle cx="470" cy="92" fill="var(--bg-surface)" r="22" stroke="var(--accent-3)" stroke-width="1.5"></circle>
+<text data-en="clock" data-zh="时钟" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="470" y="96">clock</text>
+<!-- duplicate path -->
+<path d="M452 106 C400 120 390 140 388 158" fill="none" marker-end="url(#arrT3)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="96" x="340" y="160"></rect>
+<text data-en="tick x2" data-zh="滴答 x2" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="388" y="179">tick x2</text>
+<path d="M388 190 C388 214 380 228 372 240" fill="none" marker-end="url(#arrT3)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<path d="M392 190 C400 214 406 228 412 240" fill="none" marker-end="url(#arrT3)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="76" x="336" y="242"></rect>
+<text data-en="run A" data-zh="运行 A" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="374" y="259">run A</text>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="76" x="420" y="242"></rect>
+<text data-en="run A′" data-zh="运行 A′" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="458" y="259">run A′</text>
+<!-- lost path -->
+<path d="M488 106 C540 120 550 140 552 158" fill="none" stroke="var(--accent-3)" stroke-width="1.3" stroke-dasharray="4,3"></path>
+<text data-en="lost tick" data-zh="丢失的滴答" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="552" y="176">lost tick</text>
+<line stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="2,3" x1="528" x2="576" y1="186" y2="200"></line>
+<text data-en="— silence —" data-zh="—— 沉默 ——" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="552" y="216">— silence —</text>
+<!-- late path -->
+<path d="M470 114 C470 140 496 150 500 166" fill="none" marker-end="url(#arrT3)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<rect fill="var(--bg-surface)" height="26" rx="6" stroke="var(--accent-3)" stroke-width="1.2" width="88" x="492" y="230"></rect>
+<text data-en="late tick" data-zh="迟到的滴答" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="536" y="247">late tick</text>
+<text data-en="world moved" data-zh="世界已经变了" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="536" y="272">world moved</text>
+<text data-en="duplicates · gaps · lateness" data-zh="重复 · 空档 · 迟到" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="470" y="306">duplicates · gaps · lateness</text>
+</svg>
+<p class="diagram-caption" data-en="On the left, the schedule as written: the clock ticks, one run happens, the work is done. On the right, the schedule as delivered: the same tick arrives twice and two runs race, another tick vanishes into a paused schedule or a dead worker pool, and a third arrives after the world it was meant to observe has moved. Nothing here is exotic. This is what at-least-once delivery over an unreliable channel looks like — and time is one." data-zh="左边，是写下的时刻表：时钟滴答，一次运行发生，工作完成。右边，是实际送达的时刻表：同一次滴答到达两次，两次运行赛跑；另一次滴答消失在一条被暂停的调度或一个死掉的工作池里；第三次则在它本应观察的世界已经移动之后才姗姗来迟。这里没有任何稀奇的东西。这就是「至少一次投递、跑在不可靠信道上」的样子——而时间，恰好就是一条。">On the left, the schedule as written: the clock ticks, one run happens, the work is done. On the right, the schedule as delivered: the same tick arrives twice and two runs race, another tick vanishes into a paused schedule or a dead worker pool, and a third arrives after the world it was meant to observe has moved. Nothing here is exotic. This is what at-least-once delivery over an unreliable channel looks like — and time is one.</p>
+</div>
+<h3 data-en="The duplicate run: two of you, one world" data-zh="重复运行：两个你，一个世界">The duplicate run: two of you, one world</h3>
+<p data-en="Duplication is the failure mode schedulers actually ship with. The orchestrator restarts and forgets which jobs it fired; the queue redelivers because the acknowledgment got lost; two instances both hold the schedule during a botched failover. In a classic batch job, a duplicate run wastes some compute and writes the same row twice — annoying, usually idempotent by accident. A scheduled agent is not a classic batch job. It reads the world, decides, and acts: it sends the message, files the report, opens the ticket, places the order. Two concurrent copies of the same agent do not merely duplicate a row — they duplicate judgment. Each one sees a slightly different snapshot, drafts a slightly different artifact, and both act on it. The recipient gets two briefings that disagree. The tracker gets two tickets for the same issue. The duplicate is not a performance bug; it is a consistency bug wearing a performance bug's clothes." data-zh="重复，是调度器真正出厂自带的失败模式。编排器重启后忘了自己触发过哪些任务；队列因为确认信号丢失而重投；一次搞砸的故障转移期间，两个实例都持有同一条调度。在一个经典的批处理任务里，一次重复运行浪费一点算力、把同一行写两遍——烦人，但通常碰巧幂等。定时智能体不是经典的批处理任务。它读世界、做判断、再行动：发消息、交报告、开工单、下订单。同一个智能体的两个并发副本，不只是把一行数据写两遍——它们把判断力复制了两份。每一个都看到略有不同的快照，起草略有不同的产物，然后都付诸行动。收件人收到两份互相矛盾的简报。跟踪系统里出现两张同一个问题的工单。重复不是性能 bug；它是一个穿着性能 bug 外衣的一致性 bug。">Duplication is the failure mode schedulers actually ship with. The orchestrator restarts and forgets which jobs it fired; the queue redelivers because the acknowledgment got lost; two instances both hold the schedule during a botched failover. In a classic batch job, a duplicate run wastes some compute and writes the same row twice — annoying, usually idempotent by accident. A scheduled agent is not a classic batch job. Two concurrent copies of the same agent do not merely duplicate a row — they duplicate judgment.</p>
+<p data-en="The defense is the oldest concurrency tool in the box: mutual exclusion, with a lease rather than a lock. When a wake event arrives, the run must acquire a lease on the schedule's identity — not on the machine, not on the process, on the logical job — with a heartbeat that renews it and a TTL that releases it if the holder dies. The second arrival finds the lease held and does not start a second agent; it either merges into the in-flight run as an observer, or exits as the duplicate it is. And because leases can expire while a long agent run is still thinking, the renewal must be owned by the harness, not by the model — the agent does not get to decide whether it is still the only one, because the agent is the one most likely to be wrong about that." data-zh="防御手段是工具箱里最古老的并发工具：互斥——而且要用租约，而不是锁。当一个唤醒事件到达时，这次运行必须先获取「调度身份」的租约——不是机器的租约，不是进程的租约，是那个逻辑任务的——附带一个续约心跳，和一个当持有者死亡时释放租约的 TTL。第二个到达者发现租约已被持有，就不会启动第二个智能体；它要么作为观察者并入进行中的运行，要么就作为它本来的身份——重复者——退出。而由于长时运行的智能体还在思考时租约就可能到期，续约必须由 harness 持有，而不是由模型持有——智能体无权决定自己是不是唯一的那一个，因为在这一点上最容易错的，恰恰是智能体自己。">The defense is the oldest concurrency tool in the box: mutual exclusion, with a lease rather than a lock. When a wake event arrives, the run must acquire a lease on the schedule's identity — not on the machine, not on the process, on the logical job — with a heartbeat that renews it and a TTL that releases it if the holder dies. And because leases can expire while a long agent run is still thinking, the renewal must be owned by the harness, not by the model.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrL2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE LEASE IS THE DOOR" data-zh="租约，就是那道门" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE LEASE IS THE DOOR</text>
+<!-- two wake events -->
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="110" x="60" y="56"></rect>
+<text data-en="wake №1" data-zh="唤醒 №1" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="115" y="75">wake №1</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="110" x="60" y="150"></rect>
+<text data-en="wake №2 (dup)" data-zh="唤醒 №2（重复）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="115" y="169">wake №2 (dup)</text>
+<!-- lease box -->
+<rect fill="var(--accent-dim)" height="88" rx="10" stroke="var(--accent)" stroke-width="2" width="150" x="250" y="70"></rect>
+<text data-en="LEASE" data-zh="租约" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="325" y="98">LEASE</text>
+<text data-en="job: daily-brief" data-zh="任务: daily-brief" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="325" y="116">job: daily-brief</text>
+<text data-en="ttl: 30m · heartbeat" data-zh="ttl: 30m · 心跳" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="325" y="132">ttl: 30m · heartbeat</text>
+<!-- wake 1 acquires -->
+<path d="M170 71 C210 71 220 85 250 95" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.6"></path>
+<text data-en="acquired ✓" data-zh="获取成功 ✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="208" y="58">acquired ✓</text>
+<!-- wake 2 rejected -->
+<path d="M170 165 C215 160 220 140 245 128" fill="none" marker-end="url(#arrL2)" stroke="var(--accent-3)" stroke-width="1.4" stroke-dasharray="4,3"></path>
+<text data-en="held → exit" data-zh="被持有 → 退出" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="208" y="182">held → exit</text>
+<!-- run A proceeds -->
+<path d="M400 95 C450 95 460 110 470 128" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.6"></path>
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.5" width="100" x="470" y="130"></rect>
+<text data-en="run №1" data-zh="运行 №1" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="520" y="146">run №1</text>
+<text data-en="harness renews" data-zh="harness 负责续约" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="520" y="158">harness renews</text>
+<!-- idempotency key on actions -->
+<path d="M520 164 L520 190" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.4"></path>
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="180" x="430" y="192"></rect>
+<text data-en="actions keyed by" data-zh="动作以键约束" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="520" y="209">actions keyed by</text>
+<text data-en="schedule + period" data-zh="调度 + 周期" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="520" y="226">schedule + period</text>
+<!-- expired lease path -->
+<path d="M325 158 C325 200 340 220 360 232" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.3" stroke-dasharray="3,3"></path>
+<text data-en="ttl expiry → next wake may take over" data-zh="ttl 到期 → 下一个唤醒可以接管" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="400" y="252">ttl expiry → next wake may take over</text>
+<rect fill="var(--accent-dim)" height="36" opacity="0.5" rx="8" width="560" x="30" y="278"></rect>
+<text data-en="One lease per logical job, one idempotency key per action: the duplicate never starts, and even if it does, the world cannot tell." data-zh="每个逻辑任务一把租约，每个动作一个幂等键：重复者根本启动不了；即便启动了，世界也分辨不出。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="301">One lease per logical job, one idempotency key per action: the duplicate never starts, and even if it does, the world cannot tell.</text>
+</svg>
+<p class="diagram-caption" data-en="The first wake acquires a lease on the logical job and proceeds; its harness heartbeats the lease for as long as the run lives. The duplicate wake finds the lease held and exits — the second agent is never born. If the holder dies, the TTL releases the lease and the next wake takes over cleanly. Behind the run, every outbound action carries an idempotency key derived from the schedule and the period, so even a race that slips past the lease produces at most one visible effect." data-zh="第一个唤醒获取逻辑任务的租约并开始运行；运行存活期间，由它的 harness 为租约心跳续期。重复的唤醒发现租约被持有，随即退出——第二个智能体根本不会诞生。如果持有者死亡，TTL 会释放租约，下一个唤醒干净地接管。在运行身后，每一个出站动作都带着一条由「调度 + 周期」派生的幂等键——于是即便有一场比赛溜过了租约这道门，可见的效果也最多发生一次。">The first wake acquires a lease on the logical job and proceeds; its harness heartbeats the lease for as long as the run lives. The duplicate wake finds the lease held and exits. If the holder dies, the TTL releases the lease and the next wake takes over cleanly. Behind the run, every outbound action carries an idempotency key derived from the schedule and the period.</p>
+</div>
+<h3 data-en="The missed run: silence is a value" data-zh="漏掉的运行：沉默也是一种取值">The missed run: silence is a value</h3>
+<p data-en="The opposite failure is quieter and worse. The schedule does not fire — the worker pool was deploying, someone paused the job during an incident and unpaused the wrong one, the cron expression only means what its author thinks it means in one timezone. A queue that drops a message usually drops it loudly: an error, a dead-letter queue, an alarm. A scheduler that skips a tick drops it silently. The 04:00 briefing simply does not exist this morning. Nobody notices, because the artifact of a missed run is the absence of an artifact — and absence does not page anyone." data-zh="相反的失败更安静，也更糟。调度没有触发——工作池当时正在部署、有人在事故期间暂停了任务却恢复错了那一条、那条 cron 表达式只在某个时区里意味着它的作者以为的含义。一条丢消息的队列通常丢得很响：一个报错、一个死信队列、一次告警。一个跳过滴答的调度器，却是悄悄地丢。凌晨四点的简报，今天早上根本不存在。没人注意到，因为漏掉一次运行的产物，是一个不存在的产物——而「不存在」不会叫醒任何人。">The opposite failure is quieter and worse. The schedule does not fire — the worker pool was deploying, someone paused the job during an incident and unpaused the wrong one, the cron expression only means what its author thinks it means in one timezone. A queue that drops a message usually drops it loudly. A scheduler that skips a tick drops it silently. The 04:00 briefing simply does not exist this morning. Nobody notices, because the artifact of a missed run is the absence of an artifact — and absence does not page anyone.</p>
+<p data-en="The fix is to make the schedule itself an audited stream, not a hope. Every expected firing is a record: when it should have happened, whether it did, what it produced. A watcher — outside the scheduler, outside the agent — compares expectation against reality on every period and raises the flag on the first silent gap. And the moment a gap is detected, the policy question surfaces: does the missed run get backfilled or skipped? The answer is not universal. A data-sync agent should backfill, because its output is a function of the world and the world still exists. a briefing agent should usually skip, because a stale briefing delivered late is noise wearing the costume of diligence. Backfill-or-skip is a real decision with real semantics, and it belongs in the design doc, not in the adrenaline of an incident channel at 9am." data-zh="解法是把时刻表本身变成一条被审计的流，而不是一个愿望。每一次预期中的触发都是一条记录：它应该在何时发生、是否发生了、产出了什么。一个监视者——在调度器之外、在智能体之外——每个周期把期望与现实对比一次，在第一个沉默的空档上亮起旗帜。而空档被检测到的那一刻，策略问题浮出水面：漏掉的运行，该补跑还是该跳过？答案并不通用。数据同步智能体应该补跑，因为它的输出是世界 的函数，而世界还在。简报智能体通常应该跳过，因为一份迟到的过期简报，是穿着勤奋外衣的噪音。补跑还是跳过，是一个有真实语义的真实决策——它属于设计文档，而不属于早上九点事故频道里的肾上腺素。">The fix is to make the schedule itself an audited stream, not a hope. Every expected firing is a record: when it should have happened, whether it did, what it produced. A watcher — outside the scheduler, outside the agent — compares expectation against reality on every period. And the moment a gap is detected, the policy question surfaces: does the missed run get backfilled or skipped? A data-sync agent should backfill, because its output is a function of the world and the world still exists. A briefing agent should usually skip, because a stale briefing delivered late is noise wearing the costume of diligence.</p>
+<h3 data-en="The stale wake: revalidate before you act" data-zh="过期的唤醒：行动之前，先重新验证">The stale wake: revalidate before you act</h3>
+<p data-en="The third failure is the subtlest. The tick arrives, exactly once, on time — but the plan it triggers was written when the schedule was written, and the world has edited the premises since. The digest agent wakes at 06:00 and finds the source it summarizes changed format overnight; the cleanup agent fires and discovers the queue it drains was migrated and deprecated; the escalation agent runs and finds the ticket it was going to chase was already closed by a human at midnight. An interactive user would notice any of this in a second, because an interactive user is looking. The scheduled agent's defining property is that nobody is looking — which means noticing has to be built into the wake itself." data-zh="第三种失败最微妙。滴答到来了，恰好一次，准时——但它触发的那份计划，是在时刻表被写下的那一刻写成的，而世界从那以后修改了前提。摘要智能体在 06:00 醒来，发现它总结的信息源一夜之间换了格式；清理智能体触发时，发现它要排空的队列已被迁移并废弃；催办智能体运行时，发现它要追的那张工单，已经被一个人在午夜关掉了。一个交互式的用户会在一秒内注意到这一切，因为交互式的用户正在看。而定时智能体的定义性特征，就是没有人在看——这意味着「注意到」这件事，必须被内建进唤醒本身。">The third failure is the subtlest. The tick arrives, exactly once, on time — but the plan it triggers was written when the schedule was written, and the world has edited the premises since. The digest agent wakes and finds the source it summarizes changed format overnight; the cleanup agent discovers the queue it drains was migrated and deprecated; the escalation agent finds the ticket it was going to chase was already closed by a human at midnight. An interactive user would notice any of this in a second. The scheduled agent's defining property is that nobody is looking — which means noticing has to be built into the wake itself.</p>
+<p data-en="The pattern is wake-time revalidation: a cheap, deterministic preflight that runs before the model is ever invoked. Is the trigger still true — does the condition this schedule was guarding still hold? Is the input still shaped like the input — same schema, same endpoints, same liveness? Is the output still wanted — or did someone archive the channel, close the ticket, cancel the subscription? Only after all three checks pass does the agent get to think. This ordering matters for cost as much as correctness: a scheduled fleet that invokes the model first and discovers irrelevance at token forty thousand is burning its budget on runs that should have died in preflight. The cheapest agent run is the one that never calls the model." data-zh="这个模式叫唤醒时重验证：一段便宜、确定性的预检，在模型被调用之前先跑一遍。触发条件还成立吗——这条调度所守护的那个条件，现在还成立吗？输入还长得像输入吗——同样的 schema、同样的端点、同样的存活状态？输出还被人要吗——还是有人归档了频道、关掉了工单、退订了订阅？三项检查全部通过之后，智能体才被允许开始思考。这个顺序对成本的意义不亚于对正确性的意义：一支先调用模型、到第四万个 token 才发现「此事已无关」的定时智能体舰队，正在把预算烧在本该死在预检里的运行上。最便宜的一次智能体运行，是从不调用模型的那一次。">The pattern is wake-time revalidation: a cheap, deterministic preflight that runs before the model is ever invoked. Is the trigger still true? Is the input still shaped like the input? Is the output still wanted? Only after all three checks pass does the agent get to think. This ordering matters for cost as much as correctness: a scheduled fleet that invokes the model first and discovers irrelevance at token forty thousand is burning its budget on runs that should have died in preflight. The cheapest agent run is the one that never calls the model.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 380" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrW1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrW2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE WAKE PROTOCOL" data-zh="唤醒协议" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE WAKE PROTOCOL</text>
+<!-- wake event -->
+<rect fill="var(--bg-surface)" height="32" rx="8" stroke="var(--accent)" stroke-width="2" width="120" x="250" y="42"></rect>
+<text data-en="wake event" data-zh="唤醒事件" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="63">wake event</text>
+<line marker-end="url(#arrW1)" stroke="var(--accent)" stroke-width="1.5" x1="310" x2="310" y1="74" y2="92"></line>
+<!-- check 1 -->
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="230" x="195" y="94"></rect>
+<text data-en="① lease held by another run?" data-zh="① 租约已被其他运行持有？" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="117">① lease held by another run?</text>
+<line marker-end="url(#arrW2)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3" x1="425" x2="490" y1="112" y2="112"></line>
+<text data-en="yes → exit (dup)" data-zh="是 → 退出（重复）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="548" y="115">yes → exit (dup)</text>
+<line marker-end="url(#arrW1)" stroke="var(--accent)" stroke-width="1.5" x1="310" x2="310" y1="130" y2="148"></line>
+<!-- check 2 -->
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="230" x="195" y="150"></rect>
+<text data-en="② last period still complete?" data-zh="② 上个周期确实完成了？" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="173">② last period still complete?</text>
+<line marker-end="url(#arrW2)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3" x1="425" x2="490" y1="168" y2="168"></line>
+<text data-en="no → backfill / skip" data-zh="否 → 补跑 / 跳过" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="548" y="171">no → backfill / skip</text>
+<line marker-end="url(#arrW1)" stroke="var(--accent)" stroke-width="1.5" x1="310" x2="310" y1="186" y2="204"></line>
+<!-- check 3 -->
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="230" x="195" y="206"></rect>
+<text data-en="③ trigger still true? world still shaped" data-zh="③ 触发条件仍真？世界仍是原样？" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="310" y="229">③ trigger still true? world still shaped</text>
+<line marker-end="url(#arrW2)" stroke="var(--accent-3)" stroke-width="1.2" stroke-dasharray="4,3" x1="425" x2="490" y1="224" y2="224"></line>
+<text data-en="no → die cheap" data-zh="否 → 便宜地死掉" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="548" y="227">no → die cheap</text>
+<line marker-end="url(#arrW1)" stroke="var(--accent)" stroke-width="1.5" x1="310" x2="310" y1="242" y2="260"></line>
+<!-- run -->
+<rect fill="var(--accent-dim)" height="46" rx="9" stroke="var(--accent)" stroke-width="2" width="220" x="200" y="262"></rect>
+<text data-en="RUN THE AGENT" data-zh="运行智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="310" y="282">RUN THE AGENT</text>
+<text data-en="idempotency keys on every action" data-zh="每个动作都带幂等键" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="298">idempotency keys on every action</text>
+<line marker-end="url(#arrW1)" stroke="var(--accent)" stroke-width="1.5" x1="310" x2="310" y1="308" y2="326"></line>
+<text data-en="record the period as done ✓" data-zh="将本周期记为完成 ✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="344">record the period as done ✓</text>
+<text data-en="every exit is logged — silence never means success" data-zh="每一个出口都被记录——沉默永远不等于成功" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="368">every exit is logged — silence never means success</text>
+</svg>
+<p class="diagram-caption" data-en="A wake event is not a command to run; it is a claim to be evaluated. The protocol: check the lease (a duplicate never starts), check the ledger (a gap is detected and resolved by policy), revalidate the world (a stale premise dies before the model is billed), and only then run — with idempotency keys on every outbound action, and the period recorded as complete at the end, so the next wake inherits a truthful ledger instead of an optimistic one." data-zh="一个唤醒事件，不是一条「去运行」的命令；它是一条等待评估的主张。协议如下：查租约（重复者永不启动）、查账本（空档被检测到，并按策略处置）、重验证世界（过期的前提在模型计费之前死去），然后才运行——每个出站动作都带幂等键，结束时把本周期记为完成，于是下一个唤醒继承到的是一本诚实的账，而不是一本乐观的账。">A wake event is not a command to run; it is a claim to be evaluated. The protocol: check the lease, check the ledger, revalidate the world, and only then run — with idempotency keys on every outbound action, and the period recorded as complete at the end, so the next wake inherits a truthful ledger instead of an optimistic one.</p>
+</div>
+<blockquote data-en="A schedule is not a promise that work will happen. It is a producer on an unreliable bus, publishing events into a world that changes while they are in flight. The mature position is not to trust the tick, and not to distrust it either — it is to treat every wake as unverified input, the same way a good harness treats every tool result: welcome it, check it, and make it prove that this run should exist before letting it touch the world." data-zh="时刻表不是「工作将会发生」的承诺。它是一条不可靠总线上的生产者，把事件发布进一个在事件还在途中的时候就发生变化的世界。成熟的姿态，不是信任滴答，也不是不信任滴答——而是把每一次唤醒都当作未经证实的输入来对待，就像一个好的 harness 对待每一个工具返回结果那样：欢迎它，检查它，并在允许它触碰世界之前，让它先证明这一次运行理应存在。">A schedule is not a promise that work will happen. It is a producer on an unreliable bus, publishing events into a world that changes while they are in flight. The mature position is to treat every wake as unverified input, the same way a good harness treats every tool result: welcome it, check it, and make it prove that this run should exist before letting it touch the world.</blockquote>
+<h3 data-en="The schedule is code" data-zh="时刻表，就是代码">The schedule is code</h3>
+<p data-en="None of this argues against scheduled agents — they are the most economically important shape an agent can take, because they convert intelligence from a service someone must request into a utility that compounds while the team sleeps. The argument is against the casualness. The crontab line, the scheduler rule, the workflow trigger: these are not configuration. They are the top node of the agent's graph, the edge along which every run enters existence, and they deserve the same rigor as every other edge. That means identity for schedules, leases for runs, ledgers for periods, revalidation at the wake, and idempotency at the boundary — five boring mechanisms, all older than LLMs, that together turn a timer into a contract." data-zh="这些都不是在反对定时智能体——它们是智能体能拥有的、经济上最重要的形态，因为它们把智能从「必须有人来请求的服务」，变成一支在团队睡觉时复利的公共设施。反对的是那份随意。crontab 的一行、调度器的一条规则、工作流的一个触发器：这些不是配置。它们是智能体图的顶端节点，是每一次运行得以存在的入口边，它们值得与其余每一条边同等的严谨。这意味着：调度要有身份，运行要有租约，周期要有账本，唤醒时要重验证，边界上要幂等——五个无聊的机制，全都比大模型古老，合在一起，把一个计时器变成一份契约。">None of this argues against scheduled agents — they are the most economically important shape an agent can take, because they convert intelligence from a service someone must request into a utility that compounds while the team sleeps. The argument is against the casualness. The crontab line, the scheduler rule, the workflow trigger: these are not configuration. They are the top node of the agent's graph, the edge along which every run enters existence, and they deserve the same rigor as every other edge. Five boring mechanisms — identity, leases, ledgers, revalidation, idempotency — together turn a timer into a contract.</p>
+<p data-en="The teams that figure this out stop talking about their schedules in the language of convenience ('runs every morning at four') and start talking in the language of semantics: delivery guarantee, overlap policy, gap policy, staleness policy, per-period identity. That vocabulary shift is the tell. It marks the moment a scheduled agent stops being a cron job with a model inside — a novelty waiting for its first duplicate run — and becomes what it should have been all along: a small distributed system, waking on an unreliable queue, that happens to think." data-zh="想通了这一点的团队，不再用便利的语言谈论自己的调度（「每天早上四点跑一次」），而是开始用语义的语言：投递保证、重叠策略、空档策略、过期策略、每个周期的身份。这个词汇的转变，就是标志。它标记了那个时刻：一个定时智能体，不再是「一个里面塞了模型的 cron 任务」——一件等着第一次重复运行的 novelty——而变成它从一开始就该是的东西：一个小小的分布式系统，在一条不可靠的队列上醒来，并且恰好会思考。">The teams that figure this out stop talking about their schedules in the language of convenience ('runs every morning at four') and start talking in the language of semantics: delivery guarantee, overlap policy, gap policy, staleness policy, per-period identity. That vocabulary shift is the tell. It marks the moment a scheduled agent stops being a cron job with a model inside — and becomes what it should have been all along: a small distributed system, waking on an unreliable queue, that happens to think.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

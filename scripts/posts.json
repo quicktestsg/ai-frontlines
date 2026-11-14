@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-15",
+    "slug": "time-is-an-unreliable-queue",
+    "title_en": "Time Is an Unreliable Queue",
+    "title_zh": "时间，是一条不可靠的队列",
+    "read_time": 9,
+    "excerpt_en": "The second wave of agents runs on cron, and teams treat the scheduler as transport. But time is a message bus with at-least-once delivery, silent gaps, and stale events — and duplicate runs, missed runs, and stale wakes are not edge cases. They are the delivery semantics. Leases, period ledgers, and wake-time revalidation turn a timer into a contract.",
+    "excerpt_zh": "第二波智能体跑在 cron 上，而团队把调度器当成传输层。但时间是一条消息总线：至少一次的投递、沉默的空档、过期的事件——重复运行、漏掉的运行、过期的唤醒都不是边缘情况，而是投递语义本身。租约、周期账本与唤醒时重验证，把一个计时器变成一份契约。"
+  },
+  {
     "date": "2026-11-14",
     "slug": "the-tournament-layer",
     "title_en": "The Tournament Layer — Buy Attempts, Not Certainty",
