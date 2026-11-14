@@ -1,6 +1,597 @@
 {
   "tweets": [
     {
+      "id": "2121317227618340990",
+      "url": "https://x.com/AnthropicAI/status/2121317227618340990",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-11-14T08:05:54.655175+00:00",
+      "translation_zh": "安全评估对于判断一个模型是否可以部署、需要配套哪些防护措施、以及训练和研究的重点方向都至关重要。\n\n我们在工程博客上分享了 10 条关于如何设计、运行和报告安全评估的建议。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1766,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-13T19:00:13.000Z",
+        "display_text_range": [
+          0,
+          280
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "anthropic.com/research/build…",
+              "expanded_url": "https://www.anthropic.com/research/building-strong-safety-evaluations",
+              "indices": [
+                257,
+                280
+              ],
+              "url": "https://t.co/MtSQmqqi2D"
+            }
+          ]
+        },
+        "id_str": "2121317227618340990",
+        "text": "Safety evaluations are critical for understanding whether a model is ready to deploy, which safeguards to build for it, and where to focus training and research.\n\nOn our Engineering Blog, we offer 10 recommendations for how to design, run and report them.\n\nhttps://t.co/MtSQmqqi2D",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2121317227618340990"
+          ],
+          "editable_until_msecs": "1794600013000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 322,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/MtSQmqqi2D",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Illustration of two dark green gridded squares on a light green background. On the left, a tilted red square and an upright blue square overlap imperfectly, leaving their edges exposed; on the right, the two align exactly.",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2121304601446035456/TPD7kPFo?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Illustration of two dark green gridded squares on a light green background. On the left, a tilted red square and an upright blue square overlap imperfectly, leaving their edges exposed; on the right, the two align exactly.",
+                "height": 147,
+                "url": "https://pbs.twimg.com/card_img/2121304601446035456/TPD7kPFo?format=jpg&name=280x150",
+                "width": 280
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Recommendations for designing, running, and reporting safety evaluations, based on our own experiences.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "www.anthropic.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Illustration of two dark green gridded squares on a light green background. On the left, a tilted red square and an upright blue square overlap imperfectly, leaving their edges exposed; on the right, the two align exactly.",
+                "height": 315,
+                "url": "https://pbs.twimg.com/card_img/2121304601446035456/TPD7kPFo?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Illustration of two dark green gridded squares on a light green background. On the left, a tilted red square and an upright blue square overlap imperfectly, leaving their edges exposed; on the right, the two align exactly.",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2121304601446035456/TPD7kPFo?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Illustration of two dark green gridded squares on a light green background. On the left, a tilted red square and an upright blue square overlap imperfectly, leaving their edges exposed; on the right, the two align exactly.",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2121304601446035456/TPD7kPFo?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Illustration of two dark green gridded squares on a light green background. On the left, a tilted red square and an upright blue square overlap imperfectly, leaving their edges exposed; on the right, the two align exactly.",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2121304601446035456/TPD7kPFo?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Illustration of two dark green gridded squares on a light green background. On the left, a tilted red square and an upright blue square overlap imperfectly, leaving their edges exposed; on the right, the two align exactly.",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2121304601446035456/TPD7kPFo?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Illustration of two dark green gridded squares on a light green background. On the left, a tilted red square and an upright blue square overlap imperfectly, leaving their edges exposed; on the right, the two align exactly.",
+                "height": 76,
+                "url": "https://pbs.twimg.com/card_img/2121304601446035456/TPD7kPFo?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "creator": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Illustration of two dark green gridded squares on a light green background. On the left, a tilted red square and an upright blue square overlap imperfectly, leaving their edges exposed; on the right, the two align exactly.",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2121304601446035456/TPD7kPFo?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Illustration of two dark green gridded squares on a light green background. On the left, a tilted red square and an upright blue square overlap imperfectly, leaving their edges exposed; on the right, the two align exactly.",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2121304601446035456/TPD7kPFo?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Illustration of two dark green gridded squares on a light green background. On the left, a tilted red square and an upright blue square overlap imperfectly, leaving their edges exposed; on the right, the two align exactly.",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "anthropic.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Illustration of two dark green gridded squares on a light green background. On the left, a tilted red square and an upright blue square overlap imperfectly, leaving their edges exposed; on the right, the two align exactly.",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2121304601446035456/TPD7kPFo?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Illustration of two dark green gridded squares on a light green background. On the left, a tilted red square and an upright blue square overlap imperfectly, leaving their edges exposed; on the right, the two align exactly.",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 65.01,
+                    "rgb": {
+                      "blue": 85,
+                      "green": 86,
+                      "red": 34
+                    }
+                  },
+                  {
+                    "percentage": 28.7,
+                    "rgb": {
+                      "blue": 94,
+                      "green": 140,
+                      "red": 121
+                    }
+                  },
+                  {
+                    "percentage": 2.65,
+                    "rgb": {
+                      "blue": 85,
+                      "green": 87,
+                      "red": 187
+                    }
+                  },
+                  {
+                    "percentage": 2.51,
+                    "rgb": {
+                      "blue": 197,
+                      "green": 124,
+                      "red": 34
+                    }
+                  },
+                  {
+                    "percentage": 0.66,
+                    "rgb": {
+                      "blue": 90,
+                      "green": 111,
+                      "red": 161
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Building strong safety evaluations",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 65.01,
+                    "rgb": {
+                      "blue": 85,
+                      "green": 86,
+                      "red": 34
+                    }
+                  },
+                  {
+                    "percentage": 28.7,
+                    "rgb": {
+                      "blue": 94,
+                      "green": 140,
+                      "red": 121
+                    }
+                  },
+                  {
+                    "percentage": 2.65,
+                    "rgb": {
+                      "blue": 85,
+                      "green": 87,
+                      "red": 187
+                    }
+                  },
+                  {
+                    "percentage": 2.51,
+                    "rgb": {
+                      "blue": 197,
+                      "green": 124,
+                      "red": 34
+                    }
+                  },
+                  {
+                    "percentage": 0.66,
+                    "rgb": {
+                      "blue": 90,
+                      "green": 111,
+                      "red": 161
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Illustration of two dark green gridded squares on a light green background. On the left, a tilted red square and an upright blue square overlap imperfectly, leaving their edges exposed; on the right, the two align exactly.",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2121304601446035456/TPD7kPFo?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Illustration of two dark green gridded squares on a light green background. On the left, a tilted red square and an upright blue square overlap imperfectly, leaving their edges exposed; on the right, the two align exactly.",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2121304601446035456/TPD7kPFo?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 65.01,
+                    "rgb": {
+                      "blue": 85,
+                      "green": 86,
+                      "red": 34
+                    }
+                  },
+                  {
+                    "percentage": 28.7,
+                    "rgb": {
+                      "blue": 94,
+                      "green": 140,
+                      "red": 121
+                    }
+                  },
+                  {
+                    "percentage": 2.65,
+                    "rgb": {
+                      "blue": 85,
+                      "green": 87,
+                      "red": 187
+                    }
+                  },
+                  {
+                    "percentage": 2.51,
+                    "rgb": {
+                      "blue": 197,
+                      "green": 124,
+                      "red": 34
+                    }
+                  },
+                  {
+                    "percentage": 0.66,
+                    "rgb": {
+                      "blue": 90,
+                      "green": 111,
+                      "red": 161
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Illustration of two dark green gridded squares on a light green background. On the left, a tilted red square and an upright blue square overlap imperfectly, leaving their edges exposed; on the right, the two align exactly.",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2121304601446035456/TPD7kPFo?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/MtSQmqqi2D",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Illustration of two dark green gridded squares on a light green background. On the left, a tilted red square and an upright blue square overlap imperfectly, leaving their edges exposed; on the right, the two align exactly.",
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2121304601446035456/TPD7kPFo?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2121283151729496235",
+      "url": "https://x.com/ChatGPT/status/2121283151729496235",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-11-14T08:05:54.655175+00:00",
+      "translation_zh": "现在你的 dot 可以在你的批准下安全地代你完成购买。\n\n通过 ChatGPT Wallet，agent 付款时接触不到你的真实卡号，每笔购买都需要通过安全验证。\n\nChatGPT Wallet 今天起面向美国 Pro 订阅用户在 dots 中陆续推出。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 4101,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-13T16:44:49.000Z",
+        "display_text_range": [
+          0,
+          280
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/EhtEZNaKnt",
+              "expanded_url": "https://x.com/ChatGPT/status/2121283151729496235/video/1",
+              "indices": [
+                281,
+                304
+              ],
+              "url": "https://t.co/EhtEZNaKnt"
+            }
+          ]
+        },
+        "id_str": "2121283151729496235",
+        "text": "Now your dot can securely complete purchases on your behalf—with your approval.\n\nWith ChatGPT Wallet, agents pay without access to your actual card details. Every purchase requires a security check.\n\nChatGPT Wallet is rolling out starting today to dots, for Pro subscribers in the https://t.co/EhtEZNaKnt",
+        "user": {
+          "id_str": "1714438092655149056",
+          "name": "ChatGPT",
+          "screen_name": "ChatGPT",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2081980424666935296/qU5G7mQg_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_bigger.jpg"
+            },
+            "description": "OpenAI",
+            "url": {
+              "url": "https://twitter.com/OpenAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2121283151729496235"
+          ],
+          "editable_until_msecs": "1794591889000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/EhtEZNaKnt",
+            "expanded_url": "https://x.com/ChatGPT/status/2121283151729496235/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              281,
+              304
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2121282439788331008/img/htD5nhmieyyh_0pT.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 2160,
+              "width": 3840
+            },
+            "sizes": {
+              "large": {
+                "h": 1152,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/EhtEZNaKnt",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 45209,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2121282439788331008/pl/3_caEMpK3mK72EgW.m3u8?v=cfc"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2121282439788331008/vid/avc1/480x270/kU0Ww4w5Tky_uGR8.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2121282439788331008/vid/avc1/640x360/IIME79gQnOQIyeSD.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2121282439788331008/vid/avc1/1280x720/ESRG-S0N6yrooDc1.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2121282439788331008/vid/avc1/1920x1080/Q5AxnVwNX0-wxJY4.mp4"
+                },
+                {
+                  "bitrate": 25128000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2121282439788331008/vid/avc1/3840x2160/KftUG598EvGnBVup.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 45209,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2121282439788331008/img/htD5nhmieyyh_0pT.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2121282439788331008/pl/3_caEMpK3mK72EgW.m3u8?v=cfc"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2121282439788331008/vid/avc1/480x270/kU0Ww4w5Tky_uGR8.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2121282439788331008/vid/avc1/640x360/IIME79gQnOQIyeSD.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2121282439788331008/vid/avc1/1280x720/ESRG-S0N6yrooDc1.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2121282439788331008/vid/avc1/1920x1080/Q5AxnVwNX0-wxJY4.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2121282439788331008/vid/avc1/3840x2160/KftUG598EvGnBVup.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2121283151729496235"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 527,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTIxMjgzMTUxNjA3ODYxMjQ4"
+        }
+      }
+    },
+    {
       "id": "2121247896918253875",
       "url": "https://x.com/deepseek_ai/status/2121247896918253875",
       "label": "DeepSeek",
@@ -42,6 +633,145 @@
         "isStaleEdit": false,
         "note_tweet": {
           "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTIxMjQ3ODk2Nzc1NjM5MDQx"
+        }
+      }
+    },
+    {
+      "id": "2121229774865527097",
+      "url": "https://x.com/GoogleDeepMind/status/2121229774865527097",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-11-14T08:05:54.655175+00:00",
+      "translation_zh": "准确的天气预报，始于对大气的实时清晰观测。🌍\n\n为此我们开放了 PARDIG 和 SatWeave——WeatherNext 3 背后的基础数据集，帮助研究者和开发者构建新的气候应用 🧵",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 608,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-13T13:12:43.000Z",
+        "display_text_range": [
+          0,
+          267
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/fHR0BOSnnM",
+              "expanded_url": "https://x.com/GoogleDeepMind/status/2121229774865527097/photo/1",
+              "indices": [
+                266,
+                289
+              ],
+              "url": "https://t.co/fHR0BOSnnM"
+            }
+          ]
+        },
+        "id_str": "2121229774865527097",
+        "text": "Accurate weather forecasting starts with how clearly we can observe the atmosphere in real-time. 🌍\n\nThat’s why we’re releasing PARDIG and SatWeave - the foundational datasets behind WeatherNext 3 - to help researchers and developers build new climate applications 🧵 https://t.co/fHR0BOSnnM",
+        "user": {
+          "id_str": "4783690002",
+          "name": "Google DeepMind",
+          "screen_name": "GoogleDeepMind",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2121229774865527097"
+          ],
+          "editable_until_msecs": "1794579163000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/fHR0BOSnnM",
+            "expanded_url": "https://x.com/GoogleDeepMind/status/2121229774865527097/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              266,
+              289
+            ],
+            "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/HXAevj4XwAE_s17.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1080
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1080
+              },
+              "medium": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1080
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "animated_gif",
+            "url": "https://t.co/fHR0BOSnnM",
+            "video_info": {
+              "aspect_ratio": [
+                1,
+                1
+              ],
+              "variants": [
+                {
+                  "bitrate": 0,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/tweet_video/HXAevj4XwAE_s17.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            1,
+            1
+          ],
+          "contentType": "gif",
+          "durationMs": 0,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/tweet_video_thumb/HXAevj4XwAE_s17.jpg",
+          "variants": [
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/tweet_video/HXAevj4XwAE_s17.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2121229774865527097"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 174,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTIxMjI5Nzc0Nzk0MjE1NDI1"
         }
       }
     },
