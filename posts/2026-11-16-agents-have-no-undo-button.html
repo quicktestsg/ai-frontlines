@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Agents Have No Undo Button — AI Frontlines</title>
+<meta content="Software grew up on reversibility: transactions roll back, migrations have down scripts, editors have ctrl-z. Agents act in systems where none of that exists. Every external effect — an email sent, a payment made, a row deleted — is a one-way door. The rollback layer is not a feature. It is the difference between an agent that assists and an agent that damages." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 16, 2026" data-zh="2026年11月16日">November 16, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Agents Have No Undo Button" data-zh="智能体没有撤销键">Agents Have No Undo Button</h1>
+<p class="post-header-deck" data-en="Software grew up on reversibility. Transactions roll back. Migrations ship with down scripts. Editors have undo buffers decades deep. Then agents arrived, and quietly walked into a world where none of that exists. An agent that sends an email, moves money, or deletes a row is acting in systems with no transaction boundary, no two-phase commit, no rollback. Every effect is a one-way door. The industry is busy teaching agents to act; almost nobody is teaching them to un-act. That gap is not a feature request. It is the difference between an assistant and a liability." data-zh="软件是建立在「可逆」之上的。事务可以回滚，迁移脚本自带回退，编辑器的撤销缓冲深达几十年。然后，智能体来了——并悄悄走进了一个这一切都不存在的世界。一个发送邮件、划转资金、删除数据行的智能体，正运作在没有事务边界、没有两阶段提交、没有回滚的系统里。每一个副作用，都是一扇单向门。整个行业忙着教智能体「行动」，却几乎没人在教它们「撤销行动」。这个缺口，不是一条功能需求。它是「助手」与「负债」之间的分界线。">Software grew up on reversibility. Transactions roll back. Migrations ship with down scripts. Editors have undo buffers decades deep. Then agents arrived, and quietly walked into a world where none of that exists.</p>
+</header>
+<article class="post-body">
+<p data-en="Reversibility is the invisible foundation of all reliable software. Databases wrap mutations in transactions so a failed operation leaves the world exactly as it was. Schema migrations pair every up with a down. Deployment platforms keep the previous release one click away. Even the humble text editor maintains an undo stack that outlives the session. Engineers are so marinated in this idea that they stop noticing it — until they build an agent, and discover that the entire substrate of reversibility was never a property of computation. It was a property of the systems we carefully built around computation. The agent does not live inside those systems. It lives at the edge of them, reaching outward through APIs into mail servers, payment rails, cloud consoles, and production databases — places where the undo stack does not exist, cannot exist, and in some cases must not exist." data-zh="可逆性，是一切可靠软件的隐形地基。数据库把变更包进事务里，让一个失败的操作把世界原封不动地留在原地。数据库迁移的每一个 up 都配着一个 down。发布平台让上一个版本永远只差一次点击。就连最朴素的文本编辑器，都维护着一个比会话还长寿的撤销栈。工程师泡在这个观念里太久，久到不再察觉它——直到他们构建了一个智能体，才发现可逆性这整块基底，从来不是「计算」的属性。它是我们围绕计算、精心建造的那些系统的属性。而智能体并不住在那些系统里。它住在系统的边缘，通过 API 向外伸手，伸向邮件服务器、支付通道、云控制台和生产数据库——那些撤销栈不存在、不可能存在、在某些情况下甚至不应存在的地方。">Reversibility is the invisible foundation of all reliable software. Databases wrap mutations in transactions so a failed operation leaves the world exactly as it was. Schema migrations pair every up with a down. Even the humble text editor maintains an undo stack that outlives the session. Engineers are so marinated in this idea that they stop noticing it — until they build an agent, and discover that the entire substrate of reversibility was never a property of computation.</p>
+<p data-en="Consider what an agent actually is: a loop that turns model decisions into external effects. Each tool call crosses a boundary from the reversible world — where state lives in memory, where nothing is real until committed — into the irreversible world, where state lives in other people's systems, where every action is observed, logged, and felt. The read side of an agent's tool belt is harmless; the model can search, fetch, and summarize all day with no consequences. The danger concentrates entirely on the write side. And the write side is precisely where the industry's attention is thinnest, because writes are the exciting part — the demos, the funding pitches, the 'look, it did the thing' moments. Nobody demos the undo. Nobody pitches the un-doing." data-zh="想想智能体究竟是什么：一个把模型决策转化为外部副作用的循环。每一次工具调用，都跨越一条边界——从可逆的世界（状态活在内存里，提交之前一切都不算数），跨入不可逆的世界（状态活在别人的系统里，每一个动作都被看见、被记录、被感受到）。智能体工具腰带上的「读」那一侧是无害的；模型可以整天搜索、抓取、总结，不留任何后果。危险完全集中在「写」的那一侧。而「写」，恰恰是行业关注度最薄的地方——因为写才是激动人心的部分：演示、融资路演、那种「看，它真的做了」的高光时刻。没有人演示撤销。没有人 pitching「撤销掉刚才做的事」。">Consider what an agent actually is: a loop that turns model decisions into external effects. Each tool call crosses a boundary from the reversible world into the irreversible world, where state lives in other people's systems, where every action is observed, logged, and felt.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrU1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrU2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE IRREVERSIBILITY SPECTRUM" data-zh="不可逆性光谱" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE IRREVERSIBILITY SPECTRUM</text>
+<line marker-end="url(#arrU1)" stroke="var(--text-tertiary)" stroke-width="1.5" x1="40" x2="580" y1="70" y2="70"></line>
+<!-- read: safe -->
+<circle cx="80" cy="70" fill="var(--bg-surface)" r="16" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<text data-en="read" data-zh="读" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="80" y="74">read</text>
+<text data-en="free · retryable" data-zh="免费 · 可重试" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="80" y="112">free · retryable</text>
+<!-- compute: safe -->
+<circle cx="200" cy="70" fill="var(--bg-surface)" r="16" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<text data-en="compute" data-zh="计算" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="200" y="74">compute</text>
+<text data-en="no side effects" data-zh="无副作用" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="200" y="112">no side effects</text>
+<!-- draft: undoable -->
+<circle cx="320" cy="70" fill="var(--bg-surface)" r="16" stroke="var(--accent)" stroke-width="1.5"></circle>
+<text data-en="draft" data-zh="草稿" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="320" y="74">draft</text>
+<text data-en="deletable · ours" data-zh="可删 · 属于我们" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="320" y="112">deletable · ours</text>
+<!-- send: one-way -->
+<circle cx="440" cy="70" fill="var(--bg-surface)" r="18" stroke="var(--accent-3)" stroke-width="2"></circle>
+<text data-en="send" data-zh="发送" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="440" y="74">send</text>
+<text data-en="observed by others" data-zh="已被他人看见" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="440" y="112">observed by others</text>
+<!-- spend: irreversible -->
+<circle cx="560" cy="70" fill="var(--bg-surface)" r="20" stroke="var(--accent-3)" stroke-width="2.5"></circle>
+<text data-en="spend" data-zh="支付" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="800" text-anchor="middle" x="560" y="74">spend</text>
+<text data-en="no undo exists" data-zh="不存在撤销" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="560" y="112">no undo exists</text>
+<!-- zones -->
+<rect fill="var(--accent-dim)" height="36" opacity="0.35" rx="8" width="280" x="40" y="150"></rect>
+<text data-en="REVERSIBLE ZONE — failure costs nothing, retry freely" data-zh="可逆区 —— 失败零成本，随便重试" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="180" y="173">REVERSIBLE ZONE — failure costs nothing, retry freely</text>
+<rect fill="var(--accent-dim)" height="36" opacity="0.55" rx="8" width="280" x="300" y="150"></rect>
+<text data-en="ONE-WAY DOORS — every crossing is a commitment" data-zh="单向门 —— 每一次穿越都是承诺" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="440" y="173">ONE-WAY DOORS — every crossing is a commitment</text>
+<!-- undo arrows: left works, right doesn't -->
+<path d="M320 130 C320 216 100 216 80 132" fill="none" marker-end="url(#arrU2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="undo works" data-zh="撤销有效" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="190" y="212">undo works</text>
+<path d="M560 132 C560 232 440 236 440 196" fill="none" stroke="var(--accent-3)" stroke-width="1.3" stroke-dasharray="4,3"></path>
+<text data-en="✕ no path back" data-zh="✕ 没有回头路" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="510" y="232">✕ no path back</text>
+<!-- bottom insight -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="560" x="30" y="262"></rect>
+<text data-en="Agents drift rightward as they gain capabilities. The engineering work is deciding, in advance, how far right each agent is allowed to go — and what it must do to earn the crossing." data-zh="智能体的能力越强，就越往右漂移。工程上的功课，是预先决定每个智能体被允许走到多右——以及它必须付出什么，才能获准穿越。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="287">Agents drift rightward as they gain capabilities. The engineering work is deciding, in advance, how far right each agent is allowed to go — and what it must do to earn the crossing.</text>
+</svg>
+<p class="diagram-caption" data-en="Every tool an agent can call sits somewhere on this spectrum. Reads and computation are free to retry. Drafts are still ours to delete. But sending, spending, and deleting live data cross one-way doors — the undo arrow simply does not exist there. As agent capability grows, agents drift rightward. The architecture decides how far they may go." data-zh="智能体能调用的每一个工具，都坐落在这条光谱的某处。读取与计算可以随意重试，草稿仍然属于我们、可以删除。但发送、支付、删除生产数据，穿越的是单向门——撤销之箭在那里根本不存在。随着智能体能力增长，它会向右漂移。而架构，决定它最多能走到哪里。">Every tool an agent can call sits somewhere on this spectrum. Reads and computation are free to retry. Drafts are still ours to delete. But sending, spending, and deleting live data cross one-way doors. As agent capability grows, agents drift rightward. The architecture decides how far they may go.</p>
+</div>
+<h3 data-en="The transaction that never was" data-zh="从未存在过的事务">The transaction that never was</h3>
+<p data-en="The deep problem is that agents are, in effect, hand-rolled distributed transactions. A typical workflow agent does not perform one action; it performs a sequence — create the invoice, update the ledger, send the confirmation email, write the audit record. Each of these lands in a different system, owned by a different team, with different consistency rules. In classical distributed systems, this shape of problem was solved with two-phase commit: a coordinator locks everyone's state, collects promises, and releases them all at once. No such coordinator exists in the agent's world. The mail API does not honor your transaction. The payment rail has never heard of your saga. The agent fires calls sequentially, and if call three fails, calls one and two are already real. The database engineer's oldest guarantee — atomicity across steps — is simply absent, and no amount of model intelligence restores it. Intelligence is not a transaction manager." data-zh="深层的问题在于：智能体实际上是手写的分布式事务。一个典型的工作流智能体不是执行一个动作，而是执行一串动作——创建发票、更新账本、发送确认邮件、写入审计记录。每一个动作落进不同的系统，归不同的团队所有，遵守不同的一致性规则。在经典分布式系统里，这类问题用两阶段提交解决：一个协调者锁住所有参与方的状态，收集承诺，然后统一放行。而智能体的世界里，不存在这样的协调者。邮件 API 不认你的事务，支付通道压根没听说过你的 saga。智能体顺序地发出调用，一旦第三个调用失败，第一和第二个调用早已成为事实。数据库工程师最古老的保证——跨步骤的原子性——就这样缺席了，而且再多模型智能也补不回来。智能，不是事务管理器。">The deep problem is that agents are, in effect, hand-rolled distributed transactions. A typical workflow agent performs a sequence — create the invoice, update the ledger, send the confirmation email, write the audit record. Each lands in a different system with different consistency rules. No coordinator exists in the agent's world. If call three fails, calls one and two are already real.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrT2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrT3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE SEQUENCE THAT CANNOT BE ROLLED BACK" data-zh="无法回滚的调用序列" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE SEQUENCE THAT CANNOT BE ROLLED BACK</text>
+<!-- step 1 -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.5" width="140" x="30" y="60"></rect>
+<text data-en="① create invoice" data-zh="① 创建发票" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="100" y="82">① create invoice</text>
+<text data-en="✓ committed" data-zh="✓ 已提交" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="100" y="112">✓ committed</text>
+<!-- step 2 -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent)" stroke-width="1.5" width="140" x="220" y="60"></rect>
+<text data-en="② update ledger" data-zh="② 更新账本" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="290" y="82">② update ledger</text>
+<text data-en="✓ committed" data-zh="✓ 已提交" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="290" y="112">✓ committed</text>
+<!-- step 3: fails -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--accent-3)" stroke-width="2" width="140" x="410" y="60"></rect>
+<text data-en="③ charge card" data-zh="③ 扣款" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="480" y="82">③ charge card</text>
+<text data-en="✕ failed" data-zh="✕ 失败" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="480" y="112">✕ failed</text>
+<path d="M170 77 L216 77" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M360 77 L406 77" fill="none" marker-end="url(#arrT1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- rollback attempt -->
+<path d="M480 116 C480 170 290 170 290 130" fill="none" marker-end="url(#arrT2)" stroke="var(--accent-3)" stroke-width="1.3" stroke-dasharray="4,3"></path>
+<text data-en="rollback?" data-zh="回滚?" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="385" y="158">rollback?</text>
+<text data-en="the ledger API has no undo endpoint" data-zh="账本 API 没有撤销端点" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="385" y="176">the ledger API has no undo endpoint</text>
+<!-- divergence: two worlds -->
+<text data-en="WHAT ACTUALLY EXISTS AFTER THE FAILURE" data-zh="失败之后，世界里实际剩下什么" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="218">WHAT ACTUALLY EXISTS AFTER THE FAILURE</text>
+<rect fill="var(--accent-dim)" height="44" opacity="0.35" rx="8" width="270" x="35" y="236"></rect>
+<text data-en="your state: invoice + ledger row" data-zh="你的状态：发票 + 账本记录" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="170" y="256">your state: invoice + ledger row</text>
+<text data-en="a payment that never happened" data-zh="一笔从未发生的支付" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="170" y="272">a payment that never happened</text>
+<rect fill="var(--accent-dim)" height="44" opacity="0.55" rx="8" width="270" x="315" y="236"></rect>
+<text data-en="the world: half a transaction," data-zh="世界：半个事务，" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="450" y="256">the world: half a transaction,</text>
+<text data-en="no map of what to undo" data-zh="却没有「该撤销什么」的地图" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="450" y="272">no map of what to undo</text>
+<text data-en="Inconsistency is not the worst case. Not knowing you are inconsistent is." data-zh="不一致还不是最糟的。最糟的是：你不知道自己已经不一致。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="322">Inconsistency is not the worst case. Not knowing you are inconsistent is.</text>
+</svg>
+<p class="diagram-caption" data-en="A workflow agent commits steps one and two, then step three fails. The database instinct reaches for a rollback — but there is no transaction to roll back. Each external system committed independently, and none of them offers an undo. The result is a half-finished transaction with no record of what would need to be reversed." data-zh="一个工作流智能体提交了第一、二步，第三步失败了。数据库本能让人伸手去摸回滚——但这里根本没有事务可以回滚。每个外部系统各自独立地提交了，没有任何一个提供撤销。结果是一个半途而废的事务，而且没有一份「哪些操作需要逆转」的记录。">A workflow agent commits steps one and two, then step three fails. The database instinct reaches for a rollback — but there is no transaction to roll back. The result is a half-finished transaction with no record of what would need to be reversed.</p>
+</div>
+<blockquote data-en="A responsible agent is not one that never makes mistakes. It is one where every effect can answer three questions before it happens: what did you intend to do, what did you actually do, and what will you do if it turns out you were wrong. An effect that cannot answer the third question has no business being executed. Reversibility is not granted after the fact. It is designed before it." data-zh="一个负责任的智能体，不是从不犯错的智能体。而是每一个副作用在发生之前，都能回答三个问题的智能体：你想做什么，你实际做了什么，如果发现做错了、你打算怎么办。回答不了第三个问题的副作用，没有资格被执行。可逆性不是事后授予的。它是在事前设计出来的。">A responsible agent is not one that never makes mistakes. It is one where every effect can answer three questions before it happens: what did you intend to do, what did you actually do, and what will you do if it turns out you were wrong. An effect that cannot answer the third question has no business being executed.</blockquote>
+<h3 data-en="Write the intent before the effect" data-zh="先写意图，再产生副作用">Write the intent before the effect</h3>
+<p data-en="The first pattern is borrowed directly from database internals: the write-ahead log. Databases do not write changes to disk directly; they first append a record of what they intend to change, then apply the change, then mark the record complete. If the process dies mid-way, the log tells recovery exactly what state it was in and what to do about it. Agents need precisely this discipline, and almost none of them have it. Before every external effect, the agent should append an intent record — what tool, what arguments, what expected outcome, what compensation — to durable storage it controls. The effect is then executed, and the intent is marked applied or failed. The log costs milliseconds. What it buys is the single most valuable artifact in agent operations: a map of every one-way door the agent has ever walked through, in order, with the context needed to reason about reversing each one." data-zh="第一个模式直接借自数据库内核：预写日志（write-ahead log）。数据库不把变更直接写进磁盘；它先追加一条「我打算改什么」的记录，然后应用变更，然后把记录标记为完成。如果进程在中途死掉，日志会精确地告诉恢复程序：当时处于什么状态、该做什么。智能体需要的正是这份纪律，而几乎没有任何智能体拥有它。在每一个外部副作用之前，智能体应当先向自己掌控的持久存储追加一条意图记录——什么工具、什么参数、预期结果是什么、补偿动作是什么。然后执行副作用，再把意图标记为已应用或已失败。这条日志的代价是毫秒级的。它换来的，是智能体运维中最有价值的产物：一张地图，记录智能体走过的每一扇单向门，按顺序，且带着逆转每一扇门所需的上下文。">The first pattern is borrowed directly from database internals: the write-ahead log. Before every external effect, the agent should append an intent record — what tool, what arguments, what expected outcome, what compensation — to durable storage it controls. The log costs milliseconds. What it buys is a map of every one-way door the agent has ever walked through, in order, with the context needed to reason about reversing each one.</p>
+<p data-en="The second pattern is the compensating action — the recognition that in a cross-system world, rollback is not deletion but counter-action. You cannot un-send an email, but you can send a correction. You cannot un-transfer funds, but you can transfer them back. You cannot un-delete a row, but you can restore it from a snapshot taken before the agent ran. Compensation is weaker than rollback: it does not erase history, it appends to it; it is visible to everyone who saw the original mistake; and it only works if someone designed it in advance. That last condition is the engineering responsibility. For every write-capable tool in the agent's belt, the builder must be able to name, in one sentence, its compensating action and its cost. A tool whose compensation cannot be named is a tool the agent should not have. If the business genuinely requires an uncompensatable action — a wire transfer, a production deletion, an irreversible disclosure — then that action does not belong inside the autonomous loop at all. It belongs behind a human gate, presented with its full blast radius, approved or refused by someone with the authority to accept the downside." data-zh="第二个模式是补偿动作——承认在跨系统的世界里，「回滚」不是删除，而是反向动作。你无法「取消发送」一封邮件，但你可以发一封更正。你无法「撤销」一笔转账，但你可以转回去。你无法「恢复」一行被删的数据，但你可以从智能体运行前拍的快照里还原它。补偿比回滚弱：它不抹除历史，它在历史上追加；它对每一个见过原错误的人都可见；而且它只有被人提前设计过，才可能存在。最后一个条件，就是工程责任。对智能体腰带上每一个有写能力的工具，构建者必须能在一句话之内说出它的补偿动作是什么、代价是什么。一个说不出补偿的工具，就是智能体不该拥有的工具。如果业务确实需要不可补偿的动作——一笔电汇、一次生产数据删除、一场不可撤回的信息披露——那这个动作就根本不属于自主循环。它应该待在人工闸门之后，连同它的完整爆炸半径一起呈现，由有权承担后果的人批准或拒绝。">The second pattern is the compensating action — the recognition that in a cross-system world, rollback is not deletion but counter-action. You cannot un-send an email, but you can send a correction. Compensation is weaker than rollback: it does not erase history, it appends to it. And it only works if someone designed it in advance.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrW1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrW2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE WRITE-AHEAD INTENT LOOP" data-zh="预写意图循环" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE WRITE-AHEAD INTENT LOOP</text>
+<!-- decide -->
+<rect fill="var(--accent-dim)" height="40" rx="9" stroke="var(--accent)" stroke-width="2" width="120" x="250" y="48"></rect>
+<text data-en="agent decides" data-zh="智能体决策" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="73">agent decides</text>
+<!-- intent log -->
+<rect fill="var(--bg-surface)" height="46" rx="8" stroke="var(--accent-2)" stroke-width="1.8" width="180" x="30" y="140"></rect>
+<text data-en="INTENT LOG (durable)" data-zh="意图日志（持久）" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="120" y="160">INTENT LOG (durable)</text>
+<text data-en="tool · args · expected · undo" data-zh="工具 · 参数 · 预期 · 撤销" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="120" y="177">tool · args · expected · undo</text>
+<path d="M262 88 C180 105 130 118 122 136" fill="none" marker-end="url(#arrW1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="① append intent" data-zh="① 追加意图" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="158" y="112">① append intent</text>
+<!-- effect -->
+<rect fill="var(--bg-surface)" height="46" rx="8" stroke="var(--accent)" stroke-width="1.8" width="160" x="440" y="140"></rect>
+<text data-en="EFFECT" data-zh="副作用" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="520" y="160">EFFECT</text>
+<text data-en="the one-way door" data-zh="那扇单向门" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="520" y="177">the one-way door</text>
+<path d="M358 88 C440 105 500 118 512 136" fill="none" marker-end="url(#arrW1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="② execute" data-zh="② 执行" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="462" y="112">② execute</text>
+<!-- mark result -->
+<path d="M438 168 C340 186 220 186 216 172" fill="none" marker-end="url(#arrW2)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="3,2"></path>
+<text data-en="③ mark applied / failed" data-zh="③ 标记已应用 / 失败" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="325" y="192">③ mark applied / failed</text>
+<!-- compensator -->
+<rect fill="var(--bg-surface)" height="46" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="190" x="215" y="240"></rect>
+<text data-en="COMPENSATOR" data-zh="补偿器" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="260">COMPENSATOR</text>
+<text data-en="reverses intents, newest first" data-zh="按最新优先，逆转意图" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="277">reverses intents, newest first</text>
+<path d="M120 186 C130 230 180 258 211 262" fill="none" marker-end="url(#arrW1)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<path d="M410 262 C445 256 490 235 505 190" fill="none" marker-end="url(#arrW1)" stroke="var(--accent-3)" stroke-width="1.3"></path>
+<text data-en="④ on failure: walk the log backward" data-zh="④ 失败时：沿日志回溯" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="490" y="232">④ on failure: walk the log backward</text>
+<text data-en="The log is the agent's transaction — the only one it will ever get." data-zh="这份日志，就是智能体的事务——它此生唯一能拥有的事务。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="310" y="322">The log is the agent's transaction — the only one it will ever get.</text>
+</svg>
+<p class="diagram-caption" data-en="Before any effect fires, the agent appends an intent record to a log it controls: the tool, the arguments, the expected outcome, and the compensation. Then the effect executes, and the intent is marked applied or failed. If anything goes wrong, a compensator walks the log backward, issuing counter-actions newest-first. The log is not observability garnish — it is the transaction boundary the external systems never gave you." data-zh="在任何副作用触发之前，智能体先向自己掌控的日志追加一条意图记录：工具、参数、预期结果，以及补偿方式。然后副作用才执行，意图再被标记为已应用或已失败。一旦出了问题，补偿器沿着日志回溯，按最新优先发出反向动作。这份日志不是可观测性的点缀——它是外部系统从未给你、你只能自己建造的事务边界。">Before any effect fires, the agent appends an intent record to a log it controls: the tool, the arguments, the expected outcome, and the compensation. If anything goes wrong, a compensator walks the log backward, issuing counter-actions newest-first. The log is the transaction boundary the external systems never gave you.</p>
+</div>
+<h3 data-en="Earn the right to cross" data-zh="赢得穿越的资格">Earn the right to cross</h3>
+<p data-en="The third pattern is gradual — the idea that the right to execute irreversible actions is earned per-run, not granted at deployment. A newly deployed agent gets read-only tools. After N runs with clean verification, it may write drafts. After M runs where drafts passed review without correction, it may act, but only within a blast-radius budget: a cap on affected records, on spend, on recipients. The budget expands with a clean track record and collapses instantly on any compensation event. This is not distrust of the model; it is the same posture every production system applies to every new component. No database gives a fresh replica write access on day one. No on-call engineer gets root in their first week. The agent, which is probabilistic where those systems are deterministic, deserves the caution more, not less. Capability tiers convert a binary question — can we trust it or not — into an engineering dial that turns with evidence." data-zh="第三个模式是渐进式的——执行不可逆动作的权利，是按运行次数挣来的，不是部署时发放的。一个刚上线的智能体，只有只读工具。在 N 次运行全部干净通过验证之后，它可以写草稿。再在 M 次草稿免于修正地通过审查之后，它可以行动——但只在一个爆炸半径预算之内：受影响记录数的上限、金额的上限、收件人数的上限。这份预算随着干净的战绩扩大，并在任何一次补偿事件发生的瞬间崩缩为零。这不是对模型的不信任；这是每一个生产系统对每一个新组件的一贯姿态。没有数据库会在第一天给新副本写权限，没有值班工程师会在第一周拿到 root。智能体——在这些确定性系统面前，它是概率性的——理应得到更多而非更少的审慎。能力分级，把一个二元问题——「信还是不信」——变成一个随证据转动的工程旋钮。">The third pattern is gradual — the right to execute irreversible actions is earned per-run, not granted at deployment. A newly deployed agent gets read-only tools, then drafts, then bounded writes within a blast-radius budget that expands with a clean track record and collapses on any compensation event.</p>
+<p data-en="Put together, these patterns form the rollback layer: the piece of the harness that lives between the model's decision and the world's mutation. It is unglamorous work. It does not demo well. It will never be the slide that closes the round. But it is the layer that determines whether an agent can be pointed at anything that matters. The industry's current posture — give the agent the keys, watch it work, apologize creatively when it does not — is a phase, and an expensive one. The teams that exit that phase first will be the ones that treated irreversibility as a first-class design constraint from day one: naming the one-way doors, logging every crossing, compensating every failure, and gating the doors that cannot be compensated. Models will get smarter. Tools will get sharper. Neither trend makes a sent email unsent. The undo button does not exist, and it is not coming. The only question is whether the harness pretends otherwise, or is built knowing it." data-zh="把这些模式放在一起，就构成了回滚层：位于「模型的决策」与「世界的变更」之间的那部分 harness。这是不性感的工作。它演示不出彩。它永远不是促成融资的那一页 PPT。但正是这一层，决定了智能体能不能被指向任何真正重要的东西。行业当前的姿态——把钥匙交给智能体，看它干活，出事之后发挥创意地道歉——只是一个阶段，而且是一个昂贵的阶段。最先走出这个阶段的团队，将是那些从第一天起就把不可逆性当作一等设计约束的团队：给每一扇单向门命名，记录每一次穿越，补偿每一次失败，并在无法补偿的门后设下人工闸门。模型会变更聪明，工具会变更锋利。这两个趋势，都不能让一封已发出的邮件变成未发出。撤销键不存在，也永远不会来。唯一的问题是：harness 是假装它存在，还是在明知它不存在的前提下被建造。">Put together, these patterns form the rollback layer: the piece of the harness that lives between the model's decision and the world's mutation. The undo button does not exist, and it is not coming. The only question is whether the harness pretends otherwise, or is built knowing it.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
