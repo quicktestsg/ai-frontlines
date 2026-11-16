@@ -1,6 +1,194 @@
 {
   "tweets": [
     {
+      "id": "2121327669534933025",
+      "url": "https://x.com/antigravity/status/2121327669534933025",
+      "label": "Antigravity",
+      "color": "#4285F4",
+      "fetched_at": "2026-11-16T08:12:23.099026+00:00",
+      "translation_zh": "Google Antigravity 推出 Dynamic Workflows：使用 /run-workflow，agent 会编写一个 Python 脚本来编排并行和串行的子 agent，通过结构化交接实现确定性的控制流，取代提示词漂移。运行前可以审查脚本，也可以保存后随时重跑同一流程。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 3246,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-13T19:41:43.000Z",
+        "display_text_range": [
+          0,
+          278
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/fsAafii9u4",
+              "expanded_url": "https://x.com/antigravity/status/2121327669534933025/video/1",
+              "indices": [
+                279,
+                302
+              ],
+              "url": "https://t.co/fsAafii9u4"
+            }
+          ]
+        },
+        "id_str": "2121327669534933025",
+        "text": "We're rolling out Dynamic Workflows in Google Antigravity.\n\nUse /run-workflow and the agent writes a Python script to orchestrate parallel and sequential subagents with structured handoffs, giving you deterministic control flow instead of prompt drift.\n\nReview the script before https://t.co/fsAafii9u4",
+        "user": {
+          "id_str": "1965856473084473347",
+          "name": "Google Antigravity",
+          "screen_name": "antigravity",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1990585614279049216/-Zz6T2nk_normal.png",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/2042749771337564160/AgOFPEL3_bigger.jpg"
+            },
+            "description": "Google",
+            "url": {
+              "url": "https://twitter.com/Google",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2121327669534933025"
+          ],
+          "editable_until_msecs": "1794602503000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/fsAafii9u4",
+            "expanded_url": "https://x.com/antigravity/status/2121327669534933025/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              279,
+              302
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2121327645556097024/img/R3mzJ3rfrhzZsrV_.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1130,
+              "width": 1600
+            },
+            "sizes": {
+              "large": {
+                "h": 1130,
+                "resize": "fit",
+                "w": 1600
+              },
+              "medium": {
+                "h": 848,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 480,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/fsAafii9u4",
+            "video_info": {
+              "aspect_ratio": [
+                160,
+                113
+              ],
+              "duration_millis": 19600,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2121327645556097024/pl/aoUZat5WyhILJBoK.m3u8?tag=16"
+                },
+                {
+                  "bitrate": 288000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2121327645556097024/vid/avc1/382x270/geU17hdaFq1e-DYe.mp4?tag=16"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2121327645556097024/vid/avc1/508x360/uhFdKbzduhQ5MUrY.mp4?tag=16"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2121327645556097024/vid/avc1/1018x720/eK1XnPFMb7n5MQqr.mp4?tag=16"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2121327645556097024/vid/avc1/1528x1080/TKlDwURDMkKUgr9q.mp4?tag=16"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            160,
+            113
+          ],
+          "contentType": "media_entity",
+          "durationMs": 19600,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2121327645556097024/img/R3mzJ3rfrhzZsrV_.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2121327645556097024/pl/aoUZat5WyhILJBoK.m3u8?tag=16"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2121327645556097024/vid/avc1/382x270/geU17hdaFq1e-DYe.mp4?tag=16"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2121327645556097024/vid/avc1/508x360/uhFdKbzduhQ5MUrY.mp4?tag=16"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2121327645556097024/vid/avc1/1018x720/eK1XnPFMb7n5MQqr.mp4?tag=16"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2121327645556097024/vid/avc1/1528x1080/TKlDwURDMkKUgr9q.mp4?tag=16"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2121327669534933025"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 226,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTIxMzI3NjY5NDY3ODI4MjI0"
+        }
+      }
+    },
+    {
       "id": "2121317227618340990",
       "url": "https://x.com/AnthropicAI/status/2121317227618340990",
       "label": "Anthropic",
@@ -392,6 +580,64 @@
         },
         "isEdited": false,
         "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2121293823837921433",
+      "url": "https://x.com/Google/status/2121293823837921433",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-11-16T08:12:23.099026+00:00",
+      "translation_zh": "Gemini 的 Personal Intelligence 现已支持关联 Google Wallet，围绕个人财务问题提供更个性化的回答：直接在对话中生成现金流、资产配置和预算的动态图表；找出被遗忘的订阅和自动扣费并标记涨价；根据去年消费记录帮你制定节日预算。还可通过 Plaid 安全关联银行卡账户，解锁更深入的洞察。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 959,
+        "lang": "en",
+        "created_at": "2026-11-13T17:27:13.000Z",
+        "display_text_range": [
+          0,
+          279
+        ],
+        "entities": {
+          "user_mentions": [
+            {
+              "id_str": "1806359170830172162",
+              "indices": [
+                253,
+                263
+              ],
+              "name": "Google Gemini",
+              "screen_name": "GeminiApp"
+            }
+          ]
+        },
+        "id_str": "2121293823837921433",
+        "text": "Personal Intelligence in Gemini securely connects information from apps you already use to make your experience more personalized and helpful. Today, we’re adding Google Wallet to the list of connected apps so you can get more tailored responses in the @GeminiApp around personal",
+        "user": {
+          "id_str": "20536157",
+          "name": "Google",
+          "screen_name": "Google",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2042749771337564160/AgOFPEL3_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2121293823837921433"
+          ],
+          "editable_until_msecs": "1794594433000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "conversation_count": 146,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTIxMjkzODIzNzQ1NTk3NDQx"
+        }
       }
     },
     {
