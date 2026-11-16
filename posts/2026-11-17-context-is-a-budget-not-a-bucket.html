@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Context Is a Budget, Not a Bucket — AI Frontlines</title>
+<meta content="Teams treat the context window as a bucket: fill it until it overflows, then truncate. But every token competes for the model's attention. Context is a budget to be allocated — with pinned state, an eviction policy, and compaction that is lossy about chatter and lossless about commitments." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 17, 2026" data-zh="2026年11月17日">November 17, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Context Is a Budget, Not a Bucket" data-zh="上下文是预算，不是水桶">Context Is a Budget, Not a Bucket</h1>
+<p class="post-header-deck" data-en="Most teams treat the context window as a bucket: pour everything in — the full history, every tool output, entire files — until it overflows, then truncate from the top and hope. But every token in the window is competing for the same finite attention. A window that is 90% stale transcript is a model operating at a fraction of its intelligence. The teams whose agents stay sharp at turn 3 and at turn 300 are the ones that stopped thinking about capacity and started thinking about allocation: what is pinned, what is evicted, what survives compaction." data-zh="大多数团队把上下文窗口当成水桶：把所有东西倒进去——完整历史、每一段工具输出、整个文件——直到溢出，再从顶部截断，然后祈祷。但窗口里的每一个 token，都在争夺同一份有限的注意力。一个 90% 是过期对话记录的窗口，意味着模型只发挥出一小部分智能。那些智能体在第 3 轮和第 300 轮都同样锐利的团队，早已停止思考「容量」，开始思考「分配」：什么被钉住，什么被逐出，什么在压缩后幸存。">Most teams treat the context window as a bucket: pour everything in — the full history, every tool output, entire files — until it overflows, then truncate from the top and hope. But every token in the window is competing for the same finite attention.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a number on every model card that everyone treats as the headline: the context window. Two hundred thousand tokens. A million tokens. The number implies a container, and containers invite a particular style of engineering — the style of the bucket. If it fits, it goes in. The system prompt grows a paragraph every week. The full conversation history is replayed on every turn, because replaying is simpler than deciding what to keep. Tool outputs are pasted verbatim, headers and boilerplate and all. Entire files are inlined because retrieval is a second system and inlining is zero systems. The bucket fills. The agent still works — for a while. And then, somewhere around the long afternoon of a long session, it starts forgetting the constraint the user stated at the beginning, re-reading the same file, re-making the same decision, contradicting itself politely. Nothing crashed. Nothing logged an error. The bucket was simply full of the wrong things." data-zh="每张模型卡上都有一个被所有人当作头条的数字：上下文窗口。二十万 token。一百万 token。这个数字暗示了一个容器，而容器会诱导出一种特定的工程风格——水桶风格。装得下，就往里装。系统 prompt 每周长一段。完整对话历史每一轮都被重放，因为重放比决定「保留什么」更简单。工具输出被原样粘贴，连同表头和样板文案。整个文件被内联进窗口，因为检索是第二套系统，而内联是零套系统。水桶渐渐装满。智能体仍然在工作——一段时间。然后，在某个长会话的漫长下午，它开始忘记用户在一开始声明的约束，重新读同一个文件，重新做同一个决定，礼貌地自相矛盾。没有任何东西崩溃。没有任何日志报错。只是水桶里装满了错误的东西。">There is a number on every model card that everyone treats as the headline: the context window. Two hundred thousand tokens. A million tokens. The number implies a container, and containers invite a particular style of engineering — the style of the bucket. If it fits, it goes in. The system prompt grows a paragraph every week. The full conversation history is replayed on every turn, because replaying is simpler than deciding what to keep. Tool outputs are pasted verbatim, headers and boilerplate and all. Entire files are inlined because retrieval is a second system and inlining is zero systems. The bucket fills. The agent still works — for a while.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrB1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE BUCKET vs THE BUDGET" data-zh="水桶 vs 预算" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE BUCKET vs THE BUDGET</text>
+<!-- LEFT: the bucket, overflowing -->
+<text data-en="THE BUCKET" data-zh="水桶式" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="140" y="54">THE BUCKET</text>
+<rect fill="var(--bg-surface)" height="180" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="150" x="65" y="70"></rect>
+<rect fill="var(--accent-3)" height="20" opacity="0.25" width="134" x="73" y="78"></rect>
+<text data-en="system prompt" data-zh="系统 prompt" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="140" y="91">system prompt</text>
+<rect fill="var(--accent-3)" height="46" opacity="0.25" width="134" x="73" y="102"></rect>
+<text data-en="full transcript" data-zh="完整对话记录" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="140" y="124">full transcript</text>
+<text data-en="(turns 1–280)" data-zh="（第 1–280 轮）" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="140" y="137">(turns 1–280)</text>
+<rect fill="var(--accent-3)" height="34" opacity="0.25" width="134" x="73" y="152"></rect>
+<text data-en="raw tool dumps" data-zh="原始工具输出" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="140" y="172">raw tool dumps</text>
+<rect fill="var(--accent-3)" height="16" opacity="0.25" width="134" x="73" y="190"></rect>
+<text data-en="whole files" data-zh="整个文件" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="140" y="202">whole files</text>
+<text data-en="overflow ⟶ truncate" data-zh="溢出 ⟶ 截断" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="140" y="230">overflow ⟶ truncate</text>
+<path d="M140 252 C140 272 200 272 260 272" fill="none" marker-end="url(#arrB1)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="3,3"></path>
+<text data-en="silent degradation" data-zh="无声的性能衰减" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="140" y="300">silent degradation</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="310"></line>
+<!-- RIGHT: the budget -->
+<text data-en="THE BUDGET" data-zh="预算式" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="475" y="54">THE BUDGET</text>
+<rect fill="var(--bg-surface)" height="180" rx="8" stroke="var(--accent)" stroke-width="1.5" width="270" x="340" y="70"></rect>
+<rect fill="var(--accent)" height="26" opacity="0.3" width="254" x="348" y="78"></rect>
+<text data-en="pinned kernel — identity, rules, commitments" data-zh="钉住的内核——身份、规则、承诺" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="475" y="95">pinned kernel — identity, rules, commitments</text>
+<rect fill="var(--accent-2)" height="30" opacity="0.3" width="254" x="348" y="108"></rect>
+<text data-en="state object — decisions, IDs, constraints" data-zh="状态对象——决策、ID、约束" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="475" y="127">state object — decisions, IDs, constraints</text>
+<rect fill="var(--accent-2)" height="28" opacity="0.2" width="254" x="348" y="142"></rect>
+<text data-en="working set — recent turns" data-zh="工作集——最近几轮" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="475" y="160">working set — recent turns</text>
+<rect fill="var(--accent-3)" height="22" opacity="0.2" width="254" x="348" y="174"></rect>
+<text data-en="retrieved material — on demand" data-zh="检索材料——按需" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="475" y="189">retrieved material — on demand</text>
+<rect fill="none" height="20" width="254" x="348" y="200" stroke="var(--border)" stroke-dasharray="3,3"></rect>
+<text data-en="headroom — deliberate slack" data-zh="余量——刻意留白" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="475" y="214">headroom — deliberate slack</text>
+<text data-en="every segment is a decision" data-zh="每一段都是一次决策" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="475" y="284">every segment is a decision</text>
+<text data-en="what earns a place, and why" data-zh="什么配得上一个位置，为什么" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="475" y="302">what earns a place, and why</text>
+</svg>
+<p class="diagram-caption" data-en="On the left, the bucket: the window fills with whatever happened to occur, truncates when it overflows, and the model quietly degrades. On the right, the budget: the window is partitioned into named segments — a pinned kernel, a state object, a working set, retrieved material, and deliberate headroom — and every segment is an explicit allocation decision that can be argued about, tested, and tuned." data-zh="左边是水桶：窗口被「碰巧发生的东西」填满，溢出时截断，模型悄然衰减。右边是预算：窗口被切分为命名的区段——钉住的内核、状态对象、工作集、检索材料、以及刻意保留的余量——每一段都是一个显式的分配决策，可以被争论、被测试、被调优。">On the left, the bucket: the window fills with whatever happened to occur, truncates when it overflows, and the model quietly degrades. On the right, the budget: the window is partitioned into named segments — a pinned kernel, a state object, a working set, retrieved material, and deliberate headroom — and every segment is an explicit allocation decision that can be argued about, tested, and tuned.</p>
+</div>
+<h3 data-en="Attention is the scarce resource, not tokens" data-zh="稀缺的是注意力，不是 token">Attention is the scarce resource, not tokens</h3>
+<p data-en="The bucket mentality survives because the failure is statistical, not binary. A full window does not throw an exception. The model still produces fluent, confident, grammatical output. What changes is the distribution of its attention — and attention is not divided the way disk space is. A token in the middle of a long context is demonstrably less attended than a token at the beginning or the end; the literature calls it the lost-in-the-middle effect, and every practitioner has met its symptoms: the agent that re-asks a question answered an hour ago, the edit that violates a style rule stated in the very prompt it can still technically read. Adding more window does not fix this. A million-token window with 900,000 tokens of stale transcript is not a smarter agent; it is the same dilution at a larger scale, with a bigger invoice. The scarce resource was never capacity. It is the model's ability to notice what matters, and that ability is divided — thinning as the denominator grows — across everything in the window." data-zh="水桶心态之所以能存活，是因为它的失败是统计性的，而不是二元的。装满的窗口不会抛出异常。模型依然产出流畅、自信、合乎语法的输出。改变的是它注意力的分布——而注意力并不像磁盘空间那样被划分。长上下文中段的 token，被关注的程度明显低于开头或结尾的 token；文献称之为 lost-in-the-middle 效应，而每个从业者都见过它的症状：智能体重新问起一小时前已经回答过的问题，一次编辑违反了它技术上仍然「读得到」的 prompt 里写明的风格规则。加大窗口并不能解决这个问题。一个装着 90 万 token 过期对话记录的百万 token 窗口，不是一个更聪明的智能体；它只是更大规模的同样的稀释，附带一张更大的账单。稀缺资源从来不是容量，而是模型「注意到重要之事」的能力——而这个能力被窗口里的一切均分，分母越大，每一份越薄。">The bucket mentality survives because the failure is statistical, not binary. A full window does not throw an exception. The model still produces fluent, confident, grammatical output. What changes is the distribution of its attention — and attention is not divided the way disk space is. A token in the middle of a long context is demonstrably less attended than a token at the beginning or the end; the literature calls it the lost-in-the-middle effect, and every practitioner has met its symptoms: the agent that re-asks a question answered an hour ago, the edit that violates a style rule stated in the very prompt it can still technically read. Adding more window does not fix this. A million-token window with 900,000 tokens of stale transcript is not a smarter agent; it is the same dilution at a larger scale, with a bigger invoice.</p>
+<blockquote data-en="A token in the window is not free. It is rented space in the model's attention, and the rent is paid by every other token in the window. The question is never 'does it fit?' The question is 'what does it displace, and was that trade worth it?'" data-zh="窗口里的 token 不是免费的。它是从模型注意力中租来的空间，而租金由窗口里所有其他 token 支付。问题从来不是「装得下吗」，而是「它挤掉了什么，这笔交易值得吗」。">A token in the window is not free. It is rented space in the model's attention, and the rent is paid by every other token in the window. The question is never "does it fit?" The question is "what does it displace, and was that trade worth it?"</blockquote>
+<p data-en="Once attention is treated as the scarce resource, the design falls out almost mechanically, and it looks exactly like a memory hierarchy — the oldest trick in computer architecture. Chips did not solve the speed gap between the CPU and main memory by building everything out of the fastest memory; they built tiers, with an explicit policy for what lives where and what moves between them. Agent context deserves the same treatment. At the top tier sits the pinned kernel: identity, hard rules, the commitments the agent has made — never evicted, never summarized, checked into version control. Below it, the working set: the last N turns of genuine dialogue, kept verbatim because recency and fidelity both matter there. Below that, a relevance cache: older material that is kept only while a cheap score says it still relates to the current task — tool outputs summarized, files represented by outline rather than body. And at the bottom, the external store: everything else, living in files and indexes, retrieved on demand for the turns that actually need it. The window stops being a record of everything that happened and becomes the working memory of a system that knows where the rest is filed." data-zh="一旦把注意力当作稀缺资源，设计就几乎是机械地自然浮现，而且它看起来正像一个内存层级——计算机体系结构里最古老的招数。芯片没有靠「全部用最快的内存」来解决 CPU 与主存之间的速度鸿沟；它们构建了层级，配上显式的策略：什么住在哪一层、什么在层间移动。智能体的上下文值得同样的对待。最顶层是钉住的内核：身份、硬性规则、智能体已做出的承诺——永不逐出、永不摘要、纳入版本控制。其下是工作集：最近 N 轮真实对话，逐字保留，因为在这里新近度和保真度都重要。再往下是相关性缓存：较旧的材料，只有当某个廉价的评分仍然认为它与当前任务相关时才保留——工具输出被摘要，文件以大纲而非全文的形式存在。最底层是外部存储：其余的一切，住在文件和索引里，在真正需要的那几轮按需检索。窗口不再是「发生过的一切」的记录，而是一个知道其余一切被归档在何处的系统的工作记忆。">Once attention is treated as the scarce resource, the design falls out almost mechanically, and it looks exactly like a memory hierarchy — the oldest trick in computer architecture. Chips did not solve the speed gap between the CPU and main memory by building everything out of the fastest memory; they built tiers, with an explicit policy for what lives where and what moves between them. Agent context deserves the same treatment. At the top tier sits the pinned kernel: identity, hard rules, the commitments the agent has made — never evicted, never summarized, checked into version control. Below it, the working set: the last N turns of genuine dialogue, kept verbatim because recency and fidelity both matter there. Below that, a relevance cache: older material kept only while a cheap score says it still relates to the current task. And at the bottom, the external store: everything else, retrieved on demand.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrB2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrB3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE CONTEXT HIERARCHY" data-zh="上下文层级" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE CONTEXT HIERARCHY</text>
+<!-- tier 1 -->
+<rect fill="var(--accent-dim)" height="44" rx="8" stroke="var(--accent)" stroke-width="2" width="240" x="190" y="46"></rect>
+<text data-en="PINNED KERNEL" data-zh="钉住的内核" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="65">PINNED KERNEL</text>
+<text data-en="identity · hard rules · commitments — never evicted" data-zh="身份 · 硬性规则 · 承诺——永不逐出" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="80">identity · hard rules · commitments — never evicted</text>
+<!-- tier 2 -->
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="240" x="190" y="104"></rect>
+<text data-en="WORKING SET" data-zh="工作集" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="123">WORKING SET</text>
+<text data-en="recent turns, verbatim — evict by recency" data-zh="最近几轮，逐字——按新近度逐出" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="138">recent turns, verbatim — evict by recency</text>
+<!-- tier 3 -->
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="240" x="190" y="162"></rect>
+<text data-en="RELEVANCE CACHE" data-zh="相关性缓存" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="181">RELEVANCE CACHE</text>
+<text data-en="older material, summarized — evict by score" data-zh="较旧材料，已摘要——按评分逐出" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="196">older material, summarized — evict by score</text>
+<!-- tier 4 -->
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--border)" stroke-width="1.5" stroke-dasharray="5,3" width="240" x="190" y="220"></rect>
+<text data-en="EXTERNAL STORE" data-zh="外部存储" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="310" y="239">EXTERNAL STORE</text>
+<text data-en="files · indexes · transcripts — retrieve on demand" data-zh="文件 · 索引 · 完整记录——按需检索" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="254">files · indexes · transcripts — retrieve on demand</text>
+<!-- promotion arrows (right side, up) -->
+<path d="M452 240 C490 220 490 180 448 160" fill="none" marker-end="url(#arrB2)" stroke="var(--accent)" stroke-width="1.4"></path>
+<text data-en="promote (retrieval)" data-zh="提升（检索）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="516" y="204">promote (retrieval)</text>
+<!-- demotion arrows (left side, down) -->
+<path d="M168 128 C130 148 130 188 172 208" fill="none" marker-end="url(#arrB3)" stroke="var(--text-tertiary)" stroke-width="1.4"></path>
+<text data-en="demote (age + decay)" data-zh="降级（老化 + 衰减）" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="104" y="176">demote (age + decay)</text>
+<text data-en="the window holds the top tiers; everything else is an address away" data-zh="窗口只装上面几层；其余的一切，只隔一个地址" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="308">the window holds the top tiers; everything else is an address away</text>
+</svg>
+<p class="diagram-caption" data-en="A context hierarchy, borrowed from half a century of memory design. The pinned kernel never leaves the window. The working set holds recent turns verbatim and evicts by recency. The relevance cache keeps summarized older material until a decay score says otherwise. The external store holds everything else, and retrieval promotes material back into the window exactly when a turn needs it. The policy — what lives where, what moves when — is the actual design work." data-zh="一个借鉴了半个世纪内存设计经验的上下文层级。钉住的内核永不离开窗口。工作集逐字保存最近几轮，按新近度逐出。相关性缓存保存已摘要的旧材料，直到衰减评分说不再相关。外部存储装着其余一切，检索在某一轮真正需要时把材料提升回窗口。这套策略——什么住在哪层、何时移动——才是真正的设计工作。">A context hierarchy, borrowed from half a century of memory design. The pinned kernel never leaves the window. The working set holds recent turns verbatim and evicts by recency. The relevance cache keeps summarized older material until a decay score says otherwise. The external store holds everything else, and retrieval promotes material back into the window exactly when a turn needs it. The policy — what lives where, what moves when — is the actual design work.</p>
+</div>
+<h3 data-en="Compaction is garbage collection — and most teams do it wrong" data-zh="压缩就是垃圾回收——而大多数团队都做错了">Compaction is garbage collection — and most teams do it wrong</h3>
+<p data-en="Eventually every long session must compact: fold the old into a summary so the new can breathe. Most implementations ask the model to 'summarize the conversation so far' and splice the result in place of the history. This is garbage collection with no liveness analysis — it frees memory by sweeping whatever is oldest, with no regard for what is still referenced. And the failures are predictable. The summary faithfully captures the theme of the discussion and silently drops the identifier of the record being edited. It preserves the narrative arc of a debugging session and loses the one constraint the user said was non-negotiable. It keeps the plot and discards the commitments. Days later the agent re-opens a ticket that was closed, re-litigates a decision that was settled, or violates a rule it agreed to forty turns ago — and the trace shows nothing wrong, because the wrongness happened at compaction time, invisible and confident." data-zh="最终，每个长会话都必须压缩：把旧的折叠成摘要，好让新的喘口气。大多数实现会请求模型「总结一下目前的对话」，然后把结果拼接进历史。这是没有存活分析的垃圾回收——它靠清扫最旧的东西来释放内存，完全不管哪些仍然被引用。而失败是可预测的。摘要忠实地捕捉了讨论的主题，却悄悄丢掉了正在编辑的那条记录的标识符。它保留了调试会话的叙事弧线，却丢掉了用户说过的那条不可妥协的约束。它留住了情节，丢弃了承诺。几天后，智能体重新打开一张已关闭的工单，重新争论一个已经定案的决定，或者违反了它在四十轮前同意过的规则——而追踪记录显示一切正常，因为错误发生在压缩的那一刻，无声且自信。">Eventually every long session must compact: fold the old into a summary so the new can breathe. Most implementations ask the model to "summarize the conversation so far" and splice the result in place of the history. This is garbage collection with no liveness analysis — it frees memory by sweeping whatever is oldest, with no regard for what is still referenced. And the failures are predictable. The summary faithfully captures the theme of the discussion and silently drops the identifier of the record being edited. It preserves the narrative arc of a debugging session and loses the one constraint the user said was non-negotiable. It keeps the plot and discards the commitments.</p>
+<p data-en="The fix is to make compaction lossy about the right things. What must survive every compaction is small, structured, and enumerable: the decisions that have been made and the reasons they were made; the constraints the user has stated, verbatim where possible; every identifier, handle, path, and version number the task depends on; the errors already encountered so they are not re-attempted. What may be discarded is everything else — the phrasing, the dead ends, the three failed drafts, the social lubricant of a long conversation. The cleanest way to enforce this is to stop compacting into prose entirely and compact into a state object: a small structured document — decisions, constraints, identifiers, open questions — that is the contract between the past and the future of the session. The transcript is then free to be garbage-collected aggressively, because nothing the future needs lives only in the transcript. The summary becomes a view of the state object for humans; the state object itself is what the model consumes." data-zh="修复方法是让压缩「在对的地方有损」。每一次压缩都必须幸存的，是小的、结构化的、可枚举的：已经做出的决定，以及做出它们的理由；用户声明的约束，尽可能逐字保留；任务依赖的每一个标识符、句柄、路径和版本号；已经遇到过的错误，以免重蹈覆辙。可以丢弃的，是其余的一切——措辞、走不通的岔路、三版失败的草稿、长对话里的社交润滑剂。执行这一点最干净的方式，是完全停止压缩成散文，改为压缩成一个状态对象：一份小型的结构化文档——决策、约束、标识符、待解问题——它是会话的过去与未来之间的契约。对话记录从此可以被激进地垃圾回收，因为未来需要的一切，不再只活在对话记录里。摘要变成了给人看的状态对象视图；而模型真正消费的，是状态对象本身。">The fix is to make compaction lossy about the right things. What must survive every compaction is small, structured, and enumerable: the decisions that have been made and the reasons they were made; the constraints the user has stated, verbatim where possible; every identifier, handle, path, and version number the task depends on; the errors already encountered so they are not re-attempted. What may be discarded is everything else — the phrasing, the dead ends, the three failed drafts, the social lubricant of a long conversation. The cleanest way to enforce this is to stop compacting into prose entirely and compact into a state object: a small structured document that is the contract between the past and the future of the session.</p>
+<blockquote data-en="Good compaction is lossy about chatter and lossless about commitments. If the agent can forget the flavor of the conversation but never the promises inside it, the window can shrink without the trust shrinking with it." data-zh="好的压缩，对闲谈有损，对承诺无损。如果智能体可以忘记对话的语气细节，却永远不会忘记其中的承诺，窗口就可以缩小，而信任不会随之缩小。">Good compaction is lossy about chatter and lossless about commitments. If the agent can forget the flavor of the conversation but never the promises inside it, the window can shrink without the trust shrinking with it.</blockquote>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrB4" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrB5" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="COMPACTION WITH A LIVENESS CONTRACT" data-zh="带存活契约的压缩" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">COMPACTION WITH A LIVENESS CONTRACT</text>
+<!-- long transcript -->
+<rect fill="var(--bg-surface)" height="120" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="30" y="80"></rect>
+<text data-en="long transcript" data-zh="长对话记录" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="90" y="102">long transcript</text>
+<line stroke="var(--border)" stroke-width="1" x1="42" x2="138" y1="112" y2="112"></line>
+<line stroke="var(--border)" stroke-width="1" x1="42" x2="120" y1="124" y2="124"></line>
+<line stroke="var(--border)" stroke-width="1" x1="42" x2="132" y1="136" y2="136"></line>
+<line stroke="var(--border)" stroke-width="1" x1="42" x2="110" y1="148" y2="148"></line>
+<line stroke="var(--border)" stroke-width="1" x1="42" x2="128" y1="160" y2="160"></line>
+<line stroke="var(--border)" stroke-width="1" x1="42" x2="100" y1="172" y2="172"></line>
+<text data-en="chatter + commitments mixed" data-zh="闲谈与承诺混杂" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="90" y="192">chatter + commitments mixed</text>
+<!-- extract arrow -->
+<path d="M158 140 L215 140" fill="none" marker-end="url(#arrB4)" stroke="var(--accent)" stroke-width="1.6"></path>
+<text data-en="extract" data-zh="提取" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="186" y="130">extract</text>
+<!-- state object -->
+<rect fill="var(--accent-dim)" height="150" rx="8" stroke="var(--accent)" stroke-width="2" width="180" x="222" y="66"></rect>
+<text data-en="STATE OBJECT" data-zh="状态对象" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="312" y="88">STATE OBJECT</text>
+<text data-en="✓ decisions + reasons" data-zh="✓ 决策 + 理由" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" x="238" y="110">✓ decisions + reasons</text>
+<text data-en="✓ constraints, verbatim" data-zh="✓ 约束，逐字保留" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" x="238" y="128">✓ constraints, verbatim</text>
+<text data-en="✓ IDs, paths, versions" data-zh="✓ ID、路径、版本号" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" x="238" y="146">✓ IDs, paths, versions</text>
+<text data-en="✓ errors already seen" data-zh="✓ 已见过的错误" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" x="238" y="164">✓ errors already seen</text>
+<text data-en="✓ open questions" data-zh="✓ 待解问题" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" x="238" y="182">✓ open questions</text>
+<text data-en="small · structured · checked in" data-zh="小 · 结构化 · 纳入版本控制" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="312" y="206">small · structured · checked in</text>
+<!-- discard path -->
+<path d="M90 204 C90 250 160 268 215 268" fill="none" marker-end="url(#arrB5)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="3,3"></path>
+<text data-en="discard raw transcript" data-zh="丢弃原始对话记录" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="130" y="252">discard raw transcript</text>
+<!-- rebuild window -->
+<path d="M402 140 L460 140" fill="none" marker-end="url(#arrB4)" stroke="var(--accent)" stroke-width="1.6"></path>
+<text data-en="rebuild" data-zh="重建" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="431" y="130">rebuild</text>
+<rect fill="var(--bg-surface)" height="150" rx="8" stroke="var(--accent)" stroke-width="1.5" width="130" x="466" y="66"></rect>
+<text data-en="fresh window" data-zh="全新窗口" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="531" y="88">fresh window</text>
+<rect fill="var(--accent)" height="14" opacity="0.3" width="114" x="474" y="98"></rect>
+<text data-en="kernel" data-zh="内核" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" font-weight="700" text-anchor="middle" x="531" y="109">kernel</text>
+<rect fill="var(--accent-2)" height="14" opacity="0.3" width="114" x="474" y="116"></rect>
+<text data-en="state object" data-zh="状态对象" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" font-weight="700" text-anchor="middle" x="531" y="127">state object</text>
+<rect fill="var(--accent-2)" height="14" opacity="0.2" width="114" x="474" y="134"></rect>
+<text data-en="recent turns" data-zh="最近几轮" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="531" y="145">recent turns</text>
+<rect fill="none" height="14" width="114" x="474" y="152" stroke="var(--border)" stroke-dasharray="3,3"></rect>
+<text data-en="headroom" data-zh="余量" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" font-style="italic" text-anchor="middle" x="531" y="163">headroom</text>
+<text data-en="sharp again at turn 300" data-zh="第 300 轮依然锐利" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="531" y="200">sharp again at turn 300</text>
+<text data-en="compact into a contract, not a summary" data-zh="压缩成契约，而不是摘要" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="308">compact into a contract, not a summary</text>
+</svg>
+<p class="diagram-caption" data-en="Compaction as garbage collection done right: extract the live commitments into a structured state object — decisions and their reasons, verbatim constraints, identifiers, seen errors, open questions — then rebuild a fresh window from kernel, state object, and recent turns. The raw transcript is discarded aggressively because nothing the future needs lives only in the transcript." data-zh="把压缩做对的垃圾回收：把仍然存活的承诺提取进一个结构化状态对象——决策及其理由、逐字的约束、标识符、已见过的错误、待解问题——然后用内核、状态对象和最近几轮重建一个全新窗口。原始对话记录被激进丢弃，因为未来需要的一切，不再只活在对话记录里。">Compaction as garbage collection done right: extract the live commitments into a structured state object — decisions and their reasons, verbatim constraints, identifiers, seen errors, open questions — then rebuild a fresh window from kernel, state object, and recent turns. The raw transcript is discarded aggressively because nothing the future needs lives only in the transcript.</p>
+</div>
+<p data-en="None of this requires new infrastructure. It requires a posture change: treating the context window the way a good team treats a budget — every resident token justified, every eviction deliberate, every compaction auditable. The teams that get this right notice something counterintuitive: their agents get sharper as sessions get longer, not duller, because the window increasingly contains exactly what matters and nothing else. The model was never the bottleneck. The window was a swamp, and the intelligence drowned in it. Drain the swamp — pin what is sacred, file what is cold, and compact into contracts — and the same model, at the same price, starts behaving like the one the demo promised." data-zh="这些都不需要新的基础设施。它需要的是姿态的转变：像优秀的团队对待预算那样对待上下文窗口——每一个驻留的 token 都有理由，每一次逐出都是决定，每一次压缩都可审计。把这件事做对的团队会注意到一个反直觉的现象：随着会话变长，他们的智能体变得更锐利，而不是更迟钝，因为窗口里越来越多地装着恰恰重要的东西，别无他物。瓶颈从来不是模型。窗口是一片沼泽，智能淹死在了里面。排干它——钉住神圣的、归档冰冷的、压缩成契约——同一个模型、同样的价格，就会开始表现得像演示里承诺的那个。">None of this requires new infrastructure. It requires a posture change: treating the context window the way a good team treats a budget — every resident token justified, every eviction deliberate, every compaction auditable. The teams that get this right notice something counterintuitive: their agents get sharper as sessions get longer, not duller, because the window increasingly contains exactly what matters and nothing else. The model was never the bottleneck. The window was a swamp, and the intelligence drowned in it.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
