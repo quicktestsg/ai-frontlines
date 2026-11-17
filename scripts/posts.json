@@ -1,6 +1,15 @@
 [
-  {
-    "date": "2026-11-17",
+{
+  "date": "2026-11-18",
+  "slug": "the-agent-that-works-ahead",
+  "title_en": "The Agent That Works Ahead",
+  "title_zh": "抢跑的智能体",
+  "read_time": 9,
+  "excerpt_en": "The slowest part of an agent is rarely the model — it is the gaps between turns, where the loop waits for permission to continue. Borrowing speculative execution from CPUs: predict the next tool call, prefetch its inputs, warm the likely branch, and roll back for free on a miss. One hard rule makes it safe — speculation never crosses the reversible envelope.",
+  "excerpt_zh": "智能体最慢的环节几乎从来不是模型，而是轮次之间的间隙，循环在那里等待继续的许可。把 CPU 的投机执行借过来：预测下一个工具调用、预取输入、焐热可能的分支、猜错就免费回滚。一条硬规则让它安全——投机永不越过可逆包络。"
+},
+{
+  "date": "2026-11-17",
     "slug": "context-is-a-budget-not-a-bucket",
     "title_en": "Context Is a Budget, Not a Bucket",
     "title_zh": "上下文是预算，不是水桶",
