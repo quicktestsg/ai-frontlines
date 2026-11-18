@@ -1,6 +1,339 @@
 {
   "tweets": [
     {
+      "id": "2122801681939234950",
+      "url": "https://x.com/ClaudeDevs/status/2122801681939234950",
+      "label": "Claude",
+      "color": "#D4A574",
+      "fetched_at": "2026-11-18T20:03:47.595376+00:00",
+      "translation_zh": "Code Mode 登场：Claude Code 的实验性工具使用新方式。Claude 直接编写脚本，以更精巧的方式把多个工具串联起来，还能在长命令后台运行的同时继续回答你。设置 CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1 即可开启。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 10660,
+        "lang": "en",
+        "created_at": "2026-11-17T21:18:55.000Z",
+        "display_text_range": [
+          0,
+          268
+        ],
+        "entities": {},
+        "id_str": "2122801681939234950",
+        "text": "Check out Code Mode, a new, experimental way for Claude Code to work with tools. Claude writes scripts that chain your tools together in sophisticated ways, and it can answer you while long commands are still running. \n\nOpt in with CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1",
+        "user": {
+          "id_str": "2024518793679294464",
+          "name": "ClaudeDevs",
+          "screen_name": "ClaudeDevs",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2044472418815893504/xf14RxM8_normal.png",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_bigger.jpg"
+            },
+            "description": "Anthropic",
+            "url": {
+              "url": "https://twitter.com/AnthropicAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2122801681939234950"
+          ],
+          "editable_until_msecs": "1794953935000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 392,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/Aj5ofLiK1y",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2121305958425190400/VZnBCwYl?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "height": 147,
+                "url": "https://pbs.twimg.com/card_img/2121305958425190400/VZnBCwYl?format=jpg&name=280x150",
+                "width": 280
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Try Code Mode, an experimental feature in which Claude writes JavaScript that makes several tool calls in one step.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "code.claude.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "height": 315,
+                "url": "https://pbs.twimg.com/card_img/2121305958425190400/VZnBCwYl?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2121305958425190400/VZnBCwYl?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2121305958425190400/VZnBCwYl?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2121305958425190400/VZnBCwYl?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2121305958425190400/VZnBCwYl?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "height": 76,
+                "url": "https://pbs.twimg.com/card_img/2121305958425190400/VZnBCwYl?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2121305958425190400/VZnBCwYl?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2121305958425190400/VZnBCwYl?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "code.claude.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2121305958425190400/VZnBCwYl?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 92.69,
+                    "rgb": {
+                      "blue": 22,
+                      "green": 25,
+                      "red": 30
+                    }
+                  },
+                  {
+                    "percentage": 4.01,
+                    "rgb": {
+                      "blue": 160,
+                      "green": 160,
+                      "red": 161
+                    }
+                  },
+                  {
+                    "percentage": 0.55,
+                    "rgb": {
+                      "blue": 96,
+                      "green": 99,
+                      "red": 102
+                    }
+                  },
+                  {
+                    "percentage": 0.1,
+                    "rgb": {
+                      "blue": 64,
+                      "green": 88,
+                      "red": 159
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Run tool calls from code with Code Mode - Claude Code Docs",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 92.69,
+                    "rgb": {
+                      "blue": 22,
+                      "green": 25,
+                      "red": 30
+                    }
+                  },
+                  {
+                    "percentage": 4.01,
+                    "rgb": {
+                      "blue": 160,
+                      "green": 160,
+                      "red": 161
+                    }
+                  },
+                  {
+                    "percentage": 0.55,
+                    "rgb": {
+                      "blue": 96,
+                      "green": 99,
+                      "red": 102
+                    }
+                  },
+                  {
+                    "percentage": 0.1,
+                    "rgb": {
+                      "blue": 64,
+                      "green": 88,
+                      "red": 159
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2121305958425190400/VZnBCwYl?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2121305958425190400/VZnBCwYl?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 92.69,
+                    "rgb": {
+                      "blue": 22,
+                      "green": 25,
+                      "red": 30
+                    }
+                  },
+                  {
+                    "percentage": 4.01,
+                    "rgb": {
+                      "blue": 160,
+                      "green": 160,
+                      "red": 161
+                    }
+                  },
+                  {
+                    "percentage": 0.55,
+                    "rgb": {
+                      "blue": 96,
+                      "green": 99,
+                      "red": 102
+                    }
+                  },
+                  {
+                    "percentage": 0.1,
+                    "rgb": {
+                      "blue": 64,
+                      "green": 88,
+                      "red": 159
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2121305958425190400/VZnBCwYl?format=png&name=2048x2048_2_exp",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/Aj5ofLiK1y",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "height": 630,
+                "url": "https://pbs.twimg.com/card_img/2121305958425190400/VZnBCwYl?format=jpg&name=orig",
+                "width": 1200
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTIyODAxNjgxODE3NTc1NDI0"
+        }
+      }
+    },
+    {
       "id": "2122767521925230896",
       "url": "https://x.com/GoogleDeepMind/status/2122767521925230896",
       "label": "Google",
@@ -921,6 +1254,562 @@
         "news_action_type": "conversation",
         "isEdited": false,
         "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2122662616367853670",
+      "url": "https://x.com/demishassabis/status/2122662616367853670",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-11-18T20:03:47.595376+00:00",
+      "translation_zh": "宣布为 Isomorphic Labs 完成 50 亿美元融资，加速「解决所有疾病」的使命：用 AI 从第一性原理重新构想药物设计，大幅压缩新药发现的时间与成本。渐进，然后突变。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 13913,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-17T12:06:19.000Z",
+        "display_text_range": [
+          0,
+          283
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/ihOS3L9vPC",
+              "expanded_url": "https://x.com/demishassabis/status/2122662616367853670/video/1",
+              "indices": [
+                284,
+                307
+              ],
+              "url": "https://t.co/ihOS3L9vPC"
+            }
+          ],
+          "user_mentions": [
+            {
+              "id_str": "1349333725235060736",
+              "indices": [
+                40,
+                55
+              ],
+              "name": "Isomorphic Labs",
+              "screen_name": "IsomorphicLabs"
+            }
+          ]
+        },
+        "id_str": "2122662616367853670",
+        "text": "Thrilled to announce $5B in funding for @IsomorphicLabs to accelerate our mission to Solve All Disease. We continue to make rapid progress reimagining drug design from first principles with AI to radically cut the time &amp; cost to find new medicines. Gradually, then all at once... https://t.co/ihOS3L9vPC",
+        "user": {
+          "id_str": "1482581556",
+          "name": "Demis Hassabis",
+          "screen_name": "demishassabis",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1990472620614053888/xrAu0wQL_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2122662616367853670"
+          ],
+          "editable_until_msecs": "1794920779000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/ihOS3L9vPC",
+            "expanded_url": "https://x.com/demishassabis/status/2122662616367853670/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              284,
+              307
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2122661570731802624/img/ipBDASOeRrvKrEwk.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/ihOS3L9vPC",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 36734,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2122661570731802624/pl/_uAYS7C4pchIh8FE.m3u8?v=cfc"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2122661570731802624/vid/avc1/480x270/_dJZ6Suwov74dXs4.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2122661570731802624/vid/avc1/640x360/RlKpDOkjIrCUBPGA.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2122661570731802624/vid/avc1/1280x720/7tooMKzaHBr_YtmZ.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2122661570731802624/vid/avc1/1920x1080/-Kw4vU-tOwuahXK0.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 36734,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2122661570731802624/img/ipBDASOeRrvKrEwk.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2122661570731802624/pl/_uAYS7C4pchIh8FE.m3u8?v=cfc"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2122661570731802624/vid/avc1/480x270/_dJZ6Suwov74dXs4.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2122661570731802624/vid/avc1/640x360/RlKpDOkjIrCUBPGA.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2122661570731802624/vid/avc1/1280x720/7tooMKzaHBr_YtmZ.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2122661570731802624/vid/avc1/1920x1080/-Kw4vU-tOwuahXK0.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2122662616367853670"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 604,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2122514607726043205",
+      "url": "https://x.com/antigravity/status/2122514607726043205",
+      "label": "Antigravity",
+      "color": "#4285F4",
+      "fetched_at": "2026-11-18T20:03:47.595376+00:00",
+      "translation_zh": "Antigravity 全新 UI 广受好评，官方拆解了这次彻底重设计：界面从零重建，专为并行编排多个智能体而生——即时可见、完全掌控。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 2563,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-17T02:18:11.000Z",
+        "display_text_range": [
+          0,
+          272
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/5Ec3HSkRnA",
+              "expanded_url": "https://x.com/antigravity/status/2122514607726043205/video/1",
+              "indices": [
+                273,
+                296
+              ],
+              "url": "https://t.co/5Ec3HSkRnA"
+            }
+          ]
+        },
+        "id_str": "2122514607726043205",
+        "text": "Seeing the love for the new Antigravity UI has been incredible, so we wanted to break down the full redesign. We rebuilt the interface from the ground up as a surface made for orchestrating multiple agents in parallel, giving you immediate visibility and complete control. https://t.co/5Ec3HSkRnA",
+        "user": {
+          "id_str": "1965856473084473347",
+          "name": "Google Antigravity",
+          "screen_name": "antigravity",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1990585614279049216/-Zz6T2nk_normal.png",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/2042749771337564160/AgOFPEL3_bigger.jpg"
+            },
+            "description": "Google",
+            "url": {
+              "url": "https://twitter.com/Google",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2122514607726043205"
+          ],
+          "editable_until_msecs": "1794885491000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/5Ec3HSkRnA",
+            "expanded_url": "https://x.com/antigravity/status/2122514607726043205/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              273,
+              296
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2122514539291783168/img/VTT_rMCui9Ti4Z99.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/5Ec3HSkRnA",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 266026,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2122514539291783168/pl/uW4joM2As8ODoDt8.m3u8?tag=16&v=a82"
+                },
+                {
+                  "bitrate": 288000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2122514539291783168/vid/avc1/480x270/IoCroDIbmxDqcOq7.mp4?tag=16"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2122514539291783168/vid/avc1/640x360/VhdXC1FRoklH17Fe.mp4?tag=16"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2122514539291783168/vid/avc1/1280x720/6mOxrRhjDieuyJnv.mp4?tag=16"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2122514539291783168/vid/avc1/1920x1080/SK8b0IjbWZ92j2WH.mp4?tag=16"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 266026,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2122514539291783168/img/VTT_rMCui9Ti4Z99.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2122514539291783168/pl/uW4joM2As8ODoDt8.m3u8?tag=16&v=a82"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2122514539291783168/vid/avc1/480x270/IoCroDIbmxDqcOq7.mp4?tag=16"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2122514539291783168/vid/avc1/640x360/VhdXC1FRoklH17Fe.mp4?tag=16"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2122514539291783168/vid/avc1/1280x720/6mOxrRhjDieuyJnv.mp4?tag=16"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2122514539291783168/vid/avc1/1920x1080/SK8b0IjbWZ92j2WH.mp4?tag=16"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2122514607726043205"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 303,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2122436141282660596",
+      "url": "https://x.com/Gemini_Notebook/status/2122436141282660596",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-11-18T20:03:47.595376+00:00",
+      "translation_zh": "Gemini Notebook 新功能：把你的资料源一键变成可交互、可分享的网站。在对话里输入 \"make me a site\" 加上一句描述（交互仪表盘、项目追踪器等），建好后新标签页打开或直接分享。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 3337,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-16T21:06:23.000Z",
+        "display_text_range": [
+          0,
+          270
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/eD7xXDclkg",
+              "expanded_url": "https://x.com/Gemini_Notebook/status/2122436141282660596/video/1",
+              "indices": [
+                270,
+                293
+              ],
+              "url": "https://t.co/eD7xXDclkg"
+            }
+          ]
+        },
+        "id_str": "2122436141282660596",
+        "text": "You can now turn your sources into interactive, shareable websites 🤯\n\nJust type \"make me a site\" in the Chat with a description of what you want to build (interactive dashboards, project trackers, etc). Once built, open it in a new tab or share it directly with others. https://t.co/eD7xXDclkg",
+        "user": {
+          "id_str": "1846671939437252609",
+          "name": "Gemini Notebook",
+          "screen_name": "Gemini_Notebook",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2077802672909127680/08OuXlca_normal.png",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/2042749771337564160/AgOFPEL3_bigger.jpg"
+            },
+            "description": "Google",
+            "url": {
+              "url": "https://twitter.com/Google",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2122436141282660596"
+          ],
+          "editable_until_msecs": "1794866783000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/eD7xXDclkg",
+            "expanded_url": "https://x.com/Gemini_Notebook/status/2122436141282660596/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              270,
+              293
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2122436066259152897/img/OGjQrsfcgtR-Jxad.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/eD7xXDclkg",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 58858,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2122436066259152897/pl/GZU6_0LnR__VaDoE.m3u8?v=615"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2122436066259152897/vid/avc1/480x270/xngbNEGpthDLQEAv.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2122436066259152897/vid/avc1/640x360/rqaSWfhiz99QyHOT.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2122436066259152897/vid/avc1/1280x720/uaZQESsrM9Z_A0Oa.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2122436066259152897/vid/avc1/1920x1080/cpvvkq7UP3LMtFB2.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 58858,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2122436066259152897/img/OGjQrsfcgtR-Jxad.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2122436066259152897/pl/GZU6_0LnR__VaDoE.m3u8?v=615"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2122436066259152897/vid/avc1/480x270/xngbNEGpthDLQEAv.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2122436066259152897/vid/avc1/640x360/rqaSWfhiz99QyHOT.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2122436066259152897/vid/avc1/1280x720/uaZQESsrM9Z_A0Oa.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2122436066259152897/vid/avc1/1920x1080/cpvvkq7UP3LMtFB2.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2122436141282660596"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 117,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTIyNDM2MTQxMjE1NjEyOTI4"
+        }
       }
     },
     {

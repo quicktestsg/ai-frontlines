@@ -70,6 +70,19 @@
             </div>
 
                     <div class="post-item fade-in">
+            <a href="posts/2026-11-19-the-shadow-fleet.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">November 19, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
+                </div>
+                <h2 class="post-title" data-en="The Shadow Fleet" data-zh="影子舰队：先并行，再上线">The Shadow Fleet</h2>
+                <p class="post-excerpt" data-en="A 1% canary assumes the thing you deployed has one behavior — an agent has a distribution. The teams that ship agents weekly run a shadow fleet: the candidate serves a silent copy of live traffic against a mirrored world, a differ compares outcomes across four quadrants, and promotion becomes a ramp with gates instead of a leap of faith." data-zh="1% 灰度假设你部署的东西只有一种行为——而智能体有的是一个分布。每周发布智能体的团队在跑影子舰队：候选版本对着镜像世界静默服务一份生产流量副本，比对器把结果分成四个象限，晋升变成一道带闸门的坡道，而不是一次信仰之跃。">A 1% canary assumes the thing you deployed has one behavior — an agent has a distribution. The teams that ship agents weekly run a shadow fleet: the candidate serves a silent copy of live traffic.</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="post-item fade-in">
             <a href="posts/2026-11-18-the-agent-that-works-ahead.html" class="post-item-inner">
                 <div class="post-meta">
                     <span class="post-date">November 18, 2026</span>
@@ -108,19 +121,6 @@
             </a>
         </div>
 
-        <div class="post-item fade-in">
-            <a href="posts/2026-11-15-time-is-an-unreliable-queue.html" class="post-item-inner">
-                <div class="post-meta">
-                    <span class="post-date">November 15, 2026</span>
-                    <span class="post-dot"></span>
-                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
-                </div>
-                <h2 class="post-title" data-en="Time Is an Unreliable Queue" data-zh="时间，是一条不可靠的队列">Time Is an Unreliable Queue</h2>
-                <p class="post-excerpt" data-en="The second wave of agents runs on cron, and teams treat the scheduler as transport. But time is a message bus with at-least-once delivery, silent gaps, and stale events — and duplicate runs, missed runs, and stale wakes are not edge cases. They are the delivery semantics. Leases, period ledgers, and wake-time revalidation turn a timer into a contract." data-zh="第二波智能体跑在 cron 上，而团队把调度器当成传输层。但时间是一条消息总线：至少一次的投递、沉默的空档、过期的事件——重复运行、漏掉的运行、过期的唤醒都不是边缘情况，而是投递语义本身。租约、周期账本与唤醒时重验证，把一个计时器变成一份契约。">The second wave of agents runs on cron, and teams treat the scheduler as transport. But time is a message bus with at-least-once delivery, silent gaps, and stale events — and duplicate runs,.</p>
-                <span class="post-arrow">→</span>
-            </a>
-        </div>
-
         </div>
 
         <div class="preview-section">
@@ -134,6 +134,39 @@
             <div class="news-list">
 
                         <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/2044472418815893504/xf14RxM8_bigger.png" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">ClaudeDevs<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@ClaudeDevs · Nov 18</span>
+                </div>
+                <span class="news-badge" style="background:#D4A574">Claude</span>
+            </div>
+            <div class="tweet-body" data-en="Check out Code Mode, a new, experimental way for Claude Code to work with tools. Claude writes scripts that chain your tools together in sophisticated ways, and it can answer you while long commands are still running. 
+
+Opt in with CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1" data-zh="Code Mode 登场：Claude Code 的实验性工具使用新方式。Claude 直接编写脚本，以更精巧的方式把多个工具串联起来，还能在长命令后台运行的同时继续回答你。设置 CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1 即可开启。">Check out Code Mode, a new, experimental way for Claude Code to work with tools. Claude writes scripts that chain your tools together in sophisticated ways, and it can answer you while long commands are still running. 
+
+Opt in with CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1</div>
+            <div class="tweet-footer">
+                <a href="https://x.com/ClaudeDevs/status/2122801681939234950" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/ClaudeDevs/status/2122801681939234950" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/ClaudeDevs/status/2122801681939234950" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    10.7K
+                </a>
+                <a href="https://x.com/ClaudeDevs/status/2122801681939234950" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
             <div class="tweet-header">
                 <img src="https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
@@ -241,50 +274,6 @@ Due to increased capabilities, we’re launching GPT‑6.2 Astra and Sol with ti
             </div>
         </article>
 
-        <article class="tweet-card fade-in">
-            <div class="tweet-header">
-                <img src="https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
-                <div class="tweet-author">
-                    <span class="tweet-name">OpenAI<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
-                    <span class="tweet-handle">@OpenAI · Nov 18</span>
-                </div>
-                <span class="news-badge" style="background:#10A37F">OpenAI</span>
-            </div>
-            <div class="tweet-body" data-en="Some of you have been asking very politely. Some of you have just been asking.
-
-GPT-6.2 Astra and Sol are now available.
-
-Super efficient and built to perform where it counts—the real world.
-
-https://t.co/qr2iP0GpfX https://t.co/jLCyVIws2Y" data-zh="OpenAI 发布 GPT-6.2 Astra 与 Sol：「超级高效，并为真正重要的地方——现实世界——而打造」。即日起在 ChatGPT Work、Codex 和 API 中可用，Pro 200 订阅者首次可享 Ultrafast。">Some of you have been asking very politely. Some of you have just been asking.
-
-GPT-6.2 Astra and Sol are now available.
-
-Super efficient and built to perform where it counts—the real world.
-
-https://t.co/qr2iP0GpfX https://t.co/jLCyVIws2Y</div>
-        <div class="tweet-media-link" data-full="https://pbs.twimg.com/amplify_video_thumb/2122746240823943168/img/osC4AgQC_BfZl2EH.jpg">
-            <img src="https://pbs.twimg.com/amplify_video_thumb/2122746240823943168/img/osC4AgQC_BfZl2EH.jpg" alt="" class="tweet-media" loading="lazy" />
-        </div>
-            <div class="tweet-footer">
-                <a href="https://x.com/OpenAI/status/2122750124543926515" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
-                    0
-                </a>
-                <a href="https://x.com/OpenAI/status/2122750124543926515" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
-                    0
-                </a>
-                <a href="https://x.com/OpenAI/status/2122750124543926515" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    21.5K
-                </a>
-                <a href="https://x.com/OpenAI/status/2122750124543926515" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
-                    View on X →
-                </a>
-            </div>
-        </article>
-
             </div>
         </div>
     </section>
@@ -293,6 +282,19 @@ https://t.co/qr2iP0GpfX https://t.co/jLCyVIws2Y</div>
     <section class="post-list tab-pane" id="pane-blog">
 
                 <div class="post-item fade-in">
+            <a href="posts/2026-11-19-the-shadow-fleet.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">November 19, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
+                </div>
+                <h2 class="post-title" data-en="The Shadow Fleet" data-zh="影子舰队：先并行，再上线">The Shadow Fleet</h2>
+                <p class="post-excerpt" data-en="A 1% canary assumes the thing you deployed has one behavior — an agent has a distribution. The teams that ship agents weekly run a shadow fleet: the candidate serves a silent copy of live traffic against a mirrored world, a differ compares outcomes across four quadrants, and promotion becomes a ramp with gates instead of a leap of faith." data-zh="1% 灰度假设你部署的东西只有一种行为——而智能体有的是一个分布。每周发布智能体的团队在跑影子舰队：候选版本对着镜像世界静默服务一份生产流量副本，比对器把结果分成四个象限，晋升变成一道带闸门的坡道，而不是一次信仰之跃。">A 1% canary assumes the thing you deployed has one behavior — an agent has a distribution. The teams that ship agents weekly run a shadow fleet: the candidate serves a silent copy of live traffic.</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="post-item fade-in">
             <a href="posts/2026-11-18-the-agent-that-works-ahead.html" class="post-item-inner">
                 <div class="post-meta">
                     <span class="post-date">November 18, 2026</span>
@@ -1718,6 +1720,39 @@ https://t.co/qr2iP0GpfX https://t.co/jLCyVIws2Y</div>
 
                     <article class="tweet-card fade-in">
             <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/2044472418815893504/xf14RxM8_bigger.png" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">ClaudeDevs<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@ClaudeDevs · Nov 18</span>
+                </div>
+                <span class="news-badge" style="background:#D4A574">Claude</span>
+            </div>
+            <div class="tweet-body" data-en="Check out Code Mode, a new, experimental way for Claude Code to work with tools. Claude writes scripts that chain your tools together in sophisticated ways, and it can answer you while long commands are still running. 
+
+Opt in with CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1" data-zh="Code Mode 登场：Claude Code 的实验性工具使用新方式。Claude 直接编写脚本，以更精巧的方式把多个工具串联起来，还能在长命令后台运行的同时继续回答你。设置 CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1 即可开启。">Check out Code Mode, a new, experimental way for Claude Code to work with tools. Claude writes scripts that chain your tools together in sophisticated ways, and it can answer you while long commands are still running. 
+
+Opt in with CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1</div>
+            <div class="tweet-footer">
+                <a href="https://x.com/ClaudeDevs/status/2122801681939234950" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/ClaudeDevs/status/2122801681939234950" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/ClaudeDevs/status/2122801681939234950" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    10.7K
+                </a>
+                <a href="https://x.com/ClaudeDevs/status/2122801681939234950" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
                 <img src="https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
                     <span class="tweet-name">Google DeepMind</span>
@@ -1863,6 +1898,106 @@ https://t.co/qr2iP0GpfX https://t.co/jLCyVIws2Y</div>
                     21.5K
                 </a>
                 <a href="https://x.com/OpenAI/status/2122750124543926515" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1990472620614053888/xrAu0wQL_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Demis Hassabis<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@demishassabis · Nov 17</span>
+                </div>
+                <span class="news-badge" style="background:#4285F4">Google</span>
+            </div>
+            <div class="tweet-body" data-en="Thrilled to announce $5B in funding for <a href=&quot;https://x.com/IsomorphicLabs&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@IsomorphicLabs</a> to accelerate our mission to Solve All Disease. We continue to make rapid progress reimagining drug design from first principles with AI to radically cut the time &amp;amp; cost to find new medicines. Gradually, then all at once... https://t.co/ihOS3L9vPC" data-zh="宣布为 Isomorphic Labs 完成 50 亿美元融资，加速「解决所有疾病」的使命：用 AI 从第一性原理重新构想药物设计，大幅压缩新药发现的时间与成本。渐进，然后突变。">Thrilled to announce $5B in funding for <a href="https://x.com/IsomorphicLabs" target="_blank" rel="noopener">@IsomorphicLabs</a> to accelerate our mission to Solve All Disease. We continue to make rapid progress reimagining drug design from first principles with AI to radically cut the time &amp;amp; cost to find new medicines. Gradually, then all at once... https://t.co/ihOS3L9vPC</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/amplify_video_thumb/2122661570731802624/img/ipBDASOeRrvKrEwk.jpg">
+            <img src="https://pbs.twimg.com/amplify_video_thumb/2122661570731802624/img/ipBDASOeRrvKrEwk.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/demishassabis/status/2122662616367853670" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/demishassabis/status/2122662616367853670" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/demishassabis/status/2122662616367853670" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    13.9K
+                </a>
+                <a href="https://x.com/demishassabis/status/2122662616367853670" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1990585614279049216/-Zz6T2nk_bigger.png" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Google Antigravity<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@antigravity · Nov 17</span>
+                </div>
+                <span class="news-badge" style="background:#4285F4">Antigravity</span>
+            </div>
+            <div class="tweet-body" data-en="Seeing the love for the new Antigravity UI has been incredible, so we wanted to break down the full redesign. We rebuilt the interface from the ground up as a surface made for orchestrating multiple agents in parallel, giving you immediate visibility and complete control. https://t.co/5Ec3HSkRnA" data-zh="Antigravity 全新 UI 广受好评，官方拆解了这次彻底重设计：界面从零重建，专为并行编排多个智能体而生——即时可见、完全掌控。">Seeing the love for the new Antigravity UI has been incredible, so we wanted to break down the full redesign. We rebuilt the interface from the ground up as a surface made for orchestrating multiple agents in parallel, giving you immediate visibility and complete control. https://t.co/5Ec3HSkRnA</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/amplify_video_thumb/2122514539291783168/img/VTT_rMCui9Ti4Z99.jpg">
+            <img src="https://pbs.twimg.com/amplify_video_thumb/2122514539291783168/img/VTT_rMCui9Ti4Z99.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/antigravity/status/2122514607726043205" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/antigravity/status/2122514607726043205" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/antigravity/status/2122514607726043205" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    2.6K
+                </a>
+                <a href="https://x.com/antigravity/status/2122514607726043205" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/2077802672909127680/08OuXlca_bigger.png" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Gemini Notebook<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@Gemini_Notebook · Nov 17</span>
+                </div>
+                <span class="news-badge" style="background:#4285F4">Google</span>
+            </div>
+            <div class="tweet-body" data-en="You can now turn your sources into interactive, shareable websites 🤯
+
+Just type &quot;make me a site&quot; in the Chat with a description of what you want to build (interactive dashboards, project trackers, etc). Once built, open it in a new tab or share it directly with others. https://t.co/eD7xXDclkg" data-zh="Gemini Notebook 新功能：把你的资料源一键变成可交互、可分享的网站。在对话里输入 &quot;make me a site&quot; 加上一句描述（交互仪表盘、项目追踪器等），建好后新标签页打开或直接分享。">You can now turn your sources into interactive, shareable websites 🤯
+
+Just type &quot;make me a site&quot; in the Chat with a description of what you want to build (interactive dashboards, project trackers, etc). Once built, open it in a new tab or share it directly with others. https://t.co/eD7xXDclkg</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/amplify_video_thumb/2122436066259152897/img/OGjQrsfcgtR-Jxad.jpg">
+            <img src="https://pbs.twimg.com/amplify_video_thumb/2122436066259152897/img/OGjQrsfcgtR-Jxad.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/Gemini_Notebook/status/2122436141282660596" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/Gemini_Notebook/status/2122436141282660596" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/Gemini_Notebook/status/2122436141282660596" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    3.3K
+                </a>
+                <a href="https://x.com/Gemini_Notebook/status/2122436141282660596" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
                     View on X →
                 </a>
             </div>

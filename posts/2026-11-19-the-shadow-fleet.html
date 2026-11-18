@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Shadow Fleet — AI Frontlines</title>
+<meta content="Deterministic software ships behind feature flags. Agents cannot — the same input can produce a different answer on a new build, and no snapshot test will tell you which answer users will actually get. The teams that ship agents safely run a shadow fleet: the candidate version serves a silent copy of live traffic, a differ compares outcomes, and promotion is earned with evidence instead of hoped for." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 19, 2026" data-zh="2026年11月19日">November 19, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Shadow Fleet" data-zh="影子舰队">The Shadow Fleet</h1>
+<p class="post-header-deck" data-en="Classic software ships behind feature flags and canary percentages, and it works because the software is deterministic: same input, same output, so a 1% rollout genuinely tells you what the other 99% will experience. An agent is not deterministic. Change the model, the prompt, the retrieval order, even the temperature — and the same input produces a different trajectory, a different tool sequence, sometimes a different answer entirely. The old release engineering quietly collapses. The teams that ship agents weekly instead of quarterly have replaced the canary with something stronger: a shadow fleet — the candidate version runs a silent copy of live traffic beside production, its answers are discarded, its outcomes are diffed, and promotion is earned with evidence." data-zh="经典软件藏在功能开关和灰度百分比后面发布，这之所以成立，是因为软件是确定性的：相同的输入，相同的输出，所以 1% 的灰度真的能告诉你另外 99% 会经历什么。智能体不是确定性的。换一个模型、改一句 prompt、调整检索顺序、哪怕只是温度——相同的输入就会产出不同的轨迹、不同的工具调用序列，有时甚至是完全不同的答案。旧的发布工程学在这里悄然失效。那些每周而不是每季度发布智能体的团队，用一种更强的东西取代了金丝雀：影子舰队——候选版本在生产流量旁边静默地跑一份副本，它的答案被丢弃，它的结果被逐条比对，晋升靠证据赢得，而不是靠祈祷。">Classic software ships behind feature flags and canary percentages, and it works because the software is deterministic. An agent is not. The teams that ship weekly run a shadow fleet: the candidate serves a silent copy of live traffic, answers discarded, outcomes diffed, promotion earned with evidence.</p>
+</header>
+<article class="post-body">
+<p data-en="There is a habit left over from a decade of microservice releases that dies hard in agent engineering: treat a model swap like a library upgrade. Bump the version, run the test suite, ship to 1% of traffic, watch the dashboards, ramp to 100%. Every step of that ritual assumes the thing being deployed has one behavior. A canary works because if the new build misbehaves for one percent of users, it will misbehave the same way for the rest. Agents break that assumption at its root. Two runs of the same agent on the same input already diverge; two builds diverge more. A 1% canary doesn't sample a distribution — it samples one draw from it, and the dashboards average away exactly the variance you needed to see. The failure you are looking for is not an exception count. It is a slow drift in tool choice, a subtle rise in hallucinated citations, an agent that takes eleven steps where it used to take seven — none of which trip an alarm until users complain." data-zh="有一种从十年微服务发布实践中残留下来、在智能体工程里很难改掉的习惯：把换模型当成升级依赖库。升个版本号，跑一遍测试，灰度 1%，盯着仪表盘，全量。这套仪式的每一步，都假设被部署的东西只有一种行为。金丝雀之所以有效，是因为如果新构建在 1% 的用户那里表现异常，它在其余用户那里也会以同样的方式异常。智能体从根上打破了这个假设。同一个智能体在同一个输入上的两次运行本来就会分叉；两个构建分叉得更厉害。1% 的灰度采样的不是分布——它采样的是分布里的一次抽取，而仪表盘恰恰把你想看的方差给平均掉了。你要找的失败不是异常计数，而是工具选择的缓慢漂移、幻觉引用的不知不觉上升、一个过去七步完成的任务现在要走十一步——这些没有一个会触发告警，直到用户开始抱怨。">There is a habit left over from a decade of microservice releases that dies hard in agent engineering: treat a model swap like a library upgrade. Every step of that ritual assumes the thing being deployed has one behavior. Agents break that assumption at its root. A 1% canary doesn't sample a distribution — it samples one draw from it, and the dashboards average away exactly the variance you needed to see.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 380" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrS1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrS2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrS3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE SHADOW FLEET: ONE TRAFFIC, TWO FLEETS" data-zh="影子舰队：一份流量，两支舰队" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE SHADOW FLEET: ONE TRAFFIC, TWO FLEETS</text>
+<!-- live traffic -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--text-tertiary)" stroke-width="1.5" width="120" x="60" y="60"></rect>
+<text data-en="live traffic" data-zh="生产流量" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="120" y="82">live traffic</text>
+<!-- the tee -->
+<path d="M180 77 L240 77" fill="none" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<circle cx="240" cy="77" fill="var(--bg-surface)" r="14" stroke="var(--accent)" stroke-width="2"></circle>
+<text data-en="tee" data-zh="分流" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="240" y="81">tee</text>
+<!-- to prod (top) -->
+<path d="M254 67 C300 40 340 44 390 52" fill="none" marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="2"></path>
+<text data-en="100% — users see these answers" data-zh="100% — 用户看到的答案" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="330" y="38">100% — users see these answers</text>
+<!-- to shadow (bottom) -->
+<path d="M254 87 C300 114 340 110 390 102" fill="none" marker-end="url(#arrS3)" stroke="var(--accent-3)" stroke-width="2" stroke-dasharray="5,3"></path>
+<text data-en="sampled — answers discarded" data-zh="抽样 — 答案被丢弃" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="330" y="128">sampled — answers discarded</text>
+<!-- prod fleet -->
+<rect fill="var(--accent-dim)" height="52" rx="10" stroke="var(--accent)" stroke-width="2" width="160" x="392" y="28"></rect>
+<text data-en="PRODUCTION FLEET" data-zh="生产舰队" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="472" y="50">PRODUCTION FLEET</text>
+<text data-en="v4 · trusted · answers ship" data-zh="v4 · 受信任 · 答案上线" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="472" y="68">v4 · trusted · answers ship</text>
+<!-- shadow fleet -->
+<rect fill="var(--bg-surface)" height="52" rx="10" stroke="var(--accent-3)" stroke-width="2" stroke-dasharray="6,3" width="160" x="392" y="82"></rect>
+<text data-en="SHADOW FLEET" data-zh="影子舰队" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="472" y="104">SHADOW FLEET</text>
+<text data-en="v5 · candidate · muted" data-zh="v5 · 候选 · 静默" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="472" y="122">v5 · candidate · muted</text>
+<!-- outputs to differ -->
+<path d="M472 80 L472 158" fill="none" marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M472 134 C472 150 490 152 500 158" fill="none" marker-end="url(#arrS3)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="5,3"></path>
+<!-- differ -->
+<rect fill="var(--bg-surface)" height="46" rx="9" stroke="var(--accent-2)" stroke-width="2" width="180" x="382" y="160"></rect>
+<text data-en="OUTCOME DIFFER" data-zh="结果比对器" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="472" y="180">OUTCOME DIFFER</text>
+<text data-en="compare outcomes, not tokens" data-zh="比较结果，而非 token" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="472" y="196">compare outcomes, not tokens</text>
+<!-- differ outputs -->
+<path d="M472 206 L472 226" fill="none" marker-end="url(#arrS1)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<g>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="150" x="100" y="232"></rect>
+<text data-en="agreement rate" data-zh="一致率" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="175" y="252">agreement rate</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="150" x="280" y="232"></rect>
+<text data-en="step-count delta" data-zh="步数差" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="355" y="252">step-count delta</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="150" x="460" y="232"></rect>
+<text data-en="cost per task" data-zh="单任务成本" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="535" y="252">cost per task</text>
+</g>
+<!-- verdict -->
+<rect fill="var(--accent-dim)" height="44" opacity="0.55" rx="9" width="510" x="60" y="288"></rect>
+<text data-en="The shadow fleet sees every request the production fleet sees — but its answers never reach a user. Its only job is to generate evidence." data-zh="影子舰队看到生产舰队看到的每一个请求——但它的答案永远不会到达用户。它唯一的职责，是生成证据。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="315" y="315">The shadow fleet sees every request the production fleet sees — but its answers never reach a user. Its only job is to generate evidence.</text>
+</svg>
+<p class="diagram-caption" data-en="Every live request is teed: production answers the user, while the candidate build — the shadow — processes a sampled copy against a mirrored world. A differ compares outcomes across both fleets: agreement rate, trajectory length, tool mix, cost. The shadow's output is discarded. The evidence it produces is not." data-zh="每一个生产请求都被分流：生产舰队回答用户，而候选构建——影子——在镜像世界中对一份抽样副本进行处理。比对器在两支舰队之间比较结果：一致率、轨迹长度、工具组合、成本。影子的输出被丢弃。它产出的证据不会。">Every live request is teed: production answers the user, while the candidate build processes a sampled copy against a mirrored world. A differ compares outcomes across both fleets: agreement rate, trajectory length, tool mix, cost. The shadow's output is discarded. The evidence it produces is not.</p>
+</div>
+<h3 data-en="Compare outcomes, not tokens" data-zh="比较结果，而非 token">Compare outcomes, not tokens</h3>
+<p data-en="The first mistake every team makes with shadow traffic is diffing the text. The candidate will phrase things differently, take the steps in a different order, choose a different tool for the same subgoal — and a naive diff flags all of it as change, burying the signal in noise within a day. The diff that matters is the diff of outcomes. Did both fleets reach a correct answer, judged by the same grader? Did both complete the transaction, produce the file, close the ticket? A shadow system worth building judges each run against the task's success criteria, not against its sibling's word choice. Once outcomes are the unit of comparison, the noise collapses and four quadrants emerge — and each quadrant carries a different instruction for the release." data-zh="每个团队在影子流量上犯的第一个错误，就是比对文本。候选版本会用不同的措辞、以不同的顺序执行步骤、为同一个子目标选择不同的工具——朴素的 diff 会把这一切都标记为变更，一天之内就把信号埋进噪声里。真正要紧的 diff，是结果的 diff。两支舰队是否都得到了正确答案——由同一个评分器判定？是否都完成了交易、产出了文件、关掉了工单？一个值得构建的影子系统，评判的是每次运行是否满足任务的成功标准，而不是它兄弟的用词。一旦比较的单位变成了结果，噪声塌缩，四个象限浮现——而每个象限，对应着发布的一个不同指令。">The first mistake every team makes with shadow traffic is diffing the text. The candidate will phrase things differently, take the steps in a different order, choose a different tool for the same subgoal — and a naive diff flags all of it as change, burying the signal in noise within a day. The diff that matters is the diff of outcomes. Once outcomes are the unit of comparison, the noise collapses and four quadrants emerge — and each quadrant carries a different instruction for the release.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrQ1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE FOUR QUADRANTS OF A SHADOW DIFF" data-zh="影子比对的四个象限" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE FOUR QUADRANTS OF A SHADOW DIFF</text>
+<!-- axes -->
+<line stroke="var(--border)" stroke-width="1" x1="310" x2="310" y1="48" y2="280"></line>
+<line stroke="var(--border)" stroke-width="1" x1="70" x2="550" y1="164" y2="164"></line>
+<text data-en="shadow succeeds" data-zh="影子成功" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="310" y="300">shadow succeeds</text>
+<text data-en="prod succeeds" data-zh="生产成功" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="end" x="62" y="167" transform="rotate(-90 62 167)">prod succeeds</text>
+<!-- Q1: both succeed -->
+<rect fill="var(--accent-dim)" height="100" opacity="0.4" rx="8" width="210" x="86" y="56"></rect>
+<text data-en="BOTH SUCCEED" data-zh="双双成功" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="191" y="86">BOTH SUCCEED</text>
+<text data-en="promote" data-zh="✓ 晋升" fill="var(--accent)" font-family="Inter,sans-serif" font-size="13" font-weight="800" text-anchor="middle" x="191" y="112">promote</text>
+<text data-en="agreement is the safe harbor —" data-zh="一致是安全港——" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="191" y="134">agreement is the safe harbor —</text>
+<text data-en="check cost and steps, then ship" data-zh="查完成本与步数，就发布" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="191" y="148">check cost and steps, then ship</text>
+<!-- Q2: shadow succeeds, prod fails -->
+<rect fill="var(--bg-surface)" height="100" opacity="0.85" rx="8" width="210" x="324" y="56"></rect>
+<text data-en="SHADOW ONLY" data-zh="仅影子成功" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="429" y="86">SHADOW ONLY</text>
+<text data-en="promote fast" data-zh="→ 尽快晋升" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="13" font-weight="800" text-anchor="middle" x="429" y="112">promote fast</text>
+<text data-en="the candidate fixes real failures —" data-zh="候选修复了真实的失败——" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="429" y="134">the candidate fixes real failures —</text>
+<text data-en="but verify the grader first" data-zh="但先验证评分器" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="429" y="148">but verify the grader first</text>
+<!-- Q3: prod succeeds, shadow fails -->
+<rect fill="var(--bg-surface)" height="100" opacity="0.85" rx="8" width="210" x="86" y="172"></rect>
+<text data-en="PROD ONLY" data-zh="仅生产成功" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="191" y="202">PROD ONLY</text>
+<text data-en="block" data-zh="✗ 拦下" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="13" font-weight="800" text-anchor="middle" x="191" y="228">block</text>
+<text data-en="regressions on live wins are the" data-zh="在生产已赢的任务上回退，" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="191" y="250">regressions on live wins are the</text>
+<text data-en="exact fires canaries miss" data-zh="正是金丝雀看不见的火" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="191" y="264">exact fires canaries miss</text>
+<!-- Q4: both fail -->
+<rect fill="var(--bg-surface)" height="100" opacity="0.6" rx="8" width="210" x="324" y="172"></rect>
+<text data-en="BOTH FAIL" data-zh="双双失败" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="429" y="202">BOTH FAIL</text>
+<text data-en="ignored by release," data-zh="发布可忽略，" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="13" font-weight="800" text-anchor="middle" x="429" y="228">ignored by release,</text>
+<text data-en="gold for the roadmap — these are" data-zh="却是路线图的金矿——" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="429" y="250">gold for the roadmap — these are</text>
+<text data-en="the tasks nobody has solved yet" data-zh="这些是还没人解开的任务" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="429" y="264">the tasks nobody has solved yet</text>
+</svg>
+<p class="diagram-caption" data-en="Every shadowed task lands in one of four quadrants. Agreement means promote. Shadow-only wins mean the candidate is fixing real production failures — the strongest possible signal, once the grader itself is trusted. Prod-only wins are regressions on tasks users already rely on, and they are exactly the fires a percentage rollout averages away. Both-fail is not a release problem at all — it is a free, continuously refreshed map of where the product is weakest." data-zh="每一个被影射的任务都会落入四个象限之一。一致，意味着晋升。仅影子赢，意味着候选正在修复真实的生产失败——在评分器本身可信之后，这是最强的信号。仅生产赢，是在用户已经依赖的任务上回退，而这恰恰是百分比灰度会平均掉的火。双双失败根本不是发布问题——它是一张免费的、持续刷新的产品短板地图。">Every shadowed task lands in one of four quadrants. Agreement means promote. Shadow-only wins mean the candidate is fixing real production failures. Prod-only wins are regressions on tasks users already rely on — exactly the fires a percentage rollout averages away. Both-fail is not a release problem at all; it is a free, continuously refreshed map of where the product is weakest.</p>
+</div>
+<h3 data-en="The shadow world must be hermetic" data-zh="影子世界必须是密闭的">The shadow world must be hermetic</h3>
+<p data-en="The shadow fleet has one non-negotiable rule: it can never touch the real world. A shadow agent that sends the email, charges the card, or writes to the production database is not a shadow — it is a duplicate user with a model behind it, and the first time it acts, the whole scheme collapses into double-charges and doubled side effects. This means the shadow does not run against production state. It runs against a mirror: a frozen or forked copy of the databases, sandboxed tools that simulate writes, stubbed externals that replay canned responses. The mirror does not need to be perfectly fresh. It needs to be fresh enough that the shadow's trajectory is representative — and it needs to be isolated enough that a rogue shadow can do no harm. Teams that skip the mirror and point shadows at read-only production endpoints get away with it until the day the agent decides that the correct path to its goal involves a write, and finds the endpoint that allows it." data-zh="影子舰队有一条不可协商的铁律：它永远不能触碰真实世界。一个会发邮件、会扣款、会写生产数据库的影子，不是影子——它是一个背后挂着模型的重复用户，而它第一次行动的那一刻，整个方案就崩塌成重复扣款和翻倍副作用。这意味着影子不对生产状态运行。它对镜像运行：一份冻结或分叉的数据库副本、模拟写入的沙箱工具、回放预录响应的桩外部服务。镜像不需要完美新鲜。它需要新鲜到影子的轨迹有代表性——并且隔离到一个失控的影子无能为害。那些跳过镜像、把影子直接指向生产只读端点的团队，侥幸到某一天，智能体认定通往目标的正确路径包含一次写入，然后找到了允许写入的那个端点。">The shadow fleet has one non-negotiable rule: it can never touch the real world. A shadow agent that sends the email, charges the card, or writes to the production database is not a shadow — it is a duplicate user with a model behind it. The shadow runs against a mirror: forked state, sandboxed writes, stubbed externals. The mirror needs to be fresh enough that trajectories are representative, and isolated enough that a rogue shadow can do no harm.</p>
+<h3 data-en="Promotion is a ramp, not a switch" data-zh="晋升是坡道，不是开关">Promotion is a ramp, not a switch</h3>
+<p data-en="When the shadow has earned its keep — agreement high, regressions at zero, cost per task flat — the candidate still does not jump to full traffic. The shadow proved the candidate on a mirrored world; the ramp proves it on the real one, where the state is live, the users are unforgiving, and the side effects are permanent. The sequence is disciplined: shadow at full sampling, then a 1% live canary where the candidate answers real users, then 10%, then all of it, with an automatic rollback bound to the same outcome metrics the differ was already computing. The genius of the arrangement is that nothing new needs to be built for the ramp — the differ, the graders, and the outcome metrics were all built for the shadow. The canary is just the shadow with the mute button off, and the rollback threshold is just the differ's alarm wired to the deployment switch. One measurement system, two uses, zero new failure modes." data-zh="当影子挣得了自己的位置——一致率够高、回退为零、单任务成本平稳——候选也不会直接跳到全量。影子证明的是候选在镜像世界里的表现；坡道证明的是它在真实世界里的表现——那里的状态是活的，用户不留情面，副作用是永久的。序列是有纪律的：全量采样的影子，然后 1% 的真实灰度、由候选回答真实用户，然后 10%，然后全部——自动回滚绑定在比对器早已在计算的同一组结果指标上。这个安排的妙处在于：坡道不需要新建造任何东西。比对器、评分器、结果指标，全都是为影子建造的。金丝雀只是关掉了静音键的影子，回滚阈值只是把比对器的警报接到了部署开关上。一套度量系统，两种用途，零个新失败模式。">When the shadow has earned its keep — agreement high, regressions at zero, cost per task flat — the candidate still does not jump to full traffic. The shadow proved the candidate on a mirrored world; the ramp proves it on the real one. The canary is just the shadow with the mute button off, and the rollback threshold is just the differ's alarm wired to the deployment switch. One measurement system, two uses, zero new failure modes.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE PROMOTION RAMP" data-zh="晋升坡道" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE PROMOTION RAMP</text>
+<!-- ramp steps -->
+<g>
+<rect fill="var(--accent-dim)" height="28" rx="6" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="5,3" width="120" x="30" y="120"></rect>
+<text data-en="SHADOW 100%" data-zh="影子 100%" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="90" y="139">SHADOW 100%</text>
+<rect fill="var(--accent-dim)" height="44" rx="6" stroke="var(--accent)" stroke-width="1.5" width="100" x="180" y="104"></rect>
+<text data-en="LIVE 1%" data-zh="真实 1%" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="230" y="124">LIVE 1%</text>
+<text data-en="mute off" data-zh="解除静音" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="230" y="138">mute off</text>
+<rect fill="var(--accent-dim)" height="62" rx="6" stroke="var(--accent)" stroke-width="1.5" width="100" x="310" y="86"></rect>
+<text data-en="LIVE 10%" data-zh="真实 10%" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="360" y="110">LIVE 10%</text>
+<text data-en="real users," data-zh="真实用户，" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="360" y="124">real users,</text>
+<text data-en="real state" data-zh="真实状态" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="360" y="136">real state</text>
+<rect fill="var(--accent-dim)" height="82" rx="6" stroke="var(--accent)" stroke-width="2.5" width="110" x="440" y="66"></rect>
+<text data-en="LIVE 100%" data-zh="真实 100%" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="495" y="94">LIVE 100%</text>
+<text data-en="v5 is now" data-zh="v5 现在是" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="495" y="110">v5 is now</text>
+<text data-en="production" data-zh="生产舰队" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="495" y="122">production</text>
+</g>
+<!-- gates -->
+<path d="M150 134 L180 134" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M280 126 L310 122" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M410 116 L440 110" fill="none" marker-end="url(#arrR1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="gate: agreement ≥ target" data-zh="闸门：一致率 ≥ 目标" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="165" y="100">gate: agreement ≥ target</text>
+<text data-en="gate: 0 regressions" data-zh="闸门：零回退" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="295" y="88">gate: 0 regressions</text>
+<text data-en="gate: cost flat" data-zh="闸门：成本持平" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" font-weight="600" text-anchor="middle" x="425" y="72">gate: cost flat</text>
+<!-- rollback -->
+<path d="M230 148 C230 210 360 220 470 150" fill="none" marker-end="url(#arrR2)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="5,3"></path>
+<text data-en="auto-rollback: same differ, wired to the switch" data-zh="自动回滚：同一个比对器，接上部署开关" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="330" y="228">auto-rollback: same differ, wired to the switch</text>
+</svg>
+<p class="diagram-caption" data-en="The candidate climbs a ramp of increasing exposure: fully sampled shadow, then 1% live, then 10%, then everything — and each gate reuses the metrics the differ already computed. Rollback is not a separate mechanism; it is the differ's alarm with the authority to demote the candidate back down the ramp. Nothing new is built for the ramp. The shadow just stops being silent." data-zh="候选沿着一条曝光递增的坡道上行：全量采样的影子，然后 1% 真实流量，然后 10%，然后全部——而每一道闸门，复用的都是比对器已经算出的指标。回滚不是另一套机制；它是被赋予了降级权限的比对器警报。坡道上没有任何新东西需要建造。影子只是不再沉默而已。">The candidate climbs a ramp of increasing exposure: fully sampled shadow, then 1% live, then 10%, then everything — and each gate reuses the metrics the differ already computed. Rollback is not a separate mechanism; it is the differ's alarm with the authority to demote the candidate back down the ramp.</p>
+</div>
+<h3 data-en="What the shadow cannot tell you" data-zh="影子无法告诉你什么">What the shadow cannot tell you</h3>
+<p data-en="Honesty about the limits keeps the practice alive. Shadows measure the delta between two builds on today's traffic; they say nothing about the traffic of next month, nothing about the users who never arrive because the product cannot serve them yet. A mirror that drifts from production state quietly degrades the evidence — the day the mirror is three days stale, shadow trajectories measure the mirror, not the world. Side effects that depend on timing — a shadow that would have sent the email one minute later and collided with nothing instead of something — are invisible by design, because the shadow was never allowed to act. And shadows cost money: every sampled request is a second full agent run, so sampling rates become a budget line, not a technical constant. None of these limits break the method. They just define what it is: not a proof of safety, but the cheapest evidence machine a team can build — one that turns release day from a leap of faith into a walk down a well-lit corridor." data-zh="对局限保持诚实，才能让这套实践活下去。影子衡量的是两个构建在今天的流量上的差值；它对下个月的流量只字未提，对那些因为产品还服务不了、而从未到来的用户只字未提。一个偏离生产状态的镜像，会悄悄让证据变质——镜像过期三天的那一天，影子轨迹衡量的是镜像，而不是世界。依赖时机的副作用——一个本会晚一分钟发出邮件、从而什么都没撞上的影子——在设计上就不可见，因为影子从未被允许行动。而且影子烧钱：每一个被采样的请求，都是第二次完整的智能体运行，所以采样率是一条预算线，不是一个技术常数。这些局限没有一个能击垮这个方法。它们只是定义了它是什么：不是安全的证明，而是一个团队能建造的最便宜的证据机器——它把发布日从一次信仰之跃，变成一段灯火通明的走廊上的散步。">Honesty about the limits keeps the practice alive. Shadows measure the delta between two builds on today's traffic; they say nothing about the traffic of next month. A mirror that drifts from production state quietly degrades the evidence. Timing-dependent side effects are invisible by design. And shadows cost money — every sampled request is a second full agent run, so sampling rates become a budget line. None of this breaks the method. It defines it: not a proof of safety, but the cheapest evidence machine a team can build.</p>
+<blockquote data-en="A canary answers one question: does the new build crash? A shadow fleet answers the question that actually matters: does the new build behave — on real requests, against real outcomes, without anyone paying for its mistakes. The teams that ship agents every week are not braver than the teams that ship every quarter. They just replaced hope with a second fleet." data-zh="金丝雀只回答一个问题：新构建会不会崩？影子舰队回答的，才是真正要紧的问题：新构建的表现如何——在真实请求上、对着真实结果、而且没有任何人为它的错误买单。每周发布智能体的团队，并不比每季度发布的团队更勇敢。他们只是用第二支舰队，取代了侥幸。">A canary answers one question: does the new build crash? A shadow fleet answers the question that actually matters: does the new build behave — on real requests, against real outcomes, without anyone paying for its mistakes. The teams that ship agents every week are not braver than the teams that ship every quarter. They just replaced hope with a second fleet.</blockquote>
+<p data-en="Start smaller than feels useful. Pick one high-traffic task type, mirror its world crudely, sample one request in fifty, and tee it to a candidate build that differs from production by exactly one variable — a prompt change, a model bump, a new retrieval step. Run it for a week. The first outcome diff will be humbling: disagreement everywhere, most of it noise, and the slow realization that the team never actually knew how variable its agent was, because until now nothing was watching twin runs side by side. That realization is the point. Once the variance is visible, it can be budgeted, bounded, and improved — and every release after that ships with evidence instead of vibes. The fleet is not infrastructure. It is a culture of refusing to ship blind, expressed in servers." data-zh="从比「感觉有用」更小的规模开始。挑一种高流量的任务类型，粗糙地镜像它的世界，每五十个请求采样一个，分流给一个与生产只差一个变量的候选构建——一句 prompt 的改动、一次模型升级、一个新的检索步骤。跑一周。第一份结果比对会让人清醒：到处都是不一致，其中大部分是噪声，以及一个缓慢到来的领悟——这个团队其实从来不知道自己的智能体有多不稳定，因为直到此刻，从来没有东西并排看过两次孪生运行。那个领悟，才是重点。一旦方差变得可见，它就可以被预算、被约束、被改进——而那之后的每一次发布，都带着证据出发，而不是凭感觉。影子舰队不是基础设施。它是一种拒绝盲发的工作文化，只不过用服务器表达了出来。">Start smaller than feels useful. Pick one high-traffic task type, mirror its world crudely, sample one request in fifty, and tee it to a candidate build that differs from production by exactly one variable. Run it for a week. The first outcome diff will be humbling — and the slow realization that the team never knew how variable its agent was. Once the variance is visible, it can be budgeted, bounded, and improved. The fleet is not infrastructure. It is a culture of refusing to ship blind, expressed in servers.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
