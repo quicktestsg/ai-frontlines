@@ -1,6 +1,744 @@
 {
   "tweets": [
     {
+      "id": "2123196808675405860",
+      "url": "https://x.com/AnthropicAI/status/2123196808675405860",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-11-19T08:04:11.928469+00:00",
+      "translation_zh": "Anthropic IPO 定价每股 83 美元，预计明日在纳斯达克开始交易。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 12851,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-18T23:29:00.000Z",
+        "display_text_range": [
+          0,
+          276
+        ],
+        "entities": {
+          "urls": [
+            {
+              "display_url": "anthropic.com/news/anthropic…",
+              "expanded_url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+              "indices": [
+                91,
+                114
+              ],
+              "url": "https://t.co/igHvzweKdb"
+            }
+          ]
+        },
+        "id_str": "2123196808675405860",
+        "text": "We’ve priced our IPO at $83 per share, with trading expected to begin on Nasdaq tomorrow.\n\nhttps://t.co/igHvzweKdb\n\nLegal disclaimer: A registration statement relating to the Class A common stock was declared effective by the Securities and Exchange Commission on November 18,",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2123196808675405860"
+          ],
+          "editable_until_msecs": "1795048140000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 937,
+        "news_action_type": "conversation",
+        "card": {
+          "card_platform": {
+            "platform": {
+              "audience": {
+                "name": "production"
+              },
+              "device": {
+                "name": "iPhone",
+                "version": "13"
+              }
+            }
+          },
+          "name": "summary_large_image",
+          "url": "https://t.co/igHvzweKdb",
+          "binding_values": {
+            "photo_image_full_size_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2120989428113956864/0aB_1tfE?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 147,
+                "url": "https://pbs.twimg.com/card_img/2120989428113956864/0aB_1tfE?format=jpg&name=280x150",
+                "width": 280
+              },
+              "type": "IMAGE"
+            },
+            "description": {
+              "string_value": "Today Anthropic, PBC priced its initial public offering of its Class A common stock.",
+              "type": "STRING"
+            },
+            "domain": {
+              "string_value": "www.anthropic.com",
+              "type": "STRING"
+            },
+            "thumbnail_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 315,
+                "url": "https://pbs.twimg.com/card_img/2120989428113956864/0aB_1tfE?format=jpg&name=600x600",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2120989428113956864/0aB_1tfE?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1260,
+                "url": "https://pbs.twimg.com/card_img/2120989428113956864/0aB_1tfE?format=jpg&name=orig",
+                "width": 2400
+              },
+              "type": "IMAGE"
+            },
+            "site": {
+              "scribe_key": "publisher_id",
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "photo_image_full_size_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 202,
+                "url": "https://pbs.twimg.com/card_img/2120989428113956864/0aB_1tfE?format=jpg&name=386x202",
+                "width": 386
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 419,
+                "url": "https://pbs.twimg.com/card_img/2120989428113956864/0aB_1tfE?format=jpg&name=800x419",
+                "width": 800
+              },
+              "type": "IMAGE"
+            },
+            "thumbnail_image_small": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 76,
+                "url": "https://pbs.twimg.com/card_img/2120989428113956864/0aB_1tfE?format=jpg&name=144x144",
+                "width": 144
+              },
+              "type": "IMAGE"
+            },
+            "creator": {
+              "type": "USER",
+              "user_value": {
+                "id_str": "1353836358901501952",
+                "path": []
+              }
+            },
+            "thumbnail_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1075,
+                "url": "https://pbs.twimg.com/card_img/2120989428113956864/0aB_1tfE?format=png&name=2048x2048_2_exp",
+                "width": 2048
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1260,
+                "url": "https://pbs.twimg.com/card_img/2120989428113956864/0aB_1tfE?format=jpg&name=orig",
+                "width": 2400
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "vanity_url": {
+              "scribe_key": "vanity_url",
+              "string_value": "anthropic.com",
+              "type": "STRING"
+            },
+            "photo_image_full_size": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2120989428113956864/0aB_1tfE?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image_alt_text": {
+              "string_value": "Anthropic logo",
+              "type": "STRING"
+            },
+            "thumbnail_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 96.78,
+                    "rgb": {
+                      "blue": 237,
+                      "green": 244,
+                      "red": 247
+                    }
+                  },
+                  {
+                    "percentage": 2.12,
+                    "rgb": {
+                      "blue": 41,
+                      "green": 42,
+                      "red": 42
+                    }
+                  },
+                  {
+                    "percentage": 0.96,
+                    "rgb": {
+                      "blue": 120,
+                      "green": 124,
+                      "red": 125
+                    }
+                  },
+                  {
+                    "percentage": 0.24,
+                    "rgb": {
+                      "blue": 95,
+                      "green": 97,
+                      "red": 98
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "title": {
+              "string_value": "Anthropic prices initial public offering",
+              "type": "STRING"
+            },
+            "summary_photo_image_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 96.78,
+                    "rgb": {
+                      "blue": 237,
+                      "green": 244,
+                      "red": 247
+                    }
+                  },
+                  {
+                    "percentage": 2.12,
+                    "rgb": {
+                      "blue": 41,
+                      "green": 42,
+                      "red": 42
+                    }
+                  },
+                  {
+                    "percentage": 0.96,
+                    "rgb": {
+                      "blue": 120,
+                      "green": 124,
+                      "red": 125
+                    }
+                  },
+                  {
+                    "percentage": 0.24,
+                    "rgb": {
+                      "blue": 95,
+                      "green": 97,
+                      "red": 98
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "summary_photo_image_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1075,
+                "url": "https://pbs.twimg.com/card_img/2120989428113956864/0aB_1tfE?format=png&name=2048x2048_2_exp",
+                "width": 2048
+              },
+              "type": "IMAGE"
+            },
+            "summary_photo_image": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 314,
+                "url": "https://pbs.twimg.com/card_img/2120989428113956864/0aB_1tfE?format=jpg&name=600x314",
+                "width": 600
+              },
+              "type": "IMAGE"
+            },
+            "photo_image_full_size_color": {
+              "image_color_value": {
+                "palette": [
+                  {
+                    "percentage": 96.78,
+                    "rgb": {
+                      "blue": 237,
+                      "green": 244,
+                      "red": 247
+                    }
+                  },
+                  {
+                    "percentage": 2.12,
+                    "rgb": {
+                      "blue": 41,
+                      "green": 42,
+                      "red": 42
+                    }
+                  },
+                  {
+                    "percentage": 0.96,
+                    "rgb": {
+                      "blue": 120,
+                      "green": 124,
+                      "red": 125
+                    }
+                  },
+                  {
+                    "percentage": 0.24,
+                    "rgb": {
+                      "blue": 95,
+                      "green": 97,
+                      "red": 98
+                    }
+                  }
+                ]
+              },
+              "type": "IMAGE_COLOR"
+            },
+            "photo_image_full_size_x_large": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1075,
+                "url": "https://pbs.twimg.com/card_img/2120989428113956864/0aB_1tfE?format=png&name=2048x2048_2_exp",
+                "width": 2048
+              },
+              "type": "IMAGE"
+            },
+            "card_url": {
+              "scribe_key": "card_url",
+              "string_value": "https://t.co/igHvzweKdb",
+              "type": "STRING"
+            },
+            "summary_photo_image_original": {
+              "image_value": {
+                "alt": "Anthropic logo",
+                "height": 1260,
+                "url": "https://pbs.twimg.com/card_img/2120989428113956864/0aB_1tfE?format=jpg&name=orig",
+                "width": 2400
+              },
+              "type": "IMAGE"
+            }
+          }
+        },
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTIzMTk2ODA4NTE2MDE4MTc2"
+        }
+      }
+    },
+    {
+      "id": "2123167884411077030",
+      "url": "https://x.com/GoogleDeepMind/status/2123167884411077030",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-11-19T08:04:11.928469+00:00",
+      "translation_zh": "Gemini 4 Neon 现已上线。定位于 Carbon 与 Hydrogen 之间，为复杂软件工程、知识工作和科学研究带来前沿智能与快速任务完成能力。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 8028,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-18T21:34:04.000Z",
+        "display_text_range": [
+          0,
+          191
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/qfOLW06FOm",
+              "expanded_url": "https://x.com/GoogleDeepMind/status/2123167884411077030/photo/1",
+              "indices": [
+                192,
+                215
+              ],
+              "url": "https://t.co/qfOLW06FOm"
+            }
+          ]
+        },
+        "id_str": "2123167884411077030",
+        "text": "Gemini 4 Neon is rolling out now.\n\nSitting between Carbon and Hydrogen, it brings frontier intelligence and fast task completion for complex software engineering, knowledge work, and science. https://t.co/qfOLW06FOm",
+        "user": {
+          "id_str": "4783690002",
+          "name": "Google DeepMind",
+          "screen_name": "GoogleDeepMind",
+          "is_blue_verified": false,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1695024885070737408/-M-HSH5P_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2123167884411077030"
+          ],
+          "editable_until_msecs": "1795041244000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/qfOLW06FOm",
+            "expanded_url": "https://x.com/GoogleDeepMind/status/2123167884411077030/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              192,
+              215
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HXb_xtqWIAAVtPL.png",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 2150,
+                  "w": 3840,
+                  "x": 0,
+                  "y": 1192
+                },
+                {
+                  "h": 3342,
+                  "w": 3342,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 3342,
+                  "w": 2932,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 3342,
+                  "w": 1671,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 3342,
+                  "w": 3840,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 3342,
+              "width": 3840
+            },
+            "sizes": {
+              "large": {
+                "h": 1782,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 1044,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 592,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/qfOLW06FOm"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 2150,
+                "w": 3840,
+                "x": 0,
+                "y": 1192
+              },
+              {
+                "h": 3342,
+                "w": 3342,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 3342,
+                "w": 2932,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 3342,
+                "w": 1671,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 3342,
+                "w": 3840,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/GoogleDeepMind/status/2123167884411077030/photo/1",
+            "url": "https://pbs.twimg.com/media/HXb_xtqWIAAVtPL.png",
+            "width": 3840,
+            "height": 3342
+          }
+        ],
+        "conversation_count": 283,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTIzMTY3ODg0MzUyMzI3Njgw"
+        }
+      }
+    },
+    {
+      "id": "2123288578885386259",
+      "url": "https://x.com/Kimi_Moonshot/status/2123288578885386259",
+      "label": "Kimi",
+      "color": "#6366F1",
+      "fetched_at": "2026-11-19T08:04:11.928469+00:00",
+      "translation_zh": "Kimi K3.1 Pro 在 SII 的 17 项从业者构建基准中有 14 项超越 K3。对比 Opus 5.5，部分工作负载可降本，部分可在更高质量档位运行。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 47,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-18T17:00:41.000Z",
+        "display_text_range": [
+          0,
+          273
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/79Jiq1ZItK",
+              "expanded_url": "https://x.com/FireworksAI_HQ/status/2123099084676313207/video/1",
+              "indices": [
+                274,
+                297
+              ],
+              "url": "https://t.co/79Jiq1ZItK"
+            }
+          ],
+          "user_mentions": [
+            {
+              "id_str": "1863959670169501696",
+              "indices": [
+                14,
+                28
+              ],
+              "name": "Kimi.ai",
+              "screen_name": "Kimi_Moonshot"
+            }
+          ]
+        },
+        "id_str": "2123099084676313207",
+        "text": "K3.1 Pro from @Kimi_Moonshot outscores K3 on 14/17 practitioner-built benchmarks on the SII.\n\nAgainst Opus 5.5, it can cut costs on some workloads or improve quality at a premium on others.\n\nShould you switch your agents? See where K3.1 Pro fits in our new SII model study: https://t.co/79Jiq1ZItK",
+        "user": {
+          "id_str": "1575886662957047812",
+          "name": "Fireworks",
+          "screen_name": "FireworksAI_HQ",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2113458325853712385/ThNhIFA5_normal.png"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2123099084676313207"
+          ],
+          "editable_until_msecs": "1795024841000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/79Jiq1ZItK",
+            "expanded_url": "https://x.com/FireworksAI_HQ/status/2123099084676313207/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              274,
+              297
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HXbDXZWWwAA7yHo.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/79Jiq1ZItK",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 43000,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2123099063427977216/pl/YgVxdn5V6UfAN6av.m3u8?tag=16"
+                },
+                {
+                  "bitrate": 288000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2123099063427977216/vid/avc1/480x270/arKScOfdOvGksYzf.mp4?tag=16"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2123099063427977216/vid/avc1/640x360/GKR6zIkUc9ryWuiD.mp4?tag=16"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2123099063427977216/vid/avc1/1280x720/fz3RW6Vfi_7Pmv25.mp4?tag=16"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2123099063427977216/vid/avc1/1920x1080/tDoCRfDvRKljYMJ8.mp4?tag=16"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 43000,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/media/HXbDXZWWwAA7yHo.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2123099063427977216/pl/YgVxdn5V6UfAN6av.m3u8?tag=16"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2123099063427977216/vid/avc1/480x270/arKScOfdOvGksYzf.mp4?tag=16"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2123099063427977216/vid/avc1/640x360/GKR6zIkUc9ryWuiD.mp4?tag=16"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2123099063427977216/vid/avc1/1280x720/fz3RW6Vfi_7Pmv25.mp4?tag=16"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2123099063427977216/vid/avc1/1920x1080/tDoCRfDvRKljYMJ8.mp4?tag=16"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2123099084676313207"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 4,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTIzMDk5MDg0NTU4OTEzNTM2"
+        }
+      }
+    },
+    {
       "id": "2122801681939234950",
       "url": "https://x.com/ClaudeDevs/status/2122801681939234950",
       "label": "Claude",
