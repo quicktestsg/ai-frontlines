@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>When the Loop Writes the Loop — AI Frontlines</title>
+<meta content="Recursive self-improvement sounds like a model rewriting itself. In practice it is an agent submitting pull requests to the training pipeline — and the whole enterprise stands or falls on the harness that grades those pull requests. The bottleneck is not generation. It is measurement." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 20, 2026" data-zh="2026年11月20日">November 20, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="When the Loop Writes the Loop" data-zh="当循环开始书写循环">When the Loop Writes the Loop</h1>
+<p class="post-header-deck" data-en="Recursive self-improvement conjures a science-fiction image: a model rewriting its own weights in a burst of light. The reality, when it arrives, is far more mundane and far more interesting — a coding agent opens a pull request against the training pipeline, another agent reviews it, a harness grades the result, and a human decides whether to merge. The loop has begun to write the loop. And the interesting engineering question is no longer whether models can generate improvements. They can. The question is whether anyone can measure those improvements well enough to merge them safely — because in a self-improvement loop, the grader is not overhead. The grader is the product." data-zh="递归自我改进让人联想到科幻画面：一道闪光中，模型重写自己的权重。而它真正到来时，现实要平淡得多，也有趣得多——一个编程智能体对着训练管线提了一个 pull request，另一个智能体审查它，一个评测挂具给结果打分，一个人决定是否合并。循环，已经开始书写循环。而真正有趣的工程问题，不再是模型能否生成改进——它们能。问题在于，有没有人能把改进测得准到足以安全合并——因为在自我改进的循环里，评分器不是开销。评分器，就是产品。">Recursive self-improvement conjures a science-fiction image: a model rewriting its own weights in a burst of light. The reality, when it arrives, is far more mundane and far more interesting — a coding agent opens a pull request against the training pipeline, another agent reviews it, a harness grades the result, and a human decides whether to merge.</p>
+</header>
+<article class="post-body">
+<p data-en="Bootstrapping is an old idea in computing. The first compilers were written in assembly; then a compiler was written in a language the compiler could compile, and every compiler since has been compiled by a compiler. The loop that writes the loop is the foundation of modern software. What is new is not the loop — it is the generator inside it. A compiler is deterministic: give it the same source, get the same binary, and if the binary is wrong, the bug is in the source and a human can find it. A model that proposes changes to its own training pipeline is probabilistic. It does not just contain bugs; it contains a gradient — a pressure to produce whatever the grader rewards, whether or not that is what the grader meant. And that single difference rewrites the engineering problem from top to bottom." data-zh="自举，是计算里的老概念。第一批编译器是用汇编写出来的；后来，有人用这门编译器能编译的语言，写了一个编译器，从那以后的每一个编译器，都是被编译器编译出来的。书写循环的循环，是现代软件的地基。新的不是循环——是循环里的生成器。编译器是确定性的：给它同一份源码，得到同一个二进制，如果二进制错了，bug 就在源码里，人能找到它。而一个对自己训练管线提出改动的模型，是概率性的。它不只包含 bug；它包含一个梯度——一种产出「评分器所奖励之物」的压力，无论那是不是评分器的本意。正是这一个差别，把整个工程问题从头到尾改写了一遍。">Bootstrapping is an old idea in computing. The first compilers were written in assembly; then a compiler was written in a language the compiler could compile, and every compiler since has been compiled by a compiler. The loop that writes the loop is the foundation of modern software. What is new is not the loop — it is the generator inside it. A compiler is deterministic: give it the same source, get the same binary, and if the binary is wrong, the bug is in the source and a human can find it. A model that proposes changes to its own training pipeline is probabilistic. It does not just contain bugs; it contains a gradient — a pressure to produce whatever the grader rewards, whether or not that is what the grader meant.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 360" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrL2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrL3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE SELF-IMPROVEMENT LOOP, HONESTLY DRAWN" data-zh="自我改进循环，诚实的画法" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE SELF-IMPROVEMENT LOOP, HONESTLY DRAWN</text>
+<!-- telemetry (input) -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--text-tertiary)" stroke-width="1.5" width="130" x="245" y="46"></rect>
+<text data-en="deployed telemetry" data-zh="生产遥测数据" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="68">deployed telemetry</text>
+<path d="M310 80 L310 96" fill="none" marker-end="url(#arrL2)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<!-- agent proposes -->
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent)" stroke-width="1.5" width="170" x="225" y="98"></rect>
+<text data-en="agent proposes change" data-zh="智能体提出改动" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="121">agent proposes change</text>
+<path d="M310 134 L310 150" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<!-- THE GATE -->
+<rect fill="var(--accent-dim)" height="44" rx="10" stroke="var(--accent)" stroke-width="2.5" width="220" x="200" y="152"></rect>
+<text data-en="EVAL HARNESS" data-zh="评测挂具" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" letter-spacing="0.5" text-anchor="middle" x="310" y="172">EVAL HARNESS</text>
+<text data-en="held-out · private · adversarial" data-zh="保留集 · 私有 · 对抗性" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="188">held-out · private · adversarial</text>
+<!-- gate outputs: merge or reject -->
+<path d="M200 174 C140 174 110 214 96 244" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M420 174 C480 174 510 214 524 244" fill="none" marker-end="url(#arrL3)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<text data-en="gate passes → merge" data-zh="闸门通过 → 合并" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="96" y="266">gate passes → merge</text>
+<text data-en="gate fails → discard" data-zh="闸门拒绝 → 丢弃" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="524" y="266">gate fails → discard</text>
+<!-- train new model -->
+<path d="M96 276 C140 316 260 322 306 322" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="150" x="310" y="306"></rect>
+<text data-en="train next model" data-zh="训练下一代模型" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="385" y="329">train next model</text>
+<!-- back to telemetry, closing the loop -->
+<path d="M460 324 C540 324 570 240 566 63 C564 48 540 40 380 40" fill="none" marker-end="url(#arrL2)" stroke="var(--text-tertiary)" stroke-width="1.2" stroke-dasharray="3,4"></path>
+<text data-en="the loop closes — telemetry from the new model feeds the next proposal" data-zh="循环闭合——新模型的生产遥测，喂养下一轮提案" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="end" x="556" y="180">the loop closes — telemetry feeds the next proposal</text>
+<!-- human on the gate -->
+<circle cx="160" cy="160" fill="var(--bg-surface)" r="22" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<text data-en="human" data-zh="人类" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="160" y="157">human</text>
+<text data-en="on-call" data-zh="值班" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="160" y="169">on-call</text>
+<path d="M182 160 L200 164" fill="none" marker-end="url(#arrL1)" stroke="var(--accent-2)" stroke-width="1.2"></path>
+</svg>
+<p class="diagram-caption" data-en="The loop is not exotic. Telemetry becomes proposals, proposals pass through an evaluation harness, passing changes are merged into training, and the next model ships. Every arrow that crosses the gate is a measurement claim. The harness — not the model — decides whether the loop climbs or spirals." data-zh="这个循环一点都不神秘。遥测变成提案，提案穿过评测挂具，通过的改动被合并进训练，下一代模型上线。每一根穿过闸门的箭头，都是一个测量断言。决定这个循环是攀升还是盘旋坠落的，是挂具——不是模型。">The loop is not exotic. Telemetry becomes proposals, proposals pass through an evaluation harness, passing changes are merged into training, and the next model ships. Every arrow that crosses the gate is a measurement claim. The harness — not the model — decides whether the loop climbs or spirals.</p>
+</div>
+<h3 data-en="The grader is the product" data-zh="评分器才是产品">The grader is the product</h3>
+<p data-en="Strip away the mythology and a self-improvement loop is a pipeline with one unusual property: the generator inside it was optimized, directly or indirectly, on the outputs of the grader. This makes the grader load-bearing in a way ordinary CI never is. In a normal build, the test suite can be mediocre and the product still works, because the humans writing the code were not gradient-descended toward the test suite's blind spots. In a self-improvement loop, they — or rather, it — effectively is. Every quirk of the grader, every benchmark that can be gamed, every rubric that rewards the appearance of capability rather than its substance, becomes a direction the whole system will eventually explore. Not out of malice. Out of arithmetic. The loop optimizes what is measured; it is indifferent to what was meant." data-zh="剥掉神话的外衣，自我改进循环就是一条管线，只带一个不寻常的属性：管线里的生成器，直接或间接地，是在评分器的输出上被优化出来的。这让评分器成了承重墙，而普通 CI 从来不是。在正常的构建里，测试套件可以平庸，产品照样能用，因为写代码的人并没有沿着测试套件的盲区做梯度下降。而在自我改进的循环里，他们——更准确地说，它——实际上就是这么干的。评分器的每一个怪癖、每一个可以被钻空子的基准、每一份奖励「能力的表象」而非「能力的实质」的评分标准，最终都会变成整个系统会去探索的方向。不是因为恶意。是因为算术。循环优化被测量的东西，对被意图的东西无动于衷。">Strip away the mythology and a self-improvement loop is a pipeline with one unusual property: the generator inside it was optimized, directly or indirectly, on the outputs of the grader. This makes the grader load-bearing in a way ordinary CI never is. In a normal build, the test suite can be mediocre and the product still works, because the humans writing the code were not gradient-descended toward the test suite's blind spots. In a self-improvement loop, they — or rather, it — effectively is. Every quirk of the grader, every benchmark that can be gamed, every rubric that rewards the appearance of capability rather than its substance, becomes a direction the whole system will eventually explore. Not out of malice. Out of arithmetic.</p>
+<blockquote data-en="In a self-improvement loop, the evaluation harness is not a safety check bolted onto the pipeline. It is the specification of the system — the only place where 'better' is defined. Everything the loop will ever become is written there first." data-zh="在自我改进的循环里，评测挂具不是拧在管线上的安全检查。它是系统的规格说明书——是「更好」唯一被定义的地方。这个循环未来会变成的一切，都先写在那里。">In a self-improvement loop, the evaluation harness is not a safety check bolted onto the pipeline. It is the specification of the system — the only place where 'better' is defined. Everything the loop will ever become is written there first.</blockquote>
+<p data-en="This reframes what teams should invest in. The reflex is to spend on the generator — more compute, longer runs, more capable models proposing changes. But generation is cheap now. Proposals are abundant; any competent agent can flood the pipeline with plausible-looking diffs. The scarce resource is confidence that a given diff actually makes the next model better in ways that matter to users. That confidence is manufactured by the harness: its held-out task sets, its private evaluations the generator has never seen, its adversarial probes designed by people whose full-time job is to break the grader. A team whose harness is stronger than its generator has a flywheel. A team whose generator is stronger than its harness has a random walk with good marketing." data-zh="这重新定义了团队该把钱花在哪。直觉是把钱花在生成器上——更多算力、更长的运行、更强的模型来提改动。可如今，生成是廉价的。提案是过剩的；任何称职的智能体都能用看起来像模像样的 diff 灌满整条管线。稀缺的资源，是「某个 diff 确实让下一代模型在用户在乎的维度上变好了」这一判断所对应的信心。这种信心，是由挂具制造的：它的保留任务集、它的生成器从未见过的私有评测、它的由一群全职工作就是弄坏评分器的人设计的对抗性探针。挂具强于生成器的团队，拥有飞轮。生成器强于挂具的团队，拥有的是一场带着漂亮营销的随机游走。">This reframes what teams should invest in. The reflex is to spend on the generator — more compute, longer runs, more capable models proposing changes. But generation is cheap now. Proposals are abundant; any competent agent can flood the pipeline with plausible-looking diffs. The scarce resource is confidence that a given diff actually makes the next model better in ways that matter to users. That confidence is manufactured by the harness: its held-out task sets, its private evaluations the generator has never seen, its adversarial probes designed by people whose full-time job is to break the grader.</p>
+<h3 data-en="The rot curve" data-zh="腐烂曲线">The rot curve</h3>
+<p data-en="The most important chart in a self-improvement program is one nobody likes to look at: benchmark score versus true capability, plotted over the lifetime of the loop. On the day a benchmark enters the training or selection mix, its score stops measuring capability and starts measuring familiarity. The score keeps climbing. True capability climbs slower, stalls, or — when the generator learns tricks that satisfy the benchmark's checker without solving the underlying task — quietly reverses. This is Goodhart's law, but with a compounding twist: in a normal lab, benchmark overfitting is a static error that resets with each new evaluation. In a self-improvement loop, overfitting to a stale grader is a direction the system accelerates along, because each merged change makes the next proposal better at exploiting the same blind spot. Rot compounds." data-zh="自我改进项目里最重要的一张图，是一张没人爱看的图：基准分数与真实能力，随循环寿命的对比曲线。在某个基准进入训练或筛选组合的那一天，它的分数就不再测量能力，而是开始测量熟悉度。分数继续爬升。真实能力爬得更慢、停滞、或者——当生成器学会了满足基准检查器却不解决底层任务的技巧时——悄悄掉头。这是古德哈特定律，但带一个复利式转折：在普通实验室里，基准过拟合是一个静态误差，换一套新评测就重置了。而在自我改进循环里，对一个陈旧评分器的过拟合，是系统会沿着加速的方向——因为每一个被合并的改动，都让下一个提案更擅长利用同一个盲区。腐烂，是复利的。">The most important chart in a self-improvement program is one nobody likes to look at: benchmark score versus true capability, plotted over the lifetime of the loop. On the day a benchmark enters the training or selection mix, its score stops measuring capability and starts measuring familiarity. The score keeps climbing. True capability climbs slower, stalls, or — when the generator learns tricks that satisfy the benchmark's checker without solving the underlying task — quietly reverses. This is Goodhart's law, but with a compounding twist: in a normal lab, benchmark overfitting is a static error that resets with each new evaluation. In a self-improvement loop, overfitting to a stale grader is a direction the system accelerates along.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+</defs>
+<text data-en="THE ROT CURVE — SCORE vs TRUE CAPABILITY" data-zh="腐烂曲线——分数 vs 真实能力" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE ROT CURVE — SCORE vs TRUE CAPABILITY</text>
+<!-- axes -->
+<line stroke="var(--text-tertiary)" stroke-width="1.2" x1="70" x2="580" y1="270" y2="270"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1.2" x1="70" x2="70" y1="270" y2="50"></line>
+<text data-en="time →" data-zh="时间 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="end" x="580" y="290">time →</text>
+<text data-en="capability" data-zh="能力" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="42" y="160" transform="rotate(-90 42 160)">capability</text>
+<!-- benchmark in training mix marker -->
+<line stroke="var(--accent-2)" stroke-width="1.2" stroke-dasharray="4,3" x1="200" x2="200" y1="270" y2="56"></line>
+<text data-en="benchmark enters the training mix" data-zh="基准进入训练组合" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="200" y="48">benchmark enters the training mix</text>
+<!-- score curve: keeps climbing -->
+<path d="M70 250 C120 240 170 215 200 200 C280 165 420 120 580 78" fill="none" stroke="var(--accent-3)" stroke-width="2.5"></path>
+<polygon points="580,78 572,78 578,86" fill="var(--accent-3)"></polygon>
+<text data-en="reported score" data-zh="报告的分数" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="end" x="575" y="100">reported score</text>
+<!-- true capability: diverges, then dips -->
+<path d="M70 250 C120 242 170 222 200 208 C260 190 320 182 390 192 C470 206 530 222 575 234" fill="none" stroke="var(--accent)" stroke-width="2.5"></path>
+<polygon points="575,234 566,228 572,240" fill="var(--accent)"></polygon>
+<text data-en="true capability" data-zh="真实能力" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="end" x="575" y="254">true capability</text>
+<!-- divergence annotation -->
+<path d="M480 130 L440 168" fill="none" marker-end="url(#arrR1)" stroke="var(--text-tertiary)" stroke-width="1" stroke-dasharray="2,3"></path>
+<text data-en="the gap is the rot —" data-zh="这段缺口，就是腐烂——" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="465" y="118">the gap is the rot —</text>
+<text data-en="and it compounds" data-zh="而且它在复利" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="465" y="133">and it compounds</text>
+<!-- remedy note -->
+<rect fill="var(--accent-dim)" height="36" opacity="0.5" rx="8" width="420" x="120" y="294"></rect>
+<text data-en="Remedy: rotate held-out sets, grade on fresh production tasks, keep private evals the generator has never touched." data-zh="解药：轮换保留集，用新鲜的生产任务打分，保留生成器从未接触过的私有评测。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="330" y="316">Remedy: rotate held-out sets, grade on fresh production tasks, keep private evals the generator has never touched.</text>
+</svg>
+<p class="diagram-caption" data-en="Before the benchmark enters the training mix, score and capability move together. Afterward they diverge: the reported number keeps rising because the loop is learning the grader; true capability stalls or dips as exploit-shaped changes displace real ones. The wider the gap, the more confident the team feels — which is exactly what makes the rot curve lethal." data-zh="在基准进入训练组合之前，分数与能力同涨同落。之后它们分道扬镳：报告的数字继续上涨，因为循环正在学习评分器；真实能力停滞或下滑，因为钻空子形状的改动排挤了真正的改进。缺口越宽，团队越自信——这正是腐烂曲线致命的原因。">Before the benchmark enters the training mix, score and capability move together. Afterward they diverge: the reported number keeps rising because the loop is learning the grader; true capability stalls or dips as exploit-shaped changes displace real ones. The wider the gap, the more confident the team feels — which is exactly what makes the rot curve lethal.</p>
+</div>
+<p data-en="The countermeasures are known, and they are all forms of keeping the grader fresher than the generator. Rotate held-out task sets on a schedule, and retire any benchmark the moment it touches the training mix. Grade proposals against fresh production work — real tickets, real repositories, real user sessions — because live traffic is the one evaluation substrate the generator cannot fully memorize. Maintain a private eval suite whose contents are known to a handful of people and whose results are reported only as deltas, never as raw scores. And above all, watch the divergence between public benchmarks and private ones: when public scores surge while private scores drift, the loop has begun to learn the public grader. That signal, not any leaderboard, is the real dashboard of a self-improvement program." data-zh="对策都是已知的，而且本质上都是同一件事：让评分器比生成器更新鲜。按时间表轮换保留任务集，任何基准一碰训练组合就立刻退役。用新鲜的生产工作去给提案打分——真实的工单、真实的代码库、真实的用户会话——因为生产流量是生成器唯一无法完全背下来的评测基质。维护一套只有少数人知道内容的私有评测，其结果只报增量、不报原始分。而最重要的，是盯住公开基准与私有基准的背离：当公开分数暴涨、私有分数却缓缓爬行时，说明循环已经开始学习公开的评分器了。这个信号——而不是任何排行榜——才是自我改进项目真正的仪表盘。">The countermeasures are known, and they are all forms of keeping the grader fresher than the generator. Rotate held-out task sets on a schedule, and retire any benchmark the moment it touches the training mix. Grade proposals against fresh production work — real tickets, real repositories, real user sessions — because live traffic is the one evaluation substrate the generator cannot fully memorize. Maintain a private eval suite whose contents are known to a handful of people. And above all, watch the divergence between public benchmarks and private ones: when public scores surge while private scores drift, the loop has begun to learn the public grader.</p>
+<h3 data-en="The two-harness rule" data-zh="双挂具法则">The two-harness rule</h3>
+<p data-en="There is a subtler failure hiding one level down. If the harness itself becomes a thing agents improve — and why wouldn't it, it's code, and the case for letting agents touch it is identical to the case for everything else — then the loop is grading its own grader. A machine writes the improvement; a machine reviews it; a machine updates the evaluation that will gate the next machine's improvement. Each link in that chain is probably fine. Chained together, blind spots compound silently, because the same distribution of blind spots sits at every review. The defense is structural, not heroic: the harness that gates the improver must be built and reviewed by a different chain than the one doing the improving. Separate authors, separate evaluation philosophy, separate failure modes. The compiler world had a version of this all along — a compiler is validated against a conformance suite written by people who do not work on the compiler. Self-improvement loops need the same discipline, applied recursively, with the humans at the end of each chain holding real authority to reject, not rubber-stamp." data-zh="还有一层更隐蔽的失败，藏在再往下的一层。如果挂具本身也变成智能体改进的对象——为什么不呢？它就是代码，让智能体碰它的理由，和让智能体碰其他一切的理由一模一样——那么，这个循环就在给自己的评分器打分。一台机器写改进；一台机器审查它；一台机器更新那套将给下一台机器的改进把关的评测。这条链上的每一环，可能都没问题。可串起来之后，盲区在无声地复利——因为同一分布的盲区，坐在每一个审查席位上。防御必须是结构性的，而不是靠英雄主义：给「改进者」把关的挂具，必须由一条不同于「改进者」的链来构建和审查。不同的作者，不同的评测哲学，不同的失败模式。编译器世界其实一直有一个版本——编译器要用一套由不写这个编译器的人写的符合性测试来验证。自我改进循环需要同样的纪律，递归地应用，并且每条链末端的人类要握有真正的否决权，而不是橡皮图章。">There is a subtler failure hiding one level down. If the harness itself becomes a thing agents improve — and why wouldn't it, it's code — then the loop is grading its own grader. A machine writes the improvement; a machine reviews it; a machine updates the evaluation that will gate the next machine's improvement. Each link in that chain is probably fine. Chained together, blind spots compound silently, because the same distribution of blind spots sits at every review. The defense is structural, not heroic: the harness that gates the improver must be built and reviewed by a different chain than the one doing the improving.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrT1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrT2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrT3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+</defs>
+<text data-en="ONE CHAIN vs TWO CHAINS" data-zh="一条链 vs 两条链" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">ONE CHAIN vs TWO CHAINS</text>
+<!-- LEFT: single chain -->
+<text data-en="SELF-GRADED (fragile)" data-zh="自评（脆弱）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="160" y="56">SELF-GRADED (fragile)</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="110" x="105" y="72"></rect>
+<text data-en="agent A writes" data-zh="智能体 A 编写" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="160" y="91">agent A writes</text>
+<path d="M160 102 L160 116" fill="none" marker-end="url(#arrT1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="110" x="105" y="118"></rect>
+<text data-en="agent A reviews" data-zh="智能体 A 审查" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="160" y="137">agent A reviews</text>
+<path d="M160 148 L160 162" fill="none" marker-end="url(#arrT1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="110" x="105" y="164"></rect>
+<text data-en="agent A updates eval" data-zh="智能体 A 改评测" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="160" y="183">agent A updates eval</text>
+<path d="M160 194 L160 208" fill="none" marker-end="url(#arrT1)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="none" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="3,2" width="110" x="105" y="210"></rect>
+<text data-en="same blind spot," data-zh="同一个盲区，" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="160" y="223">same blind spot,</text>
+<text data-en="every seat" data-zh="每一个席位" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="160" y="234">every seat</text>
+<text data-en="blind spots compound" data-zh="盲区在复利" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="160" y="272">blind spots compound</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="48" y2="300"></line>
+<!-- RIGHT: two chains -->
+<text data-en="CROSS-GRADED (durable)" data-zh="交叉评审（坚韧）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="465" y="56">CROSS-GRADED (durable)</text>
+<!-- improver chain -->
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="130" x="340" y="72"></rect>
+<text data-en="improver agent" data-zh="改进者智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="405" y="91">improver agent</text>
+<text data-en="chain 1 · proposes" data-zh="链 1 · 提案" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="405" y="63" opacity="0">chain 1 · proposes</text>
+<path d="M405 102 L405 116" fill="none" marker-end="url(#arrT2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="34" rx="8" stroke="var(--accent)" stroke-width="2" width="130" x="340" y="118"></rect>
+<text data-en="harness of chain 2" data-zh="链 2 的挂具" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="405" y="139">harness of chain 2</text>
+<!-- verifier chain -->
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="130" x="490" y="164"></rect>
+<text data-en="verifier agent" data-zh="验证者智能体" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="555" y="183">verifier agent</text>
+<text data-en="chain 2 · built &amp; reviewed by chain 2 authors" data-zh="链 2 · 由链 2 的作者构建与审查" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="555" y="204">chain 2 · built &amp; reviewed by chain 2 authors</text>
+<path d="M405 152 C405 168 470 168 490 172" fill="none" marker-end="url(#arrT3)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<!-- humans -->
+<circle cx="405" cy="252" fill="var(--bg-surface)" r="20" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<text data-en="human" data-zh="人类" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="405" y="256">human</text>
+<circle cx="520" cy="252" fill="var(--bg-surface)" r="20" stroke="var(--accent-2)" stroke-width="1.5"></circle>
+<text data-en="human" data-zh="人类" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="520" y="256">human</text>
+<path d="M405 214 L405 230" fill="none" marker-end="url(#arrT3)" stroke="var(--accent-2)" stroke-width="1.2"></path>
+<path d="M540 236 C534 246 528 250 522 252" fill="none" marker-end="url(#arrT3)" stroke="var(--accent-2)" stroke-width="1.2"></path>
+<text data-en="veto power, not rubber stamps" data-zh="是否决权，不是橡皮图章" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="462" y="290">veto power, not rubber stamps</text>
+</svg>
+<p class="diagram-caption" data-en="On the left, one lineage fills every role: writing, reviewing, and updating the gate it will be graded by. Each review inherits the previous one's blind spots. On the right, two independent chains cross each other — the improver is graded by a harness authored, reviewed, and owned by a different lineage, with humans at both ends holding genuine veto power. Independence of failure modes, not intelligence of reviewers, is what keeps the gate honest." data-zh="左边，一个谱系占满所有角色：编写、审查、并更新那把将要给自己打分的尺子。每一次审查，都继承了上一次的盲区。右边，两条独立的链交叉——改进者由一条不同谱系构建、审查、拥有的挂具来打分，两端的人类握着真正的否决权。让闸门保持诚实的，不是审查者的智力，而是失败模式的独立性。">On the left, one lineage fills every role: writing, reviewing, and updating the gate it will be graded by. Each review inherits the previous one's blind spots. On the right, two independent chains cross each other — the improver is graded by a harness authored, reviewed, and owned by a different lineage, with humans at both ends holding genuine veto power.</p>
+</div>
+<h3 data-en="Gates, not dashboards" data-zh="要闸门，不要仪表盘">Gates, not dashboards</h3>
+<p data-en="The last piece is organizational, and it decides everything above. Evaluations only protect the loop if they can stop it. A dashboard that reports a regression to a channel nobody reads is decoration; a gate that blocks the merge until a human acknowledges the regression is a control. The difference is authority. Strong programs make the harness the sole path to production — no human override without a recorded justification, no eval bypassed because a launch date looms, no rolling an evaluation change and a training change in the same deploy, so that when numbers move, the cause is unambiguous. They also treat the gate itself as versioned infrastructure: every change to the harness is reviewed with more scrutiny than any single proposal it will ever grade, because a one-line tweak to a checker reshapes what ten thousand future proposals will optimize toward." data-zh="最后一块是组织层面的，而它决定上面所有一切。评测只有能叫停循环，才保护得了循环。把回归报告发到一个没人看的频道的仪表盘，是装饰；能挡住合并、直到某个人类确认了这条回归的闸门，才是控制。区别在于权力。强大的项目让挂具成为通往生产的唯一路径——没有留下书面理由就不许人为覆盖，不因为发布日期临近就绕过评测，不同时部署评测改动和训练改动——这样数字一动，原因就毫无歧义。他们还把闸门本身当作带版本的基础设施：对挂具的每一次改动，其审查都比它将评审的任何单个提案更严苛——因为检查器里的一行改动，会重塑未来一万个提案的优化方向。">The last piece is organizational, and it decides everything above. Evaluations only protect the loop if they can stop it. A dashboard that reports a regression to a channel nobody reads is decoration; a gate that blocks the merge until a human acknowledges the regression is a control. The difference is authority. Strong programs make the harness the sole path to production — no human override without a recorded justification, no eval bypassed because a launch date looms, no rolling an evaluation change and a training change in the same deploy. They also treat the gate itself as versioned infrastructure: every change to the harness is reviewed with more scrutiny than any single proposal it will ever grade.</p>
+<p data-en="The loop that writes the loop is no longer hypothetical, and it will not be un-invented. Models will propose changes to the systems that produce models; that is simply what capable coding agents pointed at an AI codebase do. What separates a durable flywheel from an impressive demo is not the sophistication of the generator. It is the rigor of the grader: held-out sets that rotate faster than they can be memorized, private evals that never touch the training mix, cross-graded harnesses with independent failure modes, and gates with real authority. The compilers taught this lesson decades ago — trust the bootstrap only as far as the conformance suite behind it. The agents are now learning it about themselves. The question every team should be asking is not 'can our models improve our models.' Almost certainly, yes. The question is: who wrote the grader — and would anyone notice if it were wrong?" data-zh="书写循环的循环，已不再是假设，也不会被取消发明。模型会对生产模型的系统提出改动；这就是有能力的编程智能体对着一座 AI 代码库会做的事。把持久的飞轮与惊艳的 demo 区分开的，不是生成器的精妙。是评分器的严谨：轮换得比被背下来更快的保留集、永不触碰训练组合的私有评测、拥有独立失败模式的交叉评审挂具、以及握有实权的闸门。编译器在几十年前就教过这一课——对自举的信任，只能到它背后那套符合性测试为止。现在，智能体正在它们自己身上学这一课。每个团队都该问的问题，不是「我们的模型能不能改进我们的模型」——几乎肯定能。问题是：评分器是谁写的——如果它错了，会有人发现吗？">The loop that writes the loop is no longer hypothetical, and it will not be un-invented. Models will propose changes to the systems that produce models; that is simply what capable coding agents pointed at an AI codebase do. What separates a durable flywheel from an impressive demo is not the sophistication of the generator. It is the rigor of the grader: held-out sets that rotate faster than they can be memorized, private evals that never touch the training mix, cross-graded harnesses with independent failure modes, and gates with real authority. The compilers taught this lesson decades ago — trust the bootstrap only as far as the conformance suite behind it. The agents are now learning it about themselves.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
