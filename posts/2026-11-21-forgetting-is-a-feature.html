@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Forgetting Is a Feature — AI Frontlines</title>
+<meta content="Agent memory systems are sold on total recall, but an agent that remembers everything is an agent that drowns in its own history. Memory is not a database problem — it is a garbage-collection problem. What survives, what gets compacted, and what is deliberately thrown away is the design." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 21, 2026" data-zh="2026年11月21日">November 21, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Forgetting Is a Feature" data-zh="遗忘是一种功能">Forgetting Is a Feature</h1>
+<p class="post-header-deck" data-en="Agent memory is marketed on total recall: remember every conversation, every preference, every decision, forever. But an agent that remembers everything is an agent that drowns in its own history. The right mental model is not a database — it is a heap. Allocations are cheap, liveness is the hard question, and the difference between a memory system that ages well and one that degrades into noise is a garbage collector: the disciplined, deliberate machinery that decides what survives, what gets compacted, and what is thrown away while it still can be." data-zh="智能体记忆，是按「全量回忆」来营销的：记住每一次对话、每一个偏好、每一个决定，永远。但一个什么都记得的智能体，是一个淹死在自己历史里的智能体。正确的心智模型不是数据库——是堆。分配很廉价，存活性才是难题；而一套越用越好的记忆系统与一套退化成噪音的记忆系统之间的差别，就是一个垃圾回收器：那套有纪律、有意图的机器，决定什么存活、什么被压缩、什么趁还来得及的时候被扔掉。">Agent memory is marketed on total recall: remember every conversation, every preference, every decision, forever. But an agent that remembers everything is an agent that drowns in its own history.</p>
+</header>
+<article class="post-body">
+<p data-en="Runtime engineers solved a version of this problem decades ago, and their vocabulary fits disturbingly well. A program allocates memory constantly; almost none of it is still needed a minute later. The miracle of automatic memory management is not that it reclaims bytes — it is that it decides, without being told, which allocations are still live. Agents have the identical structure. Every session allocates: preferences stated in passing, file layouts learned once, decisions made for reasons that expired, moods of a codebase on a Tuesday. All of it gets written to the memory store, because writing is cheap and feels diligent. Nobody asks the only question that matters: is this allocation still live? Six months later, the agent retrieves a preference the user revoked in week two, asserts a project structure that was refactored away, and cites a decision whose premises died quietly. The memory did not corrupt. It simply never became garbage — because nothing was ever built to collect it." data-zh="运行时工程师在几十年前就解过一个同构的问题，而他们的词汇表贴合得令人不安。一个程序不停地分配内存；而其中几乎没有任何一块，在一分钟之后仍然需要。自动内存管理的奇迹，不在于它回收了字节——而在于它在无人告知的情况下，判断出哪些分配仍然存活。智能体有着一模一样的结构。每一次会话都在分配：随口说出的偏好、只学过一次的文件布局、为早已过期的理由做出的决定、某个周二代码库的情绪。所有这些都被写进记忆库，因为写入很廉价，而且显得勤勉。没有人问那个唯一重要的问题：这块分配，还活着吗？六个月后，智能体检索出用户在第二周就撤销的偏好，断言一个早已被重构掉的项目结构，引用一个前提已悄然死去的决定。记忆没有损坏。它只是从未变成垃圾——因为从来没有任何东西，被造出来回收它。">Runtime engineers solved a version of this problem decades ago, and their vocabulary fits disturbingly well. A program allocates memory constantly; almost none of it is still needed a minute later. The miracle of automatic memory management is not that it reclaims bytes — it is that it decides, without being told, which allocations are still live.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrM1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrM2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrM3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE AGENT HEAP — THREE GENERATIONS" data-zh="智能体的堆——三代记忆" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">THE AGENT HEAP — THREE GENERATIONS</text>
+<!-- allocation source -->
+<rect fill="var(--bg-surface)" height="34" rx="8" stroke="var(--text-tertiary)" stroke-width="1.5" width="150" x="235" y="44"></rect>
+<text data-en="every session allocates" data-zh="每次会话都在分配" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="310" y="66">every session allocates</text>
+<path d="M310 78 L310 94" fill="none" marker-end="url(#arrM2)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<!-- nursery -->
+<rect fill="var(--bg-surface)" height="52" rx="10" stroke="var(--accent-3)" stroke-width="1.5" width="230" x="60" y="96"></rect>
+<text data-en="EPHEMERAL" data-zh="瞬时层" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="12" font-weight="800" letter-spacing="0.5" text-anchor="middle" x="175" y="118">EPHEMERAL</text>
+<text data-en="this session · scratch · drafts" data-zh="本次会话 · 草稿 · 涂鸦" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="175" y="136">this session · scratch · drafts</text>
+<!-- promotion arrow -->
+<path d="M290 122 L340 122" fill="none" marker-end="url(#arrM1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="promote on reuse" data-zh="复用即晋升" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="315" y="112">promote on reuse</text>
+<!-- episodic -->
+<rect fill="var(--accent-dim)" height="52" rx="10" stroke="var(--accent)" stroke-width="2" width="230" x="345" y="96"></rect>
+<text data-en="EPISODIC" data-zh="情节层" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="800" letter-spacing="0.5" text-anchor="middle" x="460" y="118">EPISODIC</text>
+<text data-en="what happened · when · why" data-zh="发生了什么 · 何时 · 为何" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="460" y="136">what happened · when · why</text>
+<!-- downward promotion -->
+<path d="M460 148 L460 190" fill="none" marker-end="url(#arrM2)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<text data-en="distill repeated patterns" data-zh="蒸馏反复出现的模式" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="530" y="172">distill repeated patterns</text>
+<!-- semantic core -->
+<rect fill="var(--bg-surface)" height="52" rx="10" stroke="var(--accent-2)" stroke-width="2" width="260" x="330" y="192"></rect>
+<text data-en="SEMANTIC CORE" data-zh="语义核心层" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="12" font-weight="800" letter-spacing="0.5" text-anchor="middle" x="460" y="214">SEMANTIC CORE</text>
+<text data-en="identity · durable truths · canon" data-zh="身份 · 持久事实 · 正典" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="460" y="232">identity · durable truths · canon</text>
+<!-- GC sweep below nursery -->
+<path d="M175 148 L175 190" fill="none" marker-end="url(#arrM3)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<rect fill="none" height="52" rx="10" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="3,2" width="230" x="60" y="192"></rect>
+<text data-en="COLLECTED" data-zh="已回收" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="175" y="214">COLLECTED</text>
+<text data-en="never referenced again — gone" data-zh="再未被引用——就此消失" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="175" y="232">never referenced again — gone</text>
+<!-- bottom note -->
+<rect fill="var(--accent-dim)" height="36" opacity="0.5" rx="8" width="480" x="70" y="280"></rect>
+<text data-en="Most allocations die young. Design the nursery to be cheap to empty — not cheap to fill." data-zh="大多数分配都死得很早。要把瞬时层设计成「清空起来廉价」，而不是「填满起来廉价」。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="302">Most allocations die young. Design the nursery to be cheap to empty — not cheap to fill.</text>
+</svg>
+<p class="diagram-caption" data-en="Generational garbage collectors exploit one empirical fact: most objects die young. Agent memory has the same shape. The ephemeral layer holds session scratch and should vanish by default. The episodic layer holds what happened and why, promoted only when something references it again. The semantic core is small, expensive, and hand-tended — identity, durable truths, canon. The arrows matter more than the boxes: promotion must be earned by reuse, and collection must be automatic, not aspirational." data-zh="分代垃圾回收器利用的是一个经验事实：大多数对象都死得很早。智能体记忆有着相同的形状。瞬时层装着会话草稿，默认就该消失。情节层装着发生了什么、为什么，只有当某样东西再次引用它时才被晋升。语义核心层则很小、很昂贵、需要人工照料——身份、持久事实、正典。箭头比方框更重要：晋升必须由复用挣得，而回收必须是自动的，不能只是愿望。">Generational garbage collectors exploit one empirical fact: most objects die young. Agent memory has the same shape. The ephemeral layer holds session scratch and should vanish by default. The episodic layer holds what happened and why, promoted only when something references it again. The semantic core is small, expensive, and hand-tended.</p>
+</div>
+<h3 data-en="The false economy of total recall" data-zh="全量回忆的虚假经济">The false economy of total recall</h3>
+<p data-en="The instinct behind remember-everything memory is an economy that does not exist: storage is nearly free, so remembering everything must be nearly free. This counts the wrong resource. The cost of a memory is not its storage — it is every future retrieval it participates in. Each recalled item consumes context window, attention, and the reader's trust; each stale item actively subtracts from all three. Retrieval quality degrades non-linearly with heap size: the tenth memory about a project sharpens a picture, the thousandth blurs it, because the retrieval layer cannot distinguish signal from sediment and returns both. Total recall is not a photographic memory. It is a cache with no eviction policy, and unbounded caches do not get faster as they grow — they get lucky less often." data-zh="「记住一切」式记忆背后的直觉，建立在一个并不存在的经济模型上：存储几乎免费，所以记住一切也几乎免费。这数错了资源。一条记忆的成本不是它的存储——而是它未来参与的每一次检索。每一条被召回的条目，都消耗上下文窗口、注意力、以及读者的信任；每一条过期的条目，都在这三者上做减法。检索质量随堆的大小非线性退化：关于一个项目的第十条记忆让画面更清晰，第一千条让它变模糊，因为检索层无法区分信号与沉积物，只好把两者都端回来。全量回忆不是照相机式的记忆。它是一个没有逐出策略的缓存，而无界缓存不会随着变大而变快——它们只是运气越来越差。">The instinct behind remember-everything memory is an economy that does not exist: storage is nearly free, so remembering everything must be nearly free. This counts the wrong resource. The cost of a memory is not its storage — it is every future retrieval it participates in. Each recalled item consumes context window, attention, and the reader's trust; each stale item actively subtracts from all three.</p>
+<blockquote data-en="A memory system is not judged by what it stores. It is judged by the average age of what it retrieves. Everything a long-lived agent recalls should have earned the right to be old." data-zh="评判一套记忆系统的，不是它存了什么。而是它检索回来的东西的平均年龄。一个长寿智能体回忆起的一切，都应当挣得变老的资格。">A memory system is not judged by what it stores. It is judged by the average age of what it retrieves. Everything a long-lived agent recalls should have earned the right to be old.</blockquote>
+<p data-en="There is a second cost that is harder to see: interference. In a human, forgetting is not failure — it is active suppression of what no longer predicts the present. Old habits must lose to new ones; superseded facts must yield to current ones. An agent with perfect recall has no mechanism for a new fact to win. When the user changes their mind, the memory store now contains both positions with equal weight, and whichever one the retriever happens to surface first wins the turn. That is not a fidelity bug; that is an architecture with no concept of supersession. Garbage collection is how the present outranks the past: the collector exists precisely to demote what the world has moved on from." data-zh="还有第二种更难看见的成本：干扰。对人来说，遗忘不是失败——它是主动抑制那些不再能预测当下的东西。旧习惯必须输给新习惯；被取代的事实必须让位于当前的事实。一个拥有完美回忆的智能体，没有任何机制让新事实获胜。当用户改变主意时，记忆库里就同时躺着两个立场、权重相等，而检索器碰巧先端出哪一个，哪一票就赢了这一轮。这不是保真度 bug；这是一个对「取代」毫无概念的架构。垃圾回收，就是让现在胜过过去的机制：回收器存在的意义，正是把世界已经翻篇的东西降级。">There is a second cost that is harder to see: interference. In a human, forgetting is not failure — it is active suppression of what no longer predicts the present. An agent with perfect recall has no mechanism for a new fact to win. When the user changes their mind, the memory store now contains both positions with equal weight, and whichever one the retriever surfaces first wins the turn.</p>
+<h3 data-en="Mark, sweep, compact" data-zh="标记、清扫、压缩">Mark, sweep, compact</h3>
+<p data-en="The practical question is what liveness means for a memory, and the answer is behavioral, not semantic. A memory is live if it is referenced — not by other memories, which is how hoards rationalize themselves, but by decisions. The marking pass is a simple audit over the episodic layer: did this memory change an action in the last N times it was retrieved? If it was retrieved ten times and changed nothing, it is either noise or trivia; in both cases it is paying rent in context and earning nothing. If it was never retrieved, it is unreachable — archive it cold, where resurrection is possible but costs a deliberate query. The sweep is where the discipline lives: collected does not mean deleted, it means demoted out of the working set. And the compaction pass is the one nobody budgets for and everyone needs: periodically rewriting the surviving episodic heap into canonical notes — one current statement of each durable truth, with provenance — because twenty overlapping memories of the same fact are one fact at twenty times the interference." data-zh="实践问题是：对一条记忆来说，「存活」到底意味着什么。答案是行为性的，不是语义性的。一条记忆存活，当且仅当它被引用——不是被其他记忆引用（囤积癖都是这么给自己找理由的），而是被决定引用。标记阶段，是对情节层的一次简单审计：这条记忆在上一次被检索的 N 次里，有没有改变过某个行动？如果它被检索了十次、什么也没改变，那它要么是噪音、要么是琐事；两种情况里，它都在用上下文交房租，却什么也没挣回来。如果它从未被检索过，它就是不可达的——把它冷归档，复活仍然可能，但必须付出一次刻意查询的代价。清扫阶段才是纪律所在：「被回收」不等于「被删除」，它意味着从工作集中降级出去。而压缩阶段，是所有人都需要、却没人排预算的那一步：周期性地把幸存的情节堆重写成正典笔记——每条持久事实只保留一句现行的表述、附上出处——因为同一条事实的二十条重叠记忆，就是一条事实乘以二十倍的干扰。">The practical question is what liveness means for a memory, and the answer is behavioral, not semantic. A memory is live if it is referenced — not by other memories, which is how hoards rationalize themselves, but by decisions. The marking pass is a simple audit: did this memory change an action in the last N times it was retrieved? If it was retrieved ten times and changed nothing, it is paying rent in context and earning nothing.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrG1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrG2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+<marker id="arrG3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+</defs>
+<text data-en="MARK AND SWEEP — LIVENESS IS BEHAVIORAL" data-zh="标记与清扫——存活是行为性的" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">MARK AND SWEEP — LIVENESS IS BEHAVIORAL</text>
+<!-- memory items row -->
+<text data-en="episodic heap" data-zh="情节堆" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="start" x="46" y="52">episodic heap</text>
+<circle cx="80" cy="80" fill="var(--accent)" r="16" stroke="var(--accent)" stroke-width="2"></circle>
+<circle cx="130" cy="80" fill="var(--bg-surface)" r="16" stroke="var(--accent-3)" stroke-width="2"></circle>
+<circle cx="180" cy="80" fill="var(--accent)" r="16" stroke="var(--accent)" stroke-width="2"></circle>
+<circle cx="230" cy="80" fill="var(--bg-surface)" r="16" stroke="var(--accent-3)" stroke-width="2"></circle>
+<circle cx="280" cy="80" fill="var(--bg-surface)" r="16" stroke="var(--accent-3)" stroke-width="2"></circle>
+<circle cx="330" cy="80" fill="var(--accent)" r="16" stroke="var(--accent)" stroke-width="2"></circle>
+<circle cx="380" cy="80" fill="var(--bg-surface)" r="16" stroke="var(--accent-3)" stroke-width="2"></circle>
+<circle cx="430" cy="80" fill="var(--accent)" r="16" stroke="var(--accent)" stroke-width="2"></circle>
+<!-- mark labels -->
+<text data-en="live" data-zh="活" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="80" y="116">live</text>
+<text data-en="dead" data-zh="死" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="130" y="116">dead</text>
+<text data-en="live" data-zh="活" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="180" y="116">live</text>
+<text data-en="dead" data-zh="死" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="230" y="116">dead</text>
+<text data-en="dead" data-zh="死" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="280" y="116">dead</text>
+<text data-en="live" data-zh="活" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="330" y="116">live</text>
+<text data-en="dead" data-zh="死" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="380" y="116">dead</text>
+<text data-en="live" data-zh="活" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="430" y="116">live</text>
+<!-- marking rule box -->
+<rect fill="var(--accent-dim)" height="40" rx="8" stroke="var(--accent)" stroke-width="1.5" width="300" x="160" y="140"></rect>
+<text data-en="MARK RULE: retrieved AND changed an action" data-zh="标记规则：被检索过，且改变过行动" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="310" y="157">MARK RULE: retrieved AND changed an action</text>
+<text data-en="(being relevant is not enough — it must have mattered)" data-zh="（「相关」不够——它必须产生过影响）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="172">(being relevant is not enough — it must have mattered)</text>
+<!-- arrows down to outcomes -->
+<path d="M160 190 C130 210 110 222 92 236" fill="none" marker-end="url(#arrG1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M460 190 C490 210 510 222 528 236" fill="none" marker-end="url(#arrG2)" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<!-- outcomes -->
+<rect fill="var(--bg-surface)" height="48" rx="9" stroke="var(--accent-2)" stroke-width="2" width="190" x="40" y="240"></rect>
+<text data-en="SURVIVORS → compact" data-zh="幸存者 → 压缩" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="135" y="260">SURVIVORS → compact</text>
+<text data-en="rewritten into canonical notes" data-zh="重写为正典笔记" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="135" y="278">rewritten into canonical notes</text>
+<rect fill="none" height="48" rx="9" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="3,2" width="190" x="390" y="240"></rect>
+<text data-en="DEAD → cold archive" data-zh="死亡 → 冷归档" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="485" y="260">DEAD → cold archive</text>
+<text data-en="resurrectable, at a deliberate cost" data-zh="可复活，但需刻意付出代价" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="485" y="278">resurrectable, at a deliberate cost</text>
+<!-- bottom -->
+<text data-en="collected ≠ deleted — it means demoted out of the working set" data-zh="被回收 ≠ 被删除——它意味着从工作集中降级" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="316">collected ≠ deleted — it means demoted out of the working set</text>
+</svg>
+<p class="diagram-caption" data-en="The marking pass classifies each episodic memory by a behavioral test: was it retrieved, and did retrieval change an action? Items that pass are survivors, headed for compaction into canonical notes. Items that fail — retrieved but inert, or never retrieved at all — are swept to cold archive, retrievable only by a deliberate query. Nothing is destroyed; everything is ranked. That is the entire trick." data-zh="标记阶段用一个行为测试给每条情节记忆分类：它被检索过吗？检索改变了行动吗？通过的条目是幸存者，去向是被压缩成正典笔记。未通过的——被检索过却毫无作用，或从未被检索——被清扫进冷归档，只有刻意查询才能取回。没有任何东西被摧毁；每一样东西都被排了序。全部诀窍，尽在于此。">The marking pass classifies each episodic memory by a behavioral test: was it retrieved, and did retrieval change an action? Items that pass are survivors, headed for compaction into canonical notes. Items that fail are swept to cold archive, retrievable only by a deliberate query. Nothing is destroyed; everything is ranked.</p>
+</div>
+<p data-en="Compaction deserves its own paragraph because it is where most memory systems quietly fail. The failure mode looks like success: the store grows, retrieval still returns something plausible, nothing crashes. But the semantic core — the small set of statements the agent trusts enough to act on without re-checking — has stopped being maintained. Nobody rewrote the project-conventions note after the refactor; nobody merged the three conflicting statements about deployment into one current one; nobody stamped a provenance date on the one fact that was true in March. An un-compacted core is not a knowledge base. It is a sediment layer with a search box. The fix is unglamorous and periodic: a scheduled pass, run by something with no stake in the outcome, whose whole job is to make the core smaller, more current, and better cited than it was yesterday." data-zh="压缩值得单独一段，因为多数记忆系统都是在这一步悄无声息地失败的。失败的样子看起来像成功：存储在增长，检索仍能端出像模像样的东西，什么也没崩。但语义核心层——那套智能体信任到可以不经复查就据以行动的少量陈述——已经无人维护。重构之后没有人重写项目规范笔记；没有人把三条互相矛盾的部署说法合并成一条现行版本；没有人给那条三月份还成立的事实盖上出处日期。未被压缩的核心层不是知识库。它是带搜索框的沉积层。修法毫无魅力，但必须周期性执行：一趟排定的、由一个对结果没有利害关系的东西来跑的清扫，它的全部工作，就是让核心层比昨天更小、更新、出处更硬。">Compaction deserves its own paragraph because it is where most memory systems quietly fail. The failure mode looks like success: the store grows, retrieval still returns something plausible, nothing crashes. But the semantic core — the small set of statements the agent trusts enough to act on without re-checking — has stopped being maintained. An un-compacted core is not a knowledge base. It is a sediment layer with a search box.</p>
+<h3 data-en="Expiry dates for beliefs" data-zh="给信念加上保质期">Expiry dates for beliefs</h3>
+<p data-en="There is a deeper design decision hiding under all of this: memories should carry their own decay model. Facts have different half-lives, and a store that treats them uniformly is systematically wrong about the most important ones. A user's name is effectively immortal; a preference has a half-life of months; a file layout, weeks; a sprint's priorities, days; the state of a working tree, minutes. Writing a memory without a prior on its decay is a silent claim that it will be true forever — and forever is the one thing no observation can establish. Practical systems make the prior explicit: every stored belief carries an expected half-life and a last-verified stamp, retrieval discounts for age, and items past their horizon are surfaced as questions ('this was true in September — is it still?') rather than asserted as facts. The agent that asks is not weaker than the agent that asserts. It is the only one of the two that can ever be right twice." data-zh="这一切之下还藏着一个更深的设计决策：记忆应当自带衰变模型。事实有着不同的半衰期，而一套把它们一视同仁的记忆库，会在最重要的那些事实上系统性地犯错。用户的名字近乎永生；偏好的半衰期以月计；文件布局以周计；一个冲刺的优先级以天计；工作树的状态以分钟计。写入一条记忆而不带衰变先验，等于默默宣称它将永远为真——而「永远」，是任何观察都无法确立的唯一一件事。实用的系统会把先验摆到明面上：每条存储的信念都带着预期半衰期和「最近验证」时间戳，检索时按年龄折价，过了时效范围的东西以问题的形式浮出（「这在九月是真的——现在还是吗？」），而不是被断言为事实。会问的那个智能体，不比会断言的那个弱。两者之中，也只有它可能对上两次。">There is a deeper design decision hiding under all of this: memories should carry their own decay model. Facts have different half-lives, and a store that treats them uniformly is systematically wrong about the most important ones. A user's name is effectively immortal; a preference has a half-life of months; a file layout, weeks; a sprint's priorities, days; the state of a working tree, minutes.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrH1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="HALF-LIVES — MEMORY IS NOT ONE SUBSTANCE" data-zh="半衰期——记忆不是一种均匀物质" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">HALF-LIVES — MEMORY IS NOT ONE SUBSTANCE</text>
+<!-- axes -->
+<line stroke="var(--text-tertiary)" stroke-width="1.2" x1="90" x2="580" y1="270" y2="270"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1.2" x1="90" x2="90" y1="270" y2="60"></line>
+<text data-en="confidence →" data-zh="置信度 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="52" y="165" transform="rotate(-90 52 165)">confidence →</text>
+<text data-en="age of memory →" data-zh="记忆年龄 →" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" text-anchor="end" x="580" y="290">age of memory →</text>
+<!-- decay curves -->
+<path d="M90 90 C220 95 420 100 575 104" fill="none" stroke="var(--accent-2)" stroke-width="2.5"></path>
+<text data-en="identity — near-immortal" data-zh="身份——近乎永生" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="start" x="140" y="82">identity — near-immortal</text>
+<path d="M90 110 C160 150 260 200 400 236 C460 250 520 258 575 262" fill="none" stroke="var(--accent)" stroke-width="2.5"></path>
+<text data-en="durable truths — years" data-zh="持久事实——以年计" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="start" x="150" y="150">durable truths — years</text>
+<path d="M90 130 C120 190 170 240 240 262" fill="none" stroke="var(--accent-3)" stroke-width="2.5"></path>
+<text data-en="preferences — months" data-zh="偏好——以月计" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="start" x="130" y="215">preferences — months</text>
+<path d="M90 145 C100 210 118 252 140 266" fill="none" stroke="var(--accent-3)" stroke-width="2" stroke-dasharray="5,3"></path>
+<text data-en="file layouts — weeks" data-zh="文件布局——以周计" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="start" x="60" y="252" opacity="0.9">file layouts — weeks</text>
+<path d="M90 156 C92 220 96 258 104 268" fill="none" stroke="var(--accent-3)" stroke-width="2" stroke-dasharray="2,3"></path>
+<text data-en="working-tree state — minutes" data-zh="工作树状态——以分钟计" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="start" x="118" y="196">working-tree state — minutes</text>
+<!-- question zone -->
+<rect fill="var(--accent-dim)" height="26" opacity="0.45" rx="7" width="200" x="330" y="76"></rect>
+<text data-en="past horizon → ask, don't assert" data-zh="过了时效 → 要问，不要断言" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="430" y="93">past horizon → ask, don't assert</text>
+</svg>
+<p class="diagram-caption" data-en="Every class of memory has a different confidence half-life, and a serious store encodes the prior at write time: identity barely decays, durable truths last years, preferences fade over months, layouts rot in weeks, session state is stale in minutes. Retrieval should discount by age within each curve, and anything drifting past its horizon should resurface as a question, not an assertion. A memory without a decay model is a promise that time will never pass." data-zh="每一类记忆都有不同的置信度半衰期，而认真的存储库会在写入时就编入先验：身份几乎不衰减，持久事实以年计，偏好以月消退，布局以周腐烂，会话状态以分钟计旧。检索应当按每条曲线内的年龄折价，而任何漂过自己时效的东西，都应以问题的形式重新浮出，而不是断言。不带衰变模型的记忆，是一句「时间将永远不流逝」的承诺。">Every class of memory has a different confidence half-life, and a serious store encodes the prior at write time: identity barely decays, durable truths last years, preferences fade over months, layouts rot in weeks, session state is stale in minutes.</p>
+</div>
+<p data-en="The uncomfortable conclusion is that the memory layer of an agent deserves more engineering attention than the recall layer, because recall quality is downstream of heap hygiene. A mediocre retriever over a small, current, well-cited heap beats a brilliant retriever over an unbounded sediment of stale assertions — the second system is not searching its memory so much as negotiating with its past. The teams building long-lived agents are quietly learning what the runtime world proved long ago: automatic allocation alone gives you a leak; collection is what turns a leak into a system. Forgetting, done deliberately, with rules and provenance and the humility of expiry dates, is not a limitation on what an agent knows. It is the only mechanism by which what an agent knows stays true." data-zh="让人不舒服的结论是：智能体的记忆层，值得比检索层更多的工程注意力，因为检索质量是堆卫生的下游。一个平庸的检索器扫过一个小而新、出处硬的堆，胜过一个聪明的检索器扫过一片无界的陈旧断言沉积层——第二个系统不是在搜索它的记忆，而是在与它的过去谈判。构建长寿智能体的团队，正在悄悄学到运行时世界早已证明的事情：只有自动分配，你得到的是泄漏；是回收，把泄漏变成了系统。带着规则、出处和保质期的谦卑、刻意执行的遗忘，不是对智能体认知的限制。它是让智能体所知保持为真的唯一机制。">The uncomfortable conclusion is that the memory layer deserves more engineering attention than the recall layer, because recall quality is downstream of heap hygiene. A mediocre retriever over a small, current, well-cited heap beats a brilliant retriever over an unbounded sediment of stale assertions. Automatic allocation alone gives you a leak; collection is what turns a leak into a system. Forgetting, done deliberately, is the only mechanism by which what an agent knows stays true.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
