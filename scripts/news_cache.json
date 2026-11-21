@@ -1,6 +1,1150 @@
 {
   "tweets": [
     {
+      "id": "2123856316187975756",
+      "url": "https://x.com/OpenAI/status/2123856316187975756",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-11-21T08:04:50.128241+00:00",
+      "translation_zh": "OpenAI 发布 MedChemBench，一个面向药物化学的 AI 推理基准：让模型读取分子结构、解读实验数据、判断下一个该测试哪种化合物。GPT-6.2 Astra 在 xhigh 推理档拿下 84.5% 的得分。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 3827,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-20T19:09:39.000Z",
+        "display_text_range": [
+          0,
+          232
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/ISAWR1tkt1",
+              "expanded_url": "https://x.com/OpenAI/status/2123856316187975756/video/1",
+              "indices": [
+                233,
+                256
+              ],
+              "url": "https://t.co/ISAWR1tkt1"
+            }
+          ],
+          "urls": [
+            {
+              "display_url": "openai.com/index/introduc…",
+              "expanded_url": "https://openai.com/index/introducing-medchembench/",
+              "indices": [
+                209,
+                232
+              ],
+              "url": "https://t.co/4N1H77z2YU"
+            }
+          ]
+        },
+        "id_str": "2123856316187975756",
+        "text": "MedChemBench is a new benchmark for AI reasoning in medicinal chemistry.\n\nIt shows the progress our frontier models have made in their ability to help scientists use AI to identify promising drug candidates.\n\nhttps://t.co/4N1H77z2YU https://t.co/ISAWR1tkt1",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2123856316187975756"
+          ],
+          "editable_until_msecs": "1795205379000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/ISAWR1tkt1",
+            "expanded_url": "https://x.com/OpenAI/status/2123856316187975756/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              233,
+              256
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2123855630335430656/img/4tCLd3eyj5V-Vrdz.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 2160,
+              "width": 3840
+            },
+            "sizes": {
+              "large": {
+                "h": 1152,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/ISAWR1tkt1",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 12600,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2123855630335430656/pl/ahk8pFZkCsDCShXa.m3u8"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2123855630335430656/vid/avc1/480x270/hgUgq33Fsq0qQfW5.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2123855630335430656/vid/avc1/640x360/JDKUQK4bg4JOTKCb.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2123855630335430656/vid/avc1/1280x720/5QOAuYarj25W0gZC.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2123855630335430656/vid/avc1/1920x1080/kpr7IQswtpG4NtXt.mp4"
+                },
+                {
+                  "bitrate": 25128000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2123855630335430656/vid/avc1/3840x2160/VgBX5x4BW2gpSB0R.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 12600,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2123855630335430656/img/4tCLd3eyj5V-Vrdz.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2123855630335430656/pl/ahk8pFZkCsDCShXa.m3u8"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2123855630335430656/vid/avc1/480x270/hgUgq33Fsq0qQfW5.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2123855630335430656/vid/avc1/640x360/JDKUQK4bg4JOTKCb.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2123855630335430656/vid/avc1/1280x720/5QOAuYarj25W0gZC.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2123855630335430656/vid/avc1/1920x1080/kpr7IQswtpG4NtXt.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2123855630335430656/vid/avc1/3840x2160/VgBX5x4BW2gpSB0R.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2123856316187975756"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 193,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2123827048808370477",
+      "url": "https://x.com/Google/status/2123827048808370477",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-11-21T08:04:50.128241+00:00",
+      "translation_zh": "Google 将 Gemini 3.5 Transcribe 的语音编辑能力（Gboard Rambler 和 macOS 版 Gemini 背后的同款技术）带入 Gemini API，公开预览现已上线，开发者可以构建用语音自然编辑、改写和翻译文本的应用。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1024,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-20T17:13:21.000Z",
+        "display_text_range": [
+          0,
+          280
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/iCOATUFzOf",
+              "expanded_url": "https://x.com/Google/status/2123827048808370477/video/1",
+              "indices": [
+                281,
+                304
+              ],
+              "url": "https://t.co/iCOATUFzOf"
+            }
+          ],
+          "user_mentions": [
+            {
+              "id_str": "1806359170830172162",
+              "indices": [
+                110,
+                120
+              ],
+              "name": "Google Gemini",
+              "screen_name": "GeminiApp"
+            }
+          ]
+        },
+        "id_str": "2123827048808370477",
+        "text": "We're bringing Gemini 3.5 Transcribe's voice editing capabilities, the same tech behind Rambler on Gboard and @GeminiApp on macOS, to the Gemini API.\n\nNow developers can build voice experiences that let people edit, rephrase, and translate existing text naturally using just their https://t.co/iCOATUFzOf",
+        "user": {
+          "id_str": "20536157",
+          "name": "Google",
+          "screen_name": "Google",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2042749771337564160/AgOFPEL3_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2123827048808370477"
+          ],
+          "editable_until_msecs": "1795198401000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/iCOATUFzOf",
+            "expanded_url": "https://x.com/Google/status/2123827048808370477/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              281,
+              304
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2123826913835708416/img/AhVlFGk-56US5OgF.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/iCOATUFzOf",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 39317,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2123826913835708416/pl/onakEMkaH0GfSISz.m3u8?v=3b8"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2123826913835708416/vid/avc1/480x270/3YDCDMWZe61bv0Kz.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2123826913835708416/vid/avc1/640x360/Bh3hxtTzWw7Ae6CU.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2123826913835708416/vid/avc1/1280x720/16-9eRPvLV32gesb.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2123826913835708416/vid/avc1/1920x1080/yZ056TQJyS7H6wmc.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 39317,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2123826913835708416/img/AhVlFGk-56US5OgF.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2123826913835708416/pl/onakEMkaH0GfSISz.m3u8?v=3b8"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2123826913835708416/vid/avc1/480x270/3YDCDMWZe61bv0Kz.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2123826913835708416/vid/avc1/640x360/Bh3hxtTzWw7Ae6CU.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2123826913835708416/vid/avc1/1280x720/16-9eRPvLV32gesb.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2123826913835708416/vid/avc1/1920x1080/yZ056TQJyS7H6wmc.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2123827048808370477"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 56,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTIzODI3MDQ4NzI0NTA4Njcy"
+        }
+      }
+    },
+    {
+      "id": "2123825847815561261",
+      "url": "https://x.com/Google/status/2123825847815561261",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-11-21T08:04:50.128241+00:00",
+      "translation_zh": "Gemini 4 Hydrogen 专为速度和日常任务而生，现已在 Gemini 应用和 Search 中正式上线。官方称其面向多样化的智能体工作流，能更紧密地遵循指令、更准确地调用工具，用更少的来回沟通产出可靠结果。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 631,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-20T17:08:35.000Z",
+        "display_text_range": [
+          0,
+          278
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/7ry6MgYBXB",
+              "expanded_url": "https://x.com/Google/status/2123825847815561261/photo/1",
+              "indices": [
+                276,
+                299
+              ],
+              "url": "https://t.co/7ry6MgYBXB"
+            }
+          ],
+          "user_mentions": [
+            {
+              "id_str": "1806359170830172162",
+              "indices": [
+                80,
+                90
+              ],
+              "name": "Google Gemini",
+              "screen_name": "GeminiApp"
+            }
+          ]
+        },
+        "id_str": "2123825847815561261",
+        "text": "Gemini 4 Hydrogen is built for for speed and everyday work — and is live in the @GeminiApp and Search right now🏃💨.\n\nWe designed Hydrogen for rapid, efficient execution across diverse agentic workflows and in the Gemini app, it can help you make your everyday assistant even 👏 https://t.co/7ry6MgYBXB",
+        "user": {
+          "id_str": "20536157",
+          "name": "Google",
+          "screen_name": "Google",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2042749771337564160/AgOFPEL3_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2123825847815561261"
+          ],
+          "editable_until_msecs": "1795198115000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/7ry6MgYBXB",
+            "expanded_url": "https://x.com/Google/status/2123825847815561261/photo/1",
+            "ext_alt_text": "A dark navy-to-blue gradient with white directional arrows linking the headline \"How to use Gemini 4 Hydrogen in the Gemini app.\" Subtext reads \"3 helpful things our new fast model with cutting-edge intelligence can do\" above a pill arrow button.",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              276,
+              299
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HXlYCojXMAAtEI3.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 605,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 670
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 360
+                },
+                {
+                  "h": 1231,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 209
+                },
+                {
+                  "h": 1440,
+                  "w": 720,
+                  "x": 180,
+                  "y": 0
+                },
+                {
+                  "h": 1440,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1440,
+              "width": 1080
+            },
+            "sizes": {
+              "large": {
+                "h": 1440,
+                "resize": "fit",
+                "w": 1080
+              },
+              "medium": {
+                "h": 1200,
+                "resize": "fit",
+                "w": 900
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 510
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/7ry6MgYBXB"
+          },
+          {
+            "display_url": "pic.x.com/7ry6MgYBXB",
+            "expanded_url": "https://x.com/Google/status/2123825847815561261/photo/2",
+            "ext_alt_text": "Slide with the four-point Gemini icon and headline \"Writing, research, and everyday work\" linked by white arrows. Body text explains Hydrogen follows tone, format, and rules on the first try and builds clear tables and visual breakdowns.",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              276,
+              299
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HXlYHG8WcAA_GxW.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 605,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 166
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1231,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1440,
+                  "w": 720,
+                  "x": 180,
+                  "y": 0
+                },
+                {
+                  "h": 1440,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1440,
+              "width": 1080
+            },
+            "sizes": {
+              "large": {
+                "h": 1440,
+                "resize": "fit",
+                "w": 1080
+              },
+              "medium": {
+                "h": 1200,
+                "resize": "fit",
+                "w": 900
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 510
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/7ry6MgYBXB"
+          },
+          {
+            "display_url": "pic.x.com/7ry6MgYBXB",
+            "expanded_url": "https://x.com/Google/status/2123825847815561261/photo/3",
+            "ext_alt_text": "Slide with the Gemini icon and arrow-linked headline \"Connects the dots across apps and tools.\" Body text notes Hydrogen breaks down goals step by step, pulls context from uploads, Gmail, and Drive, and calls the right tools or skills.",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              276,
+              299
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HXlYIf_XYAEsjrt.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 605,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 166
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1231,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1440,
+                  "w": 720,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1440,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1440,
+              "width": 1080
+            },
+            "sizes": {
+              "large": {
+                "h": 1440,
+                "resize": "fit",
+                "w": 1080
+              },
+              "medium": {
+                "h": 1200,
+                "resize": "fit",
+                "w": 900
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 510
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/7ry6MgYBXB"
+          },
+          {
+            "display_url": "pic.x.com/7ry6MgYBXB",
+            "expanded_url": "https://x.com/Google/status/2123825847815561261/photo/4",
+            "ext_alt_text": "Slide with the Gemini icon and arrow-linked headline \"Everyday prototyping and iteration.\" Body text explains Hydrogen generates clean, working layouts in fewer prompts so users can create and refine interactive projects quickly.",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              276,
+              299
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HXlYKImX0AAIUuc.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 605,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 166
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1231,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1440,
+                  "w": 720,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1440,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1440,
+              "width": 1080
+            },
+            "sizes": {
+              "large": {
+                "h": 1440,
+                "resize": "fit",
+                "w": 1080
+              },
+              "medium": {
+                "h": 1200,
+                "resize": "fit",
+                "w": 900
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 510
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/7ry6MgYBXB"
+          }
+        ],
+        "photos": [
+          {
+            "accessibilityLabel": "A dark navy-to-blue gradient with white directional arrows linking the headline \"How to use Gemini 4 Hydrogen in the Gemini app.\" Subtext reads \"3 helpful things our new fast model with cutting-edge intelligence can do\" above a pill arrow button.",
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 605,
+                "w": 1080,
+                "x": 0,
+                "y": 670
+              },
+              {
+                "h": 1080,
+                "w": 1080,
+                "x": 0,
+                "y": 360
+              },
+              {
+                "h": 1231,
+                "w": 1080,
+                "x": 0,
+                "y": 209
+              },
+              {
+                "h": 1440,
+                "w": 720,
+                "x": 180,
+                "y": 0
+              },
+              {
+                "h": 1440,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Google/status/2123825847815561261/photo/1",
+            "url": "https://pbs.twimg.com/media/HXlYCojXMAAtEI3.jpg",
+            "width": 1080,
+            "height": 1440
+          },
+          {
+            "accessibilityLabel": "Slide with the four-point Gemini icon and headline \"Writing, research, and everyday work\" linked by white arrows. Body text explains Hydrogen follows tone, format, and rules on the first try and builds clear tables and visual breakdowns.",
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 605,
+                "w": 1080,
+                "x": 0,
+                "y": 166
+              },
+              {
+                "h": 1080,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1231,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1440,
+                "w": 720,
+                "x": 180,
+                "y": 0
+              },
+              {
+                "h": 1440,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Google/status/2123825847815561261/photo/2",
+            "url": "https://pbs.twimg.com/media/HXlYHG8WcAA_GxW.jpg",
+            "width": 1080,
+            "height": 1440
+          },
+          {
+            "accessibilityLabel": "Slide with the Gemini icon and arrow-linked headline \"Connects the dots across apps and tools.\" Body text notes Hydrogen breaks down goals step by step, pulls context from uploads, Gmail, and Drive, and calls the right tools or skills.",
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 605,
+                "w": 1080,
+                "x": 0,
+                "y": 166
+              },
+              {
+                "h": 1080,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1231,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1440,
+                "w": 720,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1440,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Google/status/2123825847815561261/photo/3",
+            "url": "https://pbs.twimg.com/media/HXlYIf_XYAEsjrt.jpg",
+            "width": 1080,
+            "height": 1440
+          },
+          {
+            "accessibilityLabel": "Slide with the Gemini icon and arrow-linked headline \"Everyday prototyping and iteration.\" Body text explains Hydrogen generates clean, working layouts in fewer prompts so users can create and refine interactive projects quickly.",
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 605,
+                "w": 1080,
+                "x": 0,
+                "y": 166
+              },
+              {
+                "h": 1080,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1231,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1440,
+                "w": 720,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1440,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Google/status/2123825847815561261/photo/4",
+            "url": "https://pbs.twimg.com/media/HXlYKImX0AAIUuc.jpg",
+            "width": 1080,
+            "height": 1440
+          }
+        ],
+        "conversation_count": 49,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTIzODI1ODQ3NzE5MTQxMzc2"
+        }
+      }
+    },
+    {
+      "id": "2123822989154369958",
+      "url": "https://x.com/AnthropicAI/status/2123822989154369958",
+      "label": "Anthropic",
+      "color": "#D4A574",
+      "fetched_at": "2026-11-21T08:04:50.128241+00:00",
+      "translation_zh": "Anthropic 上市次日发布《The making of Anthropic》：Dario Amodei、Daniela Amodei 等七位联合创始人亲述创业故事——为什么创办公司、学到了什么、以及接下来的路。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 4067,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-20T16:57:13.000Z",
+        "display_text_range": [
+          0,
+          150
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/AkKNhIxLXS",
+              "expanded_url": "https://x.com/AnthropicAI/status/2123822989154369958/video/1",
+              "indices": [
+                151,
+                174
+              ],
+              "url": "https://t.co/AkKNhIxLXS"
+            }
+          ]
+        },
+        "id_str": "2123822989154369958",
+        "text": "Anthropic’s co-founders on the story so far. Told by Dario Amodei, Daniela Amodei, Tom Brown, Jack Clark, Jared Kaplan, Sam McCandlish, and Chris Olah https://t.co/AkKNhIxLXS",
+        "user": {
+          "id_str": "1353836358901501952",
+          "name": "Anthropic",
+          "screen_name": "AnthropicAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2123822989154369958"
+          ],
+          "editable_until_msecs": "1795197433000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {
+              "description": "Anthropic’s co-founders on why they started the company, what they’ve learned, and the work still ahead.",
+              "embeddable": true,
+              "title": "The making of Anthropic"
+            },
+            "display_url": "pic.x.com/AkKNhIxLXS",
+            "expanded_url": "https://x.com/AnthropicAI/status/2123822989154369958/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              151,
+              174
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HXlVce1X0AARumK.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1440
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1440
+              },
+              "medium": {
+                "h": 900,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 510,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/AkKNhIxLXS",
+            "video_info": {
+              "aspect_ratio": [
+                4,
+                3
+              ],
+              "duration_millis": 880546,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2123815200075747328/pl/bOg7enRjn8XrxX-S.m3u8?v=327"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2123815200075747328/vid/avc1/360x270/1NYAvo3uRmlWPkQt.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2123815200075747328/vid/avc1/480x360/M2rJybRPnWRijg9f.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2123815200075747328/vid/avc1/960x720/TNKiODa1YY4o9qEU.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2123815200075747328/vid/avc1/1440x1080/2is8N2x6wuQ-B4Gs.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            4,
+            3
+          ],
+          "contentType": "media_entity",
+          "durationMs": 880546,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/media/HXlVce1X0AARumK.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2123815200075747328/pl/bOg7enRjn8XrxX-S.m3u8?v=327"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2123815200075747328/vid/avc1/360x270/1NYAvo3uRmlWPkQt.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2123815200075747328/vid/avc1/480x360/M2rJybRPnWRijg9f.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2123815200075747328/vid/avc1/960x720/TNKiODa1YY4o9qEU.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2123815200075747328/vid/avc1/1440x1080/2is8N2x6wuQ-B4Gs.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2123822989154369958"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 340,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2123556256392847657",
+      "url": "https://x.com/thsottiaux/status/2123556256392847657",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-11-21T08:04:50.128241+00:00",
+      "translation_zh": "OpenAI 开始向少量 ChatGPT Plus（$20/月）用户测试 dots 常驻智能体（此前仅限 Pro 及以上），并面向所有 Business Standard 用户推出。官方称主动性经过多轮改进后，用户反馈明显转好。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 10450,
+        "lang": "en",
+        "created_at": "2026-11-19T23:17:19.000Z",
+        "display_text_range": [
+          0,
+          280
+        ],
+        "entities": {},
+        "id_str": "2123556256392847657",
+        "text": "Heads up, we’re starting to test dots with a small number of ChatGPT Plus users. Looking forward to the continued feedback as we expand and I’m recently seeing a lot more positives around how good the proactivity has been after many improvements. \n\nWe’re also bringing dots to all",
+        "user": {
+          "id_str": "1953337039510003712",
+          "name": "Tibo",
+          "screen_name": "thsottiaux",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2123556256392847657"
+          ],
+          "editable_until_msecs": "1795133839000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "conversation_count": 1381,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTIzNTU2MjU2MzM4Mjg4NjQw"
+        }
+      }
+    },
+    {
       "id": "2123461658890686863",
       "url": "https://x.com/AnthropicAI/status/2123461658890686863",
       "label": "Anthropic",
