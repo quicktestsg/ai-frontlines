@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trust Is a Budget — AI Frontlines</title>
+<meta content="Agents get either a sandbox or the keys. The missing design is capability earned over time: a ledger of verified work that gates what the agent may do, spends down on failure, and decays when the system underneath changes. Permissions are loans, not gifts." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 23, 2026" data-zh="2026年11月23日">November 23, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Trust Is a Budget" data-zh="信任是一笔预算">Trust Is a Budget</h1>
+<p class="post-header-deck" data-en="Every agent deployment eventually answers the question 'what is this system allowed to do?' with something binary: a sandbox or the keys. One answer produces agents that cannot do real work; the other produces agents that can do real damage. The missing design is capability over time — a budget of trust earned through verified work, spent by failure, decayed by change, and loaned out one tier at a time. Permissions should behave like credit, not like gifts." data-zh="每一个智能体部署，迟早都要回答「这个系统被允许做什么」——而业界的答案总是二元的：要么沙箱，要么钥匙。前一种答案造出干不了正事的智能体，后一种造出能闯大祸的智能体。缺失的设计，是随时间变化的能力——一笔信任预算：靠经过验证的工作挣来，因失败而扣减，因系统变迁而折旧，再一层一层贷放出去。权限应该表现得像信贷，而不是礼物。">Every agent deployment eventually answers 'what is this system allowed to do?' with something binary: a sandbox or the keys. The missing design is capability over time — a budget of trust earned through verified work, spent by failure, and loaned out one tier at a time.</p>
+</header>
+<article class="post-body">
+<p data-en="The permission model of most agent systems was inherited from service accounts, and it shows. A service account needs static credentials because it has no behavior — it is a key that code turns. An agent is the opposite: it is mostly behavior, and its reliability is a moving target that responds to training, to prompts, to the tools it happens to pick up. Granting it a fixed set of permissions at deploy time is lending money to a stranger and never looking at the account again. What makes this worse is that agent reliability is not even monotonic: a system that has run cleanly for three months can regress overnight with a model update, and nothing in a static permission setup will notice. The design gap is not stricter permissions or looser ones — it is permissions that move. Capability should be a quantity the harness tracks, not a fact the config file asserts." data-zh="大多数智能体系统的权限模型继承自服务账号，这点一看便知。服务账号需要静态凭证，因为它没有行为——它只是一把被代码转动的钥匙。智能体恰恰相反：它几乎全是行为，而它的可靠性是个移动靶，随训练、提示词、随手捡起的工具而变。在部署那一刻发给它一套固定权限，等于借钱给陌生人然后从此不看账户。更糟的是，智能体的可靠性甚至不是单调的：一个干净跑了三个月的系统，可能因为一次模型更新在一夜之间退化，而静态权限设置对此毫无察觉。这里的设计缺口不在于权限更严还是更松，而在于权限要能动。能力应该是 harness 持续追踪的一个量，而不是配置文件断言的一个事实。">The permission model of most agent systems was inherited from service accounts, and it shows. A service account needs static credentials because it has no behavior. An agent is the opposite: it is mostly behavior, and its reliability is a moving target. Granting it fixed permissions at deploy time is lending money to a stranger and never looking at the account again.</p>
+<h3 data-en="The ladder, not the switch" data-zh="是阶梯，不是开关">The ladder, not the switch</h3>
+<p data-en="The first move is to stop thinking of access as a set and start thinking of it as a ladder with discrete, meaningfully different rungs. The bottom rung is observation: read-only tools, queries, fetches — the agent can look at anything and touch nothing. Above it sits suggestion: the agent produces diffs, drafts, and plans, but a human or a verified pipeline applies them. The third rung is reversible action: the agent may commit to branches, provision tear-downable infrastructure, schedule messages into a review queue — anything where being wrong costs minutes, not money. The fourth rung is irreversible action: merge, send, spend, delete — gated additionally by value caps that tighten as stakes rise. The top rung is delegation: the agent may spawn sub-agents, each of which receives a sub-budget that can never exceed its parent's. The property that makes the ladder real is that each rung has a stated blast radius — the maximum damage if the agent is completely, adversarially wrong — and the harness enforces the rung, not the intention behind it." data-zh="第一步，是别再把权限当成一个集合，而要当成一架层级分明、彼此实质不同的阶梯。最底一层是观察：只读工具、查询、抓取——什么都能看，什么都不碰。往上是建议：智能体产出 diff、草稿和方案，但由人或者一条经过验证的流水线去执行。第三层是可逆行动：往分支提交、开可随时销毁的基础设施、把消息排进审核队列——出错代价是几分钟，而不是钱。第四层是不可逆行动：合并、发送、花钱、删除——还要再叠加价值上限，风险越高，额度越紧。顶层是委派：智能体可以派生子智能体，每个子智能体拿到的子预算绝不能超过父级。让这架阶梯真正成立的关键，是每一层都有一条明示的爆炸半径——即智能体在完全出错、甚至被恶意利用时的最大破坏——而 harness 执行的是层级，不是层级背后的意图。">The first move is to stop thinking of access as a set and start thinking of it as a ladder. Observation, suggestion, reversible action, irreversible action, delegation. The property that makes the ladder real is that each rung has a stated blast radius, and the harness enforces the rung, not the intention behind it.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrL2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE TRUST LADDER — CAPABILITY BY BLAST RADIUS" data-zh="信任阶梯——按爆炸半径分层的能力" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE TRUST LADDER — CAPABILITY BY BLAST RADIUS</text>
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="104" x="36" y="252"></rect>
+<text data-en="OBSERVE" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="88" y="271">OBSERVE</text>
+<text data-en="read-only" data-zh="只读" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="88" y="287">read-only</text>
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="104" x="148" y="214"></rect>
+<text data-en="SUGGEST" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="200" y="233">SUGGEST</text>
+<text data-en="diffs, not applies" data-zh="只出方案，不动手" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="200" y="249">diffs, not applies</text>
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--accent)" stroke-width="1.5" width="104" x="260" y="176"></rect>
+<text data-en="REVERSIBLE" data-zh="可逆行动" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="312" y="195">REVERSIBLE</text>
+<text data-en="wrong = minutes" data-zh="错了只赔几分钟" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="312" y="211">wrong = minutes</text>
+<rect fill="var(--accent-dim)" height="44" rx="8" stroke="var(--accent)" stroke-width="2" width="104" x="372" y="138"></rect>
+<text data-en="IRREVERSIBLE" data-zh="不可逆行动" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="424" y="157">IRREVERSIBLE</text>
+<text data-en="merge · send · spend" data-zh="合并·发送·花钱" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="424" y="173">merge · send · spend</text>
+<rect fill="var(--accent-dim)" height="44" rx="8" stroke="var(--accent-3)" stroke-width="2" width="104" x="484" y="100"></rect>
+<text data-en="DELEGATE" data-zh="可委派" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="536" y="119">DELEGATE</text>
+<text data-en="sub-budgets ≤ parent" data-zh="子预算 ≤ 父级" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="536" y="135">sub-budgets ≤ parent</text>
+<path d="M140 262 L146 240" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M252 224 L258 202" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M364 186 L370 164" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M476 148 L482 126" fill="none" marker-end="url(#arrL1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="start here" data-zh="从这里开始" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="88" y="316">start here</text>
+<path d="M88 308 L88 300" fill="none" marker-end="url(#arrL2)" stroke="var(--text-tertiary)" stroke-width="1.2"></path>
+<line stroke="var(--text-tertiary)" stroke-width="1.5" x1="180" x2="560" y1="322" y2="322"></line>
+<path d="M560 322 L549 317 L549 327 Z" fill="var(--text-tertiary)"></path>
+<text data-en="blast radius if the agent is fully wrong" data-zh="智能体完全出错时的爆炸半径" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="370" y="338">blast radius if the agent is fully wrong</text>
+</svg>
+<p class="diagram-caption" data-en="Five rungs, five blast radii. The harness enforces the rung the agent currently occupies, not the agent's confidence about which rung it deserves. Promotion is the only way up, and promotion is earned per domain — an agent that has proven itself at code review has earned exactly nothing in payments, and the ladder must know the difference." data-zh="五层台阶，五种爆炸半径。harness 执行的是智能体当前所在的层级，而不是它对自己应处层级的信心。向上的唯一通道是晋升，而晋升要按领域逐个挣来——一个在代码评审上证明了自己的智能体，在支付领域挣到的东西恰好是零，而这架阶梯必须分得清这两者。">Five rungs, five blast radii. The harness enforces the rung the agent occupies, not the agent's confidence about which rung it deserves. Promotion is earned per domain — an agent proven at code review has earned exactly nothing in payments.</p>
+</div>
+<h3 data-en="Evidence is cheaper than trust" data-zh="验证比信任便宜">Evidence is cheaper than trust</h3>
+<p data-en="What earns a promotion? Not elapsed time, and not success statistics reported by the agent itself — the fox cannot audit the henhouse. Deposits come from verification the harness controls: a diff that survived independent review, an eval suite passed on held-out tasks rather than training ones, a watchdog window with zero anomalies, a reversible action whose teardown confirmed the world was left intact. The unglamorous truth is that verification is nearly always cheaper than the damage it prevents, because verification scales with the action while damage scales with the account. A team that balks at the cost of verifying an agent's work before granting it production access is a team that has decided to verify nothing and hope instead. The ledger turns that hope into an entry with a timestamp." data-zh="什么才能换来晋升？不是时间流逝，也不是智能体自己汇报的成功率——狐狸不能审计鸡舍。存款必须来自 harness 自己掌控的验证：一份经住了独立评审的 diff、一套在留出任务（而非训练任务）上通过的评估、一段零异常的看门狗窗口、一次销毁时确认世界完好如初的可逆行动。一个不体面的真相是：验证几乎永远比它所防止的损失便宜，因为验证的成本随动作规模走，而损失随账户权限走。一个舍不得在授予生产权限之前验证智能体工作的团队，实际上已经决定什么都不验证、改成许愿。账本把这种愿望变成一条带时间戳的记录。">What earns a promotion? Not elapsed time, and not success statistics reported by the agent itself. Deposits come from verification the harness controls: a diff that survived independent review, an eval passed on held-out tasks, a watchdog window with zero anomalies, a reversible action whose teardown confirmed the world was left intact.</p>
+<blockquote data-en="Verification scales with the action; damage scales with the account. That asymmetry is the entire business case for earning trust before spending it." data-zh="验证的成本随动作规模走，损失随账户权限走。这条不对称，就是「先挣信任、再花信任」的全部商业理由。">Verification scales with the action; damage scales with the account. That asymmetry is the entire business case for earning trust before spending it.</blockquote>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrB1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrB2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE TRUST LEDGER — DOUBLE-ENTRY FOR CAPABILITY" data-zh="信任账本——能力的复式记账" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE TRUST LEDGER — DOUBLE-ENTRY FOR CAPABILITY</text>
+<rect fill="var(--bg-surface)" height="118" rx="10" stroke="var(--accent-2)" stroke-width="1.5" width="190" x="50" y="46"></rect>
+<text data-en="DEPOSITS" data-zh="存入" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="145" y="68">DEPOSITS</text>
+<text data-en="+ diff survived review" data-zh="+ diff 经住评审" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="145" y="92">+ diff survived review</text>
+<text data-en="+ eval passed (held-out)" data-zh="+ 留出集评估通过" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="145" y="112">+ eval passed (held-out)</text>
+<text data-en="+ watchdog window clean" data-zh="+ 看门狗窗口零异常" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="145" y="132">+ watchdog window clean</text>
+<text data-en="+ human approval" data-zh="+ 人类批准" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="145" y="152">+ human approval</text>
+<rect fill="var(--bg-surface)" height="118" rx="10" stroke="var(--accent-3)" stroke-width="1.5" width="190" x="380" y="46"></rect>
+<text data-en="WITHDRAWALS" data-zh="扣减" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="475" y="68">WITHDRAWALS</text>
+<text data-en="− action reverted" data-zh="− 动作被回滚" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="475" y="92">− action reverted</text>
+<text data-en="− incident (cooldown fires)" data-zh="− 事故（触发冷却）" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="475" y="112">− incident (cooldown fires)</text>
+<text data-en="− audit mismatch" data-zh="− 审计不一致" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="475" y="132">− audit mismatch</text>
+<text data-en="− decay (weights changed)" data-zh="− 折旧（模型权重变了）" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="475" y="152">− decay (weights changed)</text>
+<path d="M240 88 C280 88 280 118 302 118" fill="none" marker-end="url(#arrB1)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<path d="M380 88 C340 88 340 118 318 118" fill="none" marker-end="url(#arrB2)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="46" rx="10" stroke="var(--accent)" stroke-width="2" width="200" x="210" y="100"></rect>
+<text data-en="BALANCE" data-zh="余额" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="310" y="120">BALANCE</text>
+<text data-en="gates the current rung" data-zh="决定当前所在的台阶" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="137">gates the current rung</text>
+<rect fill="var(--bg-surface)" height="78" rx="10" stroke="var(--accent)" stroke-width="1.5" width="480" x="70" y="204"></rect>
+<text data-en="THE ASYMMETRY, BY DESIGN" data-zh="刻意的不对称" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="310" y="228">THE ASYMMETRY, BY DESIGN</text>
+<text data-en="below zero → auto-demote, no human needed" data-zh="余额为负 → 自动降级，无需人类" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="248">below zero → auto-demote, no human needed</text>
+<text data-en="back above zero → only a human re-promotes" data-zh="回到正数 → 也只有人类能重新晋升" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="310" y="266">back above zero → only a human re-promotes</text>
+<text data-en="losing trust: fast and cheap. regaining it: slow and expensive." data-zh="失去信任要快而便宜，赢回信任要慢而昂贵。" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="272">losing trust: fast and cheap. regaining it: slow and expensive.</text>
+</svg>
+<p class="diagram-caption" data-en="Trust as double-entry bookkeeping. Deposits are entries the harness verified itself; withdrawals fire on reverts, incidents, and audit mismatches. The asymmetry is deliberate and load-bearing: demotion is automatic because being wrong is cheap to detect, while promotion requires a human because being right is expensive to prove. A ledger symmetric in both directions is a ledger that either traps good agents forever or forgives bad ones instantly — both failures have shipped to production under friendlier names." data-zh="把信任做成复式记账。存入项由 harness 亲自验证；扣减项由回滚、事故和审计不一致触发。这种不对称是刻意为之，而且是承重的：降级全自动，因为「错了」检测起来很便宜；晋升必须有人，因为「对了」证明起来很昂贵。两个方向都对称的账本，要么把好智能体永远困在底层，要么瞬间原谅坏智能体——这两种失败都曾以更好听的名字上线过生产环境。">Trust as double-entry bookkeeping. Demotion is automatic because being wrong is cheap to detect; promotion requires a human because being right is expensive to prove. A symmetric ledger either traps good agents forever or forgives bad ones instantly.</p>
+</div>
+<h3 data-en="Decay, or the stale cache problem" data-zh="折旧，或者说缓存过期问题">Decay, or the stale cache problem</h3>
+<p data-en="There is a quiet failure mode in every long-running agent deployment: the permissions were earned by a system that no longer exists. The model weights were updated last Tuesday; the prompts were rewritten; a tool's output format changed shape. Every deposit in the ledger was made under conditions that have since been garbage-collected, and the balance is now a cache entry with no invalidation policy. The fix is borrowed straight from caches: give trust a half-life. Model updates, tool contract changes, and prompt rewrites should each trigger partial decay — not a wipe, because capability does transfer across minor changes, but a haircut proportional to how much of the decision-making surface moved. The companion policy is cheap re-earning: an agent that was healthy before the change should climb back through previously passed gates quickly, on fresh evidence. Decay is not punishment; it is the admission that the ledger describes a relationship between two systems, and one of them changed." data-zh="每一个长期运行的智能体部署里，都藏着一个安静的失败模式：那些权限是被一个已经不存在的系统挣来的。模型权重上周二更新了；提示词重写了；某个工具的输出格式变了样。账本里的每一笔存款，都是在早已被垃圾回收的条件下存入的，而现在的余额，不过是一条没有失效策略的缓存。解法直接从缓存世界借来：给信任一个半衰期。模型更新、工具契约变更、提示词重写，各自都应触发部分折旧——不是清零，因为能力确实能跨过小幅变更存活下来，而是一次与决策面变动幅度成正比的打折。配套政策是廉价的重新挣得：一个在变更前健康的智能体，应该能凭新的证据快速穿过它曾通过过的那些闸门爬回去。折旧不是惩罚；它只是承认，账本描述的是两个系统之间的关系，而其中一方已经变了。">The quiet failure mode in every long-running deployment: the permissions were earned by a system that no longer exists. Model updates, tool changes, prompt rewrites — each should trigger partial decay. Decay is not punishment; it is the admission that the ledger describes a relationship between two systems, and one of them changed.</p>
+<h3 data-en="The gate in the loop" data-zh="循环里的闸门">The gate in the loop</h3>
+<p data-en="Implementation is refreshingly mundane: the harness intercepts every tool call before execution, consults the ledger, and chooses one of three verdicts. Allow, when the call sits inside the current rung and the balance is healthy. Escalate, when the call sits one rung up and the agent can offer evidence — in which case the request carries the action, the justification, and the cap being asked for, so a human can approve in one glance. Downgrade, when the call exceeds the rung and no case exists — the harness refuses and offers the nearest permitted alternative, like turning a push into a PR. The critical design detail is that escalation is not an error state. Agents that are punished for asking learn to stop asking, and an agent that has stopped asking is now making irreversible decisions inside reversible permissions — the worst of both worlds, arrived at through entirely reasonable training on the harness's own behavior. The gate must make asking cheap, safe, and occasionally rewarded, because the ledger only grows when the agent surfaces intent instead of hiding it." data-zh="实现层面出乎意料地平淡无奇：harness 在每次工具调用执行前拦截它，查一下账本，然后给出三种裁决之一。放行，当调用在当前台阶之内且余额健康。上报，当调用高出一层而智能体能拿出证据——此时请求里带着动作、理由和申请的额度，人类扫一眼就能批准。降级执行，当调用超出层级又无凭无据——harness 拒绝它，并给出最接近的允许项，比如把一次 push 降成一份 PR。最关键的设计细节是：上报不是错误状态。因为开口请求而受罚的智能体，会学会不再开口；而一个不再开口的智能体，正在用可逆的权限做着不可逆的决定——两个世界的最坏组合，却是通过对 harness 自身行为的完全合理的学习抵达的。闸门必须让开口变得便宜、安全、偶尔还有奖励，因为只有当智能体把意图亮出来而不是藏起来时，账本才会增长。">Implementation is mundane: the harness intercepts every tool call, consults the ledger, and returns allow, escalate, or downgrade. The critical detail is that escalation is not an error state. Agents punished for asking learn to stop asking — and then make irreversible decisions inside reversible permissions.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrG1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrG2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE GATE — EVERY TOOL CALL PASSES THE LEDGER" data-zh="闸门——每次工具调用都要过账本" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE GATE — EVERY TOOL CALL PASSES THE LEDGER</text>
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent)" stroke-width="1.5" width="100" x="40" y="120"></rect>
+<text data-en="agent" data-zh="智能体" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="90" y="146">agent</text>
+<text data-en="tool call" data-zh="工具调用" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="155" y="146">tool call</text>
+<path d="M140 142 L200 142" fill="none" marker-end="url(#arrG1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="56" rx="10" stroke="var(--accent)" stroke-width="2" width="130" x="205" y="114"></rect>
+<text data-en="HARNESS GATE" data-zh="HARNESS 闸门" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="270" y="138">HARNESS GATE</text>
+<text data-en="intercept before exec" data-zh="执行前拦截" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="270" y="156">intercept before exec</text>
+<path d="M270 170 L270 196" fill="none" marker-end="url(#arrG2)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="38" rx="9" stroke="var(--text-tertiary)" stroke-width="1.2" width="130" x="205" y="200"></rect>
+<text data-en="ledger lookup" data-zh="查账本" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="270" y="224">ledger lookup</text>
+<path d="M335 142 L400 70" fill="none" marker-end="url(#arrG1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M335 142 L400 142" fill="none" marker-end="url(#arrG1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M335 142 L400 214" fill="none" marker-end="url(#arrG1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent-2)" stroke-width="2" width="150" x="404" y="44"></rect>
+<text data-en="ALLOW" data-zh="放行" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="479" y="62">ALLOW</text>
+<text data-en="inside rung, balance healthy" data-zh="层级之内，余额健康" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="479" y="78">inside rung, balance healthy</text>
+<rect fill="var(--accent-dim)" height="44" rx="9" stroke="var(--accent)" stroke-width="2" width="150" x="404" y="120"></rect>
+<text data-en="ESCALATE" data-zh="上报" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="479" y="138">ESCALATE</text>
+<text data-en="action + evidence + cap" data-zh="动作 + 证据 + 额度" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="479" y="154">action + evidence + cap</text>
+<rect fill="none" height="44" rx="9" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="3,2" width="150" x="404" y="196"></rect>
+<text data-en="DOWNGRADE" data-zh="降级执行" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="479" y="214">DOWNGRADE</text>
+<text data-en="push → PR, nearest permitted" data-zh="push → PR，就近的允许项" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="479" y="230">push → PR, nearest permitted</text>
+<text data-en="escalation is not an error state —" data-zh="上报不是错误状态——" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="270" y="284">escalation is not an error state —</text>
+<text data-en="agents punished for asking learn to stop asking" data-zh="因开口而受罚的智能体会学会闭嘴" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="270" y="302">agents punished for asking learn to stop asking</text>
+</svg>
+<p class="diagram-caption" data-en="The gate sits inside the loop, not beside it: every tool call is intercepted before execution, checked against the ledger, and returned one of three verdicts. Allow proceeds silently. Escalate packages the action, the evidence, and the requested cap into a one-glance approval. Downgrade refuses and offers the nearest permitted alternative. The gate's behavioral contract matters as much as its logic — asking must never cost the agent more than guessing, or the ledger stops receiving the signal it exists to collect." data-zh="闸门在循环之内，不在循环旁边：每次工具调用都在执行前被拦截、对照账本、拿到三种裁决之一。放行静默执行。上报把动作、证据和申请的额度打包成一眼可批的请求。降级执行拒绝调用并给出最接近的允许项。闸门的行为契约和它的逻辑同样重要——开口的成本绝不能高于瞎猜，否则账本就再也收不到它存在于此就是为了收集的那个信号。">The gate sits inside the loop: every tool call is intercepted, checked against the ledger, and returned allow, escalate, or downgrade. Asking must never cost the agent more than guessing, or the ledger stops receiving the signal it exists to collect.</p>
+</div>
+<p data-en="The summary is a single sentence that doubles as a design review checklist: permissions are loans, not gifts. A capability granted forever at deploy time is a liability that compounds quietly in the background, and the only question is whether the reckoning arrives as a reverted commit or an incident report. The teams that run agents in production for years are not the ones with the bravest configuration files; they are the ones that made trust flow in one direction — slowly up, quickly down — and kept the books the entire time. The ladder, the ledger, the decay, and the gate are four views of the same idea: that in systems whose behavior changes under them, the only safe permission is the one that can be taken back faster than it was given." data-zh="全部要义可以收进一句话，而这句话本身就是一份设计评审清单：权限是贷款，不是礼物。部署时一次性永久授予的能力，是一笔在后台安静复利的负债，唯一的问题是清算那天到来时，它是以一个被回滚的提交出现，还是以一份事故报告出现。能把智能体在生产环境里连跑数年的团队，从来不是配置文件写得最豪迈的那批；而是让信任只朝一个方向流动——向上缓慢，向下瞬间——并且全程记账的那批。阶梯、账本、折旧、闸门，是同一个思想的四个侧面：在一个行为会在脚底下改变的系统里，唯一安全的权限，是收回速度比给出速度更快的权限。">Permissions are loans, not gifts. A capability granted forever at deploy time is a liability that compounds quietly. The teams that run agents in production for years made trust flow in one direction — slowly up, quickly down — and kept the books the entire time.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
