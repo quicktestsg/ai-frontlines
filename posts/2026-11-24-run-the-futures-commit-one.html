@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Run the Futures, Commit One — AI Frontlines</title>
+<meta content="Processors have speculated for decades: when the next step is unknown, briefly run several next steps and keep the one that turns out true. Agent loops do the opposite — they serialize uncertainty into a single committed trajectory and spend the rest of the context defending it. The fix is speculative execution at the harness level: branch at decisions, verify cheaply, commit late, and autopsy the losers." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 24, 2026" data-zh="2026年11月24日">November 24, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="9 min read" data-zh="约 9 分钟">9 min read</span>
+</div>
+<h1 class="post-header-title" data-en="Run the Futures, Commit One" data-zh="把未来并行跑一遍，只提交一个">Run the Futures, Commit One</h1>
+<p class="post-header-deck" data-en="Processors solved uncertainty decades ago: when the next instruction is unknown, briefly execute several of them and keep whichever turns out to be correct. Agent loops do the opposite. Uncertain about the next step, a model must still emit exactly one next step — and from that moment the whole context defends the choice. The result is not intelligence under uncertainty but commitment under uncertainty. The fix belongs to the harness, not the model: branch at decision points, rehearse in parallel, verify cheaply, commit late, and treat the discarded futures as data." data-zh="处理器早在几十年前就解决了不确定性：下一条指令未知时，就把几条都短暂执行一遍，留下事后被证明对的那条。智能体循环恰恰相反。模型对下一步再不确定，也必须吐出唯一的一个下一步——而从那一刻起，整个上下文都在为这个选择辩护。这不是不确定性下的智能，而是不确定性下的仓促押注。解法不在模型，而在 harness：在决策点分叉、并行排练、廉价验证、晚点提交，并把被丢弃的未来当成数据。">Agent loops serialize uncertainty into a single committed trajectory, then spend the whole context defending it. The fix is harness-level speculative execution: branch, rehearse, verify, commit late — and autopsy the losers.</p>
+</header>
+<article class="post-body">
+<p data-en="Speculation is the oldest trick in computing, and it works because of one asymmetry: checking an answer is cheaper than producing one. Branch predictors guess which way a jump goes and keep the pipeline full; out-of-order engines execute instructions before their dependencies resolve and flush the losers; speculative decoding has a cheap model draft tokens while a strong one verifies them in parallel, discarding on first mismatch. Every one of these designs accepts the same trade — waste some work in exchange for never stalling on uncertainty. Agent systems have quietly accepted the opposite trade. A model mid-loop that is genuinely torn between two plans still emits one plan, one tool call, one next token. There is no architecture in which it is permitted to be briefly wrong in several directions at once, and the absence shapes everything downstream: the wrong branch is not flushed, it is committed, and every subsequent token is conditioned on it." data-zh="投机是计算领域最古老的技巧，它成立靠的是一条不对称性：验证一个答案，永远比产出一个答案便宜。分支预测器赌跳转方向来填满流水线；乱序执行引擎在依赖解开之前就把指令跑了，输了再冲掉；投机解码让便宜模型起草 token、强模型并行验证，一旦对不上就丢弃。这些设计接受的都是同一笔交易——浪费一些计算，换取从不在不确定性面前停摆。而智能体系统默默接受了相反的交易。一个在循环中途真的在两个方案之间摇摆的模型，仍然只会吐出一个方案、一次工具调用、一个 token。没有任何架构允许它同时在几个方向上短暂地错一会儿，而这种缺席塑造了下游的一切：错误的分支不会被冲掉，而是被提交，之后的每一个 token 都以它为条件。">Speculation is the oldest trick in computing, and it works because checking is cheaper than producing. Branch predictors, out-of-order cores, speculative decoding — all accept the same trade: waste some work, never stall on uncertainty. Agent loops accept the opposite trade. A model torn between two plans still emits exactly one, and the wrong branch is not flushed. It is committed.</p>
+<h3 data-en="The serial trap" data-zh="串行陷阱">The serial trap</h3>
+<p data-en="In hardware, a mispredicted branch costs a pipeline flush measured in nanoseconds. In an agent loop, the same mistake compounds on three fronts at once. It costs tokens: every step built on the wrong premise is spend that purchases nothing. It costs side effects: tool calls fired down the wrong path leave real files, real PRs, real messages behind. And worst of all it costs context, because the loop's history is self-justifying — the model that chose badly now reads a transcript in which that choice looks like established fact, and it will bend new evidence to fit it. Sunk-cost reasoning is usually described as a human bias; in agent loops it is structural. The system literally cannot see the path not taken, so the taken path becomes the only world it knows. By the time a human notices the trajectory is wrong, unwinding means replaying from the fork — which nobody does, because replay is manual, so the failure ships instead." data-zh="在硬件里，一次错误的分支预测代价是纳秒级的流水线冲刷。在智能体循环里，同样的错误在三条战线同时复利。它烧 token：每一个建在错误前提上的步骤，都是一笔什么都买不到的支出。它留副作用：沿着错误路径打出去的工具调用，留下真实的文件、真实的 PR、真实的消息。而最糟的是它污染上下文，因为循环的历史是自我辩护的——选错的那一步在转写记录里读起来像既成事实，模型会反过来把新证据掰弯去迁就它。沉没成本通常被说成人类偏见；在智能体循环里，它是结构性的。系统根本看不见没走的那条路，走过的路就成了它唯一认识的世界。等人类察觉轨迹不对时，挽回意味着从分叉点重放——而没人会重放，因为重放是手动的，于是失败直接上线。">In hardware, a misprediction costs a nanosecond flush. In an agent loop it compounds on three fronts: tokens spent building on the wrong premise, tool side effects left behind, and context that turns the mistake into established fact. The loop cannot see the path not taken, so the taken path becomes the only world it knows.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrS1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrS2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="TWO WAYS TO SPEND UNCERTAINTY" data-zh="花掉不确定性的两种方式" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">TWO WAYS TO SPEND UNCERTAINTY</text>
+<text data-en="SERIAL — COMMIT AT CHOICE TIME" data-zh="串行——选择即提交" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="start" x="40" y="58">SERIAL — COMMIT AT CHOICE TIME</text>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="96" x="40" y="72"></rect>
+<text data-en="guess" data-zh="猜测" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="88" y="96">guess</text>
+<path d="M136 92 L166 92" fill="none" marker-end="url(#arrS2)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-3)" stroke-dasharray="3,2" stroke-width="1.2" width="96" x="170" y="72"></rect>
+<text data-en="step" data-zh="步骤" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="218" y="96">step</text>
+<path d="M266 92 L296 92" fill="none" marker-end="url(#arrS2)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-3)" stroke-dasharray="3,2" stroke-width="1.2" width="96" x="300" y="72"></rect>
+<text data-en="more steps" data-zh="更多步骤" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="348" y="96">more steps</text>
+<path d="M396 92 L426 92" fill="none" marker-end="url(#arrS2)" stroke="var(--text-tertiary)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-3)" stroke-dasharray="3,2" stroke-width="1.2" width="96" x="430" y="72"></rect>
+<text data-en="defends it" data-zh="为其辩护" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="478" y="96">defends it</text>
+<text data-en="✕ unwinding = manual replay, so it ships" data-zh="✕ 挽回 = 手动重放，于是错误直接上线" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="140">✕ unwinding = manual replay, so it ships</text>
+<text data-en="SPECULATIVE — COMMIT AT VERIFY TIME" data-zh="投机——验证后才提交" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="start" x="40" y="180">SPECULATIVE — COMMIT AT VERIFY TIME</text>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent)" stroke-width="1.5" width="96" x="40" y="194"></rect>
+<text data-en="fork" data-zh="分叉" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="88" y="218">fork</text>
+<path d="M136 214 C180 214 190 168 224 168" fill="none" marker-end="url(#arrS2)" stroke="var(--text-tertiary)" stroke-width="1.2"></path>
+<path d="M136 214 L224 214" fill="none" marker-end="url(#arrS1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<path d="M136 214 C180 214 190 260 224 260" fill="none" marker-end="url(#arrS2)" stroke="var(--text-tertiary)" stroke-width="1.2"></path>
+<rect fill="none" height="36" rx="8" stroke="var(--accent-3)" stroke-dasharray="3,2" stroke-width="1.2" width="96" x="228" y="150"></rect>
+<text data-en="future A ✕" data-zh="未来 A ✕" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="276" y="172">future A ✕</text>
+<rect fill="var(--accent-dim)" height="36" rx="8" stroke="var(--accent)" stroke-width="2" width="96" x="228" y="196"></rect>
+<text data-en="future B ✓" data-zh="未来 B ✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="276" y="218">future B ✓</text>
+<rect fill="none" height="36" rx="8" stroke="var(--accent-3)" stroke-dasharray="3,2" stroke-width="1.2" width="96" x="228" y="242"></rect>
+<text data-en="future C ✕" data-zh="未来 C ✕" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="276" y="264">future C ✕</text>
+<path d="M324 214 L360 214" fill="none" marker-end="url(#arrS1)" stroke="var(--accent)" stroke-width="1.8"></path>
+<rect fill="var(--bg-surface)" height="40" rx="8" stroke="var(--accent-2)" stroke-width="2" width="110" x="364" y="194"></rect>
+<text data-en="COMMIT" data-zh="提交" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="419" y="212">COMMIT</text>
+<text data-en="one timeline survives" data-zh="只有一条时间线幸存" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="419" y="226">one timeline survives</text>
+<text data-en="pruned futures cost tokens, not trajectories" data-zh="被剪掉的未来只花 token，不花轨迹" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="310" y="316">pruned futures cost tokens, not trajectories</text>
+<line stroke="var(--text-tertiary)" stroke-width="1" x1="120" x2="560" y1="158" y2="158"></line>
+</svg>
+<p class="diagram-caption" data-en="Two ways to spend the same uncertainty. The serial loop converts doubt into commitment at choice time and pays for it in compounding context. The speculative loop converts doubt into parallel rehearsals and pays for it in wasted tokens — a currency that keeps getting cheaper. The exchange rate between those two costs is the entire engineering question, and it has been moving in one direction for three straight years." data-zh="同样的不确定性，两种花法。串行循环在选择那一刻就把犹豫兑换成承诺，然后用不断复利的上下文来还债。投机循环把犹豫兑换成并行排练，付出的代价是浪费的 token——一种一直在降价的货币。这两种代价之间的汇率，就是全部的工程问题，而且它已经朝着同一个方向走了整整三年。">Two ways to spend the same uncertainty. The serial loop converts doubt into commitment at choice time; the speculative loop converts it into parallel rehearsals paid for in wasted tokens — a currency that keeps getting cheaper.</p>
+</div>
+<h3 data-en="The asymmetry that pays for it" data-zh="为这一切买单的不对称性">The asymmetry that pays for it</h3>
+<p data-en="Speculative execution is only worth it when verification is cheaper than generation, and in agent systems that gap is enormous. Evaluating whether a proposed plan reaches the goal is a fraction of the work of producing the plan under uncertainty. This is the generator–verifier gap, and it is already the economics behind speculative decoding at the token level; the same shape appears one level up at the level of plans, queries, and tool sequences. A cheap model can draft three materially different approaches to a task; a strong model — or a deterministic checker, or a sandbox — can score all three for a fraction of what any one of them cost to write. The harness rule that falls out of this: never fan out irreversible actions, fan out their rehearsals. Dry runs, sandboxed probes, plan variants, alternative retrieval queries — anything whose failure mode is a discarded branch rather than a cleanup. The commit boundary is where speculation stops and consequences start, and drawing that boundary explicitly is most of the design work." data-zh="投机执行只在验证比生成便宜时才划算，而在智能体系统里，这道鸿沟大得惊人。评估一个方案能否达成目标，只是在不确定性下产出这个方案所需工作量的一小部分。这就是生成器–验证器差距，它早已是 token 级投机解码背后的经济学；同样的形状在上一层——方案、查询、工具序列这一层——再次出现。便宜模型可以为同一任务起草三条实质不同的路线；强模型、确定性检查器或沙箱，可以用远低于任何一条起草成本的价格，把三条全部打分。由此得出的 harness 法则是：永远不要并行铺开不可逆动作，要铺开它们的排练。空跑、沙箱探针、方案变体、备选检索查询——任何失败形态是「被丢弃的分支」而非「一场清理」的东西。提交边界是投机终止、后果开始的地方，而把这条边界画清楚，就是大半的设计工作。">Verification is a fraction of the work of generation under uncertainty. A cheap model drafts three materially different approaches; a strong model or a deterministic checker scores all three for a fraction of what any one cost to write. The harness rule: never fan out irreversible actions — fan out their rehearsals.</p>
+<blockquote data-en="A serial agent defends its first answer because its first answer is all it has. A speculative agent can afford to be wrong in futures nobody will ever read." data-zh="串行智能体为自己的第一个答案辩护，因为第一个答案就是它的全部。投机智能体可以放心地在没人会读到的未来里犯错。">A serial agent defends its first answer because its first answer is all it has. A speculative agent can afford to be wrong in futures nobody will ever read.</blockquote>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrV1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrV2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrV3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE GENERATOR–VERIFIER GAP, ONE LEVEL UP" data-zh="上移一层的生成器–验证器差距" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE GENERATOR–VERIFIER GAP, ONE LEVEL UP</text>
+<rect fill="var(--bg-surface)" height="56" rx="10" stroke="var(--accent-2)" stroke-width="1.5" width="120" x="40" y="130"></rect>
+<text data-en="CHEAP DRAFTER" data-zh="廉价起草器" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="100" y="152">CHEAP DRAFTER</text>
+<text data-en="3 plans, parallel" data-zh="三份方案，并行" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="100" y="170">3 plans, parallel</text>
+<path d="M160 140 C210 140 210 80 250 80" fill="none" marker-end="url(#arrV1)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<path d="M160 158 L250 158" fill="none" marker-end="url(#arrV1)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<path d="M160 176 C210 176 210 236 250 236" fill="none" marker-end="url(#arrV1)" stroke="var(--accent-2)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent-3)" stroke-dasharray="3,2" stroke-width="1.2" width="100" x="254" y="62"></rect>
+<text data-en="plan A" data-zh="方案 A" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="304" y="84">plan A</text>
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent)" stroke-width="1.8" width="100" x="254" y="140"></rect>
+<text data-en="plan B" data-zh="方案 B" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="304" y="162">plan B</text>
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent-3)" stroke-dasharray="3,2" stroke-width="1.2" width="100" x="254" y="218"></rect>
+<text data-en="plan C" data-zh="方案 C" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="304" y="240">plan C</text>
+<path d="M354 80 C400 80 400 150 434 150" fill="none" marker-end="url(#arrV2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M354 158 L434 158" fill="none" marker-end="url(#arrV2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M354 236 C400 236 400 166 434 166" fill="none" marker-end="url(#arrV2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="76" rx="10" stroke="var(--accent)" stroke-width="2" width="120" x="438" y="120"></rect>
+<text data-en="STRONG VERIFIER" data-zh="强验证器" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="498" y="144">STRONG VERIFIER</text>
+<text data-en="judge · sandbox · eval" data-zh="评审·沙箱·评估" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="498" y="160">judge · sandbox · eval</text>
+<text data-en="scores all 3 at once" data-zh="一次给三个全打分" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="498" y="176">scores all 3 at once</text>
+<path d="M498 196 L498 226" fill="none" marker-end="url(#arrV3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="40" rx="9" stroke="var(--accent-3)" stroke-width="1.5" width="200" x="398" y="230"></rect>
+<text data-en="A ✕  C ✕ — discarded, logged, fed back" data-zh="A ✕ C ✕——丢弃、记录、回流" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="498" y="254">A ✕  C ✕ — discarded, logged, fed back</text>
+<text data-en="verifying N plans costs a fraction of writing any one of them —" data-zh="验证 N 份方案的成本，只是起草其中一份的零头——" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="304">verifying N plans costs a fraction of writing any one of them —</text>
+<text data-en="so stop asking the expensive thing to invent; ask it to approve" data-zh="所以别再让贵的那个去发明，让它去批准" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="322">so stop asking the expensive thing to invent; ask it to approve</text>
+</svg>
+<p class="diagram-caption" data-en="Speculative decoding moved this pattern from CPUs to tokens; the next move is from tokens to plans. A cheap drafter produces several futures, a strong verifier — or better, a deterministic one — scores them in a single pass, and only the winner touches real state. The pruned plans are not waste: they are logged, compared against the winner's outcome, and folded back into the router's priors. A verifier that never sees the losing futures learns nothing about the shape of the problem." data-zh="投机解码把这个模式从 CPU 带到了 token；下一步是从 token 带到方案。廉价起草器产出多个未来，强验证器——更好的是确定性验证器——一遍全部打分，只有赢家碰真实状态。被剪掉的方案不是浪费：它们被记录、被拿来与赢家的实际结果对照，再折回路由器的先验里。一个从没见过失败方案的验证器，对这个问题的形状一无所知。">Speculative decoding moved this pattern from CPUs to tokens; the next move is from tokens to plans. Only the winner touches real state. The pruned plans are not waste — they are logged and folded back into the router's priors.</p>
+</div>
+<h3 data-en="The losers are the payload" data-zh="输家才是载荷">The losers are the payload</h3>
+<p data-en="The most underused signal in agent infrastructure today is the discarded branch. A pruned future carries information the winner cannot: which tool looked plausible and failed, which query retrieved plausible junk, which plan the verifier rejected and why. Systems that log only committed trajectories are keeping the survivorship-biased fraction of their own history — they record what worked and delete the map of what almost happened, which is precisely the map a router needs to make its next fork cheap. The fix is an autopsy queue: every pruned branch gets a one-line cause of death, and the collection becomes negative priors — do not take the search-tool path when the task is a schema lookup, stop proposing the write-first plan on read-heavy tickets. Markets discovered this before software did; losing bets are how prices get discovered. Agent harnesses are futures markets where nobody is writing down the losing quotes." data-zh="今天的智能体基础设施里，最被浪费的信号就是被丢弃的分支。一条被剪掉的未来携带着赢家给不了的信息：哪个工具看起来可行却失败了，哪条查询检索回了一堆貌似有理的垃圾，哪个方案被验证器否决、为什么。只记录已提交轨迹的系统，保存的是自身历史里幸存者偏差的那一部分——它记下什么奏效，删掉了「差点发生什么」的地图，而那恰恰是路由器把下一个分叉做便宜所需要的地图。解法是一条验尸队列：每条被剪的分支都有一行死因，这些记录汇总成负先验——任务是 schema 查询时别走搜索工具这条路，读多写少的工单上别再提先写后读的方案。市场比软件更早发现了这一点：输掉的赌注正是价格被发现的方式。智能体 harness 是一个个期货市场，只是没人记下那些输掉的报价。">The most underused signal in agent infrastructure is the discarded branch. A pruned future carries information the winner cannot. Systems that log only committed trajectories keep the survivorship-biased fraction of their own history — deleting precisely the map a router needs to make the next fork cheap.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrF1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrF2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-2)"></path>
+</marker>
+<marker id="arrF3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE FAN-OUT LOOP — LOSERS FEED THE NEXT FORK" data-zh="扇出循环——输家喂养下一个分叉" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE FAN-OUT LOOP — LOSERS FEED THE NEXT FORK</text>
+<rect fill="var(--accent-dim)" height="44" rx="9" stroke="var(--accent)" stroke-width="2" width="120" x="250" y="40"></rect>
+<text data-en="DECISION POINT" data-zh="决策点" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="310" y="58">DECISION POINT</text>
+<text data-en="uncertainty detected" data-zh="检测到不确定性" fill="var(--accent)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="310" y="74">uncertainty detected</text>
+<path d="M310 84 C310 100 210 100 210 116" fill="none" marker-end="url(#arrF1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M310 84 L310 116" fill="none" marker-end="url(#arrF1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<path d="M310 84 C310 100 410 100 410 116" fill="none" marker-end="url(#arrF1)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent-3)" stroke-dasharray="3,2" stroke-width="1.2" width="90" x="165" y="120"></rect>
+<text data-en="future ✕" data-zh="未来 ✕" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="210" y="142">future ✕</text>
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent)" stroke-width="1.8" width="90" x="265" y="120"></rect>
+<text data-en="future ✓" data-zh="未来 ✓" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="310" y="142">future ✓</text>
+<rect fill="var(--bg-surface)" height="36" rx="8" stroke="var(--accent-3)" stroke-dasharray="3,2" stroke-width="1.2" width="90" x="365" y="120"></rect>
+<text data-en="future ✕" data-zh="未来 ✕" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="410" y="142">future ✕</text>
+<path d="M310 156 L310 186" fill="none" marker-end="url(#arrF2)" stroke="var(--accent-2)" stroke-width="1.8"></path>
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent-2)" stroke-width="1.5" width="120" x="250" y="190"></rect>
+<text data-en="VERIFY" data-zh="验证" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="310" y="208">VERIFY</text>
+<text data-en="cheap · parallel · honest" data-zh="便宜·并行·诚实" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="310" y="224">cheap · parallel · honest</text>
+<path d="M250 212 C160 212 140 190 140 240 L140 252" fill="none" marker-end="url(#arrF3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<path d="M250 212 C180 212 170 262 200 268" fill="none" marker-end="url(#arrF3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent-3)" stroke-width="1.5" width="140" x="196" y="252"></rect>
+<text data-en="AUTOPSY QUEUE" data-zh="验尸队列" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="266" y="270">AUTOPSY QUEUE</text>
+<text data-en="one-line causes of death" data-zh="每条一行死因" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="266" y="286">one-line causes of death</text>
+<path d="M336 274 C400 274 430 274 470 274" fill="none" marker-end="url(#arrF3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="44" rx="9" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="474" y="252"></rect>
+<text data-en="NEGATIVE PRIORS" data-zh="负先验" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="534" y="270">NEGATIVE PRIORS</text>
+<text data-en="cheaper next fork" data-zh="让下个分叉更便宜" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="534" y="286">cheaper next fork</text>
+<path d="M534 252 C534 120 420 60 374 50" fill="none" marker-end="url(#arrF3)" stroke="var(--accent-3)" stroke-dasharray="4,3" stroke-width="1.5"></path>
+<path d="M310 190 C310 190 310 190 310 190" fill="none" stroke="none"></path>
+<text data-en="only the winner is committed; the losers are the curriculum" data-zh="只有赢家被提交，输家是教材" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="180" y="322">only the winner is committed; the losers are the curriculum</text>
+</svg>
+<p class="diagram-caption" data-en="The full loop: detect a genuine fork, spin up futures, verify them against something cheaper than their own generation, commit the survivor to real state — and route the casualties through an autopsy queue that becomes negative priors for the next fork. This is why the loop gets cheaper as it runs: every discarded future is a bet the system never has to place twice. A harness without this feedback pays full price for every fork, forever, and calls the repetition experience." data-zh="完整的循环：检测到真正的分叉，启动多个未来，用比生成它们更便宜的方式验证，把幸存者提交到真实状态——再把阵亡者送进验尸队列，变成下一个分叉的负先验。这正是循环越跑越便宜的原因：每一个被丢弃的未来，都是系统不必再下第二次的注。没有这条反馈的 harness，每个分叉都永远付全价，还把这种重复称作经验。">The full loop: fork, spin up futures, verify cheaply, commit the survivor — and route the casualties through an autopsy queue that becomes negative priors. Every discarded future is a bet the system never has to place twice.</p>
+</div>
+<p data-en="None of this is free, so the budget rule matters: speculate when the cost of rehearsing N futures is less than the probability of serial failure times the cost of unwinding a committed one. The reason most agent work fails this test today is not that parallelism is expensive — it is that teams price rehearsals at full model rates instead of drafting them cheap and verifying them deterministically. Run the numbers that way and the inequality flips fast, and it flips a little further every time draft models get cheaper. The trajectory of harness engineering is not one wiser agent walking one line; it is many futures run in parallel, one committed, and a ruthless, well-fed judge deciding which — with the graveyard doing quiet, compounding work on the judge's behalf." data-zh="这些都不是免费的，所以预算规则很重要：当排练 N 个未来的成本，小于串行失败的概率乘以挽回一个已提交错误的成本时，才投机。今天大多数智能体工作没通过这道测试，并不是因为并行贵，而是因为团队按全价模型的费率给排练定价，而不是便宜地起草、确定性地验证。换个算法，不等式很快翻转，而且草稿模型每便宜一次，它就再翻转一点。harness 工程的走向，不是一个更睿智的智能体走一条线；而是多个未来并行跑、只提交一个，由一个冷酷而喂得很好的裁判决定是哪个——墓地则在替裁判安静地做着复利的工作。">The budget rule: speculate when rehearsing N futures costs less than the probability of serial failure times the cost of unwinding a committed one. Teams fail this test only because they price rehearsals at full model rates. Price them as cheap drafts verified deterministically, and the inequality flips — a little further every time draft models get cheaper.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
