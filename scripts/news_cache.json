@@ -1,6 +1,211 @@
 {
   "tweets": [
     {
+      "id": "2125007927098699827",
+      "url": "https://x.com/OpenAI/status/2125007927098699827",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-11-24T20:07:42.688037+00:00",
+      "translation_zh": "GPT-6 Cyber 单次运行就帮助验证了 948 个可获取本地 root 权限的 Linux 内核漏洞，并生成补丁供审阅。研究团队随后与内核维护者协作，把修复合入了上游主线。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 3293,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-23T23:25:45.000Z",
+        "display_text_range": [
+          0,
+          276
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/oY8CMSrgQo",
+              "expanded_url": "https://x.com/OpenAI/status/2125007927098699827/video/1",
+              "indices": [
+                277,
+                300
+              ],
+              "url": "https://t.co/oY8CMSrgQo"
+            }
+          ],
+          "user_mentions": [
+            {
+              "id_str": "720576770",
+              "indices": [
+                150,
+                162
+              ],
+              "name": "Clint Gibler",
+              "screen_name": "clintgibler"
+            },
+            {
+              "id_str": "1041935389508788224",
+              "indices": [
+                167,
+                175
+              ],
+              "name": "kylebot",
+              "screen_name": "ky1ebot"
+            }
+          ]
+        },
+        "id_str": "2125007927098699827",
+        "text": "In one run, GPT-6 Cyber helped us validate 948 Linux kernel bugs that could grant local root access and generate patches for review.\n\nOur researchers @clintgibler and @ky1ebot share their findings and how they worked with maintainers to get fixes upstream.\n\nRead the research: https://t.co/oY8CMSrgQo",
+        "user": {
+          "id_str": "4398626122",
+          "name": "OpenAI",
+          "screen_name": "OpenAI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2125007927098699827"
+          ],
+          "editable_until_msecs": "1795479945000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/oY8CMSrgQo",
+            "expanded_url": "https://x.com/OpenAI/status/2125007927098699827/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              277,
+              300
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2125002652929196032/img/UOxIg9s51dEH3-gJ.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 2160,
+              "width": 3840
+            },
+            "sizes": {
+              "large": {
+                "h": 1152,
+                "resize": "fit",
+                "w": 2048
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/oY8CMSrgQo",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 716590,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2125002652929196032/pl/qcS8Ce0VPyOC3lQ_.m3u8?v=470"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2125002652929196032/vid/avc1/480x270/zECglWPJ8vUOFA0g.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2125002652929196032/vid/avc1/640x360/XtB0wxOmEwsNPvJg.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2125002652929196032/vid/avc1/1280x720/IgkJPRwEZbOptjzv.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2125002652929196032/vid/avc1/1920x1080/L0nxCteLp9nv6Kkc.mp4"
+                },
+                {
+                  "bitrate": 25128000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2125002652929196032/vid/avc1/3840x2160/AdpVBCNFOOa4eaYN.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 716590,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2125002652929196032/img/UOxIg9s51dEH3-gJ.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2125002652929196032/pl/qcS8Ce0VPyOC3lQ_.m3u8?v=470"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2125002652929196032/vid/avc1/480x270/zECglWPJ8vUOFA0g.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2125002652929196032/vid/avc1/640x360/XtB0wxOmEwsNPvJg.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2125002652929196032/vid/avc1/1280x720/IgkJPRwEZbOptjzv.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2125002652929196032/vid/avc1/1920x1080/L0nxCteLp9nv6Kkc.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2125002652929196032/vid/avc1/3840x2160/AdpVBCNFOOa4eaYN.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2125007927098699827"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 389,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTI1MDA3OTI2OTYwMjM0NDk2"
+        }
+      }
+    },
+    {
       "id": "2124980590717911527",
       "url": "https://x.com/OpenAI/status/2124980590717911527",
       "label": "OpenAI",
@@ -190,6 +395,654 @@
       }
     },
     {
+      "id": "2124967271814910183",
+      "url": "https://x.com/Google/status/2124967271814910183",
+      "label": "Google",
+      "color": "#4285F4",
+      "fetched_at": "2026-11-24T20:07:42.688037+00:00",
+      "translation_zh": "Gemini 模型家族中 Neon 的定位：专为复杂编码、分析推理与生产级企业工作流打造。Carbon 负责最难的长周期项目，Hydrogen 主打快速的日常执行，Neon 在深度与速度之间取衡。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 4179,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-23T20:44:12.000Z",
+        "display_text_range": [
+          0,
+          273
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/N4kkrEyA3m",
+              "expanded_url": "https://x.com/Google/status/2124967271814910183/photo/1",
+              "indices": [
+                274,
+                297
+              ],
+              "url": "https://t.co/N4kkrEyA3m"
+            }
+          ]
+        },
+        "id_str": "2124967271814910183",
+        "text": "Where Neon sits in the Gemini model family ⬇️\n\nNeon is built for complex coding, analytical reasoning, and production-grade enterprise workflows.\n\nWhile Carbon tackles your hardest, long-horizon projects and Hydrogen handles fast everyday execution, Neon balances depth and https://t.co/N4kkrEyA3m",
+        "user": {
+          "id_str": "20536157",
+          "name": "Google",
+          "screen_name": "Google",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2042749771337564160/AgOFPEL3_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2124967271814910183"
+          ],
+          "editable_until_msecs": "1795470252000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/N4kkrEyA3m",
+            "expanded_url": "https://x.com/Google/status/2124967271814910183/photo/1",
+            "ext_alt_text": "Title card reading \"Our latest Gemini models, explained\" with Gemini 4 Neon, Gemini 4 Hydrogen, and Gemini 4 Carbon.",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              274,
+              297
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HX1mKSwW8AA6_F7.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 605,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1231,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1440,
+                  "w": 720,
+                  "x": 108,
+                  "y": 0
+                },
+                {
+                  "h": 1440,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1440,
+              "width": 1080
+            },
+            "sizes": {
+              "large": {
+                "h": 1440,
+                "resize": "fit",
+                "w": 1080
+              },
+              "medium": {
+                "h": 1200,
+                "resize": "fit",
+                "w": 900
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 510
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/N4kkrEyA3m"
+          },
+          {
+            "display_url": "pic.x.com/N4kkrEyA3m",
+            "expanded_url": "https://x.com/Google/status/2124967271814910183/photo/2",
+            "ext_alt_text": "Gemini 4 Neon card: best for deep reasoning across software engineering, knowledge work, and science, with 3.5/5 speed.",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              274,
+              297
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HX1mL4kXsAAkSAw.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 605,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 94
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1231,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1440,
+                  "w": 720,
+                  "x": 180,
+                  "y": 0
+                },
+                {
+                  "h": 1440,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1440,
+              "width": 1080
+            },
+            "sizes": {
+              "large": {
+                "h": 1440,
+                "resize": "fit",
+                "w": 1080
+              },
+              "medium": {
+                "h": 1200,
+                "resize": "fit",
+                "w": 900
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 510
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/N4kkrEyA3m"
+          },
+          {
+            "display_url": "pic.x.com/N4kkrEyA3m",
+            "expanded_url": "https://x.com/Google/status/2124967271814910183/photo/3",
+            "ext_alt_text": "Gemini 4 Hydrogen card: best for speed and efficiency in everyday coding and agentic workflows, rated 5/5 for speed.",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              274,
+              297
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HX1mNo4XoAAe8mr.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 605,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 670
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 360
+                },
+                {
+                  "h": 1231,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 209
+                },
+                {
+                  "h": 1440,
+                  "w": 720,
+                  "x": 36,
+                  "y": 0
+                },
+                {
+                  "h": 1440,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1440,
+              "width": 1080
+            },
+            "sizes": {
+              "large": {
+                "h": 1440,
+                "resize": "fit",
+                "w": 1080
+              },
+              "medium": {
+                "h": 1200,
+                "resize": "fit",
+                "w": 900
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 510
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/N4kkrEyA3m"
+          },
+          {
+            "display_url": "pic.x.com/N4kkrEyA3m",
+            "expanded_url": "https://x.com/Google/status/2124967271814910183/photo/4",
+            "ext_alt_text": "Gemini 4 Carbon card: best for your hardest long-horizon agentic coding workloads and cyber defense, rated 2/5 for speed.",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              274,
+              297
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HX1mPKwXUAEsAM3.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 605,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 454
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 216
+                },
+                {
+                  "h": 1231,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 141
+                },
+                {
+                  "h": 1440,
+                  "w": 720,
+                  "x": 324,
+                  "y": 0
+                },
+                {
+                  "h": 1440,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1440,
+              "width": 1080
+            },
+            "sizes": {
+              "large": {
+                "h": 1440,
+                "resize": "fit",
+                "w": 1080
+              },
+              "medium": {
+                "h": 1200,
+                "resize": "fit",
+                "w": 900
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 510
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/N4kkrEyA3m"
+          },
+          {
+            "display_url": "pic.x.com/N4kkrEyA3m",
+            "expanded_url": "https://x.com/Google/status/2124967271814910183/photo/5",
+            "ext_alt_text": "Gemini Model Family summary card comparing Neon, Hydrogen, and Carbon strengths and where to try each model.",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              274,
+              297
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HX1mQicXgAETNF4.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 605,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 94
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1231,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1440,
+                  "w": 720,
+                  "x": 252,
+                  "y": 0
+                },
+                {
+                  "h": 1440,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1440,
+              "width": 1080
+            },
+            "sizes": {
+              "large": {
+                "h": 1440,
+                "resize": "fit",
+                "w": 1080
+              },
+              "medium": {
+                "h": 1200,
+                "resize": "fit",
+                "w": 900
+              },
+              "small": {
+                "h": 680,
+                "resize": "fit",
+                "w": 510
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/N4kkrEyA3m"
+          }
+        ],
+        "photos": [
+          {
+            "accessibilityLabel": "Title card reading \"Our latest Gemini models, explained\" with Gemini 4 Neon, Gemini 4 Hydrogen, and Gemini 4 Carbon.",
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 605,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1080,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1231,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1440,
+                "w": 720,
+                "x": 108,
+                "y": 0
+              },
+              {
+                "h": 1440,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Google/status/2124967271814910183/photo/1",
+            "url": "https://pbs.twimg.com/media/HX1mKSwW8AA6_F7.jpg",
+            "width": 1080,
+            "height": 1440
+          },
+          {
+            "accessibilityLabel": "Gemini 4 Neon card: best for deep reasoning across software engineering, knowledge work, and science, with 3.5/5 speed.",
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 605,
+                "w": 1080,
+                "x": 0,
+                "y": 94
+              },
+              {
+                "h": 1080,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1231,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1440,
+                "w": 720,
+                "x": 180,
+                "y": 0
+              },
+              {
+                "h": 1440,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Google/status/2124967271814910183/photo/2",
+            "url": "https://pbs.twimg.com/media/HX1mL4kXsAAkSAw.jpg",
+            "width": 1080,
+            "height": 1440
+          },
+          {
+            "accessibilityLabel": "Gemini 4 Hydrogen card: best for speed and efficiency in everyday coding and agentic workflows, rated 5/5 for speed.",
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 605,
+                "w": 1080,
+                "x": 0,
+                "y": 670
+              },
+              {
+                "h": 1080,
+                "w": 1080,
+                "x": 0,
+                "y": 360
+              },
+              {
+                "h": 1231,
+                "w": 1080,
+                "x": 0,
+                "y": 209
+              },
+              {
+                "h": 1440,
+                "w": 720,
+                "x": 36,
+                "y": 0
+              },
+              {
+                "h": 1440,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Google/status/2124967271814910183/photo/3",
+            "url": "https://pbs.twimg.com/media/HX1mNo4XoAAe8mr.jpg",
+            "width": 1080,
+            "height": 1440
+          },
+          {
+            "accessibilityLabel": "Gemini 4 Carbon card: best for your hardest long-horizon agentic coding workloads and cyber defense, rated 2/5 for speed.",
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 605,
+                "w": 1080,
+                "x": 0,
+                "y": 454
+              },
+              {
+                "h": 1080,
+                "w": 1080,
+                "x": 0,
+                "y": 216
+              },
+              {
+                "h": 1231,
+                "w": 1080,
+                "x": 0,
+                "y": 141
+              },
+              {
+                "h": 1440,
+                "w": 720,
+                "x": 324,
+                "y": 0
+              },
+              {
+                "h": 1440,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Google/status/2124967271814910183/photo/4",
+            "url": "https://pbs.twimg.com/media/HX1mPKwXUAEsAM3.jpg",
+            "width": 1080,
+            "height": 1440
+          },
+          {
+            "accessibilityLabel": "Gemini Model Family summary card comparing Neon, Hydrogen, and Carbon strengths and where to try each model.",
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 605,
+                "w": 1080,
+                "x": 0,
+                "y": 94
+              },
+              {
+                "h": 1080,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1231,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1440,
+                "w": 720,
+                "x": 252,
+                "y": 0
+              },
+              {
+                "h": 1440,
+                "w": 1080,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/Google/status/2124967271814910183/photo/5",
+            "url": "https://pbs.twimg.com/media/HX1mQicXgAETNF4.jpg",
+            "width": 1080,
+            "height": 1440
+          }
+        ],
+        "conversation_count": 156,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTI0OTY3MjcxNzM5MzAxODg4"
+        }
+      }
+    },
+    {
       "id": "2124959436640858475",
       "url": "https://x.com/ClaudeDevs/status/2124959436640858475",
       "label": "Claude",
@@ -371,6 +1224,194 @@
         "news_action_type": "conversation",
         "isEdited": false,
         "isStaleEdit": false
+      }
+    },
+    {
+      "id": "2124942186425069836",
+      "url": "https://x.com/ChatGPT/status/2124942186425069836",
+      "label": "OpenAI",
+      "color": "#10A37F",
+      "fetched_at": "2026-11-24T20:07:42.688037+00:00",
+      "translation_zh": "ChatGPT 聊天标签页开始推送 GPT-6.2 Sol 版本，专为日常对话优化。处理复杂请求显著更好——尤其是给出详细指令或让它联网查资料的时候。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 7915,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-23T19:04:31.000Z",
+        "display_text_range": [
+          0,
+          273
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/FdPbHTCo31",
+              "expanded_url": "https://x.com/ChatGPT/status/2124942186425069836/video/1",
+              "indices": [
+                274,
+                297
+              ],
+              "url": "https://t.co/FdPbHTCo31"
+            }
+          ]
+        },
+        "id_str": "2124942186425069836",
+        "text": "We’re rolling out a version of GPT-6.2 Sol in the Chat tab, optimized for everyday conversation.\n\nIt’s much better at handling complex requests, especially when you give it detailed instructions or ask it to find information online. \n\nA few improvements you might notice in https://t.co/FdPbHTCo31",
+        "user": {
+          "id_str": "1714438092655149056",
+          "name": "ChatGPT",
+          "screen_name": "ChatGPT",
+          "is_blue_verified": true,
+          "profile_image_shape": "Square",
+          "verified": false,
+          "verified_type": "Business",
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2081980424666935296/qU5G7mQg_normal.jpg",
+          "highlighted_label": {
+            "badge": {
+              "url": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_bigger.jpg"
+            },
+            "description": "OpenAI",
+            "url": {
+              "url": "https://twitter.com/OpenAI",
+              "url_type": "DeepLink"
+            },
+            "user_label_display_type": "Badge",
+            "user_label_type": "BusinessLabel"
+          }
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2124942186425069836"
+          ],
+          "editable_until_msecs": "1795464271000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "additional_media_info": {},
+            "display_url": "pic.x.com/FdPbHTCo31",
+            "expanded_url": "https://x.com/ChatGPT/status/2124942186425069836/video/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              274,
+              297
+            ],
+            "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2124940157111738369/img/LiN99bSHqsb03ZwU.jpg",
+            "original_info": {
+              "focus_rects": [],
+              "height": 1080,
+              "width": 1920
+            },
+            "sizes": {
+              "large": {
+                "h": 1080,
+                "resize": "fit",
+                "w": 1920
+              },
+              "medium": {
+                "h": 675,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 383,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "video",
+            "url": "https://t.co/FdPbHTCo31",
+            "video_info": {
+              "aspect_ratio": [
+                16,
+                9
+              ],
+              "duration_millis": 27466,
+              "variants": [
+                {
+                  "content_type": "application/x-mpegURL",
+                  "url": "https://video.twimg.com/amplify_video/2124940157111738369/pl/YhDuneXV-DXdUAw4.m3u8?v=cfc"
+                },
+                {
+                  "bitrate": 256000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2124940157111738369/vid/avc1/480x270/a-MZox0DpihHubkJ.mp4"
+                },
+                {
+                  "bitrate": 832000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2124940157111738369/vid/avc1/640x360/A4tbzxHqjdR5D_cf.mp4"
+                },
+                {
+                  "bitrate": 2176000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2124940157111738369/vid/avc1/1280x720/cQU_jROfwMLQ2OJb.mp4"
+                },
+                {
+                  "bitrate": 10368000,
+                  "content_type": "video/mp4",
+                  "url": "https://video.twimg.com/amplify_video/2124940157111738369/vid/avc1/1920x1080/Oag763qULlqIw9cy.mp4"
+                }
+              ]
+            }
+          }
+        ],
+        "photos": [],
+        "video": {
+          "aspectRatio": [
+            16,
+            9
+          ],
+          "contentType": "media_entity",
+          "durationMs": 27466,
+          "mediaAvailability": {
+            "status": "available"
+          },
+          "poster": "https://pbs.twimg.com/amplify_video_thumb/2124940157111738369/img/LiN99bSHqsb03ZwU.jpg",
+          "variants": [
+            {
+              "type": "application/x-mpegURL",
+              "src": "https://video.twimg.com/amplify_video/2124940157111738369/pl/YhDuneXV-DXdUAw4.m3u8?v=cfc"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2124940157111738369/vid/avc1/480x270/a-MZox0DpihHubkJ.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2124940157111738369/vid/avc1/640x360/A4tbzxHqjdR5D_cf.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2124940157111738369/vid/avc1/1280x720/cQU_jROfwMLQ2OJb.mp4"
+            },
+            {
+              "type": "video/mp4",
+              "src": "https://video.twimg.com/amplify_video/2124940157111738369/vid/avc1/1920x1080/Oag763qULlqIw9cy.mp4"
+            }
+          ],
+          "videoId": {
+            "type": "tweet",
+            "id": "2124942186425069836"
+          },
+          "viewCount": 0
+        },
+        "conversation_count": 533,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTI0OTQyMTg2MzQ5NTE0NzUy"
+        }
       }
     },
     {

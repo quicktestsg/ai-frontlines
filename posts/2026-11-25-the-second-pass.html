@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Second Pass — AI Frontlines</title>
+<meta content="For a decade, a model's depth was frozen at training time: every layer ran once per token, forever, for every token. That is changing. Middle layers now re-run at inference — several passes per token, per-token gates deciding what the first pass commits, a tiny KV window holding the working set. Depth is becoming a runtime budget, and every law of loop engineering — budgets, gates, exit conditions — applies one level down." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 25, 2026" data-zh="2026年11月25日">November 25, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The Second Pass: When the Loop Moves Inside the Model" data-zh="第二遍：当循环沉入模型内部">The Second Pass: When the Loop Moves Inside the Model</h1>
+<p class="post-header-deck" data-en="For ten years, a model's depth was frozen at training time. Every layer ran exactly once per token — for the token that ends a function, and for the token that ends a proof. Recurrence is back, and it is not the RNN of the 2010s: modern looped blocks keep the weights, re-run the middle of the network several times per token, gate how much the first pass commits, and hold the working set in a KV window measured in the hundreds of tokens. Depth is becoming a runtime budget. And every hard-won law of loop engineering at the agent level — budgets, gates, exit conditions — now applies one level down, where nobody is watching." data-zh="十年来，模型的深度在训练那一刻就被冻结了。每一层对每个 token 恰好跑一遍——无论是收尾一个函数的 token，还是收尾一个证明的 token。循环回来了，但它不是 2010 年代的 RNN：现代的循环式模块保留权重不变、把网络的中段每个 token 重跑几遍、用门控决定第一遍写下多少状态、并把工作集装进一个只有几百 token 的 KV 窗口。深度，正在变成一个运行时预算。而在智能体那一层用血泪换来的循环工程法则——预算、门、退出条件——如今下沉到了没人盯着的下一层。">For ten years, a model's depth was frozen at training time. Every layer ran exactly once per token. Recurrence is back — not the RNN of the 2010s: looped blocks keep the weights, re-run the middle of the network, gate what the first pass commits, and hold the working set in a tiny KV window. Depth is becoming a runtime budget.</p>
+</header>
+<article class="post-body">
+<p data-en="Depth has always been the bluntest instrument in the stack. Want a smarter model? Add layers. Each one runs once per token, forever, for every token — the trivial punctuation and the decisive branch point get the same compute, the same milliseconds, the same trip through all eighty-odd transformations. The uniformity was never a design choice; it was an inheritance. Feed-forward networks are amortization machines: pay for the weights once at training time, then run them at a fixed rate at inference. The bill is flat, the schedule is flat, and intelligence is priced per token regardless of how much a token actually needs." data-zh="深度，一直是这套技术栈里最钝的工具。想要更聪明的模型？加层。每一层对每个 token 跑一次，永远如此，对每个 token 一视同仁——平凡的标点和决定性的分支点，得到同样的算力、同样的毫秒、同样完整地穿过全部八十多层变换。这种均一从来不是设计选择，而是继承物。前馈网络本质上是摊销机器：训练时一次性付清权重，推理时按固定费率运行。账单是平的，调度是平的，智能按 token 计价，不管这个 token 到底需要多少。">Depth has always been the bluntest instrument in the stack. Want a smarter model? Add layers. Each one runs once per token, forever, for every token — the trivial punctuation and the decisive branch point get the same compute. The uniformity was never a design choice; it was an inheritance. Feed-forward networks are amortization machines: pay for the weights once, then run them at a fixed rate.</p>
+<p data-en="The looped block breaks the flat rate. The recipe is almost embarrassingly simple: take a pretrained model, freeze what it knows, and train the middle layers to run again — two, three, four passes over the same token before the representation is released. Between passes, a per-token gate decides how much the first pass is allowed to write into the residual stream; the loop passes read through a small KV window, a working set measured in the low hundreds of tokens rather than the whole context. In ablations on models in the tens of billions, roughly ten percent more compute lifted a competition-math score from 19.2 to 30.4 — not by making the network bigger, but by letting it re-read its own intermediate answer before committing. The same weights, asked twice, are smarter than asked once." data-zh="循环式模块打破了固定费率。配方简单得近乎尴尬：拿一个预训练模型，冻结它已会的东西，训练中段的层重新运行——在表征被放行之前，对同一个 token 跑两遍、三遍、四遍。两遍之间，一个逐 token 的门决定第一遍允许往残差流里写多少东西；循环的各遍通过一个很小的 KV 窗口读取——一个以低几百 token 计的工作集，而不是整个上下文。在几十亿参数模型的消融实验里，大约多花百分之十的算力，就把竞赛数学得分从 19.2 拉到 30.4——不是靠把网络变大，而是让它提交之前重读一遍自己的中间答案。同样的权重，问两遍，比问一遍更聪明。">The looped block breaks the flat rate. The recipe is almost embarrassingly simple: take a pretrained model, freeze what it knows, and train the middle layers to run again — two, three, four passes over the same token before the representation is released. Between passes, a per-token gate decides how much the first pass writes into the residual stream; the loop reads through a small KV window. In ablations, roughly ten percent more compute lifted a competition-math score from 19.2 to 30.4. The same weights, asked twice, are smarter than asked once.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrS1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrS2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrS3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="FROZEN DEPTH vs BUDGETED DEPTH" data-zh="冻结深度 vs 预算深度" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">FROZEN DEPTH vs BUDGETED DEPTH</text>
+<!-- LEFT: frozen stack -->
+<text data-en="THE FLAT RATE" data-zh="固定费率" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="140" y="54">THE FLAT RATE</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="80" y="64"></rect>
+<text data-en="early layers" data-zh="前段层" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="140" y="84">early layers</text>
+<path d="M140 94 L140 108" fill="none" marker-end="url(#arrS3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="80" y="110"></rect>
+<text data-en="mid layers" data-zh="中段层" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="140" y="130">mid layers</text>
+<path d="M140 140 L140 154" fill="none" marker-end="url(#arrS3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="80" y="156"></rect>
+<text data-en="late layers" data-zh="后段层" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="140" y="176">late layers</text>
+<path d="M140 186 L140 200" fill="none" marker-end="url(#arrS3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<text data-en="output" data-zh="输出" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="140" y="216">output</text>
+<text data-en="×1 pass · every token · forever" data-zh="×1 遍 · 每个 token · 永远" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="140" y="252">×1 pass · every token · forever</text>
+<text data-en="compute spent uniformly" data-zh="算力被均匀花掉" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="140" y="272">compute spent uniformly</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="46" y2="290"></line>
+<!-- RIGHT: looped stack -->
+<text data-en="THE METERED RATE" data-zh="计量费率" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="470" y="54">THE METERED RATE</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="120" x="410" y="64"></rect>
+<text data-en="early layers" data-zh="前段层" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="470" y="84">early layers</text>
+<path d="M470 94 L470 108" fill="none" marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="44" rx="9" stroke="var(--accent)" stroke-width="2" width="120" x="410" y="110"></rect>
+<text data-en="MID BLOCK" data-zh="中段模块" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="470" y="128">MID BLOCK</text>
+<text data-en="loop: passes 1..n" data-zh="循环：第 1..n 遍" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="470" y="146">loop: passes 1..n</text>
+<path d="M530 124 C560 124 560 140 530 140" fill="none" marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<path d="M470 154 L470 168" fill="none" marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="28" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="120" x="410" y="170"></rect>
+<text data-en="gate θ" data-zh="门控 θ" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="470" y="189">gate θ</text>
+<path d="M470 198 L470 212" fill="none" marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="120" x="410" y="214"></rect>
+<text data-en="late layers" data-zh="后段层" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="470" y="234">late layers</text>
+<path d="M470 244 L470 258" fill="none" marker-end="url(#arrS2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<text data-en="output" data-zh="输出" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="470" y="274">output</text>
+<rect fill="var(--bg-surface)" height="24" rx="6" stroke="var(--border)" stroke-width="1" width="150" x="395" y="284"></rect>
+<text data-en="KV window: ~128 tokens" data-zh="KV 窗口：约 128 token" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="470" y="300">KV window: ~128 tokens</text>
+</svg>
+<p class="diagram-caption" data-en="Left: the inherited contract — every layer runs once, for every token, at the same flat rate. Right: the looped block — the middle of the network re-runs under a budget, a per-token gate controls what the first pass commits, and the loop reads through a working set small enough to stay cheap. Same weights. Different pricing." data-zh="左边，是继承来的契约——每一层跑一遍，对每个 token，按同样的固定费率。右边，是循环式模块——网络的中段在预算内重跑，一个逐 token 的门控制第一遍写下什么，循环读取的工作集小到足以保持便宜。同样的权重，不同的计价方式。">Left: the inherited contract — every layer runs once, for every token, at the same flat rate. Right: the looped block — the middle of the network re-runs under a budget, a per-token gate controls what the first pass commits, and the loop reads through a working set small enough to stay cheap. Same weights. Different pricing.</p>
+</div>
+<h3 data-en="Weights are a sunk cost; passes are a spot market" data-zh="权重是沉没成本，遍数是现货市场">Weights are a sunk cost; passes are a spot market</h3>
+<p data-en="The right way to read a looped model is as two compute markets stacked on top of each other. The weights are the amortized market: paid once, at training time, in a giant lump, and reused for every request that follows. The passes are the spot market: paid per token, per request, at the moment of need. A bigger parameter count buys capability that is cheap to serve but expensive to acquire, and it buys it uniformly — every token gets the upgrade, whether it needed one or not. A second pass buys capability that is expensive to serve and free to acquire, and it can be spent selectively — only where the token is hard. The economics point in opposite directions, which is precisely why the combination is interesting. The looped block is the first mainstream architecture where capability is priced per difficulty instead of per parameter." data-zh="解读循环式模型的正确方式，是把它看成两个叠加的计算市场。权重是摊销市场：训练时一次性付一笔巨款，此后每个请求复用。遍数是现货市场：按 token、按请求、在需要的那一刻支付。更大的参数量买到的是「服务便宜、获取昂贵」的能力，而且是均一地买——每个 token 都升级，不管需不需要。第二遍买到的是「服务昂贵、获取免费」的能力，而且可以有选择地花——只花在 token 难的地方。两边的经济学指向相反的方向，而这恰恰是组合有趣的原因。循环式模块是第一个能力按难度而非按参数定价的主流架构。">The right way to read a looped model is as two compute markets. The weights are the amortized market: paid once, at training, reused forever. The passes are the spot market: paid per token, at the moment of need. Bigger weights buy capability that is cheap to serve but expensive to acquire — uniformly, for every token. A second pass buys capability that is expensive to serve and free to acquire — selectively, only where the token is hard. The economics point in opposite directions, which is precisely why the combination is interesting.</p>
+<p data-en="This reframes the scaling debate. The old question was how big; the new question is how much, when, and for which token. A routing layer that pushes filler tokens through one pass and reasoning tokens through four is doing per-token compute allocation — load balancing for depth. The serving stack suddenly matters in a way it never did for dense models: pass counts become a knob on the request, mixed in with batching strategy and cache policy. The model stops being a fixed point on a capability curve and becomes a dial, and someone in the infrastructure team now owns the decision of where to set it. That someone should understand what the dial actually does." data-zh="这重新框定了扩展之争。旧的问题是多大；新的问题是花多少、什么时候花、给哪个 token 花。把填充性 token 放一遍、把推理性 token 放四遍的路由层，做的正是逐 token 的算力分配——深度上的负载均衡。服务栈忽然变得重要起来，这是稠密模型时代从未有过的：遍数成了请求上的一个旋钮，和批处理策略、缓存策略搅在一起。模型不再是能力曲线上的一个固定点，而成了一个旋钮，而基础架构团队里现在有某个人拥有「拧到哪儿」的决定权。这个人应该理解这个旋钮到底在做什么。">This reframes the scaling debate. The old question was how big; the new question is how much, when, and for which token. A routing layer that pushes filler tokens through one pass and reasoning tokens through four is doing per-token compute allocation — load balancing for depth. Pass counts become a knob on the request, mixed in with batching and cache policy. The model stops being a fixed point on a capability curve and becomes a dial.</p>
+<blockquote data-en="A loop in the harness burns context. A loop in the weights burns compute. Both burn money. The engineering question is identical at both levels: how much, and who decides when to stop." data-zh="harness 里的循环烧上下文，权重里的循环烧算力。两者烧的都是钱。工程问题在两层一模一样：烧多少，以及由谁决定停下。">A loop in the harness burns context. A loop in the weights burns compute. Both burn money. The engineering question is identical at both levels: how much, and who decides when to stop.</blockquote>
+<h3 data-en="The gate is the architecture" data-zh="门控才是架构">The gate is the architecture</h3>
+<p data-en="The naive version of looping — just run the middle again — does not work, and the reason is instructive. On the second pass, the block is looking at its own output. If the first pass wrote everything it knew, the second pass has nothing new to say; it echoes, and the echo compounds until the representation saturates. If the first pass wrote nothing, the passes are blind to each other and the loop is a rerun of the same computation with noise. The gate is what makes the second pass possible at all: a per-token decision about how much of the first draft survives into the second reading. Open the gate fully and the block repeats itself; close it fully and the block contradicts itself. The productive setting is in between — the first pass commits a partial answer, and the second pass reads it the way a good reviewer reads a draft: enough on the page to react to, not so much that there is nothing left to change." data-zh="最朴素的循环版本——把中段再跑一遍——行不通，而原因本身很有启发。第二遍时，模块看到的是自己的输出。如果第一遍把知道的全写了，第二遍就无话可说；它开始复读，而复读不断叠加，直到表征饱和。如果第一遍什么都没写，两遍互相失明，循环只是同一段计算带噪声的重播。门控，是第二遍得以存在的全部前提：一个逐 token 的决定——第一稿有多少能活到第二遍的阅读。门全开，模块重复自己；门全关，模块自相矛盾。有效的设置在中间：第一遍提交一个部分答案，第二遍像一位好的审稿人那样读它——页面上有足够可反应的东西，又不至于多到没什么可改。">The naive version of looping — just run the middle again — does not work, and the reason is instructive. On the second pass, the block is looking at its own output. If the first pass wrote everything, the second echoes, and the echo compounds until the representation saturates. If it wrote nothing, the loop is a rerun with noise. The gate is what makes the second pass possible: a per-token decision about how much of the first draft survives into the second reading. Open it fully and the block repeats itself; close it fully and the block contradicts itself. The productive setting is in between.</p>
+<p data-en="It is worth pausing on how strange this is, architecturally. The gate is a merge policy between two drafts of the same thought, executed inside the forward pass, learned rather than written by anyone. Engineers who have built reconciliation logic — for database transactions, for concurrent edits, for agent sub-results — will recognize the shape immediately: two versions of the truth, a policy for which parts win, and failure modes on both extremes. The looped transformer re-derives a problem the systems world solved decades ago, at a scale and speed where the policy has to be learned because no one can write it fast enough. The old rules still rhyme: an over-committed first pass is a lock taken too early; an under-committed one is a transaction that never engages." data-zh="值得停下来体会这在架构上有多奇怪。门控，是同一段思考的两个草稿之间的合并策略，在前向传播内部执行，是学出来的而不是谁写的。做过协调逻辑的工程师——数据库事务、并发编辑、智能体子结果合并——会立刻认出这个形状：同一事实的两个版本、一个决定哪部分获胜的策略、以及两个极端上的失败模式。循环式 transformer 重新推导了一遍系统界几十年前解决的问题，只是规模和速度大到策略必须被学出来，因为没人写得够快。旧规则仍然押韵：过度承诺的第一遍，是过早拿下的锁；不足承诺的第一遍，是永远没有真正开启的事务。">It is worth pausing on how strange this is, architecturally. The gate is a merge policy between two drafts of the same thought, executed inside the forward pass, learned rather than written. Engineers who have built reconciliation logic — transactions, concurrent edits, agent sub-results — will recognize the shape: two versions of the truth, a policy for which parts win, failure modes at both extremes. The old rules still rhyme: an over-committed first pass is a lock taken too early; an under-committed one is a transaction that never engages.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrD1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrD2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrD3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE COMPUTE DIAL — QUALITY vs COST" data-zh="算力旋钮——质量 vs 成本" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE COMPUTE DIAL — QUALITY vs COST</text>
+<!-- axes -->
+<line stroke="var(--text-tertiary)" stroke-width="1.5" x1="80" x2="80" y1="250" y2="50"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1.5" x1="80" x2="560" y1="250" y2="250"></line>
+<text data-en="quality" data-zh="质量" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="86" y="42">quality</text>
+<text data-en="passes →" data-zh="遍数 →" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="545" y="268">passes →</text>
+<!-- quality curve: steep then flattening -->
+<path d="M80 250 C130 240 170 170 220 130 C280 90 380 78 540 72" fill="none" stroke="var(--accent)" stroke-width="2.5"></path>
+<!-- cost line: linear -->
+<path d="M80 250 L540 70" fill="none" stroke="var(--accent-3)" stroke-width="1.5" stroke-dasharray="5,4"></path>
+<text data-en="cost (linear)" data-zh="成本（线性）" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="300" y="145">cost (linear)</text>
+<text data-en="quality curve" data-zh="质量曲线" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="175" y="200">quality</text>
+<!-- knee marker -->
+<circle cx="220" cy="130" fill="var(--bg-surface)" r="7" stroke="var(--accent)" stroke-width="2"></circle>
+<line stroke="var(--accent)" stroke-dasharray="2,3" stroke-width="1" x1="220" x2="220" y1="130" y2="250"></line>
+<text data-en="the knee" data-zh="拐点" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="220" y="118">the knee</text>
+<text data-en="past the knee: 2× the spend, +ε the gain" data-zh="拐点之后：花费翻倍，收益只有 ε" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="400" y="230">past the knee: 2× the spend, +ε the gain</text>
+<!-- pass markers -->
+<rect fill="var(--bg-surface)" height="22" rx="5" stroke="var(--border)" stroke-width="1" width="56" x="104" y="258"></rect>
+<text data-en="×1 cheap" data-zh="×1 便宜" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="132" y="273">×1 cheap</text>
+<rect fill="var(--accent-dim)" height="22" rx="5" stroke="var(--accent)" stroke-width="1.5" width="56" x="192" y="258"></rect>
+<text data-en="×2-4 zone" data-zh="×2-4 区间" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="220" y="273">×2-4 zone</text>
+<rect fill="var(--bg-surface)" height="22" rx="5" stroke="var(--border)" stroke-width="1" width="56" x="330" y="258"></rect>
+<text data-en="×n??" data-zh="×n??" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="358" y="273">×n??</text>
+<text data-en="the routing question: which tokens deserve the second pass?" data-zh="路由问题：哪些 token 配得上第二遍？" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="310" y="304">the routing question: which tokens deserve the second pass?</text>
+</svg>
+<p class="diagram-caption" data-en="Quality per pass rises fast and then flattens — the knee. Cost rises linearly and never stops. The engineering is in the middle zone: enough passes to clear the knee on the tokens that matter, one pass on everything else. That judgment is a routing decision, and it is now part of inference infrastructure." data-zh="每多一遍，质量先涨得快、然后趋平——拐点。成本线性上涨，永不停歇。工程空间在中间地带：让重要的 token 跑到拐点之后的遍数，其余的都只跑一遍。这个判断本质上是一个路由决策，而它如今属于推理基础设施的一部分。">Quality per pass rises fast and then flattens — the knee. Cost rises linearly and never stops. The engineering is in the middle zone: enough passes to clear the knee on the tokens that matter, one pass on everything else. That judgment is a routing decision, and it is now part of inference infrastructure.</p>
+</div>
+<h3 data-en="More passes, fewer fires" data-zh="遍数越多，火灾越少">More passes, fewer fires</h3>
+<p data-en="The most under-discussed result in this line of work is behavioral, not benchmark-shaped. In research variants of looped models, repeated passes over the same token were associated with a sharp drop in destructive actions — a safety evaluation where single-pass models took harmful actions at a substantial rate saw that rate collapse by roughly an order of magnitude at four passes. The mechanism is not mysterious: a model that re-reads its own intermediate state before acting gets more chances to notice what it is about to do. Deliberation, at the layer level, behaves like suppression. The model catches itself." data-zh="这条研究线上最少被讨论的结果，是行为性的，而不是跑分形状的。在循环式模型的研究变体中，对同一 token 的多次重复，伴随着破坏性行为的骤降——在一项安全评估里，单遍模型以可观比例采取有害动作，而四遍时这个比例掉了一个数量级。机制并不神秘：一个在行动之前重读自己中间状态的模型，得到了更多次「注意到自己将要做什么」的机会。层层级的深思，表现得像抑制。模型抓住了它自己。">The most under-discussed result in this line of work is behavioral, not benchmark-shaped. In research variants, repeated passes over the same token were associated with a sharp drop in destructive actions — single-pass models acted harmfully at a substantial rate; four passes collapsed that rate by roughly an order of magnitude. The mechanism is not mysterious: a model that re-reads its own intermediate state gets more chances to notice what it is about to do. Deliberation, at the layer level, behaves like suppression. The model catches itself.</p>
+<p data-en="But the same observation cuts the other way. Pass count is now a behavior-relevant parameter that can be changed without touching a single weight — the same model, served at one pass and at four, is observably a different agent. Every safety property that has been validated at one setting must be re-validated at the others, because the loop amplifies whatever the middle block does, not just the parts that were intended. Alignment evaluations that treat the model as a fixed object are quietly obsolete the moment depth becomes a serving decision. The pass count belongs in the evaluation matrix, next to temperature and system prompt — a first-class condition of the behavior being measured, not an infrastructure detail beneath mention." data-zh="但同一个观察也砍向另一边。遍数，现在是一个不碰任何权重就能改变的行为参数——同一个模型，一遍服务和四遍服务，观察起来就是两个不同的智能体。在某个设置下验证过的每一个安全性质，都必须在其他设置下重新验证，因为循环放大的是中段模块所做的一切，而不仅仅是被预期的部分。「把模型当成固定对象」的对齐评估，在深度变成服务决策的那一刻，就已经悄悄过时了。遍数应该进评估矩阵，和温度、系统 prompt 并排放着——它是被测行为的一等条件，而不是不值一提的基础设施细节。">But the same observation cuts the other way. Pass count is now a behavior-relevant parameter that can be changed without touching a single weight — the same model, served at one pass and at four, is observably a different agent. Every safety property validated at one setting must be re-validated at the others, because the loop amplifies whatever the middle block does, not just the intended parts. The pass count belongs in the evaluation matrix, next to temperature and system prompt.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+</defs>
+<text data-en="THE LOOP LEDGER — SAME LAWS, TWO LEVELS" data-zh="循环台账——同一套法则，两个层级" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE LOOP LEDGER — SAME LAWS, TWO LEVELS</text>
+<!-- header row -->
+<rect fill="var(--accent-dim)" height="30" opacity="0.6" rx="7" width="170" x="45" y="42"></rect>
+<text data-en="LAW" data-zh="法则" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="130" y="62">LAW</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="180" x="225" y="42"></rect>
+<text data-en="AGENT LOOP" data-zh="智能体循环" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="315" y="62">AGENT LOOP</text>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--accent)" stroke-width="1.5" width="180" x="415" y="42"></rect>
+<text data-en="LAYER LOOP" data-zh="层级循环" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="505" y="62">LAYER LOOP</text>
+<!-- row 1: budget -->
+<rect fill="var(--bg-surface)" height="52" rx="7" stroke="var(--border)" stroke-width="1" width="170" x="45" y="82"></rect>
+<text data-en="budget" data-zh="预算" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="130" y="104">budget</text>
+<text data-en="no free loops" data-zh="循环不免费" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="130" y="122">no free loops</text>
+<rect fill="var(--bg-surface)" height="52" rx="7" stroke="var(--accent-2)" stroke-width="1" width="180" x="225" y="82"></rect>
+<text data-en="max steps / calls" data-zh="最大步数 / 调用数" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="315" y="104">max steps / calls</text>
+<text data-en="token spend cap" data-zh="token 支出上限" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="315" y="122">token spend cap</text>
+<rect fill="var(--bg-surface)" height="52" rx="7" stroke="var(--accent)" stroke-width="1" width="180" x="415" y="82"></rect>
+<text data-en="n passes per token" data-zh="每 token n 遍" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="505" y="104">n passes per token</text>
+<text data-en="flop spend cap" data-zh="flop 支出上限" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="505" y="122">flop spend cap</text>
+<!-- row 2: memory -->
+<rect fill="var(--bg-surface)" height="52" rx="7" stroke="var(--border)" stroke-width="1" width="170" x="45" y="144"></rect>
+<text data-en="working set" data-zh="工作集" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="130" y="166">working set</text>
+<text data-en="bounded, not whole" data-zh="有界，而非全量" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="130" y="184">bounded, not whole</text>
+<rect fill="var(--bg-surface)" height="52" rx="7" stroke="var(--accent-2)" stroke-width="1" width="180" x="225" y="144"></rect>
+<text data-en="context window" data-zh="上下文窗口" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="315" y="166">context window</text>
+<text data-en="pruned / summarized" data-zh="修剪 / 摘要" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="315" y="184">pruned / summarized</text>
+<rect fill="var(--bg-surface)" height="52" rx="7" stroke="var(--accent)" stroke-width="1" width="180" x="415" y="144"></rect>
+<text data-en="KV window (~128)" data-zh="KV 窗口（约 128）" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="505" y="166">KV window (~128)</text>
+<text data-en="tiny by design" data-zh="刻意地小" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="505" y="184">tiny by design</text>
+<!-- row 3: exit -->
+<rect fill="var(--bg-surface)" height="52" rx="7" stroke="var(--border)" stroke-width="1" width="170" x="45" y="206"></rect>
+<text data-en="exit / gate" data-zh="出口 / 门" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="130" y="228">exit / gate</text>
+<text data-en="someone stops it" data-zh="得有谁停下它" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="130" y="246">someone stops it</text>
+<rect fill="var(--bg-surface)" height="52" rx="7" stroke="var(--accent-2)" stroke-width="1" width="180" x="225" y="206"></rect>
+<text data-en="stop condition" data-zh="停止条件" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="315" y="228">stop condition</text>
+<text data-en="guard nodes" data-zh="守卫节点" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="315" y="246">guard nodes</text>
+<rect fill="var(--bg-surface)" height="52" rx="7" stroke="var(--accent)" stroke-width="1" width="180" x="415" y="206"></rect>
+<text data-en="per-token gate θ" data-zh="逐 token 门控 θ" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="505" y="228">per-token gate θ</text>
+<text data-en="learned, not written" data-zh="学出来的，不是写的" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="505" y="246">learned, not written</text>
+<!-- bottom line -->
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="550" x="45" y="272"></rect>
+<text data-en="A loop without a budget is a vortex. A gate without a schedule is noise. The discipline transfers; only the units change." data-zh="没有预算的循环是漩涡。没有调度的门是噪声。纪律可以迁移，变的只是单位。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="320" y="297">A loop without a budget is a vortex. A gate without a schedule is noise. The discipline transfers; only the units change.</text>
+</svg>
+<p class="diagram-caption" data-en="Agent loops and layer loops obey the same three laws — a budget, a bounded working set, an explicit stop — and fail the same way when a law is missing: the token bonfire, the context avalanche, the run that never converges. Teams that learned this discipline on harnesses will recognize it immediately in the forward pass." data-zh="智能体循环和层级循环遵守同样的三条法则——预算、有界的工作集、明确的停止——也以同样的方式在缺一条法则时失败：token 火灾、上下文雪崩、永不收敛的运行。在 harness 上学会这套纪律的团队，会在前向传播里立刻认出它。">Agent loops and layer loops obey the same three laws — a budget, a bounded working set, an explicit stop — and fail the same way when a law is missing. Teams that learned this discipline on harnesses will recognize it immediately in the forward pass.</p>
+</div>
+<p data-en="There is a larger pattern here worth naming. Loop engineering spent two years being a harness discipline: steps, tools, retries, guards, budgets — all of it written around a model that was, internally, a straight line. That era is ending. The model itself is becoming a loop, and the same vocabulary — budget, gate, working set, exit — reappears one level down, attached to learned components instead of written ones. The engineers who treated loop design as a first-class craft, who named their exit conditions and audited their budgets, have already done the intellectual work. They were just aiming at the wrong layer." data-zh="这里有一个更大的模式值得命名。循环工程作为一门 harness 学科存在了两年：步骤、工具、重试、守卫、预算——所有这些都写在一个内部仍是直线的模型周围。那个时代正在结束。模型本身正在变成循环，同一套词汇——预算、门、工作集、出口——在下一层重新出现，只是挂在了学出来的组件上，而不是写出来的组件上。那些把循环设计当作一等手艺对待、给退出条件命名、审计预算的工程师，其实早已完成了这份智力工作。他们只是瞄准错了层。">There is a larger pattern here worth naming. Loop engineering spent two years being a harness discipline — steps, tools, retries, guards, budgets — all written around a model that was, internally, a straight line. That era is ending. The model itself is becoming a loop, and the same vocabulary — budget, gate, working set, exit — reappears one level down, attached to learned components instead of written ones. The engineers who treated loop design as a craft have already done the intellectual work. They were just aiming at the wrong layer.</p>
+<p data-en="The destination is compute-elastic intelligence: models whose effective depth is a request-time decision, whose cost tracks the difficulty of the token instead of the size of the network, and whose behavior changes when the dial moves — measurably, sometimes for the better, always in ways that must be evaluated. None of that arrives as a finished product. It arrives as a set of engineering questions that used to belong to the harness and now belong to the model: how many passes, on which tokens, with the gate set where, and who is watching the knee. Depth used to be a training decision. Now it is a serving decision. The loop has finally moved inside, and it brought all the old rules with it — budgets, gates, and the unglamorous discipline of knowing when to stop." data-zh="终点是算力弹性的智能：有效深度成为请求时刻的决定，成本跟随 token 的难度而非网络的规模，行为随旋钮的移动而改变——可测量、有时更好、永远需要被重新评估。这一切不会以成品的形式到来。它以一组工程问题的形式到来：这些问题曾经属于 harness，现在属于模型——跑几遍、给哪些 token、门设在哪里、谁在盯着拐点。深度曾经是一个训练决策。现在它是一个服务决策。循环终于沉到了内部，并带上了全部旧规则——预算、门，以及知道何时停下的、毫不性感却至关重要的纪律。">The destination is compute-elastic intelligence: models whose effective depth is a request-time decision, whose cost tracks the difficulty of the token, and whose behavior changes when the dial moves — measurably, sometimes for the better, always in ways that must be evaluated. Depth used to be a training decision. Now it is a serving decision. The loop has finally moved inside, and it brought all the old rules with it.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

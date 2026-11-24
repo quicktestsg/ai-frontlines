@@ -1,5 +1,14 @@
 [
 {
+  "date": "2026-11-25",
+  "slug": "the-second-pass",
+  "title_en": "The Second Pass: When the Loop Moves Inside the Model",
+  "title_zh": "第二遍：当循环沉入模型内部",
+  "read_time": 8,
+  "excerpt_en": "For a decade, depth was frozen at training time — every layer ran once per token, forever. Looped blocks change that: middle layers re-run at inference under a per-token gate and a tiny KV window. Depth becomes a runtime budget, and every law of loop engineering — budgets, gates, exit conditions — applies one level down.",
+  "excerpt_zh": "十年来，深度在训练那一刻就被冻结——每层对每个 token 只跑一遍。循环式模块改变了这一点：中段层在推理时重跑，由逐 token 门控和一个极小的 KV 窗口约束。深度变成运行时预算，而循环工程的全部法则——预算、门、退出条件——下沉到了下一层。"
+},
+{
   "date": "2026-11-24",
   "slug": "run-the-futures-commit-one",
   "title_en": "Run the Futures, Commit One",

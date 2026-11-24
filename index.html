@@ -70,6 +70,19 @@
             </div>
 
                     <div class="post-item fade-in">
+            <a href="posts/2026-11-25-the-second-pass.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">November 25, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read" data-i18n="blog.read8">8 min read</span>
+                </div>
+                <h2 class="post-title" data-en="The Second Pass: When the Loop Moves Inside the Model" data-zh="第二遍：当循环沉入模型内部">The Second Pass: When the Loop Moves Inside the Model</h2>
+                <p class="post-excerpt" data-en="For a decade, depth was frozen at training time — every layer ran once per token, forever. Looped blocks change that: middle layers re-run at inference under a per-token gate and a tiny KV window. Depth becomes a runtime budget, and every law of loop engineering — budgets, gates, exit conditions — applies one level down." data-zh="十年来，深度在训练那一刻就被冻结——每层对每个 token 只跑一遍。循环式模块改变了这一点：中段层在推理时重跑，由逐 token 门控和一个极小的 KV 窗口约束。深度变成运行时预算，而循环工程的全部法则——预算、门、退出条件——下沉到了下一层。">For a decade, depth was frozen at training time — every layer ran once per token, forever. Looped blocks change that: middle layers re-run at inference under a per-token gate and a tiny KV window..</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="post-item fade-in">
             <a href="posts/2026-11-24-run-the-futures-commit-one.html" class="post-item-inner">
                 <div class="post-meta">
                     <span class="post-date">November 24, 2026</span>
@@ -108,19 +121,6 @@
             </a>
         </div>
 
-        <div class="post-item fade-in">
-            <a href="posts/2026-11-21-forgetting-is-a-feature.html" class="post-item-inner">
-                <div class="post-meta">
-                    <span class="post-date">November 21, 2026</span>
-                    <span class="post-dot"></span>
-                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
-                </div>
-                <h2 class="post-title" data-en="Forgetting Is a Feature" data-zh="遗忘是一种功能">Forgetting Is a Feature</h2>
-                <p class="post-excerpt" data-en="An agent that remembers everything drowns in its own history. Agent memory is not a database problem — it is a garbage-collection problem: generational heaps, behavioral mark-and-sweep, compaction into canonical notes, and expiry dates for beliefs." data-zh="什么都记得的智能体，会淹死在自己的历史里。智能体记忆不是数据库问题——是垃圾回收问题：分代堆、行为式的标记清扫、压缩成正典笔记，以及给信念加上保质期。">An agent that remembers everything drowns in its own history. Agent memory is not a database problem — it is a garbage-collection problem: generational heaps, behavioral mark-and-sweep, compaction.</p>
-                <span class="post-arrow">→</span>
-            </a>
-        </div>
-
         </div>
 
         <div class="preview-section">
@@ -134,6 +134,46 @@
             <div class="news-list">
 
                         <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">OpenAI<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@OpenAI · Nov 24</span>
+                </div>
+                <span class="news-badge" style="background:#10A37F">OpenAI</span>
+            </div>
+            <div class="tweet-body" data-en="In one run, GPT-6 Cyber helped us validate 948 Linux kernel bugs that could grant local root access and generate patches for review.
+
+Our researchers <a href=&quot;https://x.com/clintgibler&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@clintgibler</a> and <a href=&quot;https://x.com/ky1ebot&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@ky1ebot</a> share their findings and how they worked with maintainers to get fixes upstream.
+
+Read the research: https://t.co/oY8CMSrgQo" data-zh="GPT-6 Cyber 单次运行就帮助验证了 948 个可获取本地 root 权限的 Linux 内核漏洞，并生成补丁供审阅。研究团队随后与内核维护者协作，把修复合入了上游主线。">In one run, GPT-6 Cyber helped us validate 948 Linux kernel bugs that could grant local root access and generate patches for review.
+
+Our researchers <a href="https://x.com/clintgibler" target="_blank" rel="noopener">@clintgibler</a> and <a href="https://x.com/ky1ebot" target="_blank" rel="noopener">@ky1ebot</a> share their findings and how they worked with maintainers to get fixes upstream.
+
+Read the research: https://t.co/oY8CMSrgQo</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/amplify_video_thumb/2125002652929196032/img/UOxIg9s51dEH3-gJ.jpg">
+            <img src="https://pbs.twimg.com/amplify_video_thumb/2125002652929196032/img/UOxIg9s51dEH3-gJ.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/OpenAI/status/2125007927098699827" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/OpenAI/status/2125007927098699827" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/OpenAI/status/2125007927098699827" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    3.3K
+                </a>
+                <a href="https://x.com/OpenAI/status/2125007927098699827" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
             <div class="tweet-header">
                 <img src="https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
@@ -160,6 +200,46 @@
                     15.5K
                 </a>
                 <a href="https://x.com/OpenAI/status/2124980590717911527" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/2042749771337564160/AgOFPEL3_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Google<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@Google · Nov 24</span>
+                </div>
+                <span class="news-badge" style="background:#4285F4">Google</span>
+            </div>
+            <div class="tweet-body" data-en="Where Neon sits in the Gemini model family ⬇️
+
+Neon is built for complex coding, analytical reasoning, and production-grade enterprise workflows.
+
+While Carbon tackles your hardest, long-horizon projects and Hydrogen handles fast everyday execution, Neon balances depth and https://t.co/N4kkrEyA3m" data-zh="Gemini 模型家族中 Neon 的定位：专为复杂编码、分析推理与生产级企业工作流打造。Carbon 负责最难的长周期项目，Hydrogen 主打快速的日常执行，Neon 在深度与速度之间取衡。">Where Neon sits in the Gemini model family ⬇️
+
+Neon is built for complex coding, analytical reasoning, and production-grade enterprise workflows.
+
+While Carbon tackles your hardest, long-horizon projects and Hydrogen handles fast everyday execution, Neon balances depth and https://t.co/N4kkrEyA3m</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/media/HX1mKSwW8AA6_F7.jpg">
+            <img src="https://pbs.twimg.com/media/HX1mKSwW8AA6_F7.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/Google/status/2124967271814910183" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/Google/status/2124967271814910183" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/Google/status/2124967271814910183" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    4.2K
+                </a>
+                <a href="https://x.com/Google/status/2124967271814910183" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
                     View on X →
                 </a>
             </div>
@@ -201,79 +281,6 @@ The goal is to help you ship code as fast as you can write it. https://t.co/b9OB
             </div>
         </article>
 
-        <article class="tweet-card fade-in">
-            <div class="tweet-header">
-                <img src="https://pbs.twimg.com/profile_images/1950950107937185792/QOfEjFoJ_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
-                <div class="tweet-author">
-                    <span class="tweet-name">Claude<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
-                    <span class="tweet-handle">@claudeai · Nov 24</span>
-                </div>
-                <span class="news-badge" style="background:#D4A574">Claude</span>
-            </div>
-            <div class="tweet-body" data-en="Zero data retention (ZDR) with Enterprise Frontier Safeguards (EFS) is now in public beta for eligible businesses. It looks for misuse across many requests while remaining compatible with ZDR.
-
-We developed it with over 100 customers.
-
-Read more: https://t.co/M8riFzHDPY https://t.co/eOonILkHt3" data-zh="Claude 宣布零数据保留（ZDR）+ 企业前沿防护（EFS）进入公开 beta：在兼容 ZDR 的前提下跨请求检测滥用行为，与超过 100 家企业客户共同开发。">Zero data retention (ZDR) with Enterprise Frontier Safeguards (EFS) is now in public beta for eligible businesses. It looks for misuse across many requests while remaining compatible with ZDR.
-
-We developed it with over 100 customers.
-
-Read more: https://t.co/M8riFzHDPY https://t.co/eOonILkHt3</div>
-        <div class="tweet-media-link" data-full="https://pbs.twimg.com/media/HX1BMazWYAIMUE0.jpg">
-            <img src="https://pbs.twimg.com/media/HX1BMazWYAIMUE0.jpg" alt="" class="tweet-media" loading="lazy" />
-        </div>
-            <div class="tweet-footer">
-                <a href="https://x.com/claudeai/status/2124929944530587712" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
-                    0
-                </a>
-                <a href="https://x.com/claudeai/status/2124929944530587712" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
-                    0
-                </a>
-                <a href="https://x.com/claudeai/status/2124929944530587712" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    5.2K
-                </a>
-                <a href="https://x.com/claudeai/status/2124929944530587712" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
-                    View on X →
-                </a>
-            </div>
-        </article>
-
-        <article class="tweet-card fade-in">
-            <div class="tweet-header">
-                <img src="https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
-                <div class="tweet-author">
-                    <span class="tweet-name">OpenAI<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
-                    <span class="tweet-handle">@OpenAI · Nov 24</span>
-                </div>
-                <span class="news-badge" style="background:#10A37F">OpenAI</span>
-            </div>
-            <div class="tweet-body" data-en="Through our new program OpenWorks, we fund local AI experts to help small businesses develop the tools and skills they need to grow their own business, at no cost to them.
-
-We invite AI experts who love teaching others and small business owners who want to learn to implement AI" data-zh="OpenAI 推出 OpenWorks 计划：出资资助本地 AI 专家，免费帮助小企业掌握 AI 工具与技能，助力其业务成长。">Through our new program OpenWorks, we fund local AI experts to help small businesses develop the tools and skills they need to grow their own business, at no cost to them.
-
-We invite AI experts who love teaching others and small business owners who want to learn to implement AI</div>
-            <div class="tweet-footer">
-                <a href="https://x.com/OpenAI/status/2124922133545714160" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
-                    0
-                </a>
-                <a href="https://x.com/OpenAI/status/2124922133545714160" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
-                    0
-                </a>
-                <a href="https://x.com/OpenAI/status/2124922133545714160" target="_blank" rel="noopener" class="tweet-stat">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    6.7K
-                </a>
-                <a href="https://x.com/OpenAI/status/2124922133545714160" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
-                    View on X →
-                </a>
-            </div>
-        </article>
-
             </div>
         </div>
     </section>
@@ -282,6 +289,19 @@ We invite AI experts who love teaching others and small business owners who want
     <section class="post-list tab-pane" id="pane-blog">
 
                 <div class="post-item fade-in">
+            <a href="posts/2026-11-25-the-second-pass.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">November 25, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read" data-i18n="blog.read8">8 min read</span>
+                </div>
+                <h2 class="post-title" data-en="The Second Pass: When the Loop Moves Inside the Model" data-zh="第二遍：当循环沉入模型内部">The Second Pass: When the Loop Moves Inside the Model</h2>
+                <p class="post-excerpt" data-en="For a decade, depth was frozen at training time — every layer ran once per token, forever. Looped blocks change that: middle layers re-run at inference under a per-token gate and a tiny KV window. Depth becomes a runtime budget, and every law of loop engineering — budgets, gates, exit conditions — applies one level down." data-zh="十年来，深度在训练那一刻就被冻结——每层对每个 token 只跑一遍。循环式模块改变了这一点：中段层在推理时重跑，由逐 token 门控和一个极小的 KV 窗口约束。深度变成运行时预算，而循环工程的全部法则——预算、门、退出条件——下沉到了下一层。">For a decade, depth was frozen at training time — every layer ran once per token, forever. Looped blocks change that: middle layers re-run at inference under a per-token gate and a tiny KV window..</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="post-item fade-in">
             <a href="posts/2026-11-24-run-the-futures-commit-one.html" class="post-item-inner">
                 <div class="post-meta">
                     <span class="post-date">November 24, 2026</span>
@@ -1792,6 +1812,46 @@ We invite AI experts who love teaching others and small business owners who want
                 </div>
                 <span class="news-badge" style="background:#10A37F">OpenAI</span>
             </div>
+            <div class="tweet-body" data-en="In one run, GPT-6 Cyber helped us validate 948 Linux kernel bugs that could grant local root access and generate patches for review.
+
+Our researchers <a href=&quot;https://x.com/clintgibler&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@clintgibler</a> and <a href=&quot;https://x.com/ky1ebot&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@ky1ebot</a> share their findings and how they worked with maintainers to get fixes upstream.
+
+Read the research: https://t.co/oY8CMSrgQo" data-zh="GPT-6 Cyber 单次运行就帮助验证了 948 个可获取本地 root 权限的 Linux 内核漏洞，并生成补丁供审阅。研究团队随后与内核维护者协作，把修复合入了上游主线。">In one run, GPT-6 Cyber helped us validate 948 Linux kernel bugs that could grant local root access and generate patches for review.
+
+Our researchers <a href="https://x.com/clintgibler" target="_blank" rel="noopener">@clintgibler</a> and <a href="https://x.com/ky1ebot" target="_blank" rel="noopener">@ky1ebot</a> share their findings and how they worked with maintainers to get fixes upstream.
+
+Read the research: https://t.co/oY8CMSrgQo</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/amplify_video_thumb/2125002652929196032/img/UOxIg9s51dEH3-gJ.jpg">
+            <img src="https://pbs.twimg.com/amplify_video_thumb/2125002652929196032/img/UOxIg9s51dEH3-gJ.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/OpenAI/status/2125007927098699827" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/OpenAI/status/2125007927098699827" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/OpenAI/status/2125007927098699827" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    3.3K
+                </a>
+                <a href="https://x.com/OpenAI/status/2125007927098699827" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">OpenAI<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@OpenAI · Nov 24</span>
+                </div>
+                <span class="news-badge" style="background:#10A37F">OpenAI</span>
+            </div>
             <div class="tweet-body" data-en="We’re introducing Shirudo, an open-source Linux runtime allowing agents to defend systems without downtime. It lets agents write dynamic eBPF controls to shield systems from exploits, giving defenders more time to test and roll out patches. Built by <a href=&quot;https://x.com/cisco&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>@cisco</a> together with OpenAI. https://t.co/FZRZ7O0A9X" data-zh="OpenAI 联合 Cisco 开源 Shirudo：一个 Linux 运行时，让 AI agent 无需停机即可防御系统。agent 可以编写动态 eBPF 控制来屏蔽漏洞利用，为防御者争取更多时间测试和部署补丁。">We’re introducing Shirudo, an open-source Linux runtime allowing agents to defend systems without downtime. It lets agents write dynamic eBPF controls to shield systems from exploits, giving defenders more time to test and roll out patches. Built by <a href="https://x.com/cisco" target="_blank" rel="noopener">@cisco</a> together with OpenAI. https://t.co/FZRZ7O0A9X</div>
         <div class="tweet-media-link" data-full="https://pbs.twimg.com/media/HX1vOUNXwAESQQN.jpg">
             <img src="https://pbs.twimg.com/media/HX1vOUNXwAESQQN.jpg" alt="" class="tweet-media" loading="lazy" />
@@ -1810,6 +1870,46 @@ We invite AI experts who love teaching others and small business owners who want
                     15.5K
                 </a>
                 <a href="https://x.com/OpenAI/status/2124980590717911527" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/2042749771337564160/AgOFPEL3_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Google<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@Google · Nov 24</span>
+                </div>
+                <span class="news-badge" style="background:#4285F4">Google</span>
+            </div>
+            <div class="tweet-body" data-en="Where Neon sits in the Gemini model family ⬇️
+
+Neon is built for complex coding, analytical reasoning, and production-grade enterprise workflows.
+
+While Carbon tackles your hardest, long-horizon projects and Hydrogen handles fast everyday execution, Neon balances depth and https://t.co/N4kkrEyA3m" data-zh="Gemini 模型家族中 Neon 的定位：专为复杂编码、分析推理与生产级企业工作流打造。Carbon 负责最难的长周期项目，Hydrogen 主打快速的日常执行，Neon 在深度与速度之间取衡。">Where Neon sits in the Gemini model family ⬇️
+
+Neon is built for complex coding, analytical reasoning, and production-grade enterprise workflows.
+
+While Carbon tackles your hardest, long-horizon projects and Hydrogen handles fast everyday execution, Neon balances depth and https://t.co/N4kkrEyA3m</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/media/HX1mKSwW8AA6_F7.jpg">
+            <img src="https://pbs.twimg.com/media/HX1mKSwW8AA6_F7.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/Google/status/2124967271814910183" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/Google/status/2124967271814910183" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/Google/status/2124967271814910183" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    4.2K
+                </a>
+                <a href="https://x.com/Google/status/2124967271814910183" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
                     View on X →
                 </a>
             </div>
@@ -1846,6 +1946,46 @@ The goal is to help you ship code as fast as you can write it. https://t.co/b9OB
                     20.4K
                 </a>
                 <a href="https://x.com/ClaudeDevs/status/2124959436640858475" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/2081980424666935296/qU5G7mQg_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">ChatGPT<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@ChatGPT · Nov 24</span>
+                </div>
+                <span class="news-badge" style="background:#10A37F">OpenAI</span>
+            </div>
+            <div class="tweet-body" data-en="We’re rolling out a version of GPT-6.2 Sol in the Chat tab, optimized for everyday conversation.
+
+It’s much better at handling complex requests, especially when you give it detailed instructions or ask it to find information online. 
+
+A few improvements you might notice in https://t.co/FdPbHTCo31" data-zh="ChatGPT 聊天标签页开始推送 GPT-6.2 Sol 版本，专为日常对话优化。处理复杂请求显著更好——尤其是给出详细指令或让它联网查资料的时候。">We’re rolling out a version of GPT-6.2 Sol in the Chat tab, optimized for everyday conversation.
+
+It’s much better at handling complex requests, especially when you give it detailed instructions or ask it to find information online. 
+
+A few improvements you might notice in https://t.co/FdPbHTCo31</div>
+        <div class="tweet-media-link" data-full="https://pbs.twimg.com/amplify_video_thumb/2124940157111738369/img/LiN99bSHqsb03ZwU.jpg">
+            <img src="https://pbs.twimg.com/amplify_video_thumb/2124940157111738369/img/LiN99bSHqsb03ZwU.jpg" alt="" class="tweet-media" loading="lazy" />
+        </div>
+            <div class="tweet-footer">
+                <a href="https://x.com/ChatGPT/status/2124942186425069836" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/ChatGPT/status/2124942186425069836" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/ChatGPT/status/2124942186425069836" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    7.9K
+                </a>
+                <a href="https://x.com/ChatGPT/status/2124942186425069836" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
                     View on X →
                 </a>
             </div>
