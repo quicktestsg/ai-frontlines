@@ -1,5 +1,14 @@
 [
 {
+  "date": "2026-11-26",
+  "slug": "the-first-thousand-tokens-are-rent",
+  "title_en": "The First Thousand Tokens Are Rent",
+  "title_zh": "头一千个 token 是租金",
+  "read_time": 8,
+  "excerpt_en": "Every agent step re-pays the same fixed preamble — system prompt, tool schemas, rules — billed in full at every iteration of the loop. Prefix caching turns that rent into a one-time payment, but only if the prompt is ordered like a ledger: stable bytes first, volatile bytes last. Token order is an infrastructure decision now.",
+  "excerpt_zh": "智能体的每一步都在重新支付同一笔固定前导——系统 prompt、工具 schema、规则——在循环的每一轮按全价计费。前缀缓存能把这笔租金变成一次性付款，但前提是把 prompt 排成账本：稳定的字节在前，易变的字节在后。Token 的顺序，如今是一个基础设施决策。"
+},
+{
   "date": "2026-11-25",
   "slug": "the-second-pass",
   "title_en": "The Second Pass: When the Loop Moves Inside the Model",

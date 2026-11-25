@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The First Thousand Tokens Are Rent — AI Frontlines</title>
+<meta content="Every agent step re-pays the same fixed prefix: system prompt, tool definitions, few-shot blocks. Thousands of tokens, identical across millions of calls, billed again at every iteration of the loop. Prefix caching turns that rent into a one-time payment — but only if the prompt is ordered like a ledger, stable entries first and volatile entries last. Token order is an infrastructure decision now, and the hit rate belongs on the dashboard next to the token spend." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css?v=18" rel="stylesheet"/>
+</head>
+<body>
+<div class="mesh-bg">
+<div class="mesh-orb mesh-orb-1"></div>
+<div class="mesh-orb mesh-orb-2"></div>
+<div class="mesh-orb mesh-orb-3"></div>
+</div>
+<div class="progress-bar"></div>
+<nav class="nav" id="nav">
+<div class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="nav-brand-dot"></span>
+            AI Frontlines
+        </a>
+<div class="nav-right">
+<a class="nav-link" href="../about.html" data-en="About" data-zh="关于">About</a>
+<button aria-label="Switch language" class="lang-toggle" id="langToggle">
+<span class="lang-label">中文</span>
+</button>
+<button aria-label="Toggle theme" class="theme-toggle" id="themeToggle">
+<svg class="sun" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.2" x2="5.6" y1="4.2" y2="5.6"></line><line x1="18.4" x2="19.8" y1="18.4" y2="19.8"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.2" x2="5.6" y1="19.8" y2="18.4"></line><line x1="18.4" x2="19.8" y1="5.6" y2="4.2"></line></svg>
+<svg class="moon" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<div class="wrap">
+<header class="post-header">
+<div class="post-header-meta">
+<span class="post-header-date" data-en="November 26, 2026" data-zh="2026年11月26日">November 26, 2026</span>
+<span class="post-header-dot"></span>
+<span class="post-header-read" data-en="8 min read" data-zh="约 8 分钟">8 min read</span>
+</div>
+<h1 class="post-header-title" data-en="The First Thousand Tokens Are Rent" data-zh="头一千个 token 是租金">The First Thousand Tokens Are Rent</h1>
+<p class="post-header-deck" data-en="Every call an agent makes re-pays the same fixed opening balance: the system prompt, the tool schemas, the style rules — thousands of tokens that are byte-identical across millions of requests and billed again at every iteration of the loop. Prefix caching can turn that rent into a one-time payment, but the discount is earned, not given: it exists only as far as the prompt stays byte-stable, from the first token forward. That makes token order an infrastructure decision. A harness that shuffles its preamble pays full price on every step of every run, and the difference compounds quietly until it is the difference between a product and a demo." data-zh="智能体发出的每一次调用，都要重新支付同一笔固定的期初余额：系统 prompt、工具 schema、风格规则——几千个 token，在百万次请求里逐字节相同，却在循环的每一轮被重新计费。前缀缓存可以把这笔租金变成一次性付款，但折扣是挣来的，不是白给的：它只覆盖从第一个 token 起逐字节保持不变的部分。这让 token 的顺序成了一个基础设施决策。一个会打乱自己前导内容的 harness，在每次运行的每一步都支付全价，而这个差距会安静地复利下去，直到成为「产品」和「演示」之间的差距。">Every call an agent makes re-pays the same fixed opening balance — system prompt, tool schemas, style rules — billed again at every iteration of the loop. Prefix caching can turn that rent into a one-time payment, but the discount is earned, not given. Token order is an infrastructure decision.</p>
+</header>
+<article class="post-body">
+<p data-en="Start with the arithmetic nobody does. A production agent carries a preamble: system instructions, a dozen tool definitions with full JSON schemas, formatting rules, safety constraints. Call it four thousand tokens, and call that charitable. A single task is not a single call — it is a loop. Thirty steps is ordinary; a research session with subagents can run into the hundreds. At thirty steps, that fixed preamble is processed thirty times, and nothing about it ever changed. The model re-reads the same instruction manual, the same tool catalog, the same rules of engagement, on every turn, as if each call were the first call. The bill scales with the loop; the information does not scale at all. That is the definition of rent: paying repeatedly for something you already own." data-zh="先算一笔没人去算的账。一个生产级智能体带着一份前导内容：系统指令、十几个带完整 JSON schema 的工具定义、格式规则、安全约束。算它四千个 token，还是往少了说的。一个任务不是一次调用——它是一个循环。三十步很平常；带子智能体的研究型会话能跑到几百步。三十步意味着这份固定前导被处理了三十遍，而它一个字都没变过。模型在每一轮重新阅读同一本说明书、同一个工具目录、同一套交战规则，仿佛每次调用都是第一次。账单随循环增长，信息量却一点都没涨。这就是租金的定义：为自己已经拥有的东西反复付费。">Start with the arithmetic nobody does. A production agent carries a preamble: system instructions, a dozen tool definitions with full schemas, formatting rules, safety constraints. Call it four thousand tokens, and call that charitable. A single task is not a single call — it is a loop. Thirty steps is ordinary; research sessions with subagents run into the hundreds. At thirty steps, that preamble is processed thirty times, and nothing about it ever changed. The model re-reads the same instruction manual on every turn, as if each call were the first. The bill scales with the loop; the information does not scale at all. That is the definition of rent.</p>
+<p data-en="Serving stacks have an answer for this: the prefix cache. KV states for the tokens at the head of a request are computed once and reused for any later request whose head is byte-identical. The cached region is processed at a steep discount — on the order of a tenth of the input price, sometimes free below a size threshold, occasionally billed at full rate anyway, depending on the provider and the tier. The details vary; the shape does not. Identical prefix, cheaper tokens. Divergent prefix, full price. What is quietly revolutionary is where the control lives: the cache matches on bytes, and the harness decides the bytes. Prompt construction — which block goes first, which goes last, where the volatile data lands — is no longer a matter of taste. It is cache engineering, practiced through the one lever the harness still owns in full: the order of tokens." data-zh="服务栈对此有一个答案：前缀缓存。请求头部那些 token 的 KV 状态被算一次，然后复用给任何后续的、头部逐字节相同的请求。命中区域按大幅折扣计价——大约输入价的十分之一，有时低于某个规模门槛干脆免费，偶尔也照样全价，取决于服务商和档位。细节各异，形状不变：相同的前缀，更便宜的 token；分岔的前缀，全价。真正悄悄具有革命性的是控制权所在的位置：缓存按字节匹配，而字节由 harness 决定。Prompt 的构造——哪一块在前、哪一块在后、易变数据落在哪——不再只是品味问题。它是缓存工程，通过 harness 仍然完整拥有的唯一一根杠杆来实践：token 的顺序。">Serving stacks have an answer for this: the prefix cache. KV states for the head of a request are computed once and reused for any later request whose head is byte-identical. The cached region is processed at a steep discount — a tenth of input price on the major providers, sometimes free, occasionally still full rate. The details vary; the shape does not. Identical prefix, cheaper tokens. Divergent prefix, full price. What is quietly revolutionary is where control lives: the cache matches on bytes, and the harness decides the bytes.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrR1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrR2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrR3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="COLD START vs WARM START — WHAT EACH STEP PAYS" data-zh="冷启动 vs 热启动——每一步各付多少" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="26">COLD START vs WARM START — WHAT EACH STEP PAYS</text>
+<!-- LEFT: cold -->
+<text data-en="COLD: NO CACHE" data-zh="冷：无缓存" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="140" y="54">COLD: NO CACHE</text>
+<rect fill="var(--bg-surface)" height="34" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="80" y="64"></rect>
+<text data-en="system prompt" data-zh="系统 prompt" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="140" y="86">system prompt</text>
+<path d="M140 98 L140 112" fill="none" marker-end="url(#arrR3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="80" y="114"></rect>
+<text data-en="tool schemas" data-zh="工具 schema" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="140" y="136">tool schemas</text>
+<path d="M140 148 L140 162" fill="none" marker-end="url(#arrR3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="7" stroke="var(--accent-3)" stroke-width="1.5" width="120" x="80" y="164"></rect>
+<text data-en="task + history" data-zh="任务 + 历史" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="140" y="186">task + history</text>
+<path d="M140 198 L140 212" fill="none" marker-end="url(#arrR3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="26" rx="6" width="120" x="80" y="218"></rect>
+<text data-en="billed: 100% · every step" data-zh="计费：100% · 每一步" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="140" y="235">billed: 100% · every step</text>
+<text data-en="the preamble is re-read every turn" data-zh="前导内容每一轮都被重读" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="140" y="266">the preamble is re-read every turn</text>
+<!-- divider -->
+<line stroke="var(--border)" stroke-dasharray="3,5" stroke-width="1" x1="310" x2="310" y1="46" y2="290"></line>
+<!-- RIGHT: warm -->
+<text data-en="WARM: PREFIX CACHED" data-zh="热：前缀已缓存" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="470" y="54">WARM: PREFIX CACHED</text>
+<rect fill="var(--accent-dim)" height="34" rx="7" stroke="var(--accent)" stroke-width="2" width="120" x="410" y="64"></rect>
+<text data-en="system prompt" data-zh="系统 prompt" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="470" y="86">system prompt</text>
+<path d="M470 98 L470 112" fill="none" marker-end="url(#arrR2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="34" rx="7" stroke="var(--accent)" stroke-width="2" width="120" x="410" y="114"></rect>
+<text data-en="tool schemas" data-zh="工具 schema" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="470" y="136">tool schemas</text>
+<path d="M470 148 L470 162" fill="none" marker-end="url(#arrR2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="34" rx="7" stroke="var(--accent-2)" stroke-width="1.5" width="120" x="410" y="164"></rect>
+<text data-en="task + history" data-zh="任务 + 历史" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="470" y="186">task + history</text>
+<path d="M470 198 L470 212" fill="none" marker-end="url(#arrR2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--accent-dim)" height="26" rx="6" width="120" x="410" y="218"></rect>
+<text data-en="billed: ~10% on cached · 100% after" data-zh="计费：命中约 10% · 之后 100%" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="470" y="235">billed: ~10% on cached · 100% after</text>
+<!-- cache frontier line -->
+<line stroke="var(--accent)" stroke-dasharray="5,4" stroke-width="1.5" x1="395" x2="545" y1="160" y2="160"></line>
+<text data-en="← cache frontier →" data-zh="← 缓存边界 →" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="470" y="155">← cache frontier →</text>
+<text data-en="paid once per cache lifetime, not once per step" data-zh="每个缓存生命周期付一次，而不是每步付一次" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="9" font-style="italic" text-anchor="middle" x="470" y="266">paid once per cache lifetime, not once per step</text>
+</svg>
+<p class="diagram-caption" data-en="Left: the uncached harness — the fixed preamble is re-processed at full input price on every step of the loop. Right: the cache-aware harness — everything up to the cache frontier is byte-stable and billed at the cached rate; only the volatile tail pays full price. The blocks are the same blocks. Only their order, and their stability, changed." data-zh="左边，是无缓存的 harness——固定前导在循环的每一步都按全价输入重新处理。右边，是缓存感知的 harness——缓存边界之前的所有内容逐字节稳定、按缓存价计费；只有易变的尾部支付全价。块还是那些块，变的只是顺序和稳定性。">Left: the uncached harness — the fixed preamble is re-processed at full input price on every step. Right: the cache-aware harness — everything up to the cache frontier is byte-stable and billed at the cached rate; only the volatile tail pays full price. The blocks are the same blocks. Only their order changed.</p>
+</div>
+<h3 data-en="Order the prompt like a ledger" data-zh="把 prompt 排成一本账">Order the prompt like a ledger</h3>
+<p data-en="The cache matches from the first token forward and stops at the first byte that differs. Not the first sentence — the first byte. A timestamp stamped into the system prompt, a session ID, a greeting that interpolates the user's name, a tool list sorted by insertion order from a hash map: any of these will fork the prefix at token twelve and take the discount to zero. The discipline that follows is almost embarrassingly mundane, which is why most teams skip it: sort the prompt by rate of change. The immutable ledger entries go first — identity, constitution, tool contracts. The semi-stable entries follow — retrieved documents, keyed so identical retrievals produce identical bytes. The volatile entries go last, at the tail, where mutation is cheap: the working history, the scratchpad, the current question. A prompt built this way has a cache frontier as high as its stability allows, and the frontier is a straight, legible line. A prompt built any other way has a frontier that zigzags at the whim of whatever library assembled it." data-zh="缓存从第一个 token 开始匹配，停在第一个不同的字节。不是第一句——是第一个字节。盖进系统 prompt 的时间戳、会话 ID、插值了用户名的问候语、按哈希表插入顺序排列的工具列表：任何一个都会让前缀在第十二个 token 处分岔，把折扣直接归零。随之而来的纪律简单得近乎乏味，所以大多数团队干脆跳过：按变化率给 prompt 排序。不变的账目条目放最前——身份、宪法、工具契约。半稳定的条目随后——检索到的文档，加上键，让相同的检索产出相同的字节。易变的条目放最后、放尾部，在那里变动最便宜——工作历史、草稿区、当前的问题。按这个方式构造的 prompt，缓存边界能升到稳定性允许的最高处，而且这条边界是一条笔直、可读的线。按其他方式构造的 prompt，边界随着拼装它的那个库的心血来潮来回折返。">The cache matches from the first token forward and stops at the first byte that differs. Not the first sentence — the first byte. A timestamp in the system prompt, a session ID, a greeting that interpolates the user's name, a tool list sorted by hash-map insertion order: any of these forks the prefix at token twelve and takes the discount to zero. The discipline is almost embarrassingly mundane: sort the prompt by rate of change. Immutable ledger entries first — identity, constitution, tool contracts. Semi-stable entries follow — retrieved documents, keyed so identical retrievals produce identical bytes. Volatile entries go last, at the tail, where mutation is cheap. Built this way, the cache frontier is a straight, legible line. Built any other way, it zigzags at the whim of whatever library assembled it.</p>
+<p data-en="This is bookkeeping, and it deserves the respect bookkeeping gets in every other part of the stack. Accountants learned centuries ago that the fixed costs go in the ledger and the variable costs go in the day book, and nobody confuses the two. Prompt construction has the same shape. The teams that internalize it stop treating the preamble as prose and start treating it as an artifact with an owner, a version, and a stability contract. Tool schemas get deduplicated and frozen. The environment description moves from the head to the tail. Personalization — the part that genuinely varies per user — is exiled to the last few hundred tokens, where its variance costs a few cents instead of the whole discount. None of this appears in a benchmark. All of it appears in the invoice." data-zh="这是记账，而且应该得到记账在技术栈其他所有部分所得到的尊重。几个世纪前会计就学会了：固定成本进分类账，变动成本进流水账，没人把两者混为一谈。Prompt 构造有同样的形状。把这一点内化了的团队，不再把前导内容当成散文，而是当成一个有负责人、有版本号、有稳定性契约的工件。工具 schema 被去重、被冻结。环境描述从头移到尾。个性化——真正随用户变化的部分——被流放到最后几百个 token 里，在那里它的方差只花几分钱，而不是花掉整个折扣。这些都不会出现在跑分里。但全部都会出现在账单上。">This is bookkeeping, and it deserves the respect bookkeeping gets everywhere else in the stack. Accountants learned centuries ago that fixed costs go in the ledger and variable costs go in the day book. Prompt construction has the same shape. Teams that internalize it stop treating the preamble as prose and start treating it as an artifact with an owner, a version, and a stability contract. Tool schemas get deduplicated and frozen. Environment descriptions move from head to tail. Personalization is exiled to the last few hundred tokens, where its variance costs cents instead of the whole discount. None of this appears in a benchmark. All of it appears in the invoice.</p>
+<blockquote data-en="The cache does not care what the tokens mean. It cares that they are the same. Meaning is the model's business; sameness is the harness's business. The engineers who internalize this stop writing prompts and start writing invariants." data-zh="缓存不关心 token 是什么意思，它只关心它们是不是一样的。意义是模型的事，相同性是 harness 的事。内化了这一点的工程师，不再是在写 prompt，而是在写不变量。">The cache does not care what the tokens mean. It cares that they are the same. Meaning is the model's business; sameness is the harness's business. The engineers who internalize this stop writing prompts and start writing invariants.</blockquote>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrL2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrL3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="THE LEDGER LAYOUT — SORT BY RATE OF CHANGE" data-zh="账本式布局——按变化率排序" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">THE LEDGER LAYOUT — SORT BY RATE OF CHANGE</text>
+<!-- stacked prompt blocks -->
+<rect fill="var(--accent-dim)" height="44" rx="8" stroke="var(--accent)" stroke-width="2" width="240" x="60" y="46"></rect>
+<text data-en="LEDGER · identity + constitution" data-zh="账本 · 身份 + 宪法" fill="var(--accent)" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" x="180" y="65">LEDGER · identity + constitution</text>
+<text data-en="frozen · versioned · byte-stable" data-zh="冻结 · 有版本 · 逐字节稳定" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="180" y="81">frozen · versioned · byte-stable</text>
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="240" x="60" y="98"></rect>
+<text data-en="TOOL CONTRACTS · deduped schemas" data-zh="工具契约 · 去重的 schema" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="180" y="117">TOOL CONTRACTS · deduped schemas</text>
+<text data-en="deterministic ordering · pinned" data-zh="确定性排序 · 固定版本" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="180" y="133">deterministic ordering · pinned</text>
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--accent-2)" stroke-width="1.5" width="240" x="60" y="150"></rect>
+<text data-en="RETRIEVAL · keyed documents" data-zh="检索 · 带键的文档" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="180" y="169">RETRIEVAL · keyed documents</text>
+<text data-en="same query → same bytes" data-zh="相同查询 → 相同字节" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="180" y="185">same query → same bytes</text>
+<!-- cache frontier -->
+<line stroke="var(--accent)" stroke-dasharray="6,4" stroke-width="2" x1="45" x2="315" y1="204" y2="204"></line>
+<text data-en="── cache frontier ──" data-zh="── 缓存边界 ──" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="800" text-anchor="middle" x="180" y="222">── cache frontier ──</text>
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="240" x="60" y="232"></rect>
+<text data-en="HISTORY · steps 1..n" data-zh="历史 · 第 1..n 步" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="180" y="251">HISTORY · steps 1..n</text>
+<text data-en="grows every turn · cached by growth" data-zh="每轮增长 · 按增长缓存" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="9" text-anchor="middle" x="180" y="267">grows every turn · cached by growth</text>
+<rect fill="var(--bg-surface)" height="44" rx="8" stroke="var(--accent-3)" stroke-width="1.5" width="240" x="60" y="284"></rect>
+<text data-en="THE ASK · user + scratch + now" data-zh="请求 · 用户 + 草稿 + 现在" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="180" y="303">THE ASK · user + scratch + now</text>
+<!-- right annotations -->
+<path d="M310 100 C360 100 370 80 420 78" fill="none" marker-end="url(#arrL2)" stroke="var(--accent)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--border)" stroke-width="1" width="170" x="420" y="62"></rect>
+<text data-en="cached rate ~10%" data-zh="缓存价约 10%" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="505" y="81">cached rate ~10%</text>
+<path d="M310 300 C360 300 370 272 420 270" fill="none" marker-end="url(#arrL3)" stroke="var(--accent-3)" stroke-width="1.5"></path>
+<rect fill="var(--bg-surface)" height="30" rx="7" stroke="var(--border)" stroke-width="1" width="170" x="420" y="254"></rect>
+<text data-en="full rate · tail only" data-zh="全价 · 仅尾部" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="505" y="273">full rate · tail only</text>
+<text data-en="one rogue timestamp above the frontier" data-zh="边界上方一个越界的时间戳" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="505" y="180">one rogue timestamp above the frontier</text>
+<text data-en="relocates the frontier to token 12" data-zh="会把边界打回到第 12 个 token" fill="var(--text-tertiary)" font-family="Inter,sans-serif" font-size="10" font-style="italic" text-anchor="middle" x="505" y="198">relocates the frontier to token 12</text>
+</svg>
+<p class="diagram-caption" data-en="The prompt as a ledger: blocks sorted by rate of change, immutable at the head, volatile at the tail. The cache frontier sits wherever byte-stability ends — as high as the harness can push it. One interpolated timestamp above the line relocates the frontier to the top of the prompt and resets the discount to zero." data-zh="把 prompt 当账本：按变化率排块，不变的在头，易变的在尾。缓存边界停在逐字节稳定性结束的地方——harness 能把它推多高，它就在多高。边界上方只要出现一个插值时间戳，边界就会退回 prompt 顶端，折扣归零。">The prompt as a ledger: blocks sorted by rate of change, immutable at the head, volatile at the tail. The cache frontier sits wherever byte-stability ends — as high as the harness can push it. One interpolated timestamp above the line relocates the frontier to the top and resets the discount to zero.</p>
+</div>
+<h3 data-en="The loop is the amplifier" data-zh="循环是放大器">The loop is the amplifier</h3>
+<p data-en="A chat application pays the preamble once per message, which makes the preamble a rounding error. An agent loop pays it once per step, which makes it the dominant term. The mathematics only bend in the loop's favor when caching works: a thirty-step run with a stable prefix pays full price for the first step's preamble and roughly a tenth for the other twenty-nine. The same run with an unstable prefix pays full price thirty times. Nothing in the model changed between those two runs. Nothing in the task changed. The entire difference — a factor of several on the input bill for long sessions — lives in the harness, in the ordering of strings, in a place where no one thought an engineering decision existed. Agent architectures are often praised for amortizing model intelligence across many steps. The cache is the mirror image: the mechanism that lets the loop amortize its own fixed costs. A loop without cache awareness is not a loop — it is a subscription with no benefits." data-zh="聊天应用每条消息付一次前导费用，前导因此只是零头。智能体循环每一步付一次，前导因此成了主项。这套数学只有在缓存正常工作时才站在循环这边：一个三十步、前缀稳定的运行，第一步的前导付全价，其余二十九步大约只付十分之一。同样的运行、不稳定的前缀，则要付三十次全价。两次运行之间，模型没有任何变化，任务也没有任何变化。全部差距——长会话输入账单上的数倍差距——都住在 harness 里，住在字符串的排序里，住在一个没人以为存在工程决策的地方。智能体架构常因「把模型智能摊销到许多步」而被称道。缓存是它的镜像：让循环摊销自身固定成本的机制。一个没有缓存意识的循环不是循环——它是一份没有任何权益的订阅。">A chat application pays the preamble once per message — a rounding error. An agent loop pays it once per step — the dominant term. A thirty-step run with a stable prefix pays full price for the first step's preamble and roughly a tenth for the other twenty-nine. The same run with an unstable prefix pays full price thirty times. Nothing in the model changed. Nothing in the task changed. The entire difference lives in the harness, in the ordering of strings, in a place where no one thought an engineering decision existed. The cache is the mirror of amortized intelligence: the mechanism that lets the loop amortize its own fixed costs.</p>
+<p data-en="The history block deserves special attention, because it is volatile and cacheable at the same time. The working memory of an agent grows by append: step n's prompt is step n−1's prompt plus new messages. Appended bytes do not invalidate what precedes them, so a well-behaved history preserves the cache all the way up. Every rewrite of history — a summarizer that compresses the transcript mid-run, a pruner that deletes stale tool outputs, a reflection step that replaces the raw log with an edited narrative — buys context back at the price of the cache. This is a real trade, not a mistake: sometimes the compaction is worth more than the discount, especially late in a long run when the tail dwarfs the preamble. But it should be a decision with a number attached, made at a planned compaction point, not an accident of a library that rewrites the transcript whenever it feels like it. The engineers who understand this schedule compaction the way schedulers schedule garbage collection: rarely, deliberately, and never in the middle of a hot loop without accounting for it." data-zh="历史块值得特别对待，因为它既易变、又可缓存。智能体的工作记忆靠追加增长：第 n 步的 prompt，等于第 n−1 步的 prompt 加上新消息。追加的字节不会使其前面的内容失效，所以一份行为端正的历史能把缓存一路保持到最上。而对历史的每一次重写——运行中途压缩转录的摘要器、删除过期工具输出的修剪器、把原始日志替换成编辑过叙述的反思步骤——都是用缓存换回上下文。这是一笔真实的交易，不是失误：有时压缩值得比折扣更多，尤其在长跑的后期，尾部远大于前导时。但它应该是一个带数字的决策，在一个计划好的压缩点上做出，而不是某个库心血来潮重写转录造成的意外。理解这一点的工程师，像调度器调度垃圾回收一样调度压缩：稀少、刻意、且绝不毫无记账地发生在热循环中间。">The history block is volatile and cacheable at the same time: step n's prompt is step n−1's plus appended messages, and appended bytes do not invalidate what precedes them. Every rewrite of history — a summarizer that compresses the transcript, a pruner that deletes stale tool outputs — buys context back at the price of the cache. Sometimes that trade is worth it, late in a long run when the tail dwarfs the preamble. But it should be a decision with a number attached, not an accident of a library that rewrites the transcript whenever it feels like it.</p>
+<div class="diagram">
+<svg viewbox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrC1" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--text-tertiary)"></path>
+</marker>
+<marker id="arrC2" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent)"></path>
+</marker>
+<marker id="arrC3" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="4">
+<path d="M0,0 L6,4 L0,8" fill="var(--accent-3)"></path>
+</marker>
+</defs>
+<text data-en="COST PER STEP — STABLE vs UNSTABLE PREFIX" data-zh="每步成本——稳定前缀 vs 不稳定前缀" fill="var(--accent)" font-family="Inter,sans-serif" font-size="12" font-weight="700" letter-spacing="1" text-anchor="middle" x="310" y="24">COST PER STEP — STABLE vs UNSTABLE PREFIX</text>
+<!-- axes -->
+<line stroke="var(--text-tertiary)" stroke-width="1.5" x1="90" x2="90" y1="260" y2="50"></line>
+<line stroke="var(--text-tertiary)" stroke-width="1.5" x1="90" x2="560" y1="260" y2="260"></line>
+<text data-en="input cost / step" data-zh="每步输入成本" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="150" y="42">input cost / step</text>
+<text data-en="loop steps →" data-zh="循环步数 →" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="520" y="278">loop steps →</text>
+<!-- unstable: full preamble cost each step, slight growth -->
+<path d="M90 90 L560 70" fill="none" stroke="var(--accent-3)" stroke-width="2" stroke-dasharray="6,4"></path>
+<text data-en="unstable prefix · 100% × 30 steps" data-zh="不稳定前缀 · 100% × 30 步" fill="var(--accent-3)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="380" y="120">unstable prefix · 100% × 30 steps</text>
+<!-- stable: first step full, rest low, gentle growth of history -->
+<path d="M90 90 L120 88 L120 224 L560 208" fill="none" stroke="var(--accent)" stroke-width="2.5"></path>
+<text data-en="stable prefix · pay once, then ~10%" data-zh="稳定前缀 · 付一次，之后约 10%" fill="var(--accent)" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="340" y="240">stable prefix · pay once, then ~10%</text>
+<!-- step 1 marker -->
+<circle cx="120" cy="88" fill="var(--bg-surface)" r="6" stroke="var(--accent)" stroke-width="2"></circle>
+<text data-en="step 1: cold, full price" data-zh="第 1 步：冷启动，全价" fill="var(--accent)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="150" y="74">step 1: cold, full price</text>
+<!-- compaction event -->
+<circle cx="400" cy="219" fill="var(--bg-surface)" r="6" stroke="var(--accent-2)" stroke-width="2"></circle>
+<path d="M400 219 C400 180 370 160 330 158" fill="none" marker-end="url(#arrC2)" stroke="var(--accent-2)" stroke-width="1.5" stroke-dasharray="4,3"></path>
+<text data-en="compaction: rewrites history," data-zh="压缩：重写历史，" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="400" y="150">compaction: rewrites history,</text>
+<text data-en="cache lost to the rewriter" data-zh="缓存败给重写器" fill="var(--accent-2)" font-family="Inter,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="400" y="164">cache lost to the rewriter</text>
+<rect fill="var(--accent-dim)" height="40" opacity="0.5" rx="8" width="470" x="90" y="284"></rect>
+<text data-en="Same model. Same task. Same 30 steps. The gap is entirely in the harness — in the order of strings." data-zh="同一个模型。同一个任务。同样的 30 步。差距全在 harness——在字符串的顺序里。" fill="var(--text-secondary)" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="325" y="309">Same model. Same task. Same 30 steps. The gap is entirely in the harness — in the order of strings.</text>
+</svg>
+<p class="diagram-caption" data-en="Over a thirty-step loop, the unstable prefix pays full input price for the entire preamble on every step; the stable prefix pays it once and rides the cached rate thereafter, with cost creeping up only as the appended history grows. A mid-run compaction event trades cache for context — visible, priced, and scheduled, or invisible and paid anyway." data-zh="在一个三十步的循环里，不稳定前缀每一步都为整个前导支付全价；稳定前缀只付一次，此后一路按缓存价，成本只随追加的历史缓慢爬升。中途的压缩事件用缓存换上下文——要么看得见、算得过、排得上日程，要么看不见，但照样付钱。">Over a thirty-step loop, the unstable prefix pays full input price on every step; the stable prefix pays once and rides the cached rate, with cost creeping up only as the appended history grows. A mid-run compaction trades cache for context — visible, priced, and scheduled, or invisible and paid anyway.</p>
+</div>
+<h3 data-en="Discounts you cannot bank on" data-zh="不能指望的折扣">Discounts you cannot bank on</h3>
+<p data-en="There is a temptation to treat the cached rate as the new list price and re-plan the economics of the product around it. Resist it. The prefix cache is best-effort infrastructure, not a contract: entries are evicted on a clock measured in minutes, and on shared serving they are evicted by strangers. The hit rate of a production agent is a function of traffic — its own concurrency, the noise of other tenants, the time since the last warm call. A burst of parallel subagent calls warms each other's prefixes; a quiet night lets them all go cold; a neighboring workload with a different preamble can age the cache out between two steps of the same run. The discount is real, repeatable, and worth engineering for. It is also weather. The budget should be written for the cold path, with the warm savings treated as margin — the way a warehouse budgets for full freight and treats backhauls as profit. Teams that bank the discount as baseline discover this the month a provider changes an eviction policy, and the discovery arrives as a bill." data-zh="有一种诱惑：把缓存价当成新的牌价，围绕它重新规划产品的经济学。抵制它。前缀缓存是尽力而为的基础设施，不是合同：条目按分钟级的时钟被驱逐，而在共享服务上，它们会被陌生人驱逐。一个生产智能体的命中率是流量的函数——自己的并发、其他租户的噪声、距上一次热调用的时长。一阵并行的子智能体调用会互相温暖彼此的前缀；一个安静的夜晚让它们全部冷掉；隔壁一个不同前导的工作负载，可以在同一次运行的两步之间把缓存老化掉。折扣是真实的、可复现的、值得为之做工程的。但它同时也是天气。预算应该按冷路径来写，把热省下的钱当利润率——就像仓库按全价运费做预算、把顺路带货当利润。把折扣记成基线的团队，会在某个月服务商改了驱逐策略时发现这一点，而发现的形式是一张账单。">There is a temptation to treat the cached rate as the new list price and re-plan the product's economics around it. Resist it. The prefix cache is best-effort infrastructure, not a contract: entries are evicted on a clock measured in minutes, and on shared serving they are evicted by strangers. A burst of parallel subagent calls warms each other's prefixes; a quiet night lets them all go cold; a neighboring workload can age the cache out between two steps of the same run. The discount is real, repeatable, and worth engineering for. It is also weather. The budget should be written for the cold path, with warm savings treated as margin. Teams that bank the discount as baseline discover this the month a provider changes an eviction policy — and the discovery arrives as a bill.</p>
+<p data-en="None of this is glamorous, and that is precisely the point. The history of infrastructure is the history of unglamorous invariants — reference counting, connection pooling, cache line alignment — that separate systems that scale from systems that merely work. Prompt-stability is the newest member of that family. It will not make a demo more impressive, will not move a benchmark, and will be invisible in every architecture diagram that shows boxes and arrows. It shows up in exactly one place, at the end of the month, in the number that determines whether the loop can afford to run as long as the task actually needs. Loop engineering spent two years learning that the loop needs a budget, a working set, and an exit condition. Here is the fourth law, arriving late and holding a receipt: the loop also needs to stop paying rent on what it already owns. The first thousand tokens are an asset. Whether they behave like one is a choice made in the harness, one byte at a time, starting with the first." data-zh="这些没有一样是光鲜的，而这正是重点。基础设施的历史，就是一系列不光鲜的不变量的历史——引用计数、连接池、缓存行对齐——它们把「能扩展的系统」和「只是能跑的系统」区分开来。Prompt 稳定性是这个家族最新的成员。它不会让演示更惊艳，不会移动任何跑分，在每一张画着方框和箭头的架构图里都隐身。它只在一个地方现身：月底，在那个决定循环还能不能按任务真正需要的长度跑下去的数字里。循环工程花了两年学会：循环需要预算、工作集和退出条件。现在来了第四条法则，姗姗来迟，手里拿着一张收据：循环还需要停止为自己已经拥有的东西付租。头一千个 token 是一项资产。它们像不像资产，是 harness 里做出的选择——一次一个字节，从第一个开始。">None of this is glamorous, and that is precisely the point. The history of infrastructure is the history of unglamorous invariants — reference counting, connection pooling, cache line alignment — that separate systems that scale from systems that merely work. Prompt-stability is the newest member of that family. It will not move a benchmark, and it is invisible in every architecture diagram that shows boxes and arrows. It shows up in one place: at the end of the month, in the number that determines whether the loop can afford to run as long as the task actually needs. Loop engineering learned that the loop needs a budget, a working set, and an exit condition. Here is the fourth law, arriving late and holding a receipt: the loop also needs to stop paying rent on what it already owns. The first thousand tokens are an asset. Whether they behave like one is a choice made in the harness, one byte at a time, starting with the first.</p>
+</article>
+<footer class="post-footer">
+<a class="post-back" data-en="← All posts" data-zh="← 所有文章" href="../index.html">← All posts</a>
+</footer>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
