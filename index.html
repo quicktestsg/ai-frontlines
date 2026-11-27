@@ -70,6 +70,19 @@
             </div>
 
                     <div class="post-item fade-in">
+            <a href="posts/2026-11-28-done-is-a-contract.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">November 28, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read" data-i18n="blog.read8">8 min read</span>
+                </div>
+                <h2 class="post-title" data-en="Done Is a Contract, Not a Feeling" data-zh="「完成」是一份契约，不是一种感觉">Done Is a Contract, Not a Feeling</h2>
+                <p class="post-excerpt" data-en="An agent that grades its own work always passes, because the grader shares the builder's blind spots — they are the same weights. The fix is older than agents: negotiate the definition of done before the work begins, as a binary, world-verifiable contract authored by an evaluator with no stake in the narrative." data-zh="给自己工程打分的智能体永远会通过，因为评分者与建造者共享盲区——它们是同一套权重。解法比智能体更古老：在工作开始之前，谈判出一份由不关心叙述的评估方撰写的、二值可验证的「完成」定义。">An agent that grades its own work always passes, because the grader shares the builder's blind spots — they are the same weights. The fix is older than agents: negotiate the definition of done.</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="post-item fade-in">
             <a href="posts/2026-11-27-agents-need-save-files.html" class="post-item-inner">
                 <div class="post-meta">
                     <span class="post-date">November 27, 2026</span>
@@ -104,19 +117,6 @@
                 </div>
                 <h2 class="post-title" data-en="The Second Pass: When the Loop Moves Inside the Model" data-zh="第二遍：当循环沉入模型内部">The Second Pass: When the Loop Moves Inside the Model</h2>
                 <p class="post-excerpt" data-en="For a decade, depth was frozen at training time — every layer ran once per token, forever. Looped blocks change that: middle layers re-run at inference under a per-token gate and a tiny KV window. Depth becomes a runtime budget, and every law of loop engineering — budgets, gates, exit conditions — applies one level down." data-zh="十年来，深度在训练那一刻就被冻结——每层对每个 token 只跑一遍。循环式模块改变了这一点：中段层在推理时重跑，由逐 token 门控和一个极小的 KV 窗口约束。深度变成运行时预算，而循环工程的全部法则——预算、门、退出条件——下沉到了下一层。">For a decade, depth was frozen at training time — every layer ran once per token, forever. Looped blocks change that: middle layers re-run at inference under a per-token gate and a tiny KV window..</p>
-                <span class="post-arrow">→</span>
-            </a>
-        </div>
-
-        <div class="post-item fade-in">
-            <a href="posts/2026-11-24-run-the-futures-commit-one.html" class="post-item-inner">
-                <div class="post-meta">
-                    <span class="post-date">November 24, 2026</span>
-                    <span class="post-dot"></span>
-                    <span class="post-read" data-i18n="blog.read9">9 min read</span>
-                </div>
-                <h2 class="post-title" data-en="Run the Futures, Commit One" data-zh="把未来并行跑一遍，只提交一个">Run the Futures, Commit One</h2>
-                <p class="post-excerpt" data-en="CPUs solved uncertainty decades ago: run several next steps and keep the one that turns out true. Agent loops do the opposite — they commit at choice time and defend the mistake forever. The fix is harness-level speculative execution: branch, rehearse, verify, commit late." data-zh="处理器早就解决了不确定性：把几个下一步都跑一遍，留下对的那个。智能体循环恰恰相反——选择即提交，然后用整个上下文为错误辩护。解法是 harness 层的投机执行：分叉、排练、验证、晚点提交。">CPUs solved uncertainty decades ago: run several next steps and keep the one that turns out true. Agent loops do the opposite — they commit at choice time and defend the mistake forever. The fix.</p>
                 <span class="post-arrow">→</span>
             </a>
         </div>
@@ -205,35 +205,36 @@ Ming-Image-0.2-Design ranks #1 among open-weight models on Artificial Analysis&#
 
         <article class="tweet-card fade-in">
             <div class="tweet-header">
-                <img src="https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <img src="https://pbs.twimg.com/profile_images/1658293192549339138/V0Y7u33__bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
-                    <span class="tweet-name">Qwen<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
-                    <span class="tweet-handle">@Alibaba_Qwen · Nov 26</span>
+                    <span class="tweet-name">Varun Mohan<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@_mohansolo · Nov 26</span>
                 </div>
-                <span class="news-badge" style="background:#FF6B35">Qwen</span>
+                <span class="news-badge" style="background:#4285F4">Antigravity</span>
             </div>
-            <div class="tweet-body" data-en="🎙️ New multilingual capabilities are here for Qwen-Audio-3.1! Especially for Chinese dialects.
+            <div class="tweet-body" data-en="Resetting Gemini quota for all Antigravity users for Thanksgiving!
 
-We previously released the Qwen-Audio-3.1 series of speech foundation models. Today, we are bringing the enhanced multilingual capabilities, with a strong focus on Chinese dialects. https://t.co/72N0KKT9l2" data-zh="Qwen-Audio-3.1 语音模型系列迎来多语言升级，重点强化中文方言：ASR 支持 59 种语言和 8 种中文方言，TTS 支持 65 种语言和 6 种方言，实时对话支持 53 种语言。ASR/TTS/Realtime 三款 Flash 模型已在 QwenCloud 上线。">🎙️ New multilingual capabilities are here for Qwen-Audio-3.1! Especially for Chinese dialects.
+We’re very thankful for all of our users ❤️
 
-We previously released the Qwen-Audio-3.1 series of speech foundation models. Today, we are bringing the enhanced multilingual capabilities, with a strong focus on Chinese dialects. https://t.co/72N0KKT9l2</div>
-        <div class="tweet-media-link" data-full="https://pbs.twimg.com/media/HYBZhAzaEAAVw1T.jpg">
-            <img src="https://pbs.twimg.com/media/HYBZhAzaEAAVw1T.jpg" alt="" class="tweet-media" loading="lazy" />
-        </div>
+We’re growing very quickly and are working tirelessly to make sure you all have a great experience!" data-zh="为庆祝感恩节，Antigravity 重置所有用户的 Gemini 配额！非常感谢所有用户的支持。我们正在快速增长，也在不知疲倦地工作，确保每个人都有良好的使用体验。">Resetting Gemini quota for all Antigravity users for Thanksgiving!
+
+We’re very thankful for all of our users ❤️
+
+We’re growing very quickly and are working tirelessly to make sure you all have a great experience!</div>
             <div class="tweet-footer">
-                <a href="https://x.com/Alibaba_Qwen/status/2125798914490249411" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/_mohansolo/status/2125851902009311306" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
                     0
                 </a>
-                <a href="https://x.com/Alibaba_Qwen/status/2125798914490249411" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/_mohansolo/status/2125851902009311306" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
                     0
                 </a>
-                <a href="https://x.com/Alibaba_Qwen/status/2125798914490249411" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/_mohansolo/status/2125851902009311306" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    606
+                    21.4K
                 </a>
-                <a href="https://x.com/Alibaba_Qwen/status/2125798914490249411" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                <a href="https://x.com/_mohansolo/status/2125851902009311306" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
                     View on X →
                 </a>
             </div>
@@ -241,32 +242,28 @@ We previously released the Qwen-Audio-3.1 series of speech foundation models. To
 
         <article class="tweet-card fade-in">
             <div class="tweet-header">
-                <img src="https://pbs.twimg.com/profile_images/2093807917833281537/2yBgpwVV_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <img src="https://pbs.twimg.com/profile_images/1145865652533547008/XBahoZmX_bigger.png" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
-                    <span class="tweet-name">Tibo<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
-                    <span class="tweet-handle">@thsottiaux · Nov 26</span>
+                    <span class="tweet-name">The Spectator Index<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@spectatorindex · Nov 26</span>
                 </div>
-                <span class="news-badge" style="background:#10A37F">OpenAI</span>
+                <span class="news-badge" style="background:#76B900">NVIDIA</span>
             </div>
-            <div class="tweet-body" data-en="We made a billing mistake at launch of GPT-6.2 that incorrectly discounted GPT-6.2 Astra and Sol usage for most users. 
-
-We’ve fixed this now, so the same work will use more of your plan’s usage allowance. Comparing to last week, you will reach your limits 40% faster on GPT-6.2" data-zh="GPT-6.2 上线时计费出了错：多数用户的 Astra 和 Sol 用量被错误地打了折。现已修复——同样的工作会消耗更多套餐额度。与上周相比，GPT-6.2 Astra 的限额会快约 40% 触达，Sol 快约 25%。历史用量不补收，并给 Go、Plus、Pro 和 Business 用户各补偿一次额度重置。">We made a billing mistake at launch of GPT-6.2 that incorrectly discounted GPT-6.2 Astra and Sol usage for most users. 
-
-We’ve fixed this now, so the same work will use more of your plan’s usage allowance. Comparing to last week, you will reach your limits 40% faster on GPT-6.2</div>
+            <div class="tweet-body" data-en="BREAKING: NVIDIA has halted shipments of its chips to Malaysia, Singapore, Thailand and Indonesia, according to Financial Times report." data-zh="突发：据《金融时报》报道，NVIDIA 已暂停向马来西亚、新加坡、泰国和印度尼西亚运送芯片。">BREAKING: NVIDIA has halted shipments of its chips to Malaysia, Singapore, Thailand and Indonesia, according to Financial Times report.</div>
             <div class="tweet-footer">
-                <a href="https://x.com/thsottiaux/status/2125784147889393806" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/spectatorindex/status/2125849749781905624" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
                     0
                 </a>
-                <a href="https://x.com/thsottiaux/status/2125784147889393806" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/spectatorindex/status/2125849749781905624" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
                     0
                 </a>
-                <a href="https://x.com/thsottiaux/status/2125784147889393806" target="_blank" rel="noopener" class="tweet-stat">
+                <a href="https://x.com/spectatorindex/status/2125849749781905624" target="_blank" rel="noopener" class="tweet-stat">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    17.3K
+                    10.5K
                 </a>
-                <a href="https://x.com/thsottiaux/status/2125784147889393806" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                <a href="https://x.com/spectatorindex/status/2125849749781905624" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
                     View on X →
                 </a>
             </div>
@@ -280,6 +277,19 @@ We’ve fixed this now, so the same work will use more of your plan’s usage al
     <section class="post-list tab-pane" id="pane-blog">
 
                 <div class="post-item fade-in">
+            <a href="posts/2026-11-28-done-is-a-contract.html" class="post-item-inner">
+                <div class="post-meta">
+                    <span class="post-date">November 28, 2026</span>
+                    <span class="post-dot"></span>
+                    <span class="post-read" data-i18n="blog.read8">8 min read</span>
+                </div>
+                <h2 class="post-title" data-en="Done Is a Contract, Not a Feeling" data-zh="「完成」是一份契约，不是一种感觉">Done Is a Contract, Not a Feeling</h2>
+                <p class="post-excerpt" data-en="An agent that grades its own work always passes, because the grader shares the builder's blind spots — they are the same weights. The fix is older than agents: negotiate the definition of done before the work begins, as a binary, world-verifiable contract authored by an evaluator with no stake in the narrative." data-zh="给自己工程打分的智能体永远会通过，因为评分者与建造者共享盲区——它们是同一套权重。解法比智能体更古老：在工作开始之前，谈判出一份由不关心叙述的评估方撰写的、二值可验证的「完成」定义。">An agent that grades its own work always passes, because the grader shares the builder's blind spots — they are the same weights. The fix is older than agents: negotiate the definition of done.</p>
+                <span class="post-arrow">→</span>
+            </a>
+        </div>
+
+        <div class="post-item fade-in">
             <a href="posts/2026-11-27-agents-need-save-files.html" class="post-item-inner">
                 <div class="post-meta">
                     <span class="post-date">November 27, 2026</span>
@@ -1892,6 +1902,72 @@ Ming-Image-0.2-Design ranks #1 among open-weight models on Artificial Analysis&#
 
         <article class="tweet-card fade-in">
             <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1658293192549339138/V0Y7u33__bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Varun Mohan<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@_mohansolo · Nov 26</span>
+                </div>
+                <span class="news-badge" style="background:#4285F4">Antigravity</span>
+            </div>
+            <div class="tweet-body" data-en="Resetting Gemini quota for all Antigravity users for Thanksgiving!
+
+We’re very thankful for all of our users ❤️
+
+We’re growing very quickly and are working tirelessly to make sure you all have a great experience!" data-zh="为庆祝感恩节，Antigravity 重置所有用户的 Gemini 配额！非常感谢所有用户的支持。我们正在快速增长，也在不知疲倦地工作，确保每个人都有良好的使用体验。">Resetting Gemini quota for all Antigravity users for Thanksgiving!
+
+We’re very thankful for all of our users ❤️
+
+We’re growing very quickly and are working tirelessly to make sure you all have a great experience!</div>
+            <div class="tweet-footer">
+                <a href="https://x.com/_mohansolo/status/2125851902009311306" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/_mohansolo/status/2125851902009311306" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/_mohansolo/status/2125851902009311306" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    21.4K
+                </a>
+                <a href="https://x.com/_mohansolo/status/2125851902009311306" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1145865652533547008/XBahoZmX_bigger.png" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">The Spectator Index<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@spectatorindex · Nov 26</span>
+                </div>
+                <span class="news-badge" style="background:#76B900">NVIDIA</span>
+            </div>
+            <div class="tweet-body" data-en="BREAKING: NVIDIA has halted shipments of its chips to Malaysia, Singapore, Thailand and Indonesia, according to Financial Times report." data-zh="突发：据《金融时报》报道，NVIDIA 已暂停向马来西亚、新加坡、泰国和印度尼西亚运送芯片。">BREAKING: NVIDIA has halted shipments of its chips to Malaysia, Singapore, Thailand and Indonesia, according to Financial Times report.</div>
+            <div class="tweet-footer">
+                <a href="https://x.com/spectatorindex/status/2125849749781905624" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/spectatorindex/status/2125849749781905624" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/spectatorindex/status/2125849749781905624" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    10.5K
+                </a>
+                <a href="https://x.com/spectatorindex/status/2125849749781905624" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
                 <img src="https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
                 <div class="tweet-author">
                     <span class="tweet-name">Qwen<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
@@ -2019,6 +2095,39 @@ Built in <a href="https://x.com/Antigravity" target="_blank" rel="noopener">@Ant
                     1.1K
                 </a>
                 <a href="https://x.com/GeminiApp/status/2125685936344236471" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
+                    View on X →
+                </a>
+            </div>
+        </article>
+
+        <article class="tweet-card fade-in">
+            <div class="tweet-header">
+                <img src="https://pbs.twimg.com/profile_images/1658293192549339138/V0Y7u33__bigger.jpg" alt="" class="tweet-avatar" loading="lazy" />
+                <div class="tweet-author">
+                    <span class="tweet-name">Varun Mohan<svg class="verified-badge" width="16" height="16" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.972.854-1.245 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="currentColor"/></svg></span>
+                    <span class="tweet-handle">@_mohansolo · Nov 26</span>
+                </div>
+                <span class="news-badge" style="background:#4285F4">Google</span>
+            </div>
+            <div class="tweet-body" data-en="We&#x27;ve increased the cache hit rate for Neon in Antigravity again by another 4.5%. This means you can complete 28% more tasks within quota.
+
+In the last 5 days, we&#x27;ve effectively increased Neon usage on the subscription by close to 75% through caching and harness improvements!" data-zh="我们再次将 Antigravity 中 Neon 的缓存命中率提高了 4.5%，意味着你可以在配额内多完成 28% 的任务。过去 5 天里，通过缓存与 harness 优化，订阅的 Neon 有效用量提升了近 75%！">We&#x27;ve increased the cache hit rate for Neon in Antigravity again by another 4.5%. This means you can complete 28% more tasks within quota.
+
+In the last 5 days, we&#x27;ve effectively increased Neon usage on the subscription by close to 75% through caching and harness improvements!</div>
+            <div class="tweet-footer">
+                <a href="https://x.com/_mohansolo/status/2125641696377712968" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 1.999l-8.12 8.12L12 13.87l-2.88-2.75L1 1.999M1 9.999l6.12 6.12L11 19.87l2.88-2.75L23 9.999"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/_mohansolo/status/2125641696377712968" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                    0
+                </a>
+                <a href="https://x.com/_mohansolo/status/2125641696377712968" target="_blank" rel="noopener" class="tweet-stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    16.9K
+                </a>
+                <a href="https://x.com/_mohansolo/status/2125641696377712968" target="_blank" rel="noopener" class="tweet-open" data-i18n="news.viewOnX">
                     View on X →
                 </a>
             </div>
