@@ -1,6 +1,472 @@
 {
   "tweets": [
     {
+      "id": "2125968859450802415",
+      "url": "https://x.com/TencentAI_News/status/2125968859450802415",
+      "label": "Tencent",
+      "color": "#0052D9",
+      "fetched_at": "2026-11-27T08:02:42.595174+00:00",
+      "translation_zh": "腾讯混元开源 DFly2 推测解码器，可直接加速 DeepSeek-V4.1-Flash、GLM-5.3-Flash 等稀疏模型：草稿层直接读取目标模型的 KV 缓存和 top-k token，无需预填充，零额外显存。64K 上下文下 DeepSeek-V4.1-Flash 推理吞吐最高提升 81%，Hy4 flash 智能体任务提速 4.2 倍。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 1866,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-26T15:04:09.000Z",
+        "display_text_range": [
+          0,
+          273
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/i1mPR2QR5v",
+              "expanded_url": "https://x.com/TencentAI_News/status/2125968859450802415/photo/1",
+              "indices": [
+                274,
+                297
+              ],
+              "url": "https://t.co/i1mPR2QR5v"
+            }
+          ]
+        },
+        "id_str": "2125968859450802415",
+        "text": "We just open-sourced a speculative decoder that speeds up sparse models like DeepSeek-V4.1-Flash, GLM-5.3-Flash, and our own Hy4 flash.\n\nAt 64K context, DFly2 boosts DeepSeek-V4.1-Flash serving throughput by up to 81%. On Hy4 flash agentic tasks, it runs up to 4.2x faster, https://t.co/i1mPR2QR5v",
+        "user": {
+          "id_str": "2000391102923481088",
+          "name": "Tencent AI",
+          "screen_name": "TencentAI_News",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/2003780428591960064/H6DEq1-G_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2125968859450802415"
+          ],
+          "editable_until_msecs": "1795709049000",
+          "edits_remaining": "5",
+          "is_edit_eligible": true
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/i1mPR2QR5v",
+            "expanded_url": "https://x.com/TencentAI_News/status/2125968859450802415/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              274,
+              297
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HYD1QpjaQAA5kIT.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 991,
+                  "w": 1770,
+                  "x": 33,
+                  "y": 0
+                },
+                {
+                  "h": 991,
+                  "w": 991,
+                  "x": 423,
+                  "y": 0
+                },
+                {
+                  "h": 991,
+                  "w": 869,
+                  "x": 484,
+                  "y": 0
+                },
+                {
+                  "h": 991,
+                  "w": 496,
+                  "x": 670,
+                  "y": 0
+                },
+                {
+                  "h": 991,
+                  "w": 1938,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 991,
+              "width": 1938
+            },
+            "sizes": {
+              "large": {
+                "h": 991,
+                "resize": "fit",
+                "w": 1938
+              },
+              "medium": {
+                "h": 614,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 348,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/i1mPR2QR5v"
+          },
+          {
+            "display_url": "pic.x.com/i1mPR2QR5v",
+            "expanded_url": "https://x.com/TencentAI_News/status/2125968859450802415/photo/2",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              274,
+              297
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HYD1SHaaYAAWiju.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 826,
+                  "w": 1475,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 826,
+                  "w": 826,
+                  "x": 23,
+                  "y": 0
+                },
+                {
+                  "h": 826,
+                  "w": 725,
+                  "x": 74,
+                  "y": 0
+                },
+                {
+                  "h": 826,
+                  "w": 413,
+                  "x": 230,
+                  "y": 0
+                },
+                {
+                  "h": 826,
+                  "w": 1938,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 826,
+              "width": 1938
+            },
+            "sizes": {
+              "large": {
+                "h": 826,
+                "resize": "fit",
+                "w": 1938
+              },
+              "medium": {
+                "h": 511,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 290,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/i1mPR2QR5v"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 991,
+                "w": 1770,
+                "x": 33,
+                "y": 0
+              },
+              {
+                "h": 991,
+                "w": 991,
+                "x": 423,
+                "y": 0
+              },
+              {
+                "h": 991,
+                "w": 869,
+                "x": 484,
+                "y": 0
+              },
+              {
+                "h": 991,
+                "w": 496,
+                "x": 670,
+                "y": 0
+              },
+              {
+                "h": 991,
+                "w": 1938,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/TencentAI_News/status/2125968859450802415/photo/1",
+            "url": "https://pbs.twimg.com/media/HYD1QpjaQAA5kIT.jpg",
+            "width": 1938,
+            "height": 991
+          },
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 826,
+                "w": 1475,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 826,
+                "w": 826,
+                "x": 23,
+                "y": 0
+              },
+              {
+                "h": 826,
+                "w": 725,
+                "x": 74,
+                "y": 0
+              },
+              {
+                "h": 826,
+                "w": 413,
+                "x": 230,
+                "y": 0
+              },
+              {
+                "h": 826,
+                "w": 1938,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/TencentAI_News/status/2125968859450802415/photo/2",
+            "url": "https://pbs.twimg.com/media/HYD1SHaaYAAWiju.jpg",
+            "width": 1938,
+            "height": 826
+          }
+        ],
+        "conversation_count": 105,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false,
+        "note_tweet": {
+          "id": "Tm90ZVR3ZWV0UmVzdWx0czoyMTI1OTY4ODU5MjgzMDI1OTIw"
+        }
+      }
+    },
+    {
+      "id": "2125916926048358827",
+      "url": "https://x.com/AntLingAGI/status/2125916926048358827",
+      "label": "Ant",
+      "color": "#1677FF",
+      "fetched_at": "2026-11-27T08:02:42.595174+00:00",
+      "translation_zh": "蚂蚁 Ling 团队开源 Ming-Image-0.2-Design 文生图模型（约 6B，主打构图、光影与可读文字生成），在 Artificial Analysis AA-Image-T2I v2.1 榜单上以 1095 Elo 位居开放权重模型第一。分层版 Design-Layer 计划下周开源。",
+      "tweet_data": {
+        "__typename": "Tweet",
+        "favorite_count": 824,
+        "lang": "en",
+        "possibly_sensitive": false,
+        "created_at": "2026-11-26T11:37:47.000Z",
+        "display_text_range": [
+          0,
+          261
+        ],
+        "entities": {
+          "media": [
+            {
+              "display_url": "pic.x.com/xve0egLZf3",
+              "expanded_url": "https://x.com/AntLingAGI/status/2125916926048358827/photo/1",
+              "indices": [
+                262,
+                285
+              ],
+              "url": "https://t.co/xve0egLZf3"
+            }
+          ]
+        },
+        "id_str": "2125916926048358827",
+        "text": "We're introducing Ming-Image-0.2-Design and Ming-Image-0.2-Design-Layer. We're open-sourcing Design today and plan to open-source Layer next week.\nMing-Image-0.2-Design ranks #1 among open-weight models on Artificial Analysis's AA-Image-T2I v2.1 with 1,095 Elo. https://t.co/xve0egLZf3",
+        "user": {
+          "id_str": "1909081835776413696",
+          "name": "Ant Ling",
+          "screen_name": "AntLingAGI",
+          "is_blue_verified": true,
+          "profile_image_shape": "Circle",
+          "verified": false,
+          "profile_image_url_https": "https://pbs.twimg.com/profile_images/1911666162137477120/EbzxHHzp_normal.jpg"
+        },
+        "edit_control": {
+          "edit_tweet_ids": [
+            "2125916926048358827"
+          ],
+          "editable_until_msecs": "1795696667000",
+          "edits_remaining": "5",
+          "is_edit_eligible": false
+        },
+        "mediaDetails": [
+          {
+            "display_url": "pic.x.com/xve0egLZf3",
+            "expanded_url": "https://x.com/AntLingAGI/status/2125916926048358827/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "indices": [
+              262,
+              285
+            ],
+            "media_url_https": "https://pbs.twimg.com/media/HYC3lC7b0AAKgrl.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 1015,
+                  "w": 1812,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1618,
+                  "w": 1618,
+                  "x": 194,
+                  "y": 0
+                },
+                {
+                  "h": 1618,
+                  "w": 1419,
+                  "x": 393,
+                  "y": 0
+                },
+                {
+                  "h": 1618,
+                  "w": 809,
+                  "x": 1003,
+                  "y": 0
+                },
+                {
+                  "h": 1618,
+                  "w": 1812,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1618,
+              "width": 1812
+            },
+            "sizes": {
+              "large": {
+                "h": 1618,
+                "resize": "fit",
+                "w": 1812
+              },
+              "medium": {
+                "h": 1072,
+                "resize": "fit",
+                "w": 1200
+              },
+              "small": {
+                "h": 607,
+                "resize": "fit",
+                "w": 680
+              },
+              "thumb": {
+                "h": 150,
+                "resize": "crop",
+                "w": 150
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/xve0egLZf3"
+          }
+        ],
+        "photos": [
+          {
+            "backgroundColor": {
+              "red": 204,
+              "green": 214,
+              "blue": 221
+            },
+            "cropCandidates": [
+              {
+                "h": 1015,
+                "w": 1812,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1618,
+                "w": 1618,
+                "x": 194,
+                "y": 0
+              },
+              {
+                "h": 1618,
+                "w": 1419,
+                "x": 393,
+                "y": 0
+              },
+              {
+                "h": 1618,
+                "w": 809,
+                "x": 1003,
+                "y": 0
+              },
+              {
+                "h": 1618,
+                "w": 1812,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "expandedUrl": "https://x.com/AntLingAGI/status/2125916926048358827/photo/1",
+            "url": "https://pbs.twimg.com/media/HYC3lC7b0AAKgrl.jpg",
+            "width": 1812,
+            "height": 1618
+          }
+        ],
+        "conversation_count": 66,
+        "news_action_type": "conversation",
+        "isEdited": false,
+        "isStaleEdit": false
+      }
+    },
+    {
       "id": "2125798914490249411",
       "url": "https://x.com/Alibaba_Qwen/status/2125798914490249411",
       "label": "Qwen",
